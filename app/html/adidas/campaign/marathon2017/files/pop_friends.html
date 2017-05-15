@@ -1,0 +1,217 @@
+ <!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+	<meta name="format-detection" content="telephone=no">
+	<meta http-equiv="x-rim-auto-match" content="none">
+
+	<link href="/css/adidas/style.css" type="text/css" rel="stylesheet" />
+	<link href="/css/adidas/fonts.css" type="text/css" rel="stylesheet" />
+
+	<style type="text/css">
+
+		.mirun_wrap header{
+			height:50px;
+			background: #dc2c2f;
+			text-align: center;
+		}
+
+		.mirun_wrap header h1{
+			padding-left: 15px;
+			color: #fff;
+			font:15px/50px 'NotoSansKR';
+			text-align: left;
+		}
+
+		.mirun_wrap header .close_x_btn{
+			width:50px;
+			height:50px;
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+
+		.mirun_wrap header .close_x_btn::before,
+		.mirun_wrap header .close_x_btn::after{
+			background: #fff;
+		}
+
+		.mirun_wrap .contents{
+			position: relative;
+			padding: 15px;
+		}
+
+		.mirun_wrap .contents h2{
+			margin:15px 0 20px;
+			text-align:center;
+			color:#474747;
+			font:16px/22px 'NotoSansKRRegular';
+		}
+
+		.mirun_wrap .contents h2 strong{
+			color:#e72929;
+		}
+
+		.mirun_wrap .li_hypn li{
+			margin-bottom: 3px;
+		    font-size: 11px;
+		    line-height: 14px;
+		    color: #777;
+		}
+
+		.mirun_wrap .li_hypn li.s::before{
+			top:3px;
+			content:'*';
+		}
+
+		.mirun_wrap .contents .step{
+			display: -webkit-flex;
+			display: -moz-flex;
+			display: -ms-flex;
+			display: -o-flex;
+			display: flex;
+		}		
+
+
+		.frd_step{height:60px;background:#e3e3e3;border-radius:5px;}
+		.frd_step li{width:25%;float:left;color:#252525;position:relative;font-weight:bold;font-size:11px;text-align:center;line-height:15px;box-sizing:border-box;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;}
+		.frd_step li strong{color:#252525;}					
+
+		.frd_step li:nth-child(1){padding-top:16px;}
+		.frd_step li:nth-child(2){padding-top:16px;}
+		.frd_step li:nth-child(3){padding-top:7px;}
+		.frd_step li:nth-child(4){padding-top:22px;}
+
+		.frd_step li:after{
+			width:0;
+			height:0;
+			content:"";
+			position:absolute;
+			top:27px;
+			right:-5px;
+			border-top:4px solid transparent;
+			border-left:4px solid #99979c;
+			border-bottom: 4px solid transparent;
+		}
+		.frd_step li:nth-child(4):after{border:none;}
+
+		.form_box{
+			 position:relative;
+			 margin-bottom:10px;
+		}
+
+		.form_box .input_box{
+			margin:0 80px 0 60px;
+		}
+
+		.form_box .input_box input{
+			width:100%;
+			height:32px;
+			border-radius:0;
+			padding-left:10px;
+			font-size:12px;
+			box-sizing:border-box;
+			-webkit-box-sizing:border-box;
+		}
+
+		.form_box .submit{
+			width:75px;
+			height:69px;
+			line-height:69px;
+			color:#fff;
+			font-size:13px;
+			position:absolute;
+			top:0;
+			right:0;
+			background:#493191;
+			text-align:center;
+			border-radius:3px;
+		}
+
+		.form_box .label{
+			width: 45px;
+			line-height: 69px;
+			position: absolute;
+			top: 0;
+			left: 0;
+			text-align: center;
+			font-size: 16px;
+		}
+
+	</style>
+
+
+	<script type="text/javascript" src="/js/jquery-1.12.0.min.js"></script>
+	<script type="text/javascript" src="/js/swipe.js"></script>
+	<script type="text/javascript" src="/js/owl.carousel.js"></script>
+	
+	<title>아디다스 모바일</title>
+</head>
+<body>
+	<div id="wrap">		
+		<div class="mirun_wrap">
+			<header>
+				<!-- 160802 상단 제목 수정-->
+				<h1>아디다스 러닝 부스트 사고 2016 마이런 서울가자</h1>
+				<a href="javascript:void(0)" class="close_x_btn"></a>
+			</header>
+
+			<div class="contents">
+				<h2><strong>함께 달리고 싶은 친구</strong>의<br/>아디클럽 아이디와 이름을 입력해주세요!</h2>
+				<div class="form_box">
+					<div class="input_box">
+						<div class="label">친구1</div>
+						<p style="margin-bottom:5px;">
+							<input type="text" placeholder="아이디 입력하기"/>
+						</p>
+						<p>
+							<input type="text" placeholder="이름 입력하기"/>
+						</p>
+					</div>
+					<!-- 160802 버튼명 변경 -->
+					<a href="#" class="submit">친구 1 등록</a>
+				</div>
+
+				<div class="form_box" style="margin-bottom: 20px;">
+					<div class="input_box">
+						<div class="label">친구2</div>
+						<p style="margin-bottom:5px;">
+							<input type="text" placeholder="아이디 입력하기"/>
+						</p>
+						<p>
+							<input type="text" placeholder="이름 입력하기"/>
+						</p>
+					</div>
+					<!-- 160802 버튼명 변경 -->
+					<a href="#" class="submit">친구 2 등록</a>
+				</div>
+
+				<ul class="li_hypn" style="margin-bottom: 15px;">
+					<li class="s">주의사항 : 한번 입력된 친구는 변경,취소가 불가능합니다.<span>(신청완료 여부와 관계없이 변경,취소가 불가능합니다.)</span></li>
+					<li class="s">신청기간이 지나면 무료 티켓 신청이 불가능하며, 초대받은 친구 중 1명만 신청 완료하실 경우 구매자 본인과 신청 완료한 회원님에게 일반 10K 참가 티켓을 증정합니다.(반드시 크루 3명이 모두 참가 신청을 완료해야 우먼스 크루 10K에 참가 가능합니다.)</li>
+				</ul>
+
+				<ul class="frd_step">
+					<li>친구 ID/이름<br/>입력</li>
+					<li>친구에게 신청<br/>문자발송</li>
+					<li>문자의<br/>링크를 통해<br/>약관 동의</li>
+					<li>신청 완료</li>
+				</ul>
+			</div>
+		</div>
+		<!-- //mirun_wrap -->
+	</div>
+	<!-- //wrap -->
+
+	
+	<script type="text/javascript" src="/js/common.js"></script>
+	<script type="text/javascript">
+		(function($){			
+					
+		})(jQuery);	
+	</script>
+	
+</body>
+
+</html>

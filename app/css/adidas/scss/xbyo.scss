@@ -1,0 +1,431 @@
+/*
+	break width
+ */
+$break-small: 1000px;
+$break-large: 1400px;
+$width320:320px;
+$width400:400px;
+$width480:480px;
+$width600:600px;
+/*
+	@@ mixin
+ */
+@mixin box-sizing($value){
+			box-sizing: $value;
+	-webkit-box-sizing: $value;
+}
+
+@mixin prefix-css3($prop,$value){
+	#{$prop} :$value;
+	-webkit-#{$prop} :$value;
+	-moz-#{$prop}:$value;
+	-o-#{$prop} :$value;
+	-ms-#{$prop} :$value;
+}
+
+@mixin transition($prop , $duration , $easing , $delay){
+	transition :$prop $duration $easing $delay;
+	-webkit-transition :$prop $duration $easing $delay;
+	-moz-transition:$prop $duration $easing $delay;
+	-o-transition :$prop $duration $easing $delay;
+}
+
+@mixin opacity($value){
+	opacity : $value;
+	// filter:alpha(opacity=$value * 100);
+	// -ms-filter:alpha(opacity=$value * 100);
+}
+
+@mixin transform($value){
+	transform:$value;
+	-webkit-transform:$value;
+	-moz-transform:$value;
+	-o-transform:$value;
+}
+
+@media screen and (max-width: 320px) {
+	html{
+		font-size: 10px;
+	}
+}
+@media screen and (min-width: 800px) {
+	html{
+		font-size: 12px;
+	}
+}
+
+// for pseudo element
+.pseudo-element{
+	content:'';
+	display: block;
+}
+
+#xbyoPreload{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #000;
+	z-index: 1000;
+
+	#lineImage{
+		position: absolute;
+	    left: 50%;
+	    top: 100%;
+	    width: 100%;
+	    opacity: 0;
+
+	    @include prefix-css3(transform,translate3d(-50%,-100%,0));
+	    @include prefix-css3(transition-property,all);
+
+	}
+
+	#heading{
+		width: 100%;
+		padding-bottom: 50%;
+		position: absolute;
+		top: 50%;
+		left: 0;
+		opacity: 0;
+
+		@include prefix-css3(transform,translate3d(0,-50%,0));
+
+		text-align: center;
+
+		&::after{
+			@extend .pseudo-element;
+		    width: 100%;
+		    height: 100%;
+		    background: url('/images/adidas/event/xbyo/8630-title.png') center center no-repeat;
+		    background-size: 160px auto;
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+			
+		}
+	}
+
+	&.animReady{
+		#heading , #lineImage{
+			opacity: 1;
+			@include prefix-css3(transition-duration,1s);
+			@include prefix-css3(transition-property,opacity);
+		}
+	}
+
+
+	&.animStart{
+		#heading , #lineImage{
+			opacity: 1;
+			@include prefix-css3(transition-property,all);
+			@include prefix-css3(transition-duration,0.5s);
+		}
+
+		#heading{
+			margin-top: -6rem;
+		}
+
+		#lineImage{
+			width:500%;
+		}
+	}
+
+	&.animFinish{
+		#heading , #lineImage{
+			opacity: 1;
+			@include prefix-css3(transition-duration,0.5s);
+		}
+
+		#heading{
+			margin-top: 6rem;
+			opacity: 0;
+			@include prefix-css3(transition-property,all);
+		}
+
+		#lineImage{
+			width:500%;
+			opacity: 0;
+			@include prefix-css3(transition-duration,0.5s);
+			@include prefix-css3(transition-delay,1s);
+			@include prefix-css3(transition-property,opacity);
+		}
+	}
+
+	&.animDone{
+		#heading , #lineImage{
+			opacity: 0;
+		}
+		opacity: 0;
+		@include prefix-css3(transition-property,opacity);
+		@include prefix-css3(transition-duration,0.5s);
+	}
+}
+
+#xbyo{
+	.button{
+		height: auto;
+		padding:1.2rem 2rem;
+		display: inline-block;
+		font:1.3rem/1.3rem 'NotoSansKR';
+		color: #000;
+		border: 1px solid #000;
+		background:transparent;
+		text-align: left;
+		@include prefix-css3(box-sizing,border-box);
+
+		&::after{
+			vertical-align: middle;
+			font-size: 1rem;
+			margin-left:1rem;
+		}
+
+		&.btype{
+			background:#000;
+			color: #fff;
+		}
+	}
+
+	/* visual */
+	.visual{
+		width: 100%;
+		height: calc(90vh - 45px);
+		position: relative;
+		padding: 24px;
+		background:#373737 url('/images/adidas/event/xbyo/masthead-background.jpg');
+		background-size:cover;
+		@include prefix-css3(box-sizing,border-box);
+
+		@media screen and (min-width: 400px) {
+			height: 75vh;
+		}
+
+		.inner{
+			width: 100%;
+			height: 100%;
+			position: relative;
+			@include prefix-css3(box-sizing,border-box);
+
+			.logo{
+				position: absolute;
+				top: 0;
+				left: 0;
+				color: #fff;
+				font-size: 4.5rem;
+			}
+
+			.line{
+				position: absolute;
+				top: 0;
+				right: 0;
+			}
+
+			.copy{
+				width: 100%;
+				position: absolute;
+				top:8.5rem;
+				left: 0;
+				text-align: center;
+				h2{
+					text-align: left;
+					margin-bottom: 3rem;
+					img{
+						width: 16rem;
+					}
+				}	
+
+				.desc{
+					margin-bottom: 2rem;
+					font: 1.3rem/3rem 'NotoSansKR';
+					color: #fff;
+					letter-spacing: 0;
+					word-break:keep-all;
+				}
+			}
+		}		
+	}
+
+	.statement{
+		padding: 4rem 0px 3rem;
+		text-align: center;
+
+		span{
+			font:2rem 'AdihausDIN-Cond';
+			color: #a6a6a6;
+		}
+
+		&.last-statement{
+			padding-bottom: 6rem;
+			background: url('/images/adidas/event/xbyo/statementqote_tcm65-120617.jpg') center center no-repeat;
+			background-size: cover;
+			padding-top: 2.5rem;
+
+			.button_area{
+				margin-bottom: 4.5rem;
+			}
+
+			h4{
+				margin-bottom: 1.5rem;
+				padding: 0 2rem;
+				font:2rem/2.5rem 'NotoSansKR';
+				word-break:keep-all;
+			}
+
+			.by{
+				font:1.3rem/1.5rem 'NotoSansKRRegular';
+				color: #a6a6a6;
+			}
+		}
+
+
+	}
+
+	/* features */
+	.features{
+
+		padding: 15px;
+
+		.copy{
+			margin-bottom: 2rem;
+			h3{
+				margin-bottom: 1.2rem;
+				font:3.56rem/3.56rem 'AdihausDIN-Cond';
+				color: #000;
+			}
+
+			.desc{
+				margin-bottom: 1.5rem;
+				font:1.3rem/2rem 'NotoSansKRRegular';
+				color: #000;	
+				word-break:keep-all;
+			}
+		}
+
+		.imgbox{
+			width: 100%;
+			padding-bottom: 50%;
+			position: relative;
+			img{
+				width: 100%;
+			}
+			.img1{
+			
+			}
+
+			.img2{
+				width: 60%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				@include prefix-css3(transform,translate3d(1.5rem,50%,0));
+			}			
+		}
+
+		.box{
+			&:last-child{
+				.imgbox{
+
+				}
+			}
+		}
+	}
+
+	.lookbook{
+		width: 100%;
+		position: relative;
+		padding-bottom:90%;
+		overflow: hidden;
+		background:url('/images/adidas/event/xbyo/Item Selector_BG-Mob_tcm65-116500.jpg');
+		background-size:cover;
+
+		ul{
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			overflow: hidden;
+			li{
+				position: relative;
+				float: left;
+
+				img{
+					width: 100%;
+				}
+			}
+		}
+	}
+
+	.lookbook_num{
+		padding: 2rem 0px;
+		text-align: center;
+		span{
+			width: 20px;
+			height: 2px;
+			margin: 0 4px;
+			display: inline-block;
+			background: #333;
+			opacity: 0.5;
+			vertical-align: top;
+			font-size: 0;;
+
+			&.on{
+				opacity: 1;
+			}
+		}
+	}
+
+	.image_grids{
+		.statement{
+			padding-top: 3rem;
+		}
+
+		.button_area{
+			padding: 3rem 0;
+			text-align: center;
+			background: #f7f6f6;
+		}
+
+		.box{
+			position: relative;
+			img{
+				width: 100%;
+			}
+
+			.row{
+				width: 100%;
+				position: relative;
+				padding-bottom: 100%;
+
+				.col{
+					width: 50%;
+					position: absolute;
+					top: 0;
+					left: 0;
+
+					&.col2{
+						left: auto;
+						right: 0;
+					}
+					&.col3{
+						left: auto;
+						top:auto;
+						right: 0;
+						bottom:0;
+					}
+				}
+			}
+
+			&.bgtype{
+				padding-bottom: 100%;
+
+				@include prefix-css3(transform,translate3d(-20%,0,0));
+				img{
+					width: 150%;
+					position: absolute;
+					top: 0;
+					left: 0;
+				}
+			}
+		}
+	}
+}

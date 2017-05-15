@@ -1,0 +1,521 @@
+<!doctype html>
+<html itemscope="" itemtype="http://schema.org/WebPage" lang="ko" class="">
+
+<head>
+<title>리복 모바일</title>
+<meta http-equiv="Cache-Control" content="max-age=0" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+<meta content="telephone=no" name="format-detection">
+<meta content="address=no" name="format-detection">
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<link rel="stylesheet" href="/MO/reebok/css/reebok_m.css?ver=151118" />
+<link rel="apple-touch-icon-precomposed" href="/images/reebok/icon_114.png" />
+<link rel="shortcut icon" href="/images/reebok/icon_57.png" />
+<script type="text/javascript" src="/MO/js/jquery.js"></script>
+<script type="text/javascript" src="/MO/js/iscroll.js"></script>
+<script type="text/javascript" src="/MO/js/commonFn.js"></script>
+<script type="text/javascript" src="/MO/reebok/js/FlickKkb.js"></script>
+<script type="text/javascript" src="/MO/reebok/js/swipe.js"></script>
+<script type="text/javascript" src="/MO/reebok/js/reebok_js_m.js"></script>
+<script type="text/javascript" src="/MO/reebok/js/commonReebok.js"></script>
+<script type="text/javascript" src="/js/search/dqAutoCompleteCommonTop.js"></script>
+
+
+</head>
+<body>
+	<section id="wrap">
+		<section id="container">
+			<script type="text/javascript" src="/MO/js/jquery/jquery-1.4.2.js"></script>
+			<script type="text/javascript" src="/MO/js/common.js"></script>
+			<section id="contents" style="background: #fff;">
+				<div class="photo_collection">
+					<style type="text/css">
+						html,body,#wrap,#container,#contents,.photo_collection{
+							position: relative;
+							width: 100%;
+							height: 100%;
+							background: #fff;
+						}
+
+						.photo_collection .control{
+							position: absolute;
+							bottom: 0;
+							left: 0;
+							width: 100%;
+							height: 50px;
+							background: #fff;
+							z-index: 10;
+						}
+
+						.photo_collection .control .num{
+							text-align: center;
+						}
+
+						.photo_collection .control .num *{
+							color: #9d9caa;
+							font:20px/50px 'reefont-condensed';
+						}
+
+						.photo_collection .control .prev,
+						.photo_collection .control .next{
+							width: 50px;
+							height: 50px;
+							display: block;
+							position: absolute;
+							top: 0;
+							background: #a3a3a3;
+						}
+
+						.photo_collection .control .prev::before,
+						.photo_collection .control .next::before{
+							content:'';
+							display: block;
+							position: absolute;
+							top: 50%;
+							left: 50%;
+							width:15px;
+							height:15px;
+							box-sizing: border-box;
+							-webkit-box-sizing: border-box;
+							border-bottom: 1px solid  #fff;							
+						}
+
+						.photo_collection .control .prev::before{
+							margin-left:3px;
+							border-left: 1px solid  #fff;	
+							transform:translate3d(-50%,-50%,0) rotate(45deg);
+							-webkit-transform:translate3d(-50%,-50%,0) rotate(45deg);
+						}
+
+						.photo_collection .control .next::before{
+							margin-left:-3px;
+							border-right: 1px solid  #fff;	
+							transform:translate3d(-50%,-50%,0) rotate(-45deg);
+							-webkit-transform:translate3d(-50%,-50%,0) rotate(-45deg);
+						}
+
+						.photo_collection .control .prev{
+							left: 0;
+						}
+
+						.photo_collection .control .next{
+							right: 0;
+						}
+
+						.photo_collection .img_slider{
+							width: 100%;
+							height: 100%;
+							position: relative;
+							padding-bottom: 50px;
+							box-sizing: border-box;
+							-webkit-box-sizing: border-box;
+						}
+
+						.photo_collection .img_slider .img_slider_inner{
+							width: 100%;
+							height: 100%;
+							position: relative;
+						}
+
+						.photo_collection .img_slider .pop_wrap{
+							width: 100%;
+							height: 100%;
+							position:absolute;
+							top: 0;
+							left: 0;
+						}
+
+						.photo_collection .img_slider #slider_wrap{
+							width: 100%;
+							height: 100%;
+							position: relative;
+							overflow: hidden;
+						}
+						.photo_collection .img_slider #slider_wrap ul{
+							width: 100%;
+							height: 100%;
+							float: left;
+							position: relative;
+							overflow: hidden;
+						}
+
+						.photo_collection .img_slider #slider_wrap ul li{
+							width: 100%;
+							height: 100%;
+							float: left;
+							position: relative;
+							overflow: hidden;
+						}
+
+						.photo_collection .img_slider #slider_wrap ul li img{
+							opacity: 0;
+							position: absolute;
+							top:50%;
+							left:50%;
+							transform:translate3d(-50%,-50%,0);
+							-webkit-transform:translate3d(-50%,-50%,0);
+							transition:opacity 0.5s;
+							-webkit-transition:opacity 0.5s;
+						}
+
+						.photo_collection .img_slider #slider_wrap ul li img.loaded{
+							opacity: 1;
+						}
+
+						.photo_collection .email_pop{
+							padding: 15px;
+							position: absolute;
+							top: 0;
+							left: 0;
+							width: 100%;
+							height: 100%;
+							opacity: 0;
+							z-index:-1;
+							overflow: auto;
+							background:rgba(0,0,0,0.8);
+							box-sizing: border-box;
+							-webkit-box-sizing: border-box;
+							transition:opacity 0.2s;
+							-webkit-transition:opacity 0.2s;
+						}
+
+						.photo_collection .email_pop.show{
+							opacity: 1;
+							z-index: 100;
+						}
+
+						.photo_collection .email_pop .pop_contents{
+							width: 100%;
+							padding:30px 10px 75px;
+							position: relative;
+							background: #e8e9d9;
+							box-sizing: border-box;
+							-webkit-box-sizing: border-box;
+						}
+
+						.photo_collection .email_pop .pop_contents *{
+							font:12px 'NotoSansKRRegular';
+							color: #000;
+						}
+
+						.photo_collection .email_pop .pop_contents h1{
+							margin-bottom: 15px;
+							text-align: center;
+						}
+
+						.photo_collection .email_pop .pop_contents h2{
+							margin-bottom: 15px;
+							text-align: center;
+							font-size: 12px;
+							line-height: 16px;
+						}
+
+						.photo_collection .email_pop .pop_contents .email_ipt{
+							width: 100%;
+							margin-bottom: 15px;
+
+						}
+
+						.photo_collection .email_pop .pop_contents .email_ipt input{
+							width: 100%;
+							height:40px;							
+							border:3px solid #000;
+							text-align: center;
+							border-radius: 0;
+							box-sizing: border-box;
+							-webkit-box-sizing: border-box;
+						}
+
+						.photo_collection .email_pop .pop_contents .info{
+							padding: 0 10px;
+						}
+
+						.photo_collection .email_pop .pop_contents .info .chk_all{
+							margin-bottom: 12px;
+						}
+
+						.photo_collection .email_pop .pop_contents .info .chk_all label{
+							font:16px 'NotoSansKRBold';
+							color: #000;
+						}
+
+						.photo_collection .email_pop .pop_contents .info input[type="checkbox"]{
+							margin: 0;
+						}
+
+						.photo_collection .email_pop .pop_contents .info p{
+							line-height:17px;
+							color: #444;
+						}
+
+						.photo_collection .email_pop .pop_contents .info p.agr_tit{
+							margin-bottom: 8px;
+							font-family: 'NotoSansKRBold';
+							color: #000;
+						}
+
+						.photo_collection .email_pop .pop_contents .info .chk{
+							margin:7px 0 15px;
+						}
+
+						.photo_collection .email_pop .pop_contents .info .chk input{
+							vertical-align: middle;
+							margin-right: 2px;
+						}
+
+						.photo_collection .email_pop .pop_contents .info .chk label{
+							font-family: 'NotoSansKRBold';	
+							vertical-align: middle;
+							color: #000;
+						}
+
+						.photo_collection .email_pop .pop_contents .info li{
+							margin-bottom: 3px;
+							position: relative;
+							color: #444;
+						}
+
+						.photo_collection .email_pop .pop_contents .info .bul li{
+							padding-left:6px;
+						}
+
+						.photo_collection .email_pop .pop_contents .info .bul li::before{
+							content:'';
+							position: absolute;
+							top:5px;
+							left: 0;
+							width: 2px;
+							height: 2px;
+							background: #444;
+						}
+
+						.photo_collection .email_pop .pop_contents .submit{
+							width: 100%;
+							height: 50px;
+							display: block;
+							position: absolute;
+							bottom: 0;
+							left: 0;
+							background: #cc0526;
+							text-align: center;
+							font:16px/50px 'NotoSansKR';
+							color: #fff;
+						}
+
+						.photo_collection .ipt{
+							position: relative;
+						}	
+
+						.photo_collection .ipt input{
+							opacity: 0;
+							width: 15px;
+							height: 15px;
+							position: absolute;
+							top: 0;
+							left: 0;
+						}
+
+						.photo_collection .ipt label{
+							display: block;
+							padding-left: 22px;
+						}
+
+						.photo_collection .ipt label::before{
+							display: block;
+							position: absolute;
+							top:50%;
+							left:0;
+							content:'';
+							width: 14px;
+							height: 14px;
+							border: 1px solid  #000;
+							background: #e8e9d9;
+							transform:translateY(-50%);
+							-webkit-transform:translateY(-50%);
+						}
+
+						.photo_collection .ipt input:checked+label::before{
+							background: #cc0526;
+							border-color: #cc0526;
+						}
+
+					</style>
+					
+					<div class="control">
+						<a class="prev "href="javascript:void(0)"></a>
+						<div class="num">
+							 <strong>1</strong><span>/7</span>
+						</div>
+						<a class="next "href="javascript:void(0)"></a>
+					</div>
+
+					<div class="img_slider">
+						<div class="img_slider_inner">
+							<div class="pop_wrap">
+								<div class="email_pop">
+									<div class="pop_contents">
+										<h1><img src="/images/reebok/event/photo_collection/tit_furylight.jpg" alt="" style="width: 220px;"></h1>
+										<h2>당신의 이메일을 입력하시면,<br/>지금 유아인의 미공개 컷 및 더 많은 화보를 볼 수 있습니다. </h2>
+										<div class="email_ipt">
+											<input type="email" placeholder="이메일 적고 미공개 화보 보기" class="email">	
+										</div>
+										
+										<div class="info">
+											<div class="chk_all">
+												<div class="ipt">
+													<input type="checkbox" id="agree_all">
+													<label for="agree_all">일괄 동의합니다.</label>	
+												</div>
+											</div>
+											<p class="agr_tit">[마케팅 수신/ 개인정보 취급 위탁 동의]</p>
+											<ul class="bul">
+												<li>리복은 다음의 개인정보를 수집이용합니다.</li>
+												<li>개인정보 수집이용목적 : 리복 이메일 뉴스레터 제공</li>
+												<li>수집하려는 개인정보 항목 : 이메일 주소</li>
+												<li>개인정보 보유 및 이용기간</li>
+											</ul>
+											<div class="chk">
+												<div class="ipt">
+													<input type="checkbox" id="agree1">
+													<label for="agree1">동의합니다.</label>	
+												</div>
+											</div>
+											<p>리복은 이메일 뉴스레터의 제공을 위하여 필요한 개인정보 취급 위탁을 하고 있으며 개인정보의 취급 위탁을 받은 자와 위탁사항 등은 다음과 같습니다. </p>
+											<div class="chk">
+												<div class="ipt">
+													<input type="checkbox" id="agree2">
+													<label for="agree2">개인정보 취급위탁에 동의합니다.</label>	
+												</div>
+											</div>
+											<ul>
+												<li>개인정보 취급 위탁을 받는 자(수탁자) : (주)샌텔</li>
+												<li>개인정보 취급 위탁을 하는 업무의 내용 : eDM 발송 업무</li>
+												<li>개인정보 보유 및 이용기간 : 수집일로부터 1년</li>
+											</ul>
+										</div>
+										<!-- 테스트 함수 -->
+										<a href="#" class="submit" onclick="test();return false;">확인</a>
+									</div>
+								</div>
+							</div>
+							
+							<div id="slider_wrap">
+								<ul>
+									<li></li>
+									<li></li>
+									<li></li>
+									<li data-secret="true"></li>
+									<li data-secret="true"></li>
+									<li data-secret="true"></li>
+									<li data-secret="true"></li>
+								</ul>
+							</div>
+						</div>
+						
+					</div>
+
+					<script type="text/javascript" src="../MO/reebok/js/swipe.js"></script>
+					<script type="text/javascript">
+
+						// 이미지 데이터
+						var imageArray = [
+							'images/reebok/event/photo_collection/furylight/01.jpg',
+							'images/reebok/event/photo_collection/furylight/02.jpg',
+							'images/reebok/event/photo_collection/furylight/03.jpg',
+							'images/reebok/event/photo_collection/furylight/04.jpg',
+							'images/reebok/event/photo_collection/furylight/05.jpg',
+							'images/reebok/event/photo_collection/furylight/06.jpg',
+							'images/reebok/event/photo_collection/furylight/07.jpg'
+						];
+
+						// 비전시 화보 시작번호
+						var secretCutNum = 3;
+						// 이메일 인증여부
+						var isUnlocked = false;
+
+						var elem = document.getElementById('slider_wrap');
+						var mainSwipe = Swipe(elem, {
+							stopPropagation: true,
+							callback: function(index, element) {
+								if(index > secretCutNum-1 && !isUnlocked){
+									$('.email_pop').css({zIndex : 200});
+									setTimeout(function(){
+										$('.email_pop').addClass('show');
+									},10);									
+								}else{
+									$('.email_pop').removeClass('show');
+									setTimeout(function(){
+										$('.email_pop').css({zIndex : -1});
+									},200);
+								}
+								$('.photo_collection .control .num strong').text(index+1);
+								if($(element).find('img').attr('src') == undefined){
+									getImage($(element),imageArray[index]);	
+								}
+								
+							}
+						});
+
+						$('.control .prev').bind('click',function(){
+							mainSwipe.prev();
+						});
+
+						$('.control .next').bind('click',function(){
+							mainSwipe.next();
+						});
+
+						function getImage(target,src){
+							var img = new Image();
+							img.onload = function(){
+								var imgElem = setImageSize(this);
+								target.html(imgElem);
+								setTimeout(function(){
+									target.find('img').addClass('loaded');
+								},10);
+							};
+							img.src = src;
+						}
+
+						function setImageSize(imgElem){
+							var i = 0;
+							var imgWidthRatio = imgElem.width / imgElem.height;
+							var imgHeightRatio = imgElem.height / imgElem.width;
+
+							for(var i = 0;i<4; i++){
+								if(imgElem.width > window.innerWidth){
+									imgElem.width = window.innerWidth;
+								}else{									
+									if(window.innerWidth * imgHeightRatio > window.innerHeight-50){
+										imgElem.height = window.innerHeight-50;
+										imgElem.width = imgElem.height * imgWidthRatio;
+									}
+								}
+							}
+							return imgElem;
+						}
+
+						// ajax success callback 테스트 임시함수
+						function test(){
+							$('.email_pop').removeClass('show');
+							setTimeout(function(){
+								$('.email_pop').css({zIndex : -1});
+							},200);
+							isUnlocked = true;
+						}
+
+						getImage($('#slider_wrap li').eq(0),imageArray[0]);
+
+
+					</script>
+
+
+				</div>
+			</section>
+			<!-- //contents -->
+		</section>
+		<!-- //container -->
+	</seciton>
+	<!-- //wrap -->
+</body>
+</html>

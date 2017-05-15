@@ -1,0 +1,209 @@
+/*
+	break width
+ */
+$break-small: 1000px;
+$break-large: 1400px;
+$width320:320px;
+$width400:400px;
+$width480:480px;
+$width600:600px;
+/*
+	@@ mixin
+ */
+@mixin box-sizing($value){
+			box-sizing: $value;
+	-webkit-box-sizing: $value;
+}
+
+@mixin prefix-css3($prop,$value){
+	#{$prop} :$value;
+	-webkit-#{$prop} :$value;
+	-moz-#{$prop}:$value;
+	-o-#{$prop} :$value;
+	-ms-#{$prop} :$value;
+}
+
+@mixin transition($prop , $duration , $easing , $delay){
+	transition :$prop $duration $easing $delay;
+	-webkit-transition :$prop $duration $easing $delay;
+	-moz-transition:$prop $duration $easing $delay;
+	-o-transition :$prop $duration $easing $delay;
+}
+
+@mixin opacity($value){
+	opacity : $value;
+	// filter:alpha(opacity=$value * 100);
+	// -ms-filter:alpha(opacity=$value * 100);
+}
+
+@mixin transform($value){
+	transform:$value;
+	-webkit-transform:$value;
+	-moz-transform:$value;
+	-o-transform:$value;
+}
+
+@media screen and (max-width: 320px) {
+	html{
+		font-size: 10px;
+	}
+}
+@media screen and (min-width: 800px) {
+	html{
+		font-size: 12px;
+	}
+}
+
+// for pseudo element
+.pseudo-element{
+	content:'';
+	display: block;
+}
+
+
+#neverdone{
+
+	.visual{
+		position: relative;
+		img{
+			width: 100%;
+		}
+
+		.link{
+			display: block;
+			width: 40%;
+			height: 15%;
+			position: absolute;
+			left: 30%;
+
+			&.w{
+				top: 59.6%;
+			}
+
+			&.m{
+				top: 77.4%;
+			}
+		}
+	}
+
+	.feature , .collection{
+		a{
+			display: block;
+
+			img{
+				width: 100%;
+			}
+		}
+	}
+
+	.guide , .statement{
+		img{
+			width: 100%;
+		}
+	}
+
+	.statement{
+		position: relative;
+		padding-bottom: 62.5%;
+
+		img{
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	}
+
+	.feature{
+		position: relative;
+		padding-bottom: 125%;
+
+		img{
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	}
+
+
+
+	.slidearea{
+		.nav{
+			ul{
+				display:flex;
+				li{
+					width: 33%;
+					height: 50px;
+					padding-top: 16px;
+					text-align: center;
+					box-sizing:border-box;
+					-webkit-box-sizing:border-box;
+
+					&:first-child{
+						width: 30%;
+					}
+
+					&:last-child{
+						width: 37%;
+					}
+
+					a{
+						position: relative;
+						display: inline-block;
+						color: #000;
+						font:1.3rem/1.3rem 'NotoSansKR';
+
+						&::before , &::after{
+							@extend .pseudo-element;
+							position: absolute;
+							bottom: -6px;
+							width: 0;
+							height: 2px;
+							background: #000;
+						}
+
+						&::before{
+							left: 50%;
+						}
+
+						&::after{	
+							right: 50%;
+						}
+
+					}
+
+					&.on{
+						a{
+							&::before , &::after{
+								width: 50%;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.img_slide{
+			width: 100%;
+			position: relative;
+			padding-bottom: 73.5%;
+			margin-bottom: 3rem;
+			.box{
+				position: absolute;
+				top: 0;
+				left: 0;
+				opacity: 0;
+
+				@include prefix-css3(transition,opacity 0.4s);
+
+				&.active{
+					opacity: 1;
+				}
+
+				img{
+					width: 100%;
+				}
+			}
+		}	
+	}
+
+}

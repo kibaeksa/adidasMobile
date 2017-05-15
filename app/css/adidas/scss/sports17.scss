@@ -1,0 +1,336 @@
+/*
+	break width
+ */
+$break-small: 1000px;
+$break-large: 1400px;
+$width320:320px;
+$width400:400px;
+$width480:480px;
+$width600:600px;
+/*
+	@@ mixin
+ */
+@mixin box-sizing($value){
+			box-sizing: $value;
+	-webkit-box-sizing: $value;
+}
+
+@mixin prefix-css3($prop,$value){
+	#{$prop} :$value;
+	-webkit-#{$prop} :$value;
+	-moz-#{$prop}:$value;
+	-o-#{$prop} :$value;
+	-ms-#{$prop} :$value;
+}
+
+@mixin transition($prop , $duration , $easing , $delay){
+	transition :$prop $duration $easing $delay;
+	-webkit-transition :$prop $duration $easing $delay;
+	-moz-transition:$prop $duration $easing $delay;
+	-o-transition :$prop $duration $easing $delay;
+}
+
+@mixin opacity($value){
+	opacity : $value;
+	// filter:alpha(opacity=$value * 100);
+	// -ms-filter:alpha(opacity=$value * 100);
+}
+
+@mixin transform($value){
+	transform:$value;
+	-webkit-transform:$value;
+	-moz-transform:$value;
+	-o-transform:$value;
+}
+
+@media screen and (max-width: 320px) {
+	html{
+		font-size: 10px;
+	}
+}
+@media screen and (min-width: 800px) {
+	html{
+		font-size: 12px;
+	}
+}
+
+// for pseudo element
+.pseudo-element{
+	content:'';
+	display: block;
+}
+#video-layer{
+	position:fixed;top:0;left:0;width: 100%;height: 100%;z-index:1000;
+}
+
+#video-layer .bg{
+	width: 100%;
+	height: 100%;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	transform-origin:center center;
+	-webkit-transform-origin:center center;
+	transform:scale(0);
+	-webkit-transform:scale(0);
+	opacity:0;
+	background:#000;
+	z-index:1;
+
+	transition:all 0.4s;
+	-webkit-transition:all 0.4s;
+
+
+}
+
+#video-layer.loaded .bg{
+	opacity: 1;
+	transform:scale(1.2);
+	-webkit-transform:scale(1.2);
+}
+
+#video-layer .video-box{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	z-index: 3;
+}
+
+#video-layer .close_x_btn{
+	width: 70px;
+	height: 70px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 5;
+	opacity: 0;
+}
+
+#video-layer.loaded .close_x_btn{
+	opacity: 1;
+}
+
+
+#sports17{
+	.main{
+		position: relative;
+		img{ width: 100%; }
+		.play{
+			position: absolute;
+			top:50%;
+			margin-top: -50px;
+			left:50%;
+			margin-left: -52px;
+		}
+	}
+	.bg{
+		background-image: url('/images/adidas/event/sports17/bg.jpg');
+		// background-size: cover;
+		@include prefix-css3(background-size, cover);
+
+		// background-attachment: fixed;
+		background-position: 50% 50%;
+		background-repeat: no-repeat;
+		width: 100%;
+		height: 20rem;
+		p{
+			padding-top: 3.8rem;
+			text-align: center;
+			font:1.3rem/2rem 'NotoSansKR';
+		}
+	}
+	.slider_section{
+		position: relative;
+		padding:1rem 1rem 0 1rem;
+		background:#c5ddee;
+		background: linear-gradient(#c5ddee, #65a3c8); 
+		.slider_wrap{
+			position: relative;
+			// padding:2rem 0rem;
+			margin:1rem 2.5rem 0 2.5rem;
+			// overflow: hidden;
+			
+			ul{
+				position: relative;
+				.owl-item.active{
+					.num_title span{
+						margin-right: 0;
+						opacity: 1;
+					}
+					.num_title span:after{
+						width: 100%;
+					}
+				}
+				li{
+					float: left;
+					position: relative;
+					top:0;
+					// margin-right: 20px;
+					.title{
+						padding-bottom: 1.5rem;
+						text-align: center;
+						font:600 1.4rem/1.8rem 'NotoSansKRMedium';
+						p{
+							font:2.3rem/2.6rem 'adinenuPro-black';
+							letter-spacing: 0;
+							text-transform: uppercase;
+						}
+					}
+					.img{
+						img{width: 100%;}
+					}
+					.num_title{
+						position: relative;
+						padding:2rem 0 0 0;
+						text-align: center;
+						
+					}
+					.num_title span{
+						position: relative;
+						display: inline-block;
+						height: 50px;
+						font:1.8rem/2rem 'NotoSansKR';
+						letter-spacing: 0;
+						margin-right: -10rem;
+						transition: all 0.6s ease;
+						opacity: 0;
+					}
+					.num_title span:after{
+						display: inline-block;
+						content: '';
+						width: 0%;
+						height: 2px;
+						background: #000;
+						position: absolute;
+						bottom: 24px;
+						right:0;
+						transition: all 0.6s ease;
+
+					}
+				}
+				
+			}
+			ul:after{
+				content: '';
+				display: block;
+				clear: both;
+			}
+			.owl-controls{
+				.owl-dot{
+					// position: relative;
+					float: left;
+					text-align: center;
+					span{
+						display: inline-block;
+						padding:1rem 0 0 0;
+						font:1.5rem/2rem 'NotoSansKR';
+						text-align: center;
+						color:#000;
+						letter-spacing: 0;
+					}
+				}
+			}
+			.owl-nav{
+				position: absolute;
+				top:50%;
+				width:100%;
+				.owl-next {
+				  position: relative;
+				  right:-26px;
+				  float: right;
+				  width:20px; 
+				  height: 40px;
+				  background:url('/images/adidas/event/sports17/next.png') no-repeat;
+				  background-size: 100%;
+				  text-indent: -9999px;
+				}
+				.owl-prev {
+				  position: relative;
+				  left:-26px;
+				  float: left;
+				  width:20px; 
+				  height: 40px;
+				  background:url('/images/adidas/event/sports17/prev.png') no-repeat;
+				  background-size: 100%;
+				  text-indent: -9999px;
+				}
+			}
+		}
+		
+	}
+	.gal{
+		position: relative;
+		height: 60rem;
+		overflow: hidden;
+		ul{
+			li{
+				float:left;
+				position: absolute;
+				left:0;
+				opacity: 0;
+				display: none;
+				@include prefix-css3(transition, opacity 0.3s)
+
+				img{ width: 100%; }
+				.video{
+					position: relative;
+					// width: 100%;
+					text-align: center;
+					a.video-button{
+						position: absolute;
+						top:50%;
+						left:50%;
+						margin-top:-45px;
+						margin-left:-45px;
+
+						img{ width: 60%; }
+					}
+				}
+				.view{
+					position: relative;
+					
+				}
+			}
+			li.on{
+				opacity: 1;
+				display: block;
+			}
+		}
+		ul:after{
+			content: '';
+			display: block;
+			clear: both;
+		}
+		.gal_btn{
+			position: absolute;
+			left:0;
+			bottom: 2rem;
+			width: 100%;
+			text-align: center;
+			a{
+				display: inline-block;
+				padding:0 4.5rem;
+				height: 45px;
+				font: 16px/45px 'NotoSansKR';
+				background: #fff;
+				color:#000;
+				opacity: .9;
+				transition:all 0.6s;
+				.icons{
+					display: inline-block;
+					margin-left: 1rem;
+					width:1.5rem;
+					height: 2rem;
+					vertical-align: middle;
+					background: url('/images/adidas/event/sports17/icons.png') no-repeat;
+					background-size: 100%;
+				}
+			}
+			a:hover{
+				opacity: 1;
+			}
+		}
+	}
+}

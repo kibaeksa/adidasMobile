@@ -1,0 +1,384 @@
+
+<!Doctype html>
+<html ng-app="findStore">
+<head>
+<title>리복 추석쿠폰 사용 매장안내</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, width=device-width, user-scalable=yes" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta content="MSHTML 8.00.7600.16821" name="GENERATOR">
+
+<link rel="stylesheet" href="http://m.reebok.co.kr/MO/reebok/css/reebok_m.css" />	
+
+<script type="text/javascript" src="http://shop.adidas.co.kr/js/jquery/jquery-1.4.2.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+
+<style type="text/css">
+	/*
+	 * Jeju Gothic (Korean) http://www.google.com/fonts/earlyaccess
+	 */
+	@font-face {
+	  font-family: 'Jeju Gothic';
+	  font-style: normal;
+	  font-weight: 400;
+	  src: url(//fonts.gstatic.com/ea/jejugothic/v3/JejuGothic-Regular.eot);
+	  src: url(//fonts.gstatic.com/ea/jejugothic/v3/JejuGothic-Regular.eot?#iefix) format('embedded-opentype'),
+	       url(//fonts.gstatic.com/ea/jejugothic/v3/JejuGothic-Regular.woff2) format('woff2'),
+	       url(//fonts.gstatic.com/ea/jejugothic/v3/JejuGothic-Regular.woff) format('woff'),
+	       url(//fonts.gstatic.com/ea/jejugothic/v3/JejuGothic-Regular.ttf) format('truetype');
+	}
+
+	*{padding:0;margin:0;font-family:'Droid Sans','Malgun Gothic','Apple-Gothic','애플고딕','Tahoma',dotum,'돋움',gulim,'굴림',sans-serif,Arial,sans-serif;font-size:22px;font-style:normal;}	
+	li{list-style:none;}
+	img{width:100%;vertical-align:top;}
+
+	section.container{overflow:hidden;position:relative;}
+
+	footer {
+		position:relative;
+		z-index:10;
+		padding:15px 0 15px 10px;
+		background:#e7e7e8;
+		border-top:1px solid #cfcfd0;
+		border-bottom:1px solid #cfcfd0;
+		background:#444;
+
+		letter-spacing: -0.5px;
+		font:11px 'Droid Sans','Malgun Gothic','Apple-Gothic','애플고딕','Tahoma',dotum,'돋움',gulim,'굴림',sans-serif;
+	}
+	footer *{
+		color: ##a1a1a1;
+	}
+	footer h1 {
+		font-size:12px;
+		color:#272727;
+		margin:0 0 5px 0;
+		letter-spacing:-1px;
+	}
+	footer p{
+		font-size:11px;
+		margin-bottom:3px;
+		color:#999;
+		letter-spacing:-.5px;
+	}
+	footer p span{
+		margin:0 5px;
+		color: #999;
+		font-size: 11px;
+		letter-spacing: -0.5px;
+	}
+
+
+	section{
+		display:block;
+	}
+
+	.table_list{border-left:1px solid #726e6e;border-right:1px solid #726e6e;}
+	.table_list li{border-bottom:1px dotted #000;}
+	.table_list li:last-child{border-bottom-width:0;}
+	.table_list li p{padding:5px;overflow:hidden;}
+	.table_list li p:first-child{padding:5px;}
+	.table_list li span{font-size:12px;}
+	.table_list li .city{float:left;}
+	.table_list li .phone{float:right;color:#0000CC;text-decoration:underline;font-size:12px;}	
+
+	.store_select{overflow:hidden;border:1px solid #726e6e;border-top-width:0;padding:10px 2%;font-size:12px;text-align:right;background:#e6e6e6;}
+	.store_select select{float:right;}
+	.store_select select,.store_select option{font-size:12px;}
+	.store_select label{float:left;font-size:12px;margin-top:3px;font-weight:bold;}
+
+	.store_select{overflow:hidden;border-bottom:1px solid #726e6e;padding:10px 2%;font-size:12px;text-align:right;background:#e6e6e6;}
+	.store_select select{float:right;}
+	.store_select select,.store_select option{font-size:12px;}
+	.store_select label{float:left;font-size:12px;margin-top:3px;font-weight:bold;}
+
+	.visual{
+		height:115px;
+		padding-top:35px;
+		 /* fallback */
+		background-color: #464646;
+
+		/* Safari 4-5, Chrome 1-9 */
+		background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#464646), to(#888888));
+
+		/* Safari 5.1, Chrome 10+ */
+		background: -webkit-linear-gradient(top, #464646, #666666);
+
+		/* Firefox 3.6+ */
+		background: -moz-linear-gradient(top, #464646, #666666);		
+
+		text-align:center;					
+	}
+	.visual *{text-shadow:1px 1px 5px #000;}
+	.visual .txt{		
+		opacity:0;
+		transform:translateY(-10px);
+		-webkit-transform:translateY(-10px);
+		transition:all 0.5s;
+		-webkit-transition:all 0.5s;
+	}
+	.visual strong{color:#fff;font:35px/35px 'reefont-condensed';text-transform:uppercase;}
+	.visual span{position:relative;left:3px;top:-4px;color:#fff;font:24px/24px 'Jeju Gothic';}
+	.visual.act .txt{
+		opacity:1;
+		transform:translateY(0);
+		-webkit-transform:translateY(0);
+	}
+
+	.tab{height:50px;}
+	.tab li{width:50%;float:left;}
+	.tab li a{
+		width:100%;
+		height:50px;
+		line-height:50px;
+		display:block;
+		text-align:center;
+		font-size:13px;
+		background:#fafafa;
+		text-decoration:none;
+		border:1px solid #726e6e;
+		box-sizing:border-box;
+		-webkit-box-sizing:border-box;
+		color:#aaa;
+	}
+	.tab li:last-child a{border-width:1px 1px 1px 0;}
+	.tab li a.on{background:#e6e6e6;color:#222;font-weight:bold;border-bottom-width:0;}
+
+</style>
+<script type="text/javascript">
+	function clickSelect(){
+		var curSelected=jQuery('.store_select select option:selected').val();
+		jQuery('.table_list>div').hide();
+		jQuery('div.local'+curSelected).show();
+		return false;
+	}
+
+	$(document).ready(function(){
+		setTimeout(function(){
+			$('.visual').addClass('act');
+		},400);		
+	});
+</script>
+
+</head>
+
+
+
+<body ng-controller="findController">
+	<div id="wrap">
+		<section class="container">			
+			<div class="local_table">
+				<div class="local1" style="display:block;">
+					<div class="visual">
+						<div class="txt"><strong>Reebok chuseok<br/>coupon promotion</strong></div>
+					</div>
+			
+					<div class="store_select">
+						<label>리복 추석쿠폰 사용 매장안내</label>
+						<select style="width:100px;" ng-options="obj.value for obj in localList[nowTab] track by obj.label" ng-model="selectModel" ng-change="setSelcted();">
+						</select>						
+
+						<!-- <input type="text" ng-model="searchStore"/>
+						<p>{{searchStore}}</p> -->
+						
+					</div>
+
+					<div class="table_list">
+						<ul>
+							<li ng-repeat="s in nowStore | filter:searchStore">
+								<p>
+									<span class="city">{{s.name}}</span>
+									<a href="tel:{{s.phone}}" class="phone">{{s.phone}}</a>
+								</p>
+								<p>
+									<span class="addr">{{s.address}}</span>	
+								</p>
+							</li>
+						</ul>								
+					</div>
+			
+				</div>
+			
+			
+			</div>
+
+		</section>
+		<footer>
+			<address style="padding-bottom:5px;height:auto;">
+            <div class="ft1">
+                <p class="lgo" style="margin-bottom:5px;"><img src="http://m.reebok.co.kr/images/reebok/bg_logo_f.gif" alt="reebok" style="width:100px;"></p>
+            </div>
+            <div class="ft2">
+            	<p>리복 공식 온라인 스토어<span style="font-size:10px;"> (아디다스 코리아)</span></p>
+                <p>137-955 서울특별시 서초구 서초대로 74길 4, 삼성생명 서초타워 7층</p>
+                <p>대표이사 : 쟝 미쉘 그라니에&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;교환 및 반품 문의 (본사로 반품불가)</p>
+                <p>온라인스토어 고객센터 1588-7324 (평일 09:00 – 18:00, 점심시간 12:00 – 13:00)</p>
+                <p>제품 수선문의 : 리복 고객만족센터 080-344-3732 (평일 09:00 – 18:00)</p>
+                <p>사업자 등록번호 : 214-81-07412&nbsp;&nbsp;통신판매업신고 : 2007-서울서초-10391</p>
+                <p>개인정보 관리책임자 : 김동일<span style="display:inline-block;margin:0 6px;">|</span>개인정보 관리담당자 : 황선영</p>
+            </div>
+            <p style="font-size:10px;">Copyright ⓒadidas Korea Inc. </p>
+        </address>    
+		</footer>
+	</div>
+	<script type="text/javascript">
+		var jsonPath = 'json/20150909/reebok/';
+		var app = angular.module('findStore',[]);
+		var storeJson = [
+			{
+				busan : 'busan.json',
+				chungbuk : 'chungbuk.json',
+				chungnam : 'chungnam.json',
+				daegu : 'daegu.json',
+				daejun : 'daejun.json',
+				gwangju : 'gwangju.json',
+				incheon : 'incheon.json',
+				jeju : 'jeju.json',
+				jeonbuk : 'jeonbuk.json',
+				jeonnam : 'jeonnam.json',
+				kangwon : 'kangwon.json',
+				kyungbuk : 'kyungbuk.json',
+				kyungki : 'kyungki.json',
+				kyungnam : 'kyungnam.json',
+				seoul : 'seoul.json',
+				ulsan : 'ulsan.json'
+			}			
+		];
+
+		app.controller('findController',function($scope,findFactory){			
+			$scope.localList = [
+				[
+					{
+						label : 'seoul',
+						value : '서울'
+					},
+					{
+						label : 'kyungki',
+						value : '경기'
+					},
+					{
+						label : 'incheon',
+						value : '인천'
+					},
+					{
+						label : 'busan',
+						value : '부산'
+					},
+					{
+						label : 'ulsan',
+						value : '울산'
+					},
+					{
+						label : 'daegu',
+						value : '대구'
+					},
+					{
+						label : 'kyungnam',
+						value : '경남'
+					},
+					{
+						label : 'kyungbuk',
+						value : '경북'
+					},
+					{
+						label : 'gwangju',
+						value : '광주'
+					},
+					{
+						label : 'jeonnam',
+						value : '전남'
+					},
+					{
+						label : 'jeonbuk',
+						value : '전북'
+					},
+					{
+						label : 'chungnam',
+						value : '충남'
+					},
+					{
+						label : 'chungbuk',
+						value : '충북'
+					},
+					{
+						label : 'daejun',
+						value : '대전'
+					},
+					{
+						label : 'kangwon',
+						value : '강원'
+					},
+					{
+						label : 'jeju',
+						value : '제주'
+					}
+				]
+			];
+			$scope.nowTab = 0;
+			$scope.nowLocal = 'seoul';			
+			$scope.localSelected = true;
+			$scope.selectModel = {label : 'seoul',value : '서울',};
+
+			$scope.setSelcted = function(){
+				$scope.nowLocal = $scope.selectModel.label;
+				findFactory.getStore(storeJson,jsonPath,$scope.nowTab,$scope.nowLocal).success(function(data){
+					$scope.nowStore = data;
+				});
+			};
+
+			$scope.changeTab = function(data){
+				if($scope.nowTab == data){
+					return false;
+				}				
+				$scope.selectModel = {label : 'seoul',value : '서울',};
+				if(data == 0){
+					$scope.nowTab = 0;
+					$scope.nowLocal = 'seoul';
+					findFactory.getStore(storeJson,jsonPath,0,$scope.nowLocal).success(function(data){
+						$scope.nowStore = data;
+					});
+				}else{
+					$scope.nowTab = 1;
+					$scope.nowLocal = 'seoul';
+					findFactory.getStore(storeJson,jsonPath,1,$scope.nowLocal).success(function(data){
+						$scope.nowStore = data;
+					});
+				}
+				return false;
+			};				
+
+			$scope.changeLocal = function(){				
+				findFactory.getStore(storeJson,jsonPath,$scope.nowTab,$scope.nowLocal).success(function(data){
+					$scope.nowStore = data;
+				});
+			};
+
+			function init(){
+				initData();				
+			}
+			function getStore(localName){
+				var localData = [];
+				var	i;
+				return localData;
+			}
+
+			function initData(){ 
+				findFactory.getStore(storeJson,jsonPath,0,'seoul').success(function(data){					
+					$scope.nowStore = data;
+				});
+			}			
+			init();
+		});
+
+		app.factory('findFactory',function($http){
+			var factory = {};
+			factory.getStore = function(store ,jsonPath ,  storeType , storeName){
+				var path = jsonPath+store[storeType][storeName];
+				return $http.get(path);
+			};
+			return factory;
+		});
+	</script>
+
+</body>
+</html>

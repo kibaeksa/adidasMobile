@@ -1,0 +1,241 @@
+/*
+	break width
+ */
+$break-small: 1000px;
+$break-large: 1400px;
+$width320:320px;
+$width400:400px;
+$width480:480px;
+$width600:600px;
+/*
+	@@ mixin
+ */
+@mixin box-sizing($value){
+			box-sizing: $value;
+	-webkit-box-sizing: $value;
+}
+
+@mixin prefix-css3($prop,$value){
+	#{$prop} :$value;
+	-webkit-#{$prop} :$value;
+	-moz-#{$prop}:$value;
+	-o-#{$prop} :$value;
+	-ms-#{$prop} :$value;
+}
+
+@mixin transition($prop , $duration , $easing , $delay){
+	transition :$prop $duration $easing $delay;
+	-webkit-transition :$prop $duration $easing $delay;
+	-moz-transition:$prop $duration $easing $delay;
+	-o-transition :$prop $duration $easing $delay;
+}
+
+@mixin opacity($value){
+	opacity : $value;
+	// filter:alpha(opacity=$value * 100);
+	// -ms-filter:alpha(opacity=$value * 100);
+}
+
+@mixin transform($value){
+	transform:$value;
+	-webkit-transform:$value;
+	-moz-transform:$value;
+	-o-transform:$value;
+}
+@mixin transition($transition...) {
+    -moz-transition:    $transition;
+    -o-transition:      $transition;
+    -webkit-transition: $transition;
+    transition:         $transition;
+}
+
+@media screen and (max-width: 320px) {
+	html{
+		font-size: 10px;
+	}
+}
+@media screen and (min-width: 800px) {
+	html{
+		font-size: 12px;
+	}
+}
+
+
+// for pseudo element
+.pseudo-element{
+	content:'';
+	display: block;
+}
+#video-layer{
+	position:fixed;top:0;left:0;width: 100%;height: 100%;z-index:1000;
+}
+
+#video-layer .bg{
+	width: 100%;
+	height: 100%;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	transform-origin:center center;
+	-webkit-transform-origin:center center;
+	transform:scale(0);
+	-webkit-transform:scale(0);
+	opacity:0;
+	background:#000;
+	z-index:1;
+
+	transition:all 0.4s;
+	-webkit-transition:all 0.4s;
+
+
+}
+
+#video-layer.loaded .bg{
+	opacity: 1;
+	transform:scale(1.2);
+	-webkit-transform:scale(1.2);
+}
+
+#video-layer .video-box{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	z-index: 3;
+}
+
+#video-layer .close_x_btn{
+	width: 70px;
+	height: 70px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 5;
+	opacity: 0;
+}
+
+#video-layer.loaded .close_x_btn{
+	opacity: 1;
+}
+
+
+#stella{
+	.main{
+		position: relative;
+		padding-bottom: 88%;
+		.bg{
+			position: absolute;
+			top:0;
+			width: 100%;
+			img{
+				width: 100%;
+			}
+		}
+		.img{
+			position: relative;
+			width: 100%;
+		}
+		.con{
+			position: absolute;
+			top:30%;
+			z-index: 1;
+			text-align: center;
+			h2{
+				padding:0 5rem;
+				img{
+					width: 100%;
+				}
+			}
+			p{
+				color:#fff;
+				font: 1.2rem/3rem 'NotosansKRRegular', 'NanumGothic';
+				strong{
+					font:1.25rem 'adinenuPro-regular', 'Nanum Gothic';
+					color:#fff;
+					letter-spacing: 1px;
+					text-transform: uppercase;
+				}
+			}
+			a{
+				display: inline-block;
+				margin-top: 0.5rem;
+				padding: 0 1.5rem;
+				@include opacity(0.8);
+				background: #fff;
+				font: 1.08rem/3rem 'NotosansKR', 'NanumGothic';
+				color:#000;
+				&:after{
+					margin-left: 5px;
+				}
+			}
+		}
+
+	}
+
+	.txt-area{
+		position: relative;
+		top:100px;
+		text-align: center;
+		padding:2rem 0 4rem 0;
+		@include opacity(0);
+		@include transition (top, opacity, 0.8s);
+		.desc{
+			position: relative;
+			// top:100px;
+			font: 0.9rem/1.7rem 'NotosansKR', 'NanumGothic';
+			color:#000;
+			// @include opacity(0);
+			// @include transition (top, opacity, 0.8s);
+			letter-spacing: -1px;
+		}
+		.title{
+			position: relative;
+			// top:100px;
+			padding-top: 1.5rem;
+			letter-spacing: 0.6px;
+			font: 2.5rem 'adinenuPro-black', 'Nanum Gothic';
+			color:#000;
+			// @include opacity(0);
+			// @include transition (top, opacity, 0.8s);
+		}
+		a.link{
+			display: inline-block;
+			margin-top: 2rem;
+			padding:0 3.5rem;
+			font: 1.08rem/3.2rem 'NotosansKR', 'NanumGothic';
+			color:#000;
+			border:1px solid #000;
+			&.type2{
+				background: #000;
+				color:#fff;
+				font: 1.08rem/3.2rem 'NotosansKRLight', 'NanumGothic';
+
+			}
+			&:after{
+				margin-left: 5px;
+			}
+		}
+	}
+
+	.img-area{
+		&.col{
+			position: relative;
+			// top:100px;
+			@include opacity(0);
+			@include transition (opacity, 0.8s);
+
+		}
+		.bg{
+			img{
+				width: 100%;
+			}
+		}
+	}
+
+
+
+
+
+
+}

@@ -1,0 +1,383 @@
+<!doctype html>
+<html itemscope="" itemtype="http://schema.org/WebPage" lang="ko" class="">
+<head>
+	<title>Reebok</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+	<meta content="telephone=no" name="format-detection">
+	<meta content="address=no" name="format-detection">
+	<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+	<link rel="stylesheet" href="/MO/reebok/css/reebok_m.css" />	
+	<script type="text/javascript" src="/MO/reebok/js/jquery.js"></script>
+	<script type="text/javascript" src="/MO/reebok/js/reebok_js_m.js"></script>
+	<script type="text/javascript" src="/MO/reebok/js/iscroll.js"></script>
+	<script type="text/javascript" src="/MO/reebok/js/FlickKkb.js"></script>
+	<script type="text/javascript">
+		var d;
+		(function($){
+			
+
+			$(document).ready(function(){
+				Reebok.fn.prodTabAction({
+					wrap : $('.search_list_tab'),
+					btn : $('.search_list_tab .tab_list li'),
+					cont_wrap : $('.search_list_tab .tab_cont'),
+					cont : $('.tab_cont>ul')
+				});
+			});
+
+		})(jQuery);
+	</script>		
+
+
+	<style type="text/css">
+		.box1 img{width:100%;}
+		.box2{font-size:12px;}
+		.box3{margin-bottom:40px;}
+		.box3 img{width:100%;}
+		.timebox{background:#000;margin-bottom:140px;}
+		.timebox div{width:15%;height:100%;float:left;font:1.2em 'helvetica',helvetica;color:#fff;text-align:center;}
+		.timebox div.colon{width:5%;}
+
+		.crazy_prodlist li{width:100%;position:relative;margin-bottom:20px;border:1px solid #d5d5d5;box-sizing:border-box;}
+		.crazy_prodlist li p.status{position:absolute;top:0;right:0;text-align:center;color:#fff;font-size:0.6em;z-index:10;} /* 131105 z-index 추가 */
+		.crazy_prodlist li p.img{padding:20px 20px 0;text-align:center}
+		.crazy_prodlist li p.img img{width:100%;}
+		.crazy_prodlist li .price{height:40px;position:relative;padding:20px 20px 0;border-bottom:1px dotted #e0e0e1;font:0.6em 'dotum',dotum;color:#777;}
+		.crazy_prodlist li .price .line_through{color:#777;text-decoration:line-through;}
+		.crazy_prodlist li .price .sale{color:#ea1d02;font-weight:bold}
+		
+		.crazy_prodlist li p.tit{padding:15px 20px 0;font:bold 0.7em 'Droid Sans','Malgun Gothic','Apple-Gothic','애플고딕','Tahoma',dotum,'돋움',gulim,'굴림',sans-serif;}
+		.crazy_prodlist li p.tit a{color:#222;}
+		.crazy_prodlist li p.tit span{color:#222;}
+		.crazy_prodlist li p.crazy_price{padding:10px 20px;font-size:100%;}
+		.crazy_prodlist li p.crazy_price span{font-size:0.6em;}
+		.crazy_prodlist li p.crazy_price em{font:bold 1.4em 'Helvetica',helvetica;}
+		.crazy_prodlist li p.crazy_price span.lb{font-weight:bold;font-size:0.7em;}
+		.crazy_prodlist li.now p.crazy_price span{color:#003edd;}
+		.crazy_prodlist li.soldout p.crazy_price span{color:#aaa;}
+		.crazy_prodlist li.end p.crazy_price span{color:#aaa;}
+
+		.crazy_prodlist li.now p.crazy_price em{color:#003edd;}
+		.crazy_prodlist li.soldout p.crazy_price em{color:#aaa;}
+		.crazy_prodlist li.end p.crazy_price em{color:#aaa;}
+
+		.crazy_prodlist li.now p.status{background:#003edd;}
+		.crazy_prodlist li.soldout p.status{background:#ea1d02;}
+		.crazy_prodlist li.end p.status{background:#333;}
+
+		.crazy_prodlist li p.btn{padding:0 20px 20px;}
+		.crazy_prodlist li p.btn *{width:100%;height:30px;padding-top:10px;display:block;font-size:15px;text-align:center;color:#fff;border-radius:3px;}
+		.crazy_prodlist li p.btn a{background:#003edd;}
+		.crazy_prodlist li p.btn span{background:#777;}
+
+	</style>
+	<script type="text/javascript">
+		var app_size;
+		function setCrazyPage(){
+			app_size=jQuery(window).width();
+			jQuery('.box1').css({
+				marginTop:app_size/12+'px',
+				marginBottom:app_size/17+'px'
+			});
+			jQuery('.box2').css({
+				marginBottom:app_size/60+'px'
+			});
+			jQuery('.box3').css({
+				marginBottom:app_size/12+'px'
+			});
+			jQuery('.timebox').css({
+				height:app_size/4+'px',
+				fontSize:app_size/8+'px',
+				marginBottom:app_size/4+'px'
+			});
+			jQuery('.timebox>div').css({
+				lineHeight:app_size/4+'px'
+			});
+			jQuery('.crazy_prodlist li').css({
+				fontSize:app_size/15+'px'
+			});		
+			jQuery('.crazy_prodlist li .status').css({
+				width:app_size/5.1+'px',
+				height:app_size/5.1+'px',
+				lineHeight:app_size/5.1+'px'
+			});							
+		}
+
+		jQuery(document).ready(function(){
+			setCrazyPage();
+			jQuery(window).resize(function(){
+				setCrazyPage();
+			});
+		})
+	</script>
+</head>
+
+<body>
+	<aside id="leftmenu">
+		<div class="bg" onclick="Reebok.fn.toggleLeft();return false;"></div>
+		<a onclick="Reebok.fn.toggleLeft();return false;" class="btn_sidemenu" href="#">
+			<span></span>
+			<span></span>
+			<span></span>
+		</a>
+		<section id="inn_leftmenu" class="lmenu_wrap">			
+			<section class="menu">			
+				<div class="bnn">
+					<div class="bnn_sld">
+						<a href="#" style="background-image:url('images/reebok/bg_navi_visual1.jpg');"></a>
+						<a href="#" style="ba kground-image:url('images/reebok/bg_navi_visual1.jpg');"></a>
+						<a href="#" style="background-image:url('images/reebok/bg_navi_visual1.jpg');"></a>
+					</div>					
+					<div class="bul">
+						<span class="on"></span>
+						<span></span>
+					</div>
+				</div>
+				<h2 class="blind">네비게이션 메뉴</h2>
+				<ul class="dp1">
+					<li class="has_dp">
+						<a href="#" onclick="Reebok.fn.toggleLeftList(this);return false;">MEN</a>
+						<ul class="dp2">
+							<li><a href="#">BEST</a></li>
+							<li><a href="#">NEW</a></li>
+							<li><a href="#">SALE</a></li>
+							<li><a href="#" class="kor">신발</a></li>
+							<li><a href="#" class="kor">의류</a></li>
+							<li><a href="#" class="kor">용품</a></li>
+						</ul>
+					</li>
+					<li class="has_dp">
+						<a href="#" onclick="Reebok.fn.toggleLeftList(this);return false;">WOMEN</a>
+						<ul class="dp2">
+							<li><a href="#">BEST</a></li>
+							<li><a href="#">NEW</a></li>
+							<li><a href="#">SALE</a></li>
+							<li><a href="#" class="kor">신발</a></li>
+							<li><a href="#" class="kor">의류</a></li>
+							<li><a href="#" class="kor">용품</a></li>
+						</ul>
+					</li>
+					<li class="has_dp">
+						<a href="#" onclick="Reebok.fn.toggleLeftList(this);return false;">KIDS</a>
+						<ul class="dp2">
+							<li><a href="#">BEST</a></li>
+							<li><a href="#">NEW</a></li>
+							<li><a href="#">SALE</a></li>
+							<li><a href="#" class="kor">신발</a></li>
+							<li><a href="#" class="kor">의류</a></li>
+							<li><a href="#" class="kor">용품</a></li>
+						</ul>
+					</li>
+					<li class="ctg has_dp">
+						<a href="#" class="ctg" onclick="Reebok.fn.toggleLeftList(this);return false;">SPORT</a>
+						<ul class="dp2">
+							<li><a href="#">BEST</a></li>
+							<li><a href="#">NEW</a></li>
+							<li><a href="#">SALE</a></li>
+							<li><a href="#" class="kor">신발</a></li>
+							<li><a href="#" class="kor">의류</a></li>
+							<li><a href="#" class="kor">용품</a></li>
+						</ul>
+					</li>
+					<li class="ctg has_dp">
+						<a href="#" class="ctg" onclick="Reebok.fn.toggleLeftList(this);return false;">CLASSICS</a>
+						<ul class="dp2">
+							<li><a href="#">BEST</a></li>
+							<li><a href="#">NEW</a></li>
+							<li><a href="#">SALE</a></li>
+							<li><a href="#" class="kor">신발</a></li>
+							<li><a href="#" class="kor">의류</a></li>
+							<li><a href="#" class="kor">용품</a></li>
+						</ul>
+					</li>
+					<li class="has_dp">
+						<a href="#" class="ctg" onclick="Reebok.fn.toggleLeftList(this);return false;">COLLECTION</a>
+						<ul class="dp2">
+							<li><a href="#">BEST</a></li>
+							<li><a href="#">NEW</a></li>
+							<li><a href="#">SALE</a></li>
+							<li><a href="#" class="kor">신발</a></li>
+							<li><a href="#" class="kor">의류</a></li>
+							<li><a href="#" class="kor">용품</a></li>
+						</ul>
+					</li>
+					<li><a href="#" class="kor">신상품</a></li>
+					<li><a href="#" class="kor">베스트상품</a></li>
+					<li><a href="#" class="kor">기획전</a></li>
+					<li><a href="#" class="sale">SALE</a></li>
+				</ul>
+				<ul class="util">
+					<li><a href="#">로그인</a></li>
+					<li><a href="#">장바구니</a></li>
+					<li><a href="#">마이페이지</a></li>
+					<li><a href="#">공지사항</a></li>
+					<li><a href="#" class="club">리클럽</a></li>
+				</ul>
+				<div class="btn">
+					<a href="#">고객센터</a>
+					<a href="#">매장찾기</a>
+				</div>
+			</section>
+			<!-- //menu -->
+		</section>
+		
+	</aside>
+	<!-- //leftmenu -->
+
+	<section id="wrap">			
+		<section id="container">
+			<header id="header">
+				<div class="hdr1">
+					<h1><a href="#" class="spt_bg"></a></h1>
+					<ul>
+						<li><a href="#">로그인</a></li>
+						<li><a href="#">회원가입</a></li>
+						<li><a href="#">마이페이지</a></li>
+						<li><a href="#">장바구니<span>(3)</span></a></li>
+					</ul>
+				</div>
+				<!-- //hdr1 -->
+				<div class="hdr2">
+					<div class="sch_area">
+						<a href="#" class="btn_sidemenu active" onclick="Reebok.fn.toggleLeft();return false;">
+							<span></span>
+							<span></span>
+							<span></span>
+						</a>				
+						<form method="get" action="#">
+							<div class="sch">
+								<input type="input" placeholder="검색어를 입력하세요"/>					
+							</div>
+							<button type="button">검색</button>
+						</form>				
+					</div>
+					<!-- //hdr2 -->
+				</div>
+			</header>
+			<!-- //header -->
+
+			<section id="contents" style="background:#fff;">				
+				<div style="overflow:hidden;padding:0 20px;background:url(images/reebok/event/crazy/bg_crazy.jpg) 50% 0 no-repeat;background-size:100% auto;" class="crazyfriday">
+					<p class="box1" style="margin-top: 33.6667px; margin-bottom: 23.7647px;"><img alt="" src="/images/reebok/event/crazy/tit_crazy.jpg"></p>
+					<p style="color: rgb(255, 255, 255); text-align: right; margin-bottom: 6.73333px;" class="box2">현재 남은시간</p>
+					<div class="timebox" style="height: 101px; font-size: 50.5px; margin-bottom: 101px;">
+						<div class="time_area1 ree_ft" id="hour01" style="line-height: 101px;">1</div>
+						<div class="time_area2 ree_ft" id="hour02" style="line-height: 101px;">2</div>
+						<div class="colon" style="line-height: 101px;">:</div>
+						<div class="time_area3 ree_ft" id="minute01" style="line-height: 101px;">3</div>
+						<div class="time_area4 ree_ft" id="minute02" style="line-height: 101px;">4</div>
+						<div class="colon" style="line-height: 101px;">:</div>
+						<div class="time_area5 ree_ft" id="second01" style="line-height: 101px;">5</div>
+						<div class="time_area6 ree_ft" id="second02" style="line-height: 101px;">6</div>
+					</div>
+					<p class="box3" style="margin-bottom: 33.6667px;"><img alt="" src="/images/reebok/event/crazy/tit_crazy2.jpg"></p>
+					<ul class="crazy_prodlist">
+						<li class="ss now" style="font-size: 26.9333px;">
+							<p class="status" style="width: 79.2157px; height: 79.2157px; line-height: 79.2157px;">진행중</p>
+							<p class="img">
+								<!-- 131105 -->
+								<a style="display:block;position:relative;" href="#">
+									<img alt="" src="http://shop.reebok.co.kr/upload/prod/basic/500/V48146-1_500X500.jpg">
+								</a>
+								<!-- //131105 -->
+							</p>
+							<div class="price">
+								<span>판매가 : </span>
+								<!--<span class="pr">149,000원</span>-->
+								<span class="line_through">149,000원</span>
+								<span class="sale">119,200원 </span> 
+							</div>
+							<p class="tit"><a href="#">[Men's Running] 온라인 단독 클라이마쿨 레볼루션</a></p>
+							<p class="crazy_price">
+								<span class="lb">crazy price</span>
+								<em style="sale">190,000</em>
+								<span>원</span>
+							</p>
+							<p class="btn"><a href="#">구매하기</a></p>
+						</li>
+						<li class="ss end" style="font-size: 26.9333px;">
+							<p class="status" style="width: 79.2157px; height: 79.2157px; line-height: 79.2157px;">종료</p>
+							<p class="img"><a href="#"><img alt="" src="http://shop.reebok.co.kr/upload/prod/basic/500/V48146-1_500X500.jpg"></a></p>
+							<div class="price">
+								<span>판매가 : </span>
+								<!--<span class="pr">149,000원</span>-->
+								<span class="line_through">149,000원</span>
+								<span class="sale">119,200원 </span> 
+							</div>
+							<p class="tit"><a href="#">[Men's Running] 온라인 단독 클라이마쿨 레볼루션</a></p>
+							<p class="crazy_price">
+								<span class="lb">crazy price</span>
+								<em style="sale">190,000</em>
+								<span>원</span>
+							</p>
+							<p class="btn"><a href="#">구매하기</a></p>
+						</li>
+						<li class="sp soldout" style="font-size: 26.9333px;">
+							<p class="status" style="width: 79.2157px; height: 79.2157px; line-height: 79.2157px;">품절</p>
+							<p class="img"><img alt="" src="http://shop.reebok.co.kr/upload/prod/basic/500/V48146-1_500X500.jpg"></p>
+							<div class="price">
+								<span>판매가 : </span>
+								<!--<span class="pr">149,000원</span>-->
+								<span class="line_through">149,000원</span>
+								<span class="sale">119,200원 </span> 
+							</div>
+							<p class="tit"><span>[Men's Running] 온라인 단독 클라이마쿨 레볼루션</span></p>
+							<p class="crazy_price">
+								<span class="lb">crazy price</span>
+								<em style="sale">190,000</em>
+								<span>원</span>
+							</p>
+							<p class="btn"><span class="soldout">품절</span></p>
+						</li>
+					</ul>
+				</div>
+			</section>
+			<!-- //contents -->
+
+			<footer id="footer">
+				<div style="border-bottom:5px solid #d0d0d6;"><a href="#"><img src="/images/reebok/bg_reeclub_bnn.jpg" alt="" style="width:100%;"/></a></div>
+				<section class="fmenu">
+					<ul>
+						<li><a href="#">검색</a></li>
+						<li><a href="#">매장찾기</a></li>
+						<li><a href="#">마이페이지</a></li>
+						<li><a href="#">고객센터</a></li>
+					</ul>
+					<ul>
+						<li><a href="#">PC 사이트</a></li>
+						<li><a href="#">홈</a></li>
+						<li><a href="#">리클럽</a></li>
+					</ul>
+				</section>				
+				<address>					
+					<div class="ft1">
+						<p class="lgo"><img src="/images/reebok/bg_logo_f.gif" alt="reebok"/></p>
+						<span>리복 공식 온라인 스토어</span>
+					</div>
+					<div class="ft2">
+						<p>137-955 서울특별시 서초구 서초대로 74길 4, 삼성생명 서초타워 7층</p>
+						<p>대표이사 : 쟝 미쉘 그라니에   교환 및 반품 문의 (본사로 반품불가)</p>
+						<p>온라인스토어 고객센터 1588-7324 (평일 09:00 – 18:00, 점심시간 12:00 – 13:00)</p>
+						<p>제품 수선문의 : 리복 고객만족센터 080-344-3732 (평일 09:00 – 18:00)</p>
+						<p>사업자 등록번호 : 214-81-07412   통신판매업신고 : 2007-서울서초-10391</p>
+						<p>개인정보 보호책임자 : 황선영<a target="_blank" href="#" class="lnk_pc">개인정보취급방침 확인</a></p>
+					</div>
+					<div class="lnk">
+						<a target="_blank" href="http://shop.reebok.co.kr/RPF010107.action?gubn=1">구매이용약관</a>
+						<span>|</span>
+						<a target="_blank" href="http://www.ftc.go.kr/info/bizinfo/communicationViewPopup.jsp?wrkr_no=2148107412">공정거래 위원회 사업자 신원정보 확인</a>
+						<span>|</span>
+						<a target="_blank" href="http://m.reebok.co.kr/Common/CertifiedInfoPop.jsp">채무지급보증안내 확인</a>
+					</div>					
+				</address>				
+
+			</footer>
+		</section>
+		<!-- //container -->
+		
+	</seciton>
+	<!-- //wrap -->
+
+</body>
+
+</html>

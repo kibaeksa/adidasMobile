@@ -1,0 +1,628 @@
+/*
+	break width
+ */
+$break-small: 1000px;
+$break-large: 1400px;
+$width320:320px;
+$width400:400px;
+$width480:480px;
+$width600:600px;
+/*
+	@@ mixin
+ */
+@mixin box-sizing($value){
+			box-sizing: $value;
+	-webkit-box-sizing: $value;
+}
+
+@mixin prefix-css3($prop,$value){
+	#{$prop} :$value;
+	-webkit-#{$prop} :$value;
+	-moz-#{$prop}:$value;
+	-o-#{$prop} :$value;
+	-ms-#{$prop} :$value;
+}
+
+@mixin transition($prop , $duration , $easing , $delay){
+	transition :$prop $duration $easing $delay;
+	-webkit-transition :$prop $duration $easing $delay;
+	-moz-transition:$prop $duration $easing $delay;
+	-o-transition :$prop $duration $easing $delay;
+}
+
+@mixin opacity($value){
+	opacity : $value;
+	// filter:alpha(opacity=$value * 100);
+	// -ms-filter:alpha(opacity=$value * 100);
+}
+
+@mixin transform($value){
+	transform:$value;
+	-webkit-transform:$value;
+	-moz-transform:$value;
+	-o-transform:$value;
+}
+@mixin transition($transition...) {
+    -moz-transition:    $transition;
+    -o-transition:      $transition;
+    -webkit-transition: $transition;
+    transition:         $transition;
+}
+
+@media screen and (max-width: 320px) {
+	html{
+		font-size: 10px;
+	}
+}
+@media screen and (min-width: 800px) {
+	html{
+		font-size: 12px;
+	}
+}
+
+
+// for pseudo element
+.pseudo-element{
+	content:'';
+	display: block;
+}
+#video-layer{
+	position:fixed;top:0;left:0;width: 100%;height: 100%;z-index:1000;
+}
+
+#video-layer .bg{
+	width: 100%;
+	height: 100%;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	transform-origin:center center;
+	-webkit-transform-origin:center center;
+	transform:scale(0);
+	-webkit-transform:scale(0);
+	opacity:0;
+	background:#000;
+	z-index:1;
+
+	transition:all 0.4s;
+	-webkit-transition:all 0.4s;
+
+
+}
+
+#video-layer.loaded .bg{
+	opacity: 1;
+	transform:scale(1.2);
+	-webkit-transform:scale(1.2);
+}
+
+#video-layer .video-box{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	z-index: 3;
+}
+
+#video-layer .close_x_btn{
+	width: 70px;
+	height: 70px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 5;
+	opacity: 0;
+}
+
+#video-layer.loaded .close_x_btn{
+	opacity: 1;
+}
+
+
+#ultra_boost{
+	.main{
+		position: relative;
+		.bg{
+			position: absolute;
+			top:0;;
+			width: 100%;
+			img{
+				width: 100%;
+			}
+		}
+		.img{
+			position: relative;
+			width: 100%;
+			.img_bg{
+				width:100%;
+				height: 100%;
+				position: absolute;
+				top:0;
+				left:0;
+				background: #000;
+				@include opacity (0.11);
+			}
+
+
+			.img_inner{
+				@include box-sizing(border-box);
+				position: relative;
+				width: 28rem;
+				margin:0 auto;
+				padding:2rem 0 8rem;
+				overflow: hidden;
+				img{
+					width: 149%;
+				}
+			}
+
+		}
+		.txt{
+			position: absolute;
+			top:23%;
+			width: 100%;
+			text-align: center;
+			.title{
+				color:#fff;
+				font:22px/30px 'adinenuPro-light', "Nanum Gothic";
+				letter-spacing: 12px;
+				padding-left: 12px;
+				strong{
+					letter-spacing: 8px;
+				}
+			}
+			.desc{
+				padding-top: 0.8rem;
+				color:#fff;
+				font:15px/25px 'NotosansKRlight', "Nanum Gothic";
+			}
+		}
+		.buy{
+			position: absolute;
+			bottom: 12.5%;
+			width: 100%;
+			text-align: center;
+			a{
+				display: inline-block;
+				padding: 0 3rem;
+				background: #101010;
+				color:#fff;
+				font:1rem/3.2rem 'NotosansKRLight';
+				letter-spacing: 0px;
+
+			}
+		}
+	}
+	.video{
+		position: relative;
+		width: 100%;
+		height: 100%;
+		margin-top: -1rem;
+		.bgimg{ width: 100%; }
+		.play{
+				position: absolute;
+				width:100%;
+				top:41%;
+				text-align: center;
+			a{
+				display: inline-block;
+				width: 5rem;
+				img{width: 80%;}
+			}
+		}
+	}
+
+	.box{
+		position: relative;
+		background: url("http://imagem.adidas.co.kr/images/adidas/event/ultra_boost_x/item_bg.jpg") 0 0 no-repeat;
+		background-size:117% 108%;
+		height: 70rem;
+		&.box1{
+			.inner_box{
+				padding-top: 5rem;
+				.imgs{
+					position: relative;
+					height: 36rem;
+					.img{
+						position: absolute;
+						left:50%;
+						margin-left: -37%;
+						top:2%;
+						width: 20rem;
+						@include opacity(0);
+						@include transition(top 0.8s, opacity 0.8s);
+
+						img{
+							width: 100%;
+						}
+					}
+					.img2{
+						overflow: hidden;
+						position: absolute;
+						width: 20rem;
+						left:50%;
+						margin-left: -26%;
+						top:22%;
+						@include opacity(0);
+							@include transition(top 0.8s, opacity 0.8s);
+						.light{
+							position: absolute;
+							top:40%;
+							@include opacity(1);
+							@include prefix-css3(transition,all 1.5s);
+						}
+
+
+						img{
+							width: 100%;
+						}
+					}
+				}
+				.txt{
+					position: relative;
+					padding:0 5rem;
+					text-align: right;
+					.title{
+						font:2rem/3rem 'adinenuPro-bold', 'Nanum Gothic';
+						text-transform: uppercase;
+						color:#000;
+						letter-spacing: 16px;
+						margin-right: -16px;
+					}
+					.title_desc{
+						font:1.8rem/3rem 'adinenuPro-light', 'Nanum Gothic';
+						letter-spacing: 6px;
+						margin-right: -6px;
+					}
+					.desc{
+						padding-bottom: 2rem;
+						font:1.1rem/1.6rem 'NotosansKRlight', 'Nanum Gothic';
+						color:#000;
+						letter-spacing: 0px;
+						// padding-right: 10px;
+					}
+					.buy{
+							display: inline-block;
+							// margin-right: 10px;
+							padding: 0 3rem;
+							background: #101010;
+							color:#fff;
+							font:1rem/3.2rem 'NotosansKRLight';
+							letter-spacing: 0px;
+					}
+				}
+			}
+		}
+		&.box2{
+			.inner_box{
+				padding-top: 5rem;
+				.imgs{
+					position: relative;
+					height: 36rem;
+					.img{
+						position: absolute;
+						left:50%;
+						margin-left: -37%;
+						top:2%;
+						width: 20rem;
+						@include opacity(0);
+						@include transition(top 0.8s, opacity 0.8s);
+
+						img{
+							width: 100%;
+						}
+					}
+					.img2{
+						overflow: hidden;
+						position: absolute;
+						width: 20rem;
+						left:50%;
+						margin-left: -26%;
+						top:22%;
+						@include opacity(0);
+							@include transition(top 0.8s, opacity 0.8s);
+						.light{
+							position: absolute;
+							top:40%;
+							@include opacity(1);
+								@include prefix-css3(transition,all 1.5s);
+						}
+
+
+						img{
+							width: 100%;
+						}
+					}
+				}
+				.txt{
+					position: relative;
+					padding:0 5rem;
+					text-align: left;
+					.title{
+
+						font:2rem/3rem 'adinenuPro-bold', 'Nanum Gothic';
+						text-transform: uppercase;
+						color:#000;
+						letter-spacing: 16px;
+					}
+					.title_desc{
+						font:1.4rem/3rem 'adinenuPro-light', 'Nanum Gothic';
+						letter-spacing: 0px;
+
+
+					}
+					.desc{
+						padding-bottom: 2rem;
+						font:1.1rem/1.6rem 'NotosansKRlight', 'Nanum Gothic';
+						color:#000;
+						letter-spacing: 0px;
+					}
+					.buy{
+							display: inline-block;
+
+							padding: 0 3rem;
+							background: #101010;
+							color:#fff;
+							font:1rem/3.2rem 'NotosansKRLight';
+							letter-spacing: 0px;
+					}
+				}
+			}
+		}
+		&.box3{
+			.inner_box{
+				padding-top: 5rem;
+				.imgs{
+					position: relative;
+					height: 36rem;
+					.img{
+						position: absolute;
+						left:50%;
+						margin-left: -37%;
+						top:2%;
+						width: 20rem;
+						@include opacity(0);
+						@include transition(top 0.8s, opacity 0.8s);
+
+						img{
+							width: 100%;
+						}
+					}
+					.img2{
+						overflow: hidden;
+						position: absolute;
+						width: 20rem;
+						left:50%;
+						margin-left: -26%;
+						top:22%;
+						@include opacity(0);
+							@include transition(top 0.8s, opacity 0.8s);
+						.light{
+							position: absolute;
+							top:40%;
+							@include opacity(1);
+								@include prefix-css3(transition,all 1.5s);
+						}
+
+
+						img{
+							width: 100%;
+						}
+					}
+				}
+				.txt{
+					position: relative;
+					padding:0 5rem;
+					text-align: right;
+					.title{
+						margin-right:-16px;
+						font:2rem/3rem 'adinenuPro-bold', 'Nanum Gothic';
+						text-transform: uppercase;
+						color:#000;
+						letter-spacing: 16px;
+					}
+					.title_desc{
+						// padding-right: 10px;
+						font:1.4rem/3rem 'adinenuPro-light', 'Nanum Gothic';
+						letter-spacing: 0px;
+
+
+					}
+					.desc{
+						// padding-right: 10px;
+						padding-bottom: 2rem;
+						font:1.1rem/1.6rem 'NotosansKRlight', 'Nanum Gothic';
+						color:#000;
+						letter-spacing: 0px;
+					}
+					.buy{
+							display: inline-block;
+							// margin-right: 10px;
+							padding: 0 3rem;
+							background: #101010;
+							color:#fff;
+							font:1rem/3.2rem 'NotosansKRLight';
+							letter-spacing: 0px;
+					}
+				}
+			}
+		}
+	}
+
+	.slider_section{
+		position: relative;
+		padding:1rem 1rem 0 1rem;
+		background: #fff;
+		.slider_wrap{
+			position: relative;
+			margin:1rem 2.5rem 0 2.5rem;
+			.txt{
+				position: absolute;
+				top:32%;
+				width: 100%;
+				margin-left: 15px;
+				text-align: center;
+				z-index: 5;
+				font:22px/42px 'adinenuPro-bold', 'Nanum Gothic';
+				color:#fff;
+				letter-spacing: 15px;
+
+			}
+
+			ul{
+				position: relative;
+				.owl-item.active{
+					.num_title span{
+						margin-right: 0;
+						opacity: 1;
+					}
+					.num_title span:after{
+						width: 100%;
+					}
+				}
+				li{
+					float: left;
+					position: relative;
+					top:0;
+					// margin-right: 20px;
+					.title{
+						padding-bottom: 1.5rem;
+						text-align: center;
+						font:600 1.4rem/1.8rem 'NotoSansKRMedium';
+						p{
+							font:2.3rem/2.6rem 'adinenuPro-black';
+							letter-spacing: 0;
+							text-transform: uppercase;
+						}
+					}
+					.img{
+						img{width: 100%;}
+					}
+					.num_title{
+						position: absolute;;
+						padding:2rem 0 0 0;
+						text-align: center;
+
+					}
+					.num_title span{
+						position: relative;
+						display: inline-block;
+						height: 50px;
+						font:1.8rem/2rem 'NotoSansKR';
+						letter-spacing: 0;
+						margin-right: -10rem;
+						transition: all 0.6s ease;
+						opacity: 0;
+					}
+					.num_title span:after{
+						display: inline-block;
+						content: '';
+						width: 0%;
+						height: 2px;
+						background: #000;
+						position: absolute;
+						bottom: 24px;
+						right:0;
+						transition: all 0.6s ease;
+
+					}
+				}
+
+			}
+			ul:after{
+				content: '';
+				display: block;
+				clear: both;
+			}
+			.owl-controls{
+				.owl-dot{
+					// position: relative;
+					float: left;
+					text-align: center;
+					span{
+						display: inline-block;
+						padding:1rem 0 0 0;
+						font:1.5rem/2rem 'NotoSansKR';
+						text-align: center;
+						color:#000;
+						letter-spacing: 0;
+					}
+				}
+			}
+			.owl-nav{
+				position: absolute;
+				top:50%;
+				margin-top: -20px;
+				width:100%;
+				z-index: 10;
+				.owl-next {
+				  position: relative;
+				  right:-26px;
+				  float: right;
+				  width:48px;
+				  height: 48px;
+				  background:url("http://imagem.adidas.co.kr/images/adidas/event/ultra_boost_x/next.png") 40% 50% no-repeat;
+				  background-size: 60%;
+				  text-indent: -9999px;
+					background-color: #000;
+				}
+				.owl-prev {
+				  position: relative;
+				  left:-26px;
+				  float: left;
+				  width:48px;
+				  height: 48px;
+				  background:url("http://imagem.adidas.co.kr/images/adidas/event/ultra_boost_x/prev.png") 40% 50% no-repeat;
+				  background-size: 60%;
+				  text-indent: -9999px;
+					background-color: #000;
+				}
+			}
+		}
+
+	}
+
+	.banner_wrap{
+		position: relative;
+		padding:0 2rem;
+		background: url("http://imagem.adidas.co.kr/images/adidas/event/ultra_boost_x/bottom_bg.jpg") 50% -200% no-repeat;
+		padding-bottom: 18rem;
+		.banner{
+			position: relative;
+			margin:2rem 0;
+			a.full{
+				position: absolute;
+				top:0;
+				left:0;
+				width: 100%;
+				height: 100%;
+			}
+			img{
+				width:100%;
+			}
+			.con{
+				position: absolute;
+				top:31%;
+				width: 100%;
+				text-align: center;
+				p{
+					padding-bottom: 2rem;
+					color:#fff;
+					letter-spacing: 7px;
+					font: 26px/47px adinenuPro-bold, "Nanum Gothic";
+				}
+				.buy{
+					display: inline-block;
+					padding: 0 3rem;
+					background: #101010;
+					color:#fff;
+					font:1rem/3.2rem 'NotosansKRLight';
+					letter-spacing: 0px;
+				}
+			}
+
+
+	}
+	}
+}

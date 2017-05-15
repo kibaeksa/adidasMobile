@@ -1,0 +1,520 @@
+/*
+	break width
+ */
+$break-small: 1000px;
+$break-large: 1400px;
+$width320:320px;
+$width400:400px;
+$width480:480px;
+$width600:600px;
+/*
+	@@ mixin
+ */
+@mixin box-sizing($value){
+			box-sizing: $value;
+	-webkit-box-sizing: $value;
+}
+
+@mixin prefix-css3($prop,$value){
+	#{$prop} :$value;
+	-webkit-#{$prop} :$value;
+	-moz-#{$prop}:$value;
+	-o-#{$prop} :$value;
+	-ms-#{$prop} :$value;
+}
+
+@mixin transition($prop , $duration , $easing , $delay){
+	transition :$prop $duration $easing $delay;
+	-webkit-transition :$prop $duration $easing $delay;
+	-moz-transition:$prop $duration $easing $delay;
+	-o-transition :$prop $duration $easing $delay;
+}
+
+@mixin opacity($value){
+	opacity : $value;
+	// filter:alpha(opacity=$value * 100);
+	// -ms-filter:alpha(opacity=$value * 100);
+}
+
+@mixin transform($value){
+	transform:$value;
+	-webkit-transform:$value;
+	-moz-transform:$value;
+	-o-transform:$value;
+}
+@mixin transition($transition...) {
+    -moz-transition:    $transition;
+    -o-transition:      $transition;
+    -webkit-transition: $transition;
+    transition:         $transition;
+}
+
+@media screen and (max-width: 320px) {
+	html{
+		font-size: 10px;
+	}
+}
+@media screen and (min-width: 800px) {
+	html{
+		font-size: 12px;
+	}
+}
+
+
+// for pseudo element
+.pseudo-element{
+	content:'';
+	display: block;
+}
+#video-layer{
+	position:fixed;top:0;left:0;width: 100%;height: 100%;z-index:1000;
+}
+
+#video-layer .bg{
+	width: 100%;
+	height: 100%;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	transform-origin:center center;
+	-webkit-transform-origin:center center;
+	transform:scale(0);
+	-webkit-transform:scale(0);
+	opacity:0;
+	background:#000;
+	z-index:1;
+
+	transition:all 0.4s;
+	-webkit-transition:all 0.4s;
+
+
+}
+
+#video-layer.loaded .bg{
+	opacity: 1;
+	transform:scale(1.2);
+	-webkit-transform:scale(1.2);
+}
+
+#video-layer .video-box{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	z-index: 3;
+}
+
+#video-layer .close_x_btn{
+	width: 70px;
+	height: 70px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 5;
+	opacity: 0;
+}
+
+#video-layer.loaded .close_x_btn{
+	opacity: 1;
+}
+
+
+#pure_boost{
+	.main{
+		position: relative;
+		padding-bottom: 122%;
+		.bg{
+			position: absolute;
+			top:0;
+			width: 100%;
+			img{
+				width: 100%;
+			}
+		}
+		.main-txt{
+			position: absolute;
+			width: 100%;
+			top:70%;
+			z-index: 2;
+			text-align: center;
+			.title{
+				font:2.8rem/2.6rem 'adinenuPro-black';
+				color:#fff;
+				letter-spacing: 1px;
+			}
+			.desc{
+
+				font:1rem/1.7rem 'NotosansKRlight', 'Nanum Gothic';
+				color:#fff;
+
+
+			}
+		}
+		.img{
+			position: relative;
+			width: 100%;
+		}
+
+		.buy{
+			position: absolute;
+			bottom: 5%;
+			width: 100%;
+			text-align: center;
+			a{
+				display: inline-block;
+				padding: 0 10rem;
+				background: #fff;
+				color:#000;
+				font:1rem/3.2rem 'NotosansKR';
+				letter-spacing: 0px;
+				&:after{
+					display: inline-block;
+					margin-left: 3px;
+				}
+			}
+		}
+	}
+
+	.txt-area{
+		position: relative;
+		background: url("/images/adidas/event/pure_boost/bg1.jpg") 0 0 no-repeat;
+		background-size:100% 100%;
+		text-align: center;
+		padding:5rem 0;
+		.desc{
+			position: relative;
+			top:100px;
+			font:1.3rem/1.7rem 'NotosansKRlight', 'Nanum Gothic';
+			color:#fff;
+			@include opacity(0);
+			@include transition (top, opacity, 0.8s);
+		}
+		.title{
+			position: relative;
+			top:100px;
+			padding-top: 1.5rem;
+			font:1.3rem/1.7rem 'NotosansKR', 'Nanum Gothic';
+			color:#fff;
+			@include opacity(0);
+			@include transition (top, opacity, 0.8s);
+		}
+	}
+
+	.video{
+		position: relative;
+		width: 100%;
+		height: 100%;
+		a.video-button{
+			position: absolute;
+			width: 100%;
+			height: 100%;
+		}
+		img.video_bg{ width: 100%; }
+		.play{
+			position: absolute;
+			top:50%;
+			left:50%;
+			background: url("/images/adidas/event/pure_boost/play.png") 0 0 no-repeat;
+			background-size:100% 100%;
+			width: 6rem;
+			height: 6rem;
+			margin-top: -3rem;
+			margin-left: -3rem;
+			@include opacity(0);
+			@include transition (opacity, 0.8s);
+		}
+
+	}
+
+	.shoes{
+		.box{
+			position: relative;
+			padding:0 1.5rem;
+			&.type1{
+				padding:6.5rem 1.5rem 5rem 1.5rem;
+				background: url("/images/adidas/event/pure_boost/type1_bg.jpg") no-repeat;
+				background-size:100% 100%;
+				>img{
+					@include opacity(0);
+					@include transition (opacity, 0.8s);
+				}
+				.txt{
+					position: relative;
+					top:500px;
+					text-align: right;
+					@include opacity(0);
+					@include transition (top, opacity, 0.8s);
+				}
+			}
+			&.type2{
+				padding:0.8rem 1.5rem 5rem 1.5rem;
+				background: url("/images/adidas/event/pure_boost/type2_bg.jpg") no-repeat;
+				background-size:100% 100%;
+				>img{
+					@include opacity(0);
+					@include transition (opacity, 0.8s);
+				}
+				.txt{
+					position: relative;
+					top:500px;
+					text-align: left;
+					@include opacity(0);
+					@include transition (top, opacity, 0.8s);
+				}
+			}
+			&.type3{
+				padding:0.8rem 1.5rem 5rem 1.5rem;
+				background: url("/images/adidas/event/pure_boost/type3_bg.jpg") no-repeat;
+				background-size:100% 100%;
+				>img{
+					@include opacity(0);
+					@include transition (opacity, 0.8s);
+				}
+				.txt{
+					position: relative;
+					top:500px;
+					text-align: right;
+					@include opacity(0);
+					@include transition (top, opacity, 0.8s);
+				}
+			}
+			>img{
+				width: 100%;
+			}
+			.txt{
+				.title{
+					padding-top: 2rem;
+					font:2.5rem/2.5rem 'NotosansKR', 'Nanum Gothic';
+					color:#fff;
+				}
+				.desc{
+					padding:1.5rem 0 1.5rem 0;
+					font:1.2rem/1.7rem 'NotosansKRlight', 'Nanum Gothic';
+					color:#fff;
+				}
+				.buy{
+					position: relative;
+					display: inline-block;
+					padding: 0 1.4rem 0 1.4rem;
+					background: #fff;
+					color:#000;
+					font:1rem/3rem 'NotosansKR';
+					letter-spacing: 0px;
+					&:after{
+						display: inline-block;
+						margin-left: 41px;
+					}
+
+				}
+
+			}
+		}
+	}
+
+	.slider_section{
+		position: relative;
+		padding-bottom: 3.7rem;
+
+		background: #fff;
+		.slider_wrap{
+			position: relative;
+			// margin:1rem 2.5rem 0 2.5rem;
+			ul{
+				position: relative;
+				.owl-item.active{
+					.num_title span{
+						margin-right: 0;
+						opacity: 1;
+					}
+					.num_title span:after{
+						width: 100%;
+					}
+				}
+				li{
+					float: left;
+					position: relative;
+					top:0;
+					// margin-right: 20px;
+					.title{
+						padding-bottom: 1.5rem;
+						text-align: center;
+						font:600 1.4rem/1.8rem 'NotoSansKRMedium';
+						p{
+							font:2.3rem/2.6rem 'adinenuPro-black';
+							letter-spacing: 0;
+							text-transform: uppercase;
+						}
+					}
+					.img{
+						img{width: 100%;}
+					}
+					.num_title{
+						position: absolute;;
+						padding:2rem 0 0 0;
+						text-align: center;
+
+					}
+					.num_title span{
+						position: relative;
+						display: inline-block;
+						height: 50px;
+						font:1.8rem/2rem 'NotoSansKR';
+						letter-spacing: 0;
+						margin-right: -10rem;
+						transition: all 0.6s ease;
+						opacity: 0;
+					}
+					.num_title span:after{
+						display: inline-block;
+						content: '';
+						width: 0%;
+						height: 2px;
+						background: #000;
+						position: absolute;
+						bottom: 24px;
+						right:0;
+						transition: all 0.6s ease;
+
+					}
+				}
+
+			}
+			ul:after{
+				content: '';
+				display: block;
+				clear: both;
+			}
+			.owl-controls{
+
+				.owl-dot{
+					// position: relative;
+					float: left;
+					text-align: center;
+					span{
+						display: inline-block;
+						padding:1rem 0 0 0;
+						font:1.5rem/2rem 'NotoSansKR';
+						text-align: center;
+						color:#000;
+						letter-spacing: 0;
+					}
+				}
+			}
+			.owl-nav{
+				position: absolute;
+				top:0;
+				width:100%;
+				height: 100%;
+				z-index: 10;
+				.owl-next {
+				  position: relative;
+				  right:0;
+				  float: right;
+				  width:48px;
+				  height: 100%;
+					background:url("http://imagem.adidas.co.kr/images/adidas/event/ultra_boost_x/next.png") 40% 50% no-repeat;
+				  background-size: 60%;
+				  text-indent: -9999px;
+					// background-color: #000;
+					// @include opacity(0.3);
+					&:after{
+						display: inline-block;
+						width: 1rem;
+						height: 1rem;
+						position: absolute;
+						top:50%;
+						content: '';
+						background:url("http://imagem.adidas.co.kr/images/adidas/event/ultra_boost_x/next.png") 40% 50% no-repeat;
+					}
+				}
+				.owl-prev {
+				  position: relative;
+				  left:0;
+				  float: left;
+				  width:48px;
+				  height: 100%;
+				  background:url("http://imagem.adidas.co.kr/images/adidas/event/ultra_boost_x/prev.png") 40% 50% no-repeat;
+				  background-size: 60%;
+				  text-indent: -9999px;
+					// background-color: #000;
+					// @include opacity(0.3);
+				}
+			}
+			.owl-dots{
+				position: absolute;
+				width: 100%;
+				text-align: center;
+				background: #000;
+				padding:1.5rem 0;
+				.owl-dot{
+					display: inline-block;
+					float:none;
+					margin:0 5px;
+					width: 1rem; height: 1rem;
+					background: #c8c8c8;
+					border-radius: 50px;
+					-webkit-border-radius: 50px;
+					&.active{
+						background: #772f44;
+					}
+				}
+			}
+		}
+
+	}
+
+	.banner_wrap{
+		position: relative;
+		padding:2rem 2rem 2rem 2rem;
+		background: url("/images/adidas/event/pure_boost/bottom_bg.jpg") 0 0 no-repeat;
+		background-size:100% 100%;
+		.banner{
+			position: relative;
+			margin-bottom: 2rem;
+				a.full{
+					position: absolute;
+					top:0;
+					left:0;
+					width: 100%;
+					height: 100%;
+				}
+				img{
+					width:100%;
+				}
+				.con{
+					position: absolute;
+					top:31%;
+					width: 100%;
+					text-align: center;
+						p{
+							padding-top: 2rem;
+							color:#fff;
+							letter-spacing: 1px;
+							font: 26px/34px adinenuPro-bold, "Nanum Gothic";
+						}
+						a.buy{
+							display: inline-block;
+							padding: 0 1.4rem 0 1.4rem;
+							background: #fff;
+							color:#000;
+							font:1rem/3.2rem 'NotosansKR';
+							letter-spacing: 0px;
+							@include opacity(0.8);
+							&:after{
+								margin-left: 41px;
+							}
+						}
+					}
+
+			}
+			.txt-area{
+				.title{
+					font:2.5rem/2.6rem 'adinenuPro-black';
+					letter-spacing: 1px;
+					padding-bottom: 0.5rem;
+
+				}
+			}
+	}
+}

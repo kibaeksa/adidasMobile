@@ -1,0 +1,3059 @@
+<!doctype html>
+<html itemscope="" itemtype="http://schema.org/WebPage" lang="ko" class="">
+<head>
+	<title>Reebok</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+	<meta content="telephone=no" name="format-detection">
+	<meta content="address=no" name="format-detection">
+	<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+	<link rel="stylesheet" href="/MO/reebok/css/reebok_m.css" />	
+	<script type="text/javascript" src="/MO/reebok/js/jquery.js"></script>
+	<script type="text/javascript" src="/MO/reebok/js/reebok_js_m.js"></script>
+	<script type="text/javascript" src="/MO/reebok/js/iscroll.js"></script>
+	<script type="text/javascript" src="/MO/reebok/js/FlickKkb.js"></script>
+	<script type="text/javascript" src="/MO/js/jquery.event.drag-1.5.min.js"></script>
+	<script type="text/javascript" src="/MO/js/jquery.touchSlider.js"></script>
+	<script type="text/javascript">
+		var safeBigTab;
+		var safeTabView;
+		var openCardBenefit;
+		var closeCardBenefit;
+ 
+		;(function($){
+			var w;
+
+			openCardBenefit = function(){
+				$('.card_benefit').show();
+				$('.detail .prod_info2 .btn_area a:last-child').addClass('on');
+			}
+
+			closeCardBenefit = function(){
+				$('.card_benefit').hide();
+				$('.detail .prod_info2 .btn_area a:last-child').removeClass('on');
+			}
+
+			safeTabView = function(num,o){
+                var obj=$('.safebox'+num);
+                var thisObj=$(o);
+                var thisIdx=$(o).parent('li').index();
+                var nowidx;
+                obj.find('ul li').each(function(){
+                    if($(this).find('a').hasClass('on')) nowidx=$(this).index();
+                });
+                if(nowidx==thisIdx){
+                    thisObj.siblings('div').hide();
+                    thisObj.removeClass('on');
+                }else{
+                    obj.find('ul li').each(function(){
+                        $(this).find('a').removeClass('on');
+                        $(this).find('div').hide();
+                    });
+                    thisObj.addClass('on');
+                    thisObj.siblings('div').show();
+                }
+            }
+            safeBigTab = function(o){
+                var obj=$(o);
+                if(obj.hasClass('on')) return false;
+                $('.safe_mtab li').each(function(){
+                    $(this).find('a').removeClass('on');
+                });
+                obj.addClass('on');
+                $('.safe_body>div').hide();
+                $('.safe_body>div').eq(obj.parent('li').index()).show();
+            }			
+
+			$(document).ready(function(){
+				w = $(window).width();
+				$('#prod_detail_cut li').css({width:w});
+
+				  if( w >500 ) $('#prod_detail_cut').css({height:'500px'});
+				  else $('#prod_detail_cut').css({height:w*0.8+'px'});
+				
+				$(window).resize(function(){
+					  w = $(window).width();
+					  $('#prod_detail_cut li').css({width:w});
+
+					  if( w >500 ) $('#prod_detail_cut').css({height:'500px'});
+					  else $('#prod_detail_cut').css({height:w*0.8+'px'});
+				});
+
+
+				$('#prod_detail_cut').touchSlider({
+					flexible : true,
+					btn_prev : $('.prod_cut_btn .prev'),
+					btn_next : $('.prod_cut_btn .next'),
+					counter : function (e) {
+						$('.prod_cut_btn .btn span').removeClass("on").eq(e.current-1).addClass("on");
+					}
+				});
+
+				$('.rela_prodlist_wrap .prodlist').touchSlider({
+					flexible : true,
+					btn_prev : $('.rela_prodlist_wrap .prev'),
+					btn_next : $('.rela_prodlist_wrap .next'),
+					counter : function (e) {
+						$('.rela_prodlist_wrap h5 span').text('('+e.current+'/'+$('.rela_prodlist_wrap .prodlist ul').length+')');
+					}
+				});
+				
+
+				$('.prod_service>ul>li>a').click(function(){
+					if ( $(this).hasClass('on') ){
+						$(this).removeClass('on');
+						$(this).siblings('.cont').hide();
+					}else{
+						$(this).addClass('on');
+						$(this).siblings('.cont').show();
+					}
+					return false;
+				});
+
+				$('.revw_list .revw_article .top>a').click(function(){
+					var prt = $(this).parent().parent();					
+					if(prt.hasClass('open')){
+						prt.find('.cont').hide();
+						prt.removeClass('open');
+					}else{
+						$('.revw_list .revw_article .cont').hide();
+						prt.find('.cont').show();
+						prt.addClass('open');
+					}
+					return false;
+				});
+
+				$('.info_revw_box>.tab>li>a').click(function(){
+
+					if( $(this).hasClass('on') ) return false;
+					var idx = $(this).parent().index();
+					if(idx == 0){
+						$('.info_revw_box>.tab>li').eq(1).find('a').removeClass('on');
+						$(this).addClass('on');
+						$('.info_revw_box>.cont>.revw').hide();
+						$('.info_revw_box>.cont>.prod_info_tb').show();
+					}else{
+						$('.info_revw_box>.tab>li').eq(0).find('a').removeClass('on');
+						$(this).addClass('on');
+						$('.info_revw_box>.cont>.prod_info_tb').hide();
+						$('.info_revw_box>.cont>.revw').show();						
+					}
+					return false;
+				});
+
+			});
+
+	})(jQuery);
+	</script>		
+</head>
+
+<body>
+	<aside id="leftmenu">
+		<div class="bg" onclick="Reebok.fn.toggleLeft();return false;"></div>
+		<a onclick="Reebok.fn.toggleLeft();return false;" class="btn_sidemenu" href="#">
+			<span></span>
+			<span></span>
+			<span></span>
+		</a>
+		<section id="inn_leftmenu" class="lmenu_wrap">			
+			<section class="menu">			
+				<div class="bnn">
+					<div class="bnn_sld">
+						<a href="#" style="background-image:url('images/reebok/bg_navi_visual1.jpg');"></a>
+						<a href="#" style="ba kground-image:url('images/reebok/bg_navi_visual1.jpg');"></a>
+						<a href="#" style="background-image:url('images/reebok/bg_navi_visual1.jpg');"></a>
+					</div>					
+					<div class="bul">
+						<span class="on"></span>
+						<span></span>
+					</div>
+				</div>
+				<h2 class="blind">네비게이션 메뉴</h2>
+				<ul class="dp1">
+					<li class="has_dp">
+						<a href="#" onclick="Reebok.fn.toggleLeftList(this);return false;">MEN</a>
+						<ul class="dp2">
+							<li><a href="#">BEST</a></li>
+							<li><a href="#">NEW</a></li>
+							<li><a href="#">SALE</a></li>
+							<li class="has_dp">
+								<a href="#" class="kor" onclick="Reebok.fn.toggleLeftListDepth3(this);return false;">신발</a>
+								<div class="dp3">
+									<a href="#">전체 보기</a>
+									<dl>
+										<dt>스포츠별</dt>
+										<dd>
+											<ul>
+												<li><a href="#"><span>러닝<em>(10)</em></span></a></li>
+												<li><a href="#"><span>트레이닝<em>(10)</em></span></a></li>
+											</ul>
+										</dd>
+									</dl>
+									<dl>
+										<dt>상품별</dt>
+										<dd>
+											<ul>											
+												<li><a href="#"><span>하이컷/미드컷<em>(10)</em></span></a></li>
+												<li><a href="#"><span>로우컷<em>(10)</em></span></a></li>
+												<li><a href="#"><span>샌들/슬리퍼<em>(10)</em></span></a></li>
+											</ul>
+										</dd>
+									</dl>									
+								</div>
+							</li>
+							<li class="has_dp">
+								<a href="#" class="kor" onclick="Reebok.fn.toggleLeftListDepth3(this);return false;">의류</a>
+								<div class="dp3">
+									<a href="#">전체 보기</a>
+									<dl>
+										<dt>스포츠별</dt>
+										<dd>
+											<ul>
+												<li><a href="#"><span>러닝<em>(10)</em></span></a></li>
+												<li><a href="#"><span>트레이닝<em>(10)</em></span></a></li>
+											</ul>
+										</dd>
+									</dl>
+								</div>
+							</li>
+							<li class="has_dp">
+								<a href="#" class="kor" onclick="Reebok.fn.toggleLeftListDepth3(this);return false;">용품</a>
+								<div class="dp3">
+									<a href="#">전체 보기</a>
+									<dl>
+										<dt>스포츠별</dt>
+										<dd>
+											<ul>
+												<li><a href="#"><span>러닝<em>(10)</em></span></a></li>
+												<li><a href="#"><span>트레이닝<em>(10)</em></span></a></li>
+											</ul>
+										</dd>
+									</dl>
+								</div>
+							</li>
+						</ul>
+					</li>
+					<li class="has_dp">
+						<a href="#" onclick="Reebok.fn.toggleLeftList(this);return false;">WOMEN</a>
+						<ul class="dp2">
+							<li><a href="#">BEST</a></li>
+							<li><a href="#">NEW</a></li>
+							<li><a href="#">SALE</a></li>
+							<li class="has_dp">
+								<a href="#" class="kor" onclick="Reebok.fn.toggleLeftListDepth3(this);return false;">신발</a>
+								<div class="dp3">
+									<a href="#">전체 보기</a>
+									<dl>
+										<dt>스포츠별</dt>
+										<dd>
+											<ul>
+												<li><a href="#"><span>러닝<em>(10)</em></span></a></li>
+												<li><a href="#"><span>트레이닝<em>(10)</em></span></a></li>
+											</ul>
+										</dd>
+									</dl>
+									<dl>
+										<dt>상품별</dt>
+										<dd>
+											<ul>											
+												<li><a href="#"><span>하이컷/미드컷<em>(10)</em></span></a></li>
+												<li><a href="#"><span>로우컷<em>(10)</em></span></a></li>
+												<li><a href="#"><span>샌들/슬리퍼<em>(10)</em></span></a></li>
+											</ul>
+										</dd>
+									</dl>									
+								</div>
+							</li>
+							<li class="has_dp">
+								<a href="#" class="kor" onclick="Reebok.fn.toggleLeftListDepth3(this);return false;">의류</a>
+								<div class="dp3">
+									<a href="#">전체 보기</a>
+									<dl>
+										<dt>스포츠별</dt>
+										<dd>
+											<ul>
+												<li><a href="#"><span>러닝<em>(10)</em></span></a></li>
+												<li><a href="#"><span>트레이닝<em>(10)</em></span></a></li>
+											</ul>
+										</dd>
+									</dl>
+								</div>
+							</li>
+							<li class="has_dp">
+								<a href="#" class="kor" onclick="Reebok.fn.toggleLeftListDepth3(this);return false;">용품</a>
+								<div class="dp3">
+									<a href="#">전체 보기</a>
+									<dl>
+										<dt>스포츠별</dt>
+										<dd>
+											<ul>
+												<li><a href="#"><span>러닝<em>(10)</em></span></a></li>
+												<li><a href="#"><span>트레이닝<em>(10)</em></span></a></li>
+											</ul>
+										</dd>
+									</dl>
+								</div>
+							</li>
+						</ul>
+					</li>
+					<li class="has_dp">
+						<a href="#" onclick="Reebok.fn.toggleLeftList(this);return false;">KIDS</a>
+						<ul class="dp2">
+							<li><a href="#">BEST</a></li>
+							<li><a href="#">NEW</a></li>
+							<li><a href="#">SALE</a></li>
+							<li><a href="#" class="kor">신발</a></li>
+							<li><a href="#" class="kor">의류</a></li>
+							<li><a href="#" class="kor">용품</a></li>
+						</ul>
+					</li>
+					<li class="ctg has_dp">
+						<a href="#" class="ctg" onclick="Reebok.fn.toggleLeftList(this);return false;">SPORT</a>
+						<ul class="dp2">
+							<li><a href="#">BEST</a></li>
+							<li><a href="#">NEW</a></li>
+							<li><a href="#">SALE</a></li>
+							<li><a href="#" class="kor">신발</a></li>
+							<li><a href="#" class="kor">의류</a></li>
+							<li><a href="#" class="kor">용품</a></li>
+						</ul>
+					</li>
+					<li class="ctg has_dp">
+						<a href="#" class="ctg" onclick="Reebok.fn.toggleLeftList(this);return false;">CLASSICS</a>
+						<ul class="dp2">
+							<li><a href="#">BEST</a></li>
+							<li><a href="#">NEW</a></li>
+							<li><a href="#">SALE</a></li>
+							<li><a href="#" class="kor">신발</a></li>
+							<li><a href="#" class="kor">의류</a></li>
+							<li><a href="#" class="kor">용품</a></li>
+						</ul>
+					</li>
+					<li class="has_dp">
+						<a href="#" class="ctg" onclick="Reebok.fn.toggleLeftList(this);return false;">COLLECTION</a>
+						<ul class="dp2">
+							<li><a href="#">BEST</a></li>
+							<li><a href="#">NEW</a></li>
+							<li><a href="#">SALE</a></li>
+							<li><a href="#" class="kor">신발</a></li>
+							<li><a href="#" class="kor">의류</a></li>
+							<li><a href="#" class="kor">용품</a></li>
+						</ul>
+					</li>
+					<li><a href="#" class="kor">신상품</a></li>
+					<li><a href="#" class="kor">베스트상품</a></li>
+					<li><a href="#" class="kor">기획전</a></li>
+					<li><a href="#" class="sale">SALE</a></li>
+				</ul>
+				<ul class="util">
+					<li><a href="#">로그인</a></li>
+					<li><a href="#">장바구니</a></li>
+					<li><a href="#">마이페이지</a></li>
+					<li><a href="#">공지사항</a></li>
+					<li><a href="#" class="club">리클럽</a></li>
+				</ul>
+				<div class="btn">
+					<a href="#">고객센터</a>
+					<a href="#">매장찾기</a>
+				</div>
+			</section>
+			<!-- //menu -->
+		</section>
+		
+	</aside>
+	<!-- //leftmenu -->
+
+	<section id="wrap">			
+		<section id="container">
+
+			<div class="layer_bg"></div>
+			<div id="calc_layer"class="layer_pop" style="top:250px;">
+				<div class="layer_pop_wrap">
+					<a href="#" class="close" onclick="Reebok.fn.closeLayerPop('calc_layer');return false;"><img src="/images/reebok/btn_close_layer.gif" alt=""/></a>
+					<h4>최종 예상 가격 보기</h4>
+					<div class="calc_top">
+						<ul class="desc">
+							<li>현재 가지고 계신 쿠폰은 아래 표기 되며,</li>
+							<li><strong>"쿠폰선택" 버튼</strong>을 통해 사용 가능한 쿠폰을 적용하시면</li>
+							<li>최종 구매 예상 가격 확인이 가능합니다.</li>
+						</ul>
+						<div class="ops1">
+							<select class="selc_box2">
+								<option>상품별 할인 쿠폰</option>
+								<option>상품별 할인 쿠폰</option>
+								<option>상품별 할인 쿠폰</option>
+								<option>상품별 할인 쿠폰</option>
+							</select>
+							<select class="selc_box2">
+								<option>이벤트 쿠폰</option>
+								<option>이벤트 쿠폰</option>
+								<option>이벤트 쿠폰</option>
+								<option>이벤트 쿠폰</option>
+							</select>
+						</div>
+						<div class="ops2">
+							<span>포인트/생일 쿠폰</span>
+							<a href="#" class="btn1">쿠폰 선택</a>
+						</div>
+						<p class="desc2">* 사용 가능한 쿠폰이 2매 있습니다.</p>
+					</div>
+					<!-- //calc_top -->
+
+					<div class="pnt_coupon">
+						<table cellpadding="0" cellspacing="0" width="100%">
+							<colgroup>
+								<col width="35%">
+								<col width="20%">
+								<col width="35%">
+								<col width="10%">
+							</colgroup>	
+							<tr>
+								<th>포인트/생일쿠폰 할인<br/><span>(중복선택가능)</span></th>
+								<th>할인금액</th>
+								<th>유효기간</th>
+								<th><a href="#"><img src="/images/reebok/btn_close_wht.png" style="width:16px;"></a></th>
+							</tr>
+							<tr>
+								<td>samba fiesta 15,000원 쿠폰<strong>(100,000원 이상 구매시 사용가능)</strong></td>
+								<td>15,000원</td>
+								<td>2014.05.20<br/>~2014.06.28</td>
+								<td><input type="checkbox"/></td>
+							</tr>
+							<tr>
+								<td>samba fiesta 15,000원 쿠폰<strong>(100,000원 이상 구매시 사용가능)</strong></td>
+								<td>15,000원</td>
+								<td>2014.05.20<br/>~2014.06.28</td>
+								<td><input type="checkbox"/></td>
+							</tr>
+							<tr>
+								<td>samba fiesta 15,000원 쿠폰<strong>(100,000원 이상 구매시 사용가능)</strong></td>
+								<td>15,000원</td>
+								<td>2014.05.20<br/>~2014.06.28</td>
+								<td><input type="checkbox"/></td>
+							</tr>
+							<tr>
+								<td>samba fiesta 15,000원 쿠폰<strong>(100,000원 이상 구매시 사용가능)</strong></td>
+								<td>15,000원</td>
+								<td>2014.05.20<br/>~2014.06.28</td>
+								<td><input type="checkbox"/></td>
+							</tr>
+						</table>
+						<div class="btn_area">
+							<a href="#" class="btn1">확인</a>
+						</div>
+					</div>
+
+					<div class="calc_result">
+						<ul class="price_result">
+							<li style="border-radius:2px;">
+								<strong>상품판매 가격</strong>
+								<div class="td">
+									<span class="price">
+										<strong class="ree_ft">219,000</strong>
+										<span>원</span>
+									</span>
+								</div>
+							</li>
+							<li class="sale_list">
+								<strong>상품별 할인 쿠폰</strong>
+								<div class="td">
+									<span class="price">
+										<strong class="ree_ft">-1,000</strong>
+										<span>원</span>
+									</span>
+								</div>
+							</li>
+							<li class="sale_list">
+								<strong>이벤트 할인 쿠폰</strong>
+								<div class="td">
+									<span class="price">
+										<strong class="ree_ft">-10,000</strong>
+										<span>원</span>
+									</span>
+								</div>
+							</li>
+							<li class="sale_list" style="border-bottom-width:0;">
+								<strong>포인트/생일쿠폰 할인</strong>
+								<div class="td">
+									<span class="price">
+										<strong class="ree_ft">-10,000</strong>
+										<span>원</span>
+									</span>
+								</div>
+							</li>
+							<li style="border-radius:2px 2px 0 0;">
+								<strong>할인 총 금액</strong>
+								<div class="td">
+									<span class="price sale">
+										<strong class="ree_ft">-21,000</strong>
+										<span>원</span>
+									</span>
+								</div>
+							</li>
+							<li style="border-bottom-width:0;border-radius:0 0 2px 2px;">
+								<strong>최종 구매 예상 가격</strong>
+								<div class="td">
+									<span class="price sale">
+										<strong class="ree_ft">98,000</strong>
+										<span>원</span>
+									</span>
+								</div>
+							</li>
+						</ul>
+
+						<ul class="desc">											
+							<li>시리얼 쿠폰의 경우 마이페이지에서 별도 확인 하십시오.</li>
+							<li>위 가격은 참고용이며, 실제 제품 구매시 할인 금액이 다를 수 있습니다.</li>
+							<li><strong>실제 구매시 쿠폰 적용을 다시 해주셔야 합니다.</strong></li>
+						</ul>
+						<div class="btn_area">
+							<a class="btn1" href="#">바로 구매하기</a>
+							<a class="btn1" href="#">취소</a>
+						</div>
+					</div>
+					<!-- //calc_result -->					
+				</div>
+				<!-- //calc_wrap -->						
+			</div>
+			<!-- //calc -->
+
+
+			<div id="stocked_alarm_layer"class="layer_pop" style="top:250px;">
+				<div class="layer_pop_wrap">
+					<a href="#" class="close" onclick="Reebok.fn.closeLayerPop('stocked_alarm_layer');return false;"><img src="/images/reebok/btn_close_layer.gif" alt=""/></a>
+					<h4>입고알림 서비스</h4>
+					<ul class="data_tb_list">
+						<li class="hgt_auto">
+							<strong>상품명</strong>
+							<div class="td">
+								<span style="text-align:left;display:inline-block;">[Men's apparel] 폴리 니트 팬츠</span>
+							</div>
+						</li>
+						<li>
+							<strong>모델명</strong>
+							<div class="td">K84862</div>
+						</li>
+						<li>
+							<strong>COLOR</strong>
+							<div class="td">BLUE</div>
+						</li>
+					</ul>	
+					<ul class="data_tb_form">
+						<li class="mail">
+							<strong><span class="impt">이메일 알림신청</span></strong>
+							<div class="td">
+								<input type="text" class="ipt bdrbox" style="width:35%;">
+								<span>@</span>
+								<input type="text" class="ipt bdrbox" style="width:45%;">
+							</div>
+						</li>
+						<li class="mail">								
+							<div class="td">
+								<select class="selc_box2 bdrbox" style="width:100%;">
+									<option selected>선택해주세요.</option>
+									<option value="naver.com">naver.com</option>
+									<option value="hanmail.net">hanmail.net</option>
+									<option value="hotmail.com">hotmail.com</option>
+									<option value="nate.com">nate.com</option>
+									<option value="yahoo.co.kr">yahoo.co.kr</option>
+									<option value="empas.com">empas.com</option>
+									<option value="dreamwiz.com">dreamwiz.com</option>
+									<option value="freechal.com">freechal.com</option>
+									<option value="lycos.co.kr">lycos.co.kr</option>
+									<option value="korea.com">korea.com</option>
+									<option value="gmail.com">gmail.com</option>
+									<option value="hanmir.com">hanmir.com</option>
+									<option value="paran.com">paran.com</option>
+									<option value="self">직접입력</option>
+								</select>
+							</div>
+						</li>
+
+						<li class="phn">
+							<strong><span class="impt">SMS 알림신청</span></strong>
+							<div class="td">
+								<select class="selc_box2">
+									<option>02</option>
+								</select>
+								<input type="tel" class="ipt_lng3 bdrbox">
+								<input type="tel" class="ipt_lng3 bdrbox">
+							</div>
+						</li>
+					</ul>	
+
+					<ul class="desc1">        
+						<li>개인정보의 수집이용목적 : 리복 제품 입고 알림</li>
+						<li>수집되는 개인정보 : 휴대전화번호, 이메일주소</li>
+						<li>보유기간 : 입고알림 이후 30일 까지 (본 보유기간은 아디클럽 회원이 아닌 경우에 한함)</li>
+					</ul>	
+					<ul class="desc2">
+						<li>본 동의를 거부할 수 있습니다. 다만 그러한 경우, 아디다스 제품이 입고되는 시점에 대한 정보를 우선적으로 전달받으실 수 없습니다. 단, “통신사 및 이메일서버 사정으로 인한 발송, 수신오류, 고객휴대폰의 스팸등록 및 고객이메일의 용량초과 등으로 인해 SMS 및 이메일이 전달되지 않을 수 있으며 이러한 경우 아디다스코리아가 책임지지 않습니다.”</li>
+						<li>입력해주신 휴대폰번호 또는 이메일주소 중 자사의 사정에 따라 한가지 방법으로 안내하겠습니다.</li>
+					</ul>	
+					<span class="chk_dsgn">
+						<input type="checkbox" id="SMS_CHECK">
+						<label for="SMS_CHECK" style="color:#212121;">동의합니다.</label>
+					</span>
+					<div class="btn_area">
+						<a href="#" class="btn1" onclick="Reebok.fn.closeLayerPop('stocked_alarm_layer',true);Reebok.fn.openLayerPop('stocked_alarm_layer_done',230);return false;">입고 알림 서비스 신청</a>
+					</div>
+					
+				</div>
+				<!-- //calc_wrap -->						
+			</div>
+			<!-- //calc -->
+
+			<div id="stocked_alarm_layer_done"class="layer_pop" style="top:250px;">
+				<div class="layer_pop_wrap" style="padding:0 10px;">
+					<a href="#" class="close" onclick="Reebok.fn.closeLayerPop('stocked_alarm_layer_done');return false;"><img src="/images/reebok/btn_close_layer.gif" alt=""/></a>
+					<h4>입고알림 서비스</h4>
+					<ul class="data_tb_list">
+						<li class="hgt_auto">
+							<strong style="font-size:14px;">상품명</strong>
+							<div class="td">
+								<span style="font-weight:bold;font-size:14px;text-align:left;display:inline-block;">[Men's apparel] 폴리 니트 팬츠</span>
+							</div>
+						</li>
+						<li>
+							<strong style="font-size:14px;">모델명</strong>
+							<div class="td" style="font-weight:bold;font-size:14px;">K84862</div>
+						</li>
+						<li>
+							<strong style="font-size:14px;">COLOR</strong>
+							<div class="td" style="font-weight:bold;font-size:14px;">BLUE</div>
+						</li>
+					</ul>	
+					<div>
+						<strong style="margin-bottom:10px;display:block;text-align:center;font-size:17px;font-weight:bold;">신청이 완료 되었습니다!</strong>
+						<p style="text-align:center;">감사합니다.</p>
+					</div>					
+
+					<div class="btn_area" style="padding:15px 0;">
+						<a href="#" class="btn1">쇼핑 계속하기</a>
+					</div>
+					
+				</div>
+				<!-- //calc_wrap -->						
+			</div>
+			<!-- //calc -->
+
+
+			<header id="header">
+				<div class="hdr1">
+					<h1><a href="#" class="spt_bg"></a></h1>
+					<ul>
+						<li><a href="#">로그인</a></li>
+						<li><a href="#">회원가입</a></li>
+						<li><a href="#">마이페이지</a></li>
+						<li><a href="#">장바구니<span>(3)</span></a></li>
+					</ul>
+				</div>
+				<!-- //hdr1 -->
+				<div class="hdr2">
+					<div class="sch_area">
+						<a href="#" class="btn_sidemenu active" onclick="Reebok.fn.toggleLeft();return false;">
+							<span></span>
+							<span></span>
+							<span></span>
+						</a>				
+						<form method="get" action="#">
+							<div class="sch">
+								<input type="input" placeholder="검색어를 입력하세요"/>					
+							</div>
+							<button type="button">검색</button>
+						</form>				
+					</div>
+					<!-- //hdr2 -->
+				</div>
+			</header>
+			<!-- //header -->
+
+			<section id="contents">				
+				<section class="m_contents detail">
+					<div class="loc">
+						<span>신발</span>
+						<span class="arw">&gt;</span>
+						<span>트레이닝</span>
+						<span class="arw">&gt;</span>
+						<span>하이컷/미드컷</span>
+					</div>
+
+					<div class="prod_info1">
+						<h3>[Men's running] 레코드 피니쉬 RS 2.0 </h3>
+						<div class="rv">
+							<span class="lev"><div style="width:75%"></div></span><em>(5)</em>
+						</div>
+						
+						<div class="prod_cut" id="prod_detail_cut">
+							<ul>
+								<li><img alt="" src="http://shop.reebok.co.kr//upload/prod/basic/500/V55672-1_500X500.jpg"></li>
+								<li><img alt="" src="http://shop.reebok.co.kr/upload/prod/etc/500/V55672-2_500X500.jpg"></li>
+								<li><img alt="" src="http://shop.reebok.co.kr/upload/prod/etc/500/V55672-3_500X500.jpg"></li>
+								<li><img alt="" src="http://shop.reebok.co.kr/upload/prod/etc/500/V55672-4_500X500.jpg"></li>
+								<li><img alt="" src="http://shop.reebok.co.kr/upload/prod/etc/500/V55672-5_500X500.jpg"></li>
+							</ul>
+						</div>
+					
+						<div class="prod_cut_btn">
+							<a href="#" class="prev"></a>
+							<div class="btn">
+								<span class="on"></span>
+								<span></span>
+								<span></span>
+								<span></span>
+								<span></span>
+							</div>
+							<a href="#" class="next"></a>
+						</div>
+
+
+					</div>
+					<!-- //prod_info1 -->
+
+					<div class="prod_info2">
+						<div class="other_color">
+							<p>컬러 (상품코드) : <strong class="ree_ft">GREY/WHITE/WHITE (V55677)</strong></p>
+							<div>
+								<ul>
+									<li><a href="#" class="bdrbox on"><img src="http://shop.reebok.co.kr/upload/prod/basic/120/V47514-1_120X120.jpg"/></a></li>
+									<li><a href="#" class="bdrbox"><img src="http://shop.reebok.co.kr/upload/prod/basic/120/V47514-1_120X120.jpg"/></a></li>
+									<li><a href="#" class="bdrbox"><img src="http://shop.reebok.co.kr/upload/prod/basic/120/V47514-1_120X120.jpg"/></a></li>
+									<li><a href="#" class="bdrbox"><img src="http://shop.reebok.co.kr/upload/prod/basic/120/V47514-1_120X120.jpg"/></a></li>
+									<li><a href="#" class="bdrbox"><img src="http://shop.reebok.co.kr/upload/prod/basic/120/V47514-1_120X120.jpg"/></a></li>
+									<li><a href="#" class="bdrbox"><img src="http://shop.reebok.co.kr/upload/prod/basic/120/V47514-1_120X120.jpg"/></a></li>
+								</ul>
+							</div>
+						</div>
+						<!-- //other_color -->
+
+						<table cellpadding="0" cellspacing="0" class="prc">
+							<colgroup>
+								<col width="150">
+								<col width="*">
+							</colgroup>
+							<tr>
+								<th>판매가</th>
+								<td class="price">									
+									<span class="line"><em class="ree_ft">69,000</em>원</span>
+									<span class="sale"><em class="ree_ft">51,200</em>원</span>
+								</td>
+							</tr>
+							<tr>
+								<th style="border-bottom-width:0;">예상포인트</th>
+								<td class="pnt" style="border-bottom-width:0;">
+									<span>
+										<em class="ree_ft">2,250</em>
+										<span class="p ree_ft">P</span>
+										<span class="per ree_ft">(%)</span>
+									</span>
+								</td>
+							</tr>
+						</table>
+						<!-- //prc -->
+
+						<div class="btn_area">
+							<a href="#" class="btn1 bdrbox" onclick="Reebok.fn.openLayerPop('calc_layer',230);return false;"><span>미리 계산기</span></a>
+							<a href="#" class="btn1 bdrbox" onclick="openCardBenefit();return false;"><span>카드혜택보기</span></a>
+						</div>
+						<!-- //btn_area -->		
+
+						<div class="card_benefit">
+							<div class="cbf_top">
+								<span><img style="width:32px;" alt="" src="/images/reebok/bg_card_btn.gif"></span>지금 할인되는 카드 프로모션 보기
+								<a href="#" class="close" onclick="closeCardBenefit();return false;"><img src="/images/reebok/btn_close_wht.png" alt=""/></a>
+							</div>
+							<div class="cbf_body">
+								<table cellspacing="0" cellpadding="0" width="100%">
+									<!-- 140916 colgroup col 값을 변경해주세요. -->
+									<colgroup>
+										<col width="15%">
+										<col width="60%">
+										<col width="25%">
+									</colgroup>
+										
+									<tr>
+										<td>국민</td>
+										<td>5만원 이상 구매시 
+												
+										</td>
+										<td>무이자할부</td>
+									</tr>
+										
+									<tr>
+										<td>삼성</td>
+										<td>10만원 이상 구매시 5000원</td>
+										<td>즉시할인</td>
+									</tr>
+										
+								</table>
+								
+								<a class="/MOre" href="#">카드 행사 자세히 보기</a>
+								
+							</div>
+						</div>				
+
+						<div class="ops">
+							<ul>
+								<li>
+									<strong>상품코드</strong>
+									<div class="td">
+										<select class="selc_box2">
+											<option>V55677(GREY)</option>
+										</select>
+									</div>
+								</li>
+								<li>
+									<strong>사이즈</strong>
+									<div class="td">
+										<select class="selc_box2">
+											<option>85</option>
+											<option>90</option>
+											<option>95</option>
+											<option>100</option>
+										</select>
+									</div>
+								</li>
+
+								<li>
+									<strong>사이즈</strong>
+									<div class="td alarm">
+										<select class="selc_box2">
+											<option>85</option>
+											<option>90</option>
+											<option>95</option>
+											<option>100</option>
+										</select>
+
+										<a href="#" class="btn1" onclick="Reebok.fn.openLayerPop('stocked_alarm_layer',230);return false;">알람 신청하기</a>
+									</div>
+								</li>
+
+								<li>
+									<strong>주문수량</strong>
+									<div class="td">
+										<input type="tel" class="bdrbox"/>
+									</div>
+								</li>
+								<li class="sns">
+									<strong>공유하기</strong>
+									<div class="td">
+										<a href="#" class="fb"></a>
+										<a href="#" class="twt"></a>
+										<a href="#" class="kakao"></a>
+										<a href="#" class="url_cp"></a>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<!-- //ops -->
+
+						<div class="prd_btn_area">
+							<a href="#" class="btn1">바로구매</a>
+							<a href="#" class="btn1">장바구니</a>
+							<a href="#" class="btn1">관심상품</a>
+						</div>
+						<!-- //prd_btn_area -->
+					</div>
+					<!-- //prod_info2 -->
+				
+					<div class="rela_prodlist_wrap">
+						<div class="btn">
+							<a href="" class="prev"></a>
+							<h5>이 상품을 본 다른 회원들이<br/>함께 본 상품<span>(1/3)</span></h5>
+							<a href="" class="next"></a>
+						</div>
+						<div class="prodlist">
+							<div class="slider">
+								<ul>
+									<li class="bdrbox">
+										<a href="#">
+											<span class="img"><img alt="" src="http://shop.adidas.co.kr/upload/prod/basic/320/M48559-1_320X320.jpg"></span>
+											<span class="txt">[Reebok Clsassic/Unisex] 인스타펌프 퓨리 </span>
+											<span class="rv">
+												<span class="lev"><div style="width:75%"></div></span>
+											</span>
+											<span class="price">
+												<span class="line">
+													<strong class="">219,000</strong>
+													<span>원</span>
+												</span>	
+												<span class="sale">
+													<strong class="">152,000</strong>
+													<span>원</span>
+												</span>
+											</span>
+										</a>
+									</li>
+									<li class="bdrbox">
+										<a href="#">
+											<span class="img"><img alt="" src="http://shop.adidas.co.kr/upload/prod/basic/320/M46025-1_320X320.jpg"></span>
+											<span class="txt">[reebok classic/Unisex] 펌프 그래프라이트</span>
+											<span class="rv">
+												<span class="lev"><div style="width:75%"></div></span>
+											</span>
+											<span class="price">
+												<span class="line">
+													<strong class="">219,000</strong>
+													<span>원</span>
+												</span>	
+												<span class="sale">
+													<strong class="">152,000</strong>
+													<span>원</span>
+												</span>
+											</span>
+										</a>
+									</li>
+									<li class="bdrbox">
+										<a href="#">
+											<span class="img"><img alt="" src="http://shop.adidas.co.kr/upload/prod/basic/320/M41417-1_320X320.jpg"></span>
+											<span class="txt">[REEBOK CLASSIC /Unisex] GL 6000</span>
+											<span class="rv">
+												<span class="lev"><div style="width:75%"></div></span>
+											</span>
+											<span class="price">
+
+												<span class="line">
+													<strong class="">219,000</strong>
+													<span>원</span>
+												</span>	
+												<span class="sale">
+													<strong class="">152,000</strong>
+													<span>원</span>
+												</span>	
+
+											</span>
+										</a>
+									</li>
+								</ul>
+
+								<ul>
+									<li class="bdrbox">
+										<a href="#">
+											<span class="img"><img alt="" src="http://shop.adidas.co.kr/upload/prod/basic/320/M41417-1_320X320.jpg"></span>
+											<span class="txt">[REEBOK CLASSIC /Unisex] GL 6000</span>
+											<span class="rv">
+												<span class="lev"><div style="width:75%"></div></span>
+											</span>
+											<span class="price">
+												<span class="line">
+													<strong class="">219,000</strong>
+													<span>원</span>
+												</span>	
+												<span class="sale">
+													<strong class="">152,000</strong>
+													<span>원</span>
+												</span>
+											</span>
+										</a>
+									</li>
+									<li class="bdrbox">
+										<a href="#">
+											<span class="img"><img alt="" src="http://shop.adidas.co.kr/upload/prod/basic/320/M48559-1_320X320.jpg"></span>
+											<span class="txt">[Reebok Clsassic/Unisex] 인스타펌프 퓨리 </span>
+											<span class="rv">
+												<span class="lev"><div style="width:75%"></div></span>
+											</span>
+											<span class="price">
+												<span>
+													<strong class="">189,000</strong>
+													<span>원</span>
+												</span>	
+											</span>
+										</a>
+									</li>
+									<li class="bdrbox">
+										<a href="#">
+											<span class="img"><img alt="" src="http://shop.adidas.co.kr/upload/prod/basic/320/M46025-1_320X320.jpg"></span>
+											<span class="txt">[reebok classic/Unisex] 펌프 그래프라이트</span>
+											<span class="rv">
+												<span class="lev"><div style="width:75%"></div></span>
+											</span>
+											<span class="price">
+												<span>
+													<strong class="">189,000</strong>
+													<span>원</span>
+												</span>
+											</span>
+										</a>
+									</li>									
+								</ul>
+
+								<ul>
+									<li class="bdrbox">
+										<a href="#">
+											<span class="img"><img alt="" src="http://shop.adidas.co.kr/upload/prod/basic/320/M48559-1_320X320.jpg"></span>
+											<span class="txt">[Reebok Clsassic/Unisex] 인스타펌프 퓨리 </span>
+											<span class="rv">
+												<span class="lev"><div style="width:75%"></div></span>
+											</span>
+											<span class="price">
+												<span>
+													<strong class="">69,000</strong>
+													<span>원</span>
+												</span>
+											</span>
+										</a>
+									</li>									
+									<li class="bdrbox">
+										<a href="#">
+											<span class="img"><img alt="" src="http://shop.adidas.co.kr/upload/prod/basic/320/M41417-1_320X320.jpg"></span>
+											<span class="txt">[REEBOK CLASSIC /Unisex] GL 6000</span>
+											<span class="rv">
+												<span class="lev"><div style="width:75%"></div></span>
+											</span>
+											<span class="price">
+												<span>
+													<strong class="">189,000</strong>
+													<span>원</span>
+												</span>
+											</span>
+										</a>
+									</li>
+									<li class="bdrbox">
+										<a href="#">
+											<span class="img"><img alt="" src="http://shop.adidas.co.kr/upload/prod/basic/320/M46025-1_320X320.jpg"></span>
+											<span class="txt">[reebok classic/Unisex] 펌프 그래프라이트</span>
+											<span class="rv">
+												<span class="lev"><div style="width:75%"></div></span>
+											</span>
+											<span class="price">
+												<span>
+													<strong class="">189,000</strong>
+													<span>원</span>
+												</span>
+											</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<!-- //slider -->
+						</div>
+						<!-- //prodlist -->
+					</div>
+					<!-- //prodlist_wrap -->
+
+					<div class="info_revw_box">
+						<ul class="tab">
+							<li><a href="#" class="on">상품정보</a></li>
+							<li><a href="#">상품평<em>(3)</em></a></li>
+						</ul>
+						<div class="cont">
+							<div class="prod_info_tb">
+								<h6>[Women's running] 레코드 피니쉬 RS 2.0</h6>
+								<table class="view" summary="제품정보">
+									<caption>제품정보</caption>
+									<colgroup>
+										<col width="30%">
+										<col width="70%">
+									</colgroup>
+									<tbody><tr>
+										<th>제품코드</th>
+										<td>M67376</td>
+									</tr>
+									<tr>
+										<th>용도</th>
+										<td>트레이닝 &amp; 일상생활</td>
+									</tr>
+									<tr>
+										<th>소재</th>
+										<td>겉감: 80% 면 + 20% 폴리에스터</td>
+									</tr>
+									<tr>
+										<th>컬러</th>
+										<td>CORHTR</td>
+									</tr>
+									<tr>
+										<th>원산지</th>
+										<td>중국</td>
+									</tr>
+									<tr>
+										<th>제조년월</th>
+										<td>2014-07 <a class="s_btn1" href="#">자세히 보기</a></td><!-- 140916 &gt; 값을 지워주세요 -->										
+									</tr>
+									<tr>
+										<th>제조자/수입자</th>
+										<td>adidasAG / 아디다스코리아㈜</td>
+									</tr>
+								
+								
+									<tr>
+										<th colspan="2" style="border-bottom-width:0px">제품특징</th>
+									</tr>
+									<tr>
+										<td colspan="2" class="prod_content_mob" style="border-bottom-width:0;">
+											2014년 인기를 끌었던 리복의 여성용 러닝화로 트렌디한 스타일과 부드러운 쿠셔닝을 제공하는 중창이 특징입니다. 합성가죽과 메쉬로 이루어진 갑피가 내구성을 제공하며 부드러운 쿠셔닝을 제공하는 중창이 트렌드에 적합한 스타일로 젊은 소비자에게 인기 있는 모델입니다.<br/><br/>합성가죽과 메쉬로 이루어진 갑피가 내구성을 제공
+			                            </td>
+									</tr>
+								</table>
+
+								<div style="margin:10px 0;"><img alt="STYLE FIT" style="width:100%;" src="/images/reebok/bg_btmsize1.jpg"></div>
+
+								<div class="prod_manual">									
+									<div class="manual_table">
+										<p class="tit"><strong class="ree_ft" style="font-size:19px">SIZE CHART</strong> 남자 의류</p>
+										<ul class="desc">
+											<li>상의 : 끈을 수평으로 유지하면서, 둘레가 가장 긴 부분을 측정합니다.</li>
+											<li>하의 : 끈을 수평으로 유지하면서, 가장 얇은 부분을 측정합니다.</li>
+										</ul>
+										<p class="m_img">
+											<img alt="남자상의" src="/images/reebok/bg_sizetop_dft_men.gif" style="width:42%;margin:0 3px;">
+											<img alt="여남하의" src="/images/reebok/bg_sizebtm_dft_men.gif" style="width:42%;margin:0 3px;">
+										</p>
+										<table cellspacing="0" cellpadding="0">
+											<colgroup>
+												<col width="20%">
+												<col width="20%">
+												<col width="20%">
+												<col width="20%">
+												<col width="20%">
+											</colgroup>
+											<tr>
+												<th class="first" rowspan="2"></th>
+												<th>신장</th>
+												<th>가슴둘레</th>
+												<th>허리둘레</th>
+												<th>허리둘레</th>
+											</tr>
+											<tr>
+												<th class="first">(cm)</th>
+												<th>(cm)</th>
+												<th>(inch)</th>
+												<th>(cm)</th>
+											</tr>
+										
+											<tr>
+												<td class="first">XXS(85)</td>
+												<td>160~165</td>
+												<td>85</td>
+												<td>29</td>
+												<td>74</td>
+											</tr>
+										
+											<tr>
+												<td class="first">XS(90)</td>
+												<td>165~170</td>
+												<td>90</td>
+												<td>30</td>
+												<td>76</td>
+											</tr>
+										
+											<tr>
+												<td class="first">S(95)</td>
+												<td>170~175</td>
+												<td>95</td>
+												<td>31</td>
+												<td>80</td>
+											</tr>
+										
+											<tr>
+												<td class="first">M(100)</td>
+												<td>175~180</td>
+												<td>100</td>
+												<td>33</td>
+												<td>84</td>
+											</tr>
+										
+											<tr>
+												<td class="first">L(105)</td>
+												<td>180~185</td>
+												<td>105</td>
+												<td>35</td>
+												<td>88</td>
+											</tr>										
+											<tr>
+												<td class="first">XL(110)</td>
+												<td>185~190</td>
+												<td>110</td>
+												<td>36</td>
+												<td>92</td>
+											</tr>
+											
+										</table>
+									</div>
+									<p class="desc">※ 제품의 실측 사이즈가 아닌 각 사이즈에 맞는 신체 사이즈로 실제품과 차이가 있을 수 있으므로 참고하시기 바랍니다.</p>
+								</div>
+
+								<div class="prod_manual">									
+									<div class="manual_table">
+										<p class="tit"><strong class="ree_ft" style="font-size:19px">SIZE CHART</strong> 여자 의류</p>
+										<ul class="desc">
+											<li>상의 : 끈을 수평으로 유지하면서, 둘레가 가장 긴 부분을 측정합니다.</li>
+											<li>하의 : 끈을 수평으로 유지하면서, 가장 얇은 부분을 측정합니다.</li>
+										</ul>
+										<p class="m_img">
+											<img alt="여자상의" src="/images/reebok/bg_sizetop_dft_women.gif" style="width:42%;margin:0 3px;">
+											<img alt="여자하의" src="/images/reebok/bg_sizebtm_dft_women.gif" style="width:42%;margin:0 3px;">
+										</p>
+										<table cellspacing="0" cellpadding="0">
+											<colgroup>
+												<col width="20%">
+												<col width="20%">
+												<col width="20%">
+												<col width="20%">
+												<col width="20%">
+											</colgroup>
+											<tbody>
+											<tr>
+												<th class="first" rowspan="2"></th>
+												<th>신장</th>
+												<th>가슴둘레</th>
+												<th>허리둘레</th>
+												<th>허리둘레</th>
+											</tr>
+											<tr>
+												<th class="first">(cm)</th>
+												<th>(cm)</th>
+												<th>(inch)</th>
+												<th>(cm)</th>
+											</tr>
+										
+											<tr>
+												<td class="first">XXS(80)</td>
+												<td>155~160</td>
+												<td>82</td>
+												<td>24</td>
+												<td>62</td>
+											</tr>
+										
+											<tr>
+												<td class="first">XS(85)</td>
+												<td>160~165</td>
+												<td>86</td>
+												<td>26</td>
+												<td>65</td>
+											</tr>
+										
+											<tr>
+												<td class="first">S(90)</td>
+												<td>165~170</td>
+												<td>90</td>
+												<td>27</td>
+												<td>68</td>
+											</tr>
+										
+											<tr>
+												<td class="first">M(95)</td>
+												<td>170~175</td>
+												<td>94</td>
+												<td>28</td>
+												<td>71</td>
+											</tr>
+										
+											<tr>
+												<td class="first">L(100)</td>
+												<td>175~180</td>
+												<td>98</td>
+												<td>29</td>
+												<td>74</td>
+											</tr>										
+											<tr>
+												<td class="first">XL(105)</td>
+												<td>180~185</td>
+												<td>102</td>
+												<td>30</td>
+												<td>77</td>
+											</tr>
+											<tr>
+												<td class="first">XXL(110)</td>
+												<td>185~190</td>
+												<td>106</td>
+												<td>31</td>
+												<td>80</td>
+											</tr>
+										
+											</tbody>
+										</table>
+									</div>
+									<p class="desc">※ 제품의 실측 사이즈가 아닌 각 사이즈에 맞는 신체 사이즈로 실제품과 차이가 있을 수 있으므로 참고하시기 바랍니다.</p>
+								</div>
+								
+								<div class="prod_manual">									
+									<div class="manual_table">
+										<p class="tit"><strong class="ree_ft" style="font-size:19px">SIZE CHART</strong> 여자 상하의</p>
+										<p class="m_img"><img alt="여자상의" src="/images/reebok/bg_sizetop_women.gif"></p>
+										<table cellspacing="0" cellpadding="0">
+											<colgroup>
+												<col width="20%">
+												<col width="20%">
+												<col width="20%">
+												<col width="20%">
+												<col width="20%">
+											</colgroup>
+											<tbody>
+											<tr>
+												<th class="first" rowspan="2"></th>
+												<th>가슴둘레</th>
+												<th>팔길이</th>
+												<th>총 기장</th>
+												<th>손목둘레</th>
+											</tr>
+											<tr>
+												<th class="first">(cm)</th>
+												<th>(cm)</th>
+												<th>(cm)</th>
+												<th>(cm)</th>
+											</tr>
+										
+											<tr>
+												<td class="first">XS(80)</td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+											</tr>
+										
+											<tr>
+												<td class="first">S(85)</td>
+												<td>90</td>
+												<td>59</td>
+												<td>55</td>
+												<td>8.5</td>
+											</tr>
+										
+											<tr>
+												<td class="first">M(90)</td>
+												<td>94</td>
+												<td>61</td>
+												<td>57</td>
+												<td>9</td>
+											</tr>
+										
+											<tr>
+												<td class="first">L(95)</td>
+												<td>98</td>
+												<td>63</td>
+												<td>59</td>
+												<td>9.5</td>
+											</tr>
+										
+											<tr>
+												<td class="first">XL(100)</td>
+												<td>102</td>
+												<td>65</td>
+												<td>61</td>
+												<td>10</td>
+											</tr>
+										
+											<tr>
+												<td class="first">XXL(105)</td>
+												<td>106</td>
+												<td>67</td>
+												<td>63</td>
+												<td>10.5</td>
+											</tr>
+										
+											</tbody>
+										</table>
+
+										<p class="m_img"><img alt="여자상의" src="/images/reebok/bg_sizetop_women.gif"></p>
+										<table cellspacing="0" cellpadding="0">
+											<colgroup>
+												<col width="20%">
+												<col width="20%">
+												<col width="20%">
+												<col width="20%">
+												<col width="20%">
+											</colgroup>
+											<tbody>
+											<tr>
+												<th class="first" rowspan="2"></th>
+												<th>가슴둘레</th>
+												<th>팔길이</th>
+												<th>총 기장</th>
+												<th>손목둘레</th>
+											</tr>
+											<tr>
+												<th class="first">(cm)</th>
+												<th>(cm)</th>
+												<th>(cm)</th>
+												<th>(cm)</th>
+											</tr>
+										
+											<tr>
+												<td class="first">XS(80)</td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+											</tr>
+										
+											<tr>
+												<td class="first">S(85)</td>
+												<td>90</td>
+												<td>59</td>
+												<td>55</td>
+												<td>8.5</td>
+											</tr>
+										
+											<tr>
+												<td class="first">M(90)</td>
+												<td>94</td>
+												<td>61</td>
+												<td>57</td>
+												<td>9</td>
+											</tr>
+										
+											<tr>
+												<td class="first">L(95)</td>
+												<td>98</td>
+												<td>63</td>
+												<td>59</td>
+												<td>9.5</td>
+											</tr>
+										
+											<tr>
+												<td class="first">XL(100)</td>
+												<td>102</td>
+												<td>65</td>
+												<td>61</td>
+												<td>10</td>
+											</tr>
+										
+											<tr>
+												<td class="first">XXL(105)</td>
+												<td>106</td>
+												<td>67</td>
+												<td>63</td>
+												<td>10.5</td>
+											</tr>
+										
+											</tbody>
+										</table>
+
+									</div>
+									<p class="desc">※ 해당 치수는 제품의 <strong>실제 사이즈</strong>이며, 치수를 재는 방법에 따라 약간의 차이가 있습니다.</p>
+								</div>
+
+
+								<!-- 여자하의 -->
+								<div class="prod_manual">									
+									<div class="manual_table">
+										<p class="tit"><strong class="ree_ft" style="font-size:19px">SIZE CHART</strong> 여자 하의</p>
+										<p class="m_img"><img alt="여자상의" src="/images/reebok/bg_sizebtm_women.gif"></p>
+										<table cellspacing="0" cellpadding="0">
+											<colgroup>
+												<col width="*">
+												<col width="16%">
+												<col width="16%">
+												<col width="16%">
+												<col width="16%">
+												<col width="16%">
+											</colgroup>
+											<tbody>
+											<tr>
+												<th class="first" rowspan="2"></th>
+												<th>허리너비</th>
+												<th>엉덩이너비</th>
+												<th>전체밑위</th>
+												<th>밑단너비</th>
+												<th>총장</th>
+											</tr>
+											<tr>
+												<th class="first">(cm)</th>
+												<th>(cm)</th>
+												<th>(cm)</th>
+												<th>(cm)</th>
+												<th>(cm)</th>
+											</tr>
+										
+											<tr>
+												<td class="first">XS(80)</td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+											</tr>
+										
+											<tr>
+												<td class="first">S(85)</td>
+												<td>59</td>
+												<td>80</td>
+												<td>52.5</td>
+												<td>30.5</td>
+												<td>97.5</td>
+											</tr>
+										
+											<tr>
+												<td class="first">M(90)</td>
+												<td>62</td>
+												<td>84</td>
+												<td>53.5</td>
+												<td>31</td>
+												<td>99</td>
+											</tr>
+										
+											<tr>
+												<td class="first">L(95)</td>
+												<td>65</td>
+												<td>88</td>
+												<td>54.5</td>
+												<td>31.5</td>
+												<td>100.5</td>
+											</tr>
+										
+											<tr>
+												<td class="first">XL(100)</td>
+												<td>68</td>
+												<td>92</td>
+												<td>55.5</td>
+												<td>32</td>
+												<td>102</td>
+											</tr>
+										
+											<tr>
+												<td class="first">XXL(105)</td>
+												<td>71</td>
+												<td>96</td>
+												<td>56.5</td>
+												<td>32.5</td>
+												<td>103.5</td>
+											</tr>
+										
+											</tbody>
+										</table>
+									</div>
+									<p class="desc">※ 해당 치수는 제품의 <strong>실제 사이즈</strong>이며, 치수를 재는 방법에 따라 약간의 차이가 있습니다.</p>
+								</div>
+
+								<!-- //신발 -->
+								<div class="prod_manual">
+									<div class="manual_table">
+										<p class="tit"><strong class="ree_ft" style="font-size:19px">SIZE CHART</strong> 신발</p>
+										<p class="m_img"><img alt="여자상의" src="/images/reebok/bg_size_shoes.gif"></p>
+										<table cellspacing="0" cellpadding="0">
+											<colgroup>
+												<col width="21%">
+												<col width="21%">
+												<col width="17%">
+												<col width="13%">
+												<col width="14%">
+												<col width="14%">
+											</colgroup>
+											<tr>
+												<th class="first">WOMEN</th>
+												<th colspan="2">MEN</th>
+												<th colspan="3">KIDS(mm)</th>
+											</tr>
+											<tr>
+												<th class="first">(mm)</th>
+												<th colspan="2">(mm)</th>
+												<th style="border-right:0;" class="helve">infant</th>
+												<th style="border-right:0;" class="helve">toddler</th>
+												<th style="border-right:0;" class="helve">junior</th>
+											</tr>
+											<tr>
+												<td class="">230</td>
+												<td colspan="2"><span>230</span><span>235</span></td>
+												<td colspan="3" class="kids"><span>70</span><span>110</span><span>170</span></td>
+											</tr>
+											<tr>
+												<td class="">235</td>
+												<td colspan="2"><span>240</span><span>245</span></td>
+												<td colspan="3" class="kids"><span>80</span><span>120</span><span>180</span></td>
+											</tr>
+											<tr>
+												<td class="">240</td>
+												<td colspan="2"><span>250</span><span>255</span></td>
+												<td colspan="3" class="kids"><span>90</span><span>130</span><span>190</span></td>
+											</tr>
+											<tr>
+												<td class="">245</td>
+												<td colspan="2"><span>260</span><span>265</span></td>
+												<td colspan="3" class="kids"><span>&nbsp;</span><span>140</span><span>200</span></td>
+											</tr>
+											<tr>
+												<td class="">250</td>
+												<td colspan="2"><span>270</span><span>275</span></td>
+												<td colspan="3" class="kids"><span>&nbsp;</span><span>150</span><span>210</span></td>
+											</tr>
+											<tr>
+												<td class="">255</td>
+												<td colspan="2"><span>280</span><span>285</span></td>
+												<td colspan="3" class="kids"><span>&nbsp;</span><span>160</span><span>220</span></td>
+											</tr>
+											<tr>
+												<td class="">260</td>
+												<td colspan="2"><span>290</span><span>295</span></td>
+												<td colspan="3" class="kids"><span>&nbsp;</span><span>&nbsp;</span><span>230</span></td>
+											</tr>
+											<tr>
+												<td class="">&nbsp;</td>
+												<td colspan="2"><span>300</span><span>&nbsp;</span></td>
+												<td colspan="3" class="kids"><span>&nbsp;</span><span>&nbsp;</span><span>240</span></td>
+											</tr>
+										</table>
+									</div>
+									<!-- //manual_table -->
+								</div>
+								<!-- //prod_manual -->
+
+							</div>
+							<!-- //if_tb -->
+
+							<div class="revw" style="display:none;">
+								<div class="revw_top">
+									<h4 style="margin-bottom:20px;">상품평 및 제품 평점 요약</h4>
+									<div class="rv">
+										<span class="lev"><div style="width:75%"></div></span>
+										<span class="ree_ft"><strong class="ree_ft">4.9</strong> / 5</span>
+									</div>
+									<p class="desc_pnt"><strong>2개</strong>의 상품에 총 <strong>106개</strong>의 상품평이 있습니다.</p>
+									<ul class="prod_stpc">
+										<li>
+											<strong class="lb">실착용 사이즈</strong>
+											<div class="bar bdrbox">												
+												<div class="map">
+													<div class="pointer" style="left:50%;"></div>
+													<div class="line">
+														<span class="c1"></span>
+														<span class="c2"></span>
+														<span class="c3"></span>
+														<span class="c4"></span>
+														<span class="c5"></span>
+													</div>
+													<ul>
+														<li>작다</li>
+														<li>적당함</li>
+														<li>크다</li>
+													</ul>
+												</div>
+											</div>
+											<!-- //bar -->
+										</li>
+
+										<li>
+											<strong class="lb">발볼 넓이</strong>
+											<div class="bar bdrbox">												
+												<div class="map">
+													<div class="pointer" style="left:50%;"></div>
+													<div class="line">
+														<span class="c1"></span>
+														<span class="c2"></span>
+														<span class="c3"></span>
+														<span class="c4"></span>
+														<span class="c5"></span>
+													</div>
+													<ul>
+														<li>작다</li>
+														<li>적당함</li>
+														<li>크다</li>
+													</ul>
+												</div>
+											</div>
+											<!-- //bar -->
+										</li>
+										<li>
+											<strong class="lb">실제품 컬러</strong>
+											<div class="bar bdrbox">												
+												<div class="map">
+													<div class="pointer" style="left:50%;"></div>
+													<div class="line">
+														<span class="c1"></span>
+														<span class="c2"></span>
+														<span class="c3"></span>
+														<span class="c4"></span>
+														<span class="c5"></span>
+													</div>
+													<ul>
+														<li>어둡다</li>
+														<li>화면과 같다</li>
+														<li>밝다</li>
+													</ul>
+												</div>
+											</div>
+											<!-- //bar -->
+										</li>
+										<li>
+											<strong class="lb">품질 &amp; 만족도</strong>
+											<div class="bar bdrbox">												
+												<div class="map">
+													<div class="pointer" style="left:50%;"></div>
+													<div class="line">
+														<span class="c1"></span>
+														<span class="c2"></span>
+														<span class="c3"></span>
+														<span class="c4"></span>
+														<span class="c5"></span>
+													</div>
+													<ul>
+														<li>불만</li>
+														<li>보통</li>
+														<li>만족</li>
+													</ul>
+												</div>
+											</div>
+											<!-- //bar -->
+										</li>
+
+									</ul>
+									<a href="#" class="revw_wrt btn1">상품평쓰기</a>
+									<h4>상품평</h4>
+									<p class="wrt_desc">*상품평 선택 보기</p>
+
+									<div class="revw_ops">
+										<div class="selc_area">
+											<select class="selc_box2">
+												<option>동일 모델 전체</option>
+												<option>동일 모델 전체</option>
+												<option>동일 모델 전체</option>
+											</select>
+											<select class="selc_box2">
+												<option>상품 평가</option>
+												<option>상품 평가</option>
+												<option>상품 평가</option>
+											</select>
+										</div>
+										<!-- //selc_area -->
+										<a href="#" class="btn1">적용</a>
+									</div>
+									<!-- //revw_ops -->
+								</div>
+								<!-- //revw_top -->
+
+								<div class="revw_list">
+
+									<article class="revw_article">
+										<div class="top">
+											<a href="#">
+												<div class="rv">
+													<span class="lev"><div style="width:75%"></div></span>
+													<span>OHK*** <span>(여, 20대)</span></span>
+												</div>
+												<h5>[V55567]너무 좋습니다!</h5>
+												<p class="color ree_ft">COLOR GREY/WHITE/WHITE/WHITE</p>
+												<p class="date ree_ft">2014.04.11</p>
+											</a>										
+										</div>
+										<div class="cont">
+											<article>
+												발볼이 넓은편인데 작아보여서 이뻐요~정사이즈로 구매<br/>했는데 딱맞는게 편안하기도 해서 맘에 쏙들어요 ^^*<br/>잘 신을게요~ <br/><br/>
+												<img src="/images/reebok/temp_review.jpg" style="width:100%;"><br/>
+											</article>
+											<div class="stpc">
+												<ul class="prod_stpc">
+													<li>
+														<storng class="lb">실착용 사이즈</storng>
+														<div class="bar bdrbox">
+															<div class="map">
+																<div class="pointer" style="left:50%;"></div>
+																<div class="line">
+																	<span class="c1"></span>
+																	<span class="c2"></span>
+																	<span class="c3"></span>
+																	<span class="c4"></span>
+																	<span class="c5"></span>
+																</div>
+																<ul>
+																	<li>작다</li>
+																	<li>적당함</li>
+																	<li>크다</li>
+																</ul>
+															</div>
+														</div>
+														<!-- //bar -->
+													</li>
+													<li>
+														<storng class="lb">발볼 넓이</storng>
+														<div class="bar bdrbox">
+															<div class="map">
+																<div class="pointer" style="left:50%;"></div>
+																<div class="line">
+																	<span class="c1"></span>
+																	<span class="c2"></span>
+																	<span class="c3"></span>
+																	<span class="c4"></span>
+																	<span class="c5"></span>
+																</div>
+																<ul>
+																	<li>작다</li>
+																	<li>적당함</li>
+																	<li>크다</li>
+																</ul>
+															</div>
+														</div>
+														<!-- //bar -->
+													</li>
+													<li>
+														<storng class="lb">실제품 컬러</storng>
+														<div class="bar bdrbox">
+															<div class="map">
+																<div class="pointer" style="left:50%;"></div>
+																<div class="line">
+																	<span class="c1"></span>
+																	<span class="c2"></span>
+																	<span class="c3"></span>
+																	<span class="c4"></span>
+																	<span class="c5"></span>
+																</div>
+																<ul>
+																	<li>어둡다</li>
+																	<li>화면과 같다</li>
+																	<li>밝다</li>
+																</ul>
+															</div>
+														</div>
+														<!-- //bar -->
+													</li>
+													<li>
+														<storng class="lb">품질 &amp; 만족도</storng>
+														<div class="bar bdrbox">
+															<div class="map">
+																<div class="pointer" style="left:50%;"></div>
+																<div class="line">
+																	<span class="c1"></span>
+																	<span class="c2"></span>
+																	<span class="c3"></span>
+																	<span class="c4"></span>
+																	<span class="c5"></span>
+																</div>
+																<ul>
+																	<li>불만</li>
+																	<li>보통</li>
+																	<li>만족</li>
+																</ul>
+															</div>
+														</div>
+														<!-- //bar -->
+													</li>
+												</ul>
+											</div>
+											<!-- //stpc -->
+										</div>
+										<!-- //cont -->										
+									</article>
+
+									<article class="revw_article">
+										<div class="top">
+											<a href="#">
+												<div class="rv">
+													<span class="lev"><div style="width:75%"></div></span>
+													<span>OHK*** <span>(여, 20대)</span></span>
+												</div>
+												<h5>[V55567]너무 좋습니다!</h5>
+												<p class="color ree_ft">COLOR GREY/WHITE/WHITE/WHITE</p>
+												<p class="date ree_ft">2014.04.11</p>
+											</a>										
+										</div>
+										<div class="cont">
+											<article>
+												발볼이 넓은편인데 작아보여서 이뻐요~정사이즈로 구매<br/>했는데 딱맞는게 편안하기도 해서 맘에 쏙들어요 ^^*<br/>잘 신을게요~ <br/><br/>
+												<img src="/images/reebok/temp_review.jpg" style="width:100%;"><br/>
+											</article>
+											<div class="stpc">
+												<ul class="prod_stpc">
+													<li>
+														<storng class="lb">실착용 사이즈</storng>
+														<div class="bar bdrbox">
+															<div class="map">
+																<div class="pointer" style="left:50%;"></div>
+																<div class="line">
+																	<span class="c1"></span>
+																	<span class="c2"></span>
+																	<span class="c3"></span>
+																	<span class="c4"></span>
+																	<span class="c5"></span>
+																</div>
+																<ul>
+																	<li>작다</li>
+																	<li>적당함</li>
+																	<li>크다</li>
+																</ul>
+															</div>
+														</div>
+														<!-- //bar -->
+													</li>
+													<li>
+														<storng class="lb">발볼 넓이</storng>
+														<div class="bar bdrbox">
+															<div class="map">
+																<div class="pointer" style="left:50%;"></div>
+																<div class="line">
+																	<span class="c1"></span>
+																	<span class="c2"></span>
+																	<span class="c3"></span>
+																	<span class="c4"></span>
+																	<span class="c5"></span>
+																</div>
+																<ul>
+																	<li>작다</li>
+																	<li>적당함</li>
+																	<li>크다</li>
+																</ul>
+															</div>
+														</div>
+														<!-- //bar -->
+													</li>
+													<li>
+														<storng class="lb">실제품 컬러</storng>
+														<div class="bar bdrbox">
+															<div class="map">
+																<div class="pointer" style="left:50%;"></div>
+																<div class="line">
+																	<span class="c1"></span>
+																	<span class="c2"></span>
+																	<span class="c3"></span>
+																	<span class="c4"></span>
+																	<span class="c5"></span>
+																</div>
+																<ul>
+																	<li>어둡다</li>
+																	<li>화면과 같다</li>
+																	<li>밝다</li>
+																</ul>
+															</div>
+														</div>
+														<!-- //bar -->
+													</li>
+													<li>
+														<storng class="lb">품질 &amp; 만족도</storng>
+														<div class="bar bdrbox">
+															<div class="map">
+																<div class="pointer" style="left:50%;"></div>
+																<div class="line">
+																	<span class="c1"></span>
+																	<span class="c2"></span>
+																	<span class="c3"></span>
+																	<span class="c4"></span>
+																	<span class="c5"></span>
+																</div>
+																<ul>
+																	<li>불만</li>
+																	<li>보통</li>
+																	<li>만족</li>
+																</ul>
+															</div>
+														</div>
+														<!-- //bar -->
+													</li>
+												</ul>
+											</div>
+											<!-- //stpc -->
+										</div>
+										<!-- //cont -->										
+									</article>
+
+									<article class="revw_article">
+										<div class="top">
+											<a href="#">
+												<div class="rv">
+													<span class="lev"><div style="width:75%"></div></span>
+													<span>OHK*** <span>(여, 20대)</span></span>
+												</div>
+												<h5>[V55567]너무 좋습니다!</h5>
+												<p class="color ree_ft">COLOR GREY/WHITE/WHITE/WHITE</p>
+												<p class="date ree_ft">2014.04.11</p>
+											</a>										
+										</div>
+										<div class="cont">
+											<article>
+												발볼이 넓은편인데 작아보여서 이뻐요~정사이즈로 구매<br/>했는데 딱맞는게 편안하기도 해서 맘에 쏙들어요 ^^*<br/>잘 신을게요~ <br/><br/>
+												<img src="/images/reebok/temp_review.jpg" style="width:100%;"><br/>
+											</article>
+											<div class="stpc">
+												<ul class="prod_stpc">
+													<li>
+														<storng class="lb">실착용 사이즈</storng>
+														<div class="bar bdrbox">
+															<div class="map">
+																<div class="pointer" style="left:50%;"></div>
+																<div class="line">
+																	<span class="c1"></span>
+																	<span class="c2"></span>
+																	<span class="c3"></span>
+																	<span class="c4"></span>
+																	<span class="c5"></span>
+																</div>
+																<ul>
+																	<li>작다</li>
+																	<li>적당함</li>
+																	<li>크다</li>
+																</ul>
+															</div>
+														</div>
+														<!-- //bar -->
+													</li>
+													<li>
+														<storng class="lb">발볼 넓이</storng>
+														<div class="bar bdrbox">
+															<div class="map">
+																<div class="pointer" style="left:50%;"></div>
+																<div class="line">
+																	<span class="c1"></span>
+																	<span class="c2"></span>
+																	<span class="c3"></span>
+																	<span class="c4"></span>
+																	<span class="c5"></span>
+																</div>
+																<ul>
+																	<li>작다</li>
+																	<li>적당함</li>
+																	<li>크다</li>
+																</ul>
+															</div>
+														</div>
+														<!-- //bar -->
+													</li>
+													<li>
+														<storng class="lb">실제품 컬러</storng>
+														<div class="bar bdrbox">
+															<div class="map">
+																<div class="pointer" style="left:50%;"></div>
+																<div class="line">
+																	<span class="c1"></span>
+																	<span class="c2"></span>
+																	<span class="c3"></span>
+																	<span class="c4"></span>
+																	<span class="c5"></span>
+																</div>
+																<ul>
+																	<li>어둡다</li>
+																	<li>화면과 같다</li>
+																	<li>밝다</li>
+																</ul>
+															</div>
+														</div>
+														<!-- //bar -->
+													</li>
+													<li>
+														<storng class="lb">품질 &amp; 만족도</storng>
+														<div class="bar bdrbox">
+															<div class="map">
+																<div class="pointer" style="left:50%;"></div>
+																<div class="line">
+																	<span class="c1"></span>
+																	<span class="c2"></span>
+																	<span class="c3"></span>
+																	<span class="c4"></span>
+																	<span class="c5"></span>
+																</div>
+																<ul>
+																	<li>불만</li>
+																	<li>보통</li>
+																	<li>만족</li>
+																</ul>
+															</div>
+														</div>
+														<!-- //bar -->
+													</li>
+												</ul>
+											</div>
+											<!-- //stpc -->
+										</div>
+										<!-- //cont -->										
+									</article>
+
+									<article class="revw_article">
+										<div class="top">
+											<a href="#">
+												<div class="rv">
+													<span class="lev"><div style="width:75%"></div></span>
+													<span>OHK*** <span>(여, 20대)</span></span>
+												</div>
+												<h5>[V55567]너무 좋습니다!</h5>
+												<p class="color ree_ft">COLOR GREY/WHITE/WHITE/WHITE</p>
+												<p class="date ree_ft">2014.04.11</p>
+											</a>										
+										</div>
+										<div class="cont">
+											<article>
+												발볼이 넓은편인데 작아보여서 이뻐요~정사이즈로 구매<br/>했는데 딱맞는게 편안하기도 해서 맘에 쏙들어요 ^^*<br/>잘 신을게요~ <br/><br/>
+												<img src="/images/reebok/temp_review.jpg" style="width:100%;"><br/>
+											</article>
+											<div class="stpc">
+												<ul class="prod_stpc">
+													<li>
+														<storng class="lb">실착용 사이즈</storng>
+														<div class="bar bdrbox">
+															<div class="map">
+																<div class="pointer" style="left:50%;"></div>
+																<div class="line">
+																	<span class="c1"></span>
+																	<span class="c2"></span>
+																	<span class="c3"></span>
+																	<span class="c4"></span>
+																	<span class="c5"></span>
+																</div>
+																<ul>
+																	<li>작다</li>
+																	<li>적당함</li>
+																	<li>크다</li>
+																</ul>
+															</div>
+														</div>
+														<!-- //bar -->
+													</li>
+													<li>
+														<storng class="lb">발볼 넓이</storng>
+														<div class="bar bdrbox">
+															<div class="map">
+																<div class="pointer" style="left:50%;"></div>
+																<div class="line">
+																	<span class="c1"></span>
+																	<span class="c2"></span>
+																	<span class="c3"></span>
+																	<span class="c4"></span>
+																	<span class="c5"></span>
+																</div>
+																<ul>
+																	<li>작다</li>
+																	<li>적당함</li>
+																	<li>크다</li>
+																</ul>
+															</div>
+														</div>
+														<!-- //bar -->
+													</li>
+													<li>
+														<storng class="lb">실제품 컬러</storng>
+														<div class="bar bdrbox">
+															<div class="map">
+																<div class="pointer" style="left:50%;"></div>
+																<div class="line">
+																	<span class="c1"></span>
+																	<span class="c2"></span>
+																	<span class="c3"></span>
+																	<span class="c4"></span>
+																	<span class="c5"></span>
+																</div>
+																<ul>
+																	<li>어둡다</li>
+																	<li>화면과 같다</li>
+																	<li>밝다</li>
+																</ul>
+															</div>
+														</div>
+														<!-- //bar -->
+													</li>
+													<li>
+														<storng class="lb">품질 &amp; 만족도</storng>
+														<div class="bar bdrbox">
+															<div class="map">
+																<div class="pointer" style="left:50%;"></div>
+																<div class="line">
+																	<span class="c1"></span>
+																	<span class="c2"></span>
+																	<span class="c3"></span>
+																	<span class="c4"></span>
+																	<span class="c5"></span>
+																</div>
+																<ul>
+																	<li>불만</li>
+																	<li>보통</li>
+																	<li>만족</li>
+																</ul>
+															</div>
+														</div>
+														<!-- //bar -->
+													</li>
+												</ul>
+											</div>
+											<!-- //stpc -->
+										</div>
+										<!-- //cont -->										
+									</article>
+
+									<article class="revw_article">
+										<div class="top">
+											<a href="#">
+												<div class="rv">
+													<span class="lev"><div style="width:75%"></div></span>
+													<span>OHK*** <span>(여, 20대)</span></span>
+												</div>
+												<h5>[V55567]너무 좋습니다!</h5>
+												<p class="color ree_ft">COLOR GREY/WHITE/WHITE/WHITE</p>
+												<p class="date ree_ft">2014.04.11</p>
+											</a>										
+										</div>
+										<div class="cont">
+											<article>
+												발볼이 넓은편인데 작아보여서 이뻐요~정사이즈로 구매<br/>했는데 딱맞는게 편안하기도 해서 맘에 쏙들어요 ^^*<br/>잘 신을게요~ <br/><br/>
+												<img src="/images/reebok/temp_review.jpg" style="width:100%;"><br/>
+											</article>
+											<div class="stpc">
+												<ul class="prod_stpc">
+													<li>
+														<storng class="lb">실착용 사이즈</storng>
+														<div class="bar bdrbox">
+															<div class="map">
+																<div class="pointer" style="left:50%;"></div>
+																<div class="line">
+																	<span class="c1"></span>
+																	<span class="c2"></span>
+																	<span class="c3"></span>
+																	<span class="c4"></span>
+																	<span class="c5"></span>
+																</div>
+																<ul>
+																	<li>작다</li>
+																	<li>적당함</li>
+																	<li>크다</li>
+																</ul>
+															</div>
+														</div>
+														<!-- //bar -->
+													</li>
+													<li>
+														<storng class="lb">발볼 넓이</storng>
+														<div class="bar bdrbox">
+															<div class="map">
+																<div class="pointer" style="left:50%;"></div>
+																<div class="line">
+																	<span class="c1"></span>
+																	<span class="c2"></span>
+																	<span class="c3"></span>
+																	<span class="c4"></span>
+																	<span class="c5"></span>
+																</div>
+																<ul>
+																	<li>작다</li>
+																	<li>적당함</li>
+																	<li>크다</li>
+																</ul>
+															</div>
+														</div>
+														<!-- //bar -->
+													</li>
+													<li>
+														<storng class="lb">실제품 컬러</storng>
+														<div class="bar bdrbox">
+															<div class="map">
+																<div class="pointer" style="left:50%;"></div>
+																<div class="line">
+																	<span class="c1"></span>
+																	<span class="c2"></span>
+																	<span class="c3"></span>
+																	<span class="c4"></span>
+																	<span class="c5"></span>
+																</div>
+																<ul>
+																	<li>어둡다</li>
+																	<li>화면과 같다</li>
+																	<li>밝다</li>
+																</ul>
+															</div>
+														</div>
+														<!-- //bar -->
+													</li>
+													<li>
+														<storng class="lb">품질 &amp; 만족도</storng>
+														<div class="bar bdrbox">
+															<div class="map">
+																<div class="pointer" style="left:50%;"></div>
+																<div class="line">
+																	<span class="c1"></span>
+																	<span class="c2"></span>
+																	<span class="c3"></span>
+																	<span class="c4"></span>
+																	<span class="c5"></span>
+																</div>
+																<ul>
+																	<li>불만</li>
+																	<li>보통</li>
+																	<li>만족</li>
+																</ul>
+															</div>
+														</div>
+														<!-- //bar -->
+													</li>
+												</ul>
+											</div>
+											<!-- //stpc -->
+										</div>
+										<!-- //cont -->										
+									</article>
+
+									<article class="revw_article">
+										<div class="top">
+											<a href="#">
+												<div class="rv">
+													<span class="lev"><div style="width:75%"></div></span>
+													<span>OHK*** <span>(여, 20대)</span></span>
+												</div>
+												<h5>[V55567]너무 좋습니다!</h5>
+												<p class="color ree_ft">COLOR GREY/WHITE/WHITE/WHITE</p>
+												<p class="date ree_ft">2014.04.11</p>
+											</a>										
+										</div>
+										<div class="cont">
+											<article>
+												발볼이 넓은편인데 작아보여서 이뻐요~정사이즈로 구매<br/>했는데 딱맞는게 편안하기도 해서 맘에 쏙들어요 ^^*<br/>잘 신을게요~ <br/><br/>
+												<img src="/images/reebok/temp_review.jpg" style="width:100%;"><br/>
+											</article>
+											<div class="stpc">
+												<ul class="prod_stpc">
+													<li>
+														<storng class="lb">실착용 사이즈</storng>
+														<div class="bar bdrbox">
+															<div class="map">
+																<div class="pointer" style="left:50%;"></div>
+																<div class="line">
+																	<span class="c1"></span>
+																	<span class="c2"></span>
+																	<span class="c3"></span>
+																	<span class="c4"></span>
+																	<span class="c5"></span>
+																</div>
+																<ul>
+																	<li>작다</li>
+																	<li>적당함</li>
+																	<li>크다</li>
+																</ul>
+															</div>
+														</div>
+														<!-- //bar -->
+													</li>
+													<li>
+														<storng class="lb">발볼 넓이</storng>
+														<div class="bar bdrbox">
+															<div class="map">
+																<div class="pointer" style="left:50%;"></div>
+																<div class="line">
+																	<span class="c1"></span>
+																	<span class="c2"></span>
+																	<span class="c3"></span>
+																	<span class="c4"></span>
+																	<span class="c5"></span>
+																</div>
+																<ul>
+																	<li>작다</li>
+																	<li>적당함</li>
+																	<li>크다</li>
+																</ul>
+															</div>
+														</div>
+														<!-- //bar -->
+													</li>
+													<li>
+														<storng class="lb">실제품 컬러</storng>
+														<div class="bar bdrbox">
+															<div class="map">
+																<div class="pointer" style="left:50%;"></div>
+																<div class="line">
+																	<span class="c1"></span>
+																	<span class="c2"></span>
+																	<span class="c3"></span>
+																	<span class="c4"></span>
+																	<span class="c5"></span>
+																</div>
+																<ul>
+																	<li>어둡다</li>
+																	<li>화면과 같다</li>
+																	<li>밝다</li>
+																</ul>
+															</div>
+														</div>
+														<!-- //bar -->
+													</li>
+													<li>
+														<storng class="lb">품질 &amp; 만족도</storng>
+														<div class="bar bdrbox">
+															<div class="map">
+																<div class="pointer" style="left:50%;"></div>
+																<div class="line">
+																	<span class="c1"></span>
+																	<span class="c2"></span>
+																	<span class="c3"></span>
+																	<span class="c4"></span>
+																	<span class="c5"></span>
+																</div>
+																<ul>
+																	<li>불만</li>
+																	<li>보통</li>
+																	<li>만족</li>
+																</ul>
+															</div>
+														</div>
+														<!-- //bar -->
+													</li>
+												</ul>
+											</div>
+											<!-- //stpc -->
+										</div>
+										<!-- //cont -->										
+									</article>
+
+									<article class="revw_article">
+										<div class="top">
+											<a href="#">
+												<div class="rv">
+													<span class="lev"><div style="width:75%"></div></span>
+													<span>OHK*** <span>(여, 20대)</span></span>
+												</div>
+												<h5>[V55567]너무 좋습니다!</h5>
+												<p class="color ree_ft">COLOR GREY/WHITE/WHITE/WHITE</p>
+												<p class="date ree_ft">2014.04.11</p>
+											</a>										
+										</div>
+										<div class="cont">
+											<article>
+												발볼이 넓은편인데 작아보여서 이뻐요~정사이즈로 구매<br/>했는데 딱맞는게 편안하기도 해서 맘에 쏙들어요 ^^*<br/>잘 신을게요~ <br/><br/>
+												<img src="/images/reebok/temp_review.jpg" style="width:100%;"><br/>
+											</article>
+											<div class="stpc">
+												<ul class="prod_stpc">
+													<li>
+														<storng class="lb">실착용 사이즈</storng>
+														<div class="bar bdrbox">
+															<div class="map">
+																<div class="pointer" style="left:50%;"></div>
+																<div class="line">
+																	<span class="c1"></span>
+																	<span class="c2"></span>
+																	<span class="c3"></span>
+																	<span class="c4"></span>
+																	<span class="c5"></span>
+																</div>
+																<ul>
+																	<li>작다</li>
+																	<li>적당함</li>
+																	<li>크다</li>
+																</ul>
+															</div>
+														</div>
+														<!-- //bar -->
+													</li>
+													<li>
+														<storng class="lb">발볼 넓이</storng>
+														<div class="bar bdrbox">
+															<div class="map">
+																<div class="pointer" style="left:50%;"></div>
+																<div class="line">
+																	<span class="c1"></span>
+																	<span class="c2"></span>
+																	<span class="c3"></span>
+																	<span class="c4"></span>
+																	<span class="c5"></span>
+																</div>
+																<ul>
+																	<li>작다</li>
+																	<li>적당함</li>
+																	<li>크다</li>
+																</ul>
+															</div>
+														</div>
+														<!-- //bar -->
+													</li>
+													<li>
+														<storng class="lb">실제품 컬러</storng>
+														<div class="bar bdrbox">
+															<div class="map">
+																<div class="pointer" style="left:50%;"></div>
+																<div class="line">
+																	<span class="c1"></span>
+																	<span class="c2"></span>
+																	<span class="c3"></span>
+																	<span class="c4"></span>
+																	<span class="c5"></span>
+																</div>
+																<ul>
+																	<li>어둡다</li>
+																	<li>화면과 같다</li>
+																	<li>밝다</li>
+																</ul>
+															</div>
+														</div>
+														<!-- //bar -->
+													</li>
+													<li>
+														<storng class="lb">품질 &amp; 만족도</storng>
+														<div class="bar bdrbox">
+															<div class="map">
+																<div class="pointer" style="left:50%;"></div>
+																<div class="line">
+																	<span class="c1"></span>
+																	<span class="c2"></span>
+																	<span class="c3"></span>
+																	<span class="c4"></span>
+																	<span class="c5"></span>
+																</div>
+																<ul>
+																	<li>불만</li>
+																	<li>보통</li>
+																	<li>만족</li>
+																</ul>
+															</div>
+														</div>
+														<!-- //bar -->
+													</li>
+												</ul>
+											</div>
+											<!-- //stpc -->
+										</div>
+										<!-- //cont -->										
+									</article>
+
+									<article class="revw_article">
+										<div class="top">
+											<a href="#">
+												<div class="rv">
+													<span class="lev"><div style="width:75%"></div></span>
+													<span>OHK*** <span>(여, 20대)</span></span>
+												</div>
+												<h5>[V55567]너무 좋습니다!</h5>
+												<p class="color ree_ft">COLOR GREY/WHITE/WHITE/WHITE</p>
+												<p class="date ree_ft">2014.04.11</p>
+											</a>										
+										</div>
+										<div class="cont">
+											<article>
+												발볼이 넓은편인데 작아보여서 이뻐요~정사이즈로 구매<br/>했는데 딱맞는게 편안하기도 해서 맘에 쏙들어요 ^^*<br/>잘 신을게요~ <br/><br/>
+												<img src="/images/reebok/temp_review.jpg" style="width:100%;"><br/>
+											</article>
+											<div class="stpc">
+												<ul class="prod_stpc">
+													<li>
+														<storng class="lb">실착용 사이즈</storng>
+														<div class="bar bdrbox">
+															<div class="map">
+																<div class="pointer" style="left:50%;"></div>
+																<div class="line">
+																	<span class="c1"></span>
+																	<span class="c2"></span>
+																	<span class="c3"></span>
+																	<span class="c4"></span>
+																	<span class="c5"></span>
+																</div>
+																<ul>
+																	<li>작다</li>
+																	<li>적당함</li>
+																	<li>크다</li>
+																</ul>
+															</div>
+														</div>
+														<!-- //bar -->
+													</li>
+													<li>
+														<storng class="lb">발볼 넓이</storng>
+														<div class="bar bdrbox">
+															<div class="map">
+																<div class="pointer" style="left:50%;"></div>
+																<div class="line">
+																	<span class="c1"></span>
+																	<span class="c2"></span>
+																	<span class="c3"></span>
+																	<span class="c4"></span>
+																	<span class="c5"></span>
+																</div>
+																<ul>
+																	<li>작다</li>
+																	<li>적당함</li>
+																	<li>크다</li>
+																</ul>
+															</div>
+														</div>
+														<!-- //bar -->
+													</li>
+													<li>
+														<storng class="lb">실제품 컬러</storng>
+														<div class="bar bdrbox">
+															<div class="map">
+																<div class="pointer" style="left:50%;"></div>
+																<div class="line">
+																	<span class="c1"></span>
+																	<span class="c2"></span>
+																	<span class="c3"></span>
+																	<span class="c4"></span>
+																	<span class="c5"></span>
+																</div>
+																<ul>
+																	<li>어둡다</li>
+																	<li>화면과 같다</li>
+																	<li>밝다</li>
+																</ul>
+															</div>
+														</div>
+														<!-- //bar -->
+													</li>
+													<li>
+														<storng class="lb">품질 &amp; 만족도</storng>
+														<div class="bar bdrbox">
+															<div class="map">
+																<div class="pointer" style="left:50%;"></div>
+																<div class="line">
+																	<span class="c1"></span>
+																	<span class="c2"></span>
+																	<span class="c3"></span>
+																	<span class="c4"></span>
+																	<span class="c5"></span>
+																</div>
+																<ul>
+																	<li>불만</li>
+																	<li>보통</li>
+																	<li>만족</li>
+																</ul>
+															</div>
+														</div>
+														<!-- //bar -->
+													</li>
+												</ul>
+											</div>
+											<!-- //stpc -->
+										</div>
+										<!-- //cont -->										
+									</article>
+
+									<article class="revw_article">
+										<div class="top">
+											<a href="#">
+												<div class="rv">
+													<span class="lev"><div style="width:75%"></div></span>
+													<span>OHK*** <span>(여, 20대)</span></span>
+												</div>
+												<h5>[V55567]너무 좋습니다!</h5>
+												<p class="color ree_ft">COLOR GREY/WHITE/WHITE/WHITE</p>
+												<p class="date ree_ft">2014.04.11</p>
+											</a>										
+										</div>
+										<div class="cont">
+											<article>
+												발볼이 넓은편인데 작아보여서 이뻐요~정사이즈로 구매<br/>했는데 딱맞는게 편안하기도 해서 맘에 쏙들어요 ^^*<br/>잘 신을게요~ <br/><br/>
+												<img src="/images/reebok/temp_review.jpg" style="width:100%;"><br/>
+											</article>
+											<div class="stpc">
+												<ul class="prod_stpc">
+													<li>
+														<storng class="lb">실착용 사이즈</storng>
+														<div class="bar bdrbox">
+															<div class="map">
+																<div class="pointer" style="left:50%;"></div>
+																<div class="line">
+																	<span class="c1"></span>
+																	<span class="c2"></span>
+																	<span class="c3"></span>
+																	<span class="c4"></span>
+																	<span class="c5"></span>
+																</div>
+																<ul>
+																	<li>작다</li>
+																	<li>적당함</li>
+																	<li>크다</li>
+																</ul>
+															</div>
+														</div>
+														<!-- //bar -->
+													</li>
+													<li>
+														<storng class="lb">발볼 넓이</storng>
+														<div class="bar bdrbox">
+															<div class="map">
+																<div class="pointer" style="left:50%;"></div>
+																<div class="line">
+																	<span class="c1"></span>
+																	<span class="c2"></span>
+																	<span class="c3"></span>
+																	<span class="c4"></span>
+																	<span class="c5"></span>
+																</div>
+																<ul>
+																	<li>작다</li>
+																	<li>적당함</li>
+																	<li>크다</li>
+																</ul>
+															</div>
+														</div>
+														<!-- //bar -->
+													</li>
+													<li>
+														<storng class="lb">실제품 컬러</storng>
+														<div class="bar bdrbox">
+															<div class="map">
+																<div class="pointer" style="left:50%;"></div>
+																<div class="line">
+																	<span class="c1"></span>
+																	<span class="c2"></span>
+																	<span class="c3"></span>
+																	<span class="c4"></span>
+																	<span class="c5"></span>
+																</div>
+																<ul>
+																	<li>어둡다</li>
+																	<li>화면과 같다</li>
+																	<li>밝다</li>
+																</ul>
+															</div>
+														</div>
+														<!-- //bar -->
+													</li>
+													<li>
+														<storng class="lb">품질 &amp; 만족도</storng>
+														<div class="bar bdrbox">
+															<div class="map">
+																<div class="pointer" style="left:50%;"></div>
+																<div class="line">
+																	<span class="c1"></span>
+																	<span class="c2"></span>
+																	<span class="c3"></span>
+																	<span class="c4"></span>
+																	<span class="c5"></span>
+																</div>
+																<ul>
+																	<li>불만</li>
+																	<li>보통</li>
+																	<li>만족</li>
+																</ul>
+															</div>
+														</div>
+														<!-- //bar -->
+													</li>
+												</ul>
+											</div>
+											<!-- //stpc -->
+										</div>
+										<!-- //cont -->										
+									</article>
+
+									<article class="revw_article">
+										<div class="top">
+											<a href="#">
+												<div class="rv">
+													<span class="lev"><div style="width:75%"></div></span>
+													<span>OHK*** <span>(여, 20대)</span></span>
+												</div>
+												<h5>[V55567]너무 좋습니다!</h5>
+												<p class="color ree_ft">COLOR GREY/WHITE/WHITE/WHITE</p>
+												<p class="date ree_ft">2014.04.11</p>
+											</a>										
+										</div>
+										<div class="cont">
+											<article>
+												발볼이 넓은편인데 작아보여서 이뻐요~정사이즈로 구매<br/>했는데 딱맞는게 편안하기도 해서 맘에 쏙들어요 ^^*<br/>잘 신을게요~ <br/><br/>
+												<img src="/images/reebok/temp_review.jpg" style="width:100%;"><br/>
+											</article>
+											<div class="stpc">
+												<ul class="prod_stpc">
+													<li>
+														<storng class="lb">실착용 사이즈</storng>
+														<div class="bar bdrbox">
+															<div class="map">
+																<div class="pointer" style="left:50%;"></div>
+																<div class="line">
+																	<span class="c1"></span>
+																	<span class="c2"></span>
+																	<span class="c3"></span>
+																	<span class="c4"></span>
+																	<span class="c5"></span>
+																</div>
+																<ul>
+																	<li>작다</li>
+																	<li>적당함</li>
+																	<li>크다</li>
+																</ul>
+															</div>
+														</div>
+														<!-- //bar -->
+													</li>
+													<li>
+														<storng class="lb">발볼 넓이</storng>
+														<div class="bar bdrbox">
+															<div class="map">
+																<div class="pointer" style="left:50%;"></div>
+																<div class="line">
+																	<span class="c1"></span>
+																	<span class="c2"></span>
+																	<span class="c3"></span>
+																	<span class="c4"></span>
+																	<span class="c5"></span>
+																</div>
+																<ul>
+																	<li>작다</li>
+																	<li>적당함</li>
+																	<li>크다</li>
+																</ul>
+															</div>
+														</div>
+														<!-- //bar -->
+													</li>
+													<li>
+														<storng class="lb">실제품 컬러</storng>
+														<div class="bar bdrbox">
+															<div class="map">
+																<div class="pointer" style="left:50%;"></div>
+																<div class="line">
+																	<span class="c1"></span>
+																	<span class="c2"></span>
+																	<span class="c3"></span>
+																	<span class="c4"></span>
+																	<span class="c5"></span>
+																</div>
+																<ul>
+																	<li>어둡다</li>
+																	<li>화면과 같다</li>
+																	<li>밝다</li>
+																</ul>
+															</div>
+														</div>
+														<!-- //bar -->
+													</li>
+													<li>
+														<storng class="lb">품질 &amp; 만족도</storng>
+														<div class="bar bdrbox">
+															<div class="map">
+																<div class="pointer" style="left:50%;"></div>
+																<div class="line">
+																	<span class="c1"></span>
+																	<span class="c2"></span>
+																	<span class="c3"></span>
+																	<span class="c4"></span>
+																	<span class="c5"></span>
+																</div>
+																<ul>
+																	<li>불만</li>
+																	<li>보통</li>
+																	<li>만족</li>
+																</ul>
+															</div>
+														</div>
+														<!-- //bar -->
+													</li>
+												</ul>
+											</div>
+											<!-- //stpc -->
+										</div>
+										<!-- //cont -->										
+									</article>									
+								</div>
+								<!-- //revw_list -->
+								<div class="paging">
+									<a class="prev" href="#"></a>
+									<a class="on" href="#">1</a>
+									<a href="#">2</a>
+									<a href="#">3</a>
+									<a href="#">4</a>
+									<a href="#">5</a>
+									<a class="next" href="#"></a>
+								</div>
+
+
+							</div>
+							<!-- //revw -->
+						</div>						
+						<!-- //cont -->
+					</div>
+					<!-- //info_revw_box -->
+
+					<div class="prod_service">
+						<ul>
+							<li class="m1">
+								<a href="#">배송, 반품안내</a>
+								<div class="cont">													
+									리복 온라인 스토어에서는 고객서비스를 지속적으로
+									향상시키는데 도움이 되는 여러분의 모든 의견을 소중히 합니다.<br>
+									주문/배송등에 문제가 있으신 경우에는 아래 고객센터로
+									연락 주시면 성심껏 답변을 드리겠습니다.<br>
+									<span class="txt4">- Phone: <a href="tel:1588-7324">1588-7324</a></span><br>
+									<span class="txt4">- eMail: Reeclub_Korea@Reebok.com</span><br>
+									<span class="txt4">- URL: shop.reebok.co.kr</span><br><br>
+							
+									<p class="midtit txt4">배송안내</p>
+									1. 배송은 구매자께서 선택하신 배송지주소에서 가까운
+										오프라인매장에서 배송됩니다.<br>
+									2. 복수의 상품을 한번에 결제하신 경우 빠른 배송을 위해
+										각각의 상품이 따로 배송될 수 있습니다. 따로 배송되는
+										경우에도 배송비는 추가되지 않습니다.<br>
+									3. 배송은 입금확인일로부터 주중에는 5일 이내에 배송해
+										드립니다. 단, 주말/공휴일의 경우 또는 도서산간지역의 경우
+										1-2일 더 소요될 수 있습니다.<br>
+									4. 구매금액이 5만원 이상인 경우 무료로 배송해 드리며
+										5만원 미만 주문 시에는 배송료 2,500원이 별도 부과됩니다.
+										단, 도서/산간 지역은 배송비가 추가 될 수 있습니다.<br>
+									5. 배송진행상황은 [마이페이지 &gt; 주문배송조회]에서 확인하실
+										수 있습니다. <br><br>
+									<p class="midtit txt4">반품안내</p>
+									1. 반품은 배송완료일로부터 7일 이내에 신청해 주십시오.<br>
+										단, 다음과 같은 경우 반품신청이 불가능 할 수 있습니다.<br>
+										<ul class="cont_list">
+											<li>- 반품요청기간이 지난 경우</li>
+											<li>- 포장을 개봉하였거나 포장이 훼손되어(상품의 Tag 분리/분실, 비닐포장 훼손, 신발박스 훼손 등) 상품가치가 현저히 감소한 경우</li>
+											<li>- 구매자의 책임있는 사유로 상품 등이 멸실 또는 훼손된 경우</li>
+											<li>- 구매자의 사용 또는 일부 소비에 의하여 상품가치가 현저히 감소한 경우</li>
+											<li>- 기간의 경과에 의하여 재판매가 곤란할 정도로 상품가치가 현저히 감소한 경우</li>
+											<li>- 주문확인 후 상품제작에 들어가는 주문제작 상품인 경우</li>
+											<li>- 복제가 가능한 상품 등의 포장을 훼손한 경우</li>
+										</ul><br>
+									2. 반품은 아래 방법으로 진행해 주셔야 빠른 환불처리가 가능합니다.<br>
+										<ul class="cont_list">
+											<li>- <span class="txt_em">[로그인 &gt; 마이페이지 &gt; 나의 쇼핑내역 &gt; 취소/반품 조회]</span> 페이지에서 신청해 주셔야 합니다.</li>
+											<li>- <span class="txt_em">고객 단순변심</span>에 의한 반품 시 <span class="txt_em">왕복 배송비</span>를 부담하셔야 합니다.</li>
+											<li>- 상품불량/오배송으로 인한 반품 시 택배비는 리복에서 부담하며 반드시 한진 택배를 이용하셔야 합니다.</li>
+											<li>- 반송하실 상품은 배송된 <span class="txt_em">오프라인매장</span>으로 반품해 주셔야 합니다. 오프라인매장주소는 배송박스를 참조해 주십시오.
+											<br>반품 회수 택배사는 <span class="txt_em">한진 택배</span>이며, 다른 택배회사를 이용하여 반품하는 경우 환불이 지연될 수 있습니다.
+											<br>다른 택배 회사를 통해 반품 시 <span class="txt_em">고객센터(1588-7324)</span>로 통화 후에 택배비 고객 부담으로 진행해주셔야 합니다.
+											</li>
+											<li>- 기타 다른 방법으로 반품하시는 경우 환불처리가 지연될 수 있습니다.</li>
+											<li>- 부분 반품을 하는 경우, 반품하지 않는 상품의 금액이 5만원 이상이면 반품 배송비만 부담하시면 됩니다. 상품 금액이 <span class="txt_em">5만원 미만</span>일 경우에는 <span class="txt_em">왕복 배송비를 부담</span>해주셔야 합니다.</li>
+										</ul><br>
+									
+									<p class="midtit txt4">교환안내</p>
+									리복 공식 온라인 스토어에서는 구매자가 선택한 배송지 주소에서 가까운 오프라인 매장에서 배송하므로, 교환은 배송완료 후 7일 이내에 해당상품을 반품하신 후 재주문 하여야 합니다.<br>
+									교환의 경우 사이즈 교환 건만 가능하며, 배송한 매장에 동일한 상품 재고 보유 시 가능합니다.<br><br>						
+									교환 진행 시 교환 배송비는 고객님이 부담하셔야 합니다. (단, 상품하자는 제외됩니다.)<br>
+									주문 상품 교환하실 경우 배송된 매장별로 사이즈 교환 시 배송비는 각각 왕복 배송비 부담하셔야 합니다.<br><br>
+											
+									<p class="midtit txt4">주의사항</p>
+									미성년자가 상품을 구매하시는 경우 법정대리인이 동의하지
+									않으면 미성년자 본인 또는 법정대리인이 구매를 취소할 수
+									있습니다. <br><br>
+								</div>
+							</li>
+							<li class="m2">
+								<a href="#">세탁 취급 유의사항</a>
+								<div class="cont">
+					                <div class="safe_wrap">
+					                    <div class="safe_mtab">
+					                        <ul>
+					                            <li><a onclick="safeBigTab(this);return false" class="on" href="#">신발</a></li>
+					                            <li><a onclick="safeBigTab(this);return false" href="#">의류</a></li>
+					                            <li style="margin-right:0;"><a onclick="safeBigTab(this);return false" href="#">용품</a></li>
+					                        </ul>
+					                    </div>
+					                    <div class="safe_body">
+
+					                        <div style="display: none;" class="safebox1">
+					                            <ul>
+					                                <li class="first">
+					                                    <a onclick="safeTabView(1,this);return false" href="#">천연가죽</a>
+					                                    <div class="cont"><img alt="천연가죽" src="/images/reebok/bg_shoes_01.jpg"></div>
+					                                </li>
+					                                <li>
+					                                    <a onclick="safeTabView(1,this);return false" href="#">섬유제품 또는 합성제품</a>
+					                                    <div class="cont"><img alt="섬유제품 또는 합성제품" src="/images/reebok/bg_shoes_02.jpg"></div>
+					                                </li>
+													
+					                            </ul>
+					                        </div>
+
+					                        <div class="safebox2" style="display: none;">
+					                            <ul>
+					                                <li class="first">
+					                                    <a onclick="safeTabView(2,this);return false" href="#" class="">100% 면</a>
+					                                    <div class="cont" style="display: none;"><img alt="100% 면" src="/images/reebok/bg_app_01.jpg"></div>
+					                                </li>
+					                                <li>
+					                                    <a onclick="safeTabView(2,this);return false" href="#" class="">100% 폴리에스터(니트) / 100% 나일론(니트)</a>
+					                                    <div class="cont" style="display: none;"><img alt="100% 폴리에스터(니트) / 100% 나일론(니트)" src="/images/reebok/bg_app_02.jpg"></div>
+					                                </li>
+					                                <li>
+					                                    <a onclick="safeTabView(2,this);return false" href="#" class="">100% 폴리에스터(우븐) / 100% 나일론(우븐)</a>
+					                                    <div class="cont" style="display: none;"><img alt="100% 폴리에스터(우븐) / 100% 나일론(우븐)" src="/images/reebok/bg_app_03.jpg"></div>
+					                                </li>
+					                                <li>
+					                                    <a onclick="safeTabView(2,this);return false" href="#" class="">울</a>
+					                                    <div class="cont" style="display: none;"><img alt="울" src="/images/reebok/bg_app_04.jpg"></div>
+					                                </li>
+					                                <li>
+					                                    <a onclick="safeTabView(2,this);return false" href="#" class="">패딩</a>
+					                                    <div class="cont" style="display: none;"><img alt="패딩" src="/images/reebok/bg_app_05.jpg"></div>
+					                                </li>
+					                                <li>
+					                                    <a onclick="safeTabView(2,this);return false" href="#" class="">다운</a>
+					                                    <div class="cont" style="display: none;"><img alt="다운" src="/images/reebok/bg_app_06.jpg"></div>
+					                                </li>
+					                                <li>
+					                                    <a onclick="safeTabView(2,this);return false" href="#" class="">구스다운</a>
+					                                    <div class="cont" style="display: none;"><img alt="구스다운" src="/images/reebok/bg_app_07.jpg"></div>
+					                                </li>
+					                                <li>
+					                                    <a onclick="safeTabView(2,this);return false" href="#">스판덱스</a>
+					                                    <div class="cont" style="display: none;"><img alt="스판덱스" src="/images/reebok/bg_app_08.jpg"></div>
+					                                </li>
+					                            </ul>
+					                        </div>
+
+					                        <div class="safebox3" style="display: block;">
+					                            <ul>
+					                                <li class="first">
+					                                    <a onclick="safeTabView(3,this);return false" href="#" class="">모자</a>
+					                                    <div class="cont" style="display: none;"><img alt="모자" src="/images/reebok/bg_acc_01.jpg"></div>
+					                                </li>
+					                                <li>
+					                                    <a onclick="safeTabView(3,this);return false" href="#" class="">가방</a>
+					                                    <div class="cont" style="display: none;"><img alt="가방" src="/images/reebok/bg_acc_02.jpg"></div>
+					                                </li>
+					                                <li>
+					                                    <a onclick="safeTabView(3,this);return false" href="#" class="">밴드류 워머</a>
+					                                    <div class="cont" style="display: none;"><img alt="밴드류 워머" src="/images/reebok/bg_acc_03.jpg"></div>
+					                                </li>
+					                                <li>
+					                                    <a onclick="safeTabView(3,this);return false" href="#">요가 매트</a>
+					                                    <div class="cont" style="display: none;"><img alt="요가 매트" src="/images/reebok/bg_acc_04.jpg"></div>
+					                                </li>
+					                                <li>
+					                                    <a onclick="safeTabView(3,this);return false" href="#" class="">니트 글러브</a>
+					                                    <div class="cont" style="display: none;"><img alt="니트 글러브" src="/images/reebok/bg_acc_05.jpg"></div>
+					                                </li>
+					                                <li>
+					                                    <a onclick="safeTabView(3,this);return false" href="#" class="">양말</a>
+					                                    <div class="cont" style="display: none;"><img alt="양말" src="/images/reebok/bg_acc_06.jpg"></div>
+					                                </li>
+					                                <li>
+					                                    <a onclick="safeTabView(3,this);return false" href="#">가죽 제품류</a>
+					                                    <div class="cont" style="display: none;"><img alt="가죽 제품류" src="/images/reebok/bg_acc_07.jpg"></div>
+					                                </li>
+													
+					                            </ul>
+					                        </div>
+
+					                    </div>
+					                </div>
+					            </div>
+							</li>
+							<li class="m3">
+								<a href="#">품질 보증 AS 정보</a>
+								<div class="cont">
+									<img src="/images/reebok/bg_qual_shoes.jpg" alt="" style="width:100%;"/>
+								</div>
+							</li>
+						</ul>
+					</div>
+
+				</section>
+			</section>
+			<!-- //contents -->
+
+			<footer id="footer">
+				<div style="border-bottom:5px solid #d0d0d6;"><a href="#"><img src="/images/reebok/bg_reeclub_bnn.jpg" alt="" style="width:100%;"/></a></div>
+				<section class="fmenu">
+					<ul>
+						<li><a href="#">검색</a></li>
+						<li><a href="#">매장찾기</a></li>
+						<li><a href="#">마이페이지</a></li>
+						<li><a href="#">고객센터</a></li>
+					</ul>
+					<ul>
+						<li><a href="#">PC 사이트</a></li>
+						<li><a href="#">홈</a></li>
+						<li><a href="#">리클럽</a></li>
+					</ul>
+				</section>				
+				<address>					
+					<div class="ft1">
+						<p class="lgo"><img src="/images/reebok/bg_logo_f.gif" alt="reebok"/></p>
+						<span>리복 공식 온라인 스토어</span>
+					</div>
+					<div class="ft2">
+						<p>137-955 서울특별시 서초구 서초대로 74길 4, 삼성생명 서초타워 7층</p>
+						<p>대표이사 : 쟝 미쉘 그라니에   교환 및 반품 문의 (본사로 반품불가)</p>
+						<p>온라인스토어 고객센터 1588-7324 (평일 09:00 – 18:00, 점심시간 12:00 – 13:00)</p>
+						<p>제품 수선문의 : 리복 고객만족센터 080-344-3732 (평일 09:00 – 18:00)</p>
+						<p>사업자 등록번호 : 214-81-07412   통신판매업신고 : 2007-서울서초-10391</p>
+						<p>개인정보 보호책임자 : 황선영<a target="_blank" href="#" class="lnk_pc">개인정보취급방침 확인</a></p>
+					</div>
+					<div class="lnk">
+						<a target="_blank" href="http://shop.reebok.co.kr/RPF010107.action?gubn=1">구매이용약관</a>
+						<span>|</span>
+						<a target="_blank" href="http://www.ftc.go.kr/info/bizinfo/communicationViewPopup.jsp?wrkr_no=2148107412">공정거래 위원회 사업자 신원정보 확인</a>
+						<span>|</span>
+						<a target="_blank" href="http://m.reebok.co.kr/Common/CertifiedInfoPop.jsp">채무지급보증안내 확인</a>
+					</div>					
+				</address>				
+
+			</footer>
+		</section>
+		<!-- //container -->
+		
+	</seciton>
+	<!-- //wrap -->
+
+</body>
+
+</html>

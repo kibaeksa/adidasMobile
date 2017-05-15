@@ -1,0 +1,610 @@
+ <!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+	<meta name="format-detection" content="telephone=no">
+	<meta http-equiv="x-rim-auto-match" content="none">
+
+	<link href="/css/adidas/style.css" type="text/css" rel="stylesheet" />
+	<link href="/css/adidas/fonts.css" type="text/css" rel="stylesheet" />
+
+	<style type="text/css">
+
+		.mirun_wrap{
+			background: #f2f2f2;
+		}
+
+		.mirun_wrap h2.step_title{
+			text-align: center;
+			color: #333;
+			text-align: center;
+			font:13px/15px 'NotoSansKRBold';
+		}
+
+		.mirun_wrap header{
+			height:50px;
+			background: #47328f;
+			text-align: center;
+		}
+
+		.mirun_wrap header h1{
+			color: #fff;
+			font:15px/50px 'NotoSansKR';
+			background: #8d2c81;
+		}
+
+		.mirun_wrap header .close_x_btn{
+			width:50px;
+			height:50px;
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+
+		.mirun_wrap header .close_x_btn::before,
+		.mirun_wrap header .close_x_btn::after{
+			background: #fff;
+		}
+
+		.mirun_wrap .contents{
+			position: relative;
+			padding: 15px;
+		}
+
+		.mirun_wrap .li_hypn li{
+			margin-bottom: 3px;
+		    font-size: 11px;
+		    line-height: 14px;
+		    color: #777;
+		}
+
+		.mirun_wrap .li_hypn li.s::before{
+			top:3px;
+			content:'*';
+		}
+
+		.mirun_wrap .contents .step{
+			display: -webkit-flex;
+			display: -moz-flex;
+			display: -ms-flex;
+			display: -o-flex;
+			display: flex;
+		}
+
+		.mirun_wrap .contents .step li{
+			width:100%;
+			min-height: 20px;
+			background: #f9f9f9;
+			color: #adadad;
+			font-size: 12px;
+		}
+
+		.mirun_wrap .contents .step li.on{
+			background: #fff;
+			color: #000;
+		}
+
+		.mirun_wrap .contents .tit_box{
+			padding: 15px 0;
+			border-bottom: 1px dotted  #a9a9a9;
+		}
+
+		.mirun_wrap .contents .tit_box h2{
+			margin-bottom: 5px;
+			font:17px/19px 'NotoSansKRBold';
+			color: #cb2b6f;
+			text-align: center;
+			letter-spacing:-0.75px;
+			text-align: center;
+		}
+
+		.mirun_wrap .contents .tit_box p{
+			font-size: 12px;
+			line-height: 16px;
+			color: #656564;
+			letter-spacing:-0.75px;
+			text-align: center;
+		}
+
+		.mirun_wrap .contents dl.desc_box{
+
+		}
+
+		.mirun_wrap .contents dl.desc_box dt{
+			margin-bottom: 5px;
+			color: #000;
+			font-size: 12px;
+			font-weight: bold;
+		}
+
+		.mirun_wrap .contents dl.desc_box dt a{
+			color: #666;
+			margin-left: 10px;
+			text-decoration: underline;
+			font-size: 11px;
+		}
+
+		.mirun_wrap .contents dl.desc_box dd li{
+			margin-bottom: 3px;
+			font-size: 11px;
+			line-height:14px;
+			color: #777;
+		}
+
+		.mirun_wrap .contents dl.desc_box dd li:last-child{
+			margin-bottom: 0;
+		}
+
+		.mirun_wrap .contents dl.desc_box dd li.s::before{
+			content:'*';
+		}
+
+		.mirun_wrap .contents .agree_wrapper .tit{
+			position: relative;
+			margin-bottom: 10px;
+		}
+
+		.mirun_wrap .contents .agree_wrapper .tit h3{
+			display: inline-block;
+			color: #000;
+		    font-size: 12px;
+		    font-weight: bold;
+		    line-height: 15px;
+		}
+
+		.mirun_wrap .contents .agree_wrapper .tit .view{
+			margin-left: 5px;
+			color: #666;
+			text-decoration: underline;
+			font-size: 11px;
+		}
+
+		.mirun_wrap .contents .agree_wrapper .tit .check_box{
+			margin-top: 5px;
+			/*position: absolute;*/
+			/*top: 0;*/
+			/*right: 0;*/
+		}
+
+		.mirun_wrap .contents .agree_wrapper ol li{
+			position: relative;
+			min-height:30px;
+			margin-bottom: 1px;
+			background: #fff;
+		}
+
+		.mirun_wrap .contents .agree_wrapper ol li .check_box{
+			position: absolute;
+			top:50%;
+			right:10px;
+			transform:translateY(-50%);
+			-webkit-transform:translateY(-50%);
+		}
+
+		.mirun_wrap .contents .agree_wrapper ol li span{
+			padding: 8px 55px 8px 10px;
+			display: block;
+			line-height: 14px;
+			box-sizing:border-box;
+			-webkit-box-sizing:border-box;
+		}
+
+		.mirun_wrap .contents .agree_wrapper ol li span strong{
+			font-weight: bold;
+		}
+
+		.mirun_wrap .contents .agree_wrapper ol li span .view{
+			display: inline-block;
+			color: #666;
+			text-decoration: underline;
+		}
+
+		.check_box input[type="checkbox"],
+		.check_box input[type="radio"]{
+			position: absolute;
+			left: -9999px;
+		}
+
+		.check_box label{
+			padding-right:20px;
+			/*padding-top: 2px;*/
+			display: inline-block;
+			position: relative;
+			box-sizing:border-box;
+			-webkit-box-sizing:border-box;
+			line-height: 13px;
+		}
+
+		.check_box.all_check label{
+			font-weight: bold;
+		}
+
+		.check_box label::before,
+		.check_box label::after{
+			content:'';
+			display: block;
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+
+		.check_box label::before{
+			width:16px;
+			height:16px;
+			background: #ccc;
+			border-radius:15px;
+		}
+
+		.check_box label::after{
+			width: 7px;
+			height: 2px;
+			border-bottom: 1px solid  #fff;
+			border-left: 1px solid  #fff;
+			transform:rotate(-45deg);
+			-webkit-transform:rotate(-45deg);
+			top:6px;
+    		right:4px;
+		}
+
+		.check_box input:checked + label::before{
+			background: #cb2b6f;
+		}
+
+		.btn_area{
+			padding-top: 15px;
+			text-align: center;
+		}
+
+		.btn_area a{
+			width:120px;
+			height: 30px;
+			display: inline-block;
+			text-align: center;
+			font-size: 13px;
+			line-height: 30px;
+			background: #cb2b6f;
+			color: #fff;
+		}
+
+		.insurance th{
+			padding-left:10px;
+			background: #fff;
+			border-right:1px solid #eaeaea;
+			text-align: left;
+			vertical-align: middle;
+			font-size: 11px;
+			line-height: 16px;
+		}
+
+		.insurance td{
+			padding: 10px;
+			background: #fff;
+			border-bottom:1px solid #eaeaea;
+		}
+
+		.insurance tr:last-child td{
+			border-bottom-width: 0;
+		}
+
+		.insurance td .b1{
+			margin-bottom:10px;
+		}
+
+		.insurance td .b1 input{
+			margin: 0;
+		}
+
+		.insurance td .b1 input[type="text"]{
+			width:50px;
+			display: inline-block;
+			margin-left: 5px;
+		}
+
+		.insurance td .b2 span{
+			display: block;
+			margin-bottom: 3px;
+		}
+
+	</style>
+
+
+	<script type="text/javascript" src="/js/jquery-1.12.0.min.js"></script>
+	<script type="text/javascript" src="/js/swipe.js"></script>
+	<script type="text/javascript" src="/js/owl.carousel.js"></script>
+
+	<title>아디다스 모바일</title>
+</head>
+<body>
+	<div id="wrap">
+		<div class="mirun_wrap">
+			<header>
+				<h1>신청서 작성</h1>
+				<a href="javascript:void(0)" class="close_x_btn"></a>
+			</header>
+
+			<div class="contents">
+				<div class="box">
+					<h2 class="step_title">STEP 01. 참가자 유의사항 및 동의서약서</h2>
+				</div>
+				<!-- //box -->
+				<div class="box">
+
+					<div class="tit_box" style="margin-bottom: 15px;">
+						<h2>참가자 유의사항 및 동의서약서</h2>
+						<p>참가를 원하시는 분은 아래의 참가자 유의사항과 동의서약서를 읽고 동의해 주시기 바랍니다.</p>
+					</div>
+
+					<dl class="desc_box" style="margin-bottom: 15px;">
+						<dt>참가자 유의사항 <a href="">자세히 보기</a></dt>
+						<dd>
+							<ul class="li_hypn">
+								<li>어떤 이유를 불문하고 가명, 차명을 통한 신청은 불가능합니다.</li>
+								<li>신청 후 참가권양도도 불가능합니다. (가명, 차명, 참가권양도는 본인의 안전 뿐 아니라 대회 진행상 행정에도 많은 어려움을 초래합니다)</li>
+								<li>가명, 차명, 참가권양도 사실이 밝혀질 경우 추후 참가제한 등 불이익을 당할 수 있음을 유념해주십시오.</li>
+								<li>신청 접수 후 '참가확인/수정'을 통해 접수가 완료되었는지 확인하십시오. 중간에서 멈출 경우 신청이 완료되지 않습니다.</li>
+							</ul>
+						</dd>
+					</dl>
+
+					<!-- 170116 개인정보보호정책 내용  -->
+					<div class="agree_wrapper" style="margin-bottom: 20px;">
+						<ol>
+							<li>
+								<span>
+                  <!-- 170118 내용보기에 링크추가 -->
+									<span style="font-size:12px;font-weight:bold;margin-bottom:5px;padding:0;">개인정보 보호정책 (필수) <a href="http://m.adidas.co.kr/upload/fckeditor/temp/image/S_I_M_2017_terms.html" class="view" target="_blank">내용보기</a></span>
+									<strong>보험업법 시행령 제102조에 근거하여 보험가입을 위한 주민번호 수집은 가능합니다.</strong>
+								</span>
+								<div class="check_box">
+									<input type="checkbox" id="agree2_1">
+									<label for="agree2_1">동의</label>
+								</div>
+							</li>
+						</ol>
+					</div>
+					<!-- //170116 -->
+
+					<div class="agree_wrapper" style="margin-bottom: 15px;">
+						<div class="tit">
+              <!-- 170118 내용보기에 링크추가 -->
+							<h3>가입 설계를 위한 개인(신용) 정보 처리 동의서 (필수)<a href="http://www.seoul-marathon.com/apply/pop_a1.html" class="view" target="_blank">내용보기</a></h3>
+							<div class="check_box all_check">
+								<input type="checkbox" id="agree1_all">
+								<label for="agree1_all">전체 동의</label>
+							</div>
+						</div>
+						<ol>
+							<li>
+								<span>1. 개인(신용)정보의 수집/이용에 관한 사항</span>
+								<div class="check_box">
+									<input type="checkbox" id="agree1_1">
+									<label for="agree1_1">동의</label>
+								</div>
+							</li>
+							<li>
+								<span>2. 개인(신용)정보의 조회에 관한 사항</span>
+								<div class="check_box">
+									<input type="checkbox" id="agree1_2">
+									<label for="agree1_2">동의</label>
+								</div>
+							</li>
+							<li>
+								<span>3. 개인(신용)정보의 제공에 관한 사항</span>
+								<div class="check_box">
+									<input type="checkbox" id="agree1_3">
+									<label for="agree1_3">동의</label>
+								</div>
+							</li>
+							<li>
+								<span>4. 민감정보 및 고유식별정보의 처리에 관한 사항</span>
+								<div class="check_box">
+									<input type="checkbox" id="agree1_4">
+									<label for="agree1_4">동의</label>
+								</div>
+							</li>
+						</ol>
+					</div>
+					<!-- //agree_wrapper -->
+
+
+					<div class="agree_wrapper" style="margin-bottom:20px;">
+						<div class="tit">
+              <!-- 170118 내용보기에 링크추가 -->
+							<h3>계약의 체결 및 이행 등을 위한 개인(신용) 정보 수집, 이용, 조회, 제공 동의서 (필수)<a href="http://www.seoul-marathon.com/apply/pop_a2.html" class="view" target="_blank">내용보기</a></h3>
+							<!-- 170116 전체동의 추가 -->
+							<div class="check_box all_check">
+								<input type="checkbox" id="agree1_all">
+								<label for="agree1_all">전체 동의</label>
+							</div>
+							<!-- //170116 -->
+						</div>
+						<ol>
+							<li>
+								<span>1. 개인(신용)정보의 수집/이용에 관한 사항</span>
+								<div class="check_box">
+									<input type="checkbox" id="agree2_3_1">
+									<label for="agree2_3_1">동의</label>
+								</div>
+							</li>
+							<li>
+								<span>2. 개인(신용)정보의 조회에 관한 사항</span>
+								<div class="check_box">
+									<input type="checkbox" id="agree2_3_2">
+									<label for="agree2_3_2">동의</label>
+								</div>
+							</li>
+							<li>
+								<span>3. 개인(신용)정보의 제공에 관한 사항</span>
+								<div class="check_box">
+									<input type="checkbox" id="agree2_3_3">
+									<label for="agree2_3_3">동의</label>
+								</div>
+							</li>
+							<li>
+								<span>4. 민감정보 및 고유식별정보의 처리에 관한 사항</span>
+								<div class="check_box">
+									<input type="checkbox" id="agree2_3_4">
+									<label for="agree2_3_4">동의</label>
+								</div>
+							</li>
+						</ol>
+					</div>
+					<!-- //agree_wrapper -->
+
+
+					<div class="agree_wrapper" style="margin-bottom:20px;">
+						<div class="tit">
+              <!-- 170118 내용보기에 링크추가 -->
+							<h3>마케팅 및 광고 활동 동의서 (선택)<a href="http://www.seoul-marathon.com/apply/pop_a4.html" class="view" target="_blank">내용보기</a></h3>
+							<!-- 170116 전체동의 추가 -->
+							<div class="check_box all_check">
+								<input type="checkbox" id="agree1_all">
+								<label for="agree1_all">전체 동의</label>
+							</div>
+							<!-- //170116 -->
+						</div>
+						<ol>
+							<li>
+								<span>1. 개인(신용)정보의 수집ㆍ이용에 관한 사항</span>
+								<div class="check_box">
+									<input type="checkbox" id="agree2_3_1">
+									<label for="agree2_3_1">동의</label>
+								</div>
+							</li>
+							<li>
+								<span>2. 마케팅 및 광고 활용에 관한 사항</span>
+								<div class="check_box">
+									<input type="checkbox" id="agree2_3_2">
+									<label for="agree2_3_2">동의</label>
+								</div>
+							</li>
+						</ol>
+					</div>
+					<!-- //agree_wrapper -->
+
+
+					<div class="agree_wrapper" style="margin-bottom: 15px;">
+						<ol>
+							<li>
+								<!-- 170116 (필수) 텍스트 추가 -->
+								<span><strong>상해 및 질병 사망 보험에 가입하는 것을 동의합니다. (필수)</strong></span>
+								<div class="check_box">
+									<input type="checkbox" id="agree2_4">
+									<label for="agree2_4">동의</label>
+								</div>
+							</li>
+						</ol>
+					</div>
+					<!-- //agree_wrapper -->
+
+
+				</div>
+				<!-- //box -->
+
+				<!--
+				170116-2
+				style 추가 : margin-bottom:20px;
+				 -->
+				<div class="box" style="margin-bottom: 20px;">
+
+
+					<!--
+					170116-2
+					style 변경 : margin-bottom:20px; => margin-bottom:10px;
+					 -->
+					<div class="agree_wrapper" style="margin-bottom:10px;">
+						<div class="tit">
+              <!-- 170118 내용보기 링크 수정 -->
+							<h3 style="margin-bottom:5px;font-size:11px;">보험 가입 약관 확인 및 정보 입력 동의 (필수)<!-- <a href="#" class="view">내용보기</a> --></h3>
+							<p style="font-size:11px;line-height:14px;margin-bottom:5px;color:#aaa;">참가자 분들의 정보를 소중히 다루고 있으며 본인 동의 없이는 외부에 제공 하지 않습니다. 각 정보를 정확히 입력 바랍니다.</p>
+						</div>
+						<ol>
+							<li>
+								<span>
+									<span style="font-size:12px;font-weight:bold;margin-bottom:5px;padding:0;">보험가입 동의</span>
+									<strong>보험가입을 위한 주민등록번호 수집에 동의 합니다. 주민번호는보험 가입에만 사용됩니다  </strong>
+								</span>
+								<div class="check_box">
+									<input type="checkbox" id="agree2_1">
+									<label for="agree2_1">동의</label>
+								</div>
+							</li>
+						</ol>
+					</div>
+					<!-- //agree_wrapper -->
+
+					<!--
+					170116-2
+					안내문구 추가
+					 -->
+					<p style="font-size:11px;line-height:14px;color:#cb2b6f;">* 주민등록번호는 보험가입 용도로만 사용하기 위해 보험사에 전달하며, 행사 종료 후 일괄 폐기됩니다. </p>
+				</div>
+				<!-- //box -->
+
+				<div class="box">
+					<table cellpadding="0" cellspacing="0" width="100%" class="insurance">
+						<colgroup>
+							<col width="35%">
+							<col width="65%">
+						</colgroup>
+						<tr>
+							<th rowspan="2">국적&amp;<br>보험가입용 정보</th>
+							<td>
+								<p class="b1">
+									<input type="radio">
+									<label for="">내국인 (대한민국)</label>
+								</p>
+								<p class="b2">
+									<span>내국인용 보험가입용 정보</span>
+									<div style="margin:7px 0 3px;font-size: 11px;letter-spacing:0;">880625 -</div>
+                  <input type="password" placeholder="주민등록번호 뒷자리를 입력해주세요/">
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p class="b1">
+									<input type="radio">
+									<label for="">외국인</label>
+									<input type="text" placeholder="국적입력">
+								</p>
+								<p class="b2">
+									<span style="font-size:11px;letter-spacing:-1px;display:block;margin-bottom:3px;">외국인용 보험가입용 정보</span>
+									<input type="text" placeholder="여권번호를 입력해주세요/">
+								</p>
+							</td>
+						</tr>
+					</table>
+
+					<!--
+					170116-2
+					안내문구 추가
+					 -->
+					<p style="margin-top:10px;font-size:11px;line-height:14px;color:#cb2b6f;">* 주민등록번호는 보험가입 용도로만 사용하기 위해 보험사에 전달하며, 행사 종료 후 일괄 폐기됩니다. </p>
+
+					<div class="btn_area">
+						<a href="#" class="button">다음</a>
+					</div>
+				</div>
+				<!-- //box -->
+
+			</div>
+			<!-- //contents -->
+		</div>
+		<!-- //mirun_wrap -->
+	</div>
+	<!-- //wrap -->
+
+
+	<script type="text/javascript" src="/js/adidas/common.js"></script>
+	<script type="text/javascript">
+		(function($){
+
+		})(jQuery);
+	</script>
+
+</body>
+
+</html>

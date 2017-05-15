@@ -1,0 +1,2127 @@
+<!doctype html>
+<html itemscope="" itemtype="http://schema.org/WebPage" lang="ko" class="">
+
+<head>
+<title>리복 모바일 주문서작성</title>
+<meta http-equiv="Cache-Control" content="max-age=0" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+<meta content="telephone=no" name="format-detection">
+<meta content="address=no" name="format-detection">
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<link rel="stylesheet" href="/MO/reebok/css/reebok_m.css?ver=151118" />
+<link rel="apple-touch-icon-precomposed" href="/images/reebok/icon_114.png" />
+<link rel="shortcut icon" href="/images/reebok/icon_57.png" />
+<script type="text/javascript" src="/MO/js/jquery.js"></script>
+<script type="text/javascript" src="/MO/js/iscroll.js"></script>
+<script type="text/javascript" src="/MO/js/commonFn.js"></script>
+<script type="text/javascript" src="/MO/reebok/js/FlickKkb.js"></script>
+<script type="text/javascript" src="/MO/reebok/js/swipe.js"></script>
+<script type="text/javascript" src="/MO/reebok/js/reebok_js_m.js"></script>
+<script type="text/javascript" src="/MO/reebok/js/commonReebok.js"></script>
+<script type="text/javascript" src="js/search/dqAutoCompleteCommonTop.js"></script>
+
+
+
+
+
+
+
+<script type="text/javascript">
+var _COMM_HTTP_CONTEXT_URL = "http://m.reebok.co.kr/MO";
+var _COMM_HTTP_CONTEXT_SSL_URL = "https://m.reebok.co.kr:447/MO";
+var lmenu_bnn;
+
+jQuery(document).ready(function(){	
+	
+    lmenu_bnn = new FlickKkb({
+        wrapper : 'lmenu_bnn_sld',
+        criterion : 3,
+        callback : function(e){
+            jQuery('#lmenu_bnn_sld+.bul span').removeClass('on').eq(e.fake_index).addClass('on');
+        },
+        looptype : true,
+        multpl_width : 0.8
+    }).init();
+    
+    if (fn_getCookie('today_close_crazy')!='close') {
+        jQuery("#top_banner_crazy").show();
+    } else {
+        jQuery("#top_banner_crazy").hide();
+    }
+    
+
+    jQuery("#inn_leftmenu .util li:first a").attr("href", "javascript:doLogouts();").text("로그아웃");
+    jQuery("#inn_leftmenu .util li:eq(1)").show();
+
+	// 광복절 알림 레이어
+	
+
+	//노동절 알림 레이어
+	
+	
+	//추석 알림 레이어
+	
+	
+	//무료배송비 알림 레이어
+		
+});
+
+//BlackBerry Check
+function checkBrower(msg){
+    var hUserAgent = "/MOzilla/5.0 (iPhone; U; CPU iPhone OS 3_0 like Mac OS X; en-us) AppleWebKit/528.18 (KHTML, like Gecko) Version/4.0 Mobile/7A341 Safari/528.16";
+
+    if( hUserAgent.indexOf("BlackBerry") >= 0 ){
+        alert(msg + " 오페라/사파리/안드로이드 브라우저를 이용해 주시기 바랍니다.");
+        return true;
+    }else{  
+        return false;
+    }
+}
+
+// 로그인을 위한 부분
+function doLogins() {
+    if( checkBrower("로그인은") ) return;
+    
+    var formNm = document.gnbForm;
+
+    formNm.action = "https://m.reebok.co.kr:447/MO/Member/loginCheck.action";
+    formNm.siteNm.value = "reebok";
+
+    formNm.submit();
+}
+
+// 회원가입을 위한 부분
+function doJoin() {
+    if( checkBrower("회원가입은") ) return;
+    
+    var formNm = document.gnbForm;
+
+    formNm.action = "https://m.reebok.co.kr:447/MO/Member/memAgreement.action";
+    formNm.siteNm.value = "reebok";
+
+    formNm.submit();
+}
+
+// 로그아웃을 위한 부분
+function doLogouts() {
+    var formNm = document.gnbForm;
+
+    formNm.action = "https://m.reebok.co.kr:447/MO/Member/logout.action";
+    formNm.siteNm.value = "reebok";
+
+    formNm.submit();
+}
+
+// 검색페이지로 이동 ()
+function go_search_main (evnt) {
+    var curUri = document.location.href;
+    if(curUri.indexOf("/Search/searchMain.action") < 0) {
+        location.href = _COMM_HTTP_CONTEXT_URL + "/Search/searchMain.action";
+    } else {
+        dqtop_setTextbox('1', evnt);
+    }
+}
+
+// 엔터키 검색
+function handle_enter_top (kind, event, tab) {
+    var keyCode = event.keyCode ? event.keyCode : event.which ? event.which : event.charCode;
+
+    if (keyCode == 13) {
+        if (kind == 1) {
+            doSearch();//기본검색
+        }
+        return false;
+    } else {
+        return true;
+    }
+}
+
+// 검색엔진을 통한 검색으로 연동하는 부분
+function doSearch() {
+    var formNm = document.frmSrch;
+    var keyword = formNm.S_PROD_NM.value;
+
+    if("" == keyword || -1 != keyword.indexOf("검색어")){
+        alert("검색어를 입력해주세요.");
+        formNm.S_PROD_NM.focus();
+        return;
+    }//end if
+
+    formNm.action = "http://m.reebok.co.kr/MO/Search/searchIR.action";
+    formNm.siteNm.value = "reebok";
+    formNm.query.value = keyword;
+
+    formNm.submit();
+}
+
+// 인기검색어 클릭시 조회
+function fn_popular(keyword){
+    keyword = keyword.replace(/<sqm>/gi, '\'');
+    
+    var f = document.frmSrch;
+    f.S_PROD_NM.value = keyword;
+    f.action = "http://m.reebok.co.kr/MO/Search/searchIR.action";
+    f.siteNm.value = "reebok";
+    f.query.value = keyword;
+
+    f.submit();
+}
+
+// 트리구조의 카테고리를 위한 부분으로 구성
+function viewCart(id) {
+    if (document.all[id].style.display == 'none') document.all[id].style.display = '';
+    else document.all[id].style.display = 'none';
+}
+
+function goCatDispList(ctgr_cd) {
+    if (ctgr_cd == "") {
+        alert("카테고리 구분이 없습니다. 확인하시기 바랍니다.");
+        return;
+    }
+    window.location = "http://m.reebok.co.kr/MO/Product/eachCatPrdList.action?ctgr_cd="+ctgr_cd;
+}
+
+// 쿠폰 레이어 닫기
+function closeMyCpnLayer(){
+    fn_setCookie('today_close_mycpn', 'close' ,1);
+    jQuery('#top_banner_mycpn').hide();
+    return false;
+}
+
+function closeCrazyLayer() {
+    //fn_setCookie('today_close_crazy','close',1);
+    jQuery('#top_banner_crazy').hide();
+    return false;
+}
+
+function goCatDispList(ctgr_cd) {
+    if (ctgr_cd == "") {
+        alert("카테고리 구분이 없습니다. 확인하시기 바랍니다.");
+        return;
+    }
+    window.location = _COMM_HTTP_CONTEXT_URL + "/Product/eachCatPrdList.action?ctgr_cd=" + ctgr_cd;
+}
+
+/* 환불/입금 내역 */
+function goExgIncList(start, end){
+
+    location.href = _COMM_HTTP_CONTEXT_URL + "/MyPage/mypageExgIncList.action" + param;
+}
+
+/* 내 쿠폰 보기 */
+function goCoupSel(){
+
+    location.href = _COMM_HTTP_CONTEXT_URL + "/MyPage/mypageCoupSel.action";
+}
+
+/* 내 포인트 보기 */
+function goPtrSel(){
+
+    location.href = _COMM_HTTP_CONTEXT_URL + "/MyPage/mypagePtrSel.action";
+}
+
+/* 관심상품 */
+function goFavoPrdList(){
+
+    location.href = _COMM_HTTP_CONTEXT_URL + "/MyPage/mypageFavoPrdList.action";
+}
+
+/* 오늘 본 상품 */
+function goTodayPrdList(){
+
+    location.href = _COMM_HTTP_CONTEXT_URL + "/MyPage/mypageTodayPrdList.action";
+}
+
+/* 1:1 문의 내역 */
+function goQnaList(fromDt, toDt){
+
+    var param = "";
+
+    if( typeof(fromDt) != "undefined" ){
+
+        if( param != "" )
+            param += "&";
+        else
+            param += "?";
+
+        param += "fromDt=" + fromDt;
+    }
+
+    if( typeof(toDt) != "undefined" ){
+
+        if( param != "" )
+            param += "&";
+        else
+            param += "?";
+
+        param += "toDt=" + toDt;
+    }
+
+    location.href = _COMM_HTTP_CONTEXT_URL + "/MyPage/mypageQnaList.action" + param;
+}
+
+/* 1:1 문의하기 */
+function goQna(ordNo, prodCd) {
+    var param="";
+    if( typeof(ordNo) != "undefined" ){
+        param = "?ordNo=" + ordNo + "&prodCd=" + prodCd;
+    }
+    location.href = _COMM_HTTP_CONTEXT_URL + "/Customer/customerQna.action" + param;
+}
+
+/* 회원증 재발급 */
+function goMemIdCrd(){
+
+    location.href = _COMM_HTTP_CONTEXT_URL + "/MyPage/mypageMemIdCrd.action";
+}
+
+/* 장바구니 */
+function goCart(){
+    if( checkBrower("장바구니는") ) return;
+    location.href = _COMM_HTTP_CONTEXT_URL + "/Cart/cartList.action";
+}
+
+/* 관심상품 - 장바구니 */
+function goWish(){
+
+    location.href = _COMM_HTTP_CONTEXT_URL + "/Cart/wishList.action";
+}
+
+/* 상품상세 */
+function goProductDetail(prodCD, spst_id){
+
+    var param = "";
+    var spstId = spst_id;
+
+    if(typeof(spst_id) == "undefined")
+        spstId = "0";
+
+    if( typeof(prodCD) != "undefined" ){
+
+        if( param != "" )
+            param += "&";
+        else
+            param += "?";
+
+        param += "prodCD=" + prodCD + "&spst_id="+spstId;
+    }else{
+        return;
+    }//end else
+
+    location.href = _COMM_HTTP_CONTEXT_URL + "/Product/prdDispBas.action" + param;
+}
+
+/* 베스트 상품 */
+function goBestPrdList(currPage){
+
+    var param = "";
+
+    if( typeof(currPage) != "undefined" ){
+
+        if( param != "" )
+            param += "&";
+        else
+            param += "?";
+
+        param += "strPage=" + currPage;
+    }
+
+    location.href = _COMM_HTTP_CONTEXT_URL + "/Product/bestPrdList.action" + param;
+}
+
+/* 신상품 */
+function goNewPrdList(){
+    location.href = _COMM_HTTP_CONTEXT_URL + "/Product/newPrdList.action";
+}
+
+/* 세일상품 */
+function goSalePrdList(){
+    location.href = _COMM_HTTP_CONTEXT_URL + "/Product/salePrdList.action";
+}
+
+/* 리클럽 */
+function goClub(){
+    location.href = _COMM_HTTP_CONTEXT_URL + "/AdiClub/reeClubIntro.action";
+}
+
+/* 리클럽 캠페인 */
+function goCampainList(){
+    location.href = _COMM_HTTP_CONTEXT_URL + "/Club/clubCampainList.action";
+}
+
+/* 기획전 */
+function goPlanShopList(){
+    location.href = _COMM_HTTP_CONTEXT_URL + "/Product/planShopList.action";
+}
+
+/* 기획전 상세 */
+function planShopPrdList(mainId, subId){
+
+    var param = "";
+
+    if( typeof(mainId) != "undefined" ){
+
+        if( param != "" )
+            param += "&";
+        else
+            param += "?";
+
+        param += "mainId=" + mainId;
+    }
+
+    if( typeof(subId) != "undefined" ){
+
+        if( param != "" )
+            param += "&";
+        else
+            param += "?";
+
+        param += "subId=" + subId;
+    }
+
+    location.href = _COMM_HTTP_CONTEXT_URL + "/Product/planShopPrdList.action" + param;
+}
+
+/* 공지사항 상세 */
+function goNotiDetailList(seqNo, notiSeqNo) {
+
+    var param = "";
+
+    if( typeof(seqNo) != "undefined" ){
+
+        if( param != "" )
+            param += "&";
+        else
+            param += "?";
+
+        param += "siteCD=2&notiSeqNo=" + notiSeqNo;
+    }else{
+
+        alert("선택된 공지사항이 없습니다.");
+        return;
+    }
+
+    location.href = _COMM_HTTP_CONTEXT_URL + "/Notify/notiDetailList.action" + param;
+}
+
+/* Crazy */
+function goCrazy() {
+    location.href = _COMM_HTTP_CONTEXT_URL + "/Product/onedaySale.action";
+}
+
+/* 교환 조회 */
+function goExchgList(work, start, end, term){
+    var param = "";
+
+    if( typeof(work) != "undefined" ){
+        if( param != "" )
+            param += "&";
+        else
+            param += "?";
+
+        param += "work=" + work;
+    }
+
+    if( typeof(start) != "undefined" ){
+        if( param != "" )
+            param += "&";
+        else
+            param += "?";
+
+        param += "start=" + start;
+    }
+
+    if( typeof(end) != "undefined" ){
+        if( param != "" )
+            param += "&";
+        else
+            param += "?";
+
+        param += "end=" + end;
+    }
+
+    if( typeof(term) != "undefined" ){
+        if( param != "" )
+            param += "&";
+        else
+            param += "?";
+
+        param += "term=" + term;
+    }
+    
+    location.href = _COMM_HTTP_CONTEXT_URL + "/MyPage/mypageExchgList.action" + param;
+}
+
+/* 교환 결제대기 */
+function goExchgRepayList(){
+    location.href = _COMM_HTTP_CONTEXT_URL + "/MyPage/mypageExchgRepayList.action";
+}
+
+/* 공지사항 */
+function goNotice() {
+    location.href = _COMM_HTTP_CONTEXT_URL + "/Notify/notiDetailList.action";
+}
+
+
+/* 고객센터 */
+function goCsCenter(){
+    location.href = _COMM_HTTP_CONTEXT_URL + "/Customer/customerCenter.action";
+}
+/* FAQ */
+
+function goFaq() {
+    location.href = "http://shop.reebok.co.kr/RPF080301.action";
+}
+
+//추석 알림 레이어 열기
+function openCsNotiLayer(){	
+	jQuery('#popup_cs_noti').show();
+}
+
+//추석 알림 레이어 닫기
+function closeCsNotiLayer(){
+	jQuery('#popup_cs_noti').hide();
+}
+
+function closeDelvTopBnn(){
+    fn_setCookie('today_close_dlv_noti', 'close' ,1);
+    jQuery('#top_banner_dlv').hide();
+    return false;
+}
+</script>
+</head>
+<body>
+
+    
+<aside id="leftmenu">    <div class="bg" onclick="Reebok.fn.toggleLeft();return false;"></div>    <a onclick="Reebok.fn.toggleLeft();return false;" class="btn_sidemenu" href="#">        <span></span>        <span></span>        <span></span>    </a>    <section id="inn_leftmenu" class="lmenu_wrap">        <section class="menu u15_1">            <div class="bnn">                <div class="bnn_sld" id="lmenu_bnn_sld">                                                                                                        <a href="http://m.reebok.co.kr/MO/Product/planShopPrdList.action?mainId=954&subId=1354" style="background-image:url('/upload/banner/c07ddfcb7c5b42d9a0a304302b7f9b90_0824094213.jpg');"></a>                                                                                                                        </div>                <div class="bul">                                            <span class="on"></span>                                    </div>            </div>            <h2 class="blind">네비게이션 메뉴</h2>            <ul class="dp1">                                <li class="has_dp">                    <a href="#" onclick="Reebok.fn.toggleMenu(this,'.dp2','siblings');return false;" onmousedown="javascript:trk_flashEnvView('_TRK_PI=LMEN');">MEN</a>                    <ul class="dp2">                        <li><a href="/MO/Product/bestPrdList.action?ctgr_cd=02001" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^MEN^BEST')">BEST</a></li>                        <li><a href="/MO/Product/newPrdList.action?ctgr_cd=02001" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^MEN^NEW')">NEW</a></li>                        <li><a href="/MO/Product/salePrdList.action?ctgr_cd=02001" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^MEN^SALE')">SALE</a></li>                                                                                        <li class="has_dp">                            <a href="#" class="kor" onclick="Reebok.fn.toggleMenu(this,'.dplist','siblings');return false;">신발</a>                            <div class="dplist">                                <a href="/MO/Product/eachCatPrdListData.action?ctgr_cd=02001001" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^MEN^신발')">전체 보기</a>                                <dl>                                                                                                                                                                        <dt>스포츠별</dt>                                                <dd>                                                    <ul>                                                                                                                <li><a href="/MO/Product/eachCatPrdListData.action?ctgr_cd=02001001001002" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^MEN^신발^스포츠별^농구')"><span>농구<em>(2)</em></span></a></li>                                                                                                                <li><a href="/MO/Product/eachCatPrdListData.action?ctgr_cd=02001001001003" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^MEN^신발^스포츠별^러닝')"><span>러닝<em>(49)</em></span></a></li>                                                                                                                <li><a href="/MO/Product/eachCatPrdListData.action?ctgr_cd=02001001001006" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^MEN^신발^스포츠별^트레이닝')"><span>트레이닝<em>(13)</em></span></a></li>                                                                                                                <li><a href="/MO/Product/eachCatPrdListData.action?ctgr_cd=02001001001007" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^MEN^신발^스포츠별^캐주얼')"><span>캐주얼<em>(70)</em></span></a></li>                                                                                                            </ul>                                                </dd>                                                                                                                                                                                                                                                                                                        <dt>상품별</dt>                                                <dd>                                                    <ul>                                                                                                                <li><a href="/MO/Product/eachCatPrdListData.action?ctgr_cd=02001001002001" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^MEN^신발^상품별^하이컷/미드컷')"><span>하이컷/미드컷<em>(3)</em></span></a></li>                                                                                                                <li><a href="/MO/Product/eachCatPrdListData.action?ctgr_cd=02001001002002" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^MEN^신발^상품별^로우컷')"><span>로우컷<em>(125)</em></span></a></li>                                                                                                            </ul>                                                </dd>                                                                                                                                                                                                    </dl>                            </div>                        </li>                                                    <li class="has_dp">                            <a href="#" class="kor" onclick="Reebok.fn.toggleMenu(this,'.dplist','siblings');return false;">의류</a>                            <div class="dplist">                                <a href="/MO/Product/eachCatPrdListData.action?ctgr_cd=02001002" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^MEN^의류')">전체 보기</a>                                <dl>                                                                                                                                                                        <dt>스포츠별</dt>                                                <dd>                                                    <ul>                                                                                                                <li><a href="/MO/Product/eachCatPrdListData.action?ctgr_cd=02001002001003" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^MEN^의류^스포츠별^러닝')"><span>러닝<em>(9)</em></span></a></li>                                                                                                                <li><a href="/MO/Product/eachCatPrdListData.action?ctgr_cd=02001002001005" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^MEN^의류^스포츠별^아웃도어')"><span>아웃도어<em>(12)</em></span></a></li>                                                                                                                <li><a href="/MO/Product/eachCatPrdListData.action?ctgr_cd=02001002001006" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^MEN^의류^스포츠별^트레이닝')"><span>트레이닝<em>(117)</em></span></a></li>                                                                                                                <li><a href="/MO/Product/eachCatPrdListData.action?ctgr_cd=02001002001007" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^MEN^의류^스포츠별^캐주얼')"><span>캐주얼<em>(19)</em></span></a></li>                                                                                                            </ul>                                                </dd>                                                                                                                                                                                                                                                                                                        <dt>상품별</dt>                                                <dd>                                                    <ul>                                                                                                                <li><a href="/MO/Product/eachCatPrdListData.action?ctgr_cd=02001002002001" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^MEN^의류^상품별^자켓')"><span>자켓<em>(38)</em></span></a></li>                                                                                                                <li><a href="/MO/Product/eachCatPrdListData.action?ctgr_cd=02001002002002" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^MEN^의류^상품별^티셔츠')"><span>티셔츠<em>(60)</em></span></a></li>                                                                                                                <li><a href="/MO/Product/eachCatPrdListData.action?ctgr_cd=02001002002003" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^MEN^의류^상품별^팬츠')"><span>팬츠<em>(56)</em></span></a></li>                                                                                                                <li><a href="/MO/Product/eachCatPrdListData.action?ctgr_cd=02001002002006" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^MEN^의류^상품별^트랙탑 / 져지탑')"><span>트랙탑 / 져지탑<em>(10)</em></span></a></li>                                                                                                                <li><a href="/MO/Product/eachCatPrdListData.action?ctgr_cd=02001002002007" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^MEN^의류^상품별^슬리브리스')"><span>슬리브리스<em>(2)</em></span></a></li>                                                                                                                <li><a href="/MO/Product/eachCatPrdListData.action?ctgr_cd=02001002002008" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^MEN^의류^상품별^윈터자켓')"><span>윈터자켓<em>(21)</em></span></a></li>                                                                                                            </ul>                                                </dd>                                                                                                                                                                                                    </dl>                            </div>                        </li>                                                    <li class="has_dp">                            <a href="#" class="kor" onclick="Reebok.fn.toggleMenu(this,'.dplist','siblings');return false;">용품</a>                            <div class="dplist">                                <a href="/MO/Product/eachCatPrdListData.action?ctgr_cd=02001003" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^MEN^용품')">전체 보기</a>                                <dl>                                                                                                                                                                        <dt>스포츠별</dt>                                                <dd>                                                    <ul>                                                                                                                <li><a href="/MO/Product/eachCatPrdListData.action?ctgr_cd=02001003005008" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^MEN^용품^스포츠별^전체보기')"><span>전체보기<em>(15)</em></span></a></li>                                                                                                            </ul>                                                </dd>                                                                                                                                                                                                                                                                                                        <dt>상품별</dt>                                                <dd>                                                    <ul>                                                                                                                <li><a href="/MO/Product/eachCatPrdListData.action?ctgr_cd=02001003006005" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^MEN^용품^상품별^전체보기')"><span>전체보기<em>(15)</em></span></a></li>                                                                                                            </ul>                                                </dd>                                                                                                                                                                                                    </dl>                            </div>                        </li>                                                                                                    </ul>                </li>                                <li class="has_dp">                    <a href="#" onclick="Reebok.fn.toggleMenu(this,'.dp2','siblings');return false;" onmousedown="javascript:trk_flashEnvView('_TRK_PI=LWOMEN');">WOMEN</a>                    <ul class="dp2">                        <li><a href="/MO/Product/bestPrdList.action?ctgr_cd=02002" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^WOMEN^BEST')">BEST</a></li>                        <li><a href="/MO/Product/newPrdList.action?ctgr_cd=02002" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^WOMEN^NEW')">NEW</a></li>                        <li><a href="/MO/Product/salePrdList.action?ctgr_cd=02002" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^WOMEN^SALE')">SALE</a></li>                                                                                        <li class="has_dp">                            <a href="#" class="kor" onclick="Reebok.fn.toggleMenu(this,'.dplist','siblings');return false;">신발</a>                            <div class="dplist">                                <a href="/MO/Product/eachCatPrdListData.action?ctgr_cd=02002001" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^WOMEN^신발')">전체 보기</a>                                <dl>                                                                                                                                                                        <dt>스포츠별</dt>                                                <dd>                                                    <ul>                                                                                                                <li><a href="/MO/Product/eachCatPrdListData.action?ctgr_cd=02002001001003" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^WOMEN^신발^스포츠별^러닝')"><span>러닝<em>(44)</em></span></a></li>                                                                                                                <li><a href="/MO/Product/eachCatPrdListData.action?ctgr_cd=02002001001006" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^WOMEN^신발^스포츠별^트레이닝')"><span>트레이닝<em>(7)</em></span></a></li>                                                                                                                <li><a href="/MO/Product/eachCatPrdListData.action?ctgr_cd=02002001001007" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^WOMEN^신발^스포츠별^캐주얼')"><span>캐주얼<em>(59)</em></span></a></li>                                                                                                            </ul>                                                </dd>                                                                                                                                                                                                                                                                                                        <dt>상품별</dt>                                                <dd>                                                    <ul>                                                                                                                <li><a href="/MO/Product/eachCatPrdListData.action?ctgr_cd=02002001002001" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^WOMEN^신발^상품별^하이컷/미드컷')"><span>하이컷/미드컷<em>(2)</em></span></a></li>                                                                                                                <li><a href="/MO/Product/eachCatPrdListData.action?ctgr_cd=02002001002002" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^WOMEN^신발^상품별^로우컷')"><span>로우컷<em>(109)</em></span></a></li>                                                                                                            </ul>                                                </dd>                                                                                                                                                                                                    </dl>                            </div>                        </li>                                                    <li class="has_dp">                            <a href="#" class="kor" onclick="Reebok.fn.toggleMenu(this,'.dplist','siblings');return false;">의류</a>                            <div class="dplist">                                <a href="/MO/Product/eachCatPrdListData.action?ctgr_cd=02002002" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^WOMEN^의류')">전체 보기</a>                                <dl>                                                                                                                                                                        <dt>스포츠별</dt>                                                <dd>                                                    <ul>                                                                                                                <li><a href="/MO/Product/eachCatPrdListData.action?ctgr_cd=02002002001001" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^WOMEN^의류^스포츠별^러닝')"><span>러닝<em>(8)</em></span></a></li>                                                                                                                <li><a href="/MO/Product/eachCatPrdListData.action?ctgr_cd=02002002001002" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^WOMEN^의류^스포츠별^트레이닝')"><span>트레이닝<em>(111)</em></span></a></li>                                                                                                                <li><a href="/MO/Product/eachCatPrdListData.action?ctgr_cd=02002002001003" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^WOMEN^의류^스포츠별^캐주얼')"><span>캐주얼<em>(13)</em></span></a></li>                                                                                                                <li><a href="/MO/Product/eachCatPrdListData.action?ctgr_cd=02002002001008" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^WOMEN^의류^스포츠별^아웃도어')"><span>아웃도어<em>(10)</em></span></a></li>                                                                                                            </ul>                                                </dd>                                                                                                                                                                                                                                                                                                        <dt>상품별</dt>                                                <dd>                                                    <ul>                                                                                                                <li><a href="/MO/Product/eachCatPrdListData.action?ctgr_cd=02002002002001" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^WOMEN^의류^상품별^자켓')"><span>자켓<em>(27)</em></span></a></li>                                                                                                                <li><a href="/MO/Product/eachCatPrdListData.action?ctgr_cd=02002002002002" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^WOMEN^의류^상품별^티셔츠')"><span>티셔츠<em>(27)</em></span></a></li>                                                                                                                <li><a href="/MO/Product/eachCatPrdListData.action?ctgr_cd=02002002002003" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^WOMEN^의류^상품별^팬츠')"><span>팬츠<em>(63)</em></span></a></li>                                                                                                                <li><a href="/MO/Product/eachCatPrdListData.action?ctgr_cd=02002002002004" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^WOMEN^의류^상품별^기타')"><span>기타<em>(3)</em></span></a></li>                                                                                                                <li><a href="/MO/Product/eachCatPrdListData.action?ctgr_cd=02002002002005" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^WOMEN^의류^상품별^트랙탑 / 져지탑')"><span>트랙탑 / 져지탑<em>(7)</em></span></a></li>                                                                                                                <li><a href="/MO/Product/eachCatPrdListData.action?ctgr_cd=02002002002006" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^WOMEN^의류^상품별^브라탑/언더웨어')"><span>브라탑/언더웨어<em>(24)</em></span></a></li>                                                                                                                <li><a href="/MO/Product/eachCatPrdListData.action?ctgr_cd=02002002002008" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^WOMEN^의류^상품별^윈터자켓')"><span>윈터자켓<em>(16)</em></span></a></li>                                                                                                            </ul>                                                </dd>                                                                                                                                                                                                    </dl>                            </div>                        </li>                                                    <li class="has_dp">                            <a href="#" class="kor" onclick="Reebok.fn.toggleMenu(this,'.dplist','siblings');return false;">용품</a>                            <div class="dplist">                                <a href="/MO/Product/eachCatPrdListData.action?ctgr_cd=02002003" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^WOMEN^용품')">전체 보기</a>                                <dl>                                                                                                                                                                        <dt>스포츠별</dt>                                                <dd>                                                    <ul>                                                                                                                <li><a href="/MO/Product/eachCatPrdListData.action?ctgr_cd=02002003005007" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^WOMEN^용품^스포츠별^전체보기')"><span>전체보기<em>(14)</em></span></a></li>                                                                                                            </ul>                                                </dd>                                                                                                                                                                                                                                                                                                        <dt>상품별</dt>                                                <dd>                                                    <ul>                                                                                                                <li><a href="/MO/Product/eachCatPrdListData.action?ctgr_cd=02002003006005" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^WOMEN^용품^상품별^전체보기')"><span>전체보기<em>(14)</em></span></a></li>                                                                                                            </ul>                                                </dd>                                                                                                                                                                                                    </dl>                            </div>                        </li>                                                                                                    </ul>                </li>                                <li class="has_dp">                    <a href="#" onclick="Reebok.fn.toggleMenu(this,'.dp2','siblings');return false;" onmousedown="javascript:trk_flashEnvView('_TRK_PI=LKIDS');">KIDS</a>                    <ul class="dp2">                        <li><a href="/MO/Product/bestPrdList.action?ctgr_cd=02003" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^KIDS^BEST')">BEST</a></li>                        <li><a href="/MO/Product/newPrdList.action?ctgr_cd=02003" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^KIDS^NEW')">NEW</a></li>                        <li><a href="/MO/Product/salePrdList.action?ctgr_cd=02003" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^KIDS^SALE')">SALE</a></li>                                                                                                        <li><a href="/MO/Product/eachCatPrdListData.action?ctgr_cd=02003001" class="kor" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^KIDS^전체보기')">전체보기(29)</a></li>                                                                                </ul>                </li>                                <li class="has_dp">                    <a href="#" class="ctg" onclick="Reebok.fn.toggleMenu(this,'.dp2','siblings');return false;" onmousedown="javascript:trk_flashEnvView('_TRK_PI=LSPORT');">FITNESS</a>                    <ul class="dp2">                        <li><a href="/MO/Product/bestPrdList.action?ctgr_cd=02004" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^FITNESS^BEST')">BEST</a></li>                        <li><a href="/MO/Product/newPrdList.action?ctgr_cd=02004" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^FITNESS^NEW')">NEW</a></li>                        <li><a href="/MO/Product/salePrdList.action?ctgr_cd=02004" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^FITNESS^SALE')">SALE</a></li>                                                                                                        <li><a href="/MO/Product/eachCatPrdListData.action?ctgr_cd=02004001" class="kor" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^FITNESS^MEN')">MEN(185)</a></li>                                                <li><a href="/MO/Product/eachCatPrdListData.action?ctgr_cd=02004002" class="kor" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^FITNESS^WOMEN')">WOMEN(172)</a></li>                                                                                </ul>                </li>                                <li class="has_dp">                    <a href="#" class="ctg" onclick="Reebok.fn.toggleMenu(this,'.dp2','siblings');return false;" onmousedown="javascript:trk_flashEnvView('_TRK_PI=LCLASS');">CLASSIC</a>                    <ul class="dp2">                        <li><a href="/MO/Product/bestPrdList.action?ctgr_cd=02005" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^CLASSIC^BEST')">BEST</a></li>                        <li><a href="/MO/Product/newPrdList.action?ctgr_cd=02005" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^CLASSIC^NEW')">NEW</a></li>                        <li><a href="/MO/Product/salePrdList.action?ctgr_cd=02005" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^CLASSIC^SALE')">SALE</a></li>                                                                                                        <li><a href="/MO/Product/eachCatPrdListData.action?ctgr_cd=02005001" class="kor" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^CLASSIC^MEN')">MEN(98)</a></li>                                                <li><a href="/MO/Product/eachCatPrdListData.action?ctgr_cd=02005002" class="kor" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^CLASSIC^WOMEN')">WOMEN(80)</a></li>                                                                                </ul>                </li>                                <li class="has_dp">                    <a href="#" class="ctg" onclick="Reebok.fn.toggleMenu(this,'.dp2','siblings');return false;" onmousedown="javascript:trk_flashEnvView('_TRK_PI=LCOLLEC');">COLLECTION</a>                    <ul class="dp2">                        <li><a href="/MO/Product/bestPrdList.action?ctgr_cd=02006" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^COLLECTION^BEST')">BEST</a></li>                        <li><a href="/MO/Product/newPrdList.action?ctgr_cd=02006" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^COLLECTION^NEW')">NEW</a></li>                        <li><a href="/MO/Product/salePrdList.action?ctgr_cd=02006" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^COLLECTION^SALE')">SALE</a></li>                                                                                                        <li><a href="/MO/Product/eachCatPrdListData.action?ctgr_cd=02006003" class="kor" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^COLLECTION^크로스핏')">크로스핏(67)</a></li>                                                <li><a href="/MO/Product/eachCatPrdListData.action?ctgr_cd=02006005" class="kor" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^COLLECTION^레스밀')">레스밀(14)</a></li>                                                <li><a href="/MO/Product/eachCatPrdListData.action?ctgr_cd=02006009" class="kor" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^COLLECTION^펌프 퓨리')">펌프 퓨리(32)</a></li>                                                <li><a href="/MO/Product/eachCatPrdListData.action?ctgr_cd=02006010" class="kor" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^COLLECTION^피트니스 컬렉션')">피트니스 컬렉션(170)</a></li>                                                <li><a href="/MO/Product/eachCatPrdListData.action?ctgr_cd=02006011" class="kor" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^COLLECTION^요가 컬렉션')">요가 컬렉션(19)</a></li>                                                <li><a href="/MO/Product/eachCatPrdListData.action?ctgr_cd=02006012" class="kor" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^COLLECTION^UFC')">UFC(1)</a></li>                                                                                </ul>                </li>                                <li><a href="/MO/Product/newPrdList.action" class="kor" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^신상품');trk_flashEnvView('_TRK_PI=LNEW');">신상품</a></li>                <li><a href="/MO/Product/bestPrdList.action" class="kor" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^베스트');trk_flashEnvView('_TRK_PI=LBEST');">베스트상품</a></li>                <li><a href="/MO/Product/planShopList.action" class="kor" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^기획전');trk_flashEnvView('_TRK_PI=LSP');">기획전</a></li>                <li><a href="/MO/Product/salePrdList.action" class="sale" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^SALE');trk_flashEnvView('_TRK_PI=LSALE');">SALE</a></li>                <li class="has_dp">                    <a href="#" onclick="Reebok.fn.toggleMenu(this,'.dp2','siblings');return false;" style="color:#d90000;">OUTLET</a>                    <ul class="dp2">                                                <li class="has_dp">                    <a href="#" onclick="Reebok.fn.toggleMenu(this,'.dp3','siblings');return false;" onmousedown="javascript:trk_flashEnvView('_TRK_PI=LMEN');">MEN</a>                    <ul class="dp3">                    <li><a href="/MO/Product/eachCatPrdOutletListData.action?ctgr_cd=02001">전체보기</a></li>                                                                                        <li class="has_dp">                            <a href="#" class="kor" onclick="Reebok.fn.toggleMenu(this,'.dplist','siblings');return false;">신발</a>                            <div class="dplist">                                <a href="/MO/Product/eachCatPrdOutletListData.action?ctgr_cd=02001001" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^OUTLET^MEN^신발')">전체 보기</a>                                <dl>                                                                                                                                                                        <dt>스포츠별</dt>                                                <dd>                                                    <ul>                                                                                                                <li><a href="/MO/Product/eachCatPrdOutletListData.action?ctgr_cd=02001001001002" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^OUTLET^MEN^신발^스포츠별^농구')"><span>농구<em>(6)</em></span></a></li>                                                                                                                <li><a href="/MO/Product/eachCatPrdOutletListData.action?ctgr_cd=02001001001003" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^OUTLET^MEN^신발^스포츠별^러닝')"><span>러닝<em>(18)</em></span></a></li>                                                                                                                <li><a href="/MO/Product/eachCatPrdOutletListData.action?ctgr_cd=02001001001006" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^OUTLET^MEN^신발^스포츠별^트레이닝')"><span>트레이닝<em>(4)</em></span></a></li>                                                                                                                <li><a href="/MO/Product/eachCatPrdOutletListData.action?ctgr_cd=02001001001007" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^OUTLET^MEN^신발^스포츠별^캐주얼')"><span>캐주얼<em>(13)</em></span></a></li>                                                                                                                <li><a href="/MO/Product/eachCatPrdOutletListData.action?ctgr_cd=02001001001008" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^OUTLET^MEN^신발^스포츠별^기타')"><span>기타<em>(5)</em></span></a></li>                                                                                                            </ul>                                                </dd>                                                                                                                                                                                                                                                                                                        <dt>상품별</dt>                                                <dd>                                                    <ul>                                                                                                                <li><a href="/MO/Product/eachCatPrdOutletListData.action?ctgr_cd=02001001002001" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^OUTLET^MEN^신발^상품별^하이컷/미드컷')"><span>하이컷/미드컷<em>(6)</em></span></a></li>                                                                                                                <li><a href="/MO/Product/eachCatPrdOutletListData.action?ctgr_cd=02001001002002" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^OUTLET^MEN^신발^상품별^로우컷')"><span>로우컷<em>(30)</em></span></a></li>                                                                                                                <li><a href="/MO/Product/eachCatPrdOutletListData.action?ctgr_cd=02001001002003" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^OUTLET^MEN^신발^상품별^샌들/슬리퍼')"><span>샌들/슬리퍼<em>(5)</em></span></a></li>                                                                                                            </ul>                                                </dd>                                                                                                                                                                                                    </dl>                            </div>                        </li>                                                    <li class="has_dp">                            <a href="#" class="kor" onclick="Reebok.fn.toggleMenu(this,'.dplist','siblings');return false;">의류</a>                            <div class="dplist">                                <a href="/MO/Product/eachCatPrdOutletListData.action?ctgr_cd=02001002" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^OUTLET^MEN^의류')">전체 보기</a>                                <dl>                                                                                                                                                                        <dt>스포츠별</dt>                                                <dd>                                                    <ul>                                                                                                                <li><a href="/MO/Product/eachCatPrdOutletListData.action?ctgr_cd=02001002001003" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^OUTLET^MEN^의류^스포츠별^러닝')"><span>러닝<em>(4)</em></span></a></li>                                                                                                                <li><a href="/MO/Product/eachCatPrdOutletListData.action?ctgr_cd=02001002001006" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^OUTLET^MEN^의류^스포츠별^트레이닝')"><span>트레이닝<em>(27)</em></span></a></li>                                                                                                                <li><a href="/MO/Product/eachCatPrdOutletListData.action?ctgr_cd=02001002001007" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^OUTLET^MEN^의류^스포츠별^캐주얼')"><span>캐주얼<em>(5)</em></span></a></li>                                                                                                            </ul>                                                </dd>                                                                                                                                                                                                                                                                                                        <dt>상품별</dt>                                                <dd>                                                    <ul>                                                                                                                <li><a href="/MO/Product/eachCatPrdOutletListData.action?ctgr_cd=02001002002001" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^OUTLET^MEN^의류^상품별^자켓')"><span>자켓<em>(17)</em></span></a></li>                                                                                                                <li><a href="/MO/Product/eachCatPrdOutletListData.action?ctgr_cd=02001002002002" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^OUTLET^MEN^의류^상품별^티셔츠')"><span>티셔츠<em>(11)</em></span></a></li>                                                                                                                <li><a href="/MO/Product/eachCatPrdOutletListData.action?ctgr_cd=02001002002003" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^OUTLET^MEN^의류^상품별^팬츠')"><span>팬츠<em>(4)</em></span></a></li>                                                                                                                <li><a href="/MO/Product/eachCatPrdOutletListData.action?ctgr_cd=02001002002007" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^OUTLET^MEN^의류^상품별^슬리브리스')"><span>슬리브리스<em>(1)</em></span></a></li>                                                                                                                <li><a href="/MO/Product/eachCatPrdOutletListData.action?ctgr_cd=02001002002008" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^OUTLET^MEN^의류^상품별^윈터자켓')"><span>윈터자켓<em>(8)</em></span></a></li>                                                                                                            </ul>                                                </dd>                                                                                                                                                                                                    </dl>                            </div>                        </li>                                                    <li class="has_dp">                            <a href="#" class="kor" onclick="Reebok.fn.toggleMenu(this,'.dplist','siblings');return false;">용품</a>                            <div class="dplist">                                <a href="/MO/Product/eachCatPrdOutletListData.action?ctgr_cd=02001003" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^OUTLET^MEN^용품')">전체 보기</a>                                <dl>                                                                                                                                                                        <dt>스포츠별</dt>                                                <dd>                                                    <ul>                                                                                                                <li><a href="/MO/Product/eachCatPrdOutletListData.action?ctgr_cd=02001003005008" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^OUTLET^MEN^용품^스포츠별^전체보기')"><span>전체보기<em>(5)</em></span></a></li>                                                                                                            </ul>                                                </dd>                                                                                                                                                                                                                                                                                                        <dt>상품별</dt>                                                <dd>                                                    <ul>                                                                                                                <li><a href="/MO/Product/eachCatPrdOutletListData.action?ctgr_cd=02001003006005" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^OUTLET^MEN^용품^상품별^전체보기')"><span>전체보기<em>(5)</em></span></a></li>                                                                                                            </ul>                                                </dd>                                                                                                                                                                                                    </dl>                            </div>                        </li>                                                                            </ul>                </li>                                                                <li class="has_dp">                    <a href="#" onclick="Reebok.fn.toggleMenu(this,'.dp3','siblings');return false;" onmousedown="javascript:trk_flashEnvView('_TRK_PI=LWOMEN');">WOMEN</a>                    <ul class="dp3">                    <li><a href="/MO/Product/eachCatPrdOutletListData.action?ctgr_cd=02002">전체보기</a></li>                                                                                        <li class="has_dp">                            <a href="#" class="kor" onclick="Reebok.fn.toggleMenu(this,'.dplist','siblings');return false;">신발</a>                            <div class="dplist">                                <a href="/MO/Product/eachCatPrdOutletListData.action?ctgr_cd=02002001" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^OUTLET^WOMEN^신발')">전체 보기</a>                                <dl>                                                                                                                                                                        <dt>스포츠별</dt>                                                <dd>                                                    <ul>                                                                                                                <li><a href="/MO/Product/eachCatPrdOutletListData.action?ctgr_cd=02002001001003" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^OUTLET^WOMEN^신발^스포츠별^러닝')"><span>러닝<em>(24)</em></span></a></li>                                                                                                                <li><a href="/MO/Product/eachCatPrdOutletListData.action?ctgr_cd=02002001001006" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^OUTLET^WOMEN^신발^스포츠별^트레이닝')"><span>트레이닝<em>(14)</em></span></a></li>                                                                                                                <li><a href="/MO/Product/eachCatPrdOutletListData.action?ctgr_cd=02002001001007" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^OUTLET^WOMEN^신발^스포츠별^캐주얼')"><span>캐주얼<em>(9)</em></span></a></li>                                                                                                                <li><a href="/MO/Product/eachCatPrdOutletListData.action?ctgr_cd=02002001001008" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^OUTLET^WOMEN^신발^스포츠별^기타')"><span>기타<em>(3)</em></span></a></li>                                                                                                            </ul>                                                </dd>                                                                                                                                                                                                                                                                                                        <dt>상품별</dt>                                                <dd>                                                    <ul>                                                                                                                <li><a href="/MO/Product/eachCatPrdOutletListData.action?ctgr_cd=02002001002001" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^OUTLET^WOMEN^신발^상품별^하이컷/미드컷')"><span>하이컷/미드컷<em>(1)</em></span></a></li>                                                                                                                <li><a href="/MO/Product/eachCatPrdOutletListData.action?ctgr_cd=02002001002002" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^OUTLET^WOMEN^신발^상품별^로우컷')"><span>로우컷<em>(42)</em></span></a></li>                                                                                                                <li><a href="/MO/Product/eachCatPrdOutletListData.action?ctgr_cd=02002001002003" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^OUTLET^WOMEN^신발^상품별^샌들/슬리퍼')"><span>샌들/슬리퍼<em>(3)</em></span></a></li>                                                                                                            </ul>                                                </dd>                                                                                                                                                                                                    </dl>                            </div>                        </li>                                                    <li class="has_dp">                            <a href="#" class="kor" onclick="Reebok.fn.toggleMenu(this,'.dplist','siblings');return false;">의류</a>                            <div class="dplist">                                <a href="/MO/Product/eachCatPrdOutletListData.action?ctgr_cd=02002002" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^OUTLET^WOMEN^의류')">전체 보기</a>                                <dl>                                                                                                                                                                        <dt>스포츠별</dt>                                                <dd>                                                    <ul>                                                                                                                <li><a href="/MO/Product/eachCatPrdOutletListData.action?ctgr_cd=02002002001001" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^OUTLET^WOMEN^의류^스포츠별^러닝')"><span>러닝<em>(1)</em></span></a></li>                                                                                                                <li><a href="/MO/Product/eachCatPrdOutletListData.action?ctgr_cd=02002002001002" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^OUTLET^WOMEN^의류^스포츠별^트레이닝')"><span>트레이닝<em>(39)</em></span></a></li>                                                                                                                <li><a href="/MO/Product/eachCatPrdOutletListData.action?ctgr_cd=02002002001003" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^OUTLET^WOMEN^의류^스포츠별^캐주얼')"><span>캐주얼<em>(4)</em></span></a></li>                                                                                                            </ul>                                                </dd>                                                                                                                                                                                                                                                                                                        <dt>상품별</dt>                                                <dd>                                                    <ul>                                                                                                                <li><a href="/MO/Product/eachCatPrdOutletListData.action?ctgr_cd=02002002002001" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^OUTLET^WOMEN^의류^상품별^자켓')"><span>자켓<em>(11)</em></span></a></li>                                                                                                                <li><a href="/MO/Product/eachCatPrdOutletListData.action?ctgr_cd=02002002002002" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^OUTLET^WOMEN^의류^상품별^티셔츠')"><span>티셔츠<em>(9)</em></span></a></li>                                                                                                                <li><a href="/MO/Product/eachCatPrdOutletListData.action?ctgr_cd=02002002002003" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^OUTLET^WOMEN^의류^상품별^팬츠')"><span>팬츠<em>(14)</em></span></a></li>                                                                                                                <li><a href="/MO/Product/eachCatPrdOutletListData.action?ctgr_cd=02002002002004" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^OUTLET^WOMEN^의류^상품별^기타')"><span>기타<em>(1)</em></span></a></li>                                                                                                                <li><a href="/MO/Product/eachCatPrdOutletListData.action?ctgr_cd=02002002002005" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^OUTLET^WOMEN^의류^상품별^트랙탑 / 져지탑')"><span>트랙탑 / 져지탑<em>(1)</em></span></a></li>                                                                                                                <li><a href="/MO/Product/eachCatPrdOutletListData.action?ctgr_cd=02002002002006" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^OUTLET^WOMEN^의류^상품별^브라탑/언더웨어')"><span>브라탑/언더웨어<em>(6)</em></span></a></li>                                                                                                                <li><a href="/MO/Product/eachCatPrdOutletListData.action?ctgr_cd=02002002002008" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^OUTLET^WOMEN^의류^상품별^윈터자켓')"><span>윈터자켓<em>(8)</em></span></a></li>                                                                                                            </ul>                                                </dd>                                                                                                                                                                                                    </dl>                            </div>                        </li>                                                    <li class="has_dp">                            <a href="#" class="kor" onclick="Reebok.fn.toggleMenu(this,'.dplist','siblings');return false;">용품</a>                            <div class="dplist">                                <a href="/MO/Product/eachCatPrdOutletListData.action?ctgr_cd=02002003" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^OUTLET^WOMEN^용품')">전체 보기</a>                                <dl>                                                                                                                                                                        <dt>스포츠별</dt>                                                <dd>                                                    <ul>                                                                                                                <li><a href="/MO/Product/eachCatPrdOutletListData.action?ctgr_cd=02002003005007" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^OUTLET^WOMEN^용품^스포츠별^전체보기')"><span>전체보기<em>(5)</em></span></a></li>                                                                                                            </ul>                                                </dd>                                                                                                                                                                                                                                                                                                        <dt>상품별</dt>                                                <dd>                                                    <ul>                                                                                                                <li><a href="/MO/Product/eachCatPrdOutletListData.action?ctgr_cd=02002003006005" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^OUTLET^WOMEN^용품^상품별^전체보기')"><span>전체보기<em>(5)</em></span></a></li>                                                                                                            </ul>                                                </dd>                                                                                                                                                                                                    </dl>                            </div>                        </li>                                                                            </ul>                </li>                                                                <li class="has_dp">                    <a href="#" onclick="Reebok.fn.toggleMenu(this,'.dp3','siblings');return false;" onmousedown="javascript:trk_flashEnvView('_TRK_PI=LKIDS');">KIDS</a>                    <ul class="dp3">                    <li><a href="/MO/Product/eachCatPrdOutletListData.action?ctgr_cd=02003">전체보기</a></li>                                                                    </ul>                </li>                                                    </ul>                </li>                            </ul>            <ul class="util">                <li><a href="javascript:doLogins();" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^로그인')">로그인</a></li>                <li><a href="javascript:goCart();" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^장바구니')">장바구니</a></li>                <li><a href="javascript:goMypageIndex();" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^마이페이지')">마이페이지</a></li>                <li><a href="javascript:goNotice();" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^공지사항');trk_flashEnvView('_TRK_PI=LNOTICE');">공지사항</a></li>                <li><a href="javascript:goClub();" class="club" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^리클럽');trk_flashEnvView('_TRK_PI=LREE');">리클럽</a></li>            </ul>            <div class="btn">                <a href="javascript:goCsCenter();" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^고객센터');trk_flashEnvView('_TRK_PI=LCS');">고객센터</a>                <a href="/MO/Customer/customerStoreList.action" onmousedown="javascript:trk_clickTrace('EVT','^좌메뉴^매장찾기');trk_flashEnvView('_TRK_PI=LST');">매장찾기</a>            </div>        </section>        <!-- //menu -->    </section>    </aside><!-- //leftmenu -->
+
+
+    
+    <!-- //leftmenu -->
+    <section id="wrap">
+    	
+    	    
+    	
+    	
+    	
+    	
+    	
+    	
+        <section id="container">
+   		
+    	
+        
+        
+        
+        
+            <div class="layer_bg"></div>
+            
+            <div id="popup_not_repay" style="background:#ff5400;border: 3px solid #fff; left: 50%; margin-left: -48%; margin-top: -130px; position: fixed; top: 50%; width: 96%; z-index: 5000;display:none" class="bdrbox">
+                <div style="width:100px;height:100px;border:3px solid #fff;border-radius:100px;margin:25px auto 19px;">
+                    <div style="width:6px;height:40px;background:#fff;margin:23px auto 5px;"></div>
+                    <div style="width:6px;height:6px;background:#fff;margin:0 auto;"></div>
+                </div>
+                <p style="margin-bottom:20px;text-align:center;color:#fff;font-size:14px;">현재 결제 대기중인 건이 있습니다!</p>
+                <a style="width:150px;margin:10px auto 20px;" class="btn1" href="#" onclick="javascript:goExchgRepayList();"> 결제하러 가기</a>
+            </div>
+            <header id="header">
+                <form name="gnbForm" id="gnbForm" method="post" action="" onsubmit="return false">
+                    <input type="hidden" name="siteNm" value="" />
+                </form>
+                <div class="hdr1">
+                    <h1><a href="javascript:goMain();" class="spt_bg" onmousedown="javascript:trk_clickTrace('EVT','^리복모바일^좌상단로고');"></a></h1>
+                    <ul>
+                    
+                        <li><a href="javascript:doLogouts();">로그아웃</a></li>
+                    
+                        <li><a href="javascript: goMypageIndex();" onmousedown="javascript:trk_clickTrace('EVT','^리복모바일^마이페이지');">마이페이지</a></li>
+                    
+                        <li><a href="javascript: goCart();" onmousedown="javascript:trk_clickTrace('EVT','^리복모바일^장바구니');">장바구니<span>(4)</span></a></li>
+                    
+                    </ul>
+                </div>
+                <!-- //hdr1 -->
+                <form name="frmSrch" id="frmSrch" method="post" onsubmit="return false">
+                    <div class="hdr2">
+                        <div class="sch_area">
+                            <a href="#" class="btn_sidemenu active" onclick="Reebok.fn.toggleLeft();return false;" onmousedown="javascript:trk_clickTrace('EVT','^리복모바일^좌상단메뉴');">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </a>
+                            <input type="hidden" name="keyword" value="" />
+                            <input type="hidden" name="query" value="" />
+                            <input type="hidden" name="siteNm" value="" />
+                            <input type="hidden" name="siteCD" value="2" />
+                            <div class="sch">
+                                <input type="input" id="S_PROD_NM" name="S_PROD_NM" value="" placeholder="검색어를 입력하세요" onkeypress="return handle_enter_top(1,event);" onmousedown="go_search_main(event);" onkeypress="go_search_main();" />
+                                
+                            </div>
+                            <button type="button" onclick="doSearch();" onmousedown="javascript:trk_clickTrace('EVT','^리복모바일^검색돋보기');">검색</button>
+                        </div>
+                        <!-- //hdr2 -->
+                        
+<script language="JavaScript" src="/js/search/dqAutoCompleteTop.js"></script>
+<div style="position:relative;z-index:1000;">
+    <div onmouseout="dqtop_setMouseoff();" onmouseover="dqtop_setMouseon();" style="position: absolute;left:0px;top:0px;z-index: 1000;width:100%;display:none;" id="dqAutoTop">
+    </div>
+</div>
+
+                    </form>
+                </div>
+            </header>
+
+
+<script type="text/javascript" src="/MO/js/common.js"></script>
+<script type="text/javascript" src="/MO/js/prototype-1.6.1.js"></script>
+<script type="text/javascript">
+/*
+	jQuery(document).ready(function(){
+		alert("ready");
+	});
+	*/
+	
+	function on_pay() {
+		var myform = document.formOrder;
+		var myform1 = document.frmPay;
+
+        myform.receiver.value = fn_trim(myform.receiver.value);
+        myform.tel11.value = fn_trim(myform.tel11.value);
+        myform.tel12.value = fn_trim(myform.tel12.value);
+        myform.tel13.value = fn_trim(myform.tel13.value);
+        myform.tel21.value = fn_trim(myform.tel21.value);
+        myform.tel22.value = fn_trim(myform.tel22.value);
+        myform.tel23.value = fn_trim(myform.tel23.value);
+        myform.zipCode1.value = fn_trim(myform.zipCode1.value);
+        myform.zipCode2.value = fn_trim(myform.zipCode2.value);
+        myform.Dliv_addr.value = fn_trim(myform.Dliv_addr.value);
+        myform.Dliv_dtl_addr.value = fn_trim(myform.Dliv_dtl_addr.value);
+        myform.orderDesc.value = fn_trim(myform.orderDesc.value);
+       
+        /*
+        myform.CASH_RECPT_MOBLNO1.value = fn_trim(myform.CASH_RECPT_MOBLNO1.value);
+        myform.CASH_RECPT_MOBLNO2.value = fn_trim(myform.CASH_RECPT_MOBLNO2.value);
+        myform.CASH_RECPT_MOBLNO3.value = fn_trim(myform.CASH_RECPT_MOBLNO3.value);
+        myform.CASH_RECPT_BIZRNO1.value = fn_trim(myform.CASH_RECPT_BIZRNO1.value);
+        myform.CASH_RECPT_BIZRNO2.value = fn_trim(myform.CASH_RECPT_BIZRNO2.value);
+        myform.CASH_RECPT_BIZRNO3.value = fn_trim(myform.CASH_RECPT_BIZRNO3.value);
+        */
+       
+		if (myform.receiver.value == "") {
+			alert("받으시는 분이 입력되지 않았습니다.");
+			myform.receiver.focus();
+			return;
+		}
+
+		if (myform.tel21.value == "") {
+			alert("휴대폰번호가 입력되지 않았습니다.");
+			myform.tel21.focus();
+			return;
+		}
+
+		if (myform.tel22.value == "" || !(myform.tel22.value.length == 3 || myform.tel22.value.length == 4)) {
+			alert("휴대폰번호가 입력되지 않았습니다.");
+			myform.tel22.focus();
+			return;
+		}
+
+		if (myform.tel23.value == "" || (myform.tel23.value.length != 4)) {
+			alert("휴대폰번호가 입력되지 않았습니다.");
+			myform.tel23.focus();
+			return;
+		}
+
+		if ( !myform.tel22.value.isNumber() ) {
+			alert("휴대폰번호에 숫자만 입력해 주세요.");
+			myform.tel22.focus();
+			return;
+		}	
+		if ( !myform.tel23.value.isNumber() ) {
+			alert("휴대폰번호에 숫자만 입력해 주세요.");
+			myform.tel23.focus();
+			return;
+		}
+		
+		if (myform.tel11.value == "") {
+			alert("전화번호가 입력되지 않았습니다.");
+			myform.tel11.focus();
+			return;
+		}
+
+		if (myform.tel12.value == "" || !(myform.tel12.value.length == 3 || myform.tel12.value.length == 4)) {
+			alert("전화번호가 입력되지 않았습니다.");
+			myform.tel12.focus();
+			return;
+		}
+
+		if (myform.tel13.value == "" || (myform.tel13.value.length != 4)) {
+			alert("전화번호가 입력되지 않았습니다.");
+			myform.tel13.focus();
+			return;
+		}
+
+		if ( !myform.tel12.value.isNumber() ) {
+			alert("전화번호에 숫자만 입력해 주세요.");
+			myform.tel12.focus();
+			return;
+		}	
+		if ( !myform.tel13.value.isNumber() ) {
+			alert("전화번호에 숫자만 입력해 주세요.");
+			myform.tel13.focus();
+			return;
+		}		
+
+		if (myform.DELVYA.value == "5") {
+			alert("사서함 주소는 한진택배 배송이 되지 않습니다. \n배송지 주소를 변경하시어 주문해 주시면 감사하겠습니다.");
+			myform.Dliv_dtl_addr.focus();
+			return;
+		}
+		
+		if (myform.zipCode1.value == "") {
+			alert("우편번호가 입력되지 않았습니다.");
+			myform.Dliv_dtl_addr.focus();
+			return;
+		}
+
+		if (myform.zipCode2.value == "") {
+			alert("우편번호가 입력되지 않았습니다.");
+			myform.Dliv_dtl_addr.focus();
+			return;
+		}
+
+		if (myform.Dliv_addr.value == "") {
+			alert("배송지 주소가 입력되지 않았습니다.");
+			myform.Dliv_dtl_addr.focus();
+			return;
+		}
+
+		if (myform.Dliv_dtl_addr.value == "") {
+			alert("배송지 주소가 입력되지 않았습니다.");
+			myform.Dliv_dtl_addr.focus();
+			return;
+		}
+		
+		if (myform.SIDO.value == ""
+			//|| myform.GUN.value == ""	
+			|| myform.DONG.value == "" ) {
+			alert("배송지 주소가 잘못 입력되었습니다.");
+			myform.Dliv_dtl_addr.focus();
+			return;
+		}
+		
+		if (myform.PAYMT_TYPE.value == "" && myform.P_AMT.value != 0) {
+			alert("결제 수단을 선택하십시요.");
+			myform.CARD_PAYMT_TYPE.focus();
+			return;
+		}
+		
+		// K-PAY 추가
+		if (myform.CARD_PAYMT_TYPE.value == "02") {
+			//parent.document.formOrder.P_RESERVED.value = "d_kpay=Y&kpay_siteId=INIpayTest";
+			parent.document.formOrder.P_RESERVED.value = "d_kpay=Y&kpay_siteId=" + "reebok0001";
+		} 
+
+		// 무통장입금 금액이 존재할 경우 현금영수증 처리
+		if( myform.PAYMT_TYPE.value == "05" && myform.P_AMT.value >= 0 ) {
+			var f = document.frm;
+
+			// 발행
+			if(myform.CASH_RECPT_APPLY_Y.checked) {
+				//소득공제용
+				if( myform.CASH_RECPT_PUBL_PRPOS_01.checked) {
+
+					myform.CASH_RECPT_PUBL_PRPOS.value = "01";
+					myform.CASH_RECPT_CRT_DIVI.value = "10";
+
+					if ( myform.CASH_RECPT_MOBLNO1.value == "" ) {
+						alert("핸드폰번호가 입력되지 않았습니다.");
+						myform.CASH_RECPT_MOBLNO1.focus();
+						return;
+					}
+					if ( myform.CASH_RECPT_MOBLNO2.value == "" ) {
+						alert("핸드폰번호가 입력되지 않았습니다.");
+						myform.CASH_RECPT_MOBLNO2.focus();
+						return;
+					}
+					if ( myform.CASH_RECPT_MOBLNO3.value == "" ) {
+						alert("핸드폰번호가 입력되지 않았습니다.");
+						myform.CASH_RECPT_MOBLNO3.focus();
+						return;
+					}
+
+					if ( !myform.CASH_RECPT_MOBLNO1.value.isNumber() ) {
+						alert("핸드폰번호에 숫자만 입력해 주세요.");
+						myform.CASH_RECPT_MOBLNO1.focus();
+						return;
+					}					
+					if ( !myform.CASH_RECPT_MOBLNO2.value.isNumber() ) {
+						alert("핸드폰번호에 숫자만 입력해 주세요.");
+						myform.CASH_RECPT_MOBLNO2.focus();
+						return;
+					}	
+					if ( !myform.CASH_RECPT_MOBLNO3.value.isNumber() ) {
+						alert("핸드폰번호에 숫자만 입력해 주세요.");
+						myform.CASH_RECPT_MOBLNO3.focus();
+						return;
+					}	
+					
+					var mobl_no = myform.CASH_RECPT_MOBLNO1.value + myform.CASH_RECPT_MOBLNO2.value + myform.CASH_RECPT_MOBLNO3.value;
+					myform.CASH_RECPT_CRT_NO.value = mobl_no;
+				} else {
+					//지출증빙용
+					if( fn_companyCheck() ) {
+
+						myform.CASH_RECPT_PUBL_PRPOS.value = "02";
+						myform.CASH_RECPT_CRT_DIVI.value = "30";
+
+						if ( myform.CASH_RECPT_BIZRNO1.value == "" ) {
+							alert("사업자번호가 입력되지 않았습니다.");
+							myform.CASH_RECPT_BIZRNO1.focus();
+							return;
+						}
+						if ( myform.CASH_RECPT_BIZRNO2.value == "" ) {
+							alert("사업자번호가 입력되지 않았습니다.");
+							myform.CASH_RECPT_BIZRNO2.focus();
+							return;
+						}
+						if ( myform.CASH_RECPT_BIZRNO3.value == "" ) {
+							alert("사업자번호가 입력되지 않았습니다.");
+							myform.CASH_RECPT_BIZRNO3.focus();
+							return;
+						}
+						
+						if ( !myform.CASH_RECPT_BIZRNO1.value.isNumber() ) {
+							alert("사업자번호에 숫자만 입력해 주세요.");
+							myform.CASH_RECPT_BIZRNO1.focus();
+							return;
+						}					
+						if ( !myform.CASH_RECPT_BIZRNO2.value.isNumber() ) {
+							alert("사업자번호에 숫자만 입력해 주세요.");
+							myform.CASH_RECPT_BIZRNO2.focus();
+							return;
+						}	
+						if ( !myform.CASH_RECPT_BIZRNO3.value.isNumber() ) {
+							alert("사업자번호에 숫자만 입력해 주세요.");
+							myform.CASH_RECPT_BIZRNO3.focus();
+							return;
+						}						
+
+						var bizr_no = myform.CASH_RECPT_BIZRNO1.value + myform.CASH_RECPT_BIZRNO2.value + myform.CASH_RECPT_BIZRNO3.value;
+						myform.CASH_RECPT_CRT_NO.value = bizr_no;
+					} else {
+						myform.CASH_RECPT_BIZRNO1.focus();
+						return;
+					}
+				}
+			} else {
+				// 미발행
+				// 소득공제용(01), 핸드폰 발행(10), 자진발급번호(0100001234) 셋팅
+				myform.CASH_RECPT_PUBL_PRPOS.value = "01";
+				myform.CASH_RECPT_CRT_DIVI.value = "10";
+				var mobl_no = "0100001234";
+				myform.CASH_RECPT_CRT_NO.value = mobl_no;
+			}
+		}
+
+		if (myform.P_AMT.value < 1000 && myform.P_AMT.value != 0) {
+			alert("1000원 이하는 신용카드로 결제하실수 없습니다.");
+			return;
+		}
+
+		/*if (myform.P_AMT.value == 0 ) {
+			myform.nonPayIns.value = "Y";
+
+			myform.submit();
+		} else {
+			var url = "";
+
+			myform.action = "";
+			myform.target = "PAY_FRAME";
+			myform.submit();
+		}*/
+
+		myform.zipCode.value = myform.zipCode1.value + "-" + myform.zipCode2.value;
+		myform.tel1.value = myform.tel11.value + "-" + myform.tel12.value + "-" + myform.tel13.value;
+		myform.tel2.value = myform.tel21.value + "-" + myform.tel22.value + "-" + myform.tel23.value;
+
+		myform.RCIVR_NM.value = myform.receiver.value;
+		myform.RCIVR_TELNO.value = myform.tel1.value;
+		myform.RCIVR_MOBL.value = myform.tel2.value;
+		myform.DLIVY_POST_NO1.value = myform.zipCode1.value;
+		myform.DLIVY_POST_NO2.value = myform.zipCode2.value;
+		myform.DLIVY_ADDR.value = myform.Dliv_addr.value;
+		myform.DLIVY_DTL_ADDR.value = myform.Dliv_dtl_addr.value;
+		 
+		if (jQuery("#CHK_USE_DLIVY_CPON").length > 0 && jQuery("#H_DLIVY_CPON_PUBL_ID").length > 0) {
+			if (jQuery("#CHK_USE_DLIVY_CPON").attr("checked") && jQuery("#H_DLIVY_CPON_PUBL_ID").val() != "")  
+				jQuery("#DLIVY_CPON_PUBL_ID").val(jQuery("#H_DLIVY_CPON_PUBL_ID").val());
+			else
+				jQuery("#DLIVY_CPON_PUBL_ID").val("");
+		} else {
+			jQuery("#DLIVY_CPON_PUBL_ID").val("");
+		}
+		
+		myform.payYn.value = "Y";
+		changePayButton(true);
+		myform.action = "https://m.reebok.co.kr:447/MO/Order/orderInput.action?payYn=Y";
+		myform.target = "PAY_FRAME";
+		myform.submit();
+	}
+
+	function changePayButton(st) {
+		//PAY_BUTTON
+		var btn = document.getElementById("PAY_BUTTON");
+		if ( st ) {
+			btn.href="javascript:alert('결제가 진행중입니다.');";
+			btn.className="btn1 btn_C4_off";
+
+			if (jQuery("#CHK_USE_DLIVY_CPON").length > 0) {
+				jQuery("#CHK_USE_DLIVY_CPON").attr("disabled","disabled");
+			}
+			jQuery("#credit").attr("disabled","disabled");
+			jQuery("#vbank").attr("disabled","disabled");
+		} else {
+			btn.href="javascript:on_pay();";
+			btn.className="btn1 btn_C4";
+
+			if (jQuery("#CHK_USE_DLIVY_CPON").length > 0) {
+				jQuery("#CHK_USE_DLIVY_CPON").attr("disabled","");
+			}
+			jQuery("#credit").attr("disabled","");
+			jQuery("#vbank").attr("disabled","");
+		}
+	}
+
+	/* 결제를 부분을 삽입하고 이를 진행하기 위한 값을 매핑 */
+
+	window.onload = function(){
+		var payVal = "";
+		var myform = document.formOrder; //document.frmPay;
+		
+		if (payVal == 'Y') {
+			var OD_NEW_ORDER_NO = "";
+			var TOTAL_PAY_AMT = "0";
+			var orderDescValue = "";
+
+			if (OD_NEW_ORDER_NO != "") {
+				myform.P_OID.value = OD_NEW_ORDER_NO;
+				myform.P_RETURN_URL.value = myform.P_RETURN_URL.value + "?P_OID=" + myform.P_OID.value;
+				myform.P_NOTI.value = OD_NEW_ORDER_NO;
+				document.formOrder.payYn.value = "";
+			} else {
+				parent.changePayButton(false);
+                alert('주문생성에 오류가 발생하였습니다. 확인 후 다시 이용하시기 바랍니다.');
+                return;
+            }
+			
+            if (TOTAL_PAY_AMT != parent.document.formOrder.P_AMT.value) {
+                parent.changePayButton(false);
+				alert('주문생성에 오류가 발생하였습니다. 확인 후 다시 이용하시기 바랍니다.');
+				return;
+			}
+
+			parent.document.formOrder.P_OID.value = OD_NEW_ORDER_NO;
+			parent.document.formOrder.P_NOTI.value = OD_NEW_ORDER_NO;
+			parent.document.formOrder.ORDER_NO.value = OD_NEW_ORDER_NO;
+			parent.document.formOrder.DLIVY_MEMO.value = orderDescValue;
+			parent.document.formOrder.P_RETURN_URL.value = "http://m.reebok.co.kr/MO/Order/orderResultISP.action?P_OID=";
+			parent.document.formOrder.PAYMT_TYPE.value = "03";
+			
+			if (parent.document.formOrder.PAYMT_TYPE.value == "05") {
+				parent.document.formOrder.P_GOPAYMETHOD.value = "VBANK";
+				parent.document.formOrder.P_NEXT_URL.value = "http://m.reebok.co.kr/MO/Order/orderResultVBank.action";				
+				parent.document.formOrder.P_NOTI_URL.value = "http://m.reebok.co.kr/MO/Order/orderNotiVBank.action";
+			} else {
+				if (parent.document.formOrder.SWALLET_YN.value == "Y") {
+					parent.document.formOrder.P_RESERVED.value = "d_swallet=Y";
+				
+				}
+				
+				parent.document.formOrder.P_GOPAYMETHOD.value = "CARD";
+			}
+			
+			parent.goINI();
+		} else {
+			document.formOrder.payYn.value = "";
+			//jQuery("#PAYMT_TYPE").val("03");
+			
+			if (jQuery("#CHK_USE_DLIVY_CPON").length > 0) {
+				jQuery("#CHK_USE_DLIVY_CPON").attr("checked","");
+			}
+			//jQuery("#PAYMT_TYPE").val("03");
+			//fn_ChangePayMethod(jQuery("#PAYMT_TYPE").val()=="03"?"credit":"vbank");
+			
+
+			jQuery("#credit_box").show();
+
+			jQuery("#no_accbox").hide();
+			jQuery("#no_accbox_desc").hide();
+			jQuery("#standard_bank").hide();
+			jQuery("#cashReport").hide();
+			jQuery("#cardReport_choice2").hide();
+			
+			changeDlvAmount();
+			return;
+		}
+	}
+
+	// 이니시스로 결제 요청하는 URL 분기
+	function goINI() {
+		if ( parent.document.formOrder.P_AMT.value == "0" ) {
+			var myform = document.formOrder;
+			myform.action = "http://m.reebok.co.kr/MO/Order/orderResultSafeClick.action"; // 0원 결제.
+		} else {
+			//document.charset = "EUC-KR";
+			var myform = document.formOrder;
+			myform.acceptCharset = "euc-kr";
+
+			/****************************************************************************
+			결제수단 action url을 아래와 같이 설정한다
+			URL끝에 /를 삭제하면 다음과 같은 오류가 발생한다.
+			"일시적인 오류로 결제시도가 정상적으로 처리되지 않았습니다.(MX1002) 자세한 사항은 이니시스(1588-4954)로 문의해주세요."
+			 ****************************************************************************/
+			//if (myform.P_GOPAYMETHOD.value == "CARD") {
+			// 결재수단은 신용카드만 지원함으로 아래의 URL로 보낸다.
+			if (parent.document.formOrder.PAYMT_TYPE.value == "05") {
+				myform.action = "https://mobile.inicis.com/smart/vbank/"; //가상계좌 https://mobile.inicis.com/smart/vbank/
+			} else {
+				myform.action = "https://mobile.inicis.com/smart/wcard/"; //신용카드 https://mobile.inicis.com/smart/wcard/
+			}
+		}
+        myform.target = "_parent";
+        myform.submit();
+	}
+
+	function goProductDetail(prodCD) {
+		var url = "http://m.reebok.co.kr/MO/Product/prdDispBas.action";
+		var formNm = document.productDetail;
+
+		formNm.prodCD.value = prodCD;
+		formNm.action = url;
+		formNm.target = "_parent";
+		formNm.submit();
+	}
+
+	function findZipcode() {
+		var url = "https://m.reebok.co.kr:447/MO/Order/findZipCode.action";
+		var formNm = document.formOrder;
+
+		if(formNm.sms[0].checked == true)
+			formNm.isSMS.value = "Y";
+		else
+			formNm.isSMS.value = "N";
+		if(formNm.deliverType[0].checked == true)
+			formNm.isBasicAddr.value = "Y";
+		else
+			formNm.isBasicAddr.value = "N";
+
+		formNm.zipCode.value = formNm.zipCode1.value + "-" + formNm.zipCode2.value;
+		formNm.tel1.value = formNm.tel11.value + "-" + formNm.tel12.value + "-" + formNm.tel13.value;
+		formNm.tel2.value = formNm.tel21.value + "-" + formNm.tel22.value + "-" + formNm.tel23.value;
+		formNm.action = url;
+		formNm.target = "_parent";
+		formNm.submit();		
+	}
+
+	var basReceiver = '김기백';
+
+
+	var basTel11 = '010';
+	var basTel12 = '6816';
+	var basTel13 = '2520';
+
+
+
+
+	var basTel21 = '010';
+	var basTel22 = '6816';
+	var basTel23 = '2520';
+
+
+
+	var basZipcode1 = '131';
+	var basZipcode2 = '200';
+	var basAddr = '서울 중랑구 면목동';
+	var basDetailAddr = '69-30번지 지층 2호';
+	var basDelvYa = '';
+	var basNmDoro = '';
+	var basNumBldg = '';
+	
+	function selectDeliverType(opt) {
+		var formNm = document.formOrder;
+
+		if(opt == "1") {
+			formNm.receiver.value = basReceiver;
+			formNm.tel11.value = basTel11;
+			formNm.tel12.value = basTel12;
+			formNm.tel13.value = basTel13;
+			formNm.tel21.value = basTel21;
+			formNm.tel22.value = basTel22;
+			formNm.tel23.value = basTel23;
+			formNm.zipCode1.value = basZipcode1;
+			formNm.zipCode2.value = basZipcode2;
+			formNm.Dliv_addr.value = basAddr;
+			formNm.Dliv_dtl_addr.value = basDetailAddr;
+			formNm.DELVYA.value = basDelvYa;
+			formNm.NM_DORO.value = basNmDoro;
+			formNm.NUM_BLDG.value = basNumBldg;
+
+			changeDlvAmount();
+		}
+		else {
+			formNm.receiver.value = "";
+			formNm.tel11.value = "";
+			formNm.tel12.value = "";
+			formNm.tel13.value = "";
+			formNm.tel21.value = "";
+			formNm.tel22.value = "";
+			formNm.tel23.value = "";
+			formNm.zipCode1.value = "";
+			formNm.zipCode2.value = "";
+			formNm.Dliv_addr.value = "";
+			formNm.Dliv_dtl_addr.value = "";
+			formNm.DELVYA.value = "";
+			formNm.NM_DORO.value = "";
+			formNm.NUM_BLDG.value = "";
+		}
+	}
+
+	// 우편번호 팝업
+	function fn_pop(){	
+		Modal.openIframeLayer("https://m.reebok.co.kr:447/MO/Member/findZipCode.action", "uxazip", "frmPostSearch");
+		window.scrollTo(0,600);
+		return;
+	}
+
+	/// Modal popup
+	function Modal() { }
+	Modal.openIframeLayer = function(url, el, framename) {
+		var layer = document.getElementById(framename);
+		layer.src = url;
+		Modal.openLayer(el);
+	};
+	Modal.openLayer = function(el) {
+		document.getElementById(el).style.display = "block";
+		var uxaWrap = document.getElementById('wrap');
+		document.getElementById('uxabg').style.display = 'block';
+
+		function start() {
+			document.getElementById('uxabg').style.width = uxaWrap.offsetWidth + 'px';
+			document.getElementById('uxabg').style.height = uxaWrap.offsetHeight + 'px';
+		}
+		var stop = setInterval(start, 1);
+	};
+	Modal.closeLayer = function(el) {
+		document.getElementById(el).style.display = "none";
+		document.getElementById('uxabg').style.display = 'none';
+		window.scrollTo(0,620);
+	};
+
+	//우편번호Frame 사이즈
+	function resizeFrameHeight(frameId, height) {
+		document.getElementById(frameId).height = height;
+	}
+
+	//우편번호 셋팅
+	function fn_return_zipaddr(firstpost,lastpost,basic_addr,dtl_addr,sido,gun,dong,delvya, num_bldg, nm_doro) {
+		var formNm = document.formOrder;
+		
+		formNm.zipCode1.value = firstpost;
+		formNm.zipCode2.value = lastpost;
+		formNm.Dliv_addr.value = basic_addr;
+		formNm.Dliv_dtl_addr.value = dtl_addr;
+		formNm.SIDO.value = sido;
+		formNm.GUN.value = gun;
+		formNm.DONG.value = dong;
+		formNm.DELVYA.value = delvya;
+		formNm.NUM_BLDG.value = num_bldg;
+		formNm.NM_DORO.value = nm_doro;
+		
+		changeDlvAmount();
+	}
+
+	//배송료 Setting
+	function changeDlvAmount() {
+		var formNm = document.formOrder;
+		var vOrgDlivyFee = parseInt("2500");
+		var vTOTAL_ORDER_AMT = parseInt(jQuery("#TOTAL_ORDER_AMT").val());
+		var vIslndSupCntryDlivyFee = parseInt("4500");
+		var vJejudoDlivyFee = parseInt("3000");
+		var vDlivyFee = vOrgDlivyFee;
+		var vTotalPayAmt = 0;
+		var vDlivyCponAmt = 0;
+
+		if (jQuery("#H_ONLINE_ONLY").val() == "Y" && "N" == "Y") {
+			vDlivyFee = 0;
+			vIslndSupCntryDlivyFee = 0;
+			vJejudoDlivyFee = 0;
+			vOrgDlivyFee = 0;
+		} else {
+			if (vTOTAL_ORDER_AMT >= parseInt("50000")) {
+				vDlivyFee = 0;
+				vOrgDlivyFee = 0;
+			}
+			if ((vTOTAL_ORDER_AMT < parseInt("50000")) ||
+					(vTOTAL_ORDER_AMT < 50000 && parseInt("50000") < 50000)) {
+				if (jQuery("#DELVYA").val() == "9") { // 도서산간 배송...
+					vDlivyFee = vDlivyFee + vIslndSupCntryDlivyFee;
+				} else if (jQuery("#DELVYA").val() == "7") { // 제주 배송...
+					vDlivyFee = vDlivyFee + vJejudoDlivyFee;
+				}
+			}
+		}
+		
+		if (jQuery("#CHK_USE_DLIVY_CPON").length > 0 && jQuery("#H_DLIVY_CPON_PUBL_ID").length > 0) {
+			if (jQuery("#CHK_USE_DLIVY_CPON").attr("checked") && jQuery("#H_DLIVY_CPON_PUBL_ID").val() != "") {
+				vDlivyCponAmt = vDlivyFee;
+			}
+		}
+			
+		vTotalPayAmt = parseInt(formNm.ORG_TOTAL_PAY_AMT.value) - vOrgDlivyFee + vDlivyFee - vDlivyCponAmt - parseInt(jQuery("#TOTAL_DISCOUNT_AMT").val());
+		formNm.TOTAL_PAY_AMT.value = vTotalPayAmt;
+		formNm.P_AMT.value = vTotalPayAmt;
+		formNm.DLIVY_FEE.value = vDlivyFee - vDlivyCponAmt;
+
+		jQuery("#DLIVY_FEE_CPON_AMT").val(vDlivyCponAmt);
+		jQuery("#viewDlvFee").attr("innerHTML", toCurrency(vDlivyFee));
+		jQuery("#viewDlvFeeCpn").attr("innerHTML", toCurrency(vDlivyCponAmt));
+		jQuery("#viewDlvFeePay").attr("innerHTML", toCurrency(vDlivyFee - vDlivyCponAmt));
+		jQuery("#viewTotalPayAmtStr").attr("innerHTML", toCurrency(vTotalPayAmt))+" 원";	
+	}
+
+	/* 쿠폰 선택 */
+	function goSelectCoupon() {
+		var url = "http://m.reebok.co.kr/MO/Order/orderCouponForm.action";
+		var formNm = document.formOrder;
+
+		if(formNm.smsY.checked == true)
+			formNm.isSMS.value = "Y";
+		else
+			formNm.isSMS.value = "N";
+		if(formNm.deliverTypeY.checked == true)
+			formNm.isBasicAddr.value = "Y";
+		else
+			formNm.isBasicAddr.value = "N";
+
+		formNm.zipCode.value = formNm.zipCode1.value + "-" + formNm.zipCode2.value;
+		formNm.tel1.value = formNm.tel11.value + "-" + formNm.tel12.value + "-" + formNm.tel13.value;
+		formNm.tel2.value = formNm.tel21.value + "-" + formNm.tel22.value + "-" + formNm.tel23.value;
+		formNm.action = url;
+		formNm.target = "_parent";
+		formNm.submit();
+	}
+
+	/* 결제 유형 선택 */
+	function fn_ChangePayMethod(sel) {
+		if ( sel == "credit" ) {
+			jQuery("#PAYMT_TYPE").val("03");
+			jQuery("#P_GOPAYMETHOD").val("CARD");
+			jQuery("#SWALLET_YN").val("N");
+			
+			// 핸드폰번호 초기화
+			fn_initCashRecptMoblno();		
+			// 사업자번호 초기화
+			fn_initCashRecptBizrno();		
+
+			jQuery("#credit_box").show();
+			jQuery("#no_accbox").hide();
+			jQuery("#no_accbox_desc").hide();
+			jQuery("#standard_bank").hide();
+			jQuery("#cashReport").hide();
+			jQuery("#cashReport_choice").hide();
+			
+			jQuery("#cardReport_choice2").hide();
+			jQuery("#CARD_PAYMT_TYPE").val("01");
+		} else if ( sel == "kpay" ) {
+			jQuery("#PAYMT_TYPE").val("03");
+			jQuery("#P_GOPAYMETHOD").val("CARD");
+			jQuery("#SWALLET_YN").val("N");
+			
+			// 핸드폰번호 초기화
+			fn_initCashRecptMoblno();		
+			// 사업자번호 초기화
+			fn_initCashRecptBizrno();		
+
+			jQuery("#credit_box").show();
+			jQuery("#no_accbox").hide();
+			jQuery("#no_accbox_desc").hide();
+			jQuery("#standard_bank").hide();
+			jQuery("#cashReport").hide();
+			jQuery("#cashReport_choice").hide();
+			
+			jQuery("#cardReport_choice2").show();
+			jQuery("#CARD_PAYMT_TYPE").val("02");	
+		} else if ( sel == "swallet" ) {
+				jQuery("#PAYMT_TYPE").val("03");
+				jQuery("#P_GOPAYMETHOD").val("CARD");
+				jQuery("#SWALLET_YN").val("Y");
+				
+				// 핸드폰번호 초기화
+				fn_initCashRecptMoblno();		
+				// 사업자번호 초기화
+				fn_initCashRecptBizrno();		
+
+				jQuery("#credit_box").show();
+				jQuery("#no_accbox").hide();
+				jQuery("#no_accbox_desc").hide();
+				jQuery("#standard_bank").hide();
+				jQuery("#cashReport").hide();
+				
+				jQuery("#cardReport_choice2").hide();
+				jQuery("#CARD_PAYMT_TYPE").val("01");
+				
+		} else {
+			jQuery("#PAYMT_TYPE").val("05");
+			jQuery("#P_GOPAYMETHOD").val("VBANK");
+			jQuery("#SWALLET_YN").val("N");
+
+			jQuery("#CASH_RECPT_APPLY").attr("checked","checked");
+			fn_ChangeCashRecptApply('Y');
+			
+			jQuery("#no_accbox").show();
+			jQuery("#no_accbox_desc").show();
+			jQuery("#cashReport").show();
+			jQuery("#standard_bank").show();
+			jQuery("#cashReport_choice").show();
+			jQuery("#credit_box").hide();	
+			
+			jQuery("#cardReport_choice2").hide();
+			jQuery("#CARD_PAYMT_TYPE").val("01");
+		}
+	}
+
+	//핸드폰번호 초기화
+	function fn_initCashRecptMoblno() {
+		jQuery("#CASH_RECPT_MOBLNO1").val("");
+		jQuery("#CASH_RECPT_MOBLNO2").val("");
+		jQuery("#CASH_RECPT_MOBLNO3").val("");
+	}
+	//사업자번호 초기화
+	function fn_initCashRecptBizrno() {
+		jQuery("#CASH_RECPT_BIZRNO1").val("");
+		jQuery("#CASH_RECPT_BIZRNO2").val("");
+		jQuery("#CASH_RECPT_BIZRNO3").val("");
+	}
+
+	//현금영수증 신청(Y:발행, N:미발행)
+	function fn_ChangeCashRecptApply(sel) {	
+		if ( sel == "Y" ) {	
+			jQuery("#CASH_RECPT_PUBL_PRPOS_01").attr("checked","checked");
+			fn_ChangeCashRecptPubl('01');
+			
+			jQuery("#cashReport_bizr").hide();
+			jQuery("#cashReport").show();
+			jQuery("#cashReport_phn").show();
+			jQuery('#cashReport_choice').show();
+			jQuery('#cashReport_choice2').show();
+		} else {		
+			// 핸드폰번호 초기화
+			fn_initCashRecptMoblno();		
+			// 사업자번호 초기화
+			fn_initCashRecptBizrno();
+
+			jQuery("#cashReport_bizr").hide();
+			jQuery("#cashReport_phn").hide();
+			jQuery('#cashReport_choice').hide();
+			jQuery('#cashReport_choice2').hide();
+		}
+	}
+
+	function fn_ChangeCardRecptApply(sel) {	
+		if ( sel == "Y" ) {	
+			jQuery('#cardReport_choice2').show();
+		} else {		
+			jQuery('#cardReport_choice2').hide();
+		}
+	}
+
+	//현금영수증 발행용도(01:개인소득공제용, 02:지출증빙용)
+	function fn_ChangeCashRecptPubl(sel) {	 
+		if ( sel == "01" ) {		
+			// 사업자번호 초기화
+			fn_initCashRecptBizrno();
+
+			jQuery('#cashReport_bizr').hide();
+			jQuery('#cashReport_phn').show();
+		} else {		
+			// 핸드폰번호 초기화
+			fn_initCashRecptMoblno();
+
+			jQuery('#cashReport_bizr').show();
+			jQuery('#cashReport_phn').hide();
+		}
+	}
+
+	//현금영수증 인증구분(10:휴대폰, 20:주민등록번호, 30:사업자번호)
+	function fn_ChangeCashRecptCrt(sel) {	
+		if ( sel == "10" ) {		
+			// 사업자번호 초기화
+			fn_initCashRecptBizrno();
+
+			jQuery("#cashReport_bizr").hide();
+			jQuery("#cashReport_phn").show();
+
+		} else if ( sel == "30" ) {		
+			// 핸드폰번호 초기화
+			fn_initCashRecptMoblno();
+
+			jQuery("#cashReport_bizr").show();	
+			jQuery("#cashReport_phn").hide();	
+		}
+	}
+
+	//사업자 번호 체크
+	function fn_companyCheck() {
+		var li_temp, li_lastid;
+		biz_value = new Array(10);
+		var ju = jQuery("#CASH_RECPT_BIZRNO1").val() + jQuery("#CASH_RECPT_BIZRNO2").val() + jQuery("#CASH_RECPT_BIZRNO3").val();
+		
+		biz_value[0] = ( parseFloat(ju.substring(0 ,1)) * 1 ) % 10;	
+		biz_value[1] = ( parseFloat(ju.substring(1 ,2)) * 3 ) % 10;	
+		biz_value[2] = ( parseFloat(ju.substring(2 ,3)) * 7 ) % 10;	
+		biz_value[3] = ( parseFloat(ju.substring(3 ,4)) * 1 ) % 10;	
+		biz_value[4] = ( parseFloat(ju.substring(4 ,5)) * 3 ) % 10;	
+		biz_value[5] = ( parseFloat(ju.substring(5 ,6)) * 7 ) % 10;	
+		biz_value[6] = ( parseFloat(ju.substring(6 ,7)) * 1 ) % 10;	
+		biz_value[7] = ( parseFloat(ju.substring(7,8)) * 3 ) % 10;	
+		li_temp = parseFloat(ju.substring(8,9)) * 5 + "0";
+		biz_value[8] = parseFloat(li_temp.substring(0,1)) + parseFloat(li_temp.substring(1,2));	  
+		biz_value[9] = parseFloat(ju.substring(9,10));	  
+		li_lastid = (10 - ( ( biz_value[0] + biz_value[1] + biz_value[2] + biz_value[3] + biz_value[4] + biz_value[5] + biz_value[6] + biz_value[7] + biz_value[8] ) % 10 ) ) % 10;	
+
+		if (biz_value[9] == li_lastid) {
+
+			return true;
+
+		} else {
+			alert("고객님께서 입력하신 사업자등록번호는 확인되지 않습니다. 다시한번 확인해 주세요!!"); 
+			jQuery("#CASH_RECPT_BIZRNO1").val('');
+			jQuery("#CASH_RECPT_BIZRNO2").val('');
+			jQuery("#CASH_RECPT_BIZRNO3").val('');
+			jQuery("#CASH_RECPT_BIZRNO1").focus();
+			return false;
+		}
+	}
+	
+	
+	//Focus 이동
+	function moveFocus(num,fromform,toform) {
+		var str = fromform.value.length;
+		if(str == num) {
+			toform.focus();
+		}
+	}		
+</script>
+<form id="formOrder" name="formOrder" method="post" action="" onsubmit="return false">
+    <input type="hidden" name="CART_NOS" value="" />
+    <input type="hidden" name="SS_MEM_ID" value="kkbdream" />
+    <input type="hidden" name="SS_MEM_NO" value="00200208507" />
+    <input type="hidden" name="orderQty" value="1" />
+    <input type="hidden" name="optionNo" value="220" />
+    <input type="hidden" name="prodCD" value="V65750" />
+    <input type="hidden" name="zipCode" value="" />
+    <input type="hidden" name="isSMS" value="Y" />
+    <input type="hidden" name="isBasicAddr" value="Y" />
+    <input type="hidden" name="tel1" value="" />
+    <input type="hidden" name="tel2" value="" />
+    <input type="hidden" name="couponList" value="" />
+    <input type="hidden" name="nonPayIns" value="" />
+    <input type="hidden" name="payYn" value="" />
+    <input type="hidden" name="spst_id" value="0" />
+    <input type="hidden" name="srch_nm" value="" />
+    
+    <!-- kpay 결제 -->
+	<input type="hidden" name="CARD_PAYMT_TYPE" id="CARD_PAYMT_TYPE" value=""/>
+<!-- prod coupon start -->
+
+    <input type="hidden" name="PROD_CPON_AMT" value="0" />
+
+<section id="contents">
+    <section class="m_contents order_wrt">
+        
+        <div class="ord_desc">
+            <h3>주문서 작성</h3>
+            <dl>
+                <dt>주문 전 꼭 읽어보세요.</dt>
+                <dd>
+                    <ul>
+                        <li>주문하실 상품 및 수량이 모두 맞는지 다시 한번 확인해 주십시오.</li>
+                        <li>수정이 필요할 경우 목록 하단의 장바구니로 이동 버튼을 클릭 하시면 장바구니 화면으로 이동합니다.</li>
+                    </ul>
+                </dd>
+            </dl>
+        </div>
+        <!-- //ord_desc -->
+
+        <section class="odr_box sec1">
+            <h4>01. 주문할 상품</h4>
+            <div class="cont">
+                
+                
+                
+                
+                
+                
+                    <div class="box">
+                        <div class="prod_info">
+                            <div class="lf"><img alt="[Reebok Classic/Unisex] 인스타펌프 퓨리 오리지널" src="http://shop.reebok.co.kr/upload/prod/basic/160/V65750-1_160X160.jpg"></div>
+                            <div class="rg bdrbox">
+                                <p class="tit">[Reebok Classic/Unisex] 인스타펌프 퓨리 오리지널</p>
+                                <p class="price">
+                                    
+                                        
+                                            <span class="line">
+                                                <span><em class="ree_ft">219,000</em>원</span>
+                                            </span>
+                                            <span class="sale">
+                                                <span><em class="ree_ft">175,200</em>원</span>
+                                            </span>
+                                        
+                                        
+                                     
+                                </p>
+                            </div>
+                        </div>
+                        <!-- //prod_info -->
+    
+                        <ul class="data_tb_list">
+                            <li>
+                                <strong>옵션</strong>
+                                <div class="td ree_ft"><span class="ree_ft">220</span></div>
+                            </li>
+                            <li>
+                                <strong>수량</strong>
+                                <div class="td ree_ft"><span class="ree_ft">1</span></div>
+                            </li>
+                            <li>
+                                <strong>예상포인트</strong>
+                                <div class="td">
+                                    <span class="point">
+                                        <em class="ree_ft">8,760</em>
+                                        <span class="p ree_ft">P</span>
+                                        <span class="per ree_ft">(5%)</span>
+                                    </span>
+                                </div>
+                            </li>
+                        </ul>
+                        <!-- //data_tb_list -->
+                    </div>
+                    <!-- //box -->
+                    
+                    
+                    
+                    
+                    
+                
+
+                <div class="total">
+                    <dl>
+                        <dt>총 주문금액</dt>
+                        <dd>
+                            <span class="price"><em class="ree_ft">175,200</em>원</span>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>총 예상포인트</dt>
+                        <dd>
+                            <span class="point">
+                                <em class="ree_ft">8,760</em>
+                                <span class="p ree_ft">P</span>
+                                <span class="per ree_ft">(5%)</span>
+                            </span>
+                        </dd>
+                    </dl>
+                </div>
+                
+            </div>
+            <!-- //cont -->
+
+        </section>
+        <!-- //odr_box 01 -->
+
+        <section class="odr_box sec2">
+            <h4>02. 주문자 정보 확인</h4>
+            <div class="cont">
+                <ul class="data_tb_list">
+                    <li>
+                        <strong>이름</strong>
+                        <div class="td">김기백</div>
+                    </li>
+                    <li>
+                        <strong>전화번호</strong>
+                        <div class="td">010-6816-2520</div>
+                    </li>
+                    <li>
+                        <strong>휴대폰번호</strong>
+                        <div class="td">010-6816-2520</div>
+                    </li>
+                    <li>
+                        <strong>이메일</strong>
+                        <div class="td">rvdppv@naver.com</div>
+                    </li>
+                    <li>
+                        <strong>주소</strong>
+                        <div class="td">131-200</div>
+                    </li>
+                    <li class="hgt_auto">
+                        <strong class="blind">주소2</strong>
+                        <div class="td">서울 중랑구 면목동</div>
+                    </li>
+                    <li class="hgt_auto">
+                        <strong class="blind">주소3</strong>
+                        <div class="td">69-30번지 지층 2호</div>
+                    </li>
+                </ul>
+                <!-- //data_tb_list -->
+                <div class="itp_area">
+                    <strong>SMS 정보수신</strong>
+                    <div>
+                        <span class="rdo_dsgn">
+                            <input type="radio" name="sms" id="smsY" value="Y" checked="checked"/>
+                            <label for="smsY">예</label>
+                        </span>
+                        <span class="rdo_dsgn">
+                            <input type="radio"  name="sms" id="smsN" value="N"/>
+                            <label for="smsN">아니오</label>
+                        </span>
+                    </div>
+                </div>
+                <!-- //itp_area -->
+            </div>
+            <!-- //cont -->
+        </section>
+        <!-- //odr_box 02 -->
+        
+        <!-- Modal Popup bg-->
+        <div id="uxabg" style="width:100%;position:absolute;top:0;left:0;z-index:50;background:#000;opacity:0.5;display:none;"></div>
+        <!--// Modal Popup bg-->
+        <!--우편번호찾기-->
+        <div id="uxazip" style="width:100%;left:0px;text-align:center;display:none;z-index:100;position:absolute;top:460px;">
+            <iframe id="frmPostSearch" src="about:blank" frameborder="0" scrolling="no" width="99%" height="540px" title="우편번호찾기 노출을 위한 프레임"></iframe>
+        </div>
+        <!--//우편번호찾기-->
+
+        <section class="odr_box sec3">
+            <h4>03. 배송정보 확인</h4>
+            <div class="cont">
+
+                <div class="itp_area">
+                    <strong>배송지 선택</strong>
+                    <div>
+                        <span class="rdo_dsgn">
+                            <input type="radio" name="deliverType" id="deliverTypeY" value="Y" checked="checked" onClick="javascript:selectDeliverType('1');"/>
+                            <label for="deliverTypeY">기본주소</label>
+                        </span>
+                        <span class="rdo_dsgn">
+                            <input type="radio" name="deliverType" id="deliverTypeN" value="N" onClick="javascript:selectDeliverType('2');"/>
+                            <label for="deliverTypeN">새로입력</label>
+                        </span>
+                    </div>
+                </div>
+                <!-- //itp_area -->
+
+                <ul class="data_tb_form">
+                    <li>
+                        <strong>받으시는 분</strong>
+                        <div class="td">
+                            <input type="text" name="receiver" id="receiver" value="김기백" class="ipt bdrbox">
+                        </div>
+                    </li>
+
+                    <li class="phn">
+                        <strong>휴대폰</strong>
+                        <div class="td">
+                            <select name="tel21" id="tel21" class="selc_box2">
+                                <option value="010" selected="selected">010</option>
+                                <option value="011">011</option>
+                                <option value="016">016</option>
+                                <option value="017">017</option>
+                                <option value="018">018</option>
+                                <option value="019">019</option>
+                            </select>
+                            <input type="tel" name="tel22" id="tel22" value="6816" class="ipt_lng3 bdrbox" maxlength="4" onkeyup="/MOveFocus(4,this,this.form.tel23);">
+                            <input type="tel" name="tel23" id="tel23" value="2520" class="ipt_lng3 bdrbox" maxlength="4">
+                        </div>
+                    </li>
+                    
+
+                    <li class="phn">
+                        <strong>전화번호</strong>
+                        <div class="td">
+                            <select name="tel11" id="tel11" class="selc_box2">
+                                <option value="02">02</option>
+                                <option value="031">031</option>
+                                <option value="032">032</option>
+                                <option value="033">033</option>
+                                <option value="041">041</option>
+                                <option value="042">042</option>
+                                <option value="043">043</option>
+                                <option value="044">044</option>
+                                <option value="051">051</option>
+                                <option value="052">052</option>
+                                <option value="053">053</option>
+                                <option value="054">054</option>
+                                <option value="055">055</option>
+                                <option value="060">060</option>
+                                <option value="061">061</option>
+                                <option value="062">062</option>
+                                <option value="063">063</option>
+                                <option value="064">064</option>
+                                <option value="070">070</option>
+                                <option value="080">080</option>
+                                <option value="010" selected="selected">010</option>
+                                <option value="011">011</option>
+                                <option value="016">016</option>
+                                <option value="017">017</option>
+                                <option value="018">018</option>
+                                <option value="019">019</option>
+                            </select>
+                            <input type="tel" name="tel12" id="tel12" value="6816" class="ipt_lng3 bdrbox" maxlength="4" onkeyup="/MOveFocus(4,this,this.form.tel13);">
+                            <input type="tel" name="tel13" id="tel13" value="2520" class="ipt_lng3 bdrbox" maxlength="4">
+                        </div>
+                    </li>
+
+                    <li class="addr zip_num">
+                        <strong>주소</strong>
+                        <div class="td">
+                            <input type="text" name="zipCode1" id="zipCode1" value="131" class="ipt_lng3 bdrbox" readonly="readonly">
+                            <input type="text" name="zipCode2" id="zipCode2" value="200" class="ipt_lng3 bdrbox" readonly="readonly">
+                            <a href="javascript:fn_pop();" name="zipcodeBtn" id="zipcodeBtn" class="btn1">우편번호 검색</a>
+                        </div>
+                    </li>
+                    <li class="addr">
+                        <div class="td colspan">
+                            <input type="text" name="Dliv_addr" id="Dliv_addr" class="ipt bdrbox" value="서울 중랑구 면목동" readonly="readonly">
+                        </div>
+                    </li>
+                    <li class="addr">
+                        <div class="td colspan">
+                            <input type="text" name="Dliv_dtl_addr" id="Dliv_dtl_addr" class="ipt bdrbox" value="69-30번지 지층 2호">
+                        </div>
+                    </li>
+
+                    <li>
+                        <strong>배송시 요청사항</strong>
+                        <div class="td">
+                            <input type="text" name="orderDesc" id="orderDesc" value="" class="ipt bdrbox">
+                        </div>
+                    </li>
+
+                </ul>
+
+            </div>
+        </section>
+        <!-- //odr_box 03 -->
+
+        <section class="odr_box sec4">
+            <h4>04. 결제금액</h4>
+            <div class="cont">
+                <ul class="data_tb_list">
+                    <li>
+                        <strong>총 주문금액</strong>
+                        <div class="td">175,200 원</div>
+                    </li>
+                    <li>
+                        <strong>쿠폰 사용</strong>
+                        <div class="td">
+                            <span style="float:left;clear:both;">0 원</span>
+                            <a href="javascript:goSelectCoupon();" class="btn1">쿠폰 조회</a>
+                        </div>
+                    </li>
+                    <li>
+                        <strong>배송비</strong>
+                        <div class="td">
+                            0 원
+                        </div>
+                    </li>
+                </ul>
+                <!-- //data_tb_list -->
+                <div class="total_prc">
+                    <strong>최종 결제 금액</strong>
+                    <span class="price">
+                        <strong class="ree_ft" id="viewTotalPayAmtStr">175,200</strong>
+                        <span>원</span>
+                    </span>
+                </div>
+                <!-- //itp_area -->
+            </div>
+            <!-- //cont -->
+        </section>
+        <!-- //odr_box 04 -->
+        
+        <section class="odr_box sec5">
+            <h4>05. 결제수단</h4>
+            <div class="cont">
+                <p style="color:#cc0000;">리복 온라인 공식쇼핑몰은 고객님의 결제정보를 저장하고 있지 않습니다. 신용카드의 정보 유출로 인해 우려되신다면, 무통장입금(가상계좌)을 이용해보세요.</p>
+                <div class="itp_area">
+                    <div>
+                        <strong>결제수단 선택</strong>
+                        <div>
+                            <!-- 151123 span 태그에 style 추가  -->
+                            <span class="rdo_dsgn" style="margin-bottom:5px;">
+                                <input type="radio" id="credit" name="payMethod" onclick="fn_ChangePayMethod('credit');" value="03"/>
+                                <label  for="credit">카드결제(일반)</label>
+                            </span>
+                            <!-- 151123 span 태그에 style 추가  -->
+                            <span class="rdo_dsgn" style="margin-bottom:5px;">
+                                <input type="radio" id="kpay" name="payMethod" onclick="fn_ChangePayMethod('kpay');" value="03"/>
+                                <label  for="kpay">Kpay</label>
+                            </span>
+                            <!-- 151123 span 태그에 style 추가  -->
+                            <span class="rdo_dsgn" style="margin-bottom:5px;">
+                                <input type="radio" id="vbank" name="payMethod" onclick="fn_ChangePayMethod('vbank');" value="05"/>
+                                <label for="vbank">무통장 입금</label>
+                            </span>
+                            <!-- 151123 휴대폰결제 span 추가   -->
+                            <span class="rdo_dsgn" style="margin-bottom:5px;">
+                                <input type="radio" id="/MObile" name="payMethod" onclick="fn_ChangePayMethod('mobile');" value="06"/>
+                                <label for="/MObile">휴대폰 결제</label>
+                            </span>
+                        </div>
+                    </div>
+                    <p class="desc" id="no_accbox_desc" style="display:none;">아래 '결제하기' 버튼클릭 후 입금은행 및 계좌, 입금기한을 확인하실 수 있습니다.</p>                                
+                </div>
+				<!-- 151123 휴대폰결제 설명   -->
+		        <table border="0" style="display: table;" id="/MObile_payment" summary="휴대폰 결제">
+                    <tr>
+                        <td colspan="2" style="padding:5px 0;">
+                            <div>
+                                <p style="margin-bottom:12px;font-size:13px;color:#222;font-weight:bold;">결제 안내</p>
+                                <p style="margin-bottom:2px;font-size:11px;color:#888;font-weight:normal;">결제 한도금액은 통신사별, 회원등급별, 신규/번호이동 여부에 따라 다를 수 있습니다.</p>
+                                <p style="margin-bottom:15px;font-size:11px;color:#ff0000;font-weight:normal;">※ 결제 제한 및 이용한도에 대한 자세한 내용은 FAQ 참고</p>
+
+                                <p style="margin-bottom:2px;font-size:11px;color:#888;font-weight:normal;">휴대폰 결제의 경우, 현금영수증 및 세금계산서 발급은 불가능합니다.</p>
+                                <p style="margin-bottom:20px;font-size:11px;color:#888;font-weight:normal;">(현금영수증은 휴대폰 요금 현금 지불 시에만 통신사 통해 발급 가능)</p>
+
+                                <p style="margin-bottom:12px;font-size:13px;color:#222;font-weight:bold;">취소 및 반품 안내</p>
+                                <ul>
+                                    <li style="position:relative;padding-left:8px;margin-bottom:5px;font-size:11px;color:#888;font-weight:normal;"><span style="margin:0;position:absolute;top:0;left:0;color:#888;">-</span>결제한 달과 취소/반품한 달이 같은 경우, 결제 금액은 당일 취소 됩니다.</li>
+                                    <li style="position:relative;padding-left:8px;margin-bottom:5px;font-size:11px;color:#888;font-weight:normal;"><span style="margin:0;position:absolute;top:0;left:0;color:#888;">-</span>결제한 달과 취소/반품한 달이 다른 경우, 입력하신 은행 계좌로 영업일 기준 3일 이내에 환불 됩니다.</li>
+                                    <li style="position:relative;padding-left:8px;margin-bottom:5px;font-size:11px;color:#888;font-weight:normal;"><span style="margin:0;position:absolute;top:0;left:0;color:#888;">-</span>부분 취소/반품의 경우, 취소 건을 제외한 금액을 재결제 하시면 이전 결제 건 전체가 취소 됩니다.</li>
+                                    <li style="position:relative;padding-left:8px;margin-bottom:15px;font-size:11px;color:#888;font-weight:normal;"><span style="margin:0;position:absolute;top:0;left:0;color:#888;">-</span>부분 취소 시 결제한도 금액이 부족한 경우, 휴대폰 결제 외에 다른 결제 수단으로 이용해주세요.</li>
+                                </ul>
+                                <p style="margin-bottom:15px;font-size:11px;color:#ff0000;font-weight:normal;">※ 자세한 결제 취소 및 반품 절차는 FAQ 참고</p>
+                            </div>
+                        </td>
+                    </tr>           
+                </table>
+                <!-- //151123 -->
+
+						<table border="0" style="display:none;" id="cardReport_choice2" summary="신용카드">
+							<tr>
+								<td colspan="2" style="padding:5px 0;">
+									<div>
+										<p style="margin-bottom:12px;font-size:13px;color:#222;font-weight:bold;">KG이니시스의 스마트폰 앱 간편결제 서비스</p>
+										<p style="margin-bottom:15px;font-size:11px;color:#888;">사용자가 신용카드 결제정보를 Kpay에 미리 등록하고, 가맹점 결제 시 Kpay 어플리케이션을 실행, 간편하게 결제하는 서비스 입니다.</p>
+	
+										<dl>
+											<dt style="margin-bottom:2px;font-size:11px;color:#ff0000;font-weight:normal;">※ Kpay 지원 카드</dt>
+											<dd style="margin-bottom:15px;">
+												<ul>
+													<li style="line-height:15px;font-size:11px;color:#888;">신한, 비씨, 삼성, 롯데, 하나, 국민, 현대, 농협, 외환카드 사용가능</li>
+												</ul>
+											</dd>
+											<dt style="line-height:15px;margin-bottom:2px;font-size:11px;color:#ff0000;font-weight:normal;">※ Kpay 안드로이드 지원 단말</dt>
+											<dd style="margin-bottom:15px;">
+												<ul>
+													<li style="line-height:15px;">
+														<strong style="font-size:11px;color:#222;font-weight:normal;margin-right:3px;">지원 OS :</strong>
+														<span style="font-size:11px;color:#888;margin:0;">안드로이드 4.0 아이스크림 샌드위치 이상</span>
+													</li>
+													<li style="line-height:15px;">
+														<strong style="font-size:11px;color:#222;font-weight:normal;margin-right:3px;">해상도 : </strong>
+														<span style="font-size:11px;color:#888;margin:0;">1280 x 720 이상 단말</span>
+													</li>
+													<li style="line-height:15px;font-size:11px;color:#888;margin-top:4px;">갤럭시S2 와 해당 동급 스마트폰 사용 불가</li>
+												</ul>
+											</dd>
+											<dt style="margin-bottom:2px;font-size:11px;color:#ff0000;font-weight:normal;">※ Kpay iOS 지원 단말</dt>
+											<dd style="margin-bottom:20px;">
+												<ul>
+													<li style="line-height:15px;">
+														<strong style="font-size:11px;color:#222;font-weight:normal;margin-right:3px;">지원 OS : </strong>
+														<span style="font-size:11px;color:#888;margin:0;">iOS 6.0 이상</span>
+													</li>
+													<li style="line-height:15px;">
+														<span style="font-size:11px;color:#888;margin:0;">iPhone 4 이상 단말기 사용가능</span>
+													</li>
+													<li style="line-height:15px;">
+														<strong style="font-size:11px;color:#222;font-weight:normal;margin-right:3px;">해상도 :</strong>
+														<span style="font-size:11px;color:#888;margin:0;">1280 x 720 이상 단말</span>
+													</li>
+													<li style="line-height:15px;font-size:11px;color:#888;margin:0;">갤럭시S2 와 해당 동급 스마트폰 사용 불가</li>
+												</ul>
+											</dd>										
+										</dl>
+	
+	
+										<p style="font-size:11px;color:#ff0000;font-weight:bold;">위의 지원 카드 및 지원 단말기 등을 확인 후 사용해 주세요.</p>
+	
+									</div>
+								</td>
+							</tr>			
+						</table>
+					
+				<!-- //141217 -->
+                <div class="itp_area" id="no_accbox" style="display:none;">
+                    <div>
+                        <strong>현금영수증 신청</strong>
+                        <div>
+                            <span class="rdo_dsgn">
+                                <input type="radio" id="CASH_RECPT_APPLY_Y" name="CASH_RECPT_APPLY" value="Y" onclick="fn_ChangeCashRecptApply('Y')" checked="checked"/>
+                                <label  for="CASH_RECPT_APPLY_Y">신청하기</label>
+                            </span>
+                            <span class="rdo_dsgn">
+                                <input type="radio" id="CASH_RECPT_APPLY_N" name="CASH_RECPT_APPLY" value="N" onclick="fn_ChangeCashRecptApply('N')"/>
+                                <label for="CASH_RECPT_APPLY_N">신청안함</label>
+                            </span>
+                        </div>
+                    </div>
+                    <p class="desc">개인 소득공제용으로 신청하실 경우 국세청으로 자동전송 됩니다.</p>
+                    <p class="desc">사업자 지출 증빙용으로 신청하시면 세금계산서로 활용 가능합니다.</p>
+                </div>
+                <!-- //itp_area -->
+
+                <div class="itp_area" id="cashReport_choice" style="display:none;">
+                    <div>
+                        <strong>현금영수증 발급</strong>
+                        <div>
+                            <span class="rdo_dsgn">
+                                <input type="hidden" name="CASH_RECPT_PUBL_PRPOS" id="CASH_RECPT_PUBL_PRPOS">
+                                <input type="radio" id="CASH_RECPT_PUBL_PRPOS_01" name="CASH_RECPT_PUBL_PRPOS_R" onclick="fn_ChangeCashRecptPubl('01');" checked="checked"/>
+                                <label  for="CASH_RECPT_PUBL_PRPOS_01">개인소득공제용</label>
+                            </span>
+                            <span class="rdo_dsgn">
+                                <input type="radio" id="CASH_RECPT_PUBL_PRPOS_02" name="CASH_RECPT_PUBL_PRPOS_R" onclick="fn_ChangeCashRecptPubl('02');" />
+                                <label for="CASH_RECPT_PUBL_PRPOS_02">사업자증빙용</label>
+                            </span>
+                        </div>
+                    </div>
+                    <div>
+                        <ul class="data_tb_form">
+                            <li class="phn" id="cashReport_phn" style="display:none;">
+                                <strong>휴대폰번호</strong>
+                                <div class="td">
+                                    <select class="selc_box2" id="CASH_RECPT_MOBLNO1" name="CASH_RECPT_MOBLNO1">
+                                        <option value="" selected="selected">선택</option>
+                                        <option value="010">010</option>
+                                        <option value="011">011</option>
+                                        <option value="016">016</option>
+                                        <option value="017">017</option>
+                                        <option value="018">018</option>
+                                        <option value="019">019</option>
+                                    </select>
+                                    <input type="tel" class="ipt_lng3 bdrbox" id="CASH_RECPT_MOBLNO2" name="CASH_RECPT_MOBLNO2" maxlength="4" onkeyup="/MOveFocus(4,this,this.form.CASH_RECPT_MOBLNO3);">
+                                    <input type="tel" class="ipt_lng3 bdrbox" id="CASH_RECPT_MOBLNO3" name="CASH_RECPT_MOBLNO3" maxlength="4">
+                                </div>
+                            </li>
+                            <li class="phn" id="cashReport_bizr" style="display:none;">
+                                <strong>사업자등록번호</strong>
+                                <div class="td">
+                                    <input type="tel" class="ipt_lng3 bdrbox" style="width:33.4%;" id="CASH_RECPT_BIZRNO1" name="CASH_RECPT_BIZRNO1" maxlength="3" onkeyup="/MOveFocus(3,this,this.form.CASH_RECPT_BIZRNO2);">
+                                    <input type="tel" class="ipt_lng3 bdrbox" style="width:33.3%;" id="CASH_RECPT_BIZRNO2" name="CASH_RECPT_BIZRNO2" maxlength="2" onkeyup="/MOveFocus(2,this,this.form.CASH_RECPT_BIZRNO3);">
+                                    <input type="tel" class="ipt_lng3 bdrbox" style="width:33.3%;" id="CASH_RECPT_BIZRNO3" name="CASH_RECPT_BIZRNO3" maxlength="5">
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- //itp_area -->
+
+                <div id="standard_bank" style="margin-top:15px;display:none;">
+                    <div style="margin-bottom:5px;">
+                        <strong style="font-size:11px;letter-spacing:-.75px;">한국스탠다드차타드은행 채무지급보증안내</strong>
+                        <a href="http://m.reebok.co.kr/Common/CertifiedInfoPop.jsp" class="s_btn1" style="width:115px;" target="_blank">서비스 가입사실 확인</a>
+                    </div>
+                    <div style="border: 1px solid #d9d9d9;box-sizing: border-box;font-size: 11px;line-height: 18px;padding:10px;text-align: center;">당사는 고객님이 현금으로 결제한 금액에 대해 한국스탠다드차타드은행과 채무 지급보증 계약을 체결하여 안전거래를 보장하고 있습니다.</div>
+                </div>
+            </div>
+            <!-- //cont -->
+        </section>
+        <!-- //odr_box 04 -->
+
+        <div class="btn_area">
+            <a href="javascript:on_pay();" class="btn1" id="PAY_BUTTON" onmousedown="javascript:trk_clickTrace('EVT','^주문서작성^결제하기');">결제하기</a>
+            <a href="javascript:goCart();" class="btn1" onmousedown="javascript:trk_clickTrace('EVT','^주문서작성^장바구니로이동');">장바구니로 이동</a>
+        </div>
+
+    </section>
+</section>
+<!-- //contents -->
+
+
+<!-- 결제용 frame -->
+<iframe src="" name="PAY_FRAME" id="PAY_FRAME" style="width:0px;height:0px;display:none;" title="결제 처리를 위한 숨김 프레임"></iframe>
+<!-- // 결제용 frame -->
+<!-- <form name="frmPay" id="frmPay" methpd="post" onsubmit="return false"> -->
+    <!--************************************************************************************
+    전달해야 하는 파라미터
+    P_MID 상점아이디 char(10) 필수
+    P_AMT 거래금액 char(8) 필수
+    P_UNAME 결제고객성명 char(30) 필수
+    P_GOODS 결제상품명 char(10) 필수
+    P_HPP_METHOD 상품컨텐츠구분 char(1) 휴대폰(HPP) 결제수단 사용시 필수 / 1=컨텐츠, 2=실물
+
+    P_NEXT_URL 결과화면URL char(250) 안심클릭/가상계좌에서 사용
+    P_NOTI_URL 결과처리URL char(250) ISP에서 사용
+    P_RETURN_URL 결과화면URL char(250) ISP에서 사용
+
+    P_NOTI 기타주문정보 char(1024) 선택
+    P_OID 주문번호 char(40) 선택 / 한글불가
+    P_MOBILE 사용자휴대폰번호 char(15) 선택 / '-'를 포함한 번호를 입력한다. 휴대폰 결제시는 널값이 낫다.
+    P_EMAIL 사용자이메일주소 char(30) 선택
+    P_VBANK_DT 가상계좌입금기한 char(8) 선택 / YYYYMMDD로 설정, 값이 없으면 요청일+10일로 처리됨
+    P_CARD_OPTION 카드선택옵션 char(2) 선택 / 설정시 해당 카드사가 맨위에 표시됨
+    ************************************************************************************-->
+    <!-- 안심클릭결제순서 : orderInput.action(주문서제출) => orderResultSafeClick.action(결제결과화면) -->
+    <!-- 안심클릭 필수 항목 - 인증결과를 해당 url로 post함, 즉 이 URL이 화면상에 보여지게 됨 -->
+    <input type="hidden" name="P_NEXT_URL" value="http://m.reebok.co.kr/MO/Order/orderResultSafeClick.action">
+    <!-- ISP결제 : orderInput.action => orderNoti.action => orderResultISP.action -->
+    <!-- ISP 필수항목 - 이 URL로 ISP 승인결과가 리턴됨 -->
+    <input type="hidden" name="P_NOTI_URL" value="http://m.reebok.co.kr/MO/Order/orderNoti.action">
+    <!-- ISP 필수항목 - ISP동작이 완료된 후 이 URL이 화면상에 보여짐 -->
+    <input type="hidden" name="P_RETURN_URL" value="http://m.reebok.co.kr/MO/Order/orderResultISP.action">
+    <!--  결제수단(신용카드) : 모바일에서는 신용카드 결제만 구현하면 됨 -->
+    <input type="hidden" name="P_GOPAYMETHOD" value="CARD" />
+    <!--  상점아이디  : 테스트 완료 후 상점아이디 수정 -->
+    <input type="hidden" name="P_MID" value="reebok0001" />
+    <input type="hidden" name="P_GOODS" value="[Reebok Classic/Unisex] 인스타펌프 퓨리 오리지널" /><!--  상품명  -->
+    <input type="hidden" name="P_AMT" value="175200"/><!--  금액  --><!-- 1000 -->
+    <input type="hidden" name="P_UNAME" value="김기백" /><!--  구매자이름  -->
+    <input type="hidden" name="P_EMAIL" value="rvdppv@naver.com" /><!--  이메일주소 -->
+    <input type="hidden" name="P_MOBILE" value="010-6816-2520" /><!--  휴대폰번호 -->
+    <input type="hidden" name="P_OID" value="" /><!--  주문번호 -->
+    <input type="hidden" name="P_NOTI" value="" /><!-- 기타주문정보 -->
+    <input type="hidden" name="P_HPP_METHOD" value="2" /><!-- 상품컨텐츠구분(휴대폰 결제시 필요함 1:컨텐츠, 2:실물) -->
+    <input type="hidden" name="P_VBANK_DT" value="20151124" /><!-- 가상계좌입금기한 -->
+    <input type="hidden" name="P_RESERVED" value="" /><!-- 복합 parameter 정보 -->
+    <!-- 결제 처리를 위한 부분으로 해당 된 값을 받을  수 있도록 한다. - 주문 결제 테스트 -->
+
+    <!-- 저장해야 하는 항목들을 관리하기 위해 저장 : 시작  -->
+    <input type="hidden" name="TOTAL_PAY_AMT" id="TOTAL_PAY_AMT" value="175200"/>
+    <input type="hidden" name="TOTAL_DISCOUNT_AMT" id="TOTAL_DISCOUNT_AMT" value="0"/>
+    <input type="hidden" name="ORG_TOTAL_PAY_AMT" id="ORG_TOTAL_PAY_AMT" value="175200"/>
+    <input type="hidden" name="TOTAL_ORDER_AMT" id="TOTAL_ORDER_AMT" value="175200"/>
+    <input type="hidden" name="TOTAL_POINT" id="TOTAL_POINT" value="0"/>
+    <input type="hidden" name="DLIVY_FEE" id="DLIVY_FEE" value="0"/>
+    <input type="hidden" name="ORG_DLIVY_FEE" id="ORG_DLIVY_FEE" value="0"/>
+    <input type="hidden" name="RCIVR_NM" id="RCIVR_NM" value="김기백"/>
+
+    <input type="hidden" name="RCIVR_TELNO" id="RCIVR_TELNO" value="010-6816-2520"/>
+
+    <input type="hidden" name="RCIVR_MOBL" id="RCIVR_MOBL" value="010-6816-2520"/>
+
+    <input type="hidden" name="DLIVY_POST_NO1" id="DLIVY_POST_NO1" value="131"/>
+    <input type="hidden" name="DLIVY_POST_NO2" id="DLIVY_POST_NO2" value="200"/>
+    <input type="hidden" name="DLIVY_ADDR" id="DLIVY_ADDR" value="서울 중랑구 면목동"/>
+    <input type="hidden" name="DLIVY_DTL_ADDR" id="DLIVY_DTL_ADDR" value="69-30번지 지층 2호"/>
+    <input type="hidden" name="SIDO" id="SIDO" value="서울"/>
+    <input type="hidden" name="GUN" id="GUN" value="중랑구"/>
+    <input type="hidden" name="DONG" id="DONG" value="면목동"/>
+    <input type="hidden" name="DELVYA" id="DELVYA" value=""/>
+    <input type="hidden" name="NUM_BLDG" id="NUM_BLDG" value=""/>
+    <input type="hidden" name="NM_DORO" id="NM_DORO" value=""/>
+    <input type="hidden" name="DLIVY_MEMO" id="DLIVY_MEMO" value=""/>
+    <input type="hidden" name="EMAIL_RET_YN" id="EMAIL_RET_YN" value="N"/>
+    <input type="hidden" name="SMS_RET_YN" id="SMS_RET_YN" value="Y"/>
+    <input type="hidden" name="ORDER_NO" id="ORDER_NO" value=""/>
+    <input type="hidden" name="OPTION_NO" id="OPTION_NO" value="220"/>
+    <input type="hidden" name="SS_SITE_CD" id="SS_SITE_CD" value="2"/>
+    <input type="hidden" name="SS_SITE_NM" id="SS_SITE_NM" value="reebok"/>
+    <input type="hidden" name="SITE_CD" id="SITE_CD" value="2"/>
+    <input type="hidden" name="SCRTNO" id="SCRTNO" value=""/>
+    <input type="hidden" name="MEM_TELNO" id="MEM_TELNO" value="010-6816-2520"/>
+    <input type="hidden" name="MEM_NM" id="MEM_NM" value="김기백"/>
+    <input type="hidden" name="MEM_DIVI" id="MEM_DIVI" value="01"/>
+    <input type="hidden" name="MEM_EMAIL1" id="MEM_EMAIL1" value=""/>
+    <input type="hidden" name="MEM_EMAIL2" id="MEM_EMAIL2" value=""/>
+    <input type="hidden" name="MEM_EMAIL" id="MEM_EMAIL" value="rvdppv@naver.com"/>
+    <input type="hidden" name="MEM_MOBL" id="MEM_MOBL" value="010-6816-2520"/>
+    <input type="hidden" name="CART_NOS" id="CART_NOS" value=""/>
+    <input type="hidden" name="PROD_CD" id="PROD_CD" value="V65750"/>
+    <input type="hidden" name="CPON_PUBL_IDS" id="CPON_PUBL_IDS" value=""/>
+    <input type="hidden" name="ORD_CPON_AMT" id="ORD_CPON_AMT" value="0"/>
+    <input type="hidden" name="DLIVY_CPON_PUBL_ID" id="DLIVY_CPON_PUBL_ID" value=""/>
+    <input type="hidden" name="DLIVY_FEE_CPON_AMT" id="DLIVY_FEE_CPON_AMT" value="0"/>
+    <input type="hidden" name="SITE_TYPE" id="SITE_TYPE" value="02"/>
+    <input type="hidden" name="ORDER_TYPE" id="ORDER_TYPE" value="01"/>
+    <input type="hidden" name="ORDER_ST" id="ORDER_ST" value="01"/>
+    <input type="hidden" name="SETL_YN" id="SETL_YN" value="N"/>
+    <input type="hidden" name="SALES_YN" id="SALES_YN" value="N"/>
+    <input type="hidden" name="PAYMT_TYPE" id="PAYMT_TYPE" value="03"/>
+    <input type="hidden" name="PAYMT_ST" id="PAYMT_ST" value="02"/>
+    <input type="hidden" name="PG_CD" id="PG_CD" value="01"/>
+    <input type="hidden" name="PG_STORE_ID" id="PG_STORE_ID" value="reebok0001"/>
+    <input type="hidden" name="PG_STORE_KEY" id="PG_STORE_KEY" value=""/>
+    <input type="hidden" name="BANK_CD" id="BANK_CD" value=""/>
+    <input type="hidden" name="DPSTR" id="DPSTR" value=""/>
+    <input type="hidden" name="ESCRW_YN" id="ESCRW_YN" value="N"/>
+    <input type="hidden" name="CASH_RECPT_TYPE" id="CASH_RECPT_TYPE" value="N"/>
+    <input type="hidden" name="CASH_RECPT_YN" id="CASH_RECPT_YN" value="N"/>
+    <input type="hidden" name="CASH_RECPT_CRT_DIVI" id="CASH_RECPT_CRT_DIVI" value=""/>
+    <input type="hidden" name="CASH_RECPT_CRT_NO" id="CASH_RECPT_CRT_NO" value=""/>
+    <input type="hidden" name="SWALLET_YN" id="SWALLET_YN" value="N"/>
+</form>
+<form name="productDetail" id="productDetail" method="post" action="" onsubmit="return false">
+    <input type="hidden" name="prodCD" value="" />
+    <input type="hidden" name="siteNm" value="reebok" />
+</form>
+
+
+<script type="text/javascript">
+    _TRK_PI = "ODF";
+</script>
+
+
+
+    <footer id="footer">
+        
+        <section class="fmenu">
+            <ul>
+                <li><a href="/MO/Search/searchMain.action" onmousedown="javascript:trk_flashEnvView('_TRK_PI=FOOTSE');trk_clickTrace('EVT','^리복모바일^하단검색');">검색</a></li>
+                <li><a href="/MO/Customer/customerStoreList.action" onmousedown="javascript:trk_flashEnvView('_TRK_PI=FOOTST');trk_clickTrace('EVT','^리복모바일^하단매장찾기');">매장찾기</a></li>
+                <li><a href="javascript: goMypageIndex();" onmousedown="javascript:trk_flashEnvView('_TRK_PI=FOOTMY');trk_clickTrace('EVT','^리복모바일^하단마이페이지');">마이페이지</a></li>
+                <li><a href="javascript:goCsCenter();" onmousedown="javascript:trk_flashEnvView('_TRK_PI=FOOTCS');trk_clickTrace('EVT','^리복모바일^하단고객센터');">1588-7324</a></li>
+            </ul>
+            <ul>
+                <li><a href="http://shop.reebok.co.kr/reeMain.action?mobile_yn=Y" onmousedown="javascript:trk_flashEnvView('_TRK_PI=FOOTPC');trk_clickTrace('EVT','^리복모바일^하단PC');">PC 사이트</a></li>
+                <li><a href="javascript:goMain();" onmousedown="javascript:trk_flashEnvView('_TRK_PI=FOOTHO');trk_clickTrace('EVT','^리복모바일^하단홈');">홈</a></li>
+                <li><a href="javascript:goClub();" onmousedown="javascript:trk_flashEnvView('_TRK_PI=FOOTREE');trk_clickTrace('EVT','^리복모바일^하단리클럽');">리클럽</a></li>
+            </ul>
+        </section>
+        <address style="padding-bottom:5px;height:auto;">
+            <div class="ft1">
+                <p class="lgo" style="margin-right:5px;"><img src="/images/reebok/bg_logo_f.gif" alt="reebok"/></p>
+            </div>
+            <div class="ft2">
+            	<p>리복 공식 온라인 스토어<span style="font-size:10px;"> (아디다스 코리아)</span></p>
+                <p>137-955 서울특별시 서초구 서초대로 74길 4, 삼성생명 서초타워 7층</p>
+                <p>대표이사 : 쟝 미쉘 그라니에&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;교환 및 반품 문의 (본사로 반품불가)</p>
+                <p>온라인스토어 고객센터 1588-7324 (평일 09:00 – 18:00, 점심시간 12:00 – 13:00)</p>
+                <p>제품 수선문의 : 리복 고객만족센터 080-344-3732 (평일 09:00 – 18:00)</p>
+                <p>사업자 등록번호 : 214-81-07412&nbsp;&nbsp;통신판매업신고 : 2007-서울서초-10391</p>
+                <p>개인정보 관리책임자 : 김동일<span style="display:inline-block;margin:0 6px;">|</span>개인정보 관리담당자 : 황선영</p>
+                <p><a target="_blank" href="/MO/reebok/html/m_join_personal_information_policy.html" class="lnk_pc" style="margin-left:0;">개인정보취급방침 확인</a></p>
+            </div>
+            <div class="lnk">
+                <a target="_blank" href="/MO/reebok/html/m_join_purchase_clause.html">구매이용약관</a>
+                <span>|</span>
+                <a target="_blank" href="http://www.ftc.go.kr/info/bizinfo/communicationViewPopup.jsp?wrkr_no=2148107412">공정거래 위원회 사업자 신원정보 확인</a>
+                <span>|</span>
+                <a target="_blank" href="http://m.reebok.co.kr/Common/CertifiedInfoPop.jsp">채무지급보증안내 확인</a>						
+                <span>|</span>
+				<a href="http://m.reebok.co.kr/m_pop_justice_bns.html" target="_blank">공정거래 자율준수</a>
+            </div>
+            <p style="font-size:10px;">Copyright ⓒadidas Korea Inc. </p>
+        </address>
+    </footer>
+
+
+</section>
+<!-- //container -->
+        
+</seciton>
+<!-- //wrap -->
+
+</body>
+</html>

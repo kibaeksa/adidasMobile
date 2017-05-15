@@ -1,0 +1,499 @@
+<!doctype html>
+<html itemscope="" itemtype="http://schema.org/WebPage" lang="ko" class="">
+<head>
+	<title>Reebok</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+	<meta content="telephone=no" name="format-detection">
+	<meta content="address=no" name="format-detection">
+	<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+	<link rel="stylesheet" href="/MO/reebok/css/reebok_m.css" />	
+	<script type="text/javascript" src="/MO/reebok/js/jquery.js"></script>
+	<script type="text/javascript" src="/MO/reebok/js/reebok_js_m.js"></script>
+	<script type="text/javascript" src="/MO/reebok/js/iscroll.js"></script>
+	<script type="text/javascript" src="/MO/reebok/js/FlickKkb.js"></script>
+	<script type="text/javascript">
+		var d;
+		var openClubSec;
+		(function($){
+			
+			openClubSec = function(num){
+				var btn1 = $('#club_toggle_btn1');
+				var btn2 = $('#club_toggle_btn2');
+				var sec1 = $('#club_sec_btn1');
+				var sec2 = $('#club_sec_btn2');
+
+				if(num == 1){
+					if(btn1.hasClass('on')){
+						btn1.removeClass('on');						
+						sec1.hide();
+						$('.club_benefit .more').show();
+					}else{
+						btn2.removeClass('on');
+						sec2.hide();
+						btn1.addClass('on');
+						sec1.show();
+						$('.club_benefit .more').hide();
+					}
+				}else{
+					if(btn2.hasClass('on')){
+						btn2.removeClass('on');
+						sec2.hide();
+					}else{
+						btn1.removeClass('on');
+						sec1.hide();
+						$('.club_benefit .more').show();
+						btn2.addClass('on');
+						sec2.show();
+					}
+				}
+				return false;
+			}	
+
+			$(document).ready(function(){
+
+
+			});
+
+		})(jQuery);
+	</script>		
+</head>
+
+<body>
+	<aside id="leftmenu">
+		<div class="bg" onclick="Reebok.fn.toggleLeft();return false;"></div>
+		<a onclick="Reebok.fn.toggleLeft();return false;" class="btn_sidemenu" href="#">
+			<span></span>
+			<span></span>
+			<span></span>
+		</a>
+		<section id="inn_leftmenu" class="lmenu_wrap">			
+			<section class="menu">			
+				<div class="bnn">
+					<div class="bnn_sld">
+						<a href="#" style="background-image:url('images/reebok/bg_navi_visual1.jpg');"></a>
+						<a href="#" style="ba kground-image:url('images/reebok/bg_navi_visual1.jpg');"></a>
+						<a href="#" style="background-image:url('images/reebok/bg_navi_visual1.jpg');"></a>
+					</div>					
+					<div class="bul">
+						<span class="on"></span>
+						<span></span>
+					</div>
+				</div>
+				<h2 class="blind">네비게이션 메뉴</h2>
+				<ul class="dp1">
+					<li class="has_dp">
+						<a href="#" onclick="Reebok.fn.toggleLeftList(this);return false;">MEN</a>
+						<ul class="dp2">
+							<li><a href="#">BEST</a></li>
+							<li><a href="#">NEW</a></li>
+							<li><a href="#">SALE</a></li>
+							<li class="has_dp">
+								<a href="#" class="kor" onclick="Reebok.fn.toggleLeftListDepth3(this);return false;">신발</a>
+								<div class="dp3">
+									<a href="#">전체 보기</a>
+									<dl>
+										<dt>스포츠별</dt>
+										<dd>
+											<ul>
+												<li><a href="#"><span>러닝<em>(10)</em></span></a></li>
+												<li><a href="#"><span>트레이닝<em>(10)</em></span></a></li>
+											</ul>
+										</dd>
+									</dl>
+									<dl>
+										<dt>상품별</dt>
+										<dd>
+											<ul>											
+												<li><a href="#"><span>하이컷/미드컷<em>(10)</em></span></a></li>
+												<li><a href="#"><span>로우컷<em>(10)</em></span></a></li>
+												<li><a href="#"><span>샌들/슬리퍼<em>(10)</em></span></a></li>
+											</ul>
+										</dd>
+									</dl>									
+								</div>
+							</li>
+							<li class="has_dp">
+								<a href="#" class="kor" onclick="Reebok.fn.toggleLeftListDepth3(this);return false;">의류</a>
+								<div class="dp3">
+									<a href="#">전체 보기</a>
+									<dl>
+										<dt>스포츠별</dt>
+										<dd>
+											<ul>
+												<li><a href="#"><span>러닝<em>(10)</em></span></a></li>
+												<li><a href="#"><span>트레이닝<em>(10)</em></span></a></li>
+											</ul>
+										</dd>
+									</dl>
+								</div>
+							</li>
+							<li class="has_dp">
+								<a href="#" class="kor" onclick="Reebok.fn.toggleLeftListDepth3(this);return false;">용품</a>
+								<div class="dp3">
+									<a href="#">전체 보기</a>
+									<dl>
+										<dt>스포츠별</dt>
+										<dd>
+											<ul>
+												<li><a href="#"><span>러닝<em>(10)</em></span></a></li>
+												<li><a href="#"><span>트레이닝<em>(10)</em></span></a></li>
+											</ul>
+										</dd>
+									</dl>
+								</div>
+							</li>
+						</ul>
+					</li>
+					<li class="has_dp">
+						<a href="#" onclick="Reebok.fn.toggleLeftList(this);return false;">WOMEN</a>
+						<ul class="dp2">
+							<li><a href="#">BEST</a></li>
+							<li><a href="#">NEW</a></li>
+							<li><a href="#">SALE</a></li>
+							<li class="has_dp">
+								<a href="#" class="kor" onclick="Reebok.fn.toggleLeftListDepth3(this);return false;">신발</a>
+								<div class="dp3">
+									<a href="#">전체 보기</a>
+									<dl>
+										<dt>스포츠별</dt>
+										<dd>
+											<ul>
+												<li><a href="#"><span>러닝<em>(10)</em></span></a></li>
+												<li><a href="#"><span>트레이닝<em>(10)</em></span></a></li>
+											</ul>
+										</dd>
+									</dl>
+									<dl>
+										<dt>상품별</dt>
+										<dd>
+											<ul>											
+												<li><a href="#"><span>하이컷/미드컷<em>(10)</em></span></a></li>
+												<li><a href="#"><span>로우컷<em>(10)</em></span></a></li>
+												<li><a href="#"><span>샌들/슬리퍼<em>(10)</em></span></a></li>
+											</ul>
+										</dd>
+									</dl>									
+								</div>
+							</li>
+							<li class="has_dp">
+								<a href="#" class="kor" onclick="Reebok.fn.toggleLeftListDepth3(this);return false;">의류</a>
+								<div class="dp3">
+									<a href="#">전체 보기</a>
+									<dl>
+										<dt>스포츠별</dt>
+										<dd>
+											<ul>
+												<li><a href="#"><span>러닝<em>(10)</em></span></a></li>
+												<li><a href="#"><span>트레이닝<em>(10)</em></span></a></li>
+											</ul>
+										</dd>
+									</dl>
+								</div>
+							</li>
+							<li class="has_dp">
+								<a href="#" class="kor" onclick="Reebok.fn.toggleLeftListDepth3(this);return false;">용품</a>
+								<div class="dp3">
+									<a href="#">전체 보기</a>
+									<dl>
+										<dt>스포츠별</dt>
+										<dd>
+											<ul>
+												<li><a href="#"><span>러닝<em>(10)</em></span></a></li>
+												<li><a href="#"><span>트레이닝<em>(10)</em></span></a></li>
+											</ul>
+										</dd>
+									</dl>
+								</div>
+							</li>
+						</ul>
+					</li>
+					<li class="has_dp">
+						<a href="#" onclick="Reebok.fn.toggleLeftList(this);return false;">KIDS</a>
+						<ul class="dp2">
+							<li><a href="#">BEST</a></li>
+							<li><a href="#">NEW</a></li>
+							<li><a href="#">SALE</a></li>
+							<li><a href="#" class="kor">신발</a></li>
+							<li><a href="#" class="kor">의류</a></li>
+							<li><a href="#" class="kor">용품</a></li>
+						</ul>
+					</li>
+					<li class="ctg has_dp">
+						<a href="#" class="ctg" onclick="Reebok.fn.toggleLeftList(this);return false;">SPORT</a>
+						<ul class="dp2">
+							<li><a href="#">BEST</a></li>
+							<li><a href="#">NEW</a></li>
+							<li><a href="#">SALE</a></li>
+							<li><a href="#" class="kor">신발</a></li>
+							<li><a href="#" class="kor">의류</a></li>
+							<li><a href="#" class="kor">용품</a></li>
+						</ul>
+					</li>
+					<li class="ctg has_dp">
+						<a href="#" class="ctg" onclick="Reebok.fn.toggleLeftList(this);return false;">CLASSICS</a>
+						<ul class="dp2">
+							<li><a href="#">BEST</a></li>
+							<li><a href="#">NEW</a></li>
+							<li><a href="#">SALE</a></li>
+							<li><a href="#" class="kor">신발</a></li>
+							<li><a href="#" class="kor">의류</a></li>
+							<li><a href="#" class="kor">용품</a></li>
+						</ul>
+					</li>
+					<li class="has_dp">
+						<a href="#" class="ctg" onclick="Reebok.fn.toggleLeftList(this);return false;">COLLECTION</a>
+						<ul class="dp2">
+							<li><a href="#">BEST</a></li>
+							<li><a href="#">NEW</a></li>
+							<li><a href="#">SALE</a></li>
+							<li><a href="#" class="kor">신발</a></li>
+							<li><a href="#" class="kor">의류</a></li>
+							<li><a href="#" class="kor">용품</a></li>
+						</ul>
+					</li>
+					<li><a href="#" class="kor">신상품</a></li>
+					<li><a href="#" class="kor">베스트상품</a></li>
+					<li><a href="#" class="kor">기획전</a></li>
+					<li><a href="#" class="sale">SALE</a></li>
+				</ul>
+				<ul class="util">
+					<li><a href="#">로그인</a></li>
+					<li><a href="#">장바구니</a></li>
+					<li><a href="#">마이페이지</a></li>
+					<li><a href="#">공지사항</a></li>
+					<li><a href="#" class="club">리클럽</a></li>
+				</ul>
+				<div class="btn">
+					<a href="#">고객센터</a>
+					<a href="#">매장찾기</a>
+				</div>
+			</section>
+			<!-- //menu -->
+		</section>
+		
+	</aside>
+	<!-- //leftmenu -->
+
+	<section id="wrap">			
+		<section id="container">
+			<header id="header">
+				<div class="hdr1">
+					<h1><a href="#" class="spt_bg"></a></h1>
+					<ul>
+						<li><a href="#">로그인</a></li>
+						<li><a href="#">회원가입</a></li>
+						<li><a href="#">마이페이지</a></li>
+						<li><a href="#">장바구니<span>(3)</span></a></li>
+					</ul>
+				</div>
+				<!-- //hdr1 -->
+				<div class="hdr2">
+					<div class="sch_area">
+						<a href="#" class="btn_sidemenu active" onclick="Reebok.fn.toggleLeft();return false;">
+							<span></span>
+							<span></span>
+							<span></span>
+						</a>				
+						<form method="get" action="#">
+							<div class="sch">
+								<input type="input" placeholder="검색어를 입력하세요"/>					
+							</div>
+							<button type="button">검색</button>
+						</form>				
+					</div>
+					<!-- //hdr2 -->
+				</div>
+			</header>
+			<!-- //header -->
+
+			<section id="contents">				
+				<section class="m_contents club">
+					<div class="loc">
+						<span>HOME</span>
+						<span class="arw">&gt;</span>
+						<span>리클럽 멤버십</span>					
+					</div>
+
+					<ul class="tab">
+						<li><a class="on" href="#">리클럽 멤버십</a></li>
+						<li><a href="#">리클럽 캠페인</a></li>
+					</ul>
+								
+					<div class="club_visual"><img src="/images/reebok/bg_visual_club.jpg" alt="" style="width:100%;"/></div>
+					<h3>리클럽은 <strong>진정한 소통을 위한 커뮤니티</strong> 입니다.</h3>
+					<p class="desc">오직 클럽 멤버만을 위한 한정 서비스와 포인트 적립 및 쿠폰, 그리고 신제품 및 이벤트에 대한 발빠른 정보까지!<strong>리클럽이 당신을 기다립니다.</strong></p>
+
+					<ul class="club_list">
+						<li>
+							<div class="btn"><a href="#" id="club_toggle_btn1" onclick="openClubSec(1);return false;">회원혜택</a></div>
+							<div class="cont">
+								<div class="club_benefit">
+									<ul>
+										<li>
+											<dl>
+												<dt>5% 포인트 적립</dt>
+												<dd>
+													<strong>구매금액의 5% 포인트 적립</strong>
+													<p>구매금액 20만원 마다 현금처럼 사용 가능한 1만원 쿠폰으로 전환 </p>
+													<p>쿠폰 사용 기간 : 쿠폰 전환 8일 이후 ~ 3개월 간</p>
+												</dd>
+											</dl>
+										</li>
+										<li style="margin-bottom:0;">
+											<dl>
+												<dt>첫 구매 감사쿠폰</dt>
+												<dd>
+													<strong>온라인 스토어 및 오프라인 스토어 20,000원 쿠폰</strong>
+													<p>100,000원 이상 구매 시, 사용 가능</p>
+													<p>사용기간 : 쿠폰발급 이후 1개월 이후부터 3개월 이내 사용가능</p> 
+													<p>(마이페이지 내 쿠폰확인에서 발급된 쿠폰의 사용기간을 꼭 확인하세요.)</p>
+													<p style="color:#000;">(2014년 7월 1일 이후 가입고객부터)</p>
+												</dd>
+											</dl>
+										</li>
+									</ul>
+									<a href="#" class="/MOre" onclick="openClubSec(1);return false;">더보기</a>
+									<ul id="club_sec_btn1" style="border-bottom:1px solid #212121;display:none;">
+										<li>
+											<dl>
+												<dt>친구추천 쿠폰</dt>
+												<dd>
+													<strong>온라인 스토어 및 오프라인 스토어 5,000원 쿠폰</strong>
+													<p>50,000원 이상 구매 시, 사용 가능</p>
+												</dd>
+											</dl>
+										</li>
+										<li>
+											<dl>
+												<dt>기념일 쿠폰</dt>
+												<dd>
+													<strong>온라인 스토어 및 오프라인 스토어 10,000원 쿠폰</strong>
+													<p>100,000원 이상 구매 시, 사용 가능</p>
+												</dd>
+											</dl>
+										</li>										
+										<li>
+											<dl>
+												<dt>신제품 / 이벤트 정보</dt>
+												<dd>
+													<strong>신제품 및 새로운 이벤트 최신 정보 제공 </strong>
+												</dd>
+											</dl>
+										</li>
+										<li>
+											<dl>
+												<dt>회원만을 위한 이벤트</dt>
+												<dd>
+													<strong>회원만을 위한 쿠폰 또는 리복 이벤트에 우선 초대</strong>
+												</dd>
+											</dl>
+										</li>
+										<li class="desc">포인트 유효 기간 : 마지막 구매로부터 12개월</li>
+										<li class="desc">리클럽 회원 혜택변경 : 2014년 9월 1일부터 적용</li>
+									</ul>
+									<!-- //club_benefit -->
+								</div>								
+							</div>
+							<!-- //cont -->
+						</li>
+						<li>
+							<div class="btn"><a href="#" id="club_toggle_btn2" onclick="openClubSec(2);return false;">회원 가입 방법</a></div>
+							<div class="cont" id="club_sec_btn2" style="display:none;">
+								<dl class="join_guide">
+									<dt>오프라인 스토어에서 회원가입</dt>
+									<dd>
+										<ol>
+											<li>
+												<span>1.</span>
+												<p>제품 구매후, <strong>리클럽 가입신청서</strong>를 작성하여 직원에게 전달</p>
+											</li>
+											<li>
+												<span>2.</span>
+												<p>회원번호 및 등록을 위한 <strong>임시 비밀번호가 핸드폰</strong>으로 전송</p>
+											</li>
+											<li>
+												<span>3.</span>
+												<p>리복 공식 온라인/모바일의 [로그인]페이지에서 <strong>회원번호 등록 후,</strong>회원가입완료</p>
+											</li>
+											<li class="btn">
+												<a href="#" class="btn1">지금 회원번호 등록하러 가기</a>
+											</li>
+										</ol>
+									</dd>
+								</dl>
+								<!-- join_guide -->
+								<dl class="join_guide">
+									<dt>온라인/모바일 스토어에서 회원가입</dt>
+									<dd>
+										<ol>
+											<li>
+												<span>1.</span>
+												<p>리복 공식 온라인/모바일 스토어에서 <strong>이용약관 동의</strong> 후, 회원 가입 완료</p>
+											</li>
+											<li>
+												<span>2.</span>
+												<p>리클럽 <strong>모바일 카드</strong> 다운로드</p>
+											</li>											
+											<li class="btn">
+												<a href="#" class="btn1">지금 회원가입 하러 가기</a>
+											</li>
+										</ol>
+									</dd>
+								</dl>
+								<!-- //join_guide -->
+							</div>
+						</li>
+					</ul>
+
+				</section>
+				<!-- club -->
+			</section>
+			<!-- //contents -->
+
+			<footer id="footer">
+				<div style="border-bottom:5px solid #d0d0d6;"><a href="#"><img src="/images/reebok/bg_reeclub_bnn.jpg" alt="" style="width:100%;"/></a></div>
+				<section class="fmenu">
+					<ul>
+						<li><a href="#">검색</a></li>
+						<li><a href="#">매장찾기</a></li>
+						<li><a href="#">마이페이지</a></li>
+						<li><a href="#">고객센터</a></li>
+					</ul>
+					<ul>
+						<li><a href="#">PC 사이트</a></li>
+						<li><a href="#">홈</a></li>
+						<li><a href="#">리클럽</a></li>
+					</ul>
+				</section>				
+				<address>					
+					<div class="ft1">
+						<p class="lgo"><img src="/images/reebok/bg_logo_f.gif" alt="reebok"/></p>
+						<span>리복 공식 온라인 스토어</span>
+					</div>
+					<div class="ft2">
+						<p>137-955 서울특별시 서초구 서초대로 74길 4, 삼성생명 서초타워 7층</p>
+						<p>대표이사 : 쟝 미쉘 그라니에   교환 및 반품 문의 (본사로 반품불가)</p>
+						<p>온라인스토어 고객센터 1588-7324 (평일 09:00 – 18:00, 점심시간 12:00 – 13:00)</p>
+						<p>제품 수선문의 : 리복 고객만족센터 080-344-3732 (평일 09:00 – 18:00)</p>
+						<p>사업자 등록번호 : 214-81-07412   통신판매업신고 : 2007-서울서초-10391</p>
+						<p>개인정보 보호책임자 : 황선영<a target="_blank" href="#" class="lnk_pc">개인정보취급방침 확인</a></p>
+					</div>
+					<div class="lnk">
+						<a target="_blank" href="http://shop.reebok.co.kr/RPF010107.action?gubn=1">구매이용약관</a>
+						<span>|</span>
+						<a target="_blank" href="http://www.ftc.go.kr/info/bizinfo/communicationViewPopup.jsp?wrkr_no=2148107412">공정거래 위원회 사업자 신원정보 확인</a>
+						<span>|</span>
+						<a target="_blank" href="http://m.reebok.co.kr/Common/CertifiedInfoPop.jsp">채무지급보증안내 확인</a>
+					</div>					
+				</address>				
+
+			</footer>
+		</section>
+		<!-- //container -->
+		
+	</seciton>
+	<!-- //wrap -->
+
+</body>
+
+</html>

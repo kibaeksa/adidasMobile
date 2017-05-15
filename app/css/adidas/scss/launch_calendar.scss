@@ -1,0 +1,587 @@
+/*
+	break width
+ */
+$break-small: 1000px;
+$break-large: 1400px;
+$width320:320px;
+$width400:400px;
+$width480:480px;
+$width600:600px;
+/*
+	@@ mixin
+ */
+@mixin box-sizing($value){
+			box-sizing: $value;
+	-webkit-box-sizing: $value;
+}
+
+@mixin prefix-css3($prop,$value){
+	#{$prop} :$value;
+	-webkit-#{$prop} :$value;
+	-moz-#{$prop}:$value;
+	-o-#{$prop} :$value;
+	-ms-#{$prop} :$value;
+}
+
+@mixin transition($prop , $duration , $easing , $delay){
+	transition :$prop $duration $easing $delay;
+	-webkit-transition :$prop $duration $easing $delay;
+	-moz-transition:$prop $duration $easing $delay;
+	-o-transition :$prop $duration $easing $delay;
+}
+
+@mixin opacity($value){
+	opacity : $value;
+	// filter:alpha(opacity=$value * 100);
+	// -ms-filter:alpha(opacity=$value * 100);
+}
+
+@mixin transform($value){
+	transform:$value;
+	-webkit-transform:$value;
+	-moz-transform:$value;
+	-o-transform:$value;
+}
+
+@media screen and (max-width: 320px) {
+	html{
+		font-size: 10px;
+	}
+}
+@media screen and (min-width: 800px) {
+	html{
+		font-size: 12px;
+	}
+}
+
+// for pseudo element
+.pseudo-element{
+	content:'';
+	display: block;
+}
+
+
+#launch_calendar{
+	h2{
+		padding: 1.5rem 0;
+		font-size:2.85rem;
+		text-align: center;
+		text-transform: uppercase;
+
+		span{
+			color: #59aa6f !important;
+		}
+	}
+
+	.category_menu{
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+
+		a{
+			position: relative;
+			display: block;
+			width: 100%;
+			font:1.3rem/40px 'AdihausDIN-Cond';
+			text-align: center;
+			background: #eee;
+			color: #aaa;
+			text-transform: uppercase;
+			letter-spacing: 0;
+
+			&.on{
+				color:#000;
+				font-weight: bold;
+
+				&:after{
+					@extend .pseudo-element;
+					width: 100%;
+					height: 2px;
+					background: #000;
+					position: absolute;
+					bottom: 0;
+					left: 0;
+				}
+			}
+		}
+	}
+
+	.sort_menu{
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		padding-top: 15px;
+
+		@include prefix-css3(justify-content,space-between);
+
+		.sel_design{
+			width: 12rem;
+			position: relative;
+
+			>a{
+				border-width: 0;
+				span{
+					font-size: 1.5rem;
+					font-family: 'AdihausDIN-Cond';
+					font-weight: bold;
+					letter-spacing: 0;
+				}
+
+				&:before{
+					position: absolute;
+					top: 50%;
+					right: 10px;
+
+					@include prefix-css3(transform,translate3d(0,-50%,0) rotate(90deg));
+				}
+			}
+		}
+
+		.view_type_btn{
+			display: -webkit-flex;
+			display: -moz-flex;
+			display: -ms-flex;
+			display: -o-flex;
+			display: flex;
+
+			.sort_btn{
+				width: 45px;
+				height: 45px;
+				position: relative;
+				display: block;
+
+				>span.ico{
+					position: absolute;
+					top: 50%;
+					left: 50%;
+
+					@include prefix-css3(transform,translate3d(-50%,-50%,0));
+
+					span{
+						display: block;
+						&:after , &:before{
+							display: block;
+							@extend .pseudo-element;
+						}
+					}
+				}
+
+				&.box_type{
+					.ico{
+						span{
+							position: relative;
+
+							&:before{
+								width: 21px;
+								height: 14px;
+								background: #ccc;
+								margin-bottom: 1px;
+							}
+
+							&:after{
+								width: 21px;
+								height: 7px;
+								background: #ccc;
+							}
+						}
+					}
+				}
+
+				&.list_type{
+					.ico{
+						span{
+							display: -webkit-flex;
+							display: -moz-flex;
+							display: -ms-flex;
+							display: -o-flex;
+							display: flex;
+							margin-bottom: 1px;
+							&:before{
+								width: 7px;
+								height: 7px;
+								background: #ccc;
+								margin-right: 1px;
+							}
+
+							&:after{
+								width: 13px;
+								height: 7px;
+								background: #ccc;
+							}
+						}
+					}
+				}
+
+				&.on{
+					.ico{
+						span{
+							&:before , &:after{
+								background: #000;
+							}
+						}
+					}
+				}
+
+			}
+		}
+	}
+
+	.products_list{
+		.box{
+			position: relative;
+			padding: 15px 15px 0;
+
+			&:last-child{
+				padding-bottom: 15px;
+				&:after{
+					display: none;
+				}
+			}
+
+			&:after{
+				width: 100%;
+				height: 1px;
+				background: #ccc;
+				margin-top: 15px;
+
+				@extend .pseudo-element;
+			}
+
+			.img{
+				position: relative;
+				margin-bottom: 24px;
+				opacity:0.8;
+
+				img{
+					width: 100%;
+				}
+
+				.label{
+					position: absolute;
+					top: 15px;
+					left: 0;
+					min-width: 80px;
+					padding: 6px 15px 4px;
+					text-align: center;
+					font:1.4rem/1.4rem 'AdihausDIN-Cond';
+					text-transform: uppercase;
+					color: #fff;
+					background: #59aa6f;
+					letter-spacing: 0;
+
+					@include prefix-css3(box-sizing,border-box);
+				}
+			}
+
+			&.release , &.locked{
+				.img{
+					opacity: 1;
+				}
+			}
+
+			.tit{
+				margin-bottom: 13px;
+				font-size:1.4rem;
+				line-height: 1.7rem;
+			}
+
+			.price{
+				margin-bottom: 15px;
+				font:bold 1.6rem/1.6rem 'AdihausDIN-Cond';
+				letter-spacing: 0;
+
+				span{
+					font-size: 1.2rem;
+				}
+			}
+
+			.ctgr{
+				margin-bottom: 17px;
+				font:1.4rem/1.4rem 'AdihausDIN-Cond';
+				letter-spacing: 0;
+				color: #888;
+			}
+
+			.button{
+				display: block;
+				height: 4rem;
+				line-height: 4rem;
+				text-align: center;
+				border: 1px solid  #000;
+
+				font-size: 1.25rem;
+				color: #000;
+				@include prefix-css3(box-sizing,border-box);
+
+				&.disabled{
+					background: #ddd;
+					border-color: #ddd;
+					color: #fff;
+				}
+			}
+
+			a.button{
+				position: relative;
+				z-index: 3;
+			}
+
+			.ico{
+				width: 40px;
+				height: 40px;
+				border-radius:45px;
+				position: absolute;
+				bottom: 76px;
+				right: 15px;
+				background:#000 url('/images/adidas/event/launch_calendar/ico_phone.png') center center no-repeat;
+				background-size: 12px auto;
+				-webkit-background-size: 12px auto;
+			}
+
+			.product_link{
+				position: absolute;
+				top:0;
+				left:0;
+				display: block;
+				width: 100%;
+				height: 100%;
+				z-index: 2;
+			}
+
+			&:last-child{
+				border-bottom-width: 0;
+			}
+
+			&.locked{
+				.img{
+					width: 100%;
+					padding-bottom: 100%;
+					position: relative;
+					background: #000;
+
+					.text{
+						width: 100%;
+						position: absolute;
+						top: 50%;
+						left:50%;
+						@include prefix-css3(transform,translate3d(-50%,-50%,0));
+
+						div{
+							color: #fff;
+							text-align: center;
+
+							&.icons{
+								margin-bottom: 1rem;
+								font-size: 6rem;
+							}
+
+							&.adipro-l{
+								font-size: 2.4rem;
+								text-transform: uppercase;
+								opacity: 0.8;
+								color: #59aa6f;
+							}
+						}
+					}
+
+					&:before{
+						display: block;
+						position: absolute;
+						top: 50%;
+						left: 50%;
+						color: #fff;
+						font-size: 7.5rem;
+
+						@include prefix-css3(transform,translate3d(-50%,-50%,0));
+					}
+				}
+			}
+
+			&.release{
+				.img{
+					.label{
+						background: #fd3d31;
+					}
+				}
+
+				.ico{
+					background:#fd3d31;
+					color: #fff;
+					font-size: 17px;
+					text-align: center;
+					line-height: 40px;
+
+					&:after{
+						font-family: 'adiPictoRegular';
+					    content: '\E607';
+					    speak: none;
+					    -webkit-font-feature-settings: "liga", "dlig";
+					    -moz-font-feature-settings: "liga=1, dlig=1";
+					    -moz-font-feature-settings: "liga", "dlig";
+					    -ms-font-feature-settings: "liga", "dlig";
+					    -o-font-feature-settings: "liga", "dlig";
+					    font-feature-settings: "liga", "dlig";
+					    text-rendering: geometricPrecision;
+					    -webkit-font-smoothing: antialiased;
+					    font-smooth: always;
+					    font-weight: normal;
+					    font-variant: normal;
+					    text-transform: none;
+					}
+				}
+			}
+
+			&.ondate{
+				.img{
+					.label{
+						background: #5bc2e7;
+					}
+				}
+			}
+
+			&.ondate_mon{
+				.img{
+					.label{
+						background: #3078e2;
+					}
+				}
+			}
+
+			&.soldout{
+				.img{
+					.label{
+						background: #888;
+					}
+				}
+
+				.button{
+					background: #999;
+					border-color: #999;
+					font:1.6rem/40px 'AdihausDIN-Cond';
+					text-transform: uppercase;
+					color: #fff;
+					letter-spacing: 0;
+				}
+			}
+		}
+
+
+		&.list_type{
+
+			margin-top: 15px;
+			.box{
+				padding-top: 20px;
+				padding-bottom: 20px;
+				border-bottom:1px solid #eee;
+				&:after{
+					display: none;
+				}
+
+				&.locked{
+					.img{
+						width: 10rem;
+						height: 10rem;
+						padding-bottom: 0;
+
+						&:before{
+							font-size: 5rem;
+						}
+
+						.label{
+							top: 0;
+							padding-left: 15px;
+						}
+
+						.text{
+							.icons{
+								font-size: 2rem;
+							}
+
+							.adipro-l{
+								font-size: 1.6rem;
+							}
+						}
+					}
+				}
+
+				&:first-child{
+					border-top: 1px solid  #eee;
+				}
+
+				&.release{
+					.ico{
+						font-size: 1.2rem;
+						line-height: 30px;
+					}
+				}
+			}
+
+
+			.img{
+				position: static;
+				width: 10rem;
+				margin-bottom: 0;
+				.label{
+					width: 100%;
+					top: 20px;
+					padding:0 0 0 30px;
+					left: 10rem;
+					background: none !important;
+					color: #888;
+					text-align: left;
+				}
+			}
+
+			.tit{
+				padding: 0 15px 0 30px;
+				position: absolute;
+				left: 10rem;
+				top: 40px;
+				font-size: 1.25rem;
+				line-height: 1.5rem;
+
+				display: -webkit-box;
+				display: -moz-box;
+				display: box;
+				overflow: hidden;
+
+				@include prefix-css3(line-clamp,2);
+				@include prefix-css3(box-orient,vertical);
+			}
+
+			.price{
+				position: absolute;
+				padding-left: 30px;
+				left: 10rem;
+				bottom: 25px;
+				margin-bottom: 0;
+			}
+
+			.ctgr{
+				display: none;
+			}
+
+			.button{
+				display: none;
+			}
+
+			.ico{
+				width: 30px;
+				height: 30px;
+				bottom: 20px;
+				background-size: 8px auto;
+			}
+		}
+	}
+}
+
+@media screen and (min-width:481px) {
+
+}
+
+@media screen and (min-width:641px){
+
+}

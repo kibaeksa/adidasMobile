@@ -1,0 +1,629 @@
+/*
+	break width
+ */
+$break-small: 1000px;
+$break-large: 1400px;
+$width320:320px;
+$width400:400px;
+$width480:480px;
+$width600:600px;
+/*
+	@@ mixin
+ */
+@mixin box-sizing($value){
+			box-sizing: $value;
+	-webkit-box-sizing: $value;
+}
+
+@mixin prefix-css3($prop,$value){
+	#{$prop} :$value;
+	-webkit-#{$prop} :$value;
+	-moz-#{$prop}:$value;
+	-o-#{$prop} :$value;
+	-ms-#{$prop} :$value;
+}
+
+@mixin transition($prop , $duration , $easing , $delay){
+	transition :$prop $duration $easing $delay;
+	-webkit-transition :$prop $duration $easing $delay;
+	-moz-transition:$prop $duration $easing $delay;
+	-o-transition :$prop $duration $easing $delay;
+}
+
+@mixin opacity($value){
+	opacity : $value;
+	// filter:alpha(opacity=$value * 100);
+	// -ms-filter:alpha(opacity=$value * 100);
+}
+
+@mixin transform($value){
+	transform:$value;
+	-webkit-transform:$value;
+	-moz-transform:$value;
+	-o-transform:$value;
+}
+@mixin transition($transition...) {
+    -moz-transition:    $transition;
+    -o-transition:      $transition;
+    -webkit-transition: $transition;
+    transition:         $transition;
+}
+
+@media screen and (max-width: 320px) {
+	html{
+		font-size: 10px;
+	}
+}
+@media screen and (min-width: 800px) {
+	html{
+		font-size: 12px;
+	}
+}
+
+
+// for pseudo element
+.pseudo-element{
+	content:'';
+	display: block;
+}
+#video-layer{
+	position:fixed;top:0;left:0;width: 100%;height: 100%;z-index:1000;
+}
+
+#video-layer .bg{
+	width: 100%;
+	height: 100%;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	transform-origin:center center;
+	-webkit-transform-origin:center center;
+	transform:scale(0);
+	-webkit-transform:scale(0);
+	opacity:0;
+	background:#000;
+	z-index:1;
+
+	transition:all 0.4s;
+	-webkit-transition:all 0.4s;
+
+
+}
+
+#video-layer.loaded .bg{
+	opacity: 1;
+	transform:scale(1.2);
+	-webkit-transform:scale(1.2);
+}
+
+#video-layer .video-box{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	z-index: 3;
+}
+
+#video-layer .close_x_btn{
+	width: 70px;
+	height: 70px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 5;
+	opacity: 0;
+}
+
+#video-layer.loaded .close_x_btn{
+	opacity: 1;
+}
+
+
+#training_12{
+	&.kim_seung_gyu{
+		.profile{
+			h2{
+				color:#494746;
+				img{
+					right: 2%;
+				    bottom: 23%;
+				    width: 33%;
+				}
+			}
+			.say{
+				p{
+					color:#3b4e55;
+					strong{
+						color:#0e1315;
+					}
+				}
+			}
+		}
+	}
+	&.ameera{
+		.profile{
+			h2{
+				color:#494746;
+				img{
+					left: 2%;
+				    bottom: 23%;
+				    width: 33%;
+
+				}
+			}
+			.say{
+				background-image: url("http://imagem.adidas.co.kr/images/adidas/event/creator_know_how/02/say_bg.png");
+				p{
+					color:#735e5c;
+					strong{
+						color:#3a2a28;
+					}
+				}
+			}
+		}
+		.middle_banner{
+			background-image: url("http://imagem.adidas.co.kr/images/adidas/event/creator_know_how/02/middle_banner.jpg");
+			p{
+				color:#000;
+			}
+			.bar{
+				background: #000;
+			}
+			a.btn{
+				font-family: 'NotoSansKR';
+				border:1px solid #000;
+				color:#000;
+			}
+		}
+	}
+	&.Kimseunghyeon{
+		.profile{
+			h2{
+				position: relative;
+				color:#193055;
+				font: 3rem/3.5rem 'adinenuPro-black','Nanum Gothic';
+				img{
+					right: 50%;
+					bottom: 25%;
+				    width: 25%;
+				    margin-right: -159px;
+				}
+			}
+			.say{
+				background-image: url("http://imagem.adidas.co.kr/images/adidas/event/creator_know_how/03/say_bg.png");
+				p{
+					color:#574747;
+					letter-spacing: -1px;
+					&:first-child{
+						margin-bottom: 1rem;
+					}
+					strong{
+						color:#3a2a28;
+					}
+				}
+			}
+		}
+		.middle_banner{
+			background-image: url("http://imagem.adidas.co.kr/images/adidas/event/creator_know_how/03/middle_banner.jpg");
+			a.btn{
+				font-family: 'NotoSansKR';
+				border:1px solid #fff;
+				color:#fff;
+				background: rgba(0,0,0,0.16);
+			}
+		}
+		.product{
+			.box{
+				.info_wrap{
+					.info{
+						&:last-child{
+							margin-right: 2rem;
+						}
+					}
+				}
+			}
+		}
+	}
+	.main{
+		position: relative;
+		background: url("http://imagem.adidas.co.kr/images/adidas/event/creator_know_how/main_bg.jpg") no-repeat;
+		background-size: 100% 100%;
+		padding-bottom: 53%;
+
+		.bg{
+			position: absolute;
+			top:0;
+			width: 100%;
+			img{
+				width: 100%;
+			}
+		}
+		h1{
+			position: relative;
+			padding:2.5rem 2.2rem 1rem 2.2rem;
+			z-index: 1;
+			img{
+				width: 100%;
+			}
+		}
+		.slider{
+			position: relative;
+			margin: 0 2.5rem;
+			ul{
+				li{
+					position: absolute;
+					top: 25px;
+					left: 0;
+					width: 100%;
+					@include opacity(0);
+
+					&.on{
+						@include opacity(1);
+						z-index: 10;
+					}
+					div.box{
+						position: relative;
+						box-sizing: border-box;
+						-webkit-box-sizing: border-box;
+						width: 28.7%;
+						display: inline-block;
+						text-align: center;
+						background-size: 100%;
+						background-size: 100%;
+						background-repeat: no-repeat;
+						margin-right: 6.2%;
+						.thumb{
+							img{
+								position: absolute;
+								top:0;
+								left:0;
+								width: 100%;
+							}
+
+							display: inline-block;
+							width: 100%;
+							padding-bottom: 100%;
+							position: relative;
+							background-size: cover;
+						}
+						.name{
+							position: relative;
+					    display: inline-block;
+					    width: 55%;
+					    height: 35px;
+					    background-position: 50%;
+					    background-size: 100%;
+					    background-repeat: no-repeat;
+						}
+						a{
+							width: 100%;
+							height: 100%;
+							position: absolute;
+							top: 0;
+							left: 0;
+							z-index: 10;
+						}
+						&.active{
+							.thumb{
+								&:after{
+									box-sizing: border-box;
+									-webkit-box-sizing: border-box;
+									position: absolute;
+									top:0;
+									width: 100%;
+									height: 100%;
+									content: '';
+									display: block;
+									border:4px solid #0cc485;
+									border-radius: 300px;
+									-webkit-border-radius: 300px;
+								}
+							}
+						}
+						&.comming{
+							pointer-events: none;
+							.thumb{
+								background-image: url("http://imagem.adidas.co.kr/images/adidas/event/creator_know_how/comming.png");
+								.name{
+									display: inline-block;
+								}
+							}
+
+						}
+						&.ord1{
+							&.active{
+								.name{
+									background-image: url("http://imagem.adidas.co.kr/images/adidas/event/creator_know_how/01/name_hover.png");
+								}
+							}
+							.name{
+								background-image: url("http://imagem.adidas.co.kr/images/adidas/event/creator_know_how/01/name.png");
+							}
+						}
+						&.ord2{
+							&.active{
+								.name{
+									background-image: url("http://imagem.adidas.co.kr/images/adidas/event/creator_know_how/02/name_hover.png");
+								}
+							}
+							.name{
+								display: inline-block;
+								background-image: url("http://imagem.adidas.co.kr/images/adidas/event/creator_know_how/02/name.png");
+							}
+						}
+						&.ord3{
+							&.active{
+								.name{
+									background-image: url("http://imagem.adidas.co.kr/images/adidas/event/creator_know_how/03/name_hover.png");
+								}
+							}
+							.name{
+								display: inline-block;
+								background-image: url("http://imagem.adidas.co.kr/images/adidas/event/creator_know_how/03/name.png");
+							}
+						}
+					}
+				}
+			}
+		}
+		.num{
+			position: absolute;
+			bottom:10%;
+			width: 100%;
+			text-align: center;
+			z-index: 10;
+			display: none;
+			a{
+
+				display: inline-block;
+				margin: 0 3px;
+				width: 7px;
+				height: 7px;
+				background: #8b8b8b;
+				border-radius: 50px;
+				-webkit-border-radius: 50px;
+				&.active{
+					background: #0cc485;
+				}
+			}
+		}
+		.navi{
+			position: absolute;
+			top:50%;
+			margin-top: 25px;
+			width: 100%;
+			display: none;
+			.prev{
+				position: absolute;
+				left:6px;
+				img{ width: 75%; }
+			}
+			.next{
+				position: absolute;
+				right:6px;
+				img{ width: 75%; }
+			}
+		}
+	}
+
+	.profile{
+		position: relative;
+		h2{
+			position: relative;
+			padding:2.1rem 0 1.5rem;
+			font: 3.5rem 'adinenuPro-black','Nanum Gothic';
+			text-transform: uppercase;
+			text-align: center;
+			letter-spacing: 0.1px;
+			img{
+				position: absolute;
+				@include opacity(0.7);
+			}
+		}
+		.profile_img{
+			img{
+				width: 100%;
+			}
+		}
+		.say{
+			padding: 6rem 0;
+	    background: url("http://imagem.adidas.co.kr/images/adidas/event/creator_know_how/01/say_bg.png") no-repeat;
+	    background-size: 60% auto;
+	    background-position: center;
+			p{
+				position: relative;
+				top:-10px;
+
+				text-align: center;
+				font: 1.4rem 'NotosansKRRegular', 'Nanum Gothic';
+			}
+		}
+	}
+
+	.play{
+		padding: 0 2rem 4rem;
+		a{
+			display: inline-block;
+			img{
+				width: 100%;
+			}
+		}
+	}
+
+	.middle_banner{
+		position: relative;
+		padding: 2rem 0;
+		text-align: center;
+		background: url("http://imagem.adidas.co.kr/images/adidas/event/creator_know_how/01/middle_banner.jpg") no-repeat;
+		background-size: 100% 100%;
+		p{
+			position: relative;
+			top:50px;
+			color:#fff;
+			text-align: center;
+			@include opacity(0);
+			@include transition(opacity, top, 0.4s);
+			&.sub_tit{
+				font:2rem  'NotoSansKRThin', 'Nanum Gothic';
+			}
+			&.keyword{
+				padding: 0.2rem 0;
+				text-transform: uppercase;
+    		font: 1.8rem 'adinenuPro-bold', 'Nanum Gothic';
+				letter-spacing: 1px;
+			}
+			&.desc{
+				padding-bottom: 2rem;
+				font:1rem/1.5rem 'NotoSansKRRegular', 'Nanum Gothic';
+				letter-spacing: 0.2px;
+				strong{
+					font-family: 'NotoSansKRBold';
+					letter-spacing: 0.2px;
+
+				}
+			}
+		}
+		.bar{
+			margin: 0.8rem auto;
+			width: 1px;
+			height: 20px;
+			background: #fff;
+		}
+	}
+
+	.product{
+		position: relative;
+		padding-bottom: 2rem;
+		.box{
+			padding: 0 1rem;
+			margin: 2rem 1rem 0 2rem;
+			border-bottom: 1.5px solid #d7d7d7;
+			text-align: center;
+			&:last-child{
+				border-bottom: 0px;
+			}
+
+			.img{
+				position: relative;
+				// padding: 0 2rem;
+				img{width: 100%;}
+				.tit{
+					position: absolute;
+
+					p{
+						position: relative;
+						padding: 2px 9px 3px;
+						z-index: 1;
+						font: 0.9rem 'NotosansKRRegular','Nanum Gothic';
+						color: #fff;
+						letter-spacing: 0.2px;
+					}
+					span{
+
+						position: absolute;
+						top: 0;
+						left: 0;
+						width: 100%;
+						height: 100%;
+						background: #000;
+						@include opacity(0.67);
+					}
+				}
+			}
+			.info_wrap{
+				position: relative;
+				display: flex;
+				&.single{
+					display: inline-block;
+					.info{
+						width:100%;
+					}
+				}
+				.info{
+					position: relative;
+					width: 50%;
+					display: inline-block;
+					padding: 1.8rem 0;
+					text-align: left;
+					margin-right: 5px;
+					&.single{
+						width: 100%;
+					}
+
+					&:last-child{
+						margin-left: 3px;
+						margin-right: 0px;
+					}
+					p{
+						&.title{
+				    		font: 1.4rem/1.7rem 'NotosansKRBold','Nanum Gothic';
+							span{
+								text-transform: uppercase;
+						    	font: 1rem 'adinenuPro-regular','Nanum Gothic';
+								letter-spacing: 0.2px;
+							}
+						}
+						&.desc{
+							padding: 0.2rem 0 0.5rem;
+					    	font: 0.9rem 'NotosansKRRegular','Nanum Gothic';
+						}
+					}
+				}
+			}
+
+		}
+	}
+
+	.col{
+		div{
+			position: relative;
+			@include opacity(0);
+			@include transition(opacity, top, 0.4s);
+
+			&.buy{
+				a{
+				}
+			}
+			.button{
+				position: absolute;
+				bottom:14%;
+				width: 100%;
+				text-align: center;
+			}
+			img{
+				width: 100%;
+			}
+		}
+	}
+
+
+	// btn
+	a.btn{
+		display: inline-block;
+		font:1.1rem/1.5rem 'NotoSansKRRegular', 'Nanum Gothic';
+		letter-spacing: 0.2px;
+		&:after{
+			margin-left: 5px;
+		}
+		&.type1{
+			padding: 0.8rem 2rem;
+			color:#fff;
+			border:1px solid #fff;
+		}
+		&.type2{
+			padding: 0.8rem 3.3rem;
+			color:#fff;
+			border:1px solid #fff;
+			background: #000;
+			font:1rem/1.5rem 'NotoSansKRRegular', 'Nanum Gothic';
+		}
+		&.type3{
+			padding: 0.8rem 3.3rem;
+			color:#000;
+			background: #fff;
+			font:1rem/1.5rem 'NotoSansKR', 'Nanum Gothic';
+			@include opacity(0.74);
+		}
+	}
+}

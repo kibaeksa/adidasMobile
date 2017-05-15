@@ -1,0 +1,1716 @@
+<!doctype html>
+<html itemscope="" itemtype="http://schema.org/WebPage" lang="ko" class="">
+<head>
+	<title>Reebok</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+	<meta content="telephone=no" name="format-detection">
+	<meta content="address=no" name="format-detection">
+	<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+	<link rel="stylesheet" href="/MO/reebok/css/reebok_m.css" />	
+	<script type="text/javascript" src="/MO/reebok/js/jquery.js"></script>
+	<script type="text/javascript" src="/MO/reebok/js/reebok_js_m.js"></script>
+	<script type="text/javascript" src="/MO/reebok/js/iscroll.js"></script>
+	<script type="text/javascript" src="/MO/reebok/js/FlickKkb_addTrn.js"></script>
+	<script type="text/javascript">
+		var d;
+		var main_sec1;
+		var main_sec2;
+		var main_sec3;
+		var lmenu_bnn;
+		(function($){
+			function resizeSliderHeightObj(){
+				$('#main_cnt1 .top_bnn').css({height:$(window).width()*0.95});
+				$('#main_cnt3 .top_bnn').css({height:$(window).width()*0.7125});				
+				$('#main_cnt4 .top_bnn').css({height:$(window).width()*0.7125});
+				$('#main_cnt1_fake .top_bnn').css({height:$(window).width()*0.95});
+				$('.sprt_ctgr ul').css({height:$(window).width()*0.42125}); 
+				$('.main_bnn2').css({height:$(window).width()*0.625}); // 141031 추가
+			}
+
+			$(document).ready(function(){
+				resizeSliderHeightObj();
+				$(window).resize(function(){
+					resizeSliderHeightObj();
+				});
+
+
+				d = new FlickKkb({
+					wrapper : 'main_fck',
+					criterion : 3,
+					btn : $('#contents .gnb li'),
+					callback : function(e){
+						var idx = jQuery('#contents .gnb li a.on').parent().index();
+						if(idx == e.fake_index) return false;	
+					
+						jQuery('#contents .gnb li').each(function(){
+							jQuery(this).find('a').removeClass('on');
+						});
+						jQuery('#contents .gnb li').eq(e.fake_index).find('a').addClass('on');
+						jQuery('html,body').animate({scrollTop:107},1);
+					},
+					looptype : true
+				}).init();
+
+				
+				main_sec1 = new FlickKkb({
+					wrapper : 'slider_mainmenu1_ul',
+					criterion : 3,
+					init : function(e){						
+						$('#slider_mainmenu1 .num span').text('/ '+(e.length-2));
+					},
+					callback : function(e){
+						$('#slider_mainmenu1 .num strong').text(e.fake_index+1);
+					},
+					btn_left : $('#slider_mainmenu1 .l'),
+					btn_right : $('#slider_mainmenu1 .r'),
+					looptype : true,
+					autoSlide : true,
+					autoSlideSpeed : 3000
+				}).init();
+
+				main_sec2 = new FlickKkb({
+					wrapper : 'slider_mainmenu2_ul',
+					criterion : 3,
+					init : function(e){						
+						$('#slider_mainmenu2 .num span').text('/ '+(e.length-2));
+					},
+					callback : function(e){
+						$('#slider_mainmenu2 .num strong').text(e.fake_index+1);
+					},
+					btn_left : $('#slider_mainmenu2 .l'),
+					btn_right : $('#slider_mainmenu2 .r'),
+					looptype : true,
+					autoSlide : true,
+					autoSlideSpeed : 5000
+				}).init();
+
+				main_sec3 = new FlickKkb({
+					wrapper : 'slider_mainmenu3_ul',
+					criterion : 3,
+					init : function(e){						
+						$('#slider_mainmenu3 .num span').text('/ '+(e.length-2));
+					},
+					callback : function(e){
+						$('#slider_mainmenu3 .num strong').text(e.fake_index+1);
+					},
+					btn_left : $('#slider_mainmenu3 .l'),
+					btn_right : $('#slider_mainmenu3 .r'),
+					looptype : true,
+					autoSlide : true,
+					autoSlideSpeed : 5000
+				}).init();
+
+
+				lmenu_bnn = new FlickKkb({
+					wrapper : 'lmenu_bnn_sld',
+					criterion : 3,
+					callback : function(e){
+						$('#lmenu_bnn_sld+.bul span').removeClass('on').eq(e.fake_index).addClass('on');
+					},
+					looptype : true,
+					multpl_width : 0.8,
+					autoSlide : true,
+					autoSlideSpeed : 5000
+				}).init();
+				
+				
+
+
+				Reebok.fn.prodTabAction({
+					wrap : $('#classic_prod_tab'),
+					btn : $('#classic_prod_tab .prod_tab li'),
+					cont_wrap : $('#classic_prod_tab .prod_tab_cont'),
+					cont : $('#classic_prod_tab .prod_tab_cont>div')
+				});
+
+				Reebok.fn.prodTabAction({
+					wrap : $('#sport_prod_tab'),
+					btn : $('#sport_prod_tab .prod_tab li'),
+					cont_wrap : $('#sport_prod_tab .prod_tab_cont'),
+					cont : $('#sport_prod_tab .prod_tab_cont>div')
+				});
+
+				Reebok.fn.prodTabAction({
+					wrap : $('#main1_prod_tab'),
+					btn : $('#main1_prod_tab .prod_tab li'),
+					cont_wrap : $('#main1_prod_tab .prod_tab_cont'),
+					cont : $('#main1_prod_tab .prod_tab_cont>div')
+				});							
+
+			});
+
+
+			
+
+
+		})(jQuery);
+
+	</script>	
+
+	<!-- 141027 오픈 이벤트 스타일 -->
+	
+</head>
+
+<body>
+
+	<!-- 141027 오픈 이벤트 html -
+	<div id="renewal_open" class="bdrbox" style="position:absolute;top:0;left:0;width:100%;height:100%;padding:10px;background:#000;z-index:1111;overflow-y:auto;">
+		<img src="/images/reebok/renewal_open.jpg" style="width:100%;" onclick="renewalIntro(d);">
+	</div>	
+	-->
+	
+	<aside id="leftmenu">
+		<div class="bg" onclick="Reebok.fn.toggleLeft();return false;"></div>
+		<a onclick="Reebok.fn.toggleLeft();return false;" class="btn_sidemenu" href="#">
+			<span></span>
+			<span></span>
+			<span></span>
+		</a>
+		<section id="inn_leftmenu" class="lmenu_wrap">			
+			<section class="menu">			
+				<div class="bnn">
+					<div id="lmenu_bnn_sld"class="bnn_sld">
+						<a href="#" style="background-image:url('images/reebok/bg_navi_visual1.jpg');"></a>
+						<a href="#" style="background-image:url('images/reebok/bg_navi_visual1.jpg');"></a>
+					</div>					
+					<div class="bul">
+						<span class="on"></span>
+						<span></span>
+					</div>
+				</div>
+				<h2 class="blind">네비게이션 메뉴</h2>
+				<ul class="dp1">
+					<li class="has_dp">
+						<a href="#" onclick="Reebok.fn.toggleLeftList(this);return false;">MEN</a>
+						<ul class="dp2">
+							<li><a href="#">BEST</a></li>
+							<li><a href="#">NEW</a></li>
+							<li><a href="#">SALE</a></li>
+							<li class="has_dp">
+								<a href="#" class="kor" onclick="Reebok.fn.toggleLeftListDepth3(this);return false;">신발</a>
+								<div class="dp3">
+									<a href="#">전체 보기</a>
+									<dl>
+										<dt>스포츠별</dt>
+										<dd>
+											<ul>
+												<li><a href="#"><span>러닝<em>(10)</em></span></a></li>
+												<li><a href="#"><span>트레이닝<em>(10)</em></span></a></li>
+											</ul>
+										</dd>
+									</dl>
+									<dl>
+										<dt>상품별</dt>
+										<dd>
+											<ul>											
+												<li><a href="#"><span>하이컷/미드컷<em>(10)</em></span></a></li>
+												<li><a href="#"><span>로우컷<em>(10)</em></span></a></li>
+												<li><a href="#"><span>샌들/슬리퍼<em>(10)</em></span></a></li>
+											</ul>
+										</dd>
+									</dl>									
+								</div>
+							</li>
+							<li class="has_dp">
+								<a href="#" class="kor" onclick="Reebok.fn.toggleLeftListDepth3(this);return false;">의류</a>
+								<div class="dp3">
+									<a href="#">전체 보기</a>
+									<dl>
+										<dt>스포츠별</dt>
+										<dd>
+											<ul>
+												<li><a href="#"><span>러닝<em>(10)</em></span></a></li>
+												<li><a href="#"><span>트레이닝<em>(10)</em></span></a></li>
+											</ul>
+										</dd>
+									</dl>
+								</div>
+							</li>
+							<li class="has_dp">
+								<a href="#" class="kor" onclick="Reebok.fn.toggleLeftListDepth3(this);return false;">용품</a>
+								<div class="dp3">
+									<a href="#">전체 보기</a>
+									<dl>
+										<dt>스포츠별</dt>
+										<dd>
+											<ul>
+												<li><a href="#"><span>러닝<em>(10)</em></span></a></li>
+												<li><a href="#"><span>트레이닝<em>(10)</em></span></a></li>
+											</ul>
+										</dd>
+									</dl>
+								</div>
+							</li>
+						</ul>
+					</li>
+					<li class="has_dp">
+						<a href="#" onclick="Reebok.fn.toggleLeftList(this);return false;">WOMEN</a>
+						<ul class="dp2">
+							<li><a href="#">BEST</a></li>
+							<li><a href="#">NEW</a></li>
+							<li><a href="#">SALE</a></li>
+							<li class="has_dp">
+								<a href="#" class="kor" onclick="Reebok.fn.toggleLeftListDepth3(this);return false;">신발</a>
+								<div class="dp3">
+									<a href="#">전체 보기</a>
+									<dl>
+										<dt>스포츠별</dt>
+										<dd>
+											<ul>
+												<li><a href="#"><span>러닝<em>(10)</em></span></a></li>
+												<li><a href="#"><span>트레이닝<em>(10)</em></span></a></li>
+											</ul>
+										</dd>
+									</dl>
+									<dl>
+										<dt>상품별</dt>
+										<dd>
+											<ul>											
+												<li><a href="#"><span>하이컷/미드컷<em>(10)</em></span></a></li>
+												<li><a href="#"><span>로우컷<em>(10)</em></span></a></li>
+												<li><a href="#"><span>샌들/슬리퍼<em>(10)</em></span></a></li>
+											</ul>
+										</dd>
+									</dl>									
+								</div>
+							</li>
+							<li class="has_dp">
+								<a href="#" class="kor" onclick="Reebok.fn.toggleLeftListDepth3(this);return false;">의류</a>
+								<div class="dp3">
+									<a href="#">전체 보기</a>
+									<dl>
+										<dt>스포츠별</dt>
+										<dd>
+											<ul>
+												<li><a href="#"><span>러닝<em>(10)</em></span></a></li>
+												<li><a href="#"><span>트레이닝<em>(10)</em></span></a></li>
+											</ul>
+										</dd>
+									</dl>
+								</div>
+							</li>
+							<li class="has_dp">
+								<a href="#" class="kor" onclick="Reebok.fn.toggleLeftListDepth3(this);return false;">용품</a>
+								<div class="dp3">
+									<a href="#">전체 보기</a>
+									<dl>
+										<dt>스포츠별</dt>
+										<dd>
+											<ul>
+												<li><a href="#"><span>러닝<em>(10)</em></span></a></li>
+												<li><a href="#"><span>트레이닝<em>(10)</em></span></a></li>
+											</ul>
+										</dd>
+									</dl>
+								</div>
+							</li>
+						</ul>
+					</li>
+					<li class="has_dp">
+						<a href="#" onclick="Reebok.fn.toggleLeftList(this);return false;">KIDS</a>
+						<ul class="dp2">
+							<li><a href="#">BEST</a></li>
+							<li><a href="#">NEW</a></li>
+							<li><a href="#">SALE</a></li>
+							<li><a href="#" class="kor">신발</a></li>
+							<li><a href="#" class="kor">의류</a></li>
+							<li><a href="#" class="kor">용품</a></li>
+						</ul>
+					</li>
+					<li class="ctg has_dp">
+						<a href="#" class="ctg" onclick="Reebok.fn.toggleLeftList(this);return false;">FITNESS</a>
+						<ul class="dp2">
+							<li><a href="#">BEST</a></li>
+							<li><a href="#">NEW</a></li>
+							<li><a href="#">SALE</a></li>
+							<li><a href="#" class="kor">신발</a></li>
+							<li><a href="#" class="kor">의류</a></li>
+							<li><a href="#" class="kor">용품</a></li>
+						</ul>
+					</li>
+					<li class="ctg has_dp">
+						<a href="#" class="ctg" onclick="Reebok.fn.toggleLeftList(this);return false;">CLASSIC</a>
+						<ul class="dp2">
+							<li><a href="#">BEST</a></li>
+							<li><a href="#">NEW</a></li>
+							<li><a href="#">SALE</a></li>
+							<li><a href="#" class="kor">신발</a></li>
+							<li><a href="#" class="kor">의류</a></li>
+							<li><a href="#" class="kor">용품</a></li>
+						</ul>
+					</li>
+					<li class="has_dp">
+						<a href="#" class="ctg" onclick="Reebok.fn.toggleLeftList(this);return false;">COLLECTION</a>
+						<ul class="dp2">
+							<li><a href="#">BEST</a></li>
+							<li><a href="#">NEW</a></li>
+							<li><a href="#">SALE</a></li>
+							<li><a href="#" class="kor">크로스핏 (CROSSFIT)(44)</a></li>
+							<li><a href="#" class="kor">서브라이트(SUBLITE)(7)</a></li>
+							<li><a href="#" class="kor">원 시리즈(ONE Series)(5)</a></li>
+							<li><a href="#" class="kor">GL 6000(20)</a></li>
+							<li><a href="#" class="kor">PUMP FURY(13)</a></li>
+							<li><a href="#" class="kor">리복 피트니스 컬렉션(104)</a></li>
+						</ul>
+					</li>
+					<li><a href="#" class="kor">신상품</a></li>
+					<li><a href="#" class="kor">베스트상품</a></li>
+					<li><a href="#" class="kor">기획전</a></li>
+					<li><a href="#" class="sale">SALE</a></li>
+				</ul>
+				<ul class="util">
+					<li><a href="#">로그인</a></li>
+					<li><a href="#">장바구니</a></li>
+					<li><a href="#">마이페이지</a></li>
+					<li><a href="#">공지사항</a></li>
+					<li><a href="#" class="club">리클럽</a></li>
+				</ul>
+				<div class="btn">
+					<a href="#">고객센터</a>
+					<a href="#">매장찾기</a>
+				</div>
+			</section>
+			<!-- //menu -->
+		</section>
+		
+	</aside>
+	<!-- //leftmenu -->
+
+	<section id="wrap">
+		
+		<section id="container">
+
+
+			<!-- 141030 start -->
+			<div class="bdrbox" style="background:#ff5400;border: 3px solid #fff; left: 50%; margin-left: -48%; margin-top: -130px; position: fixed; top: 50%; width: 96%; z-index: 5000;display:none;" id="popup_not_repay">
+                <div style="width:100px;height:100px;border:3px solid #fff;border-radius:100px;margin:25px auto 19px;">
+                    <div style="width:6px;height:40px;background:#fff;margin:23px auto 5px;"></div>
+                    <div style="width:6px;height:6px;background:#fff;margin:0 auto;"></div>
+                </div>
+
+                <p style="margin-bottom:20px;text-align:center;color:#fff;font-size:14px;">현재 결제 대기중인 건이 있습니다!</p>
+
+                <a href="#" class="btn1" style="width:150px;margin:10px auto 20px;"> 결제하러 가기</a>
+			</div>
+			<!-- //141030 start -->
+
+
+
+			<div id="top_banner" class="top_bnn" style="display:none;">
+				<a href="#"><img src="/images/reebok/temp_top.jpg" alt=""/></a>
+				<a href="#" class="close" onclick="jQuery('#top_banner').hide();return false;"><img src="/images/reebok/btn_topbnn_close.png" alt=""/></a>
+			</div>
+			<div id="top_banner2" class="top_bnn" style="display:none;">
+				<a href="#"><img src="/images/reebok/temp_cpn_pop.jpg" alt=""/></a>
+				<a href="#" class="close" onclick="jQuery('#top_banner2').hide();return false;"><img src="/images/reebok/btn_topbnn_close.png" alt=""/></a>
+			</div>
+			
+			<header id="header">
+				<div class="hdr1">
+					<h1><a href="#" class="spt_bg"></a></h1>
+					<ul>
+						<li><a href="#">로그인</a></li>
+						<li><a href="#">회원가입</a></li>
+						<li><a href="#">마이페이지</a></li>
+						<li><a href="#">장바구니<span>(3)</span></a></li>
+					</ul>
+				</div>
+				<!-- //hdr1 -->
+				<div class="hdr2">
+					<div class="sch_area">
+						<a href="#" class="btn_sidemenu active" onclick="Reebok.fn.toggleLeft();return false;">
+							<span></span>
+							<span></span>
+							<span></span>
+						</a>				
+						<form method="get" action="#">
+							<div class="sch">
+								<input type="input" placeholder="검색어를 입력하세요"/>					
+							</div>
+							<button type="button">검색</button>
+						</form>				
+					</div>
+					<!-- //hdr2 -->
+				</div>
+			</header>
+			<!-- //header -->
+
+			<section id="contents">
+				<ul class="gnb">
+					<li class="m1"><a href="#" class="on">HOME</a></li>
+					<li class="m2"><a href="#" class="kor">기획전</a></li>
+					<li class="m3"><a href="#">CLASSIC</a></li>
+					<li class="m4"><a href="#">FITNESS</a></li>
+					<li class="m5"><a href="#">SALE</a></li>
+				</ul>
+				<section class="main_contents">
+					<h2 class="blind">메인 컨텐츠</h2>
+					<div id="main_fck">
+						<div id="main_cnt1">
+							<h3 class="blind">HOME</h3>
+							<div class="top_bnn" id="slider_mainmenu1">
+								<ul id="slider_mainmenu1_ul">
+									<li><a href="#"><img src="/images/reebok/visual.jpg" alt=""/></a></li>
+									<li><a href="#"><img src="/images/reebok/visual.jpg" alt=""/></a></li>
+									<li><a href="#"><img src="/images/reebok/visual.jpg" alt=""/></a></li>									
+								</ul>
+								<div class="control">
+									<a href="#" class="l">
+										<span></span>
+										<span></span>
+									</a>
+									<a href="#" class="r">
+										<span></span>
+										<span></span>
+									</a>
+									<div class="num">
+										<strong>1</strong>
+										<span>/13</span>
+									</div>
+								</div>
+							</div>
+							<!-- //top_bnn -->
+
+							<div class="main_bnn2">
+								<!-- 141031 -->	
+								<a href="#" style="background-image:url('images/reebok/temp_bnn1.jpg');"></a>
+								<a href="#" style="background-image:url('images/reebok/temp_bnn2.jpg');"></a>								
+							</div>
+
+							<div id="main1_prod_tab" class="prodlist_type1 now_tab1">
+								<ul class="prod_tab">
+									<li><a href="#" class="on">BEST PRODUCT</a></li>
+									<li><a href="#">NEW PRODUCT</a></li>
+								</ul>
+								<div class="prod_tab_cont">
+
+									<div class="prod_list">
+										<ul>
+											<li>
+												<a href="#">
+													<span class="img"><img src="http://shop.adidas.co.kr/upload/prod/basic/320/110228-1_320X320.jpg" alt=""/></span>
+													<span class="txt">[reebok classic/unisex] 프리스타일 하이</span>
+													<span class="rv">
+														<span class="lev"><div style="width:75%"></div></span><em>(5)</em>
+													</span>
+													<span class="price">
+														<span class="line">
+															<strong class="">219,000</strong>
+															<span>원</span>
+														</span>	
+														<span class="sale">
+															<strong class="">152,000</strong>
+															<span>원</span>
+														</span>	
+													</span>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<span class="img"><img src="http://shop.adidas.co.kr/upload/prod/basic/320/V55672-1_320X320.jpg" alt=""/></span>
+													<span class="txt">[reebok classic/unisex] 레코드 피니쉬 RS 2.0</span>
+	                                                <span class="rv">
+														<span class="lev"><div style="width:75%"></div></span><em>(5)</em>
+													</span>
+													<span class="price">
+														<strong class="">219,000</strong>
+														<span>원</span>
+													</span>
+												</a>
+											</li>
+										</ul>
+										<ul>
+											<li>
+												<a href="#">
+													<span class="img"><img src="http://shop.adidas.co.kr/upload/prod/basic/320/M41412-1_320X320.jpg" alt=""/></span>
+													<span class="txt">[REEBOK CLASSIC/Unisex] GL 6000</span>
+													<span class="rv">
+														<span class="lev"><div style="width:75%"></div></span><em>(5)</em>
+													</span>
+													<span class="price">
+														<strong class="">219,000</strong>
+														<span>원</span>
+													</span>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<span class="img"><img src="http://shop.adidas.co.kr/upload/prod/basic/320/Z82819-1_320X320.jpg" alt=""/></span>
+													<span class="txt">[Women's apparel] 레깅스</span>
+	                                                <span class="rv">
+														<span class="lev"><div style="width:75%"></div></span><em>(5)</em>
+													</span>
+													<span class="price">
+														<strong class="">219,000</strong>
+														<span>원</span>
+													</span>
+												</a>
+											</li>
+										</ul>
+										<ul>
+											<li>
+												<a href="#">
+													<span class="img"><img src="http://shop.adidas.co.kr/upload/prod/basic/320/Z95967-1_320X320.jpg" alt=""/></span>
+													<span class="txt">[Unisex acc] 얼티메이트 미듐 백팩</span>
+													<span class="rv">
+														<span class="lev"><div style="width:75%"></div></span><em>(5)</em>
+													</span>
+													<span class="price">
+														<strong class="">219,000</strong>
+														<span>원</span>
+													</span>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<span class="img"><img src="http://shop.adidas.co.kr/upload/prod/basic/320/M40934-1_320X320.jpg" alt=""/></span>
+													<span class="txt">[Reebok classic/unisex] 인스타펌프 퓨리 오리지널</span>
+	                                                <span class="rv">
+														<span class="lev"><div style="width:75%"></div></span><em>(5)</em>
+													</span>
+													<span class="price">
+														<strong class="">219,000</strong>
+														<span>원</span>
+													</span>
+												</a>
+											</li>
+										</ul>
+									</div>
+									<!-- //prod_list -->
+
+									<div class="prod_list" style="display:none;">
+										<ul>
+											<li>
+												<a href="#">
+													<span class="img"><img src="http://shop.adidas.co.kr/upload/prod/basic/320/V55672-1_320X320.jpg" alt=""/></span>
+													<span class="txt">[reebok classic/unisex] 프리스타일 하이</span>
+													<span class="rv">
+														<span class="lev"><div style="width:75%"></div></span><em>(5)</em>
+													</span>
+													<span class="price">
+														<strong class="">219,000</strong>
+														<span>원</span>
+													</span>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<span class="img"><img src="http://shop.adidas.co.kr/upload/prod/basic/320/110228-1_320X320.jpg" alt=""/></span>
+													<span class="txt">[reebok classic/unisex] 레코드 피니쉬 RS 2.0</span>
+	                                                <span class="rv">
+														<span class="lev"><div style="width:75%"></div></span><em>(5)</em>
+													</span>
+													<span class="price">
+														<strong class="">219,000</strong>
+														<span>원</span>
+													</span>
+												</a>
+											</li>
+										</ul>
+										<ul>
+											<li>
+												<a href="#">
+													<span class="img"><img src="http://shop.adidas.co.kr/upload/prod/basic/320/Z82819-1_320X320.jpg" alt=""/></span>
+													<span class="txt">[REEBOK CLASSIC/Unisex] GL 6000</span>
+													<span class="rv">
+														<span class="lev"><div style="width:75%"></div></span><em>(5)</em>
+													</span>
+													<span class="price">
+														<strong class="">219,000</strong>
+														<span>원</span>
+													</span>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<span class="img"><img src="http://shop.adidas.co.kr/upload/prod/basic/320/M41412-1_320X320.jpg" alt=""/></span>
+													<span class="txt">[Women's apparel] 레깅스</span>
+	                                                <span class="rv">
+														<span class="lev"><div style="width:75%"></div></span><em>(5)</em>
+													</span>
+													<span class="price">
+														<strong class="">219,000</strong>
+														<span>원</span>
+													</span>
+												</a>
+											</li>
+										</ul>
+										<ul>
+											<li>
+												<a href="#">
+													<span class="img"><img src="http://shop.adidas.co.kr/upload/prod/basic/320/Z95967-1_320X320.jpg" alt=""/></span>
+													<span class="txt">[Unisex acc] 얼티메이트 미듐 백팩</span>
+													<span class="rv">
+														<span class="lev"><div style="width:75%"></div></span><em>(5)</em>
+													</span>
+													<span class="price">
+														<strong class="">219,000</strong>
+														<span>원</span>
+													</span>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<span class="img"><img src="http://shop.adidas.co.kr/upload/prod/basic/320/M40934-1_320X320.jpg" alt=""/></span>
+													<span class="txt">[Reebok classic/unisex] 인스타펌프 퓨리 오리지널</span>
+	                                                <span class="rv">
+														<span class="lev"><div style="width:75%"></div></span><em>(5)</em>
+													</span>
+													<span class="price">
+														<strong class="">219,000</strong>
+														<span>원</span>
+													</span>
+												</a>
+											</li>
+										</ul>
+									</div>
+									<!-- //prod_list -->
+								</div>
+								
+								<a href="#" class="/MOre loading">전체보기<div class="pls"><div></div><div></div></div></a>
+							</div>
+							<!-- //prodlist_type1 -->
+
+							<div class="rbk_info">
+								<div class="f_s">
+									<a href="#"><img src="/images/reebok/bg_find_store.jpg" alt=""/></a>
+								</div>
+								<!-- 150109 ln4 클래스 추가 , 인스타링크 추가-->
+								<div class="sns ln4">
+									<a href="#" class="fb">리복<br/>코리아</a>
+									<a href="#" class="fb">리복<br/>클래식</a>
+									<a href="#" class="nv">리복<br/>블로그</a>
+									<a href="http://instagram.com/reebokclassickorea" target="_blank" class="insta">리복<br/>클래식</a>
+								</div>
+							</div>
+						</div>
+						<!-- //main_cnt1 -->
+
+						<div id="main_cnt2">
+							<h3 class="tit kor">기획전</h3>
+							<ul class="promo_list">
+								<li><a href="#"><img src="/images/reebok/bg_main_promo1.jpg" alt=""/></a></li>
+								<li><a href="#"><img src="/images/reebok/bg_main_promo2.jpg" alt=""/></a></li>
+								<li><a href="#"><img src="/images/reebok/bg_main_promo3.jpg" alt=""/></a></li>
+							</ul>
+						</div>
+						<!-- //main_cnt2 -->
+
+						<div id="main_cnt3">
+							<h3 class="tit">CLASSIC</h3>
+							<div class="top_bnn" id="slider_mainmenu2">
+								<ul id="slider_mainmenu2_ul">
+									<li><a href="#"><img src="/images/reebok/visual_classic.jpg" alt=""/></a></li>
+									<li><a href="#"><img src="/images/reebok/visual_classic.jpg" alt=""/></a></li>
+									<li><a href="#"><img src="/images/reebok/visual_classic.jpg" alt=""/></a></li>									
+								</ul>
+								<div class="control">
+									<a href="#" class="l">
+										<span></span>
+										<span></span>
+									</a>
+									<a href="#" class="r">
+										<span></span>
+										<span></span>
+									</a>
+									<div class="num">
+										<strong>1</strong>
+										<span> / 13</span>
+									</div>
+								</div>
+							</div>
+							<!-- //top_bnn -->
+
+							<div id="classic_prod_tab" class="prodlist_type1 now_tab1" style="margin-bottom:20px;">
+								<ul class="prod_tab">
+									<li><a href="#" class="on">BEST PRODUCT</a></li>
+									<li><a href="#">NEW PRODUCT</a></li>
+								</ul>
+								<div class="prod_tab_cont">
+
+									<div class="prod_list">
+										<ul>
+											<li>
+												<a href="#">
+													<span class="img"><img src="http://shop.adidas.co.kr/upload/prod/basic/320/110228-1_320X320.jpg" alt=""/></span>
+													<span class="txt">[reebok classic/unisex] 프리스타일 하이</span>
+													<span class="rv">
+														<span class="lev"><div style="width:75%"></div></span><em>(5)</em>
+													</span>
+													<span class="price">
+														<strong class="">219,000</strong>
+														<span>원</span>
+													</span>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<span class="img"><img src="http://shop.adidas.co.kr/upload/prod/basic/320/V55672-1_320X320.jpg" alt=""/></span>
+													<span class="txt">[reebok classic/unisex] 레코드 피니쉬 RS 2.0</span>
+	                                                <span class="rv">
+														<span class="lev"><div style="width:75%"></div></span><em>(5)</em>
+													</span>
+													<span class="price">
+														<strong class="">219,000</strong>
+														<span>원</span>
+													</span>
+												</a>
+											</li>
+										</ul>
+										<ul>
+											<li>
+												<a href="#">
+													<span class="img"><img src="http://shop.adidas.co.kr/upload/prod/basic/320/M41412-1_320X320.jpg" alt=""/></span>
+													<span class="txt">[REEBOK CLASSIC/Unisex] GL 6000</span>
+													<span class="rv">
+														<span class="lev"><div style="width:75%"></div></span><em>(5)</em>
+													</span>
+													<span class="price">
+														<strong class="">219,000</strong>
+														<span>원</span>
+													</span>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<span class="img"><img src="http://shop.adidas.co.kr/upload/prod/basic/320/Z82819-1_320X320.jpg" alt=""/></span>
+													<span class="txt">[Women's apparel] 레깅스</span>
+	                                                <span class="rv">
+														<span class="lev"><div style="width:75%"></div></span><em>(5)</em>
+													</span>
+													<span class="price">
+														<strong class="">219,000</strong>
+														<span>원</span>
+													</span>
+												</a>
+											</li>
+										</ul>
+										<ul>
+											<li>
+												<a href="#">
+													<span class="img"><img src="http://shop.adidas.co.kr/upload/prod/basic/320/Z95967-1_320X320.jpg" alt=""/></span>
+													<span class="txt">[Unisex acc] 얼티메이트 미듐 백팩</span>
+													<span class="rv">
+														<span class="lev"><div style="width:75%"></div></span><em>(5)</em>
+													</span>
+													<span class="price">
+														<strong class="">219,000</strong>
+														<span>원</span>
+													</span>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<span class="img"><img src="http://shop.adidas.co.kr/upload/prod/basic/320/M40934-1_320X320.jpg" alt=""/></span>
+													<span class="txt">[Reebok classic/unisex] 인스타펌프 퓨리 오리지널</span>
+	                                                <span class="rv">
+														<span class="lev"><div style="width:75%"></div></span><em>(5)</em>
+													</span>
+													<span class="price">
+														<strong class="">219,000</strong>
+														<span>원</span>
+													</span>
+												</a>
+											</li>
+										</ul>
+									</div>
+									<!-- //prod_list -->
+
+									<div class="prod_list" style="display:none;">
+										<ul>
+											<li>
+												<a href="#">
+													<span class="img"><img src="http://shop.adidas.co.kr/upload/prod/basic/320/V55672-1_320X320.jpg" alt=""/></span>
+													<span class="txt">[reebok classic/unisex] 프리스타일 하이</span>
+													<span class="rv">
+														<span class="lev"><div style="width:75%"></div></span><em>(5)</em>
+													</span>
+													<span class="price">
+														<strong class="">219,000</strong>
+														<span>원</span>
+													</span>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<span class="img"><img src="http://shop.adidas.co.kr/upload/prod/basic/320/110228-1_320X320.jpg" alt=""/></span>
+													<span class="txt">[reebok classic/unisex] 레코드 피니쉬 RS 2.0</span>
+	                                                <span class="rv">
+														<span class="lev"><div style="width:75%"></div></span><em>(5)</em>
+													</span>
+													<span class="price">
+														<strong class="">219,000</strong>
+														<span>원</span>
+													</span>
+												</a>
+											</li>
+										</ul>
+										<ul>
+											<li>
+												<a href="#">
+													<span class="img"><img src="http://shop.adidas.co.kr/upload/prod/basic/320/Z82819-1_320X320.jpg" alt=""/></span>
+													<span class="txt">[REEBOK CLASSIC/Unisex] GL 6000</span>
+													<span class="rv">
+														<span class="lev"><div style="width:75%"></div></span><em>(5)</em>
+													</span>
+													<span class="price">
+														<strong class="">219,000</strong>
+														<span>원</span>
+													</span>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<span class="img"><img src="http://shop.adidas.co.kr/upload/prod/basic/320/M41412-1_320X320.jpg" alt=""/></span>
+													<span class="txt">[Women's apparel] 레깅스</span>
+	                                                <span class="rv">
+														<span class="lev"><div style="width:75%"></div></span><em>(5)</em>
+													</span>
+													<span class="price">
+														<strong class="">219,000</strong>
+														<span>원</span>
+													</span>
+												</a>
+											</li>
+										</ul>
+										<ul>
+											<li>
+												<a href="#">
+													<span class="img"><img src="http://shop.adidas.co.kr/upload/prod/basic/320/Z95967-1_320X320.jpg" alt=""/></span>
+													<span class="txt">[Unisex acc] 얼티메이트 미듐 백팩</span>
+													<span class="rv">
+														<span class="lev"><div style="width:75%"></div></span><em>(5)</em>
+													</span>
+													<span class="price">
+														<strong class="">219,000</strong>
+														<span>원</span>
+													</span>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<span class="img"><img src="http://shop.adidas.co.kr/upload/prod/basic/320/M40934-1_320X320.jpg" alt=""/></span>
+													<span class="txt">[Reebok classic/unisex] 인스타펌프 퓨리 오리지널</span>
+	                                                <span class="rv">
+														<span class="lev"><div style="width:75%"></div></span><em>(5)</em>
+													</span>
+													<span class="price">
+														<strong class="">219,000</strong>
+														<span>원</span>
+													</span>
+												</a>
+											</li>
+										</ul>
+									</div>
+									<!-- //prod_list -->
+								</div>
+								
+								<a href="#" class="/MOre loading">전체보기<div class="pls"><div></div><div></div></div></a>
+							</div>
+							<!-- //prodlist_type1 -->
+
+							<div class="prodlist_type2 sale"> 
+								<div class="top">
+									<h4>SALE PRODUCT</h4>									
+								</div>
+								<div class="prod_list">
+									<ul>
+										<li>
+											<a href="#">
+												<div class="img"><img src="http://shop.adidas.co.kr/upload/prod/basic/320/M40934-1_320X320.jpg" alt=""/></div>
+												<div class="info">
+													<P class="txt">[Reebok classic/unisex] 인스타펌프 퓨리 오리지널</P>
+													<P class="price">
+														<span class="line">
+															<strong class="">219,000</strong>
+															<span>원</span>
+														</span>	
+														<span class="sale">
+															<strong class="">152,000</strong>
+															<span>원</span>
+														</span>	
+													</P>
+                                                    <div class="rv">
+													    <div class="lev"><div style="width:25%"></div></div><em>(5)</em>
+												    </div>
+												</div>
+											</a>
+										</li>	
+
+										<li>
+											<a href="#">
+												<div class="img"><img src="http://shop.adidas.co.kr/upload/prod/basic/320/V55672-1_320X320.jpg" alt=""/></div>
+												<div class="info">
+													<P class="txt">[reebok classic/unisex] 레코드 피니쉬 RS 2.0</P>
+													<P class="price">
+														<span class="line">
+															<strong class="">219,000</strong>
+															<span>원</span>
+														</span>	
+														<span class="sale">
+															<strong class="">152,000</strong>
+															<span>원</span>
+														</span>	
+													</P>
+                                                    <div class="rv">
+													    <div class="lev"><div style="width:25%"></div></div><em>(5)</em>
+												    </div>
+												</div>
+											</a>
+										</li>	
+
+										<li>
+											<a href="#">
+												<div class="img"><img src="http://shop.adidas.co.kr/upload/prod/basic/320/Z95967-1_320X320.jpg" alt=""/></div>
+												<div class="info">
+													<P class="txt">[Unisex acc] 얼티메이트 미듐 백팩</P>
+													<P class="price">
+														<span class="line">
+															<strong class="">219,000</strong>
+															<span>원</span>
+														</span>	
+														<span class="sale">
+															<strong class="">152,000</strong>
+															<span>원</span>
+														</span>	
+													</P>
+                                                    <div class="rv">
+													    <div class="lev"><div style="width:25%"></div></div><em>(5)</em>
+												    </div>
+												</div>
+											</a>
+										</li>	
+
+										<li>
+											<a href="#">
+												<div class="img"><img src="http://shop.adidas.co.kr/upload/prod/basic/320/Z82819-1_320X320.jpg" alt=""/></div>
+												<div class="info">
+													<P class="txt">[Women's apparel] 레깅스</P>
+													<P class="price">
+														<span class="line">
+															<strong class="">219,000</strong>
+															<span>원</span>
+														</span>	
+														<span class="sale">
+															<strong class="">152,000</strong>
+															<span>원</span>
+														</span>	
+													</P>
+                                                    <div class="rv">
+													    <div class="lev"><div style="width:25%"></div></div><em>(5)</em>
+												    </div>
+												</div>
+											</a>
+										</li>	
+
+										<li>
+											<a href="#">
+												<div class="img"><img src="http://shop.adidas.co.kr/upload/prod/basic/320/M41412-1_320X320.jpg" alt=""/></div>
+												<div class="info">
+													<P class="txt">[Reebok CLASSIC/Unisex] GL 6000</P>
+													<P class="price">
+														<strong class="">219,000</strong>
+														<span>원</span>
+													</P>
+                                                    <div class="rv">
+													    <div class="lev"><div style="width:25%"></div></div><em>(5)</em>
+												    </div>
+												</div>
+											</a>
+										</li>	
+
+										<li>
+											<a href="#">
+												<div class="img"><img src="http://shop.adidas.co.kr/upload/prod/basic/320/110228-1_320X320.jpg" alt=""/></div>
+												<div class="info">
+													<P class="txt">[reebok classic/unisex] 프리스타일 하이</P>
+													<P class="price">
+														<strong class="">219,000</strong>
+														<span>원</span>
+													</P>
+                                                    <div class="rv">
+													    <div class="lev"><div style="width:25%"></div></div><em>(5)</em>
+												    </div>
+												</div>
+											</a>
+										</li>	
+									</ul>
+								</div>
+								<!-- //prod_list -->
+								<a href="#" class="/MOre loading">전체보기<div class="pls"><div></div><div></div></div></a>     
+							</div>
+							<!-- //prodlist_type2 sale -->
+						</div>
+						<!-- //main_cnt3 -->
+
+						<div id="main_cnt4">
+							<h3 class="tit">SPORT</h3>
+							<div class="top_bnn" id="slider_mainmenu3">
+								<ul id="slider_mainmenu3_ul">
+									<li><a href="#"><img src="/images/reebok/visual_sport.jpg" alt=""/></a></li>
+									<li><a href="#"><img src="/images/reebok/visual_sport.jpg" alt=""/></a></li>
+									<li><a href="#"><img src="/images/reebok/visual_sport.jpg" alt=""/></a></li>									
+								</ul>
+								<div class="control">
+									<a href="#" class="l">
+										<span></span>
+										<span></span>
+									</a>
+									<a href="#" class="r">
+										<span></span>
+										<span></span>
+									</a>
+									<div class="num">
+										<strong>1</strong>
+										<span> / 13</span>
+									</div>
+								</div>
+							</div>
+							<!-- //top_bnn -->
+
+							<!-- 141027 배너식으로 수정 -->
+							<div class="sprt_ctgr">
+								<ul>
+									<li>
+										<a href="#" style="background-image:url('images/reebok/temp_spt1.jpg');"></a>
+									</li>
+									<li>
+										<a href="#" style="background-image:url('images/reebok/temp_spt2.jpg');"></a>
+									</li>
+									<li>
+										<a href="#" style="background-image:url('images/reebok/temp_spt3.jpg');"></a>
+									</li>
+									<li>
+										<a href="#" style="background-image:url('images/reebok/temp_spt4.jpg');"></a>
+									</li>
+
+								</ul>
+							</div>
+
+							<div id="sport_prod_tab" class="prodlist_type1 now_tab1" style="margin-bottom:20px;">
+								<ul class="prod_tab">
+									<li><a href="#" class="on">BEST PRODUCT</a></li>
+									<li><a href="#">NEW PRODUCT</a></li>
+								</ul>
+								<div class="prod_tab_cont">
+
+									<div class="prod_list">
+										<ul>
+											<li>
+												<a href="#">
+													<span class="img"><img src="http://shop.adidas.co.kr/upload/prod/basic/320/110228-1_320X320.jpg" alt=""/></span>
+													<span class="txt">[reebok classic/unisex] 프리스타일 하이</span>
+													<span class="rv">
+														<span class="lev"><div style="width:75%"></div></span><em>(5)</em>
+													</span>
+													<span class="price">
+														<strong class="">219,000</strong>
+														<span>원</span>
+													</span>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<span class="img"><img src="http://shop.adidas.co.kr/upload/prod/basic/320/V55672-1_320X320.jpg" alt=""/></span>
+													<span class="txt">[reebok classic/unisex] 레코드 피니쉬 RS 2.0</span>
+	                                                <span class="rv">
+														<span class="lev"><div style="width:75%"></div></span><em>(5)</em>
+													</span>
+													<span class="price">
+														<strong class="">219,000</strong>
+														<span>원</span>
+													</span>
+												</a>
+											</li>
+										</ul>
+										<ul>
+											<li>
+												<a href="#">
+													<span class="img"><img src="http://shop.adidas.co.kr/upload/prod/basic/320/M41412-1_320X320.jpg" alt=""/></span>
+													<span class="txt">[REEBOK CLASSIC/Unisex] GL 6000</span>
+													<span class="rv">
+														<span class="lev"><div style="width:75%"></div></span><em>(5)</em>
+													</span>
+													<span class="price">
+														<strong class="">219,000</strong>
+														<span>원</span>
+													</span>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<span class="img"><img src="http://shop.adidas.co.kr/upload/prod/basic/320/Z82819-1_320X320.jpg" alt=""/></span>
+													<span class="txt">[Women's apparel] 레깅스</span>
+	                                                <span class="rv">
+														<span class="lev"><div style="width:75%"></div></span><em>(5)</em>
+													</span>
+													<span class="price">
+														<strong class="">219,000</strong>
+														<span>원</span>
+													</span>
+												</a>
+											</li>
+										</ul>
+										<ul>
+											<li>
+												<a href="#">
+													<span class="img"><img src="http://shop.adidas.co.kr/upload/prod/basic/320/Z95967-1_320X320.jpg" alt=""/></span>
+													<span class="txt">[Unisex acc] 얼티메이트 미듐 백팩</span>
+													<span class="rv">
+														<span class="lev"><div style="width:75%"></div></span><em>(5)</em>
+													</span>
+													<span class="price">
+														<strong class="">219,000</strong>
+														<span>원</span>
+													</span>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<span class="img"><img src="http://shop.adidas.co.kr/upload/prod/basic/320/M40934-1_320X320.jpg" alt=""/></span>
+													<span class="txt">[Reebok classic/unisex] 인스타펌프 퓨리 오리지널</span>
+	                                                <span class="rv">
+														<span class="lev"><div style="width:75%"></div></span><em>(5)</em>
+													</span>
+													<span class="price">
+														<strong class="">219,000</strong>
+														<span>원</span>
+													</span>
+												</a>
+											</li>
+										</ul>
+									</div>
+									<!-- //prod_list -->
+
+									<div class="prod_list" style="display:none;">
+										<ul>
+											<li>
+												<a href="#">
+													<span class="img"><img src="http://shop.adidas.co.kr/upload/prod/basic/320/V55672-1_320X320.jpg" alt=""/></span>
+													<span class="txt">[reebok classic/unisex] 프리스타일 하이</span>
+													<span class="rv">
+														<span class="lev"><div style="width:75%"></div></span><em>(5)</em>
+													</span>
+													<span class="price">
+														<strong class="">219,000</strong>
+														<span>원</span>
+													</span>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<span class="img"><img src="http://shop.adidas.co.kr/upload/prod/basic/320/110228-1_320X320.jpg" alt=""/></span>
+													<span class="txt">[reebok classic/unisex] 레코드 피니쉬 RS 2.0</span>
+	                                                <span class="rv">
+														<span class="lev"><div style="width:75%"></div></span><em>(5)</em>
+													</span>
+													<span class="price">
+														<strong class="">219,000</strong>
+														<span>원</span>
+													</span>
+												</a>
+											</li>
+										</ul>
+										<ul>
+											<li>
+												<a href="#">
+													<span class="img"><img src="http://shop.adidas.co.kr/upload/prod/basic/320/Z82819-1_320X320.jpg" alt=""/></span>
+													<span class="txt">[REEBOK CLASSIC/Unisex] GL 6000</span>
+													<span class="rv">
+														<span class="lev"><div style="width:75%"></div></span><em>(5)</em>
+													</span>
+													<span class="price">
+														<strong class="">219,000</strong>
+														<span>원</span>
+													</span>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<span class="img"><img src="http://shop.adidas.co.kr/upload/prod/basic/320/M41412-1_320X320.jpg" alt=""/></span>
+													<span class="txt">[Women's apparel] 레깅스</span>
+	                                                <span class="rv">
+														<span class="lev"><div style="width:75%"></div></span><em>(5)</em>
+													</span>
+													<span class="price">
+														<strong class="">219,000</strong>
+														<span>원</span>
+													</span>
+												</a>
+											</li>
+										</ul>
+										<ul>
+											<li>
+												<a href="#">
+													<span class="img"><img src="http://shop.adidas.co.kr/upload/prod/basic/320/Z95967-1_320X320.jpg" alt=""/></span>
+													<span class="txt">[Unisex acc] 얼티메이트 미듐 백팩</span>
+													<span class="rv">
+														<span class="lev"><div style="width:75%"></div></span><em>(5)</em>
+													</span>
+													<span class="price">
+														<strong class="">219,000</strong>
+														<span>원</span>
+													</span>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<span class="img"><img src="http://shop.adidas.co.kr/upload/prod/basic/320/M40934-1_320X320.jpg" alt=""/></span>
+													<span class="txt">[Reebok classic/unisex] 인스타펌프 퓨리 오리지널</span>
+	                                                <span class="rv">
+														<span class="lev"><div style="width:75%"></div></span><em>(5)</em>
+													</span>
+													<span class="price">
+														<strong class="">219,000</strong>
+														<span>원</span>
+													</span>
+												</a>
+											</li>
+										</ul>
+									</div>
+									<!-- //prod_list -->
+								</div>
+								
+								<a href="#" class="/MOre loading">전체보기<div class="pls"><div></div><div></div></div></a>
+							</div>
+							<!-- //prodlist_type1 -->
+
+							<div class="prodlist_type2 sale"> 
+								<div class="top">
+									<h4>SALE PRODUCT</h4>									
+								</div>
+								<div class="prod_list">
+									<ul>
+										<li>
+											<a href="#">
+												<div class="img"><img src="http://shop.adidas.co.kr/upload/prod/basic/320/M40934-1_320X320.jpg" alt=""/></div>
+												<div class="info">
+													<P class="txt">[Reebok classic/unisex] 인스타펌프 퓨리 오리지널</P>
+													<P class="price">
+														<strong class="">219,000</strong>
+														<span>원</span>
+													</P>
+                                                    <div class="rv">
+													    <div class="lev"><div style="width:25%"></div></div>
+												    </div>
+												</div>
+											</a>
+										</li>	
+
+										<li>
+											<a href="#">
+												<div class="img"><img src="http://shop.adidas.co.kr/upload/prod/basic/320/V55672-1_320X320.jpg" alt=""/></div>
+												<div class="info">
+													<P class="txt">[reebok classic/unisex] 레코드 피니쉬 RS 2.0</P>
+													<P class="price">
+														<strong class="">219,000</strong>
+														<span>원</span>
+													</P>
+                                                    <div class="rv">
+													    <div class="lev"><div style="width:25%"></div></div><em>(5)</em>
+												    </div>
+												</div>
+											</a>
+										</li>	
+
+										<li>
+											<a href="#">
+												<div class="img"><img src="http://shop.adidas.co.kr/upload/prod/basic/320/Z95967-1_320X320.jpg" alt=""/></div>
+												<div class="info">
+													<P class="txt">[Unisex acc] 얼티메이트 미듐 백팩</P>
+													<P class="price">
+														<strong class="">219,000</strong>
+														<span>원</span>
+													</P>
+                                                    <div class="rv">
+													    <div class="lev"><div style="width:25%"></div></div><em>(5)</em>
+												    </div>
+												</div>
+											</a>
+										</li>	
+
+										<li>
+											<a href="#">
+												<div class="img"><img src="http://shop.adidas.co.kr/upload/prod/basic/320/Z82819-1_320X320.jpg" alt=""/></div>
+												<div class="info">
+													<P class="txt">[Women's apparel] 레깅스</P>
+													<P class="price">
+														<strong class="">219,000</strong>
+														<span>원</span>
+													</P>
+                                                    <div class="rv">
+													    <div class="lev"><div style="width:25%"></div></div><em>(5)</em>
+												    </div>
+												</div>
+											</a>
+										</li>	
+
+										<li>
+											<a href="#">
+												<div class="img"><img src="http://shop.adidas.co.kr/upload/prod/basic/320/M41412-1_320X320.jpg" alt=""/></div>
+												<div class="info">
+													<P class="txt">[Reebok CLASSIC/Unisex] GL 6000</P>
+													<P class="price">
+														<strong class="">219,000</strong>
+														<span>원</span>
+													</P>
+                                                    <div class="rv">
+													    <div class="lev"><div style="width:25%"></div></div>
+												    </div>
+												</div>
+											</a>
+										</li>	
+
+										<li>
+											<a href="#">
+												<div class="img"><img src="http://shop.adidas.co.kr/upload/prod/basic/320/110228-1_320X320.jpg" alt=""/></div>
+												<div class="info">
+													<P class="txt">[reebok classic/unisex] 프리스타일 하이</P>
+													<P class="price">
+														<strong class="">219,000</strong>
+														<span>원</span>
+													</P>
+                                                    <div class="rv">
+													    <div class="lev"><div style="width:25%"></div></div><em>(5)</em>
+												    </div>
+												</div>
+											</a>
+										</li>	
+									</ul>
+								</div>
+								<!-- //prod_list -->
+								<a href="#" class="/MOre loading">전체보기<div class="pls"><div></div><div></div></div></a>     
+							</div>
+							<!-- //prodlist_type2 sale -->
+						</div>
+						<!-- //main_cnt4 -->
+						<div id="main_cnt5">
+							<h3 class="tit">SALE</h3>
+							<div style="margin-bottom:20px;"><img src="/images/reebok/bg_sale_visual.jpg" alt="" style="width:100%;"/></div>
+							<div class="prodlist_type2 sale"> 
+								<div class="top">
+									<h4>SALE PRODUCT</h4>									
+								</div>
+								<div class="prod_list">
+									<ul>
+										<li>
+											<a href="#">
+												<div class="img"><img src="http://shop.adidas.co.kr/upload/prod/basic/320/M40934-1_320X320.jpg" alt=""/></div>
+												<div class="info">
+													<P class="txt">[Reebok classic/unisex] 인스타펌프 퓨리 오리지널</P>
+													<P class="price">
+														<strong class="">219,000</strong>
+														<span>원</span>
+													</P>
+                                                    <div class="rv">
+													    <div class="lev"><div style="width:25%"></div></div><em>(5)</em>
+												    </div>
+												</div>
+											</a>
+										</li>	
+
+										<li>
+											<a href="#">
+												<div class="img"><img src="http://shop.adidas.co.kr/upload/prod/basic/320/V55672-1_320X320.jpg" alt=""/></div>
+												<div class="info">
+													<P class="txt">[reebok classic/unisex] 레코드 피니쉬 RS 2.0</P>
+													<P class="price">
+														<strong class="">219,000</strong>
+														<span>원</span>
+													</P>
+                                                    <div class="rv">
+													    <div class="lev"><div style="width:25%"></div></div><em>(5)</em>
+												    </div>
+												</div>
+											</a>
+										</li>	
+
+										<li>
+											<a href="#">
+												<div class="img"><img src="http://shop.adidas.co.kr/upload/prod/basic/320/Z95967-1_320X320.jpg" alt=""/></div>
+												<div class="info">
+													<P class="txt">[Unisex acc] 얼티메이트 미듐 백팩</P>
+													<P class="price">
+														<strong class="">219,000</strong>
+														<span>원</span>
+													</P>
+                                                    <div class="rv">
+													    <div class="lev"><div style="width:25%"></div></div><em>(5)</em>
+												    </div>
+												</div>
+											</a>
+										</li>	
+
+										<li>
+											<a href="#">
+												<div class="img"><img src="http://shop.adidas.co.kr/upload/prod/basic/320/Z82819-1_320X320.jpg" alt=""/></div>
+												<div class="info">
+													<P class="txt">[Women's apparel] 레깅스</P>
+													<P class="price">
+														<strong class="">219,000</strong>
+														<span>원</span>
+													</P>
+                                                    <div class="rv">
+													    <div class="lev"><div style="width:25%"></div></div>
+												    </div>
+												</div>
+											</a>
+										</li>	
+
+										<li>
+											<a href="#">
+												<div class="img"><img src="http://shop.adidas.co.kr/upload/prod/basic/320/M41412-1_320X320.jpg" alt=""/></div>
+												<div class="info">
+													<P class="txt">[Reebok CLASSIC/Unisex] GL 6000</P>
+													<P class="price">
+														<strong class="">219,000</strong>
+														<span>원</span>
+													</P>
+                                                    <div class="rv">
+													    <div class="lev"><div style="width:25%"></div></div><em>(5)</em>
+												    </div>
+												</div>
+											</a>
+										</li>	
+
+										<li>
+											<a href="#">
+												<div class="img"><img src="http://shop.adidas.co.kr/upload/prod/basic/320/110228-1_320X320.jpg" alt=""/></div>
+												<div class="info">
+													<P class="txt">[reebok classic/unisex] 프리스타일 하이</P>
+													<P class="price">
+														<strong class="">219,000</strong>
+														<span>원</span>
+													</P>
+                                                    <div class="rv">
+													    <div class="lev"><div style="width:25%"></div></div><em>(5)</em>
+												    </div>
+												</div>
+											</a>
+										</li>	
+										<li>
+											<a href="#">
+												<div class="img"><img src="http://shop.adidas.co.kr/upload/prod/basic/320/M40934-1_320X320.jpg" alt=""/></div>
+												<div class="info">
+													<P class="txt">[Reebok classic/unisex] 인스타펌프 퓨리 오리지널</P>
+													<P class="price">
+														<strong class="">219,000</strong>
+														<span>원</span>
+													</P>
+                                                    <div class="rv">
+													    <div class="lev"><div style="width:25%"></div></div><em>(5)</em>
+												    </div>
+												</div>
+											</a>
+										</li>	
+
+										<li>
+											<a href="#">
+												<div class="img"><img src="http://shop.adidas.co.kr/upload/prod/basic/320/V55672-1_320X320.jpg" alt=""/></div>
+												<div class="info">
+													<P class="txt">[reebok classic/unisex] 레코드 피니쉬 RS 2.0</P>
+													<P class="price">
+														<strong class="">219,000</strong>
+														<span>원</span>
+													</P>
+                                                    <div class="rv">
+													    <div class="lev"><div style="width:25%"></div></div><em>(5)</em>
+												    </div>
+												</div>
+											</a>
+										</li>	
+
+										<li>
+											<a href="#">
+												<div class="img"><img src="http://shop.adidas.co.kr/upload/prod/basic/320/Z95967-1_320X320.jpg" alt=""/></div>
+												<div class="info">
+													<P class="txt">[Unisex acc] 얼티메이트 미듐 백팩</P>
+													<P class="price">
+														<strong class="">219,000</strong>
+														<span>원</span>
+													</P>
+                                                    <div class="rv">
+													    <div class="lev"><div style="width:25%"></div></div>
+												    </div>
+												</div>
+											</a>
+										</li>	
+
+										<li>
+											<a href="#">
+												<div class="img"><img src="http://shop.adidas.co.kr/upload/prod/basic/320/Z82819-1_320X320.jpg" alt=""/></div>
+												<div class="info">
+													<P class="txt">[Women's apparel] 레깅스</P>
+													<P class="price">
+														<strong class="">219,000</strong>
+														<span>원</span>
+													</P>
+                                                    <div class="rv">
+													    <div class="lev"><div style="width:25%"></div></div><em>(5)</em>
+												    </div>
+												</div>
+											</a>
+										</li>	
+
+										<li>
+											<a href="#">
+												<div class="img"><img src="http://shop.adidas.co.kr/upload/prod/basic/320/M41412-1_320X320.jpg" alt=""/></div>
+												<div class="info">
+													<P class="txt">[Reebok CLASSIC/Unisex] GL 6000</P>
+													<P class="price">
+														<strong class="">219,000</strong>
+														<span>원</span>
+													</P>
+                                                    <div class="rv">
+													    <div class="lev"><div style="width:25%"></div></div><em>(5)</em>
+												    </div>
+												</div>
+											</a>
+										</li>	
+
+										<li>
+											<a href="#">
+												<div class="img"><img src="http://shop.adidas.co.kr/upload/prod/basic/320/110228-1_320X320.jpg" alt=""/></div>
+												<div class="info">
+													<P class="txt">[reebok classic/unisex] 프리스타일 하이</P>
+													<P class="price">
+														<strong class="">219,000</strong>
+														<span>원</span>
+													</P>
+                                                    <div class="rv">
+													    <div class="lev"><div style="width:25%"></div></div><em>(5)</em>
+												    </div>
+												</div>
+											</a>
+										</li>	
+										<li>
+											<a href="#">
+												<div class="img"><img src="http://shop.adidas.co.kr/upload/prod/basic/320/M40934-1_320X320.jpg" alt=""/></div>
+												<div class="info">
+													<P class="txt">[Reebok classic/unisex] 인스타펌프 퓨리 오리지널</P>
+													<P class="price">
+														<strong class="">219,000</strong>
+														<span>원</span>
+													</P>
+                                                    <div class="rv">
+													    <div class="lev"><div style="width:25%"></div></div><em>(5)</em>
+												    </div>
+												</div>
+											</a>
+										</li>	
+
+										<li>
+											<a href="#">
+												<div class="img"><img src="http://shop.adidas.co.kr/upload/prod/basic/320/V55672-1_320X320.jpg" alt=""/></div>
+												<div class="info">
+													<P class="txt">[reebok classic/unisex] 레코드 피니쉬 RS 2.0</P>
+													<P class="price">
+														<strong class="">219,000</strong>
+														<span>원</span>
+													</P>
+                                                    <div class="rv">
+													    <div class="lev"><div style="width:25%"></div></div><em>(5)</em>
+												    </div>
+												</div>
+											</a>
+										</li>	
+
+										<li>
+											<a href="#">
+												<div class="img"><img src="http://shop.adidas.co.kr/upload/prod/basic/320/Z95967-1_320X320.jpg" alt=""/></div>
+												<div class="info">
+													<P class="txt">[Unisex acc] 얼티메이트 미듐 백팩</P>
+													<P class="price">
+														<strong class="">219,000</strong>
+														<span>원</span>
+													</P>
+                                                    <div class="rv">
+													    <div class="lev"><div style="width:25%"></div></div>
+												    </div>
+												</div>
+											</a>
+										</li>	
+
+										<li>
+											<a href="#">
+												<div class="img"><img src="http://shop.adidas.co.kr/upload/prod/basic/320/Z82819-1_320X320.jpg" alt=""/></div>
+												<div class="info">
+													<P class="txt">[Women's apparel] 레깅스</P>
+													<P class="price">
+														<strong class="">219,000</strong>
+														<span>원</span>
+													</P>
+                                                    <div class="rv">
+													    <div class="lev"><div style="width:25%"></div></div><em>(5)</em>
+												    </div>
+												</div>
+											</a>
+										</li>	
+									</ul>
+								</div>
+								<!-- //prod_list -->
+								<a href="#" class="/MOre loading">전체보기<div class="pls"><div></div><div></div></div></a>     
+							</div>
+							<!-- //prodlist_type2 sale -->
+						</div>
+						<!-- //main_cnt5 -->
+					</div>
+					<!-- //main_fck -->
+				</section>
+				<!-- //main_contents -->
+			</section>
+			<!-- //contents -->
+
+			<footer id="footer">
+				<div style="border-bottom:5px solid #d0d0d6;"><a href="#"><img src="/images/reebok/bg_reeclub_bnn.jpg" alt="" style="width:100%;"/></a></div>
+				<section class="fmenu">
+					<ul>
+						<li><a href="#">검색</a></li>
+						<li><a href="#">매장찾기</a></li>
+						<li><a href="#">마이페이지</a></li>
+						<li><a href="#">고객센터</a></li>
+					</ul>
+					<ul>
+						<li><a href="#">PC 사이트</a></li>
+						<li><a href="#">홈</a></li>
+						<li><a href="#">리클럽</a></li>
+					</ul>
+				</section>				
+				<address>					
+					<div class="ft1">
+						<p class="lgo"><img src="/images/reebok/bg_logo_f.gif" alt="reebok"/></p>
+						<span>리복 공식 온라인 스토어</span>
+					</div>
+					<div class="ft2">
+						<p>137-955 서울특별시 서초구 서초대로 74길 4, 삼성생명 서초타워 7층</p>
+						<!-- 141022 -->
+						<p>대표이사 : 쟝 미쉘 그라니에&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;교환 및 반품 문의 (본사로 반품불가)</p>
+						<p>온라인스토어 고객센터 1588-7324 (평일 09:00 – 18:00, 점심시간 12:00 – 13:00)</p>
+						<p>제품 수선문의 : 리복 고객만족센터 080-344-3732 (평일 09:00 – 18:00)</p>
+						<p>사업자 등록번호 : 214-81-07412   통신판매업신고 : 2007-서울서초-10391</p>
+						<p>개인정보 보호책임자 : 황선영<a target="_blank" href="#" class="lnk_pc">개인정보취급방침 확인</a></p>
+					</div>
+					<div class="lnk">
+						<a target="_blank" href="http://shop.reebok.co.kr/RPF010107.action?gubn=1">구매이용약관</a>
+						<span style="padding:0 1px;">|</span>
+						<a target="_blank" href="http://www.ftc.go.kr/info/bizinfo/communicationViewPopup.jsp?wrkr_no=2148107412">공정거래 위원회 사업자 신원정보 확인</a>
+						<span style="padding:0 1px;">|</span>
+						<a target="_blank" href="http://m.reebok.co.kr/Common/CertifiedInfoPop.jsp">채무지급보증안내 확인</a>
+						<!-- 141224 -->
+						<span>|</span>
+						<a href="http://m.reebok.co.kr/m_pop_justice_bns.html" target="_blank">공정거래 자율준수</a>
+						<!-- //141224 -->
+					</div>	
+					<p class="cprgt">Copyright © 2011 adidas Korea Inc.</p>
+				</address>
+
+			</footer>
+		</section>
+		<!-- //container -->
+		
+	</seciton>
+	<!-- //wrap -->
+
+</body>
+
+</html>
