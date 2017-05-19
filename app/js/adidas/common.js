@@ -389,18 +389,18 @@ adiApp.getNodefromString = function (htmlString) {
 
 
 
-	// adiApp.bindSelectBox = function(elemId){
-	// 	if(elemId != undefined){
-	// 		$('#'+elemId+'>select').bind('change',function(){
-	// 			$(this).siblings('a').find('span').text($(this).find('option:selected').text());
-	// 		});
-	// 	}else{
-	// 		$('.sel_design>select').bind('change',function(){
-	// 			$(this).siblings('a').find('span').text($(this).find('option:selected').text());
-	// 		});
-	// 	}
-	//
-	// };
+	adiApp.bindSelectBox = function(elemId){
+		if(elemId != undefined){
+			$('#'+elemId+'>select').bind('change',function(){
+				$(this).siblings('a').find('span').text($(this).find('option:selected').text());
+			});
+		}else{
+			$('.sel_design>select').bind('change',function(){
+				$(this).siblings('a').find('span').text($(this).find('option:selected').text());
+			});
+		}
+
+	};
 
 	adiApp.openHotspot = function(elemId,obj){
 
