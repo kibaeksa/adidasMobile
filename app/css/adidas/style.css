@@ -13714,6 +13714,10 @@ em.prd_speedy .tooltip-box:before{
 	left: 0;
 }
 
+#container .adiclub.renewal_170518>.top>.tab{
+    z-index: 1;
+}
+
 #container .adiclub>.top>.tab>li{
 	width: 50%;
 	height: 50px;
@@ -13736,6 +13740,7 @@ em.prd_speedy .tooltip-box:before{
 }
 #container .adiclub.renewal_170518>.top>.tab>li>a.on{
 	color: #fff;
+    background: none;
 }
 
 #container .adiclub>.top>img.bnn{
@@ -13767,9 +13772,38 @@ em.prd_speedy .tooltip-box:before{
 }
 
 #container .adiclub.renewal_170518>.top>.info .adiclub_desc{
+    position: relative;
     padding-bottom: 10px;
     font:12px/20px 'NotosansKRRegular','Nanum Gothic';
     color: #fff;
+    z-index: 5;
+}
+
+#container .adiclub.renewal_170518>.top>.info .adiclub_desc.title{
+    padding: 4px 0 0 0;
+    line-height: 12px;
+}
+
+
+#container .adiclub.renewal_170518>.top>.info .adiclub_desc strong{
+    position: relative;
+    z-index: 2;
+}
+
+#container .adiclub.renewal_170518>.top>.info .adiclub_desc strong span{
+    position: relative;
+    z-index: 5;
+}
+
+#container .adiclub.renewal_170518>.top>.info .adiclub_desc strong em{
+    content: '';
+    position: absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    height: 5px;
+    background: #000;
+    z-index: 1;
 }
 
 #container .adiclub.renewal_170518>.top>.info .adiclub_desc:last-child{
@@ -13864,6 +13898,23 @@ em.prd_speedy .tooltip-box:before{
     text-align: center;
     color:#bebebe;
     font: 10px 'NotosansKRRegular','Nanum Gothic';
+}
+
+#container .adiclub.renewal_170518>.top>p.tip>a{
+    position: relative;
+    margin-left: 2px;
+    color:#fff;
+    font: 10px 'NotosansKRBold','Nanum Gothic';
+}
+
+#container .adiclub.renewal_170518>.top>p.tip>a:after{
+    content: '';
+    width:100%;
+    height:1px;
+    background: #fff;
+    position: absolute;
+    bottom:-2px;
+    left:2px;
 }
 
 #container .adiclub>.top>.info *{
@@ -13989,7 +14040,7 @@ em.prd_speedy .tooltip-box:before{
 }
 
 #container .adiclub .club_benefit>.box.club1 .inner .button_area>div{
-    padding: 0px 2px;
+    padding: 0;
 }
 
 #container .adiclub .club_benefit>.box.club1 .inner .button_area.detail_advan{
@@ -14097,11 +14148,11 @@ em.prd_speedy .tooltip-box:before{
     color:#595959;
 }
 
-#container .adiclub .club_benefit>.box.club1 .inner p.title{
+#container .adiclub .club_benefit .inner p.title{
     font:13px/15px 'NotoSansKRBold';
 }
 
-#container .adiclub .club_benefit>.box.club1 .inner p{
+#container .adiclub .club_benefit .inner p{
     font: 11px/14px 'NotoSansKRRegular';
     text-align: center;
 }
@@ -14229,18 +14280,18 @@ em.prd_speedy .tooltip-box:before{
     background-color: #0286cd;
 }
 
-#container .adiclub .club_benefit>.box .inner .more_infom{
+#container .adiclub .club_benefit .more_infom{
     padding:20px 0 5px 0;
     border-top:1px solid #c5c5c5;
 }
 
-#container .adiclub .club_benefit>.box .inner .more_infom ul li{
+#container .adiclub .club_benefit .more_infom ul li{
     position: relative;
     padding-left: 8px;
     font: 1rem/20px 'NotoSansKRRegular';
 }
 
-#container .adiclub .club_benefit>.box .inner .more_infom ul li:after{
+#container .adiclub .club_benefit .more_infom ul li:after{
     position: absolute;
     top:10px;
     left:0;
@@ -14590,10 +14641,6 @@ em.prd_speedy .tooltip-box:before{
 	right: 0;
 }
 
-#container .adiclub>.camp_box>.camp_list{
-
-}
-
 #container .adiclub>.camp_box>.camp_list li{
 	border-bottom: 1px solid  #ccc;
 }
@@ -14700,12 +14747,206 @@ em.prd_speedy .tooltip-box:before{
 	position: relative;
 	border-bottom: 1px solid  #000;
 }
-
-/* CS CENTER */
-#container .cs_center{
+/* adiclub sports */
+#container .adiclub .adiclub_more_benefits{
+    padding: 20px 15px;
+}
+#container .adiclub .adiclub_more_benefits:after{
+    content: '';
+    display: inline-block;
+    clear: both;
+}
+#container .adiclub .adiclub_more_benefits>p{
+    float: left;
+    text-transform: uppercase;
+    font-size: 18px;
 
 }
+#container .adiclub .adiclub_more_benefits>a{
+    float: right;
+    font: 12px/12px 'NotoSansKRBold';
+    display: inline-block;
+    color:#000;
+}
 
+/*adiclub sports&culture*/
+#container .adiclub .adiclub_more_benefits>a:after{
+    margin-left: 4px;
+}
+
+#container .adiclub.adiclubsports .button_area.runbase_link a{
+    display: block;
+    text-align: center;
+    font: 12px/50px 'NotosansKRBold','Nanum Gothic';
+    background: none;
+    color:#000;
+}
+
+#container .adiclub.adiclubsports .button_area div a{
+    font: 12px/50px 'NotosansKRBold','Nanum Gothic';
+    letter-spacing: 0.1px;
+}
+
+#container .adiclub.adiclubsports>.top>.info h2{
+    padding-top: 80px;
+}
+
+#container .adiclub.adiclubsports>.top>.tab>li>a{
+    background: #ebebeb;
+    color:#000;
+}
+
+#container .adiclub.adiclubsports>.top{
+    background:url("/images/adidas/adiclub_renewal_170518/temp_adiclubsports_bnn.jpg") no-repeat;
+    background-size: 100% 100%;
+}
+
+#container .adiclub.adiclubculture>.top{
+    background:url("/images/adidas/adiclub_renewal_170518/temp_adiclubculture_bnn.jpg") no-repeat;
+    background-size: 100% 100%;
+}
+
+#container .adiclub.adiclubsports>.top .button_area{
+    padding:15px 0;
+}
+
+#container .adiclub.adiclubsports .club_benefit{
+    background:url("/images/adidas/adiclub_renewal_170518/temp_adiclubsports_list_bg.jpg") no-repeat;
+    background-size: 100% 100%;
+}
+
+#container .adiclub.adiclubsports>.top>.tab>li>a.on span{
+    border-bottom: 1px solid #fff;
+}
+
+#container .adiclub.adiclubsports>.top>.info .adiclub_desc{
+    line-height: 22px;
+}
+
+#container .adiclub.adiclubsports .club_benefit .inner{
+    padding: 15px;
+}
+
+#container .adiclub.adiclubsports .club_benefit .more_infom{
+    padding: 15px 0;
+}
+
+#container .adiclub.adiclubsports .club_benefit h3{
+    margin: 10px 0 0 0;
+    font: 19px/21px 'NotoSansKRBold','Nanum Gothic';
+    text-align: center;
+}
+
+#container .adiclub.adiclubsports .club_benefit .adiclub_desc{
+    font: 12px/20px 'NotosansKRRegular','Nanum Gothic';
+}
+
+#container .adiclub.adiclubsports .club_benefit .adiclub_desc .eng{
+    font: 13px 'adinenuPro-regular';
+    letter-spacing: 0.7px;
+}
+
+#container .adiclub.adiclubsports .club_benefit .adiclub_desc.point_view{
+    display: block;
+    color:#000;
+    font-family: 'NotoSansKRBold';
+    text-align: center;
+}
+
+#container .adiclub.adiclubsports .club_benefit .club_benefit_list{
+    background: rgba(0,0,0,0.8);
+}
+
+#container .adiclub.adiclubsports .club_benefit .club_benefit_list ul{
+    padding: 20px 0;
+}
+
+#container .adiclub.adiclubsports .club_benefit .club_benefit_list ul li{
+    display: inline-block;
+    width: 100%;
+    height: 62px;
+    margin-bottom: 14px;
+    text-align: center;
+}
+
+#container .adiclub.adiclubsports .club_benefit .club_benefit_list ul li:last-child{
+    margin-bottom: 0;
+}
+
+#container .adiclub.adiclubsports .club_benefit .club_benefit_list ul li .box{
+    position: relative;
+    display: inline-block;
+}
+
+#container .adiclub.adiclubsports .club_benefit .club_benefit_list ul li .graphic{
+    position: absolute;
+}
+
+#container .adiclub.adiclubsports .club_benefit .club_benefit_list ul li .graphic .img{
+    position: relative;
+    padding: 3px;
+    display: inline-block;
+    width: 55px;
+    height: 55px;
+    border-radius: 50px;
+    background: #fff;
+    text-align: center;
+}
+
+#container .adiclub.adiclubsports .club_benefit .club_benefit_list ul li .graphic .img span{
+    font-size: 40px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -ms-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+#container .adiclub.adiclubsports .club_benefit .club_benefit_list ul li .graphic .img.runbase_icon{
+    display: inline-block;
+    background: url("/images/adidas/adiclub_renewal_170518/temp_adiclubsports_runbase_icon.png");
+    background-size:100% 100%;
+}
+
+#container .adiclub.adiclubsports .club_benefit .club_benefit_list ul li dl{
+    width:150px;
+    padding: 10px 10px 0px 70px;
+}
+
+#container .adiclub.adiclubsports .club_benefit .club_benefit_list ul li dl p{
+    text-align: left;
+    color:#fff;
+}
+
+#container .adiclub.adiclubsports .club_benefit .club_benefit_list ul li dl p.title{
+    padding-bottom: 3px;
+}
+
+#container .adiclub.adiclubsports .adiclubsports_sns_bnn{
+    padding: 40px 0;
+    background: url("/images/adidas/adiclub_renewal_170518/temp_snstop_bnn.jpg") no-repeat;
+    background-size: 100% 100%;
+    text-align: center;
+}
+#container .adiclub.adiclubsports .adiclubsports_sns_bnn h3{
+    text-align: center;
+    font: 28px 'adinenuPro-bold';
+    color:#fff;
+}
+#container .adiclub.adiclubsports .adiclubsports_sns_bnn p.title{
+    color:#fff;
+    font-size: 11px;
+}
+#container .adiclub.adiclubsports .adiclubsports_sns_bnn p{
+    text-align: center;
+    font: 1rem/18px 'NotoSansKRRegular';
+    color:#c0c0c0;
+}
+
+
+/* CS CENTER */
 #container .cs_center>.top{
 	position: relative;
 }
