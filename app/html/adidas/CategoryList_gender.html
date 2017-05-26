@@ -657,7 +657,7 @@
 		<!-- 170525 필터 레이어	 -->
 		<div class="filter_container_wraper">
 			<div class="overlay"></div>
-			<a href="" class="close_x_btn white"></a>
+			<a href="javascript:void(0)" class="close_x_btn white"></a>
 
 			<div class="filter_container">
 				<div class="selected_filter">
@@ -683,8 +683,10 @@
 				<div class="category_box">
 					<div class="box category_size">
 						<div class="tit">
-							사이즈
-							<span class="toggle_circle"></span>
+							<a href="javascript:void(0)">
+								사이즈
+								<span class="toggle_circle"></span>
+							</a>
 						</div>
 						<div class="content">
 							<a href="javascript:void(0)" class="adihs on">240</a>
@@ -697,8 +699,10 @@
 
 					<div class="box category_color">
 						<div class="tit">
-							컬러
-							<span class="toggle_circle"></span>
+							<a href="javascript:void(0)">
+								컬러
+								<span class="toggle_circle"></span>
+							</a>
 						</div>
 						<div class="content">
 							<a class="blue" href="javascript:void(0)"><span class="c1"></span><span class="c2"></span></a>
@@ -726,30 +730,37 @@
 
 					<div class="box category_price">
 						<div class="tit">
-							가격
-							<span class="toggle_circle"></span>
+							<a href="javascript:void(0)">
+								가격
+								<span class="toggle_circle"></span>
+							</a>
 						</div>
 						<div class="content">
-							<div class="price_box">
-								<p>최소</p>
-								<div class="iptbox">
-									<input type="tel">
+							<div class="inner">
+								<div class="price_box">
+									<p>최소</p>
+									<div class="iptbox">
+										<input type="tel">
+									</div>
 								</div>
-							</div>
-							<div class="price_box">
-								<p>최대</p>
-								<div class="iptbox">
-									<input type="tel">
+								<div class="price_box">
+									<p>최대</p>
+									<div class="iptbox">
+										<input type="tel">
+									</div>
 								</div>
+								<a href="#" class="icons aft" data-icon="">적용하기</a>
 							</div>
-							<a href="#" class="icons aft" data-icon="">적용하기</a>
+
 						</div>
 					</div>
 
 					<div class="box category_products">
 						<div class="tit">
-							상품분류
-							<span class="toggle_circle"></span>
+							<a href="javascript:void(0)">
+								상품분류
+								<span class="toggle_circle"></span>
+							</a>
 						</div>
 						<div class="content">
 							<ul>
@@ -821,9 +832,9 @@
 					</div>
 				</div>
 				<ul>
-					<li><a href="#">사이즈</a></li>
-					<li><a href="#">컬러</a></li>
-					<li class="btn_filter">
+					<li data-ctgr="size"><a href="#">사이즈</a></li>
+					<li data-ctgr="color"><a href="#">컬러</a></li>
+					<li class="filter_icon">
 						<a href="#">필터</a>
 					</li>
 				</ul>
@@ -1209,9 +1220,42 @@
 
 			});
 
-			window.addEventListener('touchmove',function(event){
-				// event.preventDefault();
+
+			$('.filter_wrapper ul>li').bind('click',function(){
+				$('.filter_container').css({
+					width : $(window).width() - 60
+				});
+				$('.filter_container_wraper').addClass('open');
+				if(this.dataset.ctgr !== undefined){
+					$('.category_box>.box.category_'+this.dataset.ctgr).addClass('open');
+				}
+
 			});
+			$('.filter_container_wraper>.close_x_btn , .filter_container_wraper>.overlay').bind('click',function(){
+				$('.filter_container_wraper').removeClass('open');
+				$('.category_box>.box').removeClass('open');
+			});
+
+			$('.filter_container_wraper>.overlay').bind('touchmove',function(event){
+				event.preventDefault();
+			});
+
+			$('.filter_container_wraper .category_box .box>.tit').bind('click',function(){
+				var elemParent = $(this).parent();
+				if(elemParent.hasClass('open')){
+					elemParent.removeClass('open');
+				}else{
+					elemParent.addClass('open');
+					$('.filter_container_wraper .filter_container').animate({
+						scrollTop : elemParent.offset().top
+					})
+				}
+			});
+
+
+			// document.querySelector('#container').addEventListener('touchmove',function(event){
+				// event.preventDefault();
+			// });
 
 		})(jQuery);
 
