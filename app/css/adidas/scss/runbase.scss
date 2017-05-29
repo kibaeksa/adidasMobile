@@ -1,0 +1,1624 @@
+/*
+	break width
+ */
+$break-small: 1000px;
+$break-large: 1400px;
+$width320:320px;
+$width400:400px;
+$width480:480px;
+$width600:600px;
+/*
+	@@ mixin
+ */
+@mixin box-sizing($value){
+			box-sizing: $value;
+	-webkit-box-sizing: $value;
+}
+
+@mixin css3($prop,$value...){
+	#{$prop} :$value;
+	-webkit-#{$prop} :$value;
+	-moz-#{$prop}:$value;
+	-o-#{$prop} :$value;
+	-ms-#{$prop} :$value;
+}
+
+@mixin transition($prop , $duration , $easing , $delay){
+	transition :$prop $duration $easing $delay;
+	-webkit-transition :$prop $duration $easing $delay;
+	-moz-transition:$prop $duration $easing $delay;
+	-o-transition :$prop $duration $easing $delay;
+}
+
+@mixin opacity($value){
+	opacity : $value;
+	// filter:alpha(opacity=$value * 100);
+	// -ms-filter:alpha(opacity=$value * 100);
+}
+
+@mixin transform($value){
+	transform:$value;
+	-webkit-transform:$value;
+	-moz-transform:$value;
+	-o-transform:$value;
+}
+
+@media screen and (max-width: 320px) {
+	html{
+		font-size: 10px;
+	}
+}
+@media screen and (min-width: 800px) {
+	html{
+		font-size: 12px;
+	}
+}
+
+// for pseudo element
+.pseudo-element{
+	content:'';
+	display: block;
+}
+
+#container>.runbase{
+	width: 100%;
+	position: relative;
+	background: #000;
+
+	/*** Common use ***/
+	/* description-box */
+	.description-box{
+		padding: 1.5rem 1.2rem;
+		background: #000;
+		border: 1px solid  #008675;
+		background:rgba(0,134,117,0.5);
+		color: #fff;
+	}
+
+	/* slide-arrow */
+	.slide-arrow-prev , .slide-arrow-next{
+		display: block;
+		position: absolute;
+		top: 50%;
+		width: 30px;
+		height: 30px;
+	}
+
+	.slide-arrow-prev{
+		left: 1.5rem;
+		border-bottom: 1px solid  #fff;
+		border-left: 1px solid  #fff;
+
+		@include css3(transform,translate3d(0,-50%,0) rotate(45deg));
+	}
+
+	.slide-arrow-next{
+		right: 1.5rem;
+		border-bottom: 1px solid  #fff;
+		border-right: 1px solid  #fff;
+
+		@include css3(transform,translate3d(0,-50%,0) rotate(-45deg));
+	}
+
+	/* indecator */
+	.indicator{
+		width: 100%;
+		text-align: center;
+		span{
+			width: 6px;
+			height: 6px;
+			margin: 0 3px;
+			display: inline-block;
+			border-radius:50%;
+			background: #666;
+
+			&.on{
+				background: #ee265c;
+			}
+		}
+	}
+
+	/* Reservation list */
+	.runbase_reservation_list{
+		min-height: 400px;
+		padding: 0 1.2rem;
+
+		li{
+			width: 100%;
+			min-height: 6.9rem;
+			position: relative;
+			display: table;
+			padding: 1.2rem;
+			border: 1px dotted  #008675;
+			background:rgba(0,129,113,0.25);
+			box-sizing:border-box;
+			-webkit-box-sizing:border-box;
+			margin-bottom: 0.5rem;
+
+			>div{
+				display: table-cell;
+			}
+
+			.noti{
+				text-align: center;
+			    vertical-align: middle;
+			    color: #fff;
+			    font-size: 1.2rem;
+			}
+
+			.date{
+				position: absolute;
+				top: 1.2rem;
+				left: 1.2rem;
+
+				div{
+					color: #fff;
+					text-align: center;
+					font-size: 0.9rem;
+				}
+
+				.num{
+					width: 3.5rem;
+					height: 3.5rem;
+					margin-bottom: 0.5rem;
+					border-radius: 50%;
+					background: #ee265c;
+					font-size: 1.9rem;
+					line-height: 3.5rem;
+				}
+			}
+
+			.cont{
+				width: 100%;
+				padding-left: 4.7rem;
+				box-sizing:border-box;
+				-webkit-box-sizing:border-box;
+				vertical-align: middle;
+
+				.event_box{
+					margin-bottom: 1rem;
+					font-size: 1.1rem;
+					line-height: 1.4rem;
+					color: #fff;
+					.status{
+						width: 4.8rem;
+						margin-right: 0.5rem;
+						margin-bottom: 0.15rem;
+						padding: 0.2rem 0;
+						display: inline-block;
+						vertical-align: middle;
+						text-transform: uppercase;
+						text-align: center;
+						letter-spacing: 0;
+						font-size: 1rem;
+
+						&.online{
+							border: 1px solid #ee265c;
+							background:rgba(238,38,92,0.3);
+						}
+
+						&.offline{
+							border: 1px solid #008675;
+							background:rgba(0,134,117,0.3);
+						}
+
+						&.close{
+							border: 1px solid #777;
+							background:rgba(119,119,119,0.3);
+							color: #777;
+						}
+					}
+
+					&:last-child{
+						margin-bottom: 0;
+					}
+				}
+			}
+		}
+	}
+
+	/* Common header */
+	.header{
+		padding: 1rem;
+
+		h2{
+			display: inline-block;
+			position: relative;
+			color: #ee265c;
+			text-transform: uppercase;
+			span{
+				display: block;
+				font-size: 2.6rem;
+				line-height: 2.4rem;
+
+				&.icons{
+					position: absolute;
+					bottom:-0.3rem;
+					right: 1rem;
+					color: #fff;
+					font-size: 2rem;
+					text-align: right;
+				}
+			}
+		}
+
+		.runbase_menu{
+			width: 100%;
+			position: absolute;
+			top: 0;
+			right: 0;
+			>a{
+				position: absolute;
+				top: 1.5rem;
+				right: 1rem;
+				display: inline-block;
+			    padding: 1.2rem 2rem 1rem;
+			    font-size: 1.5rem;
+			    color: #fff;
+			    border: 1px solid #008675;
+			}
+		}
+	}
+	/* Common header END */
+
+	/* Masthead START */
+	.masthead{
+		width: 100%;
+		padding:1rem 1rem 95%;
+		position: relative;
+		box-sizing:border-box;
+		-webkit-box-sizing:border-box;
+
+		background:url('/images/adidas/club/runbase-masthead.-visual.jpg');
+		background-size: cover;
+
+		.headline_wrap{
+			width: 100%;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			padding: 1rem 1.2rem;
+			box-sizing:border-box;
+			-webkit-box-sizing:border-box;
+
+			.headline{
+				position: relative;
+				padding: 1.5rem;
+				background:rgba(203,0,77,0.8);
+				color: #fff;
+				text-align: center;
+				z-index: 10;
+
+				h3{
+					margin-bottom: 1rem;
+					text-transform: uppercase;
+					font-size:3.2rem;
+					line-height: 3.2rem;
+				}
+
+				.desc{
+					font-size: 1.3rem;
+					line-height: 1.8rem;
+				}
+
+			}
+		}
+	}
+	/* Masthead END */
+
+	/* Section START */
+	>.section{
+		width: 100%;
+		box-sizing:border-box;
+		-webkit-box-sizing:border-box;
+		position: relative;
+		background-size: 100% auto;
+		background-position: 0 0;
+		background-repeat: no-repeat;
+
+		.title{
+			width: 100%;
+			padding: 2.5rem 0 1rem;
+			text-align: center;
+			>*{
+				text-align: center;
+				color: #fff;
+				text-transform: uppercase;
+				font-size: 1.5rem;
+			}
+
+			p{
+				position: relative;
+				display: inline-block;
+				margin-bottom: 10px;
+
+				&::after{
+					@extend .pseudo-element;
+					width: 100%;
+					height: 2px;
+					background: #ee265c;
+					position: absolute;
+					bottom: -3px;
+					left: 0;
+				}
+			}
+
+		}
+
+		/* Section1 START */
+		&#section1{
+			width: 100%;
+
+			.slider_wrap{
+				position: relative;
+				ul{
+					position: relative;
+					overflow: hidden;
+					li{
+						position: relative;
+						float: left;
+
+						img{
+							width: 100%;
+						}
+					}
+				}
+
+				.indicator{
+					position: absolute;
+					bottom: -2rem;
+					left: 0;
+				}
+			}
+			/* slider_wrap END */
+
+			.about_runbase{
+				width: 100%;
+				padding: 4.5rem 1.2rem 0;
+				background:url('/images/adidas/club/runbase-bg-section1.jpg') 0 0 no-repeat;
+				background-size: 100% auto;
+				box-sizing:border-box;
+				-webkit-box-sizing:border-box;
+
+				.desc{
+					margin-bottom: 1rem;
+					color: #fff;
+					text-align: center;
+					font:0.9rem/1.7rem 'NotoSansKRRegular';
+
+					strong{
+						display: inline-block;
+						position: relative;
+						&::after{
+							@extend .pseudo-element;
+							display: block;
+							position: absolute;
+							width: 100%;
+							height: 2px;
+							bottom: 3px;
+							left: 0;
+							background:#008675;
+						}
+					}
+				}
+
+				.desc_detail{
+					width: 100%;
+					padding: 2.5rem 0.3rem 0;
+					box-sizing:border-box;
+					-webkit-box-sizing:border-box;
+
+					li{
+						width: 50%;
+						float: left;
+						text-align: center;
+						margin-bottom: 1.5rem;
+
+						dt{
+							width: 80%;
+							padding-bottom: 80%;
+							display: inline-block;
+							position: relative;
+							margin-bottom:0.5rem;
+							border-radius:50%;
+							background-color:rgba(224,0,77,0.8);
+							text-align: center;
+
+							&::after{
+								position: absolute;
+								top: 50%;
+								left: 50%;
+								background-repeat: no-repeat;
+								background-position: 0 0;
+
+								@extend .pseudo-element;
+								@include css3(transform,translate3d(-50%,50%,0));
+							}
+
+							span{
+								width: 100%;
+								display: block;
+								position: absolute;
+								bottom: 2rem;
+								left: 0;
+								text-align: center;
+								color: #fff;
+								font-size: 1.2rem;
+								z-index: 1;
+							}
+						}
+
+						dd{
+							text-align: center;
+							color: #fff;
+							font-size: 1rem;
+							font:1rem/1.45rem 'NotoSansKRLight';
+						}
+
+						&:nth-child(1){
+							dt{
+								&::after{
+									width: 55px;
+									height: 55px;
+									margin-top: -65px;
+									background-image: url('/images/adidas/club/ico_runbase_desc1.png');
+									background-size: 54px auto;
+								}
+							}
+						}
+
+						&:nth-child(2){
+							dt{
+								&::after{
+									width: 55px;
+									height: 57px;
+									margin-top: -70px;
+									margin-left: -3px;
+									background-image: url('/images/adidas/club/ico_runbase_desc2.png');
+									background-size: 55px auto;
+								}
+							}
+						}
+
+						&:nth-child(3){
+							dt{
+								&::after{
+									width: 45px;
+									height: 60px;
+									margin-top: -75px;
+									background-image: url('/images/adidas/club/ico_runbase_desc3.png');
+									background-size: 45px auto;
+								}
+							}
+						}
+
+						&:nth-child(4){
+							dt{
+								&::after{
+									width: 47px;
+									height: 47px;
+									margin-top: -60px;
+									background-image: url('/images/adidas/club/ico_runbase_desc4.png');
+									background-size: 47px auto;
+								}
+							}
+						}
+
+					}
+				}
+				/* desc_detail END */
+
+				.description-box{
+					margin-bottom: 1rem;
+					dl{
+						position: relative;
+						margin-bottom: 0.3rem;
+						dt{
+							position: absolute;
+							top: 0;
+							left: 0;
+							font: 0.9rem/1.3rem 'NotoSansKR';
+						}
+						dd{
+							padding-left: 4.2rem;
+							font: 0.9rem/1.3rem 'NotoSansKRRegular';
+						}
+
+						&.last{
+							margin-bottom: 0;
+						}
+					}
+				}
+			}
+			/* about_runbase END */
+		}
+		/* Section1 END */
+
+		&#section2{
+			overflow: hidden;
+			background-image:url('/images/adidas/club/runbase-bg-section2.jpg');
+
+			.runbase_reservation_list{
+				margin: 1.5rem 0px 2rem;
+			}
+
+			.button_area{
+				margin-top: 1.5rem;
+				>div{
+					padding: 0 1.2rem;
+					a{
+						font-size: 1.1rem;
+						background: #ee265c;
+
+						.icons{
+							font-size: 1rem;
+							margin-left: 5px;
+						}
+					}
+				}
+			}
+		}
+
+		&#section3{
+			background-image:url('/images/adidas/club/runbase-bg-section3.jpg');
+
+			.trainers_slider_wrap{
+				position: relative;
+				overflow: hidden;
+				li{
+					width: 100%;
+					padding-bottom: 4rem;
+					position: relative;
+					float: left;
+
+					>*{
+						color: #fff;
+						text-align: center;
+					}
+
+					.pic{
+						width: 50%;
+						padding-bottom: 50%;
+						position: relative;
+						overflow: hidden;
+						border-radius:50%;
+						margin: 0 auto 1rem;
+
+						img{
+							width: 100%;
+							position: absolute;
+							top: 0;
+							left: 0;
+						}
+					}
+
+					.name{
+						margin-bottom: 1rem;
+						font:1.5rem 'NotoSansKRLight';
+					}
+
+					.role{
+						margin-bottom: 1.5rem;
+						text-transform: uppercase;
+						font-size: 1.15rem;
+					}
+
+					.stitle{
+						margin-bottom: 1.5rem;
+						font-size: 1.3rem;
+					}
+
+					.desc{
+						font:1.05rem/1.7rem 'NotoSansKRLight';
+					}
+				}
+
+				.trainers_slider_prev,
+				.trainers_slider_next{
+					width: 50px;
+					height: 100%;
+					position: absolute;
+					top: 0;
+				}
+
+				.trainers_slider_prev{
+					left: 0;
+				}
+
+				.trainers_slider_next{
+					right: 0;
+				}
+
+				.indicator{
+					position: absolute;
+					bottom: 1rem;
+					left: 0;
+				}
+			}
+		}
+		/* Section3 END */
+
+		&#section4{
+			background-image:url('/images/adidas/club/runbase-bg-section4.jpg');
+
+			ul{
+				margin-bottom: 3rem;
+				padding: 0 2rem;
+				li{
+					margin-bottom: 1.5rem;
+					color: #fff;
+					dt{
+						margin-bottom: 0.3rem;
+						padding-left: 7px;
+						position: relative;
+						text-transform: uppercase;
+						font-size: 1.2rem;
+						&::after{
+							@extend .pseudo-element;
+
+							width: 3px;
+							height: 3px;
+							background: #fff;
+							position: absolute;
+							border-radius: 50%;
+							top: 6px;
+							left: 0;
+						}
+					}
+					dd{
+						padding-left: 7px;
+						font-size: 1rem;
+					}
+				}
+			}
+
+			.button_area{
+				>div{
+					padding: 0 1.2rem;
+					a{
+						font-size: 1.1rem;
+						background: #ee265c;
+
+						.icons{
+							font-size: 1rem;
+							margin-left: 5px;
+						}
+					}
+				}
+			}
+		}
+
+		&#section5{
+			padding: 0 1.2rem 3rem;
+			background-image:url('/images/adidas/club/runbase-bg-section5.jpg');
+
+			.sns{
+				width: 100%;
+				margin: 2rem -0px;
+				text-align: center;
+
+				a{
+					display: inline-block;
+					position: relative;
+					width: 50px;
+					height: 50px;
+					margin:0 10px;
+					background-position: center center;
+					background-repeat: no-repeat;
+
+					&::after{
+						@extend .pseudo-element;
+						position: absolute;
+						top: 10px;
+						right: -2px;
+						width: 1px;
+						height: 30px;
+						background: #fff;
+						display: inline-block;
+					}
+
+					&:last-child{
+						&::after{
+							display: none;
+						}
+					}
+
+					&.insta{
+						background-image: url('/images/adidas/club/ico_insta.png');
+						background-size: 30px auto;
+
+						&::after{
+							right: -15px;
+						}
+					}
+					&.fb{
+						background-image: url('/images/adidas/club/ico_fb.png');
+						background-size: 12px auto;
+					}
+				}
+			}
+
+			.desc{
+			    color: #fff;
+			    text-align: center;
+			    font: 0.9rem/1.4rem 'NotoSansKRRegular';
+			}
+
+			.description-box{
+				p{
+					color: #fff;
+					font: 0.9rem/1.3rem 'NotoSansKRRegular';
+				}
+			}
+		}
+	}
+	/* Section END */
+
+	.reserve_header{
+		position: relative;
+		h3{
+			width: 100%;
+			position: absolute;
+			top: 50%;
+			left: 0;
+			color: #fff;
+			font-size: 1.75rem;
+			text-align: center;
+			text-transform: uppercase;
+			@include css3(transform,translate3d(0,-50%,0));
+		}
+
+		.bg{
+			img{
+				width: 100%;
+			}
+		}
+	}
+
+	/* runbase_calendar START */
+	.runbase_calendar{
+
+		.reserver_info{
+			padding:1rem 1.2rem 1.2rem;
+			h4{
+				padding: 0 0 0.3rem;
+				border-bottom: 1px dotted  #949494;
+				text-align: center;
+				color: #fff;
+				font:1.3rem 'NotoSansKRRegular';
+
+				>*{
+					margin-left: 5px;
+					font:1.8rem 'NotoSansKRBold';
+					letter-spacing: 0;
+				}
+
+				strong{
+					margin: 0;
+					color: #ee265c;
+				}
+			}
+
+			.user_id{
+				padding-top: 0.5rem;
+				font-size: 1.7rem;
+				text-align: center;
+				color: #ee265c;
+			}
+		}
+		/* reserver_info end */
+
+		.status{
+			display: -webkit-flex;
+			display: flex;
+
+			>div{
+				width: 25%;
+				position: relative;
+				padding: 0.8rem 0px;
+				background: #1b1b1b;
+				text-align: center;
+
+				&::after{
+					position: absolute;
+					top: 50%;
+					right: 0;
+					width: 1px;
+					height: 60%;
+					background: #393939;
+
+					@extend .pseudo-element;
+					@include css3(transform,translate3d(0,-50%,0));
+				}
+
+				&:last-child{
+					&::after{
+						display: none;
+					}
+				}
+
+				dt{
+					margin-bottom: 0.5rem;
+					font: 1.2rem 'NotoSansKR';
+					color: #fff;
+				}
+				dd{
+					vertical-align: middle;
+					font-size: 1rem;
+					color: #fff;
+
+					strong{
+						vertical-align: middle;
+						font-size: 1.4rem;
+						color: #ee265c;
+					}
+				}
+			}
+		}
+		/* status end */
+
+		.date_selector{
+			width: 100%;
+			height: 5rem;
+			position: relative;
+			margin-bottom: 1rem;
+			border-bottom: 1px solid  #131314;
+
+			.next_mon , .prev_mon{
+				width: 5rem;
+				height: 5rem;
+				position: absolute;
+				top: 0;
+			}
+
+			.next_mon{
+				right: 0;
+			}
+
+			.prev_mon{
+				left: 0;
+			}
+
+			.slide-arrow-prev , .slide-arrow-next{
+				width: 15px;
+				height: 15px;
+				left: 50%;
+				margin-left: 5px;
+				@include css3(transform,translate3d(-50%,-50%,0) rotate(45deg));
+			}
+
+
+			.slide-arrow-next{
+				margin-left: -5px;
+				@include css3(transform,translate3d(-50%,-50%,0) rotate(-45deg));
+			}
+
+			.date{
+				text-align: center;
+				color: #fff;
+				font: 2.2rem/5rem 'Adihaus-regular';
+			}
+		}
+		/* date_selector end */
+
+		.calendar{
+			>div{
+				display: -webkit-flex;
+				display: -ms-flex;
+				display: flex;
+
+				>div{
+					width: 14.28571428571429%;
+					position: relative;
+					color: #fff;
+					text-align: center;
+				}
+
+				&.weekday{
+					>div{
+						padding: 0.5rem 0;
+						font-size: 1rem;
+					}
+				}
+
+				&.day_cols{
+					position: relative;
+					>div{
+						padding-bottom: 14.28571428571429%;
+
+						span{
+							width: 100%;
+							display: block;
+							position: absolute;
+							top: 50%;
+							left: 0;
+							margin-top: 0.1rem;
+							text-align: center;
+							font-size: 1.4rem;
+							z-index: 10;
+
+							@include css3(transform,translate3d(0,-50%,0));
+						}
+
+						&.selected{
+
+							&::after{
+								@extend .pseudo-element;
+								width: 70%;
+								height: 70%;
+								background: #ee265c;
+								position: absolute;
+								top: 50%;
+								left: 50%;
+								border-radius:50%;
+
+								@include css3(transform,translate3d(-50%,-50%,0));
+							}
+						}
+
+						&.not_this_month{
+							span{
+								font-family: 'Adihaus-regular' !important;
+							}
+						}
+					}
+				}
+
+			}
+		}
+	}
+	/* runbase_calendar END */
+
+	/* reserve_details START */
+	.reserve_details{
+		padding-top: 1.2rem;
+		.img{
+			width: 100%;
+			margin-bottom: 1rem;
+			text-align: center;
+
+			img{
+				max-width:70%;
+			}
+
+		}
+
+		h3{
+			margin-bottom: 1rem;
+			padding: 0 1.2rem;
+			font:1.5rem/2.4rem 'NotoSansKR';
+			color: #ee265c;
+			text-align: center;
+		}
+
+		.date{
+			position: relative;
+			margin-bottom: 1rem;
+			font-size: 1.5rem;
+			text-align: center;
+			color: #fff;
+		}
+
+		.reserve_button{
+			position: relative;
+			margin:3rem 0 1.2rem;
+
+			&::after{
+				position: absolute;
+				top: -2rem;
+				left: 50%;
+				width: 15px;
+				height: 2px;
+				background: #fff;
+
+				@include css3(transform,translate3d(-50%,0,0));
+				@extend .pseudo-element;
+			}
+
+			dt{
+				margin-bottom: 1rem;
+				font:1.4rem/1.4rem 'NotoSansKR';
+				color: #fff;
+				text-align: center;
+			}
+			dd{
+				position: relative;
+				padding: 0 1.2rem;
+				display: -webkit-flex;
+				display: -ms-flex;
+				display: flex;
+
+				a{
+					width: 25%;
+					padding-bottom: 20%;
+					position: relative;
+					display: block;
+					margin: 0 0.6rem;
+					border: 2px solid  #ee265c;
+
+					p{
+						width: 100%;
+						position: absolute;
+						left: 0;
+						top: 50%;
+						color: #ee265c;
+						text-align: center;
+
+						&.time{
+							font-size: 1.3rem;
+							@include css3(transform,translate3d(0,-130%,0));
+						}
+
+						&.status{
+							font-size: 1.05rem;
+							@include css3(transform,translate3d(0,30%,0));
+						}
+					}
+
+					&:first-child{
+						margin-left: 0;
+					}
+
+					&:last-child{
+						margin-right: 0;
+					}
+
+					&.selected{
+						background: #ee265c;
+						p{
+							color: #fff;
+						}
+					}
+
+					&.close{
+						background: #131313;
+						border-color: #202020;
+						p{
+							color: #444343;
+						}
+					}
+
+					&.offline{
+						border-color: #008675;
+						p{
+							color: #008675;
+						}
+					}
+
+				}
+			}
+		}
+		/* reserve_button end */
+
+		.button_area{
+			margin-bottom: 1.2rem;
+			>div{
+				padding: 0 1.2rem;
+				a{
+					font-size: 1.1rem;
+					background: #ee265c;
+
+					.icons{
+						font-size: 1rem;
+						margin-left: 5px;
+					}
+				}
+			}
+		}
+
+		.description_class_wrap{
+			padding: 0 1.2rem 2rem;
+
+			.description_class{
+				padding: 1.2rem;
+				background:rgba(0,134,117,0.21);
+				border-top: 1px dotted  #334846;
+				border-bottom: 1px dotted  #334846;
+				color: #fff;
+
+				h4{
+					margin-bottom: 1rem;
+					font-size: 1.3rem;
+				}
+
+				ul{
+					padding-bottom: 1rem;
+					li{
+						width: 50%;
+						position: relative;
+						margin-bottom: 0.9rem;
+						float: left;
+
+						dl{
+
+							>*{
+								letter-spacing: 0;
+							}
+							dt{
+								position: absolute;
+								top: 0;
+								left: 0;
+								font-size: 1.1rem;
+
+								&::after{
+									@extend .pseudo-element;
+									display: block;
+									width: 1px;
+									height: 8px;
+									background: #fff;
+									position: absolute;
+									top: 3px;
+									right: -13px;
+								}
+							}
+							dd{
+								padding-left: 46px;
+								font-size: 1.1rem;
+							}
+						}
+					}
+				}
+
+				.desc{
+					padding: 1rem 0;
+					border-top: 1px dotted  #334846;
+					font-size: 1.1rem;
+					line-height: 1.6rem;
+					letter-spacing: 0;
+
+					&:last-child{
+						padding-bottom: 0;
+					}
+				}
+
+			}
+		}
+
+		.reserve_confirm_wrap{
+			padding: 1.2rem;
+
+			>p{
+				margin-bottom: 0.5rem;
+				text-align: center;
+				color: #fff;
+				font:1.7rem 'NotoSansKRBold';
+			}
+
+			>.box{
+				margin-bottom: 1.2rem;
+				border: 1px solid  #666;
+				background: #333;
+
+				h4{
+					padding: 0.5rem 0;
+					background: #1f1f1f;
+					text-align: center;
+					color: #ee265c;
+					font:1.4rem 'NotoSansKRBold';
+
+					&.tit_col2{
+						overflow: hidden;
+						div{
+							width: 50%;
+							float: left;
+						}
+					}
+				}
+
+				.data_form{
+					padding: 1.2rem;
+					table{
+						width: 100%;
+
+						tr>*{
+							padding: 0.5rem 0px;
+							font-size: 1.1rem;
+							line-height: 1.4rem;
+						}
+
+						th{
+							width: 7rem;
+							text-align: left;
+							color: #fff;
+						}
+
+						td{
+							position: relative;
+							color: #aeaeae;
+
+							.input_wrapper{
+								position: relative;
+
+								input[type="text"]{
+									width: 100%;
+									height: 25px;
+									font-size: 1.05rem;
+									border-width: 0;
+									padding-left: 5px;
+								}
+
+								a{
+									display: block;
+									width: 60px;
+									height: 25px;
+									position: absolute;
+									top: 0;
+									right: 0;
+									background: #cecccc;
+									font-size: 1.1rem;
+									line-height: 25px;
+									color: #000;
+									text-align: center;
+								}
+
+								&.input_file{
+									padding-right: 70px;
+								}
+							}
+
+
+						}
+					}
+
+					&.data_point{
+						padding: 0.8rem 1.2rem;
+						table{
+							tr{
+								td{
+									font-size: 1.4rem;
+									color: #fff;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	/* reserve_details END */
+
+	/* reserve_details START */
+	.runbase_courses{
+		padding-bottom: 2rem;
+		background:url('/images/adidas/club/runbase-bg-courses.jpg') 0 0 no-repeat;
+		background-size: 100% auto;
+		border-top: 1px solid  #404040;
+		h3{
+			position: relative;
+			padding: 2rem 0px;
+			margin-bottom: 2rem;
+			color: #fff;
+			text-align: center;
+			font-size: 1.6rem;
+
+			&::after{
+				@extend .pseudo-element;
+				width: 1.5rem;
+				height: 1px;
+				position: absolute;
+				bottom: 0;
+				left: 50%;
+				background: #fff;
+
+				@include css3(transform,translate3d(-50%,0,0));
+			}
+		}
+
+		.courses_wrapper{
+			.select_course{
+				width: 100%;
+				margin-bottom: 1.2rem;
+				text-align: center;
+
+				a{
+					display: inline-block;
+					width: 4rem;
+					height: 4rem;
+					border:1px solid #ed265d;
+					border-radius:50%;
+					margin: 0 0.5rem;
+					color: #ed265d;
+					text-align: center;
+					font-size: 1.6rem;
+					line-height: 4rem;
+
+					&.active{
+						background: #ed265d;
+						color: #fff;
+					}
+				}
+			}
+
+			.course_content{
+				padding: 0 1.2rem;
+
+				.box{
+					display: none;
+					&.active{
+						display: block;
+					}
+				}
+
+				h4{
+					margin-bottom: 1rem;
+					color: #ed265d;
+					text-align: center;
+					font-size: 1.9rem;
+					line-height: 2.2rem;
+				}
+
+				.img{
+					margin-bottom: 1.2rem;
+					img{
+						width: 100%;
+					}
+				}
+
+				dl{
+					margin-bottom: 1rem;
+
+					dt{
+						position: relative;
+						margin-bottom: 1rem;
+						padding-bottom: 1rem;
+						font:1.4rem/1.4rem 'NotoSansKRBold';
+
+						&::after{
+							@extend .pseudo-element;
+							width: 1.5rem;
+							height: 1px;
+							position: absolute;
+							bottom: 0;
+							left: 0;
+							background: #ee265c;
+						}
+					}
+					dd{
+						font:1rem/1.6rem 'NotoSansKRLight';
+
+						span{
+							margin-right: 0.5rem;
+							display: inline-block;
+						}
+					}
+
+					&:last-child{
+						margin-bottom: 0;
+					}
+				}
+			}
+		}
+	}
+	/* reserve_details END */
+
+}
+/* RUNBASE END */
+
+.layerpopup-wrapper{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 100;
+
+	>.overlay{
+		width: 100%;
+		height: 100%;
+		position: fixed;
+		top: 0;
+		left: 0;
+		background: rgba(0,0,0,0.5);
+		z-index: 5;
+	}
+}
+
+.layerpopup{
+	width: 100%;
+	background: #fff;
+	position: absolute;
+	top: 50%;
+	left: 0;
+	z-index: 10;
+
+	@include css3(transform,translate3d(0,-50%,0));
+
+	&.runbase_reserve_pop{
+		.header{
+			h2{
+				padding-left: 1.2rem;
+			}
+
+			.close_x_btn{
+				right: 1.2rem;
+			}
+		}
+		.contents{
+			padding: 1.2rem;
+
+			h3{
+				margin: 1rem 0 0.3rem;
+				text-align: center;
+				font-size: 2rem;
+			}
+
+			.desc{
+				margin-bottom: 1.5rem;
+				text-align: center;
+				font-size: 1.2rem;
+			}
+
+			table{
+				width: 100%;
+				margin-bottom: 1.5rem;
+				border-bottom: 2px solid  #000;
+				th,td{
+					padding: 1rem 0;
+					font-size: 1.1rem;
+					border-top: 1px solid  #cfcfcf;
+				}
+				th{
+					width: 8rem;
+					text-align: left;
+					font: 1.1rem 'NotoSansKR';
+				}
+
+				td{
+					color: #555;
+					letter-spacing: -0.75px;
+				}
+			}
+
+			.li_hypn{
+				margin-bottom: 1.2rem;
+				li{
+					margin-bottom: 0.3rem;
+					font-size: 1rem;
+					letter-spacing: -0.75px;
+				}
+			}
+
+			.button_area{
+				>div{
+					.icons{
+						margin-left: 0.2rem;
+						font-size: 1rem;
+					}
+
+					a{
+						font-size:1.1rem;
+					}
+				}
+
+				&.col2{
+					>div{
+						padding: 0 0.6rem 0 0;
+
+						&:last-child{
+							padding: 0 0 0 0.6rem;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&.done_pop{
+		.contents{
+			h3{
+				margin:2rem 0 4rem;
+				font: 1.7rem 'NotoSansKRRegular';
+			}
+		}
+
+	}
+}
+
+/* RUNBASE Globa navigation */
+.runbase_gnb{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	z-index: 121;
+	display: none;
+
+	&.open{
+		display: block;
+	}
+
+	.overlay{
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background:rgba(0,0,0,0.7);
+	}
+
+	.close_x_btn{
+		width: 5rem;
+		height: 5rem;
+		position: absolute;
+		top: 0;
+		right: 0;
+
+		@include css3(transform,translate3d(0,-100%,0));
+	}
+
+	.gnb_menu{
+		width: 100%;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		padding: 0 1.2rem;
+		box-sizing:border-box;
+		-webkit-box-sizing:border-box;
+		@include css3(transform,translate3d(-50%,-50%,0));
+
+		ul{
+			border: 2px solid  #e0004d;
+			li{
+				border-bottom: 1px solid  #e0004d;
+				a{
+					width: 100%;
+					height: 7.5rem;
+					position: relative;
+					display: block;
+					background:rgba(0,0,0,0.7);
+
+					>*{
+						color: #fff;
+					}
+
+					.num , .icons{
+						position: absolute;
+						top: 50%;
+						@include css3(transform,translate3d(0,-50%,0));
+					}
+
+					.num{
+						left: 2rem;
+						font-size: 1.6rem;
+					}
+
+					.icons{
+						right: 2rem;
+						font-size: 1.3rem;
+					}
+
+					.tit{
+						font-size: 1.8rem;
+					}
+
+					.desc{
+						font-size: 1rem;
+					}
+
+					p{
+						position: absolute;
+						top: 50%;
+						left: 6rem;
+						@include css3(transform,translate3d(0,-80%,0));
+
+						&.desc{
+							@include css3(transform,translate3d(0,60%,0));
+						}
+					}
+				}
+
+				&:last-child{
+					border-bottom-width: 0;
+				}
+
+				&.on{
+					a{
+						background: #e0004d;
+					}
+				}
+			}
+		}
+	}
+
+}
