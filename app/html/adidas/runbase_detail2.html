@@ -697,22 +697,18 @@
             <link rel="stylesheet" href="/css/adidas/runbase.css">
             <div class="runbase">
 
-                <div class="header">
+				<div class="header_adisports">
+					<a href="#">adiclub sports</a>
                     <h2>
-                        <span class="adipro-bk">runbase</span>
-                        <span class="adipro-l">seoul</span>
-                        <span class="icons" data-icon=""></span>
+                        <span class="adipro-bk">PROGRAM</span>
+                        <span class="adipro-bk">RESERVATION</span>
+                        <span>프로그램 예약하기</span>
                     </h2>
 
-                    <div class="runbase_menu">
-                        <a href="javascript:void(0)" class="adipro-b">MENU</a>
+                    <div class="menu">
+                        <a href="javascript:void(0)" class="adipro-b">adiclub SPORTS MENU</a>
                     </div>
                 </div>
-
-				<div class="reserve_header">
-					<h3 class="adipro-bk">runbase seoul reservation</h3>
-					<div class="bg"><img src="/images/adidas/club/banner_reserve.jpg" alt=""></div>
-				</div>
 
 				<div class="reserve_details">
 					<div class="img">
@@ -771,7 +767,7 @@
 						</div>
 
 
-						<p>액티비티 포인트 차감</p>
+						<p>아디코인</p>
 						<div class="box">
 							<h4 class="tit_col2">
 								<div>잔여 포인트</div>
@@ -797,20 +793,19 @@
 			<script type="text/javascript">
 				(function(){
 					function initRunbaseMenu(){
-						document.querySelector('.runbase_gnb').className += ' open';
+						document.querySelector('.adisports_gnb').className += ' open';
 					}
 
 					function removeRunbaseMenu(){
-						document.querySelector('.runbase_gnb').className = 'runbase_gnb';
+						document.querySelector('.adisports_gnb').className = 'adisports_gnb';
 					}
 
-					document.querySelector('.runbase .header .runbase_menu>a').addEventListener('click',function(){
+					document.querySelector('.runbase .header_adisports .menu>a').addEventListener('click',function(){
 						initRunbaseMenu();
 
-						document.querySelector('.runbase_gnb .close_x_btn').addEventListener('click',removeRunbaseMenu);
-						document.querySelector('.runbase_gnb .overlay').addEventListener('click',removeRunbaseMenu);
+						document.querySelector('.adisports_gnb .close_x_btn').addEventListener('click',removeRunbaseMenu);
+						document.querySelector('.adisports_gnb .overlay').addEventListener('click',removeRunbaseMenu);
 					});
-
 				})();
 			</script>
 
@@ -852,54 +847,33 @@
 
 	</div>
 
-	<div class="runbase_gnb">
+	<div class="adisports_gnb">
 		<div class="overlay"></div>
-			<div class="gnb_menu">
-				<a href="javascript:void(0)" class="close_x_btn white"></a>
-				<ul>
-					<li>
-						<a href="#">
-							<span class="num adipro-bk">01</span>
-							<p class="tit adipro-bk">ABOUT</p>
-							<p class="desc">런베이스 서울이란?</p>
-							<span class="icons" data-icon=""></span>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<span class="num adipro-bk">02</span>
-							<p class="tit adipro-bk">PROGRAM SCHEDULE</p>
-							<p class="desc">런베이스 서울 프로그램 스케줄 (준비중입니다.)</p>
-							<span class="icons" data-icon=""></span>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<span class="num adipro-bk">03</span>
-							<p class="tit adipro-bk">COACH</p>
-							<p class="desc">런베이스 서울 코치진</p>
-							<span class="icons" data-icon=""></span>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<span class="num adipro-bk adipro-bk">04</span>
-							<p class="tit adipro-bk">RUNNIING COURSE</p>
-							<p class="desc">다양한 런베이스 서울 러닝 코스들</p>
-							<span class="icons" data-icon=""></span>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<span class="num adipro-bk">05</span>
-							<p class="tit adipro-bk">LOCATION</p>
-							<p class="desc">런베이스 서울 오시는 길</p>
-							<span class="icons" data-icon=""></span>
-						</a>
-					</li>
-				</ul>
-			</div>
+		<div class="gnb_menu">
+			<a href="javascript:void(0)" class="close_x_btn white"></a>
+			<ul>
+				<li>
+					<a href="#">
+						<p class="tit"><span class="adipro-bk">adiclub SPORTS</span> 바로가기</p>
+						<span class="icons" data-icon=""></span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<p class="tit"><span class="adipro-bk">RUNBASE </span> 바로가기</p>
+						<span class="icons" data-icon=""></span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<p class="tit"><span class="adipro-bk">AR </span> 바로가기</p>
+						<span class="icons" data-icon=""></span>
+					</a>
+				</li>
+			</ul>
 		</div>
+	</div>
+
 	</div>
 
 	<script type="text/javascript" src="/js/adidas/common.js"></script>

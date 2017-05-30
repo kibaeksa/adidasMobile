@@ -12,7 +12,7 @@
   html {
     font-size: 12px; } }
 
-.pseudo-element, #container > .runbase > .section .title p::after, #container > .runbase > .section#section1 .about_runbase .desc strong::after, #container > .runbase > .section#section1 .about_runbase .desc_detail li dt::after, #container > .runbase > .section#section4 ul li dt::after, #container > .runbase > .section#section5 .sns a::after, #container > .runbase .runbase_calendar .status > div::after, #container > .runbase .runbase_calendar .calendar > div.day_cols > div.selected::after, #container > .runbase .reserve_details .reserve_button::after, #container > .runbase .reserve_details .description_class_wrap .description_class ul li dl dt::after, #container > .runbase .runbase_courses h3::after, #container > .runbase .runbase_courses .courses_wrapper .course_content dl dt::after {
+.pseudo-element, #container > .runbase > .section .title p::after, #container > .runbase > .section#section1 .about_runbase .desc strong::after, #container > .runbase > .section#section1 .about_runbase .desc_detail li dt::after, #container > .runbase > .section#section4 ul li dt::after, #container > .runbase > .section#section5 .sns a::after, #container > .runbase .runbase_calendar .reserve_infobox .status > div::after, #container > .runbase .runbase_calendar .calendar > div.day_cols > div.selected::after, #container > .runbase .reserve_details .reserve_button::after, #container > .runbase .reserve_details .description_class_wrap .description_class ul li dl dt::after, #container > .runbase .runbase_courses h3::after, #container > .runbase .runbase_courses .courses_wrapper .course_content dl dt::after {
   content: '';
   display: block; }
 
@@ -27,6 +27,8 @@
   /* Reservation list */
   /* Common header */
   /* Common header END */
+  /* Adiclub sports header START */
+  /* Adiclub sports header END */
   /* Masthead START */
   /* Masthead END */
   /* Section START */
@@ -123,10 +125,37 @@
         -webkit-box-sizing: border-box;
         vertical-align: middle; }
         #container > .runbase .runbase_reservation_list li .cont .event_box {
+          min-height: 2rem;
+          position: relative;
           margin-bottom: 1rem;
+          padding-top: 0.3rem;
+          padding-left: 5.5rem;
+          padding-right: 3rem;
           font-size: 1.1rem;
           line-height: 1.4rem;
-          color: #fff; }
+          color: #fff;
+          -webkit-box-sizing: border-box;
+          vertical-align: middle; }
+          #container > .runbase .runbase_reservation_list li .cont .event_box.active > a {
+            background: rgba(0, 129, 113, 0.29); }
+          #container > .runbase .runbase_reservation_list li .cont .event_box::before {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            font-size: 1.1rem;
+            transform: translate3d(0, -50%, 0);
+            -webkit-transform: translate3d(0, -50%, 0);
+            -moz-transform: translate3d(0, -50%, 0);
+            -o-transform: translate3d(0, -50%, 0);
+            -ms-transform: translate3d(0, -50%, 0); }
+          #container > .runbase .runbase_reservation_list li .cont .event_box > a {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 1px;
+            height: 100%;
+            z-index: 5; }
           #container > .runbase .runbase_reservation_list li .cont .event_box .status {
             width: 4.8rem;
             margin-right: 0.5rem;
@@ -137,7 +166,16 @@
             text-transform: uppercase;
             text-align: center;
             letter-spacing: 0;
-            font-size: 1rem; }
+            font-size: 1rem;
+            line-height: 1.4rem;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translate3d(0, -50%, 0);
+            -webkit-transform: translate3d(0, -50%, 0);
+            -moz-transform: translate3d(0, -50%, 0);
+            -o-transform: translate3d(0, -50%, 0);
+            -ms-transform: translate3d(0, -50%, 0); }
             #container > .runbase .runbase_reservation_list li .cont .event_box .status.online {
               border: 1px solid #ee265c;
               background: rgba(238, 38, 92, 0.3); }
@@ -180,6 +218,45 @@
         display: inline-block;
         padding: 1.2rem 2rem 1rem;
         font-size: 1.5rem;
+        color: #fff;
+        border: 1px solid #008675; }
+  #container > .runbase .header_adisports {
+    position: relative;
+    padding: 2rem 1rem; }
+    #container > .runbase .header_adisports > a {
+      width: 4.5rem;
+      height: 4.5rem;
+      display: block;
+      position: absolute;
+      top: 2.4rem;
+      left: 1.2rem;
+      background: url("/images/adidas/club/logo_adisports.png") 0 0 no-repeat;
+      background-size: 4.5rem auto;
+      text-indent: -9999px; }
+    #container > .runbase .header_adisports h2 {
+      display: inline-block;
+      position: relative;
+      margin-left: 5.7rem;
+      color: #fff;
+      text-transform: uppercase; }
+      #container > .runbase .header_adisports h2 span {
+        display: block;
+        font-size: 1.3rem;
+        line-height: 1.7rem; }
+        #container > .runbase .header_adisports h2 span.adipro-bk {
+          font-size: 1.5rem; }
+    #container > .runbase .header_adisports .menu {
+      width: 100%;
+      position: absolute;
+      top: 0;
+      right: 0; }
+      #container > .runbase .header_adisports .menu > a {
+        position: absolute;
+        top: 3rem;
+        right: 1rem;
+        display: inline-block;
+        padding: 1rem 0.5rem;
+        font-size: 1rem;
         color: #fff;
         border: 1px solid #008675; }
   #container > .runbase .masthead {
@@ -374,6 +451,25 @@
     #container > .runbase > .section#section2 {
       overflow: hidden;
       background-image: url("/images/adidas/club/runbase-bg-section2.jpg"); }
+      #container > .runbase > .section#section2 .select_wrapper {
+        overflow: hidden;
+        padding: 1.2rem 1.2rem 0; }
+        #container > .runbase > .section#section2 .select_wrapper .sel_design {
+          width: 50%;
+          float: right; }
+          #container > .runbase > .section#section2 .select_wrapper .sel_design > a {
+            border-color: #008675;
+            background: none;
+            color: #008675; }
+            #container > .runbase > .section#section2 .select_wrapper .sel_design > a::before {
+              position: absolute;
+              top: 1.2rem;
+              right: 1.2rem;
+              transform: rotate(90deg);
+              -webkit-transform: rotate(90deg);
+              -moz-transform: rotate(90deg);
+              -o-transform: rotate(90deg);
+              -ms-transform: rotate(90deg); }
       #container > .runbase > .section#section2 .runbase_reservation_list {
         margin: 1.5rem 0px 2rem; }
       #container > .runbase > .section#section2 .button_area {
@@ -541,64 +637,98 @@
     #container > .runbase .reserve_header .bg img {
       width: 100%; }
   #container > .runbase .runbase_calendar {
-    /* reserver_info end */
-    /* status end */
+    /* reserve_infobox END */
     /* date_selector end */ }
-    #container > .runbase .runbase_calendar .reserver_info {
-      padding: 1rem 1.2rem 1.2rem; }
-      #container > .runbase .runbase_calendar .reserver_info h4 {
-        padding: 0 0 0.3rem;
-        border-bottom: 1px dotted  #949494;
-        text-align: center;
-        color: #fff;
-        font: 1.3rem 'NotoSansKRRegular'; }
-        #container > .runbase .runbase_calendar .reserver_info h4 > * {
-          margin-left: 5px;
-          font: 1.8rem 'NotoSansKRBold';
+    #container > .runbase .runbase_calendar .reserve_infobox {
+      padding: 1rem 1.2rem 0;
+      margin-bottom: 1rem;
+      background: #1b1b1b;
+      /* user_info end */
+      /* status end */ }
+      #container > .runbase .runbase_calendar .reserve_infobox > dl {
+        margin-bottom: 0.8rem;
+        padding-bottom: 0.8rem;
+        overflow: hidden;
+        border-bottom: 1px dotted  #9f9f9f; }
+        #container > .runbase .runbase_calendar .reserve_infobox > dl > * {
+          color: #fff; }
+        #container > .runbase .runbase_calendar .reserve_infobox > dl dt {
+          float: left;
+          font-size: 1.35rem; }
+        #container > .runbase .runbase_calendar .reserve_infobox > dl dd {
+          margin-top: 0.2rem;
+          font-size: 0.9rem;
+          float: right; }
+      #container > .runbase .runbase_calendar .reserve_infobox .button_area {
+        padding-bottom: 0.8rem; }
+        #container > .runbase .runbase_calendar .reserve_infobox .button_area > div {
+          height: 3.5rem;
+          padding-right: 0.4rem; }
+          #container > .runbase .runbase_calendar .reserve_infobox .button_area > div:last-child {
+            padding: 0 0 0 0.4rem; }
+          #container > .runbase .runbase_calendar .reserve_infobox .button_area > div a {
+            height: 3.5rem;
+            line-height: 3.5rem;
+            font-size: 0.9rem; }
+            #container > .runbase .runbase_calendar .reserve_infobox .button_area > div a::after {
+              margin-left: 5px; }
+      #container > .runbase .runbase_calendar .reserve_infobox .user_info {
+        padding-bottom: 0.8rem;
+        overflow: hidden;
+        border-bottom: 1px dotted  #9f9f9f; }
+        #container > .runbase .runbase_calendar .reserve_infobox .user_info h4 {
+          float: left;
+          padding: 0 0 0.3rem;
+          position: relative;
+          top: 0.3rem;
+          text-align: center;
+          color: #fff;
+          font: 1.2rem 'NotoSansKRRegular';
           letter-spacing: 0; }
-        #container > .runbase .runbase_calendar .reserver_info h4 strong {
-          margin: 0;
-          color: #ee265c; }
-      #container > .runbase .runbase_calendar .reserver_info .user_id {
-        padding-top: 0.5rem;
-        font-size: 1.7rem;
-        text-align: center;
-        color: #ee265c; }
-    #container > .runbase .runbase_calendar .status {
-      display: -webkit-flex;
-      display: flex; }
-      #container > .runbase .runbase_calendar .status > div {
-        width: 25%;
-        position: relative;
-        padding: 0.8rem 0px;
-        background: #1b1b1b;
-        text-align: center; }
-        #container > .runbase .runbase_calendar .status > div::after {
-          position: absolute;
-          top: 50%;
-          right: 0;
-          width: 1px;
-          height: 60%;
-          background: #393939;
-          transform: translate3d(0, -50%, 0);
-          -webkit-transform: translate3d(0, -50%, 0);
-          -moz-transform: translate3d(0, -50%, 0);
-          -o-transform: translate3d(0, -50%, 0);
-          -ms-transform: translate3d(0, -50%, 0); }
-        #container > .runbase .runbase_calendar .status > div:last-child::after {
-          display: none; }
-        #container > .runbase .runbase_calendar .status > div dt {
-          margin-bottom: 0.5rem;
-          font: 1.2rem 'NotoSansKR';
-          color: #fff; }
-        #container > .runbase .runbase_calendar .status > div dd {
-          vertical-align: middle;
-          font-size: 1rem;
-          color: #fff; }
-          #container > .runbase .runbase_calendar .status > div dd strong {
-            vertical-align: middle;
-            font-size: 1.4rem;
+          #container > .runbase .runbase_calendar .reserve_infobox .user_info h4 strong {
+            margin: 0;
             color: #ee265c; }
+        #container > .runbase .runbase_calendar .reserve_infobox .user_info .user_id {
+          float: right;
+          padding-top: 0.5rem;
+          font-size: 1.4rem;
+          text-align: center;
+          color: #ee265c;
+          vertical-align: baseline; }
+      #container > .runbase .runbase_calendar .reserve_infobox .status {
+        display: -webkit-flex;
+        display: flex; }
+        #container > .runbase .runbase_calendar .reserve_infobox .status > div {
+          width: 25%;
+          position: relative;
+          padding: 0.8rem 0px;
+          text-align: center; }
+          #container > .runbase .runbase_calendar .reserve_infobox .status > div::after {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            width: 1px;
+            height: 60%;
+            background: #393939;
+            transform: translate3d(0, -50%, 0);
+            -webkit-transform: translate3d(0, -50%, 0);
+            -moz-transform: translate3d(0, -50%, 0);
+            -o-transform: translate3d(0, -50%, 0);
+            -ms-transform: translate3d(0, -50%, 0); }
+          #container > .runbase .runbase_calendar .reserve_infobox .status > div:last-child::after {
+            display: none; }
+          #container > .runbase .runbase_calendar .reserve_infobox .status > div dt {
+            margin-bottom: 0.5rem;
+            font: 1.05rem 'NotoSansKR';
+            color: #fff; }
+          #container > .runbase .runbase_calendar .reserve_infobox .status > div dd {
+            vertical-align: middle;
+            font-size: 1rem;
+            color: #fff; }
+            #container > .runbase .runbase_calendar .reserve_infobox .status > div dd strong {
+              vertical-align: middle;
+              font-size: 1.4rem;
+              color: #ee265c; }
     #container > .runbase .runbase_calendar .date_selector {
       width: 100%;
       height: 5rem;
@@ -657,7 +787,7 @@
             position: absolute;
             top: 50%;
             left: 0;
-            margin-top: 0.1rem;
+            margin-top: -0.1rem;
             text-align: center;
             font-size: 1.4rem;
             z-index: 10;
@@ -680,6 +810,7 @@
             -o-transform: translate3d(-50%, -50%, 0);
             -ms-transform: translate3d(-50%, -50%, 0); }
           #container > .runbase .runbase_calendar .calendar > div.day_cols > div.not_this_month span {
+            margin-top: 0;
             font-family: 'Adihaus-regular' !important; }
   #container > .runbase .reserve_details {
     /* reserve_button end */ }
@@ -687,7 +818,8 @@
       width: 100%;
       margin-bottom: 1rem;
       padding-top: 3rem;
-      text-align: center; }
+      text-align: center;
+      border-top: 1px solid  #333; }
       #container > .runbase .reserve_details .img img {
         max-width: 70%; }
     #container > .runbase .reserve_details h3 {
@@ -707,7 +839,7 @@
       margin: 3rem 0 1.2rem; }
       #container > .runbase .reserve_details .reserve_button::after {
         position: absolute;
-        top: -2rem;
+        top: -1.7rem;
         left: 50%;
         width: 15px;
         height: 2px;
@@ -783,6 +915,9 @@
           #container > .runbase .reserve_details .button_area > div a .icons {
             font-size: 1rem;
             margin-left: 5px; }
+        #container > .runbase .reserve_details .button_area > div.disable a {
+          background: #444343;
+          color: #939393; }
     #container > .runbase .reserve_details .description_class_wrap {
       padding: 0 1.2rem 2rem; }
       #container > .runbase .reserve_details .description_class_wrap .description_class {
@@ -793,7 +928,8 @@
         color: #fff; }
         #container > .runbase .reserve_details .description_class_wrap .description_class h4 {
           margin-bottom: 1rem;
-          font-size: 1.3rem; }
+          font-size: 1.3rem;
+          line-height: 1.7rem; }
         #container > .runbase .reserve_details .description_class_wrap .description_class ul {
           padding-bottom: 1rem; }
           #container > .runbase .reserve_details .description_class_wrap .description_class ul li {
@@ -801,24 +937,32 @@
             position: relative;
             margin-bottom: 0.9rem;
             float: left; }
-            #container > .runbase .reserve_details .description_class_wrap .description_class ul li dl > * {
-              letter-spacing: 0; }
-            #container > .runbase .reserve_details .description_class_wrap .description_class ul li dl dt {
-              position: absolute;
-              top: 0;
-              left: 0;
-              font-size: 1.1rem; }
-              #container > .runbase .reserve_details .description_class_wrap .description_class ul li dl dt::after {
-                display: block;
-                width: 1px;
-                height: 8px;
-                background: #fff;
-                position: absolute;
-                top: 3px;
-                right: -13px; }
-            #container > .runbase .reserve_details .description_class_wrap .description_class ul li dl dd {
-              padding-left: 46px;
-              font-size: 1.1rem; }
+            #container > .runbase .reserve_details .description_class_wrap .description_class ul li dl {
+              width: 100%;
+              display: -webkit-flex;
+              display: -ms-flex;
+              display: flex; }
+              #container > .runbase .reserve_details .description_class_wrap .description_class ul li dl > * {
+                letter-spacing: 0;
+                align-items: center;
+                -webkit-align-items: center; }
+              #container > .runbase .reserve_details .description_class_wrap .description_class ul li dl dt {
+                position: relative;
+                min-width: 30px;
+                padding-right: 5px;
+                margin-right: 5px;
+                font-size: 1rem; }
+                #container > .runbase .reserve_details .description_class_wrap .description_class ul li dl dt::after {
+                  display: block;
+                  width: 1px;
+                  height: 8px;
+                  background: #fff;
+                  position: absolute;
+                  top: 3px;
+                  right: 3px; }
+              #container > .runbase .reserve_details .description_class_wrap .description_class ul li dl dd {
+                width: 100%;
+                font-size: 1rem; }
         #container > .runbase .reserve_details .description_class_wrap .description_class .desc {
           padding: 1rem 0;
           border-top: 1px dotted  #334846;
@@ -843,12 +987,19 @@
           background: #1f1f1f;
           text-align: center;
           color: #ee265c;
+          border-bottom: 1px solid  #666;
           font: 1.4rem 'NotoSansKRBold'; }
           #container > .runbase .reserve_details .reserve_confirm_wrap > .box h4.tit_col2 {
+            padding: 0;
             overflow: hidden; }
             #container > .runbase .reserve_details .reserve_confirm_wrap > .box h4.tit_col2 div {
               width: 50%;
-              float: left; }
+              float: left;
+              padding: 0.5rem 0;
+              box-sizing: border-box;
+              -webkit-box-sizing: border-box; }
+              #container > .runbase .reserve_details .reserve_confirm_wrap > .box h4.tit_col2 div:first-child {
+                border-right: 1px solid  #666; }
         #container > .runbase .reserve_details .reserve_confirm_wrap > .box .data_form {
           padding: 1.2rem; }
           #container > .runbase .reserve_details .reserve_confirm_wrap > .box .data_form table {
@@ -970,6 +1121,28 @@
             display: inline-block; }
         #container > .runbase .runbase_courses .courses_wrapper .course_content dl:last-child {
           margin-bottom: 0; }
+  #container > .runbase .go_main {
+    padding-top: 1.2rem;
+    text-align: right; }
+    #container > .runbase .go_main a {
+      display: inline-block;
+      position: relative;
+      padding-right: 15px;
+      color: #fff;
+      font-size: 1rem; }
+      #container > .runbase .go_main a::after {
+        position: absolute;
+        top: 2px;
+        right: 1px; }
+      #container > .runbase .go_main a::before {
+        display: block;
+        content: '';
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: #fff; }
 
 /* RUNBASE END */
 .layerpopup-wrapper {
@@ -1007,9 +1180,10 @@
   .layerpopup.runbase_reserve_pop .contents {
     padding: 1.2rem; }
     .layerpopup.runbase_reserve_pop .contents h3 {
-      margin: 1rem 0 0.3rem;
+      margin: 1rem 0;
       text-align: center;
-      font-size: 2rem; }
+      font: 1.8rem/2.1rem 'NotoSansKRBold';
+      letter-spacing: 0; }
     .layerpopup.runbase_reserve_pop .contents .desc {
       margin-bottom: 1.5rem;
       text-align: center;
@@ -1039,7 +1213,8 @@
       margin-left: 0.2rem;
       font-size: 1rem; }
     .layerpopup.runbase_reserve_pop .contents .button_area > div a {
-      font-size: 1.1rem; }
+      font-size: 1.3rem;
+      letter-spacing: 0; }
     .layerpopup.runbase_reserve_pop .contents .button_area.col2 > div {
       padding: 0 0.6rem 0 0; }
       .layerpopup.runbase_reserve_pop .contents .button_area.col2 > div:last-child {
@@ -1139,3 +1314,83 @@
           border-bottom-width: 0; }
         .runbase_gnb .gnb_menu ul li.on a {
           background: #e0004d; }
+
+/* ADISPORTS Globa navigation */
+.adisports_gnb {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 121;
+  display: none; }
+  .adisports_gnb.open {
+    display: block; }
+  .adisports_gnb .overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7); }
+  .adisports_gnb .close_x_btn {
+    width: 5rem;
+    height: 5rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate3d(0, -100%, 0);
+    -webkit-transform: translate3d(0, -100%, 0);
+    -moz-transform: translate3d(0, -100%, 0);
+    -o-transform: translate3d(0, -100%, 0);
+    -ms-transform: translate3d(0, -100%, 0); }
+  .adisports_gnb .gnb_menu {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 0 1.2rem;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    transform: translate3d(-50%, -50%, 0);
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    -moz-transform: translate3d(-50%, -50%, 0);
+    -o-transform: translate3d(-50%, -50%, 0);
+    -ms-transform: translate3d(-50%, -50%, 0); }
+    .adisports_gnb .gnb_menu ul {
+      border: 2px solid  #fff; }
+      .adisports_gnb .gnb_menu ul li {
+        border-bottom: 1px solid  #fff; }
+        .adisports_gnb .gnb_menu ul li a {
+          width: 100%;
+          height: 7.5rem;
+          position: relative;
+          display: block;
+          padding: 3rem 0 0 2rem;
+          background: rgba(0, 0, 0, 0.7);
+          box-sizing: border-box;
+          -webkit-box-sizing: border-box; }
+          .adisports_gnb .gnb_menu ul li a > * {
+            color: #fff; }
+          .adisports_gnb .gnb_menu ul li a .icons {
+            right: 2rem;
+            font-size: 1.3rem;
+            position: absolute;
+            top: 50%;
+            transform: translate3d(0, -50%, 0);
+            -webkit-transform: translate3d(0, -50%, 0);
+            -moz-transform: translate3d(0, -50%, 0);
+            -o-transform: translate3d(0, -50%, 0);
+            -ms-transform: translate3d(0, -50%, 0); }
+          .adisports_gnb .gnb_menu ul li a .tit {
+            font-size: 1.3rem;
+            font-family: 'NotoSansKRMedium'; }
+            .adisports_gnb .gnb_menu ul li a .tit .adipro-bk {
+              font-size: 1.8rem;
+              vertical-align: middle; }
+        .adisports_gnb .gnb_menu ul li:last-child {
+          border-bottom-width: 0; }
+        .adisports_gnb .gnb_menu ul li.on a {
+          background: #fff; }
+          .adisports_gnb .gnb_menu ul li.on a > * {
+            color: #000; }

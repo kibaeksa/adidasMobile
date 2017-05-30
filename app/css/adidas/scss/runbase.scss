@@ -176,10 +176,44 @@ $width600:600px;
 				vertical-align: middle;
 
 				.event_box{
+					min-height: 2rem;
+					position: relative;
 					margin-bottom: 1rem;
+					padding-top: 0.3rem;
+					padding-left: 5.5rem;
+					padding-right: 3rem;
 					font-size: 1.1rem;
 					line-height: 1.4rem;
 					color: #fff;
+					-webkit-box-sizing:border-box;
+					vertical-align: middle;
+
+					&.active{
+						>a{
+							background:rgba(0,129,113,0.29);
+							// background:red;
+						}
+					}
+
+					&::before{
+						position: absolute;
+						top: 50%;
+						right: 0;
+						font-size: 1.1rem;
+
+						@include css3(transform,translate3d(0,-50%,0));
+					}
+
+					>a{
+						position: absolute;
+						top: 0;
+						left: 0;
+						width: 100%;
+						padding: 1px;
+						height: 100%;
+						z-index: 5;
+					}
+
 					.status{
 						width: 4.8rem;
 						margin-right: 0.5rem;
@@ -191,6 +225,12 @@ $width600:600px;
 						text-align: center;
 						letter-spacing: 0;
 						font-size: 1rem;
+						line-height: 1.4rem;
+						position: absolute;
+						top: 50%;
+						left: 0;
+
+						@include css3(transform,translate3d(0,-50%,0));
 
 						&.online{
 							border: 1px solid #ee265c;
@@ -260,6 +300,62 @@ $width600:600px;
 		}
 	}
 	/* Common header END */
+
+	/* Adiclub sports header START */
+	.header_adisports{
+		position: relative;
+		padding: 2rem 1rem;
+
+		>a{
+			width: 4.5rem;
+			height: 4.5rem;
+			display: block;
+			position: absolute;
+			top: 2.4rem;
+			left: 1.2rem;
+			background:url('/images/adidas/club/logo_adisports.png') 0 0 no-repeat;
+			background-size: 4.5rem auto;
+			text-indent: -9999px;
+		}
+
+		h2{
+			display: inline-block;
+			position: relative;
+			margin-left: 5.7rem;
+			color: #fff;
+			text-transform: uppercase;
+			span{
+				display: block;
+				font-size: 1.3rem;
+				line-height: 1.7rem;
+
+				&.adipro-bk{
+					font-size:1.5rem;
+				}
+			}
+		}
+
+		.menu{
+			width: 100%;
+			position: absolute;
+			top: 0;
+			right: 0;
+			>a{
+				position: absolute;
+				top: 3rem;
+				right: 1rem;
+				display: inline-block;
+			    padding: 1rem 0.5rem;
+			    font-size: 1rem;
+			    color: #fff;
+			    border: 1px solid #008675;
+			}
+		}
+	}
+	/* Adiclub sports header END */
+
+
+
 
 	/* Masthead START */
 	.masthead{
@@ -538,6 +634,28 @@ $width600:600px;
 			overflow: hidden;
 			background-image:url('/images/adidas/club/runbase-bg-section2.jpg');
 
+			.select_wrapper{
+				overflow: hidden;
+				padding: 1.2rem 1.2rem 0;
+				.sel_design{
+					width: 50%;
+					float: right;
+					>a{
+						border-color: #008675;
+						background: none;
+						color: #008675;
+
+						&::before{
+							position: absolute;
+							top: 1.2rem;
+							right: 1.2rem;
+
+							@include css3(transform,rotate(90deg));
+						}
+					}
+				}
+			}
+
 			.runbase_reservation_list{
 				margin: 1.5rem 0px 2rem;
 			}
@@ -793,85 +911,135 @@ $width600:600px;
 
 	/* runbase_calendar START */
 	.runbase_calendar{
+		.reserve_infobox{
+			padding:1rem 1.2rem 0;
+			margin-bottom: 1rem;
+			background: #1b1b1b;
+			// 1b1b1b
 
-		.reserver_info{
-			padding:1rem 1.2rem 1.2rem;
-			h4{
-				padding: 0 0 0.3rem;
-				border-bottom: 1px dotted  #949494;
-				text-align: center;
-				color: #fff;
-				font:1.3rem 'NotoSansKRRegular';
-
+			>dl{
+				margin-bottom: 0.8rem;
+				padding-bottom:0.8rem;
+				overflow: hidden;
+				border-bottom: 1px dotted  #9f9f9f;
 				>*{
-					margin-left: 5px;
-					font:1.8rem 'NotoSansKRBold';
-					letter-spacing: 0;
-				}
-
-				strong{
-					margin: 0;
-					color: #ee265c;
-				}
-			}
-
-			.user_id{
-				padding-top: 0.5rem;
-				font-size: 1.7rem;
-				text-align: center;
-				color: #ee265c;
-			}
-		}
-		/* reserver_info end */
-
-		.status{
-			display: -webkit-flex;
-			display: flex;
-
-			>div{
-				width: 25%;
-				position: relative;
-				padding: 0.8rem 0px;
-				background: #1b1b1b;
-				text-align: center;
-
-				&::after{
-					position: absolute;
-					top: 50%;
-					right: 0;
-					width: 1px;
-					height: 60%;
-					background: #393939;
-
-					@extend .pseudo-element;
-					@include css3(transform,translate3d(0,-50%,0));
-				}
-
-				&:last-child{
-					&::after{
-						display: none;
-					}
-				}
-
-				dt{
-					margin-bottom: 0.5rem;
-					font: 1.2rem 'NotoSansKR';
 					color: #fff;
+				}
+				dt{
+					float: left;
+					font-size: 1.35rem;
 				}
 				dd{
-					vertical-align: middle;
-					font-size: 1rem;
+					margin-top: 0.2rem;
+					font-size: 0.9rem;
+					float: right;
+				}
+			}
+
+			.button_area{
+				padding-bottom: 0.8rem;
+				>div{
+					height: 3.5rem;
+					padding-right: 0.4rem;
+
+					&:last-child{
+						padding:0 0 0 0.4rem;
+					}
+
+					a{
+						height: 3.5rem;
+						line-height: 3.5rem;
+						font-size: 0.9rem;
+
+						&::after{
+							margin-left: 5px;
+						}
+					}
+				}
+			}
+
+			.user_info{
+				padding-bottom: 0.8rem;
+				overflow: hidden;
+				border-bottom: 1px dotted  #9f9f9f;
+
+				h4{
+					float: left;
+					padding: 0 0 0.3rem;
+					position: relative;
+					top: 0.3rem;
+					text-align: center;
 					color: #fff;
+					font:1.2rem 'NotoSansKRRegular';
+					letter-spacing: 0;
 
 					strong{
-						vertical-align: middle;
-						font-size: 1.4rem;
+						margin: 0;
 						color: #ee265c;
 					}
 				}
+
+				.user_id{
+					float: right;
+					padding-top: 0.5rem;
+					font-size: 1.4rem;
+					text-align: center;
+					color: #ee265c;
+					vertical-align: baseline;
+				}
 			}
+			/* user_info end */
+
+			.status{
+				display: -webkit-flex;
+				display: flex;
+
+				>div{
+					width: 25%;
+					position: relative;
+					padding: 0.8rem 0px;
+					text-align: center;
+
+					&::after{
+						position: absolute;
+						top: 50%;
+						right: 0;
+						width: 1px;
+						height: 60%;
+						background: #393939;
+
+						@extend .pseudo-element;
+						@include css3(transform,translate3d(0,-50%,0));
+					}
+
+					&:last-child{
+						&::after{
+							display: none;
+						}
+					}
+
+					dt{
+						margin-bottom: 0.5rem;
+						font: 1.05rem 'NotoSansKR';
+						color: #fff;
+					}
+					dd{
+						vertical-align: middle;
+						font-size: 1rem;
+						color: #fff;
+
+						strong{
+							vertical-align: middle;
+							font-size: 1.4rem;
+							color: #ee265c;
+						}
+					}
+				}
+			}
+			/* status end */
 		}
-		/* status end */
+		/* reserve_infobox END */
+
 
 		.date_selector{
 			width: 100%;
@@ -948,7 +1116,7 @@ $width600:600px;
 							position: absolute;
 							top: 50%;
 							left: 0;
-							margin-top: 0.1rem;
+							margin-top: -0.1rem;
 							text-align: center;
 							font-size: 1.4rem;
 							z-index: 10;
@@ -974,6 +1142,7 @@ $width600:600px;
 
 						&.not_this_month{
 							span{
+								margin-top: 0;
 								font-family: 'Adihaus-regular' !important;
 							}
 						}
@@ -992,6 +1161,7 @@ $width600:600px;
 			margin-bottom: 1rem;
 			padding-top: 3rem;
 			text-align: center;
+			border-top: 1px solid  #333;
 
 			img{
 				max-width:70%;
@@ -1021,7 +1191,7 @@ $width600:600px;
 
 			&::after{
 				position: absolute;
-				top: -2rem;
+				top: -1.7rem;
 				left: 50%;
 				width: 15px;
 				height: 2px;
@@ -1119,6 +1289,13 @@ $width600:600px;
 						margin-left: 5px;
 					}
 				}
+
+				&.disable{
+					a{
+						background: #444343;
+						color: #939393;
+					}
+				}
 			}
 		}
 
@@ -1135,6 +1312,7 @@ $width600:600px;
 				h4{
 					margin-bottom: 1rem;
 					font-size: 1.3rem;
+					line-height: 1.7rem;
 				}
 
 				ul{
@@ -1146,15 +1324,22 @@ $width600:600px;
 						float: left;
 
 						dl{
+							width: 100%;
+							display: -webkit-flex;
+							display: -ms-flex;
+							display: flex;
 
 							>*{
 								letter-spacing: 0;
+								align-items: center;
+								-webkit-align-items: center;
 							}
 							dt{
-								position: absolute;
-								top: 0;
-								left: 0;
-								font-size: 1.1rem;
+								position: relative;
+								min-width: 30px;
+								padding-right: 5px;
+								margin-right: 5px;
+								font-size: 1rem;
 
 								&::after{
 									@extend .pseudo-element;
@@ -1164,12 +1349,12 @@ $width600:600px;
 									background: #fff;
 									position: absolute;
 									top: 3px;
-									right: -13px;
+									right: 3px;
 								}
 							}
 							dd{
-								padding-left: 46px;
-								font-size: 1.1rem;
+								width: 100%;
+								font-size: 1rem;
 							}
 						}
 					}
@@ -1210,13 +1395,22 @@ $width600:600px;
 					background: #1f1f1f;
 					text-align: center;
 					color: #ee265c;
+					border-bottom: 1px solid  #666;
 					font:1.4rem 'NotoSansKRBold';
 
 					&.tit_col2{
+						padding: 0;
 						overflow: hidden;
 						div{
 							width: 50%;
 							float: left;
+							padding: 0.5rem 0;
+							box-sizing: border-box;
+							-webkit-box-sizing: border-box;
+
+							&:first-child{
+								border-right: 1px solid  #666;
+							}
 						}
 					}
 				}
@@ -1407,6 +1601,36 @@ $width600:600px;
 	}
 	/* reserve_details END */
 
+	.go_main{
+		padding-top: 1.2rem;
+		text-align: right;
+		a{
+			display: inline-block;
+			position: relative;
+			padding-right: 15px;
+			color: #fff;
+			font-size: 1rem;
+
+			&::after{
+				position: absolute;
+				top: 2px;
+				right: 1px;
+			}
+
+			&::before{
+				display: block;
+				content:'';
+				position: absolute;
+				bottom: -3px;
+				left: 0;
+				width: 100%;
+				height: 1px;
+				background: #fff;
+
+			}
+		}
+	}
+
 }
 /* RUNBASE END */
 
@@ -1453,9 +1677,10 @@ $width600:600px;
 			padding: 1.2rem;
 
 			h3{
-				margin: 1rem 0 0.3rem;
+				margin: 1rem 0;
 				text-align: center;
-				font-size: 2rem;
+				font: 1.8rem/2.1rem 'NotoSansKRBold';
+				letter-spacing: 0;
 			}
 
 			.desc{
@@ -1502,7 +1727,8 @@ $width600:600px;
 					}
 
 					a{
-						font-size:1.1rem;
+						font-size:1.3rem;
+						letter-spacing: 0;
 					}
 				}
 
@@ -1636,5 +1862,108 @@ $width600:600px;
 			}
 		}
 	}
+}
 
+
+
+
+/* ADISPORTS Globa navigation */
+.adisports_gnb{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	z-index: 121;
+	display: none;
+
+	&.open{
+		display: block;
+	}
+
+	.overlay{
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background:rgba(0,0,0,0.7);
+	}
+
+	.close_x_btn{
+		width: 5rem;
+		height: 5rem;
+		position: absolute;
+		top: 0;
+		right: 0;
+
+		@include css3(transform,translate3d(0,-100%,0));
+	}
+
+	.gnb_menu{
+		width: 100%;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		padding: 0 1.2rem;
+		box-sizing:border-box;
+		-webkit-box-sizing:border-box;
+		@include css3(transform,translate3d(-50%,-50%,0));
+
+		ul{
+			border: 2px solid  #fff;
+			li{
+				border-bottom: 1px solid  #fff;
+				a{
+					width: 100%;
+					height: 7.5rem;
+					position: relative;
+					display: block;
+					padding:3rem 0 0 2rem;
+					background:rgba(0,0,0,0.7);
+					box-sizing:border-box;
+					-webkit-box-sizing:border-box;
+
+					>*{
+						color: #fff;
+					}
+
+
+					.icons{
+						right: 2rem;
+						font-size: 1.3rem;
+						position: absolute;
+						top: 50%;
+						@include css3(transform,translate3d(0,-50%,0));
+					}
+
+					.tit{
+						font-size: 1.3rem;
+						font-family: 'NotoSansKRMedium';
+
+						.adipro-bk{
+							font-size: 1.8rem;
+							vertical-align: middle;
+						}
+					}
+
+
+				}
+
+				&:last-child{
+					border-bottom-width: 0;
+				}
+
+				&.on{
+					a{
+						background: #fff;
+
+						>*{
+							color: #000;
+						}
+					}
+				}
+			}
+		}
+	}
 }
