@@ -410,11 +410,16 @@ html.no_srl{
 .rdo_box1.blue>input:checked + label:after{
 	background: #027dbf !important;
 }
+/* adidas coin */
+.madicoin{
+	font:12px 'AdihausDIN-bold';
+}
 
 /* adidas point */
 .mpoints{
 	font:12px 'AdihausDIN-bold';
 }
+
 .mpoints span{
 	font:normal 11px 'Adihaus-regular';
 }
@@ -431,6 +436,36 @@ html.no_srl{
 	font:9px/12px 'AdihausDIN-bold';
 	vertical-align: middle;
 }
+
+.madicoin span:before{
+    content:'C';
+    width:12px;
+    height:12px;
+    border-radius:2px;
+    margin: 0 3px;
+    background: #000;
+    display: inline-block;
+    text-align: center;
+    color: #fff;
+    font:9px/12px 'AdihausDIN-bold';
+    vertical-align: middle;
+}
+
+.madicoin_white span:before{
+    content:'C';
+    width:12px;
+    height:12px;
+    border-radius:2px;
+    margin: 0 3px;
+    display: inline-block;
+    text-align: center;
+    color:#000;
+    font:9px/12px 'AdihausDIN-bold';
+    vertical-align: middle;
+    background: #fff;
+    font:9px/14px 'adinenuPro-regular';
+}
+
 
 .price>div{
 	display: inline-block;
@@ -13305,8 +13340,38 @@ em.prd_speedy .tooltip-box:before{
 	text-align: center;
 }
 
+#container.mypage.adiclub_mypage .user_cpn>a{
+    width:33.33%;
+}
+
 #container.mypage .user_cpn>a:last-child{
 	border-right-width: 0;
+}
+
+#container.mypage .user_cpn>a.pre_service span{
+    position: relative;
+}
+
+#container.mypage .user_cpn>a.pre_service span:after{
+    content: '';
+    width: 100%;
+    height: 1px;
+    background: #0286cd;
+    position: absolute;
+    bottom: 0;
+    left:0;
+}
+
+#container.mypage .user_cpn>a.pre_service strong{
+    padding: 6px 0 0 0;
+    margin: 0;
+    color:#0286cd;
+    font-size: 12px;
+}
+
+#container.mypage .user_cpn>a.pre_service strong:after{
+	display: inline-block;
+    margin-left: 3px;
 }
 
 #container.mypage .user_cpn>a p{
@@ -13360,6 +13425,23 @@ em.prd_speedy .tooltip-box:before{
 	transform:rotate(-30deg);
 }
 
+#container.mypage .user_cpn>a:nth-child(2) p.icons:before{
+	transform:rotate(-30deg);
+}
+
+#container.mypage .user_cpn>a:nth-child(2) p:last-child{
+	margin-top: -6px;
+}
+
+#container.mypage.adiclub_mypage .user_cpn>a:last-child p.icons:before{
+    background: url("/images/adidas/ico_adicoin.png") center center no-repeat;
+    width: 19px;
+    height: 19px;
+    background-size: 14px auto;
+    transform:rotate(0deg);
+    -webkit-transform:rotate(0deg);
+}
+
 #container.mypage .order_process{
 	padding:20px 15px 15px;
 	border-bottom: 1px solid  #d7d7d7;
@@ -13367,8 +13449,15 @@ em.prd_speedy .tooltip-box:before{
 }
 
 #container.mypage .order_process .box{
-	display: -webkit-flex;
-	display: flex;
+    display: -webkit-flex;
+    display: flex;
+}
+
+#container.mypage.adiclub_mypage .order_process h3{
+    padding-bottom: 15px;
+    text-align: center;
+    font-size: 13px;
+    color:#555;
 }
 
 #container.mypage .order_process>p{
@@ -14230,7 +14319,6 @@ em.prd_speedy .tooltip-box:before{
 	color:#555;
 }
 
-
 #container.mypage .point_box{
 	padding: 15px 0;
 	margin: 0 15px 20px;
@@ -14244,6 +14332,18 @@ em.prd_speedy .tooltip-box:before{
 
 #container.mypage .point_box .mpoints{
 	margin-left: 5px;
+	vertical-align: middle;
+	font-size:21px;
+}
+
+#container.mypage .point_box .madicoin{
+    margin-left: 5px;
+	vertical-align: middle;
+	font-size:21px;
+}
+
+#container.mypage .point_box .madicoin_white{
+    margin-left: 5px;
 	vertical-align: middle;
 	font-size:21px;
 }
@@ -14277,6 +14377,12 @@ em.prd_speedy .tooltip-box:before{
 	text-align: right;
 	border-bottom: 1px solid  #ccc;
 }
+
+#container.mypage .point_tb.adicoin_tb tr th{
+    padding-right: 0px;
+    text-align: center;
+}
+
 #container.mypage .point_tb tr th:first-child{
 	width: 20%;
 	padding-right: 0;
@@ -14285,6 +14391,22 @@ em.prd_speedy .tooltip-box:before{
 
 #container.mypage .point_tb tr th:last-child{
 	padding-right:43px;
+}
+
+#container.mypage .point_tb.adicoin_tb tr th:last-child{
+	padding-right:0px;
+}
+
+#container.mypage .point_tb.adicoin_tb tr th:first-child{
+    width: 22%;
+}
+
+#container.mypage .point_tb.adicoin_tb tr th{
+    width:23%;
+}
+
+#container.mypage .point_tb.adicoin_tb tr th:last-child{
+    width:8%;
 }
 
 #container.mypage .point_tb td{
@@ -14328,6 +14450,18 @@ em.prd_speedy .tooltip-box:before{
 	font-size: 13px;
 	color:#757575;
 	letter-spacing: -.5px;
+}
+
+#container.mypage .point_tb.adicoin_tb td .pnt_box>*{
+	padding: 12px 0 0;
+	text-align: center;
+	font-size: 13px;
+	color:#757575;
+	letter-spacing: -.5px;
+}
+
+#container.mypage .point_tb.adicoin_tb td .pnt_box .rest_adicoin span{
+    color:#000;
 }
 
 #container.mypage .point_tb td .pnt_box>.minus,
@@ -14391,6 +14525,28 @@ em.prd_speedy .tooltip-box:before{
 	color:#505050;
 }
 
+#container.mypage .point_tb.adicoin_tb td .pnt_list li strong.plus_adicoin{
+    color:#ff0000;
+    font-family: 'NotosansKRBold';
+}
+
+#container.mypage .point_tb.adicoin_tb td .pnt_list li strong.plus_adicoin::before{
+    content: '+ ';
+}
+
+#container.mypage .point_tb.adicoin_tb td .pnt_list li strong.plus_adicoin::after{
+    content: 'C';
+}
+
+#container.mypage .point_tb.adicoin_tb td .pnt_list li strong.rest_adicoin{
+    color:#000;
+    font-family: 'NotosansKRBold';
+}
+
+#container.mypage .point_tb.adicoin_tb td .pnt_list li strong.rest_adicoin::after{
+    content: 'C';
+}
+
 #container.mypage .point_tb td .pnt_list li strong.point{
 	color: #000;
 	font-weight: bold;
@@ -14399,10 +14555,6 @@ em.prd_speedy .tooltip-box:before{
 #container.mypage .point_tb td .pnt_list li strong.point:before{
 	margin-right: 3px;
 	font-size:8px;
-}
-
-#container.mypage .mpg_orderbox.qna_result{
-
 }
 
 #container.mypage .mpg_orderbox.qna_result .box{
