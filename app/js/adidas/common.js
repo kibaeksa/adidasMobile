@@ -513,12 +513,15 @@ adiApp.getNodefromString = function (htmlString) {
 
 			if(prevScroll > 0 && sTop > 0){
 
-				if(prevScroll - sTop > 10){
+				if(sTop < document.getElementById('header').offsetHeight){
 					$(headerElem).removeClass('hide');
-				}else if(prevScroll - sTop < -10){
-					$(headerElem).addClass('hide');
+				}else{
+					if(prevScroll - sTop > 10){
+						$(headerElem).removeClass('hide');
+					}else if(prevScroll - sTop < -10){
+							$(headerElem).addClass('hide');
+					}
 				}
-				
 			}
 
 
@@ -526,6 +529,8 @@ adiApp.getNodefromString = function (htmlString) {
 			offsetBottom = headerElem.getBoundingClientRect().bottom;
 
 			prevScroll = sTop;
+
+			document.getElementById('container').style.paddingTop = document.getElementById('header').offsetHeight+'px';
 
 
 			// document.querySelector('#statusDiv').innerHTML = sTop +' -- '+' 헤더 클래스값 : '+$(headerElem).css('position');
@@ -570,5 +575,14 @@ adiApp.getNodefromString = function (htmlString) {
 			popElem.parentNode.removeChild(popElem);
 		});
 	};
+
+	window.initLoading = function(){
+		var htmlString = '<div class="loading-container"><div class="loader-icon"></div></div>';
+		$('body').append(htmlString);
+	}
+
+	window.removeLoading = function(){
+		$('.loading-container').remove();
+	}
 
 })(jQuery);

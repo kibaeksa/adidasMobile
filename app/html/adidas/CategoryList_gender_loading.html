@@ -17,6 +17,7 @@
 	<title>아디다스 모바일</title>
 </head>
 <body>
+
 	<div id="wrap">
 		<!-- 160523 filter 레이어 추가 -->
 		<div id="filter_layer">
@@ -1274,9 +1275,12 @@
 			});
 
 
-			// document.querySelector('#container').addEventListener('touchmove',function(event){
-				// event.preventDefault();
-			// });
+			/* 170530 로딩 추가 / 삭제 */
+			initLoading();
+			setTimeout(function(){
+				removeLoading();
+			},1000);
+
 
 		})(jQuery);
 
