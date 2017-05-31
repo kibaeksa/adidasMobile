@@ -210,12 +210,12 @@ html.no_srl{
 	font-family: 'adiPictoRegular';
     content: attr(data-icon);
     speak: none;
-    -webkit-font-feature-settings: "liga", "dlig";
-    -moz-font-feature-settings: "liga=1, dlig=1";
-    -moz-font-feature-settings: "liga", "dlig";
-    -ms-font-feature-settings: "liga", "dlig";
-    -o-font-feature-settings: "liga", "dlig";
-    font-feature-settings: "liga", "dlig";
+    -webkit-font-feature-settings: 'liga', 'dlig';
+    -moz-font-feature-settings: 'liga=1, dlig=1';
+    -moz-font-feature-settings: 'liga', 'dlig';
+    -ms-font-feature-settings: 'liga', 'dlig';
+    -o-font-feature-settings: 'liga', 'dlig';
+    font-feature-settings: 'liga', 'dlig';
     text-rendering: geometricPrecision;
     -webkit-font-smoothing: antialiased;
     vertical-align: middle;
@@ -233,12 +233,12 @@ html.no_srl{
 	font-family: 'adiPictoRegular';
     content: attr(data-icon);
     speak: none;
-    -webkit-font-feature-settings: "liga", "dlig";
-    -moz-font-feature-settings: "liga=1, dlig=1";
-    -moz-font-feature-settings: "liga", "dlig";
-    -ms-font-feature-settings: "liga", "dlig";
-    -o-font-feature-settings: "liga", "dlig";
-    font-feature-settings: "liga", "dlig";
+    -webkit-font-feature-settings: 'liga', 'dlig';
+    -moz-font-feature-settings: 'liga=1, dlig=1';
+    -moz-font-feature-settings: 'liga', 'dlig';
+    -ms-font-feature-settings: 'liga', 'dlig';
+    -o-font-feature-settings: 'liga', 'dlig';
+    font-feature-settings: 'liga', 'dlig';
     text-rendering: geometricPrecision;
     -webkit-font-smoothing: antialiased;
     vertical-align: middle;
@@ -4762,7 +4762,7 @@ div.layerpop_wrap#nomem_order_popup .inner .content .desc{
 }
 
 #container #card_benefit_pop .top h2{
-    font: 18px "NotoSansKR";
+    font: 18px 'NotoSansKR';
     padding: 10px 15px
 }
 
@@ -13371,12 +13371,16 @@ em.prd_speedy .tooltip-box:before{
 	text-align: center;
 }
 
-#container.mypage.adiclub_mypage .user_cpn>a{
-    width:33.33%;
+#container.mypage .user_cpn.col3>a{
+    width: 33.333333%;
 }
 
 #container.mypage .user_cpn>a:last-child{
 	border-right-width: 0;
+}
+
+#container.mypage .user_cpn.col3>a:last-child{
+    width: 33.333334%;
 }
 
 #container.mypage .user_cpn>a.pre_service span{
@@ -13414,22 +13418,21 @@ em.prd_speedy .tooltip-box:before{
 	padding-left:22px;
 	display: inline-block;
 	margin-bottom:10px;
-	font-size: 14px;
+	font-size: 1.1rem;
 	color: #555;
 }
 
-#container.mypage .user_cpn>a p  strong{
+#container.mypage .user_cpn>a p:last-child{
+    margin-top: 0.3rem;
+}
+
+#container.mypage .user_cpn>a p strong{
 	color: #0286cd;
 	font-size: 19px;
 }
 
-#container.mypage .user_cpn>a:last-child p:first-child{
-	/*margin-bottom: 0;*/
-}
-
-
-#container.mypage .user_cpn>a:last-child p:last-child{
-	margin-top: -3px;
+#container.mypage .user_cpn>a:first-child p:last-child{
+    margin-top: 0.6rem;
 }
 
 #container.mypage .user_cpn>a:last-child p:last-child strong{
@@ -13452,25 +13455,16 @@ em.prd_speedy .tooltip-box:before{
 	transform:rotate(15deg);
 }
 
-#container.mypage .user_cpn>a:last-child p.icons:before{
-	transform:rotate(-30deg);
-}
-
 #container.mypage .user_cpn>a:nth-child(2) p.icons:before{
 	transform:rotate(-30deg);
 }
 
-#container.mypage .user_cpn>a:nth-child(2) p:last-child{
-	margin-top: -6px;
-}
-
-#container.mypage.adiclub_mypage .user_cpn>a:last-child p.icons:before{
-    background: url("/images/adidas/ico_adicoin.png") center center no-repeat;
+#container.mypage .user_cpn.col3>a:last-child p.icons::before{
+    background: url('/images/adidas/ico_adicoin.png') center center no-repeat;
+    top: -1px;
     width: 19px;
     height: 19px;
     background-size: 14px auto;
-    transform:rotate(0deg);
-    -webkit-transform:rotate(0deg);
 }
 
 #container.mypage .order_process{
@@ -13484,7 +13478,7 @@ em.prd_speedy .tooltip-box:before{
     display: flex;
 }
 
-#container.mypage.adiclub_mypage .order_process h3{
+#container.mypage .order_process h3{
     padding-bottom: 15px;
     text-align: center;
     font-size: 13px;
@@ -14777,6 +14771,70 @@ em.prd_speedy .tooltip-box:before{
 	color: #0286cd;
 }
 
+#container.mypage .reservation_list{
+    padding: 0 15px;
+}
+
+#container.mypage .reservation_list table{
+    width: 100%;
+    border-top: 2px solid  #000;
+    border-bottom: 2px solid  #000;
+}
+
+#container.mypage .reservation_list table th{
+    width: 25%;
+    padding: 1rem 0;
+    border-bottom: 1px solid  #ccc;
+    color: #000;
+    font-size:1rem;
+}
+
+#container.mypage .reservation_list table td{
+    padding: 1rem;
+    border-bottom: 1px solid  #ccc;
+    text-align: center;
+    color: #757575;
+    font-size: 0.9rem;
+    vertical-align: middle;
+}
+
+#container.mypage .reservation_list table tr:last-child td{
+    border-bottom-width: 0;
+}
+
+#container.mypage .reservation_list table td.tit{
+    padding: 1rem 0px;
+}
+
+#container.mypage .reservation_list table td.tit div{
+    font-size: 1.1rem;
+    line-height: 1.4rem;
+    display: -webkit-box;
+	text-overflow: ellipsis;
+	white-space:normal;
+	overflow: hidden;
+	-webkit-line-clamp:3;
+	-webkit-box-orient: vertical;
+}
+
+#container.mypage .reservation_list table td.adihs{
+    font-size: 1rem;
+}
+
+#container.mypage .reservation_list table td .s_button{
+    height: 35px;
+    line-height: 35px;
+    margin-bottom: 5px;
+}
+
+#container.mypage .reservation_list table td .s_button:last-child{
+    margin-bottom: 0;
+}
+
+#container.mypage .reservation_list table td.tit{
+    text-align: left;
+}
+
 #container .promo_list{
 	border-top: 2px solid  #000;
 }
@@ -14814,7 +14872,7 @@ em.prd_speedy .tooltip-box:before{
 }
 
 #container .adiclub.renewal_170518>.top{
-    background:url("/images/adidas/adiclub_renewal_170518/temp_adiclub_bnn.jpg") no-repeat;
+    background:url('/images/adidas/adiclub_renewal_170518/temp_adiclub_bnn.jpg') no-repeat;
     background-size:100% 100%;
 }
 
@@ -14991,12 +15049,12 @@ em.prd_speedy .tooltip-box:before{
 
 
 #container .adiclub.renewal_170518>.top .ctgr .culture a{
-    background: url("/images/adidas/adiclub_renewal_170518/adiclub_culture.png") no-repeat;
+    background: url('/images/adidas/adiclub_renewal_170518/adiclub_culture.png') no-repeat;
     background-size:100%;
 }
 
 #container .adiclub.renewal_170518 .top .ctgr div.sports a{
-    background: url("/images/adidas/adiclub_renewal_170518/adiclub_sports.png") no-repeat;
+    background: url('/images/adidas/adiclub_renewal_170518/adiclub_sports.png') no-repeat;
     background-size:100%;
 }
 
@@ -15405,7 +15463,7 @@ em.prd_speedy .tooltip-box:before{
 #container .adiclub .club_benefit>.box.club1 .inner .advantages>.box .graphic>div em.coupon{
     width: 36px;
     height: 24px;
-    background: url("/images/adidas/ico_club_coupon.png");
+    background: url('/images/adidas/ico_club_coupon.png');
     background-repeat: no-repeat;
     background-size: 100% auto;
     display: inline-block;
@@ -15971,12 +16029,12 @@ em.prd_speedy .tooltip-box:before{
 }
 
 #container .adiclub.adiclubsports>.top{
-    background:url("/images/adidas/adiclub_renewal_170518/temp_adiclubsports_bnn.jpg") no-repeat;
+    background:url('/images/adidas/adiclub_renewal_170518/temp_adiclubsports_bnn.jpg') no-repeat;
     background-size: 100% 100%;
 }
 
 #container .adiclub.adiclubculture>.top{
-    background:url("/images/adidas/adiclub_renewal_170518/temp_adiclubculture_bnn.jpg") no-repeat;
+    background:url('/images/adidas/adiclub_renewal_170518/temp_adiclubculture_bnn.jpg') no-repeat;
     background-size: 100% 100%;
 }
 
@@ -15989,7 +16047,7 @@ em.prd_speedy .tooltip-box:before{
 }
 
 #container .adiclub.adiclubsports .club_benefit{
-    background:url("/images/adidas/adiclub_renewal_170518/temp_adiclubsports_list_bg.jpg") no-repeat;
+    background:url('/images/adidas/adiclub_renewal_170518/temp_adiclubsports_list_bg.jpg') no-repeat;
     background-size: 100% 100%;
 }
 
@@ -16102,7 +16160,7 @@ em.prd_speedy .tooltip-box:before{
 
 #container .adiclub.adiclubsports .club_benefit .club_benefit_list ul li .graphic .img.runbase_icon{
     display: inline-block;
-    background: url("/images/adidas/adiclub_renewal_170518/temp_adiclubsports_runbase_icon.png");
+    background: url('/images/adidas/adiclub_renewal_170518/temp_adiclubsports_runbase_icon.png');
     background-size:100% 100%;
 }
 
@@ -16126,7 +16184,7 @@ em.prd_speedy .tooltip-box:before{
 
 #container .adiclub.adiclubsports .adiclubsports_sns_bnn{
     padding: 40px 0;
-    background: url("/images/adidas/adiclub_renewal_170518/temp_snstop_bnn.jpg") no-repeat;
+    background: url('/images/adidas/adiclub_renewal_170518/temp_snstop_bnn.jpg') no-repeat;
     background-size: 100% 100%;
     text-align: center;
 }
@@ -16299,7 +16357,7 @@ em.prd_speedy .tooltip-box:before{
 	padding-bottom:10px;
 	border-bottom: 3px solid  #000;
 	color: #000;
-    font:16px/16px "NotoSansKR";
+    font:16px/16px 'NotoSansKR';
 }
 
 #container .cs_center .cs_list dt>a{
@@ -16307,7 +16365,7 @@ em.prd_speedy .tooltip-box:before{
 	bottom:7px;
 	right:0;
 	color: #000;
-	font:12px/12px "NotoSansKRLight";
+	font:12px/12px 'NotoSansKRLight';
 	vertical-align: middle;
 }
 
@@ -16428,7 +16486,7 @@ em.prd_speedy .tooltip-box:before{
 #container .cs_center>h2{
 	padding: 0 15px;
 	color: #000;
-    font:16px/16px "NotoSansKR";
+    font:16px/16px 'NotoSansKR';
 }
 
 #container .cs_center .faq_sch{
@@ -16536,7 +16594,7 @@ em.prd_speedy .tooltip-box:before{
 	border-width: 0;
     box-sizing: border-box;
     display: block;
-    font: 13px "NotoSansKRRegular";
+    font: 13px 'NotoSansKRRegular'';
     height: 45px;
     padding: 0 0 0 15px;
     width: 100%;
@@ -18013,12 +18071,12 @@ em.prd_speedy .tooltip-box:before{
 	content:'\E600';
 	font-family: 'adiPictoRegular';
     speak: none;
-    -webkit-font-feature-settings: "liga", "dlig";
-    -moz-font-feature-settings: "liga=1, dlig=1";
-    -moz-font-feature-settings: "liga", "dlig";
-    -ms-font-feature-settings: "liga", "dlig";
-    -o-font-feature-settings: "liga", "dlig";
-    font-feature-settings: "liga", "dlig";
+    -webkit-font-feature-settings: 'liga', 'dlig';
+    -moz-font-feature-settings: 'liga=1, dlig=1';
+    -moz-font-feature-settings: 'liga', 'dlig';
+    -ms-font-feature-settings: 'liga', 'dlig';
+    -o-font-feature-settings: 'liga', 'dlig';
+    font-feature-settings: 'liga', 'dlig';
     text-rendering: geometricPrecision;
     -webkit-font-smoothing: antialiased;
     vertical-align: middle;
