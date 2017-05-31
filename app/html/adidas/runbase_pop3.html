@@ -814,36 +814,36 @@
 
 			<script type="text/javascript">
 
-				$('.reserve_button dd>a').bind('click',function(){
+				(function($){
 
-						if($(this).hasClass('close') || $(this).hasClass('offline')){
-							return;
-						}else{
-							if($(this).hasClass('selected')){
-								$(this).removeClass('selected');
-							}else{
-								$('.reserve_button dd>a').removeClass('selected');
-								$(this).addClass('selected');
-							}
+					(function(){
+						function initRunbaseMenu(){
+							document.querySelector('.adisports_gnb').className += ' open';
 						}
-				});
 
-				(function(){
-					function initRunbaseMenu(){
-						document.querySelector('.runbase_gnb').className += ' open';
-					}
+						function removeRunbaseMenu(){
+							document.querySelector('.adisports_gnb').className = 'adisports_gnb';
+						}
 
-					function removeRunbaseMenu(){
-						document.querySelector('.runbase_gnb').className = 'runbase_gnb';
-					}
+						document.querySelector('.runbase .header_adisports .menu>a').addEventListener('click',function(){
+							initRunbaseMenu();
 
-					document.querySelector('.runbase .header .runbase_menu>a').addEventListener('click',function(){
-						initRunbaseMenu();
+							document.querySelector('.adisports_gnb .close_x_btn').addEventListener('click',removeRunbaseMenu);
+							document.querySelector('.adisports_gnb .overlay').addEventListener('click',removeRunbaseMenu);
+						});
+					})();
 
-						document.querySelector('.runbase_gnb .close_x_btn').addEventListener('click',removeRunbaseMenu);
-						document.querySelector('.runbase_gnb .overlay').addEventListener('click',removeRunbaseMenu);
+					$(document).ready(function(){
+						$('.adisports_gnb li').bind('touchstart',function(){
+							$(this).addClass('hover');
+						});
+
+						$('.adisports_gnb li').bind('touchend',function(){
+							$(this).removeClass('hover');
+						});
 					});
-				})();
+
+				})(jQuery);
 
 			</script>
 

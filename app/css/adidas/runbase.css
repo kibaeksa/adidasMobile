@@ -113,11 +113,14 @@
         #container > .runbase .runbase_reservation_list li .date .num {
           width: 3.5rem;
           height: 3.5rem;
+          padding-top: 0.2rem;
           margin-bottom: 0.5rem;
           border-radius: 50%;
           background: #ee265c;
           font-size: 1.9rem;
-          line-height: 3.5rem; }
+          line-height: 3.5rem;
+          box-sizing: border-box;
+          -webkit-box-sizing: border-box; }
       #container > .runbase .runbase_reservation_list li .cont {
         width: 100%;
         padding-left: 4.7rem;
@@ -258,7 +261,7 @@
         padding: 1rem 0.5rem;
         font-size: 1rem;
         color: #fff;
-        border: 1px solid #008675; }
+        border: 1px solid #444; }
   #container > .runbase .masthead {
     width: 100%;
     padding: 1rem 1rem 95%;
@@ -351,7 +354,7 @@
           margin-bottom: 1rem;
           color: #fff;
           text-align: center;
-          font: 0.9rem/1.7rem 'NotoSansKRRegular'; }
+          font: 1.05rem/1.7rem 'NotoSansKRRegular'; }
           #container > .runbase > .section#section1 .about_runbase .desc strong {
             display: inline-block;
             position: relative; }
@@ -449,8 +452,7 @@
             #container > .runbase > .section#section1 .about_runbase .description-box dl.last {
               margin-bottom: 0; }
     #container > .runbase > .section#section2 {
-      overflow: hidden;
-      background-image: url("/images/adidas/club/runbase-bg-section2.jpg"); }
+      overflow: hidden; }
       #container > .runbase > .section#section2 .select_wrapper {
         overflow: hidden;
         padding: 1.2rem 1.2rem 0; }
@@ -483,7 +485,9 @@
               font-size: 1rem;
               margin-left: 5px; }
     #container > .runbase > .section#section3 {
-      background-image: url("/images/adidas/club/runbase-bg-section3.jpg"); }
+      background-image: url("/images/adidas/club/runbase-bg-section3.jpg");
+      background-size: cover;
+      -webkit-background-size: cover; }
       #container > .runbase > .section#section3 .trainers_slider_wrap {
         position: relative;
         overflow: hidden; }
@@ -532,7 +536,7 @@
           right: 0; }
         #container > .runbase > .section#section3 .trainers_slider_wrap .indicator {
           position: absolute;
-          bottom: 1rem;
+          bottom: 1.7rem;
           left: 0; }
     #container > .runbase > .section#section4 {
       background-image: url("/images/adidas/club/runbase-bg-section4.jpg"); }
@@ -855,18 +859,26 @@
         color: #fff;
         text-align: center; }
       #container > .runbase .reserve_details .reserve_button dd {
+        width: 100%;
         position: relative;
-        padding: 0 1.2rem;
-        display: -webkit-flex;
-        display: -ms-flex;
-        display: flex; }
-        #container > .runbase .reserve_details .reserve_button dd a {
+        padding: 0 0.6rem;
+        overflow: hidden;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box; }
+        #container > .runbase .reserve_details .reserve_button dd div {
           width: 25%;
-          padding-bottom: 20%;
+          float: left;
+          padding: 0.6rem;
+          box-sizing: border-box;
+          -webkit-box-sizing: border-box; }
+        #container > .runbase .reserve_details .reserve_button dd a {
+          width: 100%;
+          padding-bottom: 100%;
           position: relative;
           display: block;
-          margin: 0 0.6rem;
-          border: 2px solid  #ee265c; }
+          border: 2px solid  #ee265c;
+          box-sizing: border-box;
+          -webkit-box-sizing: border-box; }
           #container > .runbase .reserve_details .reserve_button dd a p {
             width: 100%;
             position: absolute;
@@ -888,10 +900,6 @@
               -moz-transform: translate3d(0, 30%, 0);
               -o-transform: translate3d(0, 30%, 0);
               -ms-transform: translate3d(0, 30%, 0); }
-          #container > .runbase .reserve_details .reserve_button dd a:first-child {
-            margin-left: 0; }
-          #container > .runbase .reserve_details .reserve_button dd a:last-child {
-            margin-right: 0; }
           #container > .runbase .reserve_details .reserve_button dd a.selected {
             background: #ee265c; }
             #container > .runbase .reserve_details .reserve_button dd a.selected p {
@@ -939,30 +947,36 @@
             float: left; }
             #container > .runbase .reserve_details .description_class_wrap .description_class ul li dl {
               width: 100%;
-              display: -webkit-flex;
-              display: -ms-flex;
-              display: flex; }
+              text-align: left; }
               #container > .runbase .reserve_details .description_class_wrap .description_class ul li dl > * {
+                display: inline-block;
                 letter-spacing: 0;
                 align-items: center;
                 -webkit-align-items: center; }
               #container > .runbase .reserve_details .description_class_wrap .description_class ul li dl dt {
+                vertical-align: top;
+                max-width: 25%;
                 position: relative;
-                min-width: 30px;
-                padding-right: 5px;
-                margin-right: 5px;
-                font-size: 1rem; }
+                font-size: 1rem;
+                padding-right: 0.7rem;
+                margin-right: 0.5rem; }
                 #container > .runbase .reserve_details .description_class_wrap .description_class ul li dl dt::after {
-                  display: block;
+                  display: inline-block;
                   width: 1px;
                   height: 8px;
                   background: #fff;
                   position: absolute;
                   top: 3px;
-                  right: 3px; }
+                  right: 0; }
               #container > .runbase .reserve_details .description_class_wrap .description_class ul li dl dd {
-                width: 100%;
-                font-size: 1rem; }
+                max-width: 70%;
+                display: inline-block;
+                font-size: 1rem;
+                word-break: break-all; }
+          #container > .runbase .reserve_details .description_class_wrap .description_class ul.row1 li {
+            width: 100%; }
+            #container > .runbase .reserve_details .description_class_wrap .description_class ul.row1 li:last-child {
+              margin-bottom: 0; }
         #container > .runbase .reserve_details .description_class_wrap .description_class .desc {
           padding: 1rem 0;
           border-top: 1px dotted  #334846;
@@ -1122,7 +1136,8 @@
         #container > .runbase .runbase_courses .courses_wrapper .course_content dl:last-child {
           margin-bottom: 0; }
   #container > .runbase .go_main {
-    padding-top: 1.2rem;
+    padding-top: 1.6rem;
+    padding-bottom: 0.4rem;
     text-align: right; }
     #container > .runbase .go_main a {
       display: inline-block;
@@ -1312,7 +1327,7 @@
               -ms-transform: translate3d(0, 60%, 0); }
         .runbase_gnb .gnb_menu ul li:last-child {
           border-bottom-width: 0; }
-        .runbase_gnb .gnb_menu ul li.on a {
+        .runbase_gnb .gnb_menu ul li.on a, .runbase_gnb .gnb_menu ul li.hover a {
           background: #e0004d; }
 
 /* ADISPORTS Globa navigation */
@@ -1383,14 +1398,14 @@
             -o-transform: translate3d(0, -50%, 0);
             -ms-transform: translate3d(0, -50%, 0); }
           .adisports_gnb .gnb_menu ul li a .tit {
-            font-size: 1.3rem;
-            font-family: 'NotoSansKRMedium'; }
+            font-size: 1.45rem;
+            font-family: 'NotoSansKRBold'; }
             .adisports_gnb .gnb_menu ul li a .tit .adipro-bk {
               font-size: 1.8rem;
               vertical-align: middle; }
         .adisports_gnb .gnb_menu ul li:last-child {
           border-bottom-width: 0; }
-        .adisports_gnb .gnb_menu ul li.on a {
+        .adisports_gnb .gnb_menu ul li.on a, .adisports_gnb .gnb_menu ul li.hover a {
           background: #fff; }
-          .adisports_gnb .gnb_menu ul li.on a > * {
+          .adisports_gnb .gnb_menu ul li.on a > *, .adisports_gnb .gnb_menu ul li.hover a > * {
             color: #000; }

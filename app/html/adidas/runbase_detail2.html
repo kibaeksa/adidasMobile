@@ -784,29 +784,43 @@
 						</div>
 					</div>
 
-					<div class="button_area" style="padding-bottom: 1.2rem;">
+					<div class="button_area" style="padding-bottom: 2.4rem;">
 					    <div><a href="#">예약신청<span class="icons" data-icon=""></span></a></div>
 					</div>
 				</div>
             </div>
 
 			<script type="text/javascript">
-				(function(){
-					function initRunbaseMenu(){
-						document.querySelector('.adisports_gnb').className += ' open';
-					}
+				(function($){
 
-					function removeRunbaseMenu(){
-						document.querySelector('.adisports_gnb').className = 'adisports_gnb';
-					}
+					(function(){
+						function initRunbaseMenu(){
+							document.querySelector('.adisports_gnb').className += ' open';
+						}
 
-					document.querySelector('.runbase .header_adisports .menu>a').addEventListener('click',function(){
-						initRunbaseMenu();
+						function removeRunbaseMenu(){
+							document.querySelector('.adisports_gnb').className = 'adisports_gnb';
+						}
 
-						document.querySelector('.adisports_gnb .close_x_btn').addEventListener('click',removeRunbaseMenu);
-						document.querySelector('.adisports_gnb .overlay').addEventListener('click',removeRunbaseMenu);
+						document.querySelector('.runbase .header_adisports .menu>a').addEventListener('click',function(){
+							initRunbaseMenu();
+
+							document.querySelector('.adisports_gnb .close_x_btn').addEventListener('click',removeRunbaseMenu);
+							document.querySelector('.adisports_gnb .overlay').addEventListener('click',removeRunbaseMenu);
+						});
+					})();
+
+					$(document).ready(function(){
+						$('.adisports_gnb li').bind('touchstart',function(){
+							$(this).addClass('hover');
+						});
+
+						$('.adisports_gnb li').bind('touchend',function(){
+							$(this).removeClass('hover');
+						});
 					});
-				})();
+
+				})(jQuery);
 			</script>
 
 			<div class="go_top">

@@ -719,22 +719,60 @@
 					<dl class="reserve_button">
 						<dt>회차안내</dt>
 						<dd>
-							<a href="javascript:void(0)" class="offline">
-								<p class="time adihs">13:00</p>
-								<p class="status">현장 예약</p>
-							</a>
-							<a href="javascript:void(0)" class="close">
-								<p class="time adihs">16:00</p>
-								<p class="status">예약 완료</p>
-							</a>
-							<a href="javascript:void(0)">
-								<p class="time adihs">18:00</p>
-								<p class="status">예약 가능</p>
-							</a>
-							<a href="javascript:void(0)" class="selected">
-								<p class="time adihs">20:00</p>
-								<p class="status">예약 가능</p>
-							</a>
+							<div>
+								<a href="javascript:void(0)" class="offline">
+									<p class="time adihs">13:00</p>
+									<p class="status">현장 예약</p>
+								</a>
+							</div>
+							<div>
+								<a href="javascript:void(0)" class="close">
+									<p class="time adihs">16:00</p>
+									<p class="status">예약 완료</p>
+								</a>
+							</div>
+							<div>
+								<a href="javascript:void(0)">
+									<p class="time adihs">18:00</p>
+									<p class="status">예약 가능</p>
+								</a>
+							</div>
+							<div>
+								<a href="javascript:void(0)" class="selected">
+									<p class="time adihs">20:00</p>
+									<p class="status">예약 가능</p>
+								</a>
+							</div>
+							<div>
+								<a href="javascript:void(0)">
+									<p class="time adihs">18:00</p>
+									<p class="status">예약 가능</p>
+								</a>
+							</div>
+							<div>
+								<a href="javascript:void(0)">
+									<p class="time adihs">18:00</p>
+									<p class="status">예약 가능</p>
+								</a>
+							</div>
+							<div>
+								<a href="javascript:void(0)">
+									<p class="time adihs">18:00</p>
+									<p class="status">예약 가능</p>
+								</a>
+							</div>
+							<div>
+								<a href="javascript:void(0)">
+									<p class="time adihs">18:00</p>
+									<p class="status">예약 가능</p>
+								</a>
+							</div>
+							<div>
+								<a href="javascript:void(0)">
+									<p class="time adihs">18:00</p>
+									<p class="status">예약 가능</p>
+								</a>
+							</div>
 						</dd>
 					</dl>
 
@@ -760,24 +798,12 @@
 								</li>
 								<li>
 									<dl>
-										<dt>강사</dt>
-										<dd>강문희</dd>
-									</dl>
-								</li>
-								<li>
-									<dl>
-										<dt>거리</dt>
-										<dd>10km</dd>
-									</dl>
-								</li>
-								<li>
-									<dl>
 										<dt>장소</dt>
 										<dd>@RUNBASESEOUL</dd>
 									</dl>
 								</li>
 							</ul>
-							<ul class="clearfix">
+							<ul class="clearfix row1">
 								<li>
 									<dl>
 										<dt>텍스트입력1</dt>
@@ -808,37 +834,49 @@
             </div>
 
 			<script type="text/javascript">
+				(function($){
+					$('.reserve_button dd>div>a').bind('click',function(){
 
-				$('.reserve_button dd>a').bind('click',function(){
-
-						if($(this).hasClass('close') || $(this).hasClass('offline')){
-							return;
-						}else{
-							if($(this).hasClass('selected')){
-								$(this).removeClass('selected');
+							if($(this).hasClass('close') || $(this).hasClass('offline')){
+								return;
 							}else{
-								$('.reserve_button dd>a').removeClass('selected');
-								$(this).addClass('selected');
+								if($(this).hasClass('selected')){
+									$(this).removeClass('selected');
+								}else{
+									$('.reserve_button dd>div>a').removeClass('selected');
+									$(this).addClass('selected');
+								}
 							}
-						}
-				});
-
-				(function(){
-					function initRunbaseMenu(){
-						document.querySelector('.adisports_gnb').className += ' open';
-					}
-
-					function removeRunbaseMenu(){
-						document.querySelector('.adisports_gnb').className = 'adisports_gnb';
-					}
-
-					document.querySelector('.runbase .header_adisports .menu>a').addEventListener('click',function(){
-						initRunbaseMenu();
-
-						document.querySelector('.adisports_gnb .close_x_btn').addEventListener('click',removeRunbaseMenu);
-						document.querySelector('.adisports_gnb .overlay').addEventListener('click',removeRunbaseMenu);
 					});
-				})();
+
+					(function(){
+						function initRunbaseMenu(){
+							document.querySelector('.adisports_gnb').className += ' open';
+						}
+
+						function removeRunbaseMenu(){
+							document.querySelector('.adisports_gnb').className = 'adisports_gnb';
+						}
+
+						document.querySelector('.runbase .header_adisports .menu>a').addEventListener('click',function(){
+							initRunbaseMenu();
+
+							document.querySelector('.adisports_gnb .close_x_btn').addEventListener('click',removeRunbaseMenu);
+							document.querySelector('.adisports_gnb .overlay').addEventListener('click',removeRunbaseMenu);
+						});
+					})();
+
+					$(document).ready(function(){
+						$('.adisports_gnb li').bind('touchstart',function(){
+							$(this).addClass('hover');
+						});
+
+						$('.adisports_gnb li').bind('touchend',function(){
+							$(this).removeClass('hover');
+						});
+					});
+
+				})(jQuery);
 
 			</script>
 
