@@ -1339,36 +1339,39 @@ $width600:600px;
 
 						dl{
 							width: 100%;
-							display: -webkit-flex;
-							display: -ms-flex;
-							display: flex;
+							text-align: left;
 
 							>*{
+								display: inline-block;
 								letter-spacing: 0;
 								align-items: center;
 								-webkit-align-items: center;
 							}
 							dt{
+								vertical-align: top;
+								max-width: 25%;
 								position: relative;
-								min-width: 30px;
-								padding-right: 5px;
-								margin-right: 5px;
 								font-size: 1rem;
+								padding-right: 0.7rem;
+								margin-right: 0.5rem;
 
 								&::after{
 									@extend .pseudo-element;
-									display: block;
+									display: inline-block;
 									width: 1px;
 									height: 8px;
 									background: #fff;
+									// margin: 0 0.5rem 0 0.8rem;
 									position: absolute;
 									top: 3px;
-									right: 3px;
+									right: 0;
 								}
 							}
 							dd{
-								width: 100%;
+								max-width: 70%;
+								display: inline-block;
 								font-size: 1rem;
+								word-break:break-all
 							}
 						}
 					}
@@ -1376,13 +1379,6 @@ $width600:600px;
 					&.row1{
 						li{
 							width: 100%;
-							dl{
-								dt{
-									min-width:60px;
-									max-width: 100px;
-									padding-right: 8px;
-								}
-							}
 
 							&:last-child{
 								margin-bottom: 0;
