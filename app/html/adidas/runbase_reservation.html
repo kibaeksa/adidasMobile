@@ -1150,6 +1150,16 @@
 					$(this).parent().removeClass('active');
 				});
 
+				$(document).ready(function(){
+					$('.adisports_gnb li').bind('touchstart',function(){
+						$(this).addClass('hover');
+					});
+
+					$('.adisports_gnb li').bind('touchend',function(){
+						$(this).removeClass('hover');
+					});
+				});
+
 			</script>
 
 			<div class="go_top">
