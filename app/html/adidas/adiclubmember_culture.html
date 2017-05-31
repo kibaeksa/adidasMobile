@@ -602,7 +602,7 @@
 
 			</div>
 
-            <div class="layerpopup-wrapper">
+            <div class="layerpopup-wrapper" style="">
                 <div class="overlay"></div>
                 <div class="layerpopup layerpopup-adiclub">
                     <div class="header">
@@ -660,6 +660,11 @@
 	<script type="text/javascript">
 		(function($){
 			$(document).ready(function() {
+
+                $('.layerpopup-wrapper .close_x_btn').click(function(){
+                    $(this).parent('.header').parent('.layerpopup-adiclub').parent('.layerpopup-wrapper').css({'display':'none'})
+                });
+
 
 				$('.toolbox>ul>li').bind('click',function(){
 

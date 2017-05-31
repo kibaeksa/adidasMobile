@@ -475,7 +475,7 @@
                                 <li>
                                     <div class="box">
                                         <div class="graphic">
-                                            <div class="img"><span class="icons aft" data-icon=""></span></div>
+                                            <div class="img"><span class="icons aft" data-icon=""></span></div>
                                         </div>
                                         <dl>
                                             <dt><p class="title">러닝 제품 구매 </p></dt>
@@ -536,7 +536,7 @@
 			</div>
 
 
-            <div class="layerpopup-wrapper">
+            <div class="layerpopup-wrapper" >
 				<div class="overlay"></div>
 				<div class="layerpopup layerpopup-adiclub">
 					<div class="header">
@@ -559,6 +559,7 @@
 				<a href="#">BACK TO TOP</a>
 			</div>
 		</div>
+
 		<!-- //container product_list -->
 
 		<div id="footer">
@@ -593,7 +594,12 @@
 	<script type="text/javascript" src="/js/adidas/common.js"></script>
 	<script type="text/javascript">
 		(function($){
+
 			$(document).ready(function() {
+
+                $('.layerpopup-wrapper .close_x_btn').click(function(){
+                    $(this).parent('.header').parent('.layerpopup-adiclub').parent('.layerpopup-wrapper').css({'display':'none'})
+                });
 
 				$('.toolbox>ul>li').bind('click',function(){
 
