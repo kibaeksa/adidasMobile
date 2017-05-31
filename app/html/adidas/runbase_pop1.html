@@ -800,7 +800,7 @@
 					</div>
 					<div class="contents">
 						<h3>GoodAction by Sean at 런베이스서울. 모두가 함께 달리는 러닝 프로그램</h3>
-						<p class="desc">예약이 완료됐습니다.</p>
+						<p class="desc">예약이 완료되었습니다.</p>
 						<div class="data_form">
 							<table>
 								<tr>
@@ -836,37 +836,36 @@
 
 			<script type="text/javascript">
 
-				$('.reserve_button dd>a').bind('click',function(){
+				(function($){
 
-						if($(this).hasClass('close') || $(this).hasClass('offline')){
-							return;
-						}else{
-							if($(this).hasClass('selected')){
-								$(this).removeClass('selected');
-							}else{
-								$('.reserve_button dd>a').removeClass('selected');
-								$(this).addClass('selected');
-							}
+					(function(){
+						function initRunbaseMenu(){
+							document.querySelector('.adisports_gnb').className += ' open';
 						}
-				});
 
-				(function(){
-					function initRunbaseMenu(){
-						document.querySelector('.runbase_gnb').className += ' open';
-					}
+						function removeRunbaseMenu(){
+							document.querySelector('.adisports_gnb').className = 'adisports_gnb';
+						}
 
-					function removeRunbaseMenu(){
-						document.querySelector('.runbase_gnb').className = 'runbase_gnb';
-					}
+						document.querySelector('.runbase .header_adisports .menu>a').addEventListener('click',function(){
+							initRunbaseMenu();
 
-					document.querySelector('.runbase .header .runbase_menu>a').addEventListener('click',function(){
-						initRunbaseMenu();
+							document.querySelector('.adisports_gnb .close_x_btn').addEventListener('click',removeRunbaseMenu);
+							document.querySelector('.adisports_gnb .overlay').addEventListener('click',removeRunbaseMenu);
+						});
+					})();
 
-						document.querySelector('.runbase_gnb .close_x_btn').addEventListener('click',removeRunbaseMenu);
-						document.querySelector('.runbase_gnb .overlay').addEventListener('click',removeRunbaseMenu);
+					$(document).ready(function(){
+						$('.adisports_gnb li').bind('touchstart',function(){
+							$(this).addClass('hover');
+						});
+
+						$('.adisports_gnb li').bind('touchend',function(){
+							$(this).removeClass('hover');
+						});
 					});
-				})();
 
+				})(jQuery);
 			</script>
 
 			<div class="go_top">
