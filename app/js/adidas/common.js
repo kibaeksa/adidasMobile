@@ -511,24 +511,26 @@ adiApp.getNodefromString = function (htmlString) {
 			var sTop = document.documentElement.scrollTop || document.body.scrollTop;
 			offsetTop = 60 + topBnnH;
 
+			if(prevScroll > 0 && sTop > 0){
 
-
-
-
-				// $(headerElem).removeClass('unfixed');
-				// containerElem.style.marginTop = '61px';
-				offsetTop = 60 + topBnnH;
-
-				if(prevScroll - sTop > 10){
+				if(sTop < document.getElementById('header').offsetHeight){
 					$(headerElem).removeClass('hide');
-				}else if(prevScroll - sTop < -10){
-					$(headerElem).addClass('hide');
+				}else{
+					if(prevScroll - sTop > 10){
+						$(headerElem).removeClass('hide');
+					}else if(prevScroll - sTop < -10){
+							$(headerElem).addClass('hide');
+					}
 				}
+			}
 
-				offsetTop = headerElem.getBoundingClientRect().top;
-				offsetBottom = headerElem.getBoundingClientRect().bottom;
 
-				prevScroll = sTop;
+			offsetTop = headerElem.getBoundingClientRect().top;
+			offsetBottom = headerElem.getBoundingClientRect().bottom;
+
+			prevScroll = sTop;
+
+			document.getElementById('container').style.paddingTop = document.getElementById('header').offsetHeight+'px';
 
 
 			// document.querySelector('#statusDiv').innerHTML = sTop +' -- '+' 헤더 클래스값 : '+$(headerElem).css('position');
@@ -574,6 +576,13 @@ adiApp.getNodefromString = function (htmlString) {
 		});
 	};
 
+	window.initLoading = function(){
+		var htmlString = '<div class="loading-container"><div class="loader-icon"></div></div>';
+		$('body').append(htmlString);
+	}
 
+	window.removeLoading = function(){
+		$('.loading-container').remove();
+	}
 
 })(jQuery);

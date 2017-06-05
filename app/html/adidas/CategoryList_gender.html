@@ -242,7 +242,13 @@
 		</div>
 		<!-- //160523 filter 레이어 추가 -->
 
-		<div id="header" style="position: relative;">
+		<div id="header">
+			<!-- <div id="topbnn_mycpn" style="width: 100%; position: relative; overflow: hidden;" class="top_bnn">
+		        <img src="http://imagem.adidas.co.kr/images/adidas/bg_topbnn_coupon_140325.jpg?v=160429" alt="" style="width:100%;">
+		        <a href="javascript:void(0)" class="top_bnn_close" style="overflow:hidden;display:block;height: 71%;left: 87%;position: absolute;text-indent: -5000px;top: 12%;width: 11%;z-index:10;">닫기</a>
+		        <a href="javascript:void(0)" onclick="javascript:goCoupSel();" style=" display: block;width:100%;height:100%;position: absolute;top:0;left:0;text-indent: -5000px;">쿠폰 확인하기</a>
+			</div> -->
+
 			<div class="nav_menu">
 				<div class="nav_menu_inner">
 					<div class="u_info1">
@@ -250,12 +256,6 @@
 						<a href="#" class="join"><span class="icons" data-icon=""></span>회원가입</a>
 					</div>
 
-					<!-- <div class="u_info1">
-						<div class="user_box">
-							<p class="greet bronze"><span class="m">B</span>홍길동님 반갑습니다.</p>
-							<p class="noti">쿠폰 사용기간이 얼마 남지 않았습니다.</p>
-						</div>
-					</div> -->
 					<div class="u_info2">
 						<a href="#">마이페이지</a>
 						<a href="#">주문배송조회 <span>1</span></a>
@@ -652,68 +652,161 @@
 				</a>
 				<a href="#" class="btn_market icons"></a>
 			</div>
+			<div class="notice_tits">
+				<div class="notice_tits_wrap">
+					<div class="collout_bar on" id="h-pop-exchange_btn">
+						<a href="javascript:void(0)"></a>
+						<div class="img"><img src="/images/adidas/icon_exchange.png" alt=""></div>
+						<p>교환/환불은 이렇게</p>
+					</div>
+					<div class="collout_bar">
+						<a href="http://m.adidas.co.kr/MO/Main/mainDisp.action?INFLW_TC_CD=&amp;utm_expid=118388890-42.tzj7cM1gQzmk86DuRXW1sA.0"></a>
+						<div class="img"><img src="/images/adidas/icon_limited_edition.png" alt=""></div>
+						<p>온라인 한정상품을 만나보세요</p>
+					</div>
+					<div class="collout_bar" id="h_pop_today_delivery_btn">
+						<a href="javascript:void(0)"></a>
+						<div class="img"><img src="/images/adidas/icon_today_delivery.png" alt=""></div>
+						<p>스피드 배송 서비스 오픈!</p>
+					</div>
+				</div>
+				<a href="javascript:void(0)" class="more"><img src="/images/adidas/icon_view_more.png" alt=""></a>
+			</div>
+
 		</div>
 
-		<div id="container" class="product_list">
-			<div class="ctgr_visual">
-				<img src="images/adidas/temp_category_men.jpg" alt="">
-				<div class="loc">
-					<h3>MEN</h3>
-					<div class="select_wrap col4">
-						<div class="box">
-							<div class="sel_boxtype sel_design">
-								<a href="#" class="icons"><span>MEN</span></a>
-								<select name="select_size" id="select_size">
-									<option value="" selected="selected">MEN</option>
-									<option value="">WOMEN</option>
-									<option value="">KIDS</option>
-								</select>
-							</div>
-						</div>
-						<!-- //box -->
-						<div class="box">
-							<div class="sel_boxtype sel_design">
-								<a href="#" class="icons"><span>신발</span></a>
-								<select name="select_size" id="select_size">
-									<option value="">신발</option>
-									<option value="">의류</option>
-									<option value="">용품</option>
-								</select>
-							</div>
-						</div>
-						<!-- //box -->
-						<div class="box">
-							<div class="sel_boxtype sel_design">
-								<a href="#" class="icons"><span>스포츠별</span></a>
-								<select name="select_size" id="select_size">
-									<option value="" selected="selected">스포츠별</option>
-									<option value="">상품별</option>
-									<option value="">브랜드</option>
-								</select>
-							</div>
-						</div>
-						<!-- //box -->
-						<div class="box">
-							<div class="sel_boxtype sel_design disable">
-								<a href="#" class="icons"><span>러닝</span></a>
-								<select name="select_size" id="select_size">
-									<option value="">라이프스타일</option>
-									<option value="">축구</option>
-									<option value="">농구</option>
-									<option value=""selected="selected">러닝</option>
-									<option value="">테니스</option>
-									<option value="">아웃도어</option>
-								</select>
-							</div>
-						</div>
-						<!-- //box -->
-					</div>
-					<!-- //select_wrap -->
+		<!-- 170525 필터 레이어	 -->
+		<div class="filter_container_wraper">
+			<div class="overlay"></div>
+			<a href="javascript:void(0)" class="close_x_btn white"></a>
+
+			<div class="filter_container">
+				<div class="selected_filter">
+					<span>
+						<a href="" class="close_x_btn"></a>
+						검색어
+					</span>
+					<span>
+						<a href="" class="close_x_btn"></a>
+						아디다스 스텔라 매카트니
+					</span>
+					<span>
+						<a href="" class="close_x_btn"></a>
+						신발
+					</span>
+					<span>
+						<a href="" class="close_x_btn"></a>
+						240
+					</span>
 				</div>
-				<!-- //loc -->
+				<!-- //selected_filter -->
+
+				<div class="category_box">
+					<div class="box category_size">
+						<div class="tit">
+							<a href="javascript:void(0)">
+								사이즈
+								<span class="toggle_circle"></span>
+							</a>
+						</div>
+						<div class="content">
+							<a href="javascript:void(0)" class="adihs on">240</a>
+							<a href="javascript:void(0)" class="adihs">245</a>
+							<a href="javascript:void(0)" class="adihs">250</a>
+							<a href="javascript:void(0)" class="adihs">255</a>
+							<a href="javascript:void(0)" class="adihs">260</a>
+						</div>
+					</div>
+
+					<div class="box category_color">
+						<div class="tit">
+							<a href="javascript:void(0)">
+								컬러
+								<span class="toggle_circle"></span>
+							</a>
+						</div>
+						<div class="content">
+							<a class="blue" href="javascript:void(0)"><span class="c1"></span><span class="c2"></span></a>
+							<a class="navy" href="javascript:void(0)"><span class="c1"></span><span class="c2"></span></a>
+							<a class="black" href="javascript:void(0)"><span class="c1"></span><span class="c2"></span></a>
+							<a class="white" href="javascript:void(0)"><span class="c1"></span><span class="c2"></span></a>
+							<a class="red" href="javascript:void(0)"><span class="c1"></span><span class="c2"></span></a>
+							<a class="grey" href="javascript:void(0)"><span class="c1"></span><span class="c2"></span></a>
+							<a class="purple" href="javascript:void(0)"><span class="c1"></span><span class="c2"></span></a>
+							<a class="green" href="javascript:void(0)"><span class="c1"></span><span class="c2"></span></a>
+							<a class="orange" href="javascript:void(0)"><span class="c1"></span><span class="c2"></span></a>
+							<a class="brown" href="javascript:void(0)"><span class="c1"></span><span class="c2"></span></a>
+							<a class="yellow" href="javascript:void(0)"><span class="c1"></span><span class="c2"></span></a>
+							<a class="beige" href="javascript:void(0)"><span class="c1"></span><span class="c2"></span></a>
+							<a class="silver" href="javascript:void(0)"><span class="c1"></span><span class="c2"></span></a>
+							<a class="gold" href="javascript:void(0)"><span class="c1"></span><span class="c2"></span></a>
+							<a class="sand" href="javascript:void(0)"><span class="c1"></span><span class="c2"></span></a>
+							<a class="aerred" href="javascript:void(0)"><span class="c1"></span><span class="c2"></span></a>
+							<a class="khaki" href="javascript:void(0)"><span class="c1"></span><span class="c2"></span></a>
+							<a class="ivory" href="javascript:void(0)"><span class="c1"></span><span class="c2"></span></a>
+							<a class="pink" href="javascript:void(0)"><span class="c1"></span><span class="c2"></span></a>
+							<a class="champa" href="javascript:void(0)"><span class="c1"></span><span class="c2"></span></a>
+						</div>
+					</div>
+
+					<div class="box category_price">
+						<div class="tit">
+							<a href="javascript:void(0)">
+								가격
+								<span class="toggle_circle"></span>
+							</a>
+						</div>
+						<div class="content">
+							<div class="inner">
+								<div class="price_box">
+									<p>최소</p>
+									<div class="iptbox">
+										<input type="tel">
+									</div>
+								</div>
+								<div class="price_box">
+									<p>최대</p>
+									<div class="iptbox">
+										<input type="tel">
+									</div>
+								</div>
+								<a href="#" class="icons aft" data-icon="">적용하기</a>
+							</div>
+
+						</div>
+					</div>
+
+					<div class="box category_products">
+						<div class="tit">
+							<a href="javascript:void(0)">
+								상품분류
+								<span class="toggle_circle"></span>
+							</a>
+						</div>
+						<div class="content">
+							<ul>
+								<li><a href="#">상품분류 01<span>(389)</span></a></li>
+								<li><a href="#">상품분류 02<span>(389)</span></a></li>
+								<li><a href="#">상품분류 03<span>(389)</span></a></li>
+								<li><a href="#">상품분류 04<span>(389)</span></a></li>
+							</ul>
+						</div>
+
+					</div>
+
+					<div class="button_area">
+						<div class="blue"><a href="#"><strong class="adihs-din-b">85</strong>개의 상품보기</a></div>
+					</div>
+
+				</div>
 			</div>
-			<!-- //ctgr_visual -->
-			<div class="toolbox">
+		</div>
+
+
+		<!-- 170525 product_list_update 클래스 추가 -->
+		<div id="container" class="product_list product_list_update">
+
+			<!-- <div class="toolbox">
 				<div class="sel_boxtype sel_design">
 					<a href="#" class="toggle_arw"><span>정확도순</span></a>
 					<select name="order_by" id="order_by">
@@ -724,7 +817,6 @@
 						<option value="low">낮은가격순</option>
 					</select>
 				</div>
-				<!-- //sel_boxtype -->
 
 				<ul class="filter">
 					<li class="type_box">
@@ -733,29 +825,91 @@
 					<li class="type_list">
 						<a href="#" class="icons" data-icon=""></a>
 					</li>
-					<!-- 160523 filter 버튼 추가 -->
 					<li class="type_list sort">
 						<a id="filterLayerBtn" href="javascript:void(0)"></a>
 					</li>
 				</ul>
 			</div>
-			<!-- //toolbox -->
+			4-->
+
+
+			<!--
+				170525
+				* page_heading 추가
+			-->
+			<div class="page_heading">
+				<span>브랜드 / 아디다스 스텔라 맥카트니 / 신발</span>
+			</div>
+
+			<!--
+				170525
+				* filter_wrapper 추가
+			-->
+			<div class="filter_wrapper">
+				<div class="toggle_speed">
+					<div class="chk_box1 blue">
+						<input type="checkbox" id="spped_prod">
+						<label for="spped_prod">스피드 배송</label>
+					</div>
+				</div>
+				<ul>
+					<li data-ctgr="size"><a href="javascript:void(0)">사이즈</a></li>
+					<li data-ctgr="color"><a href="javascript:void(0)">컬러</a></li>
+					<li class="filter_icon">
+						<a href="javascript:void(0)">필터</a>
+					</li>
+				</ul>
+			</div>
+
+			<!--
+				170525
+				* sorting_wrapper 추가
+			 -->
+			<div class="sorting_wrapper">
+				<div class="switch_view">
+					<a href="javascript:void(0)" class=" on icons" data-icon="" data-gridname="box"></a>
+					<a href="javascript:void(0)" class="  icons" data-icon="" data-gridname="list"></a>
+				</div>
+				<div class="count">총 <strong>528</strong>개 상품</div>
+
+				<div class="sel_boxtype sel_design">
+					<a href="#" class="toggle_arw"><span>정확도순</span></a>
+					<select name="order_by" id="order_by">
+						<option value="accuracy">정확도순</option>
+						<option value="best">베스트순</option>
+						<option value="new">신상품순</option>
+						<option value="high">높은가격순</option>
+						<option value="low">낮은가격순</option>
+					</select>
+				</div>
+
+			</div>
 
 			<div class="product_grid grid_2box">
-				<div class="box">
-					<!-- 160405 a.link 추가 -> 링크는 제품 링크 -->
+				<!--
+					170525
+					mi 제품 시 mi 클래스 추가
+				-->
+				<div class="box mi">
 					<a href="#" class="link"></a>
 					<div class="img">
 						<a href="#">
-							<!-- <div class="label adihs-b o-only">ONLINE ONLY</div> -->
 							<div class="label adihs-b icons aft t-delivery " data-icon="">SPEEDY DELIVERY</div>
 							<img src="http://m.adidas.co.kr/upload/prod/basic/320/S81617-1_320X320.jpg" alt="">
 						</a>
 					</div>
 					<!-- //img -->
 					<div class="info">
-						<div class="ctgr">MEN'S ORIGINALS</div>
-						<div class="tit">슈퍼스타 슈퍼스타 슈퍼스타 슈퍼스타 슈퍼스타 슈퍼스타 슈퍼스타</div>
+						<!--
+							170525
+							status 추가
+							* 유사제품 컬러 캐수
+						-->
+						<div class="status">
+							<span>4 컬러</span>
+						</div>
+						<div class="ctgr">Originals</div>
+						<div class="tit">아디다스 오리지널스 슈퍼스타 80s 디럭스 S19 라운드 디테일 프로덕트 레볼루션</div>
 						<div class="price">
 							<div class="line">1,229,000<span>원</span></div>
 							<div class="sale">1,125,200<span>원</span></div>
@@ -776,9 +930,8 @@
 						<!-- //rating -->
 					</div>
 					<!-- //info -->
-					<a href="#" class="icons add_bag" data-icon=""></a>
 				</div>
-				<div class="box">
+				<div class="box mi">
 					<div class="img">
 						<a href="#">
 							<div class="label adihs-b new">NEW</div>
@@ -787,7 +940,10 @@
 					</div>
 					<!-- //img -->
 					<div class="info">
-						<div class="ctgr">Men's Training</div>
+						<div class="status">
+							<span>2 컬러</span>
+						</div>
+						<div class="ctgr">Originals</div>
 						<div class="tit">[한정상품] S19 라운드테일</div>
 						<div class="price">
 							<div>979,000<span>원</span></div>
@@ -808,7 +964,7 @@
 						<!-- //rating -->
 					</div>
 					<!-- //info -->
-					<a href="#" class="icons add_bag" data-icon=""></a>
+
 				</div>
 				<div class="box">
 					<div class="img">
@@ -819,7 +975,10 @@
 					</div>
 					<!-- //img -->
 					<div class="info">
-						<div class="ctgr">Women's Originals</div>
+						<div class="status">
+							<span>2 컬러</span>
+						</div>
+						<div class="ctgr">Originals</div>
 						<div class="tit">[재입고] 슈퍼스타 슬립온</div>
 						<div class="price">
 							<div>79,000<span>원</span></div>
@@ -840,7 +999,6 @@
 						<!-- //rating -->
 					</div>
 					<!-- //info -->
-					<a href="#" class="icons add_bag" data-icon=""></a>
 				</div>
 				<div class="box">
 					<div class="img">
@@ -851,7 +1009,10 @@
 					</div>
 					<!-- //img -->
 					<div class="info">
-						<div class="ctgr">Men's Basketball</div>
+						<div class="status">
+							<span>2 컬러</span>
+						</div>
+						<div class="ctgr">Originals</div>
 						<div class="tit">INT 스윙맨 저지 #23 캐블리어스</div>
 						<div class="price">
 							<div>79,000<span>원</span></div>
@@ -872,18 +1033,19 @@
 						<!-- //rating -->
 					</div>
 					<!-- //info -->
-					<a href="#" class="icons add_bag" data-icon=""></a>
 				</div>
 				<div class="box">
 					<div class="img">
 						<a href="#">
-							<div class="label adihs-b customize"><em>mi</em> adidas<span class="icon"></span></div>
 							<img src="http://m.adidas.co.kr/upload/prod/basic/320/S93438-1_320X320.jpg" alt="">
 						</a>
 					</div>
 					<!-- //img -->
 					<div class="info">
-						<div class="ctgr">Men's Originals</div>
+						<div class="status">
+							<span>4 컬러</span>
+						</div>
+						<div class="ctgr">Originals</div>
 						<div class="tit">[온라인단독] 블랙버드 페이즐리 후디</div>
 						<div class="price">
 							<div>79,000<span>원</span></div>
@@ -904,7 +1066,6 @@
 						<!-- //rating -->
 					</div>
 					<!-- //info -->
-					<a href="#" class="icons add_bag" data-icon=""></a>
 				</div>
 				<div class="box">
 					<div class="img">
@@ -914,7 +1075,10 @@
 					</div>
 					<!-- //img -->
 					<div class="info">
-						<div class="ctgr">Men's Training</div>
+						<div class="status">
+							<span>6 컬러</span>
+						</div>
+						<div class="ctgr">Originals</div>
 						<div class="tit">[온라인단독] ESS 3S M2M B</div>
 						<div class="price">
 							<div>79,000<span>원</span></div>
@@ -935,7 +1099,6 @@
 						<!-- //rating -->
 					</div>
 					<!-- //info -->
-					<a href="#" class="icons add_bag" data-icon=""></a>
 				</div>
 				<div class="box">
 					<div class="img">
@@ -945,7 +1108,10 @@
 					</div>
 					<!-- //img -->
 					<div class="info">
-						<div class="ctgr">Men's Originals</div>
+						<div class="status">
+							<span>2 컬러</span>
+						</div>
+						<div class="ctgr">Originals</div>
 						<div class="tit">[한정상품] 튜블라 X (카모)</div>
 						<div class="price">
 							<div>79,000<span>원</span></div>
@@ -966,132 +1132,6 @@
 						<!-- //rating -->
 					</div>
 					<!-- //info -->
-					<a href="#" class="icons add_bag" data-icon=""></a>
-				</div>
-				<div class="box">
-					<div class="img">
-						<a href="#">
-							<img src="http://m.adidas.co.kr/upload/prod/basic/320/AJ6581-1_320X320.jpg" alt="">
-						</a>
-					</div>
-					<!-- //img -->
-					<div class="info">
-						<div class="ctgr">Women's Training</div>
-						<div class="tit">[신아람착장] RB 삼선 브라</div>
-						<div class="price">
-							<div>79,000<span>원</span></div>
-						</div>
-						<!-- //price -->
-
-						<div class="rating">
-							<div class="star">
-								<span class="icons active" data-icon=""></span>
-								<span class="icons active" data-icon=""></span>
-								<span class="icons active" data-icon=""></span>
-								<span class="icons" data-icon=""></span>
-								<span class="icons" data-icon=""></span>
-							</div>
-							<!-- //star -->
-							126
-						</div>
-						<!-- //rating -->
-					</div>
-					<!-- //info -->
-					<a href="#" class="icons add_bag" data-icon=""></a>
-				</div>
-				<div class="box">
-					<div class="img">
-						<a href="#">
-							<img src="http://m.adidas.co.kr/upload/prod/basic/320/S81617-1_320X320.jpg" alt="">
-						</a>
-					</div>
-					<!-- //img -->
-					<div class="info">
-						<div class="ctgr">MEN'S ORIGINALS</div>
-						<div class="tit">슈퍼스타</div>
-						<div class="price">
-							<div class="line">129,000<span>원</span></div>
-							<div class="sale">85,200<span>원</span></div>
-						</div>
-						<!-- //price -->
-
-						<div class="rating">
-							<div class="star">
-								<span class="icons active" data-icon=""></span>
-								<span class="icons active" data-icon=""></span>
-								<span class="icons active" data-icon=""></span>
-								<span class="icons" data-icon=""></span>
-								<span class="icons" data-icon=""></span>
-							</div>
-							<!-- //star -->
-							126
-						</div>
-						<!-- //rating -->
-					</div>
-					<!-- //info -->
-					<a href="#" class="icons add_bag" data-icon=""></a>
-				</div>
-				<div class="box">
-					<div class="img">
-						<a href="#">
-							<img src="http://m.adidas.co.kr/upload/prod/basic/320/AK0913-1_320X320.jpg" alt="">
-						</a>
-					</div>
-					<!-- //img -->
-					<div class="info">
-						<div class="ctgr">Men's Training</div>
-						<div class="tit">[한정상품] S19 라운드테일</div>
-						<div class="price">
-							<div>79,000<span>원</span></div>
-						</div>
-						<!-- //price -->
-
-						<div class="rating">
-							<div class="star">
-								<span class="icons active" data-icon=""></span>
-								<span class="icons active" data-icon=""></span>
-								<span class="icons active" data-icon=""></span>
-								<span class="icons" data-icon=""></span>
-								<span class="icons" data-icon=""></span>
-							</div>
-							<!-- //star -->
-							126
-						</div>
-						<!-- //rating -->
-					</div>
-					<!-- //info -->
-					<a href="#" class="icons add_bag" data-icon=""></a>
-				</div>
-				<div class="box">
-					<div class="img">
-						<a href="#">
-							<img src="http://m.adidas.co.kr/upload/prod/basic/320/S81337-1_320X320.jpg" alt="">
-						</a>
-					</div>
-					<!-- //img -->
-					<div class="info">
-						<div class="ctgr">Women's Originals</div>
-						<div class="tit">[재입고] 슈퍼스타 슬립온</div>
-						<div class="price">
-							<div>79,000<span>원</span></div>
-						</div>
-						<!-- //price -->
-
-						<div class="rating">
-							<div class="star">
-								<span class="icons active" data-icon=""></span>
-								<span class="icons active" data-icon=""></span>
-								<span class="icons active" data-icon=""></span>
-								<span class="icons" data-icon=""></span>
-								<span class="icons" data-icon=""></span>
-							</div>
-							<!-- //star -->
-							126
-						</div>
-						<!-- //rating -->
-					</div>
-					<!-- //info -->
-					<a href="#" class="icons add_bag" data-icon=""></a>
 				</div>
 				<div class="box">
 					<div class="img">
@@ -1101,7 +1141,10 @@
 					</div>
 					<!-- //img -->
 					<div class="info">
-						<div class="ctgr">Men's Basketball</div>
+						<div class="status">
+							<span>2 컬러</span>
+						</div>
+						<div class="ctgr">Originals</div>
 						<div class="tit">INT 스윙맨 저지 #23 캐블리어스</div>
 						<div class="price">
 							<div>79,000<span>원</span></div>
@@ -1122,269 +1165,21 @@
 						<!-- //rating -->
 					</div>
 					<!-- //info -->
-					<a href="#" class="icons add_bag" data-icon=""></a>
-				</div>
-				<div class="box">
-					<div class="img">
-						<a href="#">
-							<img src="http://m.adidas.co.kr/upload/prod/basic/320/S93438-1_320X320.jpg" alt="">
-						</a>
-					</div>
-					<!-- //img -->
-					<div class="info">
-						<div class="ctgr">Men's Originals</div>
-						<div class="tit">[온라인단독] 블랙버드 페이즐리 후디</div>
-						<div class="price">
-							<div>79,000<span>원</span></div>
-						</div>
-						<!-- //price -->
-
-						<div class="rating">
-							<div class="star">
-								<span class="icons active" data-icon=""></span>
-								<span class="icons active" data-icon=""></span>
-								<span class="icons active" data-icon=""></span>
-								<span class="icons" data-icon=""></span>
-								<span class="icons" data-icon=""></span>
-							</div>
-							<!-- //star -->
-							126
-						</div>
-						<!-- //rating -->
-					</div>
-					<!-- //info -->
-					<a href="#" class="icons add_bag" data-icon=""></a>
-				</div>
-				<div class="box">
-					<div class="img">
-						<a href="#">
-							<img src="http://m.adidas.co.kr/upload/prod/basic/320/S17677-1_320X320.jpg" alt="">
-						</a>
-					</div>
-					<!-- //img -->
-					<div class="info">
-						<div class="ctgr">Men's Training</div>
-						<div class="tit">[온라인단독] ESS 3S M2M B</div>
-						<div class="price">
-							<div>79,000<span>원</span></div>
-						</div>
-						<!-- //price -->
-
-						<div class="rating">
-							<div class="star">
-								<span class="icons active" data-icon=""></span>
-								<span class="icons active" data-icon=""></span>
-								<span class="icons active" data-icon=""></span>
-								<span class="icons" data-icon=""></span>
-								<span class="icons" data-icon=""></span>
-							</div>
-							<!-- //star -->
-							126
-						</div>
-						<!-- //rating -->
-					</div>
-					<!-- //info -->
-					<a href="#" class="icons add_bag" data-icon=""></a>
-				</div>
-				<div class="box">
-					<div class="img">
-						<a href="#">
-							<img src="http://m.adidas.co.kr/upload/prod/basic/320/B25700-1_320X320.jpg" alt="">
-						</a>
-					</div>
-					<!-- //img -->
-					<div class="info">
-						<div class="ctgr">Men's Originals</div>
-						<div class="tit">[한정상품] 튜블라 X (카모)</div>
-						<div class="price">
-							<div>79,000<span>원</span></div>
-						</div>
-						<!-- //price -->
-
-						<div class="rating">
-							<div class="star">
-								<span class="icons active" data-icon=""></span>
-								<span class="icons active" data-icon=""></span>
-								<span class="icons active" data-icon=""></span>
-								<span class="icons" data-icon=""></span>
-								<span class="icons" data-icon=""></span>
-							</div>
-							<!-- //star -->
-							126
-						</div>
-						<!-- //rating -->
-					</div>
-					<!-- //info -->
-					<a href="#" class="icons add_bag" data-icon=""></a>
-				</div>
-				<div class="box">
-					<div class="img">
-						<a href="#">
-							<img src="http://m.adidas.co.kr/upload/prod/basic/320/AJ6581-1_320X320.jpg" alt="">
-						</a>
-					</div>
-					<!-- //img -->
-					<div class="info">
-						<div class="ctgr">Women's Training</div>
-						<div class="tit">[신아람착장] RB 삼선 브라</div>
-						<div class="price">
-							<div>79,000<span>원</span></div>
-						</div>
-						<!-- //price -->
-
-						<div class="rating">
-							<div class="star">
-								<span class="icons active" data-icon=""></span>
-								<span class="icons active" data-icon=""></span>
-								<span class="icons active" data-icon=""></span>
-								<span class="icons" data-icon=""></span>
-								<span class="icons" data-icon=""></span>
-							</div>
-							<!-- //star -->
-							126
-						</div>
-						<!-- //rating -->
-					</div>
-					<!-- //info -->
-					<a href="#" class="icons add_bag" data-icon=""></a>
-				</div>
-				<div class="box">
-					<div class="img">
-						<a href="#">
-							<img src="http://m.adidas.co.kr/upload/prod/basic/320/S81617-1_320X320.jpg" alt="">
-						</a>
-					</div>
-					<!-- //img -->
-					<div class="info">
-						<div class="ctgr">MEN'S ORIGINALS</div>
-						<div class="tit">슈퍼스타</div>
-						<div class="price">
-							<div class="line">129,000<span>원</span></div>
-							<div class="sale">85,200<span>원</span></div>
-						</div>
-						<!-- //price -->
-
-						<div class="rating">
-							<div class="star">
-								<span class="icons active" data-icon=""></span>
-								<span class="icons active" data-icon=""></span>
-								<span class="icons active" data-icon=""></span>
-								<span class="icons" data-icon=""></span>
-								<span class="icons" data-icon=""></span>
-							</div>
-							<!-- //star -->
-							126
-						</div>
-						<!-- //rating -->
-					</div>
-					<!-- //info -->
-					<a href="#" class="icons add_bag" data-icon=""></a>
-				</div>
-				<div class="box">
-					<div class="img">
-						<a href="#">
-							<img src="http://m.adidas.co.kr/upload/prod/basic/320/AK0913-1_320X320.jpg" alt="">
-						</a>
-					</div>
-					<!-- //img -->
-					<div class="info">
-						<div class="ctgr">Men's Training</div>
-						<div class="tit">[한정상품] S19 라운드테일</div>
-						<div class="price">
-							<div>79,000<span>원</span></div>
-						</div>
-						<!-- //price -->
-
-						<div class="rating">
-							<div class="star">
-								<span class="icons active" data-icon=""></span>
-								<span class="icons active" data-icon=""></span>
-								<span class="icons active" data-icon=""></span>
-								<span class="icons" data-icon=""></span>
-								<span class="icons" data-icon=""></span>
-							</div>
-							<!-- //star -->
-							126
-						</div>
-						<!-- //rating -->
-					</div>
-					<!-- //info -->
-					<a href="#" class="icons add_bag" data-icon=""></a>
-				</div>
-				<div class="box">
-					<div class="img">
-						<a href="#">
-							<img src="http://m.adidas.co.kr/upload/prod/basic/320/S81337-1_320X320.jpg" alt="">
-						</a>
-					</div>
-					<!-- //img -->
-					<div class="info">
-						<div class="ctgr">Women's Originals</div>
-						<div class="tit">[재입고] 슈퍼스타 슬립온</div>
-						<div class="price">
-							<div>79,000<span>원</span></div>
-						</div>
-						<!-- //price -->
-
-						<div class="rating">
-							<div class="star">
-								<span class="icons active" data-icon=""></span>
-								<span class="icons active" data-icon=""></span>
-								<span class="icons active" data-icon=""></span>
-								<span class="icons" data-icon=""></span>
-								<span class="icons" data-icon=""></span>
-							</div>
-							<!-- //star -->
-							126
-						</div>
-						<!-- //rating -->
-					</div>
-					<!-- //info -->
-					<a href="#" class="icons add_bag" data-icon=""></a>
-				</div>
-				<div class="box">
-					<div class="img">
-						<a href="#">
-							<img src="http://m.adidas.co.kr/upload/prod/basic/320/A61200-1_320X320.jpg" alt="">
-						</a>
-					</div>
-					<!-- //img -->
-					<div class="info">
-						<div class="ctgr">Men's Basketball</div>
-						<div class="tit">INT 스윙맨 저지 #23 캐블리어스</div>
-						<div class="price">
-							<div>79,000<span>원</span></div>
-						</div>
-						<!-- //price -->
-
-						<div class="rating">
-							<div class="star">
-								<span class="icons active" data-icon=""></span>
-								<span class="icons active" data-icon=""></span>
-								<span class="icons active" data-icon=""></span>
-								<span class="icons" data-icon=""></span>
-								<span class="icons" data-icon=""></span>
-							</div>
-							<!-- //star -->
-							126
-						</div>
-						<!-- //rating -->
-					</div>
-					<!-- //info -->
-					<a href="#" class="icons add_bag" data-icon=""></a>
 				</div>
 			</div>
 			<!-- //product_grid -->
 
-			<div class="paging">
-				<div>
-					<a href="#" class="prev icons disable" data-icon=""></a>
-					<a href="#" class="on">1</a>
-					<a href="#">2</a>
-					<a href="#">3</a>
-					<a href="#">4</a>
-					<a href="#">5</a>
-					<a href="#" class="next icons" data-icon=""></a>
+			<!-- 170525 paging -->
+			<div class="plp_paging">
+				<a href="#" class="prev disable">
+					<span></span>
+				</a>
+				<a href="#" class="next">
+					<span></span>
+				</a>
+				<div class="num">
+					<strong class="adihs-din-b">12</strong>
+					<span class="adihs-din-b"> / 22</span>
 				</div>
 			</div>
 
@@ -1426,27 +1221,63 @@
 	<script type="text/javascript" src="/js/adidas/common.js"></script>
 	<script type="text/javascript">
 		(function($){
-			$(document).ready(function() {
 
-				$('.toolbox>ul>li').bind('click',function(){
-
-					if($(this).find('a').hasClass('on') || $(this).find('a').attr('id') == 'filterLayerBtn'){
-						return false;
-					}
-
-					if($(this).hasClass('type_box')){
-						$('.product_grid').addClass('grid_2box');
+			$('.sorting_wrapper .switch_view a').bind('click',function(){
+				var gridName;
+				$('.sorting_wrapper .switch_view a').each(function(){
+					if($(this).hasClass('on')){
+						$(this).removeClass('on')
 					}else{
-						$('.product_grid').removeClass('grid_2box');
+						gridName = this.dataset.gridname;
+						$(this).addClass('on');
 					}
-
-					$('.toolbox>ul>li>a').removeClass('on');
-					$(this).find('a').addClass('on');
-					return false;
-
 				});
 
+				if(gridName == 'list'){
+					$('.product_grid').removeClass('grid_2box');
+				}else{
+					$('.product_grid').addClass('grid_2box');
+				}
+
 			});
+
+
+			$('.filter_wrapper ul>li').bind('click',function(){
+				$('.filter_container').css({
+					width : $(window).width() - 60
+				});
+				$('.filter_container_wraper').addClass('open');
+				if(this.dataset.ctgr !== undefined){
+					$('.category_box>.box.category_'+this.dataset.ctgr).addClass('open');
+				}
+
+			});
+			$('.filter_container_wraper>.close_x_btn , .filter_container_wraper>.overlay').bind('click',function(){
+				$('.filter_container_wraper').removeClass('open');
+				$('.category_box>.box').removeClass('open');
+			});
+
+			$('.filter_container_wraper>.overlay').bind('touchmove',function(event){
+				event.preventDefault();
+			});
+
+			$('.filter_container_wraper .category_box .box>.tit').bind('click',function(){
+				var elemParent = $(this).parent();
+				if(elemParent.hasClass('open')){
+					elemParent.removeClass('open');
+				}else{
+					elemParent.addClass('open');
+					$('.filter_container_wraper .filter_container').animate({
+						scrollTop : elemParent.offset().top
+					})
+				}
+			});
+
+
+			// document.querySelector('#container').addEventListener('touchmove',function(event){
+				// event.preventDefault();
+			// });
+
 		})(jQuery);
 
 	</script>
