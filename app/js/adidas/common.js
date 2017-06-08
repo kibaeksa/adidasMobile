@@ -68,6 +68,7 @@ adiApp.getNodefromString = function (htmlString) {
 					setTimeout(function(){
 						$('.nav_main .btn_slide').addClass('open');
 						$('#header .nav_menu').addClass('slide-open').css({
+							top: document.querySelector('#header>.nav_main').getBoundingClientRect().bottom,
 							minHeight : $(window).height() - document.querySelector('#header>.nav_main').getBoundingClientRect().bottom,
 							height : $(window).height() - document.querySelector('#header>.nav_main').getBoundingClientRect().bottom,
 							transform : 'translate3d(0 ,0 ,0)'
@@ -92,6 +93,7 @@ adiApp.getNodefromString = function (htmlString) {
 
 				setTimeout(function(){
 					$('#header .nav_menu').addClass('slide-open').css({
+						top: document.querySelector('#header>.nav_main').getBoundingClientRect().bottom,
 						minHeight : elemH,
 						height : elemH,
 						transform : 'translate3d(0 ,0 ,0)'
@@ -153,6 +155,7 @@ adiApp.getNodefromString = function (htmlString) {
 			$(this).addClass('open');
 			$('html').addClass('no_srl');
 			$('#header .nav_search').addClass('slide-open').css({
+				top: document.querySelector('#header>.nav_main').getBoundingClientRect().bottom,
 				minHeight : elemH,
 				height : elemH,
 				transform : 'translate3d(0 ,0 ,0)'
@@ -577,8 +580,9 @@ adiApp.getNodefromString = function (htmlString) {
 	};
 
 	window.initLoading = function(){
-		var htmlString = '<div class="loading-container"><div class="loader-icon"></div></div>';
-		$('body').append(htmlString);
+		if($('.loading-container').length == 0){
+			$('body').append('<div class="loading-container"><div class="loader-icon"></div></div>');
+		}
 	}
 
 	window.removeLoading = function(){
