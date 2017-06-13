@@ -514,29 +514,27 @@ adiApp.getNodefromString = function (htmlString) {
 			var sTop = document.documentElement.scrollTop || document.body.scrollTop;
 			offsetTop = 60 + topBnnH;
 
-			if(prevScroll > 0 && sTop > 0){
+			if(headerElem){
 
-				if(sTop < document.getElementById('header').offsetHeight){
-					$(headerElem).removeClass('hide');
-				}else{
-					if(prevScroll - sTop > 10){
+				if(prevScroll > 0 && sTop > 0){
+					if(sTop < document.getElementById('header').offsetHeight){
 						$(headerElem).removeClass('hide');
-					}else if(prevScroll - sTop < -10){
-							$(headerElem).addClass('hide');
+					}else{
+						if(prevScroll - sTop > 10){
+							$(headerElem).removeClass('hide');
+						}else if(prevScroll - sTop < -10){
+								$(headerElem).addClass('hide');
+						}
 					}
 				}
+
+				offsetTop = headerElem.getBoundingClientRect().top;
+				offsetBottom = headerElem.getBoundingClientRect().bottom;
+
+				prevScroll = sTop;
+
+				document.getElementById('container').style.paddingTop = document.getElementById('header').offsetHeight+'px';
 			}
-
-
-			offsetTop = headerElem.getBoundingClientRect().top;
-			offsetBottom = headerElem.getBoundingClientRect().bottom;
-
-			prevScroll = sTop;
-
-			document.getElementById('container').style.paddingTop = document.getElementById('header').offsetHeight+'px';
-
-
-			// document.querySelector('#statusDiv').innerHTML = sTop +' -- '+' 헤더 클래스값 : '+$(headerElem).css('position');
 
 
 			requestAnimationFrame(headerSticky);

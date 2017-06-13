@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+   <meta name="format-detection" content="telephone=no">
+   <meta http-equiv="x-rim-auto-match" content="none">
+   <title>아디다스 모바일</title>
+
+   <link href="/css/adidas/style.css" type="text/css" rel="stylesheet" />
+   <link href="/css/adidas/fonts.css" type="text/css" rel="stylesheet" />
+   <script type="text/javascript" src="/js/jquery-1.12.0.min.js"></script>
+
+
+
+
+
+   <style type="text/css">
+       .basket2017_popup{
+
+       }
+
+       .basket2017_popup{
+           border: 3px solid  #353535;
+       }
+
+       .basket2017_popup h1{
+           padding: 1rem 0;
+           font-size: 2rem;
+           line-height: 2rem;
+           text-align: center;
+           background:url('header_pop_bg.jpg') 0 0 no-repeat;
+           -webkit-background-size: cover;
+           background-size: cover;
+       }
+
+       .basket2017_popup .contents{
+           padding: 1rem;
+       }
+
+       .basket2017_popup .contents .li_hypn{
+           margin-bottom: 3rem;
+       }
+
+       .basket2017_popup .contents .li_hypn li{
+           margin-bottom: 0.3rem;
+           font-size: 1.1rem;
+           line-height: 1.6rem;
+           font-family: 'NotoSansKRLight';
+           letter-spacing: -0.25px;
+       }
+
+       .basket2017_popup .contents .li_hypn li strong{
+           position: relative;
+           font-weight: normal;
+           font-family: 'NotoSansKRBold';
+           text-decoration: underline;
+       }
+
+       .basket2017_popup .contents .li_hypn li.img{
+           padding: 1rem 0;
+       }
+
+       .basket2017_popup .contents .li_hypn li.img img{
+           width: 50px;
+           margin-right: 1rem;
+           vertical-align: middle;
+           border: 1px solid  #616161;
+       }
+
+       .basket2017_popup .contents .li_hypn li.img::before{
+           display: none;
+       }
+
+       .basket2017_popup .contents table{
+           width: 100%;
+       }
+
+       .basket2017_popup .contents table th{
+           text-align: left;
+           font-size: 1rem;
+           line-height: 1.4rem;
+           vertical-align: middle;
+       }
+
+       .basket2017_popup .contents table td{
+           font-size: 1rem;
+       }
+
+       .basket2017_popup .contents table th,
+       .basket2017_popup .contents table td{
+           padding: 0.5rem 0;
+       }
+
+       .basket2017_popup .contents table th:first-child{
+           width: 25%;
+       }
+
+       .basket2017_popup .contents h2{
+           margin-bottom: 1rem;
+           text-align: center;
+           font: 1.4rem 'NotoSansKRBold';
+       }
+
+       .basket2017_popup .contents table td .input_column{
+           display: -webkit-flex;
+           display: -ms-flex;
+           display: flex;
+       }
+
+       .basket2017_popup .contents table td .input_column>div{
+           width: 100%;
+       }
+
+       .basket2017_popup .contents table td .input_column.col3>div{
+           width: 33.3%;
+       }
+
+       .basket2017_popup .contents table td .input_column input[type="text"],
+       .basket2017_popup .contents table td .input_column input[type="tel"]{
+           width: 100%;
+           height: 35px;
+           padding-left: 10px;
+       }
+
+       .basket2017_popup .contents table td .sel_boxtype select{
+           height: 35px;
+       }
+
+       .basket2017_popup .contents table td .sel_boxtype>a{
+           height: 35px;
+           padding-top: 10px;
+           border-color: #b5b5b5;
+       }
+
+      .basket2017_popup .contents table td .sel_boxtype>a::before,
+      .basket2017_popup .contents table td .sel_boxtype>a::after{
+            width: 10px;
+            height: 2px;
+            right: 16px;
+      }
+
+       .basket2017_popup .contents table td .sel_boxtype>a::after{
+            right: 10px;
+       }
+
+       .basket2017_popup .contents table td .input_column.col3>div:first-child{
+           padding-right: 10px;
+       }
+
+       .basket2017_popup .contents table td .input_column.col3>div:nth-child(3){
+           padding-left: 10px;
+       }
+
+       .basket2017_popup .contents table td .input_column.col2>div:first-child{
+           padding-right: 5px;
+       }
+
+       .basket2017_popup .contents table td .input_column.col2>div:last-child{
+           padding-left: 5px;
+       }
+
+       .basket2017_popup .contents table td .input_column .prefix{
+           width: 30px;
+           padding-top: 12px;
+           vertical-align: middle;
+       }
+
+       .basket2017_popup .table_wrapper1{
+           margin-bottom: 3rem;
+       }
+
+       .basket2017_popup .table_wrapper2{
+           margin-bottom: 2rem;
+       }
+
+       .basket2017_popup .table_wrapper2 h2{
+           margin-bottom: 0.5rem;
+       }
+
+       .basket2017_popup .table_wrapper2 .desc{
+           margin-bottom: 1.5rem;
+           text-align: center;
+           font-size: 1.1rem;
+       }
+
+       .basket2017_popup .table_wrapper2 .tab_list{
+           margin-bottom: 1.5rem;
+           overflow: hidden;
+       }
+
+       .basket2017_popup .table_wrapper2 .tab_list>div{
+           width: 25%;
+           float: left;
+            border-right: 1px solid  #fff;
+           box-sizing: border-box;
+           -webkit-box-sizing: border-box;
+       }
+
+       .basket2017_popup .table_wrapper2 .tab_list>div>a{
+           width: 100%;
+           display: block;
+           height: 35px;
+           line-height: 35px;
+           background: #c9c9c9;
+           color: #000;
+           text-align: center;
+           font-size: 1.1rem;
+       }
+
+       .basket2017_popup .table_wrapper2 .tab_list>div.on>a{
+           background: #f9d500;
+       }
+
+       .basket2017_popup .agreement_box{
+           width: 100%;
+           padding: 1rem;
+           border:1px solid #d5d5d5;
+           background: #fff;
+           box-sizing: border-box;
+           -webkit-box-sizing: border-box;
+           font-size: 1rem;
+           line-height: 1.4rem;
+           color: #353535;
+       }
+
+       .agreement_check{
+           margin: 0.5rem 0 2rem;
+       }
+
+       .agreement_check label{
+           color: #353535;
+           font-size: 1rem;
+       }
+
+       .table_contents{
+           position: relative;
+       }
+
+       .table_contents .table_box{
+           display: none;
+       }
+
+       .table_contents .table_box.active{
+           display: block;
+       }
+
+
+   </style>
+</head>
+<body>
+   <div id="wrap">
+        <div class="basket2017_popup">
+            <h1 class="adipro-bk">ADIDAS CRAZYCOURT 2017</h1>
+            <div class="contents">
+                <ul class="li_hypn">
+                    <li>등록선수여부란 대한농구협회(KBA), 한국농구연맹(KBL)에 등록되어 있는지를 묻는 것이며, 초 / 중 / 고 / 대학일반부 / 우먼스부의 경우 전원 X 표시 되어야 출전 가능</li>
+                    <li>경기 당일 현장에서 참가자의 신원을 확인할 수 있는 신분증(미성년자의 경우 여권, 사진이 첨부된 학생증, 의료보험증, 주민등록초본 중 택1)을 반드시 지참하여 제시해야 함(참가부분 대상 나이와 참가자 나이가 상이하거나, 신분증 미지참 시 대회참가가 불가함을 알려드립니다.)</li>
+                    <li><strong>참가자 대표 회원정보의 주소지를 정확하게 업데이트 해주셔야 추후 경품 배송이 가능합니다. (주소지 미기입/오류로 인한 불이익에 대한 책임은 참가자 본인에게 있음을 명시합니다.)</strong></li>
+                    <li><strong>참가자 본인의 얼굴 사진(ex.증명사진)이미지 파일을 반드시 대회 사무국 이메일 (2017crazycourt@workerb.co.kr)로 반드시 송부해야 해야 합니다. 해당 사진은  ‘크레이지코트’ 모바일 사이트에서 추후 선수들의 다양한 경기 기록 제공 서비스를 위해 사용될 예정입니다.</strong></li>
+                    <li class="img">
+                        <div>
+                            <img src="temp_photo.jpg" alt="">
+                            <예시 이미지 참고>
+                        </div>
+                    </li>
+                    <li><strong>자세한 사항은 아디다스 농구 페이스북 (www.facebook.com/adiCourt ) 아디다스 크레이지코트 2017사무국 -전화번호 미정-에서 확인하시기 바랍니다.</strong></li>
+                </ul>
+
+                <h2>참가 신청</h2>
+                <div class="table_wrapper1">
+                    <table>
+                        <tr>
+                            <th>팀명</th>
+                            <td>
+                                <div class="input_column">
+                                    <div><input type="text" placeholder="크레이지"></div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>참가자 대표이름<br/>(신청자)</th>
+                            <td>
+                                <div class="input_column">
+                                    <div><input type="text" placeholder="홍길동"></div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th>참가자 대표<br/>연락처</th>
+                            <td>
+                                <div class="input_column col3">
+                                    <div>
+                                        <div class="sel_boxtype sel_design sel">
+        								<a href="#" class="toggle_arw"><span>010</span></a>
+        								<select name="">
+        									<option value="010" selected="selected">010</option>
+        									<option value="011">011</option>
+        									<option value="016">016</option>
+                                            <option value="017">017</option>
+                                            <option value="019">019</option>
+        								</select>
+        							</div>
+                                    </div>
+                                    <div><input type="tel"></div>
+                                    <div><input type="tel"></div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>참가부문</th>
+                            <td>
+                                <div class="input_column">
+                                    <div><input type="text" placeholder="초등부"></div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th>참가자 대표<br/>이메일</th>
+                            <td>
+                                <div class="input_column col2">
+                                    <div><input type="text"></div>
+                                    <div class="prefix">@</div>
+                                    <div><input type="text"></div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th>참가날짜</th>
+                            <td>
+                                2017. 07. 08 (토)
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th rowspan="2">주소</th>
+                            <td>
+                                <div class="input_column">
+                                    <div><input type="text" placeholder="초등부"></div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="input_column">
+                                    <div><input type="text" placeholder="초등부"></div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+
+                <div class="table_wrapper2">
+                    <h2>선수 명단</h2>
+                    <div class="desc">(참가자 대표 포함한 4명 모두 적어주세요)</div>
+                    <div class="tab_list">
+                        <div class="on"><a href="javascript:void(0)">선수 1</a></div>
+                        <div><a href="javascript:void(0)">선수 2</a></div>
+                        <div><a href="javascript:void(0)">선수 3</a></div>
+                        <div><a href="javascript:void(0)">선수 4</a></div>
+                    </div>
+
+                    <div class="table_contents">
+                        <div class="table_box active">
+                            <table>
+                                <tr>
+                                    <th>이름</th>
+                                    <td>
+                                        <div class="input_column">
+                                            <div><input type="text" placeholder="홍길동"></div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>생년월일</th>
+                                    <td>
+                                        <div class="input_column">
+                                            <div><input type="text" placeholder="1988.06.06"></div>
+                                        </div>
+                                    </td>
+                                </tr
+                                <tr>
+                                    <th>나이</th>
+                                    <td>
+                                        <div class="input_column">
+                                            <div><input type="tel" placeholder="30"></div>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th>연락처</th>
+                                    <td>
+                                        <div class="input_column col3">
+                                            <div>
+                                                <div class="sel_boxtype sel_design sel">
+                								<a href="#" class="toggle_arw"><span>010</span></a>
+                								<select name="">
+                									<option value="010" selected="selected">010</option>
+                									<option value="011">011</option>
+                									<option value="016">016</option>
+                                                    <option value="017">017</option>
+                                                    <option value="019">019</option>
+                								</select>
+                							</div>
+                                            </div>
+                                            <div><input type="tel"></div>
+                                            <div><input type="tel"></div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>등록선수 여부</th>
+                                    <td style="padding:1rem 0;">
+                                        <div class="input_column col3">
+                                            <div>
+                                                <input type="radio" id="player_status1_y" name="player_status1">
+                                                <label for="player_status1_y">O</label>
+                                            </div>
+                                            <div>
+                                                <input type="radio" id="player_status1_n" name="player_status1">
+                                                <label for="player_status1_n">X</label>
+                                            </div>
+                                            <div></div>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th>표지션</th>
+                                    <td style="padding:1rem 0;">
+                                        <div class="input_column col3">
+                                            <div>
+                                                <input type="radio" id="player_position1_1" name="player_position1">
+                                                <label for="player_position1_1">가드</label>
+                                            </div>
+                                            <div>
+                                                <input type="radio" id="player_position1_2" name="player_position1">
+                                                <label for="player_position1_2">포워드</label>
+                                            </div>
+                                            <div>
+                                                <input type="radio" id="player_position1_3" name="player_position1">
+                                                <label for="player_position1_3">센터</label>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th>신장</th>
+                                    <td>
+                                        <div class="input_column">
+                                            <div><input type="tel" placeholder="174"></div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <!-- //table_box -->
+
+                        <div class="table_box">
+                            <table>
+                                <tr>
+                                    <th>이름</th>
+                                    <td>
+                                        <div class="input_column">
+                                            <div><input type="text" placeholder="홍길동"></div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>생년월일</th>
+                                    <td>
+                                        <div class="input_column">
+                                            <div><input type="text" placeholder="1988.06.06"></div>
+                                        </div>
+                                    </td>
+                                </tr
+                                <tr>
+                                    <th>나이</th>
+                                    <td>
+                                        <div class="input_column">
+                                            <div><input type="tel" placeholder="30"></div>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th>연락처</th>
+                                    <td>
+                                        <div class="input_column col3">
+                                            <div>
+                                                <div class="sel_boxtype sel_design sel">
+                								<a href="#" class="toggle_arw"><span>010</span></a>
+                								<select name="">
+                									<option value="010" selected="selected">010</option>
+                									<option value="011">011</option>
+                									<option value="016">016</option>
+                                                    <option value="017">017</option>
+                                                    <option value="019">019</option>
+                								</select>
+                							</div>
+                                            </div>
+                                            <div><input type="tel"></div>
+                                            <div><input type="tel"></div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>등록선수 여부</th>
+                                    <td style="padding:1rem 0;">
+                                        <div class="input_column col3">
+                                            <div>
+                                                <input type="radio" id="player_status2_y" name="player_status2">
+                                                <label for="player_status2_y">O</label>
+                                            </div>
+                                            <div>
+                                                <input type="radio" id="player_status2_n" name="player_status2">
+                                                <label for="player_status2_n">X</label>
+                                            </div>
+                                            <div></div>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th>표지션</th>
+                                    <td style="padding:1rem 0;">
+                                        <div class="input_column col3">
+                                            <div>
+                                                <input type="radio" id="player_position2_1" name="player_position2">
+                                                <label for="player_position2_1">가드</label>
+                                            </div>
+                                            <div>
+                                                <input type="radio" id="player_position2_2" name="player_position2">
+                                                <label for="player_position2_2">포워드</label>
+                                            </div>
+                                            <div>
+                                                <input type="radio" id="player_position2_3" name="player_position2">
+                                                <label for="player_position2_3">센터</label>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th>신장</th>
+                                    <td>
+                                        <div class="input_column">
+                                            <div><input type="tel" placeholder="174"></div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <!-- //table_box -->
+
+                        <div class="table_box">
+                            <table>
+                                <tr>
+                                    <th>이름</th>
+                                    <td>
+                                        <div class="input_column">
+                                            <div><input type="text" placeholder="홍길동"></div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>생년월일</th>
+                                    <td>
+                                        <div class="input_column">
+                                            <div><input type="text" placeholder="1988.06.06"></div>
+                                        </div>
+                                    </td>
+                                </tr
+                                <tr>
+                                    <th>나이</th>
+                                    <td>
+                                        <div class="input_column">
+                                            <div><input type="tel" placeholder="30"></div>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th>연락처</th>
+                                    <td>
+                                        <div class="input_column col3">
+                                            <div>
+                                                <div class="sel_boxtype sel_design sel">
+                								<a href="#" class="toggle_arw"><span>010</span></a>
+                								<select name="">
+                									<option value="010" selected="selected">010</option>
+                									<option value="011">011</option>
+                									<option value="016">016</option>
+                                                    <option value="017">017</option>
+                                                    <option value="019">019</option>
+                								</select>
+                							</div>
+                                            </div>
+                                            <div><input type="tel"></div>
+                                            <div><input type="tel"></div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>등록선수 여부</th>
+                                    <td style="padding:1rem 0;">
+                                        <div class="input_column col3">
+                                            <div>
+                                                <input type="radio" id="player_status3_y" name="player_status3">
+                                                <label for="player_status3_y">O</label>
+                                            </div>
+                                            <div>
+                                                <input type="radio" id="player_status3_n" name="player_status3">
+                                                <label for="player_status3_n">X</label>
+                                            </div>
+                                            <div></div>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th>표지션</th>
+                                    <td style="padding:1rem 0;">
+                                        <div class="input_column col3">
+                                            <div>
+                                                <input type="radio" id="player_position3_1" name="player_position3">
+                                                <label for="player_position3_1">가드</label>
+                                            </div>
+                                            <div>
+                                                <input type="radio" id="player_position3_2" name="player_position3">
+                                                <label for="player_position3_2">포워드</label>
+                                            </div>
+                                            <div>
+                                                <input type="radio" id="player_position3_3" name="player_position3">
+                                                <label for="player_position3_3">센터</label>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th>신장</th>
+                                    <td>
+                                        <div class="input_column">
+                                            <div><input type="tel" placeholder="174"></div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <!-- //table_box -->
+
+                        <div class="table_box">
+                            <table>
+                                <tr>
+                                    <th>이름</th>
+                                    <td>
+                                        <div class="input_column">
+                                            <div><input type="text" placeholder="홍길동"></div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>생년월일</th>
+                                    <td>
+                                        <div class="input_column">
+                                            <div><input type="text" placeholder="1988.06.06"></div>
+                                        </div>
+                                    </td>
+                                </tr
+                                <tr>
+                                    <th>나이</th>
+                                    <td>
+                                        <div class="input_column">
+                                            <div><input type="tel" placeholder="30"></div>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th>연락처</th>
+                                    <td>
+                                        <div class="input_column col3">
+                                            <div>
+                                                <div class="sel_boxtype sel_design sel">
+                								<a href="#" class="toggle_arw"><span>010</span></a>
+                								<select name="">
+                									<option value="010" selected="selected">010</option>
+                									<option value="011">011</option>
+                									<option value="016">016</option>
+                                                    <option value="017">017</option>
+                                                    <option value="019">019</option>
+                								</select>
+                							</div>
+                                            </div>
+                                            <div><input type="tel"></div>
+                                            <div><input type="tel"></div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>등록선수 여부</th>
+                                    <td style="padding:1rem 0;">
+                                        <div class="input_column col3">
+                                            <div>
+                                                <input type="radio" id="player_status4_y" name="player_status4">
+                                                <label for="player_status4_y">O</label>
+                                            </div>
+                                            <div>
+                                                <input type="radio" id="player_status4_n" name="player_status4">
+                                                <label for="player_status4_n">X</label>
+                                            </div>
+                                            <div></div>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th>표지션</th>
+                                    <td style="padding:1rem 0;">
+                                        <div class="input_column col3">
+                                            <div>
+                                                <input type="radio" id="player_position4_1" name="player_position4">
+                                                <label for="player_position4_1">가드</label>
+                                            </div>
+                                            <div>
+                                                <input type="radio" id="player_position4_2" name="player_position4">
+                                                <label for="player_position4_2">포워드</label>
+                                            </div>
+                                            <div>
+                                                <input type="radio" id="player_position4_3" name="player_position4">
+                                                <label for="player_position4_3">센터</label>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th>신장</th>
+                                    <td>
+                                        <div class="input_column">
+                                            <div><input type="tel" placeholder="174"></div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <!-- //table_box -->
+                    </div>
+
+                </div>
+                <!-- //table_wrapper2 -->
+
+                <div class="agreement_box">
+                    개인정보 활용동의<br/>
+                    가. 수집항목 : 이름,휴대폰전화번호, 이메일, 지역, 참가자 명단 및 유니폼사이즈<br/>
+                    나. 개인정보 수집 방법 : 대회 참가 신청
+                </div>
+                <div class="agreement_check"><input type="checkbox"><label for="">개인정보 취급위탁에 동의합니다.</label></div>
+
+                <div class="button_area no_pdg">
+                    <div><a href="#" class="icons aft" data-icon="">신청완료</a></div>
+                </div>
+
+            </div>
+            <!-- //contents -->
+
+        </div>
+        <!-- //basket017_popup -->
+   </div>
+
+   <script type="text/javascript" src="/js/adidas/common.js"></script>
+   <script type="text/javascript">
+        var elemTabList = document.querySelectorAll('.tab_list>div');
+        var elemTabContent = document.querySelectorAll('.table_contents>div');
+
+        for(var i = 0;i < elemTabList.length; i++){
+            (function(index){
+                elemTabList[i].addEventListener('click',function(){
+                    for(var j =0; j< elemTabContent.length; j++){
+                        elemTabContent[j].className = 'table_box';
+                        elemTabList[j].className = '';
+                    }
+                    elemTabContent[index].className = 'table_box active';
+                    elemTabList[index].className = 'on';
+
+                });
+            })(i)
+
+        }
+
+   </script>
+
+</body>
+
+</html>
