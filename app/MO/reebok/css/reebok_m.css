@@ -1528,6 +1528,183 @@ html.no-scroll body{
     border-radius: 0;
 }
 
+/*Quick menu*/
+#quick-menu{
+    width:5rem;
+    height:5rem;
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    z-index: 150;
+}
+
+#quick-menu>.toggle_btn{
+    width: 5rem;
+    height: 5rem;
+    position: relative;
+    background: #ab2328;
+    border-radius:50%;
+    z-index: 150;
+    box-shadow:2px 3px 3px rgba(0,0,0,0.35);
+}
+
+#quick-menu>.toggle_btn>*{
+    transition:opacity 0.3s;
+    -webkit-transition:opacity 0.3s;
+    text-align: center;
+    color: #fff;
+    font-size: 1.7rem;
+    line-height: 5rem;
+}
+
+#quick-menu>.toggle_btn .close_x_btn{
+    opacity: 0;
+}
+
+#quick-menu.open>.toggle_btn .close_x_btn{
+    opacity: 1;
+}
+
+#quick-menu.open>.toggle_btn .default{
+    opacity: 0;
+}
+
+#quick-menu>.toggle_btn .close_x_btn::before,
+#quick-menu>.toggle_btn .close_x_btn::after{
+    background: #fff;
+    height: 2px;
+    width: 45%;
+}
+
+#quick-menu>.layer-wrapper{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    opacity: 0;
+
+    transition:opacity 0.3s;
+    -webkit-transition:opacity 0.3s;
+}
+
+#quick-menu.open>.layer-wrapper{
+    opacity: 1;
+}
+
+#quick-menu .overlay{
+    width: 100%;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: #000;
+    opacity: 0.8;
+}
+
+#quick-menu .menubtn_wrap{
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    z-index: 100;
+}
+
+
+
+#quick-menu .menubtn_wrap>.btn_list{
+    width: 150px;
+    position: absolute;
+    bottom: 6.5rem;
+    right: 0.5rem;
+}
+
+#quick-menu .menubtn_wrap>.btn_list>a{
+    margin-top:1.5rem;
+    min-height: 4rem;
+    display: block;
+    position: relative;
+    opacity: 0;
+
+    transform:translate3d(0,3rem,0);
+    -webkit-transform:translate3d(0,3rem,0);
+
+    transition:transform 0.2s , opacity 0.25s;
+    -webkit-transition:transform 0.2s , opacity 0.25s;
+}
+
+#quick-menu .menubtn_wrap>.btn_list>a.opened{
+    transform:translate3d(0,0,0);
+    -webkit-transform:translate3d(0,0,0);
+    opacity: 1;
+}
+
+#quick-menu .menubtn_wrap>.btn_list>a .txt{
+    position: absolute;
+    top: 50%;
+    right: 4.8rem;
+    color: #fff;
+    font: 1.3rem 'NotoSansKRRegular';
+    transform:translate3d(0,-50%,0);
+    -webkit-transform:translate3d(0,-50%,0);
+}
+
+#quick-menu .menubtn_wrap>.btn_list>a .img{
+    float: right;
+    background: #fff;
+    width: 4rem;
+    height: 4rem;
+    border-radius:50%;
+    display: block;
+    color: #000;
+    line-height: 4rem;
+    text-align: center;
+    font-size: 2rem;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+#quick-menu .menubtn_wrap>.btn_list>a.btn_login .img{
+	background-image: url('/images/reebok/ico_quick_login.png');
+	-webkit-background-size:19px auto;
+    background-size:19px auto;
+	background-position: 1.4rem center;
+}
+
+#quick-menu .menubtn_wrap>.btn_list>a.btn_logout .img{
+    background-image: url('/images/reebok/ico_quick_logout.png');
+    -webkit-background-size:19px auto;
+    background-size:19px auto;
+	background-position: 1.4rem center;
+}
+
+#quick-menu .menubtn_wrap>.btn_list>a.btn_member .img{
+	background-image: url('/images/reebok/ico_quick_join.png');
+	-webkit-background-size:19px auto;
+    background-size:19px auto;
+	background-position: 1.4rem center;
+}
+
+#quick-menu .menubtn_wrap>.btn_list>a.btn_mypage .img{
+	background-image: url('/images/reebok/ico_quick_mypage.png');
+	-webkit-background-size:14px auto;
+    background-size:14px auto;
+}
+
+#quick-menu .menubtn_wrap>.btn_list>a.btn_order .img{
+	background-image: url('/images/reebok/ico_quick_order.png');
+	-webkit-background-size:28px auto;
+    background-size:28px auto;
+	background-position: 10px center;
+}
+
+#quick-menu .menubtn_wrap>.btn_list>a.btn_cs .img{
+	background-image: url('/images/reebok/ico_quick_cs.png');
+	-webkit-background-size:22px auto;
+    background-size:22px auto;
+}
+
 
 section#header{
 	position: relative;

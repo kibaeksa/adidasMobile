@@ -570,6 +570,60 @@ Reebok.ops = {
 		Reebok.el.container = $('#container');
 		Reebok.el.flxNavi = $('#header .hdr2');
 
+		(function(){
+
+			$('#quick-menu>.layer-wrapper .overlay').bind('click',function(event){
+				closeQuickMenu();
+			});
+
+			$('#quick-menu>.toggle_btn').bind('click',function(event){
+				if($('#quick-menu').hasClass('open')){
+					closeQuickMenu();
+				}else{
+					openQuickMenu();
+				}
+			});
+
+			function openQuickMenu(){
+
+				var btnItems = $('#quick-menu .btn_list>a');
+				$('#quick-menu .layer-wrapper').css({
+					width : '100%',
+					height :'100%',
+					display:'block'
+				});
+
+				setTimeout(function(){
+					$('#quick-menu').addClass('open');
+					for(var index = btnItems.length ,  counter = 0; index >= 0; index--,counter++){
+						(function(index , counter){
+							setTimeout(function(){
+								$(btnItems[counter]).addClass('opened');
+							} , index * 30)
+						})(index , counter)
+					}
+				},100);
+
+				$(window).bind('touchmove',preventDefaultScroll);
+			}
+
+			function closeQuickMenu(){
+				var btnItems = $('#quick-menu .btn_list>a');
+
+				$('#quick-menu').removeClass('open');
+				btnItems.removeClass('opened');
+				setTimeout(function(){
+					$('#quick-menu .layer-wrapper').hide();
+				},150);
+
+				$(window).unbind('touchmove',preventDefaultScroll);
+			}
+
+			function preventDefaultScroll(event){
+				event.preventDefault();
+			}
+		})();
+
 
 	});
 
