@@ -441,7 +441,10 @@
                     <p class="copy_desc">다들 내 얘기 좀 들어봐. <br/>무엇을 할까, 어떻게 할까 모든 고민이 끝나고 삶을 뒤돌아 봤을 때<br/>결국 가장 기억에 남는 건 무엇일까? <br/>사람들을 태그하고 음식 사진이나 찍던 내 모습은 아니겠지. 그런 건 잡담에 불과해.<br/>무료한 일상은 시시한 애들에게 맡겨 두라고. 시간 낭비는 그만. 고민할 필요 없어.</p>
                     <div class="line"><img src="/images/adidas/event/campus/logo_line.png" alt=""></div>
 
-                    <div class="video"><img src="/images/adidas/event/campus/video.jpg" alt=""></div>
+                    <div class="video">
+                        <a class="video-button" href="javascript:void(0)" data-video-id="iisMyJdkyqg">
+                            <img src="/images/adidas/event/campus/video.jpg" alt=""></div>
+                        </a>
                     <a href="#" class="button icons aft" data-icon="">캠퍼스 제품 전체보기</a>
                 </div>
 
@@ -642,6 +645,14 @@
                     </div>
                 </div>
 
+                <div class="product_highlight history_highlight">
+                    <div class="copy_wrapper">
+                        <h3>70's Collection</h3>
+                        <div class="desc">스타일과 엣지, 언제 어디서나 완벽하게.<br/>70년대 스타일링에서 받은 영감에<br/>현대적인 디자인의 디테일을 담은 새로운 컬렉션.</div>
+                        <a href="#" class="button icons aft" data-icon="">캠퍼스 제품 전체보기</a>
+                    </div>
+                </div>
+
 
                 <script type="text/javascript">
 
@@ -683,6 +694,34 @@
                                 $('.highlight_korean .modelcut .box').removeClass('active').eq(index).addClass('active');
                             }
                         });
+
+                        $('.video-button').bind('click',function(){
+							var ytbId = $(this).attr('data-video-id');
+							var html = '<div id="video-layer" style="">';
+							html += '	<div class="bg" ></div>';
+							html += '	<div class="video-box"></div>';
+							html += '	<a href="javascript:void(0)" class="close_x_btn white"></a>';
+							html += '</div>';
+
+							$('html').css({overflow: 'hidden'});
+							$('body').append(html);
+
+							$('#video-layer .close_x_btn').bind('click',function(){
+								$('html').css({overflow: 'scroll'});
+								$('#video-layer ').remove();
+							});
+
+
+							setTimeout(function(){
+								$('#video-layer').addClass('loaded');
+
+								$('#video-layer .video-box').append('<iframe width="100%" height="100%" src="http://www.youtube.com/embed/'+ytbId+'?rel=0" frameborder="0" allowfullscreen></iframe>')
+							},100);
+
+
+						});
+
+
 
                     })(jQuery);
 

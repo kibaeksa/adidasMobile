@@ -21,6 +21,7 @@
   /* statement END */ }
   #campus .button {
     width: 100%;
+    height: auto;
     padding: 1rem 1.5rem;
     display: inline-block;
     border: 1px solid #000;
@@ -28,7 +29,7 @@
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     text-align: center;
-    font-size: 1.1rem;
+    font: 1.1rem/1.1rem 'NotoSansKRRegular';
     color: #000; }
     #campus .button::after {
       margin-left: 0.5rem;
@@ -85,7 +86,8 @@
         font: 1.3rem 'NotoSansKRBold'; }
   #campus .product_highlight {
     background: url("/images/adidas/event/campus/background_default.jpg") 0 0 repeat;
-    background-size: 100% auto; }
+    background-size: 100% auto;
+    /* highlight_korean */ }
     #campus .product_highlight.highlight_korean .modelcut {
       padding-bottom: 105.25%;
       position: relative; }
@@ -110,7 +112,7 @@
         position: absolute;
         top: 0;
         left: 0;
-        height: 16rem;
+        height: 14.5rem;
         opacity: 0;
         box-sizing: border-box;
         -webkit-box-sizing: border-box;
@@ -129,6 +131,22 @@
           left: 0;
           box-sizing: border-box;
           -webkit-box-sizing: border-box; }
+          #campus .product_highlight.highlight_korean .copy_wrapper .copy_box .button_area a {
+            background: none; }
+    #campus .product_highlight.history_highlight {
+      margin-bottom: 0;
+      padding: 3rem 0;
+      background: #000 url("/images/adidas/event/campus/background_history.jpg") center 0 no-repeat;
+      background-size: cover; }
+      #campus .product_highlight.history_highlight .copy_wrapper {
+        margin-bottom: 0; }
+        #campus .product_highlight.history_highlight .copy_wrapper h3 {
+          color: #fff; }
+        #campus .product_highlight.history_highlight .copy_wrapper .desc {
+          color: #fff; }
+        #campus .product_highlight.history_highlight .copy_wrapper .button {
+          border-color: #fff;
+          color: #fff; }
     #campus .product_highlight .modelcut {
       width: 100%;
       position: relative; }
@@ -177,3 +195,50 @@
       #campus .product_highlight .copy_wrapper .desc {
         margin-bottom: 2rem;
         font: 1.1rem/1.6rem 'NotoSansKRRegular'; }
+
+#video-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000; }
+
+#video-layer .bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: center center;
+  -webkit-transform-origin: center center;
+  transform: scale(0);
+  -webkit-transform: scale(0);
+  opacity: 0;
+  background: #000;
+  z-index: 1;
+  transition: all 0.4s;
+  -webkit-transition: all 0.4s; }
+
+#video-layer.loaded .bg {
+  opacity: 1;
+  transform: scale(1.2);
+  -webkit-transform: scale(1.2); }
+
+#video-layer .video-box {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 3; }
+
+#video-layer .close_x_btn {
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 5;
+  opacity: 0; }
+
+#video-layer.loaded .close_x_btn {
+  opacity: 1; }
