@@ -367,8 +367,7 @@ $width600:600px;
 		position: relative;
 		box-sizing:border-box;
 		-webkit-box-sizing:border-box;
-
-		background:url('/images/adidas/club/runbase-masthead.-visual.jpg');
+		background:url('/images/adidas/club/runbase-masthead.-visual_v2.jpg');
 		background-size: cover;
 
 		.headline_wrap{
@@ -379,6 +378,7 @@ $width600:600px;
 			padding: 1rem 1.2rem;
 			box-sizing:border-box;
 			-webkit-box-sizing:border-box;
+			display: block;
 
 			.headline{
 				position: relative;
@@ -860,18 +860,21 @@ $width600:600px;
 							display: none;
 						}
 					}
-
-					&.insta{
-						background-image: url('/images/adidas/club/ico_insta.png');
-						background-size: 30px auto;
-
-						&::after{
-							right: -15px;
-						}
-					}
 					&.fb{
+						position: relative;
 						background-image: url('/images/adidas/club/ico_fb.png');
 						background-size: 12px auto;
+						&:after{
+							position: absolute;
+						    top: 100%;
+						    left: 50%;
+						    margin-left: -5px;
+						    content: '';
+						    display: inline-block;
+						    width: 10px;
+						    height: 1px;
+						    background: #fff;
+						}
 					}
 				}
 			}
