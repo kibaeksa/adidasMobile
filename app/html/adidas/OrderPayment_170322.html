@@ -12,6 +12,7 @@
 	<script type="text/javascript" src="/js/jquery-1.12.0.min.js"></script>
 	<script type="text/javascript" src="/js/swipe.js"></script>
 	<script type="text/javascript" src="/js/owl.carousel.js"></script>
+    <script type="text/javascript" src="/js/modalPopup.min.js"></script>
 
 
 	<title>아디다스 모바일</title>
@@ -800,6 +801,11 @@
 					<span>신용카드</span>
 				</div>
 				<div class="cont">
+                    <!-- 170615 네이버페이 첫 결제 안내 문구 -->
+                    <div style="margin-bottom: 15px;">
+                        <span style="font:0.9rem 'NotoSansKR';letter-spacing:-0.5px;">네이버페이로 첫 결제 시 무조건 2000원 <span style="font-family:'NotoSansKRLight'">(2017.06.12 - 30)</span> <a class="modal-popup-click" data-modalpop-click="naverpay-eventpopup" href="javascript:void(0)" style="margin-left:10px;color:#0285cd;">자세히 보기 <span class="icons aft" data-icon="" style="margin-left:2px;"></span></a></span>
+                    </div>
+
 					<div class="payment_box">
 						<div class="payment_list">
 							<div class="on p_card"><a href="#" class="icons" data-icon="">카드결제</a></div>
@@ -1418,7 +1424,7 @@
     <!-- 161228 end -->
 
     <!-- 170419 주소찾기 결과 START -->
-    <div class="layerpopup layerpopup_zipfinder " id="layerpopup-zipfinder" style="display: block;">
+    <div class="layerpopup layerpopup_zipfinder " id="layerpopup-zipfinder">
     	<div class="header">
     		<h2>주소찾기</h2>
     		<a href="javascript:void(0)" class="close_x_btn"></a>
@@ -1462,6 +1468,29 @@
     	</div>
     </div>
     <!-- 170419 END -->
+
+
+    <!-- 170615 네이버페이 이벤트 팝업 -->
+    <div class="modal-popup-wrapper"
+        data-modalpop=""
+        data-modalpop-name="naverpay-eventpopup"
+        data-modalpop-valign="top"
+    >
+        <div class="overlay"></div>
+        <div class="popup">
+            <div class="popup-header">
+                <h2>네이버페이 오픈 이벤트</h2>
+                <a href="javascript:void(0)" class="close_x_btn"></a>
+            </div>
+
+            <div class="popup-contents" style="padding-bottom: 3rem;">
+                <img src="//imagem.adidas.co.kr/images/adidas/popup/popup_naverpay.jpg" alt="" style="width:100%">
+                <div class="button_area">
+                    <div class="blue"><a href="" class="icons aft" data-icon="">자세히 보기</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 </body>

@@ -148,8 +148,6 @@
             callback.call(window , elements[elemIndex] , elements[elemIndex].attributes);
             testCounter++;
         }
-
-        console.log(elements);
     }
 
 
@@ -173,12 +171,7 @@
             }
         };
 
-        console.log(elem);
-        console.log('------------');
-
         modalPopupContainer[setPopupName(emptyObj.name)] = emptyObj;
-
-        console.log(modalPopupContainer);
 
         return emptyObj;
     }
@@ -265,6 +258,10 @@
                 // modalPopupContainer[setPopupName(key)].element.querySelector('.popup').style.opacity = 1;
                 // modalPopupContainer[setPopupName(key)].element.querySelector('.overlay').style.opacity = 1;
             },100);
+        }
+
+        if(document.querySelector('#header') != null && !hasClass(document.querySelector('#header') , 'hide')){
+            addClass(document.querySelector('#header') , 'hide');
         }
     }
 
