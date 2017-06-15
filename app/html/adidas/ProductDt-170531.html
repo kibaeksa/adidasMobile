@@ -12,8 +12,8 @@
 	<script type="text/javascript" src="/js/jquery-1.12.0.min.js"></script>
 	<script type="text/javascript" src="/js/owl.carousel.min.js"></script>
 	<script type="text/javascript" src="/js/swipe.js"></script>
-	<!-- 160321 zoomImage.js script 추가 -->
 	<script type="text/javascript" src="/js/zoomImage.js"></script>
+    <script type="text/javascript" src="/js/modalPopup.min.js"></script>
 
 
 	<title>아디다스 모바일</title>
@@ -709,11 +709,15 @@
                         </div>
 
                     </div>
-                    <!-- 170531 추가 -->
+
                     <div class="line" style="margin-top: 15px;"></div>
-                    <div class="naverpay">
-                        <a href="#"></a>
+                    <!-- 170615 텍스트 추가 -->
+                    <div class="naverpay modal-popup-click" data-modalpop-click="naverpay-eventpopup">
+                        <a href="#">네이버 페이 오픈!</a>
+                        <span style="margin-left:10px;font-size:1rem;vertical-align:middle;">네이버페이로 첫 결제 시 무조건 2000원</span>
                     </div>
+                    <!-- //170615 -->
+
                 </div>
                 <!-- //170220 -->
 
@@ -3440,6 +3444,29 @@
 
 
 	</script>
+
+    <!-- 170615 네이버페이 이벤트 팝업 -->
+    <div class="modal-popup-wrapper"
+        data-modalpop=""
+        data-modalpop-name="naverpay-eventpopup"
+        data-modalpop-valign="top"
+    >
+        <div class="overlay"></div>
+        <div class="popup">
+            <div class="popup-header">
+                <h2>네이버페이 오픈 이벤트</h2>
+                <a href="javascript:void(0)" class="close_x_btn"></a>
+            </div>
+
+            <div class="popup-contents" style="padding-bottom: 3rem;">
+                <img src="//imagem.adidas.co.kr/images/adidas/popup/popup_naverpay.jpg" alt="" style="width:100%">
+                <div class="button_area">
+                    <div class="blue"><a href="" class="icons aft" data-icon="">자세히 보기</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
 
 </html>
