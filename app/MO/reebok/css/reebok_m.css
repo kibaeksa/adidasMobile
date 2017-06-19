@@ -6466,7 +6466,7 @@ div.layerpop_wrap#nomem_order_popup .inner .content .desc{
 
 #contents>.product_view .product_order .buy_btn>a span,
 #contents>.product_view #buy_btn_layer>a span{
-	font-size: 1.5rem;
+	font-size: 1.25rem;
 }
 
 
@@ -6520,16 +6520,16 @@ div.layerpop_wrap#nomem_order_popup .inner .content .desc{
 	width: 100%;
 }
 
-#contents>.product_view .product_order .buy_btn>a:last-child,
-#contents>.product_view #buy_btn_layer>a:last-child{
+#contents>.product_view .product_order .buy_btn>a.add_cart,
+#contents>.product_view #buy_btn_layer>a.add_cart{
 	width: auto;
 	flex:0 0 60px;
 	-webkit-flex:0 0 60px;
 	background: #777;
 }
 
-#contents>.product_view .product_order .buy_btn>a:last-child span,
-#contents>.product_view #buy_btn_layer>a:last-child span{
+#contents>.product_view .product_order .buy_btn>a.add_cart span,
+#contents>.product_view #buy_btn_layer>a.add_cart span{
     width: 25px;
 	height: 22px;
 	position: absolute;
@@ -6538,6 +6538,39 @@ div.layerpop_wrap#nomem_order_popup .inner .content .desc{
 	transform:translate3d(-50%,-50%,0);
 	-webkit-transform:translate3d(-50%,-50%,0);
 	background-position:-39px -25px;
+	margin-left: -2px;
+}
+
+#contents>.product_view .product_order .buy_btn>a.btn_npay,
+#contents>.product_view #buy_btn_layer>a.btn_npay{
+    background: #01c73c;
+}
+
+#contents>.product_view .product_order .buy_btn>a.btn_npay::before,
+#contents>.product_view #buy_btn_layer>a.btn_npay::before{
+	width: 55px;
+    height: 20px;
+    content:'';
+    display: inline-block;
+    position: relative;
+    top: 2px;
+    background:url('/images/reebok/btn_buy_npay.jpg') 0 0 no-repeat;
+    -webkit-background-size: 55px auto;
+    background-size: 55px auto;
+}
+
+#contents>.product_view .product_order .buy_btn.col3>.add_cart,
+#contents>.product_view .product_order .buy_btn.col3>.btn_npay,
+#contents>.product_view #buy_btn_layer>a.add_cart,
+#contents>.product_view #buy_btn_layer>a.btn_npay{
+    flex:0 0 100px;
+    -webkit-flex:0 0 100px;
+	font-size: 1.25rem;
+	font-family: 'NotoSansKRRegular';
+}
+
+#contents>.product_view .product_order .buy_btn.col3{
+
 }
 
 #contents>.product_view .product_order .today_delivery{
