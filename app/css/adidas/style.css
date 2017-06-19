@@ -6288,8 +6288,8 @@ div.layerpop_wrap#nomem_order_popup .inner .content .desc{
 	width: 100%;
 }
 
-#container.product_view .product_order .buy_btn>a:last-child,
-#container.product_view #buy_btn_layer>a:last-child{
+#container.product_view .product_order .buy_btn>a.add_cart,
+#container.product_view #buy_btn_layer>a.add_cart{
 	width: auto;
 	flex:0 0 60px;
 	-webkit-flex:0 0 60px;
@@ -6297,9 +6297,34 @@ div.layerpop_wrap#nomem_order_popup .inner .content .desc{
 	background-size: 16px auto;
 }
 
-#container.product_view .product_order .buy_btn>a:last-child::before,
-#container.product_view #buy_btn_layer>a:last-child::before{
+#container.product_view .product_order .buy_btn>a.add_cart::before,
+#container.product_view #buy_btn_layer>a.add_cart::before{
     display: none;
+}
+#container.product_view .product_order .buy_btn>a.btn_npay,
+#container.product_view #buy_btn_layer>a.btn_npay{
+    background: #01c73c;
+}
+
+#container.product_view .product_order .buy_btn>a.btn_npay::before,
+#container.product_view #buy_btn_layer>a.btn_npay::before{
+    width: 55px;
+    height: 20px;
+    content:'';
+    display: inline-block;
+    position: relative;
+    top: 2px;
+    background:url('/images/adidas/btn_buy_npay.jpg') 0 0 no-repeat;
+    -webkit-background-size: 55px auto;
+    background-size: 55px auto;
+}
+
+#container.product_view .product_order .buy_btn.col3>.add_cart,
+#container.product_view .product_order .buy_btn.col3>.btn_npay,
+#container.product_view #buy_btn_layer>a.add_cart,
+#container.product_view #buy_btn_layer>a.btn_npay{
+    flex:0 0 100px;
+    -webkit-flex:0 0 100px;
 }
 
 #container.product_view .product_order .today_delivery{
@@ -7705,10 +7730,6 @@ div.layerpop_wrap#nomem_order_popup .inner .content .desc{
 }
 #container.product_view #buy_btn_layer a:first-child{
 	width: 100%;
-}
-#container.product_view #buy_btn_layer a:last-child{
-	flex:0 0 60px;
-	-webkit-flex:0 0 60px;
 }
 
 .crazy_prodlist li p.img .oo_label{
