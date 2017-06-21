@@ -1,0 +1,223 @@
+/*
+	break width
+ */
+$break-small: 1000px;
+$break-large: 1400px;
+$width320:320px;
+$width400:400px;
+$width480:480px;
+$width600:600px;
+/*
+	@@ mixin
+ */
+@mixin box-sizing($value){
+			box-sizing: $value;
+	-webkit-box-sizing: $value;
+}
+
+@mixin css3($prop,$value...){
+	#{$prop} :$value;
+	-webkit-#{$prop} :$value;
+	-moz-#{$prop}:$value;
+	-o-#{$prop} :$value;
+	-ms-#{$prop} :$value;
+}
+
+@media screen and (max-width: 320px) {
+	html{
+		font-size: 10px;
+	}
+}
+@media screen and (min-width: 800px) {
+	html{
+		font-size: 12px;
+	}
+}
+
+// for pseudo element
+.pseudo-element{
+	content:'';
+	display: block;
+}
+
+#mi_adilette{
+	.button{
+		width: 100%;
+		height: 58px;
+		padding:1.8rem 1.5rem;
+		display: inline-block;
+		background: #000;
+		font-size:1.2rem;
+		box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		text-align: center;
+		font: 1.1rem/1.1rem 'NotoSansKRRegular';
+		color: #fff;
+
+		&::after{
+			margin-left: 0.5rem;
+			vertical-align: middle;
+		}
+
+		&:active , &.active{
+			background: #fff;
+			color: #000;
+		}
+	}
+
+	.masthead{
+		padding: 3.5rem 1.5rem 2rem;
+		background: url('http://imagem.adidas.co.kr/images/adidas/event/mi_adilette/visual.jpg') 0 0 no-repeat;
+		background-size: 100% auto;
+		img{
+			width:100%;
+		}
+
+		a {
+			margin-top: 108%;
+		}
+
+
+		h2{
+			margin-bottom: 1rem;
+			img{
+				width: 16rem;
+			}
+		}
+	}
+	/* masthead END */
+
+	.statement{
+		padding: 2.5rem 0 2.5rem;
+		text-align: center;
+
+		*{
+			color: #000;
+		}
+
+		.copy1{
+			font-size: 2.6rem;
+			line-height: 1.5rem;
+			font-family:'adinenuPro-black';
+		}
+
+		.copy2{
+			margin-top: 0.5rem;
+			font-size: 1.03rem;
+			line-height: 1.5rem;
+			font-family:'NotoSansKR';
+			span{
+				font: 1.2rem 'adinenuPro-bold';
+			}
+		}
+
+		.copy3{
+			margin-top: 1.5rem;
+			font-size: 1rem;
+			line-height: 1.5rem;
+			font-family:'NotoSansKRRegular';
+			span{
+				font: 1.2rem 'adinenuPro-bold';
+			}
+		}
+	}
+	/* statement END */
+
+	.product_highlight{
+
+		.bar {
+			img{
+				width: 100%;
+			}
+		}
+
+		.button_area {
+			padding: 0 1.5rem;
+		}
+
+		.modelcut{
+			width: 100%;
+			position: relative;
+
+			img{
+				width: 100%;
+			}
+		}
+
+		.slider_wrapper{
+			padding: 2rem 0 0;
+			margin-bottom: 2.5rem;
+
+			.slider{
+				position: relative;
+				width: 100%;
+				overflow: hidden;
+
+				ul{
+					width: 100%;
+					position: relative;
+					margin-bottom: 1rem;
+					overflow: hidden;
+					li{
+						width: 100%;
+						float: left;
+						position: relative;
+						img{
+							width: 100%;
+						}
+					}
+				}
+			}
+
+
+
+			.num{
+				margin-top: 1rem;
+				text-align: center;
+				span{
+					width: 10px;
+					height: 10px;
+					display: inline-block;
+					margin: 0 0.2rem;
+					background: #7d7d7d;
+					border-radius: 50%;
+
+					&.on{
+						background: #0cd5c4;
+					}
+				}
+			}
+
+
+		}
+
+		.copy_wrapper{
+			padding:0 3rem;
+			margin-bottom: 3rem;
+
+			>*{
+				text-align: center;
+			}
+
+			h3{
+				margin-bottom: 1rem;
+				color: #000;
+				font:2.2rem 'adihaus-bold';
+				letter-spacing: 3px
+			}
+
+			.desc{
+				margin-bottom: 2rem;
+				font: 1.1rem/1.6rem 'NotoSansKRRegular';
+			}
+
+
+		}
+	}
+	.bottom_area {
+		img{
+			width:100%;
+		}
+	}
+
+}
