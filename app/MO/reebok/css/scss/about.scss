@@ -166,9 +166,7 @@ html{
     		}
     	}
 	}
-footer#footer{
-	margin-top: 0;
-}
+
 
 .clearfix{
 	&:after{
@@ -181,33 +179,6 @@ footer#footer{
 	}
 }
 
-.close{
-	width:40px;
-	height:40px;
-	display: block;
-	position: absolute;
-	top: 0;
-	right: 0;
-	z-index: 10;
-
-	&:after,
-	&:before{
-		@extend .pseudo-element;
-		width:50%;
-		height: 1px;
-		position: absolute;
-		top:50%;
-		left:50%;
-		transform:translate3d(-50%,-50%,0) rotate(45deg);
-		-webkit-transform:translate3d(-50%,-50%,0) rotate(45deg);
-		background: #5c5c5c;
-	}
-
-	&:after{
-		transform:translate3d(-50%,-50%,0) rotate(-45deg);
-		-webkit-transform:translate3d(-50%,-50%,0) rotate(-45deg);
-	}
-}
 
 .campaign_list{
 	background: #fff;
@@ -223,6 +194,35 @@ footer#footer{
 }
 
 .campaign{
+
+	.close{
+		width:40px;
+		height:40px;
+		display: block;
+		position: absolute;
+		top: 0;
+		right: 0;
+		z-index: 10;
+
+		&:after,
+		&:before{
+			@extend .pseudo-element;
+			width:50%;
+			height: 1px;
+			position: absolute;
+			top:50%;
+			left:50%;
+			transform:translate3d(-50%,-50%,0) rotate(45deg);
+			-webkit-transform:translate3d(-50%,-50%,0) rotate(45deg);
+			background: #5c5c5c;
+		}
+
+		&:after{
+			transform:translate3d(-50%,-50%,0) rotate(-45deg);
+			-webkit-transform:translate3d(-50%,-50%,0) rotate(-45deg);
+		}
+	}
+
 	.button_area{
 		padding: 0rem 0px;
 		text-align: center;
@@ -1631,6 +1631,9 @@ footer#footer{
 
 			.button_area{
 				margin-bottom: 3rem;
+				a{
+					background: none;
+				}
 			}
 
 			.slider_wrap{
@@ -2754,7 +2757,6 @@ footer#footer{
 			}
 		}
 	}
-
 
 }
 
@@ -3913,6 +3915,7 @@ footer#footer{
 			}
 			.button_area{
 				margin-bottom: 8%;
+				background:none;
 				.button{
 					padding:1rem 3.5rem;
 					display: inline-block;
@@ -7547,7 +7550,7 @@ footer#footer{
 						text-align: center;
 						background: #383737;
 						color:#fff;
-						font: 1.8rem 'dinpro cond','Nanum Gothic';
+						font:700 1.8rem 'dinpro cond','Nanum Gothic';
 					}
 					.con{
 						background: url("/images/reebok/about/bmhp/con_bg.png") no-repeat;
@@ -7564,7 +7567,7 @@ footer#footer{
 							z-index: 1;
 							text-transform: uppercase;
 							color:#292929;
-							font:800 1.5rem 'dinpro cond','Nanum Gothic';
+							font:700 1.7rem 'dinpro cond','Nanum Gothic';
 							letter-spacing: -0.3px;
 						}
 						.txt{
@@ -7582,16 +7585,17 @@ footer#footer{
 							// border-bottom: 1px solid #292929;
 							a{
 								position: relative;
+								top:-1px;
 								display: inline-block;
 								font:500 1rem/1.5rem 'NotoSansKR','Nanum Gothic';
 								strong{
 									padding-right: 2px;
-									font: 1rem/1.5rem 'NotoSansKR','Nanum Gothic';
+									font: 1.1rem/1.5rem 'NotoSansKR','Nanum Gothic';
 								}
 								span{
 									position: absolute;
 									bottom: 0;
-									left:5px;
+									left:0;
 									width: 100%;
 									height: 1px;
 									background: #292929;
@@ -7604,7 +7608,7 @@ footer#footer{
 						}
 						.txt.place:before{
 							margin-left: -10px;
-							margin-right: 5px;
+							margin-right: 3px;
 						}
 						.txt.place:after{
 
