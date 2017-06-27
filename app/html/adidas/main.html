@@ -892,6 +892,193 @@
 					<!-- <span class="adihs-din-b">12</span> -->
 				</a>
 			</div>
+
+			<div class="notice_tits">
+				<div class="notice_tits_wrap">
+					<div class="collout_bar" id="h-pop-exchange_btn">
+						<a href="javascript:void(0)"></a>
+						<div class="img"><img src="http://imagem.adidas.co.kr/images/adidas/icon_exchange.png" alt=""></div>
+						<p>교환/환불은 이렇게</p>
+					</div>
+					<div class="collout_bar">
+						<a href="/MO/Product/brandsPrdList.action?ctgr_cd=01006009"></a>
+						<div class="img"><img src="http://imagem.adidas.co.kr/images/adidas/icon_limited_edition.png" alt=""></div>
+						<p>온라인 한정상품을 만나보세요</p>
+					</div>
+					<div class="collout_bar" id="h_pop_today_delivery_btn">
+						<a href="javascript:void(0)"></a>
+						<div class="img"><img src="http://imagem.adidas.co.kr/images/adidas/icon_today_delivery.png" alt=""></div>
+						<p>스피드 배송 서비스 오픈!</p>
+					</div>
+					<div class="collout_bar on" id="h-pop-free-delivery_btn">
+						<a href="javascript:void(0)"></a>
+						<div class="img"><img src="http://imagem.adidas.co.kr/images/adidas/ico_deliver.gif" alt=""></div>
+						<p>7월 한 달간, 전 제품 무료배송/교환/반품 서비스</p>
+					</div>
+				</div>
+				<a href="javascript:void(0)" class="more"><img src="http://imagem.adidas.co.kr/images/adidas/icon_view_more.png" alt=""></a>
+			</div>
+
+			<script type="text/javascript">
+				(function($){
+					// 170627
+					$(document).ready(function() {
+
+						var html = "";
+						html += '  <div class="header_layerpopup layerpopup headerpop_today_delivery" id="h-pop-today-delivery" style="display: none;">';
+						html += '    <a href="javascript:void(0)" class="close_x_btn"></a>';
+						html += '    <div class="contents">';
+						html += '      <div class="bg"></div>';
+						html += '      <div class="main_icon"><span class="icons aft" data-icon=""></span></div>';
+						html += '      <h2>스피드 배송 서비스 오픈!</h2>';
+						html += '      <p class="bold">SPEEDY DELIVERY(스피드 배송)란? <br>';
+						html += '             상품상세 페이지에 <span class="icons aft" data-icon=""></span> 표시가 된 상품을<br>저녁 6시부터 다음 날 오전 9시까지 주문 후<br>';
+						html += '              결제 완료된 <span class="icons aft" data-icon=""></span> 상품에 한하여 다음날 또는<br>당일까지 빠르게 배송해 드리는 서비스 입니다.</p>';
+						html += '      <p> 배송지 기준으로 서울 및 수도권 <br>인근지역(일부지역 제외)에 한하여 진행 됩니다.<br>빠르고 안전한 배송을 위해 박스 규격은<br>';
+						html += '        가로/세로/높이의 합이 80cm 이내이며,<br>총 주문 수량은 3개로 제한 됩니다. (단, 신발은 2개만 가능)<br>';
+						html += '        기타 SPEEDY DELIVERY(스피드 배송) 관련 자세한 안내는<br>FAQ를 참고해주시기 바랍니다.</p>';
+						html += '      <p class="bold">';
+						html += '          <a href="/MO/Faq/faqList.action?FAQ_DIVI=03&FAQ_DIVI_DTL=05" class="icons aft" data-icon="" >FAQ 바로가기</a>';
+						html += '      </p>';
+						html += '    </div>';
+						html += '  </div>';
+
+						html += '  <div class="header_layerpopup layerpopup headerpop_exchange" id="h-pop-exchange" style="display: none;">';
+						html += '    <a href="javascript:void(0)" class="close_x_btn"></a>';
+						html += '    <div class="contents">';
+						html += '      <div class="bg"></div>';
+						html += '      <div class="main_icon"><span class="icons aft" data-icon=""></span></div>';
+						html += '      <h2>교환/환불은 이렇게</h2>';
+						html += '      <p class="bold">교환/반품은 배송완료일로부터 7일 이내에<br>신청이 가능합니다.<br>';
+						html += '        단, 포장을 개봉하였거나 포장이 훼손되어<br>(상품의 Tag분리/분실, 비닐포장 훼손, 신발박스 훼손 등)<br>';
+						html += '        상품가치가 현저히 감소한 경우 교환/반품 불가 합니다.</p>';
+						html += '      <p>교환/반품 관련 자세한 문의는 <br>아디다스 고객센터 1588-8241로 해주시기 바랍니다.</p>';
+						html += '    </div>';
+						html += '  </div>';
+
+						html += '  <div class="header_layerpopup layerpopup headerpop_freedeliver" id="h-pop-free-delivery" style="display: none;">';
+						html += '    <a href="javascript:void(0)" class="close_x_btn"></a>';
+						html += '    <div class="contents" style="padding-top:100px;">';
+						html += '      <div class="bg"></div>';
+						html += '      <div class="main_icon" style="background:none;height: 3rem;"><span class="icons"><img src="http://imagem.adidas.co.kr/images/adidas/ico_pop_deliver.gif" style="width:100%" /></span></div>';
+						html += '      <h2 style="font-size:2.5rem;">FREE DELIVERY!</h2>';
+						html += '      <p class="bold" style="padding-bottom:0;font-size:2rem;line-height:2.8rem;">7월 한 달간, <br>';
+						html += '        전 제품<br>';
+						html += '        무료배송/교환/반품 서비스</p>';
+						html += '      <p style="font-size: 1.3rem;padding-top: 0.5rem;">(단, 마이아디다스 제외)</p>';
+						html += '      <p style="font-weight:400;font-size:1.5rem;line-height:2.3rem;font-family:\'NotoSansKR\'">2017.7.1~7.31 주문 건에 한해<br/>무료 배송/교환/반품 제공됩니다.</p>';
+						html += '    </div>';
+						html += '  </div>';
+						jQuery('body').prepend(html);
+
+
+
+
+						// 170627 헤더 작은 공지들 (로테이션기능 주석)
+						var tits_index = 0;
+						var len = $("#header .notice_tits .notice_tits_wrap .collout_bar").length;
+						// var rolling = setInterval(notice_tits_auto, 1600);
+
+						function notice_tits_auto(){
+							if( tits_index == len-1 ){
+							  tits_index = 0;
+							  $("#header .notice_tits .notice_tits_wrap .collout_bar").removeClass('on').eq(0).addClass('on');
+
+							}else{
+							  tits_index ++;
+							  $("#header .notice_tits .notice_tits_wrap .collout_bar").removeClass('on').eq(tits_index).addClass('on');
+							}
+						}
+
+						// 170322 헤더팝업 당일배송
+						$('#h_pop_today_delivery_btn').bind('click',function(){
+							document.getElementById('wrap').scrollTopBefore = window.scrollY;
+							document.getElementById('wrap').style.display = 'block';
+							document.getElementById('h-pop-today-delivery').style.display = 'block';
+							window.scrollTo(0, 0);
+							$('html').addClass('no_srl');
+						});
+						// 170322 헤더팝업 교환환불
+						$('#h-pop-exchange_btn').bind('click',function(){
+							document.getElementById('wrap').scrollTopBefore = window.scrollY;
+							document.getElementById('wrap').style.display = 'block';
+							document.getElementById('h-pop-exchange').style.display = 'block';
+							window.scrollTo(0, 0);
+							$('html').addClass('no_srl');
+						});
+
+						// 170627 헤더팝업 무료배송
+						$('#h-pop-free-delivery_btn').bind('click',function(){
+							document.getElementById('wrap').scrollTopBefore = window.scrollY;
+							document.getElementById('wrap').style.display = 'block';
+							document.getElementById('h-pop-free-delivery').style.display = 'block';
+							window.scrollTo(0, 0);
+							$('html').addClass('no_srl');
+						});
+
+						// 170627 당일배송 지역찾기 레이어 닫았을 떄
+						$('.layerpopup .close_x_btn').bind('click',function(){
+							document.getElementById('h-pop-today-delivery').style.display = 'none';
+							document.getElementById('h-pop-exchange').style.display = 'none';
+							document.getElementById('h-pop-free-delivery').style.display = 'none';
+							document.getElementById('wrap').style.display = 'block';
+							window.scrollTo(0, document.getElementById('wrap').scrollTopBefore);
+							$('html').removeClass('no_srl');
+						});
+
+						$.fn.cutString = function(options){
+							var elemObj = $(this);
+							var elem = $(this);
+							var tempText = options.text;
+							var isOverLine = false;
+							var contentArray = options.text.split('<br/>');
+							var textLength = 0;
+
+							for(var i = 0; i<contentArray.length; i++){
+								if(contentArray[i] !== ''){
+									textLength += contentArray[i].length;
+								}
+							}
+
+							if(textLength >= options.cutLength){
+								isOverLine = true;
+								tempText = options.text.substring(0,options.cutLength);
+								tempText += '...'
+							}
+
+							if(!isOverLine){
+								$(this).html(options.text);
+								return;
+							}
+
+							var aElem = $('<a href="javascript:void(0)" class="more_read">'+(options.buttonName != undefined ? options.buttonName.open : '더보기') +'</a>');
+							aElem.bind('click',toggleContent);
+
+							elemObj.html(tempText);
+							elemObj.append(aElem);
+
+							function toggleContent(){
+								if($(this).hasClass('shortened')) {
+									elemObj.html(tempText);
+									$(this).text((!!options.buttonName ? options.buttonName.open : '더보기')).removeClass('shortened');
+									elemObj.append(this);
+								} else {
+									elemObj.html(options.text);
+									$(this).text((!!options.buttonName ? options.buttonName.close : '줄이기')).addClass('shortened');
+									elemObj.append(this);
+								}
+								aElem.bind('click',toggleContent);
+
+								if(!!options.callback){
+									options.callback.call(elemObj,($(this).hasClass('shortened') ? true : false));
+								}
+							}
+						};
+				    });
+					// 170627 END
+				})(jQuery);
+				</script>
+
 		</div>
 
 		<div id="container" class="main">
