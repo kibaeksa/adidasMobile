@@ -3691,6 +3691,86 @@ div.layerpop_wrap#nomem_order_popup .inner .content .desc{
   letter-spacing: -0.5px;
 }
 
+/* Modal Popup */
+.modal-popup-wrapper{
+    width: 100%;
+    height: 100%;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    overflow: auto;
+}
+
+.modal-popup-wrapper.open{
+    display: block;
+}
+
+.modal-popup-wrapper>.overlay{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 5;
+    opacity:0;
+}
+
+.modal-popup-wrapper>.popup{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    opacity:0;
+    transition:opacity 0.4s;
+    -webkit-transition:opacity 0.4s;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.modal-popup-wrapper.padding>.popup{
+    padding: 0 15px;
+}
+
+.modal-popup-wrapper.open>.overlay{
+    opacity: 1;
+}
+
+.modal-popup-wrapper.open>.popup{
+    opacity: 1;
+}
+
+.modal-popup-wrapper>.popup>.popup-header{
+    position: relative;
+    background: #ebebeb;
+}
+.modal-popup-wrapper>.popup>.popup-header h2{
+    padding-left: 1.2rem;
+    height: 60px;
+    font: 1.5rem/60px 'NotoSansKR';
+}
+
+.modal-popup-wrapper>.popup>.popup-header .close_x_btn {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translate3d(0,-50%,0);
+    -webkit-transform: translate3d(0,-50%,0);
+    right: 1.2rem;
+}
+
+.modal-popup-wrapper>.popup>.popup-contents{
+    position: relative;
+    padding: 1.2rem;
+    background: #fff;
+}
+/* Modal Popup END */
+
 #container #sns_share_layer,
 #container #noti_deliv_layer{
 	width: 100%;
@@ -10213,6 +10293,107 @@ div.layerpop_wrap#nomem_order_popup .inner .content .desc{
   padding-top: 1rem;
   letter-spacing: -0.5px;
 }
+
+/* COUPON POPUP */
+.modal-coupon-popup .popup-contents{
+
+}
+
+.modal-coupon-popup .popup-contents .status{
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.modal-coupon-popup .popup-contents .status strong{
+	font-size: 1.2rem;
+    font-weight: normal;
+    font-family: 'NotoSansKRBold';
+}
+
+.modal-coupon-popup .popup-contents .coupon_list{
+    margin-bottom: 1.5rem;
+}
+
+.modal-coupon-popup .popup-contents .coupon_list li{
+    margin-bottom: 1rem;
+    min-height: 7rem;
+    position: relative;
+    background: #f1f1f1;
+}
+
+.modal-coupon-popup .popup-contents .coupon_list li:last-child{
+    margin-bottom: 0;
+}
+
+.modal-coupon-popup .popup-contents .coupon_list li .logo{
+    width: 6rem;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #000 url('/images/reebok/delta_logo.png') center center no-repeat;
+	-webkit-background-size: 32px auto;
+	background-size: 32px auto;
+    color: #fff;
+}
+
+.modal-coupon-popup .popup-contents .coupon_list li .info{
+    min-height: 7rem;
+    position: relative;
+    margin-left: 7rem;
+    padding-right: 1rem;
+    box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+}
+
+.modal-coupon-popup .popup-contents .coupon_list li .info .name{
+    padding-top:0.5rem;
+    font: 1.05rem/1.45rem 'NotoSansKRBold';
+}
+
+.modal-coupon-popup .popup-contents .coupon_list li .info .date{
+    position: absolute;
+    bottom: 1rem;
+    left:0;
+    font-size: 0.86rem;
+    letter-spacing: -0.5px;
+}
+
+.modal-coupon-popup .popup-contents .coupon_list li .price-container{
+    position: absolute;
+    bottom: 0.5rem;
+    right: 1rem;
+}
+
+.modal-coupon-popup .popup-contents .coupon_list li .price-container .prc{
+    font-size: 2.4rem;
+    line-height: 2rem;
+	font-family: 'dinpro';
+}
+
+.modal-coupon-popup .popup-contents .coupon_list li .price-container .won{
+    margin-left: 3px;
+    font-size: 1rem;
+}
+
+.modal-coupon-popup .popup-contents .button_area{
+    margin-bottom: 1rem;
+}
+
+.modal-coupon-popup .popup-contents .button_area div{
+    height: 4rem;
+}
+
+.modal-coupon-popup .popup-contents .button_area div a{
+    height: 4rem;
+    line-height: 4rem;
+    font-size: 1.25rem;
+}
+
+.modal-coupon-popup .popup-contents .button_area div a::after{
+    font-size: 1rem;
+}
+/* COUPON POPUP END */
 
 @-webkit-keyframes size-error-line {
 	0% {

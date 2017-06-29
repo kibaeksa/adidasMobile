@@ -251,7 +251,7 @@
     }
 
     function openPopup(key){
-
+        var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
         addClass(modalPopupContainer[setPopupName(key)].element , 'open');
         if(!!modalPopupContainer[setPopupName(key)].fade){
             setTimeout(function(){
@@ -260,9 +260,14 @@
             },100);
         }
 
-        if(document.querySelector('#header') != null && !hasClass(document.querySelector('#header') , 'hide')){
-            addClass(document.querySelector('#header') , 'hide');
+        if(document.querySelector('#header') != null){
+            if(document.querySelector('#header').offsetHeight < scrollTop){
+                if(!hasClass(document.querySelector('#header') , 'hide')){
+                    addClass(document.querySelector('#header') , 'hide');
+                }
+            }
         }
+
     }
 
     function closePopup(key){

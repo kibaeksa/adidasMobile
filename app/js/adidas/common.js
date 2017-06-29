@@ -515,15 +515,14 @@ adiApp.getNodefromString = function (htmlString) {
 			offsetTop = 60 + topBnnH;
 
 			if(headerElem){
-
-				if(prevScroll > 0 && sTop > 0){
+				if( sTop < document.getElementById('header').offsetHeight || (prevScroll > 0 && sTop > 0) ){
 					if(sTop < document.getElementById('header').offsetHeight){
 						$(headerElem).removeClass('hide');
 					}else{
 						if(prevScroll - sTop > 10){
 							$(headerElem).removeClass('hide');
 						}else if(prevScroll - sTop < -10){
-								$(headerElem).addClass('hide');
+							$(headerElem).addClass('hide');
 						}
 					}
 				}

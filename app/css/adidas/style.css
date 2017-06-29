@@ -18176,7 +18176,6 @@ em.prd_speedy .tooltip-box:before{
 
 .modal-popup-wrapper>.popup{
     width: 100%;
-    background: #fff;
     position: absolute;
     top: 0;
     left: 0;
@@ -18184,6 +18183,12 @@ em.prd_speedy .tooltip-box:before{
     opacity:0;
     transition:opacity 0.4s;
     -webkit-transition:opacity 0.4s;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.modal-popup-wrapper.padding>.popup{
+    padding: 0 15px;
 }
 
 .modal-popup-wrapper.open>.overlay{
@@ -18204,7 +18209,7 @@ em.prd_speedy .tooltip-box:before{
     font: 1.5rem/60px 'NotoSansKR';
 }
 
-.modal-popup-wrapper>.popup>.popup-header .close_x_btn {
+.modal-popup-wrapper>.popup>.popup-header .close_x_btn{
     width: 30px;
     height: 30px;
     position: absolute;
@@ -18215,11 +18220,16 @@ em.prd_speedy .tooltip-box:before{
     right: 1.2rem;
 }
 
+.modal-popup-wrapper>.popup>.popup-header .close_x_btn::before,
+.modal-popup-wrapper>.popup>.popup-header .close_x_btn::after{
+    width: 80%;
+}
+
 .modal-popup-wrapper>.popup>.popup-contents{
     position: relative;
     padding: 1.2rem;
+    background: #fff;
 }
-
 /* Modal Popup END */
 
 /*runbase mobile popup css와 동일*/
@@ -18658,6 +18668,114 @@ em.prd_speedy .tooltip-box:before{
 .modal-popup .popup-contents>.close_x_btn::after{
 	width: 75%;
 }
+
+/* COUPON POPUP */
+.modal-coupon-popup .popup-contents{
+
+}
+
+.modal-coupon-popup .popup-contents .status{
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.modal-coupon-popup .popup-contents .status strong{
+    font-size: 1.2rem;
+    font-weight: normal;
+    font-family: 'NotoSansKRBold';
+}
+
+.modal-coupon-popup .popup-contents .coupon_list{
+    margin-bottom: 1.5rem;
+}
+
+.modal-coupon-popup .popup-contents .coupon_list li{
+    margin-bottom: 1rem;
+    min-height: 7rem;
+    position: relative;
+    background: #f1f1f1;
+}
+
+.modal-coupon-popup .popup-contents .coupon_list li:last-child{
+    margin-bottom: 0;
+}
+
+.modal-coupon-popup .popup-contents .coupon_list li .logo{
+    width: 6rem;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #000;
+    color: #fff;
+}
+
+.modal-coupon-popup .popup-contents .coupon_list li .logo::before{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 1.8rem;
+    line-height: 1.6rem;
+    margin: -0.8rem 0 0 -0.8rem;
+}
+
+.modal-coupon-popup .popup-contents .coupon_list li .info{
+    min-height: 7rem;
+    position: relative;
+    margin-left: 7rem;
+    padding-right: 1rem;
+    box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+}
+
+.modal-coupon-popup .popup-contents .coupon_list li .info .name{
+    padding-top:0.5rem;
+    font: 1.05rem/1.45rem 'NotoSansKRBold';
+}
+
+.modal-coupon-popup .popup-contents .coupon_list li .info .date{
+    position: absolute;
+    bottom: 1rem;
+    left:0;
+    font-size: 0.86rem;
+    letter-spacing: -0.5px;
+}
+
+.modal-coupon-popup .popup-contents .coupon_list li .price-container{
+    position: absolute;
+    bottom: 0.5rem;
+    right: 1rem;
+}
+
+.modal-coupon-popup .popup-contents .coupon_list li .price-container .prc{
+    font-size: 2.4rem;
+    line-height: 2rem;
+}
+
+.modal-coupon-popup .popup-contents .coupon_list li .price-container .won{
+    margin-left: 3px;
+    font-size: 1rem;
+}
+
+.modal-coupon-popup .popup-contents .button_area{
+    margin-bottom: 1rem;
+}
+
+.modal-coupon-popup .popup-contents .button_area div{
+    height: 4rem;
+}
+
+.modal-coupon-popup .popup-contents .button_area div a{
+    height: 4rem;
+    line-height: 4rem;
+    font-size: 1.25rem;
+}
+
+.modal-coupon-popup .popup-contents .button_area div a::after{
+    font-size: 1rem;
+}
+/* COUPON POPUP END */
+
 /*common*/
 @media screen and (max-width: 320px) {
 
