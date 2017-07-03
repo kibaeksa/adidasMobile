@@ -458,22 +458,16 @@
 						$('#collection_slider3 .owl-prev').css({'top':top+'px'})
 						$('#collection_slider3 .owl-next').css({'top':top+'px'})
 
-						$('#collection_slider2 .owl-next').click(function(){
-							$('#collection_slider2 .owl-prev').css({
-								'opacity':'1','pointer-events':'initial'
-							})
-							$('#collection_slider2 .owl-next').css({
-								'opacity':'0.5','pointer-events':'none'
-							})
+						$('.owl-prev').addClass('clickevent');
+						$('.owl-next').click(function(){
+							$(this).addClass('clickevent');
+							$(this).siblings('.owl-prev').removeClass('clickevent');
 						})
-						$('#collection_slider2 .owl-prev').click(function(){
-							$('#collection_slider2 .owl-next').css({
-								'opacity':'1','pointer-events':'initial'
-							})
-							$('#collection_slider2 .owl-prev').css({
-								'opacity':'0.5','pointer-events':'none'
-							})
+						$('.owl-prev').click(function(){
+							$(this).addClass('clickevent');
+							$(this).siblings('.owl-next').removeClass('clickevent');
 						})
+
 						$('#collection_slider2 .owl-dots .owl-dot').eq(0).click(function(){
 							$('#collection_slider2 .owl-next').css({
 								'opacity':'1','pointer-events':'initial'
@@ -493,19 +487,6 @@
 
 
 
-
-
-
-
-
-						$('.video-btn').bind('click',function(){
-							// alert('상품이 준비중입니다');
-							// var ytbId = $(this).attr('data-video-id');
-							// $('.video_layer').addClass('active');
-							// setTimeout(function(){
-							// 	loadVideo(ytbId,'video_box');
-							// },400);
-						});
 
 						$('.video_layer .close').bind('click',function(){
 							$('.video_layer').prepend('<div id="video_box"></div>').find('iframe').remove();
