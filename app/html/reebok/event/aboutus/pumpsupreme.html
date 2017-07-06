@@ -131,6 +131,51 @@
 						<a href="/brand/campaign/list.action" style="letter-spacing:1px;">CAMPAIGN</a>
 						<span style="letter-spacing:1px;">Zoku Runner</span>
 					</div>
+					 <script type="text/javascript" src="/js/modalPopup.min.js"></script>
+					<div class="modal-popup-wrapper"
+					    data-modalpop=""
+					    data-modalpop-name="popup_name1"
+					>
+					    <div class="overlay"></div>
+					    <div class="popup">
+					        <div class="popup-header">
+					            <h2>판매 매장보기</h2>
+					            <a href="javascript:void(0)" class="close_x_btn"></a>
+					        </div>
+
+					        <div class="popup-contents">
+					            <p>리복 Pump Supreme 판매 매장을 확인하세요.</p>
+								<div class="shop_cont">
+									<table>
+										<colgroup>
+	                                        <col width="80%">
+	                                        <col width="20%">
+	                                    </colgroup>
+										<tr>
+											<td>
+												<ul>
+													<li class="name">레스모아 명동중앙</li>
+													<li class="adrress">서울특별시 중구 명동8길 14</li>
+													<li class="phone">02-779-7277</li>
+												</ul>
+											</td>
+											<td class="middle"><a href="http://naver.me/59PvjyyH" target="_blank"><img src="http://imagem.reebok.co.kr/images/reebok/about/pump_supreme/btn_map.jpg" alt=""/></a></td>
+										</tr>
+										<tr>
+											<td>
+												<ul>
+													<li class="name">레스모아 명동본점</li>
+													<li class="adrress">서울특별시 중구 명동길 17 </li>
+													<li class="phone">02-755-7681</li>
+												</ul>
+											</td>
+											<td class="middle"><a href="http://naver.me/59PvjyyH" target="_blank"><img src="http://imagem.reebok.co.kr/images/reebok/about/pump_supreme/btn_map.jpg" alt=""/></a></td>
+										</tr>
+									</table>
+								</div>
+					        </div>
+					    </div>
+					</div>
 
 					<div class="video_visual">
 						<div class="bg">
@@ -161,7 +206,7 @@
 										<div class="txt">
 											<p class="main">모던한 실루엣</p>
 											<p class="desc">슬리브 형태의 울트라니트 갑피 소재의 양말 같은<br />편안한 착화감과 트렌디한 룩</p>
-											<a href="#">판매 매장보기</a>
+											<a href="javascript:void(0)" class="modal-popup-click" data-modalpop-click="popup_name1">판매 매장보기</a>
 										</div>
 									</li>
 									<li>
@@ -169,7 +214,7 @@
 										<div class="txt">
 											<p class="main">맞춤 핏</p>
 											<p class="desc">신발 끈이 없이 공기주입 방식의 맞춤 핏을 제공하는<br />펌프 테크놀러지</p>
-											<a href="#">판매 매장보기</a>
+											<a href="javascript:void(0)" class="modal-popup-click" data-modalpop-click="popup_name1">판매 매장보기</a>
 										</div>
 									</li>
 									<li>
@@ -177,7 +222,7 @@
 										<div class="txt">
 											<p class="main">편안함</p>
 											<p class="desc">경량성 미드솔이 부드러운 쿠셔닝 제공</p>
-											<a href="#">판매 매장보기</a>
+											<a href="javascript:void(0)" class="modal-popup-click" data-modalpop-click="popup_name1">판매 매장보기</a>
 										</div>
 									</li>
 									<li>
@@ -185,7 +230,7 @@
 										<div class="txt">
 											<p class="main">탁월한 지지력</p>
 											<p class="desc">미드솔에 장착된 카본 플레이트가 발꿈치에서 발가락까지 일관된 안정성과 지지력 제공</p>
-											<a href="#">판매 매장보기</a>
+											<a href="javascript:void(0)" class="modal-popup-click" data-modalpop-click="popup_name1">판매 매장보기</a>
 										</div>
 									</li>
 
@@ -311,16 +356,16 @@
 
 
 							$('.video-btn').bind('click',function(){
-								alert('동영상이 준비중입니다');
-								// var ytbId = $(this).attr('data-video-id');
-								// var html = '<div id="video-layer" style="">';
-								// html += '	<div class="bg" ></div>';
-								// html += '	<div class="video-box"></div>';
-								// html += '	<a href="javascript:void(0)" class="close_x_btn white"></a>';
-								// html += '</div>';
-								//
-								// $('html').css({overflow: 'hidden'});
-								// $('body').append(html);
+								//alert('동영상이 준비중입니다');
+								var ytbId = $(this).attr('data-video-id');
+								var html = '<div id="video-layer" style="">';
+								html += '	<div class="bg" ></div>';
+								html += '	<div class="video-box"></div>';
+								html += '	<a href="javascript:void(0)" class="close_x_btn white"></a>';
+								html += '</div>';
+
+								$('html').css({overflow: 'hidden'});
+								$('body').append(html);
 
 								$('#video-layer .close_x_btn').bind('click',function(){
 									$('html').css({overflow: 'scroll'});
