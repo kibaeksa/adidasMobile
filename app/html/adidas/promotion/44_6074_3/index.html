@@ -658,11 +658,11 @@
                     var startx;
                     var x;
                     var index = 0;
-                    // var bottom = document.querySelector('.bottom');
-                    // var bottom_box = bottom.querySelectorAll('.box');
-                    // var main = document.querySelector('.main');
-                    // var main_box = bottom.querySelectorAll('.box');
-                    var max = $('.bottom .box').length -1;
+                    var bottom = document.querySelector('.bottom');
+                	var bottom_box = bottom.querySelectorAll('.box');
+                	// var main = document.querySelector('.main');
+                	// var main_box = bottom.querySelectorAll('.box');
+                	var max = bottom_box.length -1;
                     var array = ['.main .box', '.bottom .box','.txt .box','.prmbody .indicator span'];
                     // var next = document.getElementById('prmnext');
                     // var prev = document.getElementById('prmprev');
@@ -671,7 +671,6 @@
                     (function($){
 
                         $('#prmnext').click(function(){
-                            distance = 0;
                             if(index == max){
                                 index = 0;
                                 for(var a = 0; a < array.length; a++){
@@ -686,10 +685,7 @@
                             }
                         });
 
-
                         $('#prmprev').click(function(){
-                            distance = 0;
-
                             if(index == 0){
                                 index = max;
                                 for(var a = 0; a < array.length; a++){
@@ -711,66 +707,67 @@
                             $('.bottom .box').removeClass('active').eq(index).addClass('active');
                             $('.txt .box').removeClass('active').eq(index).addClass('active');
                         });
+                        function move(elem){
+                            elem.addEventListener('touchstart',function(e){
+                                startx = e.touches[0].pageX
+                            });
+
+                            elem.addEventListener('touchmove',function(e){
+                                x = e.touches[0].pageX;
+                                distance = Math.abs(x - startx);
+                                // distance = x - startx;
+                                // 현재값 - 출발값
+                            });
+
+                            elem.addEventListener('touchend',function(e){
+                                // console.log(distance)
+                                if(distance > 50 ){
+                                    if(x - startx > 0){
+                                        // console.log(' left item show ')
+                                        if(index == 0){
+                                            index = max;
+                                            for(var a = 0; a < array.length; a++){
+                                                $(array[a]).removeClass('active').eq(max).addClass('active');
+                                            }
+                                        }else{
+                                            index--;
+                                            for(var a = 0; a < array.length; a++){
+                                                $(array[a]).removeClass('active').eq(index).addClass('active');
+                                            }
+                                        }
+
+
+                                    }else{
+                                        // console.log(' right item show ')
+                                        if(index == max){
+                                            index = 0;
+                                            for(var a = 0; a < array.length; a++){
+                                                $(array[a]).removeClass('active').eq(0).addClass('active');
+                                            }
+                                        }else{
+                                            index++;
+                                            for(var a = 0; a < array.length; a++){
+                                                $(array[a]).removeClass('active').eq(index).addClass('active');
+                                            }
+                                        }
+                                    }
+                                }
+                                distance = 0;
+                            });
+                        }
+
+
+                        for(var i = 0; i<mainsection.length; i++){
+                            move(mainsection[i])
+                            distance = 0;
+                        }
+
 
 
                     })(jQuery);
 
 
 
-
-                        function move(elem){
-                            elem.addEventListener('touchstart',function(e){
-                                startx = e.touches[0].pageX
-                            });
-
-                        elem.addEventListener('touchmove',function(e){
-                            x = e.touches[0].pageX;
-                            distance = Math.abs(x - startx);
-                            // distance = x - startx;
-                            // 현재값 - 출발값
-                        });
-
-                        elem.addEventListener('touchend',function(e){
-
-                        console.log(distance)
-                        if(distance > 50){
-                            if(x - startx > 0){
-                                console.log(' left item show ')
-                                if(index == 0){
-                                    index = max;
-                                    for(var a = 0; a < array.length; a++){
-                                        $(array[a]).removeClass('active').eq(max).addClass('active');
-                                    }
-                                }else{
-                                    index--;
-                                    for(var a = 0; a < array.length; a++){
-                                        $(array[a]).removeClass('active').eq(index).addClass('active');
-                                    }
-                                }
-
-                            }else{
-                                console.log(' right item show ')
-                                if(index == max){
-                                    index = 0;
-                                    for(var a = 0; a < array.length; a++){
-                                        $(array[a]).removeClass('active').eq(0).addClass('active');
-                                    }
-                                }else{
-                                    index++;
-                                    for(var a = 0; a < array.length; a++){
-                                        $(array[a]).removeClass('active').eq(index).addClass('active');
-                                    }
-                                }
-                            }
-                        }
-
-                        });
-                    }
-
-
-                    for(var i = 0; i<mainsection.length; i++){
-                        move(mainsection[i])
-                    }
 
 
 
