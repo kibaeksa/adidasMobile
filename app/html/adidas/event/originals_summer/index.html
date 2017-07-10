@@ -518,10 +518,10 @@
                             <li class="box4">
                                 <div class="link_wrap" style="top: 19rem;">
                                     <div class="link">
-                                        <a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=CF5308" class="offprd"></a>
+                                        <a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=CF5308" class="readyprd"></a>
                                         <p class="title">TREFOIL T</p>
                                         <p>CF5308</p>
-                                        <span class="icons aft" data-icon="">구매하기</span>
+                                        <span>입고예정</span>
                                     </div>
                                     <div class="link">
                                         <a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=BY9359" class="readyprd"></a>
@@ -540,10 +540,10 @@
                             <li class="box5">
                                 <div class="link_wrap" style="top: 20rem;">
                                     <div class="link">
-                                        <a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=BJ8171"></a>
+                                        <a href="javascript:void(0)" class="soldout"></a>
                                         <p class="title">POLO TEE</p>
                                         <p>BJ8171</p>
-                                        <span class="icons aft" data-icon="">구매하기</span>
+                                        <span>품절</span>
                                     </div>
                                     <div class="link">
                                         <a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=S76227"></a>
@@ -630,19 +630,23 @@
                     <div class="banner_slider_wrap">
                         <ul id="slider_owl3" class="slider" >
                             <li>
-                                <div class="img" data-index="0"><img src="http://imagem.adidas.co.kr/images/adidas/event/originals_summer/1.png" alt=""></div>
+                                <div class="img" data-index="0"><a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=S76228"><img src="http://imagem.adidas.co.kr/images/adidas/event/originals_summer/1.png?v=1" alt=""></a></div>
                             </li>
                             <li>
-                                <div class="img" data-index="1"><img src="http://imagem.adidas.co.kr/images/adidas/event/originals_summer/2.png" alt=""></div>
+                                <div class="img" data-index="1"><a class="readyprd" href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=BY9360"><img src="http://imagem.adidas.co.kr/images/adidas/event/originals_summer/2.png?v=1" alt=""></a></div>
                             </li>
                             <li>
-                                <div class="img" data-index="2"><img src="http://imagem.adidas.co.kr/images/adidas/event/originals_summer/3.png" alt=""></div>
+                                <div class="img" data-index="2"><a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=S76227"><img src="http://imagem.adidas.co.kr/images/adidas/event/originals_summer/3.png" alt=""></a></div>
                             </li>
                             <li>
-                                <div class="img" data-index="3"><img src="http://imagem.adidas.co.kr/images/adidas/event/originals_summer/4.png" alt=""></div>
+                                <div class="img" data-index="3"><a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=BB5476"><img src="http://imagem.adidas.co.kr/images/adidas/event/originals_summer/4.png?v=1" alt=""></a></div>
                             </li>
                             <li>
-                                <div class="img" data-index="4"><img src="http://imagem.adidas.co.kr/images/adidas/event/originals_summer/5.png" alt=""></div>
+                                <div class="img" data-index="4">
+                                    <a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=BB5096" style="position:absolute;bottom:6%;left:24%;width:7rem;height:40px;z-index:1;"></a>
+                                    <a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=BB5097" style="position:absolute;bottom:6%;left:45%;width:7rem;height:40px;z-index:1;"></a>
+                                    <img src="http://imagem.adidas.co.kr/images/adidas/event/originals_summer/5.png?v=1" alt="">
+                                </div>
                             </li>
                         </ul>
                     </div>
@@ -657,6 +661,11 @@
                 //입고예정
                 $('.readyprd').click(function(){
                     alert('상품이 준비중입니다.');
+                    return false
+                });
+                //품절
+                $('.soldout').click(function(){
+                    alert('상품이 품절되었습니다.');
                     return false
                 });
                 //오프라인매장상품
