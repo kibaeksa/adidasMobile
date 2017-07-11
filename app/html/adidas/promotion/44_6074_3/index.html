@@ -605,6 +605,22 @@
                         -webkit-border-radius: 50px;
                         background: #a4a4a4;
                     }
+                    .prmbody .banner{
+                        position:relative; margin:55px 0 15px; background:url('http://imagem.adidas.co.kr/images/adidas/event/ultra_boost_v2/mirun_banner.jpg') no-repeat; background-size:100% auto;
+                    }
+                    .prmbody .banner div a{
+                        height: 45px;
+                        display: block;
+                        box-sizing: border-box;
+                        -webkit-box-sizing: border-box;
+                        background: #000;
+                        color: #fff;
+                        text-align: center;
+                        z-index: 12;
+                        text-transform: uppercase;
+                        letter-spacing: 0.8px;
+                        font: 1rem/45px 'NotosansKRBold';
+                    }
 
 				</style>
 
@@ -632,6 +648,8 @@
                         <div class="box"><img src="slide2_txt.jpg" alt=""></div>
                     </div>
                     <div class="bottom moveevent">
+                        <a href="http://shop.adidas.co.kr/PF020401.action?PROD_CD=BY4264" class="link ready" style="position:absolute;top:78%;left:0%;width:40%;height:50px;z-index:1;"></a>
+                        <a href="http://shop.adidas.co.kr/PF020401.action?PROD_CD=BW1195" class="link ready" style="position:absolute;top:78%;right:0%;width:40%;height:50px;z-index:1;"></a>
                         <div class="box active">
                             <p>알파바운스 EM M<br><span>(BY4264)</span></p>
                             <img src="slide1_bottom.jpg" alt="">
@@ -648,11 +666,19 @@
                             <div class="prev" id=prmprev><img src="prev.png" alt=""></div>
                         </div>
                     </div>
-
+                    <div class="banner" style="">
+                        <div style="position:relative; padding: 68% 4rem 10%;;"><a style="" href="http://m.adidas.co.kr/MO/Club/clubCampainView.action?event_id=3645" class="button icons aft" data-icon="">자세히 보기</a></div>
+                    </div>
 				</div>
 
 
                 <script type="text/javascript">
+
+                    $('.ready').bind('click',function(){
+                        alert('상품이 준비중입니다.');
+                        return false
+                    });
+
                     var test = document.getElementById('test');
                     var mainsection = test.querySelectorAll('.moveevent');
                     var startx;
@@ -670,7 +696,24 @@
                     var distance;
                     (function($){
 
+                        var rolling = setInterval(autoslider,4500);
+                        function autoslider(){
+                            if( index == 1 ){
+                                index = 0;
+                                for(var a = 0; a < array.length; a++){
+                                    $(array[a]).removeClass('active').eq(0).addClass('active');
+                                }
+                            }else{
+                                index++;
+                                for(var a = 0; a < array.length; a++){
+                                    $(array[a]).removeClass('active').eq(index).addClass('active');
+                                }
+                            }
+                        }
+
                         $('#prmnext').click(function(){
+                            clearInterval(rolling);
+
                             if(index == max){
                                 index = 0;
                                 for(var a = 0; a < array.length; a++){
@@ -683,9 +726,14 @@
                                     $(array[a]).removeClass('active').eq(index).addClass('active');
                                 }
                             }
+
+                            rolling = setInterval(autoslider,4500);
+
                         });
 
                         $('#prmprev').click(function(){
+                            clearInterval(rolling);
+
                             if(index == 0){
                                 index = max;
                                 for(var a = 0; a < array.length; a++){
@@ -697,15 +745,23 @@
                                     $(array[a]).removeClass('active').eq(index).addClass('active');
                                 }
                             }
+
+                            rolling = setInterval(autoslider,4500);
+
                         });
 
                         $('.prmbody .indicator span').click(function(){
+                            clearInterval(rolling);
+
                             index = $(this).index();
                             $('.prmbody .indicator span').removeClass('active');
                             $(this).addClass('active');
                             $('.main .box').removeClass('active').eq(index).addClass('active');
                             $('.bottom .box').removeClass('active').eq(index).addClass('active');
                             $('.txt .box').removeClass('active').eq(index).addClass('active');
+
+                            rolling = setInterval(autoslider,4500);
+
                         });
                         function move(elem){
                             elem.addEventListener('touchstart',function(e){
@@ -736,7 +792,6 @@
                                             }
                                         }
 
-
                                     }else{
                                         // console.log(' right item show ')
                                         if(index == max){
@@ -765,11 +820,6 @@
 
 
                     })(jQuery);
-
-
-
-
-
 
 
                 </script>
