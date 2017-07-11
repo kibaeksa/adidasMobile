@@ -476,6 +476,22 @@
                                 <li>
                                     <div class="box">
                                         <div class="graphic">
+                                            <div class="img"><span class="icons aft" data-icon=""></span></div>
+                                        </div>
+                                        <dl>
+                                            <dt><p class="title">스포츠 프로그램 예약 </p></dt>
+                                            <dd>
+                                                <p class="adiclub_desc">
+                                                    <a href="http://m.adidas.co.kr/MO/Club/rsList.action" style="color:#fff;text-decoration:underline;">예약하기</a>
+                                                    <span class="icons aft" data-icon="" style="margin-left:3px;font-size:10px;text-decoration:none;"></span>
+                                                </p>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="box">
+                                        <div class="graphic">
                                             <div class="img"><span class="icons aft" data-icon=""></span></div>
                                         </div>
                                         <dl>
@@ -635,6 +651,14 @@
                 // 170711 아디클럽 셀렉트박스
                 $('.adiclub.renewal_170518 .selectbox_wrap').click(function(){
                     $(this).toggleClass( "show" );
+                });
+
+                $('.adiclub.renewal_170518 .selectbox_wrap .select_boxs>.button_area').bind('touchstart',function(){
+                    $(this).addClass('on');
+                });
+
+                $('.adiclub.renewal_170518 .selectbox_wrap .select_boxs>.button_area').bind('touchend',function(){
+                    $(this).removeClass('on');
                 });
 
 			});
