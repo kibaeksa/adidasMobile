@@ -27,12 +27,6 @@
 						<a href="#" class="join"><span class="icons" data-icon=""></span>회원가입</a>
 					</div>
 
-					<!-- <div class="u_info1">
-						<div class="user_box">
-							<p class="greet bronze"><span class="m">B</span>홍길동님 반갑습니다.</p>
-							<p class="noti">쿠폰 사용기간이 얼마 남지 않았습니다.</p>
-						</div>
-					</div> -->
 					<div class="u_info2">
 						<a href="#">마이페이지</a>
 						<a href="#">주문배송조회 <span>1</span></a>
@@ -449,13 +443,26 @@
                         </div>
                     </div>
 					<div class="info">
-
                         <p class="adiclub_desc">
                             <strong>아디다스와 함께 다양한 스포츠를 즐기고 계신가요?</strong></br>
                             아디클럽 스포츠 서비스 신청 하고<br>더욱 특별한 스포츠 라이프를 즐겨보세요!
                         </p>
 					</div>
                     <div class="button_area"><div><a href="#" data-icon="" class="icons aft">아디클럽 스포츠 서비스 신청하기</a></div></div>
+
+                    <!-- 170711 아디클럽 셀렉트 박스 -->
+                    <div class="selectbox_wrap">
+                        <div class="button_area select_box_btn">
+                            <div><a href="javascript:void(0)" data-icon="" class="icons aft">adiclub sports <span>MENU</span></a></div>
+                        </div>
+                        <div class="select_boxs">
+                            <div class="button_area on"><div><a href="http://m.adidas.co.kr/MO/Club/rsList.action" data-icon="" class="icons aft">프로그램 예약하기</a></div></div>
+                            <div class="button_area"><div><a href="http://m.adidas.co.kr/MO/Club/rsMain.action" data-icon="" class="icons aft"><span>RUNBASE</span> 바로가기</a></div></div>
+                            <div class="button_area"><div><a href="http://m.adidas.co.kr/MO/Club/adidasrunners.action" data-icon="" class="icons aft"><span>AR</span> 바로가기</a></div></div>
+                        </div>
+                    </div>
+                    <!-- 170711 아디클럽 셀렉트 박스 end-->
+
                     <p class="tip">아직 아디클럽 회원이 아니시면 <a href="#">“가입하기”</a>를 클릭해 주세요.</p>
 				</div>
                 <div class="club_benefit">
@@ -546,7 +553,7 @@
                 <!-- 170619 class="adiclub_sns_bnn" div 삭제 -->
 
                 <!-- 170619 수정 -->
-                <div class="olapic-wrapper">
+                <div class="olapic-wrapper customization-title">
                     <h3 class="olapic-title">ADICLUB SPORTS 스테이션에서의 하루</h3>
                     <p class="olapic-desc">인스타그램에 #adiclubsports 해시태그하고 <br> 아디클럽 스포츠 스테이션에서의 추억을 공유해주세요!</p>
                     <!-- 170613 올라픽코드 -->
@@ -554,8 +561,6 @@
                     <!-- 170613 올라픽코드 end -->
                 </div>
                 <!-- 170619 수정 end-->
-
-
                 <div class="button_area" style="padding-top:20px;"><div><a href="#" data-icon="" class="icons aft">아디클럽 스포츠 서비스 신청하기</a></div></div>
 			</div>
 
@@ -627,24 +632,10 @@
                 $('.layerpopup-wrapper .close_x_btn').click(function(){
                     $(this).parent('.header').parent('.layerpopup-adiclub').parent('.layerpopup-wrapper').css({'display':'none'})
                 });
-
-				$('.toolbox>ul>li').bind('click',function(){
-
-					if($(this).find('a').hasClass('on')){
-						return false;
-					}
-
-					if($(this).hasClass('type_box')){
-						$('.product_grid').addClass('grid_2box');
-					}else{
-						$('.product_grid').removeClass('grid_2box');
-					}
-
-					$('.toolbox>ul>li>a').removeClass('on');
-					$(this).find('a').addClass('on');
-					return false;
-
-				});
+                // 170711 아디클럽 셀렉트박스
+                $('.adiclub.renewal_170518 .selectbox_wrap').click(function(){
+                    $(this).toggleClass( "show" );
+                });
 
 			});
 		})(jQuery);
