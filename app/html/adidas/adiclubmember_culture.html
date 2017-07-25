@@ -512,10 +512,35 @@
                 <div class="adiclub_station">
                     <h3>아디클럽 컬처 스테이션 안내</h3>
                     <p class="desc">아디클럽 컬처 제휴 매장별 혜택 안내해 드립니다.</p>
+                    <div class="utils">
+                        <div class="sel_boxtype sel_design">
+                            <a href="#" class="icons" data-icon=""><span>지역</span></a>
+                            <select name="order_by" id="order_by">
+                                <option value="" selected="">지역</option>
+                                <option value="">지역</option>
+                                <option value="">지역</option>
+                                <option value="">지역</option>
+                                <option value="">지역</option>
+                            </select>
+                        </div>
+
+                        <div class="sel_boxtype sel_design">
+                            <a href="#" class="icons" data-icon=""><span>스테이션</span></a>
+                            <select name="order_by" id="order_by">
+                                <option value="1" selected="">스테이션</option>
+                                <option value="2">스테이션</option>
+                                <option value="5">스테이션</option>
+                                <option value="3">스테이션</option>
+                                <option value="4">스테이션</option>
+                            </select>
+                        </div>
+                    </div>
                     <ul>
                         <li>
-                            <div class="top">
-                                <div class="img"><img src="/images/adidas/club/banner_culture_station1.jpg" alt=""></div>
+                            <div class="top toggle_arw">
+                                <div class="img icons" data-icon="">
+                                    <img src="/images/adidas/club/banner_culture_station1.jpg" alt="">
+                                </div>
                                 <div class="infobox">
                                     <p class="tit">Room 360</p>
                                     <div class="desc">스테이션 쇼핑/유통<br/>혜택 &nbsp; 제품 구매 시 할인 혜택 </div>
@@ -540,8 +565,10 @@
                             </div>
                         </li>
                         <li>
-                            <div class="top">
-                                <div class="img"><img src="/images/adidas/club/banner_culture_station2.jpg" alt=""></div>
+                            <div class="top toggle_arw">
+                                <div class="img icons" data-icon="">
+                                    <img src="/images/adidas/club/banner_culture_station2.jpg" alt="">
+                                </div>
                                 <div class="infobox">
                                     <p class="tit">Warped</p>
                                     <div class="desc">스테이션 쇼핑/유통<br/>혜택 &nbsp; 제품 구매 시 할인 혜택 </div>
@@ -566,8 +593,10 @@
                             </div>
                         </li>
                         <li>
-                            <div class="top">
-                                <div class="img"><img src="/images/adidas/club/banner_culture_station3.jpg" alt=""></div>
+                            <div class="top toggle_arw">
+                                <div class="img icons" data-icon="">
+                                    <img src="/images/adidas/club/banner_culture_station3.jpg" alt="">
+                                </div>
                                 <div class="infobox">
                                     <p class="tit">1984</p>
                                     <div class="desc">스테이션 카페/디저트<br/>혜택 &nbsp; 음료 및 도서 구매 시 할인 혜택</div>
@@ -592,6 +621,20 @@
                             </div>
                         </li>
                     </ul>
+
+                    <!-- 170724 페이징 추가 -->
+                    <div class="paging">
+                        <div>
+                            <a href="#" class="prev icons disable" data-icon=""></a>
+                            <a href="#" class="on">1</a>
+                            <a href="#">2</a>
+                            <a href="#">3</a>
+                            <a href="#">4</a>
+                            <a href="#">5</a>
+                            <a href="#" class="next icons" data-icon=""></a>
+                        </div>
+                    </div>
+                    
                 </div>
 
 
@@ -607,9 +650,17 @@
 
 
                 <div class="button_area" style="padding-top:20px;"><div><a href="#" data-icon="" class="icons aft">아디클럽 컬처 서비스 신청하기</a></div></div>
+
+                <!-- 170724 스포츠클럽 내용 추가 -->
+                <ul class="li_dot noti_adiclub">
+                    <li>아디클럽 컬처 서비스 해지를 원하시면 <a href="#">서비스 해지</a> 를 클릭하십시오.</li>
+                    <li>아디클럽 컬처 서비스를 해지할 경우 아디클럽 컬처 스테이션에서 아디코인 사용이 불가합니다.</li>
+                    <li>아디클럽 스포츠와 컬처 서비스를 모두 해지할 경우 아디코인이 0으로 초기화됩니다.</li>
+                </ul>
+
 			</div>
 
-            <div class="layerpopup-wrapper">
+            <!-- <div class="layerpopup-wrapper">
                 <div class="overlay"></div>
                 <div class="layerpopup layerpopup-adiclub">
                     <div class="header">
@@ -625,7 +676,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
 
 			<div class="go_top">
@@ -693,6 +744,15 @@
 					return false;
 
 				});
+
+                /* 170724 Station */
+                $('.adiclub_station li .top').bind('click',function(){
+                    if($(this).hasClass('open')){
+                        $(this).removeClass('open');
+                    }else{
+                        $(this).addClass('open');
+                    }
+                });
 
 			});
 		})(jQuery);
