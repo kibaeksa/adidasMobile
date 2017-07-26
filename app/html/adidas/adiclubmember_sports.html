@@ -563,71 +563,9 @@
                             </select>
                         </div>
                     </div>
-                    <ul>
-                        <li>
-                            <!-- 170724  toggle_arw 클래스 추가-->
-                            <div class="top toggle_arw">
-                                <!--
-                                    170724
-                                    * icons 클래스 추가
-                                    * data-icon="" 추가
-                                -->
-                                <div class="img icons" data-icon="">
-                                    <img src="/images/adidas/club/banner_sports_station1.jpg" alt="">
-                                </div>
-                                <div class="infobox">
-                                    <p class="tit">런베이스 서울</p>
-                                    <div class="desc">체크인 +1,000 adicoin<br/>이용료 -3,000 adicoin</div>
-                                    <!--
-                                    170724 삭제
-                                    <a href="#" class="link icons aft" data-icon="">런베이스 바로가기</a>
-                                     -->
-                                </div>
-                            </div>
-                            <div class="cont">
-                                <dl>
-                                    <dt>소개</dt>
-                                    <dd>
-                                        러닝을 위한 복합 문화공간 런베이스 서울은 남산과 경리단길 사이에 위치하고 있으며 락커룸과 샤워시설 완비, 러닝화 및 러닝 의류 렌탈 서비스,
-                                        평일 저녁과 주말 전문 선수들의 러닝 프로그램, 코어운동, 리커버리 클래스 등 상시운영
-                                        <!-- 170724 링크추가 -->
-                                        <br/><a href="#">런베이스 바로가기</a>
-                                    </dd>
-                                </dl>
-                                <dl>
-                                    <dt>혜택</dt>
-                                    <dd>+ 1,000 adicoin</dd>
-                                </dl>
-                                <dl>
-                                    <dt>주소 / 연락처</dt>
-                                    <dd>서울시 용산구 회나무로 73-1<br/>070-7797-1207</dd>
-                                </dl>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="top toggle_arw">
-                                <div class="img icons" data-icon=""></div>
-                                <div class="infobox">
-                                    <p class="tit">아디클럽 스포츠 제휴 매장</p>
-                                    <div class="desc">체크인 +1,000 adicoin<br/>이용료 -3,000 adicoin</div>
-                                </div>
-                            </div>
-                            <div class="cont">
-                                <dl>
-                                    <dt>소개</dt>
-                                    <dd>러닝을 위한 복합 문화공간 런베이스 서울은 남산과 경리단길 사이에 위치하고 있으며 락커룸과 샤워시설 완비, 러닝화 및 러닝 의류 렌탈 서비스, 평일 저녁과 주말 전문 선수들의 러닝 프로그램, 코어운동, 리커버리 클래스 등 상시운영</dd>
-                                </dl>
-                                <dl>
-                                    <dt>혜택</dt>
-                                    <dd>+ 1,000 adicoin</dd>
-                                </dl>
-                                <dl>
-                                    <dt>주소 / 연락처</dt>
-                                    <dd>서울시 용산구 회나무로 73-1<br/>070-7797-1207</dd>
-                                </dl>
-                            </div>
-                        </li>
-                    </ul>
+
+                    <!-- 170726 station_contents 추가 -->
+                    <div id="station_contents"></div>
 
                     <!-- 170724 페이징 추가 -->
                     <div class="paging">
@@ -742,14 +680,95 @@
                     $(this).removeClass('on');
                 });
 
-                /* 170724 Station */
-                $('.adiclub_station li .top').bind('click',function(){
-                    if($(this).hasClass('open')){
-                        $(this).removeClass('open');
-                    }else{
-                        $(this).addClass('open');
+                /* 170726 START */
+                function renderStationContents(data){
+                    /* Data handle  */
+                    var imgAbsolutePath = '//image.adidas.co.kr/images/adidas/club/adiclub_renewal_170518/';
+                    for(key in data){
+                        data[key].CS_DESC = data[key].CS_DESC.replace(/\n/,'<br/>');
+                        data[key].CS_BENEFIT = data[key].CS_BENEFIT.replace(/\n/,'<br/>');
+                        data[key].CS_ADDR_TEL = data[key].CS_ADDR_TEL.replace(/\n/,'<br/>');
                     }
-                });
+
+                    var key;
+                    var count = 0;
+                    var htmlString = '<ul>';
+
+                    for(key in data){
+                        htmlString += '<li>';
+                        htmlString += '    <div class="top toggle_arw">';
+                        htmlString += '        <div class="img icons" data-icon="">'+(data[key].CS_IMG_NM ? '<img src="'+(imgAbsolutePath+data[key].CS_IMG_NM)+'" alt="">' : '')+'</div>';
+                        htmlString += '        <div class="infobox">';
+                        htmlString += '            <p class="tit">'+data[key].CS_NM+'</p>';
+                        htmlString += '            <div class="desc">'+data[key].CS_DESC+'</div>';
+                        htmlString += '        </div>';
+                        htmlString += '    </div>';
+                        htmlString += '    <div class="cont">';
+                        htmlString += '        <dl>';
+                        htmlString += '            <dt>소개</dt>';
+                        htmlString += '            <dd>'+data[key].CS_INTRO+'</dd>';
+                        htmlString += '        </dl>';
+                        htmlString += '        <dl>';
+                        htmlString += '            <dt>혜택</dt>';
+                        htmlString += '            <dd>'+data[key].CS_BENEFIT+'</dd>';
+                        htmlString += '        </dl>';
+                        htmlString += '        <dl>';
+                        htmlString += '            <dt>주소 / 연락처</dt>';
+                        htmlString += '            <dd>'+data[key].CS_ADDR_TEL+'</dd>';
+                        htmlString += '        </dl>';
+                        htmlString += '    </div>';
+                        htmlString += '</li>';
+                    }
+                    htmlString += '</ul>';
+
+                    $('#station_contents').html(htmlString);
+                    bindStationEvent();
+                }
+
+
+                function bindStationEvent(){
+                    $('.adiclub_station li .top').bind('click',function(){
+                        if($(this).hasClass('open')){
+                            $(this).removeClass('open');
+                        }else{
+                            $(this).addClass('open');
+                        }
+                    });
+                }
+                /* 170726 END */
+
+
+                /* 170726 임시 데이터 */
+                var tempData =  [
+                    {
+                        "CS_NO": "26",
+                        "CS_NM": "스테이션 명 테스트1",
+                        "CS_LOCA": "01",
+                        "CS_LOCA_NM": "서울",
+                        "CS_TYPE": "01",
+                        "CS_TYPE_NM": "쇼핑/유통",
+                        "CS_IMG_NM": "thumb_test.jpg",
+                        "CS_DESC": "스테이션 설명 테스트1\n줄바꿈1",
+                        "CS_INTRO":"스테이션 설명 테스트1<br />줄바꿈1<br /><a href=\"http://naver.com\" class=\"link\">자세히보기</a>",
+                        "CS_BENEFIT": "스테이션 혜택 테스트1\n줄바꿈1",
+                        "CS_ADDR_TEL": "서울시 서초구 방배동 1-2\n02-1234-5678"
+                    },
+                    {
+                        "CS_NO": "27",
+                        "CS_NM": "스테이션 명 테스트 2",
+                        "CS_LOCA": "01",
+                        "CS_LOCA_NM": "경기",
+                        "CS_TYPE": "01",
+                        "CS_TYPE_NM": "쇼핑/유통",
+                        "CS_IMG_NM": "",
+                        "CS_DESC": "스테이션 설명 테스트2\n줄바꿈1",
+                        "CS_INTRO":"스테이션 설명 테스트2<br />줄바꿈1<br /><a href=\"http://naver.com\" class=\"link\">자세히보기</a>",
+                        "CS_BENEFIT": "스테이션 혜택 테스트2\n줄바꿈1",
+                        "CS_ADDR_TEL": "서울시 서초구 방배동 1-2\n02-1234-5678"
+                    }
+                ];
+
+                renderStationContents(tempData);
 
 
 			});
