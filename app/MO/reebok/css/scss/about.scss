@@ -235,7 +235,6 @@ html{
 		}
 	}
 
-
 	.video_visual{
 		@include box-sizing(border-box);
 		width: 100%;
@@ -249,8 +248,11 @@ html{
 			left: 0;
 			transform:translate3d(0,-50%,0);
 			-webkit-transform:translate3d(0,-50%,0);
-
-			z-index: 1
+			z-index: 1;
+			h2{
+				font:4rem/4rem 'QStencil';
+				text-align: center;
+			}
 		}
 		.bg{
 			position: absolute;
@@ -492,7 +494,6 @@ html{
 
 
 	}
-	// video_visual
 
 	.camapign_list{
 		a{
@@ -646,6 +647,7 @@ html{
 			display: inline-block;
 		}
 	}
+
 }
 
 .about_campaign.ufc{
@@ -1078,1683 +1080,6 @@ html{
 		}
 		// inner
 	}
-}
-
-.about_campaign.gigi_hadid{
-
-	.video_visual{
-		h2{
-			margin-bottom: 1.5rem;
-			text-align: center;
-			img{
-				width: 70%;
-			}
-		}
-
-		.desc{
-			margin-bottom: 1.5rem;
-			font:500 1.7rem/1.3rem 'dinpro cond';
-			text-align: center;
-			color: #fff;
-			letter-spacing: 3px;
-			text-transform: uppercase;
-		}
-		.main_sub{
-			text-align: center;
-			padding:0 9rem;
-			img{
-				width: 80%;
-			}
-		}
-
-		.video-btn{
-			margin: 0 auto;
-		}
-	}
-
-	.lookbook{
-		width: 100%;
-		background: #252525;
-		padding-top: 3.5rem;
-		text-align: center;
-
-		h3{
-			margin-bottom: 1.5rem;
-			>*{
-				font:4rem/4.2rem 'QStencil';
-				color: #fff;
-				text-align: center;
-			}
-
-			.colab{
-				@extend .close;
-				width: 3rem;
-				height: 3rem;
-				position: relative;
-				margin: 0 auto 0.8rem;
-
-				&:before,
-				&:after{
-					width: 100%;
-					background: #4f4f4f;
-				}
-			}
-		}
-
-		>.desc{
-			color: #fff;
-			font:1.4rem/1.9rem 'NotoSansKRLight';
-			text-align: center;
-		}
-
-		>.hash{
-			display: inline-block;
-			padding:2rem 4rem;
-			margin-top: 2rem;
-			color: #fff;
-			font:500 1.6rem/1.9rem 'dinpro cond';
-			text-align: center;
-			letter-spacing: -1px;
-			border:1px solid #ddd;
-		}
-
-		.slider_wrap{
-			overflow: hidden;
-			margin-top:2.5rem;
-			.box{
-				width: 100%;
-				img{
-					width: 100%;
-				}
-			}
-
-			.owl-carousel{
-				width: 100%;
-				position: relative;
-			}
-			.owl-stage-outer{
-				width: 100%;
-				position: relative;
-				overflow: hidden;
-			}
-
-			.owl-stage{
-				width: 100%;
-				position: relative;
-				overflow: hidden;
-			}
-
-			.owl-item{
-				float: left;
-			    @include box-sizing(border-box);
-			}
-			.owl-item .box{
-				width: 100%;
-				img{
-					width: 100%;
-				}
-			}
-
-			.owl-controls{
-				padding:0 1.5rem;
-			}
-
-			.owl-dots{
-				text-align: center;
-				padding: 1rem 0 2rem;
-				border-bottom: 1px solid #515151;
-				@extend .num_paging;
-
-				.active{
-					span{
-						color: #000;
-					}
-				}
-
-				.owl-dot{
-					width: 26px;
-					height: 26px;
-					border-radius: 26px;
-					margin: 0 4px;
-					display: inline-block;
-					border: 1px solid #fff;
-					box-sizing:border-box;
-					color: #fff;
-					transition-duration: 0s;
-					-webkit-transition-duration: 0s;
-
-					span{
-						font:16px/26px 'reefont-condensed';
-					}
-
-					&:nth-child(1){
-						span{
-							&:before{
-								content:'1';
-							}
-						}
-					}
-
-					&:nth-child(2){
-						span{
-							&:before{
-								content:'2';
-							}
-						}
-					}
-
-					&:nth-child(3){
-						span{
-							&:before{
-								content:'3';
-							}
-						}
-					}
-
-					&:nth-child(4){
-						span{
-							&:before{
-								content:'4';
-							}
-						}
-					}
-
-					&:nth-child(5){
-						span{
-							&:before{
-								content:'5';
-							}
-						}
-					}
-
-					&:nth-child(6){
-						span{
-							&:before{
-								content:'6';
-							}
-						}
-					}
-
-					&:nth-child(7){
-						span{
-							&:before{
-								content:'7';
-							}
-						}
-					}
-				}
-
-				.active{
-					background: #fff;
-					border-color: #fff;
-				}
-			}
-		}
-	}
-
-	.about_gigi_hadid{
-		background: #252525;
-
-		h3{
-			margin-bottom: 2rem;
-			padding: 3.5rem 0px 1.8rem;
-			color: #fff;
-			font:3.4rem/3.4rem 'NotoSansKRBold';
-			text-align: center;
-
-			p{
-				margin-bottom: 0.5rem;
-				font:1.8rem/1.8rem 'NotoSansKRLight';
-			}
-		}
-
-		.contents{
-			.quotes{
-				opacity: 0;
-				padding: 4rem 0px 5rem;
-				color: #fff;
-				font:1.5rem/2.4rem 'NotoSansKRRegular';
-				text-align: center;
-
-				.ico{
-					text-align: center;
-
-					div{
-						margin-bottom: 1.2rem;
-						position: relative;
-						display: inline-block;
-						width: 0.5rem;
-						height: 1.2rem;
-						background: #fff;
-						margin: 0 0.1rem 1.2rem;
-
-						&:before{
-							@extend .pseudo-element;
-							position: absolute;
-							top: -0.5rem;
-							left: 0;
-							width: 0;
-							height: 0;
-							border-top:0.5rem solid transparent;
-							border-bottom:0.5rem solid transparent;
-							border-left:0.5rem solid #252525;
-						}
-					}
-
-					&.end{
-						div{
-							margin-top: 1.2rem;
-							margin-bottom: 0;
-							&:before{
-								top: auto;
-								bottom: -0.5rem;
-								border-left-width:0;
-								border-right:0.5rem solid #252525;
-							}
-						}
-					}
-				}
-
-				&.gray{
-					.ico{
-						div{
-							&:before{
-								border-left-color:#6a6969 !important;
-							}
-						}
-
-						&.end{
-							div{
-								&:before{
-									border-right-color:#6a6969 !important;
-								}
-							}
-						}
-					}
-				}
-			}
-
-			.box{
-				position: relative;
-				>p{
-					position: absolute;
-					top: 3rem;
-    				left: 1.5rem;
-					color: #fff;
-					font:1.3rem/1.9rem 'NotoSansKRRegular';
-					opacity: 0;
-					transform:translate3d(-15px,0,0);
-					-webkit-transform:translate3d(-15px,0,0);
-
-					strong{
-						margin-top: 2rem;
-						// display: block;
-						font:1.3rem/2.6rem 'NotoSansKR';
-						color: #f4a099;
-					}
-				}
-				.img{
-					position: relative;
-					text-align: right;
-
-					&:before{
-						@extend .pseudo-element;
-						    width: 100%;
-						    height: 81%;
-						    background: #000;
-						    position: absolute;
-						    top: -1.5rem;
-						    left: -63%;
-						    transform: skew(-8.4deg) translate3d(-15px,0,0);
-						    -webkit-transform: skew(-8.4deg) translate3d(-15px,0,0);
-						    background: #44518c;
-						    opacity: 0;
-					}
-
-					img{
-						width: 70%;
-						opacity: 0;
-					}
-
-				}
-
-				&.box2{
-					>p{
-						padding: 2.5rem 0;
-						position: relative;
-						text-align: center;
-						top: 0;
-						left: 0;
-					}
-
-					.img{
-						text-align: left;
-						&:before{
-							height: 100%;
-							top: -2.5rem;
-							left: auto;
-							right: -70%;
-							transform: skew(-11deg) translate3d(15px,0,0);
-						    -webkit-transform: skew(-11deg) translate3d(15px,0,0);
-						    background: #931123;
-						}
-					}
-
-				}
-			}
-
-			.active{
-				opacity: 1;
-				transition:opacity 0.3s;
-				-webkit-transition:opacity 0.3s;
-
-				>p{
-					opacity: 1;
-					transform:translate3d(0,0,0);
-					-webkit-transform:translate3d(0,0,0);
-					transition:all 0.3s ease 0.3s;
-					-webkit-transition:all 0.3s ease 0.3s;
-				}
-
-				.img{
-					&:before{
-						opacity: 1;
-						transform:skew(-8.4deg) translate3d(0,0,0);
-						-webkit-transform:skew(-8.4deg) translate3d(0,0,0);
-						transition:all 0.3s ease 0.15s;
-						-webkit-transition:all 0.3s ease 0.15s;
-					}
-
-					img{
-						opacity: 1;
-						transition:opacity 0.3s;
-						-webkit-transition:opacity 0.3s;
-					}
-				}
-
-				&.box2{
-					.img{
-						&:before{
-							opacity: 1;
-							transform:skew(-11deg) translate3d(0,0,0);
-							-webkit-transform:skew(-11deg) translate3d(0,0,0);
-							transition:all 0.3s ease 1.15s;
-							-webkit-transition:all 0.3s ease 0.15s;
-						}
-					}
-				}
-			}
-
-		}
-	}
-
-	.collections{
-		padding: 0 1.5rem 1.5rem;
-		background: #5c5c5c url('/images/reebok/about/gigi_hadid/bg_collection.jpg') 0 0 repeat;
-		background-size: 100% auto;
-
-		h3{
-			padding: 3.5rem 0px 1.8rem;
-			color: #fff;
-			font:500 2.4rem 'dinpro cond';
-			text-align: center;
-			text-transform: uppercase;
-		}
-
-		.num_paging{
-			padding: 1rem 0px;
-
-			.on{
-				background: #fff;
-				color: #000;
-				border-color: #fff;
-			}
-		}
-
-		.collection_cut{
-			overflow: hidden;
-			ul{
-				overflow: hidden;
-				li{
-					position: relative;
-					float: left;
-
-					img{
-						width: 100%;
-					}
-				}
-			}
-		}
-
-		.prodlist_wrap{
-			position: relative;
-
-			.prodlist{
-				position: absolute;
-				top: 0;
-				left: 0;
-				padding: 0;
-				opacity: 0;
-				transition:opacity 0.3s;
-				-webkit-transition:opacity 0.3s;
-				z-index: 1;
-
-				.tit{
-					height: 1.4rem;
-					overflow: hidden;
-
-					display: -webkit-box;
-					overflow: hidden;
-					text-overflow: ellipsis;
-					white-space:normal;
-					-webkit-line-clamp:1;
-					-webkit-box-orient: vertical;
-				}
-			}
-
-			.active{
-				opacity: 1;
-				z-index: 2;
-			}
-			.fake{
-				position: relative;
-				opacity: 0;
-				visibility: hidden;
-			}
-
-		}
-	}
-
-	&.nada{
-		.video_visual{
-			.bg{
-				overflow: hidden;
-				img{
-					position: absolute;
-					top: 0;
-					left: 0;
-					opacity: 0;
-					transform:scale(1.02);
-					-webkit-transform:scale(1.02);
-
-					transition:all 1.5s;
-					-webkit-transition:all 1.5s;
-
-					&.remove_ready{
-						transform:scale(1);
-						-webkit-transform:scale(1);
-					}
-
-					&.active{
-						transform:scale(1);
-						-webkit-transform:scale(1);
-						opacity: 1;
-					}
-				}
-			}
-		}
-
-		.lookbook{
-			background: #d8d7d6;
-			*{
-				color:#292929;
-			}
-			h3{
-				text-align: center;
-				>*{
-					font-size: 3.7rem;
-					margin-bottom: 0;
-					display: inline-block;
-				}
-
-				>div{
-					display: block;
-
-					>*{
-						font:4rem/4.2rem 'QStencil';
-						text-align: center;
-						font-size: 3.7rem;
-						margin-bottom: 0;
-						display: inline-block;
-					}
-				}
-
-				.colab{
-					position: relative;
-					top: 0.4rem;
-					width: 2.6rem;
-					margin:0 0.5rem;
-				}
-			}
-
-			.button_area{
-				margin-bottom: 3rem;
-				a{
-					background: none;
-				}
-			}
-
-			.slider_wrap{
-				position: relative;
-				overflow: hidden;
-				li{
-					float: left;
-					position: relative;
-				}
-			}
-
-			.num_paging{
-				padding: 1.5rem 0px 2rem;
-				a{
-					border-color: #565656;
-
-					&.on{
-						background: #000;
-						color: #fff;
-					}
-				}
-			}
-
-			.owl-dots{
-				border-bottom-width: 0;
-				.owl-dot{
-					background: none;
-					color: #000;
-					border-color: #000;
-
-					&.active{
-						background: #000;
-						span{
-							color: #fff;
-						}
-					}
-				}
-			}
-		}
-
-		.about_gigi_hadid{
-			overflow: hidden;
-			background: #6a6969;
-
-			h3{
-				p:first-child{
-					font: 3.2rem/3.2rem 'NotoSansKRBold';
-				}
-
-				strong{
-					margin-left: 0.2rem;
-					font:700 3.8rem 'dinpro cond';
-				}
-			}
-
-			.txt{
-				text-align: center;
-				margin-bottom: 3.2rem;
-
-				img{
-					width: 50%;
-					max-width:200px;
-				}
-			}
-
-			.box1{
-				margin-bottom: 4.5rem;
-				>p{
-					top: 11rem;
-				}
-				.img{
-					&:before{
-						display: none;
-					}
-
-					&.abt{
-						width: 100%;
-						position: absolute;
-						top: -1.5rem;
-						left: 0;
-						text-align: left;
-						transition:all 0.3s;
-						-webkit-transition:all 0.3s;
-						transform: translate3d(-0.5rem,0,0);
-						-webkit-transform: translate3d(-0.5rem,0,0);
-
-						img{
-							width: 43%;
-						}
-					}
-				}
-
-				&.active{
-					.abt{
-						transform: translate3d(0,0,0);
-						-webkit-transform: translate3d(0,0,0);
-					}
-				}
-
-			}
-
-			.box{
-				&.box2{
-					margin-bottom: 4.5rem;
-					>p{
-						position: absolute;
-					    top: 3rem;
-					    right:1rem;
-					    color: #fff;
-					    font: 1.3rem/2rem 'NotoSansKRLight';
-					    transform: translate3d(-1rem, 0, 0);
-					    -webkit-transform: translate3d(-1rem, 0, 0);
-					    z-index: 5;
-					    text-align: right;
-					}
-					.img{
-						transform: translate3d(-1rem, 0, 0);
-					    -webkit-transform: translate3d(-1rem, 0, 0);
-					    opacity: 0;
-					    transition:all 0.3s;
-						-webkit-transition:all 0.3s;
-
-						&:before{
-							display: none;
-						}
-
-						img{
-							width: 88%;
-						}
-					}
-					&.active{
-						>p{
-							transform: translate3d(-0.5rem, 0, 0);
-					    	-webkit-transform: translate3d(-0.5rem, 0, 0);
-						}
-
-						.img{
-							transform: translate3d(0, 0, 0);
-						    -webkit-transform: translate3d(0, 0, 0);
-						    opacity: 1;
-						}
-					}
-				}
-
-				&.box3{
-					margin-bottom: 2.5rem;
-					>p{
-						position: absolute;
-					    top: 50%;
-					    right:1rem;
-					    color: #fff;
-					    font: 1.3rem/2rem 'NotoSansKRLight';
-					    transform: translate3d(-1rem, -50%, 0);
-					    -webkit-transform: translate3d(-1rem, -50%, 0);
-					    z-index: 5;
-					    text-align: left;
-					}
-					.img{
-						text-align: right;
-						transform: translate3d(-1rem, 0, 0);
-					    -webkit-transform: translate3d(-1rem, 0, 0);
-					    opacity: 0;
-					    transition:all 0.3s;
-						-webkit-transition:all 0.3s;
-
-						&:before{
-							display: none;
-						}
-
-						img{
-							width: 95%;
-						}
-					}
-					&.active{
-						>p{
-							transform: translate3d(-0.5rem, -50%, 0);
-					    	-webkit-transform: translate3d(-0.5rem, -50%, 0);
-						}
-
-						.img{
-							transform: translate3d(0, 0, 0);
-						    -webkit-transform: translate3d(0, 0, 0);
-						    opacity: 1;
-						}
-					}
-				}
-
-				.txt{
-					margin-bottom: 4rem;
-				}
-
-			}
-
-
-		}
-	}
-
-}
-
-.about_campaign.clubc_diamond{
-
-	.collections{
-		position: relative;
-		background: #5c5c5c url('/images/reebok/about/gigi_hadid/bg_collection.jpg') 0 0 repeat;
-		background-size: 100% auto;
-		h2{
-			position: absolute;
-			top:8rem;
-			z-index: 10;
-			padding: 0 6rem;
-			img{
-				width: 100%;
-			}
-		}
-
-		.num_paging{
-			position: absolute;
-			bottom:10px;
-			width: 100%;
-			text-align: center;
-			padding: 1rem 0px;
-			a{
-				margin: 0 4px;
-				width: 13px;
-				height:13px;
-				background: #fff;
-				@include opacity(0.3);
-
-				&.on{
-					background: #fff;
-					border-color: #fff;
-					@include opacity(1);
-
-
-				}
-			}
-
-		}
-
-		.collection_cut{
-			overflow: hidden;
-			ul{
-				overflow: hidden;
-				li{
-					position: relative;
-					float: left;
-
-					img{
-						width: 100%;
-					}
-				}
-			}
-		}
-	}
-	.prd_section{
-		text-align: center;
-		background: url("/images/reebok/about/clubc_diamond/bg.jpg") no-repeat;
-		background-size:100% 100%;
-		h3{
-			padding: 3.8rem 3.5rem 1.8rem;;
-			img{
-				width: 100%;
-			}
-		}
-		p{
-			padding: 0 1.5rem;
-			img{
-				width: 100%;
-			}
-		}
-		a.btn{
-			display: inline-block;
-			margin: 1.5rem 0 2rem;
-			padding: 0 3rem;
-			border:1px solid #000;
-			font:1.1rem/3rem 'NotosansKR','Nanum Gothic';
-		}
-		.prd{
-			margin: 0 1.5rem;
-			padding-bottom: 2rem;
-			a{
-				display: block;
-				padding-bottom: 1.2rem;
-				img{
-					width: 100%;
-				}
-			}
-
-		}
-	}
-
-
-}
-
-.about_campaign.about2l{
-	background: #5c5c5c url('/images/reebok/about/2l/bg.jpg') 0 0 repeat;
-
-	.video_visual{
-		h2{
-			margin-bottom: 1.5rem;
-			text-align: center;
-			img{
-				width: 70%;
-			}
-		}
-
-		.desc{
-			margin-bottom: 1.5rem;
-			font:500 1.7rem/1.3rem 'dinpro cond';
-			text-align: center;
-			color: #fff;
-			letter-spacing: 3px;
-			text-transform: uppercase;
-		}
-		.main_sub{
-			text-align: center;
-			padding:0 9rem;
-			img{
-				width: 80%;
-			}
-		}
-
-		.video-btn{
-			margin: 0 auto;
-		}
-	}
-
-	.lookbook{
-		width: 100%;
-		padding-top: 3.5rem;
-		text-align: center;
-
-		h3{
-			margin-bottom: 1.5rem;
-			>*{
-				font:4rem/4.2rem 'QStencil';
-				color: #fff;
-				text-align: center;
-			}
-			p{
-				img{
-					vertical-align: middle;
-					width: 12%;
-					margin-top: -7px;
-				}
-			}
-
-		}
-
-		>.desc{
-			color: #fff;
-			font:1.3rem/1.9rem 'NotoSansKRLight';
-			text-align: center;
-		}
-		>.buy{
-			display: inline-block;
-			margin: 2rem 0;
-			border:1px solid #fff;
-			color:#fff;
-			padding:0 5rem;
-			font:1.3rem/4rem 'NotoSansKRLight';
-
-		}
-
-	}
-	.section{
-		/*슬라이더*/
-		.slider2{
-			position: relative;
-			margin: 1rem 2rem;
-			overflow: hidden;
-			text-align: center;
-			ul{
-				li{
-					img{
-						width: 100%;
-					}
-					.p_num{
-						display: inline-block;
-						width:3.5rem; height: 3.5rem;
-						vertical-align: middle;
-						color:#fff;
-						text-align:center;
-						cursor: pointer;
-						font: 1.1rem/2rem 'NotoSansKRLight', 'Nanum Gothic';
-						em{
-							margin-left: 1px;
-							font: 1.3rem/3.5rem 'AdihausDIN';
-							position: relative;
-							z-index: 10;
-							border: 2px solid transparent;
-						}
-						a{
-							content: '';
-							display: inline-block;
-							width:100%; height: 100%;
-							background: #000;
-							@include opacity (0.7);
-							position: absolute;
-							left:0;
-							&.blink{
-								-webkit-animation: blink 2.5s linear infinite;
-								animation: blink 2.5s linear infinite;
-							}
-							&.no_active{
-								background: #000;
-								@include opacity (0.3);
-							}
-							&.on{
-								background: #b91c23;
-								@include opacity (0.7);
-							}
-							&:hover{
-								background: #b91c23;
-								@include opacity (0.7);
-								em{
-									@include opacity (1);
-								}
-							}
-
-						}
-
-					}
-				}
-			}
-		}
-
-		/*슬라이더 정보css*/
-		.info_section{
-			position: relative;
-			padding:1rem 2rem;
-			height: 14rem;
-			overflow: hidden;
-			.slider_info{
-				position: relative;
-				// display: none;
-				// @include opacity (0);
-				/*170307 코드 개선*/
-				.item{
-					position: absolute;
-					top:0;
-					display: none;
-					&:after{
-						content: '';
-						display: block;
-						clear:both;
-					}
-					.item_img{
-						width: 30%;
-						float:left;
-						text-align: center;
-						img{
-							width: 100%;
-							margin-top: 1rem;
-						}
-					}
-					.item_info{
-						width: 63%;
-						float:right;
-						p{
-							display:block;
-							padding-top: 0.5rem;
-							font: 1.4rem/2rem 'NotoSansKRLight';
-							color:#fff;
-							padding-bottom: 0.7rem;
-							border-bottom: 1px solid #fff;
-							.p_num{
-								display: inline-block;
-								width:2rem; height: 2rem;
-								vertical-align: middle;
-								color:#fff;
-								background: #000;
-								text-align:center;
-								cursor: pointer;
-								font: 1.1rem/2rem 'NotoSansKRLight', 'Nanum Gothic';
-							}
-							&.desc{
-								padding-top: 1rem;
-								border-bottom: 0px;
-								font: 1.1rem/1.5rem 'NotoSansKR','Nanum Gothic';
-								color:#bbb;
-								letter-spacing: -0.5px;
-							}
-						}
-						a.buy{
-							color:#f1554c !important;
-							font: 1.2rem/2rem 'NotoSansKRBold','Nanum Gothic';
-						}
-						a.buy:after{
-							display: inline-block;
-							padding-left: 5px;
-						}
-					}
-				}
-
-				// &.on{
-				// 	display: block;
-				// 	@include opacity (1);
-				// }
-				// &:after{
-				// 	display: block;
-				// 	content:'';
-				// 	clear:both;
-				// }
-				// .img_section{
-				// 	float:left;
-				// 	width:64%;
-				// 	height: 14rem;
-				// 	margin-left:-30rem;
-				// 	@include opacity (0);
-				// 	transition: all 0.3s ease-in;
-				// 	-webkit-transition: all 0.3s ease-in;
-				// 	&.on{
-				// 		display: block;
-				// 		@include opacity (1);
-				// 		margin-left:0rem;
-				// 	}
-				// 	&.type2{
-				// 		position: absolute;
-				// 		right:0;
-				// 		&.on{
-				// 			display: block;
-				// 			@include opacity (1);
-				// 			margin-right: 0;
-				// 		}
-				// 	}
-				// 	img{
-				// 		width: 100%;
-				// 	}
-				// 	p{
-				// 		display:block;
-				// 		padding-top: 0.5rem;
-				// 		font: 1.4rem/2rem 'NotoSansKRLight';
-				// 		color:#fff;
-				// 		padding-bottom: 0.7rem;
-				// 		border-bottom: 1px solid #fff;
-				// 		.p_num{
-				// 			display: inline-block;
-				// 			width:2rem; height: 2rem;
-				// 			vertical-align: middle;
-				// 			color:#fff;
-				// 			background: #000;
-				// 			text-align:center;
-				// 			cursor: pointer;
-				// 			font: 1.1rem/2rem 'NotoSansKRLight', 'Nanum Gothic';
-				// 		}
-				// 	}
-				// 	p.desc{
-				// 		padding-top: 1rem;
-				// 		border-bottom: 0px;
-				// 		font: 1.1rem/1.5rem 'NotoSansKR','Nanum Gothic';
-				// 		color:#bbb;
-				//
-				// 	}
-				// 	a.no_active{
-				// 		color:#6f6f6f;
-				// 		font: 1.5rem/2rem 'NotoSansKR','Nanum Gothic';
-				// 		pointer-events:none;
-				// 	}
-				// 	a.buy{
-				// 		color:#f1554c !important;
-				// 		font: 1.5rem/2rem 'NotoSansKRBold','Nanum Gothic';
-				// 	}
-				// 	a.buy:after{
-				// 		display: inline-block;
-				// 		padding-left: 5px;
-				// 	}
-				// }
-				// .img_txt{
-				// 	float:right;
-				// 	width: 50%;
-				// 	text-align: center;
-				// 	p{
-				// 		text-align: center;
-				// 		font: 1.1rem/1.2rem 'NotoSansKR','Nanum Gothic';
-				// 		em{
-				// 			color:#7f7f7f;
-				// 			font: 0.8rem/1.2rem 'NotoSansKR', 'Nanum Gothic';
-				// 		}
-				// 	}
-				//
-				// 	&.type2{
-				// 		float:left;
-				// 		width: 40%;
-				// 		position: absolute;
-				// 		top:0;
-				// 		img{
-				// 			width: 65%;
-				// 		}
-				// 	}
-				//
-				// 	&.pos6_info{
-				// 		display: none;
-				// 		img{
-				// 			width: 39%;
-				// 		}
-				// 	}
-				// 	&.pos7_info{
-				// 		display: none;
-				// 	}
-				// 	&.pos8_info{
-				// 		img{
-				// 			width: 39%;
-				// 		}
-				// 	}
-				// 	&.pos9_info{
-				// 		display: none;
-				// 	}
-				// 	&.pos10_info{
-				// 		img{
-				// 			width: 39%;
-				// 		}
-				// 	}
-				// 	&.pos11_info{
-				// 		display: none;
-				// 	}
-				// 	&.pos12_info{
-				// 		img{
-				// 			width: 39%;
-				// 		}
-				// 	}
-				// 	&.pos14_info{
-				// 		display: none;
-				// 		img{
-				// 			width: 44%;
-				// 		}
-				// 	}
-				// 	&.pos15_info{
-				// 		display: none;
-				// 		img{
-				// 			width: 39%;
-				// 		}
-				// 	}
-				//
-				// }
-			}
-
-		}
-
-	}
-
-	@-webkit-keyframes blink {
-	    0% { opacity: .9; }
-	    50% { opacity: .3; }
-	    100% { opacity: .9; }
-	}
-
-	//1 ,2
-	.p_num.pos1{ position: absolute; left:28%; top:29%; }
-	.p_num.pos2{ position: absolute; left:60%; top:57%; }
-
-	.p_num.pos em{ margin-left:1px; font: 1.3rem/3.5rem 'AdihausDIN'; position: relative; z-index: 10; border:2px solid transparent;}
-
-	.pos5_info{ z-index: 10; }
-	.pos6_info{ z-index: 9; }
-
-	//3 4
-	.p_num.pos7{ position: absolute; left:35%; top:29%; pointer-events: none;}
-	.p_num.pos8{ position: absolute; left:58%; top:58%;pointer-events: none; }
-
-	//5 6
-	.p_num.pos9{ position: absolute; left:59%; top:29%; }
-	.p_num.pos10{ position: absolute; left:20%; top:67%; }
-
-	//7 8
-	.p_num.pos11{ position: absolute; left:59%; top:30%; }
-	.p_num.pos12{ position: absolute; left:56%; top:66%; }
-
-	//9 10 11
-	.p_num.pos13{ position: absolute; left:36%; top:18%; }
-	.p_num.pos14{ position: absolute; left:50%; top:30%; }
-	.p_num.pos15{ position: absolute; left:59%; top:66%; }
-
-
-	.pos7_info{ z-index: 10; }
-	.pos8_info{ z-index: 9; }
-
-
-	@media screen and (min-width: 768px ){
-		.info_section{
-			height: 22rem;
-		}
-	}
-
-}
-
-.about_campaign.kangsisters{
-	background: #5c5c5c url('/images/reebok/about/kangsisters/bg.jpg') 0 0 repeat;
-
-	.video_visual{
-		h2{
-			margin-bottom: 1.5rem;
-			text-align: center;
-			img{
-				width: 70%;
-			}
-		}
-
-		.desc{
-			margin-bottom: 1.5rem;
-			font:500 1.7rem/1.3rem 'dinpro cond';
-			text-align: center;
-			color: #fff;
-			letter-spacing: 3px;
-			text-transform: uppercase;
-		}
-		.main_sub{
-			text-align: center;
-			padding:0 9rem;
-			img{
-				width: 80%;
-			}
-		}
-
-		.video-btn{
-			margin: 0 auto;
-		}
-
-
-	}
-
-	.lookbook{
-		width: 100%;
-		padding-top: 3.5rem;
-		text-align: center;
-
-		h3{
-			margin-bottom: 1.5rem;
-			>*{
-				font:4rem/4.2rem 'QStencil';
-				color: #fff;
-				text-align: center;
-			}
-			p{
-				img{
-					vertical-align: middle;
-					width: 12%;
-					margin-top: -7px;
-				}
-			}
-
-		}
-
-		>.desc{
-			padding-bottom: 1rem;
-			color: #fff;
-			font:1.3rem/1.9rem 'NotoSansKRLight';
-			text-align: center;
-
-		}
-		>.buy{
-			display: inline-block;
-			margin: 2rem 0;
-			border:1px solid #fff;
-			color:#fff;
-			padding:0 5rem;
-			font:1.3rem/4rem 'NotoSansKRLight';
-
-		}
-
-
-
-		.slider_wrap{
-			overflow: hidden;
-			margin-top:2.5rem;
-			.box{
-				width: 100%;
-				img{
-					width: 100%;
-				}
-			}
-
-			.owl-carousel{
-				width: 100%;
-				position: relative;
-			}
-			.owl-stage-outer{
-				width: 100%;
-				position: relative;
-				overflow: hidden;
-			}
-
-			.owl-stage{
-				width: 100%;
-				position: relative;
-				overflow: hidden;
-			}
-
-			.owl-item{
-				float: left;
-			    @include box-sizing(border-box);
-			}
-			.owl-item .box{
-				width: 100%;
-				img{
-					width: 100%;
-				}
-			}
-
-			.owl-controls{
-				padding:0 1.5rem;
-			}
-
-			.owl-dots{
-				text-align: center;
-				padding: 1rem 0 2rem;
-				border-bottom: 1px solid #515151;
-				@extend .num_paging;
-
-				.active{
-					span{
-						color: #000;
-					}
-				}
-
-				.owl-dot{
-					width: 26px;
-					height: 26px;
-					border-radius: 26px;
-					margin: 0 4px;
-					display: inline-block;
-					border: 1px solid #fff;
-					box-sizing:border-box;
-					color: #fff;
-					transition-duration: 0s;
-					-webkit-transition-duration: 0s;
-
-					span{
-						font:16px/26px 'reefont-condensed';
-					}
-
-					&:nth-child(1){
-						span{
-							&:before{
-								content:'1';
-							}
-						}
-					}
-
-					&:nth-child(2){
-						span{
-							&:before{
-								content:'2';
-							}
-						}
-					}
-
-					&:nth-child(3){
-						span{
-							&:before{
-								content:'3';
-							}
-						}
-					}
-
-					&:nth-child(4){
-						span{
-							&:before{
-								content:'4';
-							}
-						}
-					}
-
-					&:nth-child(5){
-						span{
-							&:before{
-								content:'5';
-							}
-						}
-					}
-
-					&:nth-child(6){
-						span{
-							&:before{
-								content:'6';
-							}
-						}
-					}
-
-					&:nth-child(7){
-						span{
-							&:before{
-								content:'7';
-							}
-						}
-					}
-				}
-
-				.active{
-					background: #fff;
-					border-color: #fff;
-				}
-			}
-		}
-	}
-	.clips{
-		padding:0 1.5rem;
-		.video_visual{
-			margin-bottom: 1.5rem;
-			padding-bottom: 89.4375%;
-			.cover{
-				text-align: center;
-				#clip1{
-					width: 70px;
-					height: 70px;
-					display: inline-block;
-					border: 7px solid  #fff;
-					position: relative;
-					border-radius:70px;
-					@include box-sizing(border-box);
-
-					&:before{
-						@extend .pseudo-element;
-						position: absolute;
-						top: 50%;
-						left: 50%;
-						border-top: 14px solid transparent;
-						border-bottom: 14px solid transparent;
-						border-left: 14px solid #fff;
-						margin-left: 2px;
-
-						transform:translate3d(-50%,-50%,0);
-						-webkit-transform:translate3d(-50%,-50%,0);
-					}
-				}
-				#clip2{
-					width: 70px;
-					height: 70px;
-					display: inline-block;
-					border: 7px solid  #fff;
-					position: relative;
-					border-radius:70px;
-					@include box-sizing(border-box);
-
-					&:before{
-						@extend .pseudo-element;
-						position: absolute;
-						top: 50%;
-						left: 50%;
-						border-top: 14px solid transparent;
-						border-bottom: 14px solid transparent;
-						border-left: 14px solid #fff;
-						margin-left: 2px;
-
-						transform:translate3d(-50%,-50%,0);
-						-webkit-transform:translate3d(-50%,-50%,0);
-					}
-				}
-				#clip3{
-					width: 70px;
-					height: 70px;
-					display: inline-block;
-					border: 7px solid  #fff;
-					position: relative;
-					border-radius:70px;
-					@include box-sizing(border-box);
-
-					&:before{
-						@extend .pseudo-element;
-						position: absolute;
-						top: 50%;
-						left: 50%;
-						border-top: 14px solid transparent;
-						border-bottom: 14px solid transparent;
-						border-left: 14px solid #fff;
-						margin-left: 2px;
-
-						transform:translate3d(-50%,-50%,0);
-						-webkit-transform:translate3d(-50%,-50%,0);
-					}
-				}
-			}
-			.video_layer1{
-				position: absolute;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
-				z-index: -1;
-				overflow: hidden;
-
-				#close1,#close2,#close3,{
-					position: absolute;
-					top:0;
-					right: 0;
-					width: 40px;
-					height: 40px;
-					top: 5px;
-					right: 5px;
-					opacity: 0;
-					transition:opacity 0.5s ease 0.3s;
-					-webkit-transition:opacity 0.5s 0.3s;
-					&:after,
-					&:before{
-						@extend .pseudo-element;
-						width:50%;
-						height: 1px;
-						position: absolute;
-						top:50%;
-						left:50%;
-						transform:translate3d(-50%,-50%,0) rotate(45deg);
-						-webkit-transform:translate3d(-50%,-50%,0) rotate(45deg);
-						background: #5c5c5c;
-					}
-
-					&:after{
-						transform:translate3d(-50%,-50%,0) rotate(-45deg);
-						-webkit-transform:translate3d(-50%,-50%,0) rotate(-45deg);
-					}
-				}
-
-
-				iframe{
-					position: relative;
-					z-index: 3;
-				}
-
-
-				&:before{
-					@extend .pseudo-element;
-					width: 100%;
-					height: 100%;
-					transition:all 0.5s;
-					-webkit-transition:all 0.5s;
-					background: #000;
-					filter:blur(10px);
-					-webkit-filter:blur(10px);
-					opacity: 0;
-					transform-origin:center center;
-					-webkit-transform-origin:center center;
-					transform:scale(0);
-					-webkit-transform:scale(0);
-					position: absolute;
-					top: 0;
-					left: 0;
-				}
-
-				&.active{
-					#close1,#close2,#close3{
-						opacity: 1;
-						z-index: 10;
-					}
-					z-index: 1;
-					&:before{
-						opacity: 1;
-						transform:scale(2);
-						-webkit-transform:scale(2);
-					}
-				}
-
-				&.hide{
-					#close1,#close2,#close3{
-						opacity: 0;
-						transition-delay: 0;
-						-webkit-transition-delay: 0;
-					}
-					z-index: 1;
-
-					&:before{
-						opacity: 0;
-						transform:scale(0);
-						-webkit-transform:scale(0);
-					}
-				}
-
-			}
-
-		}
-	}
-	.instagram{
-		position: relative;
-		text-align: center;
-		.title{
-			padding: 2rem 0 1rem 0;
-			text-align: center;
-			span{
-				text-transform: uppercase;
-				font:2rem/2rem 'dinpro cond';
-				color:#fff;
-			}
-			p{
-				text-transform: uppercase;
-				font:3rem/3.5rem 'dinpro cond';
-				color:#fff;
-			}
-		}
-		.insta{
-			float: left;
-			width: 48%;
-			padding-right: 2%;
-			img{width: 100%;}
-			&:last-child{
-				padding-right: 0;
-				float: right;
-			}
-		}
-		&:after{
-			content: '';
-			display: block;
-			clear: both;
-		}
-		.goUrl{
-			position: relative;
-			padding: 2rem 0;
-			display: inline-block;
-			text-align: center;
-			a{
-				display: inline-block;
-				padding: 0 4rem;
-				border:1px solid #d3d3d3;
-				font:1.4rem/4rem 'NotoSansKR';
-				color:#cad45d;
-				span{
-					font:1.4rem/4rem 'NotoSansKR';
-					color:#fff;
-					&:after{
-						padding-left: 1rem;
-					}
-				}
-			}
-		}
-	}
-
 }
 
 .about_campaign.clubc{
@@ -3495,988 +1820,756 @@ html{
 
 }
 
-.about_campaign.zoku{
-	.main_section{
-		position: relative;
-
-		.bg{
-			width: 100%;
-			height: 100%;
-			position: absolute;
-			top:0;
-			img{
-				width: 100%;
-				height: 100%;
-			}
-		}
-		.title{
-			position: relative;
-			padding:3rem 4rem 3.5rem 4rem;
-			text-align: center;
-
-			.desc{
-				padding-bottom: 0.5rem;
-				font:1rem 'NotosansKR';
-				color:#fff;
-				letter-spacing: -0.5px;
-			}
-			a{
-				position: relative;
-				top:15px;
-				z-index: 10;
-				padding:0.8rem 3.8rem 1rem 3.8rem;
-				border:1px solid #fff;
-				color:#fff;
-				font:500 1.2rem/2rem  'NotoSansKRMedium','Nanum Gothic';
-			}
-			img{
-				padding-bottom: 1.5rem;
-				width: 90%;
-			}
-		}
-
-	}
-
-
-	.video_visual{
-		padding-bottom: 112.4375%;
-		.cover{
-			top:53%;
-		}
-		h2{
-			margin-bottom:0.4rem;
-			width:inherit;
-			height: inherit;
-			text-indent: 0;
-			background:none;
-			text-align: center;
-			color:#fff;
-			text-transform: uppercase;
-			font:5rem/5.3rem 'QStencil';
-			span{
-				font:2.5rem/3.5rem 'QStencil';
-				vertical-align: top;
-			}
-		}
-		.desc{
-			margin-bottom:1.5rem;
-			text-align: center;
-			color:#fff;
-			letter-spacing: 11px;
-			text-transform: uppercase;
-			font:300 1.7rem/1.3rem 'dinpro cond';
-		}
-		.desc_eng2{
-			text-align:center;
-			color:#fff;
-			padding-bottom:5%;
-			font:300 1.3rem/1.9rem 'NotoSansKRLight','Nanum Gothic';
-		}
-		.video-btn{
-			top:1.5rem;
-			margin:0 auto;
-		}
-	}
-
-
-	.collections{
-		position: relative;
-		padding: 1.8rem 0 2.8rem 0;
-		background: #5c5c5c url('/images/reebok/about/zoku/slider_bg.jpg') 100% 0 no-repeat;
-		background-size: cover;
-
-		.num{
-			width: 100%;
-			padding: 1rem 0px;
-			text-align: center;
-
-			a{
-				position: relative;
-				display: inline-block;
-				text-align: center;
-				width: 1.8rem;
-				margin-right: 0.8rem;
-				padding-top: 1px;
-				color:#fff;
-				border:1px solid #fff;
-				font:1.4rem/1.8rem 'reefont-condensed';
-				border-radius: 50px;
-				-webkit-border-radius: 50px;
-			}
-			a:last-child{
-				margin-right: 0;
-			}
-
-			.on{
-				background: #fff;
-				color: #000;
-				font-weight: bold;
-
-			}
-		}
-		.navi{
-			position: absolute;
-			top:50%;
-			margin-top: -16.5px;
-			width: 100%;
-			text-align: center;
-			img{
-				width: 50%;
-			}
-			.next{
-				position: absolute;
-				right:0;
-				text-align: right;
-			}
-			.prev{
-				position: absolute;
-				left:0;
-				text-align: left;
-			}
-		}
-		.collection_cut{
-			overflow: hidden;
-			ul{
-				overflow: hidden;
-				li{
-					position: relative;
-					float: left;
-					text-align: center;
-					img{
-						width: 86%;
-					}
-					.txt{
-						text-align: center;
-						width: 88%;
-						display: block;
-						padding:2.6rem 2rem 2.5rem 2rem;
-						p.main{
-							text-align: center;
-							color:#fff;
-							font:2.5rem 'dinpro cond';
-							letter-spacing: 2px;
-						}
-						p.desc{
-							padding-bottom: 2rem;
-							text-align: center;
-							color:#fff;
-							font:1.5rem 'dinpro cond';
-
-						}
-						a{
-							position: relative;
-							z-index: 10;
-							padding:0.8rem 3.8rem 1rem 3.8rem;
-							border:1px solid #fff;
-							color:#fff;
-							font:500 1.2rem/2rem  'NotoSansKRMedium','Nanum Gothic';
-						}
-					}
-				}
-			}
-		}
-		.num_paging{
-			width: 91.2%;
-			padding-bottom: 5rem;
-		}
-		.prodlist_wrap{
-			position: relative;
-
-			.prodlist{
-				position: absolute;
-				top: 0;
-				left: 0;
-				padding: 0;
-				opacity: 0;
-				transition:opacity 0.3s;
-				-webkit-transition:opacity 0.3s;
-				z-index: 1;
-
-				.tit{
-					height: 1.4rem;
-					overflow: hidden;
-					display: -webkit-box;
-					overflow: hidden;
-					text-overflow: ellipsis;
-					white-space:normal;
-					-webkit-line-clamp:1;
-					-webkit-box-orient: vertical;
-				}
-			}
-
-			.active{
-				opacity: 1;
-				z-index: 2;
-			}
-			.fake{
-				position: relative;
-				opacity: 0;
-				visibility: hidden;
-			}
-
-		}
-	}
-	.collections2{
-		padding: 0 1.5rem 1.5rem;
-		background: url('/images/reebok/about/zoku/gal_bg.jpg') 0 no-repeat;
-		background-size: 100% 100%;
-
-		h3{
-			padding: 2.5rem 0px 1rem;
-			color: #fff;
-			font:2.5rem/3rem 'dinpro cond';
-			text-align: center;
-			text-transform: uppercase;
-		}
-
-		.num_paging{
-			padding: 1rem 0px;
-			.on{
-				background: #fff;
-				color: #000;
-				border-color: #fff;
-			}
-		}
-
-		.collection_cut{
-			position: relative;
-			overflow: hidden;
-			ul{
-				overflow: hidden;
-				li{
-					position: relative;
-					float: left;
-					img{
-						width: 100%;
-					}
-				}
-			}
-			.navi{
-				position: absolute;
-				top:50%;
-				margin-top: -16.5px;
-				width: 100%;
-				text-align: center;
-				img{
-					width: 50%;
-				}
-				.next{
-					position: absolute;
-					right:0;
-					text-align: right;
-					img{
-						width: 40%;
-						margin-right: 1rem;
-					}
-				}
-				.prev{
-					position: absolute;
-					left:0;
-					text-align: left;
-					img{
-						width: 40%;
-						margin-left: 1rem;
-					}
-				}
-			}
-		}
-		.prodlist_wrap{
-			position: relative;
-			padding-bottom: 190%;
-
-			.prodlist{
-				position: absolute;
-				top: 63px;
-				left: 0;
-				padding: 0;
-				opacity: 0;
-				transition:opacity 0.3s;
-				-webkit-transition:opacity 0.3s;
-				z-index: 1;
-				h4{
-					position: absolute;
-					top:-3.5rem;
-					width: 100%;
-					text-align: center;
-					img{
-						width: 77%;
-					}
-				}
-				.box{
-					.inner{
-						padding-right: 5px;
-						padding-left: 5px;
-						.info{
-							padding:20px 0 30px 12px;
-						}
-					}
-				}
-				.box:nth-child(2n){
-					.inner{
-						padding-right: 5px;
-						padding-left: 5px;
-					}
-
-				}
-				.tit{
-					height: 1.4rem;
-
-					display: -webkit-box;
-					// overflow: hidden;
-					// overflow: hidden;
-					// text-overflow: ellipsis;
-					// white-space:normal;
-					// -webkit-line-clamp:1;
-					// -webkit-box-orient: vertical;
-				}
-			}
-
-			.active{
-				opacity: 1;
-				z-index: 2;
-			}
-			.fake{
-				position: relative;
-				opacity: 0;
-				visibility: hidden;
-			}
-
-		}
-	}
-
-
-}
-
-.about_campaign.pump_supreme{
-	.modal-popup-wrapper {
-		overflow: hidden;
-		.popup{
-			top:0 !important;
-			transform: translate3d(-50%, 0%, 0px) !important;
-		}
-		.popup-contents{
-			p{
-				font: 1.2rem/1.5rem 'NotoSansKRRegular';
-				color: #666666;
-				margin-bottom: 1.6rem;
-			}
-			.shop_cont{
-				border-top: 1px solid #000;
-				border-bottom: 1px solid #000;
-				overflow: auto;
-				height: 40rem;
-				table{
-					td{
-						padding: 1.5rem 1rem;
-						border-bottom: 1px solid #ececec;
-						color:#000;
-						font:1.5rem/1.5rem 'NotoSansKRRegular';
-						text-align: left;
-						&.middle{
-							vertical-align: middle;
-						}
-						a{
-							img{
-								width:100%;
-							}
-						}
-						ul{
-							li{
-								&.name{
-									font:1.5rem/2.4rem 'NotoSansKRBold';
-									color:#000;
-								}
-								&.adrress{
-									font:1.2rem/2rem 'NotoSansKRRegular';
-									color:#000;
-								}
-								&.phone{
-									font:1.2rem/1.8rem 'NotoSansKRRegular';
-									color:#555555;
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-	}
-	.main_section{
-		position: relative;
-
-		.bg{
-			width: 100%;
-			height: 100%;
-			position: absolute;
-			top:0;
-			img{
-				width: 100%;
-				height: 100%;
-			}
-		}
-		.title{
-			position: relative;
-			padding:3rem 4rem 3.5rem 4rem;
-			text-align: center;
-
-			.desc{
-				padding-bottom: 0.5rem;
-				font:1rem 'NotosansKR';
-				color:#fff;
-				letter-spacing: -0.5px;
-			}
-			a{
-				position: relative;
-				top:15px;
-				z-index: 10;
-				padding:0.8rem 3.8rem 1rem 3.8rem;
-				border:1px solid #fff;
-				color:#fff;
-				font:500 1.2rem/2rem  'NotoSansKRMedium','Nanum Gothic';
-			}
-			img{
-				padding-bottom: 1.5rem;
-				width: 90%;
-			}
-		}
-
-	}
-	.video_visual{
-		padding-bottom: 112.4375%;
-		.cover{
-			top:53%;
-		}
-		h2{
-			margin-bottom:0.4rem;
-			width:inherit;
-			height: inherit;
-			text-indent: 0;
-			background:none;
-			text-align: center;
-			color:#fff;
-			text-transform: uppercase;
-			font:5rem/5.3rem 'QStencil';
-			span{
-				font:2.5rem/3.5rem 'QStencil';
-				vertical-align: top;
-			}
-		}
-		.desc{
-			margin-bottom:1.5rem;
-			text-align: center;
-			color:#fff;
-			letter-spacing: 11px;
-			text-transform: uppercase;
-			font:300 1.7rem/1.3rem 'dinpro cond';
-		}
-		.desc_eng2{
-			text-align:center;
-			color:#fff;
-			padding-bottom:5%;
-			font:300 1.3rem/1.9rem 'NotoSansKRLight','Nanum Gothic';
-		}
-		.video-btn{
-			top:1.5rem;
-			margin:0 auto;
-		}
-	}
-	.collections{
-		position: relative;
-		padding: 12.8% 0 4.8% 0;
-		background: #000 url('http://imagem.reebok.co.kr/images/reebok/about/pump_supreme/usp_bg.jpg') 100% 2rem no-repeat;
-		background-size: 100%;
-		h3{
-			padding: 0rem 0px 3rem;
-			color: #fff;
-			font:2.5rem/1rem 'QStencil';
-			text-align: center;
-			text-transform: uppercase;
-			span{
-				font:1.2rem/1.5rem 'NotoSansKRRegular','Nanum Gothic';
-			}
-			a{
-				display: inline-block;
-				border: 1px solid #fff;
-				color:#fff;
-				font:1.3rem/1.9rem 'NotoSansKRRegular','Nanum Gothic';
-				text-align: center;
-				padding : 0.8rem 3.8rem 1rem 3.8rem;
-				&.shop{
-					padding : 0.8rem 2.5rem 1rem 2.5rem;
-				}
-			}
-		}
-
-		.num{
-			width: 100%;
-			padding: 1rem 0px;
-			text-align: center;
-
-			a{
-				position: relative;
-				display: inline-block;
-				text-align: center;
-				width: 1rem;
-				height: 1rem;
-				margin-right: 0.8rem;
-				padding-top: 1px;
-				color:#fff;
-				background: #4f4f4f;
-				font:1.4rem/1.8rem 'reefont-condensed';
-				border-radius: 50px;
-				-webkit-border-radius: 50px;
-			}
-			a:last-child{
-				margin-right: 0;
-			}
-
-			.on{
-				background: #fff;
-				color: #000;
-				font-weight: bold;
-
-			}
-		}
-		.navi{
-			position: absolute;
-			top:50%;
-			margin-top: -16.5px;
-			width: 100%;
-			text-align: center;
-			img{
-				width: 50%;
-			}
-			.next{
-				position: absolute;
-				right:0;
-				text-align: right;
-			}
-			.prev{
-				position: absolute;
-				left:0;
-				text-align: left;
-			}
-		}
-		.collection_cut{
-			overflow: hidden;
-			padding-top: 49%;
-			ul{
-				overflow: hidden;
-				li{
-					position: relative;
-					float: left;
-					text-align: center;
-					img{
-						width: 86%;
-					}
-					.txt{
-						text-align: center;
-						width: 88%;
-						display: block;
-						padding:1.6rem 2rem 0.5rem 2rem;
-						p.main{
-							text-align: center;
-							color:#fff;
-							font:2.5rem 'NotoSansKRBold','Nanum Gothic';
-							letter-spacing: -0.5px;
-							padding-bottom: 0.6rem;
-						}
-						p.desc{
-							padding-bottom: 2rem;
-							text-align: center;
-							color:#fff;
-							font:1.3rem/1.8rem 'NotoSansKRRegular','Nanum Gothic';
-
-						}
-						a{
-							position: relative;
-							z-index: 10;
-							padding:0.8rem 3.8rem 1rem 3.8rem;
-							text-decoration: underline;
-							color:#ab2328;
-							font:500 1.5rem/2rem  'NotoSansKR','Nanum Gothic';
-						}
-					}
-				}
-			}
-		}
-		.num_paging{
-			width: 91.2%;
-			padding-bottom: 5rem;
-		}
-		.prodlist_wrap{
-			position: relative;
-
-			.prodlist{
-				position: absolute;
-				top: 0;
-				left: 0;
-				padding: 0;
-				opacity: 0;
-				transition:opacity 0.3s;
-				-webkit-transition:opacity 0.3s;
-				z-index: 1;
-
-				.tit{
-					height: 1.4rem;
-					overflow: hidden;
-					display: -webkit-box;
-					overflow: hidden;
-					text-overflow: ellipsis;
-					white-space:normal;
-					-webkit-line-clamp:1;
-					-webkit-box-orient: vertical;
-				}
-			}
-
-			.active{
-				opacity: 1;
-				z-index: 2;
-			}
-			.fake{
-				position: relative;
-				opacity: 0;
-				visibility: hidden;
-			}
-
-		}
-	}
-	.collections2{
-		padding: 0 1.5rem 1.5rem;
-		background: url('http://imagem.reebok.co.kr/images/reebok/about/pump_supreme/slide_bg.jpg') 0 no-repeat;
-		background-size: 100% 100%;
-
-		h3{
-			padding: 2.5rem 0px 1rem;
-			color: #fff;
-			font:2.5rem/3rem 'QStencil';
-			text-align: center;
-			text-transform: uppercase;
-			a{
-				display: inline-block;
-				border: 1px solid #fff;
-				color:#fff;
-				font:1.3rem/1.9rem 'NotoSansKRRegular','Nanum Gothic';
-				text-align: center;
-				padding : 0.8rem 3.8rem 1rem 3.8rem;
-				margin-top: 1rem;
-			    margin-bottom: 1rem;
-			}
-		}
-
-		.num_paging{
-			padding: 1rem 0px;
-			a{
-				background: rgba(255, 255, 255, 0.3);
-				border:none;
-				width: 1rem;
-				height: 1rem;
-				margin-right: 0.8rem;
-			}
-
-			.on{
-				background: #fff;
-			}
-		}
-
-		.collection_cut{
-			position: relative;
-			overflow: hidden;
-			ul{
-				overflow: hidden;
-				li{
-					position: relative;
-					float: left;
-					img{
-						width: 100%;
-					}
-				}
-			}
-			.navi{
-				position: absolute;
-				top:50%;
-				margin-top: -16.5px;
-				width: 100%;
-				text-align: center;
-				img{
-					width: 50%;
-				}
-				.next{
-					position: absolute;
-					right:0;
-					text-align: right;
-					img{
-						width: 40%;
-						margin-right: 1rem;
-					}
-				}
-				.prev{
-					position: absolute;
-					left:0;
-					text-align: left;
-					img{
-						width: 40%;
-						margin-left: 1rem;
-					}
-				}
-			}
-		}
-		.prodlist_wrap{
-			position: relative;
-			padding-bottom: 190%;
-
-			.prodlist{
-				position: absolute;
-				top: 63px;
-				left: 0;
-				padding: 0;
-				opacity: 0;
-				transition:opacity 0.3s;
-				-webkit-transition:opacity 0.3s;
-				z-index: 1;
-				h4{
-					position: absolute;
-					top:-3.5rem;
-					width: 100%;
-					text-align: center;
-					img{
-						width: 77%;
-					}
-				}
-				.box{
-					.inner{
-						padding-right: 5px;
-						padding-left: 5px;
-						.info{
-							padding:20px 0 30px 12px;
-						}
-					}
-				}
-				.box:nth-child(2n){
-					.inner{
-						padding-right: 5px;
-						padding-left: 5px;
-					}
-
-				}
-				.tit{
-					height: 1.4rem;
-
-					display: -webkit-box;
-					// overflow: hidden;
-					// overflow: hidden;
-					// text-overflow: ellipsis;
-					// white-space:normal;
-					// -webkit-line-clamp:1;
-					// -webkit-box-orient: vertical;
-				}
-			}
-
-			.active{
-				opacity: 1;
-				z-index: 2;
-			}
-			.fake{
-				position: relative;
-				opacity: 0;
-				visibility: hidden;
-			}
-
-		}
-	}
-}
-
-.about_campaign.insta_pury{
-
-	.video_visual{
-		padding-bottom: 123.4375%;
-		h2{
-			margin-bottom:0.4rem;
-			width:inherit;
-			height: inherit;
-			text-indent: 0;
-			background:none;
-			text-align: center;
-			color:#fff;
-			text-transform: uppercase;
-			font:5rem/5.3rem 'QStencil';
-			span{
-				font:2.5rem/3.5rem 'QStencil';
-				vertical-align: top;
-			}
-		}
-		.desc{
-			margin-bottom:1.5rem;
-			text-align: center;
-			color:#fff;
-			letter-spacing: 10px;
-			text-transform: uppercase;
-			font:300 1.7rem/1.3rem 'dinpro cond';
-		}
-		.desc_eng2{
-			text-align:center;
-			color:#fff;
-			padding-bottom:5%;
-			font:300 1.3rem/1.9rem 'NotoSansKRLight','Nanum Gothic';
-		}
-		.video-btn{
-			top:1.5rem;
-			margin:0 auto;
-		}
-	}
-	.main_cut{
-		a{
-			display: inline-block;
-			img{
-				width: 100%;
-			}
-		}
-	}
-	.collections2{
-		padding: 0 1.5rem 1.5rem;
-		background: url('/images/reebok/about/insta_pury/collection_bg.jpg') 0 no-repeat;
-		background-size: 100% 100%;
-		h3{
-			padding: 3rem 0px 1rem;
-			color: #fff;
-			font:2.5rem 'dinpro cond';
-			text-align: center;
-			text-transform: uppercase;
-			a{
-				display: inline-block;
-				border: 1px solid #fff;
-				color:#fff;
-				font:1.3rem/1.9rem 'NotoSansKRRegular','Nanum Gothic';
-				text-align: center;
-				padding : 0.8rem 3.8rem 1rem 3.8rem;
-				margin-top: 1rem;
-				margin-bottom: 1rem;
-			}
-		}
-
-		.num_paging{
-			padding: 1rem 0px;
-			a{
-				background: rgba(255, 255, 255, 0.3);
-				border:none;
-				width: 1rem;
-				height: 1rem;
-				margin-right: 0.8rem;
-			}
-
-			.on{
-				background: #fff;
-			}
-		}
-
-		.collection_cut{
-			position: relative;
-			overflow: hidden;
-			ul{
-				overflow: hidden;
-				li{
-					position: relative;
-					float: left;
-					img{
-						width: 100%;
-					}
-				}
-			}
-			.navi{
-				position: absolute;
-				top:50%;
-				margin-top: -16.5px;
-				width: 100%;
-				text-align: center;
-				img{
-					width: 50%;
-				}
-				.next{
-					position: absolute;
-					right:0;
-					text-align: right;
-					img{
-						width: 40%;
-						margin-right: 1rem;
-					}
-				}
-				.prev{
-					position: absolute;
-					left:0;
-					text-align: left;
-					img{
-						width: 40%;
-						margin-left: 1rem;
-					}
-				}
-			}
-		}
-		.prodlist_wrap{
-			position: relative;
-			padding-bottom: 190%;
-
-			.prodlist{
-				position: absolute;
-				top: 63px;
-				left: 0;
-				padding: 0;
-				opacity: 0;
-				transition:opacity 0.3s;
-				-webkit-transition:opacity 0.3s;
-				z-index: 1;
-				h4{
-					position: absolute;
-					top:-3.5rem;
-					width: 100%;
-					text-align: center;
-					img{
-						width: 77%;
-					}
-				}
-				.box{
-					.inner{
-						padding-right: 5px;
-						padding-left: 5px;
-						.info{
-							padding:20px 0 30px 12px;
-						}
-					}
-				}
-				.box:nth-child(2n){
-					.inner{
-						padding-right: 5px;
-						padding-left: 5px;
-					}
-
-				}
-				.tit{
-					height: 1.4rem;
-
-					display: -webkit-box;
-					// overflow: hidden;
-					// overflow: hidden;
-					// text-overflow: ellipsis;
-					// white-space:normal;
-					// -webkit-line-clamp:1;
-					// -webkit-box-orient: vertical;
-				}
-			}
-
-			.active{
-				opacity: 1;
-				z-index: 2;
-			}
-			.fake{
-				position: relative;
-				opacity: 0;
-				visibility: hidden;
-			}
-
-		}
-	}
-}
-
 .about_campaign{
+	&.gigi_hadid{
+		.video_visual{
+			h2{
+				margin-bottom: 1.5rem;
+				text-align: center;
+				img{
+					width: 70%;
+				}
+			}
+
+			.desc{
+				margin-bottom: 1.5rem;
+				font:500 1.7rem/1.3rem 'dinpro cond';
+				text-align: center;
+				color: #fff;
+				letter-spacing: 3px;
+				text-transform: uppercase;
+			}
+			.main_sub{
+				text-align: center;
+				padding:0 9rem;
+				img{
+					width: 80%;
+				}
+			}
+
+			.video-btn{
+				margin: 0 auto;
+			}
+		}
+
+		.lookbook{
+			width: 100%;
+			background: #252525;
+			padding-top: 3.5rem;
+			text-align: center;
+
+			h3{
+				margin-bottom: 1.5rem;
+				>*{
+					font:4rem/4.2rem 'QStencil';
+					color: #fff;
+					text-align: center;
+				}
+
+				.colab{
+					@extend .close;
+					width: 3rem;
+					height: 3rem;
+					position: relative;
+					margin: 0 auto 0.8rem;
+
+					&:before,
+					&:after{
+						width: 100%;
+						background: #4f4f4f;
+					}
+				}
+			}
+
+			>.desc{
+				color: #fff;
+				font:1.4rem/1.9rem 'NotoSansKRLight';
+				text-align: center;
+			}
+
+			>.hash{
+				display: inline-block;
+				padding:2rem 4rem;
+				margin-top: 2rem;
+				color: #fff;
+				font:500 1.6rem/1.9rem 'dinpro cond';
+				text-align: center;
+				letter-spacing: -1px;
+				border:1px solid #ddd;
+			}
+
+			.slider_wrap{
+				overflow: hidden;
+				margin-top:2.5rem;
+				.box{
+					width: 100%;
+					img{
+						width: 100%;
+					}
+				}
+
+				.owl-carousel{
+					width: 100%;
+					position: relative;
+				}
+				.owl-stage-outer{
+					width: 100%;
+					position: relative;
+					overflow: hidden;
+				}
+
+				.owl-stage{
+					width: 100%;
+					position: relative;
+					overflow: hidden;
+				}
+
+				.owl-item{
+					float: left;
+					@include box-sizing(border-box);
+				}
+				.owl-item .box{
+					width: 100%;
+					img{
+						width: 100%;
+					}
+				}
+
+				.owl-controls{
+					padding:0 1.5rem;
+				}
+
+				.owl-dots{
+					text-align: center;
+					padding: 1rem 0 2rem;
+					border-bottom: 1px solid #515151;
+					@extend .num_paging;
+
+					.active{
+						span{
+							color: #000;
+						}
+					}
+
+					.owl-dot{
+						width: 26px;
+						height: 26px;
+						border-radius: 26px;
+						margin: 0 4px;
+						display: inline-block;
+						border: 1px solid #fff;
+						box-sizing:border-box;
+						color: #fff;
+						transition-duration: 0s;
+						-webkit-transition-duration: 0s;
+
+						span{
+							font:16px/26px 'reefont-condensed';
+						}
+
+						&:nth-child(1){
+							span{
+								&:before{
+									content:'1';
+								}
+							}
+						}
+
+						&:nth-child(2){
+							span{
+								&:before{
+									content:'2';
+								}
+							}
+						}
+
+						&:nth-child(3){
+							span{
+								&:before{
+									content:'3';
+								}
+							}
+						}
+
+						&:nth-child(4){
+							span{
+								&:before{
+									content:'4';
+								}
+							}
+						}
+
+						&:nth-child(5){
+							span{
+								&:before{
+									content:'5';
+								}
+							}
+						}
+
+						&:nth-child(6){
+							span{
+								&:before{
+									content:'6';
+								}
+							}
+						}
+
+						&:nth-child(7){
+							span{
+								&:before{
+									content:'7';
+								}
+							}
+						}
+					}
+
+					.active{
+						background: #fff;
+						border-color: #fff;
+					}
+				}
+			}
+		}
+
+		.about_gigi_hadid{
+			background: #252525;
+
+			h3{
+				margin-bottom: 2rem;
+				padding: 3.5rem 0px 1.8rem;
+				color: #fff;
+				font:3.4rem/3.4rem 'NotoSansKRBold';
+				text-align: center;
+
+				p{
+					margin-bottom: 0.5rem;
+					font:1.8rem/1.8rem 'NotoSansKRLight';
+				}
+			}
+
+			.contents{
+				.quotes{
+					opacity: 0;
+					padding: 4rem 0px 5rem;
+					color: #fff;
+					font:1.5rem/2.4rem 'NotoSansKRRegular';
+					text-align: center;
+
+					.ico{
+						text-align: center;
+
+						div{
+							margin-bottom: 1.2rem;
+							position: relative;
+							display: inline-block;
+							width: 0.5rem;
+							height: 1.2rem;
+							background: #fff;
+							margin: 0 0.1rem 1.2rem;
+
+							&:before{
+								@extend .pseudo-element;
+								position: absolute;
+								top: -0.5rem;
+								left: 0;
+								width: 0;
+								height: 0;
+								border-top:0.5rem solid transparent;
+								border-bottom:0.5rem solid transparent;
+								border-left:0.5rem solid #252525;
+							}
+						}
+
+						&.end{
+							div{
+								margin-top: 1.2rem;
+								margin-bottom: 0;
+								&:before{
+									top: auto;
+									bottom: -0.5rem;
+									border-left-width:0;
+									border-right:0.5rem solid #252525;
+								}
+							}
+						}
+					}
+
+					&.gray{
+						.ico{
+							div{
+								&:before{
+									border-left-color:#6a6969 !important;
+								}
+							}
+
+							&.end{
+								div{
+									&:before{
+										border-right-color:#6a6969 !important;
+									}
+								}
+							}
+						}
+					}
+				}
+
+				.box{
+					position: relative;
+					>p{
+						position: absolute;
+						top: 3rem;
+						left: 1.5rem;
+						color: #fff;
+						font:1.3rem/1.9rem 'NotoSansKRRegular';
+						opacity: 0;
+						transform:translate3d(-15px,0,0);
+						-webkit-transform:translate3d(-15px,0,0);
+
+						strong{
+							margin-top: 2rem;
+							// display: block;
+							font:1.3rem/2.6rem 'NotoSansKR';
+							color: #f4a099;
+						}
+					}
+					.img{
+						position: relative;
+						text-align: right;
+
+						&:before{
+							@extend .pseudo-element;
+								width: 100%;
+								height: 81%;
+								background: #000;
+								position: absolute;
+								top: -1.5rem;
+								left: -63%;
+								transform: skew(-8.4deg) translate3d(-15px,0,0);
+								-webkit-transform: skew(-8.4deg) translate3d(-15px,0,0);
+								background: #44518c;
+								opacity: 0;
+						}
+
+						img{
+							width: 70%;
+							opacity: 0;
+						}
+
+					}
+
+					&.box2{
+						>p{
+							padding: 2.5rem 0;
+							position: relative;
+							text-align: center;
+							top: 0;
+							left: 0;
+						}
+
+						.img{
+							text-align: left;
+							&:before{
+								height: 100%;
+								top: -2.5rem;
+								left: auto;
+								right: -70%;
+								transform: skew(-11deg) translate3d(15px,0,0);
+								-webkit-transform: skew(-11deg) translate3d(15px,0,0);
+								background: #931123;
+							}
+						}
+
+					}
+				}
+
+				.active{
+					opacity: 1;
+					transition:opacity 0.3s;
+					-webkit-transition:opacity 0.3s;
+
+					>p{
+						opacity: 1;
+						transform:translate3d(0,0,0);
+						-webkit-transform:translate3d(0,0,0);
+						transition:all 0.3s ease 0.3s;
+						-webkit-transition:all 0.3s ease 0.3s;
+					}
+
+					.img{
+						&:before{
+							opacity: 1;
+							transform:skew(-8.4deg) translate3d(0,0,0);
+							-webkit-transform:skew(-8.4deg) translate3d(0,0,0);
+							transition:all 0.3s ease 0.15s;
+							-webkit-transition:all 0.3s ease 0.15s;
+						}
+
+						img{
+							opacity: 1;
+							transition:opacity 0.3s;
+							-webkit-transition:opacity 0.3s;
+						}
+					}
+
+					&.box2{
+						.img{
+							&:before{
+								opacity: 1;
+								transform:skew(-11deg) translate3d(0,0,0);
+								-webkit-transform:skew(-11deg) translate3d(0,0,0);
+								transition:all 0.3s ease 1.15s;
+								-webkit-transition:all 0.3s ease 0.15s;
+							}
+						}
+					}
+				}
+
+			}
+		}
+
+		.collections{
+			padding: 0 1.5rem 1.5rem;
+			background: #5c5c5c url('/images/reebok/about/gigi_hadid/bg_collection.jpg') 0 0 repeat;
+			background-size: 100% auto;
+
+			h3{
+				padding: 3.5rem 0px 1.8rem;
+				color: #fff;
+				font:500 2.4rem 'dinpro cond';
+				text-align: center;
+				text-transform: uppercase;
+			}
+
+			.num_paging{
+				padding: 1rem 0px;
+
+				.on{
+					background: #fff;
+					color: #000;
+					border-color: #fff;
+				}
+			}
+
+			.collection_cut{
+				overflow: hidden;
+				ul{
+					overflow: hidden;
+					li{
+						position: relative;
+						float: left;
+
+						img{
+							width: 100%;
+						}
+					}
+				}
+			}
+
+			.prodlist_wrap{
+				position: relative;
+
+				.prodlist{
+					position: absolute;
+					top: 0;
+					left: 0;
+					padding: 0;
+					opacity: 0;
+					transition:opacity 0.3s;
+					-webkit-transition:opacity 0.3s;
+					z-index: 1;
+
+					.tit{
+						height: 1.4rem;
+						overflow: hidden;
+
+						display: -webkit-box;
+						overflow: hidden;
+						text-overflow: ellipsis;
+						white-space:normal;
+						-webkit-line-clamp:1;
+						-webkit-box-orient: vertical;
+					}
+				}
+
+				.active{
+					opacity: 1;
+					z-index: 2;
+				}
+				.fake{
+					position: relative;
+					opacity: 0;
+					visibility: hidden;
+				}
+
+			}
+		}
+
+		&.nada{
+			.video_visual{
+				.bg{
+					overflow: hidden;
+					img{
+						position: absolute;
+						top: 0;
+						left: 0;
+						opacity: 0;
+						transform:scale(1.02);
+						-webkit-transform:scale(1.02);
+
+						transition:all 1.5s;
+						-webkit-transition:all 1.5s;
+
+						&.remove_ready{
+							transform:scale(1);
+							-webkit-transform:scale(1);
+						}
+
+						&.active{
+							transform:scale(1);
+							-webkit-transform:scale(1);
+							opacity: 1;
+						}
+					}
+				}
+			}
+
+			.lookbook{
+				background: #d8d7d6;
+				*{
+					color:#292929;
+				}
+				h3{
+					text-align: center;
+					>*{
+						font-size: 3.7rem;
+						margin-bottom: 0;
+						display: inline-block;
+					}
+
+					>div{
+						display: block;
+
+						>*{
+							font:4rem/4.2rem 'QStencil';
+							text-align: center;
+							font-size: 3.7rem;
+							margin-bottom: 0;
+							display: inline-block;
+						}
+					}
+
+					.colab{
+						position: relative;
+						top: 0.4rem;
+						width: 2.6rem;
+						margin:0 0.5rem;
+					}
+				}
+
+				.button_area{
+					margin-bottom: 3rem;
+					a{
+						background: none;
+					}
+				}
+
+				.slider_wrap{
+					position: relative;
+					overflow: hidden;
+					li{
+						float: left;
+						position: relative;
+					}
+				}
+
+				.num_paging{
+					padding: 1.5rem 0px 2rem;
+					a{
+						border-color: #565656;
+
+						&.on{
+							background: #000;
+							color: #fff;
+						}
+					}
+				}
+
+				.owl-dots{
+					border-bottom-width: 0;
+					.owl-dot{
+						background: none;
+						color: #000;
+						border-color: #000;
+
+						&.active{
+							background: #000;
+							span{
+								color: #fff;
+							}
+						}
+					}
+				}
+			}
+
+			.about_gigi_hadid{
+				overflow: hidden;
+				background: #6a6969;
+
+				h3{
+					p:first-child{
+						font: 3.2rem/3.2rem 'NotoSansKRBold';
+					}
+
+					strong{
+						margin-left: 0.2rem;
+						font:700 3.8rem 'dinpro cond';
+					}
+				}
+
+				.txt{
+					text-align: center;
+					margin-bottom: 3.2rem;
+
+					img{
+						width: 50%;
+						max-width:200px;
+					}
+				}
+
+				.box1{
+					margin-bottom: 4.5rem;
+					>p{
+						top: 11rem;
+					}
+					.img{
+						&:before{
+							display: none;
+						}
+
+						&.abt{
+							width: 100%;
+							position: absolute;
+							top: -1.5rem;
+							left: 0;
+							text-align: left;
+							transition:all 0.3s;
+							-webkit-transition:all 0.3s;
+							transform: translate3d(-0.5rem,0,0);
+							-webkit-transform: translate3d(-0.5rem,0,0);
+
+							img{
+								width: 43%;
+							}
+						}
+					}
+
+					&.active{
+						.abt{
+							transform: translate3d(0,0,0);
+							-webkit-transform: translate3d(0,0,0);
+						}
+					}
+
+				}
+
+				.box{
+					&.box2{
+						margin-bottom: 4.5rem;
+						>p{
+							position: absolute;
+							top: 3rem;
+							right:1rem;
+							color: #fff;
+							font: 1.3rem/2rem 'NotoSansKRLight';
+							transform: translate3d(-1rem, 0, 0);
+							-webkit-transform: translate3d(-1rem, 0, 0);
+							z-index: 5;
+							text-align: right;
+						}
+						.img{
+							transform: translate3d(-1rem, 0, 0);
+							-webkit-transform: translate3d(-1rem, 0, 0);
+							opacity: 0;
+							transition:all 0.3s;
+							-webkit-transition:all 0.3s;
+
+							&:before{
+								display: none;
+							}
+
+							img{
+								width: 88%;
+							}
+						}
+						&.active{
+							>p{
+								transform: translate3d(-0.5rem, 0, 0);
+								-webkit-transform: translate3d(-0.5rem, 0, 0);
+							}
+
+							.img{
+								transform: translate3d(0, 0, 0);
+								-webkit-transform: translate3d(0, 0, 0);
+								opacity: 1;
+							}
+						}
+					}
+
+					&.box3{
+						margin-bottom: 2.5rem;
+						>p{
+							position: absolute;
+							top: 50%;
+							right:1rem;
+							color: #fff;
+							font: 1.3rem/2rem 'NotoSansKRLight';
+							transform: translate3d(-1rem, -50%, 0);
+							-webkit-transform: translate3d(-1rem, -50%, 0);
+							z-index: 5;
+							text-align: left;
+						}
+						.img{
+							text-align: right;
+							transform: translate3d(-1rem, 0, 0);
+							-webkit-transform: translate3d(-1rem, 0, 0);
+							opacity: 0;
+							transition:all 0.3s;
+							-webkit-transition:all 0.3s;
+
+							&:before{
+								display: none;
+							}
+
+							img{
+								width: 95%;
+							}
+						}
+						&.active{
+							>p{
+								transform: translate3d(-0.5rem, -50%, 0);
+								-webkit-transform: translate3d(-0.5rem, -50%, 0);
+							}
+
+							.img{
+								transform: translate3d(0, 0, 0);
+								-webkit-transform: translate3d(0, 0, 0);
+								opacity: 1;
+							}
+						}
+					}
+
+					.txt{
+						margin-bottom: 4rem;
+					}
+
+				}
+
+
+			}
+		}
+	}
+	// gigi_hadid
 	&.heritage{
 		.video_visual{
 			h2{
@@ -4541,13 +2634,13 @@ html{
 			}
 			.button_area{
 				margin-bottom: 8%;
-				background:none;
 				.button{
 					padding:1rem 3.5rem;
 					display: inline-block;
 					font: 500 1.3rem 'dinpro cond','NotoSansKRRegular';
 					color:#866432;
 					border: 1px solid #866432;
+					background:none;
 				}
 			}
 			.packs{
@@ -4781,6 +2874,258 @@ html{
 
 		}
 	}
+	//heritage
+	&.about2l{
+		background: #5c5c5c url('/images/reebok/about/2l/bg.jpg') 0 0 repeat;
+
+		.video_visual{
+			h2{
+				margin-bottom: 1.5rem;
+				text-align: center;
+				img{
+					width: 70%;
+				}
+			}
+
+			.desc{
+				margin-bottom: 1.5rem;
+				font:500 1.7rem/1.3rem 'dinpro cond';
+				text-align: center;
+				color: #fff;
+				letter-spacing: 3px;
+				text-transform: uppercase;
+			}
+			.main_sub{
+				text-align: center;
+				padding:0 9rem;
+				img{
+					width: 80%;
+				}
+			}
+
+			.video-btn{
+				margin: 0 auto;
+			}
+		}
+
+		.lookbook{
+			width: 100%;
+			padding-top: 3.5rem;
+			text-align: center;
+
+			h3{
+				margin-bottom: 1.5rem;
+				>*{
+					font:4rem/4.2rem 'QStencil';
+					color: #fff;
+					text-align: center;
+				}
+				p{
+					img{
+						vertical-align: middle;
+						width: 12%;
+						margin-top: -7px;
+					}
+				}
+
+			}
+
+			>.desc{
+				color: #fff;
+				font:1.3rem/1.9rem 'NotoSansKRLight';
+				text-align: center;
+			}
+			>.buy{
+				display: inline-block;
+				margin: 2rem 0;
+				border:1px solid #fff;
+				color:#fff;
+				padding:0 5rem;
+				font:1.3rem/4rem 'NotoSansKRLight';
+
+			}
+
+		}
+		.section{
+			/*슬라이더*/
+			.slider2{
+				position: relative;
+				margin: 1rem 2rem;
+				overflow: hidden;
+				text-align: center;
+				ul{
+					li{
+						img{
+							width: 100%;
+						}
+						.p_num{
+							display: inline-block;
+							width:3.5rem; height: 3.5rem;
+							vertical-align: middle;
+							color:#fff;
+							text-align:center;
+							cursor: pointer;
+							font: 1.1rem/2rem 'NotoSansKRLight', 'Nanum Gothic';
+							em{
+								margin-left: 1px;
+								font: 1.3rem/3.5rem 'AdihausDIN';
+								position: relative;
+								z-index: 10;
+								border: 2px solid transparent;
+							}
+							a{
+								content: '';
+								display: inline-block;
+								width:100%; height: 100%;
+								background: #000;
+								@include opacity (0.7);
+								position: absolute;
+								left:0;
+								&.blink{
+									-webkit-animation: blink 2.5s linear infinite;
+									animation: blink 2.5s linear infinite;
+								}
+								&.no_active{
+									background: #000;
+									@include opacity (0.3);
+								}
+								&.on{
+									background: #b91c23;
+									@include opacity (0.7);
+								}
+								&:hover{
+									background: #b91c23;
+									@include opacity (0.7);
+									em{
+										@include opacity (1);
+									}
+								}
+
+							}
+
+						}
+					}
+				}
+			}
+
+			/*슬라이더 정보css*/
+			.info_section{
+				position: relative;
+				padding:1rem 2rem;
+				height: 14rem;
+				overflow: hidden;
+				.slider_info{
+					position: relative;
+					// display: none;
+					// @include opacity (0);
+					/*170307 코드 개선*/
+					.item{
+						position: absolute;
+						top:0;
+						display: none;
+						&:after{
+							content: '';
+							display: block;
+							clear:both;
+						}
+						.item_img{
+							width: 30%;
+							float:left;
+							text-align: center;
+							img{
+								width: 100%;
+								margin-top: 1rem;
+							}
+						}
+						.item_info{
+							width: 63%;
+							float:right;
+							p{
+								display:block;
+								padding-top: 0.5rem;
+								font: 1.4rem/2rem 'NotoSansKRLight';
+								color:#fff;
+								padding-bottom: 0.7rem;
+								border-bottom: 1px solid #fff;
+								.p_num{
+									display: inline-block;
+									width:2rem; height: 2rem;
+									vertical-align: middle;
+									color:#fff;
+									background: #000;
+									text-align:center;
+									cursor: pointer;
+									font: 1.1rem/2rem 'NotoSansKRLight', 'Nanum Gothic';
+								}
+								&.desc{
+									padding-top: 1rem;
+									border-bottom: 0px;
+									font: 1.1rem/1.5rem 'NotoSansKR','Nanum Gothic';
+									color:#bbb;
+									letter-spacing: -0.5px;
+								}
+							}
+							a.buy{
+								color:#f1554c !important;
+								font: 1.2rem/2rem 'NotoSansKRBold','Nanum Gothic';
+							}
+							a.buy:after{
+								display: inline-block;
+								padding-left: 5px;
+							}
+						}
+					}
+
+				}
+
+			}
+
+		}
+
+		@-webkit-keyframes blink {
+			0% { opacity: .9; }
+			50% { opacity: .3; }
+			100% { opacity: .9; }
+		}
+
+		//1 ,2
+		.p_num.pos1{ position: absolute; left:28%; top:29%; }
+		.p_num.pos2{ position: absolute; left:60%; top:57%; }
+
+		.p_num.pos em{ margin-left:1px; font: 1.3rem/3.5rem 'AdihausDIN'; position: relative; z-index: 10; border:2px solid transparent;}
+
+		.pos5_info{ z-index: 10; }
+		.pos6_info{ z-index: 9; }
+
+		//3 4
+		.p_num.pos7{ position: absolute; left:35%; top:29%; pointer-events: none;}
+		.p_num.pos8{ position: absolute; left:58%; top:58%;pointer-events: none; }
+
+		//5 6
+		.p_num.pos9{ position: absolute; left:59%; top:29%; }
+		.p_num.pos10{ position: absolute; left:20%; top:67%; }
+
+		//7 8
+		.p_num.pos11{ position: absolute; left:59%; top:30%; }
+		.p_num.pos12{ position: absolute; left:56%; top:66%; }
+
+		//9 10 11
+		.p_num.pos13{ position: absolute; left:36%; top:18%; }
+		.p_num.pos14{ position: absolute; left:50%; top:30%; }
+		.p_num.pos15{ position: absolute; left:59%; top:66%; }
+
+
+		.pos7_info{ z-index: 10; }
+		.pos8_info{ z-index: 9; }
+
+
+		@media screen and (min-width: 768px ){
+			.info_section{
+				height: 22rem;
+			}
+		}
+	}
+	//about2l
 	&.nano7{
 		.video_visual{
 			h2{
@@ -6135,7 +4480,6 @@ html{
 		// }
 	}
 	// printsmooth
-
 	&.printsmooth_v2{
 		.main_bg{
 			position: relative;
@@ -6670,7 +5014,6 @@ html{
 		}
 	}
 	// printsmooth_v2
-
 	&.floatride{
 		.main_bg{
 			position: relative;
@@ -7005,7 +5348,442 @@ html{
 
 	}
 	// floatride
+	&.kangsisters{
+		background: #5c5c5c url('/images/reebok/about/kangsisters/bg.jpg') 0 0 repeat;
+		.video_visual{
+			h2{
+				margin-bottom: 1.5rem;
+				text-align: center;
+				img{
+					width: 70%;
+				}
+			}
 
+			.desc{
+				margin-bottom: 1.5rem;
+				font:500 1.7rem/1.3rem 'dinpro cond';
+				text-align: center;
+				color: #fff;
+				letter-spacing: 3px;
+				text-transform: uppercase;
+			}
+			.main_sub{
+				text-align: center;
+				padding:0 9rem;
+				img{
+					width: 80%;
+				}
+			}
+
+			.video-btn{
+				margin: 0 auto;
+			}
+
+
+		}
+		.lookbook{
+			width: 100%;
+			padding-top: 3.5rem;
+			text-align: center;
+
+			h3{
+				margin-bottom: 1.5rem;
+				>*{
+					font:4rem/4.2rem 'QStencil';
+					color: #fff;
+					text-align: center;
+				}
+				p{
+					img{
+						vertical-align: middle;
+						width: 12%;
+						margin-top: -7px;
+					}
+				}
+
+			}
+
+			>.desc{
+				padding-bottom: 1rem;
+				color: #fff;
+				font:1.3rem/1.9rem 'NotoSansKRLight';
+				text-align: center;
+
+			}
+			>.buy{
+				display: inline-block;
+				margin: 2rem 0;
+				border:1px solid #fff;
+				color:#fff;
+				padding:0 5rem;
+				font:1.3rem/4rem 'NotoSansKRLight';
+
+			}
+
+
+
+			.slider_wrap{
+				overflow: hidden;
+				margin-top:2.5rem;
+				.box{
+					width: 100%;
+					img{
+						width: 100%;
+					}
+				}
+
+				.owl-carousel{
+					width: 100%;
+					position: relative;
+				}
+				.owl-stage-outer{
+					width: 100%;
+					position: relative;
+					overflow: hidden;
+				}
+
+				.owl-stage{
+					width: 100%;
+					position: relative;
+					overflow: hidden;
+				}
+
+				.owl-item{
+					float: left;
+					@include box-sizing(border-box);
+				}
+				.owl-item .box{
+					width: 100%;
+					img{
+						width: 100%;
+					}
+				}
+
+				.owl-controls{
+					padding:0 1.5rem;
+				}
+
+				.owl-dots{
+					text-align: center;
+					padding: 1rem 0 2rem;
+					border-bottom: 1px solid #515151;
+					@extend .num_paging;
+
+					.active{
+						span{
+							color: #000;
+						}
+					}
+
+					.owl-dot{
+						width: 26px;
+						height: 26px;
+						border-radius: 26px;
+						margin: 0 4px;
+						display: inline-block;
+						border: 1px solid #fff;
+						box-sizing:border-box;
+						color: #fff;
+						transition-duration: 0s;
+						-webkit-transition-duration: 0s;
+
+						span{
+							font:16px/26px 'reefont-condensed';
+						}
+
+						&:nth-child(1){
+							span{
+								&:before{
+									content:'1';
+								}
+							}
+						}
+
+						&:nth-child(2){
+							span{
+								&:before{
+									content:'2';
+								}
+							}
+						}
+
+						&:nth-child(3){
+							span{
+								&:before{
+									content:'3';
+								}
+							}
+						}
+
+						&:nth-child(4){
+							span{
+								&:before{
+									content:'4';
+								}
+							}
+						}
+
+						&:nth-child(5){
+							span{
+								&:before{
+									content:'5';
+								}
+							}
+						}
+
+						&:nth-child(6){
+							span{
+								&:before{
+									content:'6';
+								}
+							}
+						}
+
+						&:nth-child(7){
+							span{
+								&:before{
+									content:'7';
+								}
+							}
+						}
+					}
+
+					.active{
+						background: #fff;
+						border-color: #fff;
+					}
+				}
+			}
+		}
+		.clips{
+			padding:0 1.5rem;
+			.video_visual{
+				margin-bottom: 1.5rem;
+				padding-bottom: 89.4375%;
+				.cover{
+					text-align: center;
+					#clip1{
+						width: 70px;
+						height: 70px;
+						display: inline-block;
+						border: 7px solid  #fff;
+						position: relative;
+						border-radius:70px;
+						@include box-sizing(border-box);
+
+						&:before{
+							@extend .pseudo-element;
+							position: absolute;
+							top: 50%;
+							left: 50%;
+							border-top: 14px solid transparent;
+							border-bottom: 14px solid transparent;
+							border-left: 14px solid #fff;
+							margin-left: 2px;
+
+							transform:translate3d(-50%,-50%,0);
+							-webkit-transform:translate3d(-50%,-50%,0);
+						}
+					}
+					#clip2{
+						width: 70px;
+						height: 70px;
+						display: inline-block;
+						border: 7px solid  #fff;
+						position: relative;
+						border-radius:70px;
+						@include box-sizing(border-box);
+
+						&:before{
+							@extend .pseudo-element;
+							position: absolute;
+							top: 50%;
+							left: 50%;
+							border-top: 14px solid transparent;
+							border-bottom: 14px solid transparent;
+							border-left: 14px solid #fff;
+							margin-left: 2px;
+
+							transform:translate3d(-50%,-50%,0);
+							-webkit-transform:translate3d(-50%,-50%,0);
+						}
+					}
+					#clip3{
+						width: 70px;
+						height: 70px;
+						display: inline-block;
+						border: 7px solid  #fff;
+						position: relative;
+						border-radius:70px;
+						@include box-sizing(border-box);
+
+						&:before{
+							@extend .pseudo-element;
+							position: absolute;
+							top: 50%;
+							left: 50%;
+							border-top: 14px solid transparent;
+							border-bottom: 14px solid transparent;
+							border-left: 14px solid #fff;
+							margin-left: 2px;
+
+							transform:translate3d(-50%,-50%,0);
+							-webkit-transform:translate3d(-50%,-50%,0);
+						}
+					}
+				}
+				.video_layer1{
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					z-index: -1;
+					overflow: hidden;
+
+					#close1,#close2,#close3,{
+						position: absolute;
+						top:0;
+						right: 0;
+						width: 40px;
+						height: 40px;
+						top: 5px;
+						right: 5px;
+						opacity: 0;
+						transition:opacity 0.5s ease 0.3s;
+						-webkit-transition:opacity 0.5s 0.3s;
+						&:after,
+						&:before{
+							@extend .pseudo-element;
+							width:50%;
+							height: 1px;
+							position: absolute;
+							top:50%;
+							left:50%;
+							transform:translate3d(-50%,-50%,0) rotate(45deg);
+							-webkit-transform:translate3d(-50%,-50%,0) rotate(45deg);
+							background: #5c5c5c;
+						}
+
+						&:after{
+							transform:translate3d(-50%,-50%,0) rotate(-45deg);
+							-webkit-transform:translate3d(-50%,-50%,0) rotate(-45deg);
+						}
+					}
+
+
+					iframe{
+						position: relative;
+						z-index: 3;
+					}
+
+
+					&:before{
+						@extend .pseudo-element;
+						width: 100%;
+						height: 100%;
+						transition:all 0.5s;
+						-webkit-transition:all 0.5s;
+						background: #000;
+						filter:blur(10px);
+						-webkit-filter:blur(10px);
+						opacity: 0;
+						transform-origin:center center;
+						-webkit-transform-origin:center center;
+						transform:scale(0);
+						-webkit-transform:scale(0);
+						position: absolute;
+						top: 0;
+						left: 0;
+					}
+
+					&.active{
+						#close1,#close2,#close3{
+							opacity: 1;
+							z-index: 10;
+						}
+						z-index: 1;
+						&:before{
+							opacity: 1;
+							transform:scale(2);
+							-webkit-transform:scale(2);
+						}
+					}
+
+					&.hide{
+						#close1,#close2,#close3{
+							opacity: 0;
+							transition-delay: 0;
+							-webkit-transition-delay: 0;
+						}
+						z-index: 1;
+
+						&:before{
+							opacity: 0;
+							transform:scale(0);
+							-webkit-transform:scale(0);
+						}
+					}
+
+				}
+
+			}
+		}
+		.instagram{
+			position: relative;
+			text-align: center;
+			.title{
+				padding: 2rem 0 1rem 0;
+				text-align: center;
+				span{
+					text-transform: uppercase;
+					font:2rem/2rem 'dinpro cond';
+					color:#fff;
+				}
+				p{
+					text-transform: uppercase;
+					font:3rem/3.5rem 'dinpro cond';
+					color:#fff;
+				}
+			}
+			.insta{
+				float: left;
+				width: 48%;
+				padding-right: 2%;
+				img{width: 100%;}
+				&:last-child{
+					padding-right: 0;
+					float: right;
+				}
+			}
+			&:after{
+				content: '';
+				display: block;
+				clear: both;
+			}
+			.goUrl{
+				position: relative;
+				padding: 2rem 0;
+				display: inline-block;
+				text-align: center;
+				a{
+					display: inline-block;
+					padding: 0 4rem;
+					border:1px solid #d3d3d3;
+					font:1.4rem/4rem 'NotoSansKR';
+					color:#cad45d;
+					span{
+						font:1.4rem/4rem 'NotoSansKR';
+						color:#fff;
+						&:after{
+							padding-left: 1rem;
+						}
+					}
+				}
+			}
+		}
+	}
+	//kangsisters
 	&.zoku{
 		.main_section{
 			position: relative;
@@ -7047,8 +5825,6 @@ html{
 			}
 
 		}
-
-
 		.video_visual{
 			padding-bottom: 112.4375%;
 			.cover{
@@ -7088,8 +5864,6 @@ html{
 				margin:0 auto;
 			}
 		}
-
-
 		.collections{
 			position: relative;
 			padding: 1.8rem 0 2.8rem 0;
@@ -7354,10 +6128,100 @@ html{
 
 			}
 		}
-
 	}
 	// zoku
+	&.clubc_diamond{
+		.collections{
+			position: relative;
+			background: #5c5c5c url('/images/reebok/about/gigi_hadid/bg_collection.jpg') 0 0 repeat;
+			background-size: 100% auto;
+			h2{
+				position: absolute;
+				top:8rem;
+				z-index: 10;
+				padding: 0 6rem;
+				img{
+					width: 100%;
+				}
+			}
 
+			.num_paging{
+				position: absolute;
+				bottom:10px;
+				width: 100%;
+				text-align: center;
+				padding: 1rem 0px;
+				a{
+					margin: 0 4px;
+					width: 13px;
+					height:13px;
+					background: #fff;
+					@include opacity(0.3);
+
+					&.on{
+						background: #fff;
+						border-color: #fff;
+						@include opacity(1);
+
+
+					}
+				}
+
+			}
+
+			.collection_cut{
+				overflow: hidden;
+				ul{
+					overflow: hidden;
+					li{
+						position: relative;
+						float: left;
+
+						img{
+							width: 100%;
+						}
+					}
+				}
+			}
+		}
+		.prd_section{
+			text-align: center;
+			background: url("/images/reebok/about/clubc_diamond/bg.jpg") no-repeat;
+			background-size:100% 100%;
+			h3{
+				padding: 3.8rem 3.5rem 1.8rem;;
+				img{
+					width: 100%;
+				}
+			}
+			p{
+				padding: 0 1.5rem;
+				img{
+					width: 100%;
+				}
+			}
+			a.btn{
+				display: inline-block;
+				margin: 1.5rem 0 2rem;
+				padding: 0 3rem;
+				border:1px solid #000;
+				font:1.1rem/3rem 'NotosansKR','Nanum Gothic';
+			}
+			.prd{
+				margin: 0 1.5rem;
+				padding-bottom: 2rem;
+				a{
+					display: block;
+					padding-bottom: 1.2rem;
+					img{
+						width: 100%;
+					}
+				}
+
+			}
+		}
+	}
+	// clubc_diamond
 	&.activechill{
 
 		.main_bg{
@@ -7780,9 +6644,7 @@ html{
 		}
 	}
 	// activechill
-
 	&.cl_leather{
-
 		.main_bg{
 			position: relative;
 			padding-bottom: 119%;
@@ -8199,7 +7061,6 @@ html{
 		}
 	}
 	// cl_leather
-
 	&.vintage_pack{
 
 		.main_bg{
@@ -8609,6 +7470,738 @@ html{
 		}
 	}
 	// vintage_pack
+	&.pump_supreme{
+		.modal-popup-wrapper {
+			overflow: hidden;
+			.popup{
+				top:0 !important;
+				transform: translate3d(-50%, 0%, 0px) !important;
+			}
+			.popup-contents{
+				p{
+					font: 1.2rem/1.5rem 'NotoSansKRRegular';
+					color: #666666;
+					margin-bottom: 1.6rem;
+				}
+				.shop_cont{
+					border-top: 1px solid #000;
+					border-bottom: 1px solid #000;
+					overflow: auto;
+					height: 40rem;
+					table{
+						td{
+							padding: 1.5rem 1rem;
+							border-bottom: 1px solid #ececec;
+							color:#000;
+							font:1.5rem/1.5rem 'NotoSansKRRegular';
+							text-align: left;
+							&.middle{
+								vertical-align: middle;
+							}
+							a{
+								img{
+									width:100%;
+								}
+							}
+							ul{
+								li{
+									&.name{
+										font:1.5rem/2.4rem 'NotoSansKRBold';
+										color:#000;
+									}
+									&.adrress{
+										font:1.2rem/2rem 'NotoSansKRRegular';
+										color:#000;
+									}
+									&.phone{
+										font:1.2rem/1.8rem 'NotoSansKRRegular';
+										color:#555555;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		.main_section{
+			position: relative;
+
+			.bg{
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top:0;
+				img{
+					width: 100%;
+					height: 100%;
+				}
+			}
+			.title{
+				position: relative;
+				padding:3rem 4rem 3.5rem 4rem;
+				text-align: center;
+
+				.desc{
+					padding-bottom: 0.5rem;
+					font:1rem 'NotosansKR';
+					color:#fff;
+					letter-spacing: -0.5px;
+				}
+				a{
+					position: relative;
+					top:15px;
+					z-index: 10;
+					padding:0.8rem 3.8rem 1rem 3.8rem;
+					border:1px solid #fff;
+					color:#fff;
+					font:500 1.2rem/2rem  'NotoSansKRMedium','Nanum Gothic';
+				}
+				img{
+					padding-bottom: 1.5rem;
+					width: 90%;
+				}
+			}
+
+		}
+		.video_visual{
+			padding-bottom: 112.4375%;
+			.cover{
+				top:53%;
+			}
+			h2{
+				margin-bottom:0.4rem;
+				width:inherit;
+				height: inherit;
+				text-indent: 0;
+				background:none;
+				text-align: center;
+				color:#fff;
+				text-transform: uppercase;
+				font:5rem/5.3rem 'QStencil';
+				span{
+					font:2.5rem/3.5rem 'QStencil';
+					vertical-align: top;
+				}
+			}
+			.desc{
+				margin-bottom:1.5rem;
+				text-align: center;
+				color:#fff;
+				letter-spacing: 11px;
+				text-transform: uppercase;
+				font:300 1.7rem/1.3rem 'dinpro cond';
+			}
+			.desc_eng2{
+				text-align:center;
+				color:#fff;
+				padding-bottom:5%;
+				font:300 1.3rem/1.9rem 'NotoSansKRLight','Nanum Gothic';
+			}
+			.video-btn{
+				top:1.5rem;
+				margin:0 auto;
+			}
+		}
+		.collections{
+			position: relative;
+			padding: 12.8% 0 4.8% 0;
+			background: #000 url('http://imagem.reebok.co.kr/images/reebok/about/pump_supreme/usp_bg.jpg') 100% 2rem no-repeat;
+			background-size: 100%;
+			h3{
+				padding: 0rem 0px 3rem;
+				color: #fff;
+				font:2.5rem/1rem 'QStencil';
+				text-align: center;
+				text-transform: uppercase;
+				span{
+					font:1.2rem/1.5rem 'NotoSansKRRegular','Nanum Gothic';
+				}
+				a{
+					display: inline-block;
+					border: 1px solid #fff;
+					color:#fff;
+					font:1.3rem/1.9rem 'NotoSansKRRegular','Nanum Gothic';
+					text-align: center;
+					padding : 0.8rem 3.8rem 1rem 3.8rem;
+					&.shop{
+						padding : 0.8rem 2.5rem 1rem 2.5rem;
+					}
+				}
+			}
+
+			.num{
+				width: 100%;
+				padding: 1rem 0px;
+				text-align: center;
+
+				a{
+					position: relative;
+					display: inline-block;
+					text-align: center;
+					width: 1rem;
+					height: 1rem;
+					margin-right: 0.8rem;
+					padding-top: 1px;
+					color:#fff;
+					background: #4f4f4f;
+					font:1.4rem/1.8rem 'reefont-condensed';
+					border-radius: 50px;
+					-webkit-border-radius: 50px;
+				}
+				a:last-child{
+					margin-right: 0;
+				}
+
+				.on{
+					background: #fff;
+					color: #000;
+					font-weight: bold;
+
+				}
+			}
+			.navi{
+				position: absolute;
+				top:50%;
+				margin-top: -16.5px;
+				width: 100%;
+				text-align: center;
+				img{
+					width: 50%;
+				}
+				.next{
+					position: absolute;
+					right:0;
+					text-align: right;
+				}
+				.prev{
+					position: absolute;
+					left:0;
+					text-align: left;
+				}
+			}
+			.collection_cut{
+				overflow: hidden;
+				padding-top: 49%;
+				ul{
+					overflow: hidden;
+					li{
+						position: relative;
+						float: left;
+						text-align: center;
+						img{
+							width: 86%;
+						}
+						.txt{
+							text-align: center;
+							width: 88%;
+							display: block;
+							padding:1.6rem 2rem 0.5rem 2rem;
+							p.main{
+								text-align: center;
+								color:#fff;
+								font:2.5rem 'NotoSansKRBold','Nanum Gothic';
+								letter-spacing: -0.5px;
+								padding-bottom: 0.6rem;
+							}
+							p.desc{
+								padding-bottom: 2rem;
+								text-align: center;
+								color:#fff;
+								font:1.3rem/1.8rem 'NotoSansKRRegular','Nanum Gothic';
+
+							}
+							a{
+								position: relative;
+								z-index: 10;
+								padding:0.8rem 3.8rem 1rem 3.8rem;
+								text-decoration: underline;
+								color:#ab2328;
+								font:500 1.5rem/2rem  'NotoSansKR','Nanum Gothic';
+							}
+						}
+					}
+				}
+			}
+			.num_paging{
+				width: 91.2%;
+				padding-bottom: 5rem;
+			}
+			.prodlist_wrap{
+				position: relative;
+
+				.prodlist{
+					position: absolute;
+					top: 0;
+					left: 0;
+					padding: 0;
+					opacity: 0;
+					transition:opacity 0.3s;
+					-webkit-transition:opacity 0.3s;
+					z-index: 1;
+
+					.tit{
+						height: 1.4rem;
+						overflow: hidden;
+						display: -webkit-box;
+						overflow: hidden;
+						text-overflow: ellipsis;
+						white-space:normal;
+						-webkit-line-clamp:1;
+						-webkit-box-orient: vertical;
+					}
+				}
+
+				.active{
+					opacity: 1;
+					z-index: 2;
+				}
+				.fake{
+					position: relative;
+					opacity: 0;
+					visibility: hidden;
+				}
+
+			}
+		}
+		.collections2{
+			padding: 0 1.5rem 1.5rem;
+			background: url('http://imagem.reebok.co.kr/images/reebok/about/pump_supreme/slide_bg.jpg') 0 no-repeat;
+			background-size: 100% 100%;
+
+			h3{
+				padding: 2.5rem 0px 1rem;
+				color: #fff;
+				font:2.5rem/3rem 'QStencil';
+				text-align: center;
+				text-transform: uppercase;
+				a{
+					display: inline-block;
+					border: 1px solid #fff;
+					color:#fff;
+					font:1.3rem/1.9rem 'NotoSansKRRegular','Nanum Gothic';
+					text-align: center;
+					padding : 0.8rem 3.8rem 1rem 3.8rem;
+					margin-top: 1rem;
+				    margin-bottom: 1rem;
+				}
+			}
+
+			.num_paging{
+				padding: 1rem 0px;
+				a{
+					background: rgba(255, 255, 255, 0.3);
+					border:none;
+					width: 1rem;
+					height: 1rem;
+					margin-right: 0.8rem;
+				}
+
+				.on{
+					background: #fff;
+				}
+			}
+
+			.collection_cut{
+				position: relative;
+				overflow: hidden;
+				ul{
+					overflow: hidden;
+					li{
+						position: relative;
+						float: left;
+						img{
+							width: 100%;
+						}
+					}
+				}
+				.navi{
+					position: absolute;
+					top:50%;
+					margin-top: -16.5px;
+					width: 100%;
+					text-align: center;
+					img{
+						width: 50%;
+					}
+					.next{
+						position: absolute;
+						right:0;
+						text-align: right;
+						img{
+							width: 40%;
+							margin-right: 1rem;
+						}
+					}
+					.prev{
+						position: absolute;
+						left:0;
+						text-align: left;
+						img{
+							width: 40%;
+							margin-left: 1rem;
+						}
+					}
+				}
+			}
+			.prodlist_wrap{
+				position: relative;
+				padding-bottom: 190%;
+
+				.prodlist{
+					position: absolute;
+					top: 63px;
+					left: 0;
+					padding: 0;
+					opacity: 0;
+					transition:opacity 0.3s;
+					-webkit-transition:opacity 0.3s;
+					z-index: 1;
+					h4{
+						position: absolute;
+						top:-3.5rem;
+						width: 100%;
+						text-align: center;
+						img{
+							width: 77%;
+						}
+					}
+					.box{
+						.inner{
+							padding-right: 5px;
+							padding-left: 5px;
+							.info{
+								padding:20px 0 30px 12px;
+							}
+						}
+					}
+					.box:nth-child(2n){
+						.inner{
+							padding-right: 5px;
+							padding-left: 5px;
+						}
+
+					}
+					.tit{
+						height: 1.4rem;
+
+						display: -webkit-box;
+						// overflow: hidden;
+						// overflow: hidden;
+						// text-overflow: ellipsis;
+						// white-space:normal;
+						// -webkit-line-clamp:1;
+						// -webkit-box-orient: vertical;
+					}
+				}
+
+				.active{
+					opacity: 1;
+					z-index: 2;
+				}
+				.fake{
+					position: relative;
+					opacity: 0;
+					visibility: hidden;
+				}
+
+			}
+		}
+	}
+	&.insta_pury{
+		.video_visual{
+			padding-bottom: 123.4375%;
+			h2{
+				margin-bottom:0.4rem;
+				width:inherit;
+				height: inherit;
+				text-indent: 0;
+				background:none;
+				text-align: center;
+				color:#fff;
+				text-transform: uppercase;
+				font:5rem/5.3rem 'QStencil';
+				span{
+					font:2.5rem/3.5rem 'QStencil';
+					vertical-align: top;
+				}
+			}
+			.desc{
+				margin-bottom:1.5rem;
+				text-align: center;
+				color:#fff;
+				letter-spacing: 10px;
+				text-transform: uppercase;
+				font:300 1.7rem/1.3rem 'dinpro cond';
+			}
+			.desc_eng2{
+				text-align:center;
+				color:#fff;
+				padding-bottom:5%;
+				font:300 1.3rem/1.9rem 'NotoSansKRLight','Nanum Gothic';
+			}
+			.video-btn{
+				top:1.5rem;
+				margin:0 auto;
+			}
+		}
+		.main_cut{
+			a{
+				display: inline-block;
+				img{
+					width: 100%;
+				}
+			}
+		}
+		.collections2{
+			padding: 0 1.5rem 1.5rem;
+			background: url('/images/reebok/about/insta_pury/collection_bg.jpg') 0 no-repeat;
+			background-size: 100% 100%;
+			h3{
+				padding: 3rem 0px 1rem;
+				color: #fff;
+				font:2.5rem 'dinpro cond';
+				text-align: center;
+				text-transform: uppercase;
+				a{
+					display: inline-block;
+					border: 1px solid #fff;
+					color:#fff;
+					font:1.3rem/1.9rem 'NotoSansKRRegular','Nanum Gothic';
+					text-align: center;
+					padding : 0.8rem 3.8rem 1rem 3.8rem;
+					margin-top: 1rem;
+					margin-bottom: 1rem;
+				}
+			}
+
+			.num_paging{
+				padding: 1rem 0px;
+				a{
+					background: rgba(255, 255, 255, 0.3);
+					border:none;
+					width: 1rem;
+					height: 1rem;
+					margin-right: 0.8rem;
+				}
+
+				.on{
+					background: #fff;
+				}
+			}
+
+			.collection_cut{
+				position: relative;
+				overflow: hidden;
+				ul{
+					overflow: hidden;
+					li{
+						position: relative;
+						float: left;
+						img{
+							width: 100%;
+						}
+					}
+				}
+				.navi{
+					position: absolute;
+					top:50%;
+					margin-top: -16.5px;
+					width: 100%;
+					text-align: center;
+					img{
+						width: 50%;
+					}
+					.next{
+						position: absolute;
+						right:0;
+						text-align: right;
+						img{
+							width: 40%;
+							margin-right: 1rem;
+						}
+					}
+					.prev{
+						position: absolute;
+						left:0;
+						text-align: left;
+						img{
+							width: 40%;
+							margin-left: 1rem;
+						}
+					}
+				}
+			}
+			.prodlist_wrap{
+				position: relative;
+				padding-bottom: 190%;
+
+				.prodlist{
+					position: absolute;
+					top: 63px;
+					left: 0;
+					padding: 0;
+					opacity: 0;
+					transition:opacity 0.3s;
+					-webkit-transition:opacity 0.3s;
+					z-index: 1;
+					h4{
+						position: absolute;
+						top:-3.5rem;
+						width: 100%;
+						text-align: center;
+						img{
+							width: 77%;
+						}
+					}
+					.box{
+						.inner{
+							padding-right: 5px;
+							padding-left: 5px;
+							.info{
+								padding:20px 0 30px 12px;
+							}
+						}
+					}
+					.box:nth-child(2n){
+						.inner{
+							padding-right: 5px;
+							padding-left: 5px;
+						}
+
+					}
+					.tit{
+						height: 1.4rem;
+						display: -webkit-box;
+					}
+				}
+
+				.active{
+					opacity: 1;
+					z-index: 2;
+				}
+				.fake{
+					position: relative;
+					opacity: 0;
+					visibility: hidden;
+				}
+
+			}
+		}
+	}
+	//insta_pury
+	&.clubc_90{
+		.video_visual{
+			padding-bottom: 123.4375%;
+			.cover{
+				transform: translate3d(0, -54%, 0);
+			    -webkit-transform: translate3d(0, -54%, 0);
+			}
+			h2{
+				color:#fff;
+				text-transform: uppercase;
+				span{
+					font:2.5rem/3.5rem 'QStencil';
+					vertical-align: top;
+				}
+			}
+			.desc{
+				margin-bottom:1.5rem;
+				text-align: center;
+				color:#fff;
+				letter-spacing: 1px;
+				text-transform: uppercase;
+				font:500 1.7rem/1.3rem 'dinpro cond';
+			}
+			.desc_eng2{
+				text-align:center;
+				color:#fff;
+				padding-bottom:5%;
+				font:300 1.3rem/1.9rem 'NotoSansKRLight','Nanum Gothic';
+			}
+			.video-btn{
+				top:3.3rem;
+				margin:0 auto;
+			}
+		}
+		.main_cut{
+			a{
+				display: inline-block;
+				img{
+					width: 100%;
+				}
+			}
+		}
+		.event_section{
+			position: relative;
+		    padding-bottom: 193%;
+			.bg{
+				position: absolute;
+				top:0;
+				left:0;
+			    width: 100%;
+				height: 100%;
+				img{width: 100%;height: 100%;}
+			}
+			.tips_wrap{
+				position: absolute;
+				top: 80%;
+				width: 100%;
+				.tips{
+					padding: 12px 0 10px;
+					margin: 0 1rem;
+					background: rgba(255,255,255,0.6);
+					ul{
+						li{
+							position: relative;
+							margin-left: 1rem;
+							padding-left: 8px;
+							font:500 0.65rem/1.3rem 'NotoSansKR';
+							color:#999;
+							&:before{
+								content: '*';
+								display: inline-block;
+								position: absolute;
+								left:0;
+								top:2px;
+								font-size: 0.8rem;
+							}
+						}
+					}
+				}
+			}
+		}
+		.prd_section{
+			padding: 0 1rem 22px 1rem;
+			background: url('http://imagem.reebok.co.kr/images/reebok/about/clubc_90/prd_bg.jpg') no-repeat;
+			background-size: 100% 100%;
+			h3{
+				padding: 30px 0 5px;
+				font:700 2.5rem 'dinpro cond';
+				color:#fff;
+				text-transform: uppercase;
+				text-align: center;
+			}
+			p{
+				padding-bottom: 22px;
+				font:1rem 'NotoSansKR';
+				text-align: center;
+				color:#fff;
+				text-transform: uppercase;
+				letter-spacing: -0.2px;
+			}
+			.prd_box{
+				padding-bottom: 10px;
+				a{
+					display: inline-block;
+					img{
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
+	// clubc_90
 
 }
 
@@ -9205,6 +8798,7 @@ html{
 
 	}
 }
+// 캠페인리스트 업데이트
 .campaign_list_update{
 	display: block;
 	background:url('/images/reebok/about/campaign_list/bg.jpg');
