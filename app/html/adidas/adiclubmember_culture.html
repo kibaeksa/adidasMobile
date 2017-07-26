@@ -535,92 +535,9 @@
                             </select>
                         </div>
                     </div>
-                    <ul>
-                        <li>
-                            <div class="top toggle_arw">
-                                <div class="img icons" data-icon="">
-                                    <img src="/images/adidas/club/banner_culture_station1.jpg" alt="">
-                                </div>
-                                <div class="infobox">
-                                    <p class="tit">Room 360</p>
-                                    <div class="desc">스테이션 쇼핑/유통<br/>혜택 &nbsp; 제품 구매 시 할인 혜택 </div>
-                                </div>
-                            </div>
-                            <div class="cont">
-                                <dl>
-                                    <dt>소개</dt>
-                                    <dd>Hip-Hop, Funk, Disco 중고 및 최신 레코드를 디제이 소울스케이프가 직접 셀렉하여 판매</dd>
-                                </dl>
-                                <dl>
-                                    <dt>혜택</dt>
-                                    <dd>
-                                        상세 혜택은 추후 공지됩니다. <br>
-                                        <strong style="font-family:NotoSansKRBold">본 행사는 7월 1일부터 진행됩니다.</strong>
-                                    </dd>
-                                </dl>
-                                <dl>
-                                    <dt>주소 / 연락처</dt>
-                                    <dd>서울시 서초구 방배동 985-11<br/>02-3474-0360</dd>
-                                </dl>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="top toggle_arw">
-                                <div class="img icons" data-icon="">
-                                    <img src="/images/adidas/club/banner_culture_station2.jpg" alt="">
-                                </div>
-                                <div class="infobox">
-                                    <p class="tit">Warped</p>
-                                    <div class="desc">스테이션 쇼핑/유통<br/>혜택 &nbsp; 제품 구매 시 할인 혜택 </div>
-                                </div>
-                            </div>
-                            <div class="cont">
-                                <dl>
-                                    <dt>소개</dt>
-                                    <dd>Know Wave, Have a good time 등 최신 유행 아이템을 만나볼 수 있으며 디제이가 스토어 내에서 항시 음악을 플레이</dd>
-                                </dl>
-                                <dl>
-                                    <dt>혜택</dt>
-                                    <dd>
-                                        상세 혜택은 추후 공지됩니다. <br>
-                                        <strong style="font-family:NotoSansKRBold">본 행사는 7월 1일부터 진행됩니다.</strong>
-                                    </dd>
-                                </dl>
-                                <dl>
-                                    <dt>주소 / 연락처</dt>
-                                    <dd>서울시 용산구 한남동 683-94번지 1층<br/>070-7808-0852</dd>
-                                </dl>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="top toggle_arw">
-                                <div class="img icons" data-icon="">
-                                    <img src="/images/adidas/club/banner_culture_station3.jpg" alt="">
-                                </div>
-                                <div class="infobox">
-                                    <p class="tit">1984</p>
-                                    <div class="desc">스테이션 카페/디저트<br/>혜택 &nbsp; 음료 및 도서 구매 시 할인 혜택</div>
-                                </div>
-                            </div>
-                            <div class="cont">
-                                <dl>
-                                    <dt>소개</dt>
-                                    <dd>홍대 연남동 부근 위치, 각종 의류 및 서적, 라이프 굿즈를 판매하는 편집샵으로 1984 카페를 동시에 운영</dd>
-                                </dl>
-                                <dl>
-                                    <dt>혜택</dt>
-                                    <dd>
-                                        상세 혜택은 추후 공지됩니다. <br>
-                                        <strong style="font-family:NotoSansKRBold">본 행사는 7월 1일부터 진행됩니다.</strong>
-                                    </dd>
-                                </dl>
-                                <dl>
-                                    <dt>주소 / 연락처</dt>
-                                    <dd>서울시 마포구 동교동 158-24번지 1층<br/>02-325-1984</dd>
-                                </dl>
-                            </div>
-                        </li>
-                    </ul>
+
+                    <!-- 170726 station_contents 추가 -->
+                    <div id="station_contents"></div>
 
                     <!-- 170724 페이징 추가 -->
                     <div class="paging">
@@ -634,7 +551,7 @@
                             <a href="#" class="next icons" data-icon=""></a>
                         </div>
                     </div>
-                    
+
                 </div>
 
 
@@ -745,14 +662,112 @@
 
 				});
 
-                /* 170724 Station */
-                $('.adiclub_station li .top').bind('click',function(){
-                    if($(this).hasClass('open')){
-                        $(this).removeClass('open');
-                    }else{
-                        $(this).addClass('open');
+
+
+
+                /* 170726 START */
+                function renderStationContents(data){
+                    /* Data handle  */
+                    var imgAbsolutePath = '//image.adidas.co.kr/images/adidas/club/adiclub_renewal_170518/';
+                    for(key in data){
+                        data[key].CS_DESC = data[key].CS_DESC.replace(/\n/,'<br/>');
+                        data[key].CS_BENEFIT = data[key].CS_BENEFIT.replace(/\n/,'<br/>');
+                        data[key].CS_ADDR_TEL = data[key].CS_ADDR_TEL.replace(/\n/,'<br/>');
                     }
-                });
+
+                    var key;
+                    var count = 0;
+                    var htmlString = '<ul>';
+
+                    for(key in data){
+                        htmlString += '<li>';
+                        htmlString += '    <div class="top toggle_arw">';
+                        htmlString += '        <div class="img icons" data-icon="">'+(data[key].CS_IMG_NM ? '<img src="'+(imgAbsolutePath+data[key].CS_IMG_NM)+'" alt="">' : '')+'</div>';
+                        htmlString += '        <div class="infobox">';
+                        htmlString += '            <p class="tit">'+data[key].CS_NM+'</p>';
+                        htmlString += '            <div class="desc">'+data[key].CS_DESC+'</div>';
+                        htmlString += '        </div>';
+                        htmlString += '    </div>';
+                        htmlString += '    <div class="cont">';
+                        htmlString += '        <dl>';
+                        htmlString += '            <dt>소개</dt>';
+                        htmlString += '            <dd>'+data[key].CS_INTRO+'</dd>';
+                        htmlString += '        </dl>';
+                        htmlString += '        <dl>';
+                        htmlString += '            <dt>혜택</dt>';
+                        htmlString += '            <dd>'+data[key].CS_BENEFIT+'</dd>';
+                        htmlString += '        </dl>';
+                        htmlString += '        <dl>';
+                        htmlString += '            <dt>주소 / 연락처</dt>';
+                        htmlString += '            <dd>'+data[key].CS_ADDR_TEL+'</dd>';
+                        htmlString += '        </dl>';
+                        htmlString += '    </div>';
+                        htmlString += '</li>';
+                    }
+                    htmlString += '</ul>';
+
+                    $('#station_contents').html(htmlString);
+                    bindStationEvent();
+                }
+
+
+                function bindStationEvent(){
+                    $('.adiclub_station li .top').bind('click',function(){
+                        if($(this).hasClass('open')){
+                            $(this).removeClass('open');
+                        }else{
+                            $(this).addClass('open');
+                        }
+                    });
+                }
+                /* 170726 END */
+
+
+                /* 170726 임시 데이터 */
+                var tempData =  [
+                    {
+                        "CS_NO": "26",
+                        "CS_NM": "Room 360",
+                        "CS_LOCA": "01",
+                        "CS_LOCA_NM": "서울",
+                        "CS_TYPE": "01",
+                        "CS_TYPE_NM": "쇼핑/유통",
+                        "CS_IMG_NM": "culture_station_img1.jpg",
+                        "CS_DESC": "스테이션 쇼핑/유통\n혜택 제품 구매 시 할인 혜택",
+                        "CS_INTRO":"Hip-Hop, Funk, Disco 중고 및 최신 레코드를 디제이 소울스케이프가<br/>직접 셀렉하여 판매<br/><a href=\"http://naver.com\" class=\"link\">자세히보기</a>",
+                        "CS_BENEFIT": "상세 혜택은 추후 공지됩니다.",
+                        "CS_ADDR_TEL": "서울시 서초구 방배동 985-11, 1층\n02-3474-0360"
+                    },
+                    {
+                        "CS_NO": "27",
+                        "CS_NM": "Warped",
+                        "CS_LOCA": "01",
+                        "CS_LOCA_NM": "경기",
+                        "CS_TYPE": "01",
+                        "CS_TYPE_NM": "쇼핑/유통",
+                        "CS_IMG_NM": "culture_station_img2.jpg",
+                        "CS_DESC": "스테이션 카페/디저트\n혜택 제품 구매 시 할인 혜택",
+                        "CS_INTRO":"Know Wave, Have a good time 등 최신 유행 아이템을 만나볼 수 있으며 <br/>디제이가 스토어 내에서 항시 음악을 플레이<br/><a href=\"http://naver.com\" class=\"link\">자세히보기</a>",
+                        "CS_BENEFIT": "상세 혜택은 추후 공지됩니다.",
+                        "CS_ADDR_TEL": "서울시 용산구 한남동 683-94번지 1층\n070-7808-0852"
+                    },
+                    {
+                        "CS_NO": "28",
+                        "CS_NM": "1984",
+                        "CS_LOCA": "01",
+                        "CS_LOCA_NM": "경기",
+                        "CS_TYPE": "01",
+                        "CS_TYPE_NM": "쇼핑/유통",
+                        "CS_IMG_NM": "culture_station_img3.jpg",
+                        "CS_DESC": "스테이션 카페/디저트\n혜택 제품 구매 시 할인 혜택",
+                        "CS_INTRO":"홍대 연남동 부근 위치, 각종 의류 및 서적, 라이프 굿즈를 판매하는 편집샵으로 <br/>1984 카페를 동시에 운영<br/><a href=\"http://naver.com\" class=\"link\">자세히보기</a>",
+                        "CS_BENEFIT": "상세 혜택은 추후 공지됩니다.",
+                        "CS_ADDR_TEL": "서울시 마포구 동교동 158-24 번지 1층\n02-325-1984"
+                    }
+                ];
+
+
+                renderStationContents(tempData);
 
 			});
 		})(jQuery);
