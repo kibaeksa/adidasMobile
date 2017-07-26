@@ -1,0 +1,614 @@
+/*
+	break width
+ */
+$break-small: 1000px;
+$break-large: 1400px;
+$width320:320px;
+$width400:400px;
+$width480:480px;
+$width600:600px;
+/*
+	@@ mixin
+ */
+@mixin box-sizing($value){
+			box-sizing: $value;
+	-webkit-box-sizing: $value;
+}
+
+@mixin prefix-css3($prop,$value){
+	#{$prop} :$value;
+	-webkit-#{$prop} :$value;
+	-moz-#{$prop}:$value;
+	-o-#{$prop} :$value;
+	-ms-#{$prop} :$value;
+}
+
+@mixin transition($prop , $duration , $easing , $delay){
+	transition :$prop $duration $easing $delay;
+	-webkit-transition :$prop $duration $easing $delay;
+	-moz-transition:$prop $duration $easing $delay;
+	-o-transition :$prop $duration $easing $delay;
+}
+
+@mixin opacity($value){
+	opacity : $value;
+	// filter:alpha(opacity=$value * 100);
+	// -ms-filter:alpha(opacity=$value * 100);
+}
+
+@mixin transform($value){
+	transform:$value;
+	-webkit-transform:$value;
+	-moz-transform:$value;
+	-o-transform:$value;
+}
+
+@media screen and (max-width: 320px) {
+	html{
+		font-size: 10px;
+	}
+}
+@media screen and (min-width: 800px) {
+	html{
+		font-size: 12px;
+	}
+}
+
+// for pseudo element
+.pseudo-element{
+	content:'';
+	display: block;
+}
+#video-layer{
+	position:fixed;top:0;left:0;width: 100%;height: 100%;z-index:1000;
+}
+
+#video-layer .bg{
+	width: 100%;
+	height: 100%;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	transform-origin:center center;
+	-webkit-transform-origin:center center;
+	transform:scale(0);
+	-webkit-transform:scale(0);
+	opacity:0;
+	background:#000;
+	z-index:1;
+
+	transition:all 0.4s;
+	-webkit-transition:all 0.4s;
+
+
+}
+
+#video-layer.loaded .bg{
+	opacity: 1;
+	transform:scale(1.2);
+	-webkit-transform:scale(1.2);
+}
+
+#video-layer .video-box{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	z-index: 3;
+}
+
+#video-layer .close_x_btn{
+	width: 70px;
+	height: 70px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 5;
+	opacity: 0;
+}
+
+#video-layer.loaded .close_x_btn{
+	opacity: 1;
+}
+
+
+#swift{
+	.main{
+		position: relative;
+		img{ width: 100%; }
+		.play{
+			position: absolute;
+			top:50%;
+			margin-top: -50px;
+			left:50%;
+			margin-left: -52px;
+		}
+		p{
+			position: absolute;
+			top:5%;
+			left:5%;
+		}
+	}
+	//common bg
+	.statement{
+		margin-top: 50px;
+		padding: 0 3rem;
+		h3{
+			font: 2.3rem/2.6rem 'adinenuPro-black';
+		    text-align: center;
+		    letter-spacing: 1rem;
+		}
+		p{
+			font:1.4rem/2.3rem 'NotoSansKRRegular';
+			text-align: center;
+			margin-top: 30px;
+		}
+		.button_area{
+			padding: 0 ;
+			position: relative;
+			margin-top: 35px;
+			span{
+				width: 19px;
+				height: 19px;
+				display: inline-block;
+				background: url('/images/adidas/event/swift/bt_bul.png') no-repeat;
+				background-size: 80%;
+				vertical-align: middle;
+				margin-left: 7px;
+			}
+		}
+	}
+	.slider_section{
+		position: relative;
+		padding:2.5rem 1rem 0 1rem;
+		background:#fff;
+		.slider_wrap{
+			position: relative;
+			// padding:2rem 0rem;
+			margin:1rem 2.5rem 0 2.5rem;
+			// overflow: hidden;
+
+			ul{
+				position: relative;
+				.owl-item.active{
+					.num_title span{
+						margin-right: 0;
+						opacity: 1;
+					}
+
+				}
+				li{
+					float: left;
+					position: relative;
+					top:0;
+					// margin-right: 20px;
+					.title{
+						padding-bottom: 1.5rem;
+						text-align: center;
+						font:600 1.4rem/1.8rem 'NotoSansKRMedium';
+						p{
+							font:2.3rem/2.6rem 'adinenuPro-black';
+							letter-spacing: 0;
+							text-transform: uppercase;
+						}
+					}
+					.img{
+						img{width: 100%;}
+					}
+					.num_title{
+						position: relative;
+						padding:2rem 0 0 0;
+						text-align: center;
+
+					}
+					.num_title span{
+						position: relative;
+						display: inline-block;
+						height: 50px;
+						font:1.8rem/2rem 'NotoSansKRBold';
+						letter-spacing: 0;
+						margin-right: -10rem;
+						transition: all 0.6s ease;
+						opacity: 0;
+					}
+					.num_title span:after{
+						display: inline-block;
+						content: '';
+						width: 0%;
+						height: 2px;
+						background: #000;
+						position: absolute;
+						bottom: 24px;
+						right:0;
+						transition: all 0.6s ease;
+
+					}
+				}
+
+			}
+			ul:after{
+				content: '';
+				display: block;
+				clear: both;
+			}
+			.owl-controls{
+				.owl-dot{
+					// position: relative;
+					float: left;
+					text-align: center;
+					span{
+						display: inline-block;
+						padding:1rem 0 0 0;
+						font:1.5rem/2rem 'NotoSansKR';
+						text-align: center;
+						color:#000;
+						letter-spacing: 0;
+					}
+				}
+			}
+			.owl-nav{
+				position: absolute;
+				top:31%;
+				width:100%;
+				.owl-next {
+				  position: relative;
+				  right:-35px;
+				  float: right;
+				  width:27px;
+				  height: 48px;
+				  background:url('/images/adidas/event/swift/next.png') no-repeat;
+				  background-size: 70%;
+				  text-indent: -9999px;
+				}
+				.owl-prev {
+				  position: relative;
+				  left:-35px;
+				  float: left;
+				  width:27px;
+				  height: 48px;
+				  background:url('/images/adidas/event/swift/prev.png') no-repeat;
+				  background-size: 70%;
+				  text-indent: -9999px;
+				}
+			}
+		}
+
+	}
+	.txt_wrap {
+		position: relative;
+		padding:0 2rem;
+		margin-top: 4rem;
+		h4{
+			font:2rem/2.4rem 'adinenuPro-black';
+			letter-spacing: 1.3rem;
+			color:#000;
+			text-align: center;
+		}
+		p{
+			font: 1.3rem/2rem'NotoSansKR';
+		    color: #000;
+		    text-align: center;
+		    margin-top: 2rem;
+		}
+		.button_area{
+			padding: 0 ;
+			position: relative;
+			margin-top: 35px;
+			span{
+				width: 19px;
+				height: 19px;
+				display: inline-block;
+				background: url('/images/adidas/event/swift/bt_bul.png') no-repeat;
+				background-size: 80%;
+				vertical-align: middle;
+				margin-left: 7px;
+			}
+		}
+
+	}
+
+	.slider_wrapper{
+		padding: 3rem 3rem 0;
+		margin-bottom: 3rem;
+
+		.slider{
+			position: relative;
+			width: 100%;
+			overflow: hidden;
+
+			ul{
+				width: 100%;
+				position: relative;
+				margin-bottom: 1rem;
+				overflow: hidden;
+				li{
+					width: 100%;
+					float: left;
+					position: relative;
+					display: block;
+					opacity: 1;
+					img{
+						width: 100%;
+					}
+				}
+			}
+		}
+
+
+
+		.num{
+			margin-top: 1rem;
+			text-align: center;
+			span{
+				width: 8px;
+				height: 8px;
+				display: inline-block;
+				margin: 0 0.2rem;
+				background: #7d7d7d;
+				border-radius: 50%;
+
+				&.on{
+					background: #000;
+				}
+			}
+		}
+	}
+
+	.gal{
+		position: relative;
+		padding-bottom: 330%;
+		overflow: hidden;
+		ul{
+			li{
+				float:left;
+				position: absolute;
+				top: 0;
+				left:0;
+				opacity: 0;
+				display: none;
+				@include prefix-css3(transition, opacity 0.3s)
+				img{ width: 100%; }
+				.video{
+					position: relative;
+					text-align: center;
+					a.video-button{
+						position: absolute;
+						top:50%;
+						left:50%;
+						margin-top:-45px;
+						margin-left:-45px;
+						img{ width: 60%; }
+					}
+				}
+				.view{
+					position: relative;
+				}
+			}
+			li.on{
+				opacity: 1;
+				display: block;
+				width:100%;
+			}
+
+		}
+		ul:after{
+			content: '';
+			display: block;
+			clear: both;
+		}
+
+	}
+
+	.swiftcol{
+		padding-bottom: 230%;
+	}
+	.slide01_col{
+		position: relative;
+		div{
+			position: relative;
+			float:left;
+			padding-bottom: 100%;
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center;
+			&.img1{
+				width: 50%;
+				background-image: url('/images/adidas/event/swift/gallery01_1.jpg');
+			}
+			&.img2{
+				width: 50%;
+				padding-bottom: 50%;
+				height: 25%;
+				background-image: url('/images/adidas/event/swift/gallery01_2.jpg');
+
+			}
+			&.img3{
+				width: 50%;
+				padding-bottom: 50%;
+				height: 25%;
+				background-image: url('/images/adidas/event/swift/gallery01_4.jpg');
+
+			}
+			&.img4{
+				width: 100%;
+				padding-bottom: 80%;
+				background-image: url('/images/adidas/event/swift/gallery01_3.jpg');
+
+			}
+			&.img5{
+				width: 50%;
+				padding-bottom: 50%;
+				height: 25%;
+				background-image: url('/images/adidas/event/swift/gallery01_5.jpg');
+			}
+			&.img6{
+				width: 50%;
+				padding-bottom: 50%;
+				height: 25%;
+				background-image: url('/images/adidas/event/swift/gallery01_6.jpg');
+			}
+
+		}
+	}
+
+	.slide02_col{
+		position: relative;
+		div{
+			position: relative;
+			float:left;
+			padding-bottom: 100%;
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center;
+			&.img1{
+				width: 50%;
+				background-image: url('/images/adidas/event/swift/gallery02_1.jpg');
+
+			}
+			&.img2{
+				width: 50%;
+				padding-bottom: 50%;
+				height: 25%;
+				background-image: url('/images/adidas/event/swift/gallery02_2.jpg');
+
+			}
+			&.img3{
+				width: 50%;
+				padding-bottom: 50%;
+				height: 25%;
+				background-image: url('/images/adidas/event/swift/gallery02_4.jpg');
+
+			}
+			&.img4{
+				width: 100%;
+				padding-bottom: 80%;
+				background-image: url('/images/adidas/event/swift/gallery02_3.jpg');
+			}
+			&.img5{
+				width: 50%;
+				padding-bottom: 50%;
+				height: 25%;
+				background-image: url('/images/adidas/event/swift/gallery02_5.jpg');
+			}
+			&.img6{
+				width: 50%;
+				padding-bottom: 50%;
+				height: 25%;
+				background-image: url('/images/adidas/event/swift/gallery02_6.jpg');
+			}
+
+		}
+	}
+	.slide03_col{
+		position: relative;
+		div{
+			position: relative;
+			float:left;
+			padding-bottom: 100%;
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center;
+			&.img1{
+				width: 50%;
+				background-image: url('/images/adidas/event/swift/gallery03_1.jpg');
+
+			}
+			&.img2{
+				width: 50%;
+				padding-bottom: 50%;
+				height: 25%;
+				background-image: url('/images/adidas/event/swift/gallery03_2.jpg');
+
+			}
+			&.img3{
+				width: 50%;
+				padding-bottom: 50%;
+				height: 25%;
+				background-image: url('/images/adidas/event/swift/gallery03_4.jpg');
+
+			}
+			&.img4{
+				width: 100%;
+				padding-bottom: 80%;
+				background-image: url('/images/adidas/event/swift/gallery03_3.jpg');
+			}
+			&.img5{
+				width: 50%;
+				padding-bottom: 50%;
+				height: 25%;
+				background-image: url('/images/adidas/event/swift/gallery03_5.jpg');
+			}
+			&.img6{
+				width: 50%;
+				padding-bottom: 50%;
+				height: 25%;
+				background-image: url('/images/adidas/event/swift/gallery03_6.jpg');
+			}
+
+		}
+	}
+	.slide04_col{
+		position: relative;
+		div{
+			position: relative;
+			float:left;
+			padding-bottom: 100%;
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center;
+			&.img1{
+				width: 50%;
+				background-image: url('/images/adidas/event/swift/gallery04_1.jpg');
+
+			}
+			&.img2{
+				width: 50%;
+				padding-bottom: 50%;
+				height: 25%;
+				background-image: url('/images/adidas/event/swift/gallery04_2.jpg');
+
+			}
+			&.img3{
+				width: 50%;
+				padding-bottom: 50%;
+				height: 25%;
+				background-image: url('/images/adidas/event/swift/gallery04_3.jpg');
+
+			}
+			&.img4{
+				width: 100%;
+				padding-bottom: 80%;
+				background-image: url('/images/adidas/event/swift/gallery04_3.jpg');
+			}
+			&.img5{
+				width: 50%;
+				padding-bottom: 50%;
+				height: 25%;
+				background-image: url('/images/adidas/event/swift/gallery04_5.jpg');
+			}
+			&.img6{
+				width: 50%;
+				padding-bottom: 50%;
+				height: 25%;
+				background-image: url('/images/adidas/event/swift/gallery04_6.jpg');
+			}
+
+		}
+	}
+
+	.video{
+		img{
+			width:100%;
+		}
+		a{
+			position: absolute;
+			display: block;
+		    width: 80%;
+		    height: 8.1%;
+		    bottom: 1.6%;
+		    left: 10%;
+		}
+	}
+
+}
