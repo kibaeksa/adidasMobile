@@ -453,11 +453,7 @@
 
 					<div class="slider_wrap" id="slider">
 						<ul class="slider">
-                            <li data-index="0">
-								<div class="img">
-									<img src="http://imagem.adidas.co.kr/images/adidas/event/swift/slide01.jpg" alt="">
-								</div>
-							</li>
+
 							<li data-index="1">
 								<div class="img">
 									<img src="http://imagem.adidas.co.kr/images/adidas/event/swift/slide02.jpg" alt="">
@@ -473,6 +469,11 @@
 									<img src="http://imagem.adidas.co.kr/images/adidas/event/swift/slide04.jpg" alt="">
 								</div>
 							</li>
+                            <li data-index="0">
+								<div class="img">
+									<img src="http://imagem.adidas.co.kr/images/adidas/event/swift/slide01.jpg" alt="">
+								</div>
+							</li>
 
 
 
@@ -485,7 +486,7 @@
 				<div class="gal">
 					<ul>
 
-						<li class="on">
+						<li>
                             <div class="cont_wrap">
                                 <div class="txt_wrap">
     								<h4>24/7 COMFORT</h4>
@@ -522,7 +523,7 @@
                             </div>
 						</li>
 
-						<li>
+						<li class="on">
                             <div class="cont_wrap">
                                 <div class="txt_wrap">
     								<h4>24/7 COMFORT</h4>
@@ -671,7 +672,7 @@
 
 						});
 
-                    sliderArray[0] = Swipe(document.querySelector('#slider1'),{
+                    sliderArray[1] = Swipe(document.querySelector('#slider2'),{
                         stopPropagation: true,
                         callback : function(index , element){
                             $('#slider1_wrapper .num span').removeClass('on').eq(index).addClass('on');
