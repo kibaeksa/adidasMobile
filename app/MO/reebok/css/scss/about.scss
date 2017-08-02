@@ -8346,7 +8346,9 @@ html{
 				}
 				.prd_boxs{
 					.box{
+						@include opacity(0);
 						padding: 20px 0 30px;
+						@include prefix-css3 (transition, 0.5s);
 						&.hasbg{
 							.video{
 								position: relative;
@@ -8367,6 +8369,10 @@ html{
 								    background: #e9e9d9;
 								}
 							}
+						}
+						&.active{
+							top:0;
+							@include opacity(1);
 						}
 						.video{
 							video{

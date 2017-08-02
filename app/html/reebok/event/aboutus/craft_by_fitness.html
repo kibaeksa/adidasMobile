@@ -132,7 +132,9 @@
 
 					<div class="video_visual">
 						<div class="bg">
-							<video src="http://imagem.reebok.co.kr/images/reebok/about/craft_by_fitness/main_video.mp4" autoplay loop muted playinline></video>
+							<video autoplay loop muted playinline>
+								<source src="http://imagem.reebok.co.kr/images/reebok/about/craft_by_fitness/main_video.mp4" type="video/mp4">
+							</video>
 						</div>
 						<div class="cover">
 							<h2><img src="http://imagem.reebok.co.kr/images/reebok/about/craft_by_fitness/video_txt.png" alt=""></h2>
@@ -166,7 +168,11 @@
 								<div class="prd_boxs">
 									<div class="small_title">TECHNOLOGY<span></span></div>
 									<div class="box" id="box1">
-										<div class="video" style="padding-top:30px;"><video src="http://imagem.reebok.co.kr/images/reebok/about/craft_by_fitness/w_1.mp4" autoplay loop muted playinline></video></div>
+										<div class="video" style="padding-top:30px;">
+											<video autoplay loop muted playinline>
+												<source src="http://imagem.reebok.co.kr/images/reebok/about/craft_by_fitness/w_1.mp4" type="video/mp4">
+											</video>
+										</div>
 										<div class="txt">
 											<p class="title"><em>01</em><br>완벽한 핏</p><p>복부를 탄탄하게 잡아주는 와이드 앵글 허리밴드</p>
 										</div>
@@ -179,11 +185,20 @@
 										</div>
 									</div>
 									<div class="box hasbg" id="box3">
-										<div class="video"><video src="http://imagem.reebok.co.kr/images/reebok/about/craft_by_fitness/w_3.mp4" autoplay loop muted playinline></video><div class="bg"></div></div>
+										<div class="video">
+											<video autoplay loop muted playinline>
+												<source src="http://imagem.reebok.co.kr/images/reebok/about/craft_by_fitness/w_3.mp4" type="video/mp4">
+											</video>
+											<div class="bg"></div>
+										</div>
 										<div class="txt"><p class="title"><em>03</em><br>부드러운 기능성 원단</p><p>프리미엄 나이럭스 기능성 원단의 고급스러운 터치감과 <br>몸에서 땀을 제어하는 스피드윅 테크놀로지 </p></div>
 									</div>
 									<div class="box last">
-										<div class="video"><video src="http://imagem.reebok.co.kr/images/reebok/about/craft_by_fitness/w_4.mp4" autoplay loop muted playinline></video></div>
+										<div class="video">
+											<video autoplay loop muted playinline>
+												<source src="http://imagem.reebok.co.kr/images/reebok/about/craft_by_fitness/w_4.mp4" type="video/mp4">
+											</video>
+										</div>
 										<div class="txt">
 											<p class="title"><em>04</em><br>발목까지 쫀쫀하게</p><p>발목을 안정감 있게  감싸주는 발목 커프</p>
 										</div>
@@ -323,112 +338,142 @@
 					        player.stopVideo();
 					      }
 
-						  // women collention
-						  var productsSlider1 = Swipe(document.getElementById('collection_slider'),{
-							  stopPropagation: true,
+							  // collention
+							  var productsSlider1 = Swipe(document.getElementById('collection_slider'),{
+								  stopPropagation: true,
 
-							  callback: function(index, element) {
-								  $('.collection_slider .num_paging a').removeClass('on').eq(index).addClass('on');
-								//   $('.collection_slider .prodlist_wrap .prodlist').removeClass('active').eq(index).addClass('active');
-							  }
-						  });
+								  callback: function(index, element) {
+									  $('.collection_slider .num_paging a').removeClass('on').eq(index).addClass('on');
+									//   $('.collection_slider .prodlist_wrap .prodlist').removeClass('active').eq(index).addClass('active');
+								  }
+							  });
 
-						  $('#collection_slider .navi .btn.next').click(function(){
-							  productsSlider1.next();
-							  return false
-						  });
-						  $('#collection_slider .navi .btn.prev').click(function(){
-							  productsSlider1.prev();
-							  return false
-						  });
+							  $('#collection_slider .navi .btn.next').click(function(){
+								  productsSlider1.next();
+								  return false
+							  });
+							  $('#collection_slider .navi .btn.prev').click(function(){
+								  productsSlider1.prev();
+								  return false
+							  });
 
-						  var mindex = $(this).index();
+						  	var mindex = $(this).index();
+							var prd_pos_array = [];
+							var offsetCon = $('.prd_content').offset();
 
-						  // ctgr
-						  $('.ctgr .ctgr_inn div').click(function(){
+							// ctgr click event
+							$('.ctgr .ctgr_inn div').click(function(){
 
-							mindex = $(this).index();
-							var imagePath = 'http://imagem.reebok.co.kr/images/reebok/about/craft_by_fitness/';
+								mindex = $(this).index();
+								var imagePath = 'http://imagem.reebok.co.kr/images/reebok/about/craft_by_fitness/';
 
-							var main_Imgdata = ['main_w.jpg','main_m.jpg'];
-							var fullimgPath = imagePath + main_Imgdata[mindex];
-							var main_txt =['리복<br>LUX 타이츠','리복<br>EPIC 쇼츠'];
-							var main_sub_txt =['lux 타이츠 컬렉션을 소개합니다.','EPIC 쇼츠 컬렉션을 소개합니다.'];
-							//남녀 콜렉션 링크
-							var collection_link = ['http://shop.reebok.co.kr','http://daum.net'];
+								var main_Imgdata = ['main_w.jpg','main_m.jpg'];
+								var fullimgPath = imagePath + main_Imgdata[mindex];
+								var main_txt =['리복<br>LUX 타이츠','리복<br>EPIC 쇼츠'];
+								var main_sub_txt =['lux 타이츠 컬렉션을 소개합니다.','EPIC 쇼츠 컬렉션을 소개합니다.'];
+								//남녀 콜렉션 링크
+								var collection_link = ['http://shop.reebok.co.kr','http://daum.net'];
 
-							var box1 = [
-								'<div class="video" style="padding-top:30px;"><video src="http://imagem.reebok.co.kr/images/reebok/about/craft_by_fitness/w_1.mp4" autoplay="" loop="" muted="" playinline=""></video></div><div class="txt"><p class="title"><em>01</em><br>완벽한 핏</p><p>복부를 탄탄하게 잡아주는 와이드 앵글 허리밴드</p></div>',
-								'<div class="video" style="padding-top:30px;"><video src="http://imagem.reebok.co.kr/images/reebok/about/craft_by_fitness/m_1.mp4" autoplay="" loop="" muted="" playinline=""></video></div><div class="txt"><p class="title"><em>01</em><br>자유로운 움직임 </p><p>4-WAY 스트레치 원단과 사이드 슬릿으로 어떤 동작에도자유로운 움직임 </p></div>'
-							];
-							var box2 = [
-								'<div class="video"><video src="http://imagem.reebok.co.kr/images/reebok/about/craft_by_fitness/w_2.mp4" autoplay="" loop="" muted="" playinline=""></video></div><div class="txt"><p class="title"><em>02</em><br>지속적인 편안함 </p><p>바디라인을 매끈하게 연출하는 플랫락 방식의 측면 솔기</p></div>',
-								'<div class="video"><video src="http://imagem.reebok.co.kr/images/reebok/about/craft_by_fitness/m_2.mp4" autoplay="" loop="" muted="" playinline=""></video></div><div class="txt"><p class="title"><em>02</em><br>완벽한 핏 </p><p>코드락 잠금 허리밴드로 탄탄하게 잡아주는 느낌</p></div>'
-							];
-							var box3 = [
-								'<div class="video"><video src="http://imagem.reebok.co.kr/images/reebok/about/craft_by_fitness/w_3.mp4" autoplay="" loop="" muted="" playinline=""></video><div class="bg"></div></div><div class="txt"><p class="title"><em>03</em><br>부드러운 기능성 원단</p><p>프리미엄 나이럭스 기능성 원단의 고급스러운 터치감과 <br>몸에서 땀을 제어하는 스피드윅 테크놀로지 </p></div>',
-								'<div class="video"><video src="http://imagem.reebok.co.kr/images/reebok/about/craft_by_fitness/m_3.mp4" autoplay="" loop="" muted="" playinline=""></video><div class="bg"></div></div><div class="txt"><p class="title"><em>03</em><br>쾌적한 착용감</p><p>몸에서 땀을 제어하는 스피드윅 테크놀로지</p></div>'
-							];
-							var box4 = [
-								'<div class="video"><video src="http://imagem.reebok.co.kr/images/reebok/about/craft_by_fitness/w_4.mp4" autoplay="" loop="" muted="" playinline=""></video></div><div class="txt"><p class="title"><em>04</em><br>발목까지 쫀쫀하게</p><p>발목을 안정감 있게  감싸주는 발목 커프</p></div>',
-								''
-							];
+								var box1 = [
+									'<div class="video" style="padding-top:30px;"><video autoplay="" loop="" muted="" playinline=""><source src="http://imagem.reebok.co.kr/images/reebok/about/craft_by_fitness/w_1.mp4" type="video/mp4"></video></div><div class="txt"><p class="title"><em>01</em><br>완벽한 핏</p><p>복부를 탄탄하게 잡아주는 와이드 앵글 허리밴드</p></div>',
+									'<div class="video" style="padding-top:30px;"><video autoplay="" loop="" muted="" playinline=""><source src="http://imagem.reebok.co.kr/images/reebok/about/craft_by_fitness/m_1.mp4" type="video/mp4"></video></div><div class="txt"><p class="title"><em>01</em><br>자유로운 움직임 </p><p>4-WAY 스트레치 원단과 사이드 슬릿으로 어떤 동작에도자유로운 움직임 </p></div>'
+								];
+								var box2 = [
+									'<div class="video"><video autoplay="" loop="" muted="" playinline=""><source src="http://imagem.reebok.co.kr/images/reebok/about/craft_by_fitness/w_2.mp4" type="video/mp4"></video></div><div class="txt"><p class="title"><em>02</em><br>지속적인 편안함 </p><p>바디라인을 매끈하게 연출하는 플랫락 방식의 측면 솔기</p></div>',
+									'<div class="video"><video autoplay="" loop="" muted="" playinline=""><source src="http://imagem.reebok.co.kr/images/reebok/about/craft_by_fitness/m_2.mp4" type="video/mp4"></video></div><div class="txt"><p class="title"><em>02</em><br>완벽한 핏 </p><p>코드락 잠금 허리밴드로 탄탄하게 잡아주는 느낌</p></div>'
+								];
+								var box3 = [
+									'<div class="video"><video autoplay="" loop="" muted="" playinline=""><source src="http://imagem.reebok.co.kr/images/reebok/about/craft_by_fitness/w_3.mp4" type="video/mp4"></video><div class="bg"></div></div><div class="txt"><p class="title"><em>03</em><br>부드러운 기능성 원단</p><p>프리미엄 나이럭스 기능성 원단의 고급스러운 터치감과 <br>몸에서 땀을 제어하는 스피드윅 테크놀로지 </p></div>',
+									'<div class="video"><video autoplay="" loop="" muted="" playinline=""><source src="http://imagem.reebok.co.kr/images/reebok/about/craft_by_fitness/m_3.mp4" type="video/mp4"></video><div class="bg"></div></div><div class="txt"><p class="title"><em>03</em><br>쾌적한 착용감</p><p>몸에서 땀을 제어하는 스피드윅 테크놀로지</p></div>'
+								];
+								var box4 = [
+									'<div class="video"><video autoplay="" loop="" muted="" playinline=""><source src="http://imagem.reebok.co.kr/images/reebok/about/craft_by_fitness/w_4.mp4" type="video/mp4"></video></div><div class="txt"><p class="title"><em>04</em><br>발목까지 쫀쫀하게</p><p>발목을 안정감 있게  감싸주는 발목 커프</p></div>',
+									''
+								];
 
-							var col = [
-								{
-									slide0 : {
-										img : 'col_w1.jpg',
-										title : "<p>WOMEN'S TRAINING</p>럭스 타이츠 싸이매틱"
+								var col = [
+									{
+										slide0 : {
+											img : 'col_w1.jpg',
+											title : "<p>WOMEN'S TRAINING</p>럭스 타이츠 싸이매틱"
+										},
+										slide1 : {
+											img : 'col_w2.jpg',
+											title : "<p>WOMEN'S TRAINING</p>럭스 하이 라이즈 타이츠"
+										},
+										slide2 : {
+											img : 'col_w3.jpg',
+											title : "<p>WOMEN'S TRAINING</p>럭스 볼드타이츠 브릴리언"
+										}
 									},
-									slide1 : {
-										img : 'col_w2.jpg',
-										title : "<p>WOMEN'S TRAINING</p>럭스 하이 라이즈 타이츠"
-									},
-									slide2 : {
-										img : 'col_w3.jpg',
-										title : "<p>WOMEN'S TRAINING</p>럭스 볼드타이츠 브릴리언"
+									{
+										slide0 : {
+											img : 'col_m1.jpg',
+											title : "<p>MEN'S TRAINING</p>에픽 쇼츠"
+										},
+										slide1 : {
+											img : 'col_m2.jpg',
+											title : "<p>MEN'S TRAINING</p>에픽 엔듀어 쇼츠"
+										},
+										slide2 : {
+											img : 'col_m3.jpg',
+											title : "<p>MEN'S TRAINING</p>에픽 라이트웨이트 쇼츠"
+										}
 									}
-								},
-								{
-									slide0 : {
-										img : 'col_m1.jpg',
-										title : "<p>MEN'S TRAINING</p>에픽 쇼츠"
-									},
-									slide1 : {
-										img : 'col_m2.jpg',
-										title : "<p>MEN'S TRAINING</p>에픽 엔듀어 쇼츠"
-									},
-									slide2 : {
-										img : 'col_m3.jpg',
-										title : "<p>MEN'S TRAINING</p>에픽 라이트웨이트 쇼츠"
+								];
+
+								$('.main .img img').attr('src',fullimgPath);
+								document.getElementById('main_txt').innerHTML = main_txt[mindex];
+								document.getElementById('main_sub_txt').innerHTML = main_sub_txt[mindex];
+								$('.collection_link a').attr('href', collection_link[mindex]);
+								$('#box1').html(box1[mindex]);
+								$('#box2').html(box2[mindex]);
+								$('#box3').html(box3[mindex]);
+								$('.box.last').html(box4[mindex]);
+
+
+								// n번째 li에 n 번째 img 추가
+								var li_index = $('.coll_slider ul li').length;
+
+								for(var ii = 0; ii<li_index; ii++) {
+									$('.coll_slider ul li').eq(ii).children('.slide_box').children('img').attr('src',imagePath+col[mindex]['slide'+ii].img);
+									$('.coll_slider ul li').eq(ii).children('.slide_box').children('.txt').html(col[mindex]['slide'+ii].title)
+
+								}
+								// scroll to top
+								$('html, body').animate({scrollTop : offsetCon.top}, 500);
+
+								$('.prd_boxs .box').removeClass('active');
+
+
+
+							});
+							// scrollevent
+
+
+							function eachPos(){
+								var pos = $(this).offset().top;
+								prd_pos_array.push(pos);
+							}
+							$('.prd_content .prd_content_inn .prd_boxs .box').each(eachPos);
+
+
+							function scrollEvent(){
+
+								var scrollPos = $(this).scrollTop() + $('#header').height() + $('.location').height() + $('.video_visual .bg').height();
+								console.log(scrollPos)
+								for (var i = 0; i <prd_pos_array.length; i ++){
+									if(scrollPos >= prd_pos_array[i]){
+										$('.prd_wrapper .box').eq(i).addClass('active');
 									}
 								}
-							];
-
-							$('.main .img img').attr('src',fullimgPath);
-							document.getElementById('main_txt').innerHTML = main_txt[mindex];
-							document.getElementById('main_sub_txt').innerHTML = main_sub_txt[mindex];
-							$('.collection_link a').attr('href', collection_link[mindex]);
-							$('#box1').html(box1[mindex]);
-							$('#box2').html(box2[mindex]);
-							$('#box3').html(box3[mindex]);
-							$('.box.last').html(box4[mindex]);
 
 
-							// n번째 li에 n 번째 img 추가
-							var li_index = $('.coll_slider ul li').length;
-
-							for(var ii = 0; ii<li_index; ii++) {
-								$('.coll_slider ul li').eq(ii).children('.slide_box').children('img').attr('src',imagePath+col[mindex]['slide'+ii].img);
-								$('.coll_slider ul li').eq(ii).children('.slide_box').children('.txt').html(col[mindex]['slide'+ii].title)
 
 							}
+							// scrollEvent()
 
-
-
-
-
-						});
+							$(window).scroll(scrollEvent);
 
 
 
