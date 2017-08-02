@@ -159,7 +159,7 @@
 							<div class="prd_content_inn">
 								<div class="bg"></div>
 								<div class="main">
-									<div class="small_title">WOMEN'S<span></span></div>
+									<div class="small_title" id="small_title">WOMEN'S<span></span></div>
 									<p class="main_txt" id="main_txt">리복<br>LUX 타이츠</p>
 									<p id="main_sub_txt">lux 타이츠 컬렉션을 소개합니다.</p>
 									<div class="img"><img src="http://imagem.reebok.co.kr/images/reebok/about/craft_by_fitness/main_w.jpg" alt=""></div>
@@ -372,6 +372,7 @@
 
 								var main_Imgdata = ['main_w.jpg','main_m.jpg'];
 								var fullimgPath = imagePath + main_Imgdata[mindex];
+								var main_tip =["WOMEN'S","MEN'S"];
 								var main_txt =['리복<br>LUX 타이츠','리복<br>EPIC 쇼츠'];
 								var main_sub_txt =['lux 타이츠 컬렉션을 소개합니다.','EPIC 쇼츠 컬렉션을 소개합니다.'];
 								//남녀 콜렉션 링크
@@ -426,6 +427,7 @@
 								];
 
 								$('.main .img img').attr('src',fullimgPath);
+								document.getElementById('small_title').innerHTML = main_tip[mindex];
 								document.getElementById('main_txt').innerHTML = main_txt[mindex];
 								document.getElementById('main_sub_txt').innerHTML = main_sub_txt[mindex];
 								$('.collection_link a').attr('href', collection_link[mindex]);
