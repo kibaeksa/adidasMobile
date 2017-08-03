@@ -215,7 +215,10 @@
 											<li>
 												<div class="slide_box">
 													<div class="img">
-														<div class="slide_box_bg"></div>
+														<div class="slide_box_bg">
+															<a class="link" href="#"></a>
+															<div class="buy">구매하기</div>
+														</div>
 														<img src="http://imagem.reebok.co.kr/images/reebok/about/craft_by_fitness/col_w1.jpg" alt="">
 													</div>
 													<div class="txt">
@@ -227,7 +230,10 @@
 											<li>
 												<div class="slide_box">
 													<div class="img">
-														<div class="slide_box_bg"></div>
+														<div class="slide_box_bg">
+															<a class="link" href="#"></a>
+															<div class="buy">구매하기</div>
+														</div>
 														<img src="http://imagem.reebok.co.kr/images/reebok/about/craft_by_fitness/col_w2.jpg" alt="">
 													</div>
 													<div class="txt">
@@ -239,7 +245,10 @@
 											<li>
 												<div class="slide_box">
 													<div class="img">
-														<div class="slide_box_bg"></div>
+														<div class="slide_box_bg">
+															<a class="link" href="#"></a>
+															<div class="buy">구매하기</div>
+														</div>
 														<img src="http://imagem.reebok.co.kr/images/reebok/about/craft_by_fitness/col_w3.jpg" alt="">
 													</div>
 													<div class="txt">
@@ -409,29 +418,35 @@
 									{
 										slide0 : {
 											img : 'col_w1.jpg',
-											title : "<p>WOMEN'S TRAINING</p>럭스 타이츠 싸이매틱"
+											title : "<p>WOMEN'S TRAINING</p>럭스 타이츠 싸이매틱",
+											link : 'http://shop.adidas.co.kr/PF020401.action?PROD_CD=BP8978'
 										},
 										slide1 : {
 											img : 'col_w2.jpg',
-											title : "<p>WOMEN'S TRAINING</p>럭스 하이 라이즈 타이츠"
+											title : "<p>WOMEN'S TRAINING</p>럭스 하이 라이즈 타이츠",
+											link : 'http://shop.adidas.co.kr/PF020401.action?PROD_CD=BP8978'
 										},
 										slide2 : {
 											img : 'col_w3.jpg',
-											title : "<p>WOMEN'S TRAINING</p>럭스 볼드타이츠 브릴리언"
+											title : "<p>WOMEN'S TRAINING</p>럭스 볼드타이츠 브릴리언",
+											link : 'http://shop.adidas.co.kr/PF020401.action?PROD_CD=BP8978'
 										}
 									},
 									{
 										slide0 : {
 											img : 'col_m1.jpg',
-											title : "<p>MEN'S TRAINING</p>에픽 쇼츠"
+											title : "<p>MEN'S TRAINING</p>에픽 쇼츠",
+											link : 'http://shop.adidas.co.kr/PF020401.action?PROD_CD=BP8975'
 										},
 										slide1 : {
 											img : 'col_m2.jpg',
-											title : "<p>MEN'S TRAINING</p>에픽 엔듀어 쇼츠"
+											title : "<p>MEN'S TRAINING</p>에픽 엔듀어 쇼츠",
+											link : 'http://shop.adidas.co.kr/PF020401.action?PROD_CD=BP8972'
 										},
 										slide2 : {
 											img : 'col_m3.jpg',
-											title : "<p>MEN'S TRAINING</p>에픽 라이트웨이트 쇼츠"
+											title : "<p>MEN'S TRAINING</p>에픽 라이트웨이트 쇼츠",
+											link : 'http://shop.adidas.co.kr/PF020401.action?PROD_CD=BP8977'
 										}
 									}
 								];
@@ -459,7 +474,8 @@
 
 								for(var ii = 0; ii<li_index; ii++) {
 									$('.coll_slider ul li').eq(ii).children('.slide_box').children('.img').children('img').attr('src',imagePath+col[mindex]['slide'+ii].img);
-									$('.coll_slider ul li').eq(ii).children('.slide_box').children('.txt').html(col[mindex]['slide'+ii].title)
+									$('.coll_slider ul li').eq(ii).children('.slide_box').children('.txt').html(col[mindex]['slide'+ii].title);
+									$('.coll_slider ul li').eq(ii).children('.slide_box').children('.img').children('.slide_box_bg').children('.link').attr('href',col[mindex]['slide'+ii].link);
 
 								}
 								// scroll to top

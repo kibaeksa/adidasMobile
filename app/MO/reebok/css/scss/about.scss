@@ -8412,12 +8412,43 @@ html{
 								position: relative;
 								float: left;
 								.slide_box{
+									&:hover{
+										.img{
+											.slide_box_bg{
+												&:active{
+													@include opacity (1);
+													background: rgba(0,0,0,0.6);
+												}
+											}
+										}
+									}
 									.img{
 										position: relative;
 										.slide_box_bg{
+											@include opacity (0);
 											position: absolute;
 											top:0;left:0;width: 100%;height: 100%;
-											background: rgba(0,0,0,0.6);
+											background: rgba(0,0,0,0);
+											.link{
+												position: absolute;
+												top:0;
+												left:0;
+												width: 100%;
+												height: 100%;
+												z-index: 5;
+											}
+											.buy{
+												display: inline-block;
+												width: 120px;
+												position: absolute;
+												top:50%;
+												left:50%;
+												@include prefix-css3 (transform,translate(-50%,-50%));
+												color:#fff;
+												border:1px solid #fff;
+												font:1.5rem/40px 'NotosansKR';
+												text-align: center;
+											}
 										}
 										img{
 											width: 100%;
