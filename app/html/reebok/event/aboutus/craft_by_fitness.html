@@ -132,7 +132,7 @@
 
 					<div class="video_visual">
 						<div class="bg">
-							<video autoplay loop muted playsinline poster="http://imagem.reebok.co.kr/images/reebok/about/craft_by_fitness/video_bg.jpg">
+							<video autoplay loop muted playsinline poster="http://imagem.reebok.co.kr/images/reebok/about/craft_by_fitness/video_bg.jpg" id="main_top_video">
 								<source src="http://imagem.reebok.co.kr/images/reebok/about/craft_by_fitness/main_video.mp4" type="video/mp4" />
 							</video>
 						</div>
@@ -181,7 +181,8 @@
 										<div class="video">
 											<video autoplay loop muted playsinline poster="http://imagem.reebok.co.kr/images/reebok/about/craft_by_fitness/w_2.jpg">
 												<source src="http://imagem.reebok.co.kr/images/reebok/about/craft_by_fitness/w_2.mp4" type="video/mp4" />
-											</video></div>
+											</video>
+										</div>
 										<div class="txt">
 											<p class="title"><em>02</em><br>지속적인 편안함  </p>
 											<p>바디라인을 매끈하게 연출하는 플랫락 방식의 측면 솔기</p>
@@ -237,7 +238,10 @@
 											</li>
 											<li>
 												<div class="slide_box">
-													<img src="http://imagem.reebok.co.kr/images/reebok/about/craft_by_fitness/col_w3.jpg" alt="">
+													<div class="img">
+														<div class="slide_box_bg"></div>
+														<img src="http://imagem.reebok.co.kr/images/reebok/about/craft_by_fitness/col_w3.jpg" alt="">
+													</div>
 													<div class="txt">
 														<p>WOMEN'S TRAINING</p>
 														럭스 볼드타이츠 브릴리언
@@ -441,6 +445,13 @@
 								$('#box2').html(box2[mindex]);
 								$('#box3').html(box3[mindex]);
 								$('.box.last').html(box4[mindex]);
+
+								// 클릭하는 순간 상단 영상 정지
+								// $('.video_visual video').pause();
+								document.getElementById('main_top_video').pause();
+								setTimeout(function(){
+									document.getElementById('main_top_video').play();
+								},10)
 
 
 								// n번째 li에 n 번째 img 추가
