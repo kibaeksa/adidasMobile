@@ -383,6 +383,8 @@
 							var prd_pos_array = [];
 							var offsetCon = $('.prd_content').offset();
 
+							var timer;
+
 							// ctgr click event
 							$('.ctgr .ctgr_inn div').click(function(){
 
@@ -462,11 +464,14 @@
 								$('.box.last').html(box4[mindex]);
 
 								// 클릭하는 순간 상단 영상 정지
-								// $('.video_visual video').pause();
+								clearTimeout(timer);
+
 								document.getElementById('main_top_video').pause();
-								setTimeout(function(){
+								timer = setTimeout(function(){
 									document.getElementById('main_top_video').play();
 								},2000)
+
+
 
 
 								// n번째 li에 n 번째 img 추가
