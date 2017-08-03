@@ -8282,12 +8282,8 @@ html{
 
 		.prd_wrapper{
 			position: relative;
-			// padding: 16% 0 840%;
 			padding: 16% 0 50px;
 			.prd_content{
-				// position: absolute;
-				// width: 100%;
-
 				.prd_content_inn{
 					position: relative;
 					padding: 0 2.5rem;
@@ -8346,7 +8342,9 @@ html{
 				}
 				.prd_boxs{
 					.box{
+						@include opacity(0);
 						padding: 20px 0 30px;
+						@include prefix-css3 (transition, 0.5s);
 						&.hasbg{
 							.video{
 								position: relative;
@@ -8367,6 +8365,10 @@ html{
 								    background: #e9e9d9;
 								}
 							}
+						}
+						&.active{
+							top:0;
+							@include opacity(1);
 						}
 						.video{
 							video{
@@ -8410,8 +8412,47 @@ html{
 								position: relative;
 								float: left;
 								.slide_box{
-									img{
-										width: 100%;
+									&:hover{
+										.img{
+											.slide_box_bg{
+												&:active{
+													@include opacity (1);
+													background: rgba(0,0,0,0.6);
+												}
+											}
+										}
+									}
+									.img{
+										position: relative;
+										.slide_box_bg{
+											@include opacity (0);
+											position: absolute;
+											top:0;left:0;width: 100%;height: 100%;
+											background: rgba(0,0,0,0);
+											.link{
+												position: absolute;
+												top:0;
+												left:0;
+												width: 100%;
+												height: 100%;
+												z-index: 5;
+											}
+											.buy{
+												display: inline-block;
+												width: 120px;
+												position: absolute;
+												top:50%;
+												left:50%;
+												@include prefix-css3 (transform,translate(-50%,-50%));
+												color:#fff;
+												border:1px solid #fff;
+												font:1.5rem/40px 'NotosansKR';
+												text-align: center;
+											}
+										}
+										img{
+											width: 100%;
+										}
 									}
 									.txt{
 										padding: 25px 0;
@@ -8463,10 +8504,6 @@ html{
 
 					}
 				}
-			}
-			.ctgr{
-				// position: absolute;
-				// bottom:0;
 			}
 		}
 
