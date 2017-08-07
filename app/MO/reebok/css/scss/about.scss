@@ -8241,12 +8241,28 @@ html{
 
 		}
 		.video_visual{
+			position: relative;
+			margin: 2rem 0 1rem;
+			&:after{
+				content: '';
+				display: block;
+				position: absolute;
+				top:-1rem;
+				left:50%;
+				margin-left: -45%;
+				width: 90%;
+				height: 100%;
+				background: #e9e9d9;
+				z-index: 0;
+			}
 			.ctgr{
 				position: absolute;
 				bottom:-6%;
 				width: 100%;
+				z-index: 1;
 			}
 			.bg{
+				z-index: 1;
 				video{
 					width:100%;
 					height: 100%;
@@ -8284,6 +8300,22 @@ html{
 			position: relative;
 			padding: 16% 0 50px;
 			.prd_content{
+				&.men{
+					.bg{
+						left:15%;
+						width: 100%;
+					}
+					.prd_boxs{
+						.box{
+							&.hasbg{
+								.bg{
+									left: -4.2rem !important;
+									padding: 0 2.5rem !important;
+								}
+							}
+						}
+					}
+				}
 				.prd_content_inn{
 					position: relative;
 					padding: 0 2.5rem;
@@ -8499,7 +8531,7 @@ html{
 						text-align: center;
 						border:1px solid #8099a2;
 						background: none;
-						font:1.3rem/43px 'NotosansKR';
+						font:1.1rem/43px 'NotosansKR';
 						color:#8099a2;
 
 					}
