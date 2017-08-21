@@ -1,0 +1,391 @@
+@import './app/css/adidas/scss/common/mixin.scss';
+@import './app/css/adidas/scss/common/common.scss';
+
+#header{
+	position: absolute !important;
+}
+#nmd{
+
+	background: #eee;
+	.floting_wrap{
+		position: fixed;
+		top: 0px;
+		width: 100%;
+		left: 0;
+		z-index: 5;
+		opacity: 0;
+		transition: all 0.3s;
+		&.flotingshow{
+			opacity: 1;
+		}
+		&.show{
+			.floting{
+				.floting_gnb{
+					a{
+						color:#dedede;
+					}
+					div{
+						span{
+							background: #dedede;
+						}
+					}
+				}
+			}
+			.floting_menu{
+				display: block;
+			}
+		}
+
+		.floting{
+			padding: 2rem 2rem;
+			height: 25px;
+			background: #fff;
+		    box-shadow: 1px 1px 6px #ddd;
+			&:after{
+				content: '';display: inline-block;clear: both;
+			}
+			h2{
+				width: 100px;
+				float: left;
+				img{
+					width: 100%;
+				}
+			}
+			.floting_gnb{
+				float: right;
+				&:after{
+					content: '';display: inline-block;clear: both;
+				}
+				a{
+					font:20px 'AdihausDIN-Bold';
+					text-transform: uppercase;
+					color:#000;
+					float: left;
+				}
+				div{
+					margin-top: 2px;
+					float: left;
+					width: 20px;
+					margin-left: 1rem;
+					span{
+						display: block;
+						margin-bottom: 5px;
+						width: 20px;
+						height: 2px;
+						background: #000;
+					}
+				}
+			}
+		}
+		.floting_menu{
+			display: none;
+			border-top: 1px solid #e6e6e6;
+			.menu{
+				padding: 24px 0;
+				background: #fff;
+			}
+			.more{
+				background: rgba(0,0,0,0.83);
+				a{
+					position: relative;
+					padding: 24px 0;
+					display: inline-block;
+					color:#fff;
+					width: 49%;
+					text-align: center;
+					font:14px 'NotoSansKRRegular';
+					&.last{
+						&:after{
+							display: none;
+						}
+					}
+					&:after{
+						position: absolute;
+						top:50%;
+						margin-top: -7px;
+						right:0;
+						content: '';
+						display: inline-block;
+						width: 1px;
+						height: 15px;
+						background: #a3a3a3;
+					}
+					span{
+						color:#fff;
+						font:15px 'adihaus';
+						text-transform: uppercase;
+						padding-right: 5px;
+					}
+					em{
+						background: url('http://imagem.adidas.co.kr/images/adidas/event/nmd_v2/arrow.png') no-repeat;
+						width: 14px;
+						height: 14px;
+						display: inline-block;
+						background-size: 100% 100%;
+						position: relative;
+						top:2px;
+						margin-left: 5px;
+					}
+				}
+			}
+		}
+	}
+
+	.top{
+		padding: 0 1rem;
+		img{
+			width: 100%;
+		}
+	}
+	.menu{
+		padding-top: 30px;
+		ul{
+			&:after{
+				content: '';
+				display: block;
+				clear: both;
+			}
+			li{
+				position: relative;
+				display: inline-block;
+				float: left;
+				width: 33.33%;
+				text-align: center;
+				&:after{
+					position: absolute;
+					top:3px;
+					right:0;
+					content: '';
+					display: inline-block;
+					width: 1px;
+					height: 10px;
+					background: #a4a4a4;
+				}
+				&.on{
+					a{
+						font:17px 'Adihaus-regular';
+						font-weight: bold;
+						span{
+							display: block;
+							content: '';
+							display: inline-block;
+							width: 100%;
+							height: 2px;
+							background: #000;
+							position: absolute;
+							bottom:-5px;
+							left:0;
+						}
+					}
+				}
+				&.last{
+					&:after{
+						display: none;
+					}
+				}
+				a{
+					position: relative;
+					font:17px 'Adihaus-regular';
+					color:#000;
+					text-transform: uppercase;
+					span{
+						display: none;
+					}
+				}
+			}
+		}
+	}
+
+	.banner_slider_wrap{
+		position: relative;
+		#slider_owl{
+			padding-top: 60px;
+			padding-bottom: 25px;
+			// background: url('http://imagem.adidas.co.kr/images/adidas/event/nmd_v2/bg.png') no-repeat;
+			background-size: 100% 100%;
+			li{
+				.inner{
+					// padding: 0 20px;
+					img{
+						width: 100%;
+					}
+					.link{
+						position: absolute;
+						width: 100%;
+						height: 1.269%;
+						&.shoe1a{
+							top:7.3%;
+						}
+						&.shoe2a{
+							top:30.32%;
+						}
+						&.shoe3a{
+							top:41.36%;
+						}
+						&.shoe4a{
+							top:60.34%;
+						}
+						&.shoe5a{
+							top:71.7%;
+						}
+						&.shoe6a{
+							top:86.23%;
+						}
+						&.shoe7a{
+							top:98.72%;
+						}
+					}
+
+					.popBtn{
+						position: absolute;
+						width: 100%;
+						&.look1{
+							top:0;
+							height: 9%;
+						}
+						&.look2{
+							top:22%;
+							height: 9%;
+						}
+						&.look3{
+							top:32%;
+							height: 9%;
+						}
+						&.look4{
+							top:44.56%;
+							height: 9%;
+						}
+						&.look5{
+							top:57.2%;
+							height: 9%;
+						}
+						&.look6{
+							top:75.21%;
+							height: 9%;
+						}
+						&.look7{
+							top:87%;
+							height: 9%;
+						}
+						&.shoe1{
+							top:0;
+							height: 7.3%;
+						}
+						&.shoe2{
+							top:19.66%;
+							height:10.66%;
+						}
+						&.shoe3{
+							top:34.56%;
+							height:6.8%;
+						}
+						&.shoe4{
+							top:50.82%;
+							height:9.52%;
+						}
+						&.shoe5{
+							top:64.93%;
+							height:6.77%;
+						}
+						&.shoe6{
+							top:76.24%;
+							height:9.99%;
+						}
+						&.shoe7{
+							top:89.55%;
+							height:9.17%;
+						}
+
+
+					}
+				}
+			}
+		}
+		.owl-controls{
+			.owl-nav{
+				display: none;
+			}
+			.owl-dots{
+				position: absolute;
+				top:-25px;
+				left:0;
+				width: 100%;
+				z-index: 2;
+				.owl-dot{
+					display: inline-block;
+				    width: 33.33%;
+				    height: 1rem;
+				    z-index: 2;
+				    padding: 1rem 0;
+				}
+			}
+		}
+	}
+
+	//popu
+	.layerpopup{
+		display: none;
+		position: fixed;
+	    top: 0;
+	    width: 100%;
+	    height: 100%;
+	    z-index: 150;
+	    overflow: scroll;
+	    transform: translate3d(0, 0, 0);
+	    -webkit-transform: translate3d(0, 0, 0);
+	    background: rgba(0,0,0,0.8);
+		&.show{
+			display: block;
+		}
+		.close_x_btn{
+			width: 40px;
+			height: 40px;
+			position: absolute;
+			top: 30px;
+			right: 15px;
+			transform: translate3d(0,-50%,0);
+			-webkit-transform: translate3d(0,-50%,0);
+			z-index: 300;
+			background: #000;
+			&:after{
+				height: 2px;
+				transform: translate3d(-50%,-50%,0) rotate(-45deg);
+				-webkit-transform: translate3d(-50%,-50%,0) rotate(-45deg);
+				background: #fff;
+			}
+			&:before{
+				content: '';
+				width: 50%;
+				height: 2px;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate3d(-50%,-50%,0) rotate(45deg);
+				-webkit-transform: translate3d(-50%,-50%,0) rotate(45deg);
+				background: #fff;
+			}
+		}
+		.inner{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			-webkit-transform: translate(-50%,-50%);
+			width: 100%;
+			img{
+				width: 100%;
+			}
+		}
+	}
+}
+
+#video-modal-popup{
+	.popup{
+		width: 100% !important;
+		height: 100% !important;
+
+		.close_x_btn{
+			top: 0 !important;
+		}
+	}
+}

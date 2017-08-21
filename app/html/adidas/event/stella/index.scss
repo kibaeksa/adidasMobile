@@ -1,0 +1,170 @@
+@import './app/css/adidas/scss/common/mixin.scss';
+@import './app/css/adidas/scss/common/common.scss';
+
+#video-layer{
+	position:fixed;top:0;left:0;width: 100%;height: 100%;z-index:1000;
+}
+
+#video-layer .bg{
+	width: 100%;
+	height: 100%;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	transform-origin:center center;
+	-webkit-transform-origin:center center;
+	transform:scale(0);
+	-webkit-transform:scale(0);
+	opacity:0;
+	background:#000;
+	z-index:1;
+
+	transition:all 0.4s;
+	-webkit-transition:all 0.4s;
+
+
+}
+
+#video-layer.loaded .bg{
+	opacity: 1;
+	transform:scale(1.2);
+	-webkit-transform:scale(1.2);
+}
+
+#video-layer .video-box{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	z-index: 3;
+}
+
+#video-layer .close_x_btn{
+	width: 70px;
+	height: 70px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 5;
+	opacity: 0;
+}
+
+#video-layer.loaded .close_x_btn{
+	opacity: 1;
+}
+
+
+#stella{
+	.main{
+		position: relative;
+		padding-bottom: 88%;
+		.bg{
+			position: absolute;
+			top:0;
+			width: 100%;
+			img{
+				width: 100%;
+			}
+		}
+		.img{
+			position: relative;
+			width: 100%;
+		}
+		.con{
+			position: absolute;
+			top:30%;
+			z-index: 1;
+			text-align: center;
+			h2{
+				padding:0 5rem;
+				img{
+					width: 100%;
+				}
+			}
+			p{
+				color:#fff;
+				font: 1.2rem/3rem 'NotosansKRRegular', 'NanumGothic';
+				strong{
+					font:1.25rem 'adinenuPro-regular', 'Nanum Gothic';
+					color:#fff;
+					letter-spacing: 1px;
+					text-transform: uppercase;
+				}
+			}
+			a{
+				display: inline-block;
+				margin-top: 0.5rem;
+				padding: 0 1.5rem;
+				opacity: 0.8;
+				background: #fff;
+				font: 1.08rem/3rem 'NotosansKR', 'NanumGothic';
+				color:#000;
+				&:after{
+					margin-left: 5px;
+				}
+			}
+		}
+
+	}
+
+	.txt-area{
+		position: relative;
+		top:100px;
+		text-align: center;
+		padding:2rem 0 4rem 0;
+		opacity: 0;
+		@include css3(transition , all 0.8s);
+		.desc{
+			position: relative;
+			font: 0.9rem/1.7rem 'NotosansKR', 'NanumGothic';
+			color:#000;
+			letter-spacing: -1px;
+		}
+		.title{
+			position: relative;
+			padding-top: 1.5rem;
+			letter-spacing: 0.6px;
+			font: 2.5rem 'adinenuPro-black', 'Nanum Gothic';
+			color:#000;
+		}
+		a.link{
+			display: inline-block;
+			margin-top: 2rem;
+			padding:0 3.5rem;
+			font: 1.08rem/3.2rem 'NotosansKR', 'NanumGothic';
+			color:#000;
+			border:1px solid #000;
+			&.type2{
+				background: #000;
+				color:#fff;
+				font: 1.08rem/3.2rem 'NotosansKRLight', 'NanumGothic';
+
+			}
+			&:after{
+				margin-left: 5px;
+			}
+		}
+	}
+
+	.img-area{
+		&.col{
+			position: relative;
+			// top:100px;
+			opacity: 0;
+			@include css3(transition , opacity 0.8s);
+
+		}
+		.bg{
+			img{
+				width: 100%;
+			}
+		}
+	}
+
+
+
+
+
+
+}

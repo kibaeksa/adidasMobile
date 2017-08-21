@@ -10,12 +10,34 @@ var inject = require('gulp-inject-string');
 var notify = require('gulp-notify');
 var path = require('path');
 var fs = require('fs');
+var nodeSass = require('node-sass');
 
 // for parameter from CLI
 var args = require('yargs').argv;
 var sassInject = {
     path : '',
     source : ''
+};
+
+var handleSassInject  = function(_path){
+
+    if (fs.existsSync(path.resolve(_path))) {
+        try {
+            var sassString = fs.readFileSync(path.resolve(_path),'utf8');
+        } catch (e) {
+            throw '유효한 경로가 아닙니다.';
+        }
+
+        sassInject.source = nodeSass.renderSync({
+            data : sassString,
+            outputStyle : 'compressed'
+        });
+        sassInject.source = sassInject.source.css.toString();
+        sassInject.path = _path.replace(/(\W+|\w+)\.scss/,'');
+
+        gulp.start('sass-inline:inject');
+    }
+
 };
 
 
@@ -27,20 +49,8 @@ gulp.task('server',function(){
     });
 });
 
-gulp.task('sass-inline',function(){
-    gulp.src('./app/html/adidas/event/**/*.scss',{base : './'})
-        .pipe(sass({ outputStyle : 'compressed'}).on('error',sass.logError))
-        .pipe(gulp.dest(function(file){
-            sassInject.path = path.join(path.dirname(file.path) , '');
-            return './';
-        }))
-        .pipe(notify(function(){
-            gulp.start('sass-inline:inject');
-        }));
-});
-
-// gulp.task('sass-inline2',function(){
-//     gulp.src('./app/html/adidas/event/**/**/*.scss',{base : './'})
+// gulp.task('sass-inline',function(){
+//     gulp.src('./app/html/adidas/event/**/*.scss',{base : './'})
 //         .pipe(sass({ outputStyle : 'compressed'}).on('error',sass.logError))
 //         .pipe(gulp.dest(function(file){
 //             sassInject.path = path.join(path.dirname(file.path) , '');
@@ -53,7 +63,8 @@ gulp.task('sass-inline',function(){
 
 gulp.task('sass-inline:inject',function(){
     gulp.src(path.join(sassInject.path,'*.html'))
-        .pipe(inject.after('<!-- Inject css from index.sass -->','\n<style type="text/css">'+fs.readFileSync(path.join(sassInject.path,'index.css'), 'utf8')+'</style>'))
+        .pipe(inject.after('<div id="container">','\n<style type="text/css">'+sassInject.source+'</style>'))
+        .pipe(rename('index.html'))
         .pipe(gulp.dest(path.join(sassInject.path , 'build')))
         .pipe(connect.reload());
 });
@@ -91,12 +102,22 @@ gulp.task('scriptsCommon',function(){
         pipe(gulp.dest('./app/js/adidas/dest/'));
 });
 
-
 gulp.task('watch',function(){
-    gulp.watch('./app/html/adidas/event/**/*.scss',['sass-inline']);
-    gulp.watch('./app/html/adidas/event/**/*.html',['sass-inline']);
-    // gulp.watch('./app/html/adidas/event/**/**/*.scss',['sass-inline2']);
-    // gulp.watch('./app/html/adidas/event/**/**/*.html',['sass-inline2']);
+    // gulp.watch('./app/html/adidas/event/**/*.scss',['sass-inline']);
+    // gulp.watch('./app/html/adidas/event/**/*.html',['sass-inline']);
+    gulp.watch('./app/html/adidas/event/**/*.scss').on('change',function(file){
+        if(!file.path.match(/\\build\\?/)){
+            handleSassInject(file.path);
+        }
+    });
+
+    gulp.watch('./app/html/adidas/event/**/*.html').on('change',function(file){
+        if(!file.path.match(/\\build\\?/)){
+            handleSassInject(file.path.replace(/(\W+|\w+)\.html/,'index.scss'));
+        }
+    });
+
+
     gulp.watch('./app/js/adidas/common.js',['scriptsCommon']);
     gulp.watch('./app/js/modalPopup.js',['scripts']);
 

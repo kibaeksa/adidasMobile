@@ -9,15 +9,82 @@
 	<link href="/css/adidas/style.css" type="text/css" rel="stylesheet" />
 	<link href="/css/adidas/fonts.css" type="text/css" rel="stylesheet" />
 
+	<link rel="preload" href="/fonts/adineuePro/woff/adineuePRO-Bold.woff" as="font">
+
 	<script type="text/javascript" src="/js/jquery-1.12.0.min.js"></script>
-	<script type="text/javascript" src="/js/owl.carousel.min.js"></script>
 	<script type="text/javascript" src="/js/swipe.js"></script>
-	<script type="text/javascript" src="/js/zoomImage.js"></script>
+	<script type="text/javascript" src="/js/owl.carousel.js"></script>
 
 
 	<title>아디다스 모바일</title>
 </head>
 <body>
+
+	<div class="modal-popup" id="instock-notification-popup">
+		<div class="popup-contents">
+			<a href="javascript:void(0)" class="close_x_btn" onclick="jQuery(this).parent().parent().removeClass('open');"></a>
+			<div class="instock-notification">
+				<div class="tit adipro-b">
+					<div class="icons" data-icon=""></div>coming soon
+				</div>
+				<div class="desc">휴대전화 번호를 남겨 주시면,<br/>제품 입고시 문자로 알려드립니다.</div>
+
+				<div class="phone">
+					<div class="sel_cmtype sel_design">
+						<a href="#" class="toggle_arw s_arw" ><span>010</span></a>
+						<select name="" id="">
+							<option value="2" selected="">010</option>
+							<option value="1">011</option>
+							<option value="5">016</option>
+							<option value="3">017</option>
+							<option value="4">019</option>
+						</select>
+					</div>
+					<input type="tel">
+					<input type="tel">
+				</div>
+
+				<div class="agr_box">
+					<div class="chk_wrap">
+						<div class="chk_box1 blue">
+							<input type="checkbox" id="agr_for_credit" name="SMS_RET_YN" value="Y">
+							<label for="agr_for_credit" class="adipro-r">개인정보 제공동의</label>
+						</div>
+					</div>
+					<a href="javascript:void(0)" class="icons aft" data-icon="" onclick="if(jQuery(this).hasClass('open')){jQuery('.instock-notification .terms').hide();jQuery(this).removeClass('open')}else{jQuery('.instock-notification .terms').show();jQuery(this).addClass('open')}">자세히보기</a>
+				</div>
+				<!-- //agr_box -->
+
+				<div class="terms">
+					<div class="cont">
+						<dl>
+							<dt>개인정보의 수집이용목적 : </dt>
+							<dd>아디다스 제품 입고 알림</dd>
+						</dl>
+						<dl>
+							<dt>수집되는 개인정보 : </dt>
+							<dd>휴대전화번호</dd>
+						</dl>
+						<dl>
+							<dt>보유기간 : </dt>
+							<dd>입고알림 이후 30일 까지(본 보유기간은 아디클럽 회원이 아닌 경우에 한함)</dd>
+						</dl>
+       					<ul class="li_hypn">
+       						<li>아래 동의를 거부할 수 있습니다. 다만 그러한 경우, 아디다스제품이 입고되는 시점에 대한 정보를 우선적으로 전달받으실 수 없습니다. 단, “통신사 사정으로 인한 발송, 수신오류, 고객휴대폰의 스팸등록 등으로 인해 SMS가 전달되지 않을 수 있으며 이러한 경우 아디다스코리아가 책임지지 않습니다.”</li>
+       						<li>입력해주신 휴대폰번호로 안내하겠습니다.</li>
+       					</ul>
+
+					</div>
+				</div>
+
+				<div class="btn_area">
+					<a class="submit">신청하기</a>
+				</div>
+
+			</div>
+			<!-- //instock-notification -->
+		</div>
+	</div>
 
 	<div id="wrap">
 		<div id="header" style="position: relative;">
@@ -432,212 +499,384 @@
 				<a href="#" class="btn_market icons"></a>
 			</div>
 		</div>
-        <link rel="stylesheet" href="/css/adidas/event/parley.css">
+
 		<div id="container">
 
-			<div id="parley">
+			
+			<div id="sports17">
+				<div class="main">
+					<img src="/images/adidas/event/sports17/main.jpg" alt="">
+					<span class="play"><a href="javascript:void(0)" class="video-button" data-video-id="4BOZXLcKmW8"><img src="/images/adidas/event/sports17/btn_play_m.png" alt="" /></a></span>
+				</div>
+				<div class="bg">
+					<p>
+						열심히 하는 건 누구나 할 수 있지. <br>
+						우리에게는 상상력이란 무기가 있어.<br>
+						내 안의 상상력이 깨어날 때, 모든 것이 달라질 거야.
+					</p>
+					<p>
+						#Here To Create <br>
+						#새로운 나를 만들다
+					</p>
+				</div>
+				<div class="slider_section">
 
-                <div class="main">
-                    <div class="inner">
-                        <div class="video">
-                            <div class="bg video-button" data-video-id="fp9gNIaEjsU">
-                                <img src="http://imagem.adidas.co.kr/images/adidas/event/parley_v2/video_bg.jpg" alt="">
-                            </div>
-                        </div>
-                        <div class="parley_desc">
-                            <h2><img src="http://imagem.adidas.co.kr/images/adidas/event/parley_v2/logo.png" alt=""></h2>
-                            <p class="parley_txt">
-                                아디다스는 팔리<span class="adihauseDin">(PARLEY) </span> 와의 협업을 통해 <br>
-                                바다에서건져 올린 해양 폐기물을 재활용해 <br>
-                                고기능성 스포츠 제품으로 새롭게 탄생시키고 있습니다. <br>
-                                플라스틱이 만든 푸른색의 기적. <br>
-                                <strong><span class="adihauseDin">#ADIDASPARLEY</span> #아디다스팔리</strong>
-                            </p>
-                            <a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=286" class="btn">관련 제품 보기</a>
-                        </div>
-                    </div>
-                </div>
+					<div class="slider_wrap" id="slider">
+						<ul class="slider">
 
-                <div class="event">
-                    <div class="inner">
-                        <div class="img"><img src="http://imagem.adidas.co.kr/images/adidas/event/parley_v2/event_img.jpg" alt=""></div>
-                        <div class="txt">
-                            <p class="adihauseDin title">ADIDAS X PARLEY</p>
-                            <p class="parley_txt title">해양보존을 위해 함께 달리세요</p>
-                            <p class="parley_txt">런타스틱 앱을 다운받고 6월 5일에서 11일까지 진행되는 <br>디지털 러닝 행사에 참여하세요.</p>
-                            <a href="https://www.runtastic.com/ko/runfortheoceans" target="_blank" class="btn">지금 참여하기</a>
-                        </div>
-                    </div>
-                </div>
+							<li data-index="1">
+								<div class="title">
+									<p>KARLIE KLOSS</p>
+									언제나 차이를 만들어내는 그녀
+								</div>
+								<div class="img">
+									<img src="/images/adidas/event/sports17/02kali.jpg" alt="">
+								</div>
+								<div class="num_title"><span>칼리클로스</span></div>
+							</li>
+							<li data-index="2">
+								<div class="title">
+									<p>Mariana Pajon</p>
+									상상력의 바퀴는 끝없이 질주한다
+								</div>
+								<div class="img">
+									<img src="/images/adidas/event/sports17/03maria.jpg" alt="">
+								</div>
+								<div class="num_title"><span>마리아나 파혼</span></div>
 
-                <div class="prd_wrap">
-                    <div class="inner">
+							</li>
+							<li data-index="3">
+								<div class="title">
+									<p>Florencia Galarza</p>
+									오직 열정으로 삶을 채우다
+								</div>
+								<div class="img">
+									<img src="/images/adidas/event/sports17/04floren.jpg" alt="">
+								</div>
+								<div class="num_title"><span>플로렌시아 갈라자</span></div>
 
-                        <div class="slider_title">
-                            <ul>
-                                <li class="on">
-                                    <h3 class="adihauseDin">parley white</h3>
-                                    <p class="parley_txt">새로운 컬렉션의 화이트 컬러는 해양 생태계를 위협하는 산호 백화 현상의 심각성을 환기하는 아디다스의 메시지입니다.</p>
-                                </li>
-                                <li>
-                                    <h3 class="adihauseDin">parley white</h3>
-                                    <p class="parley_txt">새로운 컬렉션의 화이트 컬러는 해양 생태계를 위협하는 산호 백화 현상의 심각성을 환기하는 아디다스의 메시지입니다.</p>
-                                </li>
-                            </ul>
-                        </div>
+							</li>
+							<li data-index="4">
+								<div class="title">
+									<p>Chinae Alexander</p>
+									그녀에게 자석처럼 끌리다
+								</div>
+								<div class="img">
+									<img src="/images/adidas/event/sports17/05chinei.jpg" alt="">
+								</div>
+								<div class="num_title"><span>치네이 알렉산더</span></div>
 
-                        <div class="banner_slider_wrap">
-                            <ul id="parley_slider">
-                                <li>
-                                    <div class="slide_box" data-item="0">
-                                        <img src="http://imagem.adidas.co.kr/images/adidas/event/parley_v2/slide1.jpg" alt="">
-                                        <p class="adihauseDin prd_title">ULTRABOOST PARLEY</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="slide_box" data-item="1">
-                                        <img src="http://imagem.adidas.co.kr/images/adidas/event/parley_v2/slide1.jpg" alt="">
-                                        <p class="adihauseDin prd_title">ULTRABOOST UNCAGED</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- slider -->
+							</li>
+							<li data-index="5">
+								<div class="title">
+									<p>Becky Sauerbrunn</p>
+									상상력이 챔피언을 만든다
+								</div>
+								<div class="img">
+									<img src="/images/adidas/event/sports17/06beki.jpg" alt="">
+								</div>
+								<div class="num_title"><span>베키 사우어브런</span></div>
 
-                        <div class="slider_imgs">
-                            <ul>
-                                <li class="on">
-                                    <img src="http://imagem.adidas.co.kr/images/adidas/event/parley_v2/slide1_img.jpg" alt="">
-                                    <h3 class="adihauseDin">ULTRABOOST PARLEY</h3>
-                                    <p class="parley_txt">
-                                        발을 완벽히 감싸는 실루엣으로 활기찬 에너지를 발산하는 <br>
-                                        "몰디브 블루" 갑피와 백색 반점은 산호 백화 현상과<br>
-                                        해양 환경 문제의 심각성을 환기하는 디자인입니다.<br>
-                                        끊임없는 에너지 리턴의 부스트 미드솔과 프라임니트 갑피를<br>
-                                        제작하는데 11개의 플라스틱 병의 재활용됩니다.<br>
-                                        발상의 전환이 낳은 친환경 솔루션에 동참해보세요.
-                                    </p>
-                                    <a href="#" class="btn">제품 구매하기</a>
+							</li>
+							<li data-index="6">
+								<div class="title">
+									<p>Candace Parker</p>
+									게임의 판을 흔들다
+								</div>
+								<div class="img">
+									<img src="/images/adidas/event/sports17/07candis.jpg" alt="">
+								</div>
+								<div class="num_title"><span>캔디스 파커</span></div>
 
-                                </li>
-                                <li>
-                                    <img src="http://imagem.adidas.co.kr/images/adidas/event/parley_v2/slide2_img.jpg" alt="">
-                                    <h3 class="adihauseDin">ULTRABOOST UNCAGED</h3>
-                                    <p class="parley_txt">
-                                        최상의 반응성과 충격 흡수력, 에너지 리턴을 제공하는 부스트 미드솔과<br>
-                                        프라임니트 갑피의 95%가 팔리 오션 플라스틱으로 제작되었습니다.<br>
-                                        한 켤레를 만들 때마다 11개의 플라스틱 병이 바다에서 회수됩니다.<br>
-                                        <strong>
-                                            누구도 원치 않는 해양 오염을,<br>
-                                            모두가 원하는 신발로 해결하다.
-                                        </strong>
-                                    </p>
-                                    <a href="#" class="btn">제품 구매하기</a>
+							</li>
+							<li data-index="7">
+								<div class="title">
+									<p>Hannah Bronfman</p>
+									삶이란 여행을 마음껏 즐기다
+								</div>
+								<div class="img">
+									<img src="/images/adidas/event/sports17/08hanna.jpg" alt="">
+								</div>
+								<div class="num_title"><span>한나 브론프만</span></div>
 
-                                </li>                                
-                            </ul>
-                        </div>
+							</li>
+							<li data-index="8">
+								<div class="title">
+									<p>Miho Nonaka</p>
+									나만의 길을 열어가다
+								</div>
+								<div class="img">
+									<img src="/images/adidas/event/sports17/09miho.jpg" alt="">
+								</div>
+								<div class="num_title"><span>미호 노나카</span></div>
+
+							</li>
+							<li data-index="9">
+								<div class="title">
+									<p>Ally Love</p>
+									에너지의 무한발산
+								</div>
+								<div class="img">
+									<img src="/images/adidas/event/sports17/10love.jpg" alt="">
+								</div>
+								<div class="num_title"><span>앨리 러브</span></div>
+
+							</li>
+							<li data-index="10">
+								<div class="title">
+									<p>Ruqsana Begum</p>
+									스포츠, 여성을 해방하다
+								</div>
+								<div class="img">
+									<img src="/images/adidas/event/sports17/01ruk.jpg" alt="">
+								</div>
+								<div class="num_title"><span>럭사나 비검</span></div>
+
+							</li>
+
+						</ul>
+						<div id="test"></div>
+
+					</div>
+
+				</div>
+				<div class="gal">
+					<ul>
+
+						<!-- 칼리 -->
+						<li class="on">
+							<div class="video">
+								<img src="/images/adidas/event/sports17/02kali_video.jpg" alt="">
+								<a href="#none" class="video-button" data-video-id="4BOZXLcKmW8"><img src="/images/adidas/event/sports17/play.png" alt=""></a>
+							</div>
+							<div class="view">
+								<img src="/images/adidas/event/sports17/02kaliimg1.jpg" alt="">
+								<img src="/images/adidas/event/sports17/02kaliimg2.jpg" alt="">
+							</div>
+						</li>
+						<!-- 마리아나 -->
+						<li>
+							<div class="video">
+								<img src="/images/adidas/event/sports17/03maria_video.jpg" alt="">
+								<a href="#" class="video-button"><img src="/images/adidas/event/sports17/play.png" alt=""></a>
+							</div>
+							<div class="view">
+								<img src="/images/adidas/event/sports17/03maria_img1.jpg" alt="">
+								<img src="/images/adidas/event/sports17/03maria_img2.jpg" alt="">
+							</div>
+						</li>
+						<!-- 플로렌시아 -->
+						<li>
+							<div class="video">
+								<img src="/images/adidas/event/sports17/04floren_video.jpg" alt="">
+								<a href="#" class="video-button" data-video-id="BzvUm6JuLus"><img src="/images/adidas/event/sports17/play.png" alt=""></a>
+							</div>
+							<div class="view">
+								<img src="/images/adidas/event/sports17/04floren_img1.jpg" alt="">
+								<img src="/images/adidas/event/sports17/04floren_img2.jpg" alt="">
+							</div>
+						</li>
+						<!-- 치네이 알렉산더 -->
+						<li>
+							<div class="video">
+								<img src="/images/adidas/event/sports17/05chinei_video.jpg" alt="">
+								<a href="#" class="video-button"><img src="/images/adidas/event/sports17/play.png" alt=""></a>
+							</div>
+							<div class="view">
+								<img src="/images/adidas/event/sports17/05chinei_img1.jpg" alt="">
+								<img src="/images/adidas/event/sports17/05chinei_img2.jpg" alt="">
+							</div>
+						</li>
+						<!-- 베키 -->
+						<li>
+							<div class="video">
+								<img src="/images/adidas/event/sports17/06beki_video.jpg" alt="">
+								<a href="#" class="video-button"><img src="/images/adidas/event/sports17/play.png" alt=""></a>
+							</div>
+							<div class="view">
+								<img src="/images/adidas/event/sports17/06beki_img1.jpg" alt="">
+								<img src="/images/adidas/event/sports17/06beki_img2.jpg" alt="">
+							</div>
+						</li>
+						<!-- 캔디스 -->
+						<li>
+							<div class="video">
+								<img src="/images/adidas/event/sports17/07candis_video.jpg" alt="">
+								<a href="#" class="video-button"><img src="/images/adidas/event/sports17/play.png" alt=""></a>
+							</div>
+							<div class="view">
+								<img src="/images/adidas/event/sports17/07candis_img1.jpg" alt="">
+								<img src="/images/adidas/event/sports17/07candis_img2.jpg" alt="">
+							</div>
+						</li>
+						<!-- 한나 -->
+						<li>
+							<div class="video">
+								<img src="/images/adidas/event/sports17/08hanna_video.jpg" alt="">
+								<a href="#" class="video-button"><img src="/images/adidas/event/sports17/play.png" alt=""></a>
+							</div>
+							<div class="view">
+								<img src="/images/adidas/event/sports17/08hanna_img1.jpg" alt="">
+								<img src="/images/adidas/event/sports17/08hanna_img2.jpg" alt="">
+							</div>
+						</li>
+						<!-- 미호 -->
+						<li>
+							<div class="video">
+								<img src="/images/adidas/event/sports17/09miho_video.jpg" alt="">
+								<a href="#" class="video-button"><img src="/images/adidas/event/sports17/play.png" alt=""></a>
+							</div>
+							<div class="view">
+								<img src="/images/adidas/event/sports17/09miho_img1.jpg" alt="">
+								<img src="/images/adidas/event/sports17/09miho_img2.jpg" alt="">
+							</div>
+						</li>
+						<!-- 앨리 -->
+						<li>
+							<div class="video">
+								<img src="/images/adidas/event/sports17/10love_video.jpg" alt="">
+								<a href="#" class="video-button"  data-video-id="ZgzvjJzTWPw"><img src="/images/adidas/event/sports17/play.png" alt=""></a>
+							</div>
+							<div class="view">
+								<img src="/images/adidas/event/sports17/10love_img1.jpg" alt="">
+								<img src="/images/adidas/event/sports17/10love_img2.jpg" alt="">
+							</div>
+						</li>
+						<!-- 럭시나 -->
+						<li>
+							<div class="video">
+								<img src="/images/adidas/event/sports17/01ruk_video.jpg" alt="">
+								<a href="#" class="video-button" data-video-id="l18_qzPCA8U"><img src="/images/adidas/event/sports17/play.png" alt=""></a>
+							</div>
+							<div class="view">
+								<img src="/images/adidas/event/sports17/01rukimg1.jpg" alt="">
+								<img src="/images/adidas/event/sports17/01rukimg2.jpg" alt="">
+							</div>
+						</li>
+
+					</ul>
+					<div class="gal_btn">
+						<a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=226">그녀들의 스포츠 룩 보기<span class="icons"></span></a>
+					</div>
+				</div>
+
+        <div class="banner" style="position:relative;">
+          <a href="https://www.instagram.com/adidaswomen_kr/" class="insta" style="position:absolute; top:80%; left:0; width:50%; height:10.5rem; "></a>
+          <a href="https://www.facebook.com/mygirls.kr/?fref=ts" class="facebook" style="position:absolute; top:80%; right:0; width:50%; height:10.5rem; "></a>
+          <img src="http://imagem.adidas.co.kr/images/adidas/event/sports17/banner.jpg" style="width:100%;">
+        </div>
+
+      </div>
+			<!-- //sports17 -->
+
+			<script type="text/javascript">
+
+				(function($){
+
+					var ctgrAry = [
+						'칼리 클로스',
+						'마리아나 파혼',
+						'플로렌시아 갈라자',
+						'치네이 알렉산더',
+						'베키 사우어브런',
+						'캔디스 파커',
+						'한나 브론프만',
+						'미호 노나카',
+						'앨리 러브',
+						'럭사나 비검'
+					];
+
+					var curCtgr = 'karlie';
+					var sliderIndex = 1;
+					var linkForMen = 'http://shop.adidas.co.kr';
+					var linkForWomen = 'http://shop.reebok.co.kr';
+
+					// sports17
+
+
+					var owlProducts = $('.slider_section .slider').owlCarousel({
+							navigation: true,
+							stagePadding: 0,
+							nav: true,
+							pagination : true,
+    						paginationNumbers: false,
+							margin:50,
+							items : 1,
+							merge: true,
+							loop : true,
+
+						});
+
+					owlProducts.on('changed.owl.carousel', function(event) {
+
+						$('.gal li').removeClass('on');
+						// $('.gal li').eq(1).fadeIn();
+						$('.gal li').eq(event.item.index-2).addClass('on');
+						console.log(event.item.index);
+            if (event.item.index == 12) {
+              $('#sports17 .gal ul li').eq(0).addClass('on');
+
+            }
+					});
+
+					// $('.slider_section .owl-dots .owl-dot').each(function(index){
+					// 	$(this).find('span').text(ctgrAry[index]);
+					// });
+
+					var _index = $('.slider_section .owl-item.active').children('li').attr('data-index'); //0 ~ 9
+
+					// window.onload = function() {
+					// 	$('.gal li').fadeOut();
+					// 	$('.gal li').eq(0).fadeIn();
+
+					// }
+
+					// $('.owl-next').click(function(){
+					// 	var _index = $('.slider_section .owl-item.active').children('li').attr('data-index'); //1 ~ 9
+					// 	$('.gal li').fadeOut();
+					// 	// $('.gal li').eq(1).fadeIn();
+					// 	$('.gal li').eq(_index).fadeIn();
+					// 	// owlProducts.next();
+
+					// });
+
+
+					// video
+					$('.video-button').bind('click',function(){
+						var ytbId = $(this).attr('data-video-id');
+						var html = '<div id="video-layer" style="">';
+						html += '	<div class="bg" ></div>';
+						html += '	<div class="video-box"></div>';
+						html += '	<a href="javascript:void(0)" class="close_x_btn white"></a>';
+						html += '</div>';
+
+						$('html').css({overflow: 'hidden'});
+						$('body').append(html);
+
+						$('#video-layer .close_x_btn').bind('click',function(){
+							$('html').css({overflow: 'scroll'});
+							$('#video-layer ').remove();
+						});
+
+
+						setTimeout(function(){
+							$('#video-layer').addClass('loaded');
+
+							$('#video-layer .video-box').append('<iframe width="100%" height="100%" src="http://www.youtube.com/embed/'+ytbId+'?rel=0" frameborder="0" allowfullscreen></iframe>')
+						},100);
+						return false;
+					});
 
 
 
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="img1"></div>
-                    <div class="img2"></div>
-                    <div class="img3"></div>
-                    <div class="img4">
-                        <div class="txt">
-                            <p class="title">THE STORY SO FAR</p>
-                            <p>바닷속에 잠겨있던 플라스틱에서 기적을 인양하다</p>
-                        </div>
-                    </div>
-                    <div class="img5"></div>
-                    <div class="img6"></div>
-                </div>
-
-                <div class="bottom">
-                    <div class="inner">
-                    <h3>러닝의 새로운 미래를 <br>경험하세요</h3>
-                    <p>
-                        아디다스와 팔리(Parley)는 플라스틱 사용을 <br>
-                        지양하고 있습니다. 우리의 여정은 이제 시작일 뿐입니다.<br>
-                        팔리의 창단 멤버인 아디다스는 친환경 혁신 기술과 R&D,<br>
-                        계획 시행과 교육, 커뮤니케이션 분야에서 팔리를<br>
-                        지원하고 있습니다. 아디다스의 환경 친화적 혁신 프로그램과<br>
-                        새로운 제품에 대한 지속적인 관심을 보여주시기 바랍니다.
-                    </p>
-                    <a href="http://m.adidas.co.kr/MO/Event/subEventView.action?evtNo=5" class="btn">sign up for the future</a>
-                    </div>
-                </div>
 
 
-				<script type="text/javascript">
-					(function($){
+				})(jQuery);
 
-                        var parley_slider = $('#parley_slider').owlCarousel({
-                            stagePadding: 60,
-                            margin:12,
-                            items : 1,
-                            merge: true,
-                            loop : true,
-                            navigation: true,
-                            nav: true,
-                            slideSpeed: 1000,
-                            rewindSpeed:1000
-                        });
-
-                        parley_slider.on('changed.owl.carousel',function(event){
-                            var index = $(event.currentTarget).find('.owl-stage .owl-item').eq(event.item.index).find('.slide_box').attr('data-item');
-                            $('.slider_title ul li').removeClass('on').eq(index).addClass('on');
-                            $('.slider_imgs ul li').removeClass('on').eq(index).addClass('on');
-                        });
-
-                        $('.video-button').bind('click',function(){
-                            var ytbId = $(this).attr('data-video-id');
-                            var html = '<div id="video-layer" style="">';
-                            html += '	<div class="bg" ></div>';
-                            html += '	<div class="video-box"></div>';
-                            html += '	<a href="javascript:void(0)" class="close_x_btn white"></a>';
-                            html += '</div>';
-
-                            $('html').css({overflow: 'hidden'});
-                            $('body').append(html);
-
-                            $('#video-layer .close_x_btn').bind('click',function(){
-                                $('html').css({overflow: 'scroll'});
-                                $('#video-layer ').remove();
-                            });
-
-
-                            setTimeout(function(){
-                                $('#video-layer').addClass('loaded');
-
-                                $('#video-layer .video-box').append('<iframe width="100%" height="100%" src="http://www.youtube.com/embed/'+ytbId+'?rel=0" frameborder="0" allowfullscreen></iframe>')
-                            },100);
-
-
-                        });
-
-
-
-
-
-					})(jQuery);
-				</script>
-
-
-            </div>
-            <!-- parley -->
-
-            <div class="go_top">
-				<a href="#">BACK TO TOP</a>
-			</div>
-
+			</script>
 
 		</div>
-		<!-- //container product_view -->
+		<!-- //container product_list -->
 
 		<div id="footer">
 			<div class="f_menu">
@@ -669,7 +908,33 @@
 	</div>
 
 	<script type="text/javascript" src="/js/adidas/common.js"></script>
+	<script type="text/javascript">
 
+		var openPopInStock;
+		(function($){
+
+			openPopInStock = function(){
+				$('#instock-notification-popup').addClass('open');
+			};
+
+			$('.view_type_btn a').bind('click',function(){
+				if($(this).hasClass('on')){
+					return;
+				}
+
+				if($(this).hasClass('box_type')){
+					$('.products_list').removeClass('list_type')
+				}else{
+					$('.products_list').addClass('list_type');
+				}
+
+				$('.view_type_btn a').removeClass('on');
+				$(this).addClass('on');
+			});
+
+		})(jQuery);
+
+	</script>
 
 </body>
 
