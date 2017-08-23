@@ -140,18 +140,25 @@
 							<h2><img src="http://imagem.reebok.co.kr/images/reebok/about/craft_by_fitness/video_txt.png" alt=""></h2>
 							<a href="javascript:void(0)" class="show_video" data-video-id="rrfhup_Y7hg">풀영상 보기</a>
 						</div>
-						<div class="ctgr">
-							<div class="ctgr_inn">
-								<div class="w"><span>LUX 타이츠 보러가기</span></div>
-								<div class="m"><span>EPIC 쇼츠 보러가기</span></div>
-							</div>
-						</div>
 						<div class="video_layer">
 							<a href="javascript:void(0)" class="close"></a>
 							<div id="video_box"></div>
 						</div>
 					</div>
 					<!--// video_visual -->
+
+					<div class="banner" style="padding:0 0 1rem 0;">
+						<a href="http://www.spartanracekr.com/" target="_blank">
+							<img src="http://imagem.reebok.co.kr/images/reebok/about/craft_by_fitness/spartan_banner.jpg" alt="">
+						</a>
+					</div>
+
+					<div class="ctgr">
+						<div class="ctgr_inn">
+							<div class="w"><span>LUX 타이츠 보러가기</span></div>
+							<div class="m"><span>EPIC 쇼츠 보러가기</span></div>
+						</div>
+					</div>
 
 					<div class="prd_wrapper">
 
@@ -231,10 +238,10 @@
 												<div class="slide_box">
 													<div class="img">
 														<div class="slide_box_bg">
-															<a class="link prd_ready" href="#"></a>
+															<a class="link" href="http://m.reebok.co.kr/MO/Product/prdDispBas.action?prodCD=CF1391"></a>
 															<div class="buy">구매하기</div>
 														</div>
-														<img src="http://imagem.reebok.co.kr/images/reebok/about/craft_by_fitness/col_w2.jpg" alt="">
+														<img src="http://imagem.reebok.co.kr/images/reebok/about/craft_by_fitness/col_w2_v2.jpg" alt="">
 													</div>
 													<div class="txt">
 														<p>WOMEN'S TRAINING</p>
@@ -311,15 +318,15 @@
 
 							});
 
-					      var tag = document.createElement('script');
+						  var tag = document.createElement('script');
 
-					      tag.src = "https://www.youtube.com/iframe_api";
-					      var firstScriptTag = document.getElementsByTagName('script')[0];
-					      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+						  tag.src = "https://www.youtube.com/iframe_api";
+						  var firstScriptTag = document.getElementsByTagName('script')[0];
+						  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-					      var player;
-					      function loadVideo(videoId,targetId) {
-					        player = new YT.Player(targetId, {
+						  var player;
+						  function loadVideo(videoId,targetId) {
+							player = new YT.Player(targetId, {
 									height: '100%',
 									width: '100%',
 									videoId: videoId,
@@ -332,27 +339,27 @@
 										modestbranding : 1,
 										rel : 0
 									}
-					        });
+							});
 
-					        player.playVideo();
-					      }
+							player.playVideo();
+						  }
 
-					      // 4. The API will call this function when the video player is ready.
-					      function onPlayerReady(event) {
-					        event.target.playVideo();
-					      }
+						  // 4. The API will call this function when the video player is ready.
+						  function onPlayerReady(event) {
+							event.target.playVideo();
+						  }
 
-					      // 5. The API calls this function when the player's state changes.
-					      var done = false;
-					      function onPlayerStateChange(event) {
-					        if (event.data == YT.PlayerState.PLAYING && !done) {
-					          setTimeout(stopVideo, 6000);
-					          done = true;
-					        }
-					      }
-					      function stopVideo() {
-					        player.stopVideo();
-					      }
+						  // 5. The API calls this function when the player's state changes.
+						  var done = false;
+						  function onPlayerStateChange(event) {
+							if (event.data == YT.PlayerState.PLAYING && !done) {
+							  setTimeout(stopVideo, 6000);
+							  done = true;
+							}
+						  }
+						  function stopVideo() {
+							player.stopVideo();
+						  }
 
 							  // collention
 							  var productsSlider1 = Swipe(document.getElementById('collection_slider'),{
@@ -373,7 +380,7 @@
 								  return false
 							  });
 
-						  	var mindex = $(this).index();
+							var mindex = $(this).index();
 							var prd_pos_array = [];
 							var offsetCon = $('.prd_content').offset();
 
@@ -395,7 +402,7 @@
 
 								var box1 = [
 									'<div class="video" style="padding-top:30px;"><video autoplay="" loop="" muted="" playsinline="" poster="http://imagem.reebok.co.kr/images/reebok/about/craft_by_fitness/w_1.jpg"><source src="http://imagem.reebok.co.kr/images/reebok/about/craft_by_fitness/w_1.mp4" type="video/mp4" /></video></div><div class="txt"><p class="title"><em>01</em><br>완벽한 핏</p><p>복부를 탄탄하게 잡아주는 와이드 앵글 허리밴드</p></div>',
-									'<div class="video" style="padding-top:30px;"><video autoplay="" loop="" muted="" playsinline="" poster="http://imagem.reebok.co.kr/images/reebok/about/craft_by_fitness/m1.jpg"><source src="http://imagem.reebok.co.kr/images/reebok/about/craft_by_fitness/m_1.mp4" type="video/mp4" /></video></div><div class="txt"><p class="title"><em>01</em><br>자유로운 움직임 </p><p>4-WAY 스트레치 원단과 사이드 슬릿으로 어떤 동작에도자유로운 움직임 </p></div>'
+									'<div class="video" style="padding-top:30px;"><video autoplay="" loop="" muted="" playsinline="" poster="http://imagem.reebok.co.kr/images/reebok/about/craft_by_fitness/m1.jpg"><source src="http://imagem.reebok.co.kr/images/reebok/about/craft_by_fitness/m_1.mp4" type="video/mp4" /></video></div><div class="txt"><p class="title"><em>01</em><br>자유로운 움직임 </p><p>4-WAY 스트레치 원단과 사이드 슬릿으로 어떤 동작에도 자유로운 움직임 </p></div>'
 								];
 								var box2 = [
 									'<div class="video"><video autoplay="" loop="" muted="" playsinline="" poster="http://imagem.reebok.co.kr/images/reebok/about/craft_by_fitness/w_2.jpg"><source src="http://imagem.reebok.co.kr/images/reebok/about/craft_by_fitness/w_2.mp4" type="video/mp4" /></video></div><div class="txt"><p class="title"><em>02</em><br>지속적인 편안함 </p><p>바디라인을 매끈하게 연출하는 플랫락 방식의 측면 솔기</p></div>',
@@ -415,34 +422,34 @@
 										slide0 : {
 											img : 'col_w1.jpg',
 											title : "<p>WOMEN'S TRAINING</p>럭스 타이츠 싸이매틱",
-											link : '<a class="link" href="http://m.reebok.co.kr/MO/Product/prdDispBas.action?prodCD=BR2619"></a>'
+											link : '<a class="link" href="http://m.reebok.co.kr/MO/Product/prdDispBas.action?prodCD=BR2619"></a><div class="buy">구매하기</div>'
 										},
 										slide1 : {
-											img : 'col_w2.jpg',
+											img : 'col_w2_v2.jpg',
 											title : "<p>WOMEN'S TRAINING</p>럭스 하이 라이즈 타이츠",
-											link : '<a class="link prd_ready" href="#" onClick="readtFunc(); return false;"></a>'
+											link : '<a class="link" href="http://m.reebok.co.kr/MO/Product/prdDispBas.action?prodCD=CF1391"></a><div class="buy">구매하기</div>'
 										},
 										slide2 : {
 											img : 'col_w3.jpg',
 											title : "<p>WOMEN'S TRAINING</p>럭스 볼드타이츠 브릴리언",
-											link : '<a class="link" href="http://m.reebok.co.kr/MO/Product/prdDispBas.action?prodCD=BR2746"></a>'
+											link : '<a class="link" href="http://m.reebok.co.kr/MO/Product/prdDispBas.action?prodCD=BR2746"></a><div class="buy">구매하기</div>'
 										}
 									},
 									{
 										slide0 : {
 											img : 'col_m1.jpg',
 											title : "<p>MEN'S TRAINING</p>에픽 쇼츠",
-											link : '<a class="link" href="http://m.reebok.co.kr/MO/Product/prdDispBas.action?prodCD=CE6135"></a>'
+											link : '<a class="link" href="http://m.reebok.co.kr/MO/Product/prdDispBas.action?prodCD=CE6135"></a><div class="buy">구매하기</div>'
 										},
 										slide1 : {
 											img : 'col_m2.jpg',
 											title : "<p>MEN'S TRAINING</p>에픽 엔듀어 쇼츠",
-											link : '<a class="link" href="http://m.reebok.co.kr/MO/Product/prdDispBas.action?prodCD=BR4857"></a>'
+											link : '<a class="link" href="http://m.reebok.co.kr/MO/Product/prdDispBas.action?prodCD=BR4857"></a><div class="buy">구매하기</div>'
 										},
 										slide2 : {
 											img : 'col_m3.jpg',
 											title : "<p>MEN'S TRAINING</p>에픽 라이트웨이트 쇼츠",
-											link : '<a class="link" href="http://m.reebok.co.kr/MO/Product/prdDispBas.action?prodCD=BR4845"></a>'
+											link : '<a class="link" href="http://m.reebok.co.kr/MO/Product/prdDispBas.action?prodCD=BR4845"></a><div class="buy">구매하기</div>'
 										}
 									}
 								];
@@ -489,10 +496,10 @@
 								if(mindex==1){
 									$('.craft_by_fitness .prd_wrapper .prd_content').addClass('men');
 									// men collection link
-									$('.craft_by_fitness .prd_wrapper .prd_content.men .navi .button_area').html('<a href="http://m.reebok.co.kr/MO/Promotion/landingPage.action?pageNo=356">EPIC 컬렉션 구매하기</a>')
+									$('.craft_by_fitness .prd_wrapper .prd_content.men .navi .button_area').html('<a href="http://m.reebok.co.kr/MO/Promotion/landingPage.action?pageNo=356" style="font-size:1rem;">EPIC 컬렉션 구매하기</a>')
 									$('.craft_by_fitness .prd_wrapper .prd_content.men .col .small_title.red').html('MEET THE EPIC FAMILY<span></span>')
 								}else{
-									$('.craft_by_fitness .prd_wrapper .prd_content.men .navi .button_area').html('<a href="http://m.reebok.co.kr/MO/Promotion/landingPage.action?pageNo=355">LUX 컬렉션 구매하기</a>')
+									$('.craft_by_fitness .prd_wrapper .prd_content.men .navi .button_area').html('<a href="http://m.reebok.co.kr/MO/Promotion/landingPage.action?pageNo=355" style="font-size:1rem;">LUX 컬렉션 구매하기</a>')
 									$('.craft_by_fitness .prd_wrapper .prd_content.men .col .small_title.red').html('MEET THE LUX FAMILY<span></span>')
 								}
 
@@ -537,7 +544,6 @@
 
 					})(jQuery);
 				</script>
-
 			</section>
 			<!-- //contents -->
 
