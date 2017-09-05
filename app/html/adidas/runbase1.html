@@ -1187,9 +1187,39 @@
 			</div>
 		</div>
 	</div>
+	<!-- 170904 ar 아디다스 러너 팝업 -->
+	<style>
+		.layerpopup-ar_adidas_runner .close_x_btn:after{background: none;}
+		.layerpopup-ar_adidas_runner .close_x_btn:before{background: none;}
+	</style>
+	<div class="layerpopup-wrapper layerpopup-ar_adidas_runner">
+		<div class="overlay" style="background: rgba(0, 0, 0, 0.7);"></div>
+		<div class="layerpopup" style="background:none;">
+			<div class="header">
+				<div class="close_x_btn" href="javascript:void(0)" style="-webkit-transform: translate3d(0,-100%,0);transform: translate3d(0,-100%,0);background:url('http://imagem.adidas.co.kr/images/adidas/ar_pop_btn_cancel_201709.png');    background-size: 100%;"></div>
+			</div>
+			<div class="contents" style="padding: 1.2rem 1rem 0;">
+				<a href="http://m.adidas.co.kr/MO/Club/rsTurnList.action?RS_NO=206&RST_DY=2017-09-09&RST_NO=307&RS_TYPE=02&RS_ONOFF=01"><img src="http://imagem.adidas.co.kr/images/adidas/ar_pop_201709.jpg" alt="" style="width:100%;"></a>
+			</div>
+		</div>
+	</div>
+	<!-- 170904 ar 아디다스 러너 팝업 end-->
+
+
 
 
 	<script type="text/javascript" src="/js/adidas/common.js"></script>
+	<script type="text/javascript">
+
+
+		(function($){
+			$('.layerpopup-ar_adidas_runner .close_x_btn').click(function(){
+				$(this).parents('.header').parent().hide().parent().hide();
+			})
+		})(jQuery)
+
+	</script>
+
 </body>
 
 </html>
