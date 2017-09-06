@@ -495,6 +495,39 @@
                     <a href="http://shop.adidas.co.kr/PF050101.action?S_PROD_NM=eqt"><span>eqt</span>구매하기<em></em></a>
                 </div>
 
+                <div class="play_list">
+                    <div class="player_wrap">
+
+                        <div class="player">
+                            <audio id="music" data-id="music" class="music" preload="true"><source src="/images/adidas/event/eqt/170824/01CLASSOF90S.mp3"></audio>
+                            <div class="audioplayer">
+                                <p><em>1.</em><span><strong> CLASS OF 90S -</strong><br>THE MIXTAPE</span></p>
+                                <button id="pButton1" data-id="pButton1" class="play"></button>
+                                <div id="timeline1" data-id="timeline1" class="timeline"><div id="playhead" data-id="playhead" class="playhead"></div></div>
+                            </div>
+                        </div>
+
+                        <div class="player">
+                            <audio id="music2" data-id="music2" class="music" preload="true"><source src="/images/adidas/event/eqt/170824/02AvantgardeVak.mp3"></audio>
+                            <div class="audioplayer">
+                                <p><em>2.</em><span><strong> Avantgarde Vak -</strong><br>Just Kept</span></p>
+                                <button id="pButton2" data-id="pButton2" class="play"></button>
+                                <div id="timeline2" data-id="timeline2" class="timeline"><div id="playhead2" data-id="playhead2" class="playhead"></div></div>
+                            </div>
+                        </div>
+
+                        <div class="player soon">
+                            <audio id="music3" data-id="music3" class="music" preload="true"><source src="/images/adidas/event/eqt/170824/02AvantgardeVak.mp3"></audio>
+                            <div class="audioplayer">
+                                <p><em>3.</em><span> comming soon</span></p>
+                                <!-- <button id="pButton3" data-id="pButton3" class="play"></button>
+                                <div id="timeline3" data-id="timeline3" class="timeline"><div id="playhead3" data-id="playhead3" class="playhead"></div></div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
             <!-- //eqt -->
             <script type="text/javascript" src="/js/prx.min.js"></script>
@@ -598,6 +631,128 @@
 
 
                     $('#eqt .content .more span').bind('click',makePop);
+
+                    var playList = function(obj){
+                        var wrap = $(obj);
+                        var audio = wrap.find('audio');
+                        var id = audio.attr('data-id');
+                        var music = document.getElementById(id);
+
+                        var duration = music.duration;
+
+                        var pButton = wrap.find('.play');
+
+                        var playhead_ = wrap.find('.playhead');
+                        var playhead_id = playhead_.attr('data-id');
+                        var playhead = document.getElementById(playhead_id);
+
+                        var timeline_ = wrap.find('.timeline');
+                        var timeline_id = timeline_.attr('data-id');
+                        var timeline = document.getElementById(timeline_id);
+
+                        var timelineWidth = timeline.offsetWidth - playhead.offsetWidth;
+
+                        pButton.click(function(){
+
+                            // music.play()
+                            if (music.paused) {
+
+                                document.getElementById('music').pause();
+                                document.getElementById('music2').pause();
+                                document.getElementById('music3').pause();
+                                $(this).parent('.audioplayer').parent('.player').siblings().children('.audioplayer').children('button').attr('class','play');
+
+                                $(this).parent('.audioplayer').parent('.player').siblings().children('.audioplayer').removeClass('active');
+                                $(this).parent('.audioplayer').addClass('active');
+
+
+                                music.play();
+
+                                $(this).attr('class','pause');
+
+                            // pause music
+                            } else {
+                                music.pause();
+                                $(this).attr('class','play');
+                            }
+                        });
+
+
+                        music.addEventListener("timeupdate", timeUpdate, false);
+
+                        timeline.addEventListener("click", function(event) {
+                            moveplayhead(event);
+                            music.currentTime = duration * clickPercent(event);
+                        }, false);
+
+                        function clickPercent(event) {
+                            return (event.clientX - getPosition(timeline)) / timelineWidth;
+                        }
+
+                        // makes playhead draggable
+                        playhead.addEventListener('mousedown', mouseDown, false);
+                        window.addEventListener('mouseup', mouseUp, false);
+
+                        var onplayhead = false;
+
+                        function mouseDown() {
+                            onplayhead = true;
+                            window.addEventListener('mousemove', moveplayhead, true);
+                            music.removeEventListener('timeupdate', timeUpdate, false);
+                        }
+
+                        function mouseUp(event) {
+                            if (onplayhead == true) {
+                                moveplayhead(event);
+                                window.removeEventListener('mousemove', moveplayhead, true);
+                                // change current time
+                                music.currentTime = duration * clickPercent(event);
+                                music.addEventListener('timeupdate', timeUpdate, false);
+                            }
+                            onplayhead = false;
+                        }
+
+                        function moveplayhead(event) {
+                            var newMargLeft = event.clientX - getPosition(timeline);
+
+                            if (newMargLeft >= 0 && newMargLeft <= timelineWidth) {
+                                playhead.style.marginLeft = newMargLeft + "px";
+                            }
+                            if (newMargLeft < 0) {
+                                playhead.style.marginLeft = "0px";
+                            }
+                            if (newMargLeft > timelineWidth) {
+                                playhead.style.marginLeft = timelineWidth + "px";
+                            }
+                        }
+
+                        function timeUpdate() {
+
+                            var playPercent = timelineWidth * (music.currentTime / duration);
+                            // console.log(currentTime)
+                            playhead.style.marginLeft = playPercent + "px";
+                            if (music.currentTime == duration) {
+                                pButton.className = "";
+                                pButton.className = "play";
+                            }
+                        }
+
+
+                        // Gets audio file duration
+                        music.addEventListener("canplaythrough", function() {
+                            duration = music.duration;
+                        }, false);
+
+                        // getPosition
+                        // Returns elements left position relative to top-left of viewport
+                        function getPosition(el) {
+                            return el.getBoundingClientRect().left;
+                        }
+
+                    }
+                    $('.player_wrap .player').each(function(){
+                        playList(this);
+                    });
 
 
 
