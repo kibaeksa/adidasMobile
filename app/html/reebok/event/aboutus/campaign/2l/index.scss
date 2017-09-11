@@ -1,0 +1,253 @@
+@import "./app/MO/reebok/css/scss/about.scss";
+
+.about2l{
+    background: #5c5c5c url('/images/reebok/about/2l/bg.jpg') 0 0 repeat;
+
+    .video_visual{
+        h2{
+            margin-bottom: 1.5rem;
+            text-align: center;
+            img{
+                width: 70%;
+            }
+        }
+
+        .desc{
+            margin-bottom: 1.5rem;
+            font:500 1.7rem/1.3rem 'dinpro cond';
+            text-align: center;
+            color: #fff;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+        .main_sub{
+            text-align: center;
+            padding:0 9rem;
+            img{
+                width: 80%;
+            }
+        }
+
+        .video-btn{
+            margin: 0 auto;
+        }
+    }
+
+    .lookbook{
+        width: 100%;
+        padding-top: 3.5rem;
+        text-align: center;
+
+        h3{
+            margin-bottom: 1.5rem;
+            >*{
+                font:4rem/4.2rem 'QStencil';
+                color: #fff;
+                text-align: center;
+            }
+            p{
+                img{
+                    vertical-align: middle;
+                    width: 12%;
+                    margin-top: -7px;
+                }
+            }
+
+        }
+
+        >.desc{
+            color: #fff;
+            font:1.3rem/1.9rem 'NotoSansKRLight';
+            text-align: center;
+        }
+        >.buy{
+            display: inline-block;
+            margin: 2rem 0;
+            border:1px solid #fff;
+            color:#fff;
+            padding:0 5rem;
+            font:1.3rem/4rem 'NotoSansKRLight';
+
+        }
+
+    }
+    .section{
+        /*슬라이더*/
+        .slider2{
+            position: relative;
+            margin: 1rem 2rem;
+            overflow: hidden;
+            text-align: center;
+            ul{
+                li{
+                    img{
+                        width: 100%;
+                    }
+                    .p_num{
+                        display: inline-block;
+                        width:3.5rem; height: 3.5rem;
+                        vertical-align: middle;
+                        color:#fff;
+                        text-align:center;
+                        cursor: pointer;
+                        font: 1.1rem/2rem 'NotoSansKRLight', 'Nanum Gothic';
+                        em{
+                            margin-left: 1px;
+                            font: 1.3rem/3.5rem 'AdihausDIN';
+                            position: relative;
+                            z-index: 10;
+                            border: 2px solid transparent;
+                        }
+                        a{
+                            content: '';
+                            display: inline-block;
+                            width:100%; height: 100%;
+                            background: #000;
+                            @include opacity (0.7);
+                            position: absolute;
+                            left:0;
+                            &.blink{
+                                -webkit-animation: blink 2.5s linear infinite;
+                                animation: blink 2.5s linear infinite;
+                            }
+                            &.no_active{
+                                background: #000;
+                                @include opacity (0.3);
+                            }
+                            &.on{
+                                background: #b91c23;
+                                @include opacity (0.7);
+                            }
+                            &:hover{
+                                background: #b91c23;
+                                @include opacity (0.7);
+                                em{
+                                    @include opacity (1);
+                                }
+                            }
+
+                        }
+
+                    }
+                }
+            }
+        }
+
+        /*슬라이더 정보css*/
+        .info_section{
+            position: relative;
+            padding:1rem 2rem;
+            height: 14rem;
+            overflow: hidden;
+            .slider_info{
+                position: relative;
+                // display: none;
+                // @include opacity (0);
+                /*170307 코드 개선*/
+                .item{
+                    position: absolute;
+                    top:0;
+                    display: none;
+                    &:after{
+                        content: '';
+                        display: block;
+                        clear:both;
+                    }
+                    .item_img{
+                        width: 30%;
+                        float:left;
+                        text-align: center;
+                        img{
+                            width: 100%;
+                            margin-top: 1rem;
+                        }
+                    }
+                    .item_info{
+                        width: 63%;
+                        float:right;
+                        p{
+                            display:block;
+                            padding-top: 0.5rem;
+                            font: 1.4rem/2rem 'NotoSansKRLight';
+                            color:#fff;
+                            padding-bottom: 0.7rem;
+                            border-bottom: 1px solid #fff;
+                            .p_num{
+                                display: inline-block;
+                                width:2rem; height: 2rem;
+                                vertical-align: middle;
+                                color:#fff;
+                                background: #000;
+                                text-align:center;
+                                cursor: pointer;
+                                font: 1.1rem/2rem 'NotoSansKRLight', 'Nanum Gothic';
+                            }
+                            &.desc{
+                                padding-top: 1rem;
+                                border-bottom: 0px;
+                                font: 1.1rem/1.5rem 'NotoSansKR','Nanum Gothic';
+                                color:#bbb;
+                                letter-spacing: -0.5px;
+                            }
+                        }
+                        a.buy{
+                            color:#f1554c !important;
+                            font: 1.2rem/2rem 'NotoSansKRBold','Nanum Gothic';
+                        }
+                        a.buy:after{
+                            display: inline-block;
+                            padding-left: 5px;
+                        }
+                    }
+                }
+
+            }
+
+        }
+
+    }
+
+    @-webkit-keyframes blink {
+        0% { opacity: .9; }
+        50% { opacity: .3; }
+        100% { opacity: .9; }
+    }
+
+    //1 ,2
+    .p_num.pos1{ position: absolute; left:28%; top:29%; }
+    .p_num.pos2{ position: absolute; left:60%; top:57%; }
+
+    .p_num.pos em{ margin-left:1px; font: 1.3rem/3.5rem 'AdihausDIN'; position: relative; z-index: 10; border:2px solid transparent;}
+
+    .pos5_info{ z-index: 10; }
+    .pos6_info{ z-index: 9; }
+
+    //3 4
+    .p_num.pos7{ position: absolute; left:35%; top:29%; pointer-events: none;}
+    .p_num.pos8{ position: absolute; left:58%; top:58%;pointer-events: none; }
+
+    //5 6
+    .p_num.pos9{ position: absolute; left:59%; top:29%; }
+    .p_num.pos10{ position: absolute; left:20%; top:67%; }
+
+    //7 8
+    .p_num.pos11{ position: absolute; left:59%; top:30%; }
+    .p_num.pos12{ position: absolute; left:56%; top:66%; }
+
+    //9 10 11
+    .p_num.pos13{ position: absolute; left:36%; top:18%; }
+    .p_num.pos14{ position: absolute; left:50%; top:30%; }
+    .p_num.pos15{ position: absolute; left:59%; top:66%; }
+
+
+    .pos7_info{ z-index: 10; }
+    .pos8_info{ z-index: 9; }
+
+
+    @media screen and (min-width: 768px ){
+        .info_section{
+            height: 22rem;
+        }
+    }
+}
+//about2l

@@ -1,0 +1,359 @@
+@import "./app/MO/reebok/css/scss/about.scss";
+
+.nano7_m{
+    .main{
+        @include box-sizing(border-box);
+        position: relative;
+        width: 100%;
+        padding-bottom: 123%;
+        .bg{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            img{
+                width: 100%;
+            }
+        }
+        .logo{
+            position: absolute;
+            top:76%;
+            right:10%;
+            a{
+                display: block;
+                margin-bottom: 0.5rem;
+                padding:0.2rem 2.4rem 0 2.4rem;
+                text-align: center;
+                color:#fff;
+                text-transform: uppercase;
+                font:1.2rem/3.5rem 'dinpro cond','NotoSansKRRegular';
+                border:1px solid #fff;
+            }
+        }
+    }
+    .lookbook{
+        position: relative;
+        padding:1rem 1.2rem 2.5rem 1.2rem;
+        background: url('/images/reebok/about/nano7/main_bg.png') 0 0 no-repeat;
+        background-size:100% 100%;
+        h3{
+            margin: 2rem 3rem 0 3rem;
+            padding:2rem 0 0 0;
+            border-top:2px solid #000;
+            text-align: center;
+            img{
+                width: 100%;
+            }
+            p{
+            display: inline-block;
+            margin:0 auto;
+            padding:3% 4%;
+            color:#000;
+            font:4rem/4.2rem 'QStencil';
+            text-transform: uppercase;
+            }
+        }
+        .desc{
+            margin-bottom:1.5rem;
+            text-align: center;
+            color:#000;
+            text-transform: uppercase;
+            vertical-align: middle;
+
+            font:300 1rem/1.8rem 'NotoSansKRLight';
+
+        }
+        .logo{
+            position: relative;
+            width: 100%;
+            text-align: center;
+            top:87%;
+
+            a{
+                display: inline-block;
+                padding:0.2rem 2.4rem 0 2.4rem;
+                text-align: center;
+                color:#000;
+                text-transform: uppercase;
+                font:1.2rem/3.5rem 'dinpro cond','NotoSansKRRegular';
+                border:1px solid #000;
+            }
+        }
+    }
+    .collections{
+        position: relative;
+        padding: 0;
+        background: #5c5c5c url('/images/reebok/about/gigi_hadid/bg_collection.jpg') 0 0 repeat;
+        background-size: 100% auto;
+        h3{
+            padding: 3.5rem 0px 1.8rem;
+            color: #fff;
+            font:500 2.4rem 'dinpro cond';
+            text-align: center;
+            text-transform: uppercase;
+        }
+        .num_paging{
+            width: 100%;
+            padding: 1rem 0px;
+            position: absolute;
+            bottom:12rem;
+            a{
+                position: relative;
+                margin-right: 3.5rem;
+                width:4rem;
+                height:4rem;
+                color:#000;
+                background: #fff;
+                font:2.5rem/4rem 'reefont-condensed';
+            }
+            a:last-child{
+                margin-right: 0;
+            }
+            a:last-child:after{
+                width: 0;
+            }
+            a:after{
+                position: absolute;
+                top:2rem;
+                left:3.8rem;
+                content: '';
+                width: 5rem;
+                height: 0.2rem;
+                background: #fff;
+            }
+            .on{
+                background: #c3dc81;
+                color: #000;
+            }
+        }
+
+        .collection_cut{
+            overflow: hidden;
+            ul{
+                overflow: hidden;
+                li{
+                    position: relative;
+                    float: left;
+
+                    img{
+                        width: 100%;
+                    }
+                    .txt{
+                        position: absolute;
+                        display: block;
+                        bottom: 0;
+                        padding:0rem 2rem 2rem 2rem;
+                        p.main{
+                            padding-bottom: 1.2rem;
+                            border-bottom:1px solid #c3dc81;
+                            color:#fff;
+                            font:600 1.8rem/1.8rem  'NotoSansKRMedium','Nanum Gothic';
+                        }
+                        p.desc{
+                            color:#fff;
+                            font:500 1.2rem/2rem  'NotoSansKRMedium','Nanum Gothic';
+                            letter-spacing: -1px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .prodlist_wrap{
+            position: relative;
+
+            .prodlist{
+                position: absolute;
+                top: 0;
+                left: 0;
+                padding: 0;
+                opacity: 0;
+                transition:opacity 0.3s;
+                -webkit-transition:opacity 0.3s;
+                z-index: 1;
+
+                .tit{
+                    height: 1.4rem;
+                    overflow: hidden;
+
+                    display: -webkit-box;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space:normal;
+                    -webkit-line-clamp:1;
+                    -webkit-box-orient: vertical;
+                }
+            }
+
+            .active{
+                opacity: 1;
+                z-index: 2;
+            }
+            .fake{
+                position: relative;
+                opacity: 0;
+                visibility: hidden;
+            }
+
+        }
+    }
+    .collections2{
+        padding: 0 1.5rem 1.5rem;
+        background: url('/images/reebok/about/nano7_w/collection2_bg.jpg') 0 no-repeat;
+        background-size: 100% 100%;
+
+        h3{
+            padding: 3.5rem 0px 1rem;
+            color: #fff;
+            font:500 2.4rem 'dinpro cond';
+            text-align: center;
+            text-transform: uppercase;
+            img{
+                @include box-sizing(border-box);
+                padding:0 10px;
+                width: 100%;
+            }
+        }
+        >.desc{
+            @include box-sizing(border-box);
+            padding:0 10px 15px 0;
+            font:500 1rem/1.5rem 'NotoSansKRLight';
+            color:#fff;
+            text-align: center;
+
+        }
+
+        .num_paging{
+            padding: 1rem 0px;
+
+            .on{
+                background: #fff;
+                color: #000;
+                border-color: #fff;
+            }
+        }
+
+        .collection_cut{
+            position: relative;
+            overflow: hidden;
+            ul{
+                overflow: hidden;
+                li{
+                    position: relative;
+                    float: left;
+                    img{
+                        width: 100%;
+                    }
+                }
+            }
+            .navi{
+                position: absolute;
+                top:50%;
+                width: 100%;
+                text-align: center;
+                img{
+                    width: 50%;
+                }
+                .next{
+                    position: absolute;
+                    right:0;
+                }
+                .prev{
+                    position: absolute;
+                    left:0;
+                }
+            }
+
+        }
+        .prodlist_wrap{
+            position: relative;
+
+            .prodlist{
+                // position: absolute;
+                position: relative;
+                top: 0;
+                left: 0;
+                padding: 0;
+                opacity: 0;
+                transition:opacity 0.3s;
+                -webkit-transition:opacity 0.3s;
+                z-index: 1;
+                .box{
+                    .inner{
+                        .info{
+                            padding:20px 0 30px 12px;
+                        }
+                    }
+                }
+                .tit{
+                    height: 1.4rem;
+
+                    display: -webkit-box;
+                    // overflow: hidden;
+                    // overflow: hidden;
+                    // text-overflow: ellipsis;
+                    // white-space:normal;
+                    // -webkit-line-clamp:1;
+                    // -webkit-box-orient: vertical;
+                }
+            }
+
+            .active{
+                opacity: 1;
+                z-index: 2;
+            }
+            .fake{
+                position: relative;
+                opacity: 0;
+                visibility: hidden;
+            }
+
+        }
+    }
+    // .promotion{
+    // 	.top_img{
+    // 		img{
+    // 			width: 100%;
+    // 		}
+    // 	}
+    // 	.map_list{
+    // 		background: #fff;
+    // 		padding:1.5rem 1.2rem 1.2rem 1.2rem;
+    // 		border-bottom:1px solid #ccc;
+    // 		.txt{
+    // 			width: 82%;
+    // 			float: left;
+    // 			.main{
+    // 				font:800 2rem/2rem  'NotoSansKRMedium','Nanum Gothic';
+    // 				letter-spacing: -0.1rem;
+    // 			}
+    // 			.address{
+    // 				font:300 1.1rem/2rem  'NotoSansKRMedium','Nanum Gothic';
+    // 				padding:0.6rem 0 0.2rem 0;
+    // 				letter-spacing: -0.1rem;
+    // 			}
+    // 			.num{
+    // 				color:#6f6f6f;
+    // 				font:300 1.1rem/2rem  'NotoSansKRMedium','Nanum Gothic';
+    // 			}
+
+    // 		}
+    // 		.map_img{
+    // 			width: 18%;
+    // 			float: right;
+    // 			text-align: right;
+    // 			padding: 1.8rem 0;
+    // 			a{
+    // 				// display: inline-block;
+    // 				background: #000;
+    // 				img{
+    // 					width: 50%
+    // 				}
+    // 			}
+    // 		}
+    // 	}
+    // 	.map_list:last-child{
+    // 		border-bottom: 0;
+    // 	}
+    // }
+}
+// nano m
