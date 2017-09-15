@@ -17993,7 +17993,14 @@ em.prd_speedy .tooltip-box:before{
 }
 
 #container.register-main .form_table .row.birth{
+    position: relative;
 	margin-bottom: 30px;
+    transition: margin-bottom 0.2s;
+    -webkit-transition: margin-bottom 0.2s;
+}
+
+#container.register-main .form_table .row.birth.show_tip{
+    margin-bottom: 50px;
 }
 
 #container.register-main .form_table .row.birth>*{
@@ -18009,6 +18016,24 @@ em.prd_speedy .tooltip-box:before{
 #container.register-main .form_table .row.birth>*.dd{
 	-webkit-flex: 0 0 90px;
 	flex: 0 0 90px;
+}
+
+#container.register-main .form_table .row.birth .tip{
+    padding: 0 15px;
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    color:#027dbf;
+    font-size: 0.95rem;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    opacity: 0;
+    transition: opacity 0.15s ease 0.1s;
+    -webkit-transition: opacity 0.15s ease 0.1s;
+}
+
+#container.register-main .form_table .row.birth.show_tip .tip{
+    opacity: 1;
 }
 
 #container.register-main .form_table .row.chk_row>*{
@@ -18054,7 +18079,7 @@ em.prd_speedy .tooltip-box:before{
 
 #container.register-main .agr_box .box{
     position: relative;
-    padding: 8px 10px;
+    padding: 8px 7.2rem 16px 10px;
     border-bottom: 1px solid  #c8cbcc;
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -18076,7 +18101,16 @@ em.prd_speedy .tooltip-box:before{
 }
 
 #container.register-main .agr_box .box label{
+    display: inline-block;
+    padding: 2px 0 0 28px;
     font-size: 1.05rem;
+    line-height: 1.45rem;
+}
+
+#container.register-main .agr_box .box label::before{
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 #container.register-main .agr_box .box.sns{

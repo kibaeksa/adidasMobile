@@ -8599,11 +8599,43 @@ div.prod_manual p.desc strong{color:#3e3e3e;font-size:11px;letter-spacing:-1px;}
 #contents .join .join1 .total_agr p{width:70%;float:left;padding-left:10px;color:#212121;font-size:11px;}
 #contents .join .join1 .terms_list{padding:0 10px;background:#fff;}
 #contents .join .join1 .data_tb_list{margin-bottom:10px;}
-#contents .join .join1 .data_tb_list li{background:#fff;margin-bottom:0;border-bottom:1px dotted #ccc;}
+#contents .join .join1 .data_tb_list li{
+	padding: 5px 0;
+	height: auto;
+	background:#fff;
+	margin-bottom:0;
+	border-bottom:1px dotted #000;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+}
 #contents .join .join1 .data_tb_list li:last-child{border-bottom-width:0;}
-#contents .join .join1 .data_tb_list li strong{width:160px;height:24px;padding-top:16px;font-size:12px;padding-left:0;letter-spacing:-1px;}
+#contents .join .join1 .data_tb_list li>*{
+	width: 100%;
+	padding: 0;
+}
+#contents .join .join1 .data_tb_list li strong{
+	height: auto;
+	display: block;
+	position: relative;
+	font-size:12px;
+	padding: 5px 0 0 0;
+	letter-spacing:-1px;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	word-break:keep-all;
+}
 #contents .join .join1 .data_tb_list li strong span{color: #888;}
-#contents .join .join1 .data_tb_list li .td{margin:0 0 0 120px;padding-top:6px;text-align:right;}
+#contents .join .join1 .data_tb_list li .td{
+	-webkit-flex: 0 0 150px;
+	-ms-flex: 0 0 150px;
+	flex: 0 0 150px;
+	margin: 0;
+	text-align:right;
+}
+#contents .join .join1 .data_tb_list li .td>*{
+	display: inline-block;
+}
 #contents .join .join1 .data_tb_list li .td .chk_dsgn{display:inline-block;}
 #contents .join .join1 .data_tb_list li .td .chk_dsgn label{color:#282828;font-size:11px;}
 #contents .join .join1 .data_tb_list li .td .view_doc{
@@ -8626,6 +8658,9 @@ div.prod_manual p.desc strong{color:#3e3e3e;font-size:11px;letter-spacing:-1px;}
 	padding-top: 2px;
 }
 #contents .join .data_tb_list li.sms_box .td{
+	-webkit-flex: 0 0 100%;
+	-ms-flex: 0 0 100%;
+	flex: 0 0 100%;
 	padding-left: 30px;
 	margin: 0;
 	text-align: left;
