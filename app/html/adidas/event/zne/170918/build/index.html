@@ -1,0 +1,353 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src="/data/eventRouter.js"></script>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+	<meta name="format-detection" content="telephone=no">
+	<meta http-equiv="x-rim-auto-match" content="none">
+
+	<link href="/css/adidas/style.css" type="text/css" rel="stylesheet" />
+	<link href="/css/adidas/fonts.css" type="text/css" rel="stylesheet" />
+
+	<link rel="preload" href="/fonts/adineuePro/woff/adineuePRO-Bold.woff" as="font">
+
+	<script type="text/javascript" src="/js/jquery-1.12.0.min.js"></script>
+	<script type="text/javascript" src="/js/swipe.js"></script>
+	<script type="text/javascript" src="/js/owl.carousel.js"></script>
+
+
+	<title>아디다스 모바일</title>
+</head>
+<body>
+
+	<div class="modal-popup" id="instock-notification-popup">
+		<div class="popup-contents">
+			<a href="javascript:void(0)" class="close_x_btn" onclick="jQuery(this).parent().parent().removeClass('open');"></a>
+			<div class="instock-notification">
+				<div class="tit adipro-b">
+					<div class="icons" data-icon=""></div>coming soon
+				</div>
+				<div class="desc">휴대전화 번호를 남겨 주시면,<br/>제품 입고시 문자로 알려드립니다.</div>
+
+				<div class="phone">
+					<div class="sel_cmtype sel_design">
+						<a href="#" class="toggle_arw s_arw" ><span>010</span></a>
+						<select name="" id="">
+							<option value="2" selected="">010</option>
+							<option value="1">011</option>
+							<option value="5">016</option>
+							<option value="3">017</option>
+							<option value="4">019</option>
+						</select>
+					</div>
+					<input type="tel">
+					<input type="tel">
+				</div>
+
+				<div class="agr_box">
+					<div class="chk_wrap">
+						<div class="chk_box1 blue">
+							<input type="checkbox" id="agr_for_credit" name="SMS_RET_YN" value="Y">
+							<label for="agr_for_credit" class="adipro-r">개인정보 제공동의</label>
+						</div>
+					</div>
+					<a href="javascript:void(0)" class="icons aft" data-icon="" onclick="if(jQuery(this).hasClass('open')){jQuery('.instock-notification .terms').hide();jQuery(this).removeClass('open')}else{jQuery('.instock-notification .terms').show();jQuery(this).addClass('open')}">자세히보기</a>
+				</div>
+				<!-- //agr_box -->
+
+				<div class="terms">
+					<div class="cont">
+						<dl>
+							<dt>개인정보의 수집이용목적 : </dt>
+							<dd>아디다스 제품 입고 알림</dd>
+						</dl>
+						<dl>
+							<dt>수집되는 개인정보 : </dt>
+							<dd>휴대전화번호</dd>
+						</dl>
+						<dl>
+							<dt>보유기간 : </dt>
+							<dd>입고알림 이후 30일 까지(본 보유기간은 아디클럽 회원이 아닌 경우에 한함)</dd>
+						</dl>
+       					<ul class="li_hypn">
+       						<li>아래 동의를 거부할 수 있습니다. 다만 그러한 경우, 아디다스제품이 입고되는 시점에 대한 정보를 우선적으로 전달받으실 수 없습니다. 단, “통신사 사정으로 인한 발송, 수신오류, 고객휴대폰의 스팸등록 등으로 인해 SMS가 전달되지 않을 수 있으며 이러한 경우 아디다스코리아가 책임지지 않습니다.”</li>
+       						<li>입력해주신 휴대폰번호로 안내하겠습니다.</li>
+       					</ul>
+
+					</div>
+				</div>
+
+				<div class="btn_area">
+					<a class="submit">신청하기</a>
+				</div>
+
+			</div>
+			<!-- //instock-notification -->
+		</div>
+	</div>
+
+	<div id="wrap">
+		<div id="header" style="position: relative;">
+			<div class="nav_menu">
+				<div class="nav_menu_inner">
+
+					<div class="u_info1">
+						<a href="#" class="login"><span class="icons" data-icon=""></span>로그인</a>
+						<a href="#" class="join"><span class="icons" data-icon=""></span>회원가입</a>
+					</div>
+
+
+					<div class="u_info2">
+						<a href="#">마이페이지</a>
+						<a href="#">주문배송조회 <span>1</span></a>
+						<a href="#">나의 쿠폰 <span>12</span></a>
+					</div>
+					<ul class="gnb">
+						<li class="strong dep">
+							<a href="#">MEN</a>
+						</li>
+						<li class="strong dep">
+							<a href="#">WOMEN</a>
+						</li>
+						<li class="strong dep">
+							<a href="#">KIDS</a>
+						</li>
+						<li class="dep">
+							<a href="#">SPORTS</a>
+						</li>
+						<li>
+							<a href="#">BRANDS</a>
+						</li>
+					</ul>
+					<div class="ctgr">
+						<div>
+							<a href="#">BEST <span class="icons" data-icon=""></span></a>
+							<a href="#">NEW <span class="icons" data-icon=""></span></a>
+						</div>
+						<div>
+							<a href="#">SALE <span class="icons" data-icon=""></span></span></a>
+							<a href="#">OUTLET <span class="icons" data-icon=""></span></a>
+						</div>
+					</div>
+					<div class="club_ctgr">
+						<a href="#">기획전</a>
+						<a href="#">아디클럽</a>
+						<a href="#">캠페인</a>
+					</div>
+					<div class="viewed_items">
+						<h3>최근 본 상품</h3>
+						<div class="item_list">
+							<div class="slider">
+								<div class="item">
+									<a href="#">
+										<p class="img"><img src="http://m.adidas.co.kr/upload/prod/basic/320/B35270-1_320X320.jpg" alt=""></p>
+										<p class="price">119,000<span>원</span></p>
+									</a>
+								</div>
+
+								<div class="item">
+									<a href="#">
+										<p class="img"><img src="http://m.adidas.co.kr/upload/prod/basic/320/S83386-1_320X320.jpg" alt=""></p>
+										<p class="price">119,000<span>원</span></p>
+									</a>
+								</div>
+
+								<div class="item">
+									<a href="#">
+										<p class="img"><img src="http://m.adidas.co.kr/upload/prod/basic/320/AF6749-1_320X320.jpg" alt=""></p>
+										<p class="price">95,200<span>원</span></p>
+									</a>
+								</div>
+							</div>
+						</div>
+						<!-- //item_list -->
+
+					</div>
+					<!-- //viewed items -->
+
+					<div class="nav_footer">
+						<ul>
+							<li><a href="#">공지사항</a></li>
+							<li><a href="#">고객센터</a></li>
+							<li><a href="#">매장찾기</a></li>
+						</ul>
+						<div>
+							<p>교환 및 반품 문의 (본사로 반품불가) : 온라인스토어 고객센터 <a href="tel:1588-8241">1588-8241</a></p>
+							<p>(평일 9시 – 18시, 점심시간 12시 – 13시)</p>
+						</div>
+					</div>
+				</div>
+				<!-- //nav_menu_inner -->
+			</div>
+			<!-- //nav_menu -->
+
+			<div class="nav_search">
+				<div class="sch_box">
+					<form action="#" method="get">
+						<fieldset>
+							<input type="text" autocomplete="off">
+							<button type="submit" value="검색">
+								<span class="icons"></span>
+							</button>
+						</fieldset>
+					</form>
+				</div>
+				<div class="sch_tab">
+					<a href="#" class="on">최근 검색어</a>
+					<a href="#">인기 검색어</a>
+				</div>
+				<ul class="keyword_recent">
+					<li><a href="#">슈퍼스타<span class="close_x_btn"></span></a></li>
+					<li><a href="#">스탠스미스<span class="close_x_btn"></span></a></li>
+					<li><a href="#">트랙탑<span class="close_x_btn"></span></a></li>
+					<li><a href="#">MI SUPERSTAR<span class="close_x_btn"></span></a></li>
+					<li><a href="#">패딩<span class="close_x_btn"></span></a></li>
+					<li><a href="#">키엘<span class="close_x_btn"></span></a></li>
+					<!-- <li class="no_data">최근 검색하신 내역이 없습니다.</li> -->
+				</ul>
+				<ol class="sch_list" style="display:none;">
+					<li><span>1</span><a href="#">슈퍼스타</a></li>
+					<li><span>2</span><a href="#">수퍼스타</a></li>
+					<li><span>3</span><a href="#">트랙탑</a></li>
+					<li><span>4</span><a href="#">스탠스미스</a></li>
+					<li><span>5</span><a href="#">MI SUPERSTAR</a></li>
+					<li><span>6</span><a href="#">패딩</a></li>
+					<li><span>7</span><a href="#">키엘</a></li>
+					<li><span>8</span><a href="#">이큅먼트</a></li>
+					<li><span>9</span><a href="#">니고</a></li>
+					<li><span>10</span><a href="#">부스트</a></li>
+				</ol>
+				<!-- <div class="bnn"><img src="images/bnn_sch1.jpg" alt=""></div>
+				<div class="bnn"><img src="images/bnn_sch2.jpg" alt=""></div> -->
+			</div>
+
+			<div class="nav_main">
+				<a href="javascript:void(0);" class="btn_slide">
+					<span class="line1"></span>
+					<span class="line2"></span>
+					<span class="line3"></span>
+				</a>
+				<h1><a href="javascript:void(0);" class="logo icons"></a></h1>
+				<a href="#" class="btn_search icons">
+					<span class="icons"></span>
+				</a>
+				<a href="#" class="btn_market icons"></a>
+			</div>
+		</div>
+
+		<div id="container">
+<style type="text/css">@media screen and (max-width: 320px){html{font-size:10px}}@media screen and (min-width: 800px){html{font-size:12px}}.pseudo-element{content:'';display:block}#zne_170918 .block{width:100%;position:relative}#zne_170918 .block .img_wrapper img{width:100%}#zne_170918 .block .copy_wrapper{padding:2.5rem 2.5rem 4rem;box-sizing:border-box;-webkit-box-sizing:border-box}#zne_170918 .block .copy_wrapper>*{text-align:center}#zne_170918 .block .copy_wrapper .title{margin-bottom:0.5rem;text-transform:uppercase;font-size:3rem;line-height:3.2rem;color:#000}#zne_170918 .block .copy_wrapper .desc{margin-bottom:2.5rem;font:400 1rem 'NotoSansKR';color:#000;letter-spacing:-0.75px}#zne_170918 .block .copy_wrapper.white>*{color:#fff}#zne_170918 .button{display:block;text-align:center;width:100%;height:4.8rem;line-height:4.8rem;color:#fff;background:#000;font-size:1.2rem;letter-spacing:1px}#zne_170918 .button .eng{font-family:'AdihausDIN-Bold';text-transform:uppercase;letter-spacing:1px}#zne_170918 .button::after{margin-left:3px;vertical-align:middle}#zne_170918 .button.red{background:#b32d34}#zne_170918 .masthead{background:#121212 url("/images/adidas/event/zne/170918/masthead_bg.jpg") 0 0 no-repeat;background-size:100% auto}#zne_170918 .masthead .copy_wrapper .desc{font-size:1.15rem}#zne_170918 .video_wrapper a{display:block}#zne_170918 .video_wrapper a img{width:100%}#zne_170918 .statement{padding:3.5rem 0px;text-align:center;color:#000;font:400 1.3rem/2.8rem 'NotoSansKR'}#zne_170918 .statement strong{font-weight:700}#zne_170918 .pulse_wrapper{padding:3rem -0px;background:#000}#zne_170918 .pulse_wrapper>*{color:#fff;text-align:center}#zne_170918 .pulse_wrapper .title{font-size:2.7rem;letter-spacing:15px;text-transform:uppercase}#zne_170918 .pulse_wrapper .title strong{letter-spacing:inherit;color:#99191d}#zne_170918 .pulse_wrapper .desc{font-size:1.1rem;line-height:1.6rem;letter-spacing:0;font-weight:300}#zne_170918 .features.features1 .img_wrapper{padding:2.5rem 2.5rem 0}
+</style>
+
+
+			<div id="zne_170918">
+                <div class="masthead block">
+                    <div class="img_wrapper">
+                        <img src="/images/adidas/event/zne/170918/masthead_image.png" alt="">
+                    </div>
+
+                    <div class="copy_wrapper white">
+                        <h2 class="title adipro-bk">Find your beat <br/>Play with heart</h2>
+                        <p class="desc">심장 박동의 영감으로 탄생한 새로운 Z.N.E. 펄스 컬렉션 </p>
+                        <a href="#" class="button icons aft red" data-icon="">
+                            <span class="eng"> Z.N.E. Pulse</span>
+                            구매하기
+                        </a>
+                    </div>
+                </div>
+
+                <div class="video_wrapper block">
+                    <a href="javascript:void(0)"><img src="/images/adidas/event/zne/170918/video_pogba.jpg" alt=""></a>
+                </div>
+
+                <div class="features features1 block">
+                    <div class="img_wrapper">
+                        <img src="/images/adidas/event/zne/170918/features1.jpg" alt="">
+                    </div>
+
+                    <div class="copy_wrapper">
+                        <h2 class="title adipro-bk">The Final<br/>Countdown</h2>
+                        <p class="desc">심전도 패턴에서 영감을 받은 펄스 컬렉션은 보이지 않는<br/>심장 박동을 디자인으로 표현한 아디다스 애슬레틱스의 새로운 컬렉션입니다. </p>
+                        <a href="#" class="button icons aft" data-icon="">
+                            <span class="eng"> Z.N.E. Pulse</span>
+                            구매하기
+                        </a>
+                    </div>
+                </div>
+
+                <div class="pulse_wrapper block">
+                    <div class="title adipro-l">the <strong class="adipro-bk">pulse</strong><br/>of sport</div>
+                    <div class="img_wrapper">
+                        <img src="/images/adidas/event/zne/170918/pulse.jpg" alt="">
+                    </div>
+                    <div class="desc">경기 시작 전 침묵이 흐르는 락커룸. 오직 나만이 존재하는 공간.<br/>지금 들려오는 단 하나의 울림. 나의 심장 박동을 느끼다.</div>
+                </div>
+
+                <div class="video_wrapper block">
+                    <a href="javascript:void(0)"><img src="/images/adidas/event/zne/170918/video_son.jpg" alt=""></a>
+                </div>
+
+                <div class="statement">
+                    스포츠는 단순히 게임이 아니다.<br/>
+                    <strong>나를 나답게 하는 모든 것. 내가 존재하는 이유.</strong><br/>
+                    시계 위 초침처럼 빼곡하게 일상에 침투한다.<br/>
+                    내가 존재하는 모든 순간, 나는 스포츠로 숨을 쉰다.
+                </div>
+
+                <div class="features features2 block">
+                    <div class="img_wrapper">
+                        <img src="/images/adidas/event/zne/170918/features2.jpg" alt="">
+                    </div>
+
+                    <div class="copy_wrapper">
+                        <h2 class="title adipro-bk">Z.N.E. Pulse<br/>Hoodie</h2>
+                        <p class="desc">새로운 Z.N.E. 펄스 후디는 썸 홀과 후드에 적용된 하트비트 패턴으로<br/>선수들의 심장 박동에서 영감을 받은 새로운 디자인을 선보입니다.<br/>부드러운 원단이 완성하는 편안하고 안정감 있는 핏을 경험해보세요. </p>
+                        <a href="#" class="button icons aft" data-icon="">
+                            <span class="eng"> Z.N.E. Pulse</span>
+                            구매하기
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+
+		</div>
+		<!-- //container product_list -->
+
+		<div id="footer">
+			<div class="f_menu">
+				<a href="#">로그인</a>
+				<a href="#">주문/배송조회</a>
+				<a href="#">고객센터</a>
+				<a href="#">매장찾기</a>
+			</div>
+			<div class="f_info">
+				<p class="tit">아디다스코리아(주)</p>
+				<p>137-955 서울특별시 서초구 서초대로 74길 4, 삼성생명 서초타워 9층</p>
+				<p>대표이사 : 쟝 미쉘 그라니에&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;사업자 등록번호 : 214-81-07412</p>
+				<p>교환 및 반품 문의 (본사로 반품불가) : 온라인스토어 고객센터 1588-8241</p>
+				<p>(평일 9시 – 18시, 점심시간 12시 – 13시)</p>
+				<p>제품 수선문의 : 아디다스 고객만족센터 080-022-7981 (평일 09시 – 18시)</p>
+				<p>통신판매업신고 : 2007-서울서초-10391</p>
+				<p>이메일 : adiCLUB_Korea@adidas.com</p>
+				<p>개인정보 관리책임자 : 김동일&nbsp;&nbsp;|&nbsp;&nbsp;개인정보 관리담당자 : 황선영</p>
+				<p><a href="#">개인정보취급방침 확인<span class="ico-arrow-circle"></span></a></p>
+				<ul>
+					<li><a href="#">구매이용약관</a></li>
+					<li><a href="#">채무지급보증안내 확인</a></li>
+					<li><a href="#">공정거래 자율준수</a></li>
+					<li><a href="#">공정거래 위원회 사업자 신원정보 확인</a></li>
+				</ul>
+				<p style="color:#666;">Copyright © 2011 adidas Korea Inc.</p>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="/js/adidas/common.js"></script>
+
+</body>
+
+</html>
