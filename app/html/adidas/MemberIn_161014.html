@@ -573,14 +573,16 @@
 									<input type="checkbox" id="term1">
 									<label for="term1" class="adipro-r">(필수) 구매이용약관동의</label>
 								</div>
-                                <a href="" class="view_more icons" data-icon="">자세히 보기</a>
+                                <!-- 170918 "자세히보기" 부분 코드수정 -->
+                                <a href="" class="view_detail icons" data-icon=""></a>
 							</div>
 							<div class="box">
                                 <div class="chk_box1 line_blue">
 									<input type="checkbox" id="term2">
 									<label for="term2" class="adipro-r">(필수) 개인정보 수집 이용동의</label>
 								</div>
-								<a href="" class="view_more icons" data-icon="">자세히 보기</a>
+                                <!-- 170918 "자세히보기" 부분 코드수정 -->
+                                <a href="" class="view_detail icons" data-icon=""></a>
 							</div>
 
 							<div class="box">
@@ -588,7 +590,8 @@
 									<input type="checkbox" id="term3">
 									<label for="term3" class="adipro-r">(필수) 아디클럽 이용약관</label>
 								</div>
-								<a href="" class="view_more icons" data-icon="">자세히 보기</a>
+                                <!-- 170918 "자세히보기" 부분 코드수정 -->
+                                <a href="" class="view_detail icons" data-icon=""></a>
 							</div>
 
 						</div>
@@ -603,19 +606,23 @@
                                 -->
                                 <label for="term4" class="adipro-r">(필수) 개인정보 취급 위탁동의 (구매 및 배송 등 관련)</label>
                             </div>
-							<a href="" class="view_more icons" data-icon="">자세히 보기</a>
+                            <!-- 170918 "자세히보기" 부분 코드수정 -->
+                            <a href="" class="view_detail icons" data-icon=""></a>
 						</div>
 
 						<div class="box sns">
-                            <div class="chk_box1 line_blue" id="subscribe_agree">
+                            <!--
+                                170918
+                                * (선택) 마케팅 수신동의 ==> (선택) 쿠폰 발급, 회원전용 이벤트 등 안내 수신동의
+                                * 체크박스 삭제
+                            -->
+                            <!-- <div class="chk_box1 line_blue" id="subscribe_agree">
                                 <input type="checkbox" id="agr_subscribe">
-                                <!--
-                                    170915
-                                    (선택) 마케팅 수신동의 ==> (선택) 쿠폰 발급, 회원전용 이벤트 등 안내 수신동의
-                                -->
                                 <label for="agr_subscribe" class="adipro-r">(선택) 쿠폰 발급, 회원전용 이벤트 등 안내 수신동의</label>
-                            </div>
-                             <a href="" class="view_more icons" data-icon="">자세히 보기</a>
+                            </div> -->
+                            <span>(선택) 쿠폰 발급, 회원전용 이벤트 등 안내 수신동의</span>
+                             <!-- 170918 "자세히보기" 부분 코드수정 -->
+                             <a href="" class="view_detail icons" data-icon=""></a>
 						</div>
                         <div class="box subscribe_details" style="border-top: 1px dashed  #b2b2b2;border-bottom-width: 0;">
                             <div class="chk_box1 line_blue">
@@ -700,7 +707,8 @@
 
 					});
 
-
+                    /*
+                    170918 SNS 활성화/비활성화 삭제
 					$('#subscribe_agree').bind('click',function(){
 						if($(this).find('input[type="checkbox"]').prop('checked')){
 							$('.subscribe_details').addClass('active');
@@ -716,6 +724,7 @@
 							return false;
 						}
 					});
+                    */
 
 
                     /*
