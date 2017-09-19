@@ -19,7 +19,7 @@ var sassInject = {
     source : ''
 };
 
-var handleSassInject  = function(_path){
+var handleSassInject  = function(_path , brand){
     if (fs.existsSync(path.resolve(_path))) {
         if(_path.match(/(\W+|\w+)\.scss/)){
             var sassString = fs.readFileSync(path.resolve(_path),'utf8');
@@ -35,7 +35,12 @@ var handleSassInject  = function(_path){
                     sassInject.source = sassInject.source.css.toString();
                     sassInject.path = _path.replace(/(\W+|\w+)\.scss/,'');
 
-                    gulp.start('sass-inline:inject');
+                    if(brand == 'reebok'){
+                        gulp.start('sass-inline-reebok:inject');
+                    }else{
+                        gulp.start('sass-inline:inject');
+                    }
+
                 } catch (e) {
                     console.log(e.message);
                     console.log(e.formatted);
@@ -74,6 +79,14 @@ gulp.task('server',function(){
 gulp.task('sass-inline:inject',function(){
     gulp.src(path.join(sassInject.path,'*.html'))
         .pipe(inject.after('<div id="container">','\n<style type="text/css">'+sassInject.source+'</style>'))
+        .pipe(rename('index.html'))
+        .pipe(gulp.dest(path.join(sassInject.path , 'build')))
+        .pipe(connect.reload());
+});
+
+gulp.task('sass-inline-reebok:inject',function(){
+    gulp.src(path.join(sassInject.path,'*.html'))
+        .pipe(inject.after('<section id="contents">','\n<style type="text/css">'+sassInject.source+'</style>'))
         .pipe(rename('index.html'))
         .pipe(gulp.dest(path.join(sassInject.path , 'build')))
         .pipe(connect.reload());
@@ -124,6 +137,18 @@ gulp.task('watch',function(){
     gulp.watch('./app/html/adidas/event/**/*.html').on('change',function(file){
         if(!file.path.match(/\\build\\?/)){
             handleSassInject(file.path.replace(/(\W+|\w+)\.html/,'index.scss'));
+        }
+    });
+
+    gulp.watch('./app/html/reebok/event/aboutus/campaign/**/*.scss').on('change',function(file){
+        if(!file.path.match(/\\build\\?/)){
+            handleSassInject(file.path , 'reebok');
+        }
+    });
+
+    gulp.watch('./app/html/reebok/event/aboutus/campaign/**/*.html').on('change',function(file){
+        if(!file.path.match(/\\build\\?/)){
+            handleSassInject(file.path.replace(/(\W+|\w+)\.html/,'index.scss') , 'reebok');
         }
     });
 
