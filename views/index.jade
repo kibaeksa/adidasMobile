@@ -240,8 +240,39 @@ html(lang='en')
             }
             
             #wrapper #right-area .inner #iframe_container #iframe_inner{
-                border:40px solid #000;
-                border-radius:20px;
+                position: relative;
+                border: 15px solid #000;
+                border-radius: 20px;
+                border-top-width: 45px;
+                border-bottom-width: 90px;
+                
+            }
+            
+            #wrapper #right-area .inner #iframe_container #iframe_inner::before , 
+            #wrapper #right-area .inner #iframe_container #iframe_inner::after{
+                content:'';
+                display:block;
+                position:absolute;
+                left:50%;
+            }
+            
+            #wrapper #right-area .inner #iframe_container #iframe_inner::before{
+                width: 60px;
+                height: 60px;
+                bottom: -74px;
+                border-radius: 50%;
+                background: #111;
+                margin-left: -30px;
+            }
+            
+            #wrapper #right-area .inner #iframe_container #iframe_inner::after{
+                width: 70px;
+                height: 3px;
+                position: absolute;
+                top: -21px;
+                border-radius: 1px;
+                background: #333;
+                margin-left: -35px;
             }
 
             #wrapper #right-area .inner iframe{
