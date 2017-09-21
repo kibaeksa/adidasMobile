@@ -1,3 +1,7 @@
+var express = require('express');
+var server =require('gulp-express');
+var app = express();
+var jade = require('gulp-jade');
 // for gulp
 var gulp = require('gulp');
 var connect = require('gulp-connect');
@@ -57,11 +61,12 @@ var handleSassInject  = function(_path , brand){
 
 
 gulp.task('server',function(){
-    connect.server({
-        port : 2001,
-        root : './app/',
-        livereload : true
-    });
+    // connect.server({
+    //     root : './app',
+    //     port : 2001,
+    //     livereload : true
+    // });
+    server.run(['app.js']);
 });
 
 // gulp.task('sass-inline',function(){
