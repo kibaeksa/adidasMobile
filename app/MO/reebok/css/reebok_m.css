@@ -2513,7 +2513,7 @@ section#header .notice_tits>a.b3 .ico{
 #contents .gnb li a.kor{font-size:13px;font-weight: bold;letter-spacing: -1px;}
 #contents .gnb li a.on{color:#d20b16;border-bottom:5px solid #d20b16;}
 
-#contents{position:relative;padding-bottom: 30px;}
+#contents{position:relative;}
 #contents .prodlist_type1 .link_oneday_deliv a,
 #contents .prodlist_type2 .link_oneday_deliv a{
 	display: block;
@@ -8639,9 +8639,6 @@ div.prod_manual p.desc strong{color:#3e3e3e;font-size:11px;letter-spacing:-1px;}
 	color: #000;
 }
 #contents .join .join1 .data_tb_list li .td{
-	/*-webkit-flex: 0 0 50px;
-	-ms-flex: 0 0 50px;
-	flex: 0 0 50px;*/
 	-webkit-flex: 0 0 150px;
 	-ms-flex: 0 0 150px;
 	flex: 0 0 150px;
@@ -9378,7 +9375,8 @@ footer#footer .fmenu ul:last-child li:nth-child(3) a{background:#2d2d2d url(/ima
 
 
 footer#footer .sns_menu{
-	padding: 1.5rem;
+	/*padding: 1.5rem;*/
+    padding: 1.8rem 0.8rem 1rem;
 	display: -webkit-flex;
 	display: -moz-flex;
 	display: -ms-flex;
@@ -9386,20 +9384,21 @@ footer#footer .sns_menu{
 	display: flex;
 	justify-content:space-around;
 	-webkit-justify-content:space-around;
-	border-top:1px solid #333;
+	/*border-top:1px solid #333;*/
 	background: #000;
 }
 
 footer#footer .sns_menu>a{
 	display: block;
-	width: 4.5rem;
-	height: 4.5rem;
+	/*width: 4.5rem;
+	height: 4.5rem;*/
+	width: 3.8rem;
+	height: 3.8rem;
 	border-radius:100%;
-	background: #fff;
+	background: #aeaeac;
 	background-position: center center;
 	background-repeat: no-repeat;
 }
-
 footer#footer .f_menu{
 	display: -webkit-flex;
 	display: -moz-flex;
@@ -9407,31 +9406,110 @@ footer#footer .f_menu{
 	display: -o-flex;
 	display: flex;
 	background: #000;
-
 	align-items: center;
     justify-content: center;
     -webkit-align-items: center;
     -webkit-justify-content: center;
+	border-bottom:1px solid #333;
 }
 
 footer#footer .f_menu li{
 	width: 33%;
 	text-align: center;
 }
-
+/* 20170922 footer update : newsletter */
 footer#footer .f_menu li a{
 	width: 100%;
-	height: 50px;
+	height: 60px;
 	display: block;
-	line-height: 50px;
+	line-height: 60px;
+	font-weight: 300;
 	color: #fff;
 }
+footer#footer .newsletter{
+	position: relative;
+	padding: 0 1.5rem;
+	background: #000;
+}
+footer#footer .newsletter p{
+	padding: 20px 0 10px;
+	color:#fff;
+	font-weight: 300;
+}
+footer#footer .newsletter .input_wrap{
+	position: relative;
+}
+footer#footer .newsletter .input_wrap input{
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	border: 0;
+	width: 100%;
+	height: 45px;
+	padding: 0 0 0 10px;
+}
+footer#footer .newsletter .input_wrap .input_btn{
+	display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 4rem;
+    height: 100%;
+    text-align: center;
+    color: #fff;
+    font-size: 19px;
+    line-height: 43px;
+    background: #000;
+    border: 1px solid #fff;
+    box-sizing: border-box;
+}
+footer#footer .newsletter .marketing_chk{
+	position: absolute;
+	top:20px;
+	right:1.5rem;
+}
+footer#footer .newsletter .marketing_chk a{
+	position: relative;
+	top:-4px;
+	color:#888;
+	font-weight: 300;
+	font-size: 11px;
+	letter-spacing: -0.5px;
+}
+footer#footer .newsletter .marketing_chk a span{
+	position: absolute;
+    bottom: -2px;
+	left:0;
+	display: inline-block;
+	width: 100%;
+	height: 1px;
+	background: #888;
+}
+footer#footer .newsletter .marketing_chk .chk_dsgn>input[type='checkbox'] + label::before{
+	background: #7b7b7b;
+	border-radius: 0;
+}
+footer#footer .newsletter .marketing_chk .chk_dsgn>input[type='checkbox']:checked + label::before{
+	background: #a32924;
+}
+footer#footer .newsletter .marketing_chk .chk_dsgn>input+label:after{
+	width: 10px;
+    height: 4px;
+	top: 4px;
+    left: 3px;
+	border-bottom: 2px solid #b1b1b1;
+	border-left: 2px solid #b1b1b1;
+}
+footer#footer .newsletter .marketing_chk .chk_dsgn>input[type='checkbox']:checked + label:after{
+	border-bottom: 2px solid #fff;
+	border-left: 2px solid #fff;
+}
+/* 20170922 footer update : newsletter  end*/
 
 footer#footer .sns_menu>a.fb,
 #sns-footer-layer .btn_wrap>a.fb::before{
 	background-image: url('/images/reebok/bg_sns_fb.png');
-	-webkit-background-size: 9px auto;
-	background-size: 9px auto;
+	-webkit-background-size: 10px auto;
+	background-size: 10px auto;
 }
 
 footer#footer .sns_menu>a.insta,
@@ -9444,22 +9522,22 @@ footer#footer .sns_menu>a.insta,
 footer#footer .sns_menu>a.blog,
 #sns-footer-layer .btn_wrap>a.blog::before{
 	background-image: url('/images/reebok/bg_sns_blog.png');
-	-webkit-background-size: 20px auto;
-	background-size: 20px auto;
+	-webkit-background-size: 24px auto;
+	background-size: 24px auto;
 }
 
 footer#footer .sns_menu>a.ytb,
 #sns-footer-layer .btn_wrap>a.ytb::before{
 	background-image: url('/images/reebok/bg_sns_ytb.png');
-	-webkit-background-size: 21px auto;
-	background-size: 21px auto;
+	-webkit-background-size: 25px auto;
+	background-size: 25px auto;
 }
 
 footer#footer .sns_menu>a.kakao,
 #sns-footer-layer .btn_wrap>a.kakao::before{
 	background-image: url('/images/reebok/bg_sns_kakao.png');
-	-webkit-background-size: 23px auto;
-	background-size: 23px auto;
+	-webkit-background-size: 25px auto;
+	background-size: 25px auto;
 }
 
 footer#footer address{display:block;padding:15px 10px 25px;color:#a1a1a1;background: #000;}
@@ -9484,7 +9562,7 @@ footer#footer address .lnk{padding:10px 0;}
 footer#footer address .lnk a{color:#a1a1a1;font-size:10px;letter-spacing:-.5px;text-decoration: underline;}
 footer#footer address .cprgt{color:#a1a1a1;font-size:10px;}
 
-footer#footer address .inner p{text-align: center;color:#888;line-height: 2rem; letter-spacing: -1px; font:400 1.1rem/2.2rem 'NotoSansKR';}
+footer#footer address .inner p{text-align: center;color:#888;line-height: 2rem; letter-spacing: -1px; font:400 0.9rem/1.8rem 'NotoSansKR';}
 footer#footer address .inner p strong{font-weight: bold; color:#ccc;}
 footer#footer address .inner .f_url{padding-top: 2rem;}
 footer#footer address .inner .f_url p a{color:#999; font:300 1.1rem/2.2rem 'NotoSansKR';}
