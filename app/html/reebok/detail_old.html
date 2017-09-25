@@ -9,8 +9,6 @@
 	<link rel="stylesheet" href="/MO/reebok/css/reebok_m.css" />
 	<script type="text/javascript" src="/MO/reebok/js/jquery.js"></script>
 	<script type="text/javascript" src="/MO/reebok/js/reebok_js_m.js"></script>
-	<script type="text/javascript" src="/MO/reebok/js/iscroll.js"></script>
-	<script type="text/javascript" src="/MO/reebok/js/FlickKkb.js"></script>
 	<script type="text/javascript" src="http://imagem.reebok.co.kr/MO/js/jquery.touchSlider.js"></script>
 	<script type="text/javascript">
 		var safeBigTab;
@@ -193,49 +191,33 @@
 
 
 				// 170322 스피드 배송 상단 바 롤링 / 클릭 스크립트
-				// (function(){
-				// 	var index = 0;
-				// 	var length = $('.notice_tits>a').length;
-				// 	setInterval(function(){
-				// 		$('.notice_tits>a').removeClass('on');
-				//
-				// 		setTimeout(function(){
-				// 			$('.notice_tits>a').hide();
-				// 			if(index == length-1){
-				// 				index = 0;
-				// 			}else{
-				// 				index += 1;
-				// 			}
-				//
-				// 			$('.notice_tits>a').eq(index).show();
-				// 			setTimeout(function(){
-				// 				$('.notice_tits>a').eq(index).addClass('on');
-				// 			},30);
-				//
-				// 		},400);
-				// 	},3000);
-				//
-				// 	$('#header .notice_tits>a').bind('click',function(){
-				// 		if($(this).hasClass('b1')){
-				// 			$('.popup_oneday_open').show();
-				// 		}else if($(this).hasClass('b3')){
-				// 			$('.popup_oneday_exchange').show();
-				// 		}
-				// 	});
-				//
-				// 	$('.popup_oneday_exchange .header .close_x_btn , .popup_oneday_open .header .close_x_btn').bind('click',function(){
-				// 		$(this).parent().parent().hide();
-				// 	});
-				// })();
-				// 170322 스피드 배송 상단 바 스크립트 끝
-
-				// 170627 무료 배송 상단 바 / 클릭 스크립트
 				(function(){
 					var index = 0;
+					var length = $('.notice_tits>a').length;
+					setInterval(function(){
+						$('.notice_tits>a').removeClass('on');
+
+						setTimeout(function(){
+							$('.notice_tits>a').hide();
+							if(index == length-1){
+								index = 0;
+							}else{
+								index += 1;
+							}
+
+							$('.notice_tits>a').eq(index).show();
+							setTimeout(function(){
+								$('.notice_tits>a').eq(index).addClass('on');
+							},30);
+
+						},400);
+					},3000);
 
 					$('#header .notice_tits>a').bind('click',function(){
 						if($(this).hasClass('b1')){
 							$('.popup_oneday_open').show();
+						}else if($(this).hasClass('b3')){
+							$('.popup_oneday_exchange').show();
 						}
 					});
 
@@ -243,7 +225,7 @@
 						$(this).parent().parent().hide();
 					});
 				})();
-				// 170627 무료 배송 상단 바 / 클릭 스크립트 끝
+				// 170322 스피드 배송 상단 바 스크립트 끝
 
 
 				/*
@@ -277,7 +259,7 @@
 
 <body>
 	<!-- 170608 한정상품 팝업 -->
-	<!-- <div id="limited_prod_popup" style="width: 100%;height: 100%;position: fixed;top:0;left:0;z-index: 150;">
+	<div id="limited_prod_popup" style="width: 100%;height: 100%;position: fixed;top:0;left:0;z-index: 150;">
         <div class="layerpopup" style="width: 100%;position: absolute;top: 50%;left: 0;-webkit-transform:translate3d(0,-50%,0);transform:translate3d(0,-50%,0);background: #fff;z-index:10;">
           	<div class="header">
           		<h2>구매 안내</h2>
@@ -293,7 +275,7 @@
         </div>
 
         <div style="position: fixed;top: 0;left: 0;width: 100%;height: 100%;background:rgba(0,0,0,0.6);"></div>
-    </div> -->
+    </div>
 
 
 
@@ -322,7 +304,7 @@
 	</div>
 
 	<!-- 170404 START 스피드 배송 오픈 안내팝업 -->
-	<!-- <div class="layerpopup popup_oneday_open">
+	<div class="layerpopup popup_oneday_open">
 		<div class="header">
 			<a href="javascript:void(0)" class="close_x_btn"></a>
 		</div>
@@ -351,31 +333,7 @@
 				<a href="http://shop.reebok.co.kr/RPF080301.action" class="icons aft" data-icon="">FAQ 바로가기</a>
 			</p>
 		</div>
-	</div> -->
-
-	<!-- 170627 START 무료 배송 안내팝업 -->
-	<div class="layerpopup popup_oneday_open" style="background: rgba(255,255,255,0.95);">
-		<div class="header">
-			<a href="javascript:void(0)" class="close_x_btn"></a>
-		</div>
-		<div class="contents" style="padding-top:90px;">
-			<div class="ico">
-				<img src="http://imagem.reebok.co.kr/images/reebok/ico_truck_pop2.png" alt="">
-			</div>
-			<h2 style="font:3.8rem/4rem 'dinpro cond'; color:#444444; font-weight:700;">FREE DELIVERY!</h2>
-			<p style="font:2rem/2.8rem 'NotoSansKRBold'; color:#444444;">
-	          7월 한 달간,<br />
-			  전 제품<br />
-			  무료배송/교환/반품 서비스
-	        </p>
-	        <p style="font:1.3rem/1.9rem 'NotoSansKRRegular'; color:#444444; font-weight:700;">
-	          2017 .7 .1 ~ 7 .31 주문 건에 한해<br />
-			  무료배송/교환/반품 제공됩니다.
-			</p>
-
-		</div>
 	</div>
-	<!-- 170627 START 무료 배송 안내팝업 END -->
 
 	<section id="wrap">
 		<section id="container">
@@ -1029,7 +987,7 @@
 				</div>
 
 				<!-- 170322 스피드 배송 안내 바 -->
-				<!-- <div class="notice_tits" style="display: block;">
+				<div class="notice_tits" style="display: block;">
 					<a class="b1 on" style="display: block;" href="javascript:void(0)">
 						<div><span class="ico"></span>스피드 배송 서비스 오픈</div>
 					</a>
@@ -1038,14 +996,6 @@
 					</a>
 					<a class="b3" href="javascript:void(0)">
 						<div><span class="ico"></span>교환/환불은 이렇게</div>
-					</a>
-					<div class="more_ico sprite-image"></div>
-				</div> -->
-
-				<!-- 170627 무료 배송 안내 바 -->
-				<div class="notice_tits" style="display: block;">
-					<a class="b1 on" style="display: block; text-align:left;padding-top:0;" href="javascript:void(0)">
-						<div style="margin-left: 4rem;"><span class="ico" ></span>7월 한 달간, 전 제품 무료배송/교환/반품 서비스</div>
 					</a>
 					<div class="more_ico sprite-image"></div>
 				</div>
