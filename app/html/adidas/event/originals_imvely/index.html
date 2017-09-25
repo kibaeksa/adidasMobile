@@ -469,7 +469,7 @@
                                         <div class="link item1">
                                             <p class="title"><span></span>dress</p>
                                             <p>BR5202</p>
-                                            <a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=BR5202" class="icons aft" data-icon="">구매하기</a>
+                                            <a href="javascript:void(0)" class="icons">Sold out</a>
                                         </div>
                                         <div class="link item2">
                                             <p class="title"><span></span>swift run</p>
@@ -554,17 +554,12 @@
                         <h2>campus</h2>
                         <p>가식 없는 실루엣과 스웨이드 디자인, 살아있는 에너지, 캠퍼스</p>
                         <div class="img">
-                            <img src="http://imagem.adidas.co.kr/images/adidas/event/originals_imvely/imgmain2.jpg" alt="">
+                            <img src="http://imagem.adidas.co.kr/images/adidas/event/originals_imvely/imgmain2_v2.jpg" alt="">
                             <div class="link_wrap">
-                                <div class="link white item1">
-                                    <p class="title"><span></span>hoodie</p>
-                                    <p>BR5188</p>
-                                    <a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=BR5188" class="icons aft" data-icon="">구매하기</a>
-                                </div>
                                 <div class="link white item2">
                                     <p class="title"><span></span>campus</p>
-                                    <p>BY9840</p>
-                                    <a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=BY9840" class="icons aft" data-icon="">구매하기</a>
+                                    <p>BZ0084</p>
+                                    <a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=BZ0084" class="icons aft" data-icon="">구매하기</a>
                                 </div>
                             </div>
                         </div>
@@ -576,9 +571,9 @@
                                     <img src="http://imagem.adidas.co.kr/images/adidas/event/originals_imvely/img2_1.png" alt="">
                                     <div class="link_wrap">
                                         <div class="link white item1">
-                                            <p class="title"><span></span>dress</p>
+                                            <p class="title"><span></span>hoodie</p>
                                             <p>BR5188</p>
-                                            <a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=BR5188" class="icons aft" data-icon="">구매하기</a>
+                                            <a href="javascript:void(0)" class="icons">Sold out</a>
                                         </div>
                                         <div class="link white item2">
                                             <p class="title"><span></span>campus</p>
@@ -740,6 +735,7 @@
 
            <script type="text/javascript">
                (function($){
+
                    var owlSlider = $('#slider_owl');
                    owlSlider.owlCarousel({
                        stagePadding: 0,
@@ -748,8 +744,9 @@
                        merge: true,
                        loop : true,
                        navigation: true,
-                       nav: true
+                       nav: true,
                    });
+
 
                    var owlSlider2 = $('#slider_owl2');
                    owlSlider2.owlCarousel({
@@ -771,6 +768,25 @@
                        loop : true,
                        navigation: true,
                        nav: true
+                   });
+
+                   var ctTitle = [
+                        '1',
+                        '2',
+                        '3',
+                        '4',
+                        '5',
+                        '6'
+                   ];
+
+                   $('#slider_owl .owl-dots .owl-dot').each(function(index){
+                       $(this).find('span').text(ctTitle[index]);
+                   });
+                   $('#slider_owl2 .owl-dots .owl-dot').each(function(index){
+                       $(this).find('span').text(ctTitle[index]);
+                   });
+                   $('#slider_owl3 .owl-dots .owl-dot').each(function(index){
+                       $(this).find('span').text(ctTitle[index]);
                    });
 
                })(jQuery);
