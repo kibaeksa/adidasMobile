@@ -12,6 +12,7 @@
 	<script type="text/javascript" src="/js/jquery-1.12.0.min.js"></script>
 	<script type="text/javascript" src="/js/swipe.js"></script>
 	<script type="text/javascript" src="/js/owl.carousel.js"></script>
+    <script type="text/javascript" src="http://imagem.adidas.co.kr/js/modalPopup.min.js" charset="UTF-8"></script>
 
 
 	<title>아디다스 모바일</title>
@@ -491,7 +492,9 @@
 						</tr>
 						<tr class="no_line">
 							<th>사용처</th>
-							<td>온/오프라인 매장(단, 일부 오프라인 매장 제외)</td>
+                            <!-- 170929 쿠폰사용가능/온오프매장 -->
+							<td><span class="able-store modal-popup-click" data-modalpop-click="store-popup">사용가능 매장</span></td>
+                            <!-- 170929 쿠폰사용가능/온오프매장 end-->
 						</tr>
 						<tr class="no_line">
 							<th>적용대상</th>
@@ -650,11 +653,44 @@
 				<p style="color:#666;">Copyright © 2011 adidas Korea Inc.</p>
 			</div>
 		</div>
+
+        <!-- 170929 쿠폰사용가능/온오프매장 -->
+        <div class="modal-popup-wrapper coupon-store"
+            data-modalpop=""
+            data-modalpop-name="store-popup"
+        >
+            <div class="overlay"></div>
+            <div class="popup">
+                <div class="popup-header" style="background:#fff;border-bottom: 1px solid #e6e6e6;">
+                    <h2>쿠폰 사용가능 온/오프라인 매장</h2>
+                    <a href="javascript:void(0)" class="close_x_btn"></a>
+                </div>
+
+                <div class="popup-contents" style="height: 20rem;overflow-x: hidden;">
+                    <p style="font:300 1rem/1.5rem 'NotoSansKR';height:380px;">
+                        BCC신세계동대구, OCC신세계동대구, 포천송우OFS, 장기아울렛, 구로마리오아울렛, 둔촌, 대천（충남）, 군산나운동, 대천OFS, 논산, 전주중앙, 공주OFS, 예산A, 진천, 정읍, 당진A, 충북영동A, 이리중앙, 태안A, 부안, 공주B, 금왕, 옥천A, 롯데마트군산, 남원A, 전주중앙OFS, 서산OFS, 당진OFS, 서산A, 군산수송, 군산, 롯데마트익산, 이리영등OFS, 군산OFS, 이리영등, 진주Kids, 울산성남키즈, UMS불광NC, 대구시지Kids, 모다아울렛Kids, UMS롯데백화점안양Kids, 마산Kids, 대백프라자Kids, 거제Kids, UMS인천논현뉴코아Kids, 경산키즈, UMS중계2001아울렛, 동아쇼핑Kids, 엑스코NC Kids, UMS전주롯데백화점, 구미Kids, 성서Kids, 경주Kids, UMS순천NC, UMS광주롯데백화점Kids, 안동Kids, UMS철산2001아울렛, 신제주Kids, 서귀포Kids, 제주Kids, 인천간석A, 목감, 뉴코아부천, 롯데마트인천삼산, 홈플러스성포, 서인천B, 남양A, 평택보아즈, 2001아울렛천호, 평택Ａ, 장안바우하우스B, 명일C, 오산OFS, 원종동, 인천만수A, 상록수A, 인천계양OFS, 용인OFS, 원종OFS, 오산Ｂ, 안성Ｂ, 인천계양, 평택역OFS, 홈플러스북수원, 용인, 구월로데오, 인하대, 인덕원OFS, 인덕원, 이천B, 오산폴라리스, 신포OFS, 수원아일렛타운, 인천신포Ａ, 수원남문C, 수원남문OFS, 구월OFS, 모다아울렛인천, aFK평촌플러스Kids, 마하Kids아산퍼스트빌리지, 대천Kids, aFK대전세이백화점, 마하Kids구로2001아웃렛, aFK일산Kids뉴코아, aFK마리오아울렛, aFK금천Kids더블유몰, aFK하이힐아울렛, 마하Kids롯데마트구미, aFK대전패션아일랜드, 서산Kids, 용산아이파크Kids, 마하Kids
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- 170929 쿠폰사용가능/온오프매장 end-->
+
 	</div>
 
 	<script type="text/javascript" src="/js/adidas/common.js"></script>
 	<script type="text/javascript">
 		(function($){
+            // 170929 쿠폰사용가능/온오프매장
+            $('.able-store').click(function(){
+                $('.coupon-store').css({'display':'block'});
+                $('body,html').css({'overflow':'hidden'});
+
+            });
+            $('.coupon-store .close_x_btn').click(function(){
+                $('.coupon-store').css({'display':'none'});
+                $('body,html').css({'overflow':'auto'});
+            });
+            // 170929 쿠폰사용가능/온오프매장 end
 
 		})(jQuery);
 
