@@ -1,0 +1,286 @@
+@import './app/css/adidas/scss/common/mixin.scss';
+@import './app/css/adidas/scss/common/common.scss';
+
+#video-layer{
+	position:fixed;top:0;left:0;width: 100%;height: 100%;z-index:1000;
+}
+
+#video-layer .bg{
+	width: 100%;
+	height: 100%;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	transform-origin:center center;
+	-webkit-transform-origin:center center;
+	transform:scale(0);
+	-webkit-transform:scale(0);
+	opacity:0;
+	background:#000;
+	z-index:1;
+
+	transition:all 0.4s;
+	-webkit-transition:all 0.4s;
+
+
+}
+
+#video-layer.loaded .bg{
+	opacity: 1;
+	transform:scale(1.2);
+	-webkit-transform:scale(1.2);
+}
+
+#video-layer .video-box{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	z-index: 3;
+}
+
+#video-layer .close_x_btn{
+	width: 70px;
+	height: 70px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 5;
+	opacity: 0;
+}
+
+#video-layer.loaded .close_x_btn{
+	opacity: 1;
+}
+
+
+#superstar{
+	.main{
+		img{
+			width: 100%;
+		}
+	}
+	.statement{
+		padding: 4rem 0;
+		background: #898886;
+		>*{
+			color:#fff;
+			text-align: center;
+		}
+		h2{
+			padding: 0 0 10px 0;
+			font:48px/48px 'adinenuPro-bold';
+		}
+		p{
+			font:300 1.1rem 'NotoSansKR';
+		}
+	}
+
+	.contents{
+		position: relative;
+		width: 100%;
+		overflow: hidden;
+		background: url('http://imagem.adidas.co.kr/images/adidas/event/superstar/171010/slider_bg.jpg') no-repeat;
+		background-size: 100% 100%;
+		padding: 3.8rem 0 4.3rem;
+		.product-highlight{
+			.products_slider{
+				.owl-stage-outer{
+					.owl-stage{
+						overflow: inherit;
+						.owl-item{
+							.box{
+								width: 100%;
+								position: relative;
+								.title{
+									position: relative;
+									left:-100px;
+									opacity: 0;
+									-webkit-opacity: 0;
+									height: 5.5rem;
+									transition: all 0.8s;
+									-webkit-transition: all 0.8s;
+									>*{text-align: center;color:#fff;}
+									p{
+										font:1.4rem 'adihaus';
+										letter-spacing: -0.7px;
+										span{
+											font:300 1.3rem 'NotoSansKR';
+										}
+									}
+								}
+								.img{
+									position: relative;
+									padding: 1.5rem 0 0 0;
+							      	text-align: center;
+									img{
+										width: 100%;
+									}
+								}
+							}
+							&.active{
+								.title{
+									left:0;
+									opacity: 1;
+									-webkit-opacity: 1;
+								}
+							}
+						}
+					}
+					.owl-stage:after{
+						content:'';
+					    display: block;
+					    visibility: hidden;
+					    clear:both;
+					}
+				}
+				.owl-controls{
+					position: absolute;
+    				top: 4rem;
+					width: 100%;
+					.owl-nav{
+						>div{
+							position: absolute;
+							display: block !important;
+							text-indent: -9999px;
+							width: 3.2rem;
+							height: 3.2rem;
+						}
+						.owl-prev{
+							left:2rem;
+							background: url('http://imagem.adidas.co.kr/images/adidas/event/superstar/171010/btn_prev.png') 50% no-repeat;
+							background-size: 100% 100%;
+						}
+						.owl-next{
+							right:2rem;
+							background: url('http://imagem.adidas.co.kr/images/adidas/event/superstar/171010/btn_next.png') 50% no-repeat;
+							background-size: 100% 100%;
+						}
+					}
+				}
+			}
+		}
+
+    }
+
+	.menu-bar{
+		position: relative;
+		width: 100%;
+		height: 5rem;
+		background: #000;
+		display: none;
+		&.on{
+			position: fixed;
+			top:60px;
+			display: block;
+			z-index: 1;
+		}
+		.menu-bar-navi{
+			position: absolute;
+			width: 100%;
+			height: 5rem;
+			span{
+				position: absolute;
+				width: 1.5rem;
+				top:1rem;
+				img{
+					width: 100%;
+					height: 100%;
+				}
+				&.btn-prev{
+					left:2rem;
+				}
+				&.btn-next{
+					right:2rem;
+					transform: rotate(180deg);
+					-webkit-transform: rotate(180deg);
+				}
+			}
+		}
+		ul{
+			li{
+				width: 100%;
+				position: absolute;
+				top:1.1rem;
+				left:0;
+				opacity: 0;
+				-webkit-opacity: 0;
+				&.on{
+					opacity: 1;
+					-webkit-opacity: 1;
+				}
+				.title{
+					text-align: center;
+					p{
+						text-align: center;
+						color:#fff;
+					    font: 1.1rem 'adihaus';
+						span{
+						    font: 300 1rem/1.3rem 'NotoSansKR';
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.info-contents{
+		background: url('http://imagem.adidas.co.kr/images/adidas/event/superstar/171010/3_bg.jpg') no-repeat;
+		background-size: 100% 100%;
+		padding: 2.8rem 2rem;
+		#video_part{
+			transition: all 1s;
+			-webkit-transition: all 1s;
+			opacity: 0;
+			-webkit-opacity: 0;
+			&.on{
+				opacity: 1;
+				-webkit-opacity: 1;
+			}
+		}
+		.video{
+			img{
+				width: 100%;
+			}
+		}
+		.txt{
+			padding: 1.5rem 0 0 0;
+			font:400 1.2rem 'NotoSansKR';
+			.button_area{
+				padding: 1.5rem 0 0 0;
+				width: 60%;
+				a{
+					font-size: 1.08rem;
+				}
+			}
+		}
+	}
+
+	.gal-contents{
+		.box{
+			>img{
+				width: 100%;
+			}
+		}
+	}
+
+	.bottom-contents{
+		padding: 4rem 0;
+		>*{text-align: center;}
+		h3{
+			font:40px 'adinenuPro-bold';
+			color:#000;
+		}
+		p{
+			letter-spacing: 0.1px;
+			color:#a0a0a0;
+			font:400 1.4rem 'NotoSansKR';
+			&.eng{
+				font:20px 'adinenuPro-regular';
+			}
+		}
+	}
+
+
+}
