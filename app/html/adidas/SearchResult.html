@@ -28,6 +28,20 @@
              -->
 			<div class="nav_main search_nav_main">
 				<h1><a href="javascript:void(0);" class="logo icons"></a></h1>
+				<div class="sch_box">
+					<form name="frmSrch" id="frmSrch" action="#" method="post" onsubmit="return false">
+						<input type="hidden" name="keyword" value="">
+						<input type="hidden" name="query" value="">
+						<input type="hidden" name="siteNm" value="">
+						<input type="hidden" name="siteCD" value="1">
+						<fieldset>
+							<input type="search" id="S_PROD_NM" name="S_PROD_NM" value="검색어를 입력하세요" onkeypress="return handle_enter_top(1,event);" onfocus="javascript:this.value='';" onmousedown="javascript:dqtop_setTextbox('1',event);" title="검색어를 입력하세요" autocomplete="off">
+							<button type="submit" value="검색" onclick="javascript:doKeywordSearch();">
+								<span class="icons"></span>
+							</button>
+						</fieldset>
+					</form>
+				</div>
 			</div>
 			<div class="notice_tits">
 				<div class="notice_tits_wrap">

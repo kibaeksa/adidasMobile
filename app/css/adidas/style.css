@@ -3002,6 +3002,58 @@ html.no_srl{
 #header .nav_main a.btn_slide span.line2{top:28px;}
 #header .nav_main a.btn_slide span.line3{top:34px;}
 
+/* nav_main in SearchResult */
+#header .nav_main.search_nav_main{
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+}
+
+#header .nav_main.search_nav_main h1{
+    margin: 0;
+    border-width: 0;
+}
+
+#header .nav_main.search_nav_main h1 a{
+    width: 90px;
+}
+
+#header .nav_main.search_nav_main .sch_box{
+    width: 100%;
+    height: 60px;
+    padding: 10px 15px 10px 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+#header .nav_main.search_nav_main .sch_box input{
+    width: 100%;
+    height: 40px;
+    border-width: 0;
+    padding: 0;
+    display: block;
+    padding: 0 45px 0 10px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    font: 400 13px 'NotoSansKR';
+}
+
+#header .nav_main.search_nav_main .sch_box button{
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	top: 10px;
+	right: 15px;
+	background: none;
+	border:none;
+}
+#header .nav_main.search_nav_main .sch_box button span:before{
+	margin-top:7px;
+	color: #000;
+	font-size:18px;
+    content:'\E625';
+}
+
 /*170322 following notice*/
 #header .notice_tits{
     position: relative;
@@ -9915,6 +9967,14 @@ padding:30px 15px;
     font:700 1.05rem/1.05rem 'NotoSansKR';
     color: #000;
     letter-spacing: -0.75px;
+}
+
+#container.product_list .search_contents.search_campaigns li{
+    margin-bottom: 15px;
+}
+
+#container.product_list .search_contents.search_campaigns li:last-child{
+    margin-bottom: 0;
 }
 
 #container.product_list .search_contents.search_campaigns li a{
