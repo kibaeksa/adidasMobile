@@ -704,7 +704,10 @@
                 <input type="checkbox" id="agree_mi" name="agree_mi" style="vertical-align:middle;">
                 <label for="agree_mi" style="font-size:12px;vertical-align:middle;">마이아디다스 유의사항 확인 및 동의</label>
                 <!-- 171030 마이아디다스 제품 구매 시 유의사항 보기 버튼 변경-->
-                <a class="btn_miadi_noti" href="javascript:void(0)" style="position: absolute;top: 50%;right: 15px;color: #fff;font-size: 12px;background: #aaa;display: block;padding: 9px 12px;transform: translate3d(0,-50%,0);-webkit-transform: translate3d(0,-50%,0);letter-spacing: -0.5px;">유의사항 전체보기</a>
+                <a class="btn_miadi_noti" href="javascript:void(0)" style="position: absolute;top: 50%;right: 15px;color: #fff;font-size: 12px;background: #aaa;display: block;padding: 9px 12px;transform: translate3d(0,-50%,0);-webkit-transform: translate3d(0,-50%,0);letter-spacing: -0.5px;">
+					<span>유의사항 전체보기</span>
+					<span class="focused_box" style="display: none;width:100%;height:100%;border: 3px solid #027dbf;display: none;position: absolute;top:0;left:0;z-index: 10;box-sizing:border-box;-webkit-box-sizing:border-box;"></span>
+				</a>
                 <!-- 171030 마이아디다스 제품 구매 시 유의사항 보기 버튼 변경 END-->
             </div>
 
@@ -891,6 +894,17 @@
                 $('#miadidas_notification .close_x_btn').bind('click',function(){
                     $('#miadidas_notification').removeClass('open');
                 });
+
+				setTimeout(function(){
+
+					/* 171030 유의사항 전체보기 강조 함수 START*/
+					$('.btn_miadi_noti .focused_box').fadeIn(500).fadeOut(500);
+					setTimeout(function(){
+						$('.btn_miadi_noti .focused_box').fadeIn(500).fadeOut(500);
+					},1100);
+					/* 171030 유의사항 전체보기 강조 함수 END */
+
+				},1000);
 
 			});
 		})(jQuery);
