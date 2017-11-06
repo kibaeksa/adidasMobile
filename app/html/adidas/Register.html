@@ -599,29 +599,13 @@
                        <div class="box">
                            <div class="chk_box1 line_blue">
                                <input type="checkbox" id="term4">
-                               <!--
-                                   170915
-                                   개인정보 취급 위탁동의 (선택) ==> (필수)
-                                   (구매 및 배송 관련) ==> (구매 및 배송 등 관련)
-                               -->
                                <label for="term4" class="adipro-r">(필수) 개인정보 취급 위탁동의 (구매 및 배송 등 관련)</label>
                            </div>
-                           <!-- 170918 "자세히보기" 부분 코드수정 -->
                            <a href="" class="view_detail icons" data-icon=""></a>
                        </div>
 
                        <div class="box sns">
-                           <!--
-                               170918
-                               * (선택) 마케팅 수신동의 ==> (선택) 쿠폰 발급, 회원전용 이벤트 등 안내 수신동의
-                               * 체크박스 삭제
-                           -->
-                           <!-- <div class="chk_box1 line_blue" id="subscribe_agree">
-                               <input type="checkbox" id="agr_subscribe">
-                               <label for="agr_subscribe" class="adipro-r">(선택) 쿠폰 발급, 회원전용 이벤트 등 안내 수신동의</label>
-                           </div> -->
                            <span>(선택) 쿠폰 발급, 회원전용 이벤트 등 안내 수신동의</span>
-                            <!-- 170918 "자세히보기" 부분 코드수정 -->
                             <a href="" class="view_detail icons" data-icon=""></a>
                        </div>
                        <div class="box subscribe_details" style="border-top: 1px dashed  #b2b2b2;border-bottom-width: 0;">
@@ -634,6 +618,30 @@
                                <label for="agr_subscribe_mail" class="adipro-r">e-Mail 수신</label>
                            </div>
                        </div>
+
+                       <!-- 171106 개인정보 보호기간 추가 -->
+                       <div class="box sns" style="border-top: 1px solid  #c8cbcc;">
+                           <span>(선택) 개인정보 보관기간</span>
+                       </div>
+                      <div class="box subscribe_details" style="padding-right: 0;border-top: 1px dashed  #b2b2b2;border-bottom-width: 0;">
+                            <div class="rdo_box1 blue">
+                                <input type="radio" id="privacy_keep_term_1y" name="privacy_keep_term">
+                                <label for="privacy_keep_term_1y" class="adipro-r">1년</label>
+                            </div>
+                            <div class="rdo_box1 blue" style="margin-left: 15px;">
+                                <input type="radio" id="privacy_keep_term_3y" name="privacy_keep_term">
+                                <label for="privacy_keep_term_3y" class="adipro-r">3년</label>
+                            </div>
+                            <div class="rdo_box1 blue" style="margin-left: 15px;">
+                                <input type="radio" id="privacy_keep_term_permanent" name="privacy_keep_term">
+                                <label for="privacy_keep_term_permanent" class="adipro-r">영구보관</label>
+                            </div>
+                      </div>
+                      <ul class="privacy_keep_notice li_dot">
+                          <li>해당 기간 서비스 미사용 시 휴면계정전환</li>
+                          <li>별도로 선택하지 않는 경우, 기본 1년간 보관</li>
+                      </ul>
+                      <!-- 171106 개인정보 보호기간 추가 END -->
 
                    </div>
                </div>
