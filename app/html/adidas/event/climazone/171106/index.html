@@ -564,7 +564,7 @@
 
                     </div>
                     <!-- box1 end -->
-                    <div class="box">
+                    <div class="box men">
 
                         <div class="box_main">
                             <div class="box_title">
@@ -734,7 +734,7 @@
 
                     </div>
                     <!-- box3 end -->
-                    <div class="box">
+                    <div class="box men">
 
                         <div class="box_main">
                             <div class="box_title">
@@ -852,7 +852,7 @@
                         }
                         for(var a = 0; a < scrollArray.length; a ++){
                             currentPos = $(this).scrollTop();
-                            if(currentPos >= scrollArray[a]){
+                            if(currentPos > scrollArray[a]){
                                 gnb.addClass('active');
                                 $('#climazone_171106 .gnb ul li').removeClass('on').eq(a).addClass('on');
                             }else if(currentPos < scrollArray[0]){
@@ -862,13 +862,15 @@
 
                             }
                         }
+
                     });
 
                     $('#climazone_171106 .gnb ul li').click(function(){
                         var gnbindex = $(this).index();
                         var gnbTop = $('.scrollsection').eq(gnbindex).offset();
                         $('#climazone_171106 .gnb ul li').removeClass('on').eq(gnbindex).addClass('on');
-                        $('html,body').animate({scrollTop : gnbTop.top },800);
+                        $('html,body').animate({scrollTop : gnbTop.top +10 },800);
+                        console.log()
                     })
 
                     //video
