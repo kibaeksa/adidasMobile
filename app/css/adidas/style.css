@@ -20144,12 +20144,15 @@ em.prd_speedy .tooltip-box:before{
 	-webkit-box-sizing: border-box;
 }
 
-.layerpop_wrap.eventSystemPopup .tab table tr td{
+.layerpop_wrap.eventSystemPopup .tab table tr th{
 	box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	padding: 2px 2px;
 	height: 40px;
-	border: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-top: 1px solid #ddd;
 	text-align: center;
 	font: 500 14px/16px 'NotoSansKR','Nanum Gothic';
 	color: #000;
@@ -20158,28 +20161,38 @@ em.prd_speedy .tooltip-box:before{
 	cursor: pointer;
 }
 
-.layerpop_wrap.eventSystemPopup .tab table tr td.on{
+.layerpop_wrap.eventSystemPopup .tab table tr th.on{
 	background: #000;
 	color:#fff;
 }
 
-.layerpop_wrap.eventSystemPopup .tab table tr td.nodata{
+.layerpop_wrap.eventSystemPopup .tab table tr th.nodata{
 	color:none;
-	background: none;
-	border:0;
+    background: none;
+    border-bottom: 1px solid #fff;
+    border-left: 1px solid #fff;
+    border-right: 1px solid #fff;
+    border-top: 1px solid #fff;
 	cursor: default;
 }
 
-.layerpop_wrap.eventSystemPopup .tab table tr td.nodata:hover{
+.layerpop_wrap.eventSystemPopup .tab table tr th.nodata:hover{
+	color:none;
+
+	background: none;
+	cursor: default;
+}
+
+.layerpop_wrap.eventSystemPopup .tab table tr th.nodata:active{
 	color:none;
 	background: none;
 	cursor: default;
 }
 
-.layerpop_wrap.eventSystemPopup .tab table tr td.nodata:active{
-	color:none;
-	background: none;
-	cursor: default;
+.layerpop_wrap.eventSystemPopup .tab table tr td.tab_content{
+    padding: 10px;
+    font: 500 12px 'NotoSansKR';
+    color: #000;
 }
 
 /*EVENT SYSTEM POPUP END*/
