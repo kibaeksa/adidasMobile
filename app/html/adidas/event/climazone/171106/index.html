@@ -460,12 +460,12 @@
                         투명한 결정은 뜨거워진다.</p>
                     </div>
                     <div class="button_area">
-                        <div><a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=403&term=1"><span>climaheat</span> 제품 구매하기</a></div>
+                        <div><a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=420"><span>climaheat</span> 제품 구매하기</a></div>
                     </div>
                 </div>
 
                 <div class="film">
-                    <div class="video_visual">
+                    <!-- <div class="video_visual">
             			<div class="bg"></div>
                         <a href="javascript:void(0)" class="video_close"></a>
                         <div class="video_wrap">
@@ -473,8 +473,8 @@
                                 <source src="http://imagem.adidas.co.kr/images/adidas/event/climazone/171106/climaheat.mp4" type="video/mp4">
                             </video>
                         </div>
-            		</div>
-                    <span class="video_btn"><img src="http://imagem.adidas.co.kr/images/adidas/event/climazone/171106/film.png" alt="" ></span>
+            		</div> -->
+                    <span class="video_btn" data-video-id="9GXfKKB4K-Q"><img src="http://imagem.adidas.co.kr/images/adidas/event/climazone/171106/film.png" alt="" ></span>
                 </div>
 
                 <div class="scrollsection">
@@ -559,7 +559,7 @@
                         </div>
 
                         <div class="button_area">
-                            <div><a href="#">여성 러닝 제품 구매하기</a></div>
+                            <div><a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?ctgr_cd=01002&pageNo=403&S_ORDER_BY=1">여성 러닝 제품 구매하기</a></div>
                         </div>
 
                     </div>
@@ -643,7 +643,7 @@
                         </div>
 
                         <div class="button_area">
-                            <div><a href="#">남성 러닝 제품 구매하기</a></div>
+                            <div><a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?ctgr_cd=01001&pageNo=403&S_ORDER_BY=1">남성 러닝 제품 구매하기</a></div>
                         </div>
 
                     </div>
@@ -729,7 +729,7 @@
                         </div>
 
                         <div class="button_area">
-                            <div><a href="#">여성 트레이닝 제품 구매하기</a></div>
+                            <div><a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?ctgr_cd=01002&pageNo=404&S_ORDER_BY=1">여성 트레이닝 제품 구매하기</a></div>
                         </div>
 
                     </div>
@@ -808,7 +808,7 @@
                         </div>
 
                         <div class="button_area">
-                            <div><a href="#">남성 트레이닝 제품 구매하기</a></div>
+                            <div><a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?ctgr_cd=01001&pageNo=404&S_ORDER_BY=1">남성 트레이닝 제품 구매하기</a></div>
                         </div>
 
                     </div>
@@ -820,7 +820,7 @@
                         <img src="http://imagem.adidas.co.kr/images/adidas/event/climazone/171106/women.jpg" alt="">
                         <div class="button_area_wrap">
                             <div class="button_area">
-                                <div><a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=403&term=1">여성 제품 구매하기</a></div>
+                                <div><a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?ctgr_cd=01002&pageNo=420&S_ORDER_BY=1">여성 제품 구매하기</a></div>
                             </div>
                         </div>
                     </div>
@@ -828,7 +828,7 @@
                         <img src="http://imagem.adidas.co.kr/images/adidas/event/climazone/171106/men.jpg" alt="">
                         <div class="button_area_wrap">
                             <div class="button_area">
-                                <div><a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=403&term=1">남성 제품 구매하기</a></div>
+                                <div><a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?ctgr_cd=01001&pageNo=420&S_ORDER_BY=1">남성 제품 구매하기</a></div>
                             </div>
                         </div>
                     </div>
@@ -877,25 +877,51 @@
                         console.log()
                     })
 
+                    $('.video_btn').bind('click',function(){
+						var ytbId = $(this).attr('data-video-id');
+						var html = '<div id="video-layer" style="">';
+						html += '	<div class="bg" ></div>';
+						html += '	<div class="video-box"></div>';
+						html += '	<a href="javascript:void(0)" class="close_x_btn white"></a>';
+						html += '</div>';
+
+						$('html').css({overflow: 'hidden'});
+						$('body').append(html);
+
+						$('#video-layer .close_x_btn').bind('click',function(){
+							$('html').css({overflow: 'scroll'});
+							$('#video-layer ').remove();
+						});
+
+
+						setTimeout(function(){
+							$('#video-layer').addClass('loaded');
+
+							$('#video-layer .video-box').append('<iframe width="100%" height="100%" src="http://www.youtube.com/embed/'+ytbId+'?rel=0" frameborder="0" allowfullscreen></iframe>')
+						},100);
+						return false;
+					});
+
+
                     //video
-                    var vid = document.getElementById("main_top_video");
-                    vid.controls = true;
-                    pauseVid();
-                    function playVid() {
-                        vid.play();
-                    }
-                    function pauseVid() {
-                        vid.currentTime = 0;
-                        vid.pause();
-                    }
-                    $('.video_close').click(function(){
-                        pauseVid();
-                        $('.video_visual').removeClass('active');
-                    });
-                    $('.video_btn').click(function(){
-                        playVid();
-                        $('.video_visual').addClass('active');
-                    });
+                    // var vid = document.getElementById("main_top_video");
+                    // vid.controls = true;
+                    // pauseVid();
+                    // function playVid() {
+                    //     vid.play();
+                    // }
+                    // function pauseVid() {
+                    //     vid.currentTime = 0;
+                    //     vid.pause();
+                    // }
+                    // $('.video_close').click(function(){
+                    //     pauseVid();
+                    //     $('.video_visual').removeClass('active');
+                    // });
+                    // $('.video_btn').click(function(){
+                    //     playVid();
+                    //     $('.video_visual').addClass('active');
+                    // });
 
                     //tab_wrap
                     $('.tab_content').each(function(){
