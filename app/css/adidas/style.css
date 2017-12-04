@@ -14799,6 +14799,17 @@ em.prd_speedy .tooltip-box:before{
 	line-height: 16px;
 }
 
+#container.mypage .mpg_orderbox>.box .form_table td .able-store{
+    width: 90px;
+    height: 35px;
+    display: inline-block;
+    text-align: center;
+    line-height: 35px;
+    color:#fff;
+    background: #0286cd;
+    font-weight: 300;
+}
+
 #container.mypage .mpg_orderbox>.box .form_table td>strong{
 	color: #0286ce;
 }
@@ -19770,7 +19781,200 @@ em.prd_speedy .tooltip-box:before{
 	width: 75%;
 }
 
+/* COUPON LIST POPUP */
+
+.modal-popup-wrapper.store_coupon_list .search_box{
+    display: flex;
+    padding: 15px 15px 0;
+}
+
+.modal-popup-wrapper.store_coupon_list .search_box input{
+    border: 1px solid #c8cbcc;
+    width: 100%;
+    height: 45px;
+    padding-left: 10px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border-right: none;
+}
+
+.modal-popup-wrapper.store_coupon_list .search_box .search_button{
+    width: 55px;
+    background-image: url('/images/adidas/findstore_bt_search.jpg');
+    background-size: cover;
+    border: 1px solid #c8cbcc;
+    border-left: none;
+}
+
+.modal-popup-wrapper.store_coupon_list .popup-contents{
+    padding: 0;
+}
+
+.store_coupon_list .store_list li{
+	padding: 15px 15px 15px 72px;
+	border-bottom: 1px solid  #d7d7d7;
+	background:url('/images/adidas/ico_store_sp.png') 15px 50% no-repeat;
+	-webkit-background-size:42px auto;
+	background-size:42px auto;
+}
+
+.store_coupon_list .store_list li.ss{
+	background-image: url('/images/adidas/ico_store_ss.png');
+}
+
+.store_coupon_list .store_list li.olt{
+	background-image: url('/images/adidas/ico_store_olt.png');
+}
+
+.store_coupon_list .store_list li .ctgr{
+	margin-bottom: 5px;
+	color: #000;
+	font:300 12px/12px 'NotoSansKR';
+	text-transform: uppercase;
+}
+
+.store_coupon_list .store_list li .nm{
+	margin-bottom:8px;
+	font:700 16px/16px 'NotoSansKR';
+}
+
+.store_coupon_list .store_list li .addr{
+	margin-bottom:3px;
+	font-size:12px;
+}
+
+.store_coupon_list .store_list li .btn{
+	margin-top: 10px;
+}
+
+.store_coupon_list .store_list li .btn a{
+	width:100px;
+	margin-right:10px;
+	display: inline-block;
+}
+
+.store_coupon_list .store_select .search_box .search_button{
+    width: 55px;
+    background-image: url('/images/adidas/findstore_bt_search.jpg');
+    background-size: cover;
+    border: 1px solid #c8cbcc;
+    border-left: none;
+}
+
+.store_coupon_list .store_list .map_button{
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    color: #fff;
+    background: #0286cd;
+    border-radius: 2px;
+    font-size: 13px;
+    text-align: center;
+    font:1rem/3rem 'NotoSansKR';
+}
+
+.store_coupon_list .store_list .phone_button{
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    color: #fff;
+    background: #000;
+    border-radius: 2px;
+    font-size: 13px;
+    text-align: center;
+    font:1rem/3rem 'NotoSansKRLight';
+    letter-spacing: 0px;
+}
+
+/* COUPON LIST POPUP END */
+
+/* POPUP plp_paging */
+
+.modal-popup-wrapper .plp_paging{
+    margin: 1.5rem 0px;
+    position: relative;
+}
+
+.modal-popup-wrapper .plp_paging .num{
+    padding: 0.7rem;
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+.modal-popup-wrapper .plp_paging .prev{
+    left: 15px;
+}
+
+.modal-popup-wrapper .plp_paging .next{
+    right: 15px;
+}
+
+.modal-popup-wrapper .plp_paging .prev,
+.modal-popup-wrapper .plp_paging .next{
+    width: 3.5rem;
+    height: 3.5rem;
+    display: block;
+    position: absolute;
+    top: 0;
+    background: #3a84c8;
+}
+
+.modal-popup-wrapper .plp_paging .disable{
+    background: #afafaf;
+}
+
+.modal-popup-wrapper .plp_paging .prev>span,
+.modal-popup-wrapper .plp_paging .next>span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate3d(-50%,-50%,0);
+	-webkit-transform:translate3d(-50%,-50%,0);
+}
+
+.modal-popup-wrapper .plp_paging .prev>span{
+    margin-top: -0.86rem;
+    margin-left: -0.43rem;
+}
+
+.modal-popup-wrapper .plp_paging .next>span{
+    margin-top: -0.86rem;
+    margin-left: -1.19rem;
+}
+
+.modal-popup-wrapper .plp_paging .prev>span::before,
+.modal-popup-wrapper .plp_paging .next>span::before{
+	position: absolute;
+	top:0;
+    left:0;
+	content:'';
+	display: inline-block;
+	width: 1.72rem;
+	height: 1.72rem;
+	border-style:solid;
+	border-width:0 0 1px 1px;
+	border-color:#fff;
+}
+
+.modal-popup-wrapper .plp_paging .prev>span::after,
+.modal-popup-wrapper .plp_paging .next>span::after{
+	display: none;
+}
+
+.modal-popup-wrapper .plp_paging .prev>span::before{
+	transform:rotate(45deg);
+	-webkit-transform:rotate(45deg);
+}
+
+.modal-popup-wrapper .plp_paging .next>span::before{
+	transform:rotate(-135deg);
+	-webkit-transform:rotate(-135deg);
+}
+
+/* POPUP plp_paging END */
+
 /* COUPON POPUP */
+
 .modal-coupon-popup .popup-contents{
 
 }
@@ -19875,6 +20079,7 @@ em.prd_speedy .tooltip-box:before{
 .modal-coupon-popup .popup-contents .button_area div a::after{
     font-size: 1rem;
 }
+
 /* COUPON POPUP END */
 
 /*EVENT SYSTEM POPUP*/
