@@ -1,0 +1,338 @@
+@import './app/css/adidas/scss/common/mixin.scss';
+@import './app/css/adidas/scss/common/common.scss';
+
+
+#prophere{
+	position: relative;
+	.teager{
+		position: absolute;
+		top:0;
+		left:0;
+		width: 100%;
+		z-index: 10;
+		opacity: 1;
+		transition: all 0.5s;
+		&.none{
+			opacity: 0;
+		}
+		.inner{
+			position: relative;
+		}
+		.bg{
+			img{
+				width: 100%;
+			}
+		}
+		.inn{
+			width: 100%;
+			position: absolute;
+			top:50%;
+			left:50%;
+			transform: translate(-50%,-50%);
+			text-align: center;
+			p{
+				text-align: center;
+				font:1.5rem 'AdihausDIN-Cond';
+				font-weight:'bold';
+				text-transform: uppercase;
+				color:#fff;
+				letter-spacing: 0.1rem;
+				&.title{
+					padding: 0 0 20px 0;
+				    font-size: 2rem;
+				    color: #fff02a;
+				    letter-spacing: 1.2rem;
+				}
+			}
+			.loading{
+				position: relative;
+				margin: 0 0 20px 0;
+				display: inline-block;
+				width: 60%;
+				background: rgba(63,72,74,0.6);
+				height: 4px;
+				overflow: hidden;
+				span{
+					position: absolute;
+					top:0;
+					left:-100%;
+					display: inline-block;
+					height: 4px;
+					width: 100%;
+					background: #fff;
+					z-index: 1;
+					transition: all 8s ease;
+					&.on{
+						left:0%;
+					}
+				}
+			}
+		}
+		a{
+			display: inline-block;
+			position: absolute;
+			bottom:10%;
+			width: 100%;
+			height: 60px;
+		}
+	}
+	.content{
+		h2{
+			position: absolute;
+			top:2rem;
+		    right: 2rem;
+		    z-index: 2;
+			img{
+				width: 70%;
+			}
+		}
+		.banner_slider_wrap{
+			.box{
+				position: relative;
+				.bg{
+					position: relative;
+					width: 100%;
+					padding-bottom: 140%;
+					background-position: center center;
+					background-size: cover;
+					z-index: 0;
+					.bg1{
+						position: absolute;
+						top:0;
+						left:0;
+						width: 100%;
+						z-index: 1;
+						background-size: cover;
+						visibility: hidden;
+						padding-bottom: 140%;
+						z-index: 1;
+						background: url('http://imagem.adidas.co.kr/images/adidas/event/originals/171130_prophere/01_1.jpg') no-repeat;
+						background-position: center center;
+						background-size: cover;
+					}
+					.bg2{
+						position: absolute;
+						top:0;
+						left:0;
+						width: 100%;
+						z-index: 1;
+						background-size: cover;
+						visibility: hidden;
+						padding-bottom: 140%;
+						z-index: 1;
+						background: url('http://imagem.adidas.co.kr/images/adidas/event/originals/171130_prophere/01_2.jpg') no-repeat;
+						background-position: center center;
+						background-size: cover;
+					}
+				}
+				&.box1{
+					background: url('http://imagem.adidas.co.kr/images/adidas/event/originals/171130_prophere/01.jpg') no-repeat;
+					background-position: center center;
+					background-size: cover;
+				}
+				&.box2{
+					background: url('http://imagem.adidas.co.kr/images/adidas/event/originals/171130_prophere/02_video_bg.jpg') no-repeat;
+					background-position: center center;
+					background-size: cover;
+					.bg1{
+						background: url('http://imagem.adidas.co.kr/images/adidas/event/originals/171130_prophere/02_video_bg.jpg') no-repeat;
+						background-position: center center;
+						background-size: cover;
+					}
+					.bg2{
+						background: url('http://imagem.adidas.co.kr/images/adidas/event/originals/171130_prophere/02_video_bg.jpg') no-repeat;
+						background-position: center center;
+						background-size: cover;
+					}
+					.video{
+						position: absolute;
+					    width: 22rem;
+					    height: 22rem;
+					    top: 50%;
+					    left: 50%;
+					    transform: translate(-50%,-50%);
+						img{
+							width: 100%;
+						}
+						video{
+							width: 100%;
+						}
+					}
+				}
+				&.box3{
+					background: url('http://imagem.adidas.co.kr/images/adidas/event/originals/171130_prophere/03.jpg') no-repeat;
+					background-position: center center;
+					background-size: cover;
+					.bg1{
+						background: url('http://imagem.adidas.co.kr/images/adidas/event/originals/171130_prophere/03_1.jpg') no-repeat;
+						background-position: center center;
+						background-size: cover;
+					}
+					.bg2{
+						background: url('http://imagem.adidas.co.kr/images/adidas/event/originals/171130_prophere/03_2.jpg') no-repeat;
+						background-position: center center;
+						background-size: cover;
+					}
+				}
+				&.box4{
+					background: url('http://imagem.adidas.co.kr/images/adidas/event/originals/171130_prophere/04.jpg') no-repeat;
+					background-position: center center;
+					background-size: cover;
+					.bg1{
+						background: url('http://imagem.adidas.co.kr/images/adidas/event/originals/171130_prophere/04_1.jpg') no-repeat;
+						background-position: center center;
+						background-size: cover;
+					}
+					.bg2{
+						background: url('http://imagem.adidas.co.kr/images/adidas/event/originals/171130_prophere/04_2.jpg') no-repeat;
+						background-position: center center;
+						background-size: cover;
+					}
+				}
+				&.box5{
+					background: url('http://imagem.adidas.co.kr/images/adidas/event/originals/171130_prophere/05.jpg') no-repeat;
+					background-position: center center;
+					background-size: cover;
+					.bg1{
+						background: url('http://imagem.adidas.co.kr/images/adidas/event/originals/171130_prophere/05_1.jpg') no-repeat;
+						background-position: center center;
+						background-size: cover;
+					}
+					.bg2{
+						background: url('http://imagem.adidas.co.kr/images/adidas/event/originals/171130_prophere/05_2.jpg') no-repeat;
+						background-position: center center;
+						background-size: cover;
+					}
+				}
+				&.box6{
+					background: url('http://imagem.adidas.co.kr/images/adidas/event/originals/171130_prophere/06.jpg') no-repeat;
+					background-position: center center;
+					background-size: cover;
+					.bg1{
+						background: url('http://imagem.adidas.co.kr/images/adidas/event/originals/171130_prophere/06_1.jpg') no-repeat;
+						background-position: center center;
+						background-size: cover;
+					}
+					.bg2{
+						background: url('http://imagem.adidas.co.kr/images/adidas/event/originals/171130_prophere/06_2.jpg') no-repeat;
+						background-position: center center;
+						background-size: cover;
+					}
+				}
+				&.box7{
+					background: url('http://imagem.adidas.co.kr/images/adidas/event/originals/171130_prophere/07.jpg') no-repeat;
+					background-position: center center;
+					background-size: cover;
+					.bg1{
+						background: url('http://imagem.adidas.co.kr/images/adidas/event/originals/171130_prophere/07_1.jpg') no-repeat;
+						background-position: center center;
+						background-size: cover;
+					}
+					.bg2{
+						background: url('http://imagem.adidas.co.kr/images/adidas/event/originals/171130_prophere/07_2.jpg') no-repeat;
+						background-position: center center;
+						background-size: cover;
+					}
+				}
+				&.box8{
+					background: url('http://imagem.adidas.co.kr/images/adidas/event/originals/171130_prophere/08.jpg') no-repeat;
+					background-position: center center;
+					background-size: cover;
+					.bg1{
+						background: url('http://imagem.adidas.co.kr/images/adidas/event/originals/171130_prophere/08_1.jpg') no-repeat;
+						background-position: center center;
+						background-size: cover;
+					}
+					.bg2{
+						background: url('http://imagem.adidas.co.kr/images/adidas/event/originals/171130_prophere/08_2.jpg') no-repeat;
+						background-position: center center;
+						background-size: cover;
+					}
+				}
+				.inn{
+					position: absolute;
+				    top: 20%;
+				    left: 14%;
+				    z-index: 6;
+				    width: 100%;
+					p{
+						&.title{
+							padding: 0 0 100px 0;
+							font:1.8rem 'AdihausDIN-Cond';
+							color:#fff02a;
+							text-transform: uppercase;
+							letter-spacing: 0.5rem;
+						}
+						&.eng{
+							font:2rem 'AdihausDIN-Cond';
+							text-transform: uppercase;
+							letter-spacing: 0.1rem;
+
+						}
+						font:500 1.6rem 'NotoSansKR';
+						color:#fff;
+					}
+				}
+
+			}
+			.owl-controls{
+				position: absolute;
+			    top: 0;
+			    width: 100%;
+				.owl-nav{
+					position: absolute;
+					width: 100%;
+				    margin: 70% 0 0 0;
+					div{
+						width: 30px;
+						height: 30px;
+						text-indent: -9999px;
+					}
+					.owl-prev{
+						position: absolute;
+						left:0.5rem;
+						display: inline-block;
+						background: url('http://imagem.adidas.co.kr/images/adidas/event/originals/171130_prophere/prev.png') no-repeat;
+						background-size: 80%;
+					}
+					.owl-next{
+						position: absolute;
+						right:0.5rem;
+						display: inline-block;
+						background: url('http://imagem.adidas.co.kr/images/adidas/event/originals/171130_prophere/next.png') no-repeat;
+						background-size: 80%;
+					}
+				}
+				.owl-dots{
+					display: flex;
+				    position: absolute;
+				    top: 0;
+				    width: 100%;
+					.owl-dot{
+						display: inline-block;
+					    height: 3px;
+					    flex: 1;
+					    background: #fff;
+					    margin: 0 2px;
+						span{
+							padding: 2px 0 0 0;
+							display: inline-block;
+						    color: #fff;
+						    text-align: center;
+						    width: 100%;
+							font:1rem 'NotoSansKR';
+							opacity: 0;
+							transition: all 0.5s;
+						}
+						&.active{
+							background: #fff02a;
+							span{
+								opacity: 1;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
