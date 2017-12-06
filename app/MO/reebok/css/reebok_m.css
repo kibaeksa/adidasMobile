@@ -2840,6 +2840,17 @@ div.searchbox_info .title_sub ul li{float: left; margin-right: 5px; font: 300 14
 #contents .mypage .mpg_order_list .order_detail td a.btn_comment_write {display: inline-block; color:#fff; height: 40px; background-color: #282828; font:400 1rem/40px 'NotoSansKR'; border-radius: 5px; text-align: center; padding: 0 22px;}
 #contents .mypage .mpg_order_list .order_detail td a.btn_comment_modify {display: inline-block; color:#fff; height: 40px; background-color: #888888; font:400 1rem/40px 'NotoSansKR'; border-radius: 5px; text-align: center; padding: 0 22px;}
 
+#contents .mypage .mpg_order_list .order_detail td .able-store{
+	width: 90px;
+    height: 35px;
+    display: inline-block;
+    text-align: center;
+    line-height: 35px;
+    color: #fff;
+    background: #b81c25;
+    font-weight: 300;
+}
+
 #contents .mypage ol.mpg_order_list>li>h4{background:#fff;font-size:13px;font-weight:bold;padding:10px 15px;}
 #contents .mypage ol.mpg_order_list>li .prod_area{margin-bottom:10px;padding:10px 0;border-bottom:1px dotted #212121;}
 #contents .mypage ol.mpg_order_list>li .prod_area a{
@@ -10621,6 +10632,209 @@ div.layerpop_wrap#nomem_order_popup .inner .content .desc{
     font-size: 1rem;
 }
 /* COUPON POPUP END */
+
+/* COUPON LIST POPUP */
+
+.modal-popup-wrapper.store_coupon_list{
+    z-index: 121;
+}
+
+.modal-popup-wrapper.store_coupon_list .search_box{
+    display: flex;
+    padding: 15px 15px 0;
+}
+
+.modal-popup-wrapper.store_coupon_list .search_box input{
+    border: 1px solid #c8cbcc;
+    width: 100%;
+    height: 45px;
+    padding-left: 10px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border-right: none;
+	font:400 12px 'NotoSansKR';
+}
+
+.modal-popup-wrapper.store_coupon_list .search_box .search_button{
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	font-size: 1.8rem;
+    border: 1px solid #c8cbcc;
+	line-height: 45px;
+	height: 45px;
+    border-left: none;
+	width: 55px;
+    text-align: center;
+}
+
+.modal-popup-wrapper.store_coupon_list .popup-contents{
+    padding: 0;
+}
+
+.modal-popup-wrapper.store_coupon_list .store_list li{
+	padding: 15px 15px 15px 72px;
+	border-bottom: 1px solid  #d7d7d7;
+	background:url('/images/reebok/delta_logo_black.png') 15px 15% no-repeat;
+	-webkit-background-size:42px auto;
+	background-size:42px auto;
+}
+
+.modal-popup-wrapper.store_coupon_list .store_list li.ss{
+	background-image: url('/images/reebok/delta_logo_black.png');
+}
+
+.modal-popup-wrapper.store_coupon_list .store_list li.olt{
+	background-image: url('/images/reebok/delta_logo_black.png');
+}
+
+.modal-popup-wrapper.store_coupon_list .store_list li .ctgr{
+	margin-bottom: 5px;
+	color: #000;
+	font:300 12px/12px 'NotoSansKR';
+	text-transform: uppercase;
+}
+
+.modal-popup-wrapper.store_coupon_list .store_list li .nm{
+	margin-bottom:8px;
+	font:700 16px/16px 'NotoSansKR';
+}
+
+.modal-popup-wrapper.store_coupon_list .store_list li .addr{
+	margin-bottom:3px;
+	font-size:12px;
+	line-height: 12px;
+}
+
+.modal-popup-wrapper.store_coupon_list .store_list li .btn{
+	margin-top: 10px;
+}
+
+.modal-popup-wrapper.store_coupon_list .store_list li .btn a{
+	width:100px;
+	margin-right:10px;
+	display: inline-block;
+}
+
+.modal-popup-wrapper.store_coupon_list .store_select .search_box .search_button{
+    width: 55px;
+    background-image: url('/images/adidas/findstore_bt_search.jpg');
+    background-size: cover;
+    border: 1px solid #c8cbcc;
+    border-left: none;
+}
+
+.modal-popup-wrapper.store_coupon_list .store_list .map_button{
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    color: #fff;
+    background: #b81c25;
+    border-radius: 2px;
+    text-align: center;
+    font:13px/40px 'NotoSansKR';
+}
+
+.modal-popup-wrapper.store_coupon_list .store_list .phone_button{
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    color: #fff;
+    background: #000;
+    border-radius: 2px;
+    text-align: center;
+    font:13px/40px 'NotoSansKRLight';
+    letter-spacing: 0px;
+}
+
+/* COUPON LIST POPUP END */
+
+/* POPUP plp_paging */
+
+.modal-popup-wrapper .plp_paging{
+    margin: 1.5rem 0px;
+    position: relative;
+}
+
+.modal-popup-wrapper .plp_paging .num{
+    padding: 0.7rem;
+    text-align: center;
+}
+
+.modal-popup-wrapper .plp_paging .num span{
+	font:700 1.8rem 'dinpro cond';
+}
+
+.modal-popup-wrapper .plp_paging .prev{
+    left: 15px;
+}
+
+.modal-popup-wrapper .plp_paging .next{
+    right: 15px;
+}
+
+.modal-popup-wrapper .plp_paging .prev,
+.modal-popup-wrapper .plp_paging .next{
+    width: 3.5rem;
+    height: 3.5rem;
+    display: block;
+    position: absolute;
+    top: 0;
+    background: #b81c25;
+}
+
+.modal-popup-wrapper .plp_paging .disable{
+    background: #afafaf;
+}
+
+.modal-popup-wrapper .plp_paging .prev>span,
+.modal-popup-wrapper .plp_paging .next>span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate3d(-50%,-50%,0);
+	-webkit-transform:translate3d(-50%,-50%,0);
+}
+
+.modal-popup-wrapper .plp_paging .prev>span{
+    margin-top: -0.86rem;
+    margin-left: -0.43rem;
+}
+
+.modal-popup-wrapper .plp_paging .next>span{
+    margin-top: -0.86rem;
+    margin-left: -1.19rem;
+}
+
+.modal-popup-wrapper .plp_paging .prev>span::before,
+.modal-popup-wrapper .plp_paging .next>span::before{
+	position: absolute;
+	top:0;
+    left:0;
+	content:'';
+	display: inline-block;
+	width: 1.72rem;
+	height: 1.72rem;
+	border-style:solid;
+	border-width:0 0 1px 1px;
+	border-color:#fff;
+}
+
+.modal-popup-wrapper .plp_paging .prev>span::after,
+.modal-popup-wrapper .plp_paging .next>span::after{
+	display: none;
+}
+
+.modal-popup-wrapper .plp_paging .prev>span::before{
+	transform:rotate(45deg);
+	-webkit-transform:rotate(45deg);
+}
+
+.modal-popup-wrapper .plp_paging .next>span::before{
+	transform:rotate(-135deg);
+	-webkit-transform:rotate(-135deg);
+}
+
+/* POPUP plp_paging END */
 
 @-webkit-keyframes size-error-line {
 	0% {
