@@ -452,6 +452,8 @@
                         <a href="javascript:void(0)" id="teager_btn"></a>
                     </div>
                 </div>
+                <!-- <a class="button secondary play" style="position:absolute;top:0;z-index:100; background#ddd; width:500px;height:50px;">Play</a>
+                <a class="button secondary stop" style="position:absolute;top:50px;z-index:100; background:red; width:500px;height:50px;">stop</a> -->
                 <div class="content">
                     <h2><img src="http://imagem.adidas.co.kr/images/adidas/event/originals/171130_prophere/logo.png" alt=""></h2>
                     <div class="banner_slider_wrap">
@@ -465,10 +467,8 @@
                                     <div class="inn">
                                         <p class="title">[prophere]</p>
                                         <p>
-                                            과감하고 공격적인 디자인.<br>
-                                            그 무엇과도 비교를 거부하다.<br>
-                                            메인스트림이 표방하는 모든 것에<br>
-                                            저항하는 우리의 메시지.
+                                            <span>Prophere</span>는 존재만으로<br>
+                                            자신의 영역을 만들어냅니다.
                                         </p>
                                     </div>
                                 </div>
@@ -479,11 +479,13 @@
                                         <div class="bg1"></div>
                                         <div class="bg2"></div>
                                     </div>
+
                                     <div class="video">
-                                        <img src="http://imagem.adidas.co.kr/images/adidas/event/originals/171130_prophere/02_video.jpg" alt="" id="videoplay">
+                                        <p class="title">[prophere]</p>
+                                        <img src="http://imagem.adidas.co.kr/images/adidas/event/originals/171130_prophere/171212/02_video.jpg" alt="" id="videoplay">
                                         <span class="close_video" style="color:#fff;font-size:3rem;position:absolute;top:-45px;right:0;">×</span>
                                         <video controls autoplay loop muted playsinline controls id="prophere_video">
-                                            <source src="/images/adidas/event/originals/171130_prophere/video.mp4" type="video/mp4" />
+                                            <source src="/images/adidas/event/originals/171130_prophere/171212/video.mp4" type="video/mp4" />
                                         </video>
                                     </div>
                                 </div>
@@ -512,6 +514,12 @@
                                     </div>
                                     <div class="inn">
                                         <p class="title">[prophere]</p>
+                                        <p>
+                                            <span>Prophere</span>는<br>
+                                            주류 문화 밖에서<br>
+                                            일어나는 새로운 시도에<br>
+                                            눈을 돌리다.
+                                        </p>
                                     </div>
                                 </div>
                             </li>
@@ -534,34 +542,18 @@
                                     </div>
                                     <div class="inn">
                                         <p class="title">[prophere]</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="box box7">
-                                    <div class="bg">
-                                        <div class="bg1"></div>
-                                        <div class="bg2"></div>
-                                    </div>
-                                    <div class="inn">
-                                        <p class="title">[prophere]</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="box box8">
-                                    <div class="bg">
-                                        <div class="bg1"></div>
-                                        <div class="bg2"></div>
-                                    </div>
-                                    <div class="inn">
-                                        <p class="title">[prophere]</p>
                                         <p class="eng">
                                             december 15th
                                         </p>
+                                        <div class="btn">
+            								<a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=437" class="">
+            									<span class="icons aft" data-icon="">구매하기</span>
+            								</a>
+            							</div>
                                     </div>
                                 </div>
                             </li>
+
                         </ul>
                     </div>
                 </div>
@@ -593,15 +585,9 @@
                         stopvid();
                     });
 
-                    //teager btn
-                    $('#teager_btn').click(function(){
-                        $('.teager').addClass('none');
-                        setTimeout(function(){
-                            $('.teager').remove();
-                        },800)
 
-                    })
-                    //ani
+
+                    // img animation
                     var myVar = setInterval(timer,3000);
                     function timer (){
                         $("#prophere .box .bg .bg1").css({
@@ -624,35 +610,76 @@
                         },400);
 
                     }
+                    $('.owl-prev').hide();
 
                     //loading
+                    function slider_test(){
+                        var owl = $('#slider_owl');
+                        var numArray = ['01','02','03','01','02','03','04','05','06'];
+
+
+                        owl.owlCarousel({
+                            stagePadding: 0,
+                            margin:0,
+                            items : 1,
+                            merge: true,
+                            loop : false,
+                            navigation: true,
+                            nav: true,
+                            autoplay:true,
+                            autoplaySpeed:2000,
+                            autoplayTimeout: 2000,
+                            autoplayHoverPause:true
+                        });
+                        for(var i = 0; i<numArray.length; i++){
+                            $('.owl-dots .owl-dot').eq(i).children('span').text(numArray[i]);
+                        }
+                        owl.on('changed.owl.carousel', function(event) {
+                            if(event.item.index==5){
+                                $('.owl-next').hide();
+                            }else if (event.item.index==0) {
+                                $('.owl-prev').hide();
+                            }else{
+
+                            }
+                            console.log(event.item.index)
+
+                        });
+
+                    }
+
+
                     function loading(){
+
                         $('#prophere .loading span').addClass('on');
                         setTimeout(function(){
                             $('.teager').addClass('none');
                         },10800)
                         setTimeout(function(){
                             $('.teager').remove();
-                        },11000)
+                            $('.content').addClass('show');
+                            slider_test();
+                            $('.owl-prev').hide();
+                        },11000);
+
                     }
                     setTimeout(loading,1000);
 
-                    var owlSlider = $('#slider_owl');
-                    owlSlider.owlCarousel({
-                        stagePadding: 0,
-                        margin:0,
-                        items : 1,
-                        merge: true,
-                        loop : true,
-                        navigation: true,
-                        nav: true
-                    });
+                    // teager btn
+                    $('#teager_btn').click(function(){
+                        $('.teager').addClass('none');
+                        setTimeout(function(){
+                            $('.teager').remove();
 
-                    var numArray = ['01','02','03','04','05','06','07','08'];
+                            $('.content').addClass('show');
+                            slider_test();
+                        },800)
 
-                    for(var i = 0; i<numArray.length; i++){
-                        $('.owl-dots .owl-dot').eq(i).children('span').text(numArray[i]);
-                    }
+                    })
+
+
+
+
 
 
 				})(jQuery);
