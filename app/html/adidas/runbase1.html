@@ -998,8 +998,10 @@
                     </div>
 
 					<div class="map_wrapper">
+						<!-- 171221 -->
 						<!-- <div id="nmap"></div> -->
 						<div id="map" style="width: 100% !important; height: 100%; position: absolute; top: 0; left: 0;"></div>
+						<!-- 171221 -->
 					</div>
 					<!-- 171219 -->
 					<div class="description-box">
@@ -1102,6 +1104,11 @@
 					center: new naver.maps.LatLng(37.5405867, 126.9946487),
 					zoom: 10
 				});
+
+				// 마커로 사용할 이미지 정의
+				var marker_icon = new nhn.api.map.Icon('//image.adidas.co.kr/images/adidas/club/runbase/nhn_marker.png', new nhn.api.map.Size(32, 46), new nhn.api.map.Size(16, 46));
+				var marker = new nhn.api.map.Marker(marker_icon, {point:nPoint});
+				map.addOverlay(marker);
 
 				$(document).ready(function(){
 					$('.runbase_gnb li').bind('touchstart',function(){
