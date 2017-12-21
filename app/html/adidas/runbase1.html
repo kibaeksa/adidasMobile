@@ -13,8 +13,8 @@
 	<script type="text/javascript" src="/js/jquery-1.12.0.min.js"></script>
 	<script type="text/javascript" src="/js/swipe.js"></script>
 	<script type="text/javascript" src="/js/owl.carousel.min.js"></script>
-	<!-- 20170529 runbase naver 지도 추가 서비스 실제 운영시 키값 : ErPahvwIWR-->
-	<script src="https://openapi.map.naver.com/openapi/v2/maps.js?clientId=1KG6a0e2Hj9na72OD3D6"></script>
+	<!-- 171221 runbase naver 지도 api v3 -->
+	<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=1KG6a0e2Hj9na72OD3D6"></script>
 
 	<title>아디다스 모바일</title>
 </head>
@@ -998,7 +998,8 @@
                     </div>
 
 					<div class="map_wrapper">
-						<div id="nmap"></div>
+						<!-- <div id="nmap"></div> -->
+						<div id="map" style="width: 100% !important; height: 100%; position: absolute; top: 0; left: 0;"></div>
 					</div>
 					<!-- 171219 -->
 					<div class="description-box">
@@ -1086,18 +1087,21 @@
 					});
 				})();
 
+				// var nPoint = new nhn.api.map.LatLng(37.5405867, 126.9946487);
+				// var oMap = new nhn.api.map.Map('nmap', {
+				// 	center : nPoint,
+				// 	zoom : 100
+				// });
+                //
+				// // 마커로 사용할 이미지 정의
+				// var marker_icon = new nhn.api.map.Icon('//image.adidas.co.kr/images/adidas/club/runbase/nhn_marker.png', new nhn.api.map.Size(32, 46), new nhn.api.map.Size(16, 46));
+				// var marker = new nhn.api.map.Marker(marker_icon, {point:nPoint});
+				// oMap.addOverlay(marker);
 
-
-				var nPoint = new nhn.api.map.LatLng(37.5405867, 126.9946487);
-				var oMap = new nhn.api.map.Map('nmap', {
-					center : nPoint,
-					zoom : 100
+				var map = new naver.maps.Map('map', {
+					center: new naver.maps.LatLng(37.5405867, 126.9946487),
+					zoom: 10
 				});
-
-				// 마커로 사용할 이미지 정의
-				var marker_icon = new nhn.api.map.Icon('//image.adidas.co.kr/images/adidas/club/runbase/nhn_marker.png', new nhn.api.map.Size(32, 46), new nhn.api.map.Size(16, 46));
-				var marker = new nhn.api.map.Marker(marker_icon, {point:nPoint});
-				oMap.addOverlay(marker);
 
 				$(document).ready(function(){
 					$('.runbase_gnb li').bind('touchstart',function(){
