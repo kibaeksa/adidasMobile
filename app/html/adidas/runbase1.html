@@ -1106,9 +1106,17 @@
 				});
 
 				// 마커로 사용할 이미지 정의
-				var marker_icon = new nhn.api.map.Icon('//image.adidas.co.kr/images/adidas/club/runbase/nhn_marker.png', new nhn.api.map.Size(32, 46), new nhn.api.map.Size(16, 46));
-				var marker = new nhn.api.map.Marker(marker_icon, {point:nPoint});
-				map.addOverlay(marker);
+				var markerOptions = {
+				    position: map.center,
+				    icon: {
+				        url: 'http://static.naver.net/maps/v3/pin_default.png',
+				        size: new naver.maps.Size(22, 35),
+				        anchor: new naver.maps.Point(11, 35)
+				    }
+				};
+				var marker = new naver.maps.Marker(markerOptions);
+
+				marker.setMap(map); // 추가
 
 				$(document).ready(function(){
 					$('.runbase_gnb li').bind('touchstart',function(){
