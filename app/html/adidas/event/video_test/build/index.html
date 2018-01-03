@@ -446,23 +446,29 @@
                     <source src="/images/adidas/event/customise/170905/video.theora.ogv" type="video/ogg">
                     <a href="/images/adidas/event/customise/170905/video.m4v">Download the video</a>
                 </video> -->
-                <video id="video" autobuffer height="240" width="360">
+                <video id="video" height="240" width="360">
                     <source src="http://imagem.adidas.co.kr//images/adidas/event/customise/170905/video.m4v">
                     <source src="http://imagem.adidas.co.kr//images/adidas/event/customise/170905/video.webm" type="video/webm">
                     <source src="http://imagem.adidas.co.kr//images/adidas/event/customise/170905/video.theora.ogv" type="video/ogg">
                 </video>
+                <button id="play">play</button>
             </div>
 
             <script type="text/javascript">
                 (function($) {
 
                     var video = document.getElementById('video');
+                    var play = document.getElementById('play');
                     // video.play();
 
-                    video.addEventListener('click',function(){
-                      video.play();
-                    },false);
-$('#video').trigger("click");
+                    // video.addEventListener('click',function(){
+                    //   video.play();
+                    // },false);
+                    $('#play').click(function(){
+                        video.play();
+
+                    })
+$('#play').trigger("click");
                 })(jQuery);
             </script>
 
