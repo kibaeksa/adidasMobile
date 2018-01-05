@@ -444,32 +444,56 @@
                     <source src="/images/adidas/event/customise/170905/video.theora.ogv" type="video/ogg">
                     <a href="/images/adidas/event/customise/170905/video.m4v">Download the video</a>
                 </video> -->
-                <video id="video" height="240" width="360">
-                    <source src="http://imagem.adidas.co.kr//images/adidas/event/customise/170905/video.m4v">
-                    <source src="http://imagem.adidas.co.kr//images/adidas/event/customise/170905/video.webm" type="video/webm">
-                    <source src="http://imagem.adidas.co.kr//images/adidas/event/customise/170905/video.theora.ogv" type="video/ogg">
+                <video id="video"  loop="true" height="" width="100%">
+                    <source src="http://imagem.adidas.co.kr/images/adidas/event/customise/170905/video.m4v">
+                    <source src="http://imagem.adidas.co.kr/images/adidas/event/customise/170905/video.webm" type="video/webm">
+                    <source src="http://imagem.adidas.co.kr/images/adidas/event/customise/170905/video.theora.ogv" type="video/ogg">
                 </video>
                 <button id="play">play</button>
+
+
             </div>
 
             <script type="text/javascript">
-                (function($) {
+            var varUA = navigator.userAgent.toLowerCase(); //userAgent 값 얻기
 
-                    var video = document.getElementById('video');
-                    var play = document.getElementById('play');
-                    // video.play();
 
-                    // video.addEventListener('click',function(){
-                    //   video.play();
-                    // },false);
+        if (varUA.match('android') != null) {
+            //안드로이드 일때 처리
+            // alert('aos');
+
+            var test = document.getElementById('test');
+            test.innerHTML= 'aaa'
+
+
+        } else if (varUA.indexOf("iphone")>-1||varUA.indexOf("ipad")>-1||varUA.indexOf("ipod")>-1) {
+            //IOS 일때 처리
+            // alert('ios');
+            $('.test').addClass('bbb');
+
+
+        } else {
+
+            //아이폰, 안드로이드 외 처리
+        }
+
+            var myVid = document.getElementById("video");
+                myVid.onloadstart = (function() {
+                    // alert("Starting to load video");
+                    myVid.play();
+                })();
+
+
+                    // var video = document.getElementById('video');
+                    // var play = document.getElementById('play');
+                    //
                     $('#play').click(function(){
                         video.play();
+                    });
+                    // $('#play').trigger('click');
+                    // $('#play').click();
+                    console.log('aaaaaaaaaaaaaaaaaaaaaa')
 
-                    })
-$('#play').trigger('click');
-$('#play').click();
-
-                })(jQuery);
             </script>
 
 
