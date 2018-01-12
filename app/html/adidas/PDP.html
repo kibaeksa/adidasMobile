@@ -2459,10 +2459,12 @@
 
 
 
-
   <script type="text/javascript">
 		(function($){
+
 			$(document).ready(function() {
+
+
 
                 $('.tooltip_btn').bind('click',function(event){
 					$(this).addClass('on');
@@ -2678,6 +2680,12 @@
 				});
 
 			});
+            
+            // 180112 scrolltop 추가
+            $('html,body').animate({
+                scrollTop: 0
+            },400);
+            // 180112 scrolltop end
 
  			(function scrollDetect(){
  				var tabOffsetTop = $('.product_info').offset().top;
@@ -2975,6 +2983,7 @@
   					$('.buy_btn>a').eq(0).addClass('active');
   					$('#buy_btn_layer>a').eq(0).addClass('active');
   				});
+
 
 		})(jQuery);
 
