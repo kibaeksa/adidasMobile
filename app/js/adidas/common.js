@@ -69,8 +69,10 @@ adiApp.getNodefromString = function (htmlString) {
 						$('.nav_main .btn_slide').addClass('open');
 						$('#header .nav_menu').addClass('slide-open').css({
 							top: document.querySelector('#header>.nav_main').getBoundingClientRect().bottom,
-							minHeight : $(window).height() - document.querySelector('#header>.nav_main').getBoundingClientRect().bottom,
-							height : $(window).height() - document.querySelector('#header>.nav_main').getBoundingClientRect().bottom,
+							// minHeight : $(window).height() - document.querySelector('#header>.nav_main').getBoundingClientRect().bottom,
+							minHeight : $(window).height(),
+							// height : $(window).height() - document.querySelector('#header>.nav_main').getBoundingClientRect().bottom,
+							height : $(window).height(),
 							transform : 'translate3d(0 ,0 ,0)'
 						});
 						setTimeout(function(){
