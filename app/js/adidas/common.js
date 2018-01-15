@@ -69,10 +69,10 @@ adiApp.getNodefromString = function (htmlString) {
 						$('.nav_main .btn_slide').addClass('open');
 						$('#header .nav_menu').addClass('slide-open').css({
 							top: document.querySelector('#header>.nav_main').getBoundingClientRect().bottom,
-							// minHeight : $(window).height() - document.querySelector('#header>.nav_main').getBoundingClientRect().bottom,
-							minHeight : $(window).height(),
-							// height : $(window).height() - document.querySelector('#header>.nav_main').getBoundingClientRect().bottom,
-							height : $(window).height(),
+							minHeight : $(window).height() - document.querySelector('#header>.nav_main').getBoundingClientRect().bottom,
+							// minHeight : $(window).height(),
+							height : $(window).height() - document.querySelector('#header>.nav_main').getBoundingClientRect().bottom,
+							// height : $(window).height(),
 							transform : 'translate3d(0 ,0 ,0)'
 						});
 						setTimeout(function(){
@@ -140,6 +140,7 @@ adiApp.getNodefromString = function (htmlString) {
 			var topBnnElem = $('.top_bnn').get(0)
 			var offsetTop = !topBnnElem ? 61 : topBnnElem.getBoundingClientRect().bottom - topBnnElem.getBoundingClientRect().top + 61;
 			var elemH = $(window).height() - document.querySelector('#header>.nav_main').getBoundingClientRect().bottom;
+			var elemH_windowAll = $(window).height() ;
 
 			if($('.nav_main .btn_slide').hasClass('open')){
 				$('#header .nav_menu').removeClass('slide-open').css({
@@ -159,7 +160,7 @@ adiApp.getNodefromString = function (htmlString) {
 			$('#header .nav_search').addClass('slide-open').css({
 				top: document.querySelector('#header>.nav_main').getBoundingClientRect().bottom,
 				minHeight : elemH,
-				height : elemH,
+				height : elemH_windowAll,
 				transform : 'translate3d(0 ,0 ,0)'
 			});
 			$('#nav_menu_overlay').show().addClass('active');
