@@ -141,7 +141,7 @@ adiApp.getNodefromString = function (htmlString) {
 			var offsetTop = !topBnnElem ? 61 : topBnnElem.getBoundingClientRect().bottom - topBnnElem.getBoundingClientRect().top + 61;
 			var elemH = $(window).height() - document.querySelector('#header>.nav_main').getBoundingClientRect().bottom;
 			var windowH = $(window).height();
-			var elemH_windowAll = windowH + windowH*0.3;
+			var elemH_windowAll = windowH + windowH*0.2;
 
 			if($('.nav_main .btn_slide').hasClass('open')){
 				$('#header .nav_menu').removeClass('slide-open').css({
@@ -155,15 +155,17 @@ adiApp.getNodefromString = function (htmlString) {
 				});
 			}
 
-
 			$(this).addClass('open');
 			$('html').addClass('no_srl');
 			$('#header .nav_search').addClass('slide-open').css({
 				top: document.querySelector('#header>.nav_main').getBoundingClientRect().bottom,
-				minHeight : windowH,
-				height : windowH,
+				minHeight : elemH_windowAll,
+				height : elemH_windowAll,
 				transform : 'translate3d(0 ,0 ,0)',
-				// overflow : 'scroll !important'
+			});
+			$('#header .nav_search .sch_list').css({
+				'overflow' : 'scroll',
+				'height' : elemH_windowAll
 			});
 			$('#nav_menu_overlay').show().addClass('active');
 
