@@ -536,17 +536,13 @@
                     <div class="prod_info_wrapper">
                         <div class="img_wrapper" id="slide_swipe">
                             <ul>
-                                <li><img src="/images/adidas/event/tennis/slide01.jpg" alt=""></li>
                                 <li><img src="/images/adidas/event/tennis/slide02.jpg" alt=""></li>
                                 <li><img src="/images/adidas/event/tennis/slide03.jpg" alt=""></li>
+                                <li><img src="/images/adidas/event/tennis/slide01.jpg" alt=""></li>
                             </ul>
                         </div>
                         <div class="prod_info_box">
-                            <div class="box">
-                                <h5 class="">아디제로 우버소닉 <span>3.0</span></h5>
-                                <div class="details"></div>
-                                <a href="javascript:alert('입고예정 상품입니다')" class="button">COMING SOON <span class="icons" data-icon=""></span></a>
-                            </div>
+
                             <div class="box active" style="display: block;">
                                 <h5 class="">아디제로 우버소닉 <span>2.0</span></h5>
                                 <div class="details"></div>
@@ -556,6 +552,11 @@
                                 <h5 class="">바리케이드 부스트 <span>2018</span></h5>
                                 <div class="details"></div>
                                 <a href="/MO/Product/prdDispBas.action?prodCD=DB1570" class="button">구매하기 <span class="icons" data-icon=""></span></a>
+                            </div>
+                            <div class="box">
+                                <h5 class="">아디제로 우버소닉 <span>3.0</span></h5>
+                                <div class="details"></div>
+                                <a href="javascript:alert('입고예정 상품입니다')" class="button">COMING SOON <span class="icons" data-icon=""></span></a>
                             </div>
                         </div>
 
@@ -696,24 +697,7 @@
             <script type="text/javascript">
             (function($){
                 var infoSwipe = [
-                    {
-                        subTitle : '빠르게, 대담하게, 아디제로',
-                        title : '여성 테니스화',
-                        prodDesc : [
-                            {
-                                title : '삭 라이너 구조',
-                                desc : '비교할 수 없는 핏과 편안함'
-                            },
-                            {
-                                title : '네트 메쉬',
-                                desc : '최상의 안정감, 시원한 쿨링과 통기성'
-                            },
-                            {
-                                title : '스프린트 프레임',
-                                desc : '가볍고 안정감 있는 섀시 구조'
-                            }
-                        ]
-                    },
+
                     {
                         subTitle : '빠르게, 대담하게, 아디제로',
                         title : '남성 테니스화',
@@ -753,14 +737,35 @@
                                 desc : '편안한 착용감, 움직임에 따라 자연스럽게 늘어나는 신축성'
                             }
                         ]
+                    },
+
+                    {
+                        subTitle : '빠르게, 대담하게, 아디제로',
+                        title : '여성 테니스화',
+                        prodDesc : [
+                            {
+                                title : '삭 라이너 구조',
+                                desc : '비교할 수 없는 핏과 편안함'
+                            },
+                            {
+                                title : '네트 메쉬',
+                                desc : '최상의 안정감, 시원한 쿨링과 통기성'
+                            },
+                            {
+                                title : '스프린트 프레임',
+                                desc : '가볍고 안정감 있는 섀시 구조'
+                            }
+                        ]
                     }
                 ];
 
                 function handleSwipe(index){
                     var i = 0;
-                    var boxIndex = 0
+                    var boxIndex = 0;
                     var elemsBox = document.querySelector('.prod_info_box').children;
                     var elemDetail = elemsBox[index].querySelector('.details');
+
+
 
                     if(elemDetail.innerHTML == ''){
                         var htmlString = '<div id="details'+(index+1)+'"><ul>';
