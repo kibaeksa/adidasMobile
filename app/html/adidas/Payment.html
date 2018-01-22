@@ -708,9 +708,10 @@
 				        마이아디다스 유의사항 확인 및 동의
 				    </label>
 				</div>
+
 				<!-- 171031 체크박스 디자인 변경 END-->
 
-				
+
                 <!-- 171030 마이아디다스 제품 구매 시 유의사항 보기 버튼 변경-->
                 <a class="btn_miadi_noti" href="javascript:void(0)" style="position: absolute;top: 50%;right: 15px;color: #fff;font-size: 12px;background: #aaa;display: block;padding: 9px 12px;transform: translate3d(0,-50%,0);-webkit-transform: translate3d(0,-50%,0);letter-spacing: -0.5px;">
 					<span>유의사항 전체보기</span>
@@ -718,6 +719,23 @@
 				</a>
                 <!-- 171030 마이아디다스 제품 구매 시 유의사항 보기 버튼 변경 END-->
             </div>
+			<div class="mi_sub_agreements" style="display:none; position:relative; background-color:#f0f0f0; padding-bottom:30px;">
+				<div class="mi_line" style="position:absolute; top:-3px; left:25px;">
+					<img src="http://imagem.adidas.co.kr/upload/fckeditor/temp/image/mi_line_180119_mo.jpg" alt="">
+				</div>
+				<ul style="padding:5px 0 0 50px;">
+					<li style="color:#027dbf; font-size:12px;">
+						<span class="icons" data-icon="" style="color:#027dbf; font-size:12px; margin-right:4px;"></span>결제 후 주문 취소 불가
+					</li>
+					<li style="color:#027dbf; font-size:12px; margin-top:8px;">
+						<span class="icons" data-icon="" style="color:#027dbf; font-size:12px; margin-right:4px;"></span>결제 후 제품 옵션 정보 수정 불가
+					</li>
+					<li style="color:#027dbf; font-size:12px; margin-top:8px;">
+						<span class="icons" data-icon="" style="color:#027dbf; font-size:12px; margin-right:4px;"></span>배송기간 : 주문 후 약 4~6주 소요가능
+					</li>
+				</ul>
+			</div>
+
 
 
 			<div class="button_area no_pdg">
@@ -878,6 +896,11 @@
 				// 161219 전체동의 클릭 시
 				$('#pay_agree_yn').bind('click',function(){
 					$('.sub_agreements').fadeIn();
+				});
+
+				// 180119 마이 아디다스 구매 동의 클릭 시
+				$('#agree_mi').bind('click',function(){
+					$('.mi_sub_agreements').fadeIn();
 				});
 
 				// 161228 레이어 닫았을 떄
