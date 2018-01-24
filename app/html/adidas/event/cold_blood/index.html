@@ -559,10 +559,44 @@
                             });
                         },400)
 
+						var offset = $(".inn").offset();
+						$('html, body').animate({scrollTop : offset.top - 60}, 500);
+						$('#header').addClass("hide");
+
+                    });
+
+					$(window).scroll(function(){
+
+						var objStart = $(".inn").offset().top;  		
+						var objStart2 = $(".logos").offset().top;  		
+						var lastScrollValue = 0;
+						var thisScrollValue = $(this).scrollTop();		
+						var headerHide = $('#header').hasClass('hide');				
+
+						 console.log(objStart);	
+						 console.log(thisScrollValue);
+
+						if (thisScrollValue > lastScrollValue && thisScrollValue > objStart - 50) {
+							// 두가지를 만족하는 경우 발동
+							$('.logos').addClass('on');
+							$('.inn').css('top','50px');				
+
+							if(!headerHide) { // hide 클래스가 없다면(헤더가 보이는 경우라면)
+								$('.logos').css("top","60px");							
+							}else{
+								$('.logos').css("top","0");				
+							}
+						}else{
+							$('.logos').removeClass('on').css("top","0");
+							$('.inn').css('top','0');							
+							if (thisScrollValue == objStart) {
+								$('#header').addClass("hide");
+							}
+						}
+						thisScrollValue = lastScrollValue;
+					});
 
 
-
-                    })
                 })(jQuery)
 
             </script>
