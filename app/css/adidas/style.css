@@ -2507,11 +2507,11 @@ html.no_srl{
 #header .nav_menu .feedback{
 	width: 80%;
     max-width: 480px;
-    margin: 0 auto;   
+    margin: 0 auto;
     height: 50px;
     display: block;
-    position: relative;  
-    text-align: center;    
+    position: relative;
+    text-align: center;
     border-top: 1px solid #333;
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -2523,7 +2523,7 @@ html.no_srl{
 	color: #fff;
 	font: 300 18px/50px 'adinenuPro-light';
 	letter-spacing: 0.1rem;
-	text-transform: uppercase;	
+	text-transform: uppercase;
 }
 /* 180112 feedback 추가 END */
 
@@ -12665,6 +12665,27 @@ em.prd_speedy .tooltip-box:before{
 	color: #bbb;
 }
 
+#container.order .odr_pay_box.select_payment_1801 .payment_list div{
+	width: 25%;
+    margin-bottom: 5px;
+}
+
+#container.order .odr_pay_box.select_payment_1801 .payment_list>div:nth-child(1n){
+	padding-right: 5px;
+}
+
+#container.order .odr_pay_box.select_payment_1801 .payment_list>div:nth-child(2n){
+	padding-left: 0px;
+}
+
+#container.order .odr_pay_box.select_payment_1801 .payment_list>div:nth-child(4n){
+	padding-right: 0px;
+}
+
+#container.order .odr_pay_box.select_payment_1801 .payment{
+    font-size: 11px;
+}
+
 
 #container.order .agr_nomem{
 	padding:15px;
@@ -12730,8 +12751,17 @@ em.prd_speedy .tooltip-box:before{
 #container.order .odr_pay_box.select_payment #no_accbox,
 #container.order .odr_pay_box.select_payment .payments #cashReport_choice,
 #container.order .odr_pay_box.select_payment .payments #cashReport_phn,
-#container.order .odr_pay_box.select_payment .payments #cashReport_bizr{
+#container.order .odr_pay_box.select_payment .payments #cashReport_bizr,{
 	display: none;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #cfcfcf;
+}
+
+#container.order .odr_pay_box.select_payment #naver_payment,
+#container.order .odr_pay_box.select_payment .payments #cashReport_choice2,
+#container.order .odr_pay_box.select_payment .payments #cashReport_phn2,
+#container.order .odr_pay_box.select_payment .payments #cashReport_bizr2{
+    display: none;
     padding-bottom: 15px;
     border-bottom: 1px solid #cfcfcf;
 }
@@ -12834,6 +12864,20 @@ em.prd_speedy .tooltip-box:before{
 	width: 100px;
 	font-size: 12px;
 	line-height: 40px;
+}
+
+.odr_pay_box.select_payment #naver_payment li,
+.odr_pay_box.select_payment #kakao_payment li,
+.odr_pay_box.select_payment #lpay_payment li,
+.odr_pay_box.select_payment #payco_payment li{
+    font-size: 12px;
+    line-height: 17px;
+    margin-bottom: 3px;
+    color:#555555;
+}
+
+#container.order .odr_pay_box #naver_payment .form_table th{
+	width: 95px;
 }
 
 

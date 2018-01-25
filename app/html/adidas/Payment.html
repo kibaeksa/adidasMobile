@@ -408,7 +408,7 @@
 			</div>
 			<!-- //odr_pay_box -->
 
-			<div class="odr_pay_box select_payment">
+			<div class="odr_pay_box select_payment select_payment_1801"> <!-- 180125 결제수단 클래스 추가 -->
 				<div class="tit toggle_arw open">
 					<strong>결제수단</strong>
 					<span>신용카드</span>
@@ -419,14 +419,21 @@
                         <span style="font:0.9rem 'NotoSansKR';letter-spacing:-0.5px;">네이버페이로 첫 결제 시 무조건 2000원 <span style="font-family:'NotoSansKRLight'">(2017.06.12 - 25)</span> <a class="modal-popup-click" data-modalpop-click="naverpay-eventpopup" href="javascript:void(0)" style="margin-left:10px;color:#0285cd;">자세히 보기 <span class="icons aft" data-icon="" style="margin-left:2px;"></span></a></span>
                     </div>
 
+
 					<div class="payment_box">
 						<div class="payment_list">
-							<div class="on p_card"><a href="#" class="icons" data-icon="">카드결제</a></div>
-                            <!-- 170324 네이버 페이 추가 -->
+
+							<!-- 180125 결제수단 목록 추가 -->
                             <div class="p_naver"><a href="#" class="icons" data-icon="">네이버페이</a></div>
-							<div class="p_kp"><a href="#" class="icons" data-icon="">Kpay</a></div>
-							<div class="p_acc"><a href="#" class="icons" data-icon="">무통장입금</a></div>
-							<div class="p_mo"><a href="#" class="icons" data-icon="">휴대폰결제</a></div>
+							<div class="p_kakao"><a href="#" class="icons" data-icon="">카카오페이</a></div>
+							<div class="p_lp"><a href="#" class="icons" data-icon="">L.Pay</a></div>
+							<div class="p_payco"><a href="#" class="icons" data-icon="">Payco</a></div>
+							<div class="on p_card"><a href="#" class="icons" data-icon="">카드결제</a></div>
+							<div class="p_kp"><a href="#" class="icons" data-icon="">KPAY</a></div>
+							<div class="p_acc"><a href="#" class="icons" data-icon="">무통장</a></div>
+							<div class="p_mo"><a href="#" class="icons" data-icon="">휴대폰</a></div>
+							<div class="p_samsung"><a href="#" class="icons" data-icon="">삼성페이</a></div>
+							<!-- 180125 결제수단 목록 추가 END-->
 						</div>
 						<!-- //payment_list -->
 
@@ -619,6 +626,134 @@
 							</div>
 						</div>
 						<!-- //payments no_accbox -->
+
+						<!-- //180125 결제수단업데이트 -->
+						<div class="payments" id="naver_payment">
+							<div>
+								<ul class="li_hypn">
+								    <li>네이버페이는 네이버ID로 별도 앱 설치 없이 신용카드 또는 은행계좌 정보를<br />
+										등록하여 네이버페이 비밀번호로 결제할 수 있는 간편결제 서비스입니다.</li>
+								    <li>주문 변경 시 카드사 혜택 및 할부 적용 여부는 해당 카드사 정책에 따라<br />
+										변경될 수 있습니다.</li>
+								    <li>결제 가능한 신용카드 : 신한, 삼성, 현대, BC, 국민, 하나, 롯데, NH농협, 씨티</li>
+								    <li>결제 가능한 은행 : NH농협, 국민, 신한, 우리, 기업, SC제일, 부산, 경남, 수협, 우체국</li>
+									<li>네이버페이 카드 간편결제는 네이버페이에서 제공하는 카드사 별 무이자,<br />
+										청구할인 혜택을 받을 수 있습니다.</li>
+								</ul>
+							</div>
+							<table class="form_table">
+								<tr class="no_line">
+									<th style="padding-bottom:0;">현금영수증 신청</th>
+									<td style="padding-bottom:0;">
+										<div class="td_wrap">
+											<div class="cell">
+												<div class="rdo_box1 blue" style="margin-right:15px;">
+													<input type="radio" name="CASH_RECPT_APPLY" id="CASH_RECPT_APPLY_Y2">
+													<label for="CASH_RECPT_APPLY_Y2">신청하기</label>
+												</div>
+												<div class="rdo_box1 blue">
+													<input type="radio" name="CASH_RECPT_APPLY"  id="CASH_RECPT_APPLY_N2">
+													<label for="CASH_RECPT_APPLY_N2">신청안함</label>
+												</div>
+											</div>
+										</div>
+										<!-- //td_wrap -->
+									</td>
+								</tr>
+								<tr class="no_line">
+									<th>&nbsp;</th>
+									<td>
+										<div class="td_wrap">
+											<p>- 개인 소득공제용으로 신청하실 경우 국세청으로 자동전송됩니다.</p>
+											<p>- 사업자 지출 증빙용으로 신청하시면 세금계산서로 활용 가능합니다.</p>
+										</div>
+									</td>
+								</tr>
+							</table>
+
+							<table class="form_table" id="cashReport_choice2">
+								<tr class="no_line">
+									<th style="border-top:1px dotted #ccc;">현금영수증 발급</th>
+									<td style="border-top:1px dotted #ccc;">
+										<div class="td_wrap">
+											<div class="cell">
+												<div class="rdo_box1 blue" style="margin-right:15px;">
+													<input type="radio" name="CASH_RECPT_PUBL_PRPOS_R" id="CASH_RECPT_PUBL_PRPOS_03" checked="">
+													<label for="CASH_RECPT_PUBL_PRPOS_03">개인소득공제용</label>
+												</div>
+												<div class="rdo_box1 blue">
+													<input type="radio" name="CASH_RECPT_PUBL_PRPOS_R"  id="CASH_RECPT_PUBL_PRPOS_04">
+													<label for="CASH_RECPT_PUBL_PRPOS_04">사업자증빙용</label>
+												</div>
+											</div>
+										</div>
+										<!-- //td_wrap -->
+									</td>
+								</tr>
+
+								<tr id="cashReport_phn2" class="phn no_line" style="display: table-row;">
+									<th>&nbsp;</th>
+									<td style="padding-top:0;">
+										<div class="td_wrap">
+											<input type="tel" style="width:100%;height:30px;border:1px solid #ddd;" placeholder="휴대폰 번호">
+										</div>
+										<!-- //td_wrap -->
+									</td>
+								</tr>
+								<tr id="cashReport_bizr2" class="phn no_line">
+									<th>&nbsp;</th>
+									<td style="padding-top:0;">
+										<div class="td_wrap">
+											<input type="tel" style="width:100%;height:30px;border:1px solid #ddd;" placeholder="사업자 등록번호">
+										</div>
+										<!-- //td_wrap -->
+									</td>
+								</tr>
+							</table>
+							<div class="check_safedeal">
+								<p class="tit">한국스탠다드차타드은행 채무지급보증안내</p>
+								<p>당사는 고객님이 현금으로 결제한 금액에 대해 한국스탠다드차타드은행과 채무 지급보증 계약을 체결하여 안전거래를 보장하고 있습니다.</p>
+								<a href="#" class="icons aft" data-icon="">서비스 가입사실 확인</a>
+							</div>
+						</div>
+						<!-- //payment naver_payment -->
+
+						<div class="payments" id="kakao_payment">
+							<div>
+								<ul class="li_hypn">
+								    <li>카카오페이 간편결제는 카카오페이에서 운영하는 간편결제 서비스 입니다.</li>
+								    <li>결제가능카드 : 신한, BC, KB, 삼성, 현대, 롯데, 하나, NH</li>
+								    <li>카카오페이로 결제 시 카드사에서 제공하는 제휴 및 청구할인은 이용불가 합니다. </li>
+								</ul>
+							</div>
+						</div>
+						<!-- //payment kakao_payment -->
+
+						<div class="payments" id="lpay_payment">
+							<div>
+								<ul class="li_hypn">
+								    <li>L.pay 간편결제는 롯데에서 운영하는 온 / 오프라인 통합 간편결제 서비스<br />입니다.</li>
+								    <li>결제 불가 카드 : 농협카드, 씨티카드 (추후 서비스 제공 예정)</li>
+								    <li>결제방법 : 앱 가입 -> 결제수단 등록 -> 지문 or PIN 인증 후 결제</li>
+									<li>카드사/금융사별 정책에 따라 고액 결제 시, 추가 인증이 필요합니다.</li>
+								</ul>
+							</div>
+						</div>
+						<!-- //payment lpay_payment -->
+
+						<div class="payments" id="payco_payment">
+							<div>
+								<ul class="li_hypn">
+								    <li>PAYCO 간편결제는 엔에이치엔페이코(주)에서 운영하는 서비스이며,<br />PAYCO ID 하나로 간편하게 결제하실 수 있습니다.</li>
+								    <li>결제가능 카드 : 신한, BC, KB, 삼성, 현대, 롯데, 하나, NH</li>
+								    <li>BC, KB, 현대, NH로 결제 시 카드사에서 제공하는 제휴 및 청구할인 이용이 가능합니다. (단, 정책에 따라 일부 변동이 있을 수 있습니다.)</li>
+
+								</ul>
+							</div>
+						</div>
+						<!-- //payment payco_payment -->
+
+						<!-- //180125 결제수단업데이트END -->
 
 						<!-- 170324 border-bottom:1px solid #cfcfcf;padding-top:15px; 삭제  -->
 						<div class="view_more_area" style="margin-top:15px;">
@@ -828,7 +963,7 @@
 					$('.select_payment .payment_list>div').removeClass('on');
 					$(this).addClass('on');
 
-					// 161209 p_card 일때 추가
+					/* 180125 결제수단 추가 */
 					if(attrClass == 'p_card'){
 						$('.select_payment .payments').hide();
 						$('#credit_payment').show();
@@ -841,6 +976,18 @@
 					}else if(attrClass == 'p_acc'){
 						$('.select_payment .payments').hide();
 						$('#no_accbox').show();
+					}else if(attrClass == 'p_naver'){
+						$('.select_payment .payments').hide();
+						$('#naver_payment').show();
+					}else if(attrClass == 'p_kakao'){
+						$('.select_payment .payments').hide();
+						$('#kakao_payment').show();
+					}else if(attrClass == 'p_lp'){
+						$('.select_payment .payments').hide();
+						$('#lpay_payment').show();
+					}else if(attrClass == 'p_payco'){
+						$('.select_payment .payments').hide();
+						$('#payco_payment').show();
 					}else{
 						$('.select_payment .payments').hide();
 					}
@@ -856,6 +1003,14 @@
 					$('#cashReport_choice').hide();
 				});
 
+				/* 180125 현금영수증 신청_naverpay */
+				$('#CASH_RECPT_APPLY_Y2').bind('click',function(){
+					$('#cashReport_choice2').show();
+				});
+				$('#CASH_RECPT_APPLY_N2').bind('click',function(){
+					$('#cashReport_choice2').hide();
+				});
+
 				/* 개인소득 공제 */
 				$('#CASH_RECPT_PUBL_PRPOS_01').bind('click',function(){
 					$('#cashReport_bizr').hide();
@@ -864,10 +1019,26 @@
 					});
 				});
 
+				/* 180125 개인소득 공제_naverpay */
+				$('#CASH_RECPT_PUBL_PRPOS_03').bind('click',function(){
+					$('#cashReport_bizr2').hide();
+					$('#cashReport_phn2').css({
+						display : 'table-row'
+					});
+				});
+
 				/* 사업자 증빙 */
 				$('#CASH_RECPT_PUBL_PRPOS_02').bind('click',function(){
 					$('#cashReport_phn').hide();
 					$('#cashReport_bizr').css({
+						display : 'table-row'
+					});
+				});
+
+				/* 180125 사업자 증빙_naverpay */
+				$('#CASH_RECPT_PUBL_PRPOS_04').bind('click',function(){
+					$('#cashReport_phn2').hide();
+					$('#cashReport_bizr2').css({
 						display : 'table-row'
 					});
 				});

@@ -14,7 +14,9 @@
 	 	fn_initCashRecptBizrno,
 	 	fn_initCashRecptMoblno,
 	 	changeCashRecptApply,
-	 	changeCashRecptPubl;
+		changeCashRecptApply2, //180125 결제수단 추가 스크립트
+	 	changeCashRecptPubl,
+		changeCashRecptPubl2;  //180125 결제수단 추가 스크립트
 		;(function($){
 
 			$(document).ready(function(){
@@ -57,6 +59,15 @@
 					}
 				};
 
+				//180125 결제수단 추가 스크립트
+				changeCashRecptApply2 = function(sel){
+					if ( sel == "Y" ) {
+						$('#cashReport_choice2').show();
+					}else {
+						$('#cashReport_choice2').hide();
+					}
+				};
+
 				changeCashRecptPubl = function(sel){
 					if ( sel == "01" ) {
 						// 사업자번호 초기화
@@ -73,15 +84,36 @@
 					}
 				};
 
+				//180125 결제수단 추가 스크립트
+				changeCashRecptPubl2 = function(sel){
+					if ( sel == "04" ) {
+						// 사업자번호 초기화
+						fn_initCashRecptBizrno();
+
+						jQuery('#cashReport_bizr2').hide();
+						jQuery('#cashReport_phn2').show();
+					} else {
+						// 핸드폰번호 초기화
+						fn_initCashRecptMoblno();
+
+						jQuery('#cashReport_bizr2').show();
+						jQuery('#cashReport_phn2').hide();
+					}
+				};
+
+				//180125 결제수단 추가 스크립트
 				fn_initCashRecptBizrno = function() {
 					jQuery("#CASH_RECPT_BIZRNO1").val("");
 					jQuery("#CASH_RECPT_BIZRNO2").val("");
 					jQuery("#CASH_RECPT_BIZRNO3").val("");
+					jQuery("#CASH_RECPT_BIZRNO4").val("");
+					jQuery("#CASH_RECPT_BIZRNO5").val("");
+					jQuery("#CASH_RECPT_BIZRNO6").val("");
 				};
 				fn_initCashRecptMoblno = function() {
-					jQuery("#CASH_RECPT_MOBLNO1").val("");
-					jQuery("#CASH_RECPT_MOBLNO2").val("");
-					jQuery("#CASH_RECPT_MOBLNO3").val("");
+					jQuery("#CASH_RECPT_MOBLNO4").val("");
+					jQuery("#CASH_RECPT_MOBLNO5").val("");
+					jQuery("#CASH_RECPT_MOBLNO6").val("");
 				}
 
 
@@ -117,7 +149,7 @@
 
 	})(jQuery);
 
-
+	//180125 결제수단 추가 스크립트 start
 	function fn_ChangePayMethod(sel) {
 		if ( sel == "credit" ) {
 			jQuery("#PAYMT_TYPE").val("03");
@@ -133,9 +165,16 @@
 			jQuery("#no_accbox").hide();
 			jQuery("#no_accbox_desc").hide();
 			jQuery("#standard_bank").hide();
+			jQuery("#standard_bank2").hide();
+			jQuery("#cashReport_choice2").hide();
 			jQuery("#cashReport").hide();
 			jQuery("#cashReport_choice").hide();
 			jQuery("#phoneReport_choice").hide();
+			jQuery("#naver_desc").hide();
+			jQuery("#naver_payment").hide();
+			jQuery("#kakao_desc").hide();
+			jQuery("#lpay_desc").hide();
+			jQuery("#payco_desc").hide();
 
 			jQuery("#cardReport_choice2").hide();
 			jQuery("#CARD_PAYMT_TYPE").val("01");
@@ -154,8 +193,15 @@
 			jQuery("#no_accbox_desc").hide();
 			jQuery("#standard_bank").hide();
 			jQuery("#cashReport").hide();
+			jQuery("#standard_bank2").hide();
+			jQuery("#cashReport_choice2").hide();
 			jQuery("#cashReport_choice").hide();
 			jQuery("#phoneReport_choice").hide();
+			jQuery("#naver_desc").hide();
+			jQuery("#naver_payment").hide();
+			jQuery("#kakao_desc").hide();
+			jQuery("#lpay_desc").hide();
+			jQuery("#payco_desc").hide();
 
 			jQuery("#cardReport_choice2").show();
 			jQuery("#CARD_PAYMT_TYPE").val("02");
@@ -173,8 +219,15 @@
 				jQuery("#no_accbox").hide();
 				jQuery("#no_accbox_desc").hide();
 				jQuery("#standard_bank").hide();
+				jQuery("#standard_bank2").hide();
+				jQuery("#cashReport_choice2").hide();
 				jQuery("#cashReport").hide();
 				jQuery("#phoneReport_choice").hide();
+				jQuery("#naver_desc").hide();
+				jQuery("#naver_payment").hide();
+				jQuery("#kakao_desc").hide();
+				jQuery("#lpay_desc").hide();
+				jQuery("#payco_desc").hide();
 
 				jQuery("#cardReport_choice2").hide();
 				jQuery("#CARD_PAYMT_TYPE").val("01");
@@ -196,7 +249,14 @@
 			jQuery("#no_accbox").hide();
 			jQuery("#no_accbox_desc").hide();
 			jQuery("#standard_bank").hide();
+			jQuery("#standard_bank2").hide();
+			jQuery("#cashReport_choice2").hide();
 			jQuery("#cashReport_choice").hide();
+			jQuery("#naver_desc").hide();
+			jQuery("#naver_payment").hide();
+			jQuery("#kakao_desc").hide();
+			jQuery("#lpay_desc").hide();
+			jQuery("#payco_desc").hide();
 
 			jQuery("#cardReport_choice2").hide();
 			jQuery("#CARD_PAYMT_TYPE").val("01");
@@ -215,9 +275,16 @@
 			jQuery("#no_accbox").hide();
 			jQuery("#no_accbox_desc").hide();
 			jQuery("#standard_bank").hide();
+			jQuery("#standard_bank2").hide();
+			jQuery("#cashReport_choice2").hide();
 			jQuery("#cashReport").hide();
 			jQuery("#cashReport_choice").hide();
 			jQuery("#phoneReport_choice").hide();
+			jQuery("#naver_desc").hide();
+			jQuery("#naver_payment").hide();
+			jQuery("#kakao_desc").hide();
+			jQuery("#lpay_desc").hide();
+			jQuery("#payco_desc").hide();
 
 			jQuery("#cardReport_choice2").hide();
 			jQuery("#CARD_PAYMT_TYPE").val("03");
@@ -235,25 +302,153 @@
 			jQuery("#no_accbox_desc").show();
 			jQuery("#cashReport").show();
 			jQuery("#standard_bank").show();
+			jQuery("#standard_bank2").hide();
+			jQuery("#cashReport_choice2").hide();
 			jQuery("#cashReport_choice").show();
 			jQuery("#credit_box").hide();
 			jQuery("#phoneReport_choice").hide();
+			jQuery("#naver_desc").hide();
+			jQuery("#naver_payment").hide();
+			jQuery("#kakao_desc").hide();
+			jQuery("#lpay_desc").hide();
+			jQuery("#payco_desc").hide();
 
 			jQuery("#cardReport_choice2").hide();
 			jQuery("#CARD_PAYMT_TYPE").val("01");
 		}else if(sel == 'naver'){
+			jQuery("#PAYMT_TYPE").val("08");
+			jQuery("#P_GOPAYMETHOD").val("naver");
+			jQuery("#SWALLET_YN").val("N");
+
 			// 170324 naver 페이 else 문 추가
+
 			jQuery("#credit_box").hide();
 			jQuery("#no_accbox").hide();
 			jQuery("#no_accbox_desc").hide();
 			jQuery("#standard_bank").hide();
+			jQuery("#standard_bank2").show();
 			jQuery("#cashReport").hide();
+			jQuery("#cashReport_phn2").show();
 			jQuery("#cashReport_choice").hide();
+			jQuery("#cashReport_choice2").show();
 			jQuery("#phoneReport_choice").hide();
+			jQuery("#naver_desc").show();
+			jQuery("#naver_payment").show();
+			jQuery("#kakao_desc").hide();
+			jQuery("#lpay_desc").hide();
+			jQuery("#payco_desc").hide();
 
 			jQuery("#cardReport_choice2").hide();
+		}else if ( sel == "kakao" ) {
+
+			jQuery("#PAYMT_TYPE").val("09");
+			jQuery("#P_GOPAYMETHOD").val("kakao_desc");
+			jQuery("#SWALLET_YN").val("N");
+
+			// 핸드폰번호 초기화
+			fn_initCashRecptMoblno();
+			// 사업자번호 초기화
+			fn_initCashRecptBizrno();
+
+			jQuery("#phoneReport_choice").hide();
+			jQuery("#credit_box").hide();
+
+			jQuery("#no_accbox").hide();
+			jQuery("#no_accbox_desc").hide();
+			jQuery("#standard_bank").hide();
+			jQuery("#cashReport_choice").hide();
+			jQuery("#standard_bank2").hide();
+			jQuery("#cashReport_choice2").hide();
+			jQuery("#naver_desc").hide();
+			jQuery("#naver_payment").hide();
+			jQuery("#kakao_desc").show();
+			jQuery("#lpay_desc").hide();
+			jQuery("#payco_desc").hide();
+
+			jQuery("#cardReport_choice2").hide();
+			jQuery("#CARD_PAYMT_TYPE").val("01");
+		}else if ( sel == "lpay" ) {
+
+			jQuery("#PAYMT_TYPE").val("10");
+			jQuery("#P_GOPAYMETHOD").val("naver_desc");
+			jQuery("#SWALLET_YN").val("N");
+
+			// 핸드폰번호 초기화
+			fn_initCashRecptMoblno();
+			// 사업자번호 초기화
+			fn_initCashRecptBizrno();
+
+			jQuery("#phoneReport_choice").hide();
+			jQuery("#credit_box").hide();
+
+			jQuery("#no_accbox").hide();
+			jQuery("#no_accbox_desc").hide();
+			jQuery("#standard_bank").hide();
+			jQuery("#standard_bank2").hide();
+			jQuery("#cashReport_choice2").hide();
+			jQuery("#cashReport_choice").hide();
+			jQuery("#naver_desc").hide();
+			jQuery("#naver_payment").hide();
+			jQuery("#kakao_desc").hide();
+			jQuery("#lpay_desc").show();
+			jQuery("#payco_desc").hide();
+
+			jQuery("#cardReport_choice2").hide();
+			jQuery("#CARD_PAYMT_TYPE").val("01");
+		}else if ( sel == "payco" ) {
+
+			jQuery("#PAYMT_TYPE").val("11");
+			jQuery("#P_GOPAYMETHOD").val("payco_desc");
+			jQuery("#SWALLET_YN").val("N");
+
+			// 핸드폰번호 초기화
+			fn_initCashRecptMoblno();
+			// 사업자번호 초기화
+			fn_initCashRecptBizrno();
+
+
+			jQuery("#credit_box").hide();
+			jQuery("#phoneReport_choice").hide();
+			jQuery("#no_accbox").hide();
+			jQuery("#no_accbox_desc").hide();
+			jQuery("#standard_bank").hide();
+			jQuery("#standard_bank2").hide();
+			jQuery("#cashReport_choice2").hide();
+			jQuery("#cashReport_choice").hide();
+			jQuery("#naver_desc").hide();
+			jQuery("#naver_payment").hide();
+			jQuery("#kakao_desc").hide();
+			jQuery("#lpay_desc").hide();
+			jQuery("#payco_desc").show();
+
+			jQuery("#cardReport_choice2").hide();
+			jQuery("#CARD_PAYMT_TYPE").val("01");
+		}else if ( sel == "samsung" ) {
+			// 핸드폰번호 초기화
+			fn_initCashRecptMoblno();
+			// 사업자번호 초기화
+			fn_initCashRecptBizrno();
+
+			jQuery("#phoneReport_choice").hide();
+			jQuery("#credit_box").hide();
+
+			jQuery("#no_accbox").hide();
+			jQuery("#no_accbox_desc").hide();
+			jQuery("#standard_bank").hide();
+			jQuery("#standard_bank2").hide();
+			jQuery("#cashReport_choice2").hide();
+			jQuery("#cashReport_choice").hide();
+			jQuery("#naver_desc").hide();
+			jQuery("#naver_payment").hide();
+			jQuery("#kakao_desc").hide();
+			jQuery("#lpay_desc").hide();
+			jQuery("#payco_desc").hide();
+
+			jQuery("#cardReport_choice2").hide();
+			jQuery("#CARD_PAYMT_TYPE").val("01");
 		}
 	}
+	//180125 결제수단 추가 스크립트 END
 
 
 	function fn_ChangeCashRecptApply(sel) {
@@ -279,6 +474,28 @@
 		}
 	}
 
+	//180125 결제수단 추가 스크립트
+	function fn_ChangeCashRecptApply(sel) {
+		if ( sel == "Y" ) {
+			jQuery("#CASH_RECPT_PUBL_PRPOS_04").attr("checked","checked");
+			fn_ChangeCashRecptPubl2('04');
+
+			jQuery("#cashReport_bizr2").hide();
+			jQuery("#cashReport2").show();
+			jQuery("#cashReport_phn2").show();
+			jQuery('#cashReport_choice2').show();
+		} else {
+			// 핸드폰번호 초기화
+			fn_initCashRecptMoblno();
+			// 사업자번호 초기화
+			fn_initCashRecptBizrno();
+
+			jQuery("#cashReport_bizr2").hide();
+			jQuery("#cashReport_phn2").hide();
+			jQuery('#cashReport_choice2').hide();
+		}
+	}
+
 	//현금영수증 발행용도(01:개인소득공제용, 02:지출증빙용)
 	function fn_ChangeCashRecptPubl(sel) {
 		if ( sel == "01" ) {
@@ -293,6 +510,23 @@
 
 			jQuery('#cashReport_bizr').show();
 			jQuery('#cashReport_phn').hide();
+		}
+	}
+
+	// 180125 현금영수증 발행용도(01:개인소득공제용, 02:지출증빙용)
+	function fn_ChangeCashRecptPubl2(sel) {
+		if ( sel == "04" ) {
+			// 사업자번호 초기화
+			fn_initCashRecptBizrno();
+
+			jQuery('#cashReport_bizr2').hide();
+			jQuery('#cashReport_phn2').show();
+		} else {
+			// 핸드폰번호 초기화
+			fn_initCashRecptMoblno();
+
+			jQuery('#cashReport_bizr2').show();
+			jQuery('#cashReport_phn2').hide();
 		}
 	}
 
@@ -334,7 +568,7 @@
 
 <body>
 	<!-- 170608 배송선택 팝업 -->
-	<div id="choice_deliv_popup" style="width: 100%;height: 100%;position: fixed;top:0;left:0;z-index: 150;">
+	<!-- <div id="choice_deliv_popup" style="width: 100%;height: 100%;position: fixed;top:0;left:0;z-index: 150;">
         <div class="layerpopup" style="width: 100%;position: absolute;top: 50%;left: 0;-webkit-transform:translate3d(0,-50%,0);transform:translate3d(0,-50%,0);background: #fff;z-index:10;">
           	<div class="header">
           		<h2>배송 방법 선택</h2>
@@ -350,7 +584,7 @@
         </div>
 
         <div style="position: fixed;top: 0;left: 0;width: 100%;height: 100%;background:rgba(0,0,0,0.6);"></div>
-    </div>
+    </div> -->
 
 
 	<section id="wrap">
@@ -1131,38 +1365,60 @@
 					</section>
 					<!-- //odr_box 04 -->
 
-					<section class="odr_box sec5">
+					<section class="odr_box sec5 payment_1801">
 						<h4>05. 결제수단</h4>
 						<div class="cont">
 							<p style="color:#cc0000;">리복 온라인 공식쇼핑몰은 고객님의 결제정보를 저장하고 있지 않습니다. 신용카드의 정보 유출로 인해 우려되신다면, 무통장입금(가상계좌)을 이용해보세요.</p>
 							<div class="itp_area">
 								<div>
-									<strong>결제수단 선택</strong>
-									<div>
 
-										<span class="rdo_dsgn" style="margin-bottom:5px;">
+									<div>
+										<!-- 180125 결제수단 추가 -->
+										<span class="rdo_dsgn" style="margin-bottom:10px;">
+											<input type="radio" id="pay_naver" name="payMethod" onclick="fn_ChangePayMethod('naver');" value="08" />
+											<label  for="pay_naver">네이버페이</label>
+										</span>
+
+										<span class="rdo_dsgn" style="margin-bottom:10px;">
+											<input type="radio" id="pay_kakao" name="payMethod" onclick="fn_ChangePayMethod('kakao');" value="09" />
+											<label  for="pay_kakao">카카오페이</label>
+										</span>
+
+										<span class="rdo_dsgn" style="margin-bottom:10px;">
+											<input type="radio" id="pay_lpay" name="payMethod" onclick="fn_ChangePayMethod('lpay');" value="10" />
+											<label  for="pay_lpay">L.pay</label>
+										</span>
+
+										<span class="rdo_dsgn" style="margin-bottom:10px;">
+											<input type="radio" id="pay_payco" name="payMethod" onclick="fn_ChangePayMethod('payco');" value="11" />
+											<label  for="pay_payco">Payco</label>
+										</span>
+
+										<span class="rdo_dsgn" style="margin-bottom:10px;">
 			                                <input type="radio" id="credit" name="payMethod" onclick="fn_ChangePayMethod('credit');" value="03" checked/>
 			                                <label  for="credit">카드결제</label>
 			                            </span>
-										<!-- 170324 네이버페이 추가 -->
-										<span class="rdo_dsgn" style="margin-bottom:5px;">
-											<input type="radio" id="pay_naver" name="payMethod" onclick="fn_ChangePayMethod('naver');" value="" />
-											<label  for="pay_naver">네이버페이</label>
-										</span>
-			                            <span class="rdo_dsgn" style="margin-bottom:5px;">
+
+			                            <span class="rdo_dsgn" style="margin-bottom:10px;">
 			                                <input type="radio" id="kpay" name="payMethod" onclick="fn_ChangePayMethod('kpay');" value="03"/>
 			                                <label  for="kpay">KPAY</label>
 			                            </span>
 
-			                            <span class="rdo_dsgn" style="margin-bottom:5px;">
+			                            <span class="rdo_dsgn" style="margin-bottom:10px;">
 			                                <input type="radio" id="vbank" name="payMethod" onclick="fn_ChangePayMethod('vbank');" value="05"/>
-			                                <label for="vbank">무통장입금</label>
+			                                <label for="vbank">무통장</label>
 			                            </span>
 
-			                            <span class="rdo_dsgn" style="margin-bottom:5px;">
+			                            <span class="rdo_dsgn" style="margin-bottom:10px;">
 			                                <input type="radio" id="mobile" name="payMethod" onclick="fn_ChangePayMethod('mobile');" value="07"/>
-			                                <label for="mobile">휴대폰결제</label>
+			                                <label for="mobile">휴대폰</label>
 			                            </span>
+
+										<span class="rdo_dsgn" style="margin-bottom:10px;">
+			                                <input type="radio" id="pay_samsung" name="payMethod" onclick="fn_ChangePayMethod('samsung');" value="12"/>
+			                                <label for="pay_samsung">삼성페이</label>
+			                            </span>
+										<!-- 180125 결제수단 추가END -->
 			                        </div>
 								</div>
 							</div>
@@ -1226,7 +1482,8 @@
 			                            </div>
 			                        </td>
 			                    </tr>
-			                </tbody></table>
+			                </tbody>
+						</table>
 
 			                <table border="0" style="display: none;" id="cardReport_choice2" summary="신용카드">
 								<tr>
@@ -1289,11 +1546,11 @@
 								<div>
 									<strong>현금영수증 신청</strong>
 									<div>
-										<span class="rdo_dsgn">
+										<span class="rdo_dsgn left">
 											<input type="radio" id="CASH_RECPT_APPLY_Y" name="CASH_RECPT_APPLY" onclick="changeCashRecptApply('Y')" checked="checked"/>
 											<label  for="CASH_RECPT_APPLY_Y">신청하기</label>
 										</span>
-										<span class="rdo_dsgn">
+										<span class="rdo_dsgn right">
 											<input type="radio" id="CASH_RECPT_APPLY_N" name="CASH_RECPT_APPLY" onclick="changeCashRecptApply('N')"/>
 											<label for="CASH_RECPT_APPLY_N">신청안함</label>
 										</span>
@@ -1308,11 +1565,11 @@
 								<div>
 									<strong>현금영수증 발급</strong>
 									<div>
-										<span class="rdo_dsgn">
+										<span class="rdo_dsgn left">
 											<input type="radio" id="CASH_RECPT_PUBL_PRPOS_01" name="CASH_RECPT_PUBL_PRPOS_R" onclick="changeCashRecptPubl('01');" checked="checked"/>
 											<label  for="CASH_RECPT_PUBL_PRPOS_01">개인소득공제용</label>
 										</span>
-										<span class="rdo_dsgn">
+										<span class="rdo_dsgn right">
 											<input type="radio" id="CASH_RECPT_PUBL_PRPOS_02" name="CASH_RECPT_PUBL_PRPOS_R" onclick="changeCashRecptPubl('02');"/>
 											<label for="CASH_RECPT_PUBL_PRPOS_02">사업자증빙용</label>
 										</span>
@@ -1351,6 +1608,132 @@
 								<div style="border: 1px solid #d9d9d9;box-sizing: border-box;font-size: 11px;line-height: 18px;padding:10px;text-align: center;">당사는 고객님이 현금으로 결제한 금액에 대해 한국스탠다드차타드은행과 채무 지급보증 계약을 체결하여 안전거래를 보장하고 있습니다.</div>
 
 							</div>
+
+
+							<!-- 180125 결제수단 추가 -->
+							<div class="itp_area" id="naver_payment" style="display:none;">
+								<!-- 161209 '아래 '결제하기' 버튼클릭 후 입금은행 및 계좌, 입금기한을 확인하실 수 있습니다.' -->
+								<ul class="desc" id="naver_desc" style="display:none;">
+									<li style="position:relative;padding-left:8px;margin-bottom:5px;font-size:11px;color:#888;font-weight:normal;"><span style="margin:0;position:absolute;top:0;left:0;color:#888;">-</span>네이버페이는 네이버ID로 별도 앱 설치 없이 신용카드 또는 은행계좌 정보를 등록하여 네이버페이 비밀번호로 결제할 수 있는 간편결제 서비스입니다.</li>
+									<li style="position:relative;padding-left:8px;margin-bottom:5px;font-size:11px;color:#888;font-weight:normal;"><span style="margin:0;position:absolute;top:0;left:0;color:#888;">-</span>주문 변경 시 카드사 혜택 및 할부 적용 여부는 해당 카드사 정책에 따라 변경될 수 있습니다.</li>
+									<li style="position:relative;padding-left:8px;margin-bottom:5px;font-size:11px;color:#888;font-weight:normal;"><span style="margin:0;position:absolute;top:0;left:0;color:#888;">-</span>결제 가능한 신용카드 : 신한, 삼성, 현대, BC, 국민, 하나, 롯데, NH농협, 씨티</li>
+									<li style="position:relative;padding-left:8px;margin-bottom:5px;font-size:11px;color:#888;font-weight:normal;"><span style="margin:0;position:absolute;top:0;left:0;color:#888;">-</span>결제 가능한 은행 : NH농협, 국민, 신한, 우리, 기업, SC제일, 부산, 경남, 수협, 우체국</li>
+									<li style="position:relative;padding-left:8px;margin-bottom:5px;font-size:11px;color:#888;font-weight:normal;"><span style="margin:0;position:absolute;top:0;left:0;color:#888;">-</span>네이버페이 카드 간편결제는 네이버페이에서 제공하는 카드사 별 무이자, 청구할인 혜택을 받을 수 있습니다.</li>
+								</ul>
+								<div>
+									<strong>현금영수증 신청</strong>
+									<div>
+										<span class="rdo_dsgn left">
+											<input type="radio" id="CASH_RECPT_APPLY_Y2" name="CASH_RECPT_APPLY2" onclick="changeCashRecptApply2('Y')" checked="checked"/>
+											<label  for="CASH_RECPT_APPLY_Y2">신청하기</label>
+										</span>
+										<span class="rdo_dsgn right">
+											<input type="radio" id="CASH_RECPT_APPLY_N2" name="CASH_RECPT_APPLY2" onclick="changeCashRecptApply2('N')"/>
+											<label for="CASH_RECPT_APPLY_N2">신청안함</label>
+										</span>
+									</div>
+								</div>
+								<p class="desc">개인 소득공제용으로 신청하실 경우 국세청으로 자동전송 됩니다.</p>
+								<p class="desc">사업자 지출 증빙용으로 신청하시면 세금계산서로 활용 가능합니다.</p>
+							</div>
+							<!-- //itp_area -->
+
+							<div class="itp_area" id="cashReport_choice2" style="display:none;">
+								<div>
+									<strong>현금영수증 발급</strong>
+									<div>
+										<span class="rdo_dsgn left">
+											<input type="radio" id="CASH_RECPT_PUBL_PRPOS_04" name="CASH_RECPT_PUBL_PRPOS_R" onclick="changeCashRecptPubl2('04');" checked="checked"/>
+											<label  for="CASH_RECPT_PUBL_PRPOS_04">개인소득공제용</label>
+										</span>
+										<span class="rdo_dsgn right">
+											<input type="radio" id="CASH_RECPT_PUBL_PRPOS_05" name="CASH_RECPT_PUBL_PRPOS_R" onclick="changeCashRecptPubl2('05');"/>
+											<label for="CASH_RECPT_PUBL_PRPOS_05">사업자증빙용</label>
+										</span>
+									</div>
+								</div>
+								<div>
+									<ul class="data_tb_form">
+										<li class="phn" id="cashReport_phn2" style="display:none;">
+											<strong>휴대폰번호</strong>
+											<div class="td">
+												<select class="selc_box2" id="CASH_RECPT_MOBLNO1" name="CASH_RECPT_MOBLNO1">
+													<option>010</option>
+												</select>
+												<input type="tel" class="ipt_lng3 bdrbox" id="CASH_RECPT_MOBLNO2" name="CASH_RECPT_MOBLNO2">
+												<input type="tel" class="ipt_lng3 bdrbox" id="CASH_RECPT_MOBLNO3" name="CASH_RECPT_MOBLNO3">
+											</div>
+										</li>
+										<li class="phn" id="cashReport_bizr2" style="display:none;">
+											<strong>사업자등록번호</strong>
+											<div class="td">
+												<input type="tel" class="ipt_lng3 bdrbox" style="width:33.4%;" id="CASH_RECPT_BIZRNO1" name="CASH_RECPT_BIZRNO1">
+												<input type="tel" class="ipt_lng3 bdrbox" style="width:33.3%;" id="CASH_RECPT_BIZRNO2" name="CASH_RECPT_BIZRNO2">
+												<input type="tel" class="ipt_lng3 bdrbox" style="width:33.3%;" id="CASH_RECPT_BIZRNO3" name="CASH_RECPT_BIZRNO3">
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<!-- //itp_area -->
+
+
+							<div id="standard_bank2" style="margin-top:15px;display:none;">
+								<div style="margin-bottom:5px;">
+									<strong style="font-size:11px;letter-spacing:-.75px;">한국스탠다드차타드은행 채무지급보증안내</strong>
+									<a href="http://m.adidas.co.kr/Common/CertifiedInfoPop.jsp" class="s_btn1" style="width:115px;" target="_blank">서비스 가입사실 확인</a>
+								</div>
+								<div style="border: 1px solid #d9d9d9;box-sizing: border-box;font-size: 11px;line-height: 18px;padding:10px;text-align: center;">당사는 고객님이 현금으로 결제한 금액에 대해 한국스탠다드차타드은행과 채무 지급보증 계약을 체결하여 안전거래를 보장하고 있습니다.</div>
+
+							</div>
+
+						<table border="0" style="display: table;" id="kakao_payment" summary="카카오페이 결제">
+							<tbody><tr id="kakao_desc" style="display:none;">
+								<td colspan="2" style="padding:5px 0;">
+									<div>
+										<ul>
+											<li style="position:relative;padding-left:8px;margin-bottom:5px;font-size:11px;color:#888;font-weight:normal;"><span style="margin:0;position:absolute;top:0;left:0;color:#888;">-</span>카카오페이 간편결제는 카카오페이에서 운영하는 간편결제 서비스 입니다.</li>
+											<li style="position:relative;padding-left:8px;margin-bottom:5px;font-size:11px;color:#888;font-weight:normal;"><span style="margin:0;position:absolute;top:0;left:0;color:#888;">-</span>결제가능카드 : 신한, BC, KB, 삼성, 현대, 롯데, 하나, NH</li>
+											<li style="position:relative;padding-left:8px;margin-bottom:5px;font-size:11px;color:#888;font-weight:normal;"><span style="margin:0;position:absolute;top:0;left:0;color:#888;">-</span>카카오페이로 결제 시 카드사에서 제공하는 제휴 및 청구할인은 이용불가 합니다. </li>
+
+										</ul>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<table border="0" style="display: table;" id="lpay_payment" summary="Lpay 결제">
+						<tbody><tr id="lpay_desc" style="display:none;">
+							<td colspan="2" style="padding:5px 0;">
+								<div>
+									<ul>
+										<li style="position:relative;padding-left:8px;margin-bottom:5px;font-size:11px;color:#888;font-weight:normal;"><span style="margin:0;position:absolute;top:0;left:0;color:#888;">-</span>L.pay 간편결제는 롯데에서 운영하는 온 / 오프라인 통합 간편결제 서비스입니다.</li>
+										<li style="position:relative;padding-left:8px;margin-bottom:5px;font-size:11px;color:#888;font-weight:normal;"><span style="margin:0;position:absolute;top:0;left:0;color:#888;">-</span>결제 불가 카드 : 농협카드, 씨티카드 (추후 서비스 제공 예정)</li>
+										<li style="position:relative;padding-left:8px;margin-bottom:5px;font-size:11px;color:#888;font-weight:normal;"><span style="margin:0;position:absolute;top:0;left:0;color:#888;">-</span>결제방법 : 앱 가입 -> 결제수단 등록 -> 지문 or PIN 인증 후 결제</li>
+										<li style="position:relative;padding-left:8px;margin-bottom:15px;font-size:11px;color:#888;font-weight:normal;"><span style="margin:0;position:absolute;top:0;left:0;color:#888;">-</span>카드사/금융사별 정책에 따라 고액 결제 시, 추가 인증이 필요합니다.</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<table border="0" style="display: table;" id="payco_payment" summary="payco 결제">
+					<tbody><tr id="payco_desc" style="display:none;">
+						<td colspan="2" style="padding:5px 0;">
+							<div>
+								<ul>
+									<li style="position:relative;padding-left:8px;margin-bottom:5px;font-size:11px;color:#888;font-weight:normal;"><span style="margin:0;position:absolute;top:0;left:0;color:#888;">-</span>PAYCO 간편결제는 엔에이치엔페이코(주)에서 운영하는 서비스이며,<br />PAYCO ID 하나로 간편하게 결제하실 수 있습니다.</li>
+									<li style="position:relative;padding-left:8px;margin-bottom:5px;font-size:11px;color:#888;font-weight:normal;"><span style="margin:0;position:absolute;top:0;left:0;color:#888;">-</span>결제가능 카드 : 신한, BC, KB, 삼성, 현대, 롯데, 하나, NH</li>
+									<li style="position:relative;padding-left:8px;margin-bottom:5px;font-size:11px;color:#888;font-weight:normal;"><span style="margin:0;position:absolute;top:0;left:0;color:#888;">-</span>BC, KB, 현대, NH로 결제 시 카드사에서 제공하는 제휴 및 청구할인 이용이 가능합니다. (단, 정책에 따라 일부 변동이 있을 수 있습니다.)</li>
+								</ul>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- 180125 결제수단 추가END -->
 
 						</div>
 						<!-- //cont -->
@@ -1738,7 +2121,7 @@
 
 
 	<!-- 170328 비회원 주문조회 팝업 -->
-	<div class="layerpop_wrap" id="nomem_order_popup">
+	<!-- <div class="layerpop_wrap" id="nomem_order_popup">
 		<div class="inner" style="width:100%;position:absolute;left:0;top:80px;margin:0;background:#fff;">
 			<div class="header">
 				<h2>비회원 주문조회</h2>
@@ -1764,7 +2147,7 @@
 				<div class="desc">주문번호를 잊으신 경우, 아디다스 코리아 고객센터 1588-8241로 문의해 주세요.</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
 
 	<script type="text/javascript">
 		(function($){
