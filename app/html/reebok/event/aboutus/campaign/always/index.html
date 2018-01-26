@@ -308,6 +308,68 @@
 					</div>
 					<!-- //bn_bot -->
 
+					<div class="mail_box">
+						<div class="inner">
+							<h2>STAY CURRENT</h2>
+							<p>이메일 뉴스레터 구독하시고,<br><em>#ALWAYS CLASSIC</em> 캠페인의 새로운 컨텐츠,<br>
+								리복 클래식 신제품 소식을 놓치지 마세요!</p>
+							<table width="100%">
+								<colgroup>
+									<col width="55%">
+									<col width="10%">
+									<col width="35%">
+								</colgroup>
+								<tr>
+									<td>
+										<div class="input-ctm-box">
+											<input type="text" class="input-custom" placeholder="*이름">
+										</div>
+									</td>
+									<td></td>
+									<td>
+										<div class="selectbox-ctm">	
+											<select name="" id="">
+												<option value="성별">*성별</option>
+												<option value="남성">*남성</option>
+												<option value="여성">*여성</option>
+											</select>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="td-void" colspan="3"></td>
+								</tr>
+								<tr>
+									<td width="100%" colspan="3">
+										<div class="input-ctm-box">
+											<input type="text" class="input-custom" placeholder="*이메일">
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="td-void" colspan="3"></td>
+								</tr>
+								<tr>
+									<td width="100%" colspan="3" style="height:24px;">
+										<label class="input-custom-check">마케팅 수신 동의
+											<input type="checkbox" checked="checked">
+											<span class="checkmark"></span>
+										</label>
+									</td>
+								</tr>
+								<tr>
+									<td class="td-void" colspan="3"></td>
+								</tr>
+								<tr>
+									<td width="100%" colspan="3">
+										<a href="javascript:void(0)" class="btn-signup">SIGN UP&nbsp;&nbsp;<span class="ico-about"></span></a>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<!-- //mail_box -->					
+
 					<div class="sns_followus">                		
 						<div class="inner">
 							<h2>Follow us</h2>              		
@@ -522,7 +584,7 @@
 						var slide_gal = Swipe(document.getElementById('slide_gal'),{
 							stopPropagation: true,
 							// auto  :true,
-							// delay : 1000,							
+							// delay : 1000,						
 
 							callback: function(index, element) {
 								$('.slide_gal .num_paging a').removeClass('on').eq(index).addClass('on');
@@ -569,53 +631,6 @@
 						function addClass(el,className){
 							el.className += ' '+className;
 						}
-
-						(function(){
-
-							var parallexElement = [];
-							var elements = document.getElementsByTagName('*');
-							var elementIndex = 0;
-							var elementsLength = elements.length;
-							for(; elementIndex < elementsLength; elementIndex++){
-								var el = elements[elementIndex];
-
-								var attributeIndex = 0;
-								var attributeLength = el.attributes.length;
-
-								for(; attributeIndex < attributeLength; attributeIndex++){
-									var attr = el.attributes[attributeIndex];
-
-									if(attr.name == 'data-parallax'){
-										parallexElement.push({
-											el : el,
-											isdone : false
-										});
-									}
-
-									if(attr.name == 'data-parallax-addclass'){
-										parallexElement[parallexElement.length-1].attrClass = attr.value;
-									}
-								}
-							}
-
-
-							(function render(){
-								var i = 0;
-								var triggerPoint = window.scrollY + window.innerHeight * 0.7;
-								for(;i < parallexElement.length; i++){
-									if(triggerPoint >= parallexElement[i].el.offsetTop){
-										// parallexElement[i].el.addClass = parallexElement[i].attrClass;
-										if( !parallexElement[i].isDone ){
-											addClass(parallexElement[i].el , parallexElement[i].attrClass);
-											parallexElement[i].isDone = true;
-										}
-
-									}
-								}
-								requestAnimationFrame(render);
-							})();
-
-						})();
 
 					})(jQuery);
 				</script>
