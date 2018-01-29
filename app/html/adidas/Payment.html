@@ -218,7 +218,9 @@
 										<option value="2">배송지 1</option>
 									</select>
 								</div>
-								<a href="#" class="s_button">배송지 관리</a>
+								<!-- 180126 수정 -->
+								<a href="#" class="s_button" id="address_manage_btn">배송지 관리</a>
+								<!-- 180126 수정 end -->
 							</div>
 						</div>
 
@@ -843,10 +845,6 @@
 				        마이 아디다스 상품 구매 동의
 				    </label>
 				</div>
-
-
-
-
                 <!-- 171030 마이아디다스 제품 구매 시 유의사항 보기 버튼 변경-->
                 <a class="btn_miadi_noti" href="javascript:void(0)" style="position: absolute;top: 50%;right: 15px;color: #fff;font-size: 12px;background: #aaa;display: block;padding: 9px 12px;transform: translate3d(0,-50%,0);-webkit-transform: translate3d(0,-50%,0);letter-spacing: -0.5px;">
 					<span>유의사항 전체보기</span>
@@ -885,7 +883,37 @@
 			</div>
 		</div>
 		<!-- //container product_list -->
-
+		<!-- 180126 배송지 관리 -->
+		<div id="container" class="mypage order_cont_2" style="display:none;">
+			<div id="addr_list" class="addr_list">
+				<div class="box">
+					<div class="info">
+						<div class="top">
+							<div class="rdo_box1">
+								<input type="radio" id="DLIVY_CHECK_0" name="DLIVY_CHECK" value="0">
+								<label for="DLIVY_CHECK_0">기본배송지</label>
+								<div class="dft_adr icons" data-icon="">기본 배송지</div>
+							</div>
+						</div>
+						<ul>
+							<li><span>받는분 : </span><strong>김수영</strong></li>
+							<li><span>우편번호 : </span><strong>08709</strong></li>
+							<li><span>우편주소 : </span><strong>서울특별시 관악구 보라매로 62</strong></li>
+							<li><span>지번주소 : </span><strong>서울특별시 관악구 봉천동  1698-1 보라매삼성아파트</strong></li>
+							<li><span>상세주소 : </span><strong>(봉천동, 보라매삼성아파트108-)</strong></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="button_area col2" style="padding-top:30px;">
+				<div class="l_gray"><a href="javascript:fn_selDlvPl();">선택적용</a></div>
+				<div><a href="javascript:fn_dlvPlPopClose();">취소</a></div>
+			</div>
+			<div class="go_top">
+				<a href="#">BACK TO TOP</a>
+			</div>
+		</div>
+		<!-- 180126 END -->
 		<div id="footer">
 			<div class="f_menu">
 				<a href="#">로그인</a>
@@ -919,6 +947,19 @@
 	<script type="text/javascript">
 		(function($){
 			$(document).ready(function() {
+				//180126 배송지 관리 버튼 클릭
+				var headerH = $('#header').height();
+				$('#address_manage_btn').click(function(){
+					$('.order_cont_2').css({
+						'display':'block',
+						'padding-top':headerH +'px'
+					})
+					$('html, body').animate({scrollTop:0}, 10);
+					$('#container.order').css({
+						'display':'none'
+					})
+				})
+
                 // 20170403 툴팁 추가
                 $('.tooltip_btn').bind('click',function(event){
 					$(this).addClass('on');
@@ -1116,6 +1157,8 @@
 	</script>
 
 </div>
+
+
 
 <div class="layerpop_wrap" id="miadidas_notification">
 	<div class="inner" style="width: 100%; padding: 0px 15px; position: absolute; left: 0px; top: 0px; margin: 137.1px 0px 0px; background: none;">
