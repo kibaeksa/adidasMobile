@@ -2932,6 +2932,23 @@
 	<script type="text/javascript">
 		(function($){
 
+			// 180131 헤더 띠배너
+			var tits_index = 0;
+			var len = $("#header .notice_tits a").length;
+			var rolling = setInterval(notice_tits_auto, 1600);
+
+			function notice_tits_auto(){
+			  if( tits_index == len-1 ){
+				tits_index = 0;
+				$("#header .notice_tits a").removeClass('on').eq(0).addClass('on');
+
+			  }else{
+				tits_index ++;
+				$("#header .notice_tits a").removeClass('on').eq(tits_index).addClass('on');
+			  }
+			}
+			// 180131 헤더 띠배너 end
+
 			if($('.product_order .list_wrap .list a').length > 3){
 				$(".product_order .list_wrap .list").owlCarousel({
 					stagePadding: 40,
