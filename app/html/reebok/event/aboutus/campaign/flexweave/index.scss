@@ -22,15 +22,35 @@
 
         }
     }
+
     .txt{
         padding: 25px 0 10px;
         p{
-            font:700 38px 'dinpro cond';
-            text-transform: uppercase;
+            &.bold{
+                padding: 0 0 5px 0;
+                font:500 30px 'NotoSansKR';
+            }
+            &.small{
+                font-size: 1rem;
+                font-weight: 300;
+                line-height: 1.7rem;
+            }
+            padding: 0 0 8px 0;
+            font:400 15px 'NotoSansKR';
+            // text-transform: uppercase;
             text-align: center;
         }
     }
+
     .video_visual{
+        &.type2{
+            padding-bottom: 58%;
+            .cover{
+                .video-btn{
+                    top:0;
+                }
+            }
+        }
         .cover{
             h2{
                 padding: 0 0 8px 0;
@@ -51,6 +71,31 @@
             }
         }
     }
+
+    .prd_cuts{
+        background: url(/images/reebok/about/flexweave/prd_bg.jpg) 0 0 no-repeat;
+        background-size: cover;
+        padding: 18px 15px 20px;
+        .box{
+            .img{
+                img{
+                    width: 100%;
+                }
+            }
+            .txt{
+                padding: 20px 0 40px;
+                p{
+                    font:300 12px 'NotoSansKR';
+
+                    text-align: left;
+                    &.title{
+                        font:400 18px 'NotoSansKR';
+                    }
+                }
+            }
+        }
+    }
+
     .slide_lineup{
         position: relative;
         .slide_video_btn{
@@ -209,7 +254,11 @@
                             top:2px;
                         }
                         .input-custom-check input:checked ~ .checkmark{
-                            background: #aaaaaa;
+                            background: #ab2328;
+                        }
+                        .detail_wrap{
+                            display: inline-block;
+                            padding: 10px 9px;
                         }
                     }
                 }
@@ -335,24 +384,25 @@
     left: 0;
     height: 20px;
     width: 20px;
-    background-color: #eee;
+    background-color: #ccc;
 }
 
 /* On mouse-over, add a grey background color */
 .input-custom-check:hover input ~ .checkmark {
-    background-color: #ccc;
+    // background-color: #ab2328;
 }
 
 /* When the checkbox is checked, add a blue background */
 .input-custom-check input:checked ~ .checkmark {
-    background-color: #ab2229;
+    // background-color: #ab2229;
+    background: #ab2328;
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
 .checkmark:after {
     content: "";
     position: absolute;
-    display: none;
+    // display: none;
 }
 
 /* Show the checkmark when checked */
