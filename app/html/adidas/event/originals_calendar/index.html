@@ -438,45 +438,59 @@
 
            <div id="originals_calendar">
            		<div class="box on"><img src="/images/adidas/event/originals_calendar/top.jpg" alt=""></div>
-                <div class="box  ready"><a href="javascript:void(0)"><img src="/images/adidas/event/originals_calendar/neighbor.jpg" alt=""></a></div>
-                <div class="box bape"><a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=454&term=1"><img src="/images/adidas/event/originals_calendar/bape.jpg" alt=""></a></div>
-           		<div class="box  "><a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=490&amp;term=1"><img src="/images/adidas/event/originals_calendar/1.jpg" alt=""></a></div>
-           		<div class="box  "><a href="http://m.adidas.co.kr/MO/Event/evtNotice.action?pn=UA_AND_SONS"><img src="/images/adidas/event/originals_calendar/2.jpg" alt=""></a></div>
+                <div class="box left">
+                    <a class="link" href="http://m.adidas.co.kr/MO/Event/evtNotice.action?pn=NEIGHBORHOOD"></a>
+                    <img src="/images/adidas/event/originals_calendar/neighbor.jpg" alt="">
+                    <div class="btn icons aft" data-icon="">자세히 보기</div>
+                </div>
+                <div class="box bape">
+                    <a class="link" href="javascript:void(0)"></a>
+                    <img src="/images/adidas/event/originals_calendar/bape.jpg" alt="">
+                    <div class="btn soldout">SOLD OUT</div>
+                </div>
+           		<div class="box  ">
+                    <a class="link"  href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=490&amp;term=1"></a>
+                    <img src="/images/adidas/event/originals_calendar/1.jpg" alt="">
+                    <div class="btn icons aft" data-icon="">자세히 보기</div>
+                </div>
+           		<div class="box left">
+                    <a class="link"  href="http://m.adidas.co.kr/MO/Event/evtNotice.action?pn=UA_AND_SONS"></a>
+                    <img src="/images/adidas/event/originals_calendar/2.jpg" alt="">
+                    <div class="btn icons aft" data-icon="">자세히 보기</div>
+                </div>
            	</div>
            <!-- //originals_calendar -->
 
            <script type="text/javascript">
-               (function($){
-                   $('.ready').on('click',function(){
-                       alert('coming soon');
-                   })
+       		(function($){
+       			// $('.ready').on('click',function(){
+       			// 	alert('coming soon');
+       			// })
 
-                   $('#originals_calendar .box1').addClass('on');
-                   var scrollArray = [];
-                   var scrollContent = document.querySelectorAll('.box');
-                   function getPos(){
-                       for(var i = 0; i<scrollContent.length; i++){
-                            var mypos = scrollContent[i].offsetTop;
-                            scrollArray.push(mypos)
-                       }
-                   }
-                   getPos();
+       			$('#originals_calendar .box1').addClass('on');
+       			var scrollArray = [];
+       			var scrollContent = document.querySelectorAll('.box');
+       			function getPos(){
+       				for(var i = 0; i<scrollContent.length; i++){
+       					 var mypos = scrollContent[i].offsetTop;
+       					 scrollArray.push(mypos)
+       				}
+       			}
+       			getPos();
 
-                   $(window).scroll(function(){
-                       var thispos = $(this).scrollTop() + 500;
-                       for(var pos = 0; pos<scrollArray.length; pos++){
-                           if(thispos>scrollArray[pos]){
-                               $('#originals_calendar .box').eq(pos).addClass('on');
-                           }
-                       }
-                   })
-
-
-
-               })(jQuery);
-           </script>
+       			$(window).scroll(function(){
+       				var thispos = $(this).scrollTop() + 500;
+       				for(var pos = 0; pos<scrollArray.length; pos++){
+       					if(thispos>scrollArray[pos]){
+       						$('#originals_calendar .box').eq(pos).addClass('on');
+       					}
+       				}
+       			})
 
 
+
+       		})(jQuery);
+       	</script>
 
            <div class="go_top">
                <a href="#">BACK TO TOP</a>
