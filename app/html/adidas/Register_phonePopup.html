@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
-   <meta name="format-detection" content="telephone=no">
-   <meta http-equiv="x-rim-auto-match" content="none">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
+	<meta name="format-detection" content="telephone=no">
+	<meta http-equiv="x-rim-auto-match" content="none">
 
-   <link href="/css/adidas/style.css" type="text/css" rel="stylesheet" />
-   <link href="/css/adidas/fonts.css" type="text/css" rel="stylesheet" />
+	<!-- <link href="/css/adidas/style.css" type="text/css" rel="stylesheet" /> -->
+	<link href="/css/adidas/style.css" type="text/css" rel="stylesheet" />
+	<link href="/css/adidas/fonts.css" type="text/css" rel="stylesheet" />
 
-   <script type="text/javascript" src="/js/jquery-1.12.0.min.js"></script>
-   <script type="text/javascript" src="/js/swipe.js"></script>
-   <script type="text/javascript" src="/js/owl.carousel.js"></script>
+	<script type="text/javascript" src="/js/jquery-1.12.0.min.js"></script>
+	<script type="text/javascript" src="/js/swipe.js"></script>
+	<script type="text/javascript" src="/js/owl.carousel.min.js"></script>
+	<script type="text/javascript" src="/js/modalPopup.min.js"></script>
 
-
-   <title>아디다스 모바일</title>
+	<title>아디다스 모바일</title>
 </head>
 <body>
    <div id="wrap">
@@ -432,10 +433,6 @@
        </div>
 
        <div id="container" class="register-main">
-           <!-- <div id="location">
-               <span><a href="#">HOME</a></span>
-               <span>회원가입</span>
-           </div> -->
            <!-- 160513 회원가입 스텝 -->
            <h2>회원가입</h2>
            <!-- 180221 추가 -->
@@ -484,9 +481,12 @@
                    </div>
                </div>
 
+                <!-- 180221 수정 -->
                <div class="row phone">
-                   <input type="text" value=""  class="adipro-b">
+                   <input type="text" value="" disabled class="adipro-b" style="border: 1px solid #eaeaea;">
                </div>
+               <!-- 180221 end -->
+
                <!-- //row -->
 
                <div class="row birth">
@@ -671,6 +671,97 @@
                <!-- 170221 blue => gray-->
                <div class="gray"><a href="#">회원가입</a></div>
            </div>
+
+            <!-- 180221 휴대폰 번호 중복 안내 팝업 -->
+
+            <!-- 오프라인 가입 -->
+           <div class="modal-popup-wrapper register-popup"
+                data-modalpop=""
+                data-modalpop-name="popup_offline_join"
+                data-modalpop-autoopen=""
+            >
+                <div class="overlay"></div>
+                <div class="popup">
+                    <div class="popup-header">
+                        <h2>휴대폰 번호 중복안내</h2>
+                        <a href="javascript:void(0)" class="close_x_btn"></a>
+                    </div>
+
+                    <div class="popup-contents" style="padding: 2rem 0 2.5rem;">
+                        <p class="blue">오프라인 매장에서 이미 가입하셨네요!</p>
+                        <p style="padding-bottom:10px;">공식몰 회원으로 <strong>일반 가입</strong> 진행하시면,<br>
+                        매장에서 적립하신 포인트를 사용하실 수 있습니다.</p>
+                        <p><strong>오프라인 가입 시</strong> 발급 받으신<br>
+                        임시 아이디/패스워드로 로그인하세요! (분실 : CS)</p>
+                        <div class="form_table">
+                            <div class="row">
+                               <input type="text" placeholder="아이디">
+                           </div>
+                           <div class="row">
+                              <input type="password" placeholder="비밀번호">
+                          </div>
+                          <div class="button_area">
+                              <div class="blue"><a href="javascript:doLogin();" class="icons aft" data-icon="">일반 회원가입</a></div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- sns 가입 -->
+            <div class="modal-popup-wrapper register-popup"
+                 data-modalpop=""
+                 data-modalpop-name="popup_sns_join"
+                 data-modalpop-autoopen=""
+             >
+                 <div class="overlay"></div>
+                 <div class="popup">
+                     <div class="popup-header">
+                         <h2>휴대폰 번호 중복안내</h2>
+                         <a href="javascript:void(0)" class="close_x_btn"></a>
+                     </div>
+                     <div class="popup-contents" style="padding: 2rem 0 2.5rem;">
+                         <p class="blue">이미 해당 SNS로 가입하셨네요!</p>
+                         <p style="padding-bottom:10px;"><strong>가입하신 SNS로</strong> 로그인 해 주세요.</p>
+                         <div class="form_table">
+                           <div class="button_area">
+                               <div class="blue"><a href="javascript:doLogin();" class="icons aft" data-icon="">로그인</a></div>
+                           </div>
+                           <div class="id_pw_find">
+        						<a href="javascript:goFindUserId();">아이디 / 비밀번호 찾기</a>
+        					</div>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+
+             <!-- 기존 회원 가입 -->
+             <div class="modal-popup-wrapper register-popup"
+                  data-modalpop=""
+                  data-modalpop-name="popup_member_join"
+                  data-modalpop-autoopen=""
+              >
+                  <div class="overlay"></div>
+                  <div class="popup">
+                      <div class="popup-header">
+                          <h2>휴대폰 번호 중복안내</h2>
+                          <a href="javascript:void(0)" class="close_x_btn"></a>
+                      </div>
+                      <div class="popup-contents" style="padding: 2rem 0 2.5rem;">
+                          <p class="blue">이미 회원이시네요!</p>
+                          <p style="padding-bottom:10px;"><strong>가입하신 아이디로</strong> 로그인 해 주세요.</p>
+                          <div class="form_table">
+                            <div class="button_area">
+                                <div class="blue"><a href="javascript:doLogin();" class="icons aft" data-icon="">로그인</a></div>
+                            </div>
+                            <p style="padding:20px 0 0 0;">* 로그인하시면 SNS 계정으로 연결할 수 있습니다.</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              
+            <!-- 180221 end -->
+
 
            <div class="go_top">
                <a href="#">BACK TO TOP</a>

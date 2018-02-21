@@ -550,6 +550,23 @@ html.no_srl{
 	overflow: hidden;
 }
 
+.button_area.kakao a{
+    border: 1px solid #ccc;
+    background: none;
+    color:#999;
+}
+
+.button_area a span.ico_kakao{
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    margin-right: 5px;
+    background: url(/images/adidas/ico_btn_kakao_gray.gif) 0 0 no-repeat;
+    -webkit-background-size: 14px auto;
+    background-size: 15px auto;
+    vertical-align: middle;
+}
+
 .button_area.tac{
 	text-align: center;
 }
@@ -10562,6 +10579,36 @@ padding:30px 15px;
     vertical-align: middle;
 }
 
+#container.login .button_area .button_col2{
+    display: flex;
+}
+
+#container.login .button_area .button_col2>div{
+    flex: 1;
+    margin-right: 5px;
+}
+
+#container.login .button_area .button_col2>div a{
+    background: #fff;
+    border: 1px solid #ccc;
+}
+
+#container.login .button_area .button_col2>div a span{
+    color:#999;
+}
+
+#container.login .button_area .button_col2 .naver>a span::before{
+    content: '';
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    margin-right: 5px;
+    background: url(/images/adidas/ico_btn_naver_gray.gif) 0 0 no-repeat;
+    -webkit-background-size: 14px auto;
+    background-size: 15px auto;
+    vertical-align: middle;
+}
+
 #container .join_finish{
 	padding:50px 15px 0;
 }
@@ -10573,6 +10620,20 @@ padding:30px 15px;
 	font-size:22px;
 }
 
+#container .join_finish.new h3{
+    border-bottom: none;
+}
+
+#container .join_finish .button_area.sns{
+    padding: 0 0 35px 0;
+    border-bottom: 3px solid  #000;
+}
+
+#container .join_finish .button_area.sns a{
+    width: 180px;
+    margin: 0 auto;
+}
+
 #container .join_finish dl{
 	margin-bottom: 30px;
 	padding: 30px 0;
@@ -10580,9 +10641,10 @@ padding:30px 15px;
 	text-align: center;
 }
 
-#container .join_finish dl dt{
+#container.login .join_finish dl dt{
 	margin-bottom: 10px;
 	font-size: 14px;
+    color:#000;
 }
 
 #container .join_finish dl dt strong{
@@ -14573,7 +14635,7 @@ em.prd_speedy .tooltip-box:before{
 /* 180130 mypage_menu START */
 #container.mypage .mypage_menu{
 	overflow: hidden;
-    margin: 20px 15px 0;    
+    margin: 20px 15px 0;
 }
 
 #container.mypage .mypage_menu .mypage_menu_tit{
@@ -14597,10 +14659,10 @@ em.prd_speedy .tooltip-box:before{
 
 #container.mypage .mypage_menu ul li{
 	width: 50%;
-	float: left;	
+	float: left;
 	padding: 20px;
 	box-sizing: border-box;
-	-webkit-box-sizing: border-box;	
+	-webkit-box-sizing: border-box;
 }
 
 #container.mypage .mypage_menu ul li:nth-child(1n){
@@ -14611,7 +14673,7 @@ em.prd_speedy .tooltip-box:before{
 
 #container.mypage .mypage_menu ul li a{
 	font: 300 1.1rem/1.1rem "NotoSansKR";
-	color: #444;  
+	color: #444;
 }
 
 #container.mypage .order_sort{
@@ -15814,7 +15876,7 @@ em.prd_speedy .tooltip-box:before{
 
 #container.mypage .adiclub_select a.on{
 	background: #ebebeb;
-}	
+}
 /* 180130 adiclub_select END */
 
 /* 180130 reservation_select */
@@ -15828,7 +15890,7 @@ em.prd_speedy .tooltip-box:before{
 	width: 49%;
 	margin-right: 2%;
 }
-#container.mypage .reservation_select .sel_boxtype:last-child{	
+#container.mypage .reservation_select .sel_boxtype:last-child{
 	margin-right: 0;
 }
 /* 180130 reservation_select END */
@@ -18651,6 +18713,19 @@ em.prd_speedy .tooltip-box:before{
 	font-size: 13px;
 }
 
+#container.register-main .tip{
+    padding: 15px 15px 0 15px;
+}
+
+#container.register-main .tip p{
+    font:300 12px 'NotoSansKR';
+}
+
+#container.register-main .tip p.bold{
+    font-weight: 500;
+    color:#027dbf;
+}
+
 #container.register-main .form_table{
 	padding-top: 15px;
 }
@@ -20738,6 +20813,31 @@ em.prd_speedy .tooltip-box:before{
 	font-weight: 500;
 }
 /*RESTCUSTOMER POPUP end*/
+
+.modal-popup-wrapper.register-popup .popup-header{
+    background: #fff;
+}
+
+.modal-popup-wrapper.register-popup p{
+    text-align: center;
+    font:400 14px 'NotoSansKR','Nanum Gothic';
+    color:#000;
+}
+
+.modal-popup-wrapper.register-popup p.blue{
+    color:#027dbf;
+    font-weight: 500;
+}
+
+.modal-popup-wrapper.register-popup .id_pw_find{
+    padding: 20px 0 0 0;
+    text-align: center;
+}
+
+.modal-popup-wrapper.register-popup .id_pw_find a{
+    font: 300 15px 'NotoSansKR';
+    color: #027dbf;
+}
 
 /*common*/
 @media screen and (max-width: 320px) {
