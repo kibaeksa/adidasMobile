@@ -447,14 +447,51 @@
                 <!-- 180220 -->
 				<div style="position:relative" class="adiclub_event">
 					<img src="http://imagem.adidas.co.kr/upload/campaign/adidas/4125/m/1802_a_mirun_MO.jpg" alt="" style="width:100%;">
-					<a href="#" style="display:inline-block;position: absolute;top:20.3%;left:4%;width:92%;height:1.9%;text-indent:-5000px;">우먼스 8k 신청하기</a>
-					<a href="#" style="display:inline-block;position: absolute;top:22.7%;left:4%;width:92%;height:1.9%;text-indent:-5000px;">10k 신청하기</a>
+					<a href="#" class="btn_mirun" style="display:inline-block;position: absolute;top:20.3%;left:4%;width:92%;height:1.9%;text-indent:-5000px;">우먼스 8k 신청하기</a>
+					<a href="#" class="btn_mirun" style="display:inline-block;position: absolute;top:22.7%;left:4%;width:92%;height:1.9%;text-indent:-5000px;">10k 신청하기</a>
 					<a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=496" style="display:inline-block;position: absolute;top:42.9%;left:4%;width:44%;height:1.6%;text-indent:-5000px;">마이런 행사 제품 보기</a>
 					<a href="http://shop.adidas.co.kr/upload/storelist/index.html?mirun_store_2018" style="display:inline-block;position: absolute;top:42.9%;right:4%;width:44%;height:1.6%;text-indent:-5000px;">행사 매장 보기</a>
 					<a href="#" style="display:inline-block;position: absolute;top:64.9%;left:21%;width:58%;height:1.3%;text-indent:-5000px;">자세히 보기</a>
 					<a href="http://m.adidas.co.kr/MO/Club/adidasrunners.action" style="display:inline-block;position: absolute;top:74.5%;right:8%;width:20%;height:0.7%;text-indent:-5000px;">가입하기</a>
 				</div>
-                <!-- 180220 끝 -->
+				<!-- 180220 끝 -->
+
+				<!-- 180222 팝업 -->
+				<style>
+					div.layerpop_wrap .inner .close_x_btn{top:6px;}
+					.layerpop_wrap {padding:0 !important;}        
+					.layerpop_wrap .inner{margin-top: 120px !important;}        
+					.layerpop_wrap .top{padding: 15px; border-bottom: 1px solid #ddd;}        
+					.layerpop_wrap .top h2{font:500 16px 'NotoSansKR';}        
+					.layerpop_wrap .body{}        
+					.layerpop_wrap .body .txt{font:500 26px/36px 'NotoSansKR'; text-align: center;}                
+					.layerpop_wrap .body .ok{display: block;margin:2rem 0 1rem;padding:1.3rem 0;background: #000;color:#fff;text-align: center;font-size: 1.3rem;}
+					.layerpop_wrap .body .warn{font:500 9px/15px 'NotoSansKR'; text-align: left; color: #959595;}        
+				</style>
+				
+				<div class="layerpop_wrap" id="popup_mirun" >
+					<div class="inner">
+						<div class="top">
+							<h2>2018 아디다스 마이런 부산 신청하기</h2>
+							<a class="close_x_btn" href="javascript:void(0)"></a>
+						</div>
+						<div class="body" style="padding:30px 15px 2rem;">							
+							<p class="txt">
+								감사합니다.<br>
+								2018 아디다스 마이런 부산<br>
+								<span style="color: #e13c8e;">신청이 완료</span>되었습니다.
+							</p>							
+							<a href="http://m.adidas.co.kr/MO/Club/clubCampainView.action?event_id=4125" class="ok">
+								<span>확 인</span>
+							</a>
+							<div class="warn">
+								<p>* 응모 완료 시 당첨 확정이며 단, 신청 이후 제품 교환 및 환불 시 당첨이 취소 됩니다.</p> 
+								<p>* 2018 마이런 부산 러닝킷 배송 작업이 시작되는 2018년 4월 1일부터 제품 교환 및 환불이 불가능합니다.</p>									
+							</div>
+						</div>
+					</div>
+				  </div>
+				  <!-- 180222 팝업 끝 -->
 
             </div>
 			<!-- //promo_view -->
@@ -516,6 +553,18 @@
 					return false;
 
 				});
+
+				// 180222 팝업
+				$('.btn_mirun').bind('click',function(){
+					$('#popup_mirun').addClass('open');
+					return false;
+				});
+
+				$('#popup_mirun .close_x_btn').bind('click',function(){
+					$('#popup_mirun').removeClass('open');
+					return false;
+				});
+				// 180222 팝업 끝
 
 			});
 		})(jQuery);
