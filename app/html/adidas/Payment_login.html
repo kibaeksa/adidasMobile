@@ -48,7 +48,7 @@
 					<strong>배송지 정보</strong>
 				</div>
 				<div class="cont">
-					<!-- 180221 카카오 로그인 영역 추가 -->
+					<!-- 180223 카카오 로그인 영역 추가 -->
 					<div class="choice_login">
 						<div class="row">
 							<div class="chk_wrap">
@@ -59,25 +59,64 @@
 							</div>
 							<div class="chk_wrap">
 								<div class="rdo_box1 blue">
-									<input type="radio" id="order_nomem" name="order_choice" value="N">
-									<label for="order_nomem" class="adipro-r">SNS 로그인</label>
+									<input type="radio" id="order_sns" name="order_choice" value="N">
+									<label for="order_sns" class="adipro-r">SNS 로그인</label>
 								</div>
 							</div>
 							<div class="chk_wrap">
                                 <div class="rdo_box1 blue">
-                                    <input type="radio" id="order_naver" name="order_choice">
-                                    <label for="order_naver" class="adipro-r">비회원 주문</label>
+                                    <input type="radio" id="order_nomem" name="order_choice">
+                                    <label for="order_nomem" class="adipro-r">비회원 주문</label>
                                 </div>
                             </div>
 						</div>
-						<div class="button_area">
-							<div class="button_col2" style="padding:0; margin: 5px 0;">
-							   <div class="naver"><a href="#"><span>네이버</span></a></div>
-							   <div class="kakao" style="margin:0;"><a href="#"><span><span class="ico_kakao"></span>카카오</span></a></div>
-						   </div>
-					   </div>
+
+						<div class="login_box" style="display:block;">
+							<div class="row">
+								<input type="text" name="memId" id="userId" maxlength="20" placeholder="아이디" onkeyup="fn_enterPress();" onclick="fn_pwerrpuinit();" value="">
+								<input type="password" name="memPwd" id="userPw" maxlength="40" placeholder="비밀번호" onkeyup="fn_enterPress();" onclick="fn_pwerrpuinit();">
+							</div>
+							<div style="margin-bottom:10px;line-height:17px;font-size:12px;color:#ff0000; display: none;">
+								고객님의 아이디 또는 비밀번호가 일치하지 않아.
+								로그인이 정상적으로 이루어지지 않았습니다.<br>5회 이상 로그인 오류시 본인인증 후 로그인 가능합니다.
+							</div>
+
+							<div style="margin-bottom:10px;line-height:17px;font-size:12px;color:#ff0000; display: none;">아이디와 비밀번호를 정확하게 다시 입력해주세요.</div>
+
+							<div class="row" style="margin:0;">
+								<div class="button_area no_pdg verify_btn">
+									<div class="blue"><a href="javascript:doOrderLogin();">로그인</a></div>
+								</div>
+							</div>
+							<div class="row">
+								<a href="javascript: goFindUserId();" class="icons aft" data-icon=" ">아이디, 비밀번호 찾기</a>
+							</div>
+						</div>
+
+						<div class="sns_box" style="display:none;">
+							<div class="row">
+								<div class="button_area">
+									<div class="button_col2" style="padding:0;">
+									   <div class="naver"><a href="#"><span>네이버</span></a></div>
+									   <div class="kakao" style="margin:0;"><a href="#"><span><span class="ico_kakao"></span>카카오</span></a></div>
+								   </div>
+							   </div>
+							</div>
+						</div>
+
+					   <div class="nomem_box" style="display:none;">
+                            <div class="row">
+                                <div class="button_area no_pdg verify_btn">
+									<div class="button_area no_pdg verify_btn">
+										<div class="blue"><a href="javascript:doOrderLogin();">본인인증</a></div>
+									</div>
+                                </div>
+                            </div>
+                        </div>
+
+
 					</div>
-					<!-- 180221 카카오 로그인 영역 추가 end-->
+					<!-- 180223 카카오 로그인 영역 추가 end-->
 				</div>
 			</div>
 			<!-- //odr_pay_box -->
@@ -747,6 +786,29 @@
 	<script type="text/javascript">
 		(function($){
 			$(document).ready(function() {
+				// 180223 로그인 , 비회원주문 선택
+				$('.choice_login>.row>.chk_wrap>.rdo_box1').bind('click',function(){
+					var elemId = $(this).find('input[type="radio"]').attr('id');
+					if( elemId == 'order_nomem'){
+						$('.choice_login .login_box').hide();
+						$('.choice_login .sns_box').hide();
+						$('.choice_login .nomem_box').show();
+						$('#addr_form_box').show();
+					}
+					else if (elemId == 'order_mem') {
+						$('.choice_login .sns_box').hide();
+						$('.choice_login .nomem_box').hide();
+						$('.choice_login .login_box').show();
+						$('#addr_form_box').hide();
+					}
+					else {
+						$('.choice_login .sns_box').show();
+						$('.choice_login .nomem_box').hide();
+						$('.choice_login .login_box').hide();
+						$('#addr_form_box').hide();
+					}
+				});
+				
 				//180126 배송지 관리 버튼 클릭
 				var headerH = $('#header').height();
 				$('#address_manage_btn').click(function(){
