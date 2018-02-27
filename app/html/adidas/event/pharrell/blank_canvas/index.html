@@ -440,9 +440,23 @@
 
             <div id="blank_canvas">
 
-                <div class="main" >
+                <div class="main" style="display:none;">
                     <video src="https://www.adidas.com/5280/campaigns/blank.mobile.mp4" playsinline="" autoplay="true" loop="true" muted="true" ></video>                    
-                </div>
+				</div>
+				
+				<div class="img_box" id="slide_swipe1">
+					<ul>
+						<li style="display:block"><img src="http://imagem.adidas.co.kr/images/adidas/event/pharrell/blank_canvas/1.jpg" alt=""></li>
+						<li><img src="http://imagem.adidas.co.kr/images/adidas/event/pharrell/blank_canvas/2.jpg" alt=""></li>
+						<li><img src="http://imagem.adidas.co.kr/images/adidas/event/pharrell/blank_canvas/3.jpg" alt=""></li>
+					</ul>
+				</div>
+				
+				<div class="fade_container">
+					<img class="active" src="http://imagem.adidas.co.kr/images/adidas/event/pharrell/blank_canvas/1.jpg" alt="image1" />
+					<img src="http://imagem.adidas.co.kr/images/adidas/event/pharrell/blank_canvas/2.jpg" alt="image2" />
+					<img src="http://imagem.adidas.co.kr/images/adidas/event/pharrell/blank_canvas/3.jpg" alt="image3" />
+				</div>				
 
                 <div class="statement effectbox">                    
 					<div class="txt">
@@ -498,7 +512,29 @@
 
 			<script type="text/javascript">
 
+				var now_img, next_img;
+				function fade_change(){
+					now_img = $(".fade_container img:eq(0)");
+					next_img = $(".fade_container img:eq(1)");
+					next_img.addClass("active").css("opacity",0).animate({"opacity":1},1000, function(){
+						$(".fade_container").append(now_img);           
+						now_img.removeClass("active");
+					});
+				}					
+			
+				var timer = setInterval("fade_change()", 4000);
+
 				(function($){
+
+					var mainSwipe = Swipe(document.getElementById('slide_swipe1'),{
+						stopPropagation: true,
+						auto: 2000,
+						callback : function(index , element){
+							$('#fade1 > .num > li > a').removeClass('on').eq(index).addClass('on');
+						}
+					});
+
+
                     var gnbH = $('#header').height();
 
                     $(window).scroll(function(){

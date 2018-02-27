@@ -57,6 +57,7 @@
 #blank_canvas{
 
     .main{
+        display: none;
         position: relative;
         text-align: center;       
         video{            
@@ -64,7 +65,33 @@
             margin-left: -15%;           
         }       
     }
-
+    .img_box{
+        display: none;
+        position: relative;
+        overflow: hidden;
+        ul{
+            position: relative;
+            li{
+                position: relative;
+                float: left;
+                img{
+                    width: 100%;
+                }
+            }
+        }
+    }
+    .fade_container { 
+        position: relative;
+        overflow: hidden;
+        padding-bottom: 130%;       
+        img{
+            position:absolute;
+            width: 100%;
+        }
+        .active{
+            z-index:1;
+        }       
+    }         
     .statement{
         position: relative;
         padding: 30px 0;
@@ -175,6 +202,7 @@
     }
 
     .bottom{
+        display: none;
         position: relative;
         padding-bottom: 20px;
         &.event{
