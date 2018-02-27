@@ -1,0 +1,200 @@
+@import './app/css/adidas/scss/common/mixin.scss';
+@import './app/css/adidas/scss/common/common.scss';
+
+
+#ultra_boost{
+	.button{
+		display: inline-block;
+		a{
+			display: block;
+			background: #000;
+			color:#fff;
+			width: 180px;
+			font: 12px/40px 'NotoSansKR';
+			text-align: center;
+		}
+	}
+	.main{
+		position: relative;
+		text-align: center;
+		background: #f9eeec;
+		.bg{
+			background: #e5dcdd;
+			img{
+				width: 105%;
+			}
+			video{
+				width: 105%;
+			}
+		}
+		.txt{
+		    position: absolute;
+		    bottom: 20px;
+		    width: 100%;
+		    z-index: 1;
+			// background: #e8dfdf;
+			p{
+				padding: 0 0 17px 0;
+				font: 1.8rem/1.5rem 'NotoSansKR';
+				text-align: center;
+				strong{
+					font-weight: 700;
+				}
+			}
+
+		}
+	}
+
+	.statement{
+		position: relative;
+		@include css3(opacity, 0);
+		@include css3(transition, all 0.8s);
+
+		&.on{
+			@include css3(opacity, 1);
+		}
+		img{
+			width: 100%;
+		}
+	}
+
+	.prd_cuts{
+		position: relative;
+		padding:25px 15px 0;
+		.box{
+			position: relative;
+			top:100px;
+			@include css3(opacity, 0);
+			@include css3(transition, all 0.8s);
+			&.on{
+				top:0;
+				@include css3(opacity, 1);
+			}
+			.img{
+				position: relative;
+				img{width:100%;}
+				.gif{
+					position: absolute;
+					left: 0;
+				    bottom: -24px;
+				    padding: 0 20px;
+				    display: block;
+				    width: 125px;
+					&.right{
+						left: inherit;
+					    right: 0;
+					}
+					img{
+						width: 100%;
+					}
+				}
+
+			}
+			.txt{
+				padding: 30px 0 25px;
+				p{
+					text-align: center;
+					font:12px 'NotoSansKR';
+					&.bold{
+						display: block;
+						font:18px 'adinenuPro-black';
+						letter-spacing: 5px;
+						text-transform: uppercase;
+						span{
+							display: block;
+							font:18px 'adinenuPro-light';
+							letter-spacing: 5px;
+
+
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.statement_player{
+		img{
+			width: 100%;
+		}
+	}
+
+	.prd_gal{
+		padding: 0 0 20px 0;
+		background: url('/images/adidas/event/ultra_boost/180226/bottom_bg.jpg') no-repeat;
+		background-position: 100% 0;
+		h2{
+			padding: 20px 0 10px;
+			font:700 2.2rem/2.5rem 'NotoSansKR';
+			text-align: center;
+		}
+		.box{
+			position: relative;
+			text-align: center;
+    		padding: 20px 15px;
+
+
+			&.on{
+
+				.sec{
+					.img{
+						left:0;
+						@include css3(opacity, 1);
+					}
+				}
+
+			}
+			.sec{
+				&:after{
+					content: '';display: block;clear: both;height: 0;
+				}
+			}
+
+			.txt{
+				float: left;
+			    padding: 33px 0 30px 10px;
+				display: inline-block;
+				width: 48%;
+				p{
+					font:400 12px/14px 'NotoSansKR';
+
+					&.bold{
+						padding: 0 0 5px 0;
+						text-transform: uppercase;
+						font:700 16px 'adinenuPro-black';
+						letter-spacing: 3px;
+						span{
+							display:block;
+							font:700 16px 'adinenuPro-light';
+							letter-spacing: 3px;
+
+
+						}
+
+					}
+				}
+			}
+			.img{
+				position: relative;
+				left:100px;
+				float: right;
+				display: inline-block;
+				width: 140px;
+				@include css3(opacity, 0);
+				@include css3(transition, all 0.8s);
+				img{
+					width: 100%;
+				}
+
+			}
+			.button{
+				margin: 5px 0 0 0;
+				a{
+					&:after{
+						padding-left: 8px;
+					}
+				}
+			}
+		}
+	}
+}
