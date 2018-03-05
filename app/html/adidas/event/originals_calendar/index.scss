@@ -7,10 +7,36 @@
 		opacity: 0;
 		transition: all 0.5s;
 		text-align: right;
+		&.neighborhood{
+			.txt{
+				h3{
+					&:after{
+    					left: -12% !important;
+					}
+				}
+			}
+		}
+		&.united{
+			.txt{
+				h3{
+					&:after{
+						left: -12% !important;
+					}
+				}
+			}
+		}
 		&.left{
 			text-align: left;
 			.btn{
 			    margin: 0 30px 50px 30px;
+			}
+			.txt{
+			    margin: 15px 30px 25px 30px;
+				h3{
+					&:after{
+						left:0;
+					}
+				}
 			}
 		}
 		.link{
@@ -18,6 +44,36 @@
 		    width: 100%;
 		    height: 100%;
 		    z-index: 1;
+		}
+		.txt{
+			margin: 15px 30px 25px 0;
+			p{
+				padding: 0 0 3px 0;
+				font:400 14px 'NotoSansKR';
+				span{
+					padding: 0 5px 0 0;
+					font: 14px 'Adihaus-regular';
+					letter-spacing: 0.2px;
+				}
+			}
+			h3{
+				position: relative;
+				font: 26px/28px 'AdihausDIN-Bold';
+				// letter-spacing: 0.1px;
+				text-transform: uppercase;
+				&:after{
+					content: '';
+				    display: block;
+				    position: absolute;
+				    right: -33%;
+			        bottom: -6px;
+				    width: 250px;
+				    height: 3px;
+				    background: #000;
+
+				}
+
+			}
 		}
 		.btn{
 			display: inline-block;
@@ -31,6 +87,12 @@
 		    border: 1px solid #000;
 			&:after{
 				    padding-left: 3px;
+			}
+			&.coming{
+				padding: 8px 0 5px;
+				font: 12px 'adinenuPro-bold';
+				color: #000;
+				border: 1px solid #000;
 			}
 			&.soldout{
 				padding: 8px 0 5px;
