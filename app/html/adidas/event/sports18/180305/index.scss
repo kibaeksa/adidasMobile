@@ -1,0 +1,85 @@
+ @import './app/css/adidas/scss/common/mixin.scss';
+ @import './app/css/adidas/scss/common/common.scss';
+
+#sports18{
+    .button_area{
+        &:active{
+            a{
+                background: #fff;
+                color:#000;
+            }
+        }
+        div{
+            padding: 0;
+        }
+    }
+    .main{
+        span{
+            display: block;
+            img{
+                width: 100%;
+            }
+        }
+    }
+    .txt{
+        background: #fff;
+        padding: 30px 0 30px;
+        margin-bottom: 15px;
+        border-bottom: 1px solid #bbb;
+        p{   
+            text-align: center;
+            font:1.3rem 'NotoSansKR';
+        }
+    }
+    .banner{
+        padding: 15px;
+        background: #fff;
+        &.active{
+            .box{
+                overflow: hidden;
+                height: 480px;
+                text-align: center;
+                img{                    
+                    opacity: 1;
+                }
+                .button_area{
+                    opacity: 1;
+                    bottom:35px;
+                }
+            }
+        }
+
+        .box{
+            overflow: hidden;
+            position: relative;
+            text-align: center;
+            img{
+                height: 100%;                
+                @include css3(transition, all, 0.6s);
+                opacity: 0;   
+                margin-left: -10%;             
+            }
+            h3{
+                width: 100%;
+                position: absolute;
+                bottom: 25%;
+                text-align: center;
+                font: 24px/24px "adinenuPro-bold";
+                color: #fff;
+                text-transform: uppercase;
+                letter-spacing: 0;
+            }
+            .button_area{
+                padding: 0 7rem;
+                position: absolute;
+                bottom: 0px;
+                left: 0;
+                right: 0;
+                opacity: 0;
+
+                @include css3(transition, all, 0.6s);
+                transition-delay: 0.4s;
+            }            
+        }
+    }
+}
