@@ -46,13 +46,13 @@
 			</section>
 
 			<section id="contents">
-				<section class="m_contents login">
+				<section class="m_contents loginFind">
 					<div class="loc">
 						<span>HOME</span>
 						<span class="arw">&gt;</span>
 						<span>로그인</span>
 						<span class="arw">&gt;</span>
-						<span>아이디 찾기 결과</span>
+						<span>아이디 찾기</span>
 					</div>
 
 
@@ -60,16 +60,46 @@
 						<li><a href="#" class="on">아이디 찾기</a></li>
 						<li><a href="#">비밀번호 찾기</a></li>
 					</ul>
-					<div class="find_myinfo">
-						<p style="margin-bottom:5px;text-align:center;font-size:16px;">고객님의 아이디는 <strong style="font-weight:bold;font-size:16px;">newkdosdk</strong> 입니다.</p>
-						<p style="margin-bottom:15px;text-align:center;">( 2014.04.16 가입 )</p>
-						<div class="btn_area">
-							<a href="#" class="btn1" style="height:39px;padding-top:25px;font-size:15px;">로그인</a>
-						</div>
-						<!-- //btn_area -->
 
+					<!-- 180308 -->
+					<div class="tab_cont">
+						<div class="box active" style="padding:28px 15px 40px;">
+
+							<div class="form_find form_table">
+
+	                            <h2>아이디 찾기 결과</h2>
+								<p class="desc">각 아이디를 클릭하시면 전체 아이디를 확인하실 수 있습니다.</p>
+								<div class="row border findFull" style="margin-top:15px;">
+	                                <p>adidas123***</p>
+	                                <span>2002.01.01 가입</span>
+	                            </div>
+								<div class="row border findFull">
+									<p>adidas123***</p>
+									<span>2002.01.01 가입</span>
+								</div>
+
+								<div class="fullid_check">
+	                                <p class="title">아이디 전체 확인</p>
+	                                <div class="box">
+	                                    <p>등록된 휴대폰 번호로 확인</p>
+	                                    <p class="blue">(010-****-9090)</p>
+	                                    <div class="btn"><a href="#">아이디 발송</a></div>
+	                                </div>
+	                                <div class="box">
+	                                    <p>등록된 이메일로 확인</p>
+	                                    <p class="blue">(adidas123****@naver.com)</p>
+	                                    <div class="btn"><a href="#">아이디 발송</a></div>
+	                                </div>
+	                            </div>
+								<div class="button_area no_pdg" style="margin:25px 0 0 0;">
+	                                <div><a href="#" style="height: 55px;line-height: 55px;" class="icons aft" data-icon="">로그인</a></div>
+	                            </div>
+
+	                        </div>
+
+						</div>
 					</div>
-					<!-- //mem_login -->
+					<!-- //180308 -->
 
 				</section>
 			</section>
@@ -115,6 +145,31 @@
 
 			    </address>
 			</footer>
+
+			<!-- 180308 -->
+			<script type="text/javascript">
+
+				(function($){
+					$(document).ready(function() {
+						// 180228 id 찾기 결과 토글 함수
+						$(".findFull").click(function(){
+							$(this).toggleClass('on');
+							$(this).siblings('.findFull').removeClass('on');
+							// $(".fullid_check").toggleClass('on');
+							if($('.findFull').hasClass('on')){
+								$(".fullid_check").addClass('on')
+							}else{
+								$(".fullid_check").removeClass('on')
+							}
+						});
+					});
+
+				})(jQuery);
+
+			</script>
+			<!-- 180308 end-->
+
+
 		</section>
 		<!-- //container -->
 

@@ -50,69 +50,36 @@
 						<span class="arw">&gt;</span>
 						<span>로그인</span>
 						<span class="arw">&gt;</span>
-						<span>아이디 찾기</span>
+						<span>비밀번호 찾기</span>
 					</div>
 
 
 					<ul class="tab">
-						<li><a href="#" class="on">아이디 찾기</a></li>
-						<li><a href="#">비밀번호 찾기</a></li>
+						<li><a href="#">아이디 찾기</a></li>
+						<li><a href="#" class="on">비밀번호 찾기</a></li>
 					</ul>
 
 					<!-- 180308 -->
 					<div class="tab_cont">
 						<div class="box active" style="padding:28px 15px 40px;">
 
-	                        <div class="find_select">
-	                            <div class="rdo_box1 blue" >
-	                                <input type="radio" id="find_phone" name="find_id" checked>
-	                                <label for="find_phone" class="adipro-r">휴대폰 번호로 찾기</label>
+							<div class="form_find form_table">
+	                            <h2>휴대폰 번호로 찾기</h2>
+	                            <div class="row" style="margin-top:15px;">
+	                                <input type="text" id="MEM_ID" name="MEM_ID" maxlength="15" onkeypress="return KeyDown()" onkeyup="dbIdCheck();" placeholder="이름">
+	            				</div>
+								<div class="row">
+	                                <input type="text" maxlength="15" placeholder="아이디">
+	            				</div>
+	                            <div class="row">
+	                                <input type="text" id="MEM_ID" name="MEM_ID" maxlength="15" onkeypress="return KeyDown()" onkeyup="dbIdCheck();" placeholder="휴대폰 번호(-없이 입력)">
 	                            </div>
-	                            <div class="rdo_box1 blue">
-	                                <input type="radio" id="find_email" name="find_id">
-	                                <label for="find_email" class="adipro-r">이메일로 찾기</label>
-	                            </div>
-
-	                            <div class="rdo_box1 blue">
-	                                <input type="radio" id="find_verify" name="find_id">
-	                                <label for="find_verify" class="adipro-r">본인인증으로 찾기</label>
-	                            </div>
-	                        </div>
-							<p class="desc" style="margin-bottom:15px; font-weight:400;">
-	                            위의 인증방식 중 한 가지를 선택하여 아이디를 확인하실 수 있습니다.<br>
-	                            본인인증 시 제공되는 정보는 해당 인증기관에서 직접 수집하며,<br>
-	                            인증 이외의 용도로 이용 또는 저장되지 않습니다.
-	                        </p>
-
-							<table class="term_table" style="margin-bottom:15px; border-top:2px solid #000;">
-								<tr>
-									<th>개인정보를 제공받는 자</th>
-									<td>아이핀 인증 : 서울신용평가정보㈜<br/>휴대폰 인증 : 한국모바일인증㈜</td>
-								</tr>
-								<tr>
-									<th>제공받는 자의 이용목적</th>
-									<td>본인 확인 인증</td>
-								</tr>
-								<tr>
-									<th>제공하는 개인정보의 항목</th>
-									<td>이름, 생년월일, 성별, <br/>휴대전화번호 및 내외국인 정보</td>
-								</tr>
-								<tr>
-									<th>개인정보 보유 및 이용기간</th>
-									<td>본인 확인 인증 완료 시 까지</td>
-								</tr>
-							</table>
-
-							<div class="check_area" style="padding-bottom:20px;text-align:center;">
-								<div class="chk_box1">
-									<input type="checkbox" id="agree_nonmem_login" checked>
-									<label for="agree_nonmem_login">본인 확인을 위한 개인정보 제공에 동의합니다.</label>
-								</div>
-							</div>
-							<!-- //check_area -->
-
-	                        <div class="button_area no_pdg ">
-	                            <div class="blue"><a href="#" style="height: 55px;line-height: 55px;" class="icons aft" data-icon="">확인</a></div>
+								<div class="button_area no_pdg" style="margin:25px 0 0 0;">
+		                            <div class="blue">
+										<a href="#" style="height: 55px;line-height: 55px;" class="icons aft" data-icon="">
+										임시 비밀번호 발송</a>
+									</div>
+		                        </div>
 	                        </div>
 
 						</div>

@@ -14,7 +14,7 @@
 <body>
 
 	<section id="wrap">
-		<section id="container" class="login">
+		<section id="container">
 			<section id="header">
 			    <div class="navigation_main_wrapper">
 			        <a href="javascript:void(0)" class="navi_slide" id="global-navigation-button">
@@ -44,7 +44,7 @@
 			</section>
 
 			<section id="contents">
-				<section class="m_contents loginFind">
+				<section class="m_contents login">
 					<div class="loc">
 						<span>HOME</span>
 						<span class="arw">&gt;</span>
@@ -58,66 +58,52 @@
 						<li><a href="#" class="on">아이디 찾기</a></li>
 						<li><a href="#">비밀번호 찾기</a></li>
 					</ul>
+					<div class="find_myinfo">
+						<h3>휴대폰 인증을 통하여 아이디를 확인하실 수 있습니다.</h3>
+						<ul class="desc">
+							<li>본인 확인 인증을 위하여 다음의 정보가 인증기관에 제공됩니다.</li>
+							<li>인증기관은 인증 이외의 용도로 이용 또는 저장하지 않습니다.</li>
+						</ul>
 
-					<!-- 180308 -->
-					<div class="tab_cont">
-						<div class="box active" style="padding:28px 15px 40px;">
+						<table cellspacing="0" cellpadding="0" width="100%" style="border:1px solid #666;margin-bottom:15px;">
+                           <colgroup>
+                               <col width="40%">
+                           </colgroup>
+                           <tbody>
+                               <tr>
+                                   <td style="border-right:1px solid #666;border-bottom:1px solid #666;padding:5px;">개인정보를 제공받는 자</td>
+                                   <td style="border-bottom:1px solid #666;padding:5px;">KMC(한국 모바일 인증). 나이스 신용정보(I-PIN 인증)</td>
+                               </tr>
+                               <tr>
+                                   <td style="border-right:1px solid #666;border-bottom:1px solid #666;padding:5px;">제공받는 자의 이용목적</td>
+                                   <td style="border-bottom:1px solid #666;padding:5px;">본인 확인 인증</td>
+                               </tr>
+                               <tr>
+                                   <td style="border-right:1px solid #666;border-bottom:1px solid #666;padding:5px;">제공하는 개인정보의 항목</td>
+                                   <td style="border-bottom:1px solid #666;padding:5px;">이름, 생년월일, 성별, 휴대전화번호, 내외국인 정보</td>
+                               </tr>
+                               <tr>
+                                   <td style="border-right:1px solid #666;padding:5px;">개인정보 보유 및 이용기간</td>
+                                   <td style="padding:5px;">본인 확인 인증 완료 시 까지</td>
+                               </tr>
+                        	</tbody>
+                   		</table>
 
-	                        <div class="find_select">
-	                            <div class="rdo_box1 blue" >
-	                                <input type="radio" id="find_phone" name="find_id" checked>
-	                                <label for="find_phone" class="adipro-r">휴대폰 번호로 찾기</label>
-	                            </div>
-	                            <div class="rdo_box1 blue">
-	                                <input type="radio" id="find_email" name="find_id">
-	                                <label for="find_email" class="adipro-r">이메일로 찾기</label>
-	                            </div>
-
-	                            <div class="rdo_box1 blue">
-	                                <input type="radio" id="find_verify" name="find_id">
-	                                <label for="find_verify" class="adipro-r">본인인증으로 찾기</label>
-	                            </div>
-	                        </div>
-							<p class="desc" style="margin-bottom:15px; font-weight:400;">
-	                            위의 인증방식 중 한 가지를 선택하여 아이디를 확인하실 수 있습니다.<br>
-	                            본인인증 시 제공되는 정보는 해당 인증기관에서 직접 수집하며,<br>
-	                            인증 이외의 용도로 이용 또는 저장되지 않습니다.
-	                        </p>
-
-							<table class="term_table" style="margin-bottom:15px; border-top:2px solid #000;">
-								<tr>
-									<th>개인정보를 제공받는 자</th>
-									<td>아이핀 인증 : 서울신용평가정보㈜<br/>휴대폰 인증 : 한국모바일인증㈜</td>
-								</tr>
-								<tr>
-									<th>제공받는 자의 이용목적</th>
-									<td>본인 확인 인증</td>
-								</tr>
-								<tr>
-									<th>제공하는 개인정보의 항목</th>
-									<td>이름, 생년월일, 성별, <br/>휴대전화번호 및 내외국인 정보</td>
-								</tr>
-								<tr>
-									<th>개인정보 보유 및 이용기간</th>
-									<td>본인 확인 인증 완료 시 까지</td>
-								</tr>
-							</table>
-
-							<div class="check_area" style="padding-bottom:20px;text-align:center;">
-								<div class="chk_box1">
-									<input type="checkbox" id="agree_nonmem_login" checked>
-									<label for="agree_nonmem_login">본인 확인을 위한 개인정보 제공에 동의합니다.</label>
-								</div>
-							</div>
-							<!-- //check_area -->
-
-	                        <div class="button_area no_pdg ">
-	                            <div class="blue"><a href="#" style="height: 55px;line-height: 55px;" class="icons aft" data-icon="">확인</a></div>
-	                        </div>
-
+						<div class="chk_box">
+							<span class="chk_dsgn">
+								<input type="checkbox" id="agree_per_info">
+								<label for="agree_per_info">본인 확인을 위한 개인정보 제공에 동의합니다.</label>
+							</span>
 						</div>
+						<!-- //chk_box -->
+
+						<div class="btn_area">
+							<a href="#" class="btn1" style="height:39px;padding-top:25px;font-size:15px;">본인인증</a>
+						</div>
+						<!-- //btn_area -->
+
 					</div>
-					<!-- //180308 -->
+					<!-- //mem_login -->
 
 				</section>
 			</section>
