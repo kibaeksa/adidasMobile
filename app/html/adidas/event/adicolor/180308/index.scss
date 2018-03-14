@@ -1,0 +1,266 @@
+@import './app/css/adidas/scss/common/mixin.scss';
+@import './app/css/adidas/scss/common/common.scss';
+
+
+#adicolor{
+	.scrollevent{
+		@include css3(transition, 0.6s);
+		&.on{
+			ul{
+				li{
+					top: 0px !important;
+				}
+			}
+
+		}
+	}
+
+	.video{
+		position: relative;
+		padding-bottom: 100%;
+		.bg{
+
+			img{
+				width: 100%;
+			}
+			video{
+				width: 100%;
+		    	height: 100%;
+			    position: absolute;
+			    top: 50%;
+			    left: 50%;
+				transform: translate(-50%,-50%);
+			    -webkit-transform: translate(-50%,-50%);
+
+			    object-fit: cover;
+			}
+		}
+		.txt{
+			display: inline-block;
+			position: absolute;
+			top:50%;
+			left:50%;
+			@include css3(transform, translate(-50%,-50%));
+			width: 80%;
+			img{
+				width: 100%;
+			}
+		}
+	}
+	.gall_wrap{
+		position: relative;
+		&.box1{
+			.rect{
+				position: absolute;
+				top:25px;
+				right: 0;
+				display: inline-block;
+				width: 100px;
+				height: 120px;
+				background: #f23d5b;
+
+			}
+			.sign{
+    			top: 248px;
+			}
+			&.on{
+				background: #c0112e;
+			}
+
+		}
+		&.box2{
+			.rect{
+				position: absolute;
+				top:25px;
+				left: 0;
+				display: inline-block;
+				width: 100px;
+				height: 120px;
+				background: #bbdce6;
+
+			}
+			.sign{
+    			top: 216px;
+			}
+			&.on{
+				background: #93c9d9;
+			}
+
+		}
+		&.box3{
+			.rect{
+				position: absolute;
+				top:150px;
+				right: 0;
+				display: inline-block;
+				width: 100px;
+				height: 120px;
+				background: #4cb695;
+			}
+			.sign{
+				top: 248px;
+			}
+			&.on{
+				background: #008b60;
+			}
+
+		}
+		&.box4{
+			.rect{
+				position: absolute;
+				top:25px;
+				left: 0;
+				display: inline-block;
+				width: 100px;
+				height: 120px;
+				background: #2b4668;
+
+			}
+			.sign{
+				top: 248px;
+			}
+			&.on{
+				background: #012451;
+			}
+
+		}
+		&.box5{
+			.rect{
+				position: absolute;
+				top:25px;
+				right: 0;
+				display: inline-block;
+				width: 100px;
+				height: 120px;
+				background: #4375ca;
+
+			}
+			.sign{
+				top: 248px;
+			}
+			&.on{
+				background: #006fba;
+			}
+
+		}
+		&.box6{
+			.rect{
+				position: absolute;
+				top:150px;
+				left: 0;
+				display: inline-block;
+				width: 100px;
+				height: 120px;
+				background: #ffec73;
+			}
+			.sign{
+    			top: 248px;
+			}
+			&.on{
+				background: #f4d824;
+			}
+
+		}
+		&.box7{
+			.rect{
+				position: absolute;
+				top:150px;
+				left: 0;
+				display: inline-block;
+				width: 100px;
+				height: 120px;
+				background: #3b3b3b;
+
+			}
+			.sign{
+    			top: 239px;
+			}
+			&.on{
+				background: #12131b;
+			}
+
+		}
+		.sign{
+			position: absolute;
+			margin: 0 1.5rem;
+			z-index: 3;
+			img{
+				width:100%;
+			}
+		}
+	}
+	.banner_slider_wrap{
+		margin: 0 40px;
+		padding: 40px 0;
+		overflow: hidden;
+
+		ul{
+			li{
+				@include css3(transition, 0.4s);
+
+				position: relative;
+				top:50px;
+				.box_inn{
+					.img{
+						img{
+							width: 100%;
+						}
+					}
+				}
+			}
+			.owl-controls{
+				.owl-dots{
+					text-align: center;
+					.owl-dot{
+						display: inline-block;
+						margin: 10px 2px 0;
+						width: 8px;
+						height: 8px;
+						background: rgba(255,255,255,0.5);
+						border-radius: 50px;
+						&.active{
+							background: rgba(255,255,255,1);
+						}
+					}
+				}
+			}
+		}
+		.txt{
+			padding: 20px 0;
+			text-align: center;
+			img{
+				width: 100%;
+			}
+		}
+		.btn{
+			display: inline-block;
+			width: 100%;
+			text-align: center;
+			background: rgba(255,255,255,0.8);
+			font:600 13px/45px 'NotoSansKR';
+			color:#000;
+			letter-spacing: 0.1px;
+			&:after{
+				margin-left: 5px;
+			}
+		}
+
+	}
+
+	.bottom{
+		padding: 35px 0;
+		h3{
+			padding: 20px 0 0 0;
+			text-align: center;
+			font: 40px 'adinenuPro-black';
+		}
+		.img{
+			margin: 0 25px;
+			img{
+				width: 100%;
+			}
+		}
+
+	}
+
+}
