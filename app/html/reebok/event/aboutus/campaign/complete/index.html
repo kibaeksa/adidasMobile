@@ -80,8 +80,8 @@
 					</div>
 
 					<div class="video_visual">
-						<div class="bg">
-							<img src="/images/reebok/about/complete/video_bg.jpg" alt="" class="active">
+						<div class="bg" id="customise_top">
+							<video src="/images/reebok/about/complete/video.mp4" playsinline muted autoplay loop></video>
 						</div>
 						<div class="cover">
 							<h2>
@@ -109,7 +109,7 @@
 					<div class="collections2">
 						<h3>COMPLETE 2LCS<br>lookbook</h3>
 						<div class="btn"><a href="#">구매하기</a></div>
-						
+
 
 						<div class="collection_cut">
 
@@ -151,6 +151,22 @@
 
 				<script type="text/javascript">
 					(function($){
+						var varUA = navigator.userAgent.toLowerCase();
+						//userAgent 값 얻기
+
+						if (varUA.match('android') != null) {
+							//안드로이드 일때 처리
+
+							var maintop = document.getElementById('customise_top');
+
+							maintop.innerHTML= '<img src="/images/reebok/about/complete/video_bg.jpg" alt="" class="active">';
+
+						} else if (varUA.indexOf("iphone")>-1||varUA.indexOf("ipad")>-1||varUA.indexOf("ipod")>-1) {
+							//IOS 일때 처리
+
+						} else {
+							//아이폰, 안드로이드 외 처리
+						}
 						$('.ready_p').click(function(){
 							alert('상품이 준비 중입니다.');
 							return false
