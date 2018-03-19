@@ -140,7 +140,13 @@
 					<div class="tab">
 						<a href="JavaScript:void:(0)" class="tab01 on"></a>
 						<a href="JavaScript:void:(0)" class="tab02"></a>
+						<div class="tab_imgs">
+							<div class="img on"><img src="/images/reebok/about/flexweave/180312/tab_img1.png" alt=""></div>
+							<div class="img"><img src="/images/reebok/about/flexweave/180312/tab_img2.png" alt=""></div>
+						</div>
 					</div>
+
+
 
 					<div class="cont_area cont1 on">
 						<div class="txt">
@@ -424,6 +430,11 @@
 							$('.cont_area').removeClass('on');
 							$('.cont2').addClass('on');
 						});
+
+						$('.tab a').click(function(){
+							var tabIndex = $(this).index();
+							$('.tab_imgs .img').removeClass('on').eq(tabIndex).addClass('on');
+						})
 
 
 					})(jQuery);

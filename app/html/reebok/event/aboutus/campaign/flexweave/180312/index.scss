@@ -374,7 +374,8 @@
     }
 
     .tab{
-        background: url('http://imagem.reebok.co.kr/images/reebok/about/flexweave/180312/sub_visual.jpg') 0 0 no-repeat;
+        position: relative;
+        background: url('http://imagem.reebok.co.kr/images/reebok/about/flexweave/180312/sub_visual.jpg?v=1') 0 0 no-repeat;
         background-size: cover;
         padding-bottom: 100%;
         text-align: center;
@@ -401,6 +402,25 @@
             &.on{
                 background: url('http://imagem.reebok.co.kr/images/reebok/about/flexweave/180312/tab02_ov.png') 0 0 no-repeat;
                 background-size: cover;
+            }
+        }
+    }
+    .tab_imgs{
+
+        .img{
+            position: absolute;
+            top: 10rem;
+            padding: 0rem 7rem;
+            opacity: 0;
+            -webkit-opacity: 0;
+            &.on{
+                opacity: 1;
+                -webkit-opacity: 1;
+                transition: opacity 0.5s;
+                -webkit-transition: opacity 0.5s;
+            }
+            img{
+                width: 100%;
             }
         }
     }
