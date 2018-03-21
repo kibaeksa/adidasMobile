@@ -624,6 +624,12 @@ html.no-scroll body{
 	width:33.4%;
 }
 
+.button_area.kakao a {
+    border: 1px solid #ccc;
+    background: none;
+    color: #999;
+}
+
 .button_area>*:first-child{
 	padding-left: 15px;
 }
@@ -968,12 +974,12 @@ html.no-scroll body{
 }
 
 .chk_box1.blue>input:checked+label:before{
-	background: #027dbf;
-	border-color: #027dbf;
+	background: #ab2328;
+	border-color: #ab2328;
 }
 
 .chk_box1.line_blue>input:checked+label:before{
-	border-color: #027dbf;
+	border-color: #ab2328;
 }
 
 .chk_box1.red>input:checked+label::before{
@@ -1004,7 +1010,7 @@ html.no-scroll body{
 }
 
 .chk_box1.line_blue>input:checked+label:after{
-    border-color: #027dbf;
+    border-color: #ab2328;
 }
 
 .rdo_box1>input+label:before{
@@ -1055,7 +1061,7 @@ html.no-scroll body{
 }
 
 .rdo_box1.blue>input:checked + label:after{
-	background: #027dbf !important;
+	background: #ab2328 !important;
 }
 
 .rdo_box1.red>input+label:before{
@@ -3072,6 +3078,67 @@ div.searchbox_info .title_sub ul li{float: left; margin-right: 5px; font: 300 14
 #contents .login .join_intro p strong{font-size:14px;color:#282828;font-weight:bold;}
 
 /* find id */
+#container .loginFind .button_area .button_col2{
+    display: flex;
+}
+
+#container .loginFind .button_area .button_col2>div{
+    flex: 1;
+    margin-right: 5px;
+}
+
+#container .loginFind .button_area .button_col2>div a{
+    background: #fff;
+    border: 1px solid #ccc;
+}
+
+#container .loginFind .button_area .button_col2>div a span{
+    color:#999;
+}
+
+#container .loginFind .button_area .button_col2 .naver>a span::before{
+    content: '';
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    margin-right: 5px;
+    background: url('http://imagem.adidas.co.kr/images/reebok/ico_btn_naver_gray.gif') 0 0 no-repeat;
+    -webkit-background-size: 14px auto;
+    background-size: 15px auto;
+    vertical-align: middle;
+}
+
+#container .loginFind .btn_utils{
+	margin-top: 5px;
+	overflow: hidden;
+}
+
+#container .loginFind .btn_utils a{
+	float: left;
+	font:300 13px 'NotoSansKR';
+	color: #ab2328;
+}
+
+#container .loginFind .btn_utils a:last-child{
+	float: right;
+	color: #000;
+}
+
+#container .loginFind dl{
+	margin:10px 0 15px;
+}
+
+#container .loginFind dl dt{
+	font:700 13px 'NotoSansKR';
+	color: #989898;
+}
+
+#container .loginFind dl dd li{
+	font:400 12px/16px 'NotoSansKR';
+	color: #989898;
+}
+
+
 #container .loginFind .find_select .rdo_box1{
     width: 49%;
     padding: 0 0 15px 0;
@@ -9032,6 +9099,280 @@ div.prod_manual p.desc strong{color:#3e3e3e;font-size:11px;letter-spacing:-1px;}
 #contents .join>.join_step span.on{background-image:url(/images/reebok/bg_arw_join_step_on.png);}
 #contents .join>.join_step span:last-child.on{background:none;}
 #contents .join>.join_step span.on em{color:#fff;}
+
+#contents .join.renewal .tip{
+    padding: 15px 15px 0 15px;
+}
+
+#contents .join.renewal .tip p{
+    font:300 12px 'NotoSansKR';
+}
+
+#contents .join.renewal .tip p.bold{
+    font-weight: 500;
+    color:#ab2328 ;
+}
+#contents .join.renewal .verify_btn{
+	height: 40px;
+	margin-bottom: 10px;
+}
+
+#contents .join.renewal .verify_btn a{
+	height: 40px;
+	line-height: 40px;
+	font-size: 13px;
+}
+
+#contents .join.renewal .form_table{
+	padding-top: 15px;
+}
+
+#contents .join.renewal .form_table .row{
+	padding: 0 15px;
+	margin-bottom:10px;
+	position: relative;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+#contents .join.renewal .form_table .row input[type="text"],
+#contents .join.renewal .form_table .row input[type="password"],
+#contents .join.renewal .form_table .row input[type="number"],
+#contents .join.renewal .form_table .row input[type="tel"],
+#contents .join.renewal .form_table .row select{
+    width: 100%;
+    min-width: 40px;
+    height: 40px;
+    padding-left: 5px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border: 1px solid  #c8cbcc;
+	border-radius: 0;
+	font-family: 'NotoSansKR';
+	font-weight: 400;
+	-webkit-appearance: none;
+	font-size: 12px;
+}
+#contents .join.renewal .form_table .sel_design>a{
+	border: 1px solid #c8cbcc;
+}
+
+
+#contents .join.renewal .form_table .row input:disabled{
+	background: #fff;
+	color: #000;
+}
+
+#contents .join.renewal .form_table .row.name input{
+	font-family:'NotoSansKR';
+    font-weight: 700;
+}
+
+#contents .join.renewal .form_table .row.email>*{
+	width: 100%;
+}
+
+#contents .join.renewal .form_table .row.email .a{
+	width: auto;
+	color: #000;
+	margin: 14px 3px 0;
+	font-size: 12px;
+}
+
+#contents .join.renewal .form_table .row.email .mail_box1{
+	-webkit-flex: 0 0 100px;
+	flex: 0 0 100px;
+}
+
+#contents .join.renewal .form_table .row.email .mail_box3{
+	margin-left: 5px;
+}
+
+#contents .join.renewal .form_table .row.phone{
+	margin-bottom: 30px;
+}
+
+#contents .join.renewal .form_table .row.birth{
+    position: relative;
+	margin-bottom: 30px;
+    transition: margin-bottom 0.2s;
+    -webkit-transition: margin-bottom 0.2s;
+}
+/* 180214 */
+#contents .join.renewal .form_table .row.birth.show_tip{
+    margin-bottom: 40px;
+}
+/* 180214 */
+
+/* 180320 join renewal */
+#contents .join.renewal .form_table .row.birth>*{
+	width: 100%;
+	margin-right: 5px;
+}
+
+#contents .join.renewal .form_table .row.birth>*:last-child{
+	margin-right: 0;
+}
+
+#contents .join.renewal .form_table .row.birth>*.mm,
+#contents .join.renewal .form_table .row.birth>*.dd{
+	-webkit-flex: 0 0 90px;
+	flex: 0 0 90px;
+}
+
+#contents .join.renewal .form_table .row.birth .tip{
+    padding: 0 15px;
+    position: absolute;
+    bottom: -29px;
+    left: 0;
+    color:#ab2328;
+    font-size: 0.95rem;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    opacity: 0;
+    transition: opacity 0.15s ease 0.1s;
+    -webkit-transition: opacity 0.15s ease 0.1s;
+}
+
+#contents .join.renewal .form_table .row.birth.show_tip .tip{
+    opacity: 1;
+}
+
+#contents .join.renewal .agr_box{
+    border: 1px solid  #c8cbcc;
+    margin: 15px;
+}
+
+#contents .join.renewal .agr_box .box{
+    position: relative;
+    padding: 8px 7.2rem 16px 10px;
+    border-bottom: 1px solid  #c8cbcc;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+#contents .join.renewal .agr_box .box .view_more{
+    padding-right: 15px;
+    position: absolute;
+    top: 12px;
+    right: 10px;
+    color: #027dbf;
+    font-size: 1rem;
+}
+
+#contents .join.renewal .agr_box .box .view_more::before{
+    position: absolute;
+    top: 1px;
+    right: 0;
+}
+
+
+#contents .join.renewal .agr_box .box .view_detail{
+    position: absolute;
+    top: 0;
+    right: 6px;
+    padding: 0 0 0 30px;
+    height: 100%;
+    font-size: 1.8rem;
+    color: #000;
+}
+
+#contents .join.renewal .agr_box .box .view_detail::before{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform:translate3d(0,-50%,0);
+    -webkit-transform:translate3d(0,-50%,0);
+    line-height: 1.8rem;
+}
+
+#contents .join.renewal .agr_box .box label{
+    display: inline-block;
+    padding: 2px 0 0 28px;
+    font-size: 1.05rem;
+    line-height: 1.45rem;
+}
+
+#contents .join.renewal .agr_box .box label::before{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#contents .join.renewal .agr_box .box>span{
+    font-size: 1.05rem;
+    line-height: 1.45rem;
+}
+
+#contents .join.renewal .agr_box .box.sns{
+    border-bottom-width: 0;
+}
+
+#contents .join.renewal .agr_box .box.all_agree{
+    background: #f8f8f8;
+    border-width: 0;
+}
+
+#contents .join.renewal .agr_box .box.all_agree label{
+    color: #ab2328;
+    font-family: 'NotoSansKR';
+    font-weight: 700;
+}
+
+#contents .join.renewal .agr_box .box.subscribe_details{
+    padding-left: 40px;
+}
+
+#contents .join.renewal .agr_box .box.subscribe_details::after{
+    content:'';
+    width: 10px;
+    height: 10px;
+    border-bottom: 2px solid  #aaa;
+    border-left:2px solid  #aaa;
+    display: inline-block;
+
+    position: absolute;
+    top: 11px;
+    left: 20px;
+}
+
+#contents .join.renewal .agr_box .box.subscribe_details.active{
+    display: block;
+}
+
+#contents .join.renewal .agr_box .box.subscribe_details .chk_box1:last-child{
+    margin-left: 15px;
+}
+
+#contents .join.renewal .agr_box .sub_agreements{
+    border-top: 1px solid  #c8cbcc;
+    display: none;
+}
+
+#contents .join.renewal .agr_box .sub_agreements .privacy_keep_notice{
+    padding: 0 15px 15px;
+}
+
+#contents .join.renewal .agr_box .sub_agreements .privacy_keep_notice li{
+    font-weight: 400;
+    margin-bottom: 5px;
+    font-size: 1.05rem;
+    color: #9c9c9c;
+}
+
+#contents .join.renewal .agr_box .sub_agreements .privacy_keep_notice li::before{
+    background: #9c9c9c;
+}
+
+#contents .join.renewal .agr_box .sub_agreements .privacy_keep_notice li:last-child{
+    margin-bottom: 0;
+}
+/* 180320 join renewal end */
 
 
 
