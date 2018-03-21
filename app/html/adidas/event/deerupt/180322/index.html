@@ -18,7 +18,6 @@
     <script type="text/javascript" src="/js/swipe.js"></script>
     <script type="text/javascript" src="/js/owl.carousel.js"></script>
 
-
     <title>아디다스 모바일</title>
 </head>
 
@@ -522,21 +521,21 @@
                     <div class="view-cont">
 
                         <div class="video_box">
-                            <div class="bg"><video src="" autoplay="false" loop="false" muted="true"a width="100%"></video></div>
+                            <div class="bg"><video src="" autoplay="true" muted="true" width="100%"></video></div>
                         </div>    
 
                         <div class="slider_wrapper" style="width:100%">
                             <div id="slide_swipe" class="slider">
                                 <ul>
-                                    <li><img src="/images/adidas/event/DEERUPT/180322/slide_01.jpg"></li>
+                                    <li class="on first"><img src="/images/adidas/event/DEERUPT/180322/slide_01.jpg"></li>
                                     <li><img src="/images/adidas/event/DEERUPT/180322/slide_02.jpg"></li>
                                     <li><img src="/images/adidas/event/DEERUPT/180322/slide_03.jpg"></li>
                                     <li><img src="/images/adidas/event/DEERUPT/180322/slide_04.jpg"></li>
                                     <li><img src="/images/adidas/event/DEERUPT/180322/slide_05.jpg"></li>
                                     <li><img src="/images/adidas/event/DEERUPT/180322/slide_06.jpg"></li>
-                                </ul>
-                                <video src="/images/adidas/event/DEERUPT/180322/video-03.mp4" autoplay="true" loop="true" muted="true"a width="100%"></video>
-                            </div>                           
+                                </ul>                               
+                                <video id="slide_video" class="slide_video" src="/images/adidas/event/DEERUPT/180322/video-deerupt-00.mp4" autoplay="true" muted="true" width="100%" type="video/mp4"></video>
+                            </div>
                             <a href="javascript:void(0)" class="prev"><img src="/images/adidas/event/DEERUPT/180322/prev.png" alt=""></a>
                             <a href="javascript:void(0)" class="next"><img src="/images/adidas/event/DEERUPT/180322/next.png" alt=""></a>                                                                                
                         </div>
@@ -582,30 +581,30 @@
                             <li data-index="1">
                                 <h3>FIT</h3>                               
                                 <div class="video">
-                                    <a href="javascript:void(0)" class="video-button" data-video-id="ZWJB3W9srb4"></a>
+                                    <a href="javascript:void(0)" class="video-button" data-video-id="WCJS-C9fHZs"></a>
                                     <img src="/images/adidas/event/DEERUPT/180322/video-poster-0.jpg" alt="" class="video_bg">
                                     <span class="play">
-                                        <a href="javascript:void(0)" class="video-button" data-video-id="ZWJB3W9srb4"></a>
+                                        <a href="javascript:void(0)" class="video-button" data-video-id="WCJS-C9fHZs"></a>
                                     </span>
                                 </div>                               
                             </li>
                             <li data-index="2">
                                 <h3>FASHION</h3>
                                 <div class="video">
-                                    <a href="javascript:void(0)" class="video-button" data-video-id="ZWJB3W9srb4"></a>
+                                    <a href="javascript:void(0)" class="video-button" data-video-id="W7BVi_EtbLM"></a>
                                     <img src="/images/adidas/event/DEERUPT/180322/video-poster-1.jpg" alt="" class="video_bg">
                                     <span class="play">
-                                        <a href="javascript:void(0)" class="video-button" data-video-id="ZWJB3W9srb4"></a>
+                                        <a href="javascript:void(0)" class="video-button" data-video-id="W7BVi_EtbLM"></a>
                                     </span>
                                 </div>
                             </li>
                             <li data-index="3">
                                 <h3>DESIGN</h3>
                                 <div class="video">
-                                    <a href="javascript:void(0)" class="video-button" data-video-id="ZWJB3W9srb4"></a>
+                                    <a href="javascript:void(0)" class="video-button" data-video-id="kZFl8NCMCNA"></a>
                                     <img src="/images/adidas/event/DEERUPT/180322/video-poster-2.jpg" alt="" class="video_bg">
                                     <span class="play">
-                                        <a href="javascript:void(0)" class="video-button" data-video-id="ZWJB3W9srb4"></a>
+                                        <a href="javascript:void(0)" class="video-button" data-video-id="kZFl8NCMCNA"></a>
                                     </span>
                                 </div>
                             </li>                            
@@ -698,57 +697,205 @@
             <script type="text/javascript" src="/js/prx.min.js"></script>
             <script type="text/javascript">
                 (function($) {                    
-
+                    
                     var mainSwipe = Swipe(document.getElementById('slide_swipe'),{
                         stopPropagation: true,
+                        loop : true,
+                        duration : 0,
                         callback : function(index , element){
-                            $('.swipe_num span').removeClass('on').eq(index).addClass('on');
+                            setTimeout(function() {
+                                $('#slide_swipe li').removeClass('on').eq(index).addClass('on');      
+                            }, 790);                                                
+                                                  
                         }
                     });
-                    
-                    $('.prev').bind('click',function(){                        
-                        mainSwipe.prev();
-                    });
-                    
-                    $('.next').bind('click',function(){                        
+                    var mainSwipeLi = $('#slide_swipe').find('li');
+                    var mainSwipeLiLength = mainSwipeLi.length;
+                    // var slideVideo = $('.slide_video');
+                    var slideVideo = document.getElementById('slide_video');
+
+                    var _index = $('#slide_swipe li.on').attr('data-index');
+
+                    var slideVideoArr = [
+                        '/images/adidas/event/DEERUPT/180322/video-deerupt-00.mp4',
+                        '/images/adidas/event/DEERUPT/180322/video-deerupt-01.mp4',
+                        '/images/adidas/event/DEERUPT/180322/video-deerupt-02.mp4',
+                        '/images/adidas/event/DEERUPT/180322/video-deerupt-03.mp4',
+                        '/images/adidas/event/DEERUPT/180322/video-deerupt-04.mp4',
+                        '/images/adidas/event/DEERUPT/180322/video-deerupt-05.mp4'
+                    ];
+
+                    var slideVideoArrb = [
+                        '/images/adidas/event/DEERUPT/180322/video-deerupt-05b.mp4',
+                        '/images/adidas/event/DEERUPT/180322/video-deerupt-04b.mp4',
+                        '/images/adidas/event/DEERUPT/180322/video-deerupt-03b.mp4',
+                        '/images/adidas/event/DEERUPT/180322/video-deerupt-02b.mp4',
+                        '/images/adidas/event/DEERUPT/180322/video-deerupt-01b.mp4',
+                        '/images/adidas/event/DEERUPT/180322/video-deerupt-00b.mp4'
+                    ];
+                   
+                    $('.prev').bind('click',function(){
+                                              
+
+                        _index = $('#slide_swipe li.on').attr('data-index');
+                        
+                        // _index = _index--;
+                        console.log(_index);
+                        
+
+                        mainSwipe.prev();  
+                        
+                        slideVideo.classList.add( 'on' );
+                        slideVideo.src = slideVideoArrb[_index];
+
+                        setTimeout(function() {                            
+                            slideVideo.classList.remove( 'on' );                            
+                        }, 800);
+                        
+                    });  
+
+                    $('.next').bind('click',function(){ 
+                        console.log('next start');
                         mainSwipe.next();
-                    });
-                    
-                    $('.swipe_num span').bind('click',function(){                        
-                        mainSwipe.slide($(this).index());
-                    });
-                    
-                    var prdSwipe = Swipe(document.getElementById('slider2'),{
-                        stopPropagation: true,
-                        callback : function(index , element){
-                            $('.prd_name li').removeClass('on').eq(index).addClass('on');
-                        }
-                    });
-                    
-                    $('.prd_name li').bind('click',function(){                        
-                        prdSwipe.slide($(this).index());
-                    });
+                        
+
+                        _index = $('#slide_swipe li.on').attr('data-index');
+                        
+                        var elem = $('#slide_swipe li.on');
+                        
+                        
+                        console.log(elem);
+                        console.log(_index);
+                        
+                        
+                        slideVideo.classList.add( 'on' );
+                        slideVideo.src = slideVideoArr[_index];
+
+                        setTimeout(function() {                            
+                            slideVideo.classList.remove( 'on' );                            
+                        }, 800);
+                    });  
+
+                    // $('.swipe_num span').bind('click',function(){                        
+                    //     mainSwipe.slide($(this).index());
+                    // });
 
                     $('#crazy .slider_section .owl-prev').innerHTML = "1";
 
+                    // 중간 슬라이드
                     var owlProducts = $('.slider_section .slider').owlCarousel({
                         navigation: true,
                         stagePadding: 0,
                         nav: true,
                         pagination: true,
                         paginationNumbers: false,
-                        margin: 50,
+                        margin: 0,
                         items: 1,
                         merge: true,
-                        loop: false
+                        loop: false,
+                        center: false                                    
                     });
 
                     owlProducts.on('changed.owl.carousel', function(event) {
 
-                    });                    
+                    });
 
-                    var _index = $('.slider_section .owl-item.active').children('li').attr('data-index'); //0 ~ 9
+                    // 하단 슬라이드                   
+                    var prdSwipe = Swipe(document.getElementById('slider2'),{
+                        stopPropagation: true,
+                        callback : function(index , element){
+                            $('.prd_name li').removeClass('on').eq(index).addClass('on');
+                          
+                            console.log(index);
+                            
+                            if ( index == 0 ) {                                
+                                $('.prd_name').css('left','-0');
+                            }if(index == 1){
+                                $('.prd_name').css('left','-30px');
+                            }if(index == 2){
+                                $('.prd_name').css('left','-60px');
+                            }if(index == 3){
+                                $('.prd_name').css('left','-90px');
+                            }if(index == 4){
+                                $('.prd_name').css('left','-120px');
+                            }                             
+                        }
+                    });
+                    
+                    $('.prd_name li').bind('click',function(){                        
+                        prdSwipe.slide($(this).index());
+                    });                   
 
+                    var index = 0;
+                    var videoBox = $('.video_box').find("video");                  
+                    var videoBoxArr = [
+                        "/images/adidas/event/DEERUPT/180322/video-01.mp4",
+                        "/images/adidas/event/DEERUPT/180322/video-02.mp4",
+                        "/images/adidas/event/DEERUPT/180322/video-03.mp4"
+                    ]; 
+                    
+                    var tenSecAfter = setTimeout(function(){
+                        viewSlide();
+                    }, 10000);
+                    
+                    $(window).ready(function(){
+                        videoBox.attr('src',videoBoxArr[0]);
+                        videoBox.play();
+                        tenSecAfter();                       
+                    });
+                    
+                    function viewVideo() {
+                        $('.view_footer').removeClass('on');
+                        $('.view_footer2').addClass('on');
+                        $('.slider_wrapper').css({
+                            'opacity':'0',
+                            'padding-bottom':'0'
+                        });
+                        $('.video_box').css({
+                            'opacity':'1',
+                            'padding-bottom':'162%'
+                        }); 
+                    }
+
+                    function viewSlide(){
+
+                        clearInterval(tenSecAfter);
+
+                        $('.view_footer2').removeClass('on');
+                        $('.view_footer').addClass('on');
+                        $('.video_box').css({
+                            'opacity':'0',
+                            'padding-bottom':'0'
+                        });
+                        $('.slider_wrapper').css({
+                            'opacity':'1',
+                            'padding-bottom':'162%'
+                        });
+                    }
+
+                    function nextVideo() {
+                        index++;
+
+                        videoBox.attr('src',videoBoxArr[index]);
+                        if (index > videoBoxArr.length -1) {
+                            index = 0;
+                            videoBox.attr('src',videoBoxArr[index]);                            
+                        }
+                       
+                        setTimeout(() => {
+                            viewSlide();
+                        }, 10000);                                               
+                    }
+
+                    $('.next-video').bind('click',function(){                        
+                        viewVideo();
+                        nextVideo();
+                    });
+
+                    $('.return-slide').bind('click',function(){
+                        viewSlide();
+                    });                   
+                    
                     // video
                     $('.video-button').bind('click', function() {
                         var ytbId = $(this).attr('data-video-id');
@@ -777,73 +924,6 @@
                         }, 100);
                         return false;
                     });
-
-                    var index = 0;
-                    var videoBox = $('.video_box').find("video"); 
-                    var videoBoxArr = [
-                        "/images/adidas/event/DEERUPT/180322/video-01.mp4",
-                        "/images/adidas/event/DEERUPT/180322/video-02.mp4",
-                        "/images/adidas/event/DEERUPT/180322/video-03.mp4"
-                    ]; 
-                    
-                    $(window).ready(function(){
-                        videoBox.attr('src',videoBoxArr[0]);
-                        setTimeout(() => {
-                            viewSlide();
-                        }, 10000);                         
-                    });
-                    
-                    function viewVideo() {
-                        $('.view_footer').removeClass('on');
-                        $('.view_footer2').addClass('on');
-                        $('.slider_wrapper').css({
-                            'opacity':'0',
-                            'padding-bottom':'0'
-                        });
-                        $('.video_box').css({
-                            'opacity':'1',
-                            'padding-bottom':'162%'
-                        }); 
-                    }
-
-                    function viewSlide(){
-                        $('.view_footer2').removeClass('on');
-                        $('.view_footer').addClass('on');
-                        $('.video_box').css({
-                            'opacity':'0',
-                            'padding-bottom':'0'
-                        });
-                        $('.slider_wrapper').css({
-                            'opacity':'1',
-                            'padding-bottom':'162%'
-                        });
-                    }
-
-                    function nextVideo() {
-
-                        index++;
-
-                        videoBox.attr('src',videoBoxArr[index]);
-                        if (index > videoBoxArr.length -1) {
-                            index = 0;
-                            videoBox.attr('src',videoBoxArr[index]);
-                        }
-                        // for (let i = 0; i < videoBoxArr.length; i++) {                            
-                        //     index = i++;                          
-                        //     return videoBox.attr('src',videoBoxArr[i++]);
-                        // }                        
-                    }
-
-                    $('.next-video').bind('click',function(){                        
-                        viewVideo();
-                        nextVideo();
-                    });
-
-                    $('.return-slide').bind('click',function(){
-                        viewSlide();
-                    });                   
-                    
-
 
                 })(jQuery);
 

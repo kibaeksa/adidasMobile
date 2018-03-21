@@ -199,11 +199,26 @@
 						width: 100%;
 						overflow: hidden;
 						li{
+								
 							position: relative;
 							float: left;
 							img{
 								width: 100%;
 							}
+							&.on{
+								
+							}
+						}
+					}
+					video{
+						display: none;
+						position: absolute;
+						left: 0;
+						top: 0;
+						width: 100%;
+						z-index: 2;
+						&.on{
+							display: block;
 						}
 					}
 				}									
@@ -340,7 +355,10 @@
 			padding:15px 0 2.5rem;
 			ul{
 				position: relative;
-				.owl-item.active{
+				.owl-item{
+					padding-right: 20px;
+				}
+				.owl-item.active{					
 					.num_title span{
 						margin-right: 0;
 						opacity: 1;
@@ -352,7 +370,7 @@
 				li{
 					float: left;
 					position: relative;
-					top:0;
+					top:0;					
 					// margin-right: 20px;
 					h3{
 						font: 16px 'AdihausDIN-Bold';
