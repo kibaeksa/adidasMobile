@@ -434,7 +434,7 @@
 
         <div id="container">
 
-            <div id="crazy">
+            <div id="deerupt">
 
                 <div class="main">
 
@@ -455,7 +455,7 @@
                     <div class="view-cont">
 
                         <div class="video_box">
-                            <div class="bg"><video src="" autoplay="true" muted="true" width="100%"></video></div>
+                            <div class="bg"><video id="box_video" class="slide_video" src="http://imagem.adidas.co.kr/images/adidas/event/DEERUPT/180322/video-01.mp4" muted="true" width="100%"></video></div>
                         </div>
 
                         <div class="slider_wrapper" style="width:100%">
@@ -707,11 +707,15 @@
 
                     function videoEnded(e) {
                         $('.slide_video').removeClass('on');
+                        $('.video_box' ).css({
+                            'opacity':'0',
+                            'padding-bottom':'0'
+                        });
                         $('#slide_swipe li').removeClass('on').eq(_index).addClass('on');
-                        // $('.main ul li').removeClass('on').eq(index).addClass('on');                        
+                        viewSlide();
                     }                    
 
-                    $('#crazy .slider_section .owl-prev').innerHTML = "1";
+                    $('#deerupt .slider_section .owl-prev').innerHTML = "1";
 
                     // 중간 슬라이드
                     var owlProducts = $('.slider_section .slider').owlCarousel({
@@ -758,21 +762,23 @@
                     });
 
                     var index = 0;
-                    var videoBox = $('.video_box').find("video");
+                    var videoBox = document.getElementById('box_video');
+                    console.log(videoBox)
                     var videoBoxArr = [
                         "http://imagem.adidas.co.kr/images/adidas/event/DEERUPT/180322/video-01.mp4",
                         "http://imagem.adidas.co.kr/images/adidas/event/DEERUPT/180322/video-02.mp4",
                         "http://imagem.adidas.co.kr/images/adidas/event/DEERUPT/180322/video-03.mp4"
                     ];
 
-                    var tenSecAfter = setTimeout(function(){
-                        viewSlide();
-                    }, 10000);
+                    // var tenSecAfter = setTimeout(function(){
+                    //     viewSlide();
+                    // }, 10000);
 
                     $(window).ready(function(){
-                        videoBox.attr('src',videoBoxArr[0]);
-                        //videoBox.play();
-                        tenSecAfter();
+                        videoBox.src = videoBoxArr[0];
+                        videoBox.play();
+                        videoBox.addEventListener('ended',videoEnded,false);
+                        //tenSecAfter();
                     });
 
                     function viewVideo() {
@@ -789,9 +795,6 @@
                     }
 
                     function viewSlide(){
-
-                        clearInterval(tenSecAfter);
-
                         $('.view_footer2').removeClass('on');
                         $('.view_footer').addClass('on');
                         $('.video_box').css({
@@ -807,15 +810,15 @@
                     function nextVideo() {
                         index++;
 
-                        videoBox.attr('src',videoBoxArr[index]);
+                        videoBox.src = videoBoxArr[index];
+                        videoBox.play();
                         if (index > videoBoxArr.length -1) {
                             index = 0;
-                            videoBox.attr('src',videoBoxArr[index]);
+                            videoBox.src = videoBoxArr[index];
+                            videoBox.play();
                         }
 
-                        setTimeout(() => {
-                            viewSlide();
-                        }, 10000);
+                        videoBox.addEventListener('ended',videoEnded,false);
                     }
 
                     $('.next-video').bind('click',function(){
