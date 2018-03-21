@@ -468,7 +468,7 @@
                                     <li my-index="4"><img src="/images/adidas/event/DEERUPT/180322/slide_05.jpg"></li>
                                     <li my-index="5"><img src="/images/adidas/event/DEERUPT/180322/slide_06.jpg"></li>
                                 </ul>
-                                <video id="slide_video" class="slide_video" src="/images/adidas/event/DEERUPT/180322/video-deerupt-00.mp4" autoplay="true" muted="true" width="100%" type="video/mp4"></video>
+                                <video id="slide_video" class="slide_video" src="/images/adidas/event/DEERUPT/180322/video-deerupt-00.mp4" muted="true" width="100%" type="video/mp4"></video>
                             </div>
                             <a href="javascript:void(0)" class="prev"><img src="/images/adidas/event/DEERUPT/180322/prev.png" alt=""></a>
                             <a href="javascript:void(0)" class="next"><img src="/images/adidas/event/DEERUPT/180322/next.png" alt=""></a>
@@ -670,54 +670,45 @@
 
                     $('.prev').bind('click',function(){
 
-
                         _index = $('#slide_swipe li.on').attr('data-index');
-
                         _index--;
+                        
                         if(_index < 0){
                             _index = 5;
                         }
 
                         console.log(_index);
-
-
-
+    
                         mainSwipe.prev();
 
                         slideVideo.classList.add( 'on' );
                         slideVideo.src = slideVideoArrb[_index];
-
-                        setTimeout(function() {
-                            slideVideo.classList.remove( 'on' );
-                        }, 800);
-
+                        slideVideo.play();                        
+                        slideVideo.addEventListener('ended',videoEnded,false);
                     });
 
-                    $('.next').bind('click',function(){
-                        console.log('next start');
-                        mainSwipe.next();
+                    $('.next').bind('click',function(){                   
+                        
                         _index = $('#slide_swipe li.on').attr('my-index');
                         _index++;
 
                         if(_index > 5){
                             _index = 0;
                         }
-
                         console.log(_index);
 
+                        mainSwipe.next();
 
                         slideVideo.classList.add( 'on' );
                         slideVideo.src = slideVideoArr[_index];
-
-                        setTimeout(function() {
-                            slideVideo.classList.remove( 'on' );
-                        }, 800);
-
+                        slideVideo.play();
+                        slideVideo.addEventListener('ended',videoEnded,false);
                     });
 
-                    // $('.swipe_num span').bind('click',function(){
-                    //     mainSwipe.slide($(this).index());
-                    // });
+                    function videoEnded(e) {
+                        $('.slide_video').removeClass('on');
+                        // $('.main ul li').removeClass('on').eq(index).addClass('on');                        
+                    }                    
 
                     $('#crazy .slider_section .owl-prev').innerHTML = "1";
 
@@ -779,7 +770,7 @@
 
                     $(window).ready(function(){
                         videoBox.attr('src',videoBoxArr[0]);
-                        videoBox.play();
+                        //videoBox.play();
                         tenSecAfter();
                     });
 
