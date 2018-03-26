@@ -1,0 +1,486 @@
+@import './app/css/adidas/scss/common/mixin.scss';
+@import './app/css/adidas/scss/common/common.scss';
+
+#video-layer{
+	position:fixed;top:0;left:0;width: 100%;height: 100%;z-index:1000;
+}
+
+#video-layer .bg{
+	width: 100%;
+	height: 100%;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	transform-origin:center center;
+	-webkit-transform-origin:center center;
+	transform:scale(0);
+	-webkit-transform:scale(0);
+	opacity:0;
+	background:#000;
+	z-index:1;
+
+	transition:all 0.4s;
+	-webkit-transition:all 0.4s;
+
+
+}
+
+#video-layer.loaded .bg{
+	opacity: 1;
+	transform:scale(1.2);
+	-webkit-transform:scale(1.2);
+}
+
+#video-layer .video-box{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	z-index: 3;
+}
+
+#video-layer .close_x_btn{
+	width: 70px;
+	height: 70px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 5;
+	opacity: 0;
+}
+
+#video-layer.loaded .close_x_btn{
+	opacity: 1;
+}
+
+button {
+	padding: 0;
+	margin: 0;
+	cursor: pointer;
+	border: 0;
+	background-color: transparent; }
+  
+button:focus {
+	outline: none; }
+
+	/* 모듈 별 셋팅 영역 */
+.golf_icon_set {
+	background: url("/images/adidas/event/golf/golf_iconSet.png") no-repeat;
+}
+#container_r {
+	background-color: #fff;
+	-ms-overflow-style: none;
+	&::-webkit-scrollbar {
+		display: none;
+	}
+}
+#golf_style_m {
+	width: 100%;
+	height: auto;
+	padding: 80px 0;
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background: url("/images/adidas/event/golf/stylebook/bgi_m.jpg");
+	h3 {
+		width: 100%;
+		color: #fff;
+		text-align: center;
+	}
+	.gate_slide_wrap {
+		width: 100%;
+		overflow-x: auto;
+		overflow-y: hidden;
+		ul {
+			height: 100%;
+			li {
+				height: 100%;
+				float: left;
+			}
+			a {
+				width: 100%;
+				height: 100%;
+				display: block;
+				position: relative;
+				.gate_img {
+					width: 100%;
+					position: absolute;
+					top: 0;
+					left: 0;
+					z-index: 1;
+				}
+				.gate_cover {
+					width: 100%;
+					height: 100%;
+					position: absolute;
+					top: 0;
+					left: 0;
+					z-index: 2;
+					background: #000;
+					opacity: 0.2;
+				}
+				.gate_mark {
+					width: auto;
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					z-index: 5;
+				}
+				.mark_pos_01 {
+					margin-top: -70px;
+					margin-left: -100px;
+				}
+				.mark_pos_02 {
+					margin-top: -150px;
+					margin-left: -65px;
+				}
+				.mark_pos_03 {
+					margin-top: -65px;
+					margin-left: -145px;
+				}
+			}
+		}
+	}
+	.gate_indi_wrap {
+		width: 85px;
+		height: 15px;
+		margin: 40px auto 20px;
+		ul {
+			width: 100%;
+			height: 100%;
+			li {
+				width: 15px;
+				height: 15px;
+				float: left;
+				margin-right: 20px;
+				&:last-child {
+					margin-right: 0;
+				}
+			}
+			button {
+				width: 100%;
+				height: 100%;
+				border-radius: 50%;
+				background: #ddd;
+			}
+			.act_indi {
+				button {
+					background: #83bb36;
+				}
+			}
+		}
+	}
+	.pop_slide {
+		width: 100%;
+		height: 100%;
+		position: fixed;
+		top: 0;
+		left: 0;
+		background: #000;
+		display: none;
+		overflow: hidden;
+		z-index: 20;
+		>* {
+			position: absolute;
+		}
+		button {
+			width: 71px;
+			height: 71px;
+			top: 0;
+			right: 0;
+			z-index: 30;
+		}
+	}
+	.pop_num_wrap {
+		top: 50%;
+		left: 0;
+		margin-left: 40px;
+		overflow: hidden;
+		p {
+			width: auto;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			opacity: 0;
+			color: rgba(220, 220, 220, 0.4);
+		}
+	}
+	.pop_img_wrap {
+		height: auto;
+		top: 50%;
+		left: 0;
+		margin-left: 0;
+		display: none;
+		li {
+			height: auto;
+			display: block;
+			float: left;
+			position: relative;
+			a {
+				background: #222;
+				position: absolute;
+				top: 0;
+				left: 0;
+				margin-left: 20px;
+				z-index: 10;
+				text-align: center;
+				letter-spacing: -2px;
+				color: #fff;
+			}
+		}
+		img {
+			width: 100%;
+			display: block;
+			margin: 0 auto;
+		}
+	}
+	.pop_indi_wrap {
+		height: 15px;
+		top: 50%;
+		left: 50%;
+		margin-top: 38%;
+		li {
+			float: left;
+			border-radius: 50%;
+			background: #ddd;
+			&:last-child {
+				margin-right: 0;
+			}
+			a {
+				width: 100%;
+				height: 100%;
+				display: block;
+				font-size: 0;
+			}
+		}
+		li.act_img_indi {
+			background: #83bb36;
+		}
+	}
+}
+@media screen and (max-width: 360px) {
+	#golf_style_m {
+		padding: 35px 0;
+		h3 {
+			height: 80px;
+			padding-bottom: 25px;
+			font: 600 40px/80px "adinenuPro-black";
+		}
+		.gate_slide_wrap {
+			height: 340px;
+			ul {
+				width: 810px;
+				padding-left: 15px;
+				li {
+					width: 255px;
+					margin-right: 15px;
+				}
+				a {
+					.mark_pos_01 {
+						width: 130px;
+						margin-top: -45px;
+						margin-left: -65px;
+					}
+					.mark_pos_02 {
+						width: 80px;
+						margin-top: -92px;
+						margin-left: -40px;
+					}
+					.mark_pos_03 {
+						width: 160px;
+						margin-top: -35px;
+						margin-left: -80px;
+					}
+				}
+			}
+		}
+		.gate_indi_wrap {
+			margin: 20px auto 10px;
+		}
+	}
+	.pop_num_wrap {
+		width: 180px;
+		height: 150px;
+		margin-top: -220px;
+		margin-left: 20px;
+		p {
+			font: 400 180px/200px 'adihausDIN CnMedium', 'NotoSansKR';
+		}
+	}
+	.pop_img_wrap {
+		li {
+			a {
+				width: 100px;
+				height: 30px;
+				display: block;
+				border-radius: 15px;
+				font: 400 12px/30px 'Decima Mono', 'NotoSansKR';
+			}
+		}
+	}
+	.pop_indi_wrap {
+		height: 10px;
+	}
+}
+@media screen and (min-width: 361px) and (max-width: 440px) {
+	#golf_style_m {
+		padding: 50px 0;
+		h3 {
+			height: 90px;
+			padding-bottom: 35px;
+			font: 600 50px/90px "adinenuPro-black";
+		}
+		.gate_slide_wrap {
+			height: 380px;
+			ul {
+				width: 915px;
+				padding-left: 20px;
+				li {
+					width: 285px;
+					margin-right: 20px;
+				}
+				a {
+					.mark_pos_01 {
+						width: 130px;
+						margin-top: -45px;
+						margin-left: -65px;
+					}
+					.mark_pos_02 {
+						width: 80px;
+						margin-top: -92px;
+						margin-left: -40px;
+					}
+					.mark_pos_03 {
+						width: 160px;
+						margin-top: -35px;
+						margin-left: -80px;
+					}
+				}
+			}
+		}
+		.gate_indi_wrap {
+			margin: 30px auto 15px;
+		}
+		.pop_num_wrap {
+			width: 220px;
+			height: 180px;
+			margin-top: -260px;
+			margin-left: 20px;
+			p {
+				font: 400 220px/230px 'adihausDIN CnMedium', 'NotoSansKR';
+			}
+		}
+		.pop_img_wrap {
+			li {
+				a {
+					width: 100px;
+					height: 30px;
+					display: block;
+					border-radius: 15px;
+					font: 400 13px/30px 'Decima Mono', 'NotoSansKR';
+				}
+			}
+		}
+		.pop_indi_wrap {
+			height: 12px;
+		}
+	}
+}
+@media screen and (min-width: 441px) and (max-width: 570px) {
+	#golf_style_m {
+		padding: 60px 0;
+		h3 {
+			height: 90px;
+			padding-bottom: 50px;
+			font: 600 65px/90px "adinenuPro-black";
+		}
+		.gate_slide_wrap {
+			height: 480px;
+			ul {
+				width: 1170px;
+				padding-left: 30px;
+				li {
+					width: 360px;
+					margin-right: 30px;
+				}
+				a {
+					.mark_pos_01 {
+						width: 170px;
+						margin-top: -60px;
+						margin-left: -85px;
+					}
+					.mark_pos_02 {
+						width: 100px;
+						margin-top: -115px;
+						margin-left: -50px;
+					}
+					.mark_pos_03 {
+						width: 210px;
+						margin-top: -47px;
+						margin-left: -105px;
+					}
+				}
+			}
+		}
+		.pop_num_wrap {
+			width: 280px;
+			height: 230px;
+			margin-top: -320px;
+			p {
+				font: 400 270px/280px 'adihausDIN CnMedium', 'NotoSansKR';
+			}
+		}
+		.pop_img_wrap {
+			li {
+				a {
+					width: 130px;
+					height: 40px;
+					display: block;
+					border-radius: 20px;
+					font: 400 15px/40px 'Decima Mono', 'NotoSansKR';
+				}
+			}
+		}
+	}
+}
+@media screen and (min-width: 571px) {
+	#golf_style_m {
+		h3 {
+			height: 100px;
+			padding-bottom: 90px;
+			font: 600 80px/100px "adinenuPro-black";
+		}
+		.gate_slide_wrap {
+			height: 760px;
+			ul {
+				width: 1830px;
+				padding-left: 40px;
+				li {
+					width: 570px;
+					margin-right: 40px;
+				}
+			}
+		}
+		.pop_num_wrap {
+			width: 300px;
+			height: 320px;
+			margin-top: -450px;
+			p {
+				font: 400 380px/390px 'adihausDIN CnMedium', 'NotoSansKR';
+			}
+		}
+		.pop_img_wrap {
+			li {
+				a {
+					width: 160px;
+					height: 50px;
+					display: block;
+					border-radius: 25px;
+					font: 400 15px/50px 'Decima Mono', 'NotoSansKR';
+				}
+			}
+		}
+	}
+}
