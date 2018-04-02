@@ -1,0 +1,187 @@
+@import './app/css/adidas/scss/common/mixin.scss';
+@import './app/css/adidas/scss/common/common.scss';
+
+#alphabounce{
+	.scrollbox{
+		top:20px;
+		@include css3(opacity,0);
+		@include css3(transition, all 0.5s);
+		&.on{
+			top:0;
+			@include css3(opacity,1);
+		}
+	}
+	.btn{
+		position: relative;
+		display: block;
+		margin: 0 15px;
+		a{
+			margin: 0 0 10px 0;
+			display: block;
+			font:500 14px/46px 'NotoSansKR';
+			color:#000;
+			text-align:center;
+			background: rgba(255,255,255,0.8);
+
+		}
+	}
+	.top{
+		position: relative;
+		h2{
+			position: absolute;
+				top: 42%;
+				left: 50%;
+				width: 71%;
+			@include css3(transform, translate(-50%,-50%));
+			img{
+				width: 100%;
+			}
+		}
+		#customise_top{
+			video{
+				width:100%;
+			}
+
+		}
+		div{
+			img{
+				width: 100%;
+			}
+		}
+
+		.btn{
+			margin: 0;
+			position: absolute;
+			bottom: -44px;
+			left:50%;
+		    width: 90%;
+			@include css3(transform, translate(-50%,-50%));
+		}
+	}
+	.alphabounce_content{
+		position: relative;
+		padding: 70px 0 50px 0;
+		background: #000;
+		>*{text-align: center;color:#fff;}
+		h2{
+			position: relative;
+			padding: 0 0 15px 0;
+			font:30px 'adinenuPro-black';
+		}
+		p{
+			position: relative;
+			font:300 1rem 'NotoSansKR';
+		}
+		.video{
+			position: relative;
+		    margin: 30px;
+			img{
+				width: 100%;
+			}
+		}
+		.btn{
+			margin: 0 70px;
+			a{
+			    background: rgba(255,255,255,1);
+			}
+		}
+		.title{
+			padding: 0 0 30px;
+			font:600 30px/35px 'NotoSansKR';
+		}
+		.banner{
+			position: relative;
+			padding: 0 0 40px 0;
+			p{
+				&.title{
+					padding: 15px 0 15px;
+    				font: 500 21px/25px 'NotoSansKR';
+				}
+				letter-spacing: -0.1px;
+			}
+			.img{
+			    margin: 0 30px;
+				img{width: 100%;}
+			}
+		}
+		.statement{
+			position: relative;
+			.bg{
+				position: relative;
+				img{width: 100%;}
+				.txt{
+					position: absolute;
+					top:50%;
+					left:50%;
+					width: 100%;
+					@include css3(transform,translate(-50%,-50%));
+					p{
+						padding-bottom: 20px;
+					}
+					.btn{
+						a{
+							background: rgba(255,255,255,0.8);
+						}
+
+					}
+				}
+			}
+		}
+	}
+	.video{
+		margin: 32px 0 0 0;
+		div{
+			margin: 0 15px;
+			&.txt{
+				padding: 38px 0 28px;
+				p{
+					text-align: center;
+					font:400 16px/20px 'NotoSansKR';
+					&.b{
+						color:#3d52bb;
+					}
+				}
+			}
+			&.btn{
+				a{
+					margin: 0;
+				}
+			}
+			img{
+				width: 100%;
+			}
+		}
+	}
+	.box{
+		position: relative;
+		&.on{
+			@include css3(opacity,1);
+		}
+		div{
+			img{
+				width: 100%;
+			}
+		}
+		.txt{
+			position: absolute;
+			top:50%;
+			left:50%;
+			width: 100%;
+			@include css3(transform, translate(-50%,-50%));
+			p{
+				margin: 0 0 25px 0;
+				text-align: center;
+				font:500 25px/25px 'NotoSansKR';
+				color:#fff;
+			}
+		}
+	}
+	.bottom_logo{
+		position: relative;
+	    padding: 66px 127px;
+		background: #000;
+		img{
+			width: 100%;
+		}
+	}
+}
