@@ -3134,8 +3134,20 @@ div.searchbox_info .title_sub ul li{float: left; margin-right: 5px; font: 300 14
 #container .join_finish.new h3{
     border-bottom: none;
 	padding-bottom: 15px;
-    font-size: 28px;
-    line-height: 36px;
+    font-size: 25px;
+    line-height: 30px;
+}
+
+#container .join_finish.new p{
+	text-align: center;
+	font: 600 13px 'NotoSansKR';
+	margin-bottom: 50px;
+
+}
+
+#container .join_finish.new p strong{
+	font: 700 13px 'NotoSansKR';
+	color: #ab2328;
 }
 
 #container .join_finish .button_area.sns{
@@ -3180,20 +3192,49 @@ div.searchbox_info .title_sub ul li{float: left; margin-right: 5px; font: 300 14
 	color: #989898;
 }
 
+#container .loginFind .tab_cont.find_intro .rdo_box1{ padding: 0 0 15px 0; }
 
-#container .loginFind .find_select .rdo_box1{
-    width: 49%;
-    padding: 0 0 15px 0;
-}
+#container .loginFind .tab_cont.find_intro p.desc{ margin-bottom: 15px; font-weight: 400; letter-spacing: -1.1px; }
+
+#container .loginFind .tab_cont.find_intro .term_table{ margin-bottom: 15px; border-top: 2px solid #000; }
+
+#container .loginFind .find_select .rdo_box1{ width: 49%; }
+
 #container .loginFind p.desc{
 	font: 300 12px/18px 'NotoSansKR';
 	letter-spacing: -1px;
 }
 
-#container .loginFind .button_area a{
-	background: #ab2328;
+#container .loginFind .tab_cont .box{ padding:28px 15px 40px; }
+
+#container .loginFind .tab_cont .box .inbox{
+	position: relative;
+	background: #f5f5f5;
+	padding: 15px;
+	margin: 15px 0;
 }
 
+#container .loginFind .tab_cont .box .inbox .title{
+	display: inline-block;font: 500 12px/18px 'NotoSansKR';
+}
+
+#container .loginFind .tab_cont .box .inbox .title span{
+	color:#ab2328;
+}
+
+#container .loginFind .tab_cont .box .inbox .issue{
+	position:absolute;top:15px;right:15px;border:1px solid #ccc;font: 500 12px/34px 'NotoSansKR';color:#999;width:120px;text-align:center;
+}
+
+#container .loginFind .button_area_wrap{ margin: 25px 0 0 0; }
+
+#container .loginFind .button_area a{
+	background: #ab2328;
+	height: 55px;
+	line-height: 55px;
+}
+
+#container .loginFind .button_area .kakao a{ background:#fff;height: 55px;line-height: 55px;color:#999;border:1px solid #ccc; font-weight:500;box-sizing:border-box; }
 
 #container .loginFind .button_area .kakao span{
 	width: 19px;
@@ -3204,18 +3245,16 @@ div.searchbox_info .title_sub ul li{float: left; margin-right: 5px; font: 300 14
 }
 
 
-#container .loginFind .rdo_box1.blue>input:checked + label:after{
-	background: #ab2328 !important;
-}
+#container .loginFind .rdo_box1.blue>input:checked + label:after{ background: #ab2328 !important; }
 
 #container .loginFind .form_find h2{
-    padding: 0 0 0 0;
+    padding: 0 0 15px 0;
     border: 0;
     font: 700 18px 'NotoSansKR';
 }
 
 #container .loginFind .form_find .pw_verify_result{
-    margin: 15px 0 25px 0;
+    margin: 0 0 25px 0;
     padding: 15px;
     background: #f5f5f5;
 }
@@ -3227,6 +3266,10 @@ div.searchbox_info .title_sub ul li{float: left; margin-right: 5px; font: 300 14
 #container .loginFind .form_find .pw_verify_result>div p{
     display: inline-block;
     font: 500 13px 'NotoSansKR';
+}
+
+#container .loginFind .form_find .pw_verify_result>div p.red{
+	color: #ab2328;
 }
 
 #container .loginFind .form_find .pw_verify_result>div p.tle{
@@ -3299,7 +3342,6 @@ div.searchbox_info .title_sub ul li{float: left; margin-right: 5px; font: 300 14
 }
 
 #container .loginFind .form_table.form_find .fullid_check{
-    padding: 15px 0 0 0;
     height: 0;
     opacity: 0;
     -webkit-opacity: 0;
@@ -3308,6 +3350,7 @@ div.searchbox_info .title_sub ul li{float: left; margin-right: 5px; font: 300 14
 }
 
 #container .loginFind .form_table.form_find .fullid_check.on{
+	padding: 15px 0 0 0;
     height: 200px;
     opacity: 1;
     -webkit-opacity: 1;
@@ -9156,17 +9199,19 @@ div.prod_manual p.desc strong{color:#3e3e3e;font-size:11px;letter-spacing:-1px;}
 }
 #contents .join.renewal .verify_btn{
 	height: 40px;
-	margin-bottom: 10px;
+	margin:20px 0 10px;
 }
 
 #contents .join.renewal .verify_btn a{
 	height: 40px;
 	line-height: 40px;
 	font-size: 13px;
+	background: #ab2328;
 }
 
 #contents .join.renewal .form_table{
-	padding-top: 15px;
+	/* padding-top: 15px; */
+	padding:15px 0;
 }
 
 #contents .join.renewal .form_table .row{
