@@ -1,0 +1,875 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src="/data/eventRouter.js"></script>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+	<meta name="format-detection" content="telephone=no">
+	<meta http-equiv="x-rim-auto-match" content="none">
+
+	<link href="/css/adidas/style.css" type="text/css" rel="stylesheet" />
+	<link href="/css/adidas/fonts.css" type="text/css" rel="stylesheet" />
+
+	<link rel="preload" href="/fonts/adineuePro/woff/adineuePRO-Bold.woff" as="font">
+
+	<script type="text/javascript" src="/js/jquery-1.12.0.min.js"></script>
+	<script type="text/javascript" src="/js/swipe.js"></script>
+	<script type="text/javascript" src="/js/owl.carousel.js"></script>
+
+
+	<title>아디다스 모바일</title>
+</head>
+<body>
+
+	<div class="modal-popup" id="instock-notification-popup">
+		<div class="popup-contents">
+			<a href="javascript:void(0)" class="close_x_btn" onclick="jQuery(this).parent().parent().removeClass('open');"></a>
+			<div class="instock-notification">
+				<div class="tit adipro-b">
+					<div class="icons" data-icon=""></div>coming soon
+				</div>
+				<div class="desc">휴대전화 번호를 남겨 주시면,<br/>제품 입고시 문자로 알려드립니다.</div>
+
+				<div class="phone">
+					<div class="sel_cmtype sel_design">
+						<a href="#" class="toggle_arw s_arw" ><span>010</span></a>
+						<select name="" id="">
+							<option value="2" selected="">010</option>
+							<option value="1">011</option>
+							<option value="5">016</option>
+							<option value="3">017</option>
+							<option value="4">019</option>
+						</select>
+					</div>
+					<input type="tel">
+					<input type="tel">
+				</div>
+
+				<div class="agr_box">
+					<div class="chk_wrap">
+						<div class="chk_box1 blue">
+							<input type="checkbox" id="agr_for_credit" name="SMS_RET_YN" value="Y">
+							<label for="agr_for_credit" class="adipro-r">개인정보 제공동의</label>
+						</div>
+					</div>
+					<a href="javascript:void(0)" class="icons aft" data-icon="" onclick="if(jQuery(this).hasClass('open')){jQuery('.instock-notification .terms').hide();jQuery(this).removeClass('open')}else{jQuery('.instock-notification .terms').show();jQuery(this).addClass('open')}">자세히보기</a>
+				</div>
+				<!-- //agr_box -->
+
+				<div class="terms">
+					<div class="cont">
+						<dl>
+							<dt>개인정보의 수집이용목적 : </dt>
+							<dd>아디다스 제품 입고 알림</dd>
+						</dl>
+						<dl>
+							<dt>수집되는 개인정보 : </dt>
+							<dd>휴대전화번호</dd>
+						</dl>
+						<dl>
+							<dt>보유기간 : </dt>
+							<dd>입고알림 이후 30일 까지(본 보유기간은 아디클럽 회원이 아닌 경우에 한함)</dd>
+						</dl>
+       					<ul class="li_hypn">
+       						<li>아래 동의를 거부할 수 있습니다. 다만 그러한 경우, 아디다스제품이 입고되는 시점에 대한 정보를 우선적으로 전달받으실 수 없습니다. 단, “통신사 사정으로 인한 발송, 수신오류, 고객휴대폰의 스팸등록 등으로 인해 SMS가 전달되지 않을 수 있으며 이러한 경우 아디다스코리아가 책임지지 않습니다.”</li>
+       						<li>입력해주신 휴대폰번호로 안내하겠습니다.</li>
+       					</ul>
+
+					</div>
+				</div>
+
+				<div class="btn_area">
+					<a class="submit">신청하기</a>
+				</div>
+
+			</div>
+			<!-- //instock-notification -->
+		</div>
+	</div>
+
+	<div id="wrap">
+		<div id="header" style="position: relative;">
+			<div class="nav_menu">
+				<div class="nav_menu_inner">
+
+					<div class="u_info1">
+						<a href="#" class="login"><span class="icons" data-icon=""></span>로그인</a>
+						<a href="#" class="join"><span class="icons" data-icon=""></span>회원가입</a>
+					</div>
+
+					<!-- <div class="u_info1">
+						<div class="user_box">
+							<p class="greet bronze"><span class="m">B</span>홍길동님 반갑습니다.</p>
+							<p class="noti">쿠폰 사용기간이 얼마 남지 않았습니다.</p>
+						</div>
+					</div> -->
+					<div class="u_info2">
+						<a href="#">마이페이지</a>
+						<a href="#">주문배송조회 <span>1</span></a>
+						<a href="#">나의 쿠폰 <span>12</span></a>
+					</div>
+					<ul class="gnb">
+						<li class="strong dep">
+							<a href="#">MEN</a>
+							<div class="depth_menu depth2">
+								<ul>
+									<li class="dep">
+										<a href="#">신발</a>
+										<div class="depth_menu depth3">
+											<ul>
+												<li class="all"><a href="#">전체보기</a></li>
+												<!-- <li class="tit">스포츠별</li> -->
+												<li><a href="#">라이프스타일 <span>(214)</span></a></li>
+												<li><a href="#">축구 <span>(214)</span></a></li>
+												<li><a href="#">농구 <span>(214)</span></a></li>
+												<li><a href="#">러닝 <span>(214)</span></a></li>
+												<li><a href="#">테니스 <span>(214)</span></a></li>
+												<li><a href="#">스윔 <span>(214)</span></a></li>
+												<li><a href="#">하이컷/미드컷 <span>(214)</span></a></li>
+												<li><a href="#">로우컷 <span>(214)</span></a></li>
+												<li><a href="#">샌들/슬리퍼 <span>(214)</span></a></li>
+												<li><a href="#">SPORT <span>(214)</span></a></li>
+												<li><a href="#">ORIGINALS <span>(214)</span></a></li>
+											</ul>
+										</div>
+									</li>
+									<li class="dep">
+										<a href="#">의류</a>
+										<div class="depth_menu depth3">
+											<ul>
+												<li class="all"><a href="#">전체보기</a></li>
+												<li><a href="#">라이프스타일 <span>(214)</span></a></li>
+												<li><a href="#">축구 <span>(214)</span></a></li>
+												<li><a href="#">농구 <span>(214)</span></a></li>
+												<li><a href="#">러닝 <span>(214)</span></a></li>
+												<li><a href="#">테니스 <span>(214)</span></a></li>
+												<li><a href="#">스윔 <span>(214)</span></a></li>
+												<li><a href="#">하이컷/미드컷 <span>(214)</span></a></li>
+												<li><a href="#">로우컷 <span>(214)</span></a></li>
+												<li><a href="#">샌들/슬리퍼 <span>(214)</span></a></li>
+												<li><a href="#">SPORT <span>(214)</span></a></li>
+												<li><a href="#">ORIGINALS <span>(214)</span></a></li>
+											</ul>
+										</div>
+									</li>
+									<li class="dep">
+										<a href="#">용품</a>
+										<div class="depth_menu depth3">
+											<ul>
+												<li class="all"><a href="#">전체보기</a></li>
+												<li><a href="#">라이프스타일 <span>(214)</span></a></li>
+												<li><a href="#">축구 <span>(214)</span></a></li>
+												<li><a href="#">농구 <span>(214)</span></a></li>
+												<li><a href="#">러닝 <span>(214)</span></a></li>
+												<li><a href="#">테니스 <span>(214)</span></a></li>
+												<li><a href="#">스윔 <span>(214)</span></a></li>
+												<li><a href="#">하이컷/미드컷 <span>(214)</span></a></li>
+												<li><a href="#">로우컷 <span>(214)</span></a></li>
+												<li><a href="#">샌들/슬리퍼 <span>(214)</span></a></li>
+												<li><a href="#">SPORT <span>(214)</span></a></li>
+												<li><a href="#">ORIGINALS <span>(214)</span></a></li>
+											</ul>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li class="strong dep">
+							<a href="#">WOMEN</a>
+							<div class="depth_menu depth2">
+								<ul>
+									<li class="dep">
+										<a href="#">신발</a>
+										<div class="depth_menu depth3">
+											<ul>
+												<li class="all"><a href="#">전체보기</a></li>
+												<li><a href="#">라이프스타일 <span>(214)</span></a></li>
+												<li><a href="#">축구 <span>(214)</span></a></li>
+												<li><a href="#">농구 <span>(214)</span></a></li>
+												<li><a href="#">러닝 <span>(214)</span></a></li>
+												<li><a href="#">테니스 <span>(214)</span></a></li>
+												<li><a href="#">스윔 <span>(214)</span></a></li>
+												<li><a href="#">하이컷/미드컷 <span>(214)</span></a></li>
+												<li><a href="#">로우컷 <span>(214)</span></a></li>
+												<li><a href="#">샌들/슬리퍼 <span>(214)</span></a></li>
+												<li><a href="#">SPORT <span>(214)</span></a></li>
+												<li><a href="#">ORIGINALS <span>(214)</span></a></li>
+											</ul>
+										</div>
+									</li>
+									<li class="dep">
+										<a href="#">의류</a>
+										<div class="depth_menu depth3">
+											<ul>
+												<li class="all"><a href="#">전체보기</a></li>
+												<li><a href="#">라이프스타일 <span>(214)</span></a></li>
+												<li><a href="#">축구 <span>(214)</span></a></li>
+												<li><a href="#">농구 <span>(214)</span></a></li>
+												<li><a href="#">러닝 <span>(214)</span></a></li>
+												<li><a href="#">테니스 <span>(214)</span></a></li>
+												<li><a href="#">스윔 <span>(214)</span></a></li>
+												<li><a href="#">하이컷/미드컷 <span>(214)</span></a></li>
+												<li><a href="#">로우컷 <span>(214)</span></a></li>
+												<li><a href="#">샌들/슬리퍼 <span>(214)</span></a></li>
+												<li><a href="#">SPORT <span>(214)</span></a></li>
+												<li><a href="#">ORIGINALS <span>(214)</span></a></li>
+											</ul>
+										</div>
+									</li>
+									<li class="dep">
+										<a href="#">용품</a>
+										<div class="depth_menu depth3">
+											<ul>
+												<li class="all"><a href="#">전체보기</a></li>
+												<li><a href="#">라이프스타일 <span>(214)</span></a></li>
+												<li><a href="#">축구 <span>(214)</span></a></li>
+												<li><a href="#">농구 <span>(214)</span></a></li>
+												<li><a href="#">러닝 <span>(214)</span></a></li>
+												<li><a href="#">테니스 <span>(214)</span></a></li>
+												<li><a href="#">스윔 <span>(214)</span></a></li>
+												<li><a href="#">하이컷/미드컷 <span>(214)</span></a></li>
+												<li><a href="#">로우컷 <span>(214)</span></a></li>
+												<li><a href="#">샌들/슬리퍼 <span>(214)</span></a></li>
+												<li><a href="#">SPORT <span>(214)</span></a></li>
+												<li><a href="#">ORIGINALS <span>(214)</span></a></li>
+											</ul>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li class="strong dep">
+							<a href="#">KIDS</a>
+							<div class="depth_menu depth2">
+								<ul>
+									<li class="dep">
+										<a href="#">신발</a>
+										<div class="depth_menu depth3">
+											<ul>
+												<li class="all"><a href="#">전체보기</a></li>
+												<li class="tit">스포츠별</li>
+												<li><a href="#">라이프스타일 <span>(214)</span></a></li>
+												<li><a href="#">축구 <span>(214)</span></a></li>
+												<li><a href="#">농구 <span>(214)</span></a></li>
+												<li><a href="#">러닝 <span>(214)</span></a></li>
+												<li><a href="#">테니스 <span>(214)</span></a></li>
+												<li><a href="#">스윔 <span>(214)</span></a></li>
+												<li class="tit">상품별</li>
+												<li><a href="#">하이컷/미드컷 <span>(214)</span></a></li>
+												<li><a href="#">로우컷 <span>(214)</span></a></li>
+												<li><a href="#">샌들/슬리퍼 <span>(214)</span></a></li>
+												<li class="tit">브랜드</li>
+												<li><a href="#">SPORT <span>(214)</span></a></li>
+												<li><a href="#">ORIGINALS <span>(214)</span></a></li>
+											</ul>
+										</div>
+									</li>
+									<li class="dep">
+										<a href="#">의류</a>
+										<div class="depth_menu depth3">
+											<ul>
+												<li class="all"><a href="#">전체보기</a></li>
+												<li class="tit">스포츠별</li>
+												<li><a href="#">라이프스타일 <span>(214)</span></a></li>
+												<li><a href="#">축구 <span>(214)</span></a></li>
+												<li><a href="#">농구 <span>(214)</span></a></li>
+												<li><a href="#">러닝 <span>(214)</span></a></li>
+												<li><a href="#">테니스 <span>(214)</span></a></li>
+												<li><a href="#">스윔 <span>(214)</span></a></li>
+												<li class="tit">상품별</li>
+												<li><a href="#">하이컷/미드컷 <span>(214)</span></a></li>
+												<li><a href="#">로우컷 <span>(214)</span></a></li>
+												<li><a href="#">샌들/슬리퍼 <span>(214)</span></a></li>
+												<li class="tit">브랜드</li>
+												<li><a href="#">SPORT <span>(214)</span></a></li>
+												<li><a href="#">ORIGINALS <span>(214)</span></a></li>
+											</ul>
+										</div>
+									</li>
+									<li class="dep">
+										<a href="#">용품</a>
+										<div class="depth_menu depth3">
+											<ul>
+												<li class="all"><a href="#">전체보기</a></li>
+												<li class="tit">스포츠별</li>
+												<li><a href="#">라이프스타일 <span>(214)</span></a></li>
+												<li><a href="#">축구 <span>(214)</span></a></li>
+												<li><a href="#">농구 <span>(214)</span></a></li>
+												<li><a href="#">러닝 <span>(214)</span></a></li>
+												<li><a href="#">테니스 <span>(214)</span></a></li>
+												<li><a href="#">스윔 <span>(214)</span></a></li>
+												<li class="tit">상품별</li>
+												<li><a href="#">하이컷/미드컷 <span>(214)</span></a></li>
+												<li><a href="#">로우컷 <span>(214)</span></a></li>
+												<li><a href="#">샌들/슬리퍼 <span>(214)</span></a></li>
+												<li class="tit">브랜드</li>
+												<li><a href="#">SPORT <span>(214)</span></a></li>
+												<li><a href="#">ORIGINALS <span>(214)</span></a></li>
+											</ul>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li class="dep">
+							<a href="#">SPORTS</a>
+							<div class="depth_menu depth2">
+								<ul>
+									<li class="dep">
+										<a href="#">ORIGINALS</a>
+										<div class="depth_menu depth3">
+											<ul>
+												<li class="all"><a href="#">전체보기</a></li>
+												<li><a href="#">라이프스타일 <span>(214)</span></a></li>
+												<li><a href="#">축구 <span>(214)</span></a></li>
+												<li><a href="#">농구 <span>(214)</span></a></li>
+												<li><a href="#">러닝 <span>(214)</span></a></li>
+											</ul>
+										</div>
+									</li>
+									<li class="dep">
+										<a href="#">ADIDAS NEO</a>
+										<div class="depth_menu depth3">
+											<ul>
+												<li class="all"><a href="#">전체보기</a></li>
+												<li><a href="#">라이프스타일 <span>(214)</span></a></li>
+												<li><a href="#">축구 <span>(214)</span></a></li>
+											</ul>
+										</div>
+									</li>
+									<li class="dep">
+										<a href="#">ADIDAS BY STELLA MCCARTNEY</a>
+										<div class="depth_menu depth3">
+											<ul>
+												<li class="all"><a href="#">전체보기</a></li>
+												<li><a href="#">축구 <span>(214)</span></a></li>
+												<li><a href="#">농구 <span>(214)</span></a></li>
+												<li><a href="#">러닝 <span>(214)</span></a></li>
+												<li><a href="#">테니스 <span>(214)</span></a></li>
+												<li><a href="#">스윔 <span>(214)</span></a></li>
+											</ul>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<a href="#">BRANDS</a>
+						</li>
+					</ul>
+					<div class="ctgr">
+						<div>
+							<a href="#">BEST <span class="icons" data-icon=""></span></a>
+							<a href="#">NEW <span class="icons" data-icon=""></span></a>
+						</div>
+						<div>
+							<a href="#">SALE <span class="icons" data-icon=""></span></span></a>
+							<a href="#">OUTLET <span class="icons" data-icon=""></span></a>
+						</div>
+					</div>
+					<div class="club_ctgr">
+						<a href="#">기획전</a>
+						<a href="#">아디클럽</a>
+						<a href="#">캠페인</a>
+					</div>
+					<div class="viewed_items">
+						<h3>최근 본 상품</h3>
+						<div class="item_list">
+							<div class="slider">
+								<div class="item">
+									<a href="#">
+										<p class="img"><img src="http://m.adidas.co.kr/upload/prod/basic/320/B35270-1_320X320.jpg" alt=""></p>
+										<p class="price">119,000<span>원</span></p>
+									</a>
+								</div>
+
+								<div class="item">
+									<a href="#">
+										<p class="img"><img src="http://m.adidas.co.kr/upload/prod/basic/320/S83386-1_320X320.jpg" alt=""></p>
+										<p class="price">119,000<span>원</span></p>
+									</a>
+								</div>
+
+								<div class="item">
+									<a href="#">
+										<p class="img"><img src="http://m.adidas.co.kr/upload/prod/basic/320/AF6749-1_320X320.jpg" alt=""></p>
+										<p class="price">95,200<span>원</span></p>
+									</a>
+								</div>
+
+								<div class="item">
+									<a href="#">
+										<p class="img"><img src="http://m.adidas.co.kr/upload/prod/basic/320/S75126-1_320X320.jpg" alt=""></p>
+										<p class="price">119,000<span>원</span></p>
+									</a>
+								</div>
+
+								<div class="item">
+									<a href="#">
+										<p class="img"><img src="http://m.adidas.co.kr/upload/prod/basic/320/S75556-1_320X320.jpg" alt=""></p>
+										<p class="price">119,000<span>원</span></p>
+									</a>
+								</div>
+
+								<div class="item">
+									<a href="#">
+										<p class="img"><img src="http://m.adidas.co.kr/upload/prod/basic/320/AF6441-1_320X320.jpg" alt=""></p>
+										<p class="price">119,000<span>원</span></p>
+									</a>
+								</div>
+
+								<div class="item">
+									<a href="#">
+										<p class="img"><img src="http://m.adidas.co.kr/upload/prod/basic/320/S74805-1_320X320.jpg" alt=""></p>
+										<p class="price">119,000<span>원</span></p>
+									</a>
+								</div>
+							</div>
+						</div>
+						<!-- //item_list -->
+
+					</div>
+					<!-- //viewed items -->
+
+					<div class="nav_footer">
+						<ul>
+							<li><a href="#">공지사항</a></li>
+							<li><a href="#">고객센터</a></li>
+							<li><a href="#">매장찾기</a></li>
+						</ul>
+						<div>
+							<p>교환 및 반품 문의 (본사로 반품불가) : 온라인스토어 고객센터 <a href="tel:1588-8241">1588-8241</a></p>
+							<p>(평일 9시 – 18시, 점심시간 12시 – 13시)</p>
+						</div>
+					</div>
+				</div>
+				<!-- //nav_menu_inner -->
+			</div>
+			<!-- //nav_menu -->
+
+			<div class="nav_search">
+				<div class="sch_box">
+					<form action="#" method="get">
+						<fieldset>
+							<input type="text" autocomplete="off">
+							<button type="submit" value="검색">
+								<span class="icons"></span>
+							</button>
+						</fieldset>
+					</form>
+				</div>
+				<div class="sch_tab">
+					<a href="#" class="on">최근 검색어</a>
+					<a href="#">인기 검색어</a>
+				</div>
+				<ul class="keyword_recent">
+					<li><a href="#">슈퍼스타<span class="close_x_btn"></span></a></li>
+					<li><a href="#">스탠스미스<span class="close_x_btn"></span></a></li>
+					<li><a href="#">트랙탑<span class="close_x_btn"></span></a></li>
+					<li><a href="#">MI SUPERSTAR<span class="close_x_btn"></span></a></li>
+					<li><a href="#">패딩<span class="close_x_btn"></span></a></li>
+					<li><a href="#">키엘<span class="close_x_btn"></span></a></li>
+					<!-- <li class="no_data">최근 검색하신 내역이 없습니다.</li> -->
+				</ul>
+				<ol class="sch_list" style="display:none;">
+					<li><span>1</span><a href="#">슈퍼스타</a></li>
+					<li><span>2</span><a href="#">수퍼스타</a></li>
+					<li><span>3</span><a href="#">트랙탑</a></li>
+					<li><span>4</span><a href="#">스탠스미스</a></li>
+					<li><span>5</span><a href="#">MI SUPERSTAR</a></li>
+					<li><span>6</span><a href="#">패딩</a></li>
+					<li><span>7</span><a href="#">키엘</a></li>
+					<li><span>8</span><a href="#">이큅먼트</a></li>
+					<li><span>9</span><a href="#">니고</a></li>
+					<li><span>10</span><a href="#">부스트</a></li>
+				</ol>
+				<!-- <div class="bnn"><img src="images/bnn_sch1.jpg" alt=""></div>
+				<div class="bnn"><img src="images/bnn_sch2.jpg" alt=""></div> -->
+			</div>
+
+			<div class="nav_main">
+				<a href="javascript:void(0);" class="btn_slide">
+					<span class="line1"></span>
+					<span class="line2"></span>
+					<span class="line3"></span>
+				</a>
+				<h1><a href="javascript:void(0);" class="logo icons"></a></h1>
+				<a href="#" class="btn_search icons">
+					<span class="icons"></span>
+				</a>
+				<a href="#" class="btn_market icons"></a>
+			</div>
+		</div>
+
+		<div id="container">
+<style type="text/css">@media screen and (max-width: 320px){html{font-size:10px}}@media screen and (min-width: 800px){html{font-size:12px}}.pseudo-element{content:'';display:block}#arkyn .button{position:relative;display:inline-block;box-sizing:border-box;-webkit-box-sizing:border-box;background:rgba(255,255,255,0.8);padding:1.5rem 5rem;font:700 1.18rem/1.18rem 'NotosansKR';color:#000}#arkyn .button .icons{margin-left:5px}#arkyn .button.black{color:#fff;background:#000}#arkyn .button.adipro{font:700 1.18rem/1.18rem 'NotosansKR'}#arkyn>div{position:relative;width:100%}#arkyn .bg{width:100%;position:absolute;top:0;left:0}#arkyn .bg img{width:100%}#arkyn .main{overflow:hidden;position:relative;text-align:center;padding-bottom:200%}#arkyn .main .bg{width:100%;padding-bottom:125%}#arkyn .main .bg video{position:absolute;top:50%;left:50%;-ms-transform:translate(-50%, -50%);transform:translate(-50%, -50%);min-width:0;min-height:0;max-width:100%;object-fit:cover;font-family:'object-fit: cover;';width:100%;height:100%}#arkyn .main .bg .visual_bt{position:absolute;display:block;width:32%;height:4%;bottom:53.5%;right:10.8%}#arkyn .main .txt{position:absolute;width:100%;bottom:75px;text-align:left;padding:0 2rem;opacity:0;transition:all 0.5s;-webkit-transition:all 0.5s;-moz-transition:all 0.5s}#arkyn .main .txt h3{color:#000;font:500 2rem/4.5rem 'NotoSansKR'}#arkyn .main .txt p{font:300 1.1rem/1.5rem 'NotoSansKR';color:#000;letter-spacing:-0.3px}#arkyn .main .sub_txt{width:95%;height:4.5rem;background-color:#000;position:absolute;bottom:-20px;opacity:0;transition:all 0.5s;-webkit-transition:all 0.5s;-moz-transition:all 0.5s}#arkyn .main .sub_txt p{font:400 1.5rem/4.5rem 'NotoSansKR';color:#fff;letter-spacing:2px}#arkyn .main .buy{position:absolute;width:100%;bottom:30px;padding:0 2rem;z-index:2;left:50%;-ms-transform:translateX(-50%);transform:translateX(-50%)}#arkyn .main .buy a{display:inline-block;width:89%;height:40px;background-color:rgba(255,255,255,0.8);color:#000;font:700 1rem/40PX 'NotosansKR';letter-spacing:0px;margin-top:10px}#arkyn .main .buy a:after{display:inline-block;margin-left:5px}#arkyn .feature_box{overflow:hidden;position:relative;text-align:center;padding-bottom:112%;margin-top:3rem}#arkyn .feature_box h3{font:500 1.6rem/1.8rem 'NotoSansKR';color:#000;text-align:center;letter-spacing:0px;padding-top:30px;transition:all 0.5s;-webkit-transition:all 0.5s;-moz-transition:all 0.5s;opacity:0}#arkyn .feature_box .bg{width:100%;top:5rem;transition:all 0.5s;-webkit-transition:all 0.5s;-moz-transition:all 0.5s;opacity:0}#arkyn .feature_box .txt{position:absolute;width:50%;bottom:0px;text-align:left;padding:1.5rem 1rem;background-color:#fff;transition:all 0.5s;-webkit-transition:all 0.5s;-moz-transition:all 0.5s;opacity:0}#arkyn .feature_box .txt p{font:300 1rem/1.5rem 'NotoSansKR';color:#000;letter-spacing:-0.3px}#arkyn .feature_box .txt a{display:block;background-color:#000;color:#fff;font:300 1.1rem/3.3rem 'NotoSansKR';width:70%;height:3.3rem;text-align:center;margin-top:1.5rem}#arkyn .feature_box .txt a span{font:300 1.2rem 'AdihausDIN-Cond';letter-spacing:0.7px}#arkyn .video_box{overflow:hidden;position:relative;text-align:center;padding-bottom:100%;margin-top:3rem}#arkyn .video_box h3{font:500 1.6rem/1.8rem 'NotoSansKR';color:#000;text-align:center;letter-spacing:0px;transition:all 0.5s;-webkit-transition:all 0.5s;-moz-transition:all 0.5s;opacity:0;padding-top:30px}#arkyn .video_box .bg{width:100%;top:5rem;transition:all 0.5s;-webkit-transition:all 0.5s;-moz-transition:all 0.5s;opacity:0}#arkyn .video_box .bg .video_bt{position:absolute;display:inline-block;top:5%;left:4.5%;width:13%;height:15%}#arkyn .video_box .txt{position:absolute;width:50%;bottom:20px;right:0;text-align:left;padding:1.5rem 1rem;background-color:#fff;transition:all 0.5s;-webkit-transition:all 0.5s;-moz-transition:all 0.5s;opacity:0}#arkyn .video_box .txt p{font:300 1rem/1.5rem 'NotoSansKR';color:#000;letter-spacing:-0.3px}#arkyn .video_box .txt a{display:block;background-color:#000;color:#fff;font:300 1.1rem/3.3rem 'NotoSansKR';width:70%;height:3.3rem;text-align:center;margin-top:1.5rem}#arkyn .video_box .txt a span{font:300 1.2rem 'AdihausDIN-Cond';letter-spacing:0.7px}#arkyn .slider_wrapper{width:100%;position:relative;transition:background 0.2s ease 0.05s;-webkit-transition:background 0.2s ease 0.05s}#arkyn .slider_wrapper::before{content:'';width:100%;position:absolute;top:0;left:0;padding:130px;padding-bottom:45%;background:#c62c2a;transition:background 0.2s;-webkit-transition:background 0.2s}#arkyn .slider_wrapper .utils{width:100%;position:absolute;top:20px;left:0;z-index:5;margin-top:20px}#arkyn .slider_wrapper .utils h4{font:400 1.5rem/2rem 'NotoSansKR';text-align:center;color:#fff}#arkyn .slider_wrapper .utils p{text-align:center;color:#fff;font:500 1.5rem/2rem 'NotoSansKR'}#arkyn .slider_wrapper .utils .prev,#arkyn .slider_wrapper .utils .next{width:30px;height:30px;display:block;border:2px solid  #fff;border-radius:50%;position:absolute;top:0}#arkyn .slider_wrapper .utils .prev::before,#arkyn .slider_wrapper .utils .prev::after,#arkyn .slider_wrapper .utils .next::before,#arkyn .slider_wrapper .utils .next::after{content:'';display:block;width:10px;height:1px;position:absolute;background:#000}#arkyn .slider_wrapper .utils .prev.prev,#arkyn .slider_wrapper .utils .next.prev{left:15px}#arkyn .slider_wrapper .utils .prev.prev::before,#arkyn .slider_wrapper .utils .prev.prev::after,#arkyn .slider_wrapper .utils .next.prev::before,#arkyn .slider_wrapper .utils .next.prev::after{top:15px;left:10px;transform-origin:left top;-webkit-transform-origin:left top}#arkyn .slider_wrapper .utils .prev.prev::before,#arkyn .slider_wrapper .utils .next.prev::before{transform:rotate(-48deg)}#arkyn .slider_wrapper .utils .prev.prev::after,#arkyn .slider_wrapper .utils .next.prev::after{transform:rotate(48deg)}#arkyn .slider_wrapper .utils .prev.next,#arkyn .slider_wrapper .utils .next.next{right:15px}#arkyn .slider_wrapper .utils .prev.next::before,#arkyn .slider_wrapper .utils .prev.next::after,#arkyn .slider_wrapper .utils .next.next::before,#arkyn .slider_wrapper .utils .next.next::after{top:15px;left:10px;transform-origin:right top;-webkit-transform-origin:right top}#arkyn .slider_wrapper .utils .prev.next::before,#arkyn .slider_wrapper .utils .next.next::before{transform:rotate(-48deg)}#arkyn .slider_wrapper .utils .prev.next::after,#arkyn .slider_wrapper .utils .next.next::after{transform:rotate(48deg)}#arkyn .slider_wrapper .img_wrapper{width:100%;position:relative}#arkyn .slider_wrapper .img_wrapper ul{min-width:100%;overflow:hidden}#arkyn .slider_wrapper .img_wrapper ul li{max-width:100%;position:relative;float:left;text-align:center}#arkyn .slider_wrapper .img_wrapper ul li img{width:100%}#arkyn .slider_wrapper .prod_info_wrapper{width:100%;text-align:center}#arkyn .slider_wrapper .prod_info_wrapper .prod_info_box{width:100%;position:absolute;bottom:0;left:0}#arkyn .slider_wrapper .prod_info_wrapper .prod_info_box .box{width:100%;padding:55px 25px;position:absolute;bottom:0;left:0;display:none;opacity:0;box-sizing:border-box;-webkit-box-sizing:border-box;transition:all 0.3s;-webkit-transition:all 0.3s}#arkyn .slider_wrapper .prod_info_wrapper .prod_info_box .box.active{opacity:1}#arkyn .slider_wrapper .prod_info_wrapper .prod_info_box .box h5{margin-bottom:1rem;font-size:2rem;text-align:center;color:#fff;letter-spacing:0;font:900 1.5rem/1.5rem 'NotoSansKR'}#arkyn .slider_wrapper .prod_info_wrapper .prod_info_box .box h5 span{font:1.7rem/1.5rem 'adinenuPro-bold';letter-spacing:1px}#arkyn .slider_wrapper .prod_info_wrapper .prod_info_box .box .details{display:none}#arkyn .slider_wrapper .prod_info_wrapper .prod_info_box .box .button{width:100%}#arkyn .slider_section{position:relative;background:#fff}#arkyn .slider_section h3{font:500 1.6rem/1.8rem 'NotoSansKR';color:#000;text-align:center;letter-spacing:0px;margin:2rem 0 4rem;position:relative;transition:all 0.5s;-webkit-transition:all 0.5s;-moz-transition:all 0.5s;padding-top:30px;opacity:0}#arkyn .slider_section .slider_wrap{position:relative;transition:all 0.5s;-webkit-transition:all 0.5s;-moz-transition:all 0.5s;opacity:0;top:30px}#arkyn .slider_section .slider_wrap .owl-stage{left:-300%}#arkyn .slider_section .slider_wrap ul{position:relative}#arkyn .slider_section .slider_wrap ul .owl-item.active .num_title span{margin-right:0;opacity:1}#arkyn .slider_section .slider_wrap ul li{float:left;position:relative;top:0}#arkyn .slider_section .slider_wrap ul li .title{padding-bottom:1.5rem;text-align:center;font:1.4rem/1.8rem 'NotoSansKR'}#arkyn .slider_section .slider_wrap ul li .title p{font:2.3rem/2.6rem 'adinenuPro-black';letter-spacing:0;text-transform:uppercase}#arkyn .slider_section .slider_wrap ul li .img img{width:100%}#arkyn .slider_section .slider_wrap ul:after{content:'';display:block;clear:both}#arkyn .slider_section .slider_wrap .owl-controls .owl-dot{float:left;text-align:center}#arkyn .slider_section .slider_wrap .owl-controls .owl-dot span{display:inline-block;padding:1rem 0 0 0;font:1.5rem/2rem 'NotoSansKR';text-align:center;color:#000;letter-spacing:0}#arkyn .slider_section .slider_wrap .owl-nav{position:absolute;top:25%;width:100%}#arkyn .slider_section .slider_wrap .owl-nav .owl-next{position:relative;right:10px;float:right;width:1.5rem;height:40px;background:url("/images/adidas/event/arkyn/bt_next.png") no-repeat;background-size:100%;text-indent:-9999px}#arkyn .slider_section .slider_wrap .owl-nav .owl-prev{position:relative;left:10px;float:left;width:1.5rem;height:40px;background:url("/images/adidas/event/arkyn/bt_prev.png") no-repeat;background-size:100%;text-indent:-9999px}#arkyn .gal{position:absolute;width:50%;bottom:10.5%;right:-2rem;text-align:left;padding:1.5rem 1rem}#arkyn .gal li{float:left;position:absolute;top:0;left:0;opacity:0;transition:all 0.5s;-webkit-transition:all 0.5s}#arkyn .gal li p{font:300 1rem/1.5rem 'NotoSansKR';color:#000;letter-spacing:-0.3px}#arkyn .gal li.on{opacity:1;width:100%;transition:all 0.3s;-webkit-transition:all 0.3s}#arkyn .cont_wrap{margin-top:4rem}#arkyn .cont_wrap h3{font:500 1.6rem/1.8rem 'NotoSansKR';color:#000;text-align:center;letter-spacing:0px;transition:all 0.5s;-webkit-transition:all 0.5s;-moz-transition:all 0.5s;opacity:0;padding-top:30px}#arkyn .cont_wrap .sign{position:absolute;left:0;top:5rem;display:block;width:13%;transition:all 0.5s;-webkit-transition:all 0.5s;-moz-transition:all 0.5s;opacity:0}#arkyn .cont_wrap .sign img{width:100%}#arkyn .cont_wrap .txt_box{position:absolute;width:36%;bottom:25px;text-align:left;padding:1.5rem 1rem;background-color:#fff;transition:all 0.5s;-webkit-transition:all 0.5s;-moz-transition:all 0.5s;opacity:0}#arkyn .cont_wrap .txt_box p{font:300 1rem/1.5rem 'NotoSansKR';color:#000;letter-spacing:-0.3px}#arkyn .cont_wrap .txt_box a{display:block;background-color:#000;color:#fff;font:300 1.1rem/3.3rem 'NotoSansKR';width:95%;height:3.3rem;text-align:center;margin-top:1.5rem}#arkyn .cont_wrap .txt_box a span{font:300 1.2rem 'AdihausDIN-Cond';letter-spacing:0.7px}#arkyn .cont_wrap .cont_box{position:relative;padding:4rem 2rem 3rem 8rem;margin:0 auto}#arkyn .cont_wrap .cont_box .img_box{position:relative;overflow:hidden;transition:all 0.5s;-webkit-transition:all 0.5s;-moz-transition:all 0.5s;opacity:0}#arkyn .cont_wrap .cont_box .img_box ul{position:relative}#arkyn .cont_wrap .cont_box .img_box ul li{position:relative;float:left;width:80%}#arkyn .cont_wrap .cont_box .img_box ul li img{width:100%}#arkyn .cont_wrap .cont_box .num{padding-bottom:8%;text-align:center;padding-top:2rem}#arkyn .cont_wrap .cont_box .num li{display:inline-block}#arkyn .cont_wrap .cont_box .num li a{width:0.9rem;height:0.9rem;display:block;background-color:#ebebeb;border-radius:10px;margin:0 5px}#arkyn .cont_wrap .cont_box .num li a.on{background-color:#000}#arkyn .banner_area{margin-top:40px}#arkyn .banner_area .box{margin-bottom:2rem;padding:0 2rem}#arkyn .banner_area .box a img{width:100%}
+</style>
+
+            <!-- Inject css from index.sass -->
+
+
+            <div id="arkyn">
+
+                <div class="main">
+                    <div class="bg">
+                        <img src="/images/adidas/event/arkyn/visual.jpg" alt="">
+                        <a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=538" class="visual_bt"></a>
+                    </div>
+                    <div class="txt">
+                        <h3>스니커즈, 그 이상</h3>
+                        <p>Arkyn은 하나의 신념입니다.<br />
+                            새로운 컬렉션과 함께 당신의 스타일에 Arkyn을 더해보세요.</p>
+                    </div>
+                    <div class="sub_txt">
+                        <p>오직 그녀만을 위한 스니커즈의 탄생.</p>
+                    </div>
+                </div>
+
+                <div class="feature_box">
+                    <h3>절충의 미학을 실루엣에 담다.</h3>
+                    <div class="bg">
+                        <img src="/images/adidas/event/arkyn/img01.jpg" alt="">
+                    </div>
+                    <div class="txt">
+                        <p>아카이브의 가장 아이코닉한 디테일과<br />
+                            미래적 디자인을 접목한 컨템포러리<br />
+                            스니커가 탄생했습니다.<br />
+                            오직 그녀만을 위한 작품,<br />
+                            진보적인 실루엣의 Arkyn은<br />
+                            하이 패션의 디자인 요소와<br />
+                            강력한 에너지의 BOOST 쿠셔닝을<br />
+                            선보인다. </p>
+                        <a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=538"><span>ARKYN</span>구매하기</a>
+                    </div>
+                </div>
+
+                <div class="video_box">
+                    <h3>패션과 아카이브의 만남.</h3>
+                    <div class="bg">
+                        <img src="/images/adidas/event/arkyn/video.jpg" alt="">
+                        <a href="JavaScript:void(0)" onclick="openModalVideoViewer('XvWm9dmntkE')" class="video_bt"></a>
+                    </div>
+                    <div class="txt">
+                        <p>하이 패션과 빈티지 감성의 만남으로<br />
+                            독창적이고 독보적인<br />
+                            스타일의 컬렉션이 탄생했습니다.<br />
+                            진보적인 감각의 새로운<br />
+                            컨템포러리 스니커를 만나보세요.
+                        <a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=538"><span>ARKYN</span>구매하기</a>
+                    </div>
+                </div>
+
+                <div class="cont_wrap">
+                    <h3>내 안의 Arkyn을 찾다.</h3>
+                    <div class="cont_box" id="fade1">
+						<div class="img_box" id="slide_swipe1">
+							<ul>
+								<li style="display:block"><img src="/images/adidas/event/arkyn/flick01.jpg" alt=""></li>
+								<li><img src="/images/adidas/event/arkyn/flick02.jpg" alt=""></li>
+								<li><img src="/images/adidas/event/arkyn/flick03.jpg" alt=""></li>
+							</ul>
+						</div>
+                        <div class="num">
+                            <li><a href="javascript:void(0)" class="on"></a></li>
+                            <li><a href="javascript:void(0)"></a></li>
+                            <li><a href="javascript:void(0)"></a></li>
+                        </div>
+					</div>
+                    <div class="txt_box">
+                        <p>스니커즈, 그 이상.<br />
+                        아카이브에서 시작된 영감.<br />
+                        내일의 테크놀로지로<br />
+                        새롭게 태어나다.
+                        </p>
+                        <a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=538"><span>ARKYN</span>구매하기</a>
+                    </div>
+                    <div class="sign">
+                        <img src="/images/adidas/event/arkyn/flick_sign.jpg" alt="">
+                    </div>
+                </div>
+
+                <div class="slider_section">
+                    <h3>단어 하나로 설명할 수 없는</h3>
+
+					<div class="slider_wrap" id="slider">
+						<ul class="slider">
+                            <li data-index="0">
+								<div class="img">
+									<img src="/images/adidas/event/arkyn/slide01.jpg" alt="">
+								</div>
+							</li>
+							<li data-index="1">
+								<div class="img">
+									<img src="/images/adidas/event/arkyn/slide02.jpg" alt="">
+								</div>
+							</li>
+							<li data-index="2">
+								<div class="img">
+									<img src="/images/adidas/event/arkyn/slide03.jpg" alt="">
+								</div>
+							</li>
+							<li data-index="3">
+								<div class="img">
+									<img src="/images/adidas/event/arkyn/slide04.jpg" alt="">
+								</div>
+							</li>
+							<li data-index="4">
+								<div class="img">
+									<img src="/images/adidas/event/arkyn/slide05.jpg" alt="">
+								</div>
+							</li>
+						</ul>
+					</div>
+
+				</div>
+
+                <div class="gal">
+					<ul>
+
+						<li>
+            					<p>
+                                    세르비아 출신 아나 크라스는<br />
+                                    여러 얼굴을 지닌 크리에이터이다.<br />
+                                    가구 디자인과 인테리어<br />
+                                    건축, 데생, 회화, 조각, 사진,<br />
+                                    패션 등 다양한 분야에서 그녀만의<br />
+                                    창작 세계를 구축하고 있는 그녀는<br />
+                                    Arkyn의 진정한 정신을 표현한다.
+            					</p>
+						</li>
+
+                        <li>
+            					<p>
+                                    축구 선수 플로렌시아 갈라자는<br />
+                                    다양한 재능을 겸비한 여성으로<br />
+                                    Arkyn을 완벽히 표현한다.<br />
+                                    미국 여자축구대표팀에서<br />
+                                    활약하던 10대에 부상을<br />
+                                    당한 그녀는 위기를 기회 삼아<br />
+                                    제2의 시작하며, 각광받는 DJ로<br />
+                                    칸예 웨스트와 투어를 하고 있다.<br />
+                                    축구선수로도 재기에 성공해 현재는<br />
+                                    보카 주니어스에서 활약하고 있다.
+            					</p>
+						</li>
+
+                        <li class="on">
+            					<p>
+                                    세계에서 가장 유명한 모델 중<br />
+                                    하나인 켄달 제너.<br />
+                                    하지만 그녀는 이것만으로<br />
+                                    정의되길 거부한다.<br />
+                                    디자인, 글쓰기, 연기, 사랑하는<br />
+                                    친구와 가족을 사진에<br />
+                                    담는 취미까지. 다양한 장르를<br />
+                                    넘나들며 재능과 끼를 펼치는<br />
+                                    그녀는 단어 하나로 설명할 수 없는<br />
+                                    자유분방한 여성 크리에이터이다.
+            					</p>
+						</li>
+
+                        <li>
+            					<p>
+                                    뮤지션 시브 드 블레어<br />
+                                    (Syv de Blare)는 상반되는<br />
+                                    장르를 믹스해 그녀만의<br />
+                                    독특한 사운드를 창조한다.<br />
+                                    그녀는 음악에 대한 본래의 열정을<br />
+                                    바탕으로 사진에도<br />
+                                    특출한 재능을 보여주고 있다.<br />
+                                    이는 내 안에 존재하는<br />
+                                    창조성을 다양한 방식으로<br />
+                                    풀어내는 Arkyn의 정신,<br />
+                                    그 자체이다.
+            					</p>
+						</li>
+
+                        <li>
+            					<p>
+                                    전문 댄서이자 플로럴 디자이너.<br />
+                                    Marisa Competello.<br />
+                                    10년 가까이 어시스턴트<br />
+                                    스타일리스트로 일하던<br />
+                                    그녀에겐 변화가 절실했다.<br />
+                                    Arkyn이 잘 어울리는<br />
+                                    그녀는 Meta Flora의 창립자이다.<br />
+                                    뉴욕을 소재로 한 플로럴 디자인<br />
+                                    스튜디오인 Meta Flora는<br />
+                                    동작과 라인, 컬러와 질감에 관한<br />
+                                    그녀의 관심을 반영한<br />
+                                    미니멀한 작품을 만들어 낸다.
+            					</p>
+						</li>
+
+					</ul>
+				</div>
+
+
+            </div>
+            <div class="go_top">
+				<a href="#">BACK TO TOP</a>
+			</div>
+
+            <script type="text/javascript">
+                (function($){
+                    var mainSwipe = Swipe(document.getElementById('slide_swipe1'),{
+                        stopPropagation: true,
+                        auto: 2000,
+                        callback : function(index , element){
+                            $('#fade1 > .num > li > a').removeClass('on').eq(index).addClass('on');
+                        }
+                    });
+
+                    var owlProducts = $('.slider_section .slider').owlCarousel({
+							navigation: true,
+							stagePadding: 0,
+							nav: true,
+							margin:0,
+							items : 1,
+							merge: true,
+							loop : false,
+                            startPosition: 2,
+						});
+
+					owlProducts.on('changed.owl.carousel', function(event) {
+                        var index = $(event.currentTarget).find('.owl-stage .owl-item').eq(event.item.index).find('li').attr('data-index');
+                        // console.log(index)
+						$('.gal li').removeClass('on');
+						$('.gal li').eq(index).addClass('on');
+
+                        if(index==0){
+                            $('.owl-prev').hide();
+                        }else if (index==4) {
+                            $('.owl-next').hide();
+                        }else {
+                            $('.owl-prev').show();
+                            $('.owl-next').show();
+                        }
+					});
+
+                    var scroll1 = $('.main>.txt').offset().top-400;
+                    var scroll2 = $('.feature_box>h3').offset().top-400;
+                    var scroll3 = $('.video_box>h3').offset().top-400;
+                    var scroll4 = $('.cont_wrap>h3').offset().top-400;
+                    var scroll5 = $('.slider_section>h3').offset().top-500;
+                    $(window).scroll(function(){
+                      var scrollPX = $(this).scrollTop();
+
+                      if( scrollPX  > scroll1 ) {
+                        $(".main .txt").css({
+                          "opacity": "1",
+                          "bottom":"95"
+                        });
+                        setTimeout(function(){
+                          $(".main .sub_txt").css({
+                            "opacity": "1",
+                            "bottom":"0"
+                          });
+                        },200)
+                      }
+                      if( scrollPX  > scroll2 ) {
+                        $(".feature_box h3").css({
+                          "opacity": "1",
+                          "padding-top":"0"
+                        });
+                        $(".feature_box .txt").css({
+                          "opacity": "1",
+                        });
+                        setTimeout(function(){
+                          $(".feature_box .bg").css({
+                            "opacity": "1",
+                          });
+                        },200)
+                      }
+
+                      if( scrollPX  > scroll3 ) {
+                        $(".video_box h3").css({
+                          "opacity": "1",
+                          "padding-top":"0"
+                        });
+                        $(".video_box .txt").css({
+                          "opacity": "1",
+                        });
+                        setTimeout(function(){
+                          $(".video_box .bg").css({
+                            "opacity": "1",
+                          });
+                        },200)
+                      }
+
+                      if( scrollPX  > scroll4 ) {
+                        $(".cont_wrap h3").css({
+                          "opacity": "1",
+                          "padding-top":"0"
+                        });
+                        $(".cont_wrap .txt_box").css({
+                          "opacity": "1",
+                        });
+                        setTimeout(function(){
+                          $(".cont_wrap .img_box").css({
+                            "opacity": "1",
+                          });
+                          $(".cont_wrap .sign").css({
+                            "opacity": "1",
+                          });
+                        },200)
+                      }
+
+                      if( scrollPX  > scroll5 ) {
+                        $(".slider_section h3").css({
+                          "opacity": "1",
+                          "padding-top":"0"
+                        });
+                        setTimeout(function(){
+                          $(".slider_section .slider_wrap").css({
+                            "opacity": "1",
+                            "top": "0"
+                          });
+                        },200)
+
+                      }
+
+                    });
+
+
+
+                })(jQuery);
+            </script>
+		</div>
+		<!-- //container -->
+
+		<div id="footer">
+			<div class="f_menu">
+				<a href="#">로그인</a>
+				<a href="#">주문/배송조회</a>
+				<a href="#">고객센터</a>
+				<a href="#">매장찾기</a>
+			</div>
+			<div class="f_info">
+				<p class="tit">아디다스코리아(주)</p>
+				<p>137-955 서울특별시 서초구 서초대로 74길 4, 삼성생명 서초타워 9층</p>
+				<p>대표이사 : 쟝 미쉘 그라니에&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;사업자 등록번호 : 214-81-07412</p>
+				<p>교환 및 반품 문의 (본사로 반품불가) : 온라인스토어 고객센터 1588-8241</p>
+				<p>(평일 9시 – 18시, 점심시간 12시 – 13시)</p>
+				<p>제품 수선문의 : 아디다스 고객만족센터 080-022-7981 (평일 09시 – 18시)</p>
+				<p>통신판매업신고 : 2007-서울서초-10391</p>
+				<p>이메일 : adiCLUB_Korea@adidas.com</p>
+				<p>개인정보 관리책임자 : 김동일&nbsp;&nbsp;|&nbsp;&nbsp;개인정보 관리담당자 : 황선영</p>
+				<p><a href="#">개인정보취급방침 확인<span class="ico-arrow-circle"></span></a></p>
+				<ul>
+					<li><a href="#">구매이용약관</a></li>
+					<li><a href="#">채무지급보증안내 확인</a></li>
+					<li><a href="#">공정거래 자율준수</a></li>
+					<li><a href="#">공정거래 위원회 사업자 신원정보 확인</a></li>
+				</ul>
+				<p style="color:#666;">Copyright © 2011 adidas Korea Inc.</p>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="/js/adidas/common.js"></script>
+
+</body>
+
+</html>
