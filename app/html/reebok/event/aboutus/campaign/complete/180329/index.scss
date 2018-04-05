@@ -12,6 +12,7 @@
         }
     }
     .video_visual{
+        padding-bottom: 193%;
         .bg{
             video{
                 width: 100%;
@@ -21,25 +22,23 @@
                 object-fit: cover;
             }
         }
-        .cover{
-            h2{
-                margin-bottom:1rem;
-                width:inherit;
-                height: inherit;
-                text-indent: 0;
-                background:none;
-                text-align: center;
-                color:#fff;
-                text-transform: uppercase;
-                margin-top: 4rem;
-                font:5rem/4.5rem 'QStencil';
-                span{
-                    font:2.5rem/3.5rem 'QStencil';
-                    vertical-align: top;
+        .video_content{
+            position: absolute;
+            top: 44%;
+            margin: 0 5rem;
+            display: flex;
+            div{
+                flex: 1;
+                -webkit-flex: 1;
+                margin: 0 5px;
+                img{ width: 100%; }
+                p{
+                    padding: 5px 0 0 0;
+                    font:1.1rem 'NotoSansKR';
                 }
             }
-        }
 
+        }
         p{
             font:300 1.2rem/1.8rem 'NotoSansKR';
             color:#fff;
@@ -58,7 +57,37 @@
             width: 60px;
             height: 60px;
         }
+        .main_slider_wrap{
+            position: absolute;
+            bottom: 3%;
+            .slider{
+                ul{
+                    li{
+                        img{width: 100%;}
+                    }
+                }
+                .owl-controls{
+                    padding: 10px 0 0 0;
+                    text-align: center;
+                    .owl-dots{
+                        .owl-dot{
+                            display: inline-block;
+                            margin: 0 5px;
+                            width: 10px;
+                            height: 10px;
+                            background: #f6dce1;
+                            border-radius: 50px;
+                            -webkit-border-radius: 50px;
+                            &.active{
+                                background: #ff7f89;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
+
     .labels{
         .on{
             div{
@@ -323,7 +352,6 @@
         }
 
     }
-
     .collections2{
         position: relative;
         padding: 0 0rem 1.5rem;
