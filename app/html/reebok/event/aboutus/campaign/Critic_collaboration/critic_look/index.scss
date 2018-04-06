@@ -166,6 +166,12 @@
                 li{
                     position: relative;
                     float: left;
+                    &.active{
+                        .simg-thumb{
+                            opacity: 1;
+                            transform: translate(0, 0);                            
+                        }
+                    }
                     img{
                         width:100%;
                     }
@@ -199,12 +205,18 @@
                             }
                         }
                     }                    
-                    .simg-thumb{
+                    .simg-thumb{                        
                         width: 100%;
                         margin: 0 1rem;
+
+                        opacity: 0;
+                        transition: 0.4s;
+                        transition-delay: 0.2s;
+                        transform: translate(100px, 0);
                         span{
                             display: block;
-                            font: 14px 'dinpro cond';
+                            font: italic 14px 'dinpro cond';
+                            padding-bottom: 5px;
                         }
                         img{
                             width: 60%;
@@ -216,8 +228,7 @@
         .num_paging{
             position: absolute;
             bottom: 2rem;
-            right: 2rem;
-            padding: 1rem 0px;
+            right: 2rem;          
             a{                
                 border:1px solid #be282a;
                 width: 0.8rem;

@@ -158,13 +158,10 @@
 					<!-- //slide_lineup -->
 					
 					<div class="slide_prd">
-						<div class="collection_cut">
-							<!-- <div class="bg">
-								<img src="http://imagem.reebok.co.kr/images/reebok/about/always/bg_slide_prd.jpg" alt="">
-							</div> -->
+						<div class="collection_cut">							
 							<div class="slider" id="slide_prd">
 								<ul>
-									<li>
+									<li class="active">
 										<img class="simg" src="/images/reebok/about/Critic_collaboration/critic_look/sec02_slide_01.jpg" alt="">
 										<div class="buybox">
 											<a href="#">1 / CR STARCREST 1980 T-SHIRT / DX0368 <span>구매하기<em></em></span></a>
@@ -364,12 +361,36 @@
 						var windowWidth = $(window).width();
 						$('.owl-controls').css({'width':windowWidth + 'px'});
 
+						// owlSlider.on('changed.owl.carousel',function(event){
+                        //     alert("111");
+						// });
+						
+						// sec_slide						
+						// var owlSlider2 = $('#slide_prd');
+						// owlSlider2.owlCarousel({
+						// 	stagePadding: 0,
+						// 	margin:15,
+						// 	items :1,
+						// 	merge: true,
+						// 	loop : true,						
+						// 	navigation: true,
+						// 	nav: false,
+						// 	autoplay : true,
+						// });
+						// var windowWidth = $(window).width();
+						// $('.owl-controls').css({'width':windowWidth + 'px'});
+
+						// owlSlider.on('changed.owl.carousel',function(event){
+                        //     alert("111");
+                        // });
+
 						// slide_prd
 						var slide_prd = Swipe(document.getElementById('slide_prd'),{
 							stopPropagation: true,							
 							callback: function(index, element) {
 								$('.slide_prd .num_paging a').removeClass('on').eq(index).addClass('on');
 								$('.slide_prd .prodlist_wrap .prodlist').removeClass('active').eq(index).addClass('active');
+								$('.slide_prd li').removeClass('active').eq(index).addClass('active');
 							}
 						});
 
@@ -379,44 +400,13 @@
 							}
 							slide_prd.slide($(this).index());
 						});
-						
 
-						// slide_gal
-						var slide_gal = Swipe(document.getElementById('slide_gal'),{
-							stopPropagation: true,
-							// auto  :true,
-							// delay : 1000,						
-
-							callback: function(index, element) {
-								$('.slide_gal .num_paging a').removeClass('on').eq(index).addClass('on');
-								$('.slide_gal .prodlist_wrap .prodlist').removeClass('active').eq(index).addClass('active');
-							}
-						});
-
-						$('.slide_gal .num_paging a').bind('click',function(){
-							if($(this).hasClass('on')){
-								return;
-							}
-							slide_gal.slide($(this).index());
-						});
-
-						$('.slide_gal .next').click(function(){
-							slide_gal.next();
-							return false;
-						});
-						$('.slide_gal .prev').click(function(){
-							slide_gal.prev();
-							return false;
-						});
-
-
-						$('.btn-video').bind('click',function(){
-							// alert('상품이 준비중입니다');
-							// var ytbId = $(this).attr('data-video-id');
-							// $('.video_layer').addClass('active');
-							// setTimeout(function(){
-							// 	loadVideo(ytbId,'video_box');
-							// },400);
+						$('.btn-video').bind('click',function(){							
+							var ytbId = $(this).attr('data-video-id');
+							$('.video_layer').addClass('active');
+							setTimeout(function(){
+								loadVideo(ytbId,'video_box');
+							},400);
 						});
 
 						$('.video_layer .close').bind('click',function(){
