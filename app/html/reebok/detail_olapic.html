@@ -2947,13 +2947,14 @@
 		(function($){
 
 			// 180416 olaphic class 판별
+			$('.olapic-wrapper.customization-title .olapic-title, .olapic-wrapper.customization-title .olapic-desc').css({'display':'none'});
 			window.onload = function () {
 				setTimeout(function(){
-					var test = $('#olapic_specific_widget');
-					// item 개수 0개 일 때
-					if ($('#olapic_specific_widget').hasClass('olapic_items_0')) {
+					// item 개수 0개 아닐 때
+					if (!$('#olapic_specific_widget').hasClass('olapic_items_0')) {
 							console.log('item 0개')
-							$('#olapic_specific_widget').parents('.olapic-wrapper').fadeOut();
+							$('.olapic-wrapper.customization-title .olapic-title, .olapic-wrapper.customization-title .olapic-desc').css({'display':'block'});
+							$('#olapic_specific_widget').parents('.olapic-wrapper').fadeIn();
 						}
 				},800)
 			}
