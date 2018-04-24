@@ -21232,8 +21232,16 @@ em.prd_speedy .tooltip-box:before{
     display: none;
 }
 .modal-popup-wrapper.vr_pdp_popup .popup{
-    padding: 30px 20px 20px;
+    padding: 80px 20px 20px;
     position: fixed;
+    opacity: 0;
+    -webkit-opacity: 0;
+    transition: all 0.8s;
+}
+.modal-popup-wrapper.vr_pdp_popup .popup.on{
+    padding: 30px 20px 20px;
+    opacity: 1;
+    -webkit-opacity: 1;
 }
 .modal-popup-wrapper.vr_pdp_popup .popup-contents{
     padding: 20px;

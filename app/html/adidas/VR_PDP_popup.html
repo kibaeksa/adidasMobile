@@ -558,6 +558,7 @@
         (function($){
 
             // 180424 vr pdp popup script
+
                 // 사이즈 미선택시 박스표시 on
                 $('.vr_pdp_popup .btn_wrap .buy a').click(function(){
                     $('.select_box .focused_box').addClass('on')
@@ -567,6 +568,7 @@
                 });
                 // 상품 클릭시 팝업
                 $('.modal-popup-click').click(function(){
+                    // 팝업 내부 슬라이드 이벤트
                     setTimeout(function(){
                         var swiper = Swipe(document.getElementById('sliders'),{
                             stopPropagation: true,
@@ -587,7 +589,16 @@
                             swiper.slide($(this).index());
                         });
                     },10)
+                    // fadein : 팝업 열기 이벤트
+                    setTimeout(function(){
+                        $('.modal-popup-wrapper.vr_pdp_popup .popup').addClass('on');
+                    },300)
+                    // fadeout : 팝업 닫기 이벤트
+                    $('.close_x_btn').click(function(){
+                        $('.modal-popup-wrapper.vr_pdp_popup .popup').removeClass('on');
+                    });
                 });
+
             // 180424 vr pdp popup end
 
         })(jQuery);
