@@ -435,23 +435,22 @@
 
 		<div id="container">
 
-            <button class="modal-popup-click" data-modalpop-click="vr_pdp-popup">vr 상품 클릭버튼</button>
+            <button class="modal-popup-click" data-modalpop-click="vr_pdp-popup" style="margin: 50px auto;display: block;">vr 상품 클릭 예시 버튼</button>
+            <button class="modal-popup-click" data-modalpop-click="vr_pdp-popup" style="margin: 50px auto;display: block;">vr 상품 클릭 예시 버튼</button>
 
 			<div class="go_top">
 				<a href="#">BACK TO TOP</a>
 			</div>
 
-
-
 		</div>
 		<!-- //container  -->
 
+        <!-- 180424 vr pdp popup -->
         <div class="modal-popup-wrapper vr_pdp_popup"
             data-modalpop=""
             data-modalpop-name="vr_pdp-popup"
             data-modalpop-width="580"
             data-modalpop-height="768"
-            data-modalpop-fade=""
         >
             <div class="overlay"></div>
             <div class="popup">
@@ -461,47 +460,66 @@
                 <div class="popup-contents">
                     <div class="title">[모델착장] 슈퍼스타 파운데이션 슈즈 80s 빈티지</div>
                     <div class="price">95,200<span>원</span></div>
-                    <div class="slider_wrap">
-                        <ul id="sliders">
-                            <li><img src="http://image.adidas.co.kr/upload/prod/basic/380/AQ3091-1_380X380.jpg" alt=""></li>
-                            <li><img src="http://image.adidas.co.kr/upload/prod/basic/380/AQ3091-1_380X380.jpg" alt=""></li>
-                            <li><img src="http://image.adidas.co.kr/upload/prod/basic/380/AQ3091-1_380X380.jpg" alt=""></li>
-                            <li><img src="http://image.adidas.co.kr/upload/prod/basic/380/AQ3091-1_380X380.jpg" alt=""></li>
-                            <li><img src="http://image.adidas.co.kr/upload/prod/basic/380/AQ3091-1_380X380.jpg" alt=""></li>
-                            <li><img src="http://image.adidas.co.kr/upload/prod/basic/380/AQ3091-1_380X380.jpg" alt=""></li>
-                        </ul>
+
+                    <div class="banner_slider_wrap">
+                        <div id="sliders">
+                            <ul class="swiper-wrapper">
+								<li class="swiper-slide"><img src="http://image.adidas.co.kr/upload/prod/basic/380/DA9331-1_380X380.jpg"></li>
+								<li class="swiper-slide"><img src="http://image.adidas.co.kr/upload/prod/basic/380/DA9331-1_380X380.jpg"></li>
+								<li class="swiper-slide"><img src="http://image.adidas.co.kr/upload/prod/basic/380/DA9331-1_380X380.jpg"></li>
+								<li class="swiper-slide"><img src="http://image.adidas.co.kr/upload/prod/basic/380/DA9331-1_380X380.jpg"></li>
+								<li class="swiper-slide"><img src="http://image.adidas.co.kr/upload/prod/basic/380/DA9331-1_380X380.jpg"></li>
+                                <li class="swiper-slide"><img src="http://image.adidas.co.kr/upload/prod/basic/380/DA9331-1_380X380.jpg"></li>
+							  	<li class="swiper-slide"><img src="http://image.adidas.co.kr/upload/prod/basic/380/DA9331-1_380X380.jpg"></li>
+							</ul>
+                            <div class="indicator">
+                                <span class="on"></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="arrow_btn button-prev"><span></span></div>
+						<div class="arrow_btn button-next"><span></span></div>
                     </div>
 
                     <div class="select_box">
                         <div class="selectbox-ctm sel_design select_size">
-                            <a href="#" class="toggle_arw"><span>270</span></a>
+                            <!-- !!사이즈 미선택시 focused_box display : block -->
+                            <div class="focused_box"></div>
                             <select name="select_size" id="select_size">
-                                <option value="235" selected="">235</option>
+                                <option value="none" selected="">사이즈 선택</option>
                                 <option value="240">240</option>
                                 <option value="245">245</option>
                                 <option value="250">250</option>
                             </select>
+                            <a href="#" class="toggle_arw"><span>사이즈 선택</span></a>
                         </div>
                         <div class="selectbox-ctm sel_design select_amount">
-                            <a href="#" class="toggle_arw"><span>1</span></a>
                             <select name="select_amount" id="select_amount">
                                 <option value="1" selected="">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
                                 <option value="4">4</option>
                             </select>
+                            <a href="#" class="toggle_arw"><span>1</span></a>
                         </div>
                     </div>
 
 					<div class="btn_wrap">
 						<div class="detail"><a href="">자세히 보기</a></div>
-						<div class="buy"><a href="">바로구매</a></div>
+						<div class="buy"><a href="javascript:void(0)">바로구매</a></div>
 						<div class="buylist"><a href=""><span class="icons aft" data-icon=""></span></a></div>
 					</div>
                 </div>
             </div>
 
         </div>
+        <!-- 180424 vr pdp popup end-->
+
 
 
 		<div id="footer">
@@ -539,31 +557,38 @@
 
         (function($){
 
+            // 180424 vr pdp popup script
+                // 사이즈 미선택시 박스표시 on
+                $('.vr_pdp_popup .btn_wrap .buy a').click(function(){
+                    $('.select_box .focused_box').addClass('on')
+                    setTimeout(function(){
+                        $('.vr_pdp_popup .select_box .focused_box').removeClass('on')
+                    },2000)
+                });
+                // 상품 클릭시 팝업
+                $('.modal-popup-click').click(function(){
+                    setTimeout(function(){
+                        var swiper = Swipe(document.getElementById('sliders'),{
+                            stopPropagation: true,
+                            callback : function(index , element){
+                                $('.indicator span').removeClass('on').eq(index).addClass('on');
+                            }
+                        });
 
-            $('.modal-popup-click').click(function(){
-                $('.vr_pdp_popup').addClass('open');
-                $('.overlay').css({'opacity':'1'});
-                $('.popup').css({'opacity':'1'});
-                setTimeout(function(){
-                    var owlSlider = $('#sliders');
-                    owlSlider.owlCarousel({
-                        stagePadding: 0,
-                        margin:0,
-                        items : 1,
-                        merge: true,
-                        loop : true,
-                        navigation: true,
-                        nav: true
-                    });
+                        $('.button-prev').bind('click',function(){
+                            swiper.prev();
+                        });
 
-                },100)
-            });
+                        $('.button-next').bind('click',function(){
+                            swiper.next();
+                        });
 
-            $('.close_x_btn').click(function(){
-                $('.vr_pdp_popup').removeClass('open')
-            });
-
-
+                        $('.indicator span').bind('click',function(){
+                            swiper.slide($(this).index());
+                        });
+                    },50)
+                });
+            // 180424 vr pdp popup end
 
         })(jQuery);
 
