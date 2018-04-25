@@ -1,8 +1,6 @@
  <!DOCTYPE html>
 <html>
 <head>
-    <script type="text/javascript" src="/data/eventRouter.js"></script>
-
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
 	<meta name="format-detection" content="telephone=no">
@@ -10,8 +8,6 @@
 
 	<link href="/css/adidas/style.css" type="text/css" rel="stylesheet" />
 	<link href="/css/adidas/fonts.css" type="text/css" rel="stylesheet" />
-
-	<link rel="preload" href="/fonts/adineuePro/woff/adineuePRO-Bold.woff" as="font">
 
 	<script type="text/javascript" src="/js/jquery-1.12.0.min.js"></script>
 	<script type="text/javascript" src="/js/swipe.js"></script>
@@ -21,73 +17,6 @@
 	<title>아디다스 모바일</title>
 </head>
 <body>
-
-	<div class="modal-popup" id="instock-notification-popup">
-		<div class="popup-contents">
-			<a href="javascript:void(0)" class="close_x_btn" onclick="jQuery(this).parent().parent().removeClass('open');"></a>
-			<div class="instock-notification">
-				<div class="tit adipro-b">
-					<div class="icons" data-icon=""></div>coming soon
-				</div>
-				<div class="desc">휴대전화 번호를 남겨 주시면,<br/>제품 입고시 문자로 알려드립니다.</div>
-
-				<div class="phone">
-					<div class="sel_cmtype sel_design">
-						<a href="#" class="toggle_arw s_arw" ><span>010</span></a>
-						<select name="" id="">
-							<option value="2" selected="">010</option>
-							<option value="1">011</option>
-							<option value="5">016</option>
-							<option value="3">017</option>
-							<option value="4">019</option>
-						</select>
-					</div>
-					<input type="tel">
-					<input type="tel">
-				</div>
-
-				<div class="agr_box">
-					<div class="chk_wrap">
-						<div class="chk_box1 blue">
-							<input type="checkbox" id="agr_for_credit" name="SMS_RET_YN" value="Y">
-							<label for="agr_for_credit" class="adipro-r">개인정보 제공동의</label>
-						</div>
-					</div>
-					<a href="javascript:void(0)" class="icons aft" data-icon="" onclick="if(jQuery(this).hasClass('open')){jQuery('.instock-notification .terms').hide();jQuery(this).removeClass('open')}else{jQuery('.instock-notification .terms').show();jQuery(this).addClass('open')}">자세히보기</a>
-				</div>
-				<!-- //agr_box -->
-
-				<div class="terms">
-					<div class="cont">
-						<dl>
-							<dt>개인정보의 수집이용목적 : </dt>
-							<dd>아디다스 제품 입고 알림</dd>
-						</dl>
-						<dl>
-							<dt>수집되는 개인정보 : </dt>
-							<dd>휴대전화번호</dd>
-						</dl>
-						<dl>
-							<dt>보유기간 : </dt>
-							<dd>입고알림 이후 30일 까지(본 보유기간은 아디클럽 회원이 아닌 경우에 한함)</dd>
-						</dl>
-       					<ul class="li_hypn">
-       						<li>아래 동의를 거부할 수 있습니다. 다만 그러한 경우, 아디다스제품이 입고되는 시점에 대한 정보를 우선적으로 전달받으실 수 없습니다. 단, “통신사 사정으로 인한 발송, 수신오류, 고객휴대폰의 스팸등록 등으로 인해 SMS가 전달되지 않을 수 있으며 이러한 경우 아디다스코리아가 책임지지 않습니다.”</li>
-       						<li>입력해주신 휴대폰번호로 안내하겠습니다.</li>
-       					</ul>
-
-					</div>
-				</div>
-
-				<div class="btn_area">
-					<a class="submit">신청하기</a>
-				</div>
-
-			</div>
-			<!-- //instock-notification -->
-		</div>
-	</div>
-
 	<div id="wrap">
 		<div id="header" style="position: relative;">
 			<div class="nav_menu">
@@ -98,7 +27,12 @@
 						<a href="#" class="join"><span class="icons" data-icon=""></span>회원가입</a>
 					</div>
 
-
+					<!-- <div class="u_info1">
+						<div class="user_box">
+							<p class="greet bronze"><span class="m">B</span>홍길동님 반갑습니다.</p>
+							<p class="noti">쿠폰 사용기간이 얼마 남지 않았습니다.</p>
+						</div>
+					</div> -->
 					<div class="u_info2">
 						<a href="#">마이페이지</a>
 						<a href="#">주문배송조회 <span>1</span></a>
@@ -498,196 +432,331 @@
 		</div>
 
 		<div id="container">
-<style type="text/css">@media screen and (max-width: 320px){html{font-size:10px}}@media screen and (min-width: 800px){html{font-size:12px}}.pseudo-element{content:'';display:block}#trailrun_package .scrollbox{top:20px;opacity:0;-webkit-opacity:0;-moz-opacity:0;transition:all 0.5s;-webkit-transition:all 0.5s;-moz-transition:all 0.5s}#trailrun_package .scrollbox.on{top:0;opacity:1;-webkit-opacity:1;-moz-opacity:1}#trailrun_package .button{padding:0.5rem 1.5rem;display:block;border:2px solid #000;font-size:1.2rem;background:#000;color:#fff}#trailrun_package .button::after{margin-left:0.5rem;vertical-align:middle}#trailrun_package .masthead img{width:100%}#trailrun_package .masthead .img{width:100%;padding-bottom:106.5%;position:relative}#trailrun_package .masthead .img img{position:absolute;top:0;left:0;opacity:1;transition:opacity 0.5s;-webkit-transition:opacity 0.5s;-moz-transition:opacity 0.5s}#trailrun_package .masthead .img a{display:block;position:absolute;top:48%;left:41%;width:17%;height:17%;text-indent:-9999px}#trailrun_package .cont1{position:relative;overflow:hidden;padding-bottom:172%}#trailrun_package .cont1 h3{top:3rem;text-align:center;font:700 2rem/2.5rem 'NotoSansKR';color:#000;z-index:1;position:absolute;left:50%;-ms-transform:translate(-50%, 0);transform:translate(-50%, 0);width:100%}#trailrun_package .cont1 h3 span{font:2.3rem/2.3rem 'adinenuPro-black';letter-spacing:0.7px}#trailrun_package .cont1 h3 .button{width:30%;margin:1rem auto}#trailrun_package .cont1 .bg{width:100%;position:absolute;left:50%;-ms-transform:translate(-50%, 0);transform:translate(-50%, 0)}#trailrun_package .cont1 .bg img{width:100%}#trailrun_package .product-selector{position:relative;width:100%;background:url("/images/adidas/event/trailrun_package/slide1_bg.jpg") 0 0 no-repeat;background-size:cover;-webkit-background-size:cover;transition:all 0.5s;-webkit-transition:all 0.5s;-moz-transition:all 0.5s}#trailrun_package .product-selector img{width:100%}#trailrun_package .product-selector .box{width:100%;padding-bottom:62%;position:relative}#trailrun_package .product-selector .box>*{width:75%;position:absolute;top:50%;left:50%;transform:translate3d(-50%, -60%, 0);-webkit-transform:translate3d(-50%, -60%, 0);-moz-transform:translate3d(-50%, -60%, 0)}#trailrun_package .product-selector .owl-nav{position:absolute;top:38%;width:100%}#trailrun_package .product-selector .owl-nav .owl-next{position:relative;right:10px;float:right;width:1.5rem;height:40px;background:url("/images/adidas/event/trailrun_package/bt_next.png") no-repeat;background-size:100%;text-indent:-9999px}#trailrun_package .product-selector .owl-nav .owl-prev{position:relative;left:10px;float:left;width:1.5rem;height:40px;background:url("/images/adidas/event/trailrun_package/bt_prev.png") no-repeat;background-size:100%;text-indent:-9999px}#trailrun_package .product-selector2{position:relative;margin-top:3rem;width:100%;background:url("/images/adidas/event/trailrun_package/slide2_bg.jpg") 0 0 no-repeat;background-size:cover;-webkit-background-size:cover;transition:all 0.5s;-webkit-transition:all 0.5s;-moz-transition:all 0.5s}#trailrun_package .product-selector2 img{width:100%}#trailrun_package .product-selector2 .box{width:100%;padding-bottom:62%;position:relative}#trailrun_package .product-selector2 .box>*{width:75%;position:absolute;top:50%;left:50%;transform:translate3d(-50%, -60%, 0);-webkit-transform:translate3d(-50%, -60%, 0);-moz-transform:translate3d(-50%, -60%, 0)}#trailrun_package .product-selector2 .owl-nav{position:absolute;top:38%;width:100%}#trailrun_package .product-selector2 .owl-nav .owl-next{position:relative;right:10px;float:right;width:1.5rem;height:40px;background:url("/images/adidas/event/trailrun_package/bt_next.png") no-repeat;background-size:100%;text-indent:-9999px}#trailrun_package .product-selector2 .owl-nav .owl-prev{position:relative;left:10px;float:left;width:1.5rem;height:40px;background:url("/images/adidas/event/trailrun_package/bt_prev.png") no-repeat;background-size:100%;text-indent:-9999px}#trailrun_package .cont2{position:relative;overflow:hidden;padding:0 3.8rem;padding-bottom:22%}#trailrun_package .cont2 .img_box1{position:relative;margin:4rem auto 3rem;text-align:center}#trailrun_package .cont2 .img_box1 img{width:100%}#trailrun_package .cont2 .txt_box1{position:relative;margin:2rem auto 1.5rem;text-align:center}#trailrun_package .cont2 .txt_box1 img{width:100%}#trailrun_package .cont2 .img_box2{position:relative;margin:4rem auto 3rem;text-align:center}#trailrun_package .cont2 .img_box2 img{width:100%}#trailrun_package .cont2 .txt_box2{position:relative;margin:2rem auto 1.5rem;text-align:center}#trailrun_package .cont2 .txt_box2 img{width:100%}#trailrun_package .cont2 .bg{width:100%;position:absolute;left:50%;-ms-transform:translate(-50%, 0);transform:translate(-50%, 0);top:0;z-index:-1}#trailrun_package .cont2 .bg img{width:100%}#trailrun_package .cont3{position:relative;overflow:hidden;padding:0 1.5rem}#trailrun_package .cont3 h3{margin:3rem 0;text-align:center;font:700 2rem/2.5rem 'NotoSansKR';color:#000;z-index:1;position:relative;left:50%;-ms-transform:translate(-50%, 0);transform:translate(-50%, 0);width:100%}#trailrun_package .cont3 h3 span{font:2.3rem/2.3rem 'adinenuPro-black';letter-spacing:0.7px}#trailrun_package .cont3 h3 .button{width:30%;margin:1rem auto}#trailrun_package .cont3 .img_box{margin:0 auto;text-align:center;width:100%}#trailrun_package .cont3 .img_box img{width:100%}#trailrun_package .techwrap{position:relative;overflow:hidden;padding-bottom:202%}#trailrun_package .techwrap .tech_men{position:absolute;top:0;left:50%;-ms-transform:translate(-50%, 0);transform:translate(-50%, 0);width:100%;display:none}#trailrun_package .techwrap .tech_men img{width:100%}#trailrun_package .techwrap .tech_women{position:absolute;top:0;left:50%;-ms-transform:translate(-50%, 0);transform:translate(-50%, 0);width:100%;display:none}#trailrun_package .techwrap .tech_women img{width:100%}#trailrun_package .bottom{position:relative;overflow:hidden;margin-bottom:3rem}#trailrun_package .bottom img{width:100%}
-</style>
+			<style type="text/css">
+				#pure_boost{
+					width: 100%;
+					min-height: 100vh;
+					position: relative;
+				}
 
-            <div id="trailrun_package">
+				#pure_boost .button{
+					padding: 10px 20px 10px 10px;
+					display: inline-block;
+					background: #fff !important;
+					color: #000 !important;
+					font-size: 13px;
+				}
 
-                <div class="masthead">
-                    <div class="img">
-                        <img src="/images/adidas/event/trailrun_package/video.jpg" alt="">
-                        <a href="javascript:void(0)" onclick="openModalVideoViewer('NdZRxtoUkPw')"></a>
-                    </div>
-                </div>
+				#pure_boost .button::after{
+					vertical-align: middle;
+					margin-left: 10px;
+				}
 
-                <div class="cont1">
-                    <h3>트레일 러닝화,<br />
-                            <span>TERREX TWO BOA</span>
-                        <a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=571" class="button">구매하기</a>
-                    </h3>
-                    <div class="bg">
-                        <img src="/images/adidas/event/trailrun_package/cont1_bg.jpg" alt="">
-                    </div>
-                </div>
+				#pure_boost .visual{
+					width: 100%;
+					height: 80vh;
+					position: relative;
+					overflow: hidden;
+				}
 
-                <div class="product-selector scrollbox">
-                    <div class="slider">
-                        <div class="box">
-                            <div class="prod"><img src="/images/adidas/event/trailrun_package/slide1_01.png" /></div>
-                        </div>
-                        <div class="box">
-                            <div class="prod"><img src="/images/adidas/event/trailrun_package/slide1_02.png" /></div>
-                        </div>
-                    </div>
-                </div>
+				#pure_boost .visual .img{
+					width: 100%;
+					height: 100%;
+					position: absolute;
+					top: 0;
+					left: 0;
+					overflow: hidden;
+				}
 
-                <div class="cont2 scrollbox">
-                    <div class="img_box1">
-                        <img src="/images/adidas/event/trailrun_package/cont2_01.png" alt="">
-                    </div>
-                    <div class="txt_box1">
-                        <img src="/images/adidas/event/trailrun_package/boa_txt.png" alt="">
-                    </div>
-                    <div class="txt_box1">
-                        <img src="/images/adidas/event/trailrun_package/conti_txt.png" alt="">
-                    </div>
-                    <div class="img_box2">
-                        <img src="/images/adidas/event/trailrun_package/cont2_02.jpg" alt="">
-                    </div>
-                    <div class="txt_box2">
-                        <img src="/images/adidas/event/trailrun_package/zero_txt.png" alt="">
-                    </div>
-                    <div class="bg">
-                        <img src="/images/adidas/event/trailrun_package/cont2_bg.jpg" alt="">
-                    </div>
-                </div>
+				#pure_boost .visual img{
+					width: 100%;
+					position: absolute;
+					top: 0;
+					left: 0;
+				}
 
-                <div class="cont3 scrollbox">
-                        <h3>테렉스 트레일 러닝 아그라빅 탑<br />
-                            & 투인원 쇼츠<br />
-							<span>TRAIL RUNNING<br />
-                                AGRAVIC TOP<br />
-							& 2IN1 SHORTS</span>
-                            <a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=571" class="button">구매하기</a>
-						</h3>
-                        <div class="img_box">
-                            <img src="/images/adidas/event/trailrun_package/cont3_01.png" alt="">
-                        </div>
-                        <div class="img_box">
-                            <img src="/images/adidas/event/trailrun_package/cont3_txt.png" alt="">
-                        </div>
-                </div>
+				#pure_boost .visual .masthead{
+					width: 100%;
+					position: absolute;
+					bottom:10%;
+					left: 0;
+					padding: 0 15px;
+					box-sizing: border-box;
+					-webkit-box-sizing: border-box;
+				}
 
-                <div class="product-selector2 scrollbox">
-                    <div class="slider">
-                        <div class="box">
-                            <div class="prod"><img src="/images/adidas/event/trailrun_package/slide2_01.png" /></div>
-                        </div>
-                        <div class="box">
-                            <div class="prod"><img src="/images/adidas/event/trailrun_package/slide2_02.png" /></div>
-                        </div>
-                    </div>
-                </div>
+				#pure_boost .visual .masthead * {
+					color: #fff;
+				}
 
-                <div class="techwrap scrollbox">
-                    <div class="tech_men" style="display:block;">
-                        <img src="/images/adidas/event/trailrun_package/tech_men.png" />
-                    </div>
+				#pure_boost .visual .masthead h2,
+				#pure_boost .feature .desc h3,
+				#pure_boost .teaser .desc h4,
+				#pure_boost .boost_slider_wrap .tit_box h5{
+					margin-bottom: 5px;
+					font-size:26px;
+					line-height: 28px;
+				}
 
-                    <div class="tech_women">
-                        <img src="/images/adidas/event/trailrun_package/tech_women.png" />
-                    </div>
-                </div>
+				#pure_boost .visual .masthead p{
+					margin-bottom: 15px;
+					font-size: 16px;
+				}
 
-                <div class="bottom">
-                    <img src="/images/adidas/event/trailrun_package/parley_logo.png" />
-                </div>
+				#pure_boost .statement{
+					padding: 30px 0;
+					text-align: center;
+					font-size: 14px;
+					line-height: 18px;
+					background:url('/images/adidas/event/boost/160809/pure-boost-cut-01.jpgFW16_PBX_Mobile_CLP_Statement3_320x360_tcm65-98269.jpg') 0 0 no-repeat;
+					background-size: cover;
+				}
+
+				#pure_boost .feature{
+					width: 100%;
+					padding: 20px 20px 0;
+					box-sizing: border-box;
+					-webkit-box-sizing: border-box;
+					background:url('/images/adidas/event/boost/160809/pure-boost-cut-01.jpgFW16_PBX_Mobile_CLP_Feature_Background_800x800_tcm65-95379.jpg') 0 0 no-repeat;
+					background-size: cover;
+				}
+
+				#pure_boost .feature .shoes img{
+					width: 100%;
+				}
 
 
+				#pure_boost .feature .desc{
+					margin-bottom: 15px;
+				}
+
+				#pure_boost .feature .desc *{
+					color: #fff;
+				}
+
+				#pure_boost .feature .desc p,
+				#pure_boost .teaser .desc p{
+					font-size: 13px;
+					line-height: 18px;
+				}
+
+				#pure_boost .teaser{
+					position: relative;
+				}
+
+				#pure_boost .teaser>img{
+					width: 100%;
+				}
+
+				#pure_boost .teaser .desc{
+					width: 100%;
+					position: absolute;
+					bottom:30px;
+					left: 0;
+				}
+
+				#pure_boost .teaser .desc *{
+					color: #fff;
+					text-align: center;
+				}
+
+				#pure_boost .button_wrap{
+					border-top: 1px solid  #222;
+					padding: 30px 0;
+					background: #000;
+					text-align: center;
+				}
+
+				#pure_boost .boost_slider_wrap{
+					padding-bottom: 30px;
+				}
+
+				#pure_boost .boost_slider_wrap .tit_box{
+					padding: 30px 0;
+					text-align: center;
+					font-size: 14px;
+					line-height: 18px;
+					background:url('/images/adidas/event/boost/160809/pure-boost-cut-01.jpgFW16_PBX_Mobile_CLP_Statement3_320x360_tcm65-98269.jpg') 0 0 no-repeat;
+					background-size: cover;
+				}
+
+				#pure_boost .boost_slider_wrap .tit_box h5{
+					line-height: 26px;
+				}
+
+				#pure_boost .boost_slider_wrap .tit_box p{
+					font-size: 13px;
+				}
+
+				#pure_boost .boost_slider_wrap .slider{
+					position: relative;
+				}
+
+				#pure_boost .boost_slider_wrap .slider ul{
+					width: 100%;
+					position: relative;
+					overflow: hidden;
+				}
+
+				#pure_boost .boost_slider_wrap .slider ul li{
+					width: 100%;
+					position: relative;
+					float: left;
+				}
+
+				#pure_boost .boost_slider_wrap .slider ul li img{
+					width: 100%;
+				}
+
+				#pure_boost .boost_slider_wrap .num{
+					margin-top: 10px;
+					text-align: center;
+				}
+
+				#pure_boost .boost_slider_wrap .num span{
+					width: 4px;
+					height: 4px;
+					display: inline-block;
+					border-radius: 4px;
+					background:#9a9a9a;
+					margin: 0 2px;
+				}
+
+				#pure_boost .boost_slider_wrap .num span.on{
+					background: #0183d1;
+				}
 
 
-                <script type="text/javascript">
+			</style>
 
-                    (function($){
-                        var productSlider = $('.product-selector .slider');
-                        var productSlider2 = $('.product-selector2 .slider');
+			<div id="pure_boost">
+				<div class="visual">
+					<!-- /images/adidas/event/boost/160809/pure-boost-cut-01.jpg -->
+					<div class="img">
+						<img src="/images/adidas/event/boost/160809/FW16_PBX_Mobile_CLP_Masthead_320x568__tcm65-95370.jpg" alt="">
+					</div>
+					<div class="masthead">
+						<h2 class="adipro-bk">I AM<br/>POSITIVE<br/>ENERGY</h2>
+						<p class="desc">나의 에너지로 즐기다</p>
+						<a href="" class="button icons aft" data-icon="">퓨어부스트X 구매하기</a>
+					</div>
+				</div>
+				<!-- //visual -->
 
-                        productSlider2.on('changed.owl.carousel', function(event) {
-                            var pro_index = $('.product-selector2 .owl-stage-outer .owl-stage .active').index();
+				<div class="statement">
+					<div class="inner">
+						<p>러닝의 모든 스텝을</p>
+						<p>즐거운 에너지로 가득 채우다.</p>
+						<p>내 이름은 PUREBOOST X.</p>
+						<p>나의 에너지를 느껴봐.</p>
+					</div>
+				</div>
+				<!-- //statement -->
 
-                            if(pro_index == 0){
-                                $('.tech_men').hide();
-                                $('.tech_women').fadeIn();
-                                $('.product-selector2 .owl-prev').fadeIn();
-                                $('.product-selector2 .owl-next').fadeOut();
-                            }
-
-                            if(pro_index == 1){
-                                $('.tech_women').hide();
-                                $('.tech_men').fadeIn();
-                                $('.product-selector2 .owl-next').fadeIn();
-                                $('.product-selector2 .owl-prev').fadeOut();
-                            }
-
-                            console.log(pro_index)
-        				});
-
-                        productSlider.on('changed.owl.carousel', function(event) {
-                            var pro_index1 = $('.product-selector .owl-stage-outer .owl-stage .active').index();
-
-                            if(pro_index1 == 0){
-                                $('.product-selector .owl-prev').fadeIn();
-                                $('.product-selector .owl-next').fadeOut();
-                            }
-
-                            if(pro_index1 == 1){
-                                $('.product-selector .owl-next').fadeIn();
-                                $('.product-selector .owl-prev').fadeOut();
-                            }
-
-                            console.log(pro_index1)
-        				});
-
-                        $(document).ready(function(){
-                            $('.product-selector .owl-prev').fadeOut();
-                            $('.product-selector2 .owl-prev').fadeOut();
-                        })
+				<div class="feature">
+					<div class="inner">
+						<div class="desc">
+							<h3 class="adipro-bk">BOOST</h3>
+							<p class="desc">하나의 쿠셔닝으로 압축한<br/>수천 개의 에너지 캡슐이 발산하는<br/>끊임없는 러닝 에너지. 내 이름은 PUREBOOST X,<br/>나의 에너지를 느껴봐.</p>
+						</div>
+						<div class="shoes">
+							<img src="/images/adidas/event/boost/160809/FW16_PBX_Mobile_CLP_Feature_ContentImage_960x800_tcm65-97740.png" alt="">
+						</div>
+					</div>
+				</div>
+				<!-- //feature -->
 
 
-                        productSlider.owlCarousel({
-        					items : 1,
-        					merge: true,
-        					loop : false,
-                            smartSpeed : 600,
-                            nav : true
-        				});
+				<div class="teaser">
+					<img src="/images/adidas/event/boost/160809/FW16_PBX_Mobile_CLP_Feature_640x800_tcm65-95371.jpg" alt="">
+					<div class="inner">
+						<div class="desc">
+							<h4 class="adipro-bk">MESH UPPER</h4>
+							<p>발을 편하게 숨쉬게 하는 메쉬 소재로<br/>쾌적하고 시원한 러닝을 경험해보세요.</p>
+						</div>
+					</div>
+				</div>
+				<!-- //feature -->
 
-                        productSlider2.owlCarousel({
-        					items : 1,
-        					merge: true,
-        					loop : false,
-                            smartSpeed : 600,
-                            nav : true
-        				});
+				<div class="teaser">
+					<img src="/images/adidas/event/boost/160809/FW16_PBX_Mobile_CLP_Feature2_640x800_tcm65-95372.jpg" alt="">
+					<div class="inner">
+						<div class="desc">
+							<h4 class="adipro-bk">FLOATING ARCH</h4>
+							<p>신는 순간 러너의 발을 완벽히 감싸는 플로팅 아치의<br/>완벽한 핏을 느껴보세요.</p>
+						</div>
+					</div>
+				</div>
+				<!-- //feature -->
 
-                        var scrollF = function(){
+				<div class="button_wrap">
+					<a href="" class="button icons aft" data-icon="">퓨어부스트X 구매하기</a>
+				</div>
 
-                            var scrollArray = [];
-                            // var thisPos = $(this).scrollTop();
-                            var scrollCon = document.querySelectorAll('.scrollbox');
+				<div class="boost_slider_wrap">
+					<div class="tit_box">
+						<h5 class="adipro-bk">NEVER COMPROMISE<br/>ON STYLE</h5>
+						<p>당신의 룩에 즐거운 에너지를 더해보세요.</p>
+					</div>
 
-                            for(var i = 0; i < scrollCon.length; i++){
-                                var mypos = scrollCon[i].offsetTop;
-                                scrollArray.push(mypos);
-                            }
+					<div class="slider" id="boost-slider">
+						<ul>
+							<li><img src="/images/adidas/event/boost/160809/pure-boost-cut-01.jpg" alt=""></li>
+							<li><img src="/images/adidas/event/boost/160809/pure-boost-cut-02.jpg" alt=""></li>
+							<li><img src="/images/adidas/event/boost/160809/pure-boost-cut-03.jpg" alt=""></li>
+							<li><img src="/images/adidas/event/boost/160809/pure-boost-cut-04.jpg" alt=""></li>
+							<li><img src="/images/adidas/event/boost/160809/pure-boost-cut-05.jpg" alt=""></li>
+							<li><img src="/images/adidas/event/boost/160809/pure-boost-cut-06.jpg" alt=""></li>
+							<li><img src="/images/adidas/event/boost/160809/pure-boost-cut-07.jpg" alt=""></li>
+							<li><img src="/images/adidas/event/boost/160809/pure-boost-cut-08.jpg" alt=""></li>
+							<li><img src="/images/adidas/event/boost/160809/pure-boost-cut-09.jpg" alt=""></li>
+						</ul>
+					</div>
 
-                            for(var pos = 0; pos < scrollArray.length; pos++){
-                                var thisPos = $(this).scrollTop()+400 ;
-                                if(thisPos >= scrollArray[pos]){
-                                    $('.scrollbox').eq(pos).addClass('on');
-                                }
-                            }
-                        }
+					<div class="num">
+						<span class="on"></span>
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+				</div>
 
-                        $(window).scroll(scrollF);
+
+			</div>
+			<!-- //pure_boost -->
+
+			<script type="text/javascript">
+				(function($){
+
+					(function render(){
+
+						var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+
+						// if(scrollTop + window.innerHeight*0.5){
+
+						// }
+
+						requestAnimationFrame(render);
+
+					})();
 
 
+					var mainSwipe = Swipe(document.getElementById('boost-slider'),{
+						stopPropagation: true,
+						callback : function(index , element){
+							$('#pure_boost .boost_slider_wrap .num span').removeClass('on').eq(index).addClass('on');
+						}
+					});
 
-                    })(jQuery);
 
-                </script>
-            </div>
-            <!-- //iniki -->
+				})(jQuery);
+			</script>
+
 
 		</div>
 		<!-- //container product_list -->
@@ -723,29 +792,81 @@
 
 	<script type="text/javascript" src="/js/adidas/common.js"></script>
 	<script type="text/javascript">
-
-		var openPopInStock;
 		(function($){
+			$(document).ready(function() {
 
-			openPopInStock = function(){
-				$('#instock-notification-popup').addClass('open');
-			};
+				$('.odr_pay_box>.tit.toggle_arw').bind('click',function(){
+					if($(this).hasClass('open')){
+						$(this).removeClass('open');
+						$(this).siblings('.cont').hide();
+					}else{
+						$(this).addClass('open');
+						$(this).siblings('.cont').show();
+					}
+				});
 
-			$('.view_type_btn a').bind('click',function(){
-				if($(this).hasClass('on')){
-					return;
-				}
+				$('.adr_history .tab_box .tab_btn>div').bind('click',function(){
+					if($(this).hasClass('on')){
+						return false;
+					}
 
-				if($(this).hasClass('box_type')){
-					$('.products_list').removeClass('list_type')
-				}else{
-					$('.products_list').addClass('list_type');
-				}
+					$('.adr_history .tab_box .tab_btn>div').removeClass('on');
+					$(this).addClass('on');
+					$('.adr_history .tab_box .tab_cont>.box').removeClass('active');
+					$('.adr_history .tab_box .tab_cont>.box').eq($(this).index()).addClass('active');
+					return false;
+				});
 
-				$('.view_type_btn a').removeClass('on');
-				$(this).addClass('on');
+				/* 결제수단 선택 */
+				$('.select_payment .payment_list>div').bind('click',function(){
+					if($(this).hasClass('on')){
+						return false;
+					}
+
+					var attrClass = $(this).attr('class');
+					$('.select_payment .payment_list>div').removeClass('on');
+					$(this).addClass('on');
+
+					if(attrClass == 'p_kp'){
+						$('.select_payment .payments').hide();
+						$('#cardReport_choice2').show();
+					}else if(attrClass == 'p_mo'){
+						$('.select_payment .payments').hide();
+						$('#mobile_payment').show();
+					}else if(attrClass == 'p_acc'){
+						$('.select_payment .payments').hide();
+						$('#no_accbox').show();
+					}else{
+						$('.select_payment .payments').hide();
+					}
+
+					return false;
+				});
+
+				/* 현금영수증 신청 */
+				$('#CASH_RECPT_APPLY_Y').bind('click',function(){
+					$('#cashReport_choice').show();
+				});
+				$('#CASH_RECPT_APPLY_N').bind('click',function(){
+					$('#cashReport_choice').hide();
+				});
+
+				/* 개인소득 공제 */
+				$('#CASH_RECPT_PUBL_PRPOS_01').bind('click',function(){
+					$('#cashReport_bizr').hide();
+					$('#cashReport_phn').css({
+						display : 'table-row'
+					});
+				});
+
+				/* 사업자 증빙 */
+				$('#CASH_RECPT_PUBL_PRPOS_02').bind('click',function(){
+					$('#cashReport_phn').hide();
+					$('#cashReport_bizr').css({
+						display : 'table-row'
+					});
+				});
 			});
-
 		})(jQuery);
 
 	</script>

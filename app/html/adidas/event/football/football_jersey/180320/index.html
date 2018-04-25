@@ -11,82 +11,15 @@
 	<link href="/css/adidas/style.css" type="text/css" rel="stylesheet" />
 	<link href="/css/adidas/fonts.css" type="text/css" rel="stylesheet" />
 
-	<link rel="preload" href="/fonts/adineuePro/woff/adineuePRO-Bold.woff" as="font">
-
 	<script type="text/javascript" src="/js/jquery-1.12.0.min.js"></script>
+	<script type="text/javascript" src="/js/owl.carousel.min.js"></script>
 	<script type="text/javascript" src="/js/swipe.js"></script>
-	<script type="text/javascript" src="/js/owl.carousel.js"></script>
+	<script type="text/javascript" src="/js/zoomImage.js"></script>
 
 
 	<title>아디다스 모바일</title>
 </head>
 <body>
-
-	<div class="modal-popup" id="instock-notification-popup">
-		<div class="popup-contents">
-			<a href="javascript:void(0)" class="close_x_btn" onclick="jQuery(this).parent().parent().removeClass('open');"></a>
-			<div class="instock-notification">
-				<div class="tit adipro-b">
-					<div class="icons" data-icon=""></div>coming soon
-				</div>
-				<div class="desc">휴대전화 번호를 남겨 주시면,<br/>제품 입고시 문자로 알려드립니다.</div>
-
-				<div class="phone">
-					<div class="sel_cmtype sel_design">
-						<a href="#" class="toggle_arw s_arw" ><span>010</span></a>
-						<select name="" id="">
-							<option value="2" selected="">010</option>
-							<option value="1">011</option>
-							<option value="5">016</option>
-							<option value="3">017</option>
-							<option value="4">019</option>
-						</select>
-					</div>
-					<input type="tel">
-					<input type="tel">
-				</div>
-
-				<div class="agr_box">
-					<div class="chk_wrap">
-						<div class="chk_box1 blue">
-							<input type="checkbox" id="agr_for_credit" name="SMS_RET_YN" value="Y">
-							<label for="agr_for_credit" class="adipro-r">개인정보 제공동의</label>
-						</div>
-					</div>
-					<a href="javascript:void(0)" class="icons aft" data-icon="" onclick="if(jQuery(this).hasClass('open')){jQuery('.instock-notification .terms').hide();jQuery(this).removeClass('open')}else{jQuery('.instock-notification .terms').show();jQuery(this).addClass('open')}">자세히보기</a>
-				</div>
-				<!-- //agr_box -->
-
-				<div class="terms">
-					<div class="cont">
-						<dl>
-							<dt>개인정보의 수집이용목적 : </dt>
-							<dd>아디다스 제품 입고 알림</dd>
-						</dl>
-						<dl>
-							<dt>수집되는 개인정보 : </dt>
-							<dd>휴대전화번호</dd>
-						</dl>
-						<dl>
-							<dt>보유기간 : </dt>
-							<dd>입고알림 이후 30일 까지(본 보유기간은 아디클럽 회원이 아닌 경우에 한함)</dd>
-						</dl>
-       					<ul class="li_hypn">
-       						<li>아래 동의를 거부할 수 있습니다. 다만 그러한 경우, 아디다스제품이 입고되는 시점에 대한 정보를 우선적으로 전달받으실 수 없습니다. 단, “통신사 사정으로 인한 발송, 수신오류, 고객휴대폰의 스팸등록 등으로 인해 SMS가 전달되지 않을 수 있으며 이러한 경우 아디다스코리아가 책임지지 않습니다.”</li>
-       						<li>입력해주신 휴대폰번호로 안내하겠습니다.</li>
-       					</ul>
-
-					</div>
-				</div>
-
-				<div class="btn_area">
-					<a class="submit">신청하기</a>
-				</div>
-
-			</div>
-			<!-- //instock-notification -->
-		</div>
-	</div>
 
 	<div id="wrap">
 		<div id="header" style="position: relative;">
@@ -98,7 +31,12 @@
 						<a href="#" class="join"><span class="icons" data-icon=""></span>회원가입</a>
 					</div>
 
-
+					<!-- <div class="u_info1">
+						<div class="user_box">
+							<p class="greet bronze"><span class="m">B</span>홍길동님 반갑습니다.</p>
+							<p class="noti">쿠폰 사용기간이 얼마 남지 않았습니다.</p>
+						</div>
+					</div> -->
 					<div class="u_info2">
 						<a href="#">마이페이지</a>
 						<a href="#">주문배송조회 <span>1</span></a>
@@ -499,196 +437,239 @@
 
 		<div id="container">
 
-            <div id="trailrun_package">
+			<div class="main_tit">
+				<p>NEW FEDERATION</p>
+				<p class="b">JERSEYS</p>
+				<span>새로운 페더레이션 저지를 소개합니다.</span>
+			</div>
 
-                <div class="masthead">
-                    <div class="img">
-                        <img src="/images/adidas/event/trailrun_package/video.jpg" alt="">
-                        <a href="javascript:void(0)" onclick="openModalVideoViewer('NdZRxtoUkPw')"></a>
+			<div class="homeaway">
+				<ul>
+					<li><a href="javascript:void(0)">Home</a></li>
+					<li class="on"><a href="javascript:void(0)">Away</a></li>
+				</ul>
+			</div>
+
+            <div id="footer_180103" class="homeaway-tap">
+
+                <div class="logos">
+                    <ul>
+                        <li class="logo1 on"><div>1</div></li>
+                        <li class="logo3"><div>3</div></li>
+                        <li class="logo4"><div>4</div></li>
+                        <li class="logo5"><div>5</div></li>
+                    </ul>
+                </div>
+
+                <div class="inn on">
+                    <div class="main">
+                        <a href="#">
+                            <img src="/images/adidas/event/football/jerseys_180103/1_main.jpg" alt="">
+                        </a>
+                    </div>
+                    <div class="box" id="box1">
+                        <div class="bg"><a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=461&term=1"><img src="/images/adidas/event/football/jerseys_180103/1_box1.jpg" alt=""></a></div>
+                    </div>
+                    <div class="box" id="box2">
+                        <div class="bg"><a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=461&term=1"><img src="/images/adidas/event/football/jerseys_180103/1_box2.jpg" alt=""></a></div>
+                    </div>
+                    <div class="box" id="box3">
+                        <img src="/images/adidas/event/football/jerseys_180103/1_box3.jpg" alt="">
+                    </div>
+                    <div class="box" id="box4">
+                        <a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=461&term=1">
+                            <img src="/images/adidas/event/football/jerseys_180103/1_box4.jpg" alt="">
+                        </a>
                     </div>
                 </div>
 
-                <div class="cont1">
-                    <h3>트레일 러닝화,<br />
-                            <span>TERREX TWO BOA</span>
-                        <a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=571" class="button">구매하기</a>
-                    </h3>
-                    <div class="bg">
-                        <img src="/images/adidas/event/trailrun_package/cont1_bg.jpg" alt="">
-                    </div>
+                <div class="banners">
+                    <div class="ban"><a href="#"><img src="/images/adidas/event/football/jerseys_180103/banner1.jpg" alt=""></a></div>
+                    <div class="ban"><a href="#"><img src="/images/adidas/event/football/jerseys_180103/banner2.jpg" alt=""></a></div>
+                    <div class="ban"><a href="#"><img src="/images/adidas/event/football/jerseys_180103/banner3.jpg" alt=""></a></div>
                 </div>
 
-                <div class="product-selector scrollbox">
-                    <div class="slider">
-                        <div class="box">
-                            <div class="prod"><img src="/images/adidas/event/trailrun_package/slide1_01.png" /></div>
-                        </div>
-                        <div class="box">
-                            <div class="prod"><img src="/images/adidas/event/trailrun_package/slide1_02.png" /></div>
-                        </div>
-                    </div>
-                </div>
+			</div>
 
-                <div class="cont2 scrollbox">
-                    <div class="img_box1">
-                        <img src="/images/adidas/event/trailrun_package/cont2_01.png" alt="">
-                    </div>
-                    <div class="txt_box1">
-                        <img src="/images/adidas/event/trailrun_package/boa_txt.png" alt="">
-                    </div>
-                    <div class="txt_box1">
-                        <img src="/images/adidas/event/trailrun_package/conti_txt.png" alt="">
-                    </div>
-                    <div class="img_box2">
-                        <img src="/images/adidas/event/trailrun_package/cont2_02.jpg" alt="">
-                    </div>
-                    <div class="txt_box2">
-                        <img src="/images/adidas/event/trailrun_package/zero_txt.png" alt="">
-                    </div>
-                    <div class="bg">
-                        <img src="/images/adidas/event/trailrun_package/cont2_bg.jpg" alt="">
-                    </div>
-                </div>
+			<div id="footer_180320" class="homeaway-tap on">
 
-                <div class="cont3 scrollbox">
-                        <h3>테렉스 트레일 러닝 아그라빅 탑<br />
-                            & 투인원 쇼츠<br />
-							<span>TRAIL RUNNING<br />
-                                AGRAVIC TOP<br />
-							& 2IN1 SHORTS</span>
-                            <a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=571" class="button">구매하기</a>
-						</h3>
-                        <div class="img_box">
-                            <img src="/images/adidas/event/trailrun_package/cont3_01.png" alt="">
-                        </div>
-                        <div class="img_box">
-                            <img src="/images/adidas/event/trailrun_package/cont3_txt.png" alt="">
-                        </div>
-                </div>
+				<div class="logos">
+					<ul>
+						<li class="logo1_away on"><div>1</div></li>
+						<li class="logo3_away"><div>3</div></li>
+						<li class="logo4_away"><div>4</div></li>
+						<li class="logo5_away"><div>5</div></li>
+					</ul>
+				</div>
 
-                <div class="product-selector2 scrollbox">
-                    <div class="slider">
-                        <div class="box">
-                            <div class="prod"><img src="/images/adidas/event/trailrun_package/slide2_01.png" /></div>
-                        </div>
-                        <div class="box">
-                            <div class="prod"><img src="/images/adidas/event/trailrun_package/slide2_02.png" /></div>
-                        </div>
-                    </div>
-                </div>
+				<div class="inn on">
+					<div class="main">
+						<a href="#">
+							<img src="/images/adidas/event/football/football_jersey/180320/1_main.jpg" alt="">
+						</a>
+					</div>
+					<div class="box" id="box5">
+						<div class="bg"><a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=461&term=1"><img src="/images/adidas/event/football/football_jersey/180320/1_box1.jpg" alt=""></a></div>
+					</div>
+					<div class="box" id="box6">
+						<div class="bg"><a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=461&term=1"><img src="/images/adidas/event/football/football_jersey/180320/1_box2.jpg" alt=""></a></div>
+					</div>
+					<div class="box" id="box7">
+						<img src="/images/adidas/event/football/football_jersey/180320/1_box3.jpg" alt="">
+					</div>
+					<div class="box" id="box8">
+						<a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=461&term=1">
+							<img src="/images/adidas/event/football/football_jersey/180320/1_box4.jpg" alt="">
+						</a>
+					</div>
+				</div>
 
-                <div class="techwrap scrollbox">
-                    <div class="tech_men" style="display:block;">
-                        <img src="/images/adidas/event/trailrun_package/tech_men.png" />
-                    </div>
+				<div class="banners">
+					<div class="ban"><a href="#"><img src="/images/adidas/event/football/jerseys_180103/banner1.jpg" alt=""></a></div>
+					<div class="ban"><a href="#"><img src="/images/adidas/event/football/jerseys_180103/banner2.jpg" alt=""></a></div>
+					<div class="ban"><a href="#"><img src="/images/adidas/event/football/jerseys_180103/banner3.jpg" alt=""></a></div>
+				</div>
 
-                    <div class="tech_women">
-                        <img src="/images/adidas/event/trailrun_package/tech_women.png" />
-                    </div>
-                </div>
-
-                <div class="bottom">
-                    <img src="/images/adidas/event/trailrun_package/parley_logo.png" />
-                </div>
+			</div>
 
 
+            <script type="text/javascript">
 
+                (function($){
 
-                <script type="text/javascript">
+					function jerseyTab(){
+						$('.homeaway li').removeClass('on').eq(index).addClass('on');
+						$('.homeaway-tap').removeClass('on').eq(index).addClass('on');
+						$('.homeaway-tap').fadeOut().eq(index).fadeIn();
+					}
 
-                    (function($){
-                        var productSlider = $('.product-selector .slider');
-                        var productSlider2 = $('.product-selector2 .slider');
+					$('.homeaway li').bind('click',function(){
+						index = $(this).index();
+						if($(this).hasClass('on')){
+							return;
+						}else{
+							jerseyTab();
+						}
+					});
 
-                        productSlider2.on('changed.owl.carousel', function(event) {
-                            var pro_index = $('.product-selector2 .owl-stage-outer .owl-stage .active').index();
+                    var youtubeid = "openModalVideoViewer('BSnJJo7KtR4')";
+                    var aaa = 'aaa0';
+        			var main =[
+        				'<a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=461&term=1"><img src="/images/adidas/event/football/jerseys_180103/1_main.jpg"></a>',
+        				'<a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=462&term=1"><img src="/images/adidas/event/football/jerseys_180103/3_main.jpg"></a>',
+        				'<a href="javascript:void(0)" class="readyprd"><img src="/images/adidas/event/football/jerseys_180103/4_main.jpg"></a>',
+        				'<a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=465&term=1"><img src="/images/adidas/event/football/jerseys_180103/5_main.jpg"></a>'
+        			]
+        			var main2 =[
+        				'<a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=461&term=1"><img src="/images/adidas/event/football/football_jersey/180320/1_main.jpg"></a>',
+        				'<a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=462&term=1"><img src="/images/adidas/event/football/football_jersey/180320/3_main.jpg"></a>',
+        				'<a href="javascript:void(0)" class="readyprd"><img src="/images/adidas/event/football/football_jersey/180320/4_main.jpg"></a>',
+        				'<a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=465&term=1"><img src="/images/adidas/event/football/football_jersey/180320/5_main.jpg"></a>'
+        			]
+        			var box1 =[
+        				'<a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=461&term=1"><img src="/images/adidas/event/football/jerseys_180103/1_box1.jpg"></a>',
+        				'<a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=462&term=1"><img src="/images/adidas/event/football/jerseys_180103/3_box1.jpg"></a>',
+        				'<a class="readyprd" href="javascript:void(0)"><img src="/images/adidas/event/football/jerseys_180103/4_box1.jpg"></a>',
+        				'<a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=465&term=1"><img src="/images/adidas/event/football/jerseys_180103/5_box1.jpg"></a>'
+        			]
+        			var box2 =[
+        				'<a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=461&term=1"><img src="/images/adidas/event/football/jerseys_180103/1_box2.jpg"></a>',
+        				'<div class="german"><a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=462&term=1"></a><img  onclick='+youtubeid+' src="/images/adidas/event/football/jerseys_180103/3_box2.jpg"></div>',
+        				'<a class="readyprd" href="javascript:void(0)"><img src="/images/adidas/event/football/jerseys_180103/4_box2.jpg"></a>',
+        				'<a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=465&term=1"><img src="/images/adidas/event/football/jerseys_180103/5_box2.jpg"></a>'
+        			]
+        			var box3 =[
+        				'<img src="/images/adidas/event/football/jerseys_180103/1_box3.jpg">',
+        				'<img src="/images/adidas/event/football/jerseys_180103/3_box3.jpg">',
+        				'<img src="/images/adidas/event/football/jerseys_180103/4_box3.jpg">',
+        				'<img src="/images/adidas/event/football/jerseys_180103/5_box3.jpg">'
+        			]
+        			var box4 =[
+        				'<a href=http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=461&term=1""><img src="/images/adidas/event/football/jerseys_180103/1_box4.jpg"></a>',
+        				'<a href=http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=462&term=1""><img src="/images/adidas/event/football/jerseys_180103/3_box4.jpg"></a>',
+        				'<a class="readyprd" href="javascript:void(0)"><img src="/images/adidas/event/football/jerseys_180103/4_box4.jpg"></a>',
+        				'<a href=http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=465&term=1""><img src="/images/adidas/event/football/jerseys_180103/5_box4.jpg"></a>'
+        			]
+        			var box5 =[
+        				'<a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=461&term=1"><img src="/images/adidas/event/football/football_jersey/180320/1_box1.jpg"></a>',
+        				'<a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=462&term=1"><img src="/images/adidas/event/football/football_jersey/180320/3_box1.jpg"></a>',
+        				'<a class="readyprd" href="javascript:void(0)"><img src="/images/adidas/event/football/football_jersey/180320/4_box1.jpg"></a>',
+        				'<a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=465&term=1"><img src="/images/adidas/event/football/football_jersey/180320/5_box1.jpg"></a>'
+        			]
+        			var box6 =[
+        				'<a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=461&term=1"><img src="/images/adidas/event/football/football_jersey/180320/1_box2.jpg"></a>',
+        				'<a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=462&term=1"><img src="/images/adidas/event/football/football_jersey/180320/3_box2.jpg"></a>',
+        				'<a class="readyprd" href="javascript:void(0)"><img src="/images/adidas/event/football/football_jersey/180320/4_box2.jpg"></a>',
+        				'<a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=465&term=1"><img src="/images/adidas/event/football/football_jersey/180320/5_box2.jpg"></a>'
+        			]
+        			var box7 =[
+        				'<img src="/images/adidas/event/football/football_jersey/180320/1_box3.jpg">',
+        				'<img src="/images/adidas/event/football/football_jersey/180320/3_box3.jpg">',
+        				'<img src="/images/adidas/event/football/football_jersey/180320/4_box3.jpg">',
+        				'<img src="/images/adidas/event/football/football_jersey/180320/5_box3.jpg">'
+        			]
+        			var box8 =[
+        				'<a href=http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=461&term=1""><img src="/images/adidas/event/football/football_jersey/180320/1_box4.jpg"></a>',
+        				'<a href=http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=462&term=1""><img src="/images/adidas/event/football/football_jersey/180320/3_box4.jpg"></a>',
+        				'<a class="readyprd" href="javascript:void(0)"><img src="/images/adidas/event/football/football_jersey/180320/4_box4.jpg"></a>',
+        				'<a href=http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=465&term=1""><img src="/images/adidas/event/football/football_jersey/180320/5_box4.jpg"></a>'
+        			]
+                    console.log('aaa')
 
-                            if(pro_index == 0){
-                                $('.tech_men').hide();
-                                $('.tech_women').fadeIn();
-                                $('.product-selector2 .owl-prev').fadeIn();
-                                $('.product-selector2 .owl-next').fadeOut();
-                            }
+                    $('#footer_180103 .logos ul li').click(function(){
 
-                            if(pro_index == 1){
-                                $('.tech_women').hide();
-                                $('.tech_men').fadeIn();
-                                $('.product-selector2 .owl-next').fadeIn();
-                                $('.product-selector2 .owl-prev').fadeOut();
-                            }
+                        var index = $(this).index();
+                        $('.inn').fadeOut();
+                        setTimeout(function(){
+                            $('.inn').fadeIn();
+                        },100)
+                        setTimeout(function(){
+                            $('#footer_180103 .logos ul li').removeClass('on').eq(index).addClass('on');
+                            $('#footer_180103 .main').html(main[index]);
+                            $('#box1').html(box1[index]);
+                            $('#box2').html(box2[index]);
+                            $('#box3').html(box3[index]);
+                            $('#box4').html(box4[index]);
 
-                            console.log(pro_index)
-        				});
+                            $('.readyprd').click(function(){
+                                alert('준비 중입니다.');
+                                console.log('aaa')
+                            });
+                        },400)
+                    });
 
-                        productSlider.on('changed.owl.carousel', function(event) {
-                            var pro_index1 = $('.product-selector .owl-stage-outer .owl-stage .active').index();
+                    $('#footer_180320 .logos ul li').click(function(){
 
-                            if(pro_index1 == 0){
-                                $('.product-selector .owl-prev').fadeIn();
-                                $('.product-selector .owl-next').fadeOut();
-                            }
+                        var index = $(this).index();
+                        $('.inn').fadeOut();
+                        setTimeout(function(){
+                            $('.inn').fadeIn();
+                        },100)
+                        setTimeout(function(){
+                            $('#footer_180320 .logos ul li').removeClass('on').eq(index).addClass('on');
+                            $('#footer_180320 .main').html(main2[index]);
+                            $('#box5').html(box5[index]);
+                            $('#box6').html(box6[index]);
+                            $('#box7').html(box7[index]);
+                            $('#box8').html(box8[index]);
 
-                            if(pro_index1 == 1){
-                                $('.product-selector .owl-next').fadeIn();
-                                $('.product-selector .owl-prev').fadeOut();
-                            }
+                            $('.readyprd').click(function(){
+                                alert('준비 중입니다.');
+                                console.log('aaa')
+                            });
+                        },400)
+                    });
 
-                            console.log(pro_index1)
-        				});
+                })(jQuery)
 
-                        $(document).ready(function(){
-                            $('.product-selector .owl-prev').fadeOut();
-                            $('.product-selector2 .owl-prev').fadeOut();
-                        })
+            </script>
 
-
-                        productSlider.owlCarousel({
-        					items : 1,
-        					merge: true,
-        					loop : false,
-                            smartSpeed : 600,
-                            nav : true
-        				});
-
-                        productSlider2.owlCarousel({
-        					items : 1,
-        					merge: true,
-        					loop : false,
-                            smartSpeed : 600,
-                            nav : true
-        				});
-
-                        var scrollF = function(){
-
-                            var scrollArray = [];
-                            // var thisPos = $(this).scrollTop();
-                            var scrollCon = document.querySelectorAll('.scrollbox');
-
-                            for(var i = 0; i < scrollCon.length; i++){
-                                var mypos = scrollCon[i].offsetTop;
-                                scrollArray.push(mypos);
-                            }
-
-                            for(var pos = 0; pos < scrollArray.length; pos++){
-                                var thisPos = $(this).scrollTop()+400 ;
-                                if(thisPos >= scrollArray[pos]){
-                                    $('.scrollbox').eq(pos).addClass('on');
-                                }
-                            }
-                        }
-
-                        $(window).scroll(scrollF);
-
-
-
-                    })(jQuery);
-
-                </script>
-            </div>
-            <!-- //iniki -->
+            <div class="go_top">
+				<a href="#">BACK TO TOP</a>
+			</div>
 
 		</div>
-		<!-- //container product_list -->
+		<!-- //container product_view -->
 
 		<div id="footer">
 			<div class="f_menu">
@@ -720,33 +701,7 @@
 	</div>
 
 	<script type="text/javascript" src="/js/adidas/common.js"></script>
-	<script type="text/javascript">
 
-		var openPopInStock;
-		(function($){
-
-			openPopInStock = function(){
-				$('#instock-notification-popup').addClass('open');
-			};
-
-			$('.view_type_btn a').bind('click',function(){
-				if($(this).hasClass('on')){
-					return;
-				}
-
-				if($(this).hasClass('box_type')){
-					$('.products_list').removeClass('list_type')
-				}else{
-					$('.products_list').addClass('list_type');
-				}
-
-				$('.view_type_btn a').removeClass('on');
-				$(this).addClass('on');
-			});
-
-		})(jQuery);
-
-	</script>
 
 </body>
 
