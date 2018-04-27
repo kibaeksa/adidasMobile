@@ -1,8 +1,6 @@
  <!DOCTYPE html>
 <html>
 <head>
-    <script type="text/javascript" src="/data/eventRouter.js"></script>
-
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
 	<meta name="format-detection" content="telephone=no">
@@ -10,8 +8,6 @@
 
 	<link href="/css/adidas/style.css" type="text/css" rel="stylesheet" />
 	<link href="/css/adidas/fonts.css" type="text/css" rel="stylesheet" />
-
-	<link rel="preload" href="/fonts/adineuePro/woff/adineuePRO-Bold.woff" as="font">
 
 	<script type="text/javascript" src="/js/jquery-1.12.0.min.js"></script>
 	<script type="text/javascript" src="/js/swipe.js"></script>
@@ -21,7 +17,6 @@
 	<title>아디다스 모바일</title>
 </head>
 <body>
-
 	<div id="wrap">
 		<div id="header" style="position: relative;">
 			<div class="nav_menu">
@@ -437,152 +432,331 @@
 		</div>
 
 		<div id="container">
+			<style type="text/css">
+				#pure_boost{
+					width: 100%;
+					min-height: 100vh;
+					position: relative;
+				}
 
-			<div id="alphabounce">
+				#pure_boost .button{
+					padding: 10px 20px 10px 10px;
+					display: inline-block;
+					background: #fff !important;
+					color: #000 !important;
+					font-size: 13px;
+				}
 
-                <div class="top">
-                    <h2><img src="/images/adidas/event/alpha/alphabounce/top_logo.png" alt=""></h2>
-                    <div id="customise_top">
-                        <!-- <img src="/images/adidas/event/alpha/alphabounce/main.jpg" alt=""> -->
+				#pure_boost .button::after{
+					vertical-align: middle;
+					margin-left: 10px;
+				}
 
-                        <video src="/images/adidas/event/alpha/alphabounce/video.mp4" loop muted autoplay playsinline></video>
-                    </div>
-                    <div class="btn_wrap">
-                        <div class="btn">
-                            <a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=523">남성제품 구매하기</a>
-                            <a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=522">여성제품 구매하기</a>
-                        </div>
-                    </div>
-                </div>
+				#pure_boost .visual{
+					width: 100%;
+					height: 80vh;
+					position: relative;
+					overflow: hidden;
+				}
 
-                <div class="alphabounce_content">
-                    <h2 class="scrollbox">DESIGNED FOR THE DAYS<br>BETWEEN THE GAMES</h2>
-                    <p class="scrollbox">
-                        알파바운스는 각 분야의 스포츠를 지배하는<br>최고의 애슬리트를 위해 설계되었습니다.<br>
-                        다양한 훈련에 필요한 서포트를 제공하는 알파바운스 비욘드는<br>
-                        트레이닝을 통해 선수들이 지닌 잠재력을 최대로 이끌어내는 러닝화입니다.
-                    </p>
-                    <div class="video" onclick="openModalVideoViewer('j-B9RO0euK4')"><img src="/images/adidas/event/alpha/alphabounce/video.jpg"></div>
-                    <div class="btn">
-                        <a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=448">구매하기</a>
-                    </div>
+				#pure_boost .visual .img{
+					width: 100%;
+					height: 100%;
+					position: absolute;
+					top: 0;
+					left: 0;
+					overflow: hidden;
+				}
 
-                    <p class="title" style="padding: 40px 0 30px;">게임을 지배하는 퍼포먼스<br>평범한 바운스를 뛰어넘다</p>
-                    <div class="banner scrollbox">
-                        <div class="img"><img src="/images/adidas/event/alpha/alphabounce/banner1.jpg" alt=""></div>
-                        <p class="title">탄력 넘치는 쿠셔닝</p>
-                        <p>강력한 기능성의 경량 EVA 미드솔로 매 스텝 더욱 탄력 넘치는 움직임.</p>
-                    </div>
-                    <div class="banner scrollbox">
-                        <div class="img"><img src="/images/adidas/event/alpha/alphabounce/banner2.jpg" alt=""></div>
-                        <p class="title">단단한 접지력</p>
-                        <p>미끄럽거나 건조한 지면 어디에서나 안정적인 접지력과<br>내구성을 자랑하는 컨티넨탈 러버™ 아웃솔.</p>
-                    </div>
-                    <div class="banner scrollbox">
-                        <div class="img"><img src="/images/adidas/event/alpha/alphabounce/banner3.jpg" alt=""></div>
-                        <p class="title">빈틈없는 서포트</p>
-                        <p>시원한 통기성의 메쉬 갑피와 포지드 존으로<br>어떤 동작에도 완벽한 서포트 & 자유로운 움직임.</p>
-                    </div>
+				#pure_boost .visual img{
+					width: 100%;
+					position: absolute;
+					top: 0;
+					left: 0;
+				}
 
-                    <p class="title">애슬리트들이 말하는<br>알파바운스</p>
-                    <div class="banner scrollbox">
-                        <div class="img"><img src="/images/adidas/event/alpha/alphabounce/video_banner1.jpg" alt="" onclick="openModalVideoViewer('xIelyJ-Wrik')"></div>
-                        <p class="title">데미안 릴라드, <br>농구 코트를 지배하다</p>
-                        <p>날렵한 움직임으로 농구 코트를 지배하는 데미안 릴라드.<br>그의 스프린트 훈련에는 언제나 알파바운스가 함께한다.</p>
-                    </div>
-                    <div class="banner scrollbox">
-                        <div class="img"><img src="/images/adidas/event/alpha/alphabounce/video_banner2.jpg" alt="" onclick="openModalVideoViewer('-7OtJEjwRFo')"></div>
-                        <p class="title">캐롤린 워즈니아키, <br>테니스 코트를 지배하다</p>
-                        <p>급격한 방향 전환에도 흔들림 없이 테니스 코트를 압도하는<br>캐롤린 워즈니아키. 그녀의 풋워크 훈련엔 언제나 알파바운스가 있다.</p>
-                    </div>
+				#pure_boost .visual .masthead{
+					width: 100%;
+					position: absolute;
+					bottom:10%;
+					left: 0;
+					padding: 0 15px;
+					box-sizing: border-box;
+					-webkit-box-sizing: border-box;
+				}
 
-                    <div class="statement">
-                        <div class="bg"><img src="/images/adidas/event/alpha/alphabounce/statement1.jpg" alt="" ></div>
-                        <div class="bg">
-                            <img src="/images/adidas/event/alpha/alphabounce/statement2.jpg" alt="" >
-                            <div class="txt">
-                                <p class="title">정상을 넘어 더 높은 곳으로</p>
-                                <p>각 분야에서 최고의 자리에 오른 그들이<br>스포츠를 지배하는 노하우</p>
-                                <div class="btn"><a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=448">구매하기</a></div>
-                            </div>
-                        </div>
-                    </div>
+				#pure_boost .visual .masthead * {
+					color: #fff;
+				}
 
-                    <div class="box scrollbox">
-                        <div><img src="/images/adidas/event/alpha/alphabounce/col1.jpg" alt=""></div>
-                    </div>
+				#pure_boost .visual .masthead h2,
+				#pure_boost .feature .desc h3,
+				#pure_boost .teaser .desc h4,
+				#pure_boost .boost_slider_wrap .tit_box h5{
+					margin-bottom: 5px;
+					font-size:26px;
+					line-height: 28px;
+				}
 
-                    <div class="box scrollbox">
-                        <div><img src="/images/adidas/event/alpha/alphabounce/col2.jpg" alt=""></div>
-                        <div class="txt">
-                            <p class="title">러닝으로 게임을 지배하다 </p>
-                            <div class="btn"><a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=523">남성 제품 구매하기</a></div>
-                            <div class="btn"><a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=522">여성 제품 구매하기</a></div>
-                        </div>
-                    </div>
+				#pure_boost .visual .masthead p{
+					margin-bottom: 15px;
+					font-size: 16px;
+				}
 
-                    <div class="box scrollbox">
-                        <div><img src="/images/adidas/event/alpha/alphabounce/col3.jpg" alt=""></div>
-                    </div>
+				#pure_boost .statement{
+					padding: 30px 0;
+					text-align: center;
+					font-size: 14px;
+					line-height: 18px;
+					background:url('/images/adidas/event/boost/160809/pure-boost-cut-01.jpgFW16_PBX_Mobile_CLP_Statement3_320x360_tcm65-98269.jpg') 0 0 no-repeat;
+					background-size: cover;
+				}
 
-                    <div class="bottom_logo scrollbox">
-                        <img src="/images/adidas/event/alpha/alphabounce/logo.png" alt="" style="width:100%;">
-                    </div>
+				#pure_boost .feature{
+					width: 100%;
+					padding: 20px 20px 0;
+					box-sizing: border-box;
+					-webkit-box-sizing: border-box;
+					background:url('/images/adidas/event/boost/160809/pure-boost-cut-01.jpgFW16_PBX_Mobile_CLP_Feature_Background_800x800_tcm65-95379.jpg') 0 0 no-repeat;
+					background-size: cover;
+				}
 
-                </div>
+				#pure_boost .feature .shoes img{
+					width: 100%;
+				}
 
 
+				#pure_boost .feature .desc{
+					margin-bottom: 15px;
+				}
+
+				#pure_boost .feature .desc *{
+					color: #fff;
+				}
+
+				#pure_boost .feature .desc p,
+				#pure_boost .teaser .desc p{
+					font-size: 13px;
+					line-height: 18px;
+				}
+
+				#pure_boost .teaser{
+					position: relative;
+				}
+
+				#pure_boost .teaser>img{
+					width: 100%;
+				}
+
+				#pure_boost .teaser .desc{
+					width: 100%;
+					position: absolute;
+					bottom:30px;
+					left: 0;
+				}
+
+				#pure_boost .teaser .desc *{
+					color: #fff;
+					text-align: center;
+				}
+
+				#pure_boost .button_wrap{
+					border-top: 1px solid  #222;
+					padding: 30px 0;
+					background: #000;
+					text-align: center;
+				}
+
+				#pure_boost .boost_slider_wrap{
+					padding-bottom: 30px;
+				}
+
+				#pure_boost .boost_slider_wrap .tit_box{
+					padding: 30px 0;
+					text-align: center;
+					font-size: 14px;
+					line-height: 18px;
+					background:url('/images/adidas/event/boost/160809/pure-boost-cut-01.jpgFW16_PBX_Mobile_CLP_Statement3_320x360_tcm65-98269.jpg') 0 0 no-repeat;
+					background-size: cover;
+				}
+
+				#pure_boost .boost_slider_wrap .tit_box h5{
+					line-height: 26px;
+				}
+
+				#pure_boost .boost_slider_wrap .tit_box p{
+					font-size: 13px;
+				}
+
+				#pure_boost .boost_slider_wrap .slider{
+					position: relative;
+				}
+
+				#pure_boost .boost_slider_wrap .slider ul{
+					width: 100%;
+					position: relative;
+					overflow: hidden;
+				}
+
+				#pure_boost .boost_slider_wrap .slider ul li{
+					width: 100%;
+					position: relative;
+					float: left;
+				}
+
+				#pure_boost .boost_slider_wrap .slider ul li img{
+					width: 100%;
+				}
+
+				#pure_boost .boost_slider_wrap .num{
+					margin-top: 10px;
+					text-align: center;
+				}
+
+				#pure_boost .boost_slider_wrap .num span{
+					width: 4px;
+					height: 4px;
+					display: inline-block;
+					border-radius: 4px;
+					background:#9a9a9a;
+					margin: 0 2px;
+				}
+
+				#pure_boost .boost_slider_wrap .num span.on{
+					background: #0183d1;
+				}
+
+
+			</style>
+
+			<div id="pure_boost">
+				<div class="visual">
+					<!-- /images/adidas/event/boost/160809/pure-boost-cut-01.jpg -->
+					<div class="img">
+						<img src="/images/adidas/event/boost/160809/FW16_PBX_Mobile_CLP_Masthead_320x568__tcm65-95370.jpg" alt="">
+					</div>
+					<div class="masthead">
+						<h2 class="adipro-bk">I AM<br/>POSITIVE<br/>ENERGY</h2>
+						<p class="desc">나의 에너지로 즐기다</p>
+						<a href="" class="button icons aft" data-icon="">퓨어부스트X 구매하기</a>
+					</div>
+				</div>
+				<!-- //visual -->
+
+				<div class="statement">
+					<div class="inner">
+						<p>러닝의 모든 스텝을</p>
+						<p>즐거운 에너지로 가득 채우다.</p>
+						<p>내 이름은 PUREBOOST X.</p>
+						<p>나의 에너지를 느껴봐.</p>
+					</div>
+				</div>
+				<!-- //statement -->
+
+				<div class="feature">
+					<div class="inner">
+						<div class="desc">
+							<h3 class="adipro-bk">BOOST</h3>
+							<p class="desc">하나의 쿠셔닝으로 압축한<br/>수천 개의 에너지 캡슐이 발산하는<br/>끊임없는 러닝 에너지. 내 이름은 PUREBOOST X,<br/>나의 에너지를 느껴봐.</p>
+						</div>
+						<div class="shoes">
+							<img src="/images/adidas/event/boost/160809/FW16_PBX_Mobile_CLP_Feature_ContentImage_960x800_tcm65-97740.png" alt="">
+						</div>
+					</div>
+				</div>
+				<!-- //feature -->
+
+
+				<div class="teaser">
+					<img src="/images/adidas/event/boost/160809/FW16_PBX_Mobile_CLP_Feature_640x800_tcm65-95371.jpg" alt="">
+					<div class="inner">
+						<div class="desc">
+							<h4 class="adipro-bk">MESH UPPER</h4>
+							<p>발을 편하게 숨쉬게 하는 메쉬 소재로<br/>쾌적하고 시원한 러닝을 경험해보세요.</p>
+						</div>
+					</div>
+				</div>
+				<!-- //feature -->
+
+				<div class="teaser">
+					<img src="/images/adidas/event/boost/160809/FW16_PBX_Mobile_CLP_Feature2_640x800_tcm65-95372.jpg" alt="">
+					<div class="inner">
+						<div class="desc">
+							<h4 class="adipro-bk">FLOATING ARCH</h4>
+							<p>신는 순간 러너의 발을 완벽히 감싸는 플로팅 아치의<br/>완벽한 핏을 느껴보세요.</p>
+						</div>
+					</div>
+				</div>
+				<!-- //feature -->
+
+				<div class="button_wrap">
+					<a href="" class="button icons aft" data-icon="">퓨어부스트X 구매하기</a>
+				</div>
+
+				<div class="boost_slider_wrap">
+					<div class="tit_box">
+						<h5 class="adipro-bk">NEVER COMPROMISE<br/>ON STYLE</h5>
+						<p>당신의 룩에 즐거운 에너지를 더해보세요.</p>
+					</div>
+
+					<div class="slider" id="boost-slider">
+						<ul>
+							<li><img src="/images/adidas/event/boost/160809/pure-boost-cut-01.jpg" alt=""></li>
+							<li><img src="/images/adidas/event/boost/160809/pure-boost-cut-02.jpg" alt=""></li>
+							<li><img src="/images/adidas/event/boost/160809/pure-boost-cut-03.jpg" alt=""></li>
+							<li><img src="/images/adidas/event/boost/160809/pure-boost-cut-04.jpg" alt=""></li>
+							<li><img src="/images/adidas/event/boost/160809/pure-boost-cut-05.jpg" alt=""></li>
+							<li><img src="/images/adidas/event/boost/160809/pure-boost-cut-06.jpg" alt=""></li>
+							<li><img src="/images/adidas/event/boost/160809/pure-boost-cut-07.jpg" alt=""></li>
+							<li><img src="/images/adidas/event/boost/160809/pure-boost-cut-08.jpg" alt=""></li>
+							<li><img src="/images/adidas/event/boost/160809/pure-boost-cut-09.jpg" alt=""></li>
+						</ul>
+					</div>
+
+					<div class="num">
+						<span class="on"></span>
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+				</div>
 
 
 			</div>
-			<!-- //alphaskin -->
+			<!-- //pure_boost -->
 
 			<script type="text/javascript">
-
 				(function($){
 
-                    var varUA = navigator.userAgent.toLowerCase();
-                    //userAgent 값 얻기
+					(function render(){
 
-                    if (varUA.match('android') != null) {
-                        //안드로이드 일때 처리
+						var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
 
-                        var maintop = document.getElementById('customise_top');
+						// if(scrollTop + window.innerHeight*0.5){
 
-                        maintop.innerHTML= '<img src="/images/adidas/event/alpha/alphabounce/main.jpg" alt="">';
+						// }
 
-                    } else if (varUA.indexOf("iphone")>-1||varUA.indexOf("ipad")>-1||varUA.indexOf("ipod")>-1) {
-                        //IOS 일때 처리
+						requestAnimationFrame(render);
 
-                    } else {
-                        //아이폰, 안드로이드 외 처리
-                    }
+					})();
 
-                    var scrollF = function(){
 
-                        var scrollArray = [];
-                        // var thisPos = $(this).scrollTop();
-                        var scrollCon = document.querySelectorAll('.scrollbox');
-
-                        for(var i = 0; i < scrollCon.length; i++){
-                            var mypos = scrollCon[i].offsetTop;
-                            scrollArray.push(mypos);
-                        }
-
-                        for(var pos = 0; pos < scrollArray.length; pos++){
-                            var thisPos = $(this).scrollTop() ;
-                            if(thisPos >= scrollArray[pos]){
-                                $('.scrollbox').eq(pos).addClass('on');
-                            }
-                        }
-                    }
-
-                    $(window).scroll(scrollF);
+					var mainSwipe = Swipe(document.getElementById('boost-slider'),{
+						stopPropagation: true,
+						callback : function(index , element){
+							$('#pure_boost .boost_slider_wrap .num span').removeClass('on').eq(index).addClass('on');
+						}
+					});
 
 
 				})(jQuery);
-
 			</script>
+
 
 		</div>
 		<!-- //container product_list -->
@@ -618,29 +792,81 @@
 
 	<script type="text/javascript" src="/js/adidas/common.js"></script>
 	<script type="text/javascript">
-
-		var openPopInStock;
 		(function($){
+			$(document).ready(function() {
 
-			openPopInStock = function(){
-				$('#instock-notification-popup').addClass('open');
-			};
+				$('.odr_pay_box>.tit.toggle_arw').bind('click',function(){
+					if($(this).hasClass('open')){
+						$(this).removeClass('open');
+						$(this).siblings('.cont').hide();
+					}else{
+						$(this).addClass('open');
+						$(this).siblings('.cont').show();
+					}
+				});
 
-			$('.view_type_btn a').bind('click',function(){
-				if($(this).hasClass('on')){
-					return;
-				}
+				$('.adr_history .tab_box .tab_btn>div').bind('click',function(){
+					if($(this).hasClass('on')){
+						return false;
+					}
 
-				if($(this).hasClass('box_type')){
-					$('.products_list').removeClass('list_type')
-				}else{
-					$('.products_list').addClass('list_type');
-				}
+					$('.adr_history .tab_box .tab_btn>div').removeClass('on');
+					$(this).addClass('on');
+					$('.adr_history .tab_box .tab_cont>.box').removeClass('active');
+					$('.adr_history .tab_box .tab_cont>.box').eq($(this).index()).addClass('active');
+					return false;
+				});
 
-				$('.view_type_btn a').removeClass('on');
-				$(this).addClass('on');
+				/* 결제수단 선택 */
+				$('.select_payment .payment_list>div').bind('click',function(){
+					if($(this).hasClass('on')){
+						return false;
+					}
+
+					var attrClass = $(this).attr('class');
+					$('.select_payment .payment_list>div').removeClass('on');
+					$(this).addClass('on');
+
+					if(attrClass == 'p_kp'){
+						$('.select_payment .payments').hide();
+						$('#cardReport_choice2').show();
+					}else if(attrClass == 'p_mo'){
+						$('.select_payment .payments').hide();
+						$('#mobile_payment').show();
+					}else if(attrClass == 'p_acc'){
+						$('.select_payment .payments').hide();
+						$('#no_accbox').show();
+					}else{
+						$('.select_payment .payments').hide();
+					}
+
+					return false;
+				});
+
+				/* 현금영수증 신청 */
+				$('#CASH_RECPT_APPLY_Y').bind('click',function(){
+					$('#cashReport_choice').show();
+				});
+				$('#CASH_RECPT_APPLY_N').bind('click',function(){
+					$('#cashReport_choice').hide();
+				});
+
+				/* 개인소득 공제 */
+				$('#CASH_RECPT_PUBL_PRPOS_01').bind('click',function(){
+					$('#cashReport_bizr').hide();
+					$('#cashReport_phn').css({
+						display : 'table-row'
+					});
+				});
+
+				/* 사업자 증빙 */
+				$('#CASH_RECPT_PUBL_PRPOS_02').bind('click',function(){
+					$('#cashReport_phn').hide();
+					$('#cashReport_bizr').css({
+						display : 'table-row'
+					});
+				});
 			});
-
 		})(jQuery);
 
 	</script>

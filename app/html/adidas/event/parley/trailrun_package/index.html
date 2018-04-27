@@ -22,6 +22,72 @@
 </head>
 <body>
 
+	<div class="modal-popup" id="instock-notification-popup">
+		<div class="popup-contents">
+			<a href="javascript:void(0)" class="close_x_btn" onclick="jQuery(this).parent().parent().removeClass('open');"></a>
+			<div class="instock-notification">
+				<div class="tit adipro-b">
+					<div class="icons" data-icon=""></div>coming soon
+				</div>
+				<div class="desc">휴대전화 번호를 남겨 주시면,<br/>제품 입고시 문자로 알려드립니다.</div>
+
+				<div class="phone">
+					<div class="sel_cmtype sel_design">
+						<a href="#" class="toggle_arw s_arw" ><span>010</span></a>
+						<select name="" id="">
+							<option value="2" selected="">010</option>
+							<option value="1">011</option>
+							<option value="5">016</option>
+							<option value="3">017</option>
+							<option value="4">019</option>
+						</select>
+					</div>
+					<input type="tel">
+					<input type="tel">
+				</div>
+
+				<div class="agr_box">
+					<div class="chk_wrap">
+						<div class="chk_box1 blue">
+							<input type="checkbox" id="agr_for_credit" name="SMS_RET_YN" value="Y">
+							<label for="agr_for_credit" class="adipro-r">개인정보 제공동의</label>
+						</div>
+					</div>
+					<a href="javascript:void(0)" class="icons aft" data-icon="" onclick="if(jQuery(this).hasClass('open')){jQuery('.instock-notification .terms').hide();jQuery(this).removeClass('open')}else{jQuery('.instock-notification .terms').show();jQuery(this).addClass('open')}">자세히보기</a>
+				</div>
+				<!-- //agr_box -->
+
+				<div class="terms">
+					<div class="cont">
+						<dl>
+							<dt>개인정보의 수집이용목적 : </dt>
+							<dd>아디다스 제품 입고 알림</dd>
+						</dl>
+						<dl>
+							<dt>수집되는 개인정보 : </dt>
+							<dd>휴대전화번호</dd>
+						</dl>
+						<dl>
+							<dt>보유기간 : </dt>
+							<dd>입고알림 이후 30일 까지(본 보유기간은 아디클럽 회원이 아닌 경우에 한함)</dd>
+						</dl>
+       					<ul class="li_hypn">
+       						<li>아래 동의를 거부할 수 있습니다. 다만 그러한 경우, 아디다스제품이 입고되는 시점에 대한 정보를 우선적으로 전달받으실 수 없습니다. 단, “통신사 사정으로 인한 발송, 수신오류, 고객휴대폰의 스팸등록 등으로 인해 SMS가 전달되지 않을 수 있으며 이러한 경우 아디다스코리아가 책임지지 않습니다.”</li>
+       						<li>입력해주신 휴대폰번호로 안내하겠습니다.</li>
+       					</ul>
+
+					</div>
+				</div>
+
+				<div class="btn_area">
+					<a class="submit">신청하기</a>
+				</div>
+
+			</div>
+			<!-- //instock-notification -->
+		</div>
+	</div>
+
 	<div id="wrap">
 		<div id="header" style="position: relative;">
 			<div class="nav_menu">
@@ -32,12 +98,7 @@
 						<a href="#" class="join"><span class="icons" data-icon=""></span>회원가입</a>
 					</div>
 
-					<!-- <div class="u_info1">
-						<div class="user_box">
-							<p class="greet bronze"><span class="m">B</span>홍길동님 반갑습니다.</p>
-							<p class="noti">쿠폰 사용기간이 얼마 남지 않았습니다.</p>
-						</div>
-					</div> -->
+
 					<div class="u_info2">
 						<a href="#">마이페이지</a>
 						<a href="#">주문배송조회 <span>1</span></a>
@@ -438,151 +499,193 @@
 
 		<div id="container">
 
-			<div id="alphabounce">
+            <div id="trailrun_package">
 
-                <div class="top">
-                    <h2><img src="/images/adidas/event/alpha/alphabounce/top_logo.png" alt=""></h2>
-                    <div id="customise_top">
-                        <!-- <img src="/images/adidas/event/alpha/alphabounce/main.jpg" alt=""> -->
-
-                        <video src="/images/adidas/event/alpha/alphabounce/video.mp4" loop muted autoplay playsinline></video>
+                <div class="masthead">
+                    <div class="img">
+                        <img src="/images/adidas/event/parley/trailrun_package/video.jpg" alt="">
+                        <a href="javascript:void(0)" onclick="openModalVideoViewer('NdZRxtoUkPw')"></a>
                     </div>
-                    <div class="btn_wrap">
-                        <div class="btn">
-                            <a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=523">남성제품 구매하기</a>
-                            <a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=522">여성제품 구매하기</a>
+                </div>
+
+                <div class="cont1">
+                    <h3>트레일 러닝화,<br />
+                            <span>TERREX TWO BOA</span>
+                        <a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=571" class="button">구매하기</a>
+                    </h3>
+                    <div class="bg">
+                        <img src="/images/adidas/event/parley/trailrun_package/cont1_bg.jpg" alt="">
+                    </div>
+                </div>
+
+                <div class="product-selector scrollbox">
+                    <div class="slider">
+                        <div class="box">
+                            <div class="prod"><img src="/images/adidas/event/parley/trailrun_package/slide1_01.png" /></div>
+                        </div>
+                        <div class="box">
+                            <div class="prod"><img src="/images/adidas/event/parley/trailrun_package/slide1_02.png" /></div>
                         </div>
                     </div>
                 </div>
 
-                <div class="alphabounce_content">
-                    <h2 class="scrollbox">DESIGNED FOR THE DAYS<br>BETWEEN THE GAMES</h2>
-                    <p class="scrollbox">
-                        알파바운스는 각 분야의 스포츠를 지배하는<br>최고의 애슬리트를 위해 설계되었습니다.<br>
-                        다양한 훈련에 필요한 서포트를 제공하는 알파바운스 비욘드는<br>
-                        트레이닝을 통해 선수들이 지닌 잠재력을 최대로 이끌어내는 러닝화입니다.
-                    </p>
-                    <div class="video" onclick="openModalVideoViewer('j-B9RO0euK4')"><img src="/images/adidas/event/alpha/alphabounce/video.jpg"></div>
-                    <div class="btn">
-                        <a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=448">구매하기</a>
+                <div class="cont2 scrollbox">
+                    <div class="img_box1">
+                        <img src="/images/adidas/event/parley/trailrun_package/cont2_01.png" alt="">
                     </div>
+                    <div class="txt_box1">
+                        <img src="/images/adidas/event/parley/trailrun_package/boa_txt.png" alt="">
+                    </div>
+                    <div class="txt_box1">
+                        <img src="/images/adidas/event/parley/trailrun_package/conti_txt.png" alt="">
+                    </div>
+                    <div class="img_box2">
+                        <img src="/images/adidas/event/parley/trailrun_package/cont2_02.jpg" alt="">
+                    </div>
+                    <div class="txt_box2">
+                        <img src="/images/adidas/event/parley/trailrun_package/zero_txt.png" alt="">
+                    </div>
+                    <div class="bg">
+                        <img src="/images/adidas/event/parley/trailrun_package/cont2_bg.jpg" alt="">
+                    </div>
+                </div>
 
-                    <p class="title" style="padding: 40px 0 30px;">게임을 지배하는 퍼포먼스<br>평범한 바운스를 뛰어넘다</p>
-                    <div class="banner scrollbox">
-                        <div class="img"><img src="/images/adidas/event/alpha/alphabounce/banner1.jpg" alt=""></div>
-                        <p class="title">탄력 넘치는 쿠셔닝</p>
-                        <p>강력한 기능성의 경량 EVA 미드솔로 매 스텝 더욱 탄력 넘치는 움직임.</p>
-                    </div>
-                    <div class="banner scrollbox">
-                        <div class="img"><img src="/images/adidas/event/alpha/alphabounce/banner2.jpg" alt=""></div>
-                        <p class="title">단단한 접지력</p>
-                        <p>미끄럽거나 건조한 지면 어디에서나 안정적인 접지력과<br>내구성을 자랑하는 컨티넨탈 러버™ 아웃솔.</p>
-                    </div>
-                    <div class="banner scrollbox">
-                        <div class="img"><img src="/images/adidas/event/alpha/alphabounce/banner3.jpg" alt=""></div>
-                        <p class="title">빈틈없는 서포트</p>
-                        <p>시원한 통기성의 메쉬 갑피와 포지드 존으로<br>어떤 동작에도 완벽한 서포트 & 자유로운 움직임.</p>
-                    </div>
+                <div class="cont3 scrollbox">
+                        <h3>테렉스 트레일 러닝 아그라빅 탑<br />
+                            & 투인원 쇼츠<br />
+							<span>TRAIL RUNNING<br />
+                                AGRAVIC TOP<br />
+							& 2IN1 SHORTS</span>
+                            <a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=571" class="button">구매하기</a>
+						</h3>
+                        <div class="img_box">
+                            <img src="/images/adidas/event/parley/trailrun_package/cont3_01.png" alt="">
+                        </div>
+                        <div class="img_box">
+                            <img src="/images/adidas/event/parley/trailrun_package/cont3_txt.png" alt="">
+                        </div>
+                </div>
 
-                    <p class="title">애슬리트들이 말하는<br>알파바운스</p>
-                    <div class="banner scrollbox">
-                        <div class="img"><img src="/images/adidas/event/alpha/alphabounce/video_banner1.jpg" alt="" onclick="openModalVideoViewer('xIelyJ-Wrik')"></div>
-                        <p class="title">데미안 릴라드, <br>농구 코트를 지배하다</p>
-                        <p>날렵한 움직임으로 농구 코트를 지배하는 데미안 릴라드.<br>그의 스프린트 훈련에는 언제나 알파바운스가 함께한다.</p>
-                    </div>
-                    <div class="banner scrollbox">
-                        <div class="img"><img src="/images/adidas/event/alpha/alphabounce/video_banner2.jpg" alt="" onclick="openModalVideoViewer('-7OtJEjwRFo')"></div>
-                        <p class="title">캐롤린 워즈니아키, <br>테니스 코트를 지배하다</p>
-                        <p>급격한 방향 전환에도 흔들림 없이 테니스 코트를 압도하는<br>캐롤린 워즈니아키. 그녀의 풋워크 훈련엔 언제나 알파바운스가 있다.</p>
-                    </div>
-
-                    <div class="statement">
-                        <div class="bg"><img src="/images/adidas/event/alpha/alphabounce/statement1.jpg" alt="" ></div>
-                        <div class="bg">
-                            <img src="/images/adidas/event/alpha/alphabounce/statement2.jpg" alt="" >
-                            <div class="txt">
-                                <p class="title">정상을 넘어 더 높은 곳으로</p>
-                                <p>각 분야에서 최고의 자리에 오른 그들이<br>스포츠를 지배하는 노하우</p>
-                                <div class="btn"><a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=448">구매하기</a></div>
-                            </div>
+                <div class="product-selector2 scrollbox">
+                    <div class="slider">
+                        <div class="box">
+                            <div class="prod"><img src="/images/adidas/event/parley/trailrun_package/slide2_01.png" /></div>
+                        </div>
+                        <div class="box">
+                            <div class="prod"><img src="/images/adidas/event/parley/trailrun_package/slide2_02.png" /></div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="box scrollbox">
-                        <div><img src="/images/adidas/event/alpha/alphabounce/col1.jpg" alt=""></div>
+                <div class="techwrap scrollbox">
+                    <div class="tech_men" style="display:block;">
+                        <img src="/images/adidas/event/parley/trailrun_package/tech_men.png" />
                     </div>
 
-                    <div class="box scrollbox">
-                        <div><img src="/images/adidas/event/alpha/alphabounce/col2.jpg" alt=""></div>
-                        <div class="txt">
-                            <p class="title">러닝으로 게임을 지배하다 </p>
-                            <div class="btn"><a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=523">남성 제품 구매하기</a></div>
-                            <div class="btn"><a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=522">여성 제품 구매하기</a></div>
-                        </div>
+                    <div class="tech_women">
+                        <img src="/images/adidas/event/parley/trailrun_package/tech_women.png" />
                     </div>
+                </div>
 
-                    <div class="box scrollbox">
-                        <div><img src="/images/adidas/event/alpha/alphabounce/col3.jpg" alt=""></div>
-                    </div>
-
-                    <div class="bottom_logo scrollbox">
-                        <img src="/images/adidas/event/alpha/alphabounce/logo.png" alt="" style="width:100%;">
-                    </div>
-
+                <div class="bottom">
+                    <img src="/images/adidas/event/parley/trailrun_package/parley_logo.png" />
                 </div>
 
 
 
 
-			</div>
-			<!-- //alphaskin -->
+                <script type="text/javascript">
 
-			<script type="text/javascript">
+                    (function($){
+                        var productSlider = $('.product-selector .slider');
+                        var productSlider2 = $('.product-selector2 .slider');
 
-				(function($){
+                        productSlider2.on('changed.owl.carousel', function(event) {
+                            var pro_index = $('.product-selector2 .owl-stage-outer .owl-stage .active').index();
 
-                    var varUA = navigator.userAgent.toLowerCase();
-                    //userAgent 값 얻기
+                            if(pro_index == 0){
+                                $('.tech_men').hide();
+                                $('.tech_women').fadeIn();
+                                $('.product-selector2 .owl-prev').fadeIn();
+                                $('.product-selector2 .owl-next').fadeOut();
+                            }
 
-                    if (varUA.match('android') != null) {
-                        //안드로이드 일때 처리
+                            if(pro_index == 1){
+                                $('.tech_women').hide();
+                                $('.tech_men').fadeIn();
+                                $('.product-selector2 .owl-next').fadeIn();
+                                $('.product-selector2 .owl-prev').fadeOut();
+                            }
 
-                        var maintop = document.getElementById('customise_top');
+                            console.log(pro_index)
+        				});
 
-                        maintop.innerHTML= '<img src="/images/adidas/event/alpha/alphabounce/main.jpg" alt="">';
+                        productSlider.on('changed.owl.carousel', function(event) {
+                            var pro_index1 = $('.product-selector .owl-stage-outer .owl-stage .active').index();
 
-                    } else if (varUA.indexOf("iphone")>-1||varUA.indexOf("ipad")>-1||varUA.indexOf("ipod")>-1) {
-                        //IOS 일때 처리
+                            if(pro_index1 == 0){
+                                $('.product-selector .owl-prev').fadeIn();
+                                $('.product-selector .owl-next').fadeOut();
+                            }
 
-                    } else {
-                        //아이폰, 안드로이드 외 처리
-                    }
+                            if(pro_index1 == 1){
+                                $('.product-selector .owl-next').fadeIn();
+                                $('.product-selector .owl-prev').fadeOut();
+                            }
 
-                    var scrollF = function(){
+                            console.log(pro_index1)
+        				});
 
-                        var scrollArray = [];
-                        // var thisPos = $(this).scrollTop();
-                        var scrollCon = document.querySelectorAll('.scrollbox');
+                        $(document).ready(function(){
+                            $('.product-selector .owl-prev').fadeOut();
+                            $('.product-selector2 .owl-prev').fadeOut();
+                        })
 
-                        for(var i = 0; i < scrollCon.length; i++){
-                            var mypos = scrollCon[i].offsetTop;
-                            scrollArray.push(mypos);
-                        }
 
-                        for(var pos = 0; pos < scrollArray.length; pos++){
-                            var thisPos = $(this).scrollTop() ;
-                            if(thisPos >= scrollArray[pos]){
-                                $('.scrollbox').eq(pos).addClass('on');
+                        productSlider.owlCarousel({
+        					items : 1,
+        					merge: true,
+        					loop : false,
+                            smartSpeed : 600,
+                            nav : true
+        				});
+
+                        productSlider2.owlCarousel({
+        					items : 1,
+        					merge: true,
+        					loop : false,
+                            smartSpeed : 600,
+                            nav : true
+        				});
+
+                        var scrollF = function(){
+
+                            var scrollArray = [];
+                            // var thisPos = $(this).scrollTop();
+                            var scrollCon = document.querySelectorAll('.scrollbox');
+
+                            for(var i = 0; i < scrollCon.length; i++){
+                                var mypos = scrollCon[i].offsetTop;
+                                scrollArray.push(mypos);
+                            }
+
+                            for(var pos = 0; pos < scrollArray.length; pos++){
+                                var thisPos = $(this).scrollTop()+400 ;
+                                if(thisPos >= scrollArray[pos]){
+                                    $('.scrollbox').eq(pos).addClass('on');
+                                }
                             }
                         }
-                    }
 
-                    $(window).scroll(scrollF);
+                        $(window).scroll(scrollF);
 
 
-				})(jQuery);
 
-			</script>
+                    })(jQuery);
+
+                </script>
+            </div>
+            <!-- //iniki -->
 
 		</div>
 		<!-- //container product_list -->
