@@ -436,7 +436,6 @@
 		<div id="container">
 
             <button class="modal-popup-click" data-modalpop-click="vr_pdp-popup" style="margin: 50px auto;display: block;">vr 상품 클릭 예시 버튼</button>
-            <button class="modal-popup-click" data-modalpop-click="vr_pdp-popup" style="margin: 50px auto;display: block;">vr 상품 클릭 예시 버튼</button>
 
 			<div class="go_top">
 				<a href="#">BACK TO TOP</a>
@@ -451,6 +450,8 @@
             data-modalpop-name="vr_pdp-popup"
             data-modalpop-width="580"
             data-modalpop-height="768"
+
+
         >
             <div class="overlay"></div>
             <div class="popup">
@@ -511,7 +512,7 @@
 
 					<div class="btn_wrap">
 						<div class="detail"><a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=DA9331">자세히 보기</a></div>
-						<div class="buy"><a href="https://m.adidas.co.kr/MO/Order/orderInputNoMember.action?checkbtn=buyLogIn&prodCD=DA9331&optionNo=240&orderQty=1&onlyMem=N&returnURL=%2FMO%2FOrder%2ForderInputNoMember.action%3FsiteCD%3D1%26siteNm%3Dadidas%26prodCD%3DDA9331%26optionNo%3D240%26spst_id%3D%26srch_nm%3D%26SS_MEM_ID%3D%26SS_MEM_NO%3D%26EVAL_YN%3D%26NPAY_YN%3DN%26tempOptionNo%3D240%252C28%252C%252C29%26orderQty%3D1">바로구매</a></div>
+                        <div class="buy"><a href="https://m.adidas.co.kr/MO/Order/orderInputNoMember.action?checkbtn=buyLogIn&prodCD=DA9331&optionNo=240&orderQty=1&onlyMem=N&returnURL=%2FMO%2FOrder%2ForderInputNoMember.action%3FsiteCD%3D1%26siteNm%3Dadidas%26prodCD%3DDA9331%26optionNo%3D240%26spst_id%3D%26srch_nm%3D%26SS_MEM_ID%3D%26SS_MEM_NO%3D%26EVAL_YN%3D%26NPAY_YN%3DN%26tempOptionNo%3D240%252C28%252C%252C29%26orderQty%3D1">바로구매</a></div>
 						<div class="buylist"><a href=""><span class="icons aft" data-icon=""></span></a></div>
 					</div>
                 </div>
@@ -566,7 +567,9 @@
                         $('.vr_pdp_popup .select_box .focused_box').removeClass('on')
                     },1500)
                 });
-                // 상품 클릭시 팝업
+
+
+                // 예시 코드 :상품 클릭시 팝업
                 $('.modal-popup-click').click(function(){
                     // 팝업 내부 슬라이드 이벤트
                     setTimeout(function(){
@@ -598,6 +601,33 @@
                         $('.modal-popup-wrapper.vr_pdp_popup .popup').removeClass('on');
                     });
                 });
+
+
+
+                // 예시 코드
+                setTimeout(function(){
+                    $('.vr_pdp_popup').addClass('open');
+                    $('.vr_pdp_popup .popup').addClass('on');
+                    var swiper = Swipe(document.getElementById('sliders'),{
+                        stopPropagation: true,
+                        callback : function(index , element){
+                            $('.indicator span').removeClass('on').eq(index).addClass('on');
+                        }
+                    });
+
+                    $('.button-prev').bind('click',function(){
+                        swiper.prev();
+                    });
+
+                    $('.button-next').bind('click',function(){
+                        swiper.next();
+                    });
+
+                    $('.indicator span').bind('click',function(){
+                        swiper.slide($(this).index());
+                    });
+                },500)
+
 
             // 180424 vr pdp popup end
 
