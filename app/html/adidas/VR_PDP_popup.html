@@ -20,7 +20,7 @@
 
 	<div id="wrap">
 		<!-- 180424 vr pdp popup -->
-		<div class="layerpop_wrap vr_pdp_popup open">
+		<div class="not_layer vr_pdp_popup ">
 
 			<div class="popup">
                 <div class="popup-contents">
@@ -84,11 +84,7 @@
 			</div>
 
 		</div>
-        <!-- 180424 vr pdp popup end-->
 
-
-        <script type="text/javascript" src="/js/adidas/common.js"></script>
-        <!-- 180424 -->
         <script type="text/javascript">
             (function($){
 
@@ -106,15 +102,15 @@
                     }
                 });
 
-                $('.button-prev').bind('click',function(){
+                $('.vr_pdp_popup .button-prev').bind('click',function(){
                     swiper.prev();
                 });
 
-                $('.button-next').bind('click',function(){
+                $('.vr_pdp_popup .button-next').bind('click',function(){
                     swiper.next();
                 });
 
-                $('.indicator span').bind('click',function(){
+                $('.vr_pdp_popup .indicator span').bind('click',function(){
                     swiper.slide($(this).index());
                 });
 
