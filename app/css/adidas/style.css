@@ -21217,14 +21217,25 @@ em.prd_speedy .tooltip-box:before{
 /*register-popup end*/
 
 /* VR PDP POPUP*/
-.modal-popup-wrapper.vr_pdp_popup{
+.layerpop_wrap.layerpop_wrap.vr_pdp_popup{
+    padding: 0;
     z-index: 121;
 }
-.modal-popup-wrapper.vr_pdp_popup .popup .popup-header{
+.layerpop_wrap.layerpop_wrap.vr_pdp_popup::after{
+    display: none;
+}
+.layerpop_wrap.layerpop_wrap.vr_pdp_popup .popup{
+    position: relative;
+    background: #fff;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    z-index: 61;
+}
+.layerpop_wrap.layerpop_wrap.vr_pdp_popup .popup .popup-header{
     background: transparent;
     height: 40px;
 }
-.modal-popup-wrapper.vr_pdp_popup .popup .popup-header .close_x_btn{
+.layerpop_wrap.vr_pdp_popup .popup .popup-header .close_x_btn{
     z-index: 121;
     background: #fff;
     width: 40px;
@@ -21236,30 +21247,24 @@ em.prd_speedy .tooltip-box:before{
     transform: translate3d(0,-50%,0);
     -webkit-transform: translate3d(0,-50%,0);
 }
-.modal-popup-wrapper.vr_pdp_popup .close_x_btn::before,.modal-popup-wrapper.vr_pdp_popup .close_x_btn span{
+.layerpop_wrap.vr_pdp_popup .close_x_btn::before,.layerpop_wrap.vr_pdp_popup .close_x_btn span{
     color:#000;
     font-size: 20px;
 }
-.modal-popup-wrapper.vr_pdp_popup .close_x_btn::before,.modal-popup-wrapper.vr_pdp_popup .close_x_btn::after{
+.layerpop_wrap.vr_pdp_popup .close_x_btn::before,.layerpop_wrap.vr_pdp_popup .close_x_btn::after{
     display: none;
 }
-.modal-popup-wrapper.vr_pdp_popup .popup{
+.layerpop_wrap.vr_pdp_popup .popup{
     padding: 30px 20px 20px;
-    position: fixed;
-    opacity: 0;
-    -webkit-opacity: 0;
-    -webkit-opacity: 0;
-    transition: opacity 0.4s;
-    -webkit-transition: opacity 0.4s;
 }
-.modal-popup-wrapper.vr_pdp_popup .popup.on{
+.layerpop_wrap.vr_pdp_popup .popup.on{
     opacity: 1;
     -webkit-opacity: 1;
 }
-.modal-popup-wrapper.vr_pdp_popup .popup-contents{
-    padding: 20px;
+.layerpop_wrap.vr_pdp_popup .popup-contents{
+    /* padding: 20px; */
 }
-.modal-popup-wrapper.vr_pdp_popup .popup-contents .title{
+.layerpop_wrap.vr_pdp_popup .popup-contents .title{
 	margin: 0 0 14px 0;
     font: 400 20px/22px 'NotosansKR';
     color: #000;
@@ -21267,14 +21272,14 @@ em.prd_speedy .tooltip-box:before{
     height: 45px;
     overflow: hidden;
 }
-.modal-popup-wrapper.vr_pdp_popup .popup-contents .price{
+.layerpop_wrap.vr_pdp_popup .popup-contents .price{
 	text-align: right; font:22px/22px 'AdihausDIN-Bold';
     color:#000; letter-spacing: -0.7px;
 }
-.modal-popup-wrapper.vr_pdp_popup .popup-contents .price span{
+.layerpop_wrap.vr_pdp_popup .popup-contents .price span{
 	padding:0 0 0 5px; font:400 14px/12px 'NotosansKR'; color:#000; letter-spacing: -0.7px;
 }
-.modal-popup-wrapper.vr_pdp_popup .popup-contents .select_box{
+.layerpop_wrap.vr_pdp_popup .popup-contents .select_box{
     display: -webkit-flex;
     display: -moz-flex;
     display: -ms-flex;
@@ -21282,10 +21287,10 @@ em.prd_speedy .tooltip-box:before{
     display: flex;
     margin: 15px 0 0 0;
 }
-.modal-popup-wrapper.vr_pdp_popup .popup-contents .select_box .selectbox-ctm{
+.layerpop_wrap.vr_pdp_popup .popup-contents .select_box .selectbox-ctm{
     width: 100%;
 }
-.modal-popup-wrapper.vr_pdp_popup .popup-contents .select_box .selectbox-ctm .focused_box{
+.layerpop_wrap.vr_pdp_popup .popup-contents .select_box .selectbox-ctm .focused_box{
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     height: 45px;
@@ -21300,46 +21305,46 @@ em.prd_speedy .tooltip-box:before{
     transition: opacity 0.5s;
     -webkit-transition: opacity 0.5s;
 }
-.modal-popup-wrapper.vr_pdp_popup .popup-contents .select_box .selectbox-ctm .focused_box.on{
+.layerpop_wrap.vr_pdp_popup .popup-contents .select_box .selectbox-ctm .focused_box.on{
     opacity: 1;
     -webkit-opacity: 1;
 }
-.modal-popup-wrapper.vr_pdp_popup .popup-contents .select_box .selectbox-ctm.select_amount{
+.layerpop_wrap.vr_pdp_popup .popup-contents .select_box .selectbox-ctm.select_amount{
     flex: 0 0 100px;
     margin-left: 10px;
 }
-.modal-popup-wrapper.vr_pdp_popup .popup-contents .select_box .selectbox-ctm .toggle_arw:before,
-.modal-popup-wrapper.vr_pdp_popup .popup-contents .select_box .selectbox-ctm .toggle_arw:after{
+.layerpop_wrap.vr_pdp_popup .popup-contents .select_box .selectbox-ctm .toggle_arw:before,
+.layerpop_wrap.vr_pdp_popup .popup-contents .select_box .selectbox-ctm .toggle_arw:after{
     background: #0286cd;
 }
-.modal-popup-wrapper.vr_pdp_popup .popup-contents .select_box .selectbox-ctm select{
+.layerpop_wrap.vr_pdp_popup .popup-contents .select_box .selectbox-ctm select{
     height: 45px;
 }
-.modal-popup-wrapper.vr_pdp_popup .popup-contents .banner_slider_wrap{
+.layerpop_wrap.vr_pdp_popup .popup-contents .banner_slider_wrap{
     position: relative;
     margin: 10px 0 0;
     overflow: hidden;
     text-align:center;
 }
-.modal-popup-wrapper.vr_pdp_popup .popup-contents .banner_slider_wrap #sliders{
+.layerpop_wrap.vr_pdp_popup .popup-contents .banner_slider_wrap #sliders{
     position: relative;
     margin: 0 40px;
     overflow: hidden;
 }
-.modal-popup-wrapper.vr_pdp_popup .popup-contents .banner_slider_wrap #sliders .swiper-wrapper .swiper-slide{
+.layerpop_wrap.vr_pdp_popup .popup-contents .banner_slider_wrap #sliders .swiper-wrapper .swiper-slide{
     position: relative;
     float: left;
 }
-.modal-popup-wrapper.vr_pdp_popup .popup-contents .banner_slider_wrap #sliders .swiper-wrapper .swiper-slide img{
+.layerpop_wrap.vr_pdp_popup .popup-contents .banner_slider_wrap #sliders .swiper-wrapper .swiper-slide img{
     width: 100%;
 }
-.modal-popup-wrapper.vr_pdp_popup .popup-contents .banner_slider_wrap .arrow_btn{
+.layerpop_wrap.vr_pdp_popup .popup-contents .banner_slider_wrap .arrow_btn{
     position: absolute;
     top: 50%;
     margin-top: -20px;
     right: -10px;
 }
-.modal-popup-wrapper.vr_pdp_popup .popup-contents .banner_slider_wrap .arrow_btn span{
+.layerpop_wrap.vr_pdp_popup .popup-contents .banner_slider_wrap .arrow_btn span{
     background: url(/images/adidas/ico_arrow_black_14x20.png) 0 0 no-repeat;
     background-size: 10px;
     background-position: center;
@@ -21347,18 +21352,18 @@ em.prd_speedy .tooltip-box:before{
     display: inline-block;
     padding: 20px;
 }
-.modal-popup-wrapper.vr_pdp_popup .popup-contents .banner_slider_wrap .arrow_btn.button-prev{
+.layerpop_wrap.vr_pdp_popup .popup-contents .banner_slider_wrap .arrow_btn.button-prev{
     transform: rotate(-180deg);
     -webkit-transform: rotate(-180deg);
     right: inherit;
     left:-10px;
 }
-.modal-popup-wrapper.vr_pdp_popup .popup-contents .banner_slider_wrap .indicator{
+.layerpop_wrap.vr_pdp_popup .popup-contents .banner_slider_wrap .indicator{
     margin: 20px 0 0 0;
     text-align: center;
     display: inline-block;
 }
-.modal-popup-wrapper.vr_pdp_popup .popup-contents .banner_slider_wrap .indicator span{
+.layerpop_wrap.vr_pdp_popup .popup-contents .banner_slider_wrap .indicator span{
     display: inline-block;
     margin: 0 5px;
     background: #dedede;
@@ -21367,10 +21372,10 @@ em.prd_speedy .tooltip-box:before{
     border-radius: 50px;
     -webkit-border-radius: 50px;
 }
-.modal-popup-wrapper.vr_pdp_popup .popup-contents .banner_slider_wrap .indicator span.on{
+.layerpop_wrap.vr_pdp_popup .popup-contents .banner_slider_wrap .indicator span.on{
     background:#0286cd;
 }
-.modal-popup-wrapper.vr_pdp_popup .popup-contents .btn_wrap{
+.layerpop_wrap.vr_pdp_popup .popup-contents .btn_wrap{
     display: -webkit-flex;
     display: -moz-flex;
     display: -ms-flex;
@@ -21378,22 +21383,22 @@ em.prd_speedy .tooltip-box:before{
     display: flex;
     margin: 15px 0 0 0;
 }
-.modal-popup-wrapper.vr_pdp_popup .popup-contents .btn_wrap>div{
+.layerpop_wrap.vr_pdp_popup .popup-contents .btn_wrap>div{
     background: #000;
     width: 100%;
     text-align:center;
 }
-.modal-popup-wrapper.vr_pdp_popup .popup-contents .btn_wrap>div a{
+.layerpop_wrap.vr_pdp_popup .popup-contents .btn_wrap>div a{
     display: block;
     color:#fff;
     font:500 14px/50px 'NotoSansKR';
 }
-.modal-popup-wrapper.vr_pdp_popup .popup-contents .btn_wrap>div.detail{
+.layerpop_wrap.vr_pdp_popup .popup-contents .btn_wrap>div.detail{
 }
-.modal-popup-wrapper.vr_pdp_popup .popup-contents .btn_wrap>div.buy {
+.layerpop_wrap.vr_pdp_popup .popup-contents .btn_wrap>div.buy {
     background: #0286cd;
 }
-.modal-popup-wrapper.vr_pdp_popup .popup-contents .btn_wrap>div.buylist {
+.layerpop_wrap.vr_pdp_popup .popup-contents .btn_wrap>div.buylist {
     background: #777;
     flex: 0 0 60px;
     -webkit-flex: 0 0 60px;
