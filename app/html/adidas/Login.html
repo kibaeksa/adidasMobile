@@ -489,42 +489,53 @@
                <span><a href="#">HOME</a></span>
                <span>로그인</span>
            </div>
-           <h2>로그인</h2>
 
-           <div style="padding:0 15px;">
+           <!-- 180514 -->
 
+           <h2 class="line">로그인</h2>
+
+           <div class="login_field">
                <div class="ipt_box">
-                   <p><input type="text" placeholder="아이디를 입력해주세요."></p>
-                   <p><input type="password" placeholder="비밀번호를 입력해주세요."></p>
+                   <p><input type="text" placeholder="아이디"></p>
+                   <p class="password"><input type="password" placeholder="비밀번호"></p>
                </div>
                <div class="check_area">
-                   <div class="chk_box1" style="margin-right:15px;">
-                       <input type="checkbox" id="login_auto">
+                   <div class="chk_box1 blue autologin">
+                       <input type="checkbox" id="login_auto" checked>
                        <label for="login_auto">자동 로그인</label>
                    </div>
-                   <div class="chk_box1">
+                   <div class="chk_box1 blue">
                        <input type="checkbox" id="save_userid">
                        <label for="save_userid">아이디 저장</label>
                    </div>
                </div>
-               <!-- //check_area -->
-
                <div class="button_area no_pdg">
                    <div class="blue"><a href="#">로그인</a></div>
-                   <!-- 180221 카카오로그인 버튼 추가 -->
-                   <div class="button_col2">
+                   <!-- 삭제될 영역 -->
+                   <!-- <div class="button_col2">
                        <div class="naver"><a href="#"><span>네이버 로그인</span></a></div>
                        <div class="kakao" style="margin:0;"><a href="#"><span><span class="ico_kakao"></span>카카오 로그인</span></a></div>
-                   </div>
-                   <!-- 180221 카카오로그인 버튼 추가 end -->
+                   </div> -->
+                   <!-- 180221 삭제될 영역 end -->
                </div>
+           </div>
+           <!-- login_field end-->
 
+           <div class="sns_login clearfix">
+               <p>SNS 계정으로 로그인</p>
+                <div>
+                    <a href="" class="naver"><em></em></a>
+                    <a href="" class="kakao"><em></em></a>
+                </div>
+           </div>
+           <!-- sns_login end -->
+
+           <div class="login_find">
                <div class="btn_utils">
                    <a href="#">아이디/비밀번호 찾기</a>
 
                    <a href="#" class="tracking_num">비회원 주문조회</a>
                </div>
-
                <dl>
                    <dt>오프라인 스토어에서 가입하신 회원님.</dt>
                    <dd>
@@ -534,18 +545,19 @@
                        </ol>
                    </dd>
                </dl>
+           </div>
+           <!-- login_find end -->
 
+           <div class="button_area_wrap login">
+               <div class="button_area">
+                   <div><a href="#" class="icons aft" data-icon="">회원가입</a></div>
+               </div>
+               <div class="button_area">
+                   <div class="mild_gray"><a href="#" class="icons aft" data-icon="">카카오 회원가입</a></div>
+               </div>
            </div>
 
-           <div class="button_area" style="padding-top:15px;border-top:1px solid #d7d7d7;">
-               <div><a href="#">회원가입</a></div>
-           </div>
-
-           <div class="button_area kakao" style="padding-top:5px;">
-               <div><a href="#"><span class="ico_kakao"></span>카카오 회원가입</a></div>
-           </div>
-
-
+           <!-- 180514 end-->
 
            <div class="go_top">
                <a href="#">BACK TO TOP</a>
