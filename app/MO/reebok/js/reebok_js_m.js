@@ -359,11 +359,9 @@ Reebok.ops = {
 
 
 	// document.addEventListener("DOMContentLoaded", function(event) {
-<<<<<<< HEAD
+
 	$(document).ready(function(){
-=======
-	$(document).ready(function(event){
->>>>>>> a63e9488b8acba0af30eaaa2d4f11bf01641c3d1
+
 		Reebok.el.doc = $(document);
 
 		var elemHeader = document.getElementById('header');
