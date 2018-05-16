@@ -1,5 +1,3 @@
-'use strict';
-
 var Reebok = Reebok || {};
 var reebokApp = {};
 Reebok.fn = Reebok.el = Reebok.css3 = {};
@@ -11,6 +9,8 @@ Reebok.ops = {
 }
 
 ;(function($){
+	'use strict';
+	
 	var dummyStyle = document.createElement('div').style;
 	Reebok.ops.vendor = (function () {
 		var vendors = 't,webkitT,MozT,msT,OT'.split(',');
@@ -358,7 +358,8 @@ Reebok.ops = {
 	}
 
 
-	document.addEventListener("DOMContentLoaded", function(event) {
+	// document.addEventListener("DOMContentLoaded", function(event) {
+	$(document).ready(function(){
 		Reebok.el.doc = $(document);
 
 		var elemHeader = document.getElementById('header');
