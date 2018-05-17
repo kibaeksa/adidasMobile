@@ -14,6 +14,7 @@
 
 <body>
 
+
 	<section id="wrap">
 		<section id="container">
 			<section id="header">
@@ -45,77 +46,51 @@
 			</section>
 
 			<section id="contents">
-
-				<!-- 180320 -->
-				<section class="m_contents loginFind login">
+				<!-- 180514 'find_result' class add -->
+				<section class="m_contents loginFind find_result">
 					<div class="loc">
 						<span>HOME</span>
 						<span class="arw">&gt;</span>
 						<span>로그인</span>
-					</div>
-
-					<h2>로그인</h2>
-
-					<div class="login_content">
-						<div class="form_find form_table">
-							<div class="row">
-								<input type="text" id="id" name="id" maxlength="15" placeholder="아이디를 입력해주세요.">
-							</div>
-							<div class="row">
-								<input type="text" id="pw" name="pw" maxlength="15" placeholder="비밀번호를 입력해주세요.">
-							</div>
-						</div>
-						<div class="check_area">
-							<div class="chk_box1" style="margin-right:15px;">
-								<input type="checkbox" id="login_auto">
-								<label for="login_auto">자동 로그인</label>
-							</div>
-							<div class="chk_box1">
-								<input type="checkbox" id="save_userid">
-								<label for="save_userid">아이디 저장</label>
-							</div>
-						</div>
-						<div class="button_area_wrap">
-							<div class="button_area no_pdg" >
-							<div><a href="#">로그인</a></div>
-							<div>
-								<div class="kakao"><a href="#"><span class="ico_kakao"></span>카카오 로그인</a></div>
-							</div>
-						</div>
-						</div>
-
-						<div class="btn_utils">
-							<a href="#">아이디/비밀번호 찾기</a>
-
-							<a href="#" class="tracking_num">비회원 주문조회</a>
-						</div>
-
-						<dl>
-							<dt>오프라인 스토어에서 가입하신 회원님.</dt>
-							<dd>
-								<ol>
-									<li>1) 휴대폰으로 전송된 임시 아이디/비밀번호로 로그인</li>
-									<li>2) 회원가입 페이지로 이동해, 회원가입 절차 완료</li>
-								</ol>
-							</dd>
-						</dl>
-
-					</div>
-
-					<div class="button_area_wrap">
-						<div class="button_area">
-							<div><a href="#" style="background:#000;">회원가입</a></div>
-						</div>
-						<div class="button_area">
-							<div class="kakao"><a href="#"><span class="ico_kakao"></span>카카오 회원가입</a></div>
-						</div>
+						<span class="arw">&gt;</span>
+						<span>아이디 찾기</span>
 					</div>
 
 
+					<ul class="tab">
+						<li><a href="#" class="on">아이디 찾기</a></li>
+						<li><a href="#">비밀번호 찾기</a></li>
+					</ul>
+
+					<div class="tab_cont">
+						<div class="box active">
+
+							<div class="form_find form_table">
+	                            <h2>아이디 찾기 결과</h2>
+								<p class="desc">
+									아직 회원이 아니시네요!<br>회원가입해주세요!
+								</p>
+								<p class="desc">
+									오프라인 매장에서 가입 후 발급 된<br>임시 계정을 분실하신 경우 CS에 문의해주세요.
+								</p>
+
+								<!-- 180514 -->
+								<div class="button_area_wrap login">
+									<div class="button_area no_pdg">
+										<div><a href="#" >회원가입</a></div>
+									</div>
+									<div class="button_area no_pdg">
+										<div class="mild_gray"><a href="#" >카카오 회원가입</a></div>
+									</div>
+								</div>
+								<!-- 180514 end -->
+
+	                        </div>
+
+						</div>
+					</div>
 
 				</section>
-				<!-- 180320 end-->
-
 			</section>
 			<!-- //contents -->
 
@@ -159,6 +134,21 @@
 
 			    </address>
 			</footer>
+
+			<!-- 180308 -->
+			<script type="text/javascript">
+
+				(function($){
+					$(document).ready(function() {
+
+					});
+
+				})(jQuery);
+
+			</script>
+			<!-- 180308 end-->
+
+
 		</section>
 		<!-- //container -->
 

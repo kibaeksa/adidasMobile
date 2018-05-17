@@ -3107,7 +3107,6 @@ div.searchbox_info .title_sub ul li{float: left; margin-right: 5px; font: 300 14
 
 /* login page*/
 #contents .login{}
-#contents .login.loginFind{padding: 0 0 80px 0;}
 #contents .login .mem_login{background:#212121;padding:15px 15px 0;}
 #contents .login .mem_login p.desc{color:#fff;letter-spacing:-1px;font-size:11px;line-height:17px;}
 #contents .login .mem_login .login_form{position:relative;}
@@ -3155,13 +3154,11 @@ div.searchbox_info .title_sub ul li{float: left; margin-right: 5px; font: 300 14
 #contents .login .join_intro p strong{font-size:14px;color:#282828;font-weight:bold;}
 
 /* find id */
-#container .loginFind h2{ padding: 20px 15px 0;font: 400 25px/25px 'NotoSansKR'; }
-
-#container .loginFind .login_content{ padding: 15px; border-bottom: 1px solid #d7d7d7;}
-
-#container .loginFind .login_content+.button_area_wrap{
-	margin:20px 0 0;
-}
+#container .loginFind{ padding: 0 0 50px 0; }
+#container .loginFind h2{ padding: 20px 15px 0; font: 400 25px/25px 'NotoSansKR'; }
+#container .loginFind h2.line{ margin: 0 0 25px; padding: 20px 15px; border-bottom: 1px solid #d7d7d7;}
+/* #container .loginFind .login_content{ padding: 15px; border-bottom: 1px solid #d7d7d7;}
+#container .loginFind .login_content+.button_area_wrap{ margin:20px 0 0; } */
 
 #container .loginFind.login .button_area>div{
     margin-bottom: 5px;
@@ -3238,15 +3235,19 @@ div.searchbox_info .title_sub ul li{float: left; margin-right: 5px; font: 300 14
     margin: 0 auto;
 }
 
+#container .loginFind .login_find{
+	padding: 0 15px 10px;
+    border-bottom: 1px solid #d7d7d7;
+}
 
 #container .loginFind .btn_utils{
-	margin-top: 5px;
+	margin-top: 15px;
 	overflow: hidden;
 }
 
 #container .loginFind .btn_utils a{
 	float: left;
-	font:300 13px 'NotoSansKR';
+	font:300 15px 'NotoSansKR';
 	color: #ab2328;
 }
 
@@ -3256,7 +3257,7 @@ div.searchbox_info .title_sub ul li{float: left; margin-right: 5px; font: 300 14
 }
 
 #container .loginFind dl{
-	margin:10px 0 0;
+	margin:10px 0 15px;
 }
 
 #container .loginFind dl dt{
@@ -3278,9 +3279,21 @@ div.searchbox_info .title_sub ul li{float: left; margin-right: 5px; font: 300 14
 #container .loginFind .find_select .rdo_box1{ width: 49%; }
 
 #container .loginFind p.desc{
-	margin: 0 0 15px 0;
-	font: 300 12px/18px 'NotoSansKR';
+    margin: 0 0 15px 0;
+	font: 200 14px/18px 'NotoSansKR';
 	letter-spacing: -1px;
+}
+
+#container .loginFind.find_result .tab_cont .box{
+	padding: 28px 0 0;
+}
+
+#container .loginFind.find_result .tab_cont .box .form_find{
+	padding: 0 15px;
+}
+
+#container .loginFind.find_result .sns_login{
+	padding: 15px;
 }
 
 #container .loginFind .tab_cont .box{ padding:28px 15px 40px; }
@@ -3306,6 +3319,8 @@ div.searchbox_info .title_sub ul li{float: left; margin-right: 5px; font: 300 14
 
 #container .loginFind .button_area_wrap{ margin: 25px 0 0 0; }
 
+#container .loginFind .button_area_wrap.login .button_area div{ margin-bottom: 10px; }
+
 #container .loginFind .button_area a{
 	background: #ab2328;
 	height: 55px;
@@ -3322,15 +3337,75 @@ div.searchbox_info .title_sub ul li{float: left; margin-right: 5px; font: 300 14
     vertical-align: middle;
 }
 
-
 #container .loginFind .rdo_box1.blue>input:checked + label:after{ background: #ab2328 !important; }
+/* login > login_field */
+#container .loginFind .login_field{
+	padding: 0 15px;
+}
+#container .loginFind .login_field .form_table .row{
+    margin-bottom: 8px;
+}
 
+#container .loginFind .login_field .form_table .row.password{
+    margin-bottom: 20px;
+}
+
+#container .loginFind .login_field .check_area .chk_box1.autologin {
+    margin-right: 25px;
+}
+
+#container .loginFind .login_field .form_table .row input{
+    height: 45px;
+    padding-left: 15px;
+}
+/* login > login_field END */
 #container .loginFind .form_find h2{
-    padding: 0 0 15px 0;
+    padding: 0 0 5px 0;
     border: 0;
     font: 700 18px 'NotoSansKR';
 }
-
+/* sns_login */
+#container .loginFind .sns_login{
+    padding: 20px 15px 18px;
+    border-bottom: 1px solid #d7d7d7;
+}
+#container .loginFind .sns_login.top_line{
+    border-top: 1px solid #d7d7d7;
+}
+#container .loginFind .sns_login p{
+    display: inline-block;
+    float: left;
+    font: 500 15px/55px 'NotoSansKR';
+}
+#container .loginFind .sns_login div{
+    float: right;
+    display: inline-block;
+}
+#container .loginFind .sns_login div a{
+    position: relative;
+    display: inline-block;
+    margin-left: 15px;
+    width: 55px;
+    height: 55px;
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    background: #1ec700;
+}
+#container .loginFind .sns_login div a.kakao{
+    background: #ffde00;
+}
+#container .loginFind .sns_login div a.kakao em{
+    display: inline-block;
+    position: absolute;
+    top:54%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    width: 28px;
+    height: 30px;
+    background: url('http://imagem.reebok.co.kr/images/reebok/ico_btn_kakao.png') no-repeat;
+    background-size: 100%;
+}
+/* sns_login END */
 #container .loginFind .form_find .pw_verify_result{
     margin: 0 0 25px 0;
     padding: 15px;
@@ -9530,8 +9605,7 @@ div.prod_manual p.desc strong{color:#3e3e3e;font-size:11px;letter-spacing:-1px;}
 
 #contents .join.renewal .agr_box .box{
     position: relative;
-    /* padding: 8px 7.2rem 16px 10px; */
-	padding: 8px 0rem 16px 10px;
+    padding: 8px 0rem 16px 10px;
     border-bottom: 1px solid  #c8cbcc;
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
