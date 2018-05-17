@@ -48,7 +48,6 @@
 					<strong>배송지 정보</strong>
 				</div>
 				<div class="cont">
-					<!-- 180223 카카오 로그인 영역 추가 -->
 					<div class="choice_login">
 						<div class="row">
 							<div class="chk_wrap">
@@ -96,10 +95,16 @@
 						<div class="sns_box" style="display:none;">
 							<div class="row">
 								<div class="button_area">
-									<div class="button_col2" style="padding:0;">
-									   <div class="naver"><a href="#"><span>네이버</span></a></div>
-									   <div class="kakao" style="margin:0;"><a href="#"><span><span class="ico_kakao"></span>카카오</span></a></div>
+									<!-- 180515 -->
+									<div class="button_col2 ico">
+									   <div class="naver">
+										   <a href="#"><span><span class="ico_naver_darker"></span>네이버</span></a>
+									   </div>
+									   <div class="kakao">
+										   <a href="#"><span><span class="ico_kakao_darker"></span>카카오</span></a>
+									   </div>
 								   </div>
+								   <!-- 180515 end -->
 							   </div>
 							</div>
 						</div>
@@ -114,9 +119,7 @@
                             </div>
                         </div>
 
-
 					</div>
-					<!-- 180223 카카오 로그인 영역 추가 end-->
 				</div>
 			</div>
 			<!-- //odr_pay_box -->
@@ -249,36 +252,75 @@
             <!-- //170224 -->
 
 
-			<div class="odr_pay_box select_payment select_payment_1801"> <!-- 180125 결제수단 클래스 추가 -->
+			<div class="odr_pay_box select_payment select_payment_1801 sel_180330"> <!-- 180330 결제수단 수정 -->
 				<div class="tit toggle_arw open">
 					<strong>결제수단</strong>
 					<span>신용카드</span>
 				</div>
 				<div class="cont">
+					<div class="payment_tab">
+						<ul>
+							<li class="on">간편결제</li>
+							<li>일반결제</li>
+						</ul>
+					</div>
+					<script type="text/javascript">
+					    (function($){
+								$('.select_payment .payment_tab li').click(function() {
+									var tab_index = $(this).index();
+									$('.select_payment .payment_tab li').removeClass('on')
+									$(this).addClass('on')
+									if(tab_index == 0){
+										$('.payment_list').hide();
+										$('.pay_list1').show();
+										$('.payment_list>div').removeClass('on')
+										$('.payment_list .p_naver').addClass('on')
+										$('.select_payment .payments').hide();
+										$('#naver_payment').show();
+									}else{
+										$('.payment_list').hide();
+										$('.pay_list2').show();
+										$('.payment_list>div').removeClass('on')
+										$('.payment_list .p_card').addClass('on')
+										$('.select_payment .payments').hide();
+										$('#credit_payment').show();
+									}
+									console.log(tab_index)
+								})
+					    })(jQuery);
+					</script>
                     <!-- 170615 네이버페이 첫 결제 안내 문구 -->
-                    <div style="margin-bottom: 15px;">
+                    <!-- <div style="margin-bottom: 5px;">
                         <span style="font:0.9rem 'NotoSansKR';letter-spacing:-0.5px;">네이버페이로 첫 결제 시 무조건 2000원 <span style="font-family:'NotoSansKRLight'">(2017.06.12 - 25)</span> <a class="modal-popup-click" data-modalpop-click="naverpay-eventpopup" href="javascript:void(0)" style="margin-left:10px;color:#0285cd;">자세히 보기 <span class="icons aft" data-icon="" style="margin-left:2px;"></span></a></span>
-                    </div>
+                    </div> -->
 
 
 					<div class="payment_box">
-						<div class="payment_list">
-
+						<div class="payment_list pay_list1" style="margin:5px 0; display:block;">
 							<!-- 180125 결제수단 목록 추가 -->
-                            <div class="p_naver"><a href="#" class="icons" data-icon="">네이버페이</a></div>
+                            <div class="on p_naver"><a href="#" class="icons" data-icon="">네이버페이</a></div>
 							<div class="p_kakao"><a href="#" class="icons" data-icon="">카카오페이</a></div>
 							<div class="p_lp"><a href="#" class="icons" data-icon="">L.Pay</a></div>
 							<div class="p_payco"><a href="#" class="icons" data-icon="">Payco</a></div>
-							<div class="on p_card"><a href="#" class="icons" data-icon="">카드결제</a></div>
 							<div class="p_kp"><a href="#" class="icons" data-icon="">KPAY</a></div>
-							<div class="p_acc"><a href="#" class="icons" data-icon="">무통장</a></div>
-							<div class="p_mo"><a href="#" class="icons" data-icon="">휴대폰</a></div>
 							<div class="p_samsung"><a href="#" class="icons" data-icon="">삼성페이</a></div>
 							<!-- 180125 결제수단 목록 추가 END-->
 						</div>
+
+
+
+
+						<div class="payment_list pay_list2" style="margin:5px 0;">
+							<!-- 180125 결제수단 목록 추가 -->
+							<div class="p_card"><a href="#" class="icons" data-icon="">카드결제</a></div>
+							<div class="p_acc"><a href="#" class="icons" data-icon="">무통장</a></div>
+							<div class="p_mo"><a href="#" class="icons" data-icon="">휴대폰</a></div>
+							<!-- 180125 결제수단 목록 추가 END-->
+						</div>
+
 						<!-- //payment_list -->
 
-						<div style="padding:5px 0 15px;border-bottom:1px solid #cfcfcf;">
+						<div style="padding:5px 0 25px;border-bottom:1px solid #cfcfcf;">
 							<div class="chk_box1 blue">
 								<input type="checkbox" id="use_payment">
 								<label for="use_payment" class="adipro-r">선택한 결제수단을 다음에도 사용</label>
@@ -286,7 +328,10 @@
 						</div>
 						<!-- //161109 -->
 
-						<div class="payments" id="credit_payment" style="display:block;">
+
+						<!-- 180328 결제수단 수정 END-->
+
+						<div class="payments" id="credit_payment" >
 							<div>
 								<ul class="credit_ops">
 									<li>
@@ -469,7 +514,7 @@
 						<!-- //payments no_accbox -->
 
 						<!-- //180125 결제수단업데이트 -->
-						<div class="payments" id="naver_payment">
+						<div class="payments" id="naver_payment" style="display:block;">
 							<div>
 								<ul class="li_hypn">
 								    <li>네이버페이는 네이버ID로 별도 앱 설치 없이 신용카드 또는 은행계좌 정보를<br />
@@ -595,6 +640,7 @@
 						<!-- //payment payco_payment -->
 
 						<!-- //180125 결제수단업데이트END -->
+						<!-- 180330 결제수단 수정 END-->
 
 						<!-- 170324 border-bottom:1px solid #cfcfcf;padding-top:15px; 삭제  -->
 						<div class="view_more_area" style="margin-top:15px;">
@@ -808,7 +854,7 @@
 						$('#addr_form_box').hide();
 					}
 				});
-				
+
 				//180126 배송지 관리 버튼 클릭
 				var headerH = $('#header').height();
 				$('#address_manage_btn').click(function(){

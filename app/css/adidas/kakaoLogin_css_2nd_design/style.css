@@ -567,6 +567,28 @@ html.no_srl{
     vertical-align: middle;
 }
 
+.button_area a span.ico_kakao_darker{
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    margin-right: 5px;
+    background: url('http://imagem.adidas.co.kr/images/adidas/ico_btn_kakao_gray_darker.png') 0 0 no-repeat;
+    -webkit-background-size: 16px auto;
+    background-size: 16px auto;
+    vertical-align: middle;
+}
+
+.button_area a span.ico_naver_darker{
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    margin-right: 5px;
+    background: url('http://imagem.adidas.co.kr/images/adidas/ico_btn_naver_gray_darker.png') 0 0 no-repeat;
+    -webkit-background-size: 16px auto;
+    background-size: 16px auto;
+    vertical-align: middle;
+}
+
 .button_area.tac{
 	text-align: center;
 }
@@ -10476,6 +10498,11 @@ padding:30px 15px;
 	font:400 25px/50px 'NotoSansKR';
 }
 
+#container>h2.line{
+    margin: 0 0 25px;
+    border-bottom: 1px solid #d7d7d7;
+}
+
 #container .join_step{
 	padding: 25px 0;
 	display: -webkit-flex;
@@ -10688,12 +10715,8 @@ padding:30px 15px;
     margin: 25px 0 0 0;
 }
 
-#container.login .button_area_wrap.login{
-    padding-top:15px;border-top:1px solid #d7d7d7;
-}
-
 #container.login .button_area_wrap.col2 .button_area{
-    margin: 10px 0;
+    margin: 15px 0;
 }
 
 #container.login .button_area_wrap .button_area .kakao a{
@@ -10729,7 +10752,7 @@ padding:30px 15px;
 
 #container.login .form_find h2{
     padding: 0 0 0 0;
-    margin: 0 0 15px;
+    margin: 0 0 5px;
     border: 0;
     font: 700 18px 'NotoSansKR';
 }
@@ -10758,7 +10781,7 @@ padding:30px 15px;
 }
 
 #container.login .form_find p.desc{
-    font:300 13px 'NotoSansKR';
+    font:200 14px 'NotoSansKR';
     margin: 0 0 15px 0;
 }
 
@@ -10768,6 +10791,7 @@ padding:30px 15px;
 
 #container.login .form_table.form_find{
     padding: 0;
+    margin: 0;
 }
 
 #container.login .form_table.form_find .row{
@@ -10865,8 +10889,6 @@ padding:30px 15px;
 }
 
 #container.login .button_area .kakao span{
-    position: relative;
-    top: -1px;
     width: 19px;
     height: 17px;
     background-size: 18px auto;
@@ -10933,7 +10955,7 @@ padding:30px 15px;
 }
 
 #container.login .button_area .button_col2>div a span{
-    color:#999;
+    color:#000;
 }
 
 #container.login .button_area .button_col2 .naver>a span::before{
@@ -10947,6 +10969,9 @@ padding:30px 15px;
     background-size: 15px auto;
     vertical-align: middle;
 }
+#container.login .button_area .button_col2.ico{padding:0;}
+#container.login .button_area .button_col2.ico>div a{line-height: 49px;}
+#container.login .button_area .button_col2.ico .naver>a span::before{display: none;}
 
 #container .join_finish{
 	padding:50px 15px 0;
@@ -11010,19 +11035,111 @@ padding:30px 15px;
 }
 
 /* Login  */
-#container.login .ipt_box{
+#container.login .login_field{
+    padding: 0 15px;
+}
+#container.login .login_field .ipt_box p{
+    margin-bottom: 8px;
+}
+#container.login .login_field .ipt_box p.password{
     margin-bottom: 20px;
+}
+#container.login .login_field .ipt_box p input{
+    height: 45px;
+    padding-left: 15px;
+}
+#container.login .login_field .check_area label{
+    font-weight: 400;
+}
+#container.login .login_field .check_area .chk_box1.autologin{
+    margin-right: 25px;
+}
+#container.login .login_field .button_area a{
+    height: 55px;
+    font: 500 15px/55px 'NotoSansKR';
+}
+#container.login .sns_login{
+    padding: 20px 15px 20px;
+    border-bottom: 1px solid #d7d7d7;
+}
+#container.login .sns_login.top_line{
+    border-top: 1px solid #d7d7d7;
+}
+#container.login .sns_login p{
+    display: inline-block;
+    float: left;
+    font: 500 15px/55px 'NotoSansKR';
+}
+#container.login .sns_login div{
+    float: right;
+    display: inline-block;
+}
+#container.login .sns_login div a{
+    position: relative;
+    display: inline-block;
+    margin-left: 15px;
+    width: 55px;
+    height: 55px;
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    background: #1ec700;
+}
+#container.login .sns_login div a.naver em{
+    display: inline-block;
+    position: absolute;
+    top:54%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    width: 24px;
+    height: 24px;
+    background: url('http://imagem.adidas.co.kr/images/adidas/ico_btn_naver_white.png') no-repeat;
+    background-size: 100%;
+}
+#container.login .sns_login div a.kakao{
+    background: #ffde00;
+}
+#container.login .sns_login div a.kakao em{
+    display: inline-block;
+    position: absolute;
+    top:54%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    width: 28px;
+    height: 30px;
+    background: url('http://imagem.adidas.co.kr/images/adidas/ico_btn_kakao.png') no-repeat;
+    background-size: 100%;
+}
+#container.login .login_find{
+    padding: 0 15px 10px;
+    border-bottom: 1px solid #d7d7d7;
+}
+#container.login .login_find .btn_utils{
+    margin-top: 15px;
+}
+#container.login .login_find .btn_utils a{
+    font: 300 15px 'NotoSansKR';
+}
+#container.login .login_find dl dt{
+    letter-spacing: 0;
+}
+#container.login .login_find dl dd li{
+    letter-spacing: 0;
+}
+#container.login .button_area_wrap.login .button_area a{
+    height: 55px;
+    line-height: 55px;
+}
+#container.login .button_area_wrap.login .button_area div{
+    margin-bottom: 10px;
 }
 #container.login .ipt_box>p{
 	margin-bottom: 10px;
 }
-
 #container.login p.result_txt{
 	font-size:14px;
 	line-height:19px;
 	text-align:center;
 }
-
 #container.login p.result_txt span.id{
 	color:#0286ce;
 	font-weight:bold;
@@ -11142,7 +11259,15 @@ padding:30px 15px;
     margin-left: 5px;
     vertical-align: middle;
 }
-
+#container.login.find_result .sns_login{
+    padding: 15px;
+}
+#container.login.find_result .tab_cont .box{
+    padding: 28px 0 0;
+}
+#container.login.find_result .tab_cont .box .form_find{
+    padding: 0 15px;
+}
 
 /* Register form */
 #container.join_form .form_table{
@@ -11838,7 +11963,7 @@ padding:30px 15px;
 
 #container.order .odr_pay_box>.cont .address_form .row,
 #container.order .odr_pay_box>.cont .choice_login .row{
-	margin-bottom: 10px;
+	margin-bottom: 15px;
 	display: -webkit-flex;
 	display: -moz-flex;
 	display: -ms-flex;
