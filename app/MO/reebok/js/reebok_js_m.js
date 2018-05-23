@@ -351,9 +351,14 @@ Reebok.ops = {
 
 			var $this = $(this);
 			var $selectBox = $(this).find('select');
-			$this.change(function(event){
-				$this.find('>a span').text($selectBox.find('option:selected').text());
+			// $this.change(function(event){
+			// 	$this.find('>a span').text($selectBox.find('option:selected').text());
+			// });
+			$selectBox.on('change',function(){
+			  $(this).siblings('a').find('span').text($(this).find('option:selected').text());
 			});
+			console.log($(this))
+
 		});
 	}
 
