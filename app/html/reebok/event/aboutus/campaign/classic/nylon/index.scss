@@ -29,79 +29,18 @@
                     font: 700 13px/43px 'NotoSansKR';
                     text-transform: uppercase;
                     position: relative;
-                    left: -23px;
+                    /* left: -23px; */
+                    left: -31px;
                 }
                 span{
                     position: absolute;
-                    right: 10px;
+                    right: 20px;
                     top: 16px;
                     width: 41px;
                     height: 13px;
                     display: inline-block;
                     background: url(/images/reebok/about/classic/nylon/icon_arrow.png) no-repeat;
                     background-size: 100%;
-                }
-            }
-        }
-    }
-
-    .prd_lineup{
-        overflow: hidden;
-        background: #ebebeb; /* Old browsers */
-        background: -moz-linear-gradient(top, #ebebeb 0%, #ffffff 100%); /* FF3.6-15 */
-        background: -webkit-linear-gradient(top, #ebebeb 0%,#ffffff 100%); /* Chrome10-25,Safari5.1-6 */
-        background: linear-gradient(to bottom, #ebebeb 0%,#ffffff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebebeb', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
-        .inner{
-            width: 100%;
-            margin:0 auto;
-            text-align: center;
-            box-sizing: border-box;
-            -webkit-box-sizing: border-box;
-            h2{
-                font: 3rem/3rem 'reefont-condensed';
-                letter-spacing: 1px;
-                text-transform: uppercase;
-                color: #000;
-                text-align: center;
-                padding-top: 10px;
-            }
-            ul.prd_box{
-                overflow: hidden;
-                padding: 10px 15px 30px;
-                &.bg{
-                    background: #ebebeb; /* Old browsers */
-                    background: -moz-linear-gradient(top, #ebebeb 0%, #ffffff 100%); /* FF3.6-15 */
-                    background: -webkit-linear-gradient(top, #ebebeb 0%,#ffffff 100%); /* Chrome10-25,Safari5.1-6 */
-                    background: linear-gradient(to bottom, #ebebeb 0%,#ffffff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-                    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebebeb', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
-                }
-                li{
-                    float: left;
-                    width: 50%;
-                    text-align: center;
-                    img{
-                        width: 100%;
-                        display: inline-block;
-                    }
-                    h3{
-                        font: 25px/25px 'reefont-condensed';
-                        letter-spacing: 1px;
-                        text-transform: uppercase;
-                        color: #000;
-                        text-align: center;
-                        margin: 0 0 10px;
-                    }
-                    a.campaign-btn{
-                        display: inline-block;
-                        width: 80%;
-                        height: 40px;
-                        border: 1px solid #000;
-                        span{
-                            font: 14px/40px 'NotoSansKR';
-                            color: #000;
-                        }
-                    }
                 }
             }
         }
@@ -307,6 +246,9 @@
       .prd_titles_wrap{
           position: relative;
           padding-bottom: 47%;
+          @media screen and (max-width: 320px){
+              padding-bottom: 54%;
+          }
           a{
               position: absolute;top:0;
               left:0;
@@ -357,6 +299,7 @@
                   position: relative;
                   width: 100%;
                   margin-left: 32px;
+
                   strong{
                       position: relative;
                       font: 400 13px/23px 'dinpro cond','Nanum Gothic';
@@ -365,13 +308,20 @@
                       color: #fff;
                       letter-spacing: 0.7px;
                       z-index: 1;
+                      @media screen and (max-width: 320px){
+                          margin-right: 2px; font-size: 11px;
+                      }
                   }
+
                   em{
                       position: relative;
                       color: #fff;
                       font: 500 14px/30px 'NotoSansKR','Nanum Gothic';
                       z-index: 1;
                       letter-spacing: -0.7px;
+                      @media screen and (max-width: 320px){
+                          font-size: 12px;
+                      }
                   }
                   &:after{
                       content: '';
