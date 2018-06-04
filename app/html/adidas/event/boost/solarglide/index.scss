@@ -1,0 +1,260 @@
+@import './app/css/adidas/scss/common/mixin.scss';
+@import './app/css/adidas/scss/common/common.scss';
+
+
+#solar_boost{
+
+	strong{
+		display: block;
+		padding: 0 0 5px 0;
+		font:900 1.8rem 'NotoSansKR';
+	}
+	p{
+		font:500 1rem 'NotoSansKR';
+	}
+
+	.btn{
+		width: 100%;
+		a{
+			display: block;
+			background: #000;
+			color:#fff;
+			font:100 16px/54px 'NotoSansKR';
+			text-align: center;
+			&:after{
+				margin-left: 5px;
+			}
+
+		}
+	}
+
+	.main{
+		position: relative;
+		overflow: hidden;
+		// height: 600px;
+		&.on{
+			.bg{
+				img{
+					@include css3(transform, scale(1.08));
+				}
+			}
+		}
+		.bg{
+			overflow: hidden;
+
+			img{
+				@include css3(transform, scale(1));
+
+				@include css3(transition, all 6s);
+				width: 100%;
+			}
+		}
+		.main-txt{
+			position: absolute;
+			width: 100%;
+			left:23px;
+			top:70%;
+			z-index: 2;
+			text-align: center;
+			.title{
+				padding: 0 0 8px 0;
+			    font: 3.5rem/3rem 'adinenuPro-black';
+			    color: #fff;
+			    text-transform: uppercase;
+			    letter-spacing: 1px;
+			    text-align: left;
+			}
+			.desc{
+				font:1rem/1.7rem 'NotosansKRlight', 'Nanum Gothic';
+				color:#fff;
+				text-align: left;
+			}
+		}
+
+	}
+
+	.part1{
+		position: relative;
+		padding: 30px 0 0;
+		@include css3(opacity,0);
+		@include css3(transition, all 0.5s);
+		&.on{
+			@include css3(opacity,1);
+
+		}
+		.img{
+			img{width: 100%;}
+		}
+		.txt{
+			padding: 15px 23px 20px;
+		}
+	}
+
+	.video_wrap{
+		img{
+			width: 100%;
+		}
+	}
+
+	.statement{
+		position: relative;
+		padding: 48px 0;
+		>*{text-align: center;}
+	}
+
+	.part2{
+		position: relative;
+		top:30px;
+		padding-bottom: 15px;
+		@include css3(opacity,0);
+		@include css3(transition, all 0.5s);
+		&.on{
+			top:0;
+			@include css3(opacity,1);
+
+		}
+		&.left{
+			.txt{
+				>*{
+					text-align: right;
+				}
+			}
+		}
+		.img{
+			img{width: 100%;}
+		}
+		.txt{
+			padding: 18px 23px;
+		}
+	}
+
+	.btn_wrap{
+		margin: 0 23px;
+	}
+
+	.event{
+		position: relative;
+		padding: 30px 0 0 0;
+		a{
+			display: block;
+			img{
+				width: 100%;
+			}
+		}
+	}
+
+	.products_wrap{
+		position: relative;
+    	padding: 55px 23px 40px;
+		background: url('/images/adidas/event/boost/solarboost/prd_bg.jpg') no-repeat;
+		background-size: 100% 100%;
+		>strong{
+		    font: 30px 'adinenuPro-black';
+			text-transform: uppercase;
+		}
+		.products{
+			position: relative;
+			.owl-stage-outer{
+				position: relative;
+				left:-56px;
+			}
+			.owl-controls{
+				.owl-dots{
+					.owl-dot{
+					    padding-top: 25px;
+						&.active{
+							span{
+								background: #0286cd;
+							}
+						}
+						span{
+							width: 5px;
+    						height: 5px;
+							background: #999;
+						}
+					}
+				}
+			}
+			.prod_box{
+				padding: 0;
+				>*{color:#000;}
+				.tit{
+					height: auto;
+					padding: 0 0 5px 0;
+					font:700 18px 'NotoSansKR';
+				}
+				.ctgr{
+					padding: 0;
+					color:#000;
+				    font: 12px 'adinenuPro-regular';
+				}
+				.prc{
+					font:400 14px 'NotoSansKR';
+					span{
+	    				font: 16px 'AdihausDIN-bold';
+
+					}
+
+				}
+			}
+		}
+	}
+
+	.runners{
+		position: relative;
+	    background: url(/images/adidas/event/boost/solarboost/runners.jpg) no-repeat;
+	    padding: 250px 0 30px;
+	    background-size: 100% 100%;
+		.main-txt{
+			@include css3(opacity,0);
+			@include css3(transition, all 0.5s);
+			transition-delay: 1.3s;
+		}
+
+		&.on{
+			.main-txt{
+				@include css3(opacity,1);
+			}
+
+		}
+		.bg{
+			img{
+				width: 100%;
+			}
+		}
+		.main-txt{
+		    padding: 0 23px;
+			z-index: 2;
+			text-align: center;
+			.title{
+				padding: 0 0 8px 0;
+			    font: 3.5rem/3rem 'adinenuPro-black';
+			    color: #fff;
+			    text-transform: uppercase;
+			    letter-spacing: 1px;
+			    text-align: left;
+			}
+			.desc{
+				font:1rem/1.7rem 'NotosansKRlight', 'Nanum Gothic';
+				color:#fff;
+				text-align: left;
+			}
+			.btn_wrap{
+				margin: 0;
+				padding: 25px 0 0 0;
+				.btn{
+					a{
+						background: #fff;
+						color:#000;
+						font:300 14px/54px 'NotosansKR', 'Nanum Gothic';
+
+						span{
+							text-transform: uppercase;
+							    font: 16px 'adinenuPro-bold';
+						}
+					}
+				}
+			}
+		}
+	}
+}
