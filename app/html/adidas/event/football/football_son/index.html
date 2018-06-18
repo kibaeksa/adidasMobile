@@ -447,8 +447,8 @@
                         <li class="act"><a href="javascript:void(0)" ><span>EP</span> 1</a></li>
                         <li class="act"><a href="javascript:void(0)"><span>EP</span> 2</a></li>
                         <li class="act"><a href="javascript:void(0)"><span>EP</span> 3</a></li>
-                        <li class="act on"><a href="javascript:void(0)"><span>EP</span> 4</a></li>
-                        <li class="no_link"><a href="javascript:void(0)"><span>EP</span> 5</a></li>
+                        <li class="act"><a href="javascript:void(0)"><span>EP</span> 4</a></li>
+                        <li class="act on"><a href="javascript:void(0)"><span>EP</span> 5</a></li>
                     </ul>
                 </div>
 
@@ -459,27 +459,29 @@
                             <ul>
                                 <li>
                                     <div class="img"><img src="/images/adidas/event/football/football_son/head02.jpg" alt=""></div>
-                                    <a href="javascript:void(0)" class="video" onclick="openModalVideoViewer('l3eT96rMrr8')" style="top:50%; left:30%;"></a>
+                                    <a href="javascript:void(0)" class="video" onclick="openModalVideoViewer('l3eT96rMrr8')"  ></a>
                                 </li>
 
                                 <li>
                                     <div class="img"><img src="/images/adidas/event/football/football_son/head05.jpg" alt=""></div>
-                                    <a href="javascript:void(0)" class="video" onclick="openModalVideoViewer('9h5PdOEsUYw')" style="top:53%; left:57%;"></a>
+                                    <a href="javascript:void(0)" class="video" onclick="openModalVideoViewer('9h5PdOEsUYw')"  ></a>
                                 </li>
 
                                 <li>
                                     <div class="img"><img src="/images/adidas/event/football/football_son/son_ep_03.jpg" alt=""></div>
-                                    <a href="javascript:void(0)" class="video" onclick="openModalVideoViewer('fanzRE0sJCU')" style="top:53%; left:30%;"></a>
-                                </li>
-
-                                <li class="on">
-                                    <div class="img"><img src="/images/adidas/event/football/football_son/son_ep_04.jpg" alt=""></div>
-                                    <a href="javascript:void(0)" class="video" onclick="openModalVideoViewer('ISJh2XKhm-U')" style="top:56%; left:57.5%;"></a>
+                                    <a href="javascript:void(0)" class="video" onclick="openModalVideoViewer('fanzRE0sJCU')"  ></a>
                                 </li>
 
                                 <li>
-
+                                    <div class="img"><img src="/images/adidas/event/football/football_son/son_ep_04.jpg" alt=""></div>
+                                    <a href="javascript:void(0)" class="video" onclick="openModalVideoViewer('ISJh2XKhm-U')" ></a>
                                 </li>
+
+                                <li class="on">
+                                    <div class="img"><img src="/images/adidas/event/football/football_son/son_ep_05.jpg" alt=""></div>
+                                    <a href="javascript:void(0)" class="video" onclick="openModalVideoViewer('X3d0qOQQK-c')" ></a>
+                                </li>
+
                             </ul>
                         </div>
                     </div>
@@ -502,8 +504,6 @@
                         <a href="http://m.adidas.co.kr/MO/Product/sportsPrdList.action?brand_cd=1&ctgr_gb=001&ctgr_chk=&term=#brand_cd=1&ctgr_gb=001&strPage=1&term=2&sQuick=N" class="buy aft icons" data-icon="">축구 제품 모두 보기</a>
                     </div>
                 </div>
-
-
 
                 <div class="bottom">
                     <div class="img"><img src="/images/adidas/event/football/football_son/gallery.jpg" alt=""></div>
@@ -539,28 +539,25 @@
 
                         });
 
-                        var index = 0;
-                        var length = 5;
-
-                        function jerseyAnim(){
-                            $('.team_btn li').removeClass('on').eq(index).addClass('on');
-                            $('.team_slider li').fadeOut().eq(index).fadeIn();
-
-                        }
+                        // var index = 0;
+                        // var length = 5;
 
                         $('#football_son .team_btn li a').bind('click',function(){
 
-                            if($(this).parent().hasClass('on')){
-                                return;
-                            }
-                            if($(this).parent().hasClass('no_link')){
-                                alert("준비중입니다.");
-                                return;
-                            }
+                            // if($(this).parent().hasClass('on')){
+                            //     return;
+                            // }
+                            // if($(this).parent().hasClass('no_link')){
+                            //     alert("준비중입니다.");
+                            //     return;
+                            // }
 
-                            index = $(this).parent().index();
+                            var index = $(this).parent().index();
+                            console.log(index)
+                            $('.team_btn li').removeClass('on').eq(index).addClass('on');
+                            $('.team_slider li').fadeOut().eq(index).fadeIn();
 
-                            jerseyAnim();
+                            // jerseyAnim();
                         });
 
                         $('#football_son .prod_wrap #num1').bind('click',function(){
