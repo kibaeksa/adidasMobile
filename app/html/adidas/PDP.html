@@ -2467,7 +2467,9 @@
 
 			$(document).ready(function() {
 
-
+                // 180618 scrollTop
+                $('body,html').scrollTop();
+                console.log('scrolltop')
 
                 $('.tooltip_btn').bind('click',function(event){
 					$(this).addClass('on');
@@ -2522,10 +2524,6 @@
 					$('#prod_tab_layer>a').removeClass('on');
 					$('.product_info .prod_tab>a').eq(index).addClass('on');
 					$(this).addClass('on');
-
-					$('body').animate({
-						scrollTop : $('.product_info').offset().top
-					},0);
 
 					return false;
 				});
