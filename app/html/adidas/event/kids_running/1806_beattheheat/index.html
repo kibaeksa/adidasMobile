@@ -461,7 +461,7 @@
                             <li><a href="#"><img src="/images/adidas/event/kids_running/1806_beattheheat/img2-1.png" alt="img2-1"></a></li>
                         </ul>
                     </div>
-                    <ul class="choice">
+                    <ul class="choice1">
                         <li class="on">
                             <div class="txt">
                                 <h1>YB TR 쿨티</h1>
@@ -611,32 +611,16 @@
                         var owlSlider2 = $('#slider_owl2');
                         var owlSlider3 = $('#slider_owl3');
                         var owlSlider4 = $('#slider_owl4');
-                        var owlSlider5 = $('#slider_owl5');
-                        var owlSliderLen = $('#slider_owl1').find('li');
+                        var owlSlider5 = $('#slider_owl5');                       
 
                         owlSlider1.on('initialized.owl.carousel', function(event) {
                         });
-
-                        var _idx = owlSlider1.find('li').index();
-
-                        owlSlider1.on('changed.owl.carousel', function(event) {
-                            for(var i = 0; i < owlSliderLen.length; i++){
-                                $('.choice li').removeClass('on').eq(i).addClass('on');
                         
-                            }
+                        owlSlider1.on('changed.owl.carousel', function(event) { // 첫번째 슬라이드에 변화(change) 가 있을때						
+							var index = event.item.index - 2; // 인덱스 잡기
+							            	       
+                            $('.choice1 li').removeClass('on').eq(index).addClass('on');							 
                         });
-                        /*
-                        $('.choice li:not(:first)').hide();
-
-                        $('.attr li').click(function(){
-                        num = $(this).attr('data-new');
-                        $('.choice li').hide();
-                        $('#list'+num).show();
-                        });
-
-                        */
-
-
 
                         owlSlider1.owlCarousel({
                             stagePadding: 0,
