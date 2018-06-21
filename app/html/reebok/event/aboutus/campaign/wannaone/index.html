@@ -66,17 +66,47 @@
 						<a href="/brand/campaign/list.action">CAMPAIGN</a>
 						<span>reebok <span class="colab">x</span> nada</span>
 					</div> -->
+					<div class="top"><img src="/images/reebok/about/wannaone/top.jpg" alt=""></div>
 
-					<div class="main_visual video">
+					<div class="main_visual video" data-video-id="wNT1-sx0vUM">
 						<div class="bg"><img src="/images/reebok/about/wannaone/video.jpg" alt=""></div>
+					</div>
+					<div class="collections2 collection_slider2">
+						<div class="txt" style="margin:20px 0 0 0;"><p>Reebok Classic <span>x</span> wanna-one</p><em></em></div>
+						<div class="txt"><p>lookbook</p><em></em></div>
+						<div class="btn_wrap">
+							<a href="http://m.reebok.co.kr/MO/Product/bestPrdList.action" class="buy">구매하기</a>
+							<span></span>
+						</div>
+
+						<div class="collection_cut">
+
+							<div class="slider" >
+								<ul id="collection_slider2">
+									<li class="active"><img src="/images/reebok/about/wannaone/01.png" alt=""></li>
+									<li><img src="/images/reebok/about/wannaone/02.png" alt=""></li>
+									<li><img src="/images/reebok/about/wannaone/03.png" alt=""></li>
+									<li><img src="/images/reebok/about/wannaone/04.png" alt=""></li>
+									<li><img src="/images/reebok/about/wannaone/05.png" alt=""></li>
+									<li><img src="/images/reebok/about/wannaone/06.png" alt=""></li>
+									<li><img src="/images/reebok/about/wannaone/07.png" alt=""></li>
+									<li><img src="/images/reebok/about/wannaone/08.png" alt=""></li>
+									<li><img src="/images/reebok/about/wannaone/09.png" alt=""></li>
+									<li><img src="/images/reebok/about/wannaone/10.png" alt=""></li>
+									<li><img src="/images/reebok/about/wannaone/11.png" alt=""></li>
+								</ul>
+							</div>
+
+
+						</div>
+
+
 					</div>
 					<div class="bottom">
 						<a href="http://m.reebok.co.kr/MO/Product/bestPrdList.action">
 							<img src="/images/reebok/about/wannaone/bottom.jpg" alt="">
 						</a>
 					</div>
-
-
 
 				</div>
 				<!-- //about_campaign -->
@@ -129,14 +159,14 @@
 					      }
 
 						  $('.video').bind('click',function(){
-  							alert('오후 5시 공개 예정입니다.');
+  							// alert('오후 5시 공개 예정입니다.');
 
-  							// var ytbId = $(this).attr('data-video-id');
-  							// var html = '<div id="video-layer" style="">';
-  							// html += '	<div class="bg" ></div>';
-  							// html += '	<div class="video-box"></div>';
-  							// html += '	<a href="javascript:void(0)" class="close_x_btn white"></a>';
-  							// html += '</div>';
+  							var ytbId = $(this).attr('data-video-id');
+  							var html = '<div id="video-layer" style="">';
+  							html += '	<div class="bg" ></div>';
+  							html += '	<div class="video-box"></div>';
+  							html += '	<a href="javascript:void(0)" class="close_x_btn white"></a>';
+  							html += '</div>';
 
   							$('html').css({overflow: 'hidden'});
   							$('body').append(html);
@@ -149,10 +179,56 @@
   							setTimeout(function(){
   								$('#video-layer').addClass('loaded');
 
-  								$('#video-layer .video-box').append('<iframe width="100%" height="100%" src="http://embed.ustudio.com/embed/DiSTJCt7hAxS/'+ytbId+'?rel=0" frameborder="0" allowfullscreen></iframe>')
+  								$('#video-layer .video-box').append('<iframe width="100%" height="100%" src="http://www.youtube.com/embed/'+ytbId+'?rel=0" frameborder="0" allowfullscreen></iframe>')
   							},100);
 
   						});
+
+						// 2 하단 갤러리
+					  // var productsSlider2 = Swipe(document.getElementById('collection_slider2'),{
+						//   stopPropagation: true,
+					  //
+						//   callback: function(index, element) {
+						// 	  $('.collection_slider2 .num_paging a').removeClass('on').eq(index).addClass('on');
+						// 	  $('.collection_slider2 .prodlist_wrap .prodlist').removeClass('active').eq(index).addClass('active');
+						// 	  $('.collection_slider2 ul li').removeClass('active').eq(index).addClass('active');
+						//   }
+					  // });
+					  //
+					  // // 2 하단 갤러리넘버링
+					  //
+					  // $('.collection_slider2 .num_paging a').bind('click',function(){
+						//   if($(this).hasClass('on')){
+						// 	  return;
+						//   }
+						//   productsSlider2.slide($(this).index());
+					  // });
+					  //
+					  // $('.collection_slider2 .next').click(function(){
+						//   productsSlider2.next();
+						//   return false;
+					  // });
+					  // $('.collection_slider2 .prev').click(function(){
+						//   productsSlider2.prev();
+						//   return false;
+					  // });
+
+					  var visualSlider = $("#collection_slider2");
+
+					  visualSlider.owlCarousel({
+						  stagePadding: 0,
+						  margin:0,
+						  items : 1,
+						  merge: true,
+						  canter : true,
+						  loop : true,
+						  nav:true,
+						  autoplay:true,
+						  autoplayTimeout:3000
+					  });
+					  $('.owl-nav .owl-prev').html('<img src="/images/reebok/about/wannaone/prev.jpg" alt="">');
+					  $('.owl-nav .owl-next').html('<img src="/images/reebok/about/wannaone/next.jpg" alt="">');
+
 
 
 
