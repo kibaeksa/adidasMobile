@@ -150,8 +150,10 @@
 						</div>
 
 						<div class="btn">
-							<a href="http://m.reebok.co.kr/MO/Club/clubCampainView.action?event_id=5185">자세히 보기</a>
+							<a href="javascript:void(0)">자세히 보기</a>
+							<!-- http://m.reebok.co.kr/MO/Club/clubCampainView.action?event_id=5185 -->
 						</div>
+						<span class="add">*아래 화보에 없는 다섯 멤버의 화보는 8월에 공개됩니다.</span>
 					</div>
 
 					<!-- 슬라이더 -->
@@ -268,19 +270,23 @@
 
 					  var visualSlider = $("#collection_slider2");
 
+					  $('.box2 .btn a').bind('click',function(){
+					  	alert('이벤트 준비 중 입니다.');
+					  	// return false;
+					  })
+
+
 					  visualSlider.owlCarousel({
-						  height: 791,
-						  stagePadding: 0,
-						  margin:0,
-						  items : 1,
-						  merge: true,
-						  center : true,
-						  loop : true,
-						  nav:true,
-						  autoplay:true,
-						  autoHeight : true,
-						  autoplayTimeout:3000
-					  });
+						 stagePadding: 0,
+						 margin:0,
+						 items : 1,
+						 merge: true,
+						 canter : true,
+						 loop : true,
+						 nav:true,
+						 autoplay:true,
+						 autoplayTimeout:3000
+					 });
 
 					  // var cutSlider = $("#cutSlider");
 					  //
