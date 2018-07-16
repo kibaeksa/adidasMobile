@@ -447,7 +447,10 @@
                 <!-- 작업영역 -->
                 <div style="position:relative" class="adiclub_event">
                     <img src="http://imagem.adidas.co.kr/upload/campaign/adidas/5285/m/1807_ADICROSS_MO.jpg" alt="" style="width:100%;">
-                    <a href="javascript:void(0)" class="video-button" data-video-id="eSSVkUO_HFQ" style="display:inline-block;position: absolute;top: 22.5%;left:0;width:100%;height:9.1%;text-indent:-5000px;">동영상 보기</a>
+                    <!-- 180716 -->
+                    <a href="javascript:void(0)" class="video-button" onclick="openModalVideoViewer('eSSVkUO_HFQ')" style="display:inline-block;position: absolute;top: 22.5%;left:0;width:100%;height:9.1%;text-indent:-5000px;">동영상 보기</a>
+                    <!-- 180716 end-->
+
                     <a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=D97784" style="display:inline-block;position: absolute;top: 49.9%;left:5%;width:90%;height:2%;text-indent:-5000px;">구매하기</a>
                     <a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=652" style="display:inline-block;position: absolute;top: 79.3%;left:0;width:50%;height:2.1%;text-indent:-5000px;">아디크로 클래식 보러가기</a>
                     <a href="#" style="display:inline-block;position: absolute;top: 79.3%;right:0;width:50%;height:2.1%;text-indent:-5000px;">사은품 응모하기</a>
@@ -500,37 +503,7 @@
                     }
                 </style>
                 <script>
-                    (function($) {
-                        // video
-                        $('.video-button').bind('click', function() {
-                            var ytbId = $(this).attr('data-video-id');
-                            var html = '<div id="video-layer" style="">';
-                            html += '	<div class="bg" ></div>';
-                            html += '	<div class="video-box"></div>';
-                            html += '	<a href="javascript:void(0)" class="close_x_btn white"></a>';
-                            html += '</div>';
 
-                            $('html').css({
-                                overflow: 'hidden'
-                            });
-                            $('body').append(html);
-
-                            $('#video-layer .close_x_btn').bind('click', function() {
-                                $('html').css({
-                                    overflow: 'scroll'
-                                });
-                                $('#video-layer ').remove();
-                            });
-
-
-                            setTimeout(function() {
-                                $('#video-layer').addClass('loaded');
-
-                                $('#video-layer .video-box').append('<iframe width="100%" height="100%" src="http://www.youtube.com/embed/' + ytbId + '?rel=0" frameborder="0" allowfullscreen></iframe>')
-                            }, 100);
-                            return false;
-                        });
-                    })(jQuery);
                 </script>
 				<!-- 작업영역 끝 -->
 
