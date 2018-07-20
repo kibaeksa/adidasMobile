@@ -1,36 +1,87 @@
 @import "./app/MO/reebok/css/scss/about.scss";
+#video-layer{
+  position:fixed;top:0;left:0;width: 100%;height: 100%;z-index:1000;
+}
+
+#video-layer .bg{
+  width: 100%;
+  height: 100%;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  transform-origin:center center;
+  -webkit-transform-origin:center center;
+  transform:scale(0);
+  -webkit-transform:scale(0);
+  opacity:0;
+  background:#000;
+  z-index:1;
+
+  transition:all 0.4s;
+  -webkit-transition:all 0.4s;
+
+
+}
+
+#video-layer.loaded .bg{
+  opacity: 1;
+  transform:scale(1.2);
+  -webkit-transform:scale(1.2);
+}
+
+#video-layer .video-box{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+}
+
+#video-layer .close_x_btn{
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 5;
+  opacity: 0;
+}
+
+#video-layer.loaded .close_x_btn{
+  opacity: 1;
+}
 
 .fusion {
-    .main_section {
-        position: relative;
-
-        .bg {
-            img {
-                width: 100%;
-            }
-        }
-
-        .inn {
-            position: absolute;
-            bottom: 4%;
+    .video_visual{
+        padding-bottom: 125.4375%;
+        .cover{
+            width: 140px;
+            margin: 0 auto;
+            top:50%;
             left: 50%;
-            width: 100%;
-            transform: translateX(-50%);
-            -webkit-transform: translateX(-50%);
+            transform: translate(-50%, -50%);
             text-align: center;
-
-            .btn {
-                position: relative;
-                margin: 10px 1px;
+            a.btn-video{
                 display: inline-block;
-                width: 120px;
-                border: 2px solid #000;
-
-                em {
-                    color: #000;
-                    font: 500 12px/40px 'NotoSansKR';
-                    letter-spacing: 0.2rem;
-                }
+                margin-bottom: 15px;
+                width: 60px;
+                height: 60px;
+                background: url('/images/reebok/about/flexweave/180719/btn_play.png') 0 0 no-repeat;
+                background-size: 60px 60px;
+            }
+            a.btn-buy{
+                position: relative;
+                display: block;
+                width: 140px;
+                height: 40px;
+                border: 1px solid #fff;
+                background: rgba(0, 0, 0, 0.2);
+                text-align: center;
+                box-sizing: border-box;
+                font: 12px/38px 'NotoSansKR';
+                color: #fff;
+                letter-spacing: 0.2rem;
             }
         }
     }
@@ -159,7 +210,7 @@
 
                         > * {
                             display: inline-block;
-                        }                        
+                        }
                         span.label {
                             position: absolute;
                             left: 0;
