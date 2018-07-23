@@ -1,0 +1,259 @@
+@import './app/css/adidas/scss/common/mixin.scss';
+@import './app/css/adidas/scss/common/common.scss';
+
+html,body{
+	// height: 100%;
+}
+#container{
+	.go_top a{
+	width: 100%;
+	height: 50px;
+	display: block;
+	position: relative;
+	background: url('/images/adidas/back_top.png') center 10px no-repeat;
+	background-size: 60px auto;
+	text-indent: -5000px;
+	}
+	.pod_system{
+		background:white;
+		position: relative;
+		overflow: hidden;
+
+		.box1{
+			position: relative;
+			overflow: hidden;
+
+			// background: url('/images/adidas/event/originals/pod/banner.jpg') 0 0 no-repeat;
+			// background-size: 100% auto;
+
+			.bg{
+				img{
+					width:100%;
+				}
+			}
+			.bg_shoe{
+				position: absolute;
+				top: 65%;
+				left: 50%;
+				width: 74%;
+				@include css3(transform,translate(-50%,-50%));
+				@include css3(opacity,0);
+				@include css3(transition, all 0.5s);
+				img{
+					width:100%;
+				}
+				&.on{
+					top: 54%;
+					@include css3(opacity,1);
+				}
+			}
+		}
+
+		.box2{
+			background: #001652;
+			padding: 4rem 0;
+			.banner_slider_wrap{
+				margin: 0 15px;
+				overflow: hidden;
+				position: relative;
+				// position: relative;
+				ul{
+					.owl-item{
+						&.active{
+							li{
+								img{
+									// top: 54%;
+									@include css3(opacity,1);
+								}
+							}
+
+						}
+					}
+
+					li{
+						.txt{
+							text-align: center;
+							position: relative;
+							top: 61px;
+							h1{
+								font:30px 'adinenuPro-black';
+								color:#fff;
+								letter-spacing: 0.3px;
+							}
+							span{
+								font: 1.1rem/1.8rem 'NotoSansKR';
+								color: #fff;
+								display: block;
+								margin: 6px 0 0 0;
+							}
+							.coming{
+								margin: 8px 0;
+								display: inline-block;
+								border: 1px solid #816b9c;
+								a{
+									font:13px 'adinenuPro-bold';
+									color:#816b9c;
+									display: block;
+									padding: 8px 20px;
+								}
+							}
+						}
+						img{
+							width: 100%;
+							// @include css3(opacity,0);
+							@include css3(transition, all 0.8s);
+						}
+					}
+				}
+				.owl-controls{
+					width: 100%;
+					bottom: 46%;
+					position: absolute;
+					.owl-nav{
+						.owl-prev{
+							background: url('/images/adidas/event/originals/pod/prev.jpg') 0 0 no-repeat;
+							background-size: 100% auto;
+							position: absolute;
+							left: 0;
+							width: 40px;
+							height: 40px;
+							text-indent: -9999px;
+						}
+						.owl-next{
+							background: url('/images/adidas/event/originals/pod/next.jpg') 0 0 no-repeat;
+							background-size: 100% auto;
+							position: absolute;
+							right: 0;
+							width: 40px;
+							height: 40px;
+							text-indent: -9999px;
+						}
+					}
+					.owl-dots{
+						display: none!important;
+						text-align: center;
+						.owl-dot{
+							display: inline-block;
+							margin: 0 5px;
+							border-radius: 50px;
+							-webkit-border-radius: 50px;
+							background: #5e5b5b;
+							width: 10px;
+							height: 10px;
+							&.active{
+								background: #fff;
+							}
+						}
+					}
+				}
+			}
+			.desc{
+				text-align: center;
+				font:1.1rem/1.8rem 'NotoSansKR';
+				color:#Fff;
+				margin-top: 50px;
+			}
+		}
+
+		.box3{
+			position: relative;
+			overflow: hidden;
+			background: #000;
+			.grid_wrap{
+				width:100%;
+				position: relative;
+				.img{
+					width:50%;
+					float: left;
+					overflow: hidden;
+					position: relative;
+					img{
+						width:100%;
+						&:hover{
+							transition: 7.5s transform linear;
+							transform: scale(1.1);
+						}
+					}
+				}
+			}
+		}
+
+		.pod-modal-popup{
+			width: 100%;
+		    height: 100%;
+		    position: fixed;
+		    top: 0;
+		    left: 0;
+		    z-index: 100;
+		    overflow: auto;
+			.mask{
+				opacity: 1;
+				width: 100%;
+				height: 100%;
+				position: fixed;
+				top: 0;
+				left: 0;
+				background: rgba(0,0,0,0.7);
+				z-index: 5;
+			}
+			.popup-content{
+				width: 100%;
+				position: absolute;
+				left: 50%;
+				z-index: 10;
+				opacity: 1;
+				transition: opacity 0.4s;
+				transform: translate3d(-50%, -50%, 0px);
+				top: 50%;
+				left: 50%;
+				.close{
+					opacity: 1;
+				    position: absolute;
+				    right: 20px;
+				    top: -46px;
+				    z-index: 10000;
+				    font-size: 4rem;
+				    color: #fff;
+				    font: 400 3rem 'adinenuPro-light';
+
+				}
+				img{
+					width: 100%;
+				}
+			}
+		}
+
+		.box4{
+			position: relative;
+			overflow: hidden;
+			background: #001652;
+			.txt{
+				text-align: center;
+				margin-top:30px;
+				margin-bottom: 60px;
+				h1{
+				    font: 700 2.3rem/2rem 'NotoSansKR';
+					color:#fff;
+				}
+				p{
+					font: 1.1rem/1.8rem 'NotoSansKR';
+					color: #fff;
+					letter-spacing: 0.3px;
+					padding: 15px 0;
+				}
+				.btn{
+					display: inline-block;
+					border: 1px solid #fdbade;
+					margin-bottom:20px;
+					a{
+						display: inline-block;
+						padding:10px 30px;
+						font:1rem/1.5rem 'NotoSansKR';
+						color:#fdbade;
+					}
+				}
+			}
+		}
+
+	}
+}
