@@ -1,0 +1,1004 @@
+@charset "utf-8";
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    vertical-align:baseline;
+    background:transparent;
+    -webkit-text-size-adjust: 100%;
+    font-family:'NotoSansKR';
+    font-weight: 500;
+    letter-spacing:-1px;
+    font-family: 'NotoSansKRRegular';
+}
+blockquote, q {
+    quotes:none;
+}
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+    display:block;
+}
+nav ul ,li{
+    list-style:none;
+}
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+    text-decoration:none;
+}
+
+/***** common *****/
+/*쿠폰 레이어*/
+#top_banner_mycpn {position:absolute; left:0; top:0; z-index:200;}
+#top_banner_mycpn img {width:100%;}
+#top_banner_mycpn a.close {position:absolute; right:10px; top:15px; width:25px;}
+
+#wrap{overflow: hidden;}
+#contents img{max-width:100%; vertical-align:top}
+/* 20180404 수정 */
+section#header .navigation_main_wrapper>h1 a{} /* // 20180404 수정 */
+section#header .navigation_main_wrapper {overflow:hidden;}
+
+
+.chk_dsgn{display:inline-block;}
+.chk_dsgn input[type='checkbox']{
+	border: 0 none;
+    clip: rect(0px, 0px, 0px, 0px);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+.chk_dsgn label{
+	position: relative;
+	height:16px;
+	/*padding-top:1px;*/
+	display:inline-block;
+	color:#fff;
+	padding-left:22px;
+}
+.chk_dsgn label::before,
+.chk_dsgn label::after{
+	content:'';
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.chk_dsgn label::before{
+	width: 17px;
+	height: 17px;
+	background: #b2b2b2;
+	border-radius:3px;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+
+.chk_dsgn label::after{
+	width: 7px;
+    height: 3px;
+    top: 5px;
+    left: 4px;
+	border-bottom: 2px solid  #f0f0f0;
+	border-left: 2px solid  #f0f0f0;
+
+	transform:rotate(-45deg);
+	-webkit-transform:rotate(-45deg);
+}
+
+
+
+.chk_dsgn input[type='checkbox']:checked + label::before{
+	background: #cd000c;
+}
+
+.chk_dsgn input[type='checkbox']:checked + label::after{
+	border-color: #fff;
+}
+
+
+
+/*footer*/
+footer#footer .fmenu{background:#2d2d2d;}
+footer#footer .fmenu ul{width:100%;height:85px;border-bottom:1px solid #858585;}
+footer#footer .fmenu ul li{
+	float:left;
+	border-right:1px solid #858585;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+}
+footer#footer .fmenu ul li a{
+	display:block;
+	width:100%;
+	height:30px;
+	padding-top:55px;
+	color:#ebebeb;
+	text-align:center;
+	opacity:.8;
+}
+footer#footer .fmenu ul:first-child li{width:25%;}
+footer#footer .fmenu ul:last-child li{width:33.3%;}
+footer#footer .fmenu ul li:last-child{border-right-width:0;}
+footer#footer .fmenu ul:last-child li:last-child{width:33.4%;}
+
+footer#footer .fmenu ul:first-child li:nth-child(1) a{background:#2d2d2d url(/images/reebok/bg_f_icon1.png) no-repeat center 18px;background-size:27px auto;}
+footer#footer .fmenu ul:first-child li:nth-child(2) a{background:#2d2d2d url(/images/reebok/bg_f_icon2.png) no-repeat center 12px;background-size:22px auto;}
+footer#footer .fmenu ul:first-child li:nth-child(3) a{background:#2d2d2d url(/images/reebok/bg_f_icon3.png) no-repeat center 16px;background-size:48px auto;}
+footer#footer .fmenu ul:first-child li:nth-child(4) a{background:#2d2d2d url(/images/reebok/bg_f_icon4.png?v=151118) no-repeat center 13px;background-size:40px auto;font:18px/18px 'reefont-condensed';}
+footer#footer .fmenu ul:last-child li:nth-child(1) a{background:#2d2d2d url(/images/reebok/bg_f_icon5.png) no-repeat center 15px;background-size:33px auto;}
+footer#footer .fmenu ul:last-child li:nth-child(2) a{background:#2d2d2d url(/images/reebok/bg_f_icon6.png) no-repeat center 14px;background-size:32px auto;}
+footer#footer .fmenu ul:last-child li:nth-child(3) a{background:#2d2d2d url(/images/reebok/bg_f_icon7.png) no-repeat center 26px;background-size:77px auto;}
+
+footer#footer .sns_menu{
+	/*padding: 1.5rem;*/
+    padding: 1.8rem 0.8rem 1rem;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content:space-around;
+	-webkit-justify-content:space-around;
+	/*border-top:1px solid #333;*/
+	background: #000;
+}
+
+footer#footer .sns_menu>a{
+	display: block;
+	/*width: 4.5rem;
+	height: 4.5rem;*/
+	width: 3.8rem;
+	height: 3.8rem;
+	border-radius:100%;
+	background: #aeaeac;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+footer#footer .f_menu{
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	background: #000;
+	align-items: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    -webkit-justify-content: center;
+	border-bottom:1px solid #333;
+}
+/* 180403 너비값 수정 */
+footer#footer .f_menu li{
+	width: 20%;
+	text-align: center;
+}
+/* 20170922 footer update : newsletter */
+footer#footer .f_menu li a{
+	width: 100%;
+	height: 60px;
+	display: block;
+	line-height: 60px;
+	font-weight: 300;
+	color: #fff;
+}
+footer#footer .newsletter{
+	position: relative;
+	padding: 0 1.5rem;
+	background: #000;
+}
+footer#footer .newsletter p{
+	font-size:12px;
+	padding: 20px 0 10px;
+	color:#fff;
+	font-weight: 300;
+	height:20px;
+}
+footer#footer .newsletter .input_wrap{
+	position: relative;
+}
+footer#footer .newsletter .input_wrap input{
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	border: 0;
+	width: 100%;
+	height: 45px;
+	padding: 0 0 0 10px;
+	border:0;
+	-webkit-appearance: none;
+}
+footer#footer .newsletter .input_wrap .input_btn{
+	display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 4rem;
+    height: 100%;
+    text-align: center;
+    color: #fff;
+    font-size: 19px;
+    line-height: 43px;
+    background: #000;
+    border: 1px solid #fff;
+    box-sizing: border-box;
+}
+footer#footer .newsletter .marketing_chk{
+	position: absolute;
+	top:20px;
+	right:1.5rem;
+}
+footer#footer .newsletter .marketing_chk a{
+	position: relative;
+	top:-4px;
+	color:#888;
+	font-weight: 300;
+	font-size: 11px;
+	letter-spacing: -0.5px;
+}
+footer#footer .newsletter .marketing_chk a span{
+	position: absolute;
+    bottom: -2px;
+	left:0;
+	display: inline-block;
+	width: 100%;
+	height: 1px;
+	background: #888;
+}
+footer#footer .newsletter .marketing_chk .chk_dsgn>input[type='checkbox'] + label:before{
+	background: #7b7b7b;
+	border-radius: 0;
+}
+footer#footer .newsletter .marketing_chk .chk_dsgn>input[type='checkbox']:checked + label:before{
+	background: #a32924;
+}
+footer#footer .newsletter .marketing_chk .chk_dsgn>input+label:after{
+	width: 10px;
+    height: 4px;
+	top: 4px;
+    left: 3px;
+	border-bottom: 2px solid #b1b1b1;
+	border-left: 2px solid #b1b1b1;
+}
+footer#footer .newsletter .marketing_chk .chk_dsgn>input[type='checkbox']:checked + label:after{
+	border-bottom: 2px solid #fff;
+	border-left: 2px solid #fff;
+}
+/* 20170922 footer update : newsletter  end*/
+
+footer#footer .sns_menu>a.fb,
+#sns-footer-layer .btn_wrap>a.fb::before{
+	background-image: url('/images/reebok/efu2018/main/bg_sns_fb.png');
+	-webkit-background-size: 10px auto;
+	background-size: 10px auto;
+}
+
+footer#footer .sns_menu>a.insta,
+#sns-footer-layer .btn_wrap>a.insta::before{
+	background-image: url('/images/reebok/efu2018/main/bg_sns_insta.png?v=1');
+	-webkit-background-size: 20px auto;
+	background-size: 20px auto;
+}
+
+footer#footer .sns_menu>a.blog,
+#sns-footer-layer .btn_wrap>a.blog::before{
+	background-image: url('/images/reebok/efu2018/main/bg_sns_blog.png');
+	-webkit-background-size: 24px auto;
+	background-size: 24px auto;
+}
+
+footer#footer .sns_menu>a.ytb,
+#sns-footer-layer .btn_wrap>a.ytb::before{
+	background-image: url('/images/reebok/efu2018/main/bg_sns_ytb.png');
+	-webkit-background-size: 25px auto;
+	background-size: 25px auto;
+}
+
+footer#footer .sns_menu>a.kakao,
+#sns-footer-layer .btn_wrap>a.kakao::before{
+	background-image: url('/images/reebok/efu2018/main/bg_sns_kakao.png');
+	-webkit-background-size: 25px auto;
+	background-size: 25px auto;
+}
+
+footer#footer address{display:block;padding:15px 10px 25px;color:#a1a1a1;background: #000;}
+footer#footer address .ft1{margin-bottom:7px;}
+footer#footer address .ft1 p{margin-right:10px;display:inline-block;}
+footer#footer address .ft1 p img{width:100px;vertical-align:sub;}
+footer#footer address .ft1 span{font-weight:bold;letter-spacing:-1px;}
+footer#footer address .ft2{font-size:11px;letter-spacing:-.75px;}
+footer#footer address .ft2 p{margin-bottom:3px;font-size:10px;}
+footer#footer address .ft2 p .lnk_pc{
+	background: url(/images/reebok/bg_footer_arw.png) no-repeat right 1px;
+	background-size:10px 10px;
+    color: #5c85fa;
+    display: inline-block;
+    font-weight: bold;
+    margin-left: 10px;
+    padding-right: 13px;
+    font-size:10px;
+    text-decoration: underline;
+}
+footer#footer address .lnk{padding:10px 0;}
+footer#footer address .lnk a{color:#a1a1a1;font-size:10px;letter-spacing:-.5px;text-decoration: underline;}
+footer#footer address .cprgt{color:#a1a1a1;font-size:10px;}
+
+footer#footer address .inner p{text-align: center;color:#888;line-height: 2rem; letter-spacing: -1px; font:400 0.9rem/1.8rem 'NotoSansKR';}
+footer#footer address .inner p strong{font-weight: bold; color:#ccc;}
+footer#footer address .inner .f_url{padding-top: 2rem;}
+footer#footer address .inner .f_url p a{color:#999; font:300 1.1rem/2.2rem 'NotoSansKR';}
+footer#footer address .inner .f_url p a strong{color: #fff;font:300 1.1rem/2.2rem 'NotoSansKR';}
+footer#footer address .inner .f_url .f_logo{padding:3rem 0 1.5rem 0;}
+footer#footer .line{
+	position: relative;
+	margin:0 8px 0 0;
+	padding:0 5px 0 0;
+}
+
+footer#footer .l_left{
+	margin:0 0 0 8px;
+	padding:0 0 0 5px;
+	color:#ccc;
+}
+
+footer#footer .line::after{
+	content:'';
+	position: absolute;
+	top: 50%;
+	width: 1px;
+	height: 10px;
+	background: #666;
+	right: 0;
+	margin-top:-4px;
+}
+
+footer#footer .l_left::after{
+	left: 0;
+	right: auto;
+}
+
+footer#footer .f_logo img{
+	width: 50%;
+	max-width: 100px;
+}
+
+@media screen and (max-width: 320px) {
+	footer#footer.upt_161121 address .inner{
+		width: 280px;
+	}
+}
+
+@media screen and (min-width: 321px) and (max-width:380px) {
+	footer#footer.upt_161121 address .inner{
+		width: 320px;
+	}
+}
+
+@media screen and (min-width:380px) {
+	footer#footer.upt_161121 address .inner{
+		width: 360px;
+	}
+}
+
+
+#sns-footer-layer{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 110;
+	-webkit-transition: background .2s;
+	   -moz-transition: background .2s;
+	    -ms-transition: background .2s;
+	     -o-transition: background .2s;
+	        transition: background .2s;
+
+	background: none;
+}
+
+#sns-footer-layer.active{
+	background:rgba(0,0,0,0.8);
+}
+#sns-footer-layer .btn_wrap{
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+#sns-footer-layer .btn_wrap>a{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	margin-top:1rem;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	align-items:center;
+	-webkit-align-items:center;
+	opacity: 0;
+	-webkit-transform: translate3d(0,2rem,0);
+	   -moz-transform: translate3d(0,2rem,0);
+	    -ms-transform: translate3d(0,2rem,0);
+	     -o-transform: translate3d(0,2rem,0);
+	        transform: translate3d(0,2rem,0);
+	-webkit-transition: all .2s;
+	   -moz-transition: all .2s;
+	    -ms-transition: all .2s;
+	     -o-transition: all .2s;
+	        transition: all .2s;
+}
+
+#sns-footer-layer .btn_wrap>a:nth-child(2){
+	bottom: 7.5rem;
+}
+
+#sns-footer-layer .btn_wrap>a:nth-child(3){
+	bottom: 13rem;
+}
+
+#sns-footer-layer .btn_wrap>a.active{
+	opacity: 1;
+	-webkit-transform: translate3d(0,0,0);
+	   -moz-transform: translate3d(0,0,0);
+	    -ms-transform: translate3d(0,0,0);
+	     -o-transform: translate3d(0,0,0);
+	        transform: translate3d(0,0,0);
+}
+
+#sns-footer-layer .btn_wrap>a::before{
+	content:'';
+	display: block;
+	width: 4.5rem;
+	height: 4.5rem;
+	border-radius:100%;
+	background: #fff;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+#sns-footer-layer .btn_wrap>a span{
+	margin-left: 1rem;
+	color: #fff;
+	font:500 1.6rem 'dinpro cond';
+}
+
+#sns-footer-layer .btn_wrap>a.close{
+	top:auto;
+	margin-top:3rem;
+	width: 4.5rem;
+	height: 4.5rem;
+	border-radius:100%;
+	background: #b81c26;
+	-webkit-transform: translate3d(0,0,0);
+	   -moz-transform: translate3d(0,0,0);
+	    -ms-transform: translate3d(0,0,0);
+	     -o-transform: translate3d(0,0,0);
+	        transform: translate3d(0,0,0);
+}
+
+#sns-footer-layer .btn_wrap>a.close::before,
+#sns-footer-layer .btn_wrap>a.close::after{
+	content:'';
+	width:50%;
+	height: 1px;
+	position: absolute;
+	top:50%;
+	left:50%;
+	opacity: 0;
+
+	-webkit-transition: all .3s;
+	   -moz-transition: all .3s;
+	    -ms-transition: all .3s;
+	     -o-transition: all .3s;
+	        transition: all .3s;
+	background: #fff;
+}
+
+#sns-footer-layer .btn_wrap>a.close::before{
+	transform:translate3d(-50%,-50%,0) rotate(0);
+	-webkit-transform:translate3d(-50%,-50%,0) rotate(0);
+}
+
+#sns-footer-layer .btn_wrap>a.close::after{
+	transform:translate3d(-50%,-50%,0) rotate(0);
+	-webkit-transform:translate3d(-50%,-50%,0) rotate(0);
+}
+
+#sns-footer-layer .btn_wrap>a.active.close::before{
+	opacity: 1;
+	transform:translate3d(-50%,-50%,0) rotate(45deg);
+	-webkit-transform:translate3d(-50%,-50%,0) rotate(45deg);
+}
+
+#sns-footer-layer .btn_wrap>a.active.close::after{
+	opacity: 1;
+	transform:translate3d(-50%,-50%,0) rotate(-45deg);
+	-webkit-transform:translate3d(-50%,-50%,0) rotate(-45deg);
+}
+
+/* 브랜드 메뉴 */
+#brand_navWrap{position:fixed; right:0; top:0; width:85%; height:100%; transition:all 0.4s ease-in-out 0s;-webkit-transition:all 0.4s ease-in-out 0s;  z-index:10; transform:translate(100%,51px); -webkit-transform:translate(100%,51px);}
+#brand_navWrap.active{position:absolute; right:0; top:-1px; width:85%; height:100%;   z-index:3;transform:translate(0%,51px);-webkit-transform:translate(0%,51px);}
+#brand_navWrap .brandPd{position:absolute; width:100%; top:0px; right:0px; height:100%; overflow-y:auto;    -webkit-overflow-scrolling: touch;}
+#brand_navWrap.active .brandPd{}
+#brand_navWrap .brand_nav{background:#fff;}
+#brand_navWrap .brand_nav>li {line-height:1em; }
+#brand_navWrap .brand_nav>li:nth-child(1)>a{background:url(/images/reebok/efu2018/common/brandNav_campaigns.jpg) no-repeat 50%; }
+#brand_navWrap .brand_nav>li:nth-child(2)>a{background:url(/images/reebok/efu2018/common/brandNav_fitness.jpg) no-repeat 50%;}
+#brand_navWrap .brand_nav>li:nth-child(3)>a{background:url(/images/reebok/efu2018/common/brandNav_classic.jpg) no-repeat 50%;}
+/* 20180406 수정*/
+#brand_navWrap .brand_nav>li:nth-child(4)>a{background:url(/images/reebok/efu2018/common/brandNav_reeclub.jpg) no-repeat 50%;}
+#brand_navWrap .brand_nav>li:nth-child(5)>a{background:url(/images/reebok/efu2018/common/brandNav_blog.jpg) no-repeat 50%;}
+#brand_navWrap .brand_nav>li:nth-child(6)>a{background:url(/images/reebok/efu2018/common/brandNav_promotion.jpg) no-repeat 50%;}
+/* // 20180406 수정*/
+#brand_navWrap .brand_nav>li:last-child{margin-bottom:50px;}
+#brand_navWrap .brand_nav>li>a{position:relative; display:table; line-height:1em; height:140px; width:100%; background-size:cover !important;}
+#brand_navWrap .brand_nav>li>a:after{content:''; position:absolute; left:0px; top:0px; width:100%; height:100%; background:rgba(0, 0, 0, 0.5); z-index:1;}
+#brand_navWrap .brand_nav>li>a dl{position:relative; display:table-cell; vertical-align:middle; text-align:center; color:#fff; z-index:2}
+#brand_navWrap .brand_nav>li>a dl dt{font-size:24px; font-family: 'reefont-condensed'; letter-spacing: 3px;  line-height:24px;}
+#brand_navWrap .brand_nav>li>a dl dd{margin-top:2px; font-size:14px; line-height:14px;}
+#brand_navWrap .brand_nav>li>a dl dt em{display:block; font-family: 'NotoSansKRRegular'; font-size:16px; letter-spacing:2px;    margin: -19px 0 0 70px;}
+#brand_navWrap .brand_nav>li .smallMenu{display:none; padding:28px 0}
+#brand_navWrap .brand_nav>li .smallMenu li a{display:block; position:relative; padding-left:48px; line-height:55px; font-family: 'reefont-condensed'; letter-spacing:2px; font-size:20px;}
+#brand_navWrap .brand_nav>li .smallMenu li.over a{color:#b71c26}
+#brand_navWrap .brand_nav>li .smallMenu li.over a:after{content:''; display:block; width:34px; height:2px; position:absolute; top:50%; left:0px; margin-top:-1px; background:#b71c26; }
+#brand_navWrap .reebokLogo{display:inline-block; width:140px; height:30px; background-image:url(/images/reebok/efu2018/common/ico_common.png); background-repeat:no-repeat; background-size:250px 400px; background-position:-100px 0;}
+ #slideBg{display:none; position:fixed; top:0px; right:0px; width:100%; height:100%; z-index:1; background:#000; opacity:0; }
+#header .brand_close.close_x_btn.active{opacity: 1; transform : translate3d(0 , 0 ,0); -webkit-transform : translate3d(0 , 0 ,0);}
+#header .brand_close.close_x_btn{width: 50px; height: 50px; position: absolute; top: 0px; left: 0; background:#c41230; display: block; opacity: 0; transform : translate3d(0 , 0 ,0); -webkit-transform : translate3d(0 , 0 ,0); transition:opacity 0.15s , transform 0.2s; -webkit-transition:opacity 0.15s , -webkit-transform 0.2s; z-index: 10;}
+#header .brand_close.close_x_btn::before,section#header .brand_close.close_x_btn::after{background: #000; height: 2px; width: 20px;}
+
+/* header */
+html.noScroll {height:100%; overflow:hidden;}
+#headerWrap {position:relative; background:#000;}
+#headerWrap #header {position:relative; height:49px; border-bottom:1px solid #4c5252; background:#000; z-index:100;}
+#headerWrap #header>a,
+#headerWrap #header .cartIcon {display:inline-block; padding:0; width:48px; text-align:center;}
+#headerWrap #header .menuBtn  {display:inline-block; position:absolute; left:0; top:0; padding:19px 0 13px 0; width:48px; height:16px; text-align:center; border-right:1px solid #4c5252;}
+#headerWrap #header .menuBtn img {width:19px;}
+#headerWrap #header h1 {margin-left:60px; padding:17px 0;}
+#headerWrap #header h1 img {width:81px;}
+#headerWrap .menuWrap {position:absolute; left:0; top:49px; width:85%; height:100%;  z-index:100; overflow:auto; -webkit-transition:all 0.4s ease-in-out 0s; -webkit-transform:translate3d(-100%, 0px, 0px);}
+#headerWrap .menuWrap.active {-webkit-transform:translate3d(0px, 0px, 0px);}
+#headerWrap .menuWrap .menuArea {height:100%; border-top:1px solid #4c5252; background:#000;}
+#headerWrap .menuWrap ul.utilArea:after {content:""; display:block; clear:both;}
+#headerWrap .menuWrap ul.utilArea li {float:left; padding:18px 0; width:33.3%; text-align:center; border-left:1px solid #4c5252;box-sizing:border-box;}
+#headerWrap .menuWrap ul.utilArea li:first-child {border-left:none;}
+#headerWrap .menuWrap ul.utilArea li a {font-size:1rem; color:#fff; font-family: 'NotoSansKR'; font-weight: 400; letter-spacing:0.5px;}
+#headerWrap .menuWrap .menu li {text-align:center; border-top:1px solid #4c5252;}
+#headerWrap .menuWrap .menu li.menuTit {background:#000;}
+#headerWrap .menuWrap .menu li a {font-size:21px; color:#fff; font-family:'reefont-condensed'; letter-spacing:1px;}
+#headerWrap .menuWrap .menu li.menuTit>a {display:block; padding:17px 0;}
+
+#headerWrap .menuWrap .menu li.menuTit .deth2 {display:none; background:#fff;}
+#headerWrap .menuWrap .menu li.menuTit .deth2.open {display:block;}
+#headerWrap .menuWrap .menu li.menuTit .deth2 li {text-align:left;}
+#headerWrap .menuWrap .menu li.menuTit .deth2 li a {position:relative;}
+#headerWrap .menuWrap .menu li.menuTit .deth2>li>a:after {content:""; display:block; clear:both; position:absolute; right:30px; top:19px;width:15px; height:8px; background:url("/images/reebok/efu2018/common/blt_onOff.png") no-repeat 0 0; background-size:100% auto; overflow:hidden;;}
+#headerWrap .menuWrap .menu li.menuTit .deth2>li.bgNone a:after {width:0; height:0; background:none;}
+#headerWrap .menuWrap .menu li.menuTit .deth2>li>a.on:after {background-position-y:100%;}
+#headerWrap .menuWrap .menu li.menuTit .deth2>li {text-align:left;}
+#headerWrap .menuWrap .menu li.menuTit .deth2>li>a {display:block; padding:14px 0 14px 30px ; text-align:left;}
+#headerWrap .menuWrap .menu li.menuTit .deth2 li>a {font-size:18px; color:#333;}
+#headerWrap .menuWrap .menu li.menuTit li a.ko {font-size:15px; font-family: 'NotoSansKR'; font-weight: 400;}
+#headerWrap .menuWrap .menu li.menuTit li>div.deth3 {display:none;margin:0 0 0 -30px}
+#headerWrap .menuWrap .menu li.menuTit li.on>div.deth3 {display:block;}
+#headerWrap .menuWrap .menu li.menuTit li>div.deth3 .sort {padding:14px 0 14px 70px; font-size:18px; color:#fff; font-family:'reefont-condensed'; letter-spacing:1px; background:#818181}
+#headerWrap .menuWrap .menu li.menuTit div.deth3 .sort {border-bottom:1px solid #636363;}
+#headerWrap .menuWrap .menu li.menuTit div.deth3 + div.deth3 .sort {border-bottom:none;}
+#headerWrap .menuWrap .menu li.menuTit li>div.deth3 .sort.ko,
+#headerWrap .menuWrap .menu li.menuTit li>div.deth3 .sort.ko a {font-size:14px; color:#fff;font-family: 'NotoSansKR'; font-weight: 500;}
+#headerWrap .menuWrap .menu li.menuTit li>div.deth3 .sort.all {border-bottom:1px solid #636363;}
+#headerWrap .menuWrap .menu li.menuTit li>div.deth3 ul {background:#f4f4f4;}
+#headerWrap .menuWrap .menu li.menuTit li>div.deth3 ul li {border:none;}
+#headerWrap .menuWrap .menu li.menuTit li>div.deth3 ul li a {display:block; padding:15px 0 15px 70px; font-size:14px; color:#333; font-family: 'NotoSansKR'; font-weight: 400; letter-spacing:0.5px;}
+/* 20180704 추가 */
+.bannerArea {padding:20px 15px; height:290px; background:#efefef;}
+.bannerArea ul {margin:0 12px; border:1px solid #c8c8c8; overflow:hidden;}
+.bannerArea ul:after {content:""; display:block; celar:both;}
+.bannerArea ul li {position:relative; float:left; padding:0 15px; width:50%; background:#fff; box-sizing:border-box;}
+.bannerArea ul li:after {content:""; display:block; clear:both; position:absolute; right:15px;top:14px; width:15px; height:15px; background:url("/images/reebok/efu2018/common/blt_banner.png") no-repeat 0 0; background-size:15px 15px;}
+.bannerArea ul li:nth-child(1),
+.bannerArea ul li:nth-child(2) {border-bottom:1px solid #c8c8c8;}
+.bannerArea ul li:nth-child(2),
+.bannerArea ul li:nth-child(4) {border-left:1px solid #c8c8c8;}
+.bannerArea ul li a {display:inline-block; padding:14px 0;width:100%;font-size:15px; color:#333;}
+.bannerArea .vrSroteBanner {padding:20px 12px 0 12px; margin-top:20px; border-top:1px solid #c8c8c8;}
+.bannerArea .vrSroteBanner img {width:100%;}				
+					
+#headerWrap .menuBtnArea {position:absolute; right:0; top:0; padding-right:71px; height:48px;}
+#headerWrap .searchBtn {display:inline-block; padding-right:50px;width:48px; height:48px; line-height:50px; text-align:center; border-left:1px solid #4c5252;}
+#headerWrap .searchBtn a {display:inline-block; width:48px; padding:16px 0; height:16px; background:url("/images/reebok/efu2018/common/btn_search.png") no-repeat center; background-size:20px 20px;}
+#headerWrap .searchBtn a.on {background:url("/images/reebok/efu2018/common/btn_searchClose.png") no-repeat center; background-size:16px 16px;}
+#headerWrap .searchBtn img {width:16px;}
+#headerWrap .cartIcon {display:inline-block; position:absolute; right:71px; top:2px;  padding:19px 0 9px 0; width:48px; height:48px; line-height:55px; text-align:center;border-left:1px solid #4c5252;}
+#headerWrap .cartIcon a {display:inline-block; padding:15px 0; height:16px;}
+#headerWrap .cartIcon span {display:block; position:absolute; right:7px; top:7px; width:16px; height:16px;font-size:11px; color:#fff; line-height:15px; background:#a72227; border-radius:20px;}
+#headerWrap .cartIcon img {width:18px; vertical-aling:middle;}
+#headerWrap .brandBtn {display:inline-block; position:absolute; right:0; top:0; padding:0 14px !important; width:42px; height:48px; border-left:1px solid #4c5252;}
+#headerWrap .brandBtn a {font-size:21px; color:#fff; line-height:50px; font-family:'reefont-condensed'; letter-spacing:1px;}
+#headerWrap a.menuClose {display:none !important; position:absolute; right:0; top:50px; padding-top:16px; width:15% !important; height:32px; text-align:center;opacity: 0; transform : translate3d(-10px , 0 ,0);   transition:opacity 0.15s , transform 0.2s; -webkit-transition:opacity 0.15s , -webkit-transform 1.2s;}
+#headerWrap a.menuClose:before,
+#headerWrap a.menuClose:after {content:'';  position: absolute; top:50%; left:50%; transform:translate3d(-50%,-50%,0) rotate(45deg); -webkit-transform:translate3d(-50%,-50%,0) rotate(45deg);  background: #000;  height: 2px;  width: 20px;}
+#headerWrap a.menuClose:after {transform:translate3d(-50%,-50%,0) rotate(-45deg);	-webkit-transform:translate3d(-50%,-50%,0) rotate(-45deg);}
+#headerWrap a.menuClose.on {display:block !important;  padding:12px 0 !important; opacity: 1;  transform : translate3d(0 , 0 ,0);  -webkit-transform : translate3d(0 , 0 ,0);background:#c41230; }
+#headerWrap a.brandmenuClose {display:none !important; position:absolute; left:0; top:50px; padding-top:16px; width:15% !important; height:32px; text-align:center;opacity: 0; transform : translate3d(-100px , 0 ,0);  -webkit-transform : translate3d(10px , 0 ,0); transition:opacity 0.3s , transform 0.4s; -webkit-transition:opacity 0.3s , -webkit-transform 0.4s;}
+#headerWrap a.brandmenuClose:before,
+#headerWrap a.brandmenuClose:after {content:'';  position: absolute; top:50%; left:50%; transform:translate3d(-50%,-50%,0) rotate(45deg); -webkit-transform:translate3d(-50%,-50%,0) rotate(45deg);  background: #000;  height: 2px;  width: 20px;}
+#headerWrap a.brandmenuClose:after {transform:translate3d(-50%,-50%,0) rotate(-45deg);	-webkit-transform:translate3d(-50%,-50%,0) rotate(-45deg);}
+#headerWrap a.brandmenuClose.on {display:block !important;padding:12px 0 !important;  opacity: 1;  transform : translate3d(0 , 0 ,0);  -webkit-transform : translate3d(0 , 0 ,0); background:#c41230;}
+#headerWrap a.menuClose img,
+#headerWrap a.brandmenuClose img {width:15px;}
+#bgOverlay {display: none; position: fixed; top: 0; left: 0; width: 100%; height:100vh; background:rgba(0,0,0,0.5); opacity: 0; transition:opacity 0.4s; -webkit-transition:opacity 0.4s; z-index: 3;}
+#bgOverlay.active {display:block; opacity: 1; transition:opacity 0.4s; -webkit-transition:opacity 0.4s; z-index: 31;}
+#popBg {display: none; position: fixed; top: 0; left: 0; width: 100%; height:100vh; background:rgba(0,0,0,0.5); opacity: 0.8; z-index: 110;}
+	
+
+/*검색*/
+#global-search-slide{width: 100%; width: 100%; height: calc(100vh - 50px); display: inline-block!important; overflow: auto;-webkit-overflow-scrolling : touch; position: absolute;top: 49px;left: 0; background: #2f2f2f; box-sizing:border-box; -webkit-box-sizing:border-box; -webkit-transition:-webkit-transform 0.5s; transition:transform 0.5s; transform:translate3d(100%,0,0); -webkit-transform:translate3d(100%,0,0);	z-index: 11;transform: translate3d(100%, 0px, 0px);}
+#global-search-slide.active{transform: translate3d(0px, 0px, 0px);}
+#global-search-slide .search_field{	width: 100%;	padding: 15px;	box-sizing: border-box;	-webkit-box-sizing: border-box;}
+#global-search-slide .search_field>div{padding-right: 40px;	position: relative;	background: #fff;}
+#global-search-slide .search_field>div input[type="text"],
+#global-search-slide .search_field>div input[type="search"]{width: 100%;	height: 40px;border-width:0;	padding: 0;	border-width:0;padding: 0 0 0 10px;box-sizing: border-box;	-webkit-box-sizing: border-box;}
+#global-search-slide .search_field>div button{width: 40px;	height: 40px; position:absolute; top: 0; right: 0; font-size: 30px;	color: #8c8c8c; line-height: 40px; border:none;background:#fff;}
+#global-search-slide .search_field>div button:before{content:""; display:block; clear:both; width:16px; height:16px; background:url("/images/reebok/efu2018/common/btn_search.png") no-repeat center; background-size:16px 16px;}
+#global-search-slide .search_category>ul{display: -webkit-flex; display: -moz-flex; display: -ms-flex;	display: -o-flex;display:flex;padding: 0 15px;}
+#global-search-slide .search_category>ul>li{width: 50%;height: 30px;	text-align: center;color: #fff;}
+#global-search-slide .search_category>ul>li a{width:100%;height:30px;display:block;	color: #888;font:400 12px/30px 'NotoSansKR';}
+#global-search-slide .search_category>ul>li.on a{	color: #fff;}
+#global-search-slide .contents{padding-top: 10px;}
+#global-search-slide .contents>*{display: none;}
+#global-search-slide .rank_keywords{padding: 0 15px;}
+#global-search-slide .rank_keywords li{width: 100%;height: 35px;position: relative;background: #1d1d1d;border-bottom: 1px solid  #2f2f2f;}
+#global-search-slide .rank_keywords li span{width: 35px;height: 35px;	display: block;	background: #1d1d1d;text-align: center;	color: #fff;font:400 1.6rem/35px 'dinpro cond';}
+#global-search-slide .rank_keywords li:nth-child(1) span,
+#global-search-slide .rank_keywords li:nth-child(2) span,
+#global-search-slide .rank_keywords li:nth-child(3) span{background: #c51230;}
+#global-search-slide .rank_keywords li strong{width: 100%;height: 35px;position: absolute;	top: 0;left: 0;display: block;box-sizing: border-box;-webkit-box-sizing: border-box;	color: #fff;	padding-left: 50px;font:400 12px/35px 'NotoSansKR';}
+#global-search-slide .rank_keywords li strong::before{position: absolute;	top: 0;right: 12px;color: #454545;}
+#global-search-slide .searched_keywords{padding: 0 15px;}
+#global-search-slide .searched_keywords li{width: 100%;height: 35px;	position: relative;	background: #1d1d1d;border-bottom: 1px solid  #2f2f2f; box-sizing:border-box}
+#global-search-slide .searched_keywords li>a:first-child{width: 100%;	height: 35px;position: absolute;top: 0;left: 0;display: block;box-sizing: border-box;	-webkit-box-sizing: border-box;color: #fff;padding-left:15px;font:400 12px/35px 'NotoSansKR'}
+#global-search-slide .searched_keywords li.no_data{text-align: center;color: #aaa;padding-top:20px;font:400 12px/12px 'NotoSansKR';}
+#global-search-slide .searched_keywords li .close{width: 35px;height: 35px;	display: block;	position: absolute;top: 0;	right: 0;	color: #767676;line-height: 35px;text-align: center;}
+#dqAutoTop .search_list{
+background:#fff;
+}
+#dqAutoTop .search_list li{border-bottom:1px solid #ccc;}
+#dqAutoTop .search_list li a{display:block;padding:20px 20px 18px;font-size:13px;color:#212121;}
+#dqAutoTop .search_list li a span{font-weight:bold;}
+#dqAutoTop .close{display: none;text-align:right;padding:0 10px 10px;}
+
+
+.menuLoginArea .infoArea {position:relative; padding:20px 15px; border-bottom:1px solid #363636;}
+.menuLoginArea .infoArea p.name {font-size:20px; color:#fff; font-family: 'NotoSansKR'; font-weight: 400;}
+.menuLoginArea .infoArea p.logoutBtn {position:absolute; right:15px; top:0; padding-left:15px;border-left:1px solid #363636; line-height:60px;}
+.menuLoginArea .infoArea p.logoutBtn a {font-size:12px; color:#fff; font-family: 'NotoSansKR'; font-weight: 400;}
+.menuLoginArea .barcode {position:relative; padding-top:22px; margin:0 55px; text-align:center;}
+.menuLoginArea .barcode img {margin-left:-20px;width:136px;}
+.menuLoginArea .barcode .bacodePlus {position:absolute; right:0; bottom:0; display:block; width:20px; height:20px; font-size:18px; color:#fff;}
+.menuLoginArea .barcode .bacodePlus:after {content:"+"; display:block; clear:both; border:1px solid #fff; border-radius:20px;}
+.menuLoginArea .iconArea {margin:22px 0 19px 0;}
+.menuLoginArea .iconArea:after {content:""; display:block; clear:both;}
+.menuLoginArea .iconArea li { float:left; width:33.3%; text-align:center;}
+.menuLoginArea .iconArea li a {display:block; position:relative; padding-top:34px; font-size:13px; color:#fff; font-family: 'NotoSansKR'; font-weight: 400;}
+.menuLoginArea .iconArea li a:before {content:""; display:block; clear:both; position:absolute; left:50px; top:0; margin-left:-11px; width:26px; height:24px; background:url("/images/reebok/efu2018/common/menuIcon.png") no-repeat 0 0; background-size:320%;}
+.menuLoginArea .iconArea li.icon2 a:before {background-position-x:-28px;}
+.menuLoginArea .iconArea li.icon3 a:before {background-position-x:-57px;}
+.bacodeDetail {display:none; position:absolute; left:0; top:0;text-align:center; z-index:100;}
+.bacodeDetail.on {display:block;}
+.bacodeDetail .bacodeDetailLogo{padding:13px 0 13px 21px; text-align:left; background:#000;} 
+.bacodeDetail .bacodeDetailLogo img{width:97px;} 
+.bacodeDetail .cont {position:relative; padding:30px 35px 22px 35px;  background:#fff;}
+.bacodeDetail .cont .name {padding:0 0 25px 28px; font-size:25px; color:#000; font-family: 'NotoSansKR';font-weight: 400; text-align:left;}
+.bacodeDetail .cont .name span {font-size:17px;}
+.bacodeDetail .cont>img {width:244px;}
+.bacodeDetail .cont .txt {padding:50px 0 15px 0; font-size:12px; color:#000; line-height:18px;}
+.bacodeDetail .cont .barbodeLogo>img {width:74px}
+.bacodeDetail .close {position:absolute; right:10px; top:13px; z-index:200;}
+.bacodeDetail .close>img {width:18px;}
+
+/* location*/
+#nLocation{position:relative;}
+#nLocation h2{position:relative;  border-bottom:1px solid #e5e5e5; text-align:center; color:#000; font-family: 'reefont-condensed','NotoSansKR' !important; font-weight:500; font-size:20px; letter-spacing:0.7px; line-height:20px; box-sizing:border-box;}
+#nLocation h2 a{display:block; padding:15px 10px; color:#000; text-align:center; color:#000; font-family: 'reefont-condensed','NotoSansKR' !important; font-weight:500; font-size:20px; letter-spacing:0.7px; line-height:20px; box-sizing:border-box;}
+#nLocation>ul{position:absolute; top:51px; left:0px; width:100%; z-index:11; background:#fff;}
+#nLocation>ul>li{border-bottom:1px solid #e5e5e5}
+#nLocation>ul>li a{display:block; padding:15px 10px; color:#000; text-align:center; color:#000; font-family: 'reefont-condensed','NotoSansKR' !important; font-weight:500; font-size:20px; letter-spacing:0.7px; line-height:20px; box-sizing:border-box;}
+#nLocation.listType h2:after{content:''; position:absolute; right:23px; top:50%; margin-top:-4px; width:15px; height:8px; background-image:url(/images/reebok/efu2018/common/ico_common.png); background-repeat:no-repeat; background-size:250px 400px; background-position:0 -90px;}
+#nLocation.enter.listType h2:after{content:''; position:absolute; right:23px; top:50%; margin-top:-4px; width:15px; height:8px; background-image:url(/images/reebok/efu2018/common/ico_common.png); background-repeat:no-repeat; background-size:250px 400px; background-position:0 -100px;}
+/* btn */
+.btnTypeA{display:inline-block; width:94px; height:30px; border:1px solid #5c5b53; letter-spacing:4px; text-align:center; color:#000; font-family:'dinpro cond'; font-size:14px; font-weight:500; line-height:30px; }
+.btnTypeB{display:inline-block; width:82px; height:32px; font-size:20px; color:#fff; text-align:center; line-height:34px; font-family: 'reefont-condensed'; letter-spacing: 2px; background:#000;}
+/* 장차법 */
+.nHide{ position: absolute; overflow: hidden; clip: rect(0 0 0 0); margin: -1px; width: 1px; height: 1px;}
+/* slick  Common */
+.slick-slide a:focus{outline: none !important;}
+.slick-slide{float:left;}
+.slick-track{*zoom:1;}
+.slick-track:after{content:''; display:block; clear:both;}
+.slick-dots{text-align:center;}
+.slick-dots li{display:inline-block; margin:0 6px; line-height:12px;}
+.slick-dots li button{ width:12px; height:12px; border:0; text-indent:-999px; padding:0; border-radius:12px;  background:#fff; vertical-align:top; overflow:hidden; box-sizing:border-box;}
+.slick-dots li.slick-active button{background:#999}
+.slick-dots li button:focus{outline: none !important;}
+/* list */
+.listTypeA{max-width:630px; margin:0 auto;}
+.listTypeA li{margin-bottom:36px;}
+.listTypeA li:last-child{margin-bottom:0;}
+.listTypeA li .imgArea{text-align:center;}
+.listTypeA li .textArea{padding:25px 0 15px}
+.listTypeA li .textArea h3{font-family: 'reefont-condensed','NotoSansKRBold'; font-size:30px;  font-weight:500; letter-spacing:2.5px; color:#000; line-height:30px;}
+.listTypeA li .textArea p{margin-top:7px ; font-family: 'NotoSansKR'; font-weight:300; color:#777; font-size:14px;}
+.listTypeA li a{display:block; position:relative;}
+.listTypeA li a .condition{position:absolute; right:0px; top:0px; width:77px; }
+.listTypeA li a .condition span{display:inline-block; width:77px; height:27px; text-align:center; line-height:27px; font-size:12px; font-family: 'NotoSansKR'; font-weight:400; background:#fff;}
+.listTypeA li a .condition span.ing{color:#fff; background:#a52f30}
+.listTypeA li a .condition span.end{color:#919191; background:#000}
+
+.listTypeB li{ margin-bottom:12px; }
+.listTypeB li .imgArea{text-align:center;}
+.listTypeB li .textArea{padding:12px 0}
+.listTypeB li .textArea p{height:15px; color:#000; font-size:14px; font-family: 'NotoSansKRLight'; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical;}
+.listTypeB li .textArea .nDay{margin-top:3px; height:13px;font-size:12px; color:#9e9e9e; font-family: 'NotoSansKRLight'; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical;}
+
+#headerWrap .notice_tits{
+	display: none;
+	width: 100%;
+	height: 40px;
+	position: relative;
+	background: #d0d0d6;
+	border-bottom: 1px solid  #fff;
+}
+
+#headerWrap .notice_tits .more_ico{position:absolute; top:50%;	right:15px;	width: 13px; height: 13px; background-image: url('/images/reebok/efu2018/common/notice_icon.png'); background-size:13px 13px; transform:translate3d(0,-50%,0); -webkit-transform:translate3d(0,-50%,0);}
+
+#headerWrap .notice_tits>a{
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	padding-top:3px;
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	text-align: center;
+	/* display: none; */
+	opacity: 0;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	transition:opacity 0.6s;
+	-webkit-transition:opacity 0.6s;
+}
+
+#headerWrap .notice_tits>a.on{
+	opacity: 1;
+	z-index: 3;
+}
+
+#headerWrap .notice_tits>a>div{
+	/* margin-top: 6px; */
+	position: relative;
+	display: inline-block;
+	color: #333;
+	font:400 1.2rem/1.2rem 'NotoSansKR';
+	color: #333;
+	margin-left: 15px;
+}
+
+#headerWrap .notice_tits>a .ico{
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+	position: absolute;
+	top: -6px;
+	left: -30px;
+	background-color: #555;
+	background-repeat: no-repeat;
+	background-position: center center;
+	-webkit-background-size: 50% auto;
+	background-size: 50% auto;
+}
+
+#headerWrap .notice_tits>a.b1 .ico{
+	background-image: url('/images/reebok/efu2018/common/ico_truck_s.png');
+	-webkit-background-size: 60% auto;
+	background-size: 60% auto;
+}
+
+#headerWrap .notice_tits>a.b2 .ico{
+	background-image: url('/images/reebok/efu2018/common/ico_screen.png');
+}
+
+#headerWrap .notice_tits>a.b3 .ico{
+	background-image: url('/images/reebok/efu2018/common/ico_exch.png');
+
+}
+
+#footer{
+
+}
+
+#footer>.go_top{
+	padding:40px 0 10px;
+}
+#footer>.go_top a{
+	width: 100%;
+	height: 70px;
+	display: block;
+	position: relative;
+	background: url('/images/reebok/efu2018/order/back_top.png') center 10px no-repeat;
+	background-size:94px auto;
+	text-indent: -5000px;
+}
+
+#footer .f_menu{
+	height: 40px;
+	overflow: hidden;
+	background: #000;
+}
+
+#footer .f_menu a{
+	width: 25%;
+	height: 40px;
+	display: block;
+	float: left;
+	color: #fff;
+	line-height:40px;
+	font-size:11px;
+	text-align: center;
+}
+
+#footer .f_menu.col5 a{
+	width: 20%;
+}
+
+#footer .f_info{
+	padding:25px 0;
+	background:#272528;
+}
+
+#footer .f_info>*{
+	margin-bottom:1px;
+	text-align: center;
+	color:#999;
+	font:300 10px 'NotoSansKR';
+}
+#footer .f_info .tit{
+	margin-bottom: 10px;
+	color: #fff;
+	font:400 13px 'NotoSansKR';
+}
+#footer .f_info p a{
+	color: #0286ce;
+}
+#footer .f_info p a .ico-arrow-circle{
+	background:none;
+}
+#footer .f_info p a .ico-arrow-circle:after{
+	border-color: #0286ce;
+}
+#footer .f_info ul{
+	padding: 15px 0;
+	text-align: center;
+}
+#footer .f_info ul li{
+	margin-bottom: 2px;
+	display: inline-block;
+	font:300 10px 'NotoSansKR';
+}
+#footer .f_info ul li:after{
+	display: inline-block;
+	content:'|';
+	margin: 0 5px;
+	color: #fff;
+}
+#footer .f_info ul li:nth-child(3):after{
+	margin: 0;
+	display: none;
+}
+#footer .f_info ul li:last-child{
+	display: block;
+}
+#footer .f_info ul li:last-child:after{
+	margin: 0;
+	display: none;
+}
+#footer .f_info ul li a{
+	color: #fff;
+}
+
+#footer.footer_upt_161121 .f_info .inner{
+	width: 320px;
+	margin: 0 auto;
+}
+
+#footer.footer_upt_161121 .f_info p.tit{
+	font-size: 1.3rem;
+	color: #fff;
+	font-family:'NotoSansKR';
+    font-weight: 400;
+}
+#footer.footer_upt_161121 .f_info p{
+	text-align: left;
+	color: #d9d9d9;
+	font-size:1rem;
+	line-height:1.8rem;
+	font-family:'NotoSansKR';
+    font-weight: 300;
+	letter-spacing: 0;
+}
+
+#footer.footer_upt_161121 .f_info ul{
+	text-align: left;
+	padding: 2.5rem 0px;
+}
+
+#footer.footer_upt_161121 .f_info ul li{
+	position: relative;
+	padding-right: 15px;
+	margin-right: 10px;
+	margin-bottom: 0.7rem;
+}
+
+#footer.footer_upt_161121 .f_info ul li a{
+	color: #fff;
+	font-size:1rem;
+	font-family:'NotoSansKR';
+    font-weight: 300;
+	letter-spacing: 0;
+}
+
+#footer.footer_upt_161121 .f_info ul li a strong{
+    font-weight: normal;
+    color: #82b4e6;
+}
+
+#footer.footer_upt_161121 .f_info ul li::after{
+	margin: 0;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+#footer.footer_upt_161121 .f_info ul li:nth-child(3){
+	padding-right: 0;
+	margin-right: 0;
+}
+
+#footer.footer_upt_161121 .f_info ul li:nth-child(3)::after{
+	display: none;
+}
+
+#footer.footer_upt_161121 .f_info ul li:nth-child(4){
+	margin-bottom: 0;
+}
+
+#footer.footer_upt_161121 .f_info ul li:last-child{
+	margin-bottom: 0;
+	display: inline-block;
+}
