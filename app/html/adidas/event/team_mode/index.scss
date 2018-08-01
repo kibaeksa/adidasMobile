@@ -1,0 +1,327 @@
+@import './app/css/adidas/scss/common/mixin.scss';
+@import './app/css/adidas/scss/common/common.scss';
+
+html,body{
+	height: 100%;
+}
+@media screen and (max-width:320px){
+	html body .team_mode .box2 .contents{
+		position: relative;
+		padding-bottom:890px!important;
+	}
+}
+
+
+#container{
+	.go_top a{
+	width: 100%;
+	height: 50px;
+	display: block;
+	position: relative;
+	background: url('/images/adidas/back_top.png') center 10px no-repeat;
+	background-size: 60px auto;
+	text-indent: -5000px;
+	}
+	.team_mode{
+		background:white;
+		position: relative;
+		overflow: hidden;
+		.box1{
+			position: relative;
+			img{
+				width:100%;
+			}
+			.txt{
+				position: absolute;
+			    top: 78%;
+				left: 50%;
+				width:100%;
+				@include css3(transform,translate(-50%,-50%));
+				text-align: center;
+				h1{
+					font: 400 4rem'AdihausDIN-Cond';
+					color: #000;
+					letter-spacing: 3px;
+				}
+				p{
+					font: 400 1rem 'NotoSansKR';
+					color:#000;
+				    margin-bottom: 15px;
+				}
+
+				.btn{
+					position: relative;
+					overflow: hidden;
+					border: 1px solid #000;
+					text-align: center;
+					display: inline-block;
+					z-index: 99;
+				    margin-bottom: 20px;
+				}
+
+				.btn:hover a{
+					color:#000;
+					z-index: 99;
+				}
+				.btn a{
+					display: inline-block;
+					font: 400 15px 'NotoSansKR';
+					color:#fff;
+					padding:13px 54px;
+					position: relative;
+					z-index: 99;
+				}
+				.btn::after{
+					position: absolute;
+					top:0;
+					content: '';
+					display: block;
+					width: 100%;
+					height: 100%;
+					background-color: #000;
+					transition: all 0.5s;
+				}
+				.btn:hover:after{
+					top:50%;
+					height: 0;
+				}
+				.arrw{
+					img{
+						width:20px;
+					}
+				}
+			}
+		}
+		.box2{
+			position: relative;
+			// overflow: hidden;
+			.bar{
+				background-color:#000;
+				width:100%;
+				height: 40px;
+				.wrap{
+					display: flex;
+					max-width: 650px;
+					margin:0 auto;
+					height: 100%;
+					.tab{
+						flex: auto;
+					    overflow: hidden;
+					    position: relative;
+					    height: 100%;
+					    box-sizing: border-box;
+					    border-right: 1px solid #ccc;
+					    width: 25%;
+					    /* padding: 10px; */
+					    padding: 4px 0;
+						.show{
+							position: relative;
+						    width: 100%;
+						    height: 100%;
+							display: block;
+							    margin: 0 auto;
+							img{
+								position: absolute;
+								top: 50%;
+								left: 50%;
+								transform: translate(-50%, -50%);
+								z-index: 99;
+								width: 100%;
+								&:last-child{
+									opacity: 0;
+								}
+								&.active{
+									opacity: 1;
+									z-index: 99;
+								}
+								&.white{
+								}
+							}
+						}
+						.show1{
+							background: url(/images/adidas/event/team_mode/x_white.png) no-repeat;
+						    background-size: 10% auto;
+						    background-position: center center;
+						}
+						.show2{
+							background: url(/images/adidas/event/team_mode/pd_white.png) no-repeat;
+							background-size:55% auto;
+							background-position: center center;
+						}
+						.show3{
+							background: url(/images/adidas/event/team_mode/ns_white.png) no-repeat;
+							background-size: 70% auto;
+							background-position: center center;
+							}
+						.show4{
+							background: url(/images/adidas/event/team_mode/cp_white.png) no-repeat;
+							background-size: 70% auto;
+							background-position: center center;
+							}
+
+						.hidden{
+							position: absolute;
+							top: 0;
+						    left:-100%;
+						    // display: block;
+						    width: 100%;
+						    height: 100%;
+						    transition: all 0.5s;
+						}
+						&.on{
+							.show1{
+								background: url(/images/adidas/event/team_mode/x_grey.png) no-repeat;
+								background-size: 10% auto;
+								background-position: center center;
+							}
+							.show2{
+								background: url(/images/adidas/event/team_mode/pd_grey.png) no-repeat;
+								background-size: 55% auto;
+								background-position: center center;
+							}
+							.show3{
+								background: url(/images/adidas/event/team_mode/ns_grey.png) no-repeat;
+								background-size: 70% auto;
+								background-position: center center;
+							}
+							.show4{
+								background: url(/images/adidas/event/team_mode/cp_grey.png) no-repeat;
+								background-size: 70% auto;
+								background-position: center center;
+							}
+							.hidden{
+								left:0;
+							}
+							.color1{background: #eee548;}
+							.color2{background: #e72f3b;}
+							.color3{background: #007cc6;}
+							.color4{background: #2f2770;}
+						}
+					}
+				}
+			}
+
+			.contents{
+				position: relative;
+				padding-bottom: 260%;
+				.item{
+					position: absolute;
+					top: 20px;
+					left:50%;
+					transform: translate(-50%,0);
+					text-align: center;
+					// opacity:0;
+					display: none;
+					transition: all 1s;
+					transition-delay: .5s;
+					width:100%;
+					&.on{
+						// opacity:1;
+						display: block;
+						z-index: 99;
+					}
+					.desc1{
+						margin: 20px 0 40px 0;
+						img{
+							width:100%;
+						}
+						.txt{
+							margin-top: 25px;
+							h1{
+								font: 400 4rem/4rem 'AdihausDIN-Cond';
+							}
+							p{
+								 font:300 1rem/1rem 'NotoSansKR';
+								 margin: 10px 0 20px 0;
+							}
+							}
+							.btn{
+								position: relative;
+								overflow: hidden;
+								border: 1px solid #000;
+								text-align: center;
+								display: inline-block;
+							}
+
+							.btn:hover a{
+							    color:#fff;
+								z-index: 99;
+							}
+							.btn a{
+								position: relative;
+								overflow: hidden;
+								text-align: center;
+								display: inline-block;
+								padding: 19px 112px;
+								font:400 1rem/1rem 'NotoSansKR';
+								color:#000;
+							}
+							.btn::after{
+							    position: absolute;
+							    top:50%;
+							    content: '';
+							    display: block;
+							    width: 100%;
+							    height: 0;
+							    background-color: #000;
+							    transition: all 0.5s;
+							}
+							.btn:hover:after{
+							    top:0;
+								height: 100%;
+							}
+						}
+					}
+					.desc2{
+						img{
+							width: 100%;
+						}
+						.txt{
+							    margin: 30px;
+							h1{
+								font: 400 4rem/4rem 'AdihausDIN-Cond';
+							}
+							p{
+								 font:300 1rem'NotoSansKR';
+								 margin: 10px 0 20px 0;
+							}
+							.btn{
+								position: relative;
+							    overflow: hidden;
+							    border: 1px solid #000;
+							    text-align: center;
+							    display: inline-block;
+							}
+
+							.btn:hover a{
+							    color:#000;
+							}
+							.btn a{
+								position: relative;
+								text-align: center;
+								display: block;
+								padding: 19px 112px;
+								font:500 1rem 'NotoSansKR';
+								color:#fff;
+							    z-index: 99;
+							}
+							.btn::after{
+							    position: absolute;
+							    top:0;
+							    content: '';
+							    display: block;
+							    width: 100%;
+							    height: 100%;
+							    background-color: #000;
+							    transition: all 0.5s;
+							}
+							.btn:hover:after{
+							    top:50%;
+								height: 0;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
