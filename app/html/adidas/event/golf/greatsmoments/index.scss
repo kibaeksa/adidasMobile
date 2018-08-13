@@ -169,7 +169,8 @@
 				left:0;
 				height: 1px;
 				background: #fff;
-				@include css3(transition, all 0.8s);
+				@include css3(transition, all 1.2s);
+				transition-delay: 1.2s;
 			}
 			.bottom{
 				position: absolute;
@@ -178,7 +179,8 @@
 				right:0;
 				height: 1px;
 				background: #fff;
-				@include css3(transition, all 0.8s);
+				@include css3(transition, all 1.2s);
+				transition-delay: 1.2s;
 			}
 			&:after{
 				position: absolute;
@@ -190,10 +192,11 @@
 				height: 0%;
 				background: #fff;
 				@include css3(transition, all 0.8s);
+
 			}
 			&:before{
 				position: absolute;
-				top:0;
+				bottom:0;
 				left:0;
 				content: '';
 				display: block;
@@ -201,6 +204,7 @@
 				height: 0%;
 				background: #fff;
 				@include css3(transition, all 0.8s);
+
 			}
 			p{
 				text-align: center;
@@ -210,7 +214,7 @@
 				letter-spacing: 12px;
 				@include css3(opacity,0);
 				@include css3(transition, all 0.8s);
-				transition-delay: 1s;
+				transition-delay: 1.8s;
 
 			}
 		}
@@ -218,28 +222,47 @@
 	.box_wrap{
 		position: relative;
 		margin: 0 0 80px 0;
+		overflow: hidden;
 		.title{
-			padding: 40px 0 0 0;
+			padding: 60px 0 0 0;
 			>*{
 				text-align: center;
 			}
 			h2{
+				position: relative;
+				top:-30px;
 				padding: 0 0 5px 0;
 				font:25px/25px 'adinenuPro-bold';
 				letter-spacing: 4px;
 				text-transform: uppercase;
+				@include css3(opacity,0);
+				@include css3(transition, all 0.8s);
+				transition-delay: 0.5s;
 			}
 			p{
 				font:500 18px/18px 'NotoSansKR';
+				&.player_name_kor{
+					position: relative;
+					top:-30px;
+					@include css3(opacity,0);
+					@include css3(transition, all 0.8s);
+
+				}
 				&.desc{
 					padding: 15px 0 32px 0;
 					font:400 13px 'NotoSansKR';
+					@include css3(opacity,0);
+					@include css3(transition, all 0.8s);
+					transition-delay: 0.7s;
 
 				}
 			}
 		}
 		.more{
-			@include css3(transition, 0.5s);
+			@include css3(opacity,0);
+			@include css3(transition, 0.8s);
+			transition-delay: 0.7s;
+
 			&.active{
 				.img{
 					img{
@@ -280,6 +303,31 @@
 		}
 		&.scroll{
 			&.on{
+				.head{
+					left:0;
+					@include css3(opacity,1);
+
+				}
+				.title{
+					h2{
+						top:0;
+						@include css3(opacity,1);
+
+					}
+					p{
+						&.player_name_kor{
+							top:0;
+							@include css3(opacity,1);
+						}
+						&.desc{
+							@include css3(opacity,1);
+						}
+					}
+				}
+				.more{
+					@include css3(opacity,1);
+
+				}
 				.imgs_wrap{
 					div{
 						&.past{
@@ -358,27 +406,27 @@
 					&.past{
 						right:0px;top:0;
 						.inner_past{
-							span{
-								transition-delay: 1.5s;
-							}
-							img{
-								transition-delay: 2.5s;
-							}
+							// span{
+							// 	transition-delay: 1.5s;
+							// }
+							// img{
+							// 	transition-delay: 2.5s;
+							// }
 						}
 					}
 					&.current{
 						margin: 50px 0 0 0;
-						>img{
-							transition-delay: 3.5s;
-						}
+						// >img{
+						// 	transition-delay: 3.5s;
+						// }
 					}
 				}
 			}
 			.btn_wrap{
 				.inn{
-					&:before,&:after,.left,.right{
-						transition-delay: 4.5s;
-					}
+					// &:before,&:after,.left,.right{
+					// 	transition-delay: 4.5s;
+					// }
 				}
 			}
 		}
@@ -388,29 +436,29 @@
 					&.past{
 						left:0px;top:0;
 					    width: 40%;
-						.inner_past{
-							span{
-								transition-delay: 1.5s;
-							}
-							img{
-							    transition-delay: 2.5s;
-							}
-						}
+						// .inner_past{
+						// 	span{
+						// 		transition-delay: 1.5s;
+						// 	}
+						// 	img{
+						// 	    transition-delay: 2.5s;
+						// 	}
+						// }
 					}
 					&.current{
 						margin: 50px 0 0 0;
 					    width: 57%;
-						>img{
-							transition-delay: 3.5s;
-						}
+						// >img{
+						// 	transition-delay: 3.5s;
+						// }
 					}
 				}
 			}
 			.btn_wrap{
 				.inn{
-					&:before,&:after,.left,.right{
-					    transition-delay: 4.5s;
-					}
+					// &:before,&:after,.left,.right{
+					//     transition-delay: 4.5s;
+					// }
 				}
 			}
 		}
@@ -421,29 +469,29 @@
 						right: 15px;
 					    top: 0;
 					    width: 46%;
-						.inner_past{
-							span{
-								transition-delay: 1.5s;
-							}
-							img{
-								transition-delay: 2.5s;
-							}
-						}
+						// .inner_past{
+						// 	span{
+						// 		transition-delay: 1.5s;
+						// 	}
+						// 	img{
+						// 		transition-delay: 2.5s;
+						// 	}
+						// }
 					}
 					&.current{
 						margin: 50px 0 0 15px;
 					    width: 66%;
-						>img{
-							transition-delay: 3.5s;
-						}
+						// >img{
+						// 	transition-delay: 3.5s;
+						// }
 					}
 				}
 			}
 			.btn_wrap{
 				.inn{
-					&:before,&:after,.left,.right{
-						transition-delay: 4.5s;
-					}
+					// &:before,&:after,.left,.right{
+					// 	transition-delay: 4.5s;
+					// }
 				}
 			}
 		}
@@ -468,6 +516,7 @@
 
 						}
 						span{
+							display: none;
 							position: absolute;
 							top: -80%;
 							left: -200%;
@@ -475,7 +524,6 @@
 							height: 252%;
 							transform: rotate(-45deg);
 							@include css3(transition, all 2s);
-							// transition-delay: 0.2s;
 							img{
 								height: 100%;
 							}
@@ -507,33 +555,32 @@
 
 	.head{
 		position: relative;
-		margin: 80px 0 0 0;
-		background-attachment: fixed;
-		background-position: center;
-		background-repeat: no-repeat;
+		left:-20%;
+		@include css3(opacity,0);
+		@include css3(transition, all 2s);
 		&.box2{
 			// margin: 80px 0 0 0;
 			// background-image: url("/images/adidas/event/golf/greatsmoments/ansinae_head.jpg");
-		    height:280px;
-			background-size: 100% auto;
+		    // height:280px;
+			// background-size: 100% auto;
 		}
 		&.box4{
 			// margin: 80px 0 0 0;
 			// background-image: url("/images/adidas/event/golf/greatsmoments/choijinho_head.jpg");
-		    height:280px;
-			background-size: 100% auto;
+		    // height:280px;
+			// background-size: 100% auto;
 		}
 		&.box5{
 			// margin: 80px 0 0 0;
 			// background-image: url("/images/adidas/event/golf/greatsmoments/hongsoonsang_head.jpg");
-			height:280px;
-			background-size: 100% auto;
+			// height:280px;
+			// background-size: 100% auto;
 		}
 		&.box6{
 			// margin: 80px 0 0 0;
 			// background-image: url("/images/adidas/event/golf/greatsmoments/kimbio_head.jpg");
-			height:280px;
-			background-size: 100% auto;
+			// height:280px;
+			// background-size: 100% auto;
 		}
 		img{
 			width: 100%;
@@ -542,16 +589,18 @@
 
 	.sub_box_wrap{
 		position: relative;
-	    // padding: 0px 0 53% 0;
-	    // background: url(/images/adidas/event/golf/greatsmoments/img3_bg.png) no-repeat;
-	    // background-size: 100% auto;
-	    // background-position: 0 100%;
 
 		&.on{
 			.imgs_wrap{
 				.left{
 					top:0;
+					left:0;
 					@include css3(opacity,1);
+				}
+				.right{
+					right:0;
+					@include css3(opacity,1);
+
 				}
 			}
 			.btn_wrap{
@@ -584,7 +633,8 @@
 			position: relative;
 			top: 50px;
 			@include css3(opacity,0);
-			@include css3(transition, 4s);
+			@include css3(transition, 3s);
+			transition-delay: 1.7s;
 			img{
 				width: 100%;
 			}
@@ -596,64 +646,184 @@
 			div{
 				&.left{
 					position: relative;
+					left:-50%;
 					margin-left: 15px;
 					width: 61%;
-					@include css3(opacity,1);
-					@include css3(transition, 0.5s);
+					@include css3(opacity,0);
+					@include css3(transition, 2s);
 				}
 				&.right{
 					position: absolute;
-					right:0;
+					right:-50%;
 					top:30%;
 					width: 32%;
+					@include css3(opacity,0);
+					@include css3(transition, 2s);
+					transition-delay: 0.5s;
 				}
 			}
 			img{
 				position: relative;
 				width: 100%;
 
+			}
+		}
+		.btn_wrap {
+			.inn{
+				.left,.right{
+					transition-delay: 1.8s;
+				}
+				&::before,&::after{
+					transition-delay: 1.8s;
+				}
+				.txt{
+					transition-delay: 2.5s;
+				}
 			}
 		}
 	}
 
 	.video_wrap{
 		position: relative;
+		height: 0px;
 		margin: 0 0 80px 0;
-		&.bottom{
-			margin: 0;
-			padding: 0 0 30px 0;
-			&.on{
-				.bg{
-					top:-50px;
+
+		@include css3(transition, all 0.8s);
+
+		&.on{
+			height: 167px;
+			&.bottom{
+				height: 280px;
+				.img_wrap{
+					height: 167px;
+				}
+			}
+			.img{
+				height: 167px;
+				img{
 					@include css3(opacity,1);
 				}
 			}
-			.bg{
-			    transition-delay: 1s;
+			.video_bottom_bg{
+				bottom:0%;
+				@include css3(opacity,1);
+			}
+		}
+		&.bottom{
+			height: auto;
+			margin: 0;
+			overflow: hidden;
+			.img_wrap{
+				height: 0px;
+				overflow: hidden;
+				z-index: 2;
+				@include css3(transition, all 0.8s);
+
+				.img{
+					background: url('/images/adidas/event/golf/greatsmoments/men_video_MO.jpg') no-repeat;
+					background-size: 100% 100%;
+				}
+			}
+
+
+		}
+		&.women{
+			overflow: hidden;
+			.img{
+				background: url('/images/adidas/event/golf/greatsmoments/women_Video_MO.jpg') no-repeat;
+				background-size: 100% 100%;
 			}
 		}
 		div{
 			position: relative;
-			margin: 0 30px;
 			z-index: 1;
-			&.page_bottom{
+			&.img{
 				position: relative;
-				margin: 0 15px;
+				margin: 0 30px;
+				background: #000;
+				@include css3(transition, all 1s);
+				z-index: 2;
 				img{
-					width: 100%;
+					position: absolute;
+					top:50%;
+					left:50%;
+					transform: translate(-50%,-50%);
+					width: 25%;
+					@include css3(opacity,0);
+					@include css3(transition, all 0.8s);
+					transition-delay: 0.8s;
 				}
-			}
-			&.bg{
-				top:100px;
-				margin: 0;
-				z-index: 0;
-				@include css3(opacity,0);
-				@include css3(transition, all 6s);
-				transition-delay: 2.5s;
 			}
 			img{
 				width: 100%;
 			}
+		}
+		.video_bottom_bg{
+			position: absolute;
+			bottom: -100%;
+			left:0;
+			@include css3(opacity,0);
+			@include css3(transition, all 1.8s);
+			transition-delay: 1s;
+			img{
+				width: 100%;
+			}
+		}
+	}
+
+
+
+	.page_bottom{
+		position: relative;
+		margin: 30px 15px 0;
+		padding-bottom: 25px;
+		&.on{
+			img{
+				@include css3(opacity,1);
+
+			}
+			.inn{
+				span{
+					top:0;
+					@include css3(opacity,1);
+
+				}
+			}
+		}
+		img{
+			width: 100%;
+			@include css3(opacity,0);
+			@include css3(transition, all 1.5s);
+		}
+		.inn{
+			position: absolute;
+			top:47.5%;
+			left:50%;
+			transform: translate(-50%,-50%);
+			width: 100%;
+			span{
+				position: relative;
+				top:80px;
+				display: block;
+				padding: 0 0 5px 0;
+				text-align: center;
+			    font: 3rem/3rem 'adinenuPro-bold';
+				color:#fff;
+				text-transform: uppercase;
+				letter-spacing: 13px;
+				@include css3(opacity,0);
+				@include css3(transition, all 1.5s);
+				&.txt1{
+					transition-delay: 0.5s;
+				}
+				&.txt2{
+					transition-delay: 0.7s;
+				}
+				&.txt3{
+					transition-delay: 0.9s;
+				}
+			}
+
 		}
 	}
 
@@ -666,7 +836,18 @@
 		}
 		&.fadeIn{
 			top:0;
+
 			@include css3(opacity, 1);
+			.popup_content{
+				padding: 15px;
+				// height: 74%;
+				padding-bottom: 138%;
+				>div{
+					@include css3(opacity,1);
+				}
+
+
+			}
 
 		}
 		display: none;
@@ -722,8 +903,18 @@
 		    background: #fff;
 		    z-index: 701;
 			width: 95%;
-			padding: 15px;
+			padding: 0;
 			box-sizing: border-box;
+			height: 1px;
+			@include css3(transition, all 0.5s);
+			transition-delay: 0.5s;
+			>div{
+				@include css3(opacity,0);
+				@include css3(transition, all 0.5s);
+
+				transition-delay: 1s;
+			}
+
 			img{
 				width: 100%;
 			}
@@ -841,20 +1032,42 @@
 					}
 
 				}
-				.bottom{
-					position: relative;
-				    margin-top: 7%;
-					&:after{content: '';display: block;clear: both;}
-					span{
-						font: 400 0.8rem 'NotoSansKR';
-						color: #afafaf;
-						&.left{float: left;}
-						&.right{float: right;}
-					}
+
+			}
+			.bottom{
+				position: absolute;
+				bottom:15px;
+				width: 90%;
+				margin-top: 7%;
+				&:after{content: '';display: block;clear: both;}
+				span{
+					font: 400 0.8rem 'NotoSansKR';
+					color: #afafaf;
+					&.left{float: left;}
+					&.right{float: right;}
 				}
 			}
 		}
 
+	}
+
+	.modal-popup-wrapper{
+		.popup-header{
+			a{
+				@include css3(transform, translate3d(0,-120%,0));
+				&:after,&:before{
+					background: #fff;
+				}
+			}
+
+		}
+		.popup-contents{
+			background: none;
+			padding:0;
+			video{
+				width: 100%;
+			}
+		}
 	}
 
 }
