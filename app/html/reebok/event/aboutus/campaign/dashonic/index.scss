@@ -1,0 +1,248 @@
+@import "./app/MO/reebok/css/scss/about.scss";
+#video-layer{
+  position:fixed;top:0;left:0;width: 100%;height: 100%;z-index:1000;
+}
+
+#video-layer .bg{
+  width: 100%;
+  height: 100%;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  transform-origin:center center;
+  -webkit-transform-origin:center center;
+  transform:scale(0);
+  -webkit-transform:scale(0);
+  opacity:0;
+  background:#000;
+  z-index:1;
+
+  transition:all 0.4s;
+  -webkit-transition:all 0.4s;
+
+
+}
+
+#video-layer.loaded .bg{
+  opacity: 1;
+  transform:scale(1.2);
+  -webkit-transform:scale(1.2);
+}
+
+#video-layer .video-box{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+}
+
+#video-layer .close_x_btn{
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 5;
+  opacity: 0;
+}
+
+#video-layer.loaded .close_x_btn{
+  opacity: 1;
+}
+.bridge{
+    >div{
+        &.dn{
+            display: none;
+        }
+    }
+    .main_section{
+        position: relative;
+        .bg{
+            width: 100%;
+            img{
+                width: 100%;
+            }
+        }
+        .btn_box{
+            width: 45%;
+            position: absolute;
+            bottom:-4%;
+            left: 5%;
+            z-index: 2;
+            text-align: center;
+            a.btn-buy{
+                img{
+                    width: 100%;
+                }
+            }
+        }
+    }
+    .section{
+        overflow: hidden;
+        position: relative;
+        padding: 10rem 0 5rem;
+        >div{
+            float: left;
+        }
+        .text_box{
+            position: relative;
+            width: 40%;
+            padding-left: 5%;
+            margin-top:10.5rem;
+            p{
+                font: 400 1.4rem/2.8rem 'NotoSansKR';
+                letter-spacing: 0.5rem;
+            }
+            span{
+                font: 600 1.6rem/3.2rem 'dinpro cond';
+                letter-spacing: 0.7rem;
+                padding-top: 1rem;
+            }
+        }
+        .slide_box{
+            position: relative;
+            width: 55%;
+            padding-bottom: 76%;
+            #slideshow {
+                position: relative;
+                z-index: 5;
+                > div {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    img{
+                        width: 100%;
+                    }
+                }
+            }
+            .deco1{
+                position: absolute;
+                top: -5rem;
+                left: -3rem;
+                img{
+                    width: 90%;
+                }
+            }
+            .deco2{
+                position: absolute;
+                bottom: -1.5rem;
+                right: 0;
+                img{
+                    float: right;
+                    width: 70%;
+                }
+            }
+        }
+    }
+    .slide_lineup{
+        position: relative;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        .collection_cut{
+            position: relative;
+            overflow: hidden;
+            .slide_tit{
+                position: relative;
+                height: 58px;
+                margin-left: 50px;
+                padding-left: 20px;
+                z-index: 5;
+                .gradi_line{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 8px;
+                    height: 100px;
+                    background: linear-gradient(180deg, #939ab2, #d997bf);
+                    background-size: 100% 100%;
+                }
+                h2{
+                    font: 600 1.4rem/1.4rem 'NotoSansKR';
+                    color: #000;
+                    letter-spacing: 8px;
+                    padding-bottom: 10px;
+                }
+                p{
+                    font: 600 1rem/1.4rem 'NotoSansKR';
+                    color: #000;
+                    span{
+                        font: 600 1.4rem/1.4rem 'NotoSansKR';
+                    }
+                }
+            }
+            ul{
+                overflow: hidden;
+                li{
+                    position: relative;
+                    float: left;
+                    text-align: center;
+                    img{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        .bot_area{
+            position: relative;
+            padding-top: 0.5rem;
+            background: url('/images/reebok/about/dashonic/bg_sect.jpg') 0 0 no-repeat;
+            background-size: 100% auto;
+            .navi{
+                width: 100%;
+                img{
+                    width: 40%;
+                }
+                .prev{
+                    position: absolute;
+                    top: 8%;
+                    left: 2rem;
+                    text-align: left;
+                }
+                .next{
+                    position: absolute;
+                    top: 8%;
+                    right: 2rem;
+                    text-align: right;
+                }
+            }
+            .num_paging{
+                padding: 1rem 0px;
+                a{
+                    background: none;
+                    border:none;
+                    width: 1rem;
+                    height: 1rem;
+                    margin-right: 0.4rem;
+                    border: 1px solid #5b7693;
+                }
+                .on{
+                    background: #5b7693;
+                }
+            }
+            .inner{
+                padding: 3rem 2rem 7rem;
+                box-sizing: border-box;
+                h2{
+                    font: 700 4rem 'dinpro cond';
+                    text-align: left;
+                    letter-spacing: 0.7rem;
+                }
+                .btn-buy{
+                    display: inline-block;
+                    width: 45%;
+                    position: relative;
+                    text-align: center;
+                    margin-top: 1rem;
+                    img{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+// dmx
