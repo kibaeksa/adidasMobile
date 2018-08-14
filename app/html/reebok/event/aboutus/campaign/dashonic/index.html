@@ -158,7 +158,12 @@
 							<div class="deco1"><img src="/images/reebok/about/dashonic/sect_01_deco01.jpg" alt=""></div>
 							<div class="deco2"><img src="/images/reebok/about/dashonic/sect_01_deco02.jpg" alt=""></div>
 						</div>
+					</div>
 
+					<div class="video_area">
+						<div class="bg">
+							<img src="/images/reebok/about/dashonic/video.png" alt="" class="btn-video" data-video-id="uKjIrD92SHc">
+						</div>
 					</div>
 
 					<div class="slide_lineup">
@@ -218,6 +223,33 @@
 
 				<script type="text/javascript">
 					(function($){
+
+						$('.btn-video').bind('click',function(){
+							//alert('동영상이 준비중입니다');
+							var ytbId = $(this).attr('data-video-id');
+							var html = '<div id="video-layer" style="">';
+							html += '	<div class="bg" ></div>';
+							html += '	<div class="video-box"></div>';
+							html += '	<a href="javascript:void(0)" class="close_x_btn white"></a>';
+							html += '</div>';
+
+							$('html').css({overflow: 'hidden'});
+							$('body').append(html);
+
+							$('#video-layer .close_x_btn').bind('click',function(){
+								$('html').css({overflow: 'scroll'});
+								$('#video-layer ').remove();
+							});
+
+
+							setTimeout(function(){
+								$('#video-layer').addClass('loaded');
+
+								$('#video-layer .video-box').append('<iframe width="100%" height="100%" src="http://www.youtube.com/embed/'+ytbId+'?rel=0" frameborder="0" allowfullscreen></iframe>')
+							},100);
+
+
+						});
 
 						$("#slideshow > div:gt(0)").hide();
 
