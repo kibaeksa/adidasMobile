@@ -595,6 +595,33 @@
                 </div>
             </div>
 
+            <div class="box8 scroll">
+                <p class="title">
+                    <span class="txt">P.O.D STYLE</span>
+                    <span class="bg"></span>
+                </p>
+                <p>도끼 주노플로, 블랙핑크와 함께한 P.O.D SYSTEM 스타일 화보</p>
+                <div class="banner_slider_wrap">
+                    <ul id="slider_owl2">
+                        <li><img src="/images/adidas/event/originals/pod/180808/01.jpg" alt=""></li>
+                        <li><img src="/images/adidas/event/originals/pod/180808/02.jpg" alt=""></li>
+                        <li><img src="/images/adidas/event/originals/pod/180808/03.jpg" alt=""></li>
+                        <li><img src="/images/adidas/event/originals/pod/180808/04.jpg" alt=""></li>
+                        <li><img src="/images/adidas/event/originals/pod/180808/05.jpg" alt=""></li>
+                        <li><img src="/images/adidas/event/originals/pod/180808/06.jpg" alt=""></li>
+                        <li><img src="/images/adidas/event/originals/pod/180808/07.jpg" alt=""></li>
+                        <li><img src="/images/adidas/event/originals/pod/180808/08.jpg" alt=""></li>
+                        <li><img src="/images/adidas/event/originals/pod/180808/09.jpg" alt=""></li>
+                        <li><img src="/images/adidas/event/originals/pod/180808/10.jpg" alt=""></li>
+                        <li><img src="/images/adidas/event/originals/pod/180808/11.jpg" alt=""></li>
+                    </ul>
+                </div>
+                <div class="video_wrap">
+                    <div class="inn" onclick="openModalVideoViewer('EspMCuyslXY')"><img src="/images/adidas/event/originals/pod/180808/video.png" alt=""></div>
+                    <img src="/images/adidas/event/originals/pod/180808/video_deco.png" alt="" class="deco">
+                </div>
+            </div>
+
             <div class="go_top">
 				<a href="#">BACK TO TOP</a>
 			</div>
@@ -604,6 +631,62 @@
 
 
             (function($){
+                    $(window).load(function(){
+                        var video_offset = $('.video_wrap').offset().top;
+                        console.log(video_offset)
+
+                        //스크롤이벤트
+                        var scrollArray = [];
+                        var scrollContent = document.querySelectorAll('.scroll');
+                        for(var i = 0; i<scrollContent.length; i++){
+                             var mypos = scrollContent[i].offsetTop;
+                             scrollArray.push(mypos)
+                        }
+
+                        $(window).scroll(function(){
+                            var thispos = $(this).scrollTop() + 100;
+                            for(var pos = 0; pos<scrollArray.length; pos++){
+                                if(thispos>scrollArray[pos]){
+                                    $('.pod_system .scroll').eq(pos).addClass('on');
+                                }
+                            }
+                        });
+
+                    });
+
+
+                    // bottom slider
+                    var owlSlider2 = $('#slider_owl2');
+
+                    owlSlider2.on('initialized.owl.carousel', function(event) {
+                        /*
+                            최초 로딩 시 한번만 호출하는 함수
+                        */
+                    });
+
+                    owlSlider2.on('changed.owl.carousel', function(event) {
+                        /*
+                            Callback 이벤트 (슬라이드가 실행 될 떄마다 실행되는 함수)
+                            * index 사용하기
+                            event.item.index
+
+                            * length 사용하기
+                            event.item.count
+                        */
+                    });
+
+                    owlSlider2.owlCarousel({
+                        stagePadding: 0,
+                        margin:0,
+                        items : 1,
+                        merge: true,
+                        loop : true,
+                        navigation: true,
+                        nav: false,
+                        autoplay:true,
+
+                    });
+
                     //셋타임아웃
                     setTimeout(function(){
                         $('.pod_system .box1 .shoes').addClass('on');
@@ -611,21 +694,41 @@
 
 
 
-                    //스크롤이벤트
-                    var scrollArray = [];
-                    var scrollContent = document.querySelectorAll('.scroll');
-                    for(var i = 0; i<scrollContent.length; i++){
-                         var mypos = scrollContent[i].offsetTop;
-                         scrollArray.push(mypos)
-                    }
 
-                    $(window).scroll(function(){
-                        var thispos = $(this).scrollTop() + 100;
-                        for(var pos = 0; pos<scrollArray.length; pos++){
-                            if(thispos>scrollArray[pos]){
-                                $('.pod_system .scroll').eq(pos).addClass('on');
-                            }
-                        }
+
+                    // middle slider
+                    var owlSlider = $('#slider_owl');
+
+                    owlSlider.on('initialized.owl.carousel', function(event) {
+                        /*
+                            최초 로딩 시 한번만 호출하는 함수
+                        */
+                    });
+
+                    owlSlider.on('changed.owl.carousel', function(event) {
+                        var index = event.item.index;
+                        $('#slider_owl .owl-item li').removeClass('on').eq(index).addClass('on');
+                        /*
+                            Callback 이벤트 (슬라이드가 실행 될 떄마다 실행되는 함수)
+                            * index 사용하기
+                            event.item.index
+
+                            * length 사용하기
+                            event.item.count
+
+                        */
+
+
+                    });
+
+                    owlSlider.owlCarousel({
+                        stagePadding: 0,
+                        margin:0,
+                        items : 1,
+                        merge: true,
+                        loop : true,
+                        navigation: true,
+                        nav: true
                     });
 
 
@@ -662,45 +765,6 @@
                     // });
                 })(jQuery);
 
-
-            //슬라이더
-            (function($){
-
-                var owlSlider = $('#slider_owl');
-
-                owlSlider.on('initialized.owl.carousel', function(event) {
-                    /*
-                        최초 로딩 시 한번만 호출하는 함수
-                    */
-                });
-
-                owlSlider.on('changed.owl.carousel', function(event) {
-                    var index = event.item.index;
-                    console.log(index)
-                    $('#slider_owl .owl-item li').removeClass('on').eq(index).addClass('on');
-                    /*
-                        Callback 이벤트 (슬라이드가 실행 될 떄마다 실행되는 함수)
-                        * index 사용하기
-                        event.item.index
-
-                        * length 사용하기
-                        event.item.count
-
-                    */
-
-
-                });
-
-                owlSlider.owlCarousel({
-                    stagePadding: 0,
-                    margin:0,
-                    items : 1,
-                    merge: true,
-                    loop : true,
-                    navigation: true,
-                    nav: true
-                });
-            })(jQuery);
 
         </script>
 

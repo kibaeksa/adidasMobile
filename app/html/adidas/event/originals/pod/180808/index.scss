@@ -312,6 +312,7 @@ html,body{
 				font:1.1rem/1.8rem 'NotoSansKR';
 				color:#Fff;
 				margin-top: 50px;
+				text-transform: uppercase;
 			}
 		}
 
@@ -416,6 +417,112 @@ html,body{
 					img{
 						width: 100%;
 					}
+				}
+			}
+		}
+		.box8{
+			position: relative;
+		    padding: 40px 0 0 0;
+			background: url('/images/adidas/event/originals/pod/180808/collection_bg.jpg') no-repeat;
+			background-size: 100% 100%;
+			text-align: center;
+			&.on{
+				.video_wrap{
+					.inn{
+						top:0;
+						@include css3(opacity,1);
+					}
+					.deco{
+						top:0;
+						@include css3(opacity,1);
+
+					}
+				}
+			}
+			p{
+				text-align: center;
+				color:#fff;
+				text-align: center;
+				font: 1.1rem/1.8rem 'NotoSansKR';
+				letter-spacing: 0.1px;
+
+				&.title{
+					display: inline-block;
+					position: relative;
+					.txt{
+						position: relative;
+						font: 30px 'NotoSansKR';
+						letter-spacing: 5px;
+						z-index: 1;
+					}
+					.bg{
+						position: absolute;
+					    bottom: 9px;
+					    right: 0;
+					    width: 100%;
+					    height: 9px;
+					    background: #000;
+					}
+				}
+			}
+			.banner_slider_wrap{
+				margin: 20px 25px 0;
+				padding: 0 0 50px 0;
+				overflow: hidden;
+				ul{
+					li{
+						img{
+							width: 100%;
+						}
+					}
+					.owl-controls{
+						position: relative;
+						margin: 20px 0 0 0;
+						.owl-dots{
+							text-align: center;
+							.owl-dot{
+								display: inline-block;
+								margin: 0 5px;
+								width: 14px;
+								height: 14px;
+								background: rgba(108,108,108,0.4);
+								border-radius: 50px;
+								-webkit-border-radius: 50px;
+								&.active{
+									background: rgba(255,255,255,1);
+
+								}
+
+							}
+						}
+					}
+				}
+			}
+			.video_wrap{
+				position: relative;
+				margin: 0 25px 0;
+ 			    padding-bottom: 25%;
+				.inn{
+					position: relative;
+					top:40px;
+				    padding-right: 36px;
+					@include css3(opacity,0);
+					@include css3(transition, all 0.8s);
+					transition-delay: 0.1s;
+
+
+					img{
+						width: 100%;
+					}
+				}
+				.deco{
+					position: absolute;
+					top:40px;
+					right:0;
+					width: 53px;
+					@include css3(opacity,0);
+					@include css3(transition, all 0.8s);
+					transition-delay: 0.4s;
 				}
 			}
 		}
