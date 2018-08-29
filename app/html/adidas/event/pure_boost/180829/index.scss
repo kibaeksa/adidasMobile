@@ -151,51 +151,47 @@
 	.shoes{
 		.box{
 			position: relative;
-			padding:0 1.5rem;
 			&.type1{
-				padding:20rem 3rem 5rem 3rem;
-				background: url("/images/adidas/event/pure_boost/180829/shoe1.jpg") no-repeat;
-				background-size:100% 100%;
 				>img{
 					opacity: 0;
 					@include css3 (transition ,opacity 0.8s);
 				}
 				.txt{
-					position: relative;
+					width: 80%;
+					position: absolute;
 					top:500px;
-					text-align: right;
+					left: 50%;
+					transform: translateX(-50%);
 					opacity: 0;
 					@include css3 (transition ,opacity 0.8s);
 				}
 			}
 			&.type2{
-				padding:21rem 3rem 5rem 3rem;
-				background: url("/images/adidas/event/pure_boost/180829/shoe2.jpg") no-repeat;
-				background-size:100% 100%;
 				>img{
 					opacity: 0;
 					@include css3 (transition , opacity 0.8s);
 				}
 				.txt{
-					position: relative;
+					width: 80%;
+					position: absolute;
 					top:500px;
-					text-align: left;
+					left: 50%;
+					transform: translateX(-50%);
 					opacity: 0;
 					@include css3 (transition , opacity 0.8s);
 				}
 			}
 			&.type3{
-				padding:21rem 3rem 0 3rem;
-				background: url("/images/adidas/event/pure_boost/180829/shoe3.jpg") no-repeat;
-				background-size:100% 100%;
 				>img{
 					opacity: 0;
 					@include css3 (transition , opacity 0.8s);
 				}
 				.txt{
-					position: relative;
+					width: 80%;
+					position: absolute;
 					top:500px;
-					text-align: right;
+					left: 50%;
+					transform: translateX(-50%);
 					opacity: 0;
 					@include css3 (transition , opacity 0.8s);
 				}
@@ -222,7 +218,7 @@
 					padding: 0 2rem 0 2rem;
 					background: #000;
 					color:#fff;
-					font:1rem/3rem 'NotosansKR';
+					font:1rem/3.5rem 'NotosansKR';
 					letter-spacing: 0px;
 					text-align: center;
 					&:after{
@@ -396,46 +392,6 @@
 						color:#000;
 						letter-spacing: 0;
 					}
-				}
-			}
-			.owl-nav{
-				position: absolute;
-				top:0;
-				width:100%;
-				height: 100%;
-				z-index: 10;
-				.owl-next {
-				  position: relative;
-				  right:0;
-				  float: right;
-				  width:48px;
-				  height: 100%;
-					background:url("http://imagem.adidas.co.kr/images/adidas/event/pure_boost_x/next.png") 40% 50% no-repeat;
-				  background-size: 60%;
-				  text-indent: -9999px;
-					// background-color: #000;
-					// @include opacity(0.3);
-					&:after{
-						display: inline-block;
-						width: 1rem;
-						height: 1rem;
-						position: absolute;
-						top:50%;
-						content: '';
-						background:url("http://imagem.adidas.co.kr/images/adidas/event/pure_boost_x/next.png") 40% 50% no-repeat;
-					}
-				}
-				.owl-prev {
-				  position: relative;
-				  left:0;
-				  float: left;
-				  width:48px;
-				  height: 100%;
-				  background:url("http://imagem.adidas.co.kr/images/adidas/event/pure_boost_x/prev.png") 40% 50% no-repeat;
-				  background-size: 60%;
-				  text-indent: -9999px;
-					// background-color: #000;
-					// @include opacity(0.3);
 				}
 			}
 			.owl-dots{
