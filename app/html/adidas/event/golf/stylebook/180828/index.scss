@@ -150,7 +150,7 @@
 				border: 1px solid #000;
 				p{
 					display: inline-block;
-					font: 14px/50px 'adinenuPro-bold';
+					font: 14px/50px 'adinenuPro-regular';
 					text-transform: uppercase;
 					color:#000;
 					letter-spacing: 1px;
@@ -173,11 +173,13 @@
 		.section1{
 			position: relative;
 		    padding-top: 55px;
-			background: #f6f6f6;
 			div{
 				&.shade{
 					position: relative;
-					left:25px;
+					left:-25px;
+					@include css3(opacity,0);
+					@include css3(transition, all 0.5s);
+					transition-delay: 0.5s;
 					img{
 						width: 205px;
 					}
@@ -185,12 +187,17 @@
 				&.main{
 					position: absolute;
 					top: 68px;
-					left:40px;
+					left:0px;
+					@include css3(opacity,0);
+					@include css3(transition, all 0.5s);
+					transition-delay: 0.8s;
 				}
 				&.logo{
 					position: absolute;
 					top: 44%;
 					right: 32px;
+					@include css3(opacity,0);
+					@include css3(transition, all 0.5s);
 					img{
 						width: 150px;
 					}
@@ -198,6 +205,10 @@
 				img{
 					width: 200px;
 				}
+			}
+			&.section1_0{
+				background: url(/images/adidas/event/golf/stylebook/180828/section3_1_bg.png) no-repeat;
+				background-size: 100% 100%;
 			}
 		}
 
@@ -209,24 +220,35 @@
 			&.section2_0{
 				position: relative;
 				padding: 56px 0 0 0;
-				background: #e9e9e9;
+				background: url(/images/adidas/event/golf/stylebook/180828/section2_0_bg.png) no-repeat;
+				background-size: 100% 100%;
 				.img{
 					position: absolute;
 				    top: 56px;
-				    left: 15px;
+				    left: -15px;
+					@include css3(opacity,0);
+					@include css3(transition, all 0.5s);
+					img{
+						width:346px;
+					}
 				}
 				.img2{
 					padding-top: 52%;
 				    text-align: right;
 				    z-index: 2;
 				    position: relative;
+					top:50px;
+					@include css3(opacity,0);
+					@include css3(transition, all 0.5s);
+					transition-delay: 0.5s;
 					img{
 						width: 206px;
 					}
 				}
 			}
 			&.section2_1{
-				background: #e9e9e9;
+				background: url(/images/adidas/event/golf/stylebook/180828/section2_1_bg.png) no-repeat;
+				background-size: 100% 100%;
 				.img{
 					margin: 0 50px 0 15px;
 					padding: 70px 0 80px;
@@ -237,8 +259,13 @@
 				.img2{
 					position: absolute;
 					top:-12px;
-					right:0;
-					margin-left: 38%;
+
+					img{
+					    width: 63%;
+						    margin-left: 70%;
+						@include css3(opacity,0);
+						@include css3(transition, all 0.8s);
+					}
 				}
 				.logo{
 					position: absolute;
@@ -254,24 +281,27 @@
 			&.section2_3{
 				position: relative;
 				z-index: 4;
-				background: #e4e4e4;
+				background: url(/images/adidas/event/golf/stylebook/180828/section2_3_bg.png) no-repeat;
+				background-size: 100% 100%;
 				.img{
 					padding: 25% 0 0 0;
 				}
 				.img2{
 					position: absolute;
 					bottom:0;
-					right:30px;
+					right:-30px;
+					@include css3(opacity,0);
+					@include css3(transition, all 0.8s);
 					img{
 						width:170px;
 					}
 				}
 			}
 		}
-
 		.section3_0{
 			position: relative;
-			background: #f3f3f3;
+			background: url(/images/adidas/event/golf/stylebook/180828/section3_1_bg.png) no-repeat;
+			background-size: 100% 100%;
 			img{
 				width: 100%;
 			}
@@ -286,49 +316,645 @@
 			    margin: 0 25px 0 15px;
 			    z-index: 2;
 			    position: relative;
+				top:50px;
+				@include css3(opacity,0);
+				@include css3(transition, all 0.8s);
+				transition-delay: 0.8s;
 			}
 		}
-
 		.section3_1{
 			position: relative;
 			padding: 80px 0 0 0;
-			background: #f3f3f3;
+			background: url(/images/adidas/event/golf/stylebook/180828/section3_1_bg.png) no-repeat;
+			background-size: 100% 100%;
 
 			img{
 				width: 100%;
 			}
 			.shade{
 				position: relative;
-				left: 5px;
+
+				img{
+					position: relative;
+					left: -60px;
+					@include css3(opacity,0);
+					@include css3(transition, all 0.8s);
+					transition-delay: 0.5s;
+				}
+
 			}
 			.main{
 				position: absolute;
-			    left: -10px;
-			    top: 83px;
+				top: 83px;
+
+				img{
+					position: relative;
+					left: -60px;
+					@include css3(opacity,0);
+					@include css3(transition, all 0.8s);
+					transition-delay: 0.8s;
+				}
 			}
 			.logo{
 				position: absolute;
 				top: 56%;
 			    left: 48%;
 				transform: translate(-50%,-50%);
+				@include css3(opacity,0);
+				@include css3(transition, all 0.8s);
 				img{
 					text-align: center;
 					width: 70%;
 				}
 			}
 		}
-
 		.section3_2{
 			position: relative;
+		    padding-bottom: 105%;
+			background: url(/images/adidas/event/golf/stylebook/180828/section3_2_bg.png) no-repeat;
+			background-size: 100% auto;
 			img{
 				width: 100%;
 			}
 			.img{
-				margin: -1px 50px 15px 15px;
+				position: absolute;
+			    width: 79%;
+			    padding-bottom: 0%;
+			    /* margin: -1px 54px 15px 15px; */
+			    margin-left: 15px;
+			    background: url(/images/adidas/event/golf/stylebook/180828/sec1_img03_05.jpg) no-repeat;
+			    background-size: 100% auto;
+				@include css3(transition, all 0.8s);
+			}
+
+		}
+		.section3_3{
+			position: relative;
+			padding-bottom: 100%;
+			background: url(/images/adidas/event/golf/stylebook/180828/section3_2_bg.png) no-repeat;
+			background-size: 100% auto;
+
+			img{
+				width: 100%;
 			}
 			.img2{
-				margin: 0 40px 50px;
+				position: absolute;
+			    left: 0;
+			    right: 0;
+			    top: 0;
+			    height: 0;
+			    bottom: 0;
+			    margin: 0 auto;
+			    width: 79%;
+			    background: url(/images/adidas/event/golf/stylebook/180828/sec1_img03_06.jpg) no-repeat;
+			    background-size: 100% auto;
+				@include css3(transition, all 0.8s);
 			}
+		}
+		.btn_wrap{
+			// margin: 50px 0;
+		}
+
+	}
+	.contents_wrap.adidas{
+		height: 0;
+		opacity: 0;
+		padding: 0;
+		&.on{
+			height: auto;
+			opacity: 1;
+		}
+		.section1{
+			&.on{
+				.shade{
+					left:25px;
+					@include css3(opacity,1);
+				}
+				.main{
+					left:40px;
+					@include css3(opacity,1);
+				}
+				.logo{
+					@include css3(opacity,1);
+				}
+			}
+		}
+		.section2_0{
+			&.on{
+				.img{
+					left:15px;
+					@include css3(opacity,1);
+				}
+				.img2{
+					top:0;
+					@include css3(opacity,1);
+				}
+			}
+		}
+		.section2_2{
+			&.on{
+				.img2{
+					img{
+						top:-12px;
+						margin-left: 38%;
+
+						@include css3(opacity,1);
+					}
+
+				}
+			}
+		}
+		.section2_3{
+			&.on{
+				.img2{
+					right:30px;
+					@include css3(opacity,1);
+				}
+			}
+		}
+		.section3_0{
+			&.on{
+				.img2{
+					top:0;
+					@include css3(opacity,1);
+				}
+			}
+		}
+		.section3_1{
+			&.on{
+				.logo{
+					@include css3(opacity,1);
+				}
+				.main{
+					img{
+						left:-10px;
+						@include css3(opacity,1);
+					}
+				}
+				.shade{
+
+					img{
+						left: 0px;
+						@include css3(opacity,1);
+					}
+
+				}
+			}
+		}
+		.section3_2{
+			// margin: 0 0 15px 0;
+			&.on{
+				.img{
+					padding-bottom: 100%;
+				}
+
+			}
+		}
+		.section3_3{
+			&.on{
+				.img2{
+					height: 100%;
+				}
+			}
+		}
+		.btn_wrap{
+			background: url(/images/adidas/event/golf/stylebook/180828/section3_2_bg.png) no-repeat;
+			background-size: 100% auto;
+			padding: 50px 0;
+		}
+
+	}
+
+	.contents_wrap.adicross{
+		height: 0;
+		opacity: 0;
+		padding: 0;
+		&.on{
+			height: auto;
+			opacity: 1;
+		}
+		.section1{
+			padding: 0;
+			&.on{
+				.logo{
+					@include css3(opacity,1);
+				}
+				.bg{
+					top:0;
+					right:0;
+					@include css3(opacity,1);
+				}
+				.women{
+					right:0;
+					@include css3(opacity,1);
+				}
+				.men{
+					@include css3(opacity,1);
+
+				}
+			}
+			.bg{
+				position: relative;
+				top:-200px;
+				right:-50%;
+				@include css3(opacity,0);
+				@include css3(transition, all 0.5s);
+				img{
+					width: 100%;
+				}
+			}
+			.logo{
+				position: absolute;
+				top: 27%;
+				left: 25%;
+				transform: translate(-50%,-50%);
+				width: 19%;
+				transition-delay: 0.8s;
+
+				img{
+				    width: 100%;
+				}
+			}
+			.women{
+				position: absolute;
+			    top: 4%;
+			    right: -100px;
+				@include css3(opacity,0);
+				@include css3(transition, all 0.5s);
+				transition-delay: 0.5s;
+				img{
+					width: 170px;
+				}
+			}
+			.men{
+				position: absolute;
+			    top: 55%;
+			    left: 0;
+				@include css3(opacity,0);
+				@include css3(transition, all 0.5s);
+				transition-delay: 1s;
+
+				img{
+					width: 160px;
+				}
+			}
+		}
+		.section2{
+			&.on{
+				.men{
+					top: 22%;
+					@include css3(opacity,1);
+				}
+				.bg{
+					top:0;
+					left:0;
+					@include css3(opacity,1);
+				}
+				.women{
+					bottom: 2%;
+					left: 17px;
+					@include css3(opacity,1);
+				}
+			}
+			.bg{
+				position: relative;
+				top:100px;
+				left:-100px;
+			    padding-top: 128%;
+				@include css3(opacity,0);
+				@include css3(transition, all 1s);
+				transition-delay: 0.8s;
+				img{
+					width: 100%;
+				}
+				&:after{
+					content: '';
+				    display: inline-block;
+				    width: 105%;
+				    height: 102px;
+				    background: #fff;
+				    position: absolute;
+				    left: -8px;
+				    bottom: -6%;
+				    z-index: 2;
+				    transform: rotate(-12deg);
+				}
+			}
+			.men{
+				position: absolute;
+			    top: 50%;
+			    right: 0;
+				@include css3(opacity,0);
+				@include css3(transition, all 0.8s);
+				img{
+				    width: 172px;
+				}
+			}
+			.women{
+				position: absolute;
+			    bottom: -10%;
+			    left: -80px;
+				@include css3(opacity,0);
+				@include css3(transition, all 0.5s);
+				transition-delay: 2s;
+
+				img{
+					width: 155px;
+				}
+			}
+		}
+		.section3{
+			position: relative;
+			&.on{
+				.logo{
+					@include css3(opacity,1);
+				}
+				.men{
+					right: 15px;
+					@include css3(opacity,1);
+				}
+				.men2{
+					top: 21.85%;
+					left:15px;
+					@include css3(opacity,1);
+
+				}
+				.bg1{
+					&:after{
+						content: '';
+					    display: inline-block;
+					    height: 0%;
+					    width: 100%;
+					    background: #fff;
+					    position: absolute;
+					    top: 47%;
+					    left: 0;
+					}
+				}
+			}
+			.bg{
+				&.bg1{
+					padding-top: 87%;
+				    position: relative;
+				    z-index: 1;
+				}
+				img{
+					width:100%;
+				}
+			}
+			.logo{
+				position: absolute;
+			    top: 13.56%;
+				left: 40%;
+				transform: translate(-50%,-50%);
+				z-index: 1;
+				width: 15%;
+				@include css3(opacity,0);
+				@include css3(transition, all 0.5s);
+				img{
+					width: 100%;
+				}
+			}
+			.men{
+				position: absolute;
+				top: 0;
+				right: -50px;
+				@include css3(opacity,0);
+				@include css3(transition, all 0.5s);
+				transition-delay: 0.8s;
+				img{width: 150px;}
+			}
+			.men2{
+				position: absolute;
+		        top: 10%;
+			    z-index: 2;
+			    left: -30%;
+				@include css3(opacity,0);
+				@include css3(transition, all 0.5s);
+				transition-delay: 1.3s;
+				img{width: 143px;}
+			}
+			.bg1{
+				&:after{
+					content: '';
+				    display: inline-block;
+				    height: 53%;
+				    width: 100%;
+				    background: #fff;
+				    position: absolute;
+				    top: 47%;
+				    left: 0;
+					@include css3(transition, all 0.5s);
+					transition-delay: 1.6s;
+
+				}
+			}
+		}
+		.btn_wrap{
+			margin: 50px 0;
+		}
+	}
+
+	.contents_wrap.adipure{
+		height: 0;
+		opacity: 0;
+		padding: 0;
+		background: url(/images/adidas/event/golf/stylebook/180828/adipure_bg.png) no-repeat;
+		background-size: 100% 100%;
+		&.on{
+			height: auto;
+			opacity: 1;
+		}
+		.section1{
+			&.on{
+				.women{
+					left:0;
+					@include css3(opacity,1);
+				}
+				.men{
+					top:8%;
+					right:15px;
+					@include css3(opacity,1);
+
+				}
+				.logo{
+					@include css3(opacity,1);
+
+				}
+			}
+			.women{
+				padding-top: 54%;
+			    position: relative;
+			    left: -80px;
+			    z-index: 1;
+				@include css3(opacity,0);
+				@include css3(transition, all 0.8s);
+				transition-delay: 0.5s;
+				img{
+					width: 194px;
+				}
+			}
+			.men{
+				position: absolute;
+			    right: -80px;
+			    top: 5%;
+				@include css3(opacity,0);
+				@include css3(transition, all 0.8s);
+				img{
+				    width: 150px;
+				}
+			}
+			.logo{
+				position: absolute;
+			    top: 25%;
+			    left: 31%;
+			    transform: translate(-50%,-50%);
+			    width: 35%;
+				img{
+					width: 100%;
+				}
+			}
+			.line{
+				position: absolute;
+			    top: 56%;
+			    left: 0;
+			    width: 103%;
+			    height: 50px;
+			    background: #f9f9f7;
+			    border-top: 2px solid #000;
+			    transform: rotate(-12deg);
+			}
+		}
+		.section2{
+			&.on{
+				.women{
+					right:0;
+					@include css3(opacity,1);
+				}
+				.line{
+					width: 100%;
+					// @include css3(opacity,1);
+
+				}
+			}
+			.women{
+				position: absolute;
+			    top: -337px;
+			    right: -80px;
+				@include css3(opacity,0);
+				@include css3(transition, all 0.8s);
+				transition-delay: 0.8s;
+				img{
+					width: 338px;
+				}
+			}
+			.line{
+				width: 0%;
+				height: 3px;
+				background: #f9f9f7;
+				padding-bottom: 100px;
+				border-top: 3px solid #e3c9c1;
+				margin-top: 199px;
+				// @include css3(opacity,0);
+				@include css3(transition, all 0.8s);
+			}
+		}
+		.section3{
+			position: relative;
+			&.on{
+				div{
+					left:0;
+					@include css3(opacity,1);
+				}
+			}
+			div{
+				position: relative;
+				left:50px;
+			    padding: 50px 50px 20px 15px;
+				@include css3(opacity,0);
+
+				@include css3(transition, all 0.5s);
+				img{
+					width: 100%;
+				}
+			}
+		}
+		.section4{
+			position: relative;
+			&.on{
+				div{
+					right:0;
+					@include css3(opacity,1);
+
+				}
+			}
+			div{
+				position: relative;
+				right:50px;
+				padding: 0px 15px 20px 80px;
+				@include css3(opacity,0);
+
+				@include css3(transition, all 0.5s);
+
+				img{
+					width: 100%;
+				}
+			}
+		}
+		.section5{
+			position: relative;
+			&.on{
+				div{
+					@include css3(opacity,1);
+				}
+			}
+			div{
+				padding: 50px 60px 20px 30px;
+				@include css3(opacity,0);
+				@include css3(transition, all 0.5s);
+				img{
+					width: 100%;
+				}
+			}
+		}
+		.section6{
+			position: relative;
+		    padding-bottom: 65%;
+			&.on{
+				.women{
+					top: -202px;
+					right: 40px;
+					@include css3(opacity,1);
+				}
+				.line{
+					width: 104%;
+				}
+			}
+			.women{
+				position: absolute;
+			    top: -230px;
+			    z-index: 2;
+			    right: 80px;
+				@include css3(opacity,0);
+				@include css3(transition, all 0.5s);
+				transition-delay: 0.8s;
+				img{
+				    width: 157px;
+				}
+			}
+			.line{
+				width: 0%;
+			    position: relative;
+			    left: -2px;
+			    border-top: 2px solid #000;
+			    transform: rotate(12deg);
+			    margin-top: 65%;
+				@include css3(transition, all 0.5s);
+			}
+
+		}
+		.btn_wrap{
+			margin: 50px 0;
 		}
 
 	}

@@ -456,8 +456,8 @@
                     </div>
                 </div>
                 <!-- menu //-->
-                <div class="contents_wrap">
-                    <div class="section1 scroll">
+                <div class="contents_wrap adidas on">
+                    <div class="section1 section1_0 scroll">
                         <div class="shade"><img src="/images/adidas/event/golf/stylebook/180828/sec1_img01_01.png" alt=""></div>
                         <div class="main"><img src="/images/adidas/event/golf/stylebook/180828/sec1_img01_02.png" alt=""></div>
                         <div class="logo"><img src="/images/adidas/event/golf/stylebook/180828/sec1_logo.png" alt=""></div>
@@ -489,17 +489,81 @@
                         <div class="logo"><img src="/images/adidas/event/golf/stylebook/180828/sec1_logo.png" alt=""></div>
                     </div>
                     <div class="section3_2 scroll">
-                        <div class="img"><img src="/images/adidas/event/golf/stylebook/180828/sec1_img03_05.jpg" alt=""></div>
-                        <div class="img2"><img src="/images/adidas/event/golf/stylebook/180828/sec1_img03_06.jpg" alt=""></div>
+                        <div class="img"></div>
+                    </div>
+                    <div class="section3_3 scroll">
+                        <div class="img2"></div>
                     </div>
                     <div class="btn_wrap">
-                        <a href="https://stackoverflow.com/questions/4326845/how-can-i-determine-the-direction-of-a-jquery-scroll-event">
+                        <a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=539&term=1">
                             <p>adidas</p>
                             전체상품 보기
                             <span></span>
                         </a>
                     </div>
                 </div>
+
+                <div class="contents_wrap adicross">
+                    <div class="section1 scroll">
+                        <div class="bg"><img src="/images/adidas/event/golf/stylebook/180828/sect2_img01_01.png" alt=""></div>
+                        <div class="logo"><img src="/images/adidas/event/golf/stylebook/180828/sec2_logo.png" alt=""></div>
+                        <div class="women"><img src="/images/adidas/event/golf/stylebook/180828/sect2_img01_02.png" alt=""></div>
+                        <div class="men"><img src="/images/adidas/event/golf/stylebook/180828/sect2_img01_03.png" alt=""></div>
+                    </div>
+                    <div class="section2 scroll">
+                        <div class="bg"><img src="/images/adidas/event/golf/stylebook/180828/sec2_img02_01.png" alt=""></div>
+                        <div class="women"><img src="/images/adidas/event/golf/stylebook/180828/sec2_img02_03.png" alt=""></div>
+                        <div class="men"><img src="/images/adidas/event/golf/stylebook/180828/sec2_img02_02.jpg" alt=""></div>
+                    </div>
+                    <div class="section3 scroll">
+                        <div class="bg bg1"><img src="/images/adidas/event/golf/stylebook/180828/sec2_img03_01.jpg" alt=""></div>
+                        <div class="bg bg2"><img src="/images/adidas/event/golf/stylebook/180828/sec2_img03_02.jpg" alt=""></div>
+                        <div class="logo"><img src="/images/adidas/event/golf/stylebook/180828/sec2_logo.png" alt=""></div>
+                        <div class="men"><img src="/images/adidas/event/golf/stylebook/180828/sec2_img03_03.png" alt=""></div>
+                        <div class="men2"><img src="/images/adidas/event/golf/stylebook/180828/sec2_img03_04.png" alt=""></div>
+                        <div class="btn_wrap">
+                            <a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=540&term=1">
+                                <p>adicross</p>
+                                전체상품 보기
+                                <span></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contents_wrap adipure">
+                    <div class="section1 scroll">
+                        <div class="women"><img src="/images/adidas/event/golf/stylebook/180828/sec3_img01_02.png" alt=""></div>
+                        <div class="men"><img src="/images/adidas/event/golf/stylebook/180828/sec3_img01_01.png" alt=""></div>
+                        <div class="logo"><img src="/images/adidas/event/golf/stylebook/180828/sec3_logo.png" alt=""></div>
+                        <div class="line"></div>
+                    </div>
+                    <div class="section2 scroll">
+                        <div class="women"><img src="/images/adidas/event/golf/stylebook/180828/sec3_img02_01.png" alt=""></div>
+                        <div class="line"></div>
+                    </div>
+                    <div class="section3 scroll">
+                        <div class="men"><img src="/images/adidas/event/golf/stylebook/180828/sec3_img03_01.jpg" alt=""></div>
+                    </div>
+                    <div class="section4 scroll">
+                        <div class="men"><img src="/images/adidas/event/golf/stylebook/180828/sec3_img04_01.jpg" alt=""></div>
+                    </div>
+                    <div class="section5 scroll">
+                        <div class="women"><img src="/images/adidas/event/golf/stylebook/180828/sec3_img05_01.jpg" alt=""></div>
+                    </div>
+                    <div class="section6 scroll">
+                        <div class="women"><img src="/images/adidas/event/golf/stylebook/180828/sec3_img05_02.png" alt=""></div>
+                        <div class="line"></div>
+                    </div>
+                    <div class="btn_wrap">
+                        <a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=541&term=1">
+                            <p>adipure</p>
+                            전체상품 보기
+                            <span></span>
+                        </a>
+                    </div>
+                </div>
+
             </div>
 
 
@@ -507,10 +571,88 @@
 
 				(function($){
 
+                    $(window).load(function(){
+                        setTimeout(function(){
+                            $('#golf_stylebook .contents_wrap.on .scroll').eq(0).addClass('on');
+                        },1000)
+                        $('.menu_wrap .menu_list ul li').bind('click',function(){
+                            var thistxt = $(this).attr('data-title');
+                            var index = $(this).index();
+                            $('.menu_wrap .title p').html(thistxt)
+                            console.log(thistxt)
+                            $('html,body').animate({
+                                scrollTop:0
+                            },100)
+                            setTimeout(function(){
+                                $('.menu_wrap').removeClass('active');
+                                $('html,body').css({
+                                    'overflow':'auto'
+                                });
+                            },800);
+                            $('.contents_wrap').removeClass('on').eq(index).addClass('on');
+                            $('#golf_stylebook .contents_wrap .scroll').removeClass('on');
+
+                            setTimeout(function(){
+                                $('#golf_stylebook .contents_wrap.on .scroll').eq(0).addClass('on');
+                            },1800)
+
+
+                            // content effect
+                            var scrollArray = [];
+                            var selectContnt = $('#golf_stylebook .contents_wrap').eq(index);
+
+
+                            var scrollContent = selectContnt.find('.scroll');
+                            for(var i = 0; i<scrollContent.length; i++){
+                                 var mypos = scrollContent[i].offsetTop;
+                                 scrollArray.push(mypos)
+                            }
+
+                            console.log(scrollArray)
+                            console.log(index)
+
+
+                            $(window).scroll(function(){
+                                var thispos = $(this).scrollTop() + 300;
+                                // console.log(thispos)
+                                for(var pos = 1; pos<scrollArray.length; pos++){
+                                    if(thispos>scrollArray[pos]){
+                                        $('#golf_stylebook .contents_wrap.on .scroll').eq(pos).addClass('on');
+                                    }
+                                }
+                            });
+
+                        });
+
+                        // content effect
+                        var scrollArray = [];
+                        var selectContnt = $('#golf_stylebook .contents_wrap').eq(0);
+                        $('#golf_stylebook .contents_wrap .scroll').removeClass('on');
+
+                        var scrollContent = selectContnt.find('.scroll');
+                        for(var i = 0; i<scrollContent.length; i++){
+                             var mypos = scrollContent[i].offsetTop;
+                             scrollArray.push(mypos)
+                        }
+
+                        console.log(scrollArray)
+
+                        $(window).scroll(function(){
+                            var thispos = $(this).scrollTop() + 300;
+                            // console.log(thispos)
+                            for(var pos = 1; pos<scrollArray.length; pos++){
+                                if(thispos>scrollArray[pos]){
+                                    $('#golf_stylebook .contents_wrap.on .scroll').eq(pos).addClass('on');
+                                }
+                            }
+                        });
+
+                    });
+
                     $('.menu_wrap .title').bind('click',function(){
 
                         if($('.menu_wrap').hasClass('active')){
-                            $('html').css({
+                            $('html,body').css({
                                 'overflow':'auto'
                             });
 
@@ -521,32 +663,23 @@
 
                         }else{
                             $(this).parent('.menu_wrap').addClass('active');
-                            $('html').css({
+                            $('html,body').css({
                                 'overflow':'hidden'
                             })
                             setTimeout(function(){
                                 $('.menu_list ul').css({'opacity':1});
                             },500)
+                            // setTimeout(function(){
+                            //     $('#golf_stylebook .contents_wrap .scroll').eq(0).addClass('on');
+                            // },2500)
                         }
-                    });
-
-                    $('.menu_wrap .menu_list ul li').bind('click',function(){
-                        var thistxt = $(this).attr('data-title');
-                        $('.menu_wrap .title p').html(thistxt)
-                        console.log(thistxt)
-                        $('html').scrollTop(0);
-                        setTimeout(function(){
-                            $('.menu_wrap').removeClass('active');
-                            $('html').css({
-                                'overflow':'auto'
-                            });
-                        },800)
-
                     });
 
                     var position = 0;
 
                     $(window).scroll(function(){
+
+                        // menu scroll effect
                         var thispos = $(this).scrollTop();
                         if(thispos > position && thispos > 61  ){
                             console.log('scrollDown');
@@ -558,7 +691,8 @@
                             $('.menu_wrap').addClass('scrollingup');
                         }
                         position = thispos;
-                    })
+
+                    });
 
 				})(jQuery);
 
