@@ -1,0 +1,364 @@
+@import './app/css/adidas/scss/common/mixin.scss';
+@import './app/css/adidas/scss/common/common.scss';
+
+html,body{
+	height: 100%;
+}
+
+
+#container{
+	.ZNE_born_ready{
+		background:white;
+		position: relative;
+		overflow: hidden;
+		.box1{
+			position: relative;
+			>img{
+				width:100%;
+			}
+			.txt{
+				position: absolute;
+			    top: 50%;
+				left: 50%;
+				width:100%;
+				@include css3(transform,translate(-55%,-35%));
+				text-align: right;
+				h1{
+					font:3.2rem 'AdihausDIN-Bold';
+					color: #efe34f;
+					line-height: 1;
+				}
+				.pWrap{
+					margin:5px 0;
+					p{
+						font: 400 1.4rem 'NotoSansKR';
+						color:#fff;
+					}
+					span{
+						font: 400 1rem 'NotoSansKR';
+						color:#efe34f;
+					}
+				}
+
+				.btn{
+					display: inline-block;
+					background: #000;
+					a{
+					display: block;
+					padding:13px 1px;
+					font: 400 .9rem 'NotoSansKR';
+					color:#fff;
+					line-height: 8px;
+					text-align: center;
+						img{
+							margin-left: 25px;
+							width: 15%;
+						}
+					}
+				}
+				.btn_wrap{
+					.btn{
+						margin: 10px 0;
+					}
+
+				}
+
+			}
+		}
+
+		.box2{
+			position: relative;
+			background:url("/images/adidas/event/zne/ZNE_born_ready/ZNE_section.jpg") 0 0 no-repeat;
+			background-size: 100% 100%;
+			padding:5rem 1.5rem;
+
+			.txt{
+				    padding: 2.5rem 0;
+				h1{
+					font: 500 3rem 'NotoSansKR';
+					color:#efe34f;
+					line-height: 34px;
+				}
+				.wrapper{
+					padding : 0 0 0 23px;
+					p{
+						font: 500 1rem 'NotoSansKR';
+						color:#fff;
+						line-height: 1.5;
+						margin:13px 0 27px;
+					}
+					.btn{
+						display: inline-block;
+						background: #000;
+						a{
+						display: block;
+						padding:12px 6px;
+						font: 400 .9rem 'NotoSansKR';
+						color:#fff;
+						line-height: 6px;
+						text-align: center;
+							img{
+								margin-left: 20px;
+								width: 25%;
+							}
+						}
+					}
+				}
+			}
+			.btm{
+				width: 100%;
+			}
+		}
+		.box3{
+			position: relative;
+			p{
+				font:500 2.2rem 'NotoSansKR';
+				color:#006ab4;
+				text-align: center;
+				line-height: 32px;
+			    margin: 30px;
+			}
+			.slider_section2{
+				position: relative;
+
+				.slider_wrap{
+					position: relative;
+					margin: 0 50px;
+					overflow: hidden;
+					ul{
+						.owl-item.active{
+							.num_title span{
+								margin-right: 0;
+								opacity: 1;
+							}
+							.num_title span:after{
+								width: 100%;
+							}
+						}
+						li{
+							float: left;
+							position: relative;
+							top:0;
+							// text-align: center;
+							// margin-right: 20px;
+							.prd_info{
+								padding: 0 1.5rem 6rem;
+								.desc{
+									padding:0.5rem 0 1.5rem 0;
+									font:1.1rem/1.5rem 'NotosansKRlight', 'Nanum Gothic';
+									color:#000;
+									letter-spacing: 0rem;
+									&.bold{
+										font-weight: bold;
+										padding: 1.5rem 0;
+									}
+								}
+								.buy{
+									position: relative;
+									display: inline-block;
+									margin-top: 10px;
+									width: 120px;
+									background: #fff;
+									color:#000;
+									text-align: center;
+									font:1rem/35px 'NotosansKR';
+									letter-spacing: 0px;
+									border: 2px solid #000;
+									&:after{
+										display: inline-block;
+										margin-left: 10px;
+									}
+								}
+							}
+							img{
+								width: 100%;
+							}
+						}
+					}
+
+					ul:after{
+						content: '';
+						display: block;
+						clear: both;
+					}
+				}
+				.prev{
+					position: absolute;
+					top: 50%;
+					left: 13px;
+					margin-top: -14px;
+					z-index: 6;
+					img{
+						width: 50%;
+					}
+				}
+				.next{
+					position: absolute;
+				    top: 50%;
+				    right: -6px;
+				    margin-top: -14px;
+				    z-index: 6;
+					img{
+						width: 50%;
+					}
+				}
+			}
+
+			.prd_name{
+				position: relative;
+				left: 0;
+				transition: .6s;
+				transition-delay: .2s;
+				z-index: 10;
+				margin: 20px 0;
+				height: 30px;
+				// margin-left: 30px;
+				ul{
+					position: relative;
+					left:40px;
+					transition: .6s;
+
+					// overflow: hidden;
+					// width: 1000px;
+					&:after{
+						content: '';
+						display: block;
+						clear: both;
+					}
+					li{
+						margin: 0 10px;
+						float: left;
+						font: 500 13px 'NotoSansKR';
+						letter-spacing: normal;
+						text-transform: uppercase;
+						color: #000;
+						&.on{
+							color: #006bb3;
+							border-bottom: 1px solid #006bb3;
+							padding-bottom: 5px;
+						}
+					}
+				}
+			}
+			.contents{
+				position: relative;
+				.tab{
+					display: none;
+					transition: all 1s;
+					// transition-delay: .5s;
+					&.on{
+						display: block;
+						z-index: 99;
+					}
+					.desc1{
+						position: relative;
+						>img{
+							width:100%;
+						}
+						.txt{
+							position: absolute;
+							top: 50%;
+							left: 50%;
+							transform: translate(-50%, -50%);
+							-webkit-transform: translate(-50%, -50%);
+							width: 65%;
+							h1{
+								font:500 2.5rem 'NotoSansKR';
+								color: #efe34f;
+								line-height: 27px;
+								text-align: left;
+							}
+							.garbine_head1{
+								color:#ff4b42;
+							}
+							.julie_head1{
+								color:#ede742;
+							}
+							.deandre_head1{
+								color:#006bb3;
+							}
+							.innerWrap{
+								padding: 0 0 0 20px;
+								p{
+									font: 400 1rem 'NotoSansKR';
+									color:#fff;
+									text-align: left;
+									margin: 12px 0 20px 0;
+									line-height: 16px;
+								}
+								.btn{
+									display: inline-block;
+									background: #000;
+									a{
+									display: block;
+									padding:12px 5px;
+									font: 400 .9rem 'NotoSansKR';
+									color:#fff;
+									line-height: 8px;
+									text-align: center;
+										img{
+											margin-left: 20px;
+											width: 25%;
+										}
+									}
+								}
+							}
+						}
+					}
+					.subImg1, .subImg2, .subImg3, .subImg4, .subImg5, .subImg6, .subImg7{
+						position: relative;
+						img{
+							width: 100%;
+						}
+					}
+					.desc2{
+						position: relative;
+						>img{
+							width: 100%;
+						}
+						.txt{
+							position: absolute;
+							top: 50%;
+							left: 50%;
+							@include css3(transform,translate(-50%,-50%));
+							text-align: center;
+							width: 80%;
+							h1{
+								font: 700 2.2rem 'NotoSansKR';
+								color:#efe34f;
+								text-align: center;
+								margin-bottom:22.5px;
+								line-height: 28px;
+							}
+							.garbine_head2{
+								color:#85d9c9;
+							}
+							.julie_head2{
+								color:#f0e845;
+							}
+							.deandre_head2{
+								color:#ff4a39;
+							}
+							.btn{
+								display: inline-block;
+								background: #000;
+								a{
+								display: block;
+								padding:15px 8px;
+								font: 400 .9rem 'NotoSansKR';
+								color:#fff;
+								line-height: 4px;
+								text-align: center;
+									img{
+										margin-left: 13px;
+										width: 25%;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
