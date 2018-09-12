@@ -363,10 +363,10 @@
 
 			</section>
 
-			<!-- 180320 -->
+			<!-- 180912 -->
 			<section id="contents">
 
-				<!-- //promotion -->
+				<!-- promotion -->
 				<div style="position:relative">
 					<img src="http://imagem.reebok.co.kr/upload/campaign/reebok/180912/m/1809_r_aztrek_MO.jpg" alt="" style="width:100%"/>
 					<a href="http://m.reebok.co.kr/MO/Promotion/landingPage.action?pageNo=690" style="
@@ -377,17 +377,76 @@
 				    top: 68%;
 				    left: 0;
 				    text-indent: -3000px;">이벤트제품 자세히보기</a>
-					<!-- 응모하기 -->
-					<a href="#" class="btn_entry" style="display:block;position:absolute;width:100%;height:4.5%;top:79.8%;left:0%;text-indent: -3000px;">이벤트 응모하기</a>
+					<a href="#; none;" class="btn_entry" style="display:block;position:absolute;width:100%;height:4.5%;top:79.8%;left:0%;text-indent: -3000px;">이벤트 응모하기</a>
 				</div>
 
+				<div class="modal-popup-wrapper terms_agree_popup"
+					 data-modalpop=""
+					 data-modalpop-name="popup_offline_join"
+					>
+					<div class="overlay"></div>
+					<div class="popup" style="transform: translate3d(-50%, -50%, 0px); top: 50%; left: 50%;">
+						<div class="popup-header">
+							<h2>개인정보 수집 및 이용 등에 대한 안내</h2>
+							<a href="javascript:void(0)" class="close_x_btn"></a>
+						</div>
 
+						<div class="popup-contents">
+							<p class="desc">
+								아디다스코리아(유)(이하 “회사”)는 워너원 룩북 이벤트(이하 “이벤트”)의<br>
+								진행을 위하여, 정보통신망 이용촉진 및 정보보호 등에 관한 법률 및 개인정보보호 관련 법령에 따라 귀하의 동의를 받고자 합니다.<br>
+								아래 각 항목에 동의하시는 경우 동의 항목에 체크 해주시기 바랍니다.
+							</p>
+							<h3>개인정보수집동의</h3>
+							<div class="form">
+								<ul>
+									<li>
+										<span>1. 개인정보 수집 및 이용에 대한 동의 (필수) <a href="http://shop.reebok.co.kr/html/reebok/pop/180912/terms_01.html" target="_blank">내용보기</a></span>
+										<div class="input-box">
+											<div class="rdo_box1 blue small">
+												<input type="radio" id="agree_terms01" name="agree_terms01">
+												<label for="agree_terms01" class="adipro-r">동의</label>
+											</div>
+											<div class="rdo_box1 blue small">
+												<input type="radio" id="agree_terms01_no" name="agree_terms01">
+												<label for="agree_terms01_no" class="adipro-r">동의하지 않음</label>
+											</div>
+										</div>
+									</li>
+									<li>
+										<span>2. 개인정보 취급 위탁에 대한 동의 (필수) <a href="http://shop.reebok.co.kr/html/reebok/pop/180912/terms_02.html" target="_blank">내용보기</a></span>
+										<div class="input-box">
+											<div class="rdo_box1 blue small">
+												<input type="radio" id="agree_terms02" name="agree_terms02">
+												<label for="agree_terms02" class="adipro-r">동의</label>
+											</div>
+											<div class="rdo_box1 blue small">
+												<input type="radio" id="agree_terms02_no" name="agree_terms02">
+												<label for="agree_terms02_no" class="adipro-r">동의하지 않음</label>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<div class="button_area">
+								<!-- 응모하기 -->
+								<div class="red"><a href="#">응모하기</a></div>
+							</div>
+						</div>
+					</div>
+				</div>
 
 				<script type="text/javascript">
 
 					(function($){
 
+						$('.btn_entry').bind('click',function(){
+							$('.terms_agree_popup').addClass('open');
+						});
 
+						$('.close_x_btn').bind('click', function(){
+							$('.terms_agree_popup').removeClass('open');
+						});
 
 					})(jQuery);
 
@@ -396,7 +455,7 @@
 
 			</section>
 			<!-- //contents -->
-			<!-- //180320 -->
+			<!-- //180912 -->
 
 
 
