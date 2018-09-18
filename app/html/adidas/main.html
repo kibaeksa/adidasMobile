@@ -1094,14 +1094,15 @@
 
 		<div id="container" class="main">
 
-			<!-- 180911 start keywords : 설 명절 / 배송 지연 / -->
-			<div id="notice-popup" class="notice_deliv ">
+			<!-- 180911 start keywords : 설 명절 / 배송 지연 / 토스트팝업-->
+			<!-- <div id="notice-popup" class="notice_deliv ">
 				<a href="javascript:void(0)" class="close_x_btn white"></a>
 				<p class="tit">배송 지연 안내</p>
 				<p class="desc">
 					추석 명절로 인한 택배사의 배송 물량 증가로<br>
 					9월 19일 주문부터는 명절 이후<br/> 9월 27일부터 순차적으로 배송됩니다.</p>
-			</div>
+			</div> -->
+			<!-- 토스트팝업 end-->
 
 			<script type="text/javascript">
 				var notiPopElem = document.getElementById('notice-popup');
@@ -2031,7 +2032,7 @@
 					<p>호스팅서비스사업자 : 아디다스코리아(유) </p>
 					<p>고객센터 : <a class="tel" href="tel:1588-8241">1588-8241</a></p>
 					<p>이메일 : <a class="tel" href="mailto:adiclub_korea@adidas.com">adiclub_korea@adidas.com</a></p>
-					
+
 					<ul>
 						<!-- 170329 개인정보 처리방침 , 이용약관 strong 태그 추가 -->
 						<li><a href="http://shop.adidas.co.kr/PF010107.action?gubn=1" target="_blank"><strong>이용약관</strong></a></li>
@@ -2141,6 +2142,17 @@
 		</div> -->
 		<!-- 171206 휴면고객 팝업 END -->
 
+		<!-- 180919 추석 지연 팝업 -->
+		<div class="layerpopup-wrapper chuseok_notice" >
+			<div class="overlay"></div>
+			<a href="javascript:void(0)" class="close_x_btn transparent"></a>
+			<div class="layerpopup">
+				<div class="popup-contents" >
+					<img src="http://imagem.adidas.co.kr/images/adidas/popup/chuseok_notice_170919.jpg" alt="" style="width:100%;">
+				</div>
+			</div>
+		</div>
+		<!-- 180919 추석 지연 팝업 end -->
 
 	</div>
 
@@ -2186,6 +2198,11 @@
 
 				*/
 
+				// 180919 추석 지연 팝업 닫기
+				$('.layerpopup-wrapper.chuseok_notice .close_x_btn').bind('click',function(){
+					$(this).parents('.layerpopup-wrapper.chuseok_notice').fadeOut();
+				});
+				// 180919 추석 지연 팝업 닫기 end
 
 				var visualSlider = $(".visual_slider");
 				visualSlider.on('initialized.owl.carousel changed.owl.carousel', function(event) {

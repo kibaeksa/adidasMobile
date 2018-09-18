@@ -671,7 +671,7 @@
 		            	<p>통신판매업신고번호 : 2007-서울서초-10391</p>
 						<!-- 180913 정보추가 -->
 						<p>개인정보관리책임자 : 김동일</p>
-						<p>호스팅서비스사업자 : 아디다스코리아(유)</p>						
+						<p>호스팅서비스사업자 : 아디다스코리아(유)</p>
 						<p>고객센터 : 1588-7324</p>
 						<p>이메일 : reeclub_korea@reebok.com</p>
 		            	<div class="f_url">
@@ -889,37 +889,68 @@
 		<!-- // 180706 추석 배송지연 팝업 -->
 		<!-- 180911 start keywords : 설 명절 / 배송 지연 / -->
 
-		<div id="notice-popup" class="notice_deliv ">
+		<!-- 180919 추석 지연 팝업 -->
+		<div class="layerpopup-wrapper chuseok_notice" >
+			<div class="overlay"></div>
+			<a href="javascript:void(0)" class="close_x_btn transparent"></a>
+			<div class="layerpopup">
+				<div class="popup-contents" >
+					<img src="http://imagem.reebok.co.kr//images/reebok/popup/chuseok_notice_170919.jpg" alt="" style="width:100%;">
+				</div>
+			</div>
+		</div>
+		<!-- 180919 추석 지연 팝업 end -->
+
+		<!-- 토스트팝업 -->
+		<!-- <div id="notice-popup" class="notice_deliv ">
 			<a href="javascript:void(0)" class="close_x_btn white"></a>
 			<p class="tit">배송 지연 안내</p>
 			<p class="desc">
 				추석 명절로 인한 택배사의 배송 물량 증가로<br>
 				9월 19일 주문부터는 명절 이후<br/> 9월 27일부터 순차적으로 배송됩니다.</p>
-		</div>
+		</div> -->
+		<!-- 토스트팝업 end-->
+
 		<script type="text/javascript">
-			var notiPopElem = document.getElementById('notice-popup');
-			var originClassName = notiPopElem.className;
-			var notiPopTimer;
-			var closeNotiPop = function(){
-				notiPopElem.className = originClassName;
+			(function($){
+				$(document).ready(function(){
+					// 180919 추석 지연 팝업 닫기
+					$('.layerpopup-wrapper.chuseok_notice .close_x_btn').bind('click',function(){
+						$(this).parents('.layerpopup-wrapper.chuseok_notice').fadeOut();
+					});
+					// 180919 추석 지연 팝업 닫기 end
+				});
+				var notiPopElem = document.getElementById('notice-popup');
+				var originClassName = notiPopElem.className;
+				var notiPopTimer;
+				var closeNotiPop = function(){
+					notiPopElem.className = originClassName;
+					setTimeout(function(){
+						notiPopElem.parentNode.removeChild(notiPopElem);
+					},1000);
+				};
+
+				// 1초후 노출
 				setTimeout(function(){
-					notiPopElem.parentNode.removeChild(notiPopElem);
+					notiPopElem.className += ' active';
+
+					// 5초 후 노출 후 DOM 삭제
+					notiPopTimer = setTimeout(closeNotiPop,5000);
 				},1000);
-			};
 
-			// 1초후 노출
-			setTimeout(function(){
-				notiPopElem.className += ' active';
+				notiPopElem.querySelector('.close_x_btn').addEventListener('click',function(){
+					clearTimeout(notiPopTimer);
+					closeNotiPop();
+				});
+				ModalPopup.openPopup('coupon-popup');
 
-				// 5초 후 노출 후 DOM 삭제
-				notiPopTimer = setTimeout(closeNotiPop,5000);
-			},1000);
+			})(jQuery);
 
-			notiPopElem.querySelector('.close_x_btn').addEventListener('click',function(){
-				clearTimeout(notiPopTimer);
-				closeNotiPop();
-			});
-			ModalPopup.openPopup('coupon-popup');
+
+
+
+
+
 
 		</script>
 		<!-- 180911 end keywords : 설 명절 / 배송 지연 / -->
