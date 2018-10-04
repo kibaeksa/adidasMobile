@@ -1,0 +1,199 @@
+@import './app/css/adidas/scss/common/mixin.scss';
+@import './app/css/adidas/scss/common/common.scss';
+
+#originals_imvely{
+
+	.btn_wrap{
+		display: inline-block;
+		a{
+			display: block;
+			font:400 12px 'NotoSansKR';
+			color:#fff;
+			background: #000;
+		}
+	}
+
+	.main_visual{
+		position: relative;
+		.bg{
+			img{
+				width: 100%;
+			}
+		}
+		.txt{
+			position: absolute;
+			top:22%;left:50%;
+			transform: translate(-50%,-50%);
+			width: 100%;
+			text-align: center;
+			p{
+				font:400 12px 'NotoSansKR';
+				&.title{
+					font:bold 50px/45px 'AdihausDIN-Cond';
+				    letter-spacing: 0.7px;
+				}
+			}
+		}
+	}
+
+	.slider_wrapper{
+		position: relative;
+		.title{
+			text-align: center;
+			.main{
+				position: relative;
+				display: inline-block;
+			}
+			p.main_txt{
+				position: relative;
+				font: bold 35px/33px 'AdihausDIN-Cond';
+				letter-spacing: 2px;
+				text-transform: uppercase;
+				z-index: 2;
+
+			}
+			span{
+				width: 150%;
+				background: #ecd3c5;
+				position: absolute;
+				bottom :0;
+			    left: -25%;
+				height: 20px;
+			}
+			p.sub{
+				padding: 10px 0 15px;
+				font:400 12px 'NotoSansKR';
+
+			}
+		}
+		.banner_slider_wrap{
+			position: relative;
+			// border-bottom:1px solid #000;
+			ul{
+				li{
+					.box_wrap{
+						.img{
+							position: relative;
+							.num{
+								position: absolute;
+							    font:  15px/32px 'AdihausDIN-Cond';
+							    z-index: 1;
+							    letter-spacing: 0.5px;
+								color:#fff;
+								display: inline-block;
+								width: 29px;
+								height: 29px;
+								background: rgba(0,0,0,0.5);
+								text-align: center;
+								border-radius: 50px;
+								&.prd1{
+									top: 76%;
+								    left: 9%;
+								}
+								&.prd2{
+									top: 46%;
+									right: 9%;
+								}
+							}
+							img{
+								width: 100%;
+							}
+						}
+					}
+				}
+			}
+		}
+		.banner_slider_sub_wrap{
+			position: relative;
+			// border-top:1px solid #000;
+			border-left:1px solid #000;
+			border-right:1px solid #000;
+			// border-bottom:1px solid #000;
+		    padding-bottom: 50.4%;
+
+			ul{
+				li{
+					position: absolute;
+					top:0;
+					left:0;
+					@include css3(opacity,0);
+
+					&.on{
+						@include css3(opacity,1);
+						z-index: 2;
+					}
+					.box_wrap{
+						position: relative;
+						&:after{
+							display: block;
+							content: '';
+							clear: both;
+						}
+						>div{
+							position: relative;
+							float: left;
+						    width: 49.8%;
+							&.left{
+								border-right:1px solid #000;
+							}
+							&.right{
+
+							}
+							.info{
+								position: absolute;
+								    bottom: 0px;
+								    width: 100%;
+								    left: 0px;
+								    background: #ecd3c5;
+								    border-bottom: 1px solid #000;
+								    box-sizing: border-box;
+								p{
+									padding-left: 15px;
+									display: inline-block;
+									font:400 11px/30px 'NotoSansKR';
+								}
+								span{
+									position: absolute;
+								    right: 15px;
+									font:400 10px/30px 'NotoSansKR';
+
+									em{
+										position: relative;
+										top:1px;
+										display: inline-block;
+									    background: url(/images/adidas/event/originals/originals_imvely/181004/icon_arrow.png) no-repeat;
+									    background-size: 100% 100%;
+									    width: 20px;
+									    height: 9px;
+										    margin-left: 8px;
+									}
+								}
+							}
+							.num{
+								position: absolute;
+							    left: 15px;
+							    top: 15px;
+							    font: bold 15px 'AdihausDIN-Cond';
+							    z-index: 1;
+							    letter-spacing: 0.5px;
+							}
+						}
+						.img{
+							position: relative;
+							img{
+								// border-top: 1px solid #000;
+
+
+								position: relative;
+								// top:-2px;
+								width: 100%;
+							}
+						}
+					}
+				}
+			}
+		}
+
+	}
+
+}
