@@ -6,15 +6,39 @@
 	.btn_wrap{
 		display: inline-block;
 		a{
+			width: 180px;
 			display: block;
-			font:400 12px 'NotoSansKR';
+			font:300 13px/50px 'NotoSansKR';
 			color:#fff;
 			background: #000;
+			text-align: center;
+			em{
+				display: inline-block;
+			    margin-left: 10px;
+			    width: 31px;
+			    height: 11px;
+			    background: url(/images/adidas/event/originals/originals_imvely/181004/btn_arrow.png) no-repeat;
+			    background-size: 100% 100%;
+			}
 		}
 	}
 
 	.main_visual{
 		position: relative;
+		text-align: center;
+		&.on{
+			.txt{
+				p{
+					top:0;
+					@include css3(opacity,1);
+
+				}
+			}
+		}
+		.btn_wrap{
+			position: relative;
+			top: -24px;
+		}
 		.bg{
 			img{
 				width: 100%;
@@ -27,10 +51,19 @@
 			width: 100%;
 			text-align: center;
 			p{
+				position: relative;
+				top:50px;
 				font:400 12px 'NotoSansKR';
+				@include css3(opacity,0);
+				@include css3(transition, all 0.5s);
 				&.title{
 					font:bold 50px/45px 'AdihausDIN-Cond';
 				    letter-spacing: 0.7px;
+					transition-delay: 0.5s;
+				}
+				&.sub{
+					transition-delay: 0.6s;
+
 				}
 			}
 		}
@@ -38,7 +71,117 @@
 
 	.slider_wrapper{
 		position: relative;
+		&#slider02{
+			.title{
+				.main{
+					span{
+						background: #dce7da;
+					}
+				}
+			}
+			.banner_slider_wrap{
+				ul{
+					.owl-controls{
+						.owl-dots{
+							.owl-dot{
+								span{
+									background: #dce7da;
+								}
+							}
+						}
+					}
+				}
+			}
+			.banner_slider_sub_wrap{
+				ul{
+					li{
+						.box_wrap{
+							>div{
+								.info{
+								    background: #dce7da;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		&#slider03{
+			&.on{
+				.banner_slider_wrap{
+					ul{
+						li{
+							.box_wrap{
+								.img{
+									.num{
+										@include css3(opacity,1);
+
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			.title{
+				.main{
+					span{
+						background: #c3d4de;
+					}
+				}
+			}
+			.banner_slider_wrap{
+				ul{
+					.owl-controls{
+						.owl-dots{
+							.owl-dot{
+								span{
+									background: #c3d4de;
+								}
+							}
+						}
+					}
+				}
+			}
+			.banner_slider_sub_wrap{
+				ul{
+					li{
+						.box_wrap{
+							>div{
+								.info{
+									background: #c3d4de;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		&.on{
+			.title{
+				.main{
+					.main_txt{
+						@include css3(opacity,1);
+
+					}
+					span{
+						width: 280px;
+						// @include css3(opacity,1);
+
+					}
+				}
+				.sub{
+					@include css3(opacity,1);
+
+				}
+			}
+			.banner_slider_wrap{
+				@include css3(opacity,1);
+
+			}
+		}
 		.title{
+			margin: 50px 0 0 ;
 			text-align: center;
 			.main{
 				position: relative;
@@ -46,36 +189,64 @@
 			}
 			p.main_txt{
 				position: relative;
-				font: bold 35px/33px 'AdihausDIN-Cond';
-				letter-spacing: 2px;
+				font: bold 34px/33px 'AdihausDIN-Cond';
+				letter-spacing: 4.5px;
 				text-transform: uppercase;
 				z-index: 2;
+				@include css3(opacity,0);
+				@include css3(transition, all 0.5s);
+				transition-delay: 0.5s;
+
 
 			}
 			span{
-				width: 150%;
-				background: #ecd3c5;
-				position: absolute;
-				bottom :0;
-			    left: -25%;
-				height: 20px;
+				width: 0px;
+			    background: #ecd3c5;
+			    position: absolute;
+			    bottom: 0;
+			    left: 50%;
+			    margin-left: -140px;
+			    height: 24px;
+				// @include css3(opacity,0);
+				@include css3(transition, all 0.8s);
 			}
 			p.sub{
-				padding: 10px 0 15px;
+				padding: 10px 0 23px;
 				font:400 12px 'NotoSansKR';
+				@include css3(opacity,0);
+
+				@include css3(transition, all 0.8s);
+				transition-delay: 0.7s;
+
+
 
 			}
 		}
 		.banner_slider_wrap{
 			position: relative;
+			@include css3(opacity,0);
+			@include css3(transition, all 0.9s);
+
 			// border-bottom:1px solid #000;
 			ul{
+				.owl-item{
+				}
 				li{
+					&.on{
+						.box_wrap{
+							.img{
+								.num{
+									@include css3(opacity,1);
+								}
+							}
+						}
+					}
 					.box_wrap{
 						.img{
 							position: relative;
 							.num{
 								position: absolute;
+								top:100%;
 							    font:  15px/32px 'AdihausDIN-Cond';
 							    z-index: 1;
 							    letter-spacing: 0.5px;
@@ -86,17 +257,64 @@
 								background: rgba(0,0,0,0.5);
 								text-align: center;
 								border-radius: 50px;
+								@include css3(opacity,0);
+								@include css3(transition, all 0.5s);
 								&.prd1{
 									top: 76%;
 								    left: 9%;
+									transition-delay: 0.5s;
 								}
 								&.prd2{
 									top: 46%;
 									right: 9%;
+									transition-delay: 0.6s;
+
 								}
 							}
 							img{
 								width: 100%;
+							}
+						}
+					}
+				}
+				.owl-stage-outer{
+					margin: 45px 0 0 0;
+				}
+				.owl-controls{
+					position: absolute;
+					width: 100%;
+					top:-45px;
+					.owl-dots{
+
+						text-align: center;
+						.owl-dot{
+							position: relative;
+							display: inline-block;
+						    margin: 0 13px;
+							&.active{
+								p{
+									color:#000;
+								}
+								span{
+									background: #ecd3c5;
+									width: 114%;
+								}
+							}
+							p{
+								position: relative;z-index: 1;
+							    font:bold 16px/16px 'AdihausDIN-Cond';
+								text-transform: uppercase;
+								letter-spacing: 0.5px;
+								color:#ddd;
+							}
+							span{
+								position: absolute;
+							    bottom: 0;
+							    left: -10%;
+							    width: 0%;
+							    height: 11px;
+							    background: #ddd;
+								@include css3(transition, all 0.5s);
 							}
 						}
 					}
@@ -121,6 +339,22 @@
 					&.on{
 						@include css3(opacity,1);
 						z-index: 2;
+						.box_wrap{
+							.left{
+								.img{
+									img{
+										@include css3(opacity,1);
+									}
+								}
+							}
+							.right{
+								.img{
+									img{
+										@include css3(opacity,1);
+									}
+								}
+							}
+						}
 					}
 					.box_wrap{
 						position: relative;
@@ -133,11 +367,25 @@
 							position: relative;
 							float: left;
 						    width: 49.8%;
+							a{
+								position: absolute;
+								top:0;
+								left:0;
+								width: 100%;
+								height: 100%;
+								display: block;z-index: 2;
+							}
+
 							&.left{
 								border-right:1px solid #000;
+								img{
+									transition-delay: 0.5s;
+								}
 							}
 							&.right{
-
+								img{
+									transition-delay: 0.6s;
+								}
 							}
 							.info{
 								position: absolute;
@@ -150,7 +398,7 @@
 								p{
 									padding-left: 15px;
 									display: inline-block;
-									font:400 11px/30px 'NotoSansKR';
+									font:400 10px/30px 'NotoSansKR';
 								}
 								span{
 									position: absolute;
@@ -181,19 +429,124 @@
 						.img{
 							position: relative;
 							img{
-								// border-top: 1px solid #000;
-
-
 								position: relative;
-								// top:-2px;
 								width: 100%;
+								@include css3(opacity,0);
+								@include css3(transition, all 0.5s);
 							}
 						}
 					}
 				}
+
+			}
+		}
+		.banner_slider_wrap_navi{
+			margin: 15px 0 0 0;
+			text-align: center;
+			span{
+				display: inline-block;
+				margin: 0 5px;
+				width: 10px;
+				height: 10px;
+				background: #ddd;
+				border-radius: 50px;
+				&.on{
+					background: #000;
+				}
 			}
 		}
 
+	}
+
+	.banner_wrap{
+		position: relative;
+		margin: 50px 0 0 0;
+		.bg{
+			img{
+				width: 100%;
+			}
+		}
+		.txt{
+			position: absolute;
+			top:50%;
+			left:50%;
+			width: 100%;
+			@include css3(transform, translate(-50%,-50%));
+			text-align: center;
+			span{
+				display: block;
+			    font: bold 15px 'AdihausDIN-Cond';
+				color:#fff;
+				letter-spacing: 10px;
+				text-transform: uppercase;
+			}
+		}
+	}
+
+	.bottom_wrap{
+		position: relative;
+		padding: 70px 0 0 0;
+		text-align: center;
+		&.on{
+			p{
+
+				@include css3(opacity,1);
+				&.eng{
+
+					@include css3(opacity,1);
+				}
+			}
+			.txt{
+
+				span{
+					width: 105%;
+
+				}
+			}
+			.btn_wrap{
+				@include css3(opacity,1);
+
+			}
+		}
+		p{
+			position: relative;
+			z-index: 2;
+			text-align: center;
+		    font: 22px/22px 'AdihausDIN-Cond';
+			letter-spacing: 8px;
+			text-transform: uppercase;
+			@include css3(opacity,0);
+			@include css3(transition, all 0.6s);
+			&.eng{
+				transition-delay: 0.9s;
+
+			}
+
+		}
+		.txt{
+			position: relative;
+			margin: 10px 0 0 0;
+			display: inline-block;
+			span{
+				position: absolute;
+			    bottom: 2px;
+			    left: -4.2%;
+			    width: 0%;
+			    height: 9px;
+			    background: #ecd3c5;
+				@include css3(transition, all 0.6s);
+				transition-delay: 0.5s;
+
+			}
+
+		}
+		.btn_wrap{
+			margin: 30px 0 0 0;
+			@include css3(opacity,0);
+			@include css3(transition, all 0.6s);
+			transition-delay: 1.4s;
+
+		}
 	}
 
 }
