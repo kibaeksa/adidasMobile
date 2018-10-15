@@ -781,47 +781,56 @@
                (function($){
                    setTimeout(function(){
                         $('.main_visual').addClass('on');
-                   },1000)
+                   },1000);
+
+                   function initSlide(options){
+                       var elemContainer = $('#'+options.selector);
+                       var slider =  $(this);
+                       slider.children('.owl-controls').children('.owl-dots').children('.owl-dot:nth-child(1)').html('<p>style 01</p><span></span>');
+                       slider.children('.owl-controls').children('.owl-dots').children('.owl-dot:nth-child(2)').html('<p>style 02</p><span></span>');
+                       slider.children('.owl-controls').children('.owl-dots').children('.owl-dot:nth-child(3)').html('<p>style 03</p><span></span>');
+                       $('#'+(options.selector)+' .banner_slider_sub_wrap ul li').removeClass('on').eq(0).addClass('on');
+                       var len = options.len;
+                       for(var i =0;i<len; i++){
+                           $('#'+(options.selector)+' .banner_slider_wrap_navi').append('<span></span>');
+                       }
+                       $('#'+(options.selector)+' .banner_slider_wrap_navi span').removeClass('on').eq(0).addClass('on');
+                   };
+
+                   function slidechange(options){
+                       var elemContainer = $('#'+options.selector);
+                       var index = options.index;
+
+                       $('#'+(options.selector)+' .banner_slider_sub_wrap  ul li' ).removeClass('on').eq(index).addClass('on');
+                       $('#'+(options.selector)+' .banner_slider_wrap_navi span').removeClass('on').eq(index).addClass('on');
+                       $('#'+(options.selector)+' .banner_slider_wrap ul li').removeClass('on').eq(index+2).addClass('on');
+                       if(index == 3){
+                           index = 0;
+                           $('#'+(options.selector)+' .banner_slider_sub_wrap ul li').removeClass('on').eq(0).addClass('on');
+                           $('#'+(options.selector)+' .banner_slider_wrap_navi span').removeClass('on').eq(0).addClass('on');
+                       }
+                   };
 
                    var owlSlider01 = $('#slider_owl01');
 
                    owlSlider01.on('initialized.owl.carousel', function(event) {
                        var slider =  $(this);
 
-                       slider.children('.owl-controls').children('.owl-dots').children('.owl-dot:nth-child(1)').html('<p>style 01</p><span></span>');
-                       slider.children('.owl-controls').children('.owl-dots').children('.owl-dot:nth-child(2)').html('<p>style 02</p><span></span>');
-                       slider.children('.owl-controls').children('.owl-dots').children('.owl-dot:nth-child(3)').html('<p>style 03</p><span></span>');
+                        initSlide({
+                            selector : 'slider01',
+                            len : 3,
+                        });
 
-                       $('#slider01 .banner_slider_sub_wrap ul li').removeClass('on').eq(0).addClass('on');
-                       var len = event.item.count;
-                       for(var i =0;i<len; i++){
-                           $('#slider01 .banner_slider_wrap_navi').append('<span></span>');
-                       }
-                       $('#slider01 .banner_slider_wrap_navi span').removeClass('on').eq(0).addClass('on');
 
                    });
 
                    owlSlider01.on('changed.owl.carousel', function(event) {
-                       var index = event.item.index-2;
-                       console.log(index)
-                       $('#slider01 .banner_slider_sub_wrap  ul li' ).removeClass('on').eq(index).addClass('on');
-                       $('#slider01 .banner_slider_wrap_navi span').removeClass('on').eq(index).addClass('on');
-                       $('#slider01 .banner_slider_wrap ul li').removeClass('on').eq(index+2).addClass('on');
-                       if(index == 3){
-                           index = 0;
-                           $('#slider01 .banner_slider_sub_wrap ul li').removeClass('on').eq(0).addClass('on');
-                           $('#slider01 .banner_slider_wrap_navi span').removeClass('on').eq(0).addClass('on');
-                       }
 
+                       slidechange({
+                           selector : 'slider01',
+                           index : event.item.index-2,
+                       });
 
-                       /*
-                           Callback 이벤트 (슬라이드가 실행 될 떄마다 실행되는 함수)
-                           * index 사용하기
-                           event.item.index
-
-                           * length 사용하기
-                           event.item.count
-                       */
                    });
 
                    owlSlider01.owlCarousel({
@@ -842,31 +851,18 @@
                    owlSlider02.on('initialized.owl.carousel', function(event) {
                        var slider =  $(this);
 
-                       slider.children('.owl-controls').children('.owl-dots').children('.owl-dot:nth-child(1)').html('<p>style 01</p><span></span>');
-                       slider.children('.owl-controls').children('.owl-dots').children('.owl-dot:nth-child(2)').html('<p>style 02</p><span></span>');
-                       slider.children('.owl-controls').children('.owl-dots').children('.owl-dot:nth-child(3)').html('<p>style 03</p><span></span>');
-
-                       $('#slider02 .banner_slider_sub_wrap ul li').removeClass('on').eq(0).addClass('on');
-                       var len = event.item.count;
-                       for(var i =0;i<len; i++){
-                           $('#slider02 .banner_slider_wrap_navi').append('<span></span>');
-                       }
-                       $('#slider02 .banner_slider_wrap_navi span').removeClass('on').eq(0).addClass('on');
+                       initSlide({
+                           selector : 'slider02',
+                           len : 3,
+                       })
 
                    });
 
                    owlSlider02.on('changed.owl.carousel', function(event) {
-                       var index = event.item.index-2;
-                       console.log(index)
-                       $('#slider02 .banner_slider_sub_wrap  ul li' ).removeClass('on').eq(index).addClass('on');
-                       $('#slider02 .banner_slider_wrap_navi span').removeClass('on').eq(index).addClass('on');
-                       $('#slider02 .banner_slider_wrap ul li').removeClass('on').eq(index+2).addClass('on');
-
-                       if(index == 3){
-                           index = 0;
-                           $('#slider02 .banner_slider_sub_wrap ul li').removeClass('on').eq(0).addClass('on');
-                           $('#slider02 .banner_slider_wrap_navi span').removeClass('on').eq(0).addClass('on');
-                       }
+                       slidechange({
+                           selector : 'slider02',
+                           index : event.item.index-2,
+                       });
                    });
 
                    owlSlider02.owlCarousel({
