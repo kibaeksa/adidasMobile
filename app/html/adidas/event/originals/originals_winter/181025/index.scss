@@ -1,0 +1,378 @@
+@import './app/css/adidas/scss/common/mixin.scss';
+@import './app/css/adidas/scss/common/common.scss';
+
+#video-layer{
+	position:fixed;top:0;left:0;width: 100%;height: 100%;z-index:1000;
+}
+
+#video-layer .bg{
+	width: 100%;
+	height: 100%;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	transform-origin:center center;
+	-webkit-transform-origin:center center;
+	transform:scale(0);
+	-webkit-transform:scale(0);
+	opacity:0;
+	background:#000;
+	z-index:1;
+
+	transition:all 0.4s;
+	-webkit-transition:all 0.4s;
+
+
+}
+
+#video-layer.loaded .bg{
+	opacity: 1;
+	transform:scale(1.2);
+	-webkit-transform:scale(1.2);
+}
+
+#video-layer .video-box{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	z-index: 3;
+}
+
+#video-layer .close_x_btn{
+	width: 70px;
+	height: 70px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 5;
+	opacity: 0;
+}
+
+#video-layer.loaded .close_x_btn{
+	opacity: 1;
+}
+
+
+#originals_winter{
+	.inner{
+		.vbox{
+			opacity: 1;
+			transition: 0.4s;
+		}
+	}
+	>div{
+		overflow: hidden;
+	}
+	.btn_wrap{
+		display: inline-block;
+		a{
+		    margin: 12px 0 0 0;
+			width: 185px;
+		    font: 300 1.3rem/52px 'NotoSansKR';
+		    color: #fff;
+		    display: block;
+		    border: 1px solid #fff;
+		}
+	}
+	.main{
+		position: relative;
+		width: 100%;
+		background: url('/images/adidas/event/originals/originals_winter/bg_main.jpg') 0 0 no-repeat;
+		background-size: cover;
+		text-align: center;
+		padding: 2.5rem 3rem;
+		box-sizing: border-box;
+		img{
+			width: 100%;
+		}
+		.main_img{
+			transition: 0.6s;
+			opacity: 0;
+			transition-delay: 0.4s;
+			&.on{
+				opacity: 1;
+			}
+		}
+		.statement{
+			position: absolute;
+			top:67%;
+			left:50%;
+			transform: translate(-50%,-50%);
+			width: 51%;
+			text-align: center;
+			h1{
+				img{
+					width: 100%;
+				}
+			}
+			p{
+				font: 300 1rem 'NotoSansKR';
+				color: #fff;
+				padding-top: 1rem;
+			}
+			.allview{
+				width: 100%;
+				text-align: center;
+				a{
+					display: inline-block;
+					width: 100%;
+					margin-top: 1rem;
+					background: rgba($color: #000000, $alpha: 0.2);
+					border: 1px solid #fff;
+					color:#fff;
+					font:1rem/4rem 'NotosansKR';
+					letter-spacing: 0px;
+					box-sizing: border-box;
+					&:after{
+						display: inline-block;
+						margin-left: 3px;
+					}
+				}
+			}
+		}
+	}
+	.section{
+		position: relative;
+		text-align: center;
+		padding: 2rem 0 3rem;
+		&.sec_01{
+			background: url('/images/adidas/event/originals/originals_winter/bg_sec01.jpg') 0 0 no-repeat;
+			background-size: 100% auto;
+		}
+		&.sec_02{
+			background: url('/images/adidas/event/originals/originals_winter/bg_sec02.jpg') 0 0 no-repeat;
+			background-size: 100% auto;
+		}
+		&.sec_03{
+			background: url('/images/adidas/event/originals/originals_winter/181025/bg_sec03.jpg') 0 0 no-repeat;
+			background-size: 100% auto;
+		}
+		&.sec_04{
+			background: url('/images/adidas/event/originals/originals_winter/181025/bg_sec04.jpg') 0 0 no-repeat;
+			background-size: 100% auto;
+		}
+		>img{
+			width: 15%;
+			margin-bottom: 3rem;
+		}
+		.inn{
+			padding: 4rem 1.8rem 0;
+		}
+		.sub1{
+			position: relative;
+			// padding: 0 2rem;
+			.slider_wrap{
+				overflow: hidden;
+				position: relative;
+				z-index: 2;
+				ul{
+
+					position: relative;
+					.owl-item.active{
+						.num_title span{
+							margin-right: 0;
+							opacity: 1;
+						}
+						.num_title span:after{
+							width: 100%;
+						}
+					}
+					li{
+						float: left;
+						position: relative;
+						top:0;
+						padding: 0 2rem;
+						img{
+							width: 100%;
+						}
+					}
+					.owl-item{
+						opacity: 0;
+						transition: 1s;
+						// transition-delay: 1s;
+						&.active{
+							opacity: 1;
+						}
+					}
+				}
+				ul:after{
+					content: '';
+					display: block;
+					clear: both;
+				}
+				.owl-controls{
+					position: absolute;
+					top: 0;
+					width: 100%;
+					.owl-nav{
+						position: absolute;
+						width: 100%;
+						margin: 34% 0 0 0;
+						div{
+							width: 20px;
+							height: 20px;
+							text-indent: -9999px;
+						}
+						.owl-prev{
+							position: absolute;
+							left:0.1rem;
+							display: inline-block;
+							background: url('http://imagem.adidas.co.kr/images/adidas/event/originals/originals_winter/prev.png') no-repeat;
+							background-size: 100%;
+						}
+						.owl-next{
+							position: absolute;
+							right:0.1rem;
+							display: inline-block;
+							background: url('http://imagem.adidas.co.kr/images/adidas/event/originals/originals_winter/next.png') no-repeat;
+							background-size: 100%;
+						}
+					}
+				}
+			}
+			.inner_bg{
+				position: absolute;
+				top: -10%;
+				left: 50%;
+				width: 100%;
+				height: 120%;
+				background: rgba($color: #fff, $alpha: 0.2);
+				z-index: 1;
+				transform: translateX(-50%);
+			}
+		}
+		.sub2{
+			position: relative;
+			padding: 0;
+			.slider_wrap{
+				position: relative;
+				ul{
+					overflow: hidden;
+					position: relative;
+					.owl-item{
+						opacity: 0;
+						transition: 1s;
+						// transition-delay: 1s;
+						&.active{
+							opacity: 1;
+						}
+					}
+					li{
+						float: left;
+						position: relative;
+						top:0;
+						.info_wrap{
+							position: absolute;
+							top:0;
+							a{
+								position: absolute;
+								top:0;
+								left:0;
+								width: 100%;
+								height: 100%;
+								z-index: 2;
+							}
+							.title{
+								position: relative;
+								text-align: left;
+								font: 12px 'adinenuPro-black';
+								text-transform: uppercase;
+								color:#fff;
+								letter-spacing: 0.2px;
+								&:after{
+									transform: rotate(-45deg);
+									position: absolute;
+									left: -10px;
+								    top: 9px;
+									content: '';
+									display: inline-block;width: 8px;height: 2px;
+									background: #fff;
+								}
+							}
+							.name{
+								position: relative;
+								margin: 0 0 2px 0;
+							}
+							p{
+								font:300 12px 'NotoSansKR';
+								color:#fff;
+								text-align: left;
+								letter-spacing: -0.7px;
+								span{
+									display: inline-block;
+									margin-left: 3px;
+									width: 15px;
+								    height: 8px;
+									background: url('/images/adidas/event/originals/originals_winter/181025/icon_arrow.png') no-repeat;
+									background-size: 100% 100%;
+								}
+							}
+						}
+						img{
+							width: 100%;
+						}
+						a{
+							display: inline-block;
+							position: absolute;
+							text-indent: -3000px;
+						}
+					}
+				}
+				ul:after{
+					content: '';
+					display: block;
+					clear: both;
+				}
+				.owl-dots{
+					position: absolute;
+					width: 25%;
+					top: 48%;
+					right: 0;
+					padding-top: 0.5rem;
+					.owl-dot{
+						display: inline-block;
+						float:none;
+						margin-right: 4px;
+						width: 1rem; height: 1rem;
+						background: none;
+						background: rgba($color: #fff, $alpha: 0.6);
+						&.active{
+							background: #fff;
+						}
+					}
+				}
+			}
+		}
+		.video{
+			position: relative;
+			.inner{
+				padding: 4rem 2rem 2rem;
+				.visual_video{
+					position: relative;
+					width: 100%;
+					height: auto;
+					.bg{
+						text-align: center;
+						img{
+							width: 100%;
+						}
+					}
+				}
+			}
+		}
+	}
+	.bottom{
+		position: relative;
+		img{
+			width:100%;
+		}
+		a{
+			position: absolute;
+			z-index: 2;
+			width: 100%;
+			height: 50%;
+		}
+	}
+}
