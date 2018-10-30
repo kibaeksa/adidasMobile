@@ -1,0 +1,335 @@
+@import "./app/MO/reebok/css/scss/about.scss";
+#video-layer{
+    position:fixed;top:0;left:0;width: 100%;height: 100%;z-index:1000;
+}
+
+#video-layer .bg{
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    transform-origin:center center;
+    -webkit-transform-origin:center center;
+    transform:scale(0);
+    -webkit-transform:scale(0);
+    opacity:0;
+    background:#000;
+    z-index:1;
+
+    transition:all 0.4s;
+    -webkit-transition:all 0.4s;
+}
+
+#video-layer.loaded .bg{
+    opacity: 1;
+    transform:scale(1.2);
+    -webkit-transform:scale(1.2);
+}
+
+#video-layer .video-box{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+}
+
+#video-layer .close_x_btn{
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 5;
+    opacity: 0;
+}
+
+#video-layer.loaded .close_x_btn{
+    opacity: 1;
+}
+.solefury{
+    .modal-popup-wrapper {
+        overflow: hidden;
+        .popup{
+            top:0 !important;
+            transform: translate3d(-50%, 0%, 0px) !important;
+        }
+        .popup-header{
+            height: 60px;
+            background: none;
+            .close_x_btn::after, .close_x_btn::before,
+            .close_x_btn::after, .close_x_btn::after{
+                background: #fff;
+            }
+        }
+        .popup-contents{ 
+            width: 100%;
+            padding: 0;
+            .collection_pop{
+                position: relative;
+                overflow: hidden;
+                top: 0;
+                left:0;
+                width: 100%;
+                z-index: 3;
+                ul{
+                    overflow: hidden;
+                    li{
+                        position: relative;
+                        float: left;
+                        img{
+                            width: 100%;
+                        }
+                    }
+                }
+                .control_box{
+                    position: relative;                
+                    box-sizing: border-box;
+                    text-align: center;
+                    height: 60px;
+                    a{
+                        display: inline-block;
+                        position: absolute;
+                        top: 10px;
+                        display: inline-block;
+                        width: 40px;
+                        height: 40px;
+                        text-indent: -3000px;
+                        &.prev{
+                            left: 10px;
+                            background: url('/images/reebok/about/solefury/pop_prev.jpg') 0 0 no-repeat;
+                            background-size: 100% auto;
+                        }
+                        &.next{
+                            right: 10px;
+                            background: url('/images/reebok/about/solefury/pop_next.jpg') 0 0 no-repeat;
+                            background-size: 100% auto;
+                        }
+                    }
+                    .count{
+                        font: 500 2rem/60px 'dinpro cond';
+                        color: #000;
+                        em{
+                            font: 500 2rem 'dinpro cond';
+                        }
+                    }
+                }
+            }
+        }
+    }   
+    .video_visual{
+        padding-bottom: 143%;
+        .cover{
+            top:20%;
+            left: 5%;
+            color: #fff;        
+            transition: 0.8s;
+            opacity: 0;
+            &.on{
+                opacity: 1;
+            }
+            h4{
+                font: 500 1.5rem 'dinpro cond';
+                font-style: italic;
+                margin-bottom: 0;
+                text-align: left;
+                letter-spacing: 0.3rem;
+            }
+            h2{ 
+                font:5rem 'dinpro cond';
+                font-style: italic;
+                margin-bottom: 0;
+                text-transform: uppercase;
+                text-align: left;
+                letter-spacing: 0.3rem;
+            }        
+            .desc_eng{
+                position: absolute;
+                width: 280px;
+                top: 72px;
+                left: 31%;
+                font:1.4rem/1.4rem 'dinpro cond';
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                sup{
+                    font:0.6rem/1.4rem 'dinpro cond';
+                    letter-spacing: 2px;
+                    vertical-align: top;
+                }
+                em{
+                    color: #bfff00;
+                }
+            }
+            .btn-buy{
+                margin-top: 2.3rem;
+                display: inline-block;
+                width: 150px;
+                height: 50px;
+                font: 1.2rem/42px 'NotoSansKR';
+                border: 5px solid #fff;
+                color: #fff;
+                box-sizing: border-box;
+                letter-spacing: 2px;
+                text-align: center;
+            }
+        }
+    }
+    .sections{
+        position: relative;       
+        &.effect{
+            .effect_item{
+                opacity: 1;
+            }
+        }        
+        .bg{
+            img{
+                display: block;
+                width: 100%;
+            }
+        }
+        .effect_item{
+            position: absolute;
+            transition: 0.6s;
+            opacity: 0;
+        }
+        &.sect_01{
+            .play-video-cust{
+                display: inline-block;
+                position: absolute;
+                top: 22.5rem;
+                left: 0;
+                width: 80%;
+                z-index: 3;
+                img{
+                    width: 100%;
+                }
+            }
+            .effect_item{
+                top: -4.5rem;
+                right: 1.5rem;
+                width: 70%;
+                z-index: 2;
+            }
+        }
+        &.sect_02{
+            .txtbox{   
+                position: absolute;
+                width: 84%;
+                top: 55%;
+                left: 50%;
+                transform: translate(-50%,0);
+                z-index: 3;             
+                color: #fff;
+                text-align: center;
+                h3{ 
+                    font:600 4rem/4rem 'dinpro cond';                    
+                    // margin-bottom: 0;
+                    text-transform: uppercase;
+                    text-align: center;                    
+                }        
+                p{                   
+                    font:300 1rem 'NotoSansKR';
+                    text-align: center;        
+                }
+                .btn-buy{
+                    margin-top: 1.5rem;
+                    display: inline-block;
+                    width: 150px;
+                    height: 50px;
+                    font: 1.2rem/42px 'NotoSansKR';
+                    border: 5px solid #fff;
+                    color: #fff;
+                    box-sizing: border-box;
+                    letter-spacing: 2px;
+                    text-align: center;
+                }
+            }
+            .effect_item{
+                top: -3rem;
+                left: -1rem;
+                width: 70%;
+                transform: rotate(-15deg);
+                z-index: 2;
+            }
+        }        
+    }    
+    .collections2{
+        .collection_cut{
+            position: absolute;
+            overflow: hidden;
+            top: 36%;
+            left:5%;
+            width: 55%;
+            z-index: 3;
+            ul{
+                overflow: hidden;
+                li{
+                    position: relative;
+                    float: left;
+                    img{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        .num_paging{
+            position: absolute;
+            overflow: hidden;
+            top: 74%;
+            left:5%;
+            width: 55%;
+            a{
+                background: none;
+                border:none;
+                width: 1rem;
+                height: 1rem;
+                margin-right: 0.8rem;
+                box-sizing: border-box;
+                border: 2px solid rgba(255, 255, 255, 0.5);
+            }
+
+            .on{
+                background: #fff;
+            }
+        }
+        .popbox{
+            position: absolute;
+            width: 70%;
+            top: -2.6rem;
+            right: 0;
+            img{
+                width: 100%;
+                display: block;
+            }
+            .shop{
+                position: absolute;
+                top: 50%;left: 50%;
+                transform: translate(-50%, -7%);
+                display: inline-block;
+                width: 150px;
+                height: 50px;
+                font: 1.2rem/42px 'NotoSansKR';
+                border: 5px solid #fff;
+                color: #fff;
+                box-sizing: border-box;
+                letter-spacing: 2px;
+                text-align: center;
+                z-index: 2;
+            }
+        }
+
+        .buybox{
+            position: absolute;
+            bottom: 6%;
+            left: 0;
+            a{
+                img{
+                    width: 100%;
+                }
+            }
+        }
+    }   
+}
+// solefury
