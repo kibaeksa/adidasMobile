@@ -1,0 +1,173 @@
+@import './app/css/adidas/scss/common/mixin.scss';
+@import './app/css/adidas/scss/common/common.scss';
+
+#campaign_miadidas{
+
+	.top{
+		img{
+			width:100%;
+		}
+	}
+	.content{
+		position: relative;
+		text-align: center;
+		&.on{
+			.coupon_area{
+				.inn{
+					.txt{
+						img{
+							@include css3(opacity,1);
+						}
+					}
+					.code{
+						@include css3(opacity,1);
+
+					}
+				}
+			}
+		}
+		.title{
+			position: relative;
+			margin: 25px 0 0 0;
+			display: inline-block;
+			p{
+				position: relative;
+				text-align: center;
+				font:25px 'adinenuPro-black';
+				text-transform: uppercase;
+				color:#2b2b2b;
+				z-index: 2;
+			}
+			span{
+				position: absolute;
+				background: #ffd3d3;
+				display: inline-block;
+				width: 100%;
+				height: 10px;
+			    bottom: 6px;
+				left:0;
+			}
+		}
+		p.desc{
+			font:600 16px 'NotoSansKR';
+			color:#2b2b2b;
+
+			span{
+				font:16px 'adinenuPro-bold';
+				color:#2b2b2b;
+
+
+			}
+		}
+		.coupon_area{
+			position: relative;
+		    margin: 20px 30px 20px;
+			img{
+				width: 100%;
+
+
+
+			}
+			.inn{
+				position: absolute;
+				top:20%;
+				.txt{
+				    margin: 21px 4rem 20px;
+					img{
+						width: 90%;
+						@include css3(opacity,0);
+						@include css3(transition, all 0.2s);
+					}
+					p{
+						font:bold 4rem 'AdihausDIN-Cond';
+						letter-spacing: 5px;
+
+					}
+				}
+				.code{
+					display: inline-block;
+					background: #ad0000;
+					padding: 0px 18px;
+					@include css3(opacity,0);
+					@include css3(transition, all 0.5s);
+					transition-delay: 0.4s;
+					span{
+						position: relative;
+						top:2px;
+    					font: 16px/27px 'NotoSansKR';
+						color:#fff;
+						&.num{
+					        font: 16px/37px 'AdihausDIN-Bold';
+						}
+					}
+				}
+
+			}
+		}
+		.btn_wrap{
+			position: relative;
+			display: inline-block;
+			border:2px solid #000;
+		    width: 83%;
+			span.txt{
+				padding-right: 30px;
+				// width: auto;
+				font:600 16px/48px 'NotoSansKR';
+				color:#252525;
+			}
+			em{
+				position: absolute;
+				top: 17px;
+				right: 64px;
+				span{
+					position: relative;
+					display: inline-block;
+					right:0;
+					width: 24px;
+					height: 1px;
+					background: #000;
+					&.txt{
+
+					}
+					&:after{
+						position: absolute;
+							top: -2px;
+							right: -2px;
+							content: '';
+							display: inline-block;
+							width: 5px;
+							height: 1px;
+							background: #000;
+							transform: rotate(45deg);
+					}
+					&:before{
+						position: absolute;
+							top: 2px;
+							right: -2px;
+							content: '';
+							display: inline-block;
+							width: 5px;
+							height: 1px;
+							background: #000;
+							transform: rotate(-45deg);
+					}
+
+				}
+			}
+			a{
+				position: absolute;
+				    display: block;
+				    width: 100%;
+				    height: 100%;
+				    z-index: 2;
+			}
+		}
+	}
+	.bottom{
+		position: relative;
+		background: #f8f8f8;
+		img{
+			width: 100%;
+		}
+	}
+}
