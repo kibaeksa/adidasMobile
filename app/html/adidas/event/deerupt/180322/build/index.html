@@ -14,7 +14,8 @@
 
     <link rel="preload" href="/fonts/adineuePro/woff/adineuePRO-Bold.woff" as="font">
 
-    <script type="text/javascript" src="/js/jquery-1.12.0.min.js"></script>
+    <!-- <script type="text/javascript" src="/js/jquery-1.12.0.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script type="text/javascript" src="/js/swipe.js"></script>
     <script type="text/javascript" src="/js/owl.carousel.js"></script>
 
@@ -445,11 +446,11 @@
                         <img src="http://imagem.adidas.co.kr/images/adidas/event/DEERUPT/180322/header-02.png" class="header-ico2" alt="">
                     </div>
 
-                    <div class="view_footer on">
+                    <div class="view_footer">
                         <a href="#" class="next-video">NEXT LOOK</a>
                         <a href="http://shop.adidas.co.kr/PF070801.action?pageNo=528" class="buy">구매하기</a>
                     </div>
-                    <div class="view_footer2">
+                    <div class="view_footer2 on">
                         <a href="javascript:void(0)" class="ing-video">♪</a>
                         <a href="javascript:void(0)" class="return-slide">VIEW IN 360</a>
                     </div>
@@ -810,7 +811,7 @@
                     }
 
                     function nextVideo() {
-                        
+                        index++;
 
                         videoBox.src = videoBoxArr[index];
                         videoBox.play();
@@ -819,7 +820,6 @@
                             videoBox.src = videoBoxArr[index];
                             videoBox.play();
                         }
-                        index++;
 
                         videoBox.addEventListener('ended',videoEnded,false);
                     }
