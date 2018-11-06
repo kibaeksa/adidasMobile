@@ -2,7 +2,6 @@
 <html>
 <head>
     <script type="text/javascript" src="/data/eventRouter.js"></script>
-
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
 	<meta name="format-detection" content="telephone=no">
@@ -11,12 +10,10 @@
 	<link href="/css/adidas/style.css" type="text/css" rel="stylesheet" />
 	<link href="/css/adidas/fonts.css" type="text/css" rel="stylesheet" />
 
-	<link rel="preload" href="/fonts/adineuePro/woff/adineuePRO-Bold.woff" as="font">
-
 	<script type="text/javascript" src="/js/jquery-1.12.0.min.js"></script>
+	<script type="text/javascript" src="/js/owl.carousel.min.js"></script>
 	<script type="text/javascript" src="/js/swipe.js"></script>
-	<script type="text/javascript" src="/js/owl.carousel.js"></script>
-
+	<script type="text/javascript" src="/js/zoomImage.js"></script>
 
 	<title>아디다스 모바일</title>
 </head>
@@ -436,66 +433,127 @@
 			</div>
 		</div>
 
-		<div id="container">
-<style type="text/css">@media screen and (max-width: 320px){html{font-size:10px}}@media screen and (min-width: 800px){html{font-size:12px}}.pseudo-element{content:'';display:block}#campaign_miadidas .top img{width:100%}#campaign_miadidas .content{position:relative;text-align:center}#campaign_miadidas .content.on .coupon_area .inn .txt img{opacity:1;-webkit-opacity:1;-moz-opacity:1}#campaign_miadidas .content.on .coupon_area .inn .code{opacity:1;-webkit-opacity:1;-moz-opacity:1}#campaign_miadidas .content .title{position:relative;margin:25px 0 0 0;display:inline-block}#campaign_miadidas .content .title p{position:relative;text-align:center;font:26.5px 'adinenuPro-black';text-transform:uppercase;color:#2b2b2b;z-index:2}#campaign_miadidas .content .title span{position:absolute;background:#ffd3d3;display:inline-block;width:100%;height:10px;bottom:6px;left:0}#campaign_miadidas .content p.desc{font:600 16px 'NotoSansKR';color:#2b2b2b}#campaign_miadidas .content p.desc span{font:16px 'adinenuPro-bold';color:#2b2b2b}#campaign_miadidas .content .coupon_area{position:relative;margin:18px 30px 23px}#campaign_miadidas .content .coupon_area img{width:88%}#campaign_miadidas .content .coupon_area .inn{position:absolute;top:19%}#campaign_miadidas .content .coupon_area .inn .txt{margin:9px 4rem 14px}#campaign_miadidas .content .coupon_area .inn .txt img{width:90%;opacity:0;-webkit-opacity:0;-moz-opacity:0;transition:all 0.2s;-webkit-transition:all 0.2s;-moz-transition:all 0.2s}#campaign_miadidas .content .coupon_area .inn .txt p{font:bold 4rem 'AdihausDIN-Cond';letter-spacing:5px}#campaign_miadidas .content .coupon_area .inn .code{display:inline-block;background:#ad0000;padding:10px 18px;opacity:0;-webkit-opacity:0;-moz-opacity:0;transition:all 0.5s;-webkit-transition:all 0.5s;-moz-transition:all 0.5s;transition-delay:0.4s}#campaign_miadidas .content .coupon_area .inn .code span{position:relative;display:block;top:2px;font:13px/27px 'NotoSansKR';color:#fff;line-height:20px}#campaign_miadidas .content .coupon_area .inn .code span.num{font:23px/37px 'AdihausDIN-Bold';line-height:25px;padding-top:5px}#campaign_miadidas .content .btn_wrap{position:relative;display:inline-block;border:2px solid #000;width:83%}#campaign_miadidas .content .btn_wrap span.txt{padding-right:30px;font:600 16px/48px 'NotoSansKR';color:#252525}#campaign_miadidas .content .btn_wrap em{position:absolute;top:17px;right:64px}#campaign_miadidas .content .btn_wrap em span{position:relative;display:inline-block;right:0;width:24px;height:1px;background:#000}#campaign_miadidas .content .btn_wrap em span:after{position:absolute;top:-2px;right:-2px;content:'';display:inline-block;width:5px;height:1px;background:#000;transform:rotate(45deg)}#campaign_miadidas .content .btn_wrap em span:before{position:absolute;top:2px;right:-2px;content:'';display:inline-block;width:5px;height:1px;background:#000;transform:rotate(-45deg)}#campaign_miadidas .content .btn_wrap a{position:absolute;display:block;width:100%;height:100%;z-index:2}#campaign_miadidas .bottom{position:relative;background:#f8f8f8}#campaign_miadidas .bottom img{width:100%}
+	<div id="container">
+<style type="text/css">@media screen and (max-width: 320px){html{font-size:10px}}@media screen and (min-width: 800px){html{font-size:12px}}.pseudo-element{content:'';display:block}html,body{height:100%}#container .statement_collection{background:white;position:relative}#container .statement_collection .box1{background:#dcd2c8;padding:2rem 0 3rem}#container .statement_collection .box1 .img img{width:100%}#container .statement_collection .box1 .txt{margin-top:2rem}#container .statement_collection .box1 .txt h1{font:3.35rem 'adinenuPro-bold';text-align:center;letter-spacing:.8px}#container .statement_collection .box1 .txt p{font:400 1.1rem 'NotoSansKR';letter-spacing:.8px}#container .statement_collection .box1 .btn{position:relative;margin:3rem 2rem 4rem;background:#000}#container .statement_collection .box1 .btn a{position:absolute;top:0;left:0;width:100%;height:100%}#container .statement_collection .box1 .btn span{font:300 1rem 'NotoSansKR';display:block;padding:14px;color:#fff;text-align:center;letter-spacing:.8px}#container .statement_collection .box1 p{font:400 1rem 'NotoSansKR';text-align:center;letter-spacing:.8px}#container .statement_collection .box2{position:relative}#container .statement_collection .box2 .head{position:absolute;top:50%;left:50%;transform:translate(-93%, -291%);-webkit-transform:translate(-93%, -291%);-moz-transform:translate(-93%, -291%)}#container .statement_collection .box2 .head h1{font:3rem 'adinenuPro-bold';color:#fff;line-height:1;letter-spacing:7.5px}#container .statement_collection .box2 .img img{width:100%}#container .statement_collection .box3{position:relative;background:#dcd2c8}#container .statement_collection .box3 h1{font:2.1rem 'adinenuPro-bold';color:#000;line-height:1;letter-spacing:7.5px;padding:2.5rem 2rem 2rem 2.5rem}#container .statement_collection .box3 .wrap .img img{width:100%}#container .statement_collection .box3 .wrap .txt .btn{position:relative;display:inline-block;background:#000;text-align:center}#container .statement_collection .box3 .wrap .txt .btn a{display:block;position:absolute;top:0;left:0;width:100%;height:100%}#container .statement_collection .box3 .wrap .txt .btn span{display:block;color:#fff;padding:10px 40px;font:400 1rem 'NotoSansKR'}#container .statement_collection .box3 .wrap .txt .btn span img{vertical-align:middle;width:10.5%;padding-left:10px}#container .statement_collection .box3 .wrap .txt.left{width:92.5%;margin:0 0 0 auto}#container .statement_collection .box3 .wrap .txt.right{width:78.09%;margin:0 0 0 auto}#container .statement_collection .box3 .wrap .txt.right2{width:78.5%;margin:0 0 0 auto}#container .statement_collection .box3 .wrap p{font:400 .9rem 'NotoSansKR';padding:10px 0 60px 0}
 </style>
+        <!-- team_mode -->
+        <div class="statement_collection">
 
-			<div id="campaign_miadidas">
-                <div class="top">
-                    <img src="/images/adidas/event/customise/miadidas/181012/top_img.jpg" alt="">
+            <div class="box1">
+                <div class="img">
+                    <img src="/images/adidas/event/statement_collection/main_visual.jpg" alt="">
                 </div>
-                <div class="content">
-                    <div class="title">
-                        <p>30% off Custom shoes</p>
-                        <span></span>
+                <div class="txt">
+                    <h1>HERE TO CREATE</h1>
+                    <p>그녀를 위한 스테이트먼트 컬렉션</p>
+                </div>
+                <div class="btn">
+                    <a href="http://shop.adidas.co.kr/PF070801.action?pageNo=719 "></a>
+                    <span>구매하기</span>
+                </div>
+                <p>평화로운 명상의 시간부터 고강도 인터벌 트레이닝까지.<br>
+                새로운 스테이트먼트 컬렉션과 함께<br>
+                트레이닝에 당당한 자신감을 더해보세요.</p>
+            </div>
+            <div class="box2">
+                <div class="head">
+                    <h1>KARLE'S<br>
+                        LOOK</h1>
+                </div>
+                <div class="img">
+                    <img src="/images/adidas/event/statement_collection/section_visual.jpg" alt="">
+                </div>
+
+            </div>
+            <div class="box3">
+                <h1>KARLIE'S LOOK</h1>
+                <div class="wrap">
+                    <div class="img">
+                        <img src="/images/adidas/event/statement_collection/conts1.png" alt="">
                     </div>
-                    <p class="desc">2018. 11. 01 ~ 2018. 12. 31</p>
-                    <div class="coupon_area">
-                        <img src="/images/adidas/event/customise/miadidas/181012/coupon_mo.png" alt="">
-                        <div class="inn">
-                            <div class="txt">
-                                <img src="/images/adidas/event/customise/miadidas/181012/30off.png" alt="">
+                    <div class="txt left">
+                        <div class="btn">
+                            <a href="http://shop.adidas.co.kr/PF020401.action?PROD_CD=DH7095"></a>
+                            <span>
+                                구매하기
+                                <img src="/images/adidas/event/statement_collection/enter.png" alt="">
+                            </span>
+                        </div>
+                        <p>트레이닝에 상상력을 더하는 그녀를 위한 독특한 디자인.<br>
+                        최대 D컵까지 출시 되는 미디엄 서포트 제품입니다.</p>
+                    </div>
+                </div>
+                <div class="wrap">
+                    <div class="inner">
+                        <div class="img">
+                            <img src="/images/adidas/event/statement_collection/conts2.png" alt="">
+                        </div>
+                        <div class="txt right">
+                            <div class="btn">
+                                <a href="http://shop.adidas.co.kr/PF020401.action?PROD_CD=CX0010"></a>
+                                <span>
+                                    구매하기
+                                    <img src="/images/adidas/event/statement_collection/enter.png" alt="">
+                                </span>
                             </div>
-                            <div class="code">
-                                <span>쿠폰코드 : </span>
-                                <span class="num">09396QXPX32OKY</span>
-                            </div>
+                            <p>부드럽고 편안한 착용감으로 몸을 꼭 감싸는 핏.<br>
+                            높은 허리선과 매끄러운 컷으로 아름다운 바디 라인을 완성합니다.</p>
                         </div>
                     </div>
-                    <div class="btn_wrap">
-                        <a href="http://m.adidas.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=01007&amp;INFLW_TC_CD=&amp;term=1&amp;command=LIST&amp;ALL=ALL&amp;S_CTGR_CD=01007&amp;CONR_CD=10&amp;S_ORDER_BY=1&amp;S_PAGECNT=100&amp;PAGE_CUR=1&amp;S_SIZE=&amp;S_TECH=&amp;S_COLOR=&amp;S_COLOR2=&amp;CATG_CHK=&amp;CATG_CLK=N&amp;STEP_YN=N&amp;S_QUICK_DLIVY_YN=&amp;S_PRICE=#ctgr_cd=01007&amp;term=1&amp;command=LIST&amp;ALL=ALL&amp;S_CTGR_CD=01007&amp;CONR_CD=10&amp;S_ORDER_BY=1&amp;S_PAGECNT=100&a;PAGE_CUR=1&amp;CATG_CLK=N&amp;STEP_YN=N&amp;strPage=1&amp;sQuick=N"></a>
-                        <span class="txt">마이아디다스 제품보기</span>
-                        <em>
-                            <span></span>
-                        </em>
+                </div>
+
+                <div class="wrap">
+                    <div class="img">
+                        <img src="/images/adidas/event/statement_collection/conts3.png" alt="">
+                    </div>
+                    <div class="txt left">
+                        <div class="btn">
+                            <a href="http://shop.adidas.co.kr/PF020401.action?PROD_CD=CZ8999"></a>
+                            <span>
+                                구매하기
+                                <img src="/images/adidas/event/statement_collection/enter.png" alt="">
+                            </span>
+                        </div>
+                        <p>자연스러운 동작을 위한 레귤러 핏 제품.<br>
+                        모던한 애슬레틱 스타일에 빈티지한 매력을 더했습니다.</p>
                     </div>
                 </div>
 
-                <div class="bottom">
-                    <a href="https://m.adidas.co.kr/MO/MyPage/mypageIndex.action" style="    display: inline-block;
-                        position: absolute;
-                        top: 42.8%;
-        				left: 73%;
-        				width: 24%;
-        				height: 13%;
-                        text-indent: -5000px;">마이페이지 가기</a>
-                    <img src="/images/adidas/event/customise/miadidas/181012/bottom_img.jpg" alt="">
+                <div class="wrap">
+                    <div class="img">
+                        <img src="/images/adidas/event/statement_collection/conts4.png" alt="">
+                    </div>
+                    <div class="txt right2">
+                        <div class="btn">
+                            <a href="http://shop.adidas.co.kr/PF020401.action?PROD_CD=CZ5894"></a>
+                            <span>
+                                구매하기
+                                <img src="/images/adidas/event/statement_collection/enter.png" alt="">
+                            </span>
+                        </div>
+                        <p>
+                            활용성이 뛰어난 토트 백.<br>
+                            스텔라 맥카트니에서 영감을 받은 입체 프린트로 스타일을 더합니다.
+                        </p>
+                    </div>
                 </div>
-			</div>
-			<!-- //originals_summer -->
+            </div>
 
-			<script type="text/javascript">
+        </div>
+    </div>
+        <script type="text/javascript">
 
-				(function($){
-                    setTimeout(function(){
-                        $('#campaign_miadidas .content').addClass('on');
-                    },1000)
-				})(jQuery);
 
-			</script>
+        (function($){
 
-		</div>
-		<!-- //container product_list -->
+        
+
+
+            })(jQuery);
+        </script>
+
+	</div>
+		<!-- //container product_view -->
 
 		<div id="footer">
 			<div class="f_menu">
@@ -524,36 +582,11 @@
 				<p style="color:#666;">Copyright © 2011 adidas Korea Inc.</p>
 			</div>
 		</div>
-	</div>
+        </div>
+</div>
 
 	<script type="text/javascript" src="/js/adidas/common.js"></script>
-	<script type="text/javascript">
 
-		var openPopInStock;
-		(function($){
-
-			openPopInStock = function(){
-				$('#instock-notification-popup').addClass('open');
-			};
-
-			$('.view_type_btn a').bind('click',function(){
-				if($(this).hasClass('on')){
-					return;
-				}
-
-				if($(this).hasClass('box_type')){
-					$('.products_list').removeClass('list_type')
-				}else{
-					$('.products_list').addClass('list_type');
-				}
-
-				$('.view_type_btn a').removeClass('on');
-				$(this).addClass('on');
-			});
-
-		})(jQuery);
-
-	</script>
 
 </body>
 
