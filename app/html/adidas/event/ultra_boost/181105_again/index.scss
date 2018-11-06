@@ -1,0 +1,445 @@
+@import './app/css/adidas/scss/common/mixin.scss';
+@import './app/css/adidas/scss/common/common.scss';
+
+
+#ultra_boost_again{
+	.button{
+		display: inline-block;
+		overflow: hidden;
+		a{
+			position: relative;
+			display: block;
+		    background: #FFF;
+		    color: #000;
+		    width: 150px;
+		    font: 600 14px/45px 'NotoSansKR';
+		    text-align: center;
+			text-transform: uppercase;
+			&:after{
+				content: '';
+				display: inline-block;
+				width: 100%;
+				height: 100%;
+				background: #000;
+				position: absolute;
+				top:0;
+				left:0;
+				z-index: 2;
+				@include css3(transition, all 0.5s);
+			}
+		}
+		&.black{
+			a{
+				background: #000;
+				color:#fff;
+				&:after{
+					background: #fff;
+					@include css3(transition, all 0.5s);
+				}
+			}
+		}
+	}
+
+	.main{
+		position: relative;
+		text-align: center;
+		&.on{
+			.txt{
+				p{
+					top:0;
+					@include css3(opacity,1);
+				}
+				.button{
+					top:0;
+					@include css3(opacity,1);
+					a{
+						&:after{
+							left:100%;
+						}
+					}
+				}
+			}
+
+		}
+		.bg{
+			background: #e5dcdd;
+			img{
+				width: 105%;
+			}
+			video{
+				width: 105%;
+			}
+		}
+		.txt{
+		    position: absolute;
+	        bottom: 2.5%;
+		    width: 100%;
+		    z-index: 1;
+			// background: #e8dfdf;
+			p{
+				position: relative;
+				top:20px;
+				// padding: 0 0 10px 0;
+				font: 38px/40px 'adinenuPro-black';
+				text-align: center;
+				color:#fff;
+				letter-spacing: 0.2px;
+				@include css3(opacity,0);
+				@include css3(transition, all 0.5s);
+				&.kor{
+				    padding: 5px 0 0;
+					font: 12px/12px 'NotoSansKR';
+					transition-delay: 0.5s;
+				}
+				strong{
+					font-weight: 700;
+				}
+			}
+			.button{
+				position: relative;
+				top:20px;
+			    margin: 25px 0 30px 0;
+				@include css3(opacity,0);
+				@include css3(transition, all 0.5s);
+				transition-delay: 0.9s;
+				a{
+					&:after{
+						transition-delay: 1.2s;
+
+					}
+				}
+
+			}
+
+		}
+	}
+
+	.slider_outwrapper{
+		position: relative;
+		background: url('http://imagem.adidas.co.kr//images//adidas/event/ultra_boost/180927_again/bg1.jpg') no-repeat;
+		background-size: 100% 100%;
+		padding: 20px 0 40px 0;
+		.slider_wrap{
+			position: relative;
+		    margin: 0px 20px 0 20px;
+			overflow: hidden;
+		    padding-bottom: 15%;
+		    z-index: 2;
+			&.on{
+				.info_wrap{
+					.box{
+
+					}
+				}
+			}
+			.banner_slider_wrap{
+				ul{
+					li{
+						img{
+							width: 100%;
+						}
+					}
+					.owl-controls{
+						position: absolute;
+					    bottom: -5%;
+					    width: 100%;
+					    padding-bottom: 14%;
+						.owl-nav{
+							position: absolute;
+						    width: 100%;
+						    text-align: center;
+							div{
+								position: absolute;
+								display: inline-block;
+							}
+							.owl-next{
+								left: 50%;
+							    margin-left: 43%;
+								span{
+									position: relative;
+									height: 18px;
+									display: inline-block;
+									padding-bottom: 4px;
+									&:after{
+										position: absolute;
+									    top: 0;
+									    content: '';
+									    display: inline-block;
+									    width: 23px;
+									    height: 2px;
+									    background: #000;
+									    transform: rotate(45deg);
+									}
+									&:before{
+										position: absolute;
+									    bottom: 4px;
+									    content: '';
+									    display: inline-block;
+									    width: 23px;
+									    height: 2px;
+									    background: #000;
+									    transform: rotate(-45deg);
+									}
+								}
+							}
+							.owl-prev{
+								left:0;
+								span{
+									position: relative;
+								    height: 18px;
+								    display: inline-block;
+								    padding-bottom: 4px;
+									&:after{
+										position: absolute;
+										top: 0;
+										content: '';
+										display: inline-block;
+										width: 23px;
+										height: 2px;
+										background: #000;
+										transform: rotate(-45deg);
+
+									}
+									&:before{
+										position: absolute;
+										bottom: 4px;
+										content: '';
+										display: inline-block;
+										width: 23px;
+										height: 2px;
+										background: #000;
+										transform: rotate(45deg);
+
+									}
+								}
+
+							}
+						}
+						.owl-dots{
+							display: none !important;
+							text-align: center;
+							.owl-dot{
+								display: inline-block;
+							    width: 17px;
+							    height: 17px;
+							    border-radius: 50px;
+							    background: #7f7f7f;
+							    margin: 0 4px;
+								&.active{
+									background: #ca3a32;
+								}
+							}
+						}
+					}
+				}
+			}
+			.info_wrap{
+				position: relative;
+				padding: 0 0 41% 0;
+				.box{
+					position: absolute;
+					top:0;
+					left:0;
+					width: 100%;
+					padding: 20px 0 0 0;
+					text-align: center;
+					@include css3(opacity,0);
+
+					&.on{
+						@include css3(opacity,1);
+						z-index: 2;
+						strong{
+							top:0;
+							@include css3(opacity,1);
+						}
+						p{
+							top:0;
+							@include css3(opacity,1);
+						}
+						.button{
+							@include css3(opacity,1);
+						}
+					}
+					strong{
+						position: relative;
+						top:10px;
+						padding: 0 0 5px 0;
+						font:600 20px 'NotoSansKR';
+						color:#000;
+						@include css3(opacity,0);
+						@include css3(transition, all 0.5s);
+						transition-delay: 0.4s;
+
+
+					}
+					p{
+						position: relative;
+						top:10px;
+						padding: 5px 0 15px;
+						font: 14px 'adinenuPro-regular';
+						letter-spacing: 0.2px;
+						@include css3(opacity,0);
+						@include css3(transition, all 0.5s);
+						transition-delay: 0.6s;
+					}
+				}
+				.button{
+					@include css3(opacity,0);
+					@include css3(transition, all 0.5s);
+					transition-delay: 0.8s;
+					a{
+						&:after{
+							left:100%;
+						}
+					}
+				}
+			}
+		}
+		.navi{
+			position: absolute;
+		    text-align: center;
+		    font: 18px 'adinenuPro-regular';
+		    letter-spacing: 0.7px;
+		    width: 100%;
+		    bottom: 8%;
+
+			span{
+				font:18px 'adinenuPro-regular';
+				letter-spacing: 0.7px;
+			}
+		}
+	}
+
+	.cut_wrap{
+		&.cut1{
+			background: url('http://imagem.adidas.co.kr//images//adidas/event/ultra_boost/180927_again/bg2.jpg') no-repeat;
+			background-size: 100% 100%;
+		}
+		&.cut2{
+			background: url('http://imagem.adidas.co.kr//images//adidas/event/ultra_boost/180927_again/bg3.jpg') no-repeat;
+			background-size: 100% 100%;
+		}
+		&.cut3{
+			background: url('http://imagem.adidas.co.kr//images//adidas/event/ultra_boost/180927_again/bg4.jpg') no-repeat;
+			background-size: 100% 100%;
+		}
+		&.on{
+			.txt{
+				strong{
+					@include css3(opacity,1);
+				}
+				.light{
+					@include css3(opacity,1);
+
+				}
+				.desc{
+					@include css3(opacity,1);
+
+				}
+			}
+		}
+		.img{
+			margin: 0 15px;
+			img{width: 100%;}
+		}
+		.txt{
+			text-align: center;
+			strong{
+				display: inline-block;
+				padding: 10px 0 0px 0;
+				font:22px/22px 'adinenuPro-black';
+				color:#000;
+				letter-spacing: 0.7px;
+				@include css3(opacity,0);
+				@include css3(transition, all 0.5s);
+				transition-delay: 0.4s;
+
+			}
+			p{
+				font:400 12px 'NotoSansKR';
+				&.light{
+					font:22px/22px 'adinenuPro-light';
+					letter-spacing: 0.7px;
+					@include css3(opacity,0);
+					@include css3(transition, all 0.5s);
+					transition-delay: 0.4s;
+				}
+				&.desc{
+					padding: 5px 0 40px 0;
+					@include css3(opacity,0);
+					@include css3(transition, all 0.5s);
+					transition-delay: 0.8s;
+
+				}
+			}
+		}
+
+	}
+
+	.bottom{
+		position: relative;
+		padding: 70px 0;
+		text-align: center;
+		background: url('http://imagem.adidas.co.kr//images//adidas/event/ultra_boost/181105_again/bottom_bg.jpg') no-repeat;
+		background-size: 100% 100%;
+		&.on{
+			p{
+				top:0;
+				@include css3(opacity,1);
+
+			}
+			.button{
+				a{
+					&:after{
+						left:100%;
+					}
+				}
+			}
+		}
+		p{
+			position: relative;
+			top:10px;
+			text-align: center;
+			color:#fff;
+			@include css3(opacity,0);
+			@include css3(transition, all 0.5s);
+			&.title{
+
+			    font: 40px/38px 'adinenuPro-black';
+				transition-delay: 0.4s;
+
+			}
+			&.kor{
+				padding: 5px 0 20px 0;
+			    font: 400 13px/16px 'NotoSansKR';
+			    letter-spacing: 0.2px;
+				transition-delay: 0.6s;
+
+				span{
+					font-weight: 100;
+				}
+			}
+		}
+		.storelist{
+			display: inline-block;
+			margin: 0 0 20px 0;
+			font:300 14px/20px 'NotoSansKR';
+			border-bottom: 1px solid #000;
+			color:#000;
+
+		}
+		.button{
+			display: inline-block;
+			a{
+				display: inline-block;
+				text-align: center;
+				text-transform: uppercase;
+				&:after{
+					transition-delay: 1s;
+				}
+			}
+
+		}
+	}
+
+}
