@@ -9820,8 +9820,8 @@ padding:30px 15px;
     color: #999;
     font-size: 1rem;
 }
-/*마이아디다스 커스터마이징 아이콘 삭제 181106*/
-/* #container .product_grid>*.mi .info .status::after{
+
+#container .product_grid>*.mi .info .status::after{
     content:'';
     position: absolute;
     top: 0;
@@ -9831,7 +9831,23 @@ padding:30px 15px;
     background:url('/images/adidas/ico_mi_product.jpg') 0 0 no-repeat;
     -webkit-background-size: 14px auto;
     background-size: 14px auto;
-} */
+}
+
+/*181107 작업영역*/
+#container .product_grid>*.mi.article .info .status:after{
+    display: none;
+}
+#container .product_grid>*.mi.article .info .status span{
+    display: inline-block;
+}
+#container .product_grid>*.mi.article .info .status div{
+    font: 1rem 'Adihaus-regular';
+    display: inline-block;
+    float: right;
+    line-height: 30px;
+    color:#999;
+}
+/*181107 작업영역 끝*/
 
 #container .product_grid.grid_2box>* .info .status{
     position: relative;
