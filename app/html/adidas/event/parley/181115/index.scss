@@ -1,0 +1,286 @@
+@import './app/css/adidas/scss/common/mixin.scss';
+@import './app/css/adidas/scss/common/common.scss';
+
+#video-layer{
+	position:fixed;top:0;left:0;width: 100%;height: 100%;z-index:1000;
+}
+
+#video-layer .bg{
+	width: 100%;
+	height: 100%;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	transform-origin:center center;
+	-webkit-transform-origin:center center;
+	transform:scale(0);
+	-webkit-transform:scale(0);
+	opacity:0;
+	background:#000;
+	z-index:1;
+
+	transition:all 0.4s;
+	-webkit-transition:all 0.4s;
+
+
+}
+
+#video-layer.loaded .bg{
+	opacity: 1;
+	transform:scale(1.2);
+	-webkit-transform:scale(1.2);
+}
+
+#video-layer .video-box{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	z-index: 3;
+}
+
+#video-layer .close_x_btn{
+	width: 70px;
+	height: 70px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 5;
+	opacity: 0;
+}
+
+#video-layer.loaded .close_x_btn{
+	opacity: 1;
+}
+
+
+#parley{
+	background: url('/images/adidas/event/parley/181115/bg.jpg')top center no-repeat;
+	.inner{
+
+	}
+
+	.parley_txt{
+		font:400 1.1rem/20px 'NotoSansKR';
+		text-align: center;
+	    line-height: 25px;
+	}
+
+	.adihauseDin{
+		font:14px/12px 'AdihausDIN-Cond';
+		text-align: center;
+		letter-spacing: 1px;
+	}
+	.cyan{
+		color:#00a2a4;
+		font:24px 'adinenuPro-bold';
+	}
+	.cyan2{
+		color:#00a2a4;
+		font:700 24px 'NotoSansKR';
+	}
+	.btn{
+		display: block;
+	    background-color: #000;
+	    color: #fff;
+	    font: 400 12px/12px 'NotoSansKR';
+	    width: 90%;
+	    border: 1px solid #000;
+	    text-align: center;
+	    margin: 0 auto;
+	    line-height: 48px;
+	}
+
+
+	// 시작
+	.video{
+		position: relative;
+			.video-button{
+					// position: absolute;
+				    // top: 59%;
+				    // left: 40%;
+				    // width: 20%;
+				    // height: 14%;
+					// z-index: 2;
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 73%;
+					z-index: 2;
+			}
+		img{
+			width:100%;
+		}
+		.txt{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-37%);
+			width:100%;
+
+			p{
+				text-align: center;
+			    margin-bottom: 25%;
+			    line-height: 25px;
+				span{
+					color:#008789;
+					letter-spacing: 1px;
+				}
+			}
+		}
+	}
+	.section{
+		position: relative;
+		.img{
+			padding:1.5rem;
+			img{
+				width:100%;
+			}
+		}
+		.txt{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,23%);
+			width: 100%;
+			h1{
+				text-align: center;
+			}
+			p{
+				text-align: center;
+			}
+		}
+	}
+	.desc{
+		position: relative;
+		.img{
+			img{
+				width:100%;
+			}
+		}
+		.txt{
+			h1{
+				text-align: center;
+			}
+			p{
+				text-align: center;
+				margin:20px 0;
+			}
+			text-align: center;
+		}
+		.btn{
+			display: inline-block;
+			width: 43%;
+			margin-right: 5px;
+			&.btn2{
+				margin-right: 0;
+				margin-left: 5px;
+				background: #00a2a4;
+				border: 0;
+			}
+		}
+	}
+	.event{
+		padding-top: 3.2rem;
+		padding-bottom: 43rem;
+		background: url('http://imagem.adidas.co.kr/images/adidas/event/parley/171014/statement_bg.jpg')top center no-repeat;
+		background-size: cover;
+		.img{
+			img{width:100%;}
+		}
+		.inner{
+			position: absolute;
+			width: 100%;
+			.txt{
+				.title{
+					line-height: 28px;
+				    letter-spacing: 2.5px;
+					&.adihauseDin{
+						margin-top: 2.3rem;
+						font-size: 2.2rem;
+						&:after{
+							content: '';
+						    display: block;
+						    width: 25px;
+						    height: 2px;
+						    background: #2faf92;
+						    text-align: center;
+						    margin: 1rem auto;
+						}
+					}
+					span{
+						font-size: 2rem;
+					}
+					&.parley_txt{
+						position: relative;
+						padding-bottom: 10px;
+						margin-bottom: 10px;
+	    				font-size: 1.1rem;
+						letter-spacing: 0px;
+
+					}
+				}
+				.txt_box{
+					text-align: center;
+					margin-top: 3rem;
+					h4{
+						font:400 1.3rem/20px 'NotoSansKR';
+						span{
+							font:1.2rem/20px 'AdihausDIN-Cond';
+							letter-spacing: 1px;
+						}
+					}
+					p{
+						margin-top: 0.5rem;
+						font:400 1.1rem/20px 'NotoSansKR';
+					}
+
+				}
+			}
+		}
+	}
+
+	.btm1{
+		.img{
+			padding:1.5rem;
+			img{
+				width:100%;
+			}
+		}
+		.txt{
+			h1{
+				text-align: center;
+			}
+			p{
+				text-align: center;
+				margin:20px 0;
+			}
+		}
+	}
+
+	.btm2{
+		margin-top: 35px;
+		.img{
+			padding:1.5rem;
+			img{
+				width:100%;
+			}
+		}
+		.txt{
+			h1{
+				text-align: center;
+			}
+			p{
+				text-align: center;
+				margin:20px 0;
+			}
+		}
+	}
+
+
+
+
+
+}
