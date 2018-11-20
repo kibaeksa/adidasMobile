@@ -8,8 +8,11 @@
 	<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 	<link rel="stylesheet" href="/MO/reebok/css/reebok_m.css" />
 	<script type="text/javascript" src="/MO/reebok/js/jquery.js"></script>
+	<script type="text/javascript" src="/MO/reebok/js/owl.carousel.js"></script>
 	<script type="text/javascript" src="/MO/reebok/js/reebok_js_m.js"></script>
 	<script type="text/javascript" src="//imagem.reebok.co.kr/js/modalPopup.min.js"></script>
+
+	<script type="text/javascript" src="http://imagem.adidas.co.kr/js/jquery-1.12.0.min.js"></script>
 	<script type="text/javascript" src="/MO/reebok/js/swipe.js"></script>
 	<script type="text/javascript" src="/js/owl.carousel.js"></script>
 
@@ -110,6 +113,7 @@
 					}
 					.collection_cut ul{
 						overflow: hidden;
+						margin-top:28px;
 					}
 					.collection_cut ul li{
 						position: relative;
@@ -124,24 +128,25 @@
 					.slide_area .img img{
 						width: 100%;
 					}
-					.num_paging{
-						position: absolute;
-					    overflow: hidden;
-					    bottom: 4px;
-					    left: 50%;
-					    width: 55%;
-					    transform: translate(-50%);
-					    text-align: center;
+					.owl-nav{
+						display: none;
 					}
-					.num_paging a{
+					.owl-dots{
+					    overflow: hidden;
+					    width: 55%;
+					    text-align: center;
+					    width: 110px;
+					    margin: 5px auto;
+					}
+					.owl-dots .owl-dot{
 						display: inline-block;
 						border-radius: 50%;
-						width: 1rem;
-						height: 1rem;
-						margin-right: 0.2rem;
+						width: 0.9rem;
+					    height: 0.9rem;
+					    margin-right: 0.6rem;
 						background: rgba(255, 255, 255, 0.5);
 					}
-					.num_paging a.on{
+					.owl-dots .owl-dot.active{
 						background: #fff;
 					}
 
@@ -160,27 +165,22 @@
 						<img src="/images/reebok/event/holiday/20181119/1811_r_holiday_MO_2.jpg" alt="">
 					</div>
 
-					  <div class="sections collections2">
+					  <div class="collections2">
 
-						  <div class="collection_cut">
-							  <div class="slider" id="collection_slider">
-								  <ul>
-									  <li><img src="/images/reebok/event/holiday/20181119/slide1.jpg" alt=""></li>
-										<li><img src="/images/reebok/event/holiday/20181119/slide2.jpg" alt=""></li>
-										<li><img src="/images/reebok/event/holiday/20181119/slide3.jpg" alt=""></li>
-										<li><img src="/images/reebok/event/holiday/20181119/slide4.jpg" alt=""></li>
-								  </ul>
-							  </div>
-						  </div>
+  						<div class="collection_cut">
 
-						  <div class="num_paging">
-							  <a href="javascript:void(0)" class="on"></a>
-							  <a href="javascript:void(0)"></a>
-							  <a href="javascript:void(0)"></a>
-							  <a href="javascript:void(0)"></a>
-						  </div>
+  							<div class="slider" >
+  								<ul id="collection_slider2">
+									<li class="active"><img src="/images/reebok/event/holiday/20181119/slide1.jpg" alt=""></li>
+									<li><img src="/images/reebok/event/holiday/20181119/slide2.jpg" alt=""></li>
+									<li><img src="/images/reebok/event/holiday/20181119/slide3.jpg" alt=""></li>
+									<li><img src="/images/reebok/event/holiday/20181119/slide4.jpg" alt=""></li>
+  								</ul>
+  							</div>
+  						</div>
 
-					  </div>
+  					</div>
+
 
 
 
@@ -201,26 +201,38 @@
 
 					<script type="text/javascript">
 
+
 						(function($){
 
-							var productsSlider = Swipe(document.getElementById('collection_slider'),{
-								stopPropagation: true,
-								auto:true,
-								speed:6000,
-								callback: function(index, element) {
-									$('.collections2 .num_paging a').removeClass('on').eq(index).addClass('on');
-								}
-							});
 
-							$('.collections2 .num_paging a').bind('click',function(){
-								if($(this).hasClass('on')){
-									return;
-								}
-								productsSlider.slide($(this).index());
-							});
+						  var visualSlider = $("#collection_slider2");
+
+
+						  visualSlider.owlCarousel({
+							 stagePadding: 0,
+							 margin:0,
+							 items : 1,
+							 merge: true,
+							 canter : true,
+							 loop : true,
+							 nav:true,
+							 autoplay:true,
+							 autoplayTimeout:3000
+						 });
+
+
+
+						  // $('#collection_slider2 .owl-nav .owl-prev').html('<img src="/images/reebok/about/wannaone/180626/button_prev.png" alt="">');
+						  // $('#collection_slider2 .owl-nav .owl-next').html('<img src="/images/reebok/about/wannaone/180626/button_next.png" alt="">');
+						  //
+
 
 
 						})(jQuery);
+
+
+
+
 
 					</script>
 
