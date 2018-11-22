@@ -157,6 +157,31 @@ gulp.task('watch',function(){
         }
     });
 
+    // adidas MO UNDER DIRECTORY CREATE
+    gulp.watch('./app/MO/adidas/html/campaign/**/*.scss').on('change',function(file){
+        if(!file.path.match(/\\build\\?/)){
+            handleSassInject(file.path);
+        }
+    });
+
+    gulp.watch('./app/MO/adidas/html/campaign/**/*.html').on('change',function(file){
+        if(!file.path.match(/\\build\\?/)){
+            handleSassInject(file.path.replace(/(\W+|\w+)\.html/,'index.scss'));
+        }
+    });
+
+    // reebok MO UNDER DIRECTORY CREATE
+    gulp.watch('./app/MO/reebok/html/campaign/**/*.scss').on('change',function(file){
+        if(!file.path.match(/\\build\\?/)){
+            handleSassInject(file.path , 'reebok');
+        }
+    });
+    gulp.watch('./app/MO/reebok/html/campaign/**/*.html').on('change',function(file){
+        if(!file.path.match(/\\build\\?/)){
+            handleSassInject(file.path.replace(/(\W+|\w+)\.html/,'index.scss') , 'reebok');
+        }
+    });
+
 
     gulp.watch('./app/js/adidas/common.js',['scriptsCommon']);
     gulp.watch('./app/js/modalPopup.js',['scripts']);
