@@ -115,7 +115,7 @@
 				</div>
 
 
-<!--  상단 공지바 (PDP, PLP만 노출) -->
+				<!--  상단 공지바 (PDP, PLP만 노출) -->
 
 
 
@@ -124,16 +124,11 @@
 			<section id="contents">
 				<div class="campaign about_campaign campaign_bt21">
 
-					<div class="location">
-						<a href="http://m.reebok.co.kr/brand/campaign/list.action">ABOUT US</a>
-						<a href="http://m.reebok.co.kr/brand/campaign/list.action" style="letter-spacing:1px;">CAMPAIGN</a>
-						<span style="letter-spacing:1px;">BT21</span>
-					</div>
 					<!-- <div class="main"><img src="http://imagem.reebok.co.kr/MO/reebok/images/campaign/classic/bt21/main.jpg" alt=""></div> -->
 					<div class="main"><img src="http://imagem.reebok.co.kr/images/reebok/about/classic/bt21/main.jpg" alt=""></div>
-					<div class="video"><img src="http://imagem.reebok.co.kr/images/reebok/about/classic/bt21/video1.jpg" alt=""></div>
-					<div class="video"><img src="http://imagem.reebok.co.kr/images/reebok/about/classic/bt21/video2.jpg" alt=""></div>
-					<div class="video"><img src="http://imagem.reebok.co.kr/images/reebok/about/classic/bt21/video3.jpg" alt=""></div>
+					<div class="video play_btn scrollbox video1" data-video-id="34E86QXlIGQ"><img src="http://imagem.reebok.co.kr/images/reebok/about/classic/bt21/video1.jpg" alt=""></div>
+					<div class="video play_btn scrollbox video2" data-video-id="qJQU3MmZRhI"><img src="http://imagem.reebok.co.kr/images/reebok/about/classic/bt21/video2.jpg" alt=""></div>
+					<div class="video play_btn scrollbox video1" data-video-id="vWSzB9TfMLg"><img src="http://imagem.reebok.co.kr/images/reebok/about/classic/bt21/video3.jpg" alt=""></div>
 					<div class="bottom"><img src="http://imagem.reebok.co.kr/images/reebok/about/classic/bt21/bottom.jpg" alt=""></div>
 
 					<div class="list">
@@ -150,56 +145,6 @@
 
 				<script type="text/javascript">
 					(function($){
-						var owlSlider = $('#slider_owl');
-
-						owlSlider.on('changed.owl.carousel', function(event) {
-						    /*
-						        Callback 이벤트 (슬라이드가 실행 될 떄마다 실행되는 함수)
-						        * index 사용하기
-						        event.item.index
-
-						        * length 사용하기
-						        event.item.count
-						    */
-						});
-
-						owlSlider.owlCarousel({
-						    stagePadding: 0,
-						    margin:0,
-						    items : 1,
-						    merge: true,
-						    loop : true,
-						    navigation: true,
-						    nav: true,
-							autoplay:true,
-						});
-						$('.owl-prev').html('<img src="/images/reebok/about/classic/dashonic/arrow_prev.png" alt="">');
-						$('.owl-next').html('<img src="/images/reebok/about/classic/dashonic/arrow_next.png" alt="">');
-
-
-						setTimeout(function(){
-							$('.main_section').addClass('on');
-						},1000);
-
-						var rolling = setInterval(mainslide,3500)
-						var index = 1;
-						function mainslide(){
-							if(index ==0){
-								$('.slider_wrap .slide .item').removeClass('on').eq(index).addClass('on');
-								$('.slider_wrap .indicator span').removeClass('on').eq(index).addClass('on');
-								index =1;
-							}else{
-
-								$('.slider_wrap .slide .item').removeClass('on').eq(index).addClass('on');
-								$('.slider_wrap .indicator span').removeClass('on').eq(index).addClass('on');
-								index = 0;
-							}
-						}
-						$('.slider_wrap .indicator span').click(function(){
-							index = $(this).index();
-							$('.slider_wrap .slide .item').removeClass('on').eq(index).addClass('on');
-							$('.slider_wrap .indicator span').removeClass('on').eq(index).addClass('on');
-						});
 
 						$('.play_btn').bind('click',function(){
 							// alert('COMING SOON');
@@ -270,8 +215,6 @@
 							player.stopVideo();
 						}
 
-
-
 						$(window).ready(function(){
 
 							var scrollArray = [];
@@ -285,7 +228,7 @@
 								var thispos = $(this).scrollTop() + 350;
 								for(var pos = 0; pos<scrollArray.length; pos++){
 									if(thispos>scrollArray[pos]){
-										$('.tamin_campaign .scrollbox').eq(pos).addClass('on');
+										$('.about_campaign .scrollbox').eq(pos).addClass('on');
 									}
 								}
 							});
