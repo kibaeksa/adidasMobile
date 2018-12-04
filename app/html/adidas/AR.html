@@ -10,42 +10,7 @@
 	<script type="text/javascript" src="/js/jquery-1.12.0.min.js"></script>
     <script type="text/javascript" src="/js/modalPopup.min.js"></script>
 	<script type="text/javascript" src="/js/swipe.js"></script>
-	<script type="text/javascript" src="/js/owl.carousel.js"></script>
-
-    <style>
-    /* modal-171130 START */
-        .modal {
-            display: block;
-            position: fixed;
-            z-index: 1;
-            padding-top: 100px;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgb(0,0,0);
-            background-color: rgba(0,0,0,0.4);
-        }
-        .modal-content {
-            background: none;
-            margin: auto;
-            width: 90%;
-        }
-        .close-modal {
-            color: #fff;
-            float: right;
-            font-size: 28px;
-            padding-bottom: 5px;
-        }
-        .close-modal:hover,
-        .close-modal:focus {
-            color: #000;
-            text-decoration: none;
-            cursor: pointer;
-        }
-        /*modal-171130 END*/
-    </style>
+	<script type="text/javascript" src="/js/owl.carousel.js"></script>   
 
 	<title>아디다스 모바일</title>
 </head>
@@ -467,7 +432,7 @@
 		<div id="container">
 
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css">
-            <link rel="stylesheet" type="text/css" href="http://imagem.adidas.co.kr/css/adidas/m_event_ar.css">
+            <link rel="stylesheet" type="text/css" href="https://imagem.adidas.co.kr/css/adidas/m_event_ar.css">
             <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.jquery.min.js"></script>
 
@@ -1218,19 +1183,29 @@
 			</div>
 		</div>
 	</div>
-
-    <!-- modal-171130 START -->
-    <div id="myModal" class="modal">
-      <!-- Modal content -->
-      <div class="modal-content">
-        <span class="close-modal">&times;</span>
-        <div class="modal-content_box">
-            <!-- <a href="http://shop.adidas.co.kr/PF080804.action?RS_NO=206&RST_DY=2017-09-09&RST_NO=307&RS_TYPE=02&RS_ONOFF=01" style="position:absolute;bottom:0;width:100%;display:block;height:60px;z-index:1;"></a> -->
-            <img src="http://imagem.adidas.co.kr/images/adidas/club/1712_a_pop_ar_MO.jpg" width="100%" alt="">
-        </div>
-      </div>
-    </div>
-    <!-- modal-171130 END -->
+	
+	<!-- 181204 재정비 팝업 -->
+	<style>
+		.layerpopup-ar_adidas_runner .close_x_btn:after {
+			background: none;
+		}
+	
+		.layerpopup-ar_adidas_runner .close_x_btn:before {
+			background: none;
+		}
+	</style>
+	<div class="layerpopup-wrapper layerpopup-ar_adidas_runner">
+		<div class="overlay" style="background: rgba(0, 0, 0, 0.7);"></div>
+		<div class="layerpopup" style="background:none;">
+			<div class="header">
+				<div class="close_x_btn" href="javascript:void(0)" style="-webkit-transform: translate3d(0,-100%,0);transform: translate3d(0,-100%,0);background:url('http://imagem.adidas.co.kr/images/adidas/ar_pop_btn_cancel_201709.png');    background-size: 100%;"></div>
+			</div>
+			<div class="contents" style="padding: 1.2rem 1rem 0;">
+				<img src="http://imagem.adidas.co.kr/images/adidas/club/1812_a_pop_run_MO.jpg" alt="" style="width:100%;">
+			</div>
+		</div>
+	</div>
+	<!-- 181204 재정비 팝업 end-->
 
     <!-- 170613 올라픽코드 -->
     <script type="text/javascript" src="https://photorankstatics-a.akamaihd.net/81b03e40475846d5883661ff57b34ece/static/frontend/latest/build.min.js"  data-olapic="olapic_specific_widget" data-instance="d087e63beffe97f10054d1abf0ed486d" data-lang="KO_KO"  data-apikey="9e9c4f3a8aa4a5cd0abbc84d02e10fbfc1689b7cd22b3bf2b6043a41121db91b" async="async"></script>
@@ -1242,19 +1217,6 @@
 		(function($){            
 
 			$(document).ready(function() {
-
-                // modal-171130 START
-                var modal = $('.modal');
-                var span = $(".close-modal")[0];
-
-                $(".close-modal").on('click',function () {
-                    $('.modal').css('display','none')
-                });
-
-                $(".modal").on('click',function () {
-                    $('.modal').css('display','none')
-                });
-                // modal-171130 END
 
                 $('.layerpopup-wrapper .close_x_btn').click(function(){
                     $(this).parent('.header').parent('.layerpopup-adiclub').parent('.layerpopup-wrapper').css({'display':'none'})
