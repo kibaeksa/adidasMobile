@@ -3330,7 +3330,7 @@ width: 75%;
 
 #container.main .main_visual .btn a{
 	width: 100%;
-	height: 39px;
+	height: 40px;
 	text-align: center;
 	margin-bottom:10px;
 	color: #fff;
@@ -3338,17 +3338,49 @@ width: 75%;
 	background:rgba(2,95,142,1);
     background: -webkit-linear-gradient(left,#025f8e,#0286cd);
     background: linear-gradient(to right,#025f8e,#0286cd);
+
+	font:500 14px/40px 'NotoSansKR';
+}
+/* 181114 bullet UI 변경 */
+#container.main .main_visual.bullet_v2 .box.white .btn a{
+	width: 100%;
+	height: 39px;
+	text-align: center;
+	margin-bottom:10px;
+	color: #fff;
+	display: block;
+	background:rgba(0,0,0,1);
+    background: -webkit-linear-gradient(left,#000,#000);
+    background: linear-gradient(to right,#000,#000);
+
 	font:500 13px/38px 'NotoSansKR';
     letter-spacing: 1px;
 }
+#container.main .main_visual.bullet_v2 .box.black .btn a{
+	width: 100%;
+	height: 39px;
+	text-align: center;
+	margin-bottom:10px;
+	color: #000;
+	display: block;
+	background:rgba(255,255,255,1);
+    background: -webkit-linear-gradient(left,#fff,#fff);
+    background: linear-gradient(to right,#fff,#fff);
+
+	font:500 13px/38px 'NotoSansKR';
+    letter-spacing: 1px;
+}
+#container.main .main_visual.bullet_v2 .btn a img{
+    width:25px;
+    vertical-align: middle;
+    padding-left: 11px;
+    position: relative;
+    top: -1px;
+}
+/* 181114 bullet UI 변경 끝 */
 
 #container.main .main_visual .white .btn a{
 	background:rgba(0,0,0,1);
-}
-
-#container.main .main_visual .black .btn a{
-	background:rgba(255,255,255,255);
-    color:#000;
 }
 
 #container.main .main_visual .btn a:last-child{
@@ -3359,66 +3391,6 @@ width: 75%;
 	font-size:11px;
 	margin-left:5px;
 }
-
-
-
-
-/* 181114 bullet_v2 UI 변경 */ /*1204 반영 확인후 삭제예정*/
-#container.main .main_visual.bullet_v2 .box.white .btn a{
-    position: relative;
-	background:rgba(0,0,0,1);
-}
-#container.main .main_visual.bullet_v2 .box.black .btn a{
-    position: relative;
-	background:rgba(255,255,255,1);
-    color:#000;
-}
-#container.main .main_visual.bullet_v2 .btn a img{
-    width:25px;
-    vertical-align: middle;
-    padding-left: 11px;
-    position: relative;
-    top: -1px;
-}
-/* 181114 bullet_v2 UI 변경 끝 */
-
-/* 181204 bullet_v3 UI 변경*/
-#container.main .main_visual.bullet_v3 .box .btn a{
-    position: relative;
-    width:initial;
-    display: inline-block;
-    padding: 0 21px;
-}
-#container.main .main_visual.bullet_v3 .box .btn a::after{
-    display: block;
-    content: '';
-    position:absolute;
-    top:0;
-    left: 0;
-    width:100%;
-    height: 100%;
-    transform: translate(3px,3px);
-    -webkit-transform: translate(3px,3px);
-}
-#container.main .main_visual.bullet_v3 .box.white .btn a::after{
-    box-shadow: inset 0 0 0 1px #000;
-    -webkit-box-shadow: inset 0 0 0 1px #000;
-}
-#container.main .main_visual.bullet_v3 .box.black .btn a::after{
-    box-shadow: inset 0 0 0 1px #fff;
-    -webkit-box-shadow: inset 0 0 0 1px #fff;
-}
-#container.main .main_visual.bullet_v3 .btn a img{
-    width:25px;
-    vertical-align: middle;
-    padding-left: 11px;
-    position: relative;
-    top: -1px;
-}
-/* 181204 bullet_v3 UI 변경 끝 */
-
-
-
 
 #container.main .main_visual .owl-dots{
 	padding: 15px 0;
