@@ -108,9 +108,47 @@
 
 	.main{
 		position: relative;
+		padding-bottom: 100%;
 		z-index: 2;
-		img{
+		background: url('http://imagem.adidas.co.kr/images/adidas/event/bts/181127/video.jpg?v=1') no-repeat;
+		background-size: cover;
+		background-position: center center;
+		&.on{
+			>video{
+				@include css3(opacity,1);
+			}
+		}
+		// &.move{
+		// 	>video{
+		// 		left:-60%;
+		// 	}
+		// }
+		>img{
 			width: 100%;
+		}
+		.inn{
+			position: absolute;
+		    text-align: center;
+		    top: 50%;
+		    left: 50%;
+		    transform: translate(-50%,-50%);
+		    width: 16%;
+		    z-index: 5;
+			img{
+				width: 100%;
+			}
+		}
+		video{
+			position: absolute;
+			top:0;
+			left:0;
+			right:0;
+			bottom:0;
+			width: 100%;
+			height: 100%;
+			object-fit:cover;
+			@include css3(opacity,0);
+			@include css3(transition, opacity 1s);
 		}
 	}
 
@@ -152,7 +190,7 @@
 			position: absolute;
 			&.deco1{
 				top: 2%;
-				left: 0;
+			    left: 0%;
 			}
 			&.deco2{
 				right: 2%;
