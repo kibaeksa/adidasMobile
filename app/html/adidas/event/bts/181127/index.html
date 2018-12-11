@@ -828,9 +828,23 @@
 
                 (function($){
 
-                    setTimeout(function(){
-                        $('.main').addClass('on');
-                    },1000);
+                    var isMobile = {
+                        Android: function() {
+                            return navigator.userAgent.match(/Android/i);
+                        },
+                        iOS: function() {
+                            return navigator.userAgent.match(/iPhone|iPad|iPod/i);                        },
+                        any: function() {
+                            return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+                        }
+                    };
+                    if( isMobile.iOS() ){
+                        setTimeout(function(){
+                            $('.main').addClass('on');
+                        },1000);
+                    };
+
+
                     var coverh3 = ['스마트 데코 3종 세트','스마트 큐브 3종 세트','스마트 미니 3종 세트'];
                     var coverdesc = [
                         '꾸미기 좋아하는 우리 딸,<br>속이 보이는 메쉬 포켓에<br>인형도 넣고 사탕도 넣고 사진도 넣고.<br>지퍼 슬라이더도 내 맘대로.<br>"꾸미는 재미,<br>개성있는 나만의 가방"',
