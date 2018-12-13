@@ -60,9 +60,7 @@ adiApp.getNodefromString = function (htmlString) {
 
 			if($('.nav_main .btn_search').hasClass('open')){
 				$('#S_PROD_NM').blur();
-				$('#header .nav_search').removeClass('slide-open').css({
-					transform : 'translate3d(100% ,0 ,0)'
-				});
+				$('#header .nav_search_test').removeClass('slide-open').fadeOut(200);
 				$('.nav_main .btn_search').removeClass('open');
 				setTimeout(function(){
 					setTimeout(function(){
@@ -118,6 +116,7 @@ adiApp.getNodefromString = function (htmlString) {
 
 
 	$('.nav_main .btn_search').bind('click',function(){
+		// search area가 열려있다면 아래 실행
 		if($(this).hasClass('open')){
 			$(this).removeClass('open')
 
@@ -126,9 +125,11 @@ adiApp.getNodefromString = function (htmlString) {
 			// 181211 search test
 			$('#header .nav_search_test').removeClass('slide-open').css({
 				//$(this).css({"display":"none"});
-                transform: 'translate3d(0 ,-100% ,0)'
-			});
+				// transform: 'translate3d(0 ,-100% ,0)'
+			}).fadeOut(200);
 			// 181211 search test END
+
+			$("#textarea").blur();
 
 			$('html,body').animate({
 				scrollTop : $('.nav_main').data('prevScrollTop').scrollTop
@@ -136,7 +137,7 @@ adiApp.getNodefromString = function (htmlString) {
 
 			$('#nav_menu_overlay').removeClass('active').hide();
 			$('.navmenu_close').removeClass('open').hide();
-
+		// search area가 닫혀있다면 아래 실행
 		}else{
 			var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
 			var topBnnElem = $('.top_bnn').get(0)
@@ -162,21 +163,31 @@ adiApp.getNodefromString = function (htmlString) {
 
 			// 181211 search test
 			$('#header .nav_search_test').addClass('slide-open').css({
-				top: document.querySelector('#header>.nav_main').getBoundingClientRect().bottom,
-				// minHeight: elemH_windowAll,
-				// height: elemH_windowAll,
-				transform: 'translate3d(0 ,0 ,0)',
-            });
+				top: document.querySelector('#header>.nav_main').getBoundingClientRect().bottom - 1
+			}).fadeIn(200);
             
-            //$('#nav_menu_overlay').show().addClass('active');
-			// 181211 search test END			
-
+			// $('#nav_menu_overlay').show().addClass('active');
+			$('#nav_menu_overlay').removeClass('active').hide();
+			// 181211 search test END
+			
 			setTimeout(function(){
 				$('#S_PROD_NM').focus();
-			},600);
+				// $("#S_PROD_NM").attr("placeholder", "");
+			},200);
+
+			$("#container").on('click',function(){
+				$(".nav_main .btn_search").removeClass("open");
+				$('#header .nav_search_test').removeClass('slide-open').css({
+					//$(this).css({"display":"none"});
+					// transform: 'translate3d(0 ,-100% ,0)'
+					'z-index': 0,
+					'opacity': 0
+				});
+			});
 		}
 		return false;
 	});
+	
 
 	$('#header .nav_menu .gnb>li li').bind('click',function(event){
 		event.stopPropagation();
