@@ -60,7 +60,7 @@ adiApp.getNodefromString = function (htmlString) {
 
 			if($('.nav_main .btn_search').hasClass('open')){
 				$('#S_PROD_NM').blur();
-				$('#header .nav_search_test').removeClass('slide-open').fadeOut(200);
+				$('#header .nav_search_test').removeClass('slide-open').fadeOut(0);
 				$('.nav_main .btn_search').removeClass('open');
 				setTimeout(function(){
 					setTimeout(function(){
@@ -126,7 +126,7 @@ adiApp.getNodefromString = function (htmlString) {
 			$('#header .nav_search_test').removeClass('slide-open').css({
 				//$(this).css({"display":"none"});
 				// transform: 'translate3d(0 ,-100% ,0)'
-			}).fadeOut(200);
+			}).fadeOut(0);
 			// 181211 search test END
 
 			$("#textarea").blur();
@@ -164,7 +164,7 @@ adiApp.getNodefromString = function (htmlString) {
 			// 181211 search test
 			$('#header .nav_search_test').addClass('slide-open').css({
 				top: document.querySelector('#header>.nav_main').getBoundingClientRect().bottom - 1
-			}).fadeIn(200);
+			}).fadeIn(0);
             
 			// $('#nav_menu_overlay').show().addClass('active');
 			$('#nav_menu_overlay').removeClass('active').hide();
