@@ -1,6 +1,6 @@
 var express = require('express');
 var server =require('gulp-express');
-var app = express();
+var mobile = express();
 var jade = require('gulp-jade');
 // for gulp
 var gulp = require('gulp');
@@ -62,15 +62,15 @@ var handleSassInject  = function(_path , brand){
 
 gulp.task('server',function(){
     // connect.server({
-    //     root : './app',
+    //     root : './mobile',
     //     port : 2001,
     //     livereload : true
     // });
-    server.run(['app.js']);
+    server.run(['mobile.js']);
 });
 
 // gulp.task('sass-inline',function(){
-//     gulp.src('./app/html/adidas/event/**/*.scss',{base : './'})
+//     gulp.src('./mobile/html/adidas/event/**/*.scss',{base : './'})
 //         .pipe(sass({ outputStyle : 'compressed'}).on('error',sass.logError))
 //         .pipe(gulp.dest(function(file){
 //             sassInject.path = path.join(path.dirname(file.path) , '');
@@ -112,67 +112,67 @@ gulp.task('sass-inline-reebok:inject',function(){
 
 gulp.task('scripts',function(){
     return gulp.src([
-        './app/js/owl.carousel.js',
-        './app/js/swipe.js',
-        './app/js/modalPopup.js'
+        './mobile/js/owl.carousel.js',
+        './mobile/js/swipe.js',
+        './mobile/js/modalPopup.js'
     ]).
         pipe(concat('adidas.ui.js')).
-        pipe(gulp.dest('./app/js/adidas/dest/')).
+        pipe(gulp.dest('./mobile/js/adidas/dest/')).
         pipe(rename('adidas.ui.min.js')).
         pipe(uglify()).
-        pipe(gulp.dest('./app/js/adidas/dest/'));
+        pipe(gulp.dest('./mobile/js/adidas/dest/'));
 });
 
 gulp.task('scriptsCommon',function(){
-    return gulp.src('./app/js/adidas/common.js').
+    return gulp.src('./mobile/js/adidas/common.js').
         pipe(concat('uicommon.min.js')).
         pipe(uglify()).
-        pipe(gulp.dest('./app/js/adidas/dest/'));
+        pipe(gulp.dest('./mobile/js/adidas/dest/'));
 });
 
 gulp.task('watch',function(){
-    // gulp.watch('./app/html/adidas/event/**/*.scss',['sass-inline']);
-    // gulp.watch('./app/html/adidas/event/**/*.html',['sass-inline']);
-    gulp.watch('./app/html/adidas/event/**/*.scss').on('change',function(file){
+    // gulp.watch('./mobile/html/adidas/event/**/*.scss',['sass-inline']);
+    // gulp.watch('./mobile/html/adidas/event/**/*.html',['sass-inline']);
+    gulp.watch('./mobile/html/adidas/event/**/*.scss').on('change',function(file){
         if(!file.path.match(/\\build\\?/)){
             handleSassInject(file.path);
         }
     });
 
-    gulp.watch('./app/html/adidas/event/**/*.html').on('change',function(file){
+    gulp.watch('./mobile/html/adidas/event/**/*.html').on('change',function(file){
         if(!file.path.match(/\\build\\?/)){
             handleSassInject(file.path.replace(/(\W+|\w+)\.html/,'index.scss'));
         }
     });
 
-    gulp.watch('./app/html/reebok/event/aboutus/campaign/**/*.scss').on('change',function(file){
+    gulp.watch('./mobile/html/reebok/event/aboutus/campaign/**/*.scss').on('change',function(file){
         if(!file.path.match(/\\build\\?/)){
             handleSassInject(file.path , 'reebok');
         }
     });
 
-    gulp.watch('./app/html/reebok/event/aboutus/campaign/**/*.html').on('change',function(file){
+    gulp.watch('./mobile/html/reebok/event/aboutus/campaign/**/*.html').on('change',function(file){
         if(!file.path.match(/\\build\\?/)){
             handleSassInject(file.path.replace(/(\W+|\w+)\.html/,'index.scss') , 'reebok');
         }
     });
 
     // mobile folder
-    gulp.watch('./app/mobile/html/reebok/event/campaign/**/*.scss').on('change',function(file){
+    gulp.watch('./mobile/mobile/html/reebok/event/campaign/**/*.scss').on('change',function(file){
         if(!file.path.match(/\\build\\?/)){
             handleSassInject(file.path , 'reebok');
         }
     });
 
-    gulp.watch('./app/mobile/html/reebok/event/campaign/**/*.html').on('change',function(file){
+    gulp.watch('./mobile/mobile/html/reebok/event/campaign/**/*.html').on('change',function(file){
         if(!file.path.match(/\\build\\?/)){
             handleSassInject(file.path.replace(/(\W+|\w+)\.html/,'index.scss') , 'reebok');
         }
     });
 
 
-    gulp.watch('./app/js/adidas/common.js',['scriptsCommon']);
-    gulp.watch('./app/js/modalPopup.js',['scripts']);
+    gulp.watch('./mobile/js/adidas/common.js',['scriptsCommon']);
+    gulp.watch('./mobile/js/modalPopup.js',['scripts']);
 
 });
 
