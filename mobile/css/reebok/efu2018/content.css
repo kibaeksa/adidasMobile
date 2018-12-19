@@ -1,0 +1,698 @@
+@charset "utf-8";
+@import url('//imagem.reebok.co.kr/MO/reebok/css/fonts.css');
+@import url('common.css?v=1.0');
+
+/***** main *****/
+#contents.main{font-size:14px; color:#1b1818; padding-bottom:40px;}
+#contents.main article img{vertical-align:top; max-width:100%; width:100%;}
+#contents.main article h2{height:100px; line-height:100px; color:#000; font-family:'dinpro cond'; font-size:20px; font-weight:500; letter-spacing:5px; text-align:center;}
+#contents.main article a{color:#1b1818}
+#contents.main .nMainView{position:relative; text-align:center;}
+#contents.main .nMainView .slick-slide{position:relative;}
+#contents.main .nMainView img{max-width:100%;}
+#contents.main .nMainView .nBtnAreaWrap{position:absolute; left:0px; bottom:71%; width:100%;}
+#contents.main .nMainView .nBtnAreaWrap .nBtnArea{max-width:720px; margin:0 auto}
+#contents.main .nMainView .nBtnArea a{margin:0 2%;}
+#contents.main .nMainView .icoImg{background-image:url(/images/reebok/efu2018/common/ico_common.png); background-repeat:no-repeat; background-size:250px 400px;}
+#contents.main .nMainView .icoDown{position:fixed; bottom:10%; left:50%; margin-left:-15px; width:30px; height:16px; margin-top:0; background-position:0 0; animation-duration: 0.5s; transition: all 0.35s ease-in-out 0.1s;  animation-name: icoAni; transform: translateY(5px); animation-iteration-count: infinite; animation-direction: alternate; opacity:1;}
+#contents.main .nMainView .nViewSlide .slick-dots{position:absolute; left:0px; bottom:5%; width:100%;}
+#contents.main .nMainProduct{ position:absolute; bottom:10%; width:100%; left:0px; padding:0 15px; box-sizing:border-box; animation-duration: 0.5s;  transition: all 0.35s ease-in-out 0.1s; opacity:0;transform: translateY(35px); }
+#contents.main .nMainProduct .viewSlide{max-width:720px; margin:0 auto;}
+#contents.main .nMainProduct li{width:50%; float:left; padding:0 8px; box-sizing:border-box;}
+#contents.main .nMainProduct .textArea{padding:10px 0 10px; background:#fff; max-width:300px; margin:0 auto;}
+#contents.main .nMainProduct .textArea>span{display:block; text-align:center; font-size:12px; opacity:0.6; font-family:'dinpro cond'; font-weight:500; letter-spacing:1px;}
+#contents.main .nMainProduct .textArea>strong{display:block; height:45px; text-align:center; box-sizing:border-box; padding:0 10px; font-family: 'NotoSansKR'; font-weight:500; font-size:15px; overflow:hidden;}
+#contents.main .nMainProduct .textArea>em{display:block; margin-top:5px; text-align:center; font-style:normal; font-family: 'reefont-condensed'; font-size:18px; letter-spacing:1px; }
+#contents.main .nMainProduct .textArea>em>span{display:inline-block; margin-left:-4px; font-family: 'NotoSansKR'; font-weight:500; font-size:13px; }
+#contents.main .nMainProduct.motion{ animation-duration: 0.5s; transition: all 0.35s ease-in-out 0.1s;  animation-name: slideAni; transform: translateY(0px); animation-direction: alternate; opacity:1;}
+#contents.main .nNowReebok{background:#f2f2f2; box-sizing:border-box;}
+#contents.main .nowSlide{position:relative; max-width:720px; margin:0 auto; overflow:hidden}
+#contents.main .nowSlide .imgArea{text-align:center; padding:0 34px;}
+#contents.main .nowSlide .textArea{padding:25px 65px 0;}
+#contents.main .nowSlide .textArea strong{display:block; margin-bottom:10px; font-family:'dinpro cond'; font-size:18px; font-weight:500; letter-spacing:0.5px;}
+#contents.main .nowSlide .textArea span{display:block; font-family: 'NotoSansKRLight'; font-size:14px; color:#202020; line-height:20px;}
+#contents.main .nowSlide .textArea span.nDay{margin-top:5px; color:#202020}
+#contents.main .nowSlide .slick-dots{padding:24px 0 30px;}
+#contents.main .nowSlide .slick-dots li button{background:#000; opacity:0.19}
+#contents.main .nowSlide .slick-dots li.slick-active button{ background:#b71c26; opacity:1;}
+#contents.main .nMainBanner{background:#f2f2f2;}
+#contents.main .nMainBanner ul{max-width:720px; margin:0 auto; overflow:hidden}
+#contents.main .nMainBanner ul li a{display:table; height:100%; width:100%; position:relative; }
+#contents.main .nMainBanner ul li a:after{content:''; position:absolute; left:0px; top:0px; width:100%; height:100%; background:#000; opacity:0.2; z-index:9}
+#contents.main .nMainBanner ul li .textArea{display:block; top:50%; left:0; margin-top:-32px; position:absolute; width:100%; text-align:center; z-index:10}
+#contents.main .nMainBanner ul li .textArea strong{display:inline-block; padding:9px 5px 3px; border-top:1px solid rgba(255, 255, 255, 0.5);; border-bottom:1px solid rgba(255, 255, 255, 0.5);; line-height:1em; letter-spacing:25px; font-size:28px;  font-family:'dinpro cond'; font-weight:700;}
+#contents.main .nMainBanner ul li .textArea span{display:block; padding-top:10px; color:#fff; font-size:14px; font-family: 'NotoSansKR'; font-weight:normal; letter-spacing:0.7px}
+#contents.main .nMainBanner ul li:nth-child(1) .textArea strong{color:#00d8ff;}
+#contents.main .nMainBanner ul li:nth-child(2) .textArea strong{color:#ff0085;}
+#contents.main .nNewBest{background:#f2f2f2}
+#contents.main .nNewBest .nbSlide{padding-bottom:34px;}
+#contents.main .nNewBest  a{display:block; transform: scale(0.7); transition: all 300ms ease;}
+#contents.main .nNewBest .slick-center a{transform: scale(1) !important;-moz-transform: scale(1) !important;ransition: all 300ms ease !important;-ms-transform: scale(1);-o-transform: scale(1);-webkit-transform: scale(1);}
+#contents.main .nNewBest .imgArea{text-align:center;}
+#contents.main .nNewBest .imgArea>span{display:inline-block; position:relative;}
+#contents.main .nNewBest .imgArea>span .best{position:absolute; right:0px; top:0px; width:65px; height:65px; background:url(/images/reebok/efu2018/main/ico_best.png) no-repeat 0 0 ; background-size:65px;}
+#contents.main .nNewBest .imgArea>span .new{position:absolute; right:0px; top:0px; width:65px; height:65px; background:url(/images/reebok/efu2018/main/ico_new.png) no-repeat 0 0 ; background-size:65px;}
+#contents.main .nNewBest .textArea{padding:16px 0 0; max-width:720px; margin:0 auto;}
+#contents.main .nNewBest .textArea>span{display:block; text-align:center; font-size:12px; opacity:0.6; font-family:'dinpro cond'; font-weight:500; letter-spacing:1px;}
+#contents.main .nNewBest .textArea>strong{display:block; text-align:center; box-sizing:border-box; padding:0 10px; font-family: 'NotoSansKR'; font-weight:700; font-size:19px;}
+/* #contents.main .nNewBest .textArea>em.basic {display:block; margin-top:5px; text-align:center; font-style:normal; font-family: 'reefont-condensed'; font-size:18px; letter-spacing:1px; }  */
+#contents.main .nNewBest .textArea>em{display:block; margin-right:5px; font-size:18px; color:#9b9b9b; text-decoration:line-through; text-align:center;}
+#contents.main .nNewBest .textArea>em>span{display:inline-block; margin-left:-4px; font-family: 'NotoSansKR'; font-weight:500; font-size:13px; }
+#contents.main .nNewBest .textArea>em>.cost{display:inline-block; margin-right:12px; font-size:18px; color:#9b9b9b; text-decoration:line-through;}
+#contents.main .nNewBest .textArea>em>.cost>span{display:inline-block; margin-left:-3px; font-size:13px;}
+#contents.main .nNewBest .textArea>em>.sale{display:inline-block; font-size:21px; color:#c80000; }
+#contents.main .nNewBest .textArea>em>.sale>span{display:inline-block; margin-left:-3px; font-size:16px;}
+
+#contents.main .nMagazine .magazineSlide{position:relative;}
+#contents.main .nMagazine .magazineSlide .slick-slide{position:relative; text-align:center;}
+#contents.main .nMagazine .magazineSlide .slick-dots{position:absolute; left:0px; bottom:9%; width:100%; }
+#contents.main .nMagazine .magazineSlide .slick-dots li button{background:#fff; opacity:0.5}
+#contents.main .nMagazine .magazineSlide .slick-dots li.slick-active button{opacity:1; }
+#contents.main .nMagazine .magazineSlide .slick-slide h3 {position:absolute; top:0px; width:100%; margin-top:29%; text-align:center; font-size:29px; font-weight:200; font-family:'NotoSansKR'; letter-spacing:-1px; color:#fff; line-height:34px;}
+#contents.main .nMagazine .magazineSlide .slick-slide h3 span {width:100%; margin-top:25%; text-align:center; font-size:29px; font-weight:400; font-family:'NotoSansKR'; letter-spacing:-1px; color:#b71c26; margin-bottom:3%;}
+#contents.main .nMagazine .magazineSlide .slick-slide p {position:absolute; top:0px; width:100%; margin-top:55%; text-align:center; font-size:14px; font-weight:200; font-family:'NotoSansKR'; letter-spacing:0px; color:#fff;;}
+
+#contents.main .nOnline{background:#f2f2f2}
+#contents.main .nOnline  a{display:block; transform: scale(0.7); transition: all 300ms ease;}
+#contents.main .nOnline .slick-center a{transform: scale(1) !important;-moz-transform: scale(1) !important;ransition: all 300ms ease !important;-ms-transform: scale(1);-o-transform: scale(1);-webkit-transform: scale(1);}
+#contents.main .nOnline .nSaleWrap{padding:0 0px 45px; background:url(/images/reebok/efu2018/main/nOnlineBg.png) no-repeat 0% 20%; background-size:800px 196px;   transition: all 1000ms ease;}
+#contents.main .nOnline .nSaleWrap .nSale{}
+#contents.main .nOnline .nSaleWrap .nSale .imgArea{text-align:center; max-width:450px; margin:0 auto;}
+#contents.main .nOnline .nSaleWrap .nSale .textArea{padding:3% 25px 6%;background:#fff; max-width:450px; margin:0 auto; box-sizing:border-box;}
+#contents.main .nOnline .nSaleWrap .nSale .textArea>span{display:block; font-size:12px; color:#999; font-family:'dinpro cond'; font-weight:500; letter-spacing:1px;}
+#contents.main .nOnline .nSaleWrap .nSale .textArea>strong{display:block; font-family: 'NotoSansKR'; font-weight:700; font-size:19px; letter-spacing:-1px;}
+#contents.main .nOnline .nSaleWrap .nSale .textArea>em{display:block; font-style:normal; font-family: 'NotoSansKRRegular';}
+#contents.main .nOnline .nSaleWrap .nSale .textArea>em>.cost{display:inline-block; margin-right:5px; font-size:18px; color:#9b9b9b; text-decoration:line-through;}
+#contents.main .nOnline .nSaleWrap .nSale .textArea>em>.cost>span{display:inline-block; margin-left:-3px; font-size:13px;}
+#contents.main .nOnline .nSaleWrap .nSale .textArea>em>.sale{display:inline-block; font-size:21px; color:#c80000; }
+#contents.main .nOnline .nSaleWrap .nSale .textArea>em>.sale>span{display:inline-block; margin-left:-3px; font-size:16px;}
+#contents.main .nFooterList ul li{border-bottom:1px solid #f2f2f2;}
+#contents.main .nFooterList ul li:last-child{border-bottom:0}
+#contents.main .nFooterList ul li a{display:table; height:118px; width:100%;}
+#contents.main .nFooterList ul li a>div{display:table-cell; position:relative;  padding:0 45px 0 130px; vertical-align:middle; box-sizing:border-box}
+#contents.main .nFooterList ul li a>div:before{content:''; left:36px; top:50%;  position:absolute; height:44px; width:59px; margin:-22px 0 0 0; background-image:url(/images/reebok/efu2018/common/ico_common.png); background-repeat:no-repeat; background-size:250px 400px;}
+#contents.main .nFooterList ul li a>div:after{content:''; right:31px; top:50%;  position:absolute; height:15px; width:8px; margin:-8px 0 0 0; background-image:url(/images/reebok/efu2018/common/ico_common.png); background-repeat:no-repeat; background-size:250px 400px; background-position:0 -25px}
+#contents.main .nFooterList ul li a>div strong{display:block; font-size:23px; font-family: 'reefont-condensed'; line-height:1em; letter-spacing: 0.4px;}
+#contents.main .nFooterList ul li a>div span{display:block; font-family: 'NotoSansKR'; font-weight:400; font-size:14px; letter-spacing: -0.5px;}
+#contents.main .nFooterList ul li:nth-child(1) a>div:before{background-position:-35px 0}
+#contents.main .nFooterList ul li:nth-child(2) a>div:before{background-position:-35px -50px}
+#contents.main .nFooterList ul li:nth-child(3) a>div:before{background-position:-35px -100px}
+#contents.main .nFooterBanner ul li a{display:block;}
+#contents.main .nFooterBanner ul li a .imgArea{text-align:center;}
+#contents.main .nFooterBanner ul li a .imgArea>span{display:inline-block; position:relative;}
+#contents.main .nFooterBanner ul li a .imgArea>span:before{content:''; position:absolute; left:0px; top:0px; width:100%; height:100%; background:#000; opacity:0.38;}
+#contents.main .nFooterBanner ul li a .imgArea .titArea{position:absolute; left:0px; top:50%; width:100%; margin-top:-39px; }
+#contents.main .nFooterBanner ul li a .imgArea .titArea strong{display:block; margin-bottom:8px; color:#fff; font-family: 'reefont-condensed'; font-size:28px; font-weight:normal; letter-spacing:3px; line-height:1em;}
+#contents.main .nFooterBanner ul li a .imgArea .titArea p{color:#fff; font-size:14px; font-family: 'NotoSansKR'; font-weight:400;}
+#contents.main .nFooterBanner ul li a>span{display:block; position:relative; max-width:720px; margin:0 auto; padding:10px 23px; width:100%; background:#000; box-sizing:border-box;}
+#contents.main .nFooterBanner ul li a>span>em{color:#c4c4c4; font-family: 'reefont-condensed';  font-style:normal;  font-size:17px; line-height:1em; letter-spacing:2px;}
+#contents.main .nFooterBanner ul li a>span>span{display:inline-block; position:relative; margin-left:10px; padding-left:25px; font-family: 'NotoSansKR'; color:#fff; font-size:14px;}
+#contents.main .nFooterBanner ul li a>span>span:before{content:''; position:absolute; left:0px; top:2px; width:18px; height:17px; background-image:url(/images/reebok/efu2018/common/ico_common.png); background-repeat:no-repeat; background-size:250px 400px; background-position:0 -65px}
+#contents.main .nFooterBanner ul li a>span:after{content:''; position:absolute; right:23px; top:50%; width:8px; height:15px; margin-top:-8px; background-image:url(/images/reebok/efu2018/common/ico_common.png); background-repeat:no-repeat; background-size:250px 400px; background-position:0 -45px}
+#contents.main .nInstagram .nHash{max-width:720px; margin:0 auto; text-align:center;}
+#contents.main .nInstagram .nHash a{display:inline-block; margin:0 10px; color:#8e8e8e; font-size:14px;}
+#contents.main .nInstagram .nThum{max-width:720px; margin:0 auto; padding:10px 18px;}
+#contents.main .nInstagram .nThum li{float:left;}
+#contents.main .nInstagram .nThum:after{content:''; display:block; clear:both;}
+#contents.main .nInstagram .nThum li{width:33.33%; box-sizing:border-box; padding:5px}
+#contents.main .nInstagram .nThum li a{display:block; width:100%; text-align:center;}
+
+/* 교환환불, 스피드 배송 팝업 */
+#contents.main .nFooterList .exchangePopup {position:fixed; left:0; top:0; width:100%; height:100%; background:rgba(255,255,255,.9); z-index:200; overflow:auto; display:none;}
+#contents.main .nFooterList .exchangePopup .header {height:30px; background:none;}
+#contents.main .nFooterList .exchangePopup .header .close_x_btn {position:absolute; top:15px; right:15px; width:30px; height:30px;}
+#contents.main .nFooterList .exchangePopup .header .close_x_btn:before {content:""; width:80%; height:1px; position:absolute; top:50%; left:50%; background:#000; transform: translate3d(-50%,-50%,0) rotate(45deg); -webkit-transform: translate3d(-50%,-50%,0) rotate(45deg);}
+#contents.main .nFooterList .exchangePopup .header .close_x_btn:after {content:""; width:80%; height:1px; position:absolute; top:50%; left:50%; background:#000;}
+#contents.main .nFooterList .exchangePopup .contents {padding:15px 0px; background:none;}
+#contents.main .nFooterList .exchangePopup .contents .ico {margin-bottom:15px; text-align:center;}
+#contents.main .nFooterList .exchangePopup .contents .ico img {width:70px;}
+#contents.main .nFooterList .exchangePopup .contents h2 {height:55px; padding-bottom:10px; color:#333; font-weight:600; font-size:26px; line-height:50px; font-family:'NotoSansKR'; text-align:center; letter-spacing:-0.5px; font-weight:600;}
+#contents.main .nFooterList .exchangePopup .contents p {padding:0 1.5rem 2rem; text-align:center; letter-spacing:-1px; font:1.1rem/1.9rem 'NotosansKR'; font-weight:400;}
+#contents.main .nFooterList .exchangePopup .contents p.bold {font:800 1.3rem/2.1rem 'NotosansKRRegular';}
+
+#contents.main .nFooterList .speedPopup {position:fixed; left:0; top:0; width:100%; height:100%; background:rgba(255,255,255,.9); z-index:200; overflow:auto; display:none;}
+#contents.main .nFooterList .speedPopup .header {height:30px; background:none;}
+#contents.main .nFooterList .speedPopup .header .close_x_btn {position:absolute; top:15px; right:15px; width:30px; height:30px;}
+#contents.main .nFooterList .speedPopup .header .close_x_btn:before {content:""; width:80%; height:1px; position:absolute; top:50%; left:50%; background:#000; transform: translate3d(-50%,-50%,0) rotate(45deg); -webkit-transform: translate3d(-50%,-50%,0) rotate(45deg);}
+#contents.main .nFooterList .speedPopup .header .close_x_btn:after {content:""; width:80%; height:1px; position:absolute; top:50%; left:50%; background:#000;}
+#contents.main .nFooterList .speedPopup .contents {padding:15px 0px; background:none;}
+#contents.main .nFooterList .speedPopup .contents .ico {margin-bottom:15px; text-align:center;}
+#contents.main .nFooterList .speedPopup .contents .ico img {width:70px;}
+#contents.main .nFooterList .speedPopup .contents h2 {height:55px; padding-bottom:10px; color:#333; font-weight:600; font-size:26px; line-height:50px; font-family:'NotoSansKR'; text-align:center; letter-spacing:-0.5px; font-weight:600;}
+#contents.main .nFooterList .speedPopup .contents p {padding:0 1.5rem 2rem; text-align:center; letter-spacing:-1px; font:1.1rem/1.9rem 'NotosansKR'; font-weight:400;}
+#contents.main .nFooterList .speedPopup .contents p.bold {font:800 1.3rem/2.1rem 'NotosansKRRegular';}
+#contents.main .nFooterList .speedPopup .contents p span.ico_car {width:18px; height:14px; margin-right:3px; display:inline-block; background:url(/images/reebok/efu2018/main/ico_truck_dark.png) 0 0 no-repeat; vertical-align:middle; background-size: 18px auto;}
+#contents.main .nFooterList .speedPopup .contents p.btn {text-align:center; padding:0 6.5rem 2rem;}
+#contents.main .nFooterList .speedPopup .contents p a.box {display:block; background-color:#000; color:#fff; text-align:center; width:100%; height:4rem; line-height:4rem;}
+#contents.main .nFooterList .speedPopup .contents p.bold a {display:block; font:600 1.3rem/2.1rem 'NotosansKR'; color:#000; letter-spacing:0.5px; font-size:1.1rem; background:url(//imagem.reebok.co.kr/images/reebok/efu2018/main/ico_arrow.jpg) 215px center no-repeat; vertical-align:middle;}
+
+/* trand magazine - 팝업 */
+#contents.main .nMagazine .mensPopup {position:fixed; left:0; top:0; width:92%; height:96%; background:rgba(255,255,255,1); z-index:201; overflow:auto; text-align:center; margin:4%; display:none;}
+#contents.main .nMagazine .mensPopup .close_x_btn {position:absolute; top:15px; right:15px; width:39px; height:38px;}
+#contents.main .nMagazine .mensPopup .close_x_btn:before {content:""; width:80%; height:1px; position:absolute; top:50%; left:50%; background:#484848; transform: translate3d(-50%,-50%,0) rotate(45deg); -webkit-transform: translate3d(-50%,-50%,0) rotate(45deg);}
+#contents.main .nMagazine .mensPopup .close_x_btn:after {content:""; width:80%; height:1px; position:absolute; top:50%; left:50%; background:#484848;}
+/* #contents.main .nMagazine .mensPopup img {text-align:center; max-width:85%; }
+#contents.main .nMagazine .mensPopup>.tit {padding:30% 7% 10% 7%;} 
+#contents.main .nMagazine .mensPopup p {padding:0 7%; color:#373737; font-size:14px; font-family: 'NotoSansKR'; font-weight:300; line-height:21px; letter-spacing:-0.5px; text-align:left;}*/
+
+#contents.main .nMagazine .mensPopup img {text-align:center; width:100%; }
+#contents.main .nMagazine .mensPopup p {padding-top:100px; color:#373737; font-size:14px; font-family: 'NotoSansKR'; font-weight:300; line-height:21px; letter-spacing:-0.5px; text-align:left;}
+
+#contents.main .nMagazine .mensPopup p span {color:#373737; font-size:14px; font-family: 'NotoSansKR'; font-weight:500; line-height:21px; letter-spacing:-0.5px; text-align:center;}
+#contents.main .nMagazine .mensPopup div img {text-align:center; max-width:100%;}
+#contents.main .nMagazine .mensPopup div.top {position:relative;}
+#contents.main .nMagazine .mensPopup >div>a {display:block; padding:0; margin:0; vertical-align:top;}
+/* #contents.main .nMagazine .mensPopup div.top .txt {position:absolute; left:0; top:10%;} */
+#contents.main .nMagazine .mensPopup div.top .txt {margin:0 20px; padding-top:45px; text-align:left}
+
+#contents.main .nMagazine .womensPopup {position:fixed; left:0; top:0; width:92%; height:96%; background:rgba(255,255,255,1); z-index:201; overflow:auto; text-align:center; margin:4%; display:none;}
+#contents.main .nMagazine .womensPopup .close_x_btn {position:absolute; top:15px; right:15px; width:39px; height:38px;}
+#contents.main .nMagazine .womensPopup .close_x_btn:before {content:""; width:80%; height:1px; position:absolute; top:50%; left:50%; background:#484848; transform: translate3d(-50%,-50%,0) rotate(45deg); -webkit-transform: translate3d(-50%,-50%,0) rotate(45deg);}
+#contents.main .nMagazine .womensPopup .close_x_btn:after {content:""; width:80%; height:1px; position:absolute; top:50%; left:50%; background:#484848;}
+/* #contents.main .nMagazine .womensPopup img {text-align:center; max-width:85%; }
+#contents.main .nMagazine .womensPopup>.tit {padding:30% 7% 10% 7%;}
+#contents.main .nMagazine .womensPopup p {padding:0 7%; color:#373737; font-size:14px; font-family: 'NotoSansKR'; font-weight:300; line-height:21px; letter-spacing:-0.5px; text-align:left;} */
+
+#contents.main .nMagazine .womensPopup img {text-align:center; max-width:100%; }
+#contents.main .nMagazine .womensPopup p {padding-top:100px; color:#373737; font-size:14px; font-family: 'NotoSansKR'; font-weight:300; line-height:21px; letter-spacing:-0.5px; text-align:left;}
+
+#contents.main .nMagazine .womensPopup p span {color:#373737; font-size:14px; font-family: 'NotoSansKR'; font-weight:500; line-height:21px; letter-spacing:-0.5px; text-align:center;}
+#contents.main .nMagazine .womensPopup div img {text-align:center; max-width:100%;}
+#contents.main .nMagazine .womensPopup div.top {position:relative;}
+/* #contents.main .nMagazine .womensPopup div.top .txt {position:absolute; left:0; top:10%;} */
+#contents.main .nMagazine .womensPopup div.top .txt  {margin:0 20px; padding-top:45px; text-align:left}
+
+
+#contents.main .nMagazine .popupBg {position:fixed; left:0; right:0; top:0; bottom:0; background:rgba(0,0,00,.7); z-index:200; display:none;}
+
+
+/***** brand *****/
+/* OUR CAMPAIGNS */
+#contents.nCampaigns{padding:23px; }
+
+ /* PROMOTION */
+#contents.nPromotion{padding:23px; }
+
+/* REEBOK BLOG */
+#contents.nBlog>h2{text-align:center;background:#2c2c2c}
+#contents.nBlog .listTypeB{max-width:630px; margin:0 auto; padding:0 23px}
+#contents.nBlog .listTypeB li:first-child .imgArea{margin-top:-35%;}
+
+/* CLASSIC */
+#contents.classic{background:#2c2c2c;}
+#contents.classic .nBlt{display:inline-block; position:relative;}
+#contents.classic .nBlt img{z-index:10;}
+#contents.classic>h2{padding-top:35px; text-align:center; font-size:50px; opacity:0.08; color:#fff; font-family: 'reefont-condensed'; letter-spacing: 15px; line-height: 55px;}
+#contents.classic .btnArea{padding-top:18px; text-align:center;}
+#contents.classic .shoesThum{padding:0 22px; text-align:center;}
+#contents.classic .shoesThum .nBlt img{position:relative; z-index:10}
+#contents.classic .shoesThum.nYear{padding-bottom:60px;}
+#contents.classic .nHistoryWrap .nHistory{max-width:720px; margin:0 auto; padding:44px 40px 134px; box-sizing:border-box; }
+#contents.classic .nHistoryWrap .nHistory h3{margin-bottom:24px; color:#fff; font-size:20px; font-family: 'NotoSansKR'; font-weight:300}
+#contents.classic .nHistoryWrap .nHistory p{color:#b1b1b1; font-size:14px; font-family: 'NotoSansKR'; font-weight:300; line-height:21px;}
+#contents.classic .imgSection{max-width:720px; margin:-92px auto 0; box-sizing:border-box; padding:0 40px;}
+#contents.classic .imgSection li{text-align:center;  margin-bottom: 50px;}
+#contents.classic .imgSection li:last-child{margin-bottom:0}
+#contents.classic .imgSection li .nBlt:after{content:''; width:155px; height:155px; position:absolute; bottom:0; margin-bottom:-37px; right:-40px; background:#151138;  z-index:9; opacity: 0.6}
+#contents.classic .imgSection li img{position:relative; z-index:10}
+#contents.classic .shoesThum.nNow{padding-top:50px; }
+#contents.classic .shoesThum.nNow .nBlt:after{content:''; width:156px; height:182px; position:absolute; bottom:50%; margin-bottom:-88px; left:-22px; background:url(/images/reebok/efu2018/brand/campaigns/blt_frue02.png) no-repeat 0 0; background-size:100%; z-index:9}
+#contents.classic .nowTextWrap{max-width:720px; margin:50px auto 0; padding:0 40px; box-sizing:border-box; }
+#contents.classic .nowText{background:#1f1f1f;  color:#b1b1b1; padding:12px 25px; line-height:38px; font-size:14px; font-family: 'NotoSansKRLight'; letter-spacing: 0; box-sizing:border-box;}
+#contents.classic .thumSlideWrap{max-width:720px; margin:45px auto 0; padding:0 40px;box-sizing:border-box;}
+#contents.classic .thumSlide{ overflow:hidden; }
+#contents.classic .thumSlide .slick-slide{text-align:center;}
+#contents.classic .thumSlide .slick-dots {margin-top:16px;}
+#contents.classic .thumSlide .slick-dots li button{background:#fff; opacity:0.19;}
+#contents.classic .thumSlide .slick-dots li.slick-active button{background:#b71c26; opacity:1;}
+#contents.classic .nCampaignWrap{max-width:720px; margin:45px auto 0; padding:0 40px; box-sizing:border-box; }
+#contents.classic .nCampaignWrap .nCampaign{position:relative; padding:15% 0  30%; color:#fff; text-align:center; background:url(/images/reebok/efu2018/brand/campaigns/furyCampaignBg.jpg) no-repeat 0 100%; background-size:cover;}
+#contents.classic .nCampaignWrap .nCampaign:before{content:''; position:absolute; left:0px;  top:0px; width:100%; height:100%; background:#000; opacity:0.5 ; z-index:0}
+#contents.classic .nCampaignWrap .nCampaign dt{position:relative; margin-bottom:12px; font-size:24px; letter-spacing:5px; font-family: 'reefont-condensed', 'NotoSansKRRegular'; z-index:1;}
+#contents.classic .nCampaignWrap .nCampaign dd{position:relative; min-height:72px; font-family: 'NotoSansKRLight'; font-size:14px; line-height:24px; z-index:1; letter-spacing:-1.5px;}
+#contents.classic .youtubeWrap{max-width:720px; margin:50px auto 0; padding:0 40px; box-sizing:border-box; }
+#contents.classic .youtubeWrap .youtubeArea iframe{}
+#contents.classic .lineupArea {margin-top:70px; padding:45px 0 ; background:#fff; box-sizing:border-box;}
+#contents.classic .lineupArea .lineupWrap{max-width:720px; margin:0 auto; padding:0 19%; }
+#contents.classic .lineupArea .lineupWrap .slick-slide {margin:0 25px;}
+#contents.classic .lineupArea .lineupWrap .draggable{overflow:visible !important;}
+#contents.classic .lineupArea .lineupWrap .slick-track{overflow:visible !important;}
+#contents.classic .lineupArea .imgArea{text-align:center;}
+#contents.classic .lineupArea .textArea{margin:25px 10px; color:#444; text-align:center; box-sizing:border-box; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical;}
+#contents.classic .lineupWrap h3{text-align:center; font-size:22px; font-family: 'reefont-condensed'; letter-spacing:5px; margin-bottom:40px;}
+/* fury */
+#contents.classic.nFury .nHistoryWrap{background:#3d3b2c;}
+#contents.classic.nFury .shoesThum.nYear .nBlt:after{content:''; width:114px; height:282px; position:absolute; bottom:0; margin-bottom:-152px; right:-22px; background:url(/images/reebok/efu2018/brand/campaigns/blt_frue01.png) no-repeat 0 0; background-size:100%; z-index:9}
+
+/* workout */
+#contents.classic.nworkOut .nHistoryWrap{background:rgba(155,90,75,.33);}
+#contents.classic.nworkOut .shoesThum.nYear .nBlt:after{content:''; width:114px; height:282px; position:absolute; bottom:0; margin-bottom:-152px; right:-22px; background:url(/images/reebok/efu2018/brand/campaigns/blt_frue01.png) no-repeat 0 0; background-size:100%; z-index:9}
+#contents.classic .nCampaignWrap02 {max-width:720px; margin:45px auto 0; padding:0 40px; box-sizing:border-box; }
+#contents.classic .nCampaignWrap02 .nCampaign{position:relative; padding:27% 0  30%; color:#fff; text-align:center; background:url(/images/reebok/efu2018/brand/campaigns/workoutCampaignBg.jpg) no-repeat 0 100%; background-size:cover;}
+#contents.classic .nCampaignWrap02 .nCampaign:before{content:''; position:absolute; left:0px;  top:0px; width:100%; height:100%; background:#000; opacity:0.5 ; z-index:0}
+#contents.classic .nCampaignWrap02 .nCampaign dt{position:relative; margin-bottom:12px; font-size:24px; letter-spacing:5px; font-family: 'reefont-condensed', 'NotoSansKRRegular'; z-index:1;}
+#contents.classic .nCampaignWrap02 .nCampaign dd{position:relative; min-height:72px; font-family: 'NotoSansKRLight'; font-size:14px; line-height:24px; z-index:1; letter-spacing:-1.5px;}
+
+/* club c */
+#contents.classic.nclubc .nHistoryWrap{background:rgba(78,22,24,.4);}
+#contents.classic.nclubc .shoesThum.nYear .nBlt:after{content:''; width:114px; height:282px; position:absolute; bottom:0; margin-bottom:-152px; right:-22px; background:url(/images/reebok/efu2018/brand/campaigns/blt_frue01.png) no-repeat 0 0; background-size:100%; z-index:9}
+#contents.classic .nCampaignWrap03 {max-width:720px; margin:45px auto 0; padding:0 40px; box-sizing:border-box; }
+#contents.classic .nCampaignWrap03 .nCampaign{position:relative; padding:27% 0  30%; color:#fff; text-align:center; background:url(/images/reebok/efu2018/brand/campaigns/clubcCampaignBg.jpg) no-repeat 0 100%; background-size:cover;}
+#contents.classic .nCampaignWrap03 .nCampaign:before{content:''; position:absolute; left:0px;  top:0px; width:100%; height:100%; background:#000; opacity:0.5 ; z-index:0}
+#contents.classic .nCampaignWrap03 .nCampaign dt{position:relative; margin-bottom:12px; font-size:24px; letter-spacing:5px; font-family: 'reefont-condensed', 'NotoSansKRRegular'; z-index:1;}
+#contents.classic .nCampaignWrap03 .nCampaign dd{position:relative; min-height:72px; font-family: 'NotoSansKRLight'; font-size:14px; line-height:24px; z-index:1; letter-spacing:-1.5px;}
+#contents.classic .shoesThum.nNow02 {padding-top:100px;}
+#contents.classic .shoesThum.nNow02 .nBlt:after{content:''; width:466px; height:165px; position:absolute; bottom:83%; margin-bottom:-88px; left:-22px; background:url(/images/reebok/efu2018/brand/campaigns/blt_frue03.png) no-repeat 0 0; background-size:100%; z-index:9}
+
+/* classic leather */
+#contents.classic.nclassicltr .nHistoryWrap{background:rgba(0,34,111,.5);}
+#contents.classic.nclassicltr .shoesThum.nYear .nBlt:after{content:''; width:114px; height:282px; position:absolute; bottom:0; margin-bottom:-152px; right:-22px; background:url(/images/reebok/efu2018/brand/campaigns/blt_frue01.png) no-repeat 0 0; background-size:100%; z-index:9}
+#contents.classic .nCampaignWrap04 {max-width:720px; margin:45px auto 0; padding:0 40px; box-sizing:border-box; }
+#contents.classic .nCampaignWrap04 .nCampaign{position:relative; padding:27% 0  30%; color:#fff; text-align:center; background:url(/images/reebok/efu2018/brand/campaigns/classicleatherCampaignBg.jpg) no-repeat 0 100%; background-size:cover;}
+#contents.classic .nCampaignWrap04 .nCampaign:before{content:''; position:absolute; left:0px;  top:0px; width:100%; height:100%; background:#000; opacity:0.5 ; z-index:0}
+#contents.classic .nCampaignWrap04 .nCampaign dt{position:relative; margin-bottom:12px; font-size:24px; letter-spacing:5px; font-family: 'reefont-condensed', 'NotoSansKRRegular'; z-index:1;}
+#contents.classic .nCampaignWrap04 .nCampaign dd{position:relative; min-height:72px; font-family: 'NotoSansKRLight'; font-size:14px; line-height:24px; z-index:1; letter-spacing:-1.5px;}
+
+/* freestyle hi */
+
+#contents.classic.nfreehi .nHistoryWrap{background:rgba(147,128,96,.5);}
+#contents.classic.nfreehi .shoesThum.nYear .nBlt:after{content:''; width:114px; height:282px; position:absolute; bottom:0; margin-bottom:-152px; right:-22px; background:url(/images/reebok/efu2018/brand/campaigns/blt_frue01.png) no-repeat 0 0; background-size:100%; z-index:9}
+#contents.classic .imgSection li .nBlt.freehi:after{content:''; width:155px; height:155px; position:absolute; bottom:0; margin-bottom:-37px; right:-40px; background:rgba(58,15,16,.8);  z-index:9; opacity: 0.6}
+#contents.classic .nCampaignWrap05 {max-width:720px; margin:45px auto 0; padding:0 40px; box-sizing:border-box; }
+#contents.classic .nCampaignWrap05 .nCampaign{position:relative; padding:27% 0  30%; color:#fff; text-align:center; background:url(/images/reebok/efu2018/brand/campaigns/freehiCampaignBg.jpg) no-repeat 0 100%; background-size:cover;}
+#contents.classic .nCampaignWrap05 .nCampaign:before{content:''; position:absolute; left:0px;  top:0px; width:100%; height:100%; background:#000; opacity:0.5 ; z-index:0}
+#contents.classic .nCampaignWrap05 .nCampaign dt{position:relative; margin-bottom:12px; font-size:24px; letter-spacing:5px; font-family: 'reefont-condensed', 'NotoSansKRRegular'; z-index:1;}
+#contents.classic .nCampaignWrap05 .nCampaign dd{position:relative; min-height:72px; font-family: 'NotoSansKRLight'; font-size:14px; line-height:24px; z-index:1; letter-spacing:-1.5px;}
+
+/* reeclub */
+.nReeclub {}
+.nReeclub .titArea {max-width:720px; margin:0 auto; box-sizing:border-box; background:url(/images/reebok/efu2018/brand/reeclubBg.jpg) no-repeat 0 0; background-size:cover; position:relative; padding-bottom:110px;}
+.nReeclub .titArea h2 {text-align:center; padding:12% 23% 10%;}
+.nReeclub .titArea h3 {text-align:center; padding:0% 18%;}
+.nReeclub .titArea:before {content:""; position:absolute; height:60px; width:100%; background:url(/images/reebok/efu2018/brand/reclubBg01_1.png) no-repeat 0 0; background-size:100% 60px; bottom:0; left:0;}
+.nReeclub .titArea p {font-size:14px; color:#fff; line-height:23px; text-align:center; font-family:'NotoSansKR'; font-weight:100; padding:29px 0; }
+.nReeclub .titArea02 {max-width:720px; height:350px; margin:0 auto; box-sizing:border-box; background-size:100%; padding-bottom:110px; position:relative; padding-top:60px; background:#191919;}
+.nReeclub .titArea02:before {content:""; position:absolute; height:60px; width:100%; background:url(/images/reebok/efu2018/brand/reclubBg02.jpg) no-repeat 0 0; background-size:100% 60px; top:0; left:0;}
+.nReeclub .titArea02 h2 {text-align:center; padding:12% 23% 10%;}
+.nReeclub .titArea02 h3 {text-align:center; padding:0% 18%;}
+.nReeclub .titArea02 h4 {text-align:center; margin-top:11%;}
+.nReeclub .titArea02 h4 img {height:25px;}
+.nReeclub .titArea02 p {font-size:14px; color:#fff; line-height:23px; text-align:center; font-family:'NotoSansKR'; font-weight:100; padding:20px 0;}
+
+.nReeclub .btnArea {display:block; margin:0 auto; width:162px; height:40px; background:url(/images/reebok/efu2018/brand/reclubArrow.png) no-repeat 133px center #b71c26; background-size:9px; padding:15px; box-sizing:border-box;}
+.nReeclub .btnArea .btnTypeC {width:163px; height:40px; color:#fff; }
+.nReeclub .btnArea .btnTypeC span {display:block; font-size:14px; letter-spacing:-1px; font-family:'NotoSansKR'; font-weight:100; line-height:8px;}
+
+.nReeclub .benefit {max-width:720px; margin:0 auto; box-sizing:border-box;}
+.nReeclub .benefit h4 {text-align:center; margin:10% 0;}
+.nReeclub .benefit h4 img {height:25px;}
+.nReeclub .benefit dl {padding:0 17px;}
+.nReeclub .benefit dl>dt {font-size:20px; color:#b82329; letter-spacing:-1px; font-family:'NotoSansKR'; font-weight:500;}
+.nReeclub .benefit dl dd {margin:5px 0px 60px; border-top:3px solid #b82329;}
+.nReeclub .benefit dl dd.content {font-size:14px; color:#191919; letter-spacing:-1px; font-family:'NotoSansKR'; font-weight:300; line-height:22px; padding:18px 0px;}
+.nReeclub .benefit dl dd strong {display:block; font-size:15px; color:#3c3c3c; letter-spacing:-1px; font-family:'NotoSansKR'; font-weight:500; margin-top:18px; margin-bottom:5px;}
+.nReeclub .benefit dl dd ul {}
+.nReeclub .benefit dl dd ul li {font-size:14px; color:#191919; letter-spacing:-1px; font-family:'NotoSansKR'; font-weight:300; line-height:22px; position:relative; padding-left:15px;}
+.nReeclub .benefit dl dd ul li:before {content:""; position:absolute; left:0px; width:5px; height:5px; border-radius:50%; background:#191919; margin-top:10px;}
+/* .nReeclub .benefit dl dd ul li span {text-indent:15px; display:inline-block; font-size:14px; color:#191919; letter-spacing:-1px; font-family:'NotoSansKR'; font-weight:300; line-height:22px;} */
+
+.nReeclub .joinTab {background-color:#fff; position:relative; margin:0 auto; display:inline;}
+.nReeclub .joinTab .joincontTab {width:100%; margin:0 auto; height:50px;}
+.nReeclub .joinTab .joincontTab {content:""; display:block; clear:both;}
+.nReeclub .joinTab .joincontTab li {float:left; width:50%; text-align:center; box-sizing:border-box;}
+.nReeclub .joinTab .joincontTab li a {display:block; line-height:50px; font-size:14px; background-color:#d5d5d5; color:#919191; font-weight:400;}
+.nReeclub .joinTab .joincontTab li.active a {background-color:#4b4b4b; color:#fff; height:50px; width:100%; font-weight:400;}
+.nReeclub .viewContent {width:100%; height:auto; margin:60px auto; position:relative;}
+.nReeclub .tabContent>div.viewContent:nth-child(2){display:block;}
+.nReeclub .viewContent h2 {text-align:center; font-size:30px; letter-spacing:-1px; font-weight:100; font-family: 'NotoSansKR'; margin-bottom:40px;}
+.nReeclub .viewContent h2 span {display:inline-block; text-align:center; font-size:30px; letter-spacing:-1px; font-weight:400; font-family: 'NotoSansKR'; }
+.nReeclub .viewContent h2 span.lts {display:inline-block; text-align:center; font-size:30px; letter-spacing:-1px; font-weight:100 !important; letter-spacing:0.5px; font-family: 'NotoSansKR'; }
+.nReeclub .viewContent h2 span img {width:3px; height:3px; padding:23px 11px 0px;}
+.nReeclub .viewContent h2 span img.sdot {width:3px; height:3px; padding:23px 9px 0px;}
+.nReeclub .viewContent .kakaoSlide {padding:0px 70px; overflow:hidden; position:relative;}
+.nReeclub .viewContent .kakaoSlide .slick-slide {text-align:center;}
+.nReeclub .viewContent .kakaoSlide .slick-list {overflow:hidden; margin-bottom:30px;}
+.nReeclub .viewContent .kakaoSlide .slick-prev {background:url(/images/reebok/efu2018/brand/kakaoarrowPrev.png) no-repeat center center; width:25px; height:25px; text-indent:-999px; position:absolute; top:47%; left:35px; border:none;}
+.nReeclub .viewContent .kakaoSlide .slick-next {background:url(/images/reebok/efu2018/brand/kakaoarrowNext.png) no-repeat center center; width:25px; height:25px; text-indent:-999px; position:absolute; top:47%; right:35px; overflow:hidden;border:none;}
+.nReeclub .viewContent .kakaoSlide .slick-dots li {margin:0 3px;}
+.nReeclub .viewContent .kakaoSlide .slick-dots li.slick-active button {background:#fae100; color:#3c1e1e; text-indent:0px; width:38px; height:38px; border-radius:50%; font-family:'dinpro'; font-size:15px; letter-spacing:-1px;}
+.nReeclub .viewContent .kakaoSlide .slick-dots li button {background:#cacbc6; color:#fff; text-indent:0px; width:38px; height:38px; border-radius:50%; font-family:'dinpro'; font-size:15px; letter-spacing:-1px;}
+.nReeclub .viewContent .border {width:80%; border:1px solid #c3c3c3; box-sizing:border-box; margin:50px auto;}
+.nReeclub .viewContent .syrupSlide {padding:0px 70px; overflow:hidden; position:relative;}
+.nReeclub .viewContent .syrupSlide .slick-slide {text-align:center;}
+.nReeclub .viewContent .syrupSlide .slick-list {overflow:hidden; margin-bottom:30px;}
+.nReeclub .viewContent .syrupSlide .slick-prev {background:url(/images/reebok/efu2018/brand/kakaoarrowPrev.png) no-repeat center center; width:25px; height:25px; text-indent:-999px; position:absolute; top:47%; left:35px;border:none;}
+.nReeclub .viewContent .syrupSlide .slick-next {background:url(/images/reebok/efu2018/brand/kakaoarrowNext.png) no-repeat center center; width:25px; height:25px; text-indent:-999px; position:absolute; top:47%; right:35px; overflow:hidden;border:none;}
+.nReeclub .viewContent .syrupSlide .slick-dots li {margin:0 3px;}
+.nReeclub .viewContent .syrupSlide .slick-dots li.slick-active button {background:#fc7648; color:#fff; text-indent:0px; width:38px; height:38px; border-radius:50%; font-family:'dinpro'; font-size:15px; letter-spacing:-1px;}
+.nReeclub .viewContent .syrupSlide .slick-dots li button {background:#cacbc6; color:#fff; text-indent:0px; width:38px; height:38px; border-radius:50%; font-family:'dinpro'; font-size:15px; letter-spacing:-1px;}
+.nReeclub .viewContent .onlineSlide {padding:0px 70px; overflow:hidden; position:relative;}
+.nReeclub .viewContent .onlineSlide .slick-slide {text-align:center;}
+.nReeclub .viewContent .onlineSlide .slick-list {overflow:hidden; margin-bottom:30px;}
+.nReeclub .viewContent .onlineSlide .slick-prev {background:url(/images/reebok/efu2018/brand/kakaoarrowPrev.png) no-repeat center center; width:25px; height:25px; text-indent:-999px; position:absolute; top:47%; left:35px;border:none;}
+.nReeclub .viewContent .onlineSlide .slick-next {background:url(/images/reebok/efu2018/brand/kakaoarrowNext.png) no-repeat center center; width:25px; height:25px; text-indent:-999px; position:absolute; top:47%; right:35px; overflow:hidden;border:none;}
+.nReeclub .viewContent .onlineSlide .slick-dots li {margin:0 3px;}
+.nReeclub .viewContent .onlineSlide .slick-dots li.slick-active button {background:#b71c26; color:#fff; text-indent:0px; width:38px; height:38px; border-radius:50%; font-family:'dinpro'; font-size:15px; letter-spacing:-1px;}
+.nReeclub .viewContent .onlineSlide .slick-dots li button {background:#cacbc6; color:#fff; text-indent:0px; width:38px; height:38px; border-radius:50%; font-family:'dinpro'; font-size:15px; letter-spacing:-1px;}
+.nReeclub .viewContent .offlineSlide {padding:0px 70px; overflow:hidden; position:relative;}
+.nReeclub .viewContent .offlineSlide .slick-slide {text-align:center;}
+.nReeclub .viewContent .offlineSlide .slick-list {overflow:hidden; margin-bottom:30px;}
+.nReeclub .viewContent .offlineSlide .slick-prev {background:url(/images/reebok/efu2018/brand/kakaoarrowPrev.png) no-repeat center center; width:25px; height:25px; text-indent:-999px; position:absolute; top:47%; left:35px;border:none;}
+.nReeclub .viewContent .offlineSlide .slick-next {background:url(/images/reebok/efu2018/brand/kakaoarrowNext.png) no-repeat center center; width:25px; height:25px; text-indent:-999px; position:absolute; top:47%; right:35px; overflow:hidden;border:none;}
+.nReeclub .viewContent .offlineSlide .slick-dots li {margin:0 3px;}
+.nReeclub .viewContent .offlineSlide .slick-dots li.slick-active button {background:#4d4d4d; color:#fff; text-indent:0px; width:38px; height:38px; border-radius:50%; font-family:'dinpro'; font-size:15px; letter-spacing:-1px;}
+.nReeclub .viewContent .offlineSlide .slick-dots li button {background:#cacbc6; color:#fff; text-indent:0px; width:38px; height:38px; border-radius:50%; font-family:'dinpro'; font-size:15px; letter-spacing:-1px;}
+
+
+/* FITNESS -training */
+/* FITNESS -tab */
+.fitnessTap{position:relative; background:#000;}
+.swiper-container{position:relative; overflow:hidden; width:100%;}
+.swiper-wrapper{width:100%}
+.swiper-wrapper .swiper-slide a{display:block; position:relative; padding:73px 5px 20px; box-sizing:border-box; text-align:center; font-family: 'reefont-condensed'; font-size:17px; color:#777; letter-spacing:0px;}
+.swiper-wrapper .swiper-slide a:after{content:''; position:absolute; top:20px; left:50%; width:40px; height:50px; margin-left:-20px; background-image:url(/images/reebok/efu2018/common/ico_common.png); background-repeat:no-repeat; background-size:250px 400px;}
+.swiper-wrapper .swiper-slide.enter a{color:#b71c26}
+.swiper-wrapper .swiper-slide:nth-child(1) a:after{background-position:-100px -40px;}
+.swiper-wrapper .swiper-slide:nth-child(2) a:after{background-position:-100px -90px;}
+.swiper-wrapper .swiper-slide:nth-child(3) a:after{background-position:-100px -140px;}
+.swiper-wrapper .swiper-slide:nth-child(4) a:after{background-position:-100px -190px;}
+.swiper-wrapper .swiper-slide:nth-child(5) a:after{background-position:-100px -240px;}
+.swiper-wrapper .swiper-slide.enter:nth-child(1) a:after{background-position:-145px -40px;}
+.swiper-wrapper .swiper-slide.enter:nth-child(2) a:after{background-position:-145px -90px;}
+.swiper-wrapper .swiper-slide.enter:nth-child(3) a:after{background-position:-145px -140px;}
+.swiper-wrapper .swiper-slide.enter:nth-child(4) a:after{background-position:-145px -190px;}
+.swiper-wrapper .swiper-slide.enter:nth-child(5) a:after{background-position:-145px -240px;}
+.swiper-wrapper>div{float:left;}
+.swiper-wrapper:after{content:''; display:block; clear:both}
+
+#contents.nTraining .traningHead {max-width:720px; background:url(/images/reebok/efu2018/brand/fitness/trainingBg.png) no-repeat 0 0; background-size:100% 100%; display:block;}
+#contents.nTraining .traningHead img {padding:39% 16% 9%; text-align:center; display:inline-block; box-sizing:border-box;}
+#contents.nTraining .traningHead p {font-size:18px; color:#fff; letter-spacing:-1px; font-family:'NotoSansKR'; font-weight:500; line-height:25px; text-align:center;}
+#contents.nTraining .traningHead p span {display:block; font-size:14px; color:#fff; letter-spacing:-0.5px; font-family:'NotoSansKR'; font-weight:200; line-height:20px; text-align:center; padding-bottom:34%; padding-top:2%;}
+
+#contents.nTraining .fitnessSection {max-width:720px; background-color:#191919; height:100%;}
+#contents.nTraining .fitnessSection .section01 {text-align:left; padding:15% 8%;}
+#contents.nTraining .fitnessSection .section01 h2 {font-size:68px; color:#fff; font-family: 'reefont-condensed'; font-weight:100; letter-spacing:4px; line-height:72px;}
+#contents.nTraining .fitnessSection .section01 p {display:block; font-size:20px; color:#fff; letter-spacing:-1px; font-family:'NotoSansKR'; font-weight:300; line-height:30px; text-align:left; margin-top:10px;}
+#contents.nTraining .fitnessSection .section01 p span {display:block; font-size:14px; color:#5c5c5c; letter-spacing:0px; font-family:'NotoSansKR'; font-weight:300; line-height:20px; text-align:left; margin-top:10px;}
+#contents.nTraining .fitnessSection .section02 {text-align:right; padding:15% 8%;}
+#contents.nTraining .fitnessSection .section02 h2 {font-size:68px; color:#fff; font-family: 'reefont-condensed'; font-weight:100; letter-spacing:4px; line-height:72px;}
+#contents.nTraining .fitnessSection .section02 p {display:block; font-size:20px; color:#fff; letter-spacing:-1px; font-family:'NotoSansKR'; font-weight:300; line-height:30px; text-align:right; margin-top:10px;}
+#contents.nTraining .fitnessSection .section02 p span {display:block; font-size:14px; color:#5c5c5c; letter-spacing:0px; font-family:'NotoSansKR'; font-weight:300; line-height:20px; text-align:right; margin-top:10px;}
+#contents.nTraining .fitnessSection .section03 {text-align:left; padding:0% 8%; margin-top:-5%;}
+#contents.nTraining .fitnessSection .section03 h2 {font-size:40px; color:#fff; font-family: 'reefont-condensed'; font-weight:100; letter-spacing:4px; line-height:44px;}
+#contents.nTraining .fitnessSection .section03 h2 span {display:block; font-size:20px; color:#fff; font-family: 'reefont-condensed'; font-weight:100; letter-spacing:2px;}
+#contents.nTraining .fitnessSection .section03 p {font-size:14px; color:#fff; letter-spacing:-1px; font-family:'NotoSansKR'; font-weight:300; line-height:20px; text-align:left; margin-top:10px;}
+#contents.nTraining .fitnessSection .section03 .productBtn {display:block; width:140px; height:35px; background:url(/images/reebok/efu2018/brand/fitness/btnArrow.png) no-repeat 110px center #b71c26; background-size:8px; font-size:14px; font-family:'reefont-condensed'; font-weight:300; letter-spacing:5px; color:#fff; padding:9px 27px; box-sizing:border-box; margin:10% 0% 15%;}
+
+/* FITNESS -running */
+
+#contents.nRunning .runningHead {max-width:720px; background:url(/images/reebok/efu2018/brand/fitness/runningBg.png) no-repeat 0 0; background-size:100% 100%; display:block;}
+#contents.nRunning .runningHead img {padding:39% 16% 9%; text-align:center; display:inline-block; box-sizing:border-box;}
+#contents.nRunning .runningHead p {font-size:18px; color:#fff; letter-spacing:-1px; font-family:'NotoSansKR'; font-weight:500; line-height:25px; text-align:center;}
+#contents.nRunning .runningHead p span {display:block; font-size:14px; color:#fff; letter-spacing:-0.5px; font-family:'NotoSansKR'; font-weight:200; line-height:20px; text-align:center; padding-bottom:34%; padding-top:2%;}
+#contents.nRunning .fitnessSection {max-width:720px; background-color:#191919; height:100%;}
+#contents.nRunning .fitnessSection .section01 {text-align:left; padding:15% 8%;}
+#contents.nRunning .fitnessSection .section01 h2 {font-size:68px; color:#fff; font-family: 'reefont-condensed'; font-weight:100; letter-spacing:4px; line-height:72px;}
+#contents.nRunning .fitnessSection .section01 p {display:block; font-size:20px; color:#fff; letter-spacing:-1px; font-family:'NotoSansKR'; font-weight:300; line-height:30px; text-align:left; margin-top:10px; margin-bottom:15%;}
+#contents.nRunning .fitnessSection .section01 p span {display:block; font-size:14px; color:#5c5c5c; letter-spacing:0px; font-family:'NotoSansKR'; font-weight:300; line-height:20px; text-align:left; margin-top:10px;}
+#contents.nRunning .fitnessSection .section02 {text-align:right; padding:15% 8%;}
+#contents.nRunning .fitnessSection .section02 h2 {font-size:68px; color:#fff; font-family: 'reefont-condensed'; font-weight:100; letter-spacing:4px; line-height:72px;}
+#contents.nRunning .fitnessSection .section02 p {display:block; font-size:20px; color:#fff; letter-spacing:-1px; font-family:'NotoSansKR'; font-weight:300; line-height:30px; text-align:right; margin-top:10px;}
+#contents.nRunning .fitnessSection .section02 p span {display:block; font-size:14px; color:#5c5c5c; letter-spacing:0px; font-family:'NotoSansKR'; font-weight:300; line-height:20px; text-align:right; margin-top:10px;}
+#contents.nRunning .fitnessSection .section03 {text-align:left; padding:0% 8%; margin-top:-7%;}
+#contents.nRunning .fitnessSection .section03 h2 {font-size:34px; color:#fff; font-family: 'reefont-condensed'; font-weight:100; letter-spacing:4px; line-height:44px;}
+#contents.nRunning .fitnessSection .section03 h2 span.left {display:inline-block; font-size:26px; color:#fff; font-family: 'NotoSansKR'; font-weight:100; letter-spacing:-2px;}
+#contents.nRunning .fitnessSection .section03 h2 span {display:block; font-size:20px; color:#fff; font-family: 'NotoSansKR'; font-weight:100; letter-spacing:2px;}
+#contents.nRunning .fitnessSection .section03 p {font-size:14px; color:#fff; letter-spacing:-1px; font-family:'NotoSansKR'; font-weight:300; line-height:20px; text-align:left; margin-top:10px;}
+#contents.nRunning .fitnessSection .section03 .productBtn {display:block; width:140px; height:35px; background:url(/images/reebok/efu2018/brand/fitness/btnArrow.png) no-repeat 110px center #b71c26; background-size:8px; font-size:14px; font-family:'reefont-condensed'; font-weight:300; letter-spacing:5px; color:#fff; padding:9px 27px; box-sizing:border-box; margin:10% 0% 15%;}
+#contents.nRunning .fitnessSection .section04 p {display:block; font-size:20px; color:#fff; letter-spacing:-1px; font-family:'NotoSansKR'; font-weight:300; line-height:30px; margin-top:10px; padding:15% 8%;}
+#contents.nRunning .fitnessSection .section04 p span {display:block; font-size:14px; color:#5c5c5c; letter-spacing:0px; font-family:'NotoSansKR'; font-weight:300; line-height:20px; margin-top:10px;}
+#contents.nRunning .fitnessSection .section04 img {margin-bottom:9%;}
+#contents.nRunning .fitnessSection .section04 ul {text-align:left; position:relative; left:85px; top:0px;}
+#contents.nRunning .fitnessSection .section04 ul:last-child {margin-bottom:15%;}
+#contents.nRunning .fitnessSection .section04 ul:after {content:""; display:block; clear:both;}
+#contents.nRunning .fitnessSection .section04 ul li {font-size:17px; color:#971b23; letter-spacing:-1px; font-family:'NotoSansKR'; font-weight:400; line-height:30px;}
+#contents.nRunning .fitnessSection .section04 ul li.num {position:absolute; top:7px; left:-39px; width:18px; height:18px; background:url(/images/reebok/efu2018/brand/fitness/dotIcon.jpg) no-repeat 0 0; font-size:14px; color:#191919;  font-family: 'reefont-condensed'; font-weight:200; text-align:center; background-size:18px 18px; line-height:21px;}
+#contents.nRunning .fitnessSection .section04 ul li p {font-size:14px; color:#5c5c5c; letter-spacing:-1px; font-family:'NotoSansKR'; font-weight:300; line-height:23px; padding:0%; margin-bottom:5%; margin-top:0px;}
+
+
+/* FITNESS - crossfit */
+
+#contents.nCrossfit .crossfitHead {max-width:720px; background:url(/images/reebok/efu2018/brand/fitness/crossfitBg.jpg) no-repeat 0 0; background-size:100% 100%; display:block;}
+#contents.nCrossfit .crossfitHead img {padding:39% 16% 9%; text-align:center; display:inline-block; box-sizing:border-box;}
+#contents.nCrossfit .crossfitHead p {font-size:18px; color:#fff; letter-spacing:-1px; font-family:'NotoSansKR'; font-weight:500; line-height:25px; text-align:center;}
+#contents.nCrossfit .crossfitHead p span {display:block; font-size:14px; color:#fff; letter-spacing:-0.5px; font-family:'NotoSansKR'; font-weight:200; line-height:20px; text-align:center; padding-bottom:34%; padding-top:2%;}
+
+#contents.nCrossfit .fitnessSection {max-width:720px; background-color:#191919; height:100%;}
+#contents.nCrossfit .fitnessSection .section01 {text-align:left; padding:15% 8% 5%;}
+#contents.nCrossfit .fitnessSection .section01 h2 {font-size:68px; color:#fff; font-family: 'reefont-condensed'; font-weight:100; letter-spacing:4px; line-height:72px;}
+#contents.nCrossfit .fitnessSection .section01 h3 {font-size:20px; color:#fff; font-family: 'reefont-condensed'; font-weight:100; letter-spacing:-1px;}
+#contents.nCrossfit .fitnessSection .section01 p {display:block; font-size:14px; color:#b7b7b7; letter-spacing:-1px; font-family:'NotoSansKR'; font-weight:400; line-height:21px; text-align:left; margin-top:10px;}
+#contents.nCrossfit .fitnessSection .section01 p.text {display:block; font-size:20px; color:#fff; letter-spacing:-1px; font-family:'NotoSansKR'; font-weight:400; line-height:21px; text-align:left; margin-top:10px; margin-bottom:15%;}
+#contents.nCrossfit .fitnessSection .section01 p span.color {display:block; font-size:14px; color:#ab2328; letter-spacing:0px; font-family:'NotoSansKR'; font-weight:400; line-height:20px; text-align:left; margin-top:0px;}
+#contents.nCrossfit .fitnessSection .section01 p span {display:block; font-size:14px; color:#5c5c5c; letter-spacing:0px; font-family:'NotoSansKR'; font-weight:300; line-height:20px; text-align:left; margin-top:10px;}
+#contents.nCrossfit .fitnessSection .section02 {text-align:right; padding:15% 8%;}
+#contents.nCrossfit .fitnessSection .section02 h2 {font-size:68px; color:#fff; font-family: 'reefont-condensed'; font-weight:100; letter-spacing:4px; line-height:72px;}
+#contents.nCrossfit .fitnessSection .section02 h2 img {padding:3% 3%; max-width:20%;}
+#contents.nCrossfit .fitnessSection .section02 p {display:block; font-size:20px; color:#fff; letter-spacing:-1px; font-family:'NotoSansKR'; font-weight:300; line-height:30px; text-align:right; margin-top:10px;}
+#contents.nCrossfit .fitnessSection .section02 p span.color {display:block; font-size:20px; color:#ab2328; letter-spacing:0px; font-family:'NotoSansKR'; font-weight:400; line-height:26px; text-align:right; margin-top:15px;}
+#contents.nCrossfit .fitnessSection .section02 p span {display:block; font-size:14px; color:#5c5c5c; letter-spacing:-1px; font-family:'NotoSansKR'; font-weight:300; line-height:20px; text-align:right; margin-top:18px;}
+#contents.nCrossfit .fitnessSection .section03 {text-align:left; padding:0% 8%; margin-top:-5%;}
+#contents.nCrossfit .fitnessSection .section03 h2 {font-size:40px; color:#fff; font-family: 'reefont-condensed'; font-weight:100; letter-spacing:2px; line-height:44px;}
+#contents.nCrossfit .fitnessSection .section03 h2 span {display:block; font-size:20px; color:#fff; font-family: 'reefont-condensed'; font-weight:100; letter-spacing:-1px;}
+#contents.nCrossfit .fitnessSection .section03 p {font-size:14px; color:#fff; letter-spacing:-1px; font-family:'NotoSansKR'; font-weight:300; line-height:20px; text-align:left; margin-top:10px;}
+#contents.nCrossfit .fitnessSection .section03 .productBtn {display:block; width:140px; height:35px; background:url(/images/reebok/efu2018/brand/fitness/btnArrow.png) no-repeat 110px center #b71c26; background-size:8px; font-size:14px; font-family:'reefont-condensed'; font-weight:300; letter-spacing:5px; color:#fff; padding:9px 27px; box-sizing:border-box; margin:10% 0% 15%;}
+#contents.nCrossfit .fitnessSection .section04 {text-align:left; padding:0% 8%;}
+#contents.nCrossfit .fitnessSection .section04 p {font-size:14px; color:#fff; letter-spacing:-1px; font-family:'NotoSansKR'; font-weight:300; line-height:20px; text-align:left; margin-top:10px;}
+#contents.nCrossfit .fitnessSection .section04 p span {display:block; font-size:14px; color:#5c5c5c; letter-spacing:-1px; font-family:'NotoSansKR'; font-weight:300; line-height:20px; text-align:left; margin-top:10px; margin-bottom:10%;}
+
+/* FITNESS -studio */
+
+#contents.nStudio .studioHead {max-width:720px; background:url(/images/reebok/efu2018/brand/fitness/studioBg.jpg) no-repeat 0 0; background-size:100% 100%; display:block;}
+#contents.nStudio .studioHead img {padding:39% 16% 9%; text-align:center; display:inline-block; box-sizing:border-box;}
+#contents.nStudio .studioHead p {font-size:18px; color:#fff; letter-spacing:-1px; font-family:'NotoSansKR'; font-weight:500; line-height:25px; text-align:center;}
+#contents.nStudio .studioHead p span {display:block; font-size:14px; color:#fff; letter-spacing:-0.5px; font-family:'NotoSansKR'; font-weight:200; line-height:20px; text-align:center; padding-bottom:34%; padding-top:2%;}
+
+#contents.nStudio .fitnessSection {max-width:720px; background-color:#191919; height:100%;}
+#contents.nStudio .fitnessSection .section01 {text-align:left; padding:15% 8%;}
+#contents.nStudio .fitnessSection .section01 h2 {font-size:68px; color:#fff; font-family: 'reefont-condensed'; font-weight:100; letter-spacing:4px; line-height:72px;}
+#contents.nStudio .fitnessSection .section01 p {display:block; font-size:20px; color:#fff; letter-spacing:-1px; font-family:'NotoSansKR'; font-weight:300; line-height:30px; text-align:left; margin-top:10px;}
+#contents.nStudio .fitnessSection .section01 p span {display:block; font-size:14px; color:#5c5c5c; letter-spacing:0px; font-family:'NotoSansKR'; font-weight:300; line-height:20px; text-align:left; margin-top:10px;}
+#contents.nStudio .fitnessSection .section02 {text-align:right; padding:15% 8%;}
+#contents.nStudio .fitnessSection .section02 h2 {font-size:68px; color:#fff; font-family: 'reefont-condensed'; font-weight:100; letter-spacing:4px; line-height:72px;}
+#contents.nStudio .fitnessSection .section02 p {display:block; font-size:20px; color:#fff; letter-spacing:-1px; font-family:'NotoSansKR'; font-weight:300; line-height:30px; text-align:right; margin-top:10px;}
+#contents.nStudio .fitnessSection .section02 p span {display:block; font-size:14px; color:#5c5c5c; letter-spacing:0px; font-family:'NotoSansKR'; font-weight:300; line-height:20px; text-align:right; margin-top:10px;}
+#contents.nStudio .fitnessSection .section03 {text-align:left; padding:0% 8%; margin-top:-5%;}
+#contents.nStudio .fitnessSection .section03 h2 {font-size:40px; color:#fff; font-family: 'reefont-condensed'; font-weight:100; letter-spacing:3px; line-height:44px;}
+#contents.nStudio .fitnessSection .section03 h2 span {display:block; font-size:20px; color:#fff; font-family: 'reefont-condensed'; font-weight:100; letter-spacing:2px;}
+#contents.nStudio .fitnessSection .section03 p {font-size:14px; color:#fff; letter-spacing:-1px; font-family:'NotoSansKR'; font-weight:300; line-height:20px; text-align:left; margin-top:10px;}
+#contents.nStudio .fitnessSection .section03 .productBtn {display:block; width:140px; height:35px; background:url(/images/reebok/efu2018/brand/fitness/btnArrow.png) no-repeat 110px center #b71c26; background-size:8px; font-size:14px; font-family:'reefont-condensed'; font-weight:300; letter-spacing:5px; color:#fff; padding:9px 27px; box-sizing:border-box; margin:10% 0% 15%;}
+
+/* FITNESS -combat */
+
+#contents.nCombat .combatHead {max-width:720px; background:url(/images/reebok/efu2018/brand/fitness/combatBg.jpg) no-repeat 0 0; background-size:100% 100%; display:block;}
+#contents.nCombat .combatHead img {padding:39% 16% 9%; text-align:center; display:inline-block; box-sizing:border-box;}
+#contents.nCombat .combatHead p {font-size:18px; color:#fff; letter-spacing:-1px; font-family:'NotoSansKR'; font-weight:500; line-height:25px; text-align:center;}
+#contents.nCombat .combatHead p span {display:block; font-size:14px; color:#fff; letter-spacing:-0.5px; font-family:'NotoSansKR'; font-weight:200; line-height:20px; text-align:center; padding-bottom:34%; padding-top:2%;}
+
+#contents.nCombat .fitnessSection {max-width:720px; background-color:#191919; height:100%;}
+#contents.nCombat .fitnessSection .section01 {text-align:left; padding:15% 8%;}
+#contents.nCombat .fitnessSection .section01 h2 {font-size:68px; color:#fff; font-family: 'reefont-condensed'; font-weight:100; letter-spacing:4px; line-height:72px;}
+#contents.nCombat .fitnessSection .section01 p {display:block; font-size:20px; color:#fff; letter-spacing:-1px; font-family:'NotoSansKR'; font-weight:300; line-height:30px; text-align:left; margin-top:10px;}
+#contents.nCombat .fitnessSection .section01 p span {display:block; font-size:14px; color:#5c5c5c; letter-spacing:0px; font-family:'NotoSansKR'; font-weight:300; line-height:20px; text-align:left; margin-top:10px;}
+#contents.nCombat .fitnessSection .section02 {text-align:right; padding:15% 8%;}
+#contents.nCombat .fitnessSection .section02 h2 {font-size:68px; color:#fff; font-family: 'reefont-condensed'; font-weight:100; letter-spacing:4px; line-height:72px;}
+#contents.nCombat .fitnessSection .section02 p {display:block; font-size:20px; color:#fff; letter-spacing:-1px; font-family:'NotoSansKR'; font-weight:300; line-height:30px; text-align:right; margin-top:10px;}
+#contents.nCombat .fitnessSection .section02 p span {display:block; font-size:14px; color:#5c5c5c; letter-spacing:0px; font-family:'NotoSansKR'; font-weight:300; line-height:20px; text-align:right; margin-top:10px;}
+#contents.nCombat .fitnessSection .section03 {text-align:left; padding:0% 8%; margin-top:-5%;}
+#contents.nCombat .fitnessSection .section03 h2 {font-size:40px; color:#fff; font-family: 'reefont-condensed'; font-weight:100; letter-spacing:4px; line-height:44px;}
+#contents.nCombat .fitnessSection .section03 h2 span {display:block; font-size:20px; color:#fff; font-family: 'reefont-condensed'; font-weight:100; letter-spacing:2px;}
+#contents.nCombat .fitnessSection .section03 p {font-size:14px; color:#fff; letter-spacing:-1px; font-family:'NotoSansKR'; font-weight:300; line-height:20px; text-align:left; margin-top:10px;}
+#contents.nCombat .fitnessSection .section03 .productBtn {display:block; width:140px; height:35px; background:url(/images/reebok/efu2018/brand/fitness/btnArrow.png) no-repeat 110px center #b71c26; background-size:8px; font-size:14px; font-family:'reefont-condensed'; font-weight:300; letter-spacing:5px; color:#fff; padding:9px 27px; box-sizing:border-box; margin:10% 0% 15%;}
+
+/* 20180329 - 추가 or 20180330 수정 */
+
+#contents.main .nNewBest .textArea>em>.basic{display:inline-block; font-size:18px; color:#000; }
+#contents.main .nNewBest .textArea>em>.basic>span{display:inline-block; margin-left:-1px; font-size:13px;}
+#contents.main .nOnline .nSaleWrap .nSale .textArea>em>.basic{display:inline-block; font-size:21px; color:#000; }
+#contents.main .nOnline .nSaleWrap .nSale .textArea>em>.basic>span{display:inline-block; margin-left:-1px; font-size:16px;}
+#blockArea {position:fixed; left:0; top:0; width:100%; height:100%; background:rgba(0,0,0,.5); z-index:201;}
+#blockArea a.btnLayerClose {display:block; position:absolute; right:20px; top:20px; width:60px; height:60%;}
+
+.nReeclub .benefit p {text-align:center; font-size:14px; color:#191919; letter-spacing:-1px; font-family:'NotoSansKR'; font-weight:300; line-height:22px; margin:-7% 0 15%;}
+.nReeclub .benefit dl dd ul li.red {font-size:14px; color:#b71c26; letter-spacing:-1px; font-family:'NotoSansKR'; font-weight:300; line-height:22px; position:relative; padding-left:15px;}
+.nReeclub .benefit dl dd ul li.red:before {content:""; position:absolute; left:0px; width:5px; height:5px; border-radius:50%; background:#b71c26; margin-top:10px;}
+.nReeclub .titArea03 {max-width:720px; height:400px; margin:0 auto; box-sizing:border-box; background-size:100%; padding-bottom:110px; position:relative; padding-top:60px; background:#191919;}
+.nReeclub .titArea03 h2 {text-align:center; padding:12% 23% 10%;}
+.nReeclub .titArea03 h3 {text-align:center; padding:0% 18%;}
+.nReeclub .titArea03 h4 {text-align:center; margin-top:11%;}
+.nReeclub .titArea03 h4 img {height:60px;}
+.nReeclub .titArea03 p {font-size:14px; color:#fff; line-height:23px; text-align:center; font-family:'NotoSansKR'; font-weight:100; padding:20px 0;}
+.nReeclub .mobilememer {width:100%; height:50px; background:#4b4b4b; font-size:14px; color:#fff; text-align:center; font-family:'NotoSansKR'; font-weight:400; line-height:50px;}
+.nReeclub .download h2 {text-align:center; font-size:30px; letter-spacing:-1px; font-weight:100; font-family: 'NotoSansKR'; margin-bottom:40px; margin-top:66px;}
+.nReeclub .download h2 span {display:inline-block; text-align:center; font-size:30px; letter-spacing:-2px; font-weight:400; font-family: 'NotoSansKR'; }
+.nReeclub .download h2 span.lts {display:inline-block; text-align:center; font-size:30px; letter-spacing:-1px; font-weight:100 !important; letter-spacing:0.5px; font-family: 'NotoSansKR'; }
+.nReeclub .download h2 span img {width:3px; height:3px; padding:23px 9px 0px;}
+.nReeclub .download h2 span img.sdot {width:3px; height:3px; padding:23px 9px 0px;}
+.nReeclub .download .kakaoSlide {padding:0px 70px; overflow:hidden; position:relative;}
+.nReeclub .download .kakaoSlide .slick-slide {text-align:center;}
+.nReeclub .download .kakaoSlide .slick-list {overflow:hidden; margin-bottom:30px;}
+.nReeclub .download .kakaoSlide .slick-prev {background:url(/images/reebok/efu2018/brand/kakaoarrowPrev.png) no-repeat center center; width:25px; height:25px; text-indent:-999px; position:absolute; top:47%; left:35px; border:none;}
+.nReeclub .download .kakaoSlide .slick-next {background:url(/images/reebok/efu2018/brand/kakaoarrowNext.png) no-repeat center center; width:25px; height:25px; text-indent:-999px; position:absolute; top:47%; right:35px; overflow:hidden; border:none;}
+.nReeclub .download .kakaoSlide .slick-dots li {margin:0 3px;}
+.nReeclub .download .kakaoSlide .slick-dots li.slick-active button {background:#fae100; color:#3c1e1e; text-indent:0px; width:38px; height:38px; border-radius:50%; font-family:'dinpro'; font-size:15px; letter-spacing:-1px;}
+.nReeclub .download .kakaoSlide .slick-dots li button {background:#cacbc6; color:#fff; text-indent:0px; width:38px; height:38px; border-radius:50%; font-family:'dinpro'; font-size:15px; letter-spacing:-1px;}
+.nReeclub .download .syrupSlide {padding:0px 70px; overflow:hidden; position:relative;}
+.nReeclub .download .syrupSlide .slick-slide {text-align:center;}
+.nReeclub .download .syrupSlide .slick-list {overflow:hidden; margin-bottom:30px;}
+.nReeclub .download .syrupSlide .slick-prev {background:url(/images/reebok/efu2018/brand/kakaoarrowPrev.png) no-repeat center center; width:25px; height:25px; text-indent:-999px; position:absolute; top:47%; left:35px; border:none;}
+.nReeclub .download .syrupSlide .slick-next {background:url(/images/reebok/efu2018/brand/kakaoarrowNext.png) no-repeat center center; width:25px; height:25px; text-indent:-999px; position:absolute; top:47%; right:35px; overflow:hidden; border:none;}
+.nReeclub .download .syrupSlide .slick-dots li {margin:0 3px;}
+.nReeclub .download .syrupSlide .slick-dots li.slick-active button {background:#fc7648; color:#fff; text-indent:0px; width:38px; height:38px; border-radius:50%; font-family:'dinpro'; font-size:15px; letter-spacing:-1px;}
+.nReeclub .download .syrupSlide .slick-dots li button {background:#cacbc6; color:#fff; text-indent:0px; width:38px; height:38px; border-radius:50%; font-family:'dinpro'; font-size:15px; letter-spacing:-1px;}
+.nReeclub .titArea h1 {font-size:25px; color:#fff; line-height:33px; text-align:center; font-family:'NotoSansKR'; font-weight:500;}
+.nReeclub .titArea h1 span {font-size:25px; color:#b71c26; line-height:30px; text-align:center; font-family:'NotoSansKR'; font-weight:600;}
+.nReeclub .benefit02 {max-width:720px; margin:0 auto; box-sizing:border-box; background:#191919; padding:60px 8px 1px; margin-top:100px;}
+.nReeclub .benefit02 h4 {text-align:center; margin:10% 0;}
+.nReeclub .benefit02 h4 img {height:25px;}
+.nReeclub .benefit02 dl {padding:0 17px;}
+.nReeclub .benefit02 dl>dt {font-size:20px; color:#b82329; letter-spacing:-1px; font-family:'NotoSansKR'; font-weight:500;}
+.nReeclub .benefit02 dl dd {margin:5px 0px 60px; border-top:3px solid #b82329;}
+.nReeclub .benefit02 dl dd.content {font-size:14px; color:#fff; letter-spacing:-1px; font-family:'NotoSansKR'; font-weight:300; line-height:22px; padding:18px 0px;}
+.nReeclub .benefit02 dl dd strong {display:block; font-size:15px; color:#fff; letter-spacing:-0.5px; font-family:'NotoSansKR'; font-weight:500; margin-top:18px; margin-bottom:5px;}
+.nReeclub .benefit02 dl dd.confirm {font-size:14px; color:#fff; letter-spacing:-0.5px; font-family:'NotoSansKR'; font-weight:300; line-height:25px; position:relative; padding:25px 15px;}
+.nReeclub .benefit02 dl dd ul li {font-size:14px; color:#fff; letter-spacing:-0.5px; font-family:'NotoSansKR'; font-weight:300; line-height:22px; position:relative; padding-left:15px;}
+.nReeclub .benefit02 dl dd ul li:before {content:""; position:absolute; left:0px; width:5px; height:5px; border-radius:50%; background:#fff; margin-top:10px;}
+.nReeclub .benefit02 dl dd ul li .membershipChk {width:145px; height:30px; background:#b71c26; padding:5px 9px; box-sizing:border-box; position:relative; display:inline-block; margin:10px 0px;}
+.nReeclub .benefit02 dl dd ul li .membershipChk a {font-size:12px; letter-spacing:0px; font-family:'NotoSansKR'; font-weight:100; line-height:19px; color:#fff;}
+.nReeclub .benefit02 dl dd ul li .membershipChk:after {content:">"; position:absolute; right:17px; font-weight:600; color:#fff; font-size:14px; top:2px;}
+.nReeclub .viewContent h2 .btnArea {display:block; margin:10px auto; width:162px; height:40px; background:url(/images/reebok/efu2018/brand/reclubArrow.png) no-repeat 133px center #5c5c5c; background-size:9px; padding:15px 25px; box-sizing:border-box;}
+.nReeclub .viewContent h2 .btnArea .btnTypeC {width:130px; height:30px; color:#fff; }
+.nReeclub .viewContent h2 .btnArea .btnTypeC span {display:block; font-size:12px; letter-spacing:-1px; font-family:'NotoSansKR'; font-weight:100; line-height:8px; text-align:left;}
+
+/* category */
+.categoryIndex #footer .go_top {background:#efefef;}
+#contents.categoryArea .categoryBanner .nViewSlide {position:relative;}
+#contents.categoryArea .categoryBanner .nViewSlide .slick-dots{position:absolute; left:0px; bottom:5%; width:100%;}
+#contents.categoryArea .categoryBanner .nViewSlide .slick-dots li.slick-active button {background:#b71c26;}
+#contents.categoryArea article h2{height:100px; line-height:100px; color:#000; font-family:'dinpro cond'; font-size:20px; font-weight:500; letter-spacing:5px; text-align:center;}
+#contents.categoryArea article h2.fitness{background:#fff;}
+#contents.categoryArea .category {background:#efefef;}
+#contents.categoryArea .category.fitness>ul {background:#fff;}
+#contents.categoryArea .category>ul {padding:0 15px 20px 15px;}
+#contents.categoryArea .category>ul li {position:relative; margin-bottom:20px; border:1px solid #d8d8d8;}
+#contents.categoryArea .category>ul li a>p {position:absolute; right:24px; top:38px; padding-top:7px; font-size:23px; color:#000; font-weight:bold; text-align:right;}
+#contents.categoryArea .category>ul li a>p:before {content:""; display:block; clear:both; position:absolute; right:0; top:0; width:26px; height:3px; background:#b71c26;}
+#contents.categoryArea .category>ul li a>p span {display:block; padding-top:7px; font-size:12px; color:#474747;letter-spacing:0.2px;}
+#contents.categoryArea .category>div {position:relative;}
+#contents.categoryArea .category>div p {position:absolute; left:50%; bottom:23%; padding-top:7px; margin-left:-65px; width:130px; font-size:14px; color:#fff; font-weight:normal; text-align:center;letter-spacing:1px;}
+#contents.categoryArea .category>div p:before {content:""; display:block; clear:both; position:absolute; left:50%; top:0; margin-left:-15px; width:30px; height:2px; background:#b71c26;}
+
+#contents.categoryArea .bestProduct{margin-top:40px; background:#efefef}
+#contents.categoryArea .bestProduct  a{display:block; transform: scale(0.7); transition: all 300ms ease;}
+#contents.categoryArea .bestProduct .slick-center a{transform: scale(1) !important;-moz-transform: scale(1) !important;ransition: all 300ms ease !important;-ms-transform: scale(1);-o-transform: scale(1);-webkit-transform: scale(1);}
+#contents.categoryArea .bestProduct .nSaleWrap{padding:0 0px 45px;  }
+#contents.categoryArea .bestProduct .nSaleWrap .nSale{}
+#contents.categoryArea .bestProduct .nSaleWrap .nSale .imgArea{text-align:center; max-width:450px; margin:0 auto;}
+#contents.categoryArea .bestProduct .nSaleWrap .nSale .textArea{padding:3% 25px 6%;background:#fff; max-width:450px; margin:0 auto; box-sizing:border-box;}
+#contents.categoryArea .bestProduct .nSaleWrap .nSale .textArea>span{display:block; font-size:12px; color:#999; font-family:'dinpro cond'; font-weight:500; letter-spacing:1px;}
+#contents.categoryArea .bestProduct .nSaleWrap .nSale .textArea>strong{display:block; font-family: 'NotoSansKR'; font-weight:700; font-size:19px; color:#1b1818;letter-spacing:-1px;}
+#contents.categoryArea .bestProduct .nSaleWrap .nSale .textArea>em{display:block; font-style:normal; font-family: 'NotoSansKRRegular';}
+#contents.categoryArea .bestProduct .nSaleWrap .nSale .textArea>em>.cost{display:inline-block; margin-right:5px; font-size:18px; color:#9b9b9b; text-decoration:line-through;}
+#contents.categoryArea .bestProduct .nSaleWrap .nSale .textArea>em>.cost>span{display:inline-block; margin-left:-3px; font-size:13px;}
+#contents.categoryArea .bestProduct .nSaleWrap .nSale .textArea>em>.sale{display:inline-block; font-size:21px; color:#c80000; }
+#contents.categoryArea .bestProduct .nSaleWrap .nSale .textArea>em>.sale>span{display:inline-block; margin-left:-3px; font-size:16px;}
+#contents.categoryArea .bestProduct .nSaleWrap .nSale .textArea>em>.basic{display:inline-block; font-size:21px; color:#000; }
+#contents.categoryArea .bestProduct .imgArea>span .best{display:inline-block; position:relative;}
+#contents.categoryArea .bestProduct .imgArea>span .best{position:absolute; right:0px; top:0px; width:65px; height:65px; background:url(/images/reebok/efu2018/main/ico_best.png) no-repeat 0 0 ; background-size:65px;}
+
+#contents.categoryArea.categoryStyle2 .category ul li p { left:24px; top:50%; right:auto;  margin-top:-20px; height:40px; font-size:19px; text-align:left;}
+#contents.categoryArea.categoryStyle2 .category ul li:nth-child(2) p {left:auto; right:24px;}
+#contents.categoryArea.categoryStyle2 .category ul li p:before {width:0; height:0; background:none;}
+#contents.categoryArea.categoryStyle2 .category ul li p span {color:#000;}
+
+#contents.categoryArea .classicBanner {padding:0 15px 22px 15px;}
+#contents.categoryArea .classicBanner p {padding-bottom:13px;}
+
+/* mainPop */
+.mainPopup {position:absolute; left:5%; top:15%; padding-top:50px; width:90%; background:#fff;z-index:200;}
+.mainPopup .mainPopupTit {padding:0 20px; font-size:21px; color:#000; font-weight:500; font-family:'NotoSansKR'; line-height:28px;}
+.mainPopup .mainPopupTit:after {margin-top:13px; content:""; display:block; clear:both; margin-top:13px; width:20px; height:3px; background:#b71c26;}
+.mainPopup .mainPopupCont {padding:19px 20px 0 20px;}
+.mainPopup .mainPopupCont p {font-size:13px; color:#000; font-family:'NotoSansKR'; line-height:20px; letter-spacing:-0.5px;}
+.mainPopup .mainPopupCont dl {padding-top:25px;}
+.mainPopup .mainPopupCont dl dt {font-size:13px; color:#000; font-family:'NotoSansKR'; font-weight:500; }
+.mainPopup .mainPopupCont dl dd {padding:5px 0 10px 8px; font-size:13px; color:#000; font-family:'NotoSansKR'; font-weight:300;}
+.mainPopup .mainPopupCont .btnArea {margin:15px 0 20px 0; text-align:center; background:#b71c26;}
+.mainPopup .mainPopupCont .btnArea a {display:inline-block; padding:16px 0; width:100%; font-size:16px; color:#fff; font-family:'NotoSansKR'; text-align:center;}
+.mainPopup .todayBtn {padding:14px 20px; border-top:1px solid #e3e3e3; background:#f8f8f8;}
+.mainPopup .todayBtn input {width:16px; height:16px; border:1px solid #ccc; background:#fff; vertical-align:top;}
+.mainPopup .todayBtn a {margin-left:5px; font-size:13px; color:#333; line-height:22px;  font-family:'NotoSansKR';}
+.mainPopup .closeBtn {position:absolute; right:20px; top:20px;}
+.mainPopup .closeBtn img {width:15px;}
+.dn {display:none;}		
+	
+/* paymentPop */		
+.paymentPop .paymentPopCont {position:absolute; left:5%; top:15%; padding-top:21px; width:90%; text-align:center; background:#fff;z-index:200;}
+.paymentPop .paymentPopCont>img {width:108px;}
+.paymentPop .paymentPopCont>.txt {padding:15px 0 20px 0;font-size:13px; color:#333;}
+.paymentPop .paymentPopCont>.paymentBtn a {display:block; margin:0 20px 15px 20px; font-size:13px; color:#fff;line-height:48px; background:#b71c26;}
+.paymentPop #bg {display: block; position: fixed; top: 0; left: 0; width: 100%; height:100vh; background:rgba(0,0,0,0.5); opacity: 0.8; z-index: 110;}
+
+/***** animate *****/
+@keyframes icoAni {
+  from {
+   transform: translateY(5px);
+  }
+
+  to {
+    transform: translateY(0px);
+  }
+}
+@keyframes  slideAni {
+	from {
+   transform: translateY(35px);
+   pacity: 0;
+  }
+
+  to {
+    transform: translateY(0px);
+    pacity: 1;
+  }
+
+}
+
+/* media ca */
+@media all and (min-width:320px) and (max-width:360px) {
+
+	#contents.classic .youtubeWrap .youtubeArea iframe{height:146px;}
+
+	#contents.nTraining .fitnessSection .section01 p {font-size:19px;}
+	#contents.nTraining .fitnessSection .section01 p span {font-size:13px;}
+	#contents.nTraining .fitnessSection .section02 p {font-size:19px;}
+	#contents.nTraining .fitnessSection .section02 p span {font-size:13px;}
+	#contents.nCrossfit .fitnessSection .section03 h2 {letter-spacing:0px;}
+	#contents.nCrossfit .fitnessSection .section04 p span {letter-spacing:-2px;}
+	#contents.nStudio .fitnessSection .section01 p span {font-size:13px; letter-spacing:-1px;}
+	#contents.nStudio .fitnessSection .section03 h2 {letter-spacing:-1px;}
+	#contents.nCombat .fitnessSection .section01 p span {letter-spacing:-1px;}
+	#contents.nCombat .fitnessSection .section02 p span {font-size:13px; letter-spacing:-1px;}
+
+	/* 20180329 - 추가 */
+	#contents.main .nOnline .nSaleWrap .nSale .textArea>strong {font-size:17px;}
+
+	/* 20180406 - 추가*/
+	#contents.main .nMainProduct .textArea>strong {font-size:14.5px;}
+}
+@media all and (min-width:361px) and (max-width:460px) {
+
+	#contents.classic .youtubeWrap .youtubeArea iframe{height:246px;}
+}
+@media all and (min-width:461px) and (max-width:560px) {
+
+	#contents.classic .youtubeWrap .youtubeArea iframe{height:346px;}
+}
+@media screen and (min-width:561px) {
+	#contents.classic .youtubeWrap .youtubeArea iframe{height:446px;}
+}

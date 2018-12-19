@@ -1,0 +1,560 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+
+@font-face {
+	font-family: 'adinenu-bold';
+    src: url('/fonts/mygirl/EOT/adineue-bold-webfont.eot');
+	src: url('/fonts/mygirl/EOT/adineue-bold-webfont.eot?#iefix') format('embedded-opentype'), 
+	     url('/fonts/mygirl/WOFF/adineue-bold-webfont.woff') format('woff'), 
+	     url('/fonts/mygirl/TTF/adineue-bold-webfont.ttf')  format('truetype');
+}
+@font-face { 
+	font-family: 'adi12wf-l'; 
+    src: url('/fonts/mygirl/EOT/adi12wf-l.eot');
+	src: url('/fonts/mygirl/EOT/adi12wf-l.eot?#iefix') format('embedded-opentype'), 
+	     url('/fonts/mygirl/WOFF/adi12wf-l.woff') format('woff'), 
+	     url('/fonts/mygirl/TTF/adi12wf-l.ttf')  format('truetype');
+}
+@font-face { 
+	font-family: 'adi12wf-r'; 
+    src: url('/fonts/mygirl/EOT/adi12wf-r.eot');
+	src: url('/fonts/mygirl/EOT/adi12wf-r.eot?#iefix') format('embedded-opentype'), 
+	     url('/fonts/mygirl/WOFF/adi12wf-r.woff') format('woff'), 
+	     url('/fonts/mygirl/TTF/adi12wf-r.ttf')  format('truetype');
+}
+@font-face { 
+	font-family: 'adi12wf-b';
+    src: url('/fonts/mygirl/EOT/adi12wf-b.eot');
+	src: url('/fonts/mygirl/EOT/adi12wf-b.eot?#iefix') format('embedded-opentype'), 
+	     url('/fonts/mygirl/WOFF/adi12wf-b.woff') format('woff'), 
+	     url('/fonts/mygirl/TTF/adi12wf-b.ttf')  format('truetype');
+}
+
+.linkbox_gr{
+	padding:10px 0;
+	text-align:center;
+	display:block;
+	background:#eeaebf;
+	font-size:12px;
+	font-weight:bold;
+	color:#000;
+}
+.ft_adi{
+	font-family:'adinenu-bold';
+}
+/* header */
+.mygirl .about{
+	box-shadow:1px 1px 3px #ebebeb;
+	font-size:12px;
+}
+.mygirl .about span{
+	display:block;
+	padding:10px 0;
+	text-align:center;
+	font-size:12px;
+	color:#444;
+}
+
+.mygirl header{
+	position:relative;
+	font-size:11px;
+}
+.mygirl header h1{
+	width:23%;
+	height:120%;
+	font:2.5em/400% 'adinenu-bold';
+	background:#000;
+	position:absolute;
+	top:0;
+	left:0;
+	z-index:2;
+}
+.mygirl header h1 a{
+	display:block;
+	color:#fff;
+	text-align:center;
+}
+.mygirl header nav{font-size:100%;}
+.mygirl header nav ul{font-size:100%;}
+.mygirl header nav li{
+	width:26%;
+	height:100%;
+	float:right;
+	line-height:500%;
+	font-family:'adinenu-bold';
+	font-size:1.85em;
+}
+.mygirl header nav li a{
+	width:100%;
+	height:100%;
+	display:block;
+	text-align:center;
+	transition:background 300ms ease-out 0s;
+	-webkit-transition:background 300ms ease-out 0s;
+	color:#000;
+}
+.mygirl header nav li a.on{
+	background:#eeaebf;
+}
+/* header end*/
+
+/* main */
+.mygirl .mygirl_main article.mg_visual{
+	width:100%;
+	position:relative;
+	overflow:hidden;
+	margin-bottom:10%;
+	z-index:1;
+}
+.mygirl .mygirl_main article.mg_visual .mg_visual_wrap{
+	position:relative;
+}
+.mygirl .mygirl_main article.mg_visual .mg_visual_wrap .box{
+	width:100%;
+	position:absolute;
+	top:0;
+	left:0;
+	opacity:0.15;
+	transition:opacity 300ms ease-out 0s;
+	-moz-transition:opacity 300ms ease-out 0s;
+	-webkit-transition:opacity 300ms ease-out 0s;
+	font-size:1em;
+}
+.mygirl .mygirl_main article.mg_visual .mg_visual_wrap div.now{opacity:1;}
+.mygirl .mygirl_main article.mg_visual .box img{
+	width:100%;
+	vertical-align:top;
+}
+.mygirl .mygirl_main article.mg_visual .box a.linkbox_gr{
+	position:absolute;
+	top:72%;
+	left:23%;
+	width:50%;
+	height:7.5%;
+	padding:1.5% 2% 2%;
+	background:transparent;
+	border:5px solid #eeaebf;
+	color:#fff;
+	font-size:1.8em;
+}
+.mygirl .mygirl_main article.mg_visual .box a.linkbox_gr span{
+	display:block;
+	width:100%;
+	height:100%;
+	background:transparent;
+	color:#fff;
+}
+.mygirl .mygirl_main article.mg_visual .box a.linkbox_gr span em{
+	font-family:'adinenu-bold';
+	font-size:1.5em;
+}
+
+.mygirl .mygirl_main article.mg_visual .mg_visual_wrap div:nth-child(1){
+	transform:translateX(0%);
+	-webkit-transform:translateX(0%);
+	-moz-transform:translateX(0%);
+}
+.mygirl .mygirl_main article.mg_visual .mg_visual_wrap div:nth-child(2){
+	transform:translateX(100%);
+	-webkit-transform:translateX(100%);
+	-moz-transform:translateX(100%);
+}
+.mygirl .mygirl_main article.mg_visual .mg_visual_wrap div:nth-child(3){
+	transform:translateX(200%);
+	-webkit-transform:translateX(200%);
+	-moz-transform:translateX(200%);
+}
+.mygirl .mygirl_main article.mg_visual .mg_visual_wrap div:nth-child(4){
+	transform:translateX(300%);
+	-webkit-transform:translateX(300%);
+	-moz-transform:translateX(300%);
+}
+.mygirl .mygirl_main article.mg_visual .mg_visual_wrap div:nth-child(5){
+	transform:translateX(400%);
+	-webkit-transform:translateX(400%);
+	-moz-transform:translateX(400%);
+}
+
+.mygirl .mygirl_main article.mg_visual .mg_visual_bg img{width:100%;}
+.mygirl .mygirl_main article.mg_visual .visual_util .bullet{position:absolute;top:20px;right:20px;}
+.mygirl .mygirl_main article.mg_visual .visual_util .bullet li{
+	display:inline-block;
+	width:8px;
+	height:8px;
+	border-radius:4px;
+	background:#fff;
+	text-indent:-5000px;
+}
+
+.mygirl .mygirl_main article.mg_visual .visual_util .bullet li.on{
+	background:#eeaebf;
+}
+.mygirl .mygirl_main article.mg_visual .visual_util .arrow_r{
+	width:23%;
+	height:91.5%;
+	position:absolute;
+	top:0;
+	right:0;
+	background:url(../../images/adidas/mygirl/visual_arrow_r.png) right 50% no-repeat;
+	background-size:42% auto;
+}
+.mygirl .mygirl_main article.mg_visual .visual_util .arrow_l{
+	width:23%;
+	height:91.5%;
+	position:absolute;
+	top:0;
+	left:0;
+	background:url(../../images/adidas/mygirl/visual_arrow_l.png) 0 50% no-repeat;
+	background-size:42% auto;
+}
+
+.mygirl .notice_mygirl{
+	position:relative;
+	background:#fbfbfb url(../../images/adidas/mygirl/bg_wave_line.gif) 0 bottom repeat-x;
+	padding-bottom:8px;
+	margin-top:-12.3%;
+	z-index:0;
+	margin-bottom:10%;
+}
+
+.mygirl .notice_mygirl .btn{
+	padding:5% 0;
+}
+.mygirl .notice_mygirl .btn a{display:block;}
+.mygirl .notice_mygirl .btn img{
+	width:100%;
+}
+
+.mygirl .notice_mygirl .about_txt{
+	height:0;
+	overflow:hidden;
+	background:#fbfbfb;
+	position:relative;
+}
+.mygirl .notice_mygirl .about_txt h2{padding:5% 0 0 5%;color:#000;font-size:1.8em;margin-bottom:5%;}
+.mygirl .notice_mygirl .about_txt p{padding:0 0 5px 5%;color:#000;font-size:0.7em;}
+.mygirl .notice_mygirl .about_txt p.nl{margin-bottom:3%;}
+.mygirl .notice_mygirl .about_txt .sign{position:absolute;top:85%;right:5%;width:30%;display:none;}
+.mygirl .notice_mygirl .about_txt .sign img{width:100%;}
+.mygirl .notice_mygirl .about_txt .close{display:block;width:5%;position:absolute;top:3.3%;right:3%;padding:0;}
+.mygirl .notice_mygirl .about_txt .close img{width:100%;}
+
+
+
+.mygirl .mygirl_main .column{
+	width:65.525%;
+	margin:0 auto;
+}
+.mygirl .mygirl_main .column>div img{width:100%;}
+.mygirl .mygirl_main .column h2{
+	font:20px 'adinenu-bold';
+	color:#000;
+	text-align:center;
+	margin-bottom:10px;
+}
+.mygirl .mygirl_main .column h2 span{text-decoration:underline;}
+.mygirl .mygirl_main .column .box01{
+	border:2px solid #000;
+	padding:2%;
+	position:relative;
+	margin-bottom:15%;
+}
+.mygirl .mygirl_main .column .box01 .linkbox_gr{
+	width:60%;
+	position:absolute;
+	bottom:-18px;
+	left:20%;
+	z-index:2;
+}
+
+.mygirl .mygirl_main .column .box01 .box01_util{
+	width:100%;
+	position:absolute;
+	top:-6px;
+	left:0;
+	text-align:center;
+}
+.mygirl .mygirl_main .column .box01 .box01_util li{
+	display:inline-block;
+	width:6px;
+	height:6px;
+	border-radius:5px;
+	border:2px solid #000;
+	background:#fff;
+}
+.mygirl .mygirl_main .column .box01 .box01_util li.on{
+	background:#eeaebf;
+}
+.mygirl .mygirl_main .column .box01_wrapper{
+	overflow:hidden;
+	position:relative;
+}
+
+.mygirl .mygirl_main .column .box01_wrapper .slider{
+	position:relative;
+}
+.mygirl .mygirl_main .column .box01_wrapper .slider .box{
+	width:100%;
+	position:absolute;
+	top:0;
+	left:0;
+	opacity:0.15;
+	transition:opacity 500ms ease-out 200ms;
+	-webkit-transition:opacity 500ms ease-out 200ms;
+}
+.mygirl .mygirl_main .column .box01_wrapper .slider .box.now{opacity:1;}
+.mygirl .mygirl_main .column .box01_wrapper .slider .box:nth-child(1){
+	transform:translateX(0%);
+	-moz-transform:translateX(0%);
+	-webkit-transform:translateX(0%);
+}
+.mygirl .mygirl_main .column .box01_wrapper .slider .box:nth-child(2){
+	transform:translateX(100%);
+	-moz-transform:translateX(100%);
+	-webkit-transform:translateX(100%);
+}
+.mygirl .mygirl_main .column .box01_wrapper .slider .box:nth-child(3){
+	transform:translateX(200%);
+	-moz-transform:translateX(200%);
+	-webkit-transform:translateX(200%);
+}
+
+.mygirl .mygirl_main .column .box01_wrapper .slider .box img{
+	width:100%;
+}
+
+.mygirl .mygirl_main .column .box02{
+	margin-bottom:15%;
+}
+.mygirl .mygirl_main .column .box02 .linkbox_gr{
+	width:70%;
+	left:5%;
+	position:relative;
+}
+.mygirl .mygirl_main .column .box02 .linkbox_gr span{
+	font-size:15px;
+	color:#000;
+}
+
+.mygirl .mygirl_main .column .box03{
+	margin-bottom:15%;
+	position:relative;
+}
+.mygirl .mygirl_main .column .box03 .linkbox_gr{
+	width:60%;
+	left:20%;
+	position:absolute;
+	bottom:0;
+}
+.mygirl .mygirl_main .column .box04{
+	margin-bottom:15%;
+}
+.mygirl .mygirl_main .column .box04 .linkbox_gr{
+	width:70%;
+	left:4%;
+	position:relative;
+}
+
+/*  main end */
+
+/* event */
+.mygirl_evt{
+	padding:0 3.2%;
+}
+/* event end */
+
+
+/* stories */
+.mygirl_stories .stories_list{
+	width:100%;
+	background:url(../../images/adidas/mygirl/bg_storieslist.jpg) 0 0 no-repeat;
+	background-size:100% auto;
+	padding:30% 0;
+}
+.mygirl_stories .stories_list .listbox{
+	width:88%;
+	margin:0 auto;
+	background:#fff;
+	position:relative;
+}
+
+.mygirl_stories .stories_list h3{
+	font:17px 'adi12wf-l';
+	text-align:center;
+	padding:15px 0 10px;
+	color:#000;
+}
+.mygirl_stories .stories_list li{
+	width:100%;
+}
+.mygirl_stories .stories_list li img{width:100%;vertical-align:top;}
+
+.mygirl_stories .stories_list a.linkbox{
+	width:109%;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	border:8px solid #eeaebf;
+	height:15%;
+	display:none;
+	position:absolute;
+	top:0%;
+	left:-4.5%;
+}
+
+.mygirl_stories .stories_viewbox{position:relative;}
+.mygirl_stories .stories_viewbox.last{margin-bottom:10%;}
+.mygirl_stories .stories_viewbox img{width:100%;}
+.mygirl_stories .stories_viewbox.last .linkbox{
+	width:31%;
+	height:20%;
+	display:block;
+	position:absolute;
+	top:54%;
+	left:12%;
+	text-indent:-5900px;
+}
+/* stories end */
+
+
+/* looks */
+.mygirl_looks{}
+.mygirl_looks .looks_visual{position:relative;border-bottom:1px solid #fff;}
+.mygirl_looks .looks_visual img{width:100%;vertical-align:top;}
+.mygirl_looks .lookbox .box{position:relative;}
+.mygirl_looks .lookbox .box img{width:100%;}
+.mygirl_looks .lookbox .box .lnk{position:absolute;display:block;text-indent:-5000px;}
+
+.mygirl_looks .lookbox .box .link_lr{position:absolute;display:block;z-index:9;}
+.mygirl_looks .lookbox .box .img{
+	position:absolute;
+	top:0;
+	left:0;
+	border:2px solid #eeaebf;
+	background:#fff;border-radius:50%;background-size:100% auto;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	display:none;
+	z-index:10;
+}
+
+/* footer promo link */
+.mygirl article.looks_link{
+	position:relative;
+	box-shadow:0 -1px 20px #f4f4f4;
+}
+
+.mygirl article.looks_link img{
+	width:100%;
+	vertical-align:top;
+}
+.mygirl article.looks_link a{display:block;position:absolute;height:15%;top:74%;}
+.mygirl article.looks_link a.link1{width:15%;left:3%;}
+.mygirl article.looks_link a.link2{width:18%;left:21%;}
+.mygirl article.looks_link a.link3{width:14%;left:43%;}
+.mygirl article.looks_link a.link4{width:16%;left:62%;}
+.mygirl article.looks_link a.link5{width:16%;left:82%;}
+/* footer promo link end */
+
+/* event-mygirl */
+
+.event_mygirl header{}
+.event_mygirl header h1{
+	width:29.3%;
+	height:100%;
+	float:left;
+	background:#000;
+	font:2.7em 'adinenu-bold';
+}
+.event_mygirl header h1 a{
+	height:65%;
+	padding-top:35%;
+	display:block;
+	color:#fff;
+	text-align:center;
+}
+.event_mygirl header nav{width:70.7%;height:100%;float:left;}
+.event_mygirl header nav .menu{height:50%;}
+.event_mygirl header nav .menu ul{height:100%;font-size:100%;}
+.event_mygirl header nav .menu li{
+	width:50%;
+	height:100%;
+	float:left;
+	text-align:center;
+	font:2em 'adinenu-bold';
+}
+.event_mygirl header nav .menu li a{
+	width:100%;
+	height:100%;
+	display:block;
+	line-height:100%;
+	border-right:1px solid #000;
+	border-bottom:1px solid #000;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+}
+.event_mygirl header nav .menu li a.on{background:#eeaebf;}
+.event_mygirl header nav .menu li.mg_class a.on{background:#eeaebf;}
+.event_mygirl header nav .menu li a span{
+	display:block;
+	position:relative;
+	top:16%;
+}
+#mg_evt_contents{position:relative;}
+.event_mygirl .mg_evt_main{padding-top:5%;}
+.event_mygirl .mg_evt_main img{width:100%;}
+.event_mygirl .mg_evt_main a{display:block;position:absolute;}
+.event_mygirl .mg_evt_main a.link1{top:40.5%;left:0;width:48.5%;height:20.3%;}
+.event_mygirl .mg_evt_main a.link2{top:40.5%;right:0;width:48.5%;height:20.3%;}
+.event_mygirl .mg_evt_main a.link3{top:62.2%;right:0;width:100%;height:37.6%;}
+
+.event_mygirl .mg_evt_sub img{width:100%;}
+.event_mygirl .mg_evt_sub #evt_ct_tab{width:100%;position:absolute;}
+.event_mygirl .mg_evt_sub #evt_ct_tab li{width:32%;height:100%;float:left;margin-right:2.1%;}
+.event_mygirl .mg_evt_sub #evt_ct_tab li.menu2{margin-right:1.9%;}
+.event_mygirl .mg_evt_sub #evt_ct_tab li.menu3{margin-right:0;}
+.event_mygirl .mg_evt_sub #evt_ct_tab li a{display:block;width:100%;height:100%;}
+
+.event_mygirl .mg_evt_campus{padding-top:5%;}
+.event_mygirl .mg_evt_campus #evt_ct_tab.tab1{height:2.3%;top:1.7%;left:0;}
+.event_mygirl .mg_evt_campus #evt_ct_tab.tab2{height:1.8%;top:1.3%;left:0;}
+.event_mygirl .mg_evt_campus #evt_ct_tab.tab3{height:2%;top:1.5%;left:0;}
+.event_mygirl .mg_evt_campus #ct_img1 .fb{
+	position:absolute;
+	display:block;
+	width:35%;
+	height:2%;
+	top:69%;
+	left:56%;
+}
+
+.event_mygirl .mg_evt_seoul{padding-top:5%;}
+.event_mygirl .mg_evt_seoul #evt_ct_tab.tab1{height:3.3%;top:2.4%;left:0;}
+
+.event_mygirl .mg_evt_class{padding-top:5%;}
+.event_mygirl .mg_evt_class #evt_ct_tab.tab1{height:2.2%;top:1.66%;left:0;}
+.event_mygirl .mg_evt_class #evt_ct_tab.tab2{height:1.4%;top:1.1%;left:0;}
+
+/* event-mygirl end */
