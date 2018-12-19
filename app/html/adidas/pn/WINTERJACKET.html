@@ -1,0 +1,718 @@
+<div id="container">
+	<style type="text/css">@media screen and (max-width: 320px){html{font-size:10px}}@media screen and (min-width: 800px){html{font-size:12px}}.pseudo-element{content:'';display:block}#video-layer{position:fixed;top:0;left:0;width:100%;height:100%;z-index:1000}#video-layer .bg{width:100%;height:100%;position:absolute;top:0;left:0;transform-origin:center center;-webkit-transform-origin:center center;transform:scale(0);-webkit-transform:scale(0);opacity:0;background:#000;z-index:1;transition:all 0.4s;-webkit-transition:all 0.4s}#video-layer.loaded .bg{opacity:1;transform:scale(1.2);-webkit-transform:scale(1.2)}#video-layer .video-box{position:relative;width:100%;height:100%;z-index:3}#video-layer .close_x_btn{width:70px;height:70px;position:absolute;top:0;right:0;z-index:5;opacity:0}#video-layer.loaded .close_x_btn{opacity:1}#originals_winter .inner .vbox{opacity:1;transition:0.4s}#originals_winter>div{overflow:hidden}#originals_winter .btn_wrap{display:inline-block}#originals_winter .btn_wrap a{margin:12px 0 0 0;width:185px;font:300 1.3rem/52px 'NotoSansKR';color:#fff;display:block;border:1px solid #fff}#originals_winter .main{position:relative;padding-bottom:147%;width:100%;text-align:center;box-sizing:border-box}#originals_winter .main img{width:100%;opacity:1;-webkit-opacity:1;-moz-opacity:1;transition:all 0.8s;-webkit-transition:all 0.8s;-moz-transition:all 0.8s}#originals_winter .main img.on{opacity:1;-webkit-opacity:1;-moz-opacity:1}#originals_winter .main .bg img{position:absolute;top:0;left:0;width:100%}#originals_winter .main .main_img{transition:0.6s;opacity:0;transition-delay:0.4s}#originals_winter .main .main_img.on{opacity:1}#originals_winter .main .statement{position:absolute;top:67%;left:50%;transform:translate(-50%, -50%);width:51%;text-align:center}#originals_winter .main .statement h1 img{width:100%}#originals_winter .main .statement p{font:300 1rem 'NotoSansKR';color:#fff;padding-top:1rem}#originals_winter .main .statement .allview{width:100%;text-align:center}#originals_winter .main .statement .allview a{display:inline-block;width:100%;margin-top:1rem;background:rgba(0,0,0,0.2);border:1px solid #fff;color:#fff;font:1rem/4rem 'NotosansKR';letter-spacing:0px;box-sizing:border-box}#originals_winter .main .statement .allview a:after{display:inline-block;margin-left:3px}#originals_winter .section{position:relative;text-align:center;padding:2rem 0 3rem}#originals_winter .section.sec_01{background:url("/images/adidas/event/originals/originals_winter/bg_sec01.jpg") 0 0 no-repeat;background-size:100% auto}#originals_winter .section.sec_02{background:url("/images/adidas/event/originals/originals_winter/bg_sec02.jpg") 0 0 no-repeat;background-size:100% auto}#originals_winter .section.sec_03{background:url("/images/adidas/event/originals/originals_winter/181025/bg_sec03.jpg") 0 0 no-repeat;background-size:100% auto}#originals_winter .section.sec_04{background:url("/images/adidas/event/originals/originals_winter/181025/bg_sec04.jpg") 0 0 no-repeat;background-size:100% auto}#originals_winter .section>img{width:15%;margin-bottom:3rem}#originals_winter .section .inn{padding:4rem 1.8rem 0}#originals_winter .section .sub1{position:relative}#originals_winter .section .sub1 .slider_wrap{overflow:hidden;position:relative;z-index:2}#originals_winter .section .sub1 .slider_wrap ul{position:relative}#originals_winter .section .sub1 .slider_wrap ul .owl-item.active .num_title span{margin-right:0;opacity:1}#originals_winter .section .sub1 .slider_wrap ul .owl-item.active .num_title span:after{width:100%}#originals_winter .section .sub1 .slider_wrap ul li{float:left;position:relative;top:0;padding:0 2rem}#originals_winter .section .sub1 .slider_wrap ul li img{width:100%}#originals_winter .section .sub1 .slider_wrap ul .owl-item{opacity:0;transition:1s}#originals_winter .section .sub1 .slider_wrap ul .owl-item.active{opacity:1}#originals_winter .section .sub1 .slider_wrap ul:after{content:'';display:block;clear:both}#originals_winter .section .sub1 .slider_wrap .owl-controls{position:absolute;top:0;width:100%}#originals_winter .section .sub1 .slider_wrap .owl-controls .owl-nav{position:absolute;width:100%;margin:34% 0 0 0}#originals_winter .section .sub1 .slider_wrap .owl-controls .owl-nav div{width:20px;height:20px;text-indent:-9999px}#originals_winter .section .sub1 .slider_wrap .owl-controls .owl-nav .owl-prev{position:absolute;left:0.1rem;display:inline-block;background:url("http://imagem.adidas.co.kr/images/adidas/event/originals/originals_winter/prev.png") no-repeat;background-size:100%}#originals_winter .section .sub1 .slider_wrap .owl-controls .owl-nav .owl-next{position:absolute;right:0.1rem;display:inline-block;background:url("http://imagem.adidas.co.kr/images/adidas/event/originals/originals_winter/next.png") no-repeat;background-size:100%}#originals_winter .section .sub1 .inner_bg{position:absolute;top:-10%;left:50%;width:100%;height:120%;background:rgba(255,255,255,0.2);z-index:1;transform:translateX(-50%)}#originals_winter .section .sub2{position:relative;padding:0}#originals_winter .section .sub2 .slider_wrap{position:relative}#originals_winter .section .sub2 .slider_wrap ul{overflow:hidden;position:relative}#originals_winter .section .sub2 .slider_wrap ul .owl-item{opacity:0;transition:1s}#originals_winter .section .sub2 .slider_wrap ul .owl-item.active{opacity:1}#originals_winter .section .sub2 .slider_wrap ul li{float:left;position:relative;top:0}#originals_winter .section .sub2 .slider_wrap ul li .info_wrap{position:absolute;top:0}#originals_winter .section .sub2 .slider_wrap ul li .info_wrap a{position:absolute;top:0;left:0;width:100%;height:100%;z-index:2}#originals_winter .section .sub2 .slider_wrap ul li .info_wrap .title{position:relative;text-align:left;font:12px 'adinenuPro-black';text-transform:uppercase;color:#fff;letter-spacing:0.2px}#originals_winter .section .sub2 .slider_wrap ul li .info_wrap .title:after{transform:rotate(-45deg);position:absolute;left:-10px;top:9px;content:'';display:inline-block;width:8px;height:2px;background:#fff}#originals_winter .section .sub2 .slider_wrap ul li .info_wrap .name{position:relative;margin:0 0 2px 0}#originals_winter .section .sub2 .slider_wrap ul li .info_wrap p{font:300 12px 'NotoSansKR';color:#fff;text-align:left;letter-spacing:-0.7px}#originals_winter .section .sub2 .slider_wrap ul li .info_wrap p span{display:inline-block;margin-left:3px;width:15px;height:8px;background:url("/images/adidas/event/originals/originals_winter/181025/icon_arrow.png") no-repeat;background-size:100% 100%}#originals_winter .section .sub2 .slider_wrap ul li img{width:100%}#originals_winter .section .sub2 .slider_wrap ul li a{display:inline-block;position:absolute;text-indent:-3000px}#originals_winter .section .sub2 .slider_wrap ul:after{content:'';display:block;clear:both}#originals_winter .section .sub2 .slider_wrap .owl-dots{position:absolute;width:25%;top:48%;right:0;padding-top:0.5rem}#originals_winter .section .sub2 .slider_wrap .owl-dots .owl-dot{display:inline-block;float:none;margin-right:4px;width:1rem;height:1rem;background:none;background:rgba(255,255,255,0.6)}#originals_winter .section .sub2 .slider_wrap .owl-dots .owl-dot.active{background:#fff}#originals_winter .section .video{position:relative}#originals_winter .section .video .inner{padding:4rem 2rem 2rem}#originals_winter .section .video .inner .visual_video{position:relative;width:100%;height:auto}#originals_winter .section .video .inner .visual_video .bg{text-align:center}#originals_winter .section .video .inner .visual_video .bg img{width:100%}#originals_winter .bottom{position:relative;background:url(/images/adidas/event/originals/originals_winter/181025/bnn_bg.jpg) no-repeat;background-size:100% 100%}#originals_winter .bottom img{width:100%}#originals_winter .bottom a{position:relative;display:block}#originals_winter .bottom a.style{padding:40px 15px 10px}#originals_winter .bottom a.style .btn{bottom:19%;left:14%}#originals_winter .bottom a.event{padding:10px 15px 40px}#originals_winter .bottom a.event .btn{bottom:34%;left:14%}#originals_winter .bottom a .btn{position:absolute;bottom:0;width:105px;font:400 11px/35px 'NotoSansKR';color:#fff;background:rgba(0,0,0,0.8);text-align:center}#originals_winter .bottom a .btn:after{position:relative;top:2px;margin-left:5px}
+	</style>
+
+	<div id="originals_winter">
+
+		<div class="main">
+			<div class="bg">
+				<img src="/images/adidas/event/originals/originals_winter/181025/main_visual.jpg" class="main_img" alt="">
+				<img src="/images/adidas/event/originals/originals_winter/181025/main_visual2.jpg" class="main_img on" alt="">
+			</div>
+			<div class="statement">
+				<h1><img src="/images/adidas/event/originals/originals_winter/181025/logo.png" class="main_tit" alt=""></h1>
+				<p>올 겨울 위너와 블랙핑크가<br>선택한 아디다스 윈터 자켓을 만나보세요.</p>
+				<div class="btn_wrap">
+					<a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=705&term=1">구매하기</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="section sec_03">
+			<div class="inn">
+				<div class="sub1">
+					<div class="slider_wrap vbox" id="sec_03_sub1">
+						<ul class="slider">
+							<li><img src="/images/adidas/event/originals/originals_winter/181025/sec03_slide01.jpg" alt=""></li>
+							<li><img src="/images/adidas/event/originals/originals_winter/181025/sec03_slide02.jpg" alt=""></li>
+							<li><img src="/images/adidas/event/originals/originals_winter/181025/sec03_slide03.jpg" alt=""></li>
+							<li><img src="/images/adidas/event/originals/originals_winter/181025/sec03_slide04.jpg" alt=""></li>
+							<li><img src="/images/adidas/event/originals/originals_winter/181025/sec03_slide05.jpg" alt=""></li>
+							<li><img src="/images/adidas/event/originals/originals_winter/181025/sec03_slide06.jpg" alt=""></li>
+							<li><img src="/images/adidas/event/originals/originals_winter/181025/sec03_slide07.jpg" alt=""></li>
+							<li><img src="/images/adidas/event/originals/originals_winter/181025/sec03_slide08.jpg" alt=""></li>
+						</ul>
+					</div>
+					<div class="inner_bg"></div>
+				</div>
+
+				<div class="video">
+					<div class="inner">
+						<div class="visual_video vbox">
+							<div class="bg"><img src="/images/adidas/event/originals/originals_winter/181025/sec03_video.jpg" alt="" class="video-button"
+									data-video-id="m_ZpMYPLMWg" /></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="sub2">
+				<div class="slider_wrap vbox" id="sec_03_sub2">
+					<ul class="slider">
+						<li>
+							<img src="/images/adidas/event/originals/originals_winter/181025/sec03_slidesub01.png" alt="">
+							<div class="info_wrap" style="top: 8%;left:69%;">
+								<a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=CK0978"></a>
+								<div class="title">1. mino’s<br>pick</div>
+								<p>롱 벤치 파카 <span></span></p>
+								<p>CK0978</p>
+							</div>
+							<div class="info_wrap" style="top: 53%;left:25px;">
+								<div class="title">2. jiNu’s<br>pick </div>
+								<div class="name">
+									<a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=CK0979"></a>
+									<p>롱 벤치 파카<span></span></p>
+									<p>CK0979</p>
+								</div>
+								<div class="name">
+									<a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=CK0993"></a>
+									<p>플리스 베스트<span></span></p>
+									<p>CK0993</p>
+								</div>
+							</div>
+							<div class="info_wrap" style="top: 75%;left:25px;">
+								<div class="title">3. SEUNG yOON’s<br>pick</div>
+								<div class="name">
+									<a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=CK0973"></a>
+									<p>액티브 다운 파카<span></span></p>
+									<p>CK0973</p>
+								</div>
+								<div class="name">
+									<a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=CK0990"></a>
+									<p>리버서블 플리스<span></span></p>
+									<p>CK0990</p>
+								</div>
+							</div>
+						</li>
+						<li>
+							<img src="/images/adidas/event/originals/originals_winter/181025/sec03_slidesub02.png" alt="">
+							<div class="info_wrap" style="top: 7%;    left: 69%;">
+								<a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=CK0978"></a>
+								<div class="title">1. mino’s<br>pick</div>
+								<div class="name">
+									<a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=CK0978"></a>
+									<p>롱 벤치 파카<span></span></p>
+									<p>CK0978</p>
+								</div>
+								<div class="name">
+									<a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=CK0987"></a>
+									<p>컬러블록<br>플리스 자켓<span></span></p>
+									<p>CK0987</p>
+								</div>
+							</div>
+							<div class="info_wrap" style="top: 30%;    left: 69%;">
+								<div class="title">2. SEUNG-hOON’s<br>pick </div>
+								<div class="name">
+									<a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=CK0979"></a>
+									<p>롱 벤치 파카<span></span></p>
+									<p>CK0979</p>
+								</div>
+								<div class="name">
+									<a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=CK0988"></a>
+									<p>소프트쉘 후디드<br>플리스 자켓<span></span></p>
+									<p>CK0988</p>
+								</div>
+							</div>
+							<div class="info_wrap" style="top: 52%;left:25px;">
+								<div class="title">3. SEUNG yOON’s<br>pick</div>
+								<div class="name">
+									<a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=CK0973"></a>
+									<p>액티브 다운 파카<span></span></p>
+									<p>CK0973</p>
+								</div>
+								<div class="name">
+									<a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=CK0990"></a>
+									<p>리버서블 플리스<span></span></p>
+									<p>CK0990</p>
+								</div>
+							</div>
+						</li>
+						<li>
+							<img src="/images/adidas/event/originals/originals_winter/181025/sec03_slidesub03.png" alt="">
+							<div class="info_wrap" style="top: 8%;left:69%;">
+								<div class="title">1. SEUNG yOON’s<br>pick</div>
+								<div class="name">
+									<a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=DN8050"></a>
+									<p>AC 롱 다운 자켓<span></span></p>
+									<p>DN8050</p>
+								</div>
+								<div class="name">
+									<a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=B37462"></a>
+									<p>프로피어<span></span></p>
+									<p>B37462</p>
+								</div>
+							</div>
+							<div class="info_wrap" style="top: 53%;left:25px;">
+								<div class="title">2. mino’s pick<br>pick</div>
+								<div class="name">
+									<a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=DN8050"></a>
+									<p>AC 롱 다운 자켓<span></span></p>
+									<p>DN8050</p>
+								</div>
+								<div class="name">
+									<a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=B37464"></a>
+									<p>프로피어<span></span></p>
+									<p>B37464</p>
+								</div>
+							</div>
+							<div class="info_wrap" style="top: 75%;left:25px;">
+								<div class="title">3. SEUNG yOON’s<br>pick</div>
+								<div class="name">
+									<a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=DN8051"></a>
+									<p>AC 롱 다운 자켓<span></span></p>
+									<p>DN8051</p>
+								</div>
+								<div class="name">
+									<a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=B37462"></a>
+									<p>프로피어<span></span></p>
+									<p>B37462</p>
+								</div>
+							</div>
+						</li>
+						<li>
+							<img src="/images/adidas/event/originals/originals_winter/181025/sec03_slidesub04.png" alt="">
+							<div class="info_wrap" style="top: 8%;left:69%;">
+								<div class="title">1. jinu’s<br>pick</div>
+								<div class="name">
+									<a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=DH5003"></a>
+									<p>SST 다운 후드<span></span></p>
+									<p>DH5003</p>
+								</div>
+								<div class="name">
+									<a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=B37462"></a>
+									<p>프로피어<span></span></p>
+									<p>B37462</p>
+								</div>
+							</div>
+							<div class="info_wrap" style="top: 30%;left:69%;">
+								<div class="title">2. seung yoon’s<br>pick</div>
+								<div class="name">
+									<a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=DN8051"></a>
+									<p>AC 롱 다운 자켓<span></span></p>
+									<p>DN8051</p>
+								</div>
+								<div class="name">
+									<a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=B37462"></a>
+									<p>프로피어<span></span></p>
+									<p>B37462</p>
+								</div>
+							</div>
+							<div class="info_wrap" style="top: 53%;left:25px;">
+								<div class="title">2. SEUNG-HOON’s <br>pick</div>
+								<div class="name">
+									<a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=DH5026"></a>
+									<p>메니져 자켓<span></span></p>
+									<p>DH5026</p>
+								</div>
+								<div class="name">
+									<a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=BB6994"></a>
+									<p>프로피어<span></span></p>
+									<p>BB6994</p>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- section 3 -->
+
+		<div class="section sec_04">
+			<div class="inn">
+				<div class="sub1">
+					<div class="slider_wrap vbox" id="sec_04_sub1">
+						<ul class="slider">
+							<li><img src="/images/adidas/event/originals/originals_winter/181025/sec04_slide01.jpg" alt=""></li>
+							<li><img src="/images/adidas/event/originals/originals_winter/181025/sec04_slide02.jpg" alt=""></li>
+							<li><img src="/images/adidas/event/originals/originals_winter/181025/sec04_slide03.jpg" alt=""></li>
+							<li><img src="/images/adidas/event/originals/originals_winter/181025/sec04_slide04.jpg" alt=""></li>
+							<li><img src="/images/adidas/event/originals/originals_winter/181025/sec04_slide05.jpg" alt=""></li>
+						</ul>
+					</div>
+					<div class="inner_bg"></div>
+				</div>
+
+				<div class="video">
+					<div class="inner">
+						<div class="visual_video vbox">
+							<div class="bg"><img src="/images/adidas/event/originals/originals_winter/181025/sec04_video.jpg" alt="" class="video-button"
+									data-video-id="RblJ35hLxFQ" /></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="sub2">
+				<div class="slider_wrap vbox" id="sec_04_sub2">
+					<ul class="slider">
+						<li>
+							<img src="/images/adidas/event/originals/originals_winter/181025/sec04_slidesub01.png" alt="">
+							<div class="info_wrap" style="top: 8%;left:69%;">
+								<div class="title">1. jennie’s<br>pick </div>
+								<div class="name">
+									<a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=CK0979"></a>
+									<p>롱 벤치 파카<span></span></p>
+									<p>CK0979</p>
+								</div>
+								<div class="name">
+									<a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=CK0993"></a>
+									<p>플리스 베스트<span></span></p>
+									<p>CK0993</p>
+								</div>
+							</div>
+							<div class="info_wrap" style="top: 28%;left:69%;">
+								<div class="title">2. jisoo’s<br>pick </div>
+								<div class="name">
+									<a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=CK0979"></a>
+									<p>롱 벤치 파카<span></span></p>
+									<p>CK0979</p>
+								</div>
+								<div class="name">
+									<a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=CK0987"></a>
+									<p>컬러블록<br>플리스 자켓<span></span></p>
+									<p>CK0987</p>
+								</div>
+							</div>
+							<div class="info_wrap" style="top: 52%;left:25px;">
+								<div class="title">3. rose’s<br>pick</div>
+								<div class="name">
+									<a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=CK0978"></a>
+									<p>롱 벤치 파카<span></span></p>
+									<p>CK0978</p>
+								</div>
+								<div class="name">
+									<a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=CK0988"></a>
+									<p>소프트쉘 후디드<br>플리스 자켓<span></span></p>
+									<p>CK0988</p>
+								</div>
+							</div>
+						</li>
+						<li>
+							<img src="/images/adidas/event/originals/originals_winter/181025/sec04_slidesub02.png" alt="">
+							<div class="info_wrap" style="top: 7%;    left: 69%;">
+								<a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=CK0978"></a>
+								<div class="title">1. lisa’s<br>pick</div>
+								<div class="name">
+									<a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=CK0978"></a>
+									<p>롱 벤치 파카<span></span></p>
+									<p>CK0978</p>
+								</div>
+							</div>
+							<div class="info_wrap" style="top: 28%;    left: 69%;">
+								<a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=CK0978"></a>
+								<div class="title">2. jennie’s<br>pick</div>
+								<div class="name">
+									<a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=CK0979"></a>
+									<p>롱 벤치 파카<span></span></p>
+									<p>CK0979</p>
+								</div>
+							</div>
+							<div class="info_wrap" style="top: 52%;    left: 25px;">
+								<div class="title">3. rose’s<br>pick </div>
+								<div class="name">
+									<a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=CK0978"></a>
+									<p>롱 벤치 파카<span></span></p>
+									<p>CK0978</p>
+								</div>
+								<div class="name">
+									<a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=CK0988"></a>
+									<p>소프트쉘 후디드<br>플리스 자켓<span></span></p>
+									<p>CK0988</p>
+								</div>
+							</div>
+						</li>
+						<li>
+							<img src="/images/adidas/event/originals/originals_winter/181025/sec04_slidesub03.png" alt="">
+							<div class="info_wrap" style="top: 8%;left:69%;">
+								<div class="title">1. jisoo’s<br>pick</div>
+								<div class="name">
+									<a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=DN8051"></a>
+									<p>AC 롱 다운 자켓<span></span></p>
+									<p>DN8051</p>
+								</div>
+								<div class="name">
+									<a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=B28126"></a>
+									<p>팔콘<span></span></p>
+									<p>B28126</p>
+								</div>
+							</div>
+							<div class="info_wrap" style="top: 29%;left:69%;">
+								<div class="title">2. lisa’s<br>pick</div>
+								<div class="name">
+									<a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=DN8050"></a>
+									<p>AC 롱 다운 자켓<span></span></p>
+									<p>DN8050</p>
+								</div>
+								<div class="name">
+									<a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=B28128"></a>
+									<p>팔콘<span></span></p>
+									<p>B28128</p>
+								</div>
+							</div>
+							<div class="info_wrap" style="top: 52%;left:25px;">
+								<div class="title">3. jennie’s<br>pick</div>
+								<div class="name">
+									<a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=DH4573"></a>
+									<p>롱 다운 자켓<span></span></p>
+									<p>DH4573</p>
+								</div>
+								<div class="name">
+									<a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=B28129"></a>
+									<p>팔콘<span></span></p>
+									<p>B28129</p>
+								</div>
+							</div>
+						</li>
+						<li>
+							<img src="/images/adidas/event/originals/originals_winter/181025/sec04_slidesub04.png" alt="">
+							<div class="info_wrap" style="top: 8%;left:69%;">
+								<div class="title">1. lisa’s<br>pick</div>
+								<div class="name">
+									<a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=DH4567"></a>
+									<p>SST 롱<br>스태디온재킷<span></span></p>
+									<p>DH4567</p>
+								</div>
+								<div class="name">
+									<a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=B28128"></a>
+									<p>팔콘<span></span></p>
+									<p>B28128</p>
+								</div>
+							</div>
+							<div class="info_wrap" style="top: 30%;left:69%;">
+								<div class="title">2. rose’s<br>pick</div>
+								<div class="name">
+									<a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=DH4574"></a>
+									<p>SST 숏 보머재킷<span></span></p>
+									<p>DH4574</p>
+								</div>
+								<div class="name">
+									<a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=B28130"></a>
+									<p>팔콘<span></span></p>
+									<p>B28130</p>
+								</div>
+							</div>
+							<div class="info_wrap" style="top: 53%;left:25px;">
+								<div class="title">3. JISOO’s <br>pick</div>
+								<div class="name">
+									<a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=DH4570"></a>
+									<p>SST 숏<br>스태디온재킷<span></span></p>
+									<p>DH4570</p>
+								</div>
+								<div class="name">
+									<a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=B28126"></a>
+									<p>팔콘<span></span></p>
+									<p>B28126</p>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- section 4 -->
+
+		<div class="section sec_01">
+			<div class="inn">
+				<div class="sub1">
+					<div class="slider_wrap vbox" id="sec_01_sub1">
+						<ul class="slider">
+							<li><img src="/images/adidas/event/originals/originals_winter/sec01_slide01.jpg" alt=""></li>
+							<li><img src="/images/adidas/event/originals/originals_winter/sec01_slide02.jpg" alt=""></li>
+							<li><img src="/images/adidas/event/originals/originals_winter/sec01_slide03.jpg" alt=""></li>
+							<li><img src="/images/adidas/event/originals/originals_winter/sec01_slide04.jpg" alt=""></li>
+							<li><img src="/images/adidas/event/originals/originals_winter/sec01_slide05.jpg" alt=""></li>
+							<li><img src="/images/adidas/event/originals/originals_winter/sec01_slide06.jpg" alt=""></li>
+							<li><img src="/images/adidas/event/originals/originals_winter/sec01_slide07.jpg" alt=""></li>
+							<li><img src="/images/adidas/event/originals/originals_winter/sec01_slide08.jpg" alt=""></li>
+							<li><img src="/images/adidas/event/originals/originals_winter/sec01_slide09.jpg" alt=""></li>
+							<li><img src="/images/adidas/event/originals/originals_winter/sec01_slide10.jpg" alt=""></li>
+							<li><img src="/images/adidas/event/originals/originals_winter/sec01_slide11.jpg" alt=""></li>
+							<li><img src="/images/adidas/event/originals/originals_winter/sec01_slide12.jpg" alt=""></li>
+							<li><img src="/images/adidas/event/originals/originals_winter/sec01_slide13.jpg" alt=""></li>
+						</ul>
+					</div>
+					<div class="inner_bg"></div>
+				</div>
+
+				<div class="video">
+					<div class="inner">
+						<div class="visual_video vbox">
+							<div class="bg"><img src="/images/adidas/event/originals/originals_winter/181025/sec01_video.jpg" alt="" class="video-button"
+									data-video-id="sRvX_2VeKZg" /></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="sub2">
+				<div class="slider_wrap vbox" id="sec_01_sub2">
+					<ul class="slider">
+						<li>
+							<img src="/images/adidas/event/originals/originals_winter/sec01_slidesub01.png" alt="">
+							<a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=DT7920" style="top:6%;right:0;width:35%;height:15%;" title="3STR 롱 다운 파카 - DT7920"></a>
+							<a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=DT7921" style="top:53%;left:0;width:35%;height:15%;" title="3STR 롱 다운 파카 - DT7921"></a>
+						</li>
+						<li>
+							<img src="/images/adidas/event/originals/originals_winter/sec01_slidesub02.png" alt="">
+							<a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=CK0974" style="top:6%;right:0;width:35%;height:15%;" title="액티브 다운 파카 - CK0974"></a>
+							<a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=CK0973" style="top:53%;left:0;width:35%;height:15%;" title="액티브 다운 파카 - CK0973"></a>
+						</li>
+						<li>
+							<img src="/images/adidas/event/originals/originals_winter/sec01_slidesub03.png" alt="">
+							<a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=DH5008" style="top:6%;right:0;width:35%;height:14%;" title="SST 퀼팅 자켓 - DH5008"></a>
+							<a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=DJ3193" style="top:53%;left:0;width:35%;height:14%;" title="SST 아웃도어 자켓 - DJ3193"></a>
+							<a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=DJ3191" style="top:67%;left:0;width:35%;height:14%;" title="SST 아웃도어 자켓 - DJ3191"></a>
+						</li>
+						<li>
+							<img src="/images/adidas/event/originals/originals_winter/sec01_slidesub04.png" alt="">
+							<a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=DH5008" style="top:6%;right:0;width:35%;height:14%;" title="SST 퀼팅 자켓 - DH5008"></a>
+							<a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=DL8697" style="top:53%;left:0;width:35%;height:14%;" title="SST 퀼팅 자켓 - DL8697"></a>
+							<a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=DJ3191" style="top:67%;left:0;width:35%;height:14%;" title="SST 아웃도어 자켓 - DJ3191"></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- section 1 -->
+
+		<div class="section sec_02">
+			<div class="inn">
+				<div class="sub1">
+					<div class="slider_wrap vbox" id="sec_02_sub1">
+						<ul class="slider">
+							<li><img src="/images/adidas/event/originals/originals_winter/sec02_slide01.jpg" alt=""></li>
+							<li><img src="/images/adidas/event/originals/originals_winter/sec02_slide02.jpg" alt=""></li>
+							<li><img src="/images/adidas/event/originals/originals_winter/sec02_slide03.jpg" alt=""></li>
+							<li><img src="/images/adidas/event/originals/originals_winter/sec02_slide04.jpg" alt=""></li>
+							<li><img src="/images/adidas/event/originals/originals_winter/sec02_slide05.jpg" alt=""></li>
+							<li><img src="/images/adidas/event/originals/originals_winter/sec02_slide06.jpg" alt=""></li>
+						</ul>
+					</div>
+					<div class="inner_bg"></div>
+				</div>
+
+				<div class="video">
+					<div class="inner">
+						<div class="visual_video vbox">
+							<div class="bg"><img src="/images/adidas/event/originals/originals_winter/181025/sec02_video.jpg" alt=""
+									class="video-button" data-video-id="KrxIOl4eIb0" /></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="sub2">
+				<div class="slider_wrap vbox" id="sec_02_sub2">
+					<ul class="slider">
+						<li>
+							<img src="/images/adidas/event/originals/originals_winter/sec02_slidesub01.png" alt="">
+							<a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=DT7921" style="top:6%;right:0;width:35%;height:14%;"
+								title="3STR 롱 다운 파카 - DT7921"></a>
+							<a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=DT7920" style="top:20%;right:0;width:35%;height:14%;"
+								title="3STR 롱 다운 파카 - DT7920"></a>
+							<a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=DT7920" style="top:53%;left:0;width:35%;height:14%;"
+								title="3STR 롱 다운 파카 - DT7920"></a>
+							<a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=DT7921" style="top:67%;left:0;width:35%;height:14%;"
+								title="3STR 롱 다운 파카 - DT7921"></a>
+						</li>
+						<li>
+							<img src="/images/adidas/event/originals/originals_winter/sec02_slidesub02.png" alt="">
+							<a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=CK0973" style="top:6%;right:0;width:35%;height:14%;"
+								title="액티브 다운 파카 - CK0973"></a>
+							<a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=CK0973" style="top:53%;left:0;width:35%;height:14%;"
+								title="액티브 다운 파카 - CK0973"></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- section 2 -->
+
+		<div class="bottom">
+			<a class="style" href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=705&term=1">
+				<img src="/images/adidas/event/originals/originals_winter/181025/bnn_style.png" alt="">
+				<div class="btn icons aft" data-icon="">자세히 보기</div>
+			</a>
+			<a class="event" href="http://m.adidas.co.kr/MO/Club/clubCampainView.action?event_id=5725" >
+				<img src="/images/adidas/event/originals/originals_winter/181025/bnn_event.png" alt="">
+				<!-- <div class="btn icons aft" data-icon="">자세히 보기</div> -->
+				 <div class="btn icons aft" data-icon="">응모 마감</div>
+			</a>
+		</div>
+
+	</div>
+	<!-- //originals_winter -->
+	<script type="text/javascript" src="/js/prx.min.js"></script>
+	<script type="text/javascript">
+		(function($) {
+			$(window).ready(function(){
+				var mainindex = 0;
+				function mainrolling(){
+					if(mainindex == 1){
+						$('.main .bg img').removeClass('on').eq(1).addClass('on');
+						mainindex = 0;
+					}else{
+						$('.main .bg img').removeClass('on').eq(0).addClass('on');
+						mainindex = 1;
+					}
+				}
+				var autorolling = setInterval(mainrolling,4000);
+			});
+
+
+			var owlProducts4 = $('#sec_04_sub1 .slider').owlCarousel({
+				stagePadding:0,
+				margin: 0,
+				items: 1,
+				// merge: true,
+				loop: true,
+				navigation: true,
+				nav: true,
+				autoplay: true,
+				autoplaySpeed: 2000,
+				autoplayTimeout: 2000,
+				autoplayHoverPause: true
+			});
+
+			var owlProducts4sub = $('#sec_04_sub2 .slider').owlCarousel({
+				stagePadding: 0,
+				margin: 0,
+				items: 1,
+				// merge: true,
+				loop: true,
+				navigation: false,
+				nav: false,
+				autoplay: true,
+				autoplaySpeed: 2000,
+				autoplayTimeout: 2000,
+				autoplayHoverPause: true
+			});
+
+			var owlProducts3 = $('#sec_03_sub1 .slider').owlCarousel({
+				stagePadding:0,
+				margin: 0,
+				items: 1,
+				// merge: true,
+				loop: true,
+				navigation: true,
+				nav: true,
+				autoplay: true,
+				autoplaySpeed: 2000,
+				autoplayTimeout: 2000,
+				autoplayHoverPause: true
+			});
+
+			var owlProducts3sub = $('#sec_03_sub2 .slider').owlCarousel({
+				stagePadding: 0,
+				margin: 0,
+				items: 1,
+				// merge: true,
+				loop: true,
+				navigation: false,
+				nav: false,
+				autoplay: true,
+				autoplaySpeed: 2000,
+				autoplayTimeout: 2000,
+				autoplayHoverPause: true
+			});
+
+			var owlProducts1 = $('#sec_01_sub1 .slider').owlCarousel({
+				stagePadding:0,
+				margin: 0,
+				items: 1,
+				// merge: true,
+				loop: true,
+				navigation: true,
+				nav: true,
+				autoplay: true,
+				autoplaySpeed: 2000,
+				autoplayTimeout: 2000,
+				autoplayHoverPause: true
+			});
+
+			var owlProducts1sub = $('#sec_01_sub2 .slider').owlCarousel({
+				stagePadding: 0,
+				margin: 0,
+				items: 1,
+				// merge: true,
+				loop: true,
+				navigation: false,
+				nav: false,
+				autoplay: true,
+				autoplaySpeed: 2000,
+				autoplayTimeout: 2000,
+				autoplayHoverPause: true
+			});
+
+			var owlProducts2 = $('#sec_02_sub1 .slider').owlCarousel({
+				stagePadding: 0,
+				margin: 0,
+				items: 1,
+				// merge: true,
+				loop: true,
+				navigation: true,
+				nav: true,
+				autoplay: true,
+				autoplaySpeed: 2000,
+				autoplayTimeout: 2000,
+				autoplayHoverPause: true
+			});
+
+			var owlProducts2sub = $('#sec_02_sub2 .slider').owlCarousel({
+				stagePadding: 0,
+				margin: 0,
+				items: 1,
+				// merge: true,
+				loop: true,
+				navigation: false,
+				nav: false,
+				autoplay: true,
+				autoplaySpeed: 2000,
+				autoplayTimeout: 2000,
+				autoplayHoverPause: true
+			});
+
+			owlProducts1.on('changed.owl.carousel', function(event) {
+
+			});
+
+			// $('.sec_01 .owl-dots .owl-dot').each(function(index){
+			// 	$(this).find('span').text(ctgrAry[index]);
+			// });
+
+			var _index = $('.sec_01 .owl-item.active').children('li').attr('data-index'); //0 ~ 9
+
+			// video
+			$('.video-button').bind('click', function() {
+				var ytbId = $(this).attr('data-video-id');
+				var html = '<div id="video-layer" style="">';
+				html += '	<div class="bg" ></div>';
+				html += '	<div class="video-box"></div>';
+				html += '	<a href="javascript:void(0)" class="close_x_btn white"></a>';
+				html += '</div>';
+
+				$('html').css({
+					overflow: 'hidden'
+				});
+				$('body').append(html);
+
+				$('#video-layer .close_x_btn').bind('click', function() {
+					$('html').css({
+						overflow: 'scroll'
+					});
+					$('#video-layer ').remove();
+				});
+
+
+				setTimeout(function() {
+					$('#video-layer').addClass('loaded');
+
+					$('#video-layer .video-box').append('<iframe width="100%" height="100%" src="http://www.youtube.com/embed/' + ytbId + '?rel=0" frameborder="0" allowfullscreen></iframe>')
+				}, 100);
+				return false;
+			});
+
+		})(jQuery);
+	</script>
+
+</div>
