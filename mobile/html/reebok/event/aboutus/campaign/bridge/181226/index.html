@@ -123,59 +123,53 @@
 			<section id="contents">
 				<div class="campaign about_campaign bridge">
 
-					<div class="location">
-						<a href="/brand/aboutus.action">ABOUT US</a>
-						<a href="/brand/campaign/list.action" style="letter-spacing:1px;">CAMPAIGN</a>
-						<span style="letter-spacing:1px;">Royal Bridge</span>
-					</div>
-
 					<div class="main_section">
-						<div class="bg">
-							<img src="/images/reebok/about/bridge/visual.jpg" alt="" class="active">
+						<div class="logo">
+							<img src="/images/reebok/about/bridge/181226/logo1.png" alt="로고1">
+							<h1>BRIDGE 3.0</h1>
+						</div>
+						<div class="img">
+							<img src="/images/reebok/about/bridge/181226/visual_main.jpg" alt="메인사진" class="active">
 						</div>
 						<div class="btn_box">
-							<a href="http://m.reebok.co.kr/MO/Promotion/landingPage.action?pageNo=628" class="btn-buy">구매하기</a>
+							<a href="http://shop.reebok.co.kr/RPF070801.action?pageNo=760" class="btn-buy">구매하기</a>
 						</div>
 					</div>
 					<!--// main_section -->
 
-					<div class="video_area dn">
-						<div class="bg">
-							<img src="/images/reebok/about/dmx/video_bg.jpg" alt="" class="active">
+					<div class="video_area">
+						<div class="mid_logo">
+							<img src="/images/reebok/about/bridge/181226/mid_logo1.png" alt="비디오로고">
+						</div>
+						<div class="img">
+							<img src="/images/reebok/about/bridge/181226/visual_vid.jpg" alt="비디오이미지" class="active">
 						</div>
 						<a href="javascript:void(0)" class="btn-video" data-video-id="uKjIrD92SHc"><span class="ico-video"></span></a>
+						<div class="mid_logo">
+							<img src="/images/reebok/about/bridge/181226/mid_logo2.png" alt="비디오로고">
+						</div>
 					</div>
 					<!--// video_area -->
 
-					<div class="event_area dn">
-						<div class="bg">
-							<img src="/images/reebok/about/dmx/event.jpg" alt="">
-						</div>
-						<div class="btn_box">
-							<a href="http://m.reebok.co.kr/MO/Club/clubCampainView.action?event_id=5205">자세히 보기</a>
-						</div>
-					</div>
-					<!-- //event_area -->
 
 					<div class="slide_lineup">
-						<h2>ROYAL BRIDGE<br /><span>LOOKBOOK</span></h2>
+						<h1>LOOK BOOK</h1>
 						<div class="collection_cut">
 							<div class="slider" id="slide_lineup">
 								<ul>
-									<li><img src="/images/reebok/about/bridge/collect_01.jpg" alt=""></li>
-									<li><img src="/images/reebok/about/bridge/collect_02.jpg" alt=""></li>
-									<li><img src="/images/reebok/about/bridge/collect_03.jpg" alt=""></li>
-									<li><img src="/images/reebok/about/bridge/collect_04.jpg" alt=""></li>
-									<li><img src="/images/reebok/about/bridge/collect_05.jpg" alt=""></li>
-									<li><img src="/images/reebok/about/bridge/collect_06.jpg" alt=""></li>
-									<li><img src="/images/reebok/about/bridge/collect_07.jpg" alt=""></li>
+									<li><img src="/images/reebok/about/bridge/181226/1.jpg" alt=""></li>
+									<li><img src="/images/reebok/about/bridge/181226/2.jpg" alt=""></li>
+									<li><img src="/images/reebok/about/bridge/181226/3.jpg" alt=""></li>
+									<li><img src="/images/reebok/about/bridge/181226/4.jpg" alt=""></li>
+									<li><img src="/images/reebok/about/bridge/181226/5.jpg" alt=""></li>
+									<li><img src="/images/reebok/about/bridge/181226/6.jpg" alt=""></li>
 								</ul>
 							</div>
 						</div>
 
 						<div class="navi">
-							<a href="#none" class="prev"><img src="/images/reebok/about/bridge/prev.png" alt=""></a>
-							<a href="#none" class="next"><img src="/images/reebok/about/bridge/next.png" alt=""></a>
+							<a href="#none" class="prev"><img src="/images/reebok/about/bridge/181226/prev.png" alt=""></a>
+							<a href="#none" class="next"><img src="/images/reebok/about/bridge/181226/next.png" alt=""></a>
 						</div>
 
 						<div class="num_paging">
@@ -185,20 +179,19 @@
 							<a href="javascript:void(0)"></a>
 							<a href="javascript:void(0)"></a>
 							<a href="javascript:void(0)"></a>
-							<a href="javascript:void(0)"></a>
+						</div>
+					</div>
+					<div class="btm">
+						<div class="wrap">
+							<div class="img">
+								<img src="/images/reebok/about/bridge/181226/logo2.png" alt="">
+							</div>
+							<h2>BRIDGE 3.0</h2>
+						</div>
+						<div class="btn_box">
+							<a href="http://shop.reebok.co.kr/RPF070801.action?pageNo=760" class="btn-buy">구매하기</a>
 						</div>
 
-						<div class="bot_area">
-                            <div class="inner">
-                                <div class="ba_lt">
-                                    <img src="/images/reebok/about/bridge/logo_bot.png" alt="">
-                                    <div class="deco"></div>
-                                </div>
-                                <div class="ba_rt">
-                                    <a href="http://m.reebok.co.kr/MO/Promotion/landingPage.action?pageNo=628" class="btn-buy">구매하기</a>
-                                </div>
-                            </div>
-                        </div>
 					</div>
 					<!-- //slide_lineup -->
 
@@ -342,15 +335,22 @@
 							el.className += ' '+className;
 						}
 
+						setInterval(function(){
+							$('.main_section .logo').css('opacity','1');
+							$('.main_section .img').css('opacity','1');
+						},200);
 						$(window).scroll(function(){
                             var thisScroll = $(this).scrollTop();
-                            var slideLineup = $('.collection_cut').offset().top - 200;
+                            var video_area = $('.video_area').offset().top - 500;
                             console.log(thisScroll);
-                            console.log(slideLineup);
+                            console.log(video_area);
 
-                            if(thisScroll > slideLineup){
-                                $('.deco').css('width','250px');
+                            if(thisScroll > video_area){
+                                $('.video_area .img').css('left','0').css('transition','all 1s ease-out');
                             }
+							if(thisScroll > video_area){
+								$('.video_area .btn-video').css('opacity','1').css('transition','all 1s ease-out').css('transition-delay','1s');
+							}
                         })
 
 					})(jQuery);
