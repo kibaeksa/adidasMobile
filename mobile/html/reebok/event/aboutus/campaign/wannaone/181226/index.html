@@ -125,42 +125,52 @@
 				<div class="campaign about_campaign wannaone">
 
 					<div class="main">
-						<img src="/images/reebok/about/wannaone/181226/main.jpg" alt="" class="bg_img">
+						<img src="http://imagem.reebok.co.kr//images/reebok/about/wannaone/181226/main.jpg" alt="" class="bg_img">
 						<div class="txt_area">
 							<h2>run finish</h2>
 							<div class="btn_area">
-								<a href="http://m.reebok.co.kr/MO/Promotion/landingPage.action?pageNo=702" class="btn-buy">구매하기</a>
+								<a href="http://m.reebok.co.kr/MO/Promotion/landingPage.action?pageNo=761" class="btn-buy">구매하기</a>
 							</div>
 						</div>
 					</div>
 
 					<div class="video btn-video" data-video-id="">
-						<img src="/images/reebok/about/wannaone/181226/video.jpg" alt="">
+						<img src="http://imagem.reebok.co.kr//images/reebok/about/wannaone/181226/video.jpg" alt="">
 					</div>
 
 					<div class="prd_wrap">
+						<h3>LOOKBOOK</h3>
 						<div class="prds scrollbox">
 							<div class="banner_slider_wrap">
 							    <ul id="slider_owl">
 							        <li>
-							        	<img src="/images/reebok/about/wannaone/181226/col1.jpg" alt="">
+							        	<img src="http://imagem.reebok.co.kr//images/reebok/about/wannaone/181226/col1.jpg" alt="">
 							        </li>
 							        <li>
-							        	<img src="/images/reebok/about/wannaone/181226/col2.jpg" alt="">
+							        	<img src="http://imagem.reebok.co.kr//images/reebok/about/wannaone/181226/col2.jpg" alt="">
 							        </li>
 							        <li>
-							        	<img src="/images/reebok/about/wannaone/181226/col3.jpg" alt="">
+							        	<img src="http://imagem.reebok.co.kr//images/reebok/about/wannaone/181226/col3.jpg" alt="">
 							        </li>
 							        <li>
-							        	<img src="/images/reebok/about/wannaone/181226/col4.jpg" alt="">
+							        	<img src="http://imagem.reebok.co.kr//images/reebok/about/wannaone/181226/col4.jpg" alt="">
 							        </li>
 									<li>
-							        	<img src="/images/reebok/about/wannaone/181226/col5.jpg" alt="">
+							        	<img src="http://imagem.reebok.co.kr//images/reebok/about/wannaone/181226/col5.jpg" alt="">
 							        </li>
 							    </ul>
 							</div>
 						</div>
 
+					</div>
+
+					<div class="bottom">
+						<span></span>
+						<img src="http://imagem.reebok.co.kr//images/reebok/about/wannaone/181226/logo.png" alt="">
+						<p class="title">run finish </p>
+						<div class="btn_area">
+							<a href="http://m.reebok.co.kr/MO/Promotion/landingPage.action?pageNo=761" class="btn-buy">구매하기</a>
+						</div>
 					</div>
 
 
@@ -178,6 +188,11 @@
 
 				<script type="text/javascript">
 					(function($){
+
+
+						setTimeout(function(){
+							$('.main').addClass('on');
+						},1500);
 
 						$('.btn-video').bind('click',function(){
 							//alert('동영상이 준비중입니다');
@@ -207,13 +222,14 @@
 						var owlSlider = $('#slider_owl');
 
 						owlSlider.owlCarousel({
-						    stagePadding: 0,
-						    margin:0,
+						    stagePadding: 80,
+						    margin:80,
 						    items : 1,
 						    merge: true,
 						    loop : true,
 						    navigation: true,
-						    nav: false
+						    nav: true,
+							autoplay:true,
 						});
 
 
@@ -228,7 +244,7 @@
 						getPos();
 
 						$(window).scroll(function(){
-							var thispos = $(this).scrollTop() + 500;
+							var thispos = $(this).scrollTop() + 200;
 							for(var pos = 0; pos<scrollArray.length; pos++){
 								if(thispos>scrollArray[pos]){
 									$('.wannaone.about_campaign .scrollbox').eq(pos).addClass('effect');

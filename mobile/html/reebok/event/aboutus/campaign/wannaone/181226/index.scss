@@ -20,16 +20,25 @@
 
     .main{
         position: relative;
+        &.on{
+            .txt_area{
+                bottom: 6%;
+                opacity: 1;
+            }
+        }
         .bg_img{
             width: 100%;
         }
         .txt_area{
             position: absolute;
             width: 80%;
-            bottom: 6%;
+            bottom: -0%;
             left: 50%;
             transform: translateX(-50%);
             text-align: center;
+            opacity: 0;
+            transition: all 0.5s;
+
             h2{
                 font: 900 4.8rem/3rem 'dinpro cond';
                 letter-spacing: 0.2rem;
@@ -50,10 +59,16 @@
     }
 
     .prd_wrap{
+        h3{
+            font: 700 6rem/6rem 'dinpro cond';
+            color: #9da7b3;
+            text-align: center;
+            margin: 10% 0 -9% 0;
+            letter-spacing: 8px;
+        }
         .prds{
             .banner_slider_wrap{
                 overflow: hidden;
-                // margin: 0 1rem;
                 overflow: 0 1rem;
 
                 ul{
@@ -63,11 +78,38 @@
                         }
                     }
                     .owl-controls{
-                        padding: 15px 0 0 0;
+                        padding: 10px 0 0 0;
                         text-align: center;
+                        .owl-nav{
+                            position: absolute;
+                            top: 42%;
+                            width: 100%;
+                            div{
+                                display: inline-block;
+                                width: 15px;
+                                height: 15px;
+                                padding: 13px;
+                                text-indent: -9999px;
+                            }
+                            .owl-next{
+                                position: absolute;
+                                right: 20px;
+                                background: url(http://imagem.reebok.co.kr//images/reebok/about/wannaone/181226/arrow_next.png) no-repeat;
+                                background-size: 100%;
+                                background-position: center;
+                            }
+                            .owl-prev{
+                                position: absolute;
+                                left: 20px;
+                                background: url(http://imagem.reebok.co.kr//images/reebok/about/wannaone/181226/arrow_next.png) no-repeat;
+                                background-size: 100%;
+                                background-position: center;
+                                transform: rotate(-180deg);
+                            }
+                        }
                         .owl-dots{
                             .owl-dot{
-                                margin: 0 3px;
+                                margin: 0 5px;
                                 display: inline-block;
                                 box-sizing: border-box;
                                 width: 10px;
@@ -87,13 +129,47 @@
     }
     .prds {
         position: relative;
-        padding: 1.5rem 5.5rem 4rem;
+        // padding: 1.5rem 5.5rem 4rem;
         opacity: 0;
         -webkit-opacity: 0;
         transition: all 0.5s;
         &.effect {
             opacity: 1;
             -webkit-opacity: 1;
+        }
+    }
+
+    .bottom{
+        position: relative;
+        padding: 0 25px;
+        margin: 30px 0 37px;
+        img{
+            width: 60%;
+        }
+        span{
+            position: absolute;
+            top: 29%;
+            left: 0;
+            display: block;
+            width: 45%;
+            height: 28%;
+            background: #9da7b3;
+        }
+        p{
+            position: relative;
+            padding: 5px 0 0 ;
+            font: 900 3rem/3rem 'dinpro cond';
+            text-transform: uppercase;
+            color:#20336e;
+            letter-spacing: 8px;
+
+        }
+        .btn_area{
+            padding: 16px 0 0 0;
+            text-align: right;
+            a{
+                width: 45%;
+            }
         }
     }
 
