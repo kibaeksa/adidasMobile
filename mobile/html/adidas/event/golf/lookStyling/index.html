@@ -432,8 +432,8 @@
 				<a href="#" class="btn_market icons"></a>
 			</div>
 		</div>
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.6/css/swiper.min.css">
 		<div id="container">
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.6/css/swiper.min.css">
 
 			<div id="golfLookStyling">
 
@@ -448,6 +448,30 @@
 					<span class="deco_dir">
 						<img src="/images/adidas/event/golf/lookStyling/lookStyling_down_deco.png" alt="">
 					</span>
+				</div>
+
+        <!-- 남성 신규 작업 -->
+        <div id="golfLookNew01" class="slide_wrap slide_wrap_new01">
+					<div class="slide_model">
+						<img src="/images/adidas/event/golf/lookStyling/lookStyling_newsec01_bgi.jpg" alt="">
+						<img src="/images/adidas/event/golf/lookStyling/lookStyling_model01_new01.png" alt="">
+						<p class="ko">팀 아디다스 최충만 프로</p>
+					</div>
+
+					<div class="slide_box">
+						<div class="slide_main_con">
+							<div class="swiper-container">
+								<div class="swiper-wrapper slide_card">
+									<div class="swiper-slide" onValue="adiMenGoose"></div>
+									<div class="swiper-slide" onValue="adiEssentialBelt"></div>
+									<div class="swiper-slide" onValue="primaLoftPants"></div>
+									<div class="swiper-slide" onValue="adiTour360EQTW"></div>
+								</div>
+							</div>
+						</div>
+
+						<div class="swiper-pagination slide_indi"></div>
+					</div>
 				</div>
 
 				<!-- 남성 1 : 장훈석 미디어 프로 -->
@@ -523,6 +547,29 @@
 					</div>
 				</div>
 
+				<!-- 여성 신규 작업 -->
+				<div id="golfLookNew02" class="slide_wrap slide_wrap_new02">
+					<div class="slide_model">
+						<img src="/images/adidas/event/golf/lookStyling/lookStyling_newsec02_bgi.jpg" alt="">
+						<img src="/images/adidas/event/golf/lookStyling/lookStyling_model01_new02.png" alt="">
+						<p class="ko">팀 아디다스 임경민 프로</p>
+					</div>
+
+					<div class="slide_box">
+						<div class="slide_main_con">
+							<div class="swiper-container">
+								<div class="swiper-wrapper slide_card">
+									<div class="swiper-slide" onValue="adiWomenGoose"></div>
+									<div class="swiper-slide" onValue="adiWomenVeste"></div>
+									<div class="swiper-slide" onValue="womensAdistarW"></div>
+								</div>
+							</div>
+						</div>
+
+						<div class="swiper-pagination slide_indi"></div>
+					</div>
+				</div>
+
 				<!-- 여성 1 : 팀 아디다스 조연희 프로 -->
 				<div id="golfLook04" class="slide_wrap slide_wrap_04">
 					<div class="slide_model">
@@ -552,7 +599,7 @@
 					<div class="slide_model">
 						<img src="/images/adidas/event/golf/lookStyling/lookStyling_sec05_bgi.jpg" alt="">
 						<img src="/images/adidas/event/golf/lookStyling/lookStyling_model05.png" alt="">
-						<p class="ko">팀 아디다스 조연희 프로</p>
+						<p class="ko">팀 아디다스 여윤경 프로</p>
 					</div>
 
 					<div class="slide_box">
@@ -681,6 +728,30 @@
 				},
 			});
 
+			var swiper7 = new Swiper('#golfLookNew01 .swiper-container', {
+				slidesPerView: 'auto',
+				spaceBetween: 1,
+				pagination: {
+					el: '#golfLookNew01 .swiper-pagination',
+					clickable: true,
+					renderBullet: function (index, className) {
+					return '<span class="' + className + '"><span class="slide_num"> 0' + (index + 1) + '</span><span class="slide_human"> 0' + (index + 1) + '</span></span>';
+					},
+				},
+			});
+
+			var swiper8 = new Swiper('#golfLookNew02 .swiper-container', {
+				slidesPerView: 'auto',
+				spaceBetween: 1,
+				pagination: {
+					el: '#golfLookNew02 .swiper-pagination',
+					clickable: true,
+					renderBullet: function (index, className) {
+					return '<span class="' + className + '"><span class="slide_num"> 0' + (index + 1) + '</span><span class="slide_human"> 0' + (index + 1) + '</span></span>';
+					},
+				},
+			});
+
       var slideContent = {
 					adiZeroJacket : {
 						title : '아디제로 다운 자켓',
@@ -751,7 +822,7 @@
 						link : 'http://shop.adidas.co.kr/PF020401.action?PROD_CD=DJ2058'
 					},
 					knitSkirt : {
-						title : '아디크로스 니트 자켓',
+						title : '니트 스코트',
 						link : 'http://shop.adidas.co.kr/PF020401.action?PROD_CD=DJ2048'
 					},
 					adiCrossEQTGlove : {
@@ -761,6 +832,30 @@
 					adiKneeSocks : {
 						title : '아디다스 우먼스 니삭스',
 						link : 'http://shop.adidas.co.kr/PF020401.action?PROD_CD=CK1147'
+					},
+					adiMenGoose : {
+						title : '남성 롱 구스 다운 점퍼',
+						link : 'http://shop.adidas.co.kr/PF020401.action?PROD_CD=CK8616'
+					},
+					adiEssentialBelt : {
+						title : '아디다스 삼선 에센셜 벨트',
+						link : 'http://shop.adidas.co.kr/PF020401.action?PROD_CD=Q24797'
+					},
+					primaLoftPants : {
+						title : '프라이마로프트 팬츠',
+						link : 'http://shop.adidas.co.kr/PF020401.action?PROD_CD=DM1362'
+					},
+					adiTour360EQTW : {
+						title : '투어360 EQT 보아',
+						link : 'http://shop.adidas.co.kr/PF020401.action?PROD_CD=F33619'
+					},
+					adiWomenGoose : {
+						title : '여성 롱 구스 다운 점퍼',
+						link : 'http://shop.adidas.co.kr/PF020401.action?PROD_CD=CK8619'
+					},
+					adiWomenVeste : {
+						title : '아디퓨어 롱 다운 베스트',
+						link : 'http://shop.adidas.co.kr/PF020401.action?PROD_CD=DJ2899'
 					}
 				};
 
@@ -790,13 +885,15 @@
 					var slidemodelH = $('#golfLookStyling .slide_model').children('img:first-of-type').height();
 					$('#golfLookStyling .slide_model').css({height: slidemodelH});
 
-					// 초기 로드 시 슬라이드 값 지정
+					// 초기 로드 시 슬라이드 이미지, 텍스트 값 지정
 					basicSet('#golfLook01');
 					basicSet('#golfLook02');
 					basicSet('#golfLook03');
 					basicSet('#golfLook04');
 					basicSet('#golfLook05');
 					basicSet('#golfLook06');
+					basicSet('#golfLookNew01');
+					basicSet('#golfLookNew02');
 				});
 
 				$(window).resize(function(){
