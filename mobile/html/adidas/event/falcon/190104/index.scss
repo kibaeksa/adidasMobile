@@ -1,0 +1,484 @@
+@import './mobile/css/adidas/scss/common/mixin.scss';
+@import './mobile/css/adidas/scss/common/common.scss';
+
+
+
+#falcon{
+	position: relative;
+	.btn-buy{
+		margin: 0 9rem;
+		@include css3(transition, all 0.6s);
+		a{
+			display: inline-block;
+			width: 100%;
+			font: 1rem/40px 'NotoSansKR';
+			color:white;
+			background:#d09a20;
+			span{
+				display: inline-block;
+			    width: 22px;
+			    height: 10px;
+			    background: url('http://imagem.adidas.co.kr//images/adidas/event/falcon/181206/icon_btn_arrow.jpg') no-repeat;
+			    background-size: 100%;
+			    position: relative;
+			    top: 2px;
+				margin-left: 15px;
+			}
+		}
+	}
+	div{
+		img{
+			width: 100%;
+		}
+		.link{
+			position: absolute;
+			text-indent: -9999px;
+			display: block;
+		}
+	}
+	.visual,.cont,.video_area,.bottom{
+		position: relative;
+	}
+
+	.visual{
+		position: relative;
+		&.on{
+			.txt{
+				opacity: 1;
+				-webkit-opacity: 1;
+				.btn-buy{
+					opacity: 1;
+					-webkit-opacity: 1;
+				}
+			}
+		}
+		.txt{
+			position: absolute;
+			width: 100%;
+			top:50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			text-align: center;
+			transition: all 0.6s;
+			-webkit-transition: all 0.6s;
+			opacity: 0;
+			-webkit-opacity: 0;
+			h2{
+				img{
+					display: inline-block;
+					width: 34%;
+				}
+			}
+			h1{
+				font: 500 2.8rem/2.8rem 'NotoSansKR';
+				color: white;
+				padding-top: 1rem;
+			}
+			p{
+				font: 400 1rem/1rem 'NotoSansKR';
+				color:white;
+				padding: 8px 0 22px;
+			}
+			.btn-buy{
+			}
+
+		}
+	}
+
+	.statement2{
+		position: relative;
+		padding: 3rem 0;
+		text-align: center;
+		&.on{
+			p{
+				@include css3(opacity,1);
+			}
+			.btn-buy{
+				@include css3(opacity,1);
+			}
+		}
+		p{
+			font:400 1.1rem 'NotoSansKR';
+			transition: all 0.6s;
+			-webkit-transition: all 0.6s;
+			@include css3(opacity,0);
+			letter-spacing: 0px;
+			&.title{
+				padding: 0 0 10px 0;
+				font:600 1.3rem 'NotoSansKR';
+			}
+		}
+		.btn-buy{
+			@include css3(opacity,0);
+			margin: 13px 9rem;
+			transition-delay: 0.4s;
+		}
+	}
+
+
+	section {
+		width: 100%;
+		overflow: hidden;
+		position: relative;
+
+
+		&.section1{
+			article{
+				&:nth-child(1) {
+					width: 50%;
+					.bg{
+						transition-delay: 0.1s;
+					}
+				}
+				&:nth-child(2) {
+					width: 50%;
+					.bg{
+						transition-delay: 0.3s;
+					}
+				}
+				&:nth-child(3) {
+					width: 100%;
+					.bg{
+						transition-delay: 0.5s;
+					}
+				}
+			}
+		}
+		&.section2{
+			.row{
+				width: 50%;
+				position: relative;
+				padding-bottom: 100%;
+			}
+		}
+		&.section3{
+			article{
+				&:nth-child(1) {
+					width: 50%;
+				}
+				&:nth-child(2) {
+					width: 50%;
+				}
+				&:nth-child(3) {
+					width: 100%;
+				}
+			}
+		}
+		&.section4{
+			article{
+				&:nth-child(1) {
+					width: 100%;
+					.bg{
+						transition-delay: 0.1s;
+					}
+				}
+				&:nth-child(2) {
+					width: 50%;
+					.bg{
+						transition-delay: 0.3s;
+					}
+				}
+				&:nth-child(3) {
+					width: 50%;
+					.bg{
+						transition-delay: 0.5s;
+					}
+				}
+			}
+		}
+		&.section5{
+			.row{
+				width: 50%;
+				position: relative;
+				padding-bottom: 120%;
+			}
+		}
+		&.section6{
+			.row{
+				width: 50%;
+				position: relative;
+				padding-bottom: 120%;
+			}
+		}
+		&.on{
+			article{
+				.bg{
+					@include css3(opacity,1);
+				}
+
+			}
+		}
+		article {
+			float: left;
+			position: relative;
+			width: 100%;
+			padding-bottom: 60%;
+			box-sizing: border-box;
+
+			> div {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+				cursor: pointer;
+				@include css3(opacity,0);
+				@include css3(transition, all 0.6s);
+				.inn_wrap{
+					position: relative;
+					width: 100%;
+					height: 100%;
+				}
+				.inn{
+					position: absolute;
+					top:50%;
+					left:50%;
+					width: 100%;
+					transform: translate(-50%,-50%);
+					text-align: center;
+					p{
+						color:#fff;
+						font:400 1rem 'NotoSansKR';
+					}
+					strong{
+						display: block;
+						padding: 5px 0 0 0;
+						color:#fff;
+						text-align: center;
+						font:500 1rem 'adinenuPro-bold';
+					    letter-spacing: 0.7px;
+					}
+				}
+				.btn-buy{
+					position: absolute;
+					bottom: 0;
+					width: 100%;
+					left: 0;
+					margin: 0;
+					a{
+						padding-left: 20px;
+					    font: 1rem/35px 'NotoSansKR';
+						span{
+							position: absolute;
+							right: 20px;
+							top: 50%;
+							margin-top: -4px;
+						}
+					}
+				}
+			}
+			.bg1 {
+				background: url('http://imagem.adidas.co.kr//images/adidas/event/falcon/181206/bg_grid_01.jpg');
+			}
+			.bg2 {
+				background: url('http://imagem.adidas.co.kr//images/adidas/event/falcon/181206/bg_grid_02.jpg');
+				background-position: bottom center !important;
+			}
+			.bg3 {
+				background: url('http://imagem.adidas.co.kr//images/adidas/event/falcon/181206/bg_grid_03.jpg');
+				.inn_wrap{
+					.inn{
+						img{
+						    width: 15%;
+						}
+						strong{
+							padding: 10px 0 0 ;
+							font-size: 1.3rem;
+						}
+					}
+				}
+			}
+
+			.bg4 {
+    			height: 50%;
+				background: url('http://imagem.adidas.co.kr//images/adidas/event/falcon/181206/bg_grid_04.jpg');
+				transition-delay: 0.1s;
+				.inn_wrap{
+					.inn{
+						img{
+							width: 30%;
+						}
+						strong{
+							padding: 10px 0 0 ;
+							font-size: 1.3rem;
+						}
+					}
+				}
+			}
+			.bg5 {
+				background: url('http://imagem.adidas.co.kr//images/adidas/event/falcon/181206/bg_grid_05.jpg');
+				transition-delay: 0.3s;
+			}
+			.bg6 {
+				position: absolute;
+				bottom:0;
+				left:0;
+				height: 50%;
+				background: url('http://imagem.adidas.co.kr//images/adidas/event/falcon/181206/bg_grid_06.jpg');
+			    background-position: bottom center !important;
+				transition-delay: 0.5s;
+			}
+
+			.bg7 {
+				background: url('http://imagem.adidas.co.kr//images/adidas/event/falcon/181206/bg_grid_07.jpg');
+				    background-position: top center !important;
+				transition-delay: 0.1s;
+				.inn_wrap{
+					.inn{
+						img{
+							width: 30%;
+						}
+						strong{
+							padding: 10px 0 0 ;
+							font-size: 1.3rem;
+						}
+					}
+				}
+			}
+			.bg8 {
+				background: url('http://imagem.adidas.co.kr//images/adidas/event/falcon/181206/bg_grid_08.jpg');
+				background-position: bottom center !important;
+				transition-delay: 0.3s;
+			}
+			.bg9 {
+				background: url('http://imagem.adidas.co.kr//images/adidas/event/falcon/181206/bg_grid_09.jpg');
+				transition-delay: 0.5s;
+				.inn_wrap{
+					.inn{
+						transform: translate(-0%, -50%);
+						width: 50%;
+					}
+				}
+			}
+			.bg10 {
+				background: url('/images/adidas/event/falcon/190104/bg_grid_10.jpg');
+				.inn{
+					transform: translate(-72%, -50%);
+				}
+			}
+			.bg11 {
+				background: url('/images/adidas/event/falcon/190104/bg_grid_11.jpg');
+				background-position: bottom center !important;
+			}
+			.bg12 {
+				background: url('/images/adidas/event/falcon/190104/bg_grid_12.jpg');
+				.inn_wrap{
+					.inn{
+						img{
+						    width: 15%;
+						}
+						strong{
+							padding: 10px 0 0 ;
+							font-size: 1.3rem;
+						}
+					}
+				}
+			}
+			.bg13 {
+				background: url('/images/adidas/event/falcon/190104/bg_grid_13.jpg');
+				transition-delay: 0.1s;
+			}
+			.bg14 {
+				height: 50%;
+				background: url('/images/adidas/event/falcon/190104/bg_grid_14.jpg');
+				transition-delay: 0.3s;
+			}
+			.bg15 {
+				position: absolute;
+				bottom:0;
+				left:0;
+				height: 50%;
+				background: url('/images/adidas/event/falcon/190104/bg_grid_15.jpg');
+			    background-position: bottom center !important;
+				transition-delay: 0.5s;
+			}			
+			.bg16 {
+				height: 50%;
+				background: url('/images/adidas/event/falcon/190104/bg_grid_16.jpg');
+				background-position: top center !important;
+				transition-delay: 0.3s;
+			}
+			.bg17 {
+				position: absolute;
+				bottom:0;
+				left:0;
+				height: 50%;
+				background: url('/images/adidas/event/falcon/190104/bg_grid_17.jpg');
+			    background-position: bottom center !important;
+				transition-delay: 0.5s;
+			}
+			.bg18 {
+				background: url('/images/adidas/event/falcon/190104/bg_grid_18.jpg');
+				transition-delay: 0.1s;
+			}
+			.bg {
+				background-size: cover;
+				background-position: center center;
+
+			}
+		}
+	}
+
+	.statement3{
+		position: relative;
+		top:50px;
+		padding: 2rem 0.5rem 0;
+		text-align: center;
+		transition: all 0.6s;
+		-webkit-transition: all 0.8s;
+		@include css3(opacity,0);
+		h3{
+			font: 600 1.5rem 'NotoSansKR';
+		}
+		p{
+			font: 400 1.4rem 'NotoSansKR';			
+		}
+		img{
+			width: 100%;
+			display: block;
+		}
+		.prds_box{
+			overflow: hidden;
+			position: relative;
+			margin: 2rem 0;
+			a{
+				display: inline-block;
+				position: absolute;
+				width: 50%;
+				height: 50%;
+				text-indent: -5000px;
+			}
+		}
+		&.on{
+			top:0;
+			@include css3(opacity,1);
+		}
+	}
+	.bottom{
+		position: relative;
+		transition: all 0.6s;
+		-webkit-transition: all 0.6s;
+		.inn{
+			position: absolute;
+			top:50%;
+			left:50%;
+			transform: translate(-50%,-50%);
+			width: 100%;
+			text-align: center;
+			p{
+				padding: 0 0 8px 0;
+		    	font: 500 1.8rem 'adinenuPro-black';
+				text-transform: uppercase;
+				letter-spacing: 1px;
+			}
+			.btn-buy{
+				a{
+					background: #000;
+					span{
+						background: url(http://imagem.adidas.co.kr//images/adidas/event/falcon/181206/icon_btn_arrow_black.jpg) no-repeat;
+					    background-size: 100%;
+					}
+				}
+			}
+		}
+	}
+}
