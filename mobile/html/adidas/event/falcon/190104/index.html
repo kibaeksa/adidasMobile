@@ -681,7 +681,7 @@
 
 				<section class="section section6 scrollevent">
 					<article class="row">
-						<div class="bg bg16" onclick="openModalVideoViewer('t3Mzui1c9y4')">
+						<div class="bg bg16">
 							<div class="inn_wrap">
 								<div class="inn">
 									<p>
@@ -772,11 +772,12 @@
 							var mypos = scrollContents[i].offsetTop;
 							scrollArray.push(mypos);
 						}
-						// console.log(scrollContents[5]);
-						// console.log(scrollContents[5].offsetTop);
+						console.log(scrollArray);
+						
 
 						$(window).scroll(function () {
-							var thisPos = $(this).scrollTop() + 300;
+							// var thisPos = $(this).scrollTop();
+							var thisPos = $(this).scrollTop() + $(window).height() - 50;
 							// console.log(thisPos);
 
 							for (var pos = 0; pos < scrollArray.length; pos++) {
