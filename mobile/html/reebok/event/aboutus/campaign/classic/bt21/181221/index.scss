@@ -115,6 +115,7 @@
 					margin-right: 1%;
 				}
 				h1{
+					position: relative;
 					display: inline-block;
 					vertical-align: middle;
 					font: 700 5vw/5vw 'NotoSansKR';
@@ -122,11 +123,40 @@
 					.dinproBold{
 						font: 700 19px/19px 'dinpro';
 					}
+					span{
+						position: absolute;
+					    bottom: 28%;
+					    left: 0;
+					    width: 100%;
+					    height: 9px;
+					    background: rgba(0,0,0,0.3);
+					}
 				}
 			}
 			>.img{
+				position: relative;
+				display: inline-block;
 				img{
 					width:100%;
+				}
+				.cover{
+					position: absolute;
+					top:0;
+					left:0;
+					width: 100%;
+					height: 100%;
+					background: rgba(0,0,0,0.6);
+					.txt{
+						position: absolute;
+						top:50%;
+						left:50%;
+						transform: translate(-50%,-50%);
+						text-align: center;
+						color:#fff;
+						font: 500 2rem 'NotoSansKR';
+
+					}
+
 				}
 			}
 		}
@@ -139,18 +169,6 @@
                 width:100%;
             }
         }
-        // padding:2rem;
-        // h1{
-        //     font: 500 12.5px/12.5px 'NotoSansKR';
-        //     color:#626262;
-        //     margin-bottom: 10px;
-        // }
-        // ul{
-        //     li{
-        //         font: 500 .1rem/15px 'NotoSansKR';
-        //         color:#626262;
-        //     }
-        // }
     }
 	.slider_wrap{
 		position: relative;
