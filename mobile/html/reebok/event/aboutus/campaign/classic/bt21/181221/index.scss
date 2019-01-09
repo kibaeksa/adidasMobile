@@ -107,7 +107,7 @@
 			transition: all .7s;
 			.wrap{
 				text-align: center;
-				margin-bottom: 1.5rem;
+			    margin-bottom: 1.5rem;
 				img{
 					width: 7%;
 					vertical-align: middle !important;
@@ -115,18 +115,45 @@
 					margin-right: 1%;
 				}
 				h1{
-					display: inline-block;
-					vertical-align: middle;
-					font: 700 5vw/5vw 'NotoSansKR';
-					letter-spacing: 1px;
+					position: relative;
+				    display: inline-block;
+				    vertical-align: middle;
+				    font: 700 5vw/5vw 'NotoSansKR';
+				    letter-spacing: 1px;
+					span{
+						position: absolute;
+						bottom: 28%;
+						left: 0;
+						width: 100%;
+						height: 9px;
+						background: rgba(0,0,0,0.3);
+					}
 					.dinproBold{
 						font: 700 19px/19px 'dinpro';
 					}
 				}
 			}
 			>.img{
+				position: relative;
 				img{
 					width:100%;
+				}
+				.cover{
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					background: rgba(0,0,0,0.6);
+					.txt{
+						position: absolute;
+						top: 50%;
+						left: 50%;
+						transform: translate(-50%, -50%);
+						text-align: center;
+						color: #fff;
+						font: 500 2rem 'NotoSansKR';
+					}
 				}
 			}
 		}
