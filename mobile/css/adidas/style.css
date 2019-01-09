@@ -664,6 +664,79 @@ html.no_srl{
 	text-align: center;
 }
 
+/* button with shadow */
+.button_area_v2>div{position: relative;}
+.button_area_v2 a span.arrow{
+    position: relative;
+    top: -1px;
+    display: inline-block;
+    width: 30px;
+    height: 2px;
+    background: #fff;
+    vertical-align: middle;
+    margin-left: 20px;
+}
+.button_area_v2 a span.arrow::after{
+    position: absolute;
+    top: -3px;
+    right: -2px;
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 3px;
+    background: #fff;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+.button_area_v2 a span.arrow::before{
+    position: absolute;
+    bottom: -3px;
+    right: -2px;
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 3px;
+    background: #fff;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+.button_area_v2 a{
+    display: block;
+    text-align: center;
+    height: 50px;
+    font:500 15px/49px 'NotoSansKR';
+    color: #fff;
+    background: #000;
+}
+.button_area_v2 a::after{
+    display: block;
+    content: '';
+    position:absolute;
+    top:0;
+    left: 0;
+    width:100%;
+    height: 100%;
+    transform: translate(3px,3px);
+    -webkit-transform: translate(3px,3px);
+}
+.button_area_v2 a::after{
+    display: block;
+    content: '';
+    position:absolute;
+    top:0;
+    left: 0;
+    width:100%;
+    height: 100%;
+    transform: translate(3px,3px);
+    -webkit-transform: translate(3px,3px);
+    box-shadow: inset 0 0 0 1px #000;
+    -webkit-box-shadow: inset 0 0 0 1px #000;
+}
+.button_area_v2>div.white a{background: #fff;color: #000;}
+.button_area_v2>div.white a::after{box-shadow: inset 0 0 0 1px #fff;-webkit-box-shadow: inset 0 0 0 1px #fff;}
+.button_area_v2>div.white a span.arrow::after,.button_area_v2>div.white a span.arrow::before{background: #000;}
+.button_area_v2>div.white a span{background: #000;}
+
 /* form */
 .form_table{
 	width: 100%;
@@ -3327,7 +3400,6 @@ width: 75%;
 	padding: 0 20px 5px;
 }
 
-
 #container.main .main_visual .btn a{
 	width: 100%;
 	height: 39px;
@@ -3359,8 +3431,6 @@ width: 75%;
 	font-size:11px;
 	margin-left:5px;
 }
-
-
 
 /* 181204 bullet_v3 UI 변경*/
 #container.main .main_visual.bullet_v3 .box .btn a{
@@ -3396,9 +3466,6 @@ width: 75%;
     top: -1px;
 }
 /* 181204 bullet_v3 UI 변경 끝 */
-
-
-
 
 #container.main .main_visual .owl-dots{
 	padding: 15px 0;
