@@ -1994,6 +1994,17 @@
                             $(event.target).find('.owl-controls .owl-dot').removeClass('active').last().addClass('active');
                         }
     				});
+
+					// 190114 선택한 사이즈박스 색바뀌는 코드
+					$('.size_box a').on('click', function () {
+						if ($(this).hasClass('on')) {
+							return;
+						}
+
+						$('.size_box a').removeClass('on');
+						$(this).addClass('on');
+					});
+					
                 })(jQuery)
             </script>
             <!-- //170208 -->
