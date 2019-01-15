@@ -1,0 +1,747 @@
+ <!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+	<meta name="format-detection" content="telephone=no">
+	<meta http-equiv="x-rim-auto-match" content="none">
+
+	<link href="/css/adidas/style.css" type="text/css" rel="stylesheet" />
+	<link href="/css/adidas/fonts.css" type="text/css" rel="stylesheet" />
+
+	<script type="text/javascript" src="/js/jquery-1.12.0.min.js"></script>
+	<script type="text/javascript" src="/js/owl.carousel.js"></script>
+	
+	<title>아디다스 모바일 리뉴얼 코딩리스트</title>
+
+	<style type="text/css">
+		#wrap>p.tit1{
+			background: #333;
+			color:#fff;
+			padding:10px;
+			font:20px 'NotoSansKR';
+		}
+		#wrap>p.tit2{
+			background: #ccc;
+			color:#333;
+			padding:7px 10px;
+			font:14px 'NotoSansKR';
+		}
+
+		ul>li{
+			border-bottom:1px dashed #333;
+		}
+		ul>li:last-child{
+			border-width: 0;
+		}
+		ul>li>a{
+			display: block;
+			padding:5px 0 5px 20px;
+			color:#aaa;
+			box-sizing:border-box;
+			-webkit-box-sizing:border-box;
+		}
+		a .ctgr{
+			font-weight:bold;
+			margin-bottom:2px;
+			font-size:12px;
+		}
+
+		a .name{
+			font:14px 'adihaus';
+		}
+
+		ul>li.on>a{
+			color: #000;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrap">	
+		<p class="tit1">메인</p>	
+		<ul>
+			<li class="on">
+				<a href="index.html">
+					<p class="ctgr">메인페이지</p>
+					<p class="name">Main.html</p>
+				</a>
+			</li>			
+		</ul>
+		<p class="tit1">검색</p>
+		<ul>
+			<li class="on">
+				<a href="SearchResult.html">
+					<p class="ctgr">검색결과</p>
+					<p class="name">SearchResult.html</p>
+				</a>
+			</li>			
+			<li class="on">
+				<a href="NoSearchResult.html">
+					<p class="ctgr">검색결과 없음</p>
+					<p class="name">NoSearchResult.html</p>
+				</a>
+			</li>			
+		</ul>
+		<p class="tit1">서브메인</p>	
+		<ul>
+			<li>
+				<a href="MenSubmain.html">
+					<p class="ctgr">MEN 서브메인</p>
+					<p class="name">MenSubmain.html</p>
+				</a>
+			</li>
+			<li>
+				<a href="WomenSubmain.html">
+					<p class="ctgr">WOMEN 서브메인</p>
+					<p class="name">WomenSubmain.html</p>
+				</a>
+			</li>
+			<li>
+				<a href="KidsSubmain.html">
+					<p class="ctgr">KIDS 서브메인</p>
+					<p class="name">KidsSubmain.html</p>
+				</a>
+			</li>
+			<li>
+				<a href="SportSubmain.html">
+					<p class="ctgr">SPORTS 서브메인</p>
+					<p class="name">SportSubmain.html</p>
+				</a>
+			</li>
+			<li>
+				<a href="BrandsSubmain.html">
+					<p class="ctgr">BRAND 서브메인</p>
+					<p class="name">BrandsSubmain.html</p>
+				</a>
+			</li>
+		</ul>
+		<p class="tit1">카테고리</p>	
+		<ul>
+			<li class="on">
+				<a href="CategoryList_gender.html">
+					<p class="ctgr">MEN / WOMEN / KIDS</p>
+					<p class="name">CategoryList_gender.html</p>
+				</a>
+			</li>
+			<li class="on">
+				<a href="CategoryList_sports.html">
+					<p class="ctgr">축구,러닝,농구,트레이닝,아웃도어,테니스</p>
+					<p class="name">CategoryList_sports.html</p>
+				</a>
+			</li>
+			<li class="on">
+				<a href="CategoryList_Brands.html">
+					<p class="ctgr">Originals, adidas neo, adidas by stellamccartney, Collections</p>
+					<p class="name">CategoryList_Brands.html</p>
+				</a>
+			</li>
+			<li class="on">
+				<a href="NewProduct.html">
+					<p class="ctgr">신상품</p>
+					<p class="name">NewProduct.html</p>
+				</a>
+			</li>
+			<li class="on">
+				<a href="BestProduct.html">
+					<p class="ctgr">베스트상품</p>
+					<p class="name">BestProduct.html</p>
+				</a>
+			</li>
+			<li class="on">
+				<a href="SaleProduct.html">
+					<p class="ctgr">세일상품</p>
+					<p class="name">SaleProduct.html</p>
+				</a>
+			</li>
+			<li class="on">
+				<a href="OutletProduct.html">
+					<p class="ctgr">아웃렛</p>
+					<p class="name">OutletProduct.html</p>
+				</a>
+			</li>
+		</ul>
+		<p class="tit1">상품정보</p>	
+		<ul>
+			<li class="on">
+				<a href="ProductDt.html">
+					<p class="ctgr">상품상세정보</p>
+					<p class="name">ProductDt.html</p>
+				</a>
+			</li>
+			<li class="on">
+				<a href="ProductDtStockAlarm.html">
+					<p class="ctgr">상품상세정보 입고알림 버튼</p>
+					<p class="name">ProductDtStockAlarm.html</p>
+				</a>
+			</li>
+			<li class="on">
+				<a href="ProductReviewLi.html">
+					<p class="ctgr">상품평 목록(보기)</p>
+					<p class="name">ProductReviewLi.html</p>
+				</a>
+			</li>
+			<li class="on">
+				<a href="ProductReviewWrite.html">
+					<p class="ctgr">상품평 쓰기</p>
+					<p class="name">ProductReviewWrite.html</p>
+				</a>
+			</li>
+			<li class="on">
+				<a href="MycouponViewPop.html">
+					<p class="ctgr">미리계산기 (쿠폰조회)</p>
+					<p class="name">MycouponViewPop.html</p>
+				</a>
+			</li>
+			<li class="on">
+				<a href="CardViewPop.html">
+					<p class="ctgr">카드혜택</p>
+					<p class="name">CardViewPop.html</p>
+				</a>
+			</li>			
+		</ul>
+		<p class="tit1">주문결제</p>	
+		<ul>
+			<li class="on">
+				<a href="Cart.html">
+					<p class="ctgr">장바구니</p>
+					<p class="name">Cart.html</p>
+				</a>
+			</li>
+			<li>
+				<a href="Cart_nodata.html">
+					<p class="ctgr">장바구니 (NO DATA)</p>
+					<p class="name">Cart_nodata.html</p>
+				</a>
+			</li>
+			<li class="on">
+				<a href="OrderPayment.html">
+					<p class="ctgr">주문서작성 및 결제</p>
+					<p class="name">OrderPayment.html</p>
+				</a>
+			</li>
+			<li>
+				<a href="NotRecentDelivery.html">
+					<p class="ctgr">최근 배송지 없을때</p>
+					<p class="name">NotRecentDelivery.html</p>
+				</a>
+			</li>
+			<li>
+				<a href="SearchDelivery.html">
+					<p class="ctgr">배송지 조회</p>
+					<p class="name">SearchDelivery.html</p>
+				</a>
+			</li>			
+			<li class="on">
+				<a href="CheckCouponPop.html">
+					<p class="ctgr">쿠폰조회 </p>
+					<p class="name">CheckCouponPop.html</p>
+				</a>
+			</li>
+
+			<li class="on">
+				<a href="OrderFinish.html">
+					<p class="ctgr">주문완료</p>
+					<p class="name">OrderFinish.html</p>
+				</a>
+			</li>
+			<li class="on">
+				<a href="NonmemberAgreement.html">
+					<p class="ctgr">비회원약관동의 </p>
+					<p class="name">NonmemberAgreement.html</p>
+				</a>
+			</li>
+			<li class="on">
+				<a href="NonmemberOrderpayment.html">
+					<p class="ctgr">비회원 주문/결제 (인증전)</p>
+					<p class="name">NonmemberOrderpayment.html</p>
+				</a>
+			</li>
+			<li class="on">
+				<a href="NonmemberOrderpayment2.html">
+					<p class="ctgr">비회원 주문/결제 (인증후)</p>
+					<p class="name">NonmemberOrderpayment2.html</p>
+				</a>
+			</li>
+			<li>
+				<a href="SearchZipPop.html">
+					<p class="ctgr">우편번호 찾기</p>
+					<p class="name">SearchZipPop.html</p>
+				</a>
+			</li>			
+		</ul>
+
+		<p class="tit1">회원가입/인증</p>
+		<p class="tit2">로그인</p>
+		<ul>			
+			<li class="on">
+				<a href="Login.html">
+					<p class="ctgr">로그인 회원</p>
+					<p class="name">Login.html</p>
+				</a>
+			</li>
+			<li class="on">
+				<a href="NonmemberLogin.html">
+					<p class="ctgr">로그인 비회원</p>
+					<p class="name">NonmemberLogin.html</p>
+				</a>
+			</li>			
+		</ul>
+		<p class="tit2">아이디 찾기(팝업)</p>
+		<ul>			
+			<li class="on">
+				<a href="FindId.html">
+					<p class="ctgr">아이디 찾기</p>
+					<p class="name">FindId.html</p>
+				</a>
+			</li>
+			<li class="on">
+				<a href="FindIdResult.html">
+					<p class="ctgr">아이디 찾기 결과</p>
+					<p class="name">FindIdResult.html</p>
+				</a>
+			</li>	
+			<li>
+				<a href="FindIdError.html">
+					<p class="ctgr">아이디 찾기 에러</p>
+					<p class="name">FindIdError.html</p>
+				</a>
+			</li>	
+		</ul>
+		<p class="tit2">비밀번호 찾기(팝업)</p>
+		<ul>			
+			<li class="on">
+				<a href="FindPass.html">
+					<p class="ctgr">비밀번호 찾기</p>
+					<p class="name">FindPass.html</p>
+				</a>
+			</li>
+			<li class="on">
+				<a href="FindPassResult.html">
+					<p class="ctgr">비밀번호 전송결과 출력</p>
+					<p class="name">FindPassResult.html</p>
+				</a>
+			</li>	
+			<li>
+				<a href="FindPassError.html">
+					<p class="ctgr">비밀번호 찾기 에러</p>
+					<p class="name">FindPassError.html</p>
+				</a>
+			</li>	
+		</ul>
+		<p class="tit2">회원가입</p>
+		<ul>			
+			<li class="on">
+				<a href="Agreement1.html">
+					<p class="ctgr">약관동의</p>
+					<p class="name">Agreement1.html</p>
+				</a>
+			</li>
+			<li class="on">
+				<a href="Agreement2.html">
+					<p class="ctgr">본인확인</p>
+					<p class="name">Agreement2.html</p>
+				</a>
+			</li>	
+			<li class="on">
+				<a href="MemberIn.html">
+					<p class="ctgr">정보입력 ('2016 02 19업데이트')</p>
+					<p class="name">MemberIn.html</p>
+				</a>
+			</li>	
+			<li class="on">
+				<a href="zipcode.html">
+					<p class="ctgr">우편번호 찾기 iframe ('renew2016' 으로 주석 했습니다.')</p>
+					<p class="name">zipcode.html</p>
+				</a>
+			</li>	
+			<li class="on">
+				<a href="MemberFinish.html">
+					<p class="ctgr">가입완료</p>
+					<p class="name">MemberFinish.html</p>
+				</a>
+			</li>	
+		</ul>
+		<p class="tit2">약관</p>
+		<ul>			
+			<li class="on">
+				<a href="Clause1.html">
+					<p class="ctgr">구매이용약관</p>
+					<p class="name">Clause1.html</p>
+				</a>
+			</li>
+			<li class="on">
+				<a href="Clause2.html">
+					<p class="ctgr">아디클럽이용약관</p>
+					<p class="name">Clause2.html</p>
+				</a>
+			</li>	
+			<li class="on">
+				<a href="Clause3.html">
+					<p class="ctgr">개인정보 수집 이용동의</p>
+					<p class="name">Clause3.html</p>
+				</a>
+			</li>	
+			<li class="on">
+				<a href="Clause4.html">
+					<p class="ctgr">개인정보취급위탁동의</p>
+					<p class="name">Clause4.html</p>
+				</a>
+			</li>	
+		</ul>
+
+		<p class="tit1">마이페이지</p>
+		<p class="tit2">마이페이지 메인</p>
+		<ul>			
+			<li class="on">
+				<a href="MyPageMain.html">
+					<p class="ctgr">마이페이지 메인</p>
+					<p class="name">MyPageMain.html</p>
+				</a>
+			</li>
+			<li>
+				<a href="NonMemberMyPageMain.html">
+					<p class="ctgr">비회원 마이페이지 메인</p>
+					<p class="name">NonMemberMyPageMain.html</p>
+				</a>
+			</li>				
+		</ul>
+		<p class="tit2">주문/배송 조회</p>
+		<ul>			
+			<li class="on">
+				<a href="OrderLi.html">
+					<p class="ctgr">주문/배송 조회</p>
+					<p class="name">OrderLi.html</p>
+				</a>
+			</li>		
+		</ul>
+		<p class="tit2">취소/반품 조회</p>
+		<ul>			
+			<li class="on">
+				<a href="CancelReturnRequestLi.html">
+					<p class="ctgr">취소/반품 요청</p>
+					<p class="name">CancelReturnRequestLi.html</p>
+				</a>
+			</li>		
+			<li class="on">
+				<a href="CancelRequest.html">
+					<p class="ctgr">주문취소 신청</p>
+					<p class="name">CancelRequest.html</p>
+				</a>
+			</li>		
+			<li class="on">
+				<a href="ReturnRequest.html">
+					<p class="ctgr">반품취소 신청</p>
+					<p class="name">ReturnRequest.html</p>
+				</a>
+			</li>		
+			<li class="on">
+				<a href="ReturnLi.html">
+					<p class="ctgr">취소/반품 내역</p>
+					<p class="name">ReturnLi.html</p>
+				</a>
+			</li>		
+			<li class="on">
+				<a href="CancelDetail.html">
+					<p class="ctgr">취소 상세내역</p>
+					<p class="name">CancelDetail.html</p>
+				</a>
+			</li>		
+			<li class="on">
+				<a href="ReturnDetail.html">
+					<p class="ctgr">반품 상세내역</p>
+					<p class="name">ReturnDetail.html</p>
+				</a>
+			</li>		
+		</ul>
+		<p class="tit2">교환 조회</p>
+		<ul>			
+			<li class="on">
+				<a href="ExchangeRequestLi.html">
+					<p class="ctgr">교환 요청</p>
+					<p class="name">ExchangeRequestLi.html</p>
+				</a>
+			</li>		
+			<li class="on">
+				<a href="ExchangeRequest.html">
+					<p class="ctgr">교환 신청</p>
+					<p class="name">ExchangeRequest.html</p>
+				</a>
+			</li>		
+			<li class="on">
+				<a href="ExchangeLi.html">
+					<p class="ctgr">교환 내역</p>
+					<p class="name">ExchangeLi.html</p>
+				</a>
+			</li>		
+			<li class="on">
+				<a href="ExchangeDetail.html">
+					<p class="ctgr">교환 상세내역</p>
+					<p class="name">ExchangeDetail.html</p>
+				</a>
+			</li>					
+		</ul>
+		<p class="tit2">주문상세정보</p>
+		<ul>			
+			<li class="on">
+				<a href="OrderDetailInfo.html">
+					<p class="ctgr">주문상세정보</p>
+					<p class="name">OrderDetailInfo.html</p>
+				</a>
+			</li>
+		</ul>
+		<p class="tit2">취소/반품 결제대기</p>
+		<ul>			
+			<li class="on">
+				<a href="ReturnPayment.html">
+					<p class="ctgr">취소/반품 결제대기</p>
+					<p class="name">ReturnPayment.html</p>
+				</a>
+			</li>
+		</ul>
+		<p class="tit2">교환 결제대기</p>
+		<ul>			
+			<li class="on">
+				<a href="ExchangePayment.html">
+					<p class="ctgr">교환 결제대기</p>
+					<p class="name">ExchangePayment.html</p>
+				</a>
+			</li>
+		</ul>
+		<p class="tit2">회원정보수정</p>
+		<ul>			
+			<li class="on">
+				<a href="ConfirmPass.html">
+					<p class="ctgr">회원 비번 확인</p>
+					<p class="name">ConfirmPass.html</p>
+				</a>
+			</li>
+			<li class="on">
+				<a href="PersonalInfoMain.html">
+					<p class="ctgr">회원정보 수정</p>
+					<p class="name">PersonalInfoMain.html</p>
+				</a>
+			</li>
+			<li class="on">
+				<a href="PersonalInfoDone.html">
+					<p class="ctgr">회원정보 수정 완료</p>
+					<p class="name">PersonalInfoDone.html</p>
+				</a>
+			</li>
+		</ul>
+		<p class="tit2">배송지 관리</p>
+		<ul>			
+			<li class="on">
+				<a href="DeliveryManagement.html">
+					<p class="ctgr">배송지 관리</p>
+					<p class="name">DeliveryManagement.html</p>
+				</a>
+			</li>
+			<li class="on">
+				<a href="DeliveryAdd.html">
+					<p class="ctgr">배송지 추가</p>
+					<p class="name">DeliveryAdd.html</p>
+				</a>
+			</li>
+		</ul>
+		<p class="tit2">내 쿠폰 보기</p>
+		<ul>			
+			<li class="on">
+				<a href="CouponHistoryAll.html">
+					<p class="ctgr">쿠폰 조회 전체보기</p>
+					<p class="name">CouponHistoryAll.html</p>
+				</a>
+			</li>
+			<li class="on">
+				<a href="CouponHistory.html">
+					<p class="ctgr">쿠폰 조회</p>
+					<p class="name">CouponHistory.html</p>
+				</a>
+			</li>
+		</ul>
+		<p class="tit2">내 포인트 보기</p>
+		<ul>			
+			<li class="on">
+				<a href="MyPoint.html">
+					<p class="ctgr">포인트 조회</p>
+					<p class="name">MyPoint.html</p>
+				</a>
+			</li>
+		</ul>
+		<p class="tit2">관심상품</p>
+		<ul>			
+			<li class="on">
+				<a href="MyWishlist.html">
+					<p class="ctgr">관심상품 보기</p>
+					<p class="name">MyWishlist.html</p>
+				</a>
+			</li>
+			<li class="on">
+				<a href="MyWishlistNoData.html">
+					<p class="ctgr">관심상품 보기</p>
+					<p class="name">MyWishlistNoData.html</p>
+				</a>
+			</li>
+		</ul>
+		<p class="tit2">오늘본상품</p>
+		<ul>			
+			<li class="on">
+				<a href="WatchedLi.html">
+					<p class="ctgr">오늘본 상품 보기</p>
+					<p class="name">WatchedLi.html</p>
+				</a>
+			</li>
+			<li class="on">
+				<a href="WatchedLiNoData.html">
+					<p class="ctgr">오늘본 상품 (NO DATA)</p>
+					<p class="name">WatchedLiNoData.html</p>
+				</a>
+			</li>
+		</ul>
+		<p class="tit2">1:1문의 내역</p>
+		<ul>			
+			<li class="on">
+				<a href="MyRequestResult.html">
+					<p class="ctgr">1:1 문의내역 보기</p>
+					<p class="name">MyRequestResult.html</p>
+				</a>
+			</li>
+			<li class="on">
+				<a href="MyRequestWrite.html">
+					<p class="ctgr">1:1 문의 쓰기</p>
+					<p class="name">MyRequestWrite.html</p>
+				</a>
+			</li>
+		</ul>
+		<p class="tit2">모바일 멤버십 카드조회</p>
+		<ul>			
+			<li class="on">
+				<a href="MyMembership.html">
+					<p class="ctgr">모바일 멤버십 카드조회</p>
+					<p class="name">MyMembership.html</p>
+				</a>
+			</li>
+		</ul>
+		<p class="tit2">마이클럽</p>
+		<ul>			
+			<li class="on">
+				<a href="MyClub.html">
+					<p class="ctgr">내가 가입한 클럽</p>
+					<p class="name">MyClub.html</p>
+				</a>
+			</li>
+		</ul>
+
+		<p class="tit1">고객센터</p>
+		<ul>			
+			<li class="on">
+				<a href="CsCenterMain.html">
+					<p class="ctgr">고객센터 메인</p>
+					<p class="name">CsCenterMain.html</p>
+				</a>
+			</li>
+			<li class="on">
+				<a href="FaqLi.html">
+					<p class="ctgr">FAQ</p>
+					<p class="name">FaqLi.html</p>
+				</a>
+			</li>
+			<li>
+				<a href="SearchFaq.html">
+					<p class="ctgr">검색결과</p>
+					<p class="name">SearchFaq.html</p>
+				</a>
+			</li>
+			<li class="on">
+				<a href="MyRequest.html">
+					<p class="ctgr">1:1 문의</p>
+					<p class="name">MyRequest.html</p>
+				</a>
+			</li>
+			<li class="on">
+				<a href="MyRequestResult.html">
+					<p class="ctgr">1:1 답변확인</p>
+					<p class="name">MyRequestResult.html</p>
+				</a>
+			</li>
+			<li class="on">
+				<a href="Notice.html">
+					<p class="ctgr">공지사항</p>
+					<p class="name">Notice.html</p>
+				</a>
+			</li>
+		</ul>	
+		<p class="tit1">기획전</p>
+		<ul>			
+			<li class="on">
+				<a href="PromotionLi.html">
+					<p class="ctgr">이벤트 / 기획전 리스트</p>
+					<p class="name">PromotionLi.html</p>
+				</a>
+			</li>			
+			<li class="on">
+				<a href="PromotionView.html">
+					<p class="ctgr">이벤트 / 기획전 보기</p>
+					<p class="name">PromotionView.html</p>
+				</a>
+			</li>			
+		</ul>		
+		<p class="tit1">아디클럽</p>
+		<ul>			
+			<li class="on">
+				<a href="adiclub01.html">
+					<p class="ctgr">멤버십 프로그램</p>
+					<p class="name">adiclub01.html</p>
+				</a>
+			</li>			
+			<li class="on">
+				<a href="adiclub02.html">
+					<p class="ctgr">모바일 멤버십 카드</p>
+					<p class="name">adiclub02.html</p>
+				</a>
+			</li>		
+			<li class="on">
+				<a href="adiclub03.html">
+					<p class="ctgr">회원가입방법</p>
+					<p class="name">adiclub03.html</p>
+				</a>
+			</li>			
+		</ul>
+		<p class="tit2">캠페인</p>
+		<ul>			
+			<li class="on">
+				<a href="CampaignLi.html">
+					<p class="ctgr">캠페인 리스트</p>
+					<p class="name">CampaignLi.html</p>
+				</a>
+			</li>					
+			<li class="on">
+				<a href="CampaignView.html">
+					<p class="ctgr">캠페인 상세</p>
+					<p class="name">CampaignView.html</p>
+				</a>
+			</li>					
+		</ul>
+		<p class="tit2">매장찾기</p>
+		<ul>			
+			<li class="on">
+				<a href="findStore.html">
+					<p class="ctgr">매장찾기</p>
+					<p class="name">FindStore.html</p>
+				</a>
+			</li>
+		</ul>	
+		<p class="tit2">404 ERROR</p>
+		<ul>			
+			<li class="on">
+				<a href="Error404.html">
+					<p class="ctgr">404 에러</p>
+					<p class="name">Error404.html</p>
+				</a>
+			</li>
+		</ul>		
+
+	</div>
+	<script type="text/javascript" src="/js/adidas/common.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,329 @@
+@import './app/css/adidas/scss/common/mixin.scss';
+@import './app/css/adidas/scss/common/common.scss';
+#golf_tour_mob {
+    width: 100%;
+    margin: 0 auto;
+    .scrollsection{
+        &.on{
+            .tour_slider{
+                .img{
+                    opacity: 1 !important;
+                    -webkit-opacity: 1 !important;
+                }
+            }
+            &.tour_content_wrap{
+                img{
+                    opacity: 1 !important;
+                    -webkit-opacity: 1 !important;
+
+                }
+            }
+            &.tour_history_wrap{
+                .img{
+                    opacity: 1 !important;
+                    -webkit-opacity: 1 !important;
+                }
+            }
+        }
+    }
+
+    .tour_video_wrap{
+        position: relative;
+        .bg{
+            img{
+                width: 100%;
+            }
+        }
+        .txt{
+            position: absolute;
+            top:50%;
+            left:50%;
+            @include css3(transform, translate(-50%,-50%));
+            width: 100%;
+            text-align: center;
+            h4{
+                font: 600 48px/50px 'adinenuPro-black';
+                text-align: center;
+                color: #fff;
+                letter-spacing: 0.5px;
+            }
+            p{
+                font:300 16px 'NotoSansKR';
+                text-align: center;
+                color: #fff;
+                letter-spacing: 0.6px;
+            }
+            span{
+                display: inline-block;
+                .btn{
+                    margin: 30px 0 0 0;
+                    width: 80px;
+                }
+
+            }
+
+
+        }
+    }
+
+    .tour_slide_wrap{
+        position: relative;
+        padding-bottom: 30%;
+        background-image: url("/images/adidas/event/golf/tour360/tour_product_bgi_m.jpg");
+        background-position: center top;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        h3{
+            padding: 60px 55px 0;
+            img{width: 100%;}
+        }
+        .tour_slider{
+            padding: 24px 0 0 0;
+            ul{
+                li{
+                    .item{
+                        text-align: center;
+                        .img{
+                            @include css3(opacity,0);
+                            @include css3(transition, all 0.8s);
+                            img{width: 100%;}
+                        }
+                        .title{
+                            padding: 21px 0 10px 0px;
+                            text-align: center;
+                            font: 25px 'adinenuPro-bold';
+                            text-transform: uppercase;
+                        }
+                        a{
+                            margin: 10px 0 0 0;
+                            display: inline-block;
+                            width: 140px;
+                            text-align: center;
+                            font: 400 15px/40px 'NotoSansKR';
+                            text-align: center;
+                            color: #000;
+                            border: 1px solid #000;
+
+                        }
+                    }
+                }
+                .owl-controls{
+                    .owl-nav{
+                        position: absolute;
+                        top: 44%;
+                        width: 100%;
+                        div{
+                            position: absolute;
+                            right: 0;
+                            display: inline-block;
+                            width: 14px;
+                            height: 24px;
+                            background: url(/images/adidas/event/golf/tour360/top_slider_next.png) no-repeat;
+                            background-size: 30%;
+                            text-indent: -9999px;
+                            background-position: center;
+                            padding: 20px;
+                            &.owl-prev{
+                                position: absolute;
+                                left: 0;
+                                background: url("/images/adidas/event/golf/tour360/top_slider_prev.png") no-repeat;
+                                background-size: 30%;
+                                text-indent: -9999px;
+                                background-position: center;
+                            }
+                        }
+                    }
+                    .owl-dots{
+                        text-align: center;
+                        position: absolute;
+                        width: 100%;
+                        bottom: 20px;
+                        .owl-dot{
+                            display: inline-block;
+                            margin: 0 5px;
+                            width: 8px;height: 8px;
+                            background: #9a9a9a;
+                            border-radius: 50px;
+                            -webkit-border-radius: 50px;
+                            &.active{
+                                background: #000;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .tour_content_wrap{
+        position: relative;
+        margin: 20px 25px 0;
+
+        img{
+            width: 100%;
+            @include css3(opacity,0);
+            @include css3(transition, all 0.4s);
+
+        }
+        dl{
+            padding: 0 0 25px 0;
+            dt{
+                padding: 30px 0 10px 0;
+                font: 600 1.6rem/30px 'NotoSansKR';
+            }
+            dd{
+                padding: 0 0 15px 0;
+                span{
+                    font: 400 1rem 'NotoSansKR';
+                    vertical-align: top;
+                    display: inline-block;
+                    width: 87%;
+                    font: 400 1rem 'NotoSansKR';
+                    margin-left: 10px;
+                    position: relative;
+                    &.num_box{
+                        position: relative;
+                        top: 5px;
+                        display: inline-block;
+                        width: 18px;
+                        height: 18px;
+                        font: 400 12px/20px 'adinenuPro-regular';
+                        background: #000;
+                        color: #fff;
+                        margin: 0;
+                        text-align: center;
+
+                    }
+                    font: 400 1rem 'NotoSansKR';
+
+                }
+            }
+        }
+
+    }
+
+    .tour_history_wrap{
+        padding: 70px 0 30px;
+        background-image: url("/images/adidas/event/golf/tour360/tour_history_bgi_m.jpg");
+        background-size: 100% 100%;
+        position: relative;
+        .history_content{
+            .bottom_slider_wrap{
+                ul{
+                    li{
+                        p{
+                            text-align: center;
+                            font: 30px 'adinenuPro-bold';
+                            text-transform: uppercase;
+                            color:#fff;
+                            letter-spacing: 0.5px;
+                            span{
+                                display: block;
+                                font: 30px 'adinenuPro-light';
+                            }
+
+                        }
+                        p.kor{
+                            font: 300 1.2rem 'NotoSansKR';
+                            color:#fff;
+                            text-align: center;
+                        }
+                        .innBox{
+                            .txt{
+                                padding: 0 0 20px 0;
+                            }
+                            .img{
+                                @include css3(opacity,0);
+                                @include css3(transition, all 0.5s);
+                                img{width: 100%;}
+                            }
+                        }
+                    }
+                }
+                .owl-controls{
+                    position: absolute;
+                    width: 100%;
+                    top: 50%;
+                    .owl-dots{
+                        .owl-dot{
+                            color:#fff;
+                        }
+                    }
+                }
+                .navi_wrap{
+                    display: flex;
+                    padding: 0 40px;
+                    background: url('/images/adidas/event/golf/tour360/tour_history_bar.png') no-repeat;
+                    background-position: center 24%;
+                    background-size: 100%;
+                    dl{
+                        flex:1;
+                        text-align: center;
+                        &#center{
+                            &.on{
+                                dt{
+                                    background: url(/images/adidas/event/golf/tour360/tour_history_icon_on.png) no-repeat;
+                                    background-size: 100%;
+                                    background-position: center 5px;
+                                }
+                            }
+                            dd{
+                                font: 22px/40px 'adinenuPro-bold';
+                                color:#fff;
+                            }
+                        }
+                        dt{
+                            width: 33px;
+                            height: 33px;
+                            background: url(/images/adidas/event/golf/tour360/tour_history_icon.png) no-repeat;
+                            background-size: 100%;
+                            background-position: center 5px;
+                            display: inline-block;
+                            @include css3(transition, all 0.5s);
+
+                        }
+                        dd{
+                            position: relative;
+                            top:5px;
+                            color:#fff;
+                            font: 18px/40px 'adinenuPro-bold';
+                            color:#c8c8c8;
+                            letter-spacing: 0.2px;
+                            @include css3(opacity,0);
+                            @include css3(transition, all 0.4s);
+
+                            &.on{
+                                top:0;
+                                @include css3(opacity,1);
+                            }
+                        }
+                    }
+                }
+                .owl-next{
+                    position: absolute;
+                    right: 0;
+                    display: inline-block;
+                    background: url(/images/adidas/event/golf/tour360/bottom_arrow_next.png) no-repeat;
+                    background-size: 50%;
+                    background-position: center;
+                    text-indent: -9999px;
+                    width: 35px;
+                    height: 45px;
+
+                }
+                .owl-prev{
+                    position: absolute;
+                    left:0;
+                    display: inline-block;
+                    background: url("/images/adidas/event/golf/tour360/bottom_arrow_prev.png") no-repeat;
+                    background-size: 50%;
+                    background-position: center;
+                    text-indent: -9999px;
+                    width: 35px;
+                    height: 45px;
+
+                }
+            }
+        }
+    }
+}

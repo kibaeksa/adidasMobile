@@ -1,0 +1,118 @@
+@import './app/css/adidas/scss/common/mixin.scss';
+@import './app/css/adidas/scss/common/common.scss';
+
+#stella{
+	.button_area{
+		text-align: center;
+		>*{
+		    padding: 0 10px;
+		}
+		div{
+			position: relative;
+			display: inline-block;
+			margin-top: 20px;
+			height: 40px;
+			width: 180px;
+			&.type2{
+				border:2px solid #000;
+				a{
+					background: none;
+				    text-align: left;
+				    padding-left: 5px;
+					&:after{
+						position: absolute;
+						right: 15px;
+						top: 2px;
+					}
+				}
+			}
+			a{
+				height: 35px;
+				background: #fff;
+				font:400 1rem/35px 'NotoSansKR';
+				color:#000;
+			}
+		}
+	}
+	.stella_desc{
+		font:400 1rem/23px 'NotoSansKR';
+	}
+	.inner{
+		padding: 0 2.5rem;
+	}
+	.img_cut{
+		width: 100%;
+	}
+
+	.main_top{
+		position: relative;
+		.bg{
+			img{width:100%;}
+		}
+		h2{
+			position: absolute;
+			top:50%;
+			left:50%;
+			text-align: center;
+			@include css3(transform , translate(-50%,-40%));
+			img{
+				width:100%;
+			}
+			.scroll_down{
+				display: inline-block;
+			    padding: 0 6.8rem;
+				position: relative;
+				top:10px;
+			}
+		}
+	}
+
+	.txt-area{
+		position: relative;
+		top:100px;
+		text-align: center;
+		opacity: 0;
+		@include css3(transition, all 0.8s);
+		.title{
+			position: relative;
+			margin-top: 53px;
+		    padding-bottom: 1.5rem;
+		    letter-spacing: 1px;
+		    font: 1.7rem/25px 'adihaus', 'Nanum Gothic';
+		    color: #2495b5;
+		    margin-bottom: 1.2rem;
+			&:after{
+				position: absolute;
+				bottom:0;
+				left:50%;
+				margin-left: -12px;
+				content: '';
+				display: inline-block;
+				width:23px;
+				height: 1px;
+				background: #b2b2b2;
+			}
+		}
+		img{
+			margin-top: 53px;
+			width:100%;
+		}
+		&.statement{
+			margin-bottom: 75px;
+			.title{
+				margin-top: 75px;
+			}
+		}
+		&.event{
+			top:0;
+			opacity: 1;
+		}
+
+	}
+
+	.col{
+		margin-top: 75px;
+	}
+
+
+}

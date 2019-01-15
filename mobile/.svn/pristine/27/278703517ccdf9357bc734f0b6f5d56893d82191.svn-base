@@ -1,0 +1,218 @@
+@import './app/css/adidas/scss/common/mixin.scss';
+@import './app/css/adidas/scss/common/common.scss';
+
+#video-layer{
+	position:fixed;top:0;left:0;width: 100%;height: 100%;z-index:1000;
+}
+
+#video-layer .bg{
+	width: 100%;
+	height: 100%;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	transform-origin:center center;
+	-webkit-transform-origin:center center;
+	transform:scale(0);
+	-webkit-transform:scale(0);
+	opacity:0;
+	background:#000;
+	z-index:1;
+
+	transition:all 0.4s;
+	-webkit-transition:all 0.4s;
+
+
+}
+
+#video-layer.loaded .bg{
+	opacity: 1;
+	transform:scale(1.2);
+	-webkit-transform:scale(1.2);
+}
+
+#video-layer .video-box{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	z-index: 3;
+}
+
+#video-layer .close_x_btn{
+	width: 70px;
+	height: 70px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 5;
+	opacity: 0;
+}
+
+#video-layer.loaded .close_x_btn{
+	opacity: 1;
+}
+
+
+#adicolor{
+	.video{
+		position: relative;
+		width: 100%;
+		height: 100%;
+		a.video-button{
+			position: absolute;
+			width: 100%;
+			height: 100%;
+		}
+		img.video_bg{ width: 100%; }
+		.play{
+			position: absolute;
+			top:50%;
+			left:50%;
+			background: url("http://imagem.adidas.co.kr/images/adidas/event/pure_boost/play.png") 0 0 no-repeat;
+			background-size:100% 100%;
+			width: 6rem;
+			height: 6rem;
+			margin-top: -3rem;
+			margin-left: -3rem;
+		}
+	}
+
+	.slider_section{
+		position: relative;		
+		.slider_logo{
+			position: relative;
+			height: 50px;
+			text-align: center;
+			>img{
+				position: absolute;								
+				z-index: 2;
+				&:nth-child(1){top:17px; left: 15px;height: 16px;}
+				&:nth-child(2){top:15px; right: 15px;height: 20px;}
+			}
+			ul{
+				li{
+					position: absolute;
+					top:0;					
+					width: 100%;
+					height: 50px;									
+					opacity: 0;
+					transition: .6s;
+					&.on{							
+						opacity: 1;								
+					}
+					&:nth-child(1){background: #c0122d;}
+					&:nth-child(2){background: #0261cd;}
+					&:nth-child(3){background: #008b5e;}
+					&:nth-child(4){background: #fed130;}
+				}					
+			}				
+		}
+		.slider_wrap{
+			position: relative;		
+			ul{
+				position: relative;
+				.owl-item.active{
+					.num_title span{
+						margin-right: 0;
+						opacity: 1;
+					}
+					.num_title span:after{
+						width: 100%;
+					}
+				}
+				li{
+					float: left;
+					position: relative;
+					top:0;				
+					>div{
+						img{
+							width:100%;
+						}
+					}
+				}
+
+			}
+			ul:after{
+				content: '';
+				display: block;
+				clear: both;
+			}
+			.owl-controls{
+
+				.owl-dot{
+					// position: relative;
+					float: left;
+					text-align: center;
+					span{
+						display: inline-block;
+						padding:1rem 0 0 0;
+						font:1.5rem/2rem 'NotoSansKR';
+						text-align: center;
+						color:#000;
+						letter-spacing: 0;
+					}
+				}
+			}
+			.owl-nav{
+				position: absolute;
+				top:50%;
+				width:100%;			
+				z-index: 10;
+				.owl-next {
+				  position: relative;
+				  right:15px;
+				  float: right;
+				  width:32px;
+				  height: 72px;
+					background:url("http://imagem.adidas.co.kr/images/adidas/event/adicolor/btn-next.png") 70% 50% no-repeat;
+				  background-size: 60%;
+				  text-indent: -9999px;
+					// background-color: #000;
+					// @include opacity(0.3);
+					&:after{
+						display: inline-block;
+						width: 1rem;
+						height: 1rem;
+						position: absolute;
+						top:50%;
+						content: '';
+						background:url("http://imagem.adidas.co.kr/images/adidas/event/ultra_boost_x/next.png") 70% 50% no-repeat;
+					}
+				}
+				.owl-prev {
+				  position: relative;
+				  left:15px;
+				  float: left;
+				  width:32px;
+				  height: 72px;
+				  background:url("http://imagem.adidas.co.kr/images/adidas/event/adicolor/btn-prev.png") 30% 50% no-repeat;
+				  background-size: 60%;
+				  text-indent: -9999px;
+					// background-color: #000;
+					// @include opacity(0.3);
+				}
+			}
+			.owl-dots{
+				display: none !important;
+				position: absolute;
+				width: 100%;
+				text-align: center;
+				padding:1.5rem 0;
+				.owl-dot{
+					display: inline-block;
+					float:none;
+					margin:0 5px;
+					width: 1rem; height: 1rem;
+					background: #636363;
+					border-radius: 50px;
+					-webkit-border-radius: 50px;
+					&.active{
+						background: #fff;
+					}
+				}
+			}
+		}
+	}
+}

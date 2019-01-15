@@ -1,0 +1,584 @@
+ <!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+	<meta name="format-detection" content="telephone=no">
+	<meta http-equiv="x-rim-auto-match" content="none">
+
+	<link href="/css/adidas/style.css" type="text/css" rel="stylesheet" />
+	<link href="/css/adidas/fonts.css" type="text/css" rel="stylesheet" />
+
+	<style type="text/css">
+		
+		.mirun_wrap{
+			background: #f2f2f2;
+		}
+
+		.mirun_wrap h2.step_title{
+			text-align: center;
+			color: #333;
+			text-align: center;
+			font:13px/15px 'NotoSansKRBold';
+		}
+
+		.mirun_wrap input[type="radio"],
+		.mirun_wrap input[type="checkbox"]{
+		}
+
+		.mirun_wrap input[type="radio"]{
+			border-radius:50px;
+		}
+
+		.mirun_wrap header{
+			height:50px;
+			background: #47328f;
+			text-align: center;
+		}
+
+		.mirun_wrap header h1{
+			color: #fff;
+			font:15px/50px 'NotoSansKR';
+			background: #8d2c81;
+		}
+
+		.mirun_wrap header .close_x_btn{
+			width:50px;
+			height:50px;
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+
+		.mirun_wrap header .close_x_btn::before,
+		.mirun_wrap header .close_x_btn::after{
+			background: #fff;
+		}
+
+		.mirun_wrap .contents{
+			position: relative;
+			padding: 15px;
+		}
+
+		.mirun_wrap .li_hypn li{
+			margin-bottom: 3px;
+		    font-size: 11px;
+		    line-height: 14px;
+		    color: #777;
+		}
+
+		.mirun_wrap .li_hypn li.s{
+			padding-left:8px;
+		}
+
+		.mirun_wrap .li_hypn li.s::before{
+			top:3px;
+			content:'*';
+		}
+
+		.mirun_wrap .li_hypn li.no_pfx{
+			padding-left: 0;
+		}
+
+		.mirun_wrap .li_hypn li.no_pfx::before{
+			content:'';
+		}
+
+		.mirun_wrap .contents .step{
+			display: -webkit-flex;
+			display: -moz-flex;
+			display: -ms-flex;
+			display: -o-flex;
+			display: flex;
+		}
+
+		.mirun_wrap .contents .step li{
+			width:100%;
+			min-height: 20px;
+			background: #f9f9f9;
+			color: #adadad;
+			font-size: 12px;
+		}
+
+		.mirun_wrap .contents .step li.on{
+			background: #fff;
+			color: #000;
+		}
+
+		.mirun_wrap .contents .tit_box{
+			padding: 15px 0;
+		}
+
+		.mirun_wrap .contents .tit_box h2{
+			margin-bottom: 5px;
+			font:17px/19px 'NotoSansKRBold';
+			color: #cb2b6f;
+			text-align: center;
+			letter-spacing:-0.75px;
+			text-align: center;
+		}
+
+		.mirun_wrap .contents .tit_box p{
+			font-size: 12px;
+			line-height: 16px;
+			color: #656564;
+			letter-spacing:-0.75px;
+			text-align: center;
+		}
+
+		.mirun_wrap .contents dl.desc_box{
+
+		}
+
+		.mirun_wrap .contents dl.desc_box dt{
+			margin-bottom: 5px;
+			color: #000;
+			font-size: 12px;
+			font-weight: bold;
+		}
+
+		.mirun_wrap .contents dl.desc_box dd li{
+			margin-bottom: 3px;
+			font-size: 11px;
+			line-height:14px;
+			color: #777;
+		}
+
+		.mirun_wrap .contents dl.desc_box dd li:last-child{
+			margin-bottom: 0;
+		}
+
+		.mirun_wrap .contents dl.desc_box dd li.s::before{
+			content:'*';
+		}
+
+		.mirun_wrap .contents .agree_wrapper .tit{
+			position: relative;
+			margin-bottom: 10px;
+		}
+
+		.mirun_wrap .contents .agree_wrapper .tit h3{
+			display: inline-block;
+			color: #000;
+		    font-size: 12px;
+		    font-weight: bold;
+		    line-height: 15px;
+		}
+
+		.mirun_wrap .contents .agree_wrapper .tit .view{
+			margin-left: 5px;
+			color: #666;
+			text-decoration: underline;
+			font-size: 11px;
+		}
+
+		.mirun_wrap .contents .agree_wrapper .tit .check_box{
+			margin-top: 5px;
+			/*position: absolute;*/
+			/*top: 0;*/
+			/*right: 0;*/
+		}
+
+		.mirun_wrap .contents .agree_wrapper ol li{
+			position: relative;
+			min-height:30px;
+			margin-bottom: 1px;
+			background: #fff;
+		}
+
+		.mirun_wrap .contents .agree_wrapper ol li .check_box{
+			position: absolute;
+			top:50%;
+			right:10px;
+			transform:translateY(-50%);
+			-webkit-transform:translateY(-50%);
+		}
+
+		.mirun_wrap .contents .agree_wrapper ol li span{
+			padding: 8px 55px 8px 10px;
+			display: block;
+			line-height: 14px;
+			box-sizing:border-box;
+			-webkit-box-sizing:border-box;
+		}
+
+		.mirun_wrap .contents .agree_wrapper ol li span strong{
+			font-weight: bold;
+		}
+
+		.mirun_wrap .contents .agree_wrapper ol li span .view{
+			display: inline-block;
+			color: #666;
+			text-decoration: underline;
+		}
+
+		.check_box input[type="checkbox"],
+		.check_box input[type="radio"]{
+			position: absolute;
+			left: -9999px;
+		}
+
+		.check_box label{
+			padding-right:20px;
+			/*padding-top: 2px;*/
+			display: inline-block;
+			position: relative;
+			box-sizing:border-box;
+			-webkit-box-sizing:border-box;
+			line-height: 13px;
+		}
+
+		.check_box.all_check label{
+			font-weight: bold;
+		}
+
+		.check_box label::before,
+		.check_box label::after{
+			content:'';
+			display: block;
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+
+		.check_box label::before{
+			width:16px;
+			height:16px;
+			background: #ccc;
+			border-radius:15px;
+		}
+
+		.check_box label::after{
+			width: 7px;
+			height: 2px;
+			border-bottom: 1px solid  #fff;
+			border-left: 1px solid  #fff;
+			transform:rotate(-45deg);
+			-webkit-transform:rotate(-45deg);
+			top:6px;
+    		right:4px;
+		}
+
+		.check_box input:checked + label::before{
+			background: #483290;
+		}
+
+		.btn_area{
+			padding-top: 15px;
+			text-align: center;
+		}
+
+		.btn_area a{
+			width:120px;
+			height: 30px;
+			display: inline-block;
+			text-align: center;
+			font-size: 13px;
+			line-height: 30px;
+			background: #cb2b6f;
+			color: #fff;
+		}
+
+
+		.user_form{
+			position: relative;
+			background: #fff;
+		}
+
+		.user_form>.box{
+			display: -webkit-flex;
+			display: -moz-flex;
+			display: -ms-flex;
+			display: -o-flex;
+			display: flex;
+			border-bottom: 1px solid  #ebebeb;
+
+			align-items:center;
+			justify-content: space-around;
+			-webkit-align-items:center;
+			-webkit-justify-content: space-around;
+		}
+
+		.user_form>.box>*{
+			padding: 1.2rem 0 1.2rem 1rem;
+			background: #fff;
+			box-sizing: border-box;
+			-webkit-box-sizing: border-box;
+			font-size: 1.1rem;
+		}
+
+		.user_form>.box>.tit{
+			-webkit-flex: 0 0 9rem;
+			flex: 0 0 9rem;
+			color: #555;
+			vertical-align: middle;
+		}
+
+		.user_form>.box>.cont{
+			width: 100%;
+			padding-right: 1rem;
+			border-left: 1px solid  #ebebeb;
+			word-break: keep-all;
+		}
+
+		.user_form>.box>.cont *{
+			font-size: 1.1rem;
+		}
+
+		.user_form>.box:last-child{
+			border-bottom-width: 0;
+		}
+
+		.user_form>.box>.cont .desc{
+			margin-top: 0.5rem;
+			color: #999;
+			font-size: 1rem;
+			line-height: 1.3rem;
+			letter-spacing: -0.5px;
+		}
+
+		.user_form>.box.phone>.cont select{
+			width:50px;
+			height: 30px;
+		}
+
+		.user_form>.box.phone>.cont input{
+			width: 50px;
+			height: 30px;
+		}
+
+		.user_form>.box.phone>.cont span{
+			margin: 0 1px;
+		}
+
+		.desc_box{
+			padding: 2.5rem 0;
+		}
+
+		.desc_box p{
+			margin-bottom: 10px;
+			font-size: 1.1rem;
+			line-height: 1.5rem;;
+			color: #999;
+		}
+
+		.desc_box a{
+			padding: 1rem 2rem;
+			display: inline-block;
+			color: #666;
+			background: #fff;
+			font-size: 1.1rem;
+		}
+
+		.desc_box a::after{
+			content:'';
+			display: inline-block;
+			vertical-align: middle;
+			border-top: 3px solid transparent;
+			border-bottom: 3px solid transparent;
+			border-left: 3px solid #666;
+			margin-left: 10px;
+		}
+
+	
+
+	</style>
+
+
+	<script type="text/javascript" src="/js/jquery-1.12.0.min.js"></script>
+	
+	<title>아디다스 모바일</title>
+</head>
+<body>
+	<div id="wrap">		
+		<div class="mirun_wrap">
+			<header>
+				<h1>신청서 작성</h1>
+				<a href="javascript:void(0)" class="close_x_btn"></a>
+			</header>
+
+			<div class="contents">
+				<div class="box">
+					<h2 class="step_title">STEP 02. 상세 정보 입력</h2>
+				</div>
+				<!-- //box -->
+
+				<div class="box">
+					<div class="tit_box" style="margin-bottom: 15px;">
+						<h2>2017 서울국제마라톤 참가신청서</h2>
+					</div>
+
+					<!-- 입력 폼 -->
+					<div class="user_form">
+						<div class="box">
+							<div class="tit">참가부문</div>
+							<div class="cont">42195 릴레이 2명 (약 21Km씩)</div>
+						</div>
+						<div class="box">
+							<div class="tit">러닝CREW 팀명</div>
+							<div class="cont">크루명 팀</div>
+						</div>
+						<div class="box">
+							<div class="tit">이름</div>
+							<div class="cont">홍길동</div>
+						</div>
+						<div class="box">
+							<div class="tit">주민등록번호</div>
+							<div class="cont">
+								<p>123456 - *******</p>
+								<p class="desc">* 노출되는 생년월일이 실제와 다를 경우 마이페이지내의 개인정보 수정을 통하여 수정해 주세요.</p>
+							</div>
+						</div>
+						<div class="box">
+							<div class="tit">성별</div>
+							<div class="cont">
+
+								<div class="rdo_box1" style="margin-right:20px;">
+									<input type="radio" id="GENDER_M" name="gender">
+									<label for="GENDER_M" class="adipro-r">남자</label>
+								</div>
+
+								<div class="rdo_box1">
+									<input type="radio" id="GENDER_F" name="gender">
+									<label for="GENDER_F" class="adipro-r">여자</label>
+								</div>
+
+							</div>
+						</div>
+						<div class="box">
+							<div class="tit">이메일</div>
+							<div class="cont">appeal748@naver.com</div>
+						</div>
+						<div class="box">
+							<div class="tit">주소</div>
+							<div class="cont">
+								<p>서울특별시 서초구 서초2동 1321-15 서초타워 7층</p>
+								<p class="desc">* 주소는 사전 참가자물품 택배 발송과 대회 후 기록증 발송시 필요한 사항이므로 정확한 정보가 필요합니다.</p>
+							</div>
+						</div>
+						<div class="box">
+							<div class="tit">핸드폰번호</div>
+							<div class="cont">
+								<p>010-1111-1111</p>
+								<p class="desc">* 참가자 본인의 핸드폰 번호여야 합니다.</p>
+							</div>
+						</div>
+					</div>
+					<!-- 입력 폼 끝 -->
+					
+					<div class="desc_box">
+						<p>* 번호 및 주소 수정은 아디다스 온라인스토어 마이페이지 내 개인정보 수정에서 가능합니다.</p>
+						<a href="#">개인정보 수정하기</a>
+					</div>
+
+					<!-- 입력 폼 -->
+					<div class="user_form">
+						<div class="box phone">
+							<div class="tit">* 응급상황 연락처</div>
+							<div class="cont">
+								<select name="" id="">
+									<option value="">010</option>
+									<option value="">011</option>
+									<option value="">016</option>
+									<option value="">017</option>
+									<option value="">019</option>
+								</select>
+								<span>-</span>
+								<input type="tel">
+								<span>-</span>
+								<input type="tel">
+							</div>
+						</div>
+						<div class="box">
+							<div class="tit">* 기념품 사이즈</div>
+							<div class="cont">
+								<div style="margin-bottom: 5px;">
+									<div class="rdo_box1" style="margin-right:20px;">
+										<input type="radio" id="GENDER_M_SIZE" name="gender_siee">
+										<label for="GENDER_M_SIZE" class="adipro-r">남성용</label>
+									</div>
+
+									<div class="rdo_box1">
+										<input type="radio" id="GENDER_F_SIZE" name="gender_siee">
+										<label for="GENDER_F_SIZE" class="adipro-r">여성용</label>
+									</div>
+								</div>
+								<div style="margin-bottom: 15px;">
+									<select name="" id="">
+										<option value="">90</option>
+										<option value="">95</option>
+										<option value="">100</option>
+									</select>
+									<a href="#" style="margin-left:10px;color:#666;text-decoration:underline;">사이즈 참고</a>
+								</div>
+								<div>
+									<p class="desc">* 풀코스 기념품인 싱글렛 및 완주시 지급되는 피니셔 티셔츠 모두 선택하신 사이즈로 제공됩니다. </p>
+									<p class="desc">* 원하는 사이즈가 이미 소진되었을 경우, 신청 사이즈를 수령하지 못할 수 있습니다. </p>
+									<p class="desc">* 기념품 사이즈는 성별 교차 선택이 가능하며, 사이즈 별 품절 시 선택에서 보이지 않을 수 있습니다.</p>
+									<p class="desc">* 기념품 사이즈는 선택 후 변경이 불가능하며, 교환을 원하실 시 행사 당일 현장에서 잔여수량에 한하여 교환이 가능합니다.</p>
+								</div>
+							</div>
+						</div>
+						<div class="box">
+							<div class="tit">* 종이기록증 신청</div>
+							<div class="cont">
+								<div style="margin-bottom: 5px;">
+									<div class="rdo_box1" style="margin-right:20px;">
+										<input type="radio" id="RESULT_DOC_Y" name="result_doc">
+										<label for="RESULT_DOC_Y" class="adipro-r">예</label>
+									</div>
+
+									<div class="rdo_box1">
+										<input type="radio" id="RESULT_DOC_N" name="result_doc">
+										<label for="RESULT_DOC_N" class="adipro-r">아니오</label>
+									</div>
+								</div>
+
+								<div>
+									<p class="desc">* 모바일 기록증은 회원정보에 저장된 핸드폰번호로 결승점 통과와 동시에 자동으로 발송되며, 추가로 종이 기록증이 필요하신 분에 한하여 선택 바랍니다 </p>
+								</div>
+							</div>
+						</div>
+
+						<div class="box">
+							<div class="tit">* 비밀번호</div>
+							<div class="cont">
+								<div style="margin-bottom: 5px;">
+									<input type="tel" placeholder="* 숫자 6자리">
+								</div>
+
+								<div>
+									<p class="desc">* 본 신청 페이지가 아닌 대회 홈페이지에서 참가정보를 확인하시거나 수정하실 때 필요한 비밀번호입니다. 기억하기 쉬운 걸로 작성해 주시기 바랍니다. </p>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+					<!-- 입력 폼 끝 -->
+
+
+					<div class="btn_area">
+						<a href="#" class="button">참가 신청하기</a>
+					</div>
+
+				</div>
+				<!-- //box -->
+
+			</div>
+			<!-- //contents -->
+		</div>
+		<!-- //mirun_wrap -->
+	</div>
+	<!-- //wrap -->
+
+	
+	<script type="text/javascript" src="/js/adidas/common.js"></script>
+	<script type="text/javascript">
+		(function($){			
+					
+		})(jQuery);	
+	</script>
+	
+</body>
+
+</html>

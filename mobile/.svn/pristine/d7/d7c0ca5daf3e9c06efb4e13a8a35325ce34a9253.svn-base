@@ -1,0 +1,256 @@
+@import "./app/MO/reebok/css/scss/about.scss";
+
+.campaign_complete{
+    .btn{
+        position: absolute;
+        left:50%;
+        bottom: 33px;
+        margin-left: -75px;
+        z-index: 1;
+        a{
+            width: 150px;
+            display: inline-block;
+            font:300 14px/42px 'NotoSansKR';
+            color:#fff;
+            border: 2px solid #fff;
+            text-align: center;
+        }
+    }
+    .video_visual{
+        .bg{
+            video{
+                width: 100%;
+                height: 100%;
+                -o-object-fit: cover;
+                -webkit-object-fit: cover;
+                object-fit: cover;
+            }
+        }
+        .cover{
+            h2{
+                margin-bottom:1rem;
+                width:inherit;
+                height: inherit;
+                text-indent: 0;
+                background:none;
+                text-align: center;
+                color:#fff;
+                text-transform: uppercase;
+                margin-top: 4rem;
+                font:5rem/4.5rem 'QStencil';
+                span{
+                    font:2.5rem/3.5rem 'QStencil';
+                    vertical-align: top;
+                }
+            }
+        }
+
+        p{
+            font:300 1.2rem/1.8rem 'NotoSansKR';
+            color:#fff;
+            text-align: center;
+        }
+        .desc{
+            margin-bottom:1.5rem;
+            text-align: center;
+            color:#fff;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font:300 1.7rem/1.3rem 'dinpro cond';
+        }
+        .video-btn{
+            margin:2rem auto;
+            width: 60px;
+            height: 60px;
+        }
+    }
+    .main{
+        @include box-sizing(border-box);
+        position: relative;
+        .bg{
+            img{
+                width: 100%;
+            }
+        }
+        .logo{
+            position: absolute;
+            top: 45%;
+            left: 15px;
+            a{
+                display: block;
+                margin-bottom: 0.5rem;
+                padding:0.2rem 2rem 0 2rem;
+                text-align: center;
+                color:#000;
+                text-transform: uppercase;
+                font:500 1.2rem/3.5rem 'dinpro cond','NotoSansKR';
+                border:1px solid #000;
+            }
+        }
+
+    }
+
+    .collections2{
+        position: relative;
+        padding: 0 0rem 1.5rem;
+        background: url('/images/reebok/about/complete/gall_bg.jpg') 0 no-repeat;
+        background-size: 100% 100%;
+        .btn{
+            position: relative;
+            a{
+                background: #bddce8;
+            }
+        }
+
+        h3{
+            padding: 25px 0 45px;
+            color: #fff;
+            font: 700 35px 'dinpro cond';
+            text-align: center;
+            text-transform: uppercase;
+            img{
+                @include box-sizing(border-box);
+                padding: 0 6rem;
+                width: 100%;
+            }
+        }
+        >.desc{
+            @include box-sizing(border-box);
+            padding:0 10px 15px 0;
+            font:300 1rem/1.5rem 'NotoSansKR';
+            color:#fff;
+            text-align: center;
+
+        }
+
+        .num_paging{
+            padding: 18px 0 25px;
+            a{
+                margin: 0 5px;
+                width: 12px;
+                height: 12px;
+                background: #9ab0b9;
+                border:0;
+            }
+            .on{
+                background: #ba2727;
+                color: #000;
+                border-color: #ba2727;
+            }
+        }
+
+        .collection_cut{
+            position: relative;
+            overflow: hidden;
+            ul{
+                overflow: hidden;
+                li{
+                    position: relative;
+                    float: left;
+                    text-align: center;
+                    img{
+                        width: 60%;
+                    }
+                }
+            }
+            .navi{
+                position: absolute;
+                top:45%;
+                width: 100%;
+                text-align: center;
+                img{
+                    width: 40%;
+                }
+                .next{
+                    position: absolute;
+                    right:-2%;
+                }
+                .prev{
+                    position: absolute;
+                    left:-2%;
+                }
+            }
+
+        }
+
+        .swiper-button-next2{color:#fff; font-size: 60px;}
+
+        .prodlist_wrap{
+            position: relative;
+            padding: 0 1rem;
+            .prodlist{
+                // position: absolute;
+                position: relative;
+                top: 0;
+                left: 0;
+                padding: 0;
+                opacity: 0;
+                transition:opacity 0.3s;
+                -webkit-transition:opacity 0.3s;
+                z-index: 1;
+                .box{
+                    .inner{
+                        .info{
+                            padding:20px 0 30px 12px;
+                        }
+                    }
+                    &.col2{
+                        width: 100%;
+                        .inner{
+                            padding-right: 0;
+                            .img{
+                                padding-bottom: 55%;
+                            }
+                            .info{
+                                padding: 0 0 0 0;
+                                .tit{
+                                    display: block;
+                                    height: auto;
+                                    padding: 20px 12px 17px 12px;
+                                    text-align: center;
+                                    p{
+                                        display: block;
+                                        color: #252525;
+                                        font: 500 1.7rem 'dinpro cond';
+                                        &.btn{
+                                            width: 158px;
+                                            display: block;
+                                            margin: 0 auto;
+                                            font:1rem/35px 'NotoSansKR';
+                                            border: 1px solid #000;
+                                            letter-spacing: -0.3px;
+                                            color:#000;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .tit{
+                    height: 1.4rem;
+
+                    display: -webkit-box;
+                    // overflow: hidden;
+                    // overflow: hidden;
+                    // text-overflow: ellipsis;
+                    // white-space:normal;
+                    // -webkit-line-clamp:1;
+                    // -webkit-box-orient: vertical;
+                }
+            }
+
+            .active{
+                opacity: 1;
+                z-index: 2;
+            }
+            .fake{
+                position: relative;
+                opacity: 0;
+                visibility: hidden;
+            }
+
+        }
+    }
+
+}

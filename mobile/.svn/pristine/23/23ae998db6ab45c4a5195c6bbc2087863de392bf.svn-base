@@ -1,0 +1,359 @@
+@import './app/css/adidas/scss/common/mixin.scss';
+@import './app/css/adidas/scss/common/common.scss';
+
+
+
+#trailrun_package{
+	.scrollbox{
+		top:20px;
+		@include css3(opacity,0);
+		@include css3(transition, all 0.5s);
+		&.on{
+			top:0;
+			@include css3(opacity,1);
+		}
+	}
+	.button{
+		padding:0.5rem 1.5rem;
+		display:block;
+		border: 2px solid #000;
+		font-size:1.2rem;
+		background: #000;
+		color:#fff;
+		&::after{
+			margin-left: 0.5rem;
+			vertical-align: middle;
+		}
+
+	}
+
+	.masthead{
+		img{
+			width: 100%;
+		}
+
+		.img{
+			width: 100%;
+			padding-bottom: 106.5%;
+			position: relative;
+
+			img{
+				position: absolute;
+				top: 0;
+				left: 0;
+				opacity: 1;
+
+				@include css3(transition,opacity 0.5s);
+			}
+			a{
+				display: block;
+				position: absolute;
+				top: 48%;
+			    left: 41%;
+			    width: 17%;
+			    height: 17%;
+				text-indent: -9999px;
+			}
+		}
+
+	}
+
+	.cont1{
+		position: relative;
+		overflow: hidden;
+		padding-bottom: 172%;
+		h3{
+			top: 3rem;
+			text-align: center;
+			font: 700 2rem/2.5rem 'NotoSansKR';
+			color: #000;
+			z-index: 1;
+			position: absolute;
+			left: 50%;
+			-ms-transform: translate(-50%, 0);
+			transform: translate(-50%, 0);
+			width: 100%;
+			span{
+				font:2.3rem/2.3rem 'adinenuPro-black';
+				letter-spacing: 0.7px;
+			}
+			.button{
+				width: 30%;
+				margin: 1rem auto;
+			}
+		}
+		.bg{
+			width: 100%;
+			position: absolute;
+			left: 50%;
+			-ms-transform: translate(-50%,0);
+			transform: translate(-50%,0);
+			img{
+				width: 100%;
+			}
+		}
+	}
+
+	/* product-selector START */
+	.product-selector{
+		position: relative;
+		width: 100%;
+		background:url('/images/adidas/event/trailrun_package/slide1_bg.jpg') 0 0 no-repeat;
+		background-size: cover;
+		-webkit-background-size: cover;
+
+
+		@include css3(transition, all 0.5s);
+
+
+
+
+		img{
+			width: 100%;
+		}
+
+		.box{
+			width: 100%;
+			padding-bottom: 62%;
+			position: relative;
+
+			>*{
+				width: 75%;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+
+				@include css3(transform,translate3d(-50%,-60%,0));
+			}
+			.bg{
+
+			}
+
+			.prod{
+
+			}
+		}
+		.owl-nav{
+			position: absolute;
+			top:38%;
+			width:100%;
+			.owl-next {
+			  position: relative;
+			  right:10px;
+			  float: right;
+			  width:1.5rem;
+			  height: 40px;
+			  background:url('/images/adidas/event/trailrun_package/bt_next.png') no-repeat;
+			  background-size: 100%;
+			  text-indent: -9999px;
+			}
+			.owl-prev {
+			  position: relative;
+			  left:10px;
+			  float: left;
+			  width:1.5rem;
+			  height: 40px;
+			  background:url('/images/adidas/event/trailrun_package/bt_prev.png') no-repeat;
+			  background-size: 100%;
+			  text-indent: -9999px;
+			}
+		}
+
+
+	}
+
+	.product-selector2{
+		position: relative;
+		margin-top: 3rem;
+		width: 100%;
+		background:url('/images/adidas/event/trailrun_package/slide2_bg.jpg') 0 0 no-repeat;
+		background-size: cover;
+		-webkit-background-size: cover;
+		
+
+
+		@include css3(transition,all 0.5s);
+
+
+
+		img{
+			width: 100%;
+		}
+
+		.box{
+			width: 100%;
+			padding-bottom: 62%;
+			position: relative;
+
+			>*{
+				width: 75%;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+
+				@include css3(transform,translate3d(-50%,-60%,0));
+			}
+			.bg{
+
+			}
+
+			.prod{
+
+			}
+		}
+		.owl-nav{
+			position: absolute;
+			top:38%;
+			width:100%;
+			.owl-next {
+			  position: relative;
+			  right:10px;
+			  float: right;
+			  width:1.5rem;
+			  height: 40px;
+			  background:url('/images/adidas/event/trailrun_package/bt_next.png') no-repeat;
+			  background-size: 100%;
+			  text-indent: -9999px;
+			}
+			.owl-prev {
+			  position: relative;
+			  left:10px;
+			  float: left;
+			  width:1.5rem;
+			  height: 40px;
+			  background:url('/images/adidas/event/trailrun_package/bt_prev.png') no-repeat;
+			  background-size: 100%;
+			  text-indent: -9999px;
+			}
+		}
+
+
+	}
+	/* product-selector END */
+
+	.cont2{
+		position: relative;
+		overflow: hidden;
+		padding: 0 3.8rem;
+		padding-bottom: 22%;
+		.img_box1{
+			position: relative;
+			margin: 4rem auto 3rem;
+			text-align: center;
+			img{
+				width: 100%;
+			}
+		}
+		.txt_box1{
+			position: relative;
+			margin: 2rem auto 1.5rem;
+			text-align: center;
+			img{
+				width: 100%;
+			}
+		}
+		.img_box2{
+			position: relative;
+			margin: 4rem auto 3rem;
+			text-align: center;
+			img{
+				width: 100%;
+			}
+		}
+		.txt_box2{
+			position: relative;
+			margin: 2rem auto 1.5rem;
+			text-align: center;
+			img{
+				width: 100%;
+			}
+		}
+		.bg{
+			width: 100%;
+			position: absolute;
+			left: 50%;
+			-ms-transform: translate(-50%,0);
+			transform: translate(-50%,0);
+			top: 0;
+    		z-index: -1;
+			img{
+				width: 100%;
+			}
+		}
+	}
+
+	.cont3{
+		position: relative;
+		overflow: hidden;
+		padding: 0 1.5rem;
+		h3{
+			margin: 3rem 0;
+			text-align: center;
+			font: 700 2rem/2.5rem 'NotoSansKR';
+			color: #000;
+			z-index: 1;
+			position: relative;
+			left: 50%;
+			-ms-transform: translate(-50%, 0);
+			transform: translate(-50%, 0);
+			width: 100%;
+			span{
+				font:2.3rem/2.3rem 'adinenuPro-black';
+				letter-spacing: 0.7px;
+			}
+			.button{
+				width: 30%;
+				margin: 1rem auto;
+			}
+		}
+		.img_box{
+			margin: 0 auto;
+			text-align: center;
+			width: 100%;
+			img{
+				width: 100%;
+			}
+	}
+}
+.techwrap{
+	position: relative;
+	overflow: hidden;
+	padding-bottom: 202%;
+	.tech_men{
+		position: absolute;
+		top: 0;
+		left: 50%;
+		-ms-transform: translate(-50%, 0);
+		transform: translate(-50%, 0);
+		width: 100%;
+		display: none;
+		img{
+			width: 100%;
+		}
+	}
+	.tech_women{
+		position: absolute;
+		top: 0;
+		left: 50%;
+		-ms-transform: translate(-50%, 0);
+		transform: translate(-50%, 0);
+		width: 100%;
+		display: none;
+		img{
+			width: 100%;
+		}
+	}
+}
+
+.bottom{
+	position: relative;
+	overflow: hidden;
+	margin-bottom: 3rem;
+	img{
+		width: 100%;
+	}
+}
+
+
+
+}

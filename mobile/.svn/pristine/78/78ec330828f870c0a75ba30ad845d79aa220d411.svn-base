@@ -1,0 +1,698 @@
+@import './app/css/adidas/scss/common/mixin.scss';
+@import './app/css/adidas/scss/common/common.scss';
+
+#video-layer{
+	position:fixed;top:0;left:0;width: 100%;height: 100%;z-index:1000;
+}
+
+#video-layer .bg{
+	width: 100%;
+	height: 100%;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	transform-origin:center center;
+	-webkit-transform-origin:center center;
+	transform:scale(0);
+	-webkit-transform:scale(0);
+	opacity:0;
+	background:#000;
+	z-index:1;
+
+	transition:all 0.4s;
+	-webkit-transition:all 0.4s;
+
+
+}
+
+#video-layer.loaded .bg{
+	opacity: 1;
+	transform:scale(1.2);
+	-webkit-transform:scale(1.2);
+}
+
+#video-layer .video-box{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	z-index: 3;
+}
+
+#video-layer .close_x_btn{
+	width: 70px;
+	height: 70px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 5;
+	opacity: 0;
+}
+
+#video-layer.loaded .close_x_btn{
+	opacity: 1;
+}
+
+
+#nizza{
+	.inner{	
+		.vbox{
+			opacity: 1;
+			transition: 0.4s;
+		}		
+	}
+	>div{
+		overflow: hidden;
+	}
+	.main{
+		position: relative;
+		width: 100%;
+		.visual_top{
+			position: relative;				
+			>img{
+				width: 100%;
+			}
+			.statement{
+				position: absolute;
+				bottom: 1rem;				
+				width: 100%;
+				padding: 0 3rem;
+				box-sizing: border-box;
+				z-index: 5;
+				h1{
+					font:700 3.2rem/3.2rem 'AdihausDIN-Cond';
+					color: #fff;
+					text-align: center;
+					text-shadow: -3px 0 0 rgba($color: #fff, $alpha: 0.4);
+					letter-spacing: 0px;
+					padding-bottom: 1rem;
+				}
+				.allview{
+					width: 100%;	
+					text-align: center;					
+					a{
+						display: inline-block;
+						width: 44%;
+						margin: 0 2.5%;		
+						background: rgba($color: #000000, $alpha: 0.6);	
+						border: 1px solid #fff;			
+						color:#fff;
+						font:1rem/3rem 'NotosansKR';
+						letter-spacing: 0px;
+						box-sizing: border-box;
+						&:after{
+							display: inline-block;
+							margin-left: 3px;
+						}
+					}
+				}
+			}			
+		}				
+		.visual_bot{				
+			>img{
+				width: 100%;
+			}
+		}
+	}
+	.sec_01{	
+		.sub1{
+			position: relative;
+			.inner{
+				padding: 3rem;
+				>img{
+					width: 100%;
+					margin-bottom: 2rem;
+				}
+				.slider_wrap{
+					position: relative;				
+					ul{
+						position: relative;
+						.owl-item.active{
+							.num_title span{
+								margin-right: 0;
+								opacity: 1;
+							}
+							.num_title span:after{
+								width: 100%;
+							}
+						}
+						li{
+							float: left;
+							position: relative;
+							top:0;
+							img{
+								width: 100%;
+							}
+							.prd_name{							
+								padding-top: 3rem;							
+								a{
+									padding: 0 1rem;
+									display: inline-block;
+									width: 100%;
+									height: 2rem;
+									background: #ffe9e4;
+									font: 0.8rem/2rem 'AdihausDIN-Bold', 'NotoSansKR';
+									color: #000;
+									box-sizing: border-box;
+									-webkit-box-sizing: border-box;
+									margin-bottom: 1rem;
+									letter-spacing: 1px;
+									em{
+										font-style: normal;
+										font-size: 0.6rem;
+										font-family: 'AdihausDIN-regular';
+										letter-spacing: 1px;
+									}
+									span{
+										display: inline-block;
+										float: right;
+										img{
+											margin-left: 5px;
+											width: 30px;
+											vertical-align: middle;
+										}
+									}
+								}
+							}
+						}
+		
+					}
+					ul:after{
+						content: '';
+						display: block;
+						clear: both;
+					}
+					.sub_title{
+						position: absolute;
+						top: 43%;
+						left: -2.3rem;v
+						img{
+							width: 80%;
+						}
+					}									
+					.owl-dots{
+						position: absolute;
+						width: 100%;
+						top: 80%;				
+						padding-top: 0.5rem;
+						.owl-dot{
+							display: inline-block;
+							float:none;
+							margin-right: 8px;
+							width: 0.6rem; height: 0.6rem;
+							background: none;					
+							border : 1px solid #000;
+							&.active{
+								background: #000;
+							}
+						}
+					}
+				}				
+			}
+			.inner_bg{
+				position: absolute;
+				bottom: 0;
+				width: 100%;
+				height: 46%;
+				background: #ffd2c9;
+				z-index: -1;
+			}
+		}
+		.sub2{
+			position: relative;
+			padding: 3rem 0;
+			.slider_wrap{
+				position: relative;				
+				ul{
+					position: relative;
+					.owl-item.active{
+						.num_title span{
+							margin-right: 0;
+							opacity: 1;
+						}
+						.num_title span:after{
+							width: 100%;
+						}
+					}
+					li{
+						float: left;
+						position: relative;
+						top:0;
+						img{
+							width: 100%;
+						}						
+					}	
+				}
+				ul:after{
+					content: '';
+					display: block;
+					clear: both;
+				}								
+				.owl-dots{
+					position: absolute;
+					width: 100%;
+					bottom: 0;
+					left: 2rem;				
+					padding-top: 0.5rem;
+					.owl-dot{
+						display: inline-block;
+						float:none;
+						margin-right: 8px;
+						width: 0.6rem; height: 0.6rem;
+						background: none;					
+						border : 1px solid #000;
+						&.active{
+							background: #000;
+						}
+					}
+				}
+			}
+		}
+		.video{
+			position: relative;			
+			.inner{
+				padding: 0 3rem 3rem;
+				.visual_video{
+					position: relative;							
+					width: 100%;
+					height: auto;
+					.bg{
+						text-align: center;
+						img{
+							width: 100%;
+						}
+					}	
+					h2{
+						font: 2.5rem/5rem 'AdihausDIN-Bold';
+					}	
+					a{
+						img{
+							width: 50%;
+						}
+					}		
+				}
+			}
+		}
+	}
+	.sec_02{	
+		.sub1{
+			position: relative;
+			.inner{			
+				padding: 0 3rem 3rem;				
+				.sec_02_sub1{
+					position: relative;
+					.sub1_img{						
+						img{
+							width: 100%;
+						}						
+					}
+					.sub_title{
+						position: absolute;
+						top: 32%;
+						left: -2.3rem;
+						img{
+							width: 80%;
+						}
+					}							
+					.owl-dots{
+						position: absolute;
+						width: 100%;
+						top: 59%;				
+						padding-top: 0.5rem;
+						.owl-dot{
+							display: inline-block;
+							float:none;
+							margin-right: 8px;
+							width: 0.6rem; height: 0.6rem;
+							background: none;					
+							border : 1px solid #fff;
+							&.active{
+								background: #fff;
+							}
+						}
+					}
+				}				
+			}
+			.inner_bg{
+				position: absolute;
+				bottom: 0;
+				width: 100%;
+				height: 68%;
+				background: #cdb0b1;
+				z-index: -1;
+			}
+		}		
+		.video{
+			position: relative;
+			padding-bottom: 3rem;
+			.inner{
+				padding: 3rem;
+				.visual_video{
+					position: relative;							
+					width: 100%;
+					height: auto;
+					.bg{
+						text-align: center;
+						img{
+							width: 100%;
+						}
+					}	
+					h2{
+						font: 2.5rem/5rem 'AdihausDIN-Bold';
+						text-align: right;
+					}	
+					a{
+						position: absolute;
+						left: 50%;
+						img{
+							width: 100%;
+						}
+					}		
+				}
+			}
+		}
+	}
+	.sec_03{	
+		.sub1{			
+			position: relative;
+			.inner{
+				padding: 3rem;
+				padding-top: 0;
+				>img{
+					width: 100%;
+					margin-bottom: 4rem;
+				}
+				.sec_03_sub1{
+					position: relative;
+					.sub1_img{						
+						img{
+							width: 100%;
+						}
+						.prd_name{							
+							padding-top: 1.5rem;							
+							a{
+								padding: 0 1rem;
+								display: inline-block;
+								width: 100%;
+								height: 2rem;
+								background: #f4acc2;
+								font: 0.8rem/2rem 'AdihausDIN-Bold', 'NotoSansKR';
+								color: #fff;
+								box-sizing: border-box;
+								-webkit-box-sizing: border-box;
+								margin-bottom: 1rem;
+								letter-spacing: 1px;
+								em{
+									font-style: normal;
+									font-size: 0.6rem;
+									font-family: 'AdihausDIN-regular';
+									letter-spacing: 1px;
+								}
+								span{
+									display: inline-block;
+									float: right;
+									img{
+										margin-left: 5px;
+										width: 30px;
+										vertical-align: middle;
+									}
+								}
+							}
+						}
+					}					
+					.sub_title{
+						position: absolute;
+						top: 49%;
+						left: 0;
+						img{
+							float: right;
+							width: 80%;
+						}
+					}					
+				}				
+			}
+			.inner_bg{
+				position: absolute;
+				top: 14%;
+				width: 100%;
+				height: 39%;
+				background: #d7ffee;
+				z-index: -1;
+			}
+		}
+		.sub2{
+			position: relative;
+			padding-bottom: 3rem;
+			.slider_wrap{
+				position: relative;				
+				ul{
+					position: relative;
+					.owl-item.active{
+						.num_title span{
+							margin-right: 0;
+							opacity: 1;
+						}
+						.num_title span:after{
+							width: 100%;
+						}
+					}
+					li{
+						float: left;
+						position: relative;
+						top:0;
+						img{
+							width: 100%;
+						}						
+					}	
+				}
+				ul:after{
+					content: '';
+					display: block;
+					clear: both;
+				}								
+				.owl-dots{
+					position: absolute;					
+					top: 0;
+					right: 1.5rem;
+					.owl-dot{
+						display: inline-block;
+						float:none;
+						margin-left: 8px;
+						width: 0.6rem; height: 0.6rem;
+						background: none;					
+						border : 1px solid #000;
+						&.active{
+							background: #000;
+						}
+					}
+				}
+			}
+		}
+		.video{
+			position: relative;			
+			.inner{
+				padding: 0 3rem 3rem;
+				.visual_video{
+					position: relative;							
+					width: 100%;
+					height: auto;
+					.bg{
+						text-align: center;
+						img{
+							width: 100%;
+						}
+					}	
+					h2{
+						font: 2.5rem/5rem 'AdihausDIN-Bold';
+					}	
+					a{
+						img{
+							width: 50%;
+						}
+					}		
+				}
+			}
+		}
+	}
+	.sec_04{	
+		.sub1{
+			position: relative;
+			.inner{
+				padding: 3rem;			
+				.slider_wrap{
+					position: relative;				
+					ul{
+						position: relative;
+						.owl-item.active{
+							.num_title span{
+								margin-right: 0;
+								opacity: 1;
+							}
+							.num_title span:after{
+								width: 100%;
+							}
+						}
+						li{
+							float: left;
+							position: relative;
+							top:0;
+							img{
+								width: 100%;
+							}
+							.prd_name{							
+								padding-top: 1.5rem;							
+								a{
+									padding: 0 1rem;
+									display: inline-block;
+									width: 100%;
+									height: 2rem;
+									background: #4c82ff;
+									font: 0.8rem/2rem 'AdihausDIN-Bold', 'NotoSansKR';
+									color: #fff;
+									box-sizing: border-box;
+									-webkit-box-sizing: border-box;
+									margin-bottom: 1rem;
+									letter-spacing: 1px;
+									em{
+										font-style: normal;
+										font-size: 0.6rem;
+										font-family: 'AdihausDIN-regular';
+										letter-spacing: 1px;
+									}
+									span{
+										font-weight: normal;
+										display: inline-block;
+										float: right;
+										img{
+											margin-left: 5px;
+											width: 30px;
+											vertical-align: middle;
+										}
+									}
+								}
+							}
+						}
+		
+					}
+					ul:after{
+						content: '';
+						display: block;
+						clear: both;
+					}
+					.sub_title{
+						position: absolute;
+						top: 34%;
+						left: 0;
+						img{
+							float: right;
+							width: 105%;
+						}
+					}									
+					.owl-dots{
+						position: absolute;					
+						top: 84%;
+						right: 0;
+						.owl-dot{
+							display: inline-block;
+							float:none;
+							margin-left: 8px;
+							width: 0.6rem; height: 0.6rem;
+							background: none;					
+							border : 1px solid #0f2a68;
+							&.active{
+								background: #0f2a68;
+							}
+						}
+					}
+				}				
+			}
+			.inner_bg{
+				position: absolute;
+				top: 0;
+				width: 100%;
+				height: 28%;
+				background: #0f2a68;
+				z-index: -1;
+			}
+		}
+		.sub2{
+			position: relative;
+			padding: 0;
+			.slider_wrap{
+				position: relative;				
+				ul{
+					position: relative;
+					.owl-item.active{
+						.num_title span{
+							margin-right: 0;
+							opacity: 1;
+						}
+						.num_title span:after{
+							width: 100%;
+						}
+					}
+					li{
+						float: left;
+						position: relative;
+						top:0;
+						img{
+							width: 100%;
+						}						
+					}	
+				}
+				ul:after{
+					content: '';
+					display: block;
+					clear: both;
+				}								
+				.owl-dots{
+					position: absolute;				
+					bottom: 3.3rem;
+					left: 50%;
+					margin-left: -4rem;
+					.owl-dot{
+						display: inline-block;
+						float:none;
+						margin-right: 8px;
+						width: 0.6rem; height: 0.6rem;
+						background: none;					
+						border : 1px solid #fff;
+						&.active{
+							background: #fff;
+						}
+					}
+				}
+			}
+		}
+		.video{
+			position: relative;
+			padding-bottom: 3rem;			
+			.inner{
+				padding: 0 3rem 3rem;
+				.visual_video{
+					position: relative;							
+					width: 100%;
+					height: auto;
+					.bg{
+						text-align: center;
+						img{
+							width: 100%;
+						}
+					}	
+					h2{
+						font: 2.5rem/5rem 'AdihausDIN-Bold';
+						text-align: right;
+					}	
+					a{
+						position: absolute;
+						left: 50%;
+						img{
+							width: 100%;
+						}
+					}		
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,302 @@
+@import './mobile/css/adidas/scss/common/mixin.scss';
+@import './mobile/css/adidas/scss/common/common.scss';
+
+#video-layer{
+	position:fixed;top:0;left:0;width: 100%;height: 100%;z-index:1000;
+}
+
+#video-layer .bg{
+	width: 100%;
+	height: 100%;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	transform-origin:center center;
+	-webkit-transform-origin:center center;
+	transform:scale(0);
+	-webkit-transform:scale(0);
+	opacity:0;
+	background:#000;
+	z-index:1;
+
+	transition:all 0.4s;
+	-webkit-transition:all 0.4s;
+
+
+}
+
+#video-layer.loaded .bg{
+	opacity: 1;
+	transform:scale(1.2);
+	-webkit-transform:scale(1.2);
+}
+
+#video-layer .video-box{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	z-index: 3;
+}
+
+#video-layer .close_x_btn{
+	width: 70px;
+	height: 70px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 5;
+	opacity: 0;
+}
+
+#video-layer.loaded .close_x_btn{
+	opacity: 1;
+}
+
+
+#parley{
+	.inner{
+
+	}
+
+	.parley_txt{
+		font:400 1.2rem/20px 'NotoSansKR';
+		text-align: center;
+	}
+
+	.adihauseDin{
+		font:12px/12px 'AdihausDIN-Cond';
+		text-align: center;
+	}
+
+	.btn{
+		display: inline-block;
+		background-color: #2faf92;
+		color:#fff;
+		font:400 12px/12px 'NotoSansKR';
+		width: 100%;
+		border:1px solid #2faf92;
+		text-align: center;
+	}
+
+	.main{
+
+		.parley_desc{
+			h2{
+
+				img{
+					width:100%;
+				}
+			}
+			p{
+				line-height: 24px;
+			    font-size: 13px;
+				&.parley_txt{
+					padding: 0 1.5rem;
+				}
+				span{
+					color:#2faf92;
+				}
+				strong{
+					color:#2faf92;
+				    font-size: 13px;
+    				font-family: 'NotoSansKR';
+					font-weight: 300;
+					span{
+						letter-spacing: 2px;
+					    font-size: 14px;
+					}
+				}
+			}
+			.btn{
+			    margin: 1.5rem 0 3.2rem;
+				line-height: 48px;
+			}
+
+		}
+	}
+
+	.video{
+		img{
+			width:100%;
+		}
+	}
+
+	.event{
+		padding-top: 2.2rem;
+		padding-bottom: 52rem;
+		background: url('http://imagem.adidas.co.kr/images/adidas/event/parley/171014/statement_bg.jpg')top center no-repeat;
+		background-size: cover;
+		.img{
+			img{width:100%;}
+		}
+		.inner{
+			position: absolute;
+			width: 100%;
+			.txt{
+				padding: 0 1.5rem;
+				.title{
+					line-height: 28px;
+				    letter-spacing: 2.5px;
+					&.adihauseDin{
+						margin-top: 2.3rem;
+						font-size: 2.2rem;
+						&:after{
+							content: '';
+						    display: block;
+						    width: 25px;
+						    height: 2px;
+						    background: #2faf92;
+						    text-align: center;
+						    margin: 1rem auto;
+						}
+					}
+					span{
+						font-size: 2rem;
+					}
+					&.parley_txt{
+						position: relative;
+						padding-bottom: 10px;
+						margin-bottom: 10px;
+	    				font-size: 1.2rem;
+						letter-spacing: 0px;
+
+					}
+				}
+				.txt_box{
+					text-align: center;
+					margin-top: 4rem;
+					transition: all 0.4s;
+					transition-delay: 0.4s;
+					opacity: 0;
+					h4{
+						font:500 1.7rem/20px 'NotoSansKR';
+						span{
+							font:500 1.6rem/20px 'AdihausDIN-Cond';
+							letter-spacing: 1px;
+						}
+					}
+					p{
+						margin-top: 0.5rem;
+						font:400 1.2rem/25px 'NotoSansKR';
+					}
+
+				}
+				.btn{
+				    margin: 3.5rem 0 2.2rem;
+					line-height: 48px;
+				}
+			}
+		}
+		&.on{
+			.txt_box{
+				opacity: 1 !important;
+			}
+		}
+	}
+
+	.statement{
+		padding: 4rem 0 ;
+		text-align: center;
+		h3{
+			font: 2rem/2.4rem 'NotoSansKR';
+			transform: translateY(20px);
+			transition: all 0.4s;
+			opacity: 0;
+			&:after{
+				content: '';
+				display: block;
+				width: 25px;
+				height: 2px;
+				background: #2faf92;
+				text-align: center;
+				margin: 1.4rem auto;
+			}
+		}
+		p{
+			font: 400 1.1rem/1.9rem 'NotoSansKR';
+			letter-spacing: 0px;
+			transform: translateY(20px);
+			transition: all 0.4s;
+			transition-delay: 0.4s;
+			opacity: 0;
+			span{
+				font: 700 1.4rem/1.9rem 'AdihausDIN-Cond';
+    			letter-spacing: 0.5px;
+			}
+		}
+		&.on{
+			h3{
+				transform: translateY(0);
+				opacity: 1 !important;
+			}
+			p{
+				transform: translateY(0);
+				opacity: 1 !important;
+			}
+		}
+	}
+
+	.prd_wrap{
+		padding: 0 3rem;
+		ul{
+			li{
+				display: block;	
+				&:first-child{
+					margin-bottom: 2.4rem;
+				}			
+				.gender_box{
+					overflow: hidden;
+					position: relative;
+					img{
+						width: 100%;
+					}
+					.link_box{
+						position: absolute;
+						top:61%;
+						left: 50%;
+						transform: translateX(-50%);
+						text-align: center;
+						h4{
+							font: 2.6rem/2.6rem 'AdihausDIN-Cond';
+							color: #fff;
+							letter-spacing: 0.2rem;
+							text-align: center;
+							&::after {
+								content: '';
+								width: 25px;
+								height: 2px;
+								display: block;
+								margin: 2.5rem auto 2rem;
+								background-color: #fff;
+							}
+						}
+						a.button {
+							display: inline-block;
+							width: 220px;
+							font: 1.2rem/4rem 'NotoSansKR';
+							border: 2px solid #2faf92;
+							color: #fff;
+							background: #2faf92;
+							transition: all 0.8s;
+							-webkit-transition: all 0.8s;
+							-moz-transition: all 0.8s;
+							-o-transition: all 0.8s;
+							-ms-transition: all 0.8s;
+							letter-spacing: -1px;
+							text-align: center;
+							&:hover {
+								background: none;
+								color: #2faf92;
+								background: #fff;
+								border: 2px solid #2faf92;
+								font: 16px/48px 'NotoSansKR';
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,423 @@
+@import "./app/MO/reebok/css/scss/about.scss";
+
+.activechill{
+    .main_bg{
+        position: relative;
+        padding-bottom: 119%;
+        a.link{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left:0;
+            top:0;
+        }
+        div.box{
+            position: absolute;
+            top:0;
+            left:0;
+            @include opacity(0);
+            @include prefix-css3(transition,opacity 0.6s);
+
+
+            img{
+                width:100%;
+            }
+            &.on{
+                @include opacity(1);
+            }
+        }
+        .num{
+            position: absolute;
+            bottom:20px;
+            width: 100%;
+            text-align: center;
+            a{
+                display: inline-block;
+                margin: 0 5px;
+                width: 1rem;
+                height: 1rem;
+                background: #fff;
+                border-radius: 50px;
+                -webkit-border-radius: 50px;
+                @include opacity(0.3);
+                &.on{
+                    @include opacity(1);
+                }
+            }
+        }
+
+    }
+
+    .video_visual{
+        h2{
+            margin-bottom:1.5rem;
+            width:inherit;
+            height: inherit;
+            text-indent: 0;
+            background:none;
+            text-align: center;
+            color:#fff;
+            text-transform: uppercase;
+            font:5rem/5.3rem 'QStencil';
+            span{
+                font:2.5rem/3.5rem 'QStencil';
+                vertical-align: top;
+            }
+        }
+        .desc{
+            margin-bottom:1.5rem;
+            text-align: center;
+            color:#fff;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font:300 1.7rem/1.3rem 'dinpro cond';
+        }
+        .desc_eng2{
+            text-align:center;
+            color:#fff;
+            padding-bottom:5%;
+            font:300 1.3rem/1.9rem 'NotoSansKR';
+        }
+        .video-btn{
+            top:4rem;
+            margin:0 auto;
+        }
+    }
+
+    .collections{
+        position: relative;
+        padding: 3rem 1.5rem 0.5rem 1.5rem;
+        background: #5c5c5c url('/images/reebok/about/activechill/middle_bg.jpg') 0 0 repeat;
+        background-size: 100% 100%;
+        h2{
+            position: relative;
+            top:3rem;
+            padding: 1rem 3rem 2rem;
+            img{
+                width: 100%;
+            }
+        }
+        .num_paging{
+            width: 100%;
+            padding: 1rem 0px;
+            position: absolute;
+            bottom: 30%;
+            width: 90%;
+            a{
+                position: relative;
+                margin-right: 3.5rem;
+                width:4rem;
+                height:4rem;
+                color:#000;
+                background: #e9dfd7;
+                background: #fff;
+                font:2.5rem/4rem 'reefont-condensed';
+            }
+            a:last-child{
+                margin-right: 0;
+            }
+            a:last-child:after{
+                width: 0;
+            }
+            a:after{
+                position: absolute;
+                top:2rem;
+                left:3.8rem;
+                content: '';
+                width: 5rem;
+                height: 0.2rem;
+                background: #e9dfd7;
+            }
+            .on{
+                background: #22aaff;
+                color: #fff;
+                border-color: #22aaff;
+
+            }
+        }
+
+        .collection_cut{
+            overflow: hidden;
+            ul{
+                overflow: hidden;
+                li{
+                    position: relative;
+                    top:10rem;
+                    float: left;
+                    padding-bottom: 35%;
+                    background: rgba(0,0,0,0.6);
+                    img{
+                        width: 100%;
+                    }
+                    .txt{
+                        position: absolute;
+                        display: block;
+                        top: 8rem;
+                        padding: 0rem 2rem 2.5rem 2rem;
+                        box-sizing: border-box;
+                        -webkit-box-sizing: border-box;
+                        width: 100%;
+                        text-align: center;
+                        p.main{
+                            text-align: left;
+                            letter-spacing: -3px;
+                            padding-bottom: 1.3rem;
+                            border-bottom:1px solid rgba(299,299,299,0.5);
+                            color:#fff;
+                            font:1.8rem/1.8rem  'NotoSansKR';
+                        }
+                        p.desc{
+                            position: relative;
+                            /* top: 6px; */
+                            padding-top: 1rem;
+                            text-align: left;
+                            height: 4rem;
+                            padding-bottom: 2rem;
+                            // letter-spacing: -1px;
+                            color: #fff;
+                            font:300 1.2rem/1.5rem 'NotoSansKR';
+
+                        }
+                        a{
+                            position: relative;
+                            z-index: 10;
+                            padding:0.8rem 3rem 1rem 3rem;
+                            border:1px solid #fff;
+                            color:#fff;
+                            font:1.2rem/2rem  'NotoSansKR';
+                        }
+                    }
+                }
+            }
+        }
+
+        .prodlist_wrap{
+            position: relative;
+
+            .prodlist{
+                position: absolute;
+                top: 0;
+                left: 0;
+                padding: 0;
+                opacity: 0;
+                transition:opacity 0.3s;
+                -webkit-transition:opacity 0.3s;
+                z-index: 1;
+
+                .tit{
+                    height: 1.4rem;
+                    overflow: hidden;
+                    display: -webkit-box;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space:normal;
+                    -webkit-line-clamp:1;
+                    -webkit-box-orient: vertical;
+                }
+            }
+
+            .active{
+                opacity: 1;
+                z-index: 2;
+            }
+            .fake{
+                position: relative;
+                opacity: 0;
+                visibility: hidden;
+            }
+
+        }
+    }
+
+    .prd_wrap{
+        padding-bottom: 4rem;
+        background: url("/images/reebok/about/activechill/bg.jpg");
+        background-size: 100% 100%;
+        // padding: 0 1.5rem 1.5rem;
+        .collections2{
+            position: relative;
+            overflow: hidden;
+            &.collections_bg{
+                &:after{
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    top:8rem;
+                    width:100%;
+                    height: 100%;
+                    background: rgba(299,299,299,0.15);
+                    // @include opacity(0.15);
+                }
+            }
+            .navi{
+                position: absolute;
+                top:31%;
+                width: 100%;
+                text-align: center;
+                z-index: 10;
+                a{
+                    width: 4rem;
+                    img{ width: 100%; }
+                    &.next{
+                        position: absolute;
+                        right:0;
+                    }
+                    &.prev{
+                        position: absolute;
+                        left:0;
+                    }
+                }
+
+            }
+            .padding{
+                position: relative;
+                z-index: 1;
+                padding: 0 1.5rem;
+                h3{
+                    padding: 2rem 0 1rem;
+                    color: #fff;
+                    font:2.4rem/3rem 'QStencil';
+                    text-align: center;
+                    text-transform: uppercase;
+                }
+
+                .num_paging{
+                    position: relative;
+                    margin: 0 1rem;
+                    padding: 0rem 0px 1rem;
+                    z-index: 10;
+                    a{
+                        margin: 0 0.3rem;
+                        width: 1.2rem;
+                        height: 1.2rem;
+                        background: #7f7d7c;
+                        border-color: transparent;
+                        &.on{
+                            background: #fff;
+                            color: #000;
+                            border-color: transparent;
+                        }
+                    }
+
+                }
+
+                .collection_cut{
+                    position: relative;
+                    width: 100%;
+                    padding-bottom: 92%;
+                    overflow: hidden;
+                    ul{
+                        overflow: hidden;
+                        li{
+                            position: absolute;
+                            top:0;
+                            left:0;
+                            width: 100%;
+                            padding-bottom: 30%;
+                            @include opacity(0);
+                            @include prefix-css3(transition, all 0.6s);
+
+                            &.on{
+                                @include opacity(1);
+                            }
+                            img{
+                                width: 100%;
+                            }
+                        }
+                    }
+
+
+                }
+                .prodlist_wrap{
+                    position: relative;
+                    padding-bottom: 73%;
+
+                    .prodlist{
+                        position: absolute;
+                        top: 20px;
+                        left: 0;
+                        padding: 0 1rem;
+                        opacity: 0;
+                        transition:opacity 0.3s;
+                        -webkit-transition:opacity 0.3s;
+                        z-index: 1;
+                        h4{
+                            position: absolute;
+                            top:-3.5rem;
+                            width: 100%;
+                            text-align: center;
+                            img{
+                                width: 77%;
+                            }
+                        }
+                        .box{
+                            width: 33.333%;
+                            .inner{
+                                padding-right: 5px;
+                                padding-left: 5px;
+                                .img{
+                                    padding-bottom: 114%;
+                                    background: none;
+                                    img{
+                                        text-align: center;
+                                        width: 100%;
+                                    }
+                                }
+                                .info{
+                                    padding:28px 0;
+                                    background: none;
+                                    text-align: center;
+                                    .ctgr{
+                                        font-size: 1.1rem;
+                                        color:#b9b9b9;
+                                    }
+                                    .tit{
+                                        position: relative;
+                                        height: auto;
+                                        a{
+                                            color:#fff;
+                                        }
+                                    }
+                                    >p{
+                                        position: relative;
+                                        display: inline-block;
+                                        font:1rem 'NotosansKR', 'Nanum Gothic';
+                                        color:#b9b9b9;
+                                        // text-decoration: underline;
+                                        &:after{
+                                            position: absolute;
+                                            left:0;
+                                            bottom:0;
+                                            content: '';
+                                            width: 100%;
+                                            border-bottom: 1px solid #b9b9b9;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .box:nth-child(2n){
+                            .inner{
+                                padding-right: 5px;
+                                padding-left: 5px;
+                            }
+
+                        }
+                    }
+
+                    .active{
+                        opacity: 1;
+                        z-index: 2;
+                    }
+                    .fake{
+                        position: relative;
+                        opacity: 0;
+                        visibility: hidden;
+                    }
+
+                }
+            }
+        }
+    }
+}
+// activechill

@@ -1,0 +1,901 @@
+ <!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+	<meta name="format-detection" content="telephone=no">
+	<meta http-equiv="x-rim-auto-match" content="none">
+
+	<link href="/css/adidas/style.css" type="text/css" rel="stylesheet" />
+	<link href="/css/adidas/fonts.css" type="text/css" rel="stylesheet" />
+
+	<style type="text/css">
+
+		.mirun_wrap{
+			background: #f2f2f2;
+		}
+
+        .mirun_wrap .cmn_button{
+            width: 60px;
+            height: 30px;
+            display: inline-block;
+            font:11px 'NotoSansKRRegular';
+            color: #666;
+            background: #f2f2f2;
+            text-align: center;
+        }
+
+        .mirun_wrap .cmn_button::after{
+            vertical-align: middle;
+            content:'';
+            display: inline-block;
+            width: 0;
+            height: 0;
+            margin-left: 5px;
+            border-top: 3px solid transparent;
+            border-bottom: 3px solid transparent;
+            border-left: 3px solid #666;
+        }
+
+		.mirun_wrap h2.step_title{
+			text-align: center;
+			color: #333;
+			text-align: center;
+			font:13px/15px 'NotoSansKRBold';
+		}
+
+		.mirun_wrap input[type="radio"],
+		.mirun_wrap input[type="checkbox"]{
+		}
+
+		.mirun_wrap input[type="radio"]{
+			border-radius:50px;
+		}
+
+		.mirun_wrap header{
+			height:50px;
+			background: #191919;
+			text-align: center;
+		}
+
+		.mirun_wrap header h1{
+			color: #fff;
+			font:15px/50px 'NotoSansKR';
+		}
+
+		.mirun_wrap header .close_x_btn{
+			width:50px;
+			height:50px;
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+
+		.mirun_wrap header .close_x_btn::before,
+		.mirun_wrap header .close_x_btn::after{
+			background: #fff;
+		}
+
+		.mirun_wrap .contents{
+			position: relative;
+			padding: 15px;
+		}
+
+		.mirun_wrap .li_hypn li{
+			margin-bottom: 3px;
+		    font-size: 11px;
+		    line-height: 14px;
+		    color: #777;
+		}
+
+		.mirun_wrap .li_hypn li.s{
+			padding-left:8px;
+		}
+
+		.mirun_wrap .li_hypn li.s::before{
+			top:3px;
+			content:'*';
+		}
+
+        .mirun_wrap .li_hypn li.t{
+			padding-left:15px;
+		}
+
+		.mirun_wrap .li_hypn li.t::before{
+			left: 7px;
+			content:'-';
+		}
+
+		.mirun_wrap .li_hypn li.no_pfx{
+			padding-left: 0;
+		}
+
+		.mirun_wrap .li_hypn li.no_pfx::before{
+			content:'';
+		}
+
+		.mirun_wrap .contents .step{
+			display: -webkit-flex;
+			display: -moz-flex;
+			display: -ms-flex;
+			display: -o-flex;
+			display: flex;
+		}
+
+		.mirun_wrap .contents .step li{
+			width:100%;
+			min-height: 20px;
+			background: #f9f9f9;
+			color: #adadad;
+			font-size: 12px;
+		}
+
+		.mirun_wrap .contents .step li.on{
+			background: #fff;
+			color: #000;
+		}
+
+		.mirun_wrap .contents .tit_box{
+			padding: 15px 0;
+			border-bottom: 1px dotted  #a9a9a9;
+		}
+
+		.mirun_wrap .contents .tit_box h2{
+			margin-bottom: 5px;
+			font:17px/19px 'NotoSansKRBold';
+			color: #ca0248;
+			text-align: center;
+			letter-spacing:-0.75px;
+			text-align: center;
+		}
+
+		.mirun_wrap .contents .tit_box p{
+			font-size: 12px;
+			line-height: 16px;
+			color: #656564;
+			letter-spacing:-0.75px;
+			text-align: center;
+		}
+
+		.mirun_wrap .contents dl.desc_box{
+
+		}
+
+		.mirun_wrap .contents dl.desc_box dt{
+			margin-bottom: 5px;
+			color: #000;
+			font-size: 12px;
+			font-weight: bold;
+		}
+
+		.mirun_wrap .contents dl.desc_box dd li{
+			margin-bottom: 3px;
+			font-size: 11px;
+			line-height:14px;
+			color: #777;
+		}
+
+		.mirun_wrap .contents dl.desc_box dd li:last-child{
+			margin-bottom: 0;
+		}
+
+		.mirun_wrap .contents dl.desc_box dd li.s::before{
+			content:'*';
+		}
+
+		.mirun_wrap .contents .agree_wrapper .tit{
+			position: relative;
+			margin-bottom: 10px;
+		}
+
+		.mirun_wrap .contents .agree_wrapper .tit h3{
+			display: inline-block;
+			color: #000;
+		    font-size: 12px;
+		    font-weight: bold;
+		    line-height: 15px;
+		}
+
+		.mirun_wrap .contents .agree_wrapper .tit .view{
+			margin-left: 5px;
+			color: #666;
+			text-decoration: underline;
+			font-size: 11px;
+		}
+
+		.mirun_wrap .contents .agree_wrapper .tit .check_box{
+			margin-top: 5px;
+			/*position: absolute;*/
+			/*top: 0;*/
+			/*right: 0;*/
+		}
+
+		.mirun_wrap .contents .agree_wrapper ol li{
+			position: relative;
+			min-height:30px;
+			margin-bottom: 1px;
+			background: #fff;
+		}
+
+		.mirun_wrap .contents .agree_wrapper ol li .check_box{
+			position: absolute;
+			top:50%;
+			right:10px;
+			transform:translateY(-50%);
+			-webkit-transform:translateY(-50%);
+		}
+
+		.mirun_wrap .contents .agree_wrapper ol li span{
+			padding: 8px 55px 8px 10px;
+			display: block;
+			line-height: 14px;
+			box-sizing:border-box;
+			-webkit-box-sizing:border-box;
+		}
+
+		.mirun_wrap .contents .agree_wrapper ol li span strong{
+			font-weight: bold;
+		}
+
+		.mirun_wrap .contents .agree_wrapper ol li span .view{
+			display: inline-block;
+			color: #666;
+			text-decoration: underline;
+		}
+
+        .options_10k{
+            display: none;
+        }
+
+        .options_10k{
+            padding-top: 10px;
+            margin-top: 10px;
+            border-top: 1px dotted  #b2b2b2;
+        }
+
+        .options_10k dt{
+            margin-bottom: 5px;
+            color: #000;
+            font-size: 11px;
+        }
+
+        .options_10k dd{
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px dotted  #b2b2b2;
+        }
+
+        .options_10k .tit{
+            margin-bottom: 5px;
+            color: #000;
+            font-size: 11px;
+        }
+
+        .options_10k .cont{
+            position: relative;
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            padding-right: 70px;
+        }
+
+        .options_10k .cont a{
+            height: 52px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            padding-top: 15px;
+        }
+
+        .options_10k .box{
+            display: -webkit-flex;
+            display: -ms-flex;
+            display: flex;
+            margin-bottom: 2px;
+        }
+
+        .options_10k .box label{
+            display: inline-block;
+            padding-top: 5px;
+            -webkit-flex: 0 0 40px;
+            -ms-flex: 0 0 40px;
+            flex: 0 0 40px;
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+        }
+
+        .options_10k .box input{
+            padding-left: 10px;
+            width: 100%;
+            height: 25px;
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+        }
+
+		.check_box input[type="checkbox"],
+		.check_box input[type="radio"]{
+			position: absolute;
+			left: -9999px;
+		}
+
+		.check_box label{
+			padding-right:20px;
+			/*padding-top: 2px;*/
+			display: inline-block;
+			position: relative;
+			box-sizing:border-box;
+			-webkit-box-sizing:border-box;
+			line-height: 13px;
+		}
+
+		.check_box.all_check label{
+			font-weight: bold;
+		}
+
+		.check_box label::before,
+		.check_box label::after{
+			content:'';
+			display: block;
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+
+		.check_box label::before{
+			width:16px;
+			height:16px;
+			background: #ccc;
+			border-radius:15px;
+		}
+
+		.check_box label::after{
+			width: 7px;
+			height: 2px;
+			border-bottom: 1px solid  #fff;
+			border-left: 1px solid  #fff;
+			transform:rotate(-45deg);
+			-webkit-transform:rotate(-45deg);
+			top:6px;
+    		right:4px;
+		}
+
+		.check_box input:checked + label::before{
+			background: #483290;
+		}
+
+		.btn_area{
+			padding-top: 15px;
+			text-align: center;
+		}
+
+		.btn_area a{
+			width:120px;
+			height: 30px;
+			display: inline-block;
+			text-align: center;
+			font-size: 13px;
+			line-height: 30px;
+			background: #191919;
+			color: #fff;
+		}
+
+		.mirun_wrap .contents .user_info{
+			width: 100%;
+			table-layout: fixed;
+		}
+
+		.mirun_wrap .contents .user_info th{
+			width: 120px;
+			padding: 5px 10px;
+			border-right: 1px solid  #ebebeb;
+			border-bottom: 1px solid  #ebebeb;
+			color: #555;
+			vertical-align: middle;
+			background: #fff;
+			text-align: left;
+			font-size: 11px;
+			line-height: 16px;
+		}
+
+		.mirun_wrap .contents .user_info td{
+			padding: 5px 10px;
+			background: #fff;
+			border-bottom: 1px solid  #ebebeb;
+			color: #666;
+			vertical-align: middle;
+		}
+
+		.mirun_wrap .contents .user_info td.t_size dl{
+			margin-bottom: 10px;
+		}
+
+		.mirun_wrap .contents .user_info td.t_size dt{
+			margin-bottom: 5px;
+			color: #666;
+			font-weight: bold;
+		}
+
+		.mirun_wrap .contents .user_info td.t_size dd li{
+			overflow: hidden;
+		}
+
+		.mirun_wrap .contents .user_info td.t_size dd li>span{
+			width: 50%;
+			display:block;
+			float: left;
+		}
+
+		.pkg_box{
+
+		}
+
+		.mirun_wrap .contents .user_info td .pkg_box .rdo_box{
+			position: relative;
+			margin-bottom: 5px;
+		}
+
+		.mirun_wrap .contents .user_info td .pkg_box .rdo_box input[type="radio"]{
+			margin: 0;
+			position: absolute;
+			top:3px;
+			left: 0;
+		}
+
+		.mirun_wrap .contents .user_info td .pkg_box .rdo_box label{
+			font-size: 11px;
+			line-height: 14px;
+			display: block;
+			padding:3px 0 0 19px;
+		}
+
+		.mirun_wrap .contents .user_info td .pkg_box .cont{
+			padding-left: 15px;
+		}
+
+		.mirun_wrap .contents .user_info td .pkg_box .cont li{
+			font-size: 11px;
+			line-height: 14px;
+		}
+
+		.mirun_wrap .contents .user_info td .agree_wrapper ol{
+			padding-left: 15px;
+		}
+
+		.mirun_wrap .contents .user_info td .agree_wrapper ol li{
+			min-height: 20px;
+		}
+
+		.mirun_wrap .contents .user_info td .agree_wrapper ol li .check_box{
+			right: auto;
+			left:0;
+		}
+
+		.mirun_wrap .contents .user_info td .agree_wrapper .check_box label{
+			padding-right: 0;
+			padding-left:20px;
+		}
+
+		.mirun_wrap .contents .user_info td .agree_wrapper .check_box label::before,
+		.mirun_wrap .contents .user_info td .agree_wrapper .check_box label::after{
+			right: auto;
+		}
+
+		.mirun_wrap .contents .user_info td .agree_wrapper .check_box label::before{
+			left: 0;
+		}
+
+		.mirun_wrap .contents .user_info td .agree_wrapper .check_box label::after{
+			left: 4px;
+		}
+
+		.mirun_wrap .contents .user_info td .agree_wrapper .chk_all{
+			position: relative;
+			padding-left: 15px;
+		}
+
+		.mirun_wrap .contents .user_info td .agree_wrapper .chk_all label{
+			display: inline;
+			position: static;
+			padding-left: 5px;
+			font-size: 11px;
+		}
+
+		.mirun_wrap .contents .user_info td .agree_wrapper .chk_all .view{
+			margin:5px 0 0 5px;
+			color: #666;
+			text-decoration: underline;
+			font-size: 11px;
+			line-height: 14px;
+		}
+
+		.mirun_wrap .contents .user_info .marking{
+			margin-top: 10px;
+			padding-top: 10px;
+			border-top: 1px dotted  #ccc;
+		}
+
+		.mirun_wrap .contents .user_info .marking>p{
+			margin-bottom: 5px;
+			color: #666;
+			font-size: 12px;
+		}
+
+		.mirun_wrap .contents .user_info .marking .txt{
+			margin-bottom: 15px;
+		}
+
+		.mirun_wrap .contents .user_info .marking .txt p{
+			margin-top: 3px;
+			font-size: 10px;
+			line-height: 12px;
+		}
+
+		.mirun_wrap .contents .user_info .marking .chk{
+			font-size: 12px;
+		}
+
+		.mirun_wrap .contents .user_info .marking .chk p{
+			font-size: 10px;
+			line-height: 12px;
+		}
+
+        .mirun_wrap .snack_tr td>div{
+            margin-bottom:15px;
+        }
+
+        .mirun_wrap .snack_tr td>div label{
+            font-size: 12px;
+            color:#666;
+            vertical-align: middle;
+        }
+
+        .mirun_wrap .snack_tr td>div input{
+            vertical-align: middle;
+        }
+
+        .mirun_wrap .snack_tr td>div p{
+             padding-left:20px;
+             color:#999;
+             font-size: 12px;
+             line-height: 15px;
+        }
+
+        .mirun_wrap .snack_tr td>div .eng_snack{
+            margin-bottom:5px;
+            font-size: 11px;
+            color: #666;
+        }
+
+        .mirun_wrap .snack_tr td>div .cnk_snack{
+            padding-left: 0;
+        }
+
+
+
+	</style>
+
+
+	<script type="text/javascript" src="/js/jquery-1.12.0.min.js"></script>
+	<script type="text/javascript" src="/js/swipe.js"></script>
+	<script type="text/javascript" src="/js/owl.carousel.js"></script>
+
+	<title>아디다스 모바일</title>
+</head>
+<body>
+	<div id="wrap">
+		<div class="mirun_wrap">
+			<header>
+				<h1>신청서 작성</h1>
+				<a href="javascript:void(0)" class="close_x_btn"></a>
+			</header>
+
+			<div class="contents">
+				<div class="box">
+					<h2 class="step_title">STEP 02. 상세 정보 입력</h2>
+				</div>
+				<!-- //box -->
+
+				<div class="box">
+					<div class="tit_box" style="margin-bottom: 15px;">
+						<h2>2017 아디다스 마이런 부산 참가 신청서</h2>
+					</div>
+
+					<ul class="li_hypn" style="margin-bottom: 15px;">
+						<li>참가자분들의 정보를 소중히 다루고 있으며 본인 동의 없이는 외부에 유출 하지 않습니다. 해당 정보를 정확히 입력해 주시기 바랍니다.</li>
+						<li>아래 수집되는 개인정보는 본 행사 진행 시 본인 확인, 기록 측정, 기념품 제공 등을 위해 수집되며  기재하지 않으시거나 동의 하지 않으시는 경우
+                        참가 신청이 되지 않습니다. 참가자 정보는 회원정보를 기반으로 하며 최종 참가자 정보는 3월 12일 24시 기준으로 저장된 회원정보로 업데이트 됩니다.</li>
+						<li class="s">개인정보 수집이용목적 : 참가자의 신원확인, 물품사이즈 확인, 물품배송, 차기 대회소식전달 목적으로 수집합니다.</li>
+						<li class="s">수집 이용되는 개인정보의 항목 : 아래의 기재사항이 수집 이용됩니다.</li>
+						<li class="s">참가자는 동일 개인정보로 중복 접수 신청이 되지 않으며, 대리 참가 접수 불가합니다.</li>
+						<li class="s">프로모션 무료 참가자와 매장/온라인에서 접수한 참가자가 동일한 경우(중복 접수 확인 시)</li>
+                        <li class="t" style="color:#ca0248;">참가비의 경우 환불이 되며(1인만 참여) 참가자님께 개별 확인 연락을 드릴 예정입니다.</li>
+                        <li class="t" style="color:#ca0248;">중복 접수로 확인될 시 매장 및 온라인에서 접수한 정보를 기준으로 접수됩니다. (배송 정보 포함)</li>
+                        <li class="t" style="color:#ca0248;">중복 접수건에 대해 명의 변경(대체 참가)은 불가합니다.</li>
+					</ul>
+
+					<table class="user_info">
+						<colgroup>
+							<col width="30%">
+							<col width="70%">
+						</colgroup>
+						<tbody><tr>
+							<th>참가코스</th>
+							<td>
+								<div style="margin-bottom: 3px;" id="select_course">
+									<span>
+										<input type="radio" id="sel_8k">
+										<label for="sel_8k">Women’s 8K코스</label>
+									</span>
+									<span>
+										<input type="radio" id="sel_10k">
+										<label for="sel_10k">10km 코스</label>
+									</span>
+								</div>
+								<div class="options_10k">
+								    <dl>
+								        <dt>자신의 취향에 맞는 그룹을 선택해주세요! (1개만 선택 가능)</dt>
+                                        <dd>
+                                            <div>
+                                                <input type="radio" name="ops_10k" id="ops_10k_1">
+                                                <label for="ops_10k_1">ENERGY RUNNER 러닝이 취미이자, 일상인 러너</label>
+                                            </div>
+                                            <div>
+                                                <input type="radio" name="ops_10k" id="ops_10k_2">
+                                                <label for="ops_10k_2">BOOST RUNNER 모든 스포츠를 즐기는 러너</label>
+                                            </div>
+                                            <div>
+                                                <input type="radio" name="ops_10k" id="ops_10k_3">
+                                                <label for="ops_10k_3">STYLE RUNNER 스타일리쉬하게 돋보이고 싶은 러너</label>
+                                            </div>
+                                            <!-- 170220 Start -->
+                                            <ul class="li_hypn" style="margin-top: 10px;">
+            									<li class="s">Women’ 8K 참가자는 3개 그룹 모두 함께 출발합니다.</li>
+                                                <li class="s">그룹 선택은 소셜 이벤트 참가 및 그룹별 평균 기록 산출을 통해 우승그룹 시상 시 활용됩니다.</li>
+            								</ul>
+                                            <a href="http://adidasmirun.com/02/05/" target="_blank" class="cmn_button" style="width: 140px;line-height: 30px;margin:5px 0;">Women’s 8K 프로그램 안내</a>
+                                            <!-- 170220 End -->
+                                        </dd>
+								    </dl>
+                                    <div class="invite_friend">
+                                        <p class="tit">친구 초대하기</p>
+                                        <div class="cont">
+                                            <div class="box">
+                                                <label for="">이름</label>
+                                                <input type="text">
+                                            </div>
+                                            <div class="box">
+                                                <label for="">아이디</label>
+                                                <input type="text">
+                                            </div>
+                                            <a href="#" class="cmn_button">확인하기</a>
+                                        </div>
+
+                                    </div>
+								</div>
+							</td>
+						</tr>
+
+						<tr>
+							<th>이름</th>
+							<td>김기백</td>
+						</tr>
+
+						<tr>
+							<th>생년월일</th>
+							<td class="birth">
+								<!-- 160802 생년월일 -->
+								<div class="wp" style="margin-bottom:3px;">
+									<span style="font-size:11px;">1988 년</span>
+									<span style="font-size:11px;">6 월</span>
+									<span style="font-size:11px;">25 일</span>
+								</div>
+								<!-- //160802 -->
+								<ul class="li_hypn">
+									<li class="s">노출되는 생년월일이 실제와 다를 경우 마이페이지내의 개인정보 수정을 통하여 수정해 주세요.</li>
+								</ul>
+                                <!-- 170217 -->
+                                <a href="#" class="cmn_button" style="width: 100px;line-height: 30px;margin:5px 0;">개인정보 수정하기</a>
+							</td>
+						</tr>
+
+						<tr>
+							<th>성별</th>
+							<td style="font-size:11px;">남자</td>
+						</tr>
+
+						<tr>
+							<th>이메일</th>
+							<td>appeal@naver.com</td>
+						</tr>
+
+						<tr>
+							<th>주소</th>
+							<td>서울특별시 서초구 서초2동 1321-15 서초타워 7층</td>
+						</tr>
+
+						<tr>
+							<th>전화번호</th>
+							<td>02-1234-3453</td>
+						</tr>
+
+						<tr>
+							<th>핸드폰번호</th>
+							<td>
+								<p style="margin-bottom:6px;font-size:11px;">010-1234-3453</p>
+								<ul class="li_hypn">
+									<li class="s">참가자 본인의 핸드폰번호를 기입해주시기 바랍니다.</li>
+									<li class="s">번호 수정은 마이페이지 내 개인정보 수정에서 가능합니다.</li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<th>티셔츠 사이즈</th>
+							<td class="t_size">
+								<dl>
+									<dt>남자용 (Male)</dt>
+									<dd>
+										<ul>
+											<li>
+												<span>
+													<input type="radio" id="m_size90">
+													<label for="m_size90">90</label>
+												</span>
+												<span>
+													<input type="radio" id="m_size95">
+													<label for="m_size95">95</label>
+												</span>
+											</li>
+											<li>
+												<span>
+													<input type="radio" id="m_size100">
+													<label for="m_size100">100</label>
+												</span>
+												<span>
+													<input type="radio" id="m_size105">
+													<label for="m_size105">105</label>
+												</span>
+											</li>
+											<li>
+												<span>
+													<input type="radio" id="m_size110">
+													<label for="m_size110">110</label>
+												</span>
+												<span>
+													<input type="radio" id="m_size115">
+													<label for="m_size115">115</label>
+												</span>
+											</li>
+										</ul>
+									</dd>
+								</dl>
+
+								<dl>
+									<dt>여자용 (Female)</dt>
+									<dd>
+										<ul>
+											<li>
+												<span>
+													<input type="radio" id="fm_size80">
+													<label for="fm_size80">80</label>
+												</span>
+												<span>
+													<input type="radio" id="fm_size85">
+													<label for="fm_size85">85</label>
+												</span>
+											</li>
+											<li>
+												<span>
+													<input type="radio" id="fm_size90">
+													<label for="fm_size90">90</label>
+												</span>
+												<span>
+													<input type="radio" id="fm_size95">
+													<label for="fm_size95">95</label>
+												</span>
+											</li>
+											<li>
+												<span>
+													<input type="radio" id="fm_size100">
+													<label for="fm_size100">100</label>
+												</span>
+												<span>
+													<input type="radio" id="fm_size105">
+													<label for="fm_size105">105</label>
+												</span>
+											</li>
+										</ul>
+									</dd>
+								</dl>
+								<ul class="li_hypn">
+									<li class="no_pfx">원하는 사이즈의 기념품이 이미 소진되었을 경우, 신청 사이즈를 수령하지 못할 수 있습니다. 이 점 양해 부탁 드립니다.</li>
+									<li class="s">기념 티셔츠는 성별 교차 선택이 가능하며, 사이즈별 품절 시 선택에서 보이지 않을 수 있습니다.</li>
+									<li class="s">기념 티셔츠 사이즈는 선택 후 변경이 불가능하며, 교환을 원하실 시 행사 당일 현장에서 잔여수량에 한하여 교환이 가능합니다.</li>
+								</ul>
+							</td>
+						</tr>
+
+                        <!-- <tr class="snack_tr">
+							<th>
+								나만의 간식 패키지<br>
+								(Snack Package)
+							</th>
+							<td>
+								<div>
+									<p class="cnk_snack">
+										<input type="radio" name="snack_package" id="snack_package1">
+										<label for="snack_package1">라이트 패키지</label>
+									</p>
+									<p class="eng_snack">(Light Package)</p>
+									<p>음료, 라이트바, 샐러드류</p>
+									<p>(Drink, Light bar, Salad)</p>
+								</div>
+								<div>
+									<p class="cnk_snack">
+										<input type="radio" name="snack_package" id="snack_package2">
+										<label for="snack_package2">에너지 패키지</label>
+									</p>
+									<p class="eng_snack">(Energy Package)</p>
+									<p>음료, 에너지바, 머핀류</p>
+									<p>(Drink, Energy bar, Muffin)</p>
+								</div>
+								<div>
+									<p class="cnk_snack">
+										<input type="radio" name="snack_package" id="snack_package3">
+										<label for="snack_package3">스위트 패키지</label>
+									</p>
+									<p class="eng_snack">(Sweet Package)</p>
+									<p>음료, 초코바, 크림빵</p>
+									<p>(Drink, Chocolate bar, Cream bread)</p>
+								</div>
+
+                                <ul class="li_hypn">
+									<li class="s">패키지별 간식 항목은 추후 변경될 수 있습니다.</li>
+								</ul>
+							</td>
+						</tr> -->
+
+						<tr>
+							<th style="letter-spacing:-1px;">참가신청 비밀번호</th>
+							<td>
+								<div style="margin-bottom:5px;">
+									<input type="tel">
+									<span style="margin-top:3px;display: block;">(숫자 6자리 입력)</span>
+								</div>
+								<ul class="li_hypn">
+									<li class="s">본 신청 페이지가 아닌 대회 홈페이지에서 참가정보를 확인하시거나 수정하실때 필요한 비밀번호입니다. <br/>기억하기 쉬운 걸로 작성해 주시기 바랍니다. (마이런 부산 홈페이지에서 3월 30일 이후 확인 가능)</li>
+								</ul>
+							</td>
+						</tr>
+					</table>
+
+					<div class="btn_area">
+						<a href="#" class="button">참가 신청하기</a>
+					</div>
+				</div>
+				<!-- //box -->
+
+			</div>
+			<!-- //contents -->
+		</div>
+		<!-- //mirun_wrap -->
+	</div>
+	<!-- //wrap -->
+
+	<script type="text/javascript">
+		(function($){
+
+            $('#select_course input:radio').bind('click',function(){
+                if($(this).attr('id') == 'sel_8k'){
+                    $('.options_10k').show();
+                }else{
+                    $('.options_10k').hide();
+                }
+            });
+
+		})(jQuery);
+	</script>
+
+</body>
+
+</html>

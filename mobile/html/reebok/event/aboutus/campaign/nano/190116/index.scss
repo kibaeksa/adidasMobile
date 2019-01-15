@@ -1,0 +1,193 @@
+@import "./mobile/MO/reebok/css/scss/about.scss";
+
+.nano8{
+    .visual_main{
+        position: relative;
+        .img{
+            img{
+                width:100%;
+            }
+        }
+        .txt{
+            position: absolute;
+            top:0;
+            left: 0;
+            right:0;
+            padding: 3rem 1.5rem;
+            .wrap{
+                h1{
+                    display: inline-block;
+                    font: 300 11vw 'dinpro cond';
+                    letter-spacing: 5vw;
+                    margin: 0 13px 13px 0;
+                    span{
+                        font: 700 11vw 'dinpro cond';
+                    }
+                }
+                span{
+                    display: inline-block;
+                    font: 100 5vw 'dinpro cond';
+                    letter-spacing: .5vw;
+                }
+            }
+
+            .btn{
+                border: 3px solid #000;
+                width:35vw;
+                a{
+                    display: block;
+                    font: 700 3.5vw/11vw 'NotoSansKR';
+                    text-align: center;
+                    letter-spacing: .2rem;
+                    color:#000;
+                }
+            }
+        }
+    }
+    .visual_mid{
+        position: relative;
+        &.on{
+            .txt1{
+                opacity: 1;
+                transition: all 1s;
+                // @include css3(opacity,1);
+                // @include css3(transition, all 0.5s);
+            }
+            .wrap{
+                .txt2{
+                    opacity: 1;
+                    transition: all 1s;
+                    transition-delay: .5s;
+                }
+                .txt3{
+                    opacity: 1;
+                    transition: all 1s;
+                    transition-delay: 1s;
+                }
+            }
+        }
+        .bg{
+            img{
+                width:100%;
+            }
+        }
+        .img{
+            position: absolute;
+            top:0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .txt1{
+            position: absolute;
+            top:10%;
+            left:3%;
+            width:100%;
+            opacity: 0;
+            img{
+                width:23%;
+            }
+        }
+        .wrap{
+            .txt2{
+                position: absolute;
+                top:65%;
+                left:4%;
+                width:50%;
+                opacity: 0;
+                img{
+                    width:76%;
+                }
+            }
+            .txt3{
+                position: absolute;
+                top:60%;
+                right:-22%;
+                width:50%;
+                opacity: 0;
+                img{
+                    width: 47%;
+                }
+            }
+        }
+    }
+
+    .collections1{
+        padding: 0 0 1rem;
+        background: url('/images/reebok/about/nano/190116/bg_bottom.jpg') 0 no-repeat;
+        background-size: 100% 100%;
+        text-align: center;
+        position: relative;
+        bottom:0;
+        left:0;
+         h1{
+            padding: 2.8rem 0 1rem;
+            color: #fff;
+            font: 300 10vw 'dinpro cond';
+            text-align: center;
+            letter-spacing: 1.2rem;
+            span{
+                font: 700 10vw 'dinpro cond';
+            }
+        }
+
+        .collection_cut{
+            position: relative;
+            overflow: hidden;
+            &.collection_slider1{
+                margin-bottom: 2rem;
+            }
+            ul{
+                overflow: hidden;
+                li{
+                    position: relative;
+                    float: left;
+                    img{
+                        width: 100%;
+                    }
+                }
+            }
+            .navi{
+                position: absolute;
+                top:50%;
+                margin-top: -34px;
+                width: 100%;
+                text-align: center;
+                img{
+                    width: 50%;
+                }
+                .next{
+                    position: absolute;
+                    right:0;
+                    text-align: right;
+                }
+                .prev{
+                    position: absolute;
+                    left:0;
+                    text-align: left;
+                }
+            }
+        }
+        .navi{
+            display: none;
+        }
+        .num_paging{
+            padding: 1rem 0px;
+            a{
+                background: #ccc;
+                border:none;
+                width: 1rem;
+                height: 1rem;
+                margin-right: 0.5rem;
+            }
+
+            .on{
+                background: #ab2328;
+            }
+        }
+    }
+
+
+
+}
+
+// nano8 END

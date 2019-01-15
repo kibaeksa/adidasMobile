@@ -1,0 +1,107 @@
+@charset 'utf-8';
+@import './app/css/adidas/scss/common/mixin.scss';
+@import './app/css/adidas/scss/common/common.scss';
+
+#tenis_williams{
+
+    .button{
+        position: relative;
+        margin: 25px 1.5rem 0;
+        a{
+            display: inline-block;
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            background: #000;
+            padding: 1.5rem 0;
+            font: 1.1rem/1rem 'NotoSansKR';
+            width: 100%;
+            text-align: center;
+            color: #fff;
+            &:after{
+                margin-left: 5px;
+            }
+        }
+
+        &.black{
+            color: #fff;
+            background: #000;
+        }
+    }
+
+    .main{
+        position: relative;
+        .bg{
+            img{
+                width: 100%;
+            }
+        }
+        .logo{
+            position: absolute;
+            bottom:30px;
+            padding: 0 4rem;
+            img{
+                width: 100%;
+            }
+        }
+    }
+
+    .scrollbox{
+        opacity: 0;
+        -webkit-opacity: 0;
+        transition: all 0.8s;
+        -webkit-transition: all 0.8s;
+        &.event{
+            opacity: 1;
+            -webkit-opacity: 1;
+        }
+        &.statement{
+            padding: 60px 0 30px;
+        }
+        &.box1{
+            padding: 30px 0;
+        }
+        &.box2{
+            padding: 30px 0;
+        }
+        &.box3{
+            padding: 30px 0;
+        }
+        &.bottom{
+            position: relative;
+            padding-top: 30px;
+            .txt_box{
+                position: absolute;
+                bottom:10%;
+                width: 100%;
+                p{
+                    color:#fff;
+                }
+                .button{
+                    a{
+                        color:#000;
+                        background: #fff;
+                    }
+                }
+            }
+        }
+        .bg{
+            img{
+                width: 100%;
+            }
+        }
+        p{
+            font:400 1rem/1.9rem 'NotoSansKR';
+            text-align: center;
+            strong{
+                font-size: 1.08rem;
+            }
+            &.title{
+                padding: 40px 0 14px;
+                font:2.8rem/2.8rem 'adinenuPro-bold';
+                text-transform: uppercase;
+                letter-spacing: 0.7px;
+            }
+        }
+    }
+
+}

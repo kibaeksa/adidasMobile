@@ -1,0 +1,62 @@
+@import './app/css/adidas/scss/common/mixin.scss';
+@import './app/css/adidas/scss/common/common.scss';
+
+#kids_running{
+	.scrollbox{
+		top:20px;
+		@include css3(opacity,0);
+		@include css3(transition, all 0.5s);
+		&.on{
+			top:0;
+			@include css3(opacity,1);
+		}
+	}
+	.btn{
+		margin: 0 0 10px 0;
+		display: block;
+		font:500 14px/46px 'NotoSansKR';
+		color:#000;
+		text-align:center;
+		border: 1px solid #000;
+	}
+	.statement{
+		padding: 3rem 1.5rem;
+		p{
+			margin: 5px 0;
+			text-align: center;
+			font:500 1.2rem/1.8rem 'NotoSansKR';
+			span{
+				font:1.3rem 'adinenuPro-bold';
+				letter-spacing: 0;
+			}
+		}
+		a{
+			margin-top: 2rem;
+		}
+
+	}
+
+	.statement2{
+		padding: 3rem 1.5rem;
+		p{
+			margin: 5px 0;
+			text-align: center;
+			font:2.7rem/2.8rem 'adinenuPro-black';
+		}
+		a{
+			margin-top: 1rem;
+		}
+
+	}
+	.img_box{
+		position: relative;
+		img{
+			width: 100%;
+		}
+		a{
+			position: absolute;
+			display: block;
+			text-indent: -9999px;
+		}
+	}
+}

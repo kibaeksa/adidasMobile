@@ -1,0 +1,244 @@
+@import './app/css/adidas/scss/common/mixin.scss';
+@import './app/css/adidas/scss/common/common.scss';
+
+#video-layer{
+	position:fixed;top:0;left:0;width: 100%;height: 100%;z-index:1000;
+}
+
+#video-layer .bg{
+	width: 100%;
+	height: 100%;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	transform-origin:center center;
+	-webkit-transform-origin:center center;
+	transform:scale(0);
+	-webkit-transform:scale(0);
+	opacity:0;
+	background:#000;
+	z-index:1;
+
+	transition:all 0.4s;
+	-webkit-transition:all 0.4s;
+
+
+}
+
+#video-layer.loaded .bg{
+	opacity: 1;
+	transform:scale(1.2);
+	-webkit-transform:scale(1.2);
+}
+
+#video-layer .video-box{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	z-index: 3;
+}
+
+#video-layer .close_x_btn{
+	width: 70px;
+	height: 70px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 5;
+	opacity: 0;
+}
+
+#video-layer.loaded .close_x_btn{
+	opacity: 1;
+}
+
+#blank_canvas{
+
+    .main{
+        display: none;
+        position: relative;
+        text-align: center;       
+        video{            
+            width: 130%;
+            margin-left: -15%;           
+        }       
+    }
+    .img_box{
+        display: none;
+        position: relative;
+        overflow: hidden;
+        ul{
+            position: relative;
+            li{
+                position: relative;
+                float: left;
+                img{
+                    width: 100%;
+                }
+            }
+        }
+    }
+    .fade_container { 
+        position: relative;
+        overflow: hidden;
+        padding-bottom: 130%;       
+        img{
+            position:absolute;
+            width: 100%;
+        }
+        .active{
+            z-index:1;
+        }       
+    }         
+    .statement{
+        position: relative;
+        padding: 30px 0;
+        .bg{
+            img{
+                width: 100%;
+            }
+        }
+        &.event{
+            .txt{
+                top:0;
+                @include css3(opacity, 1);
+            }
+        }
+        .txt{
+            width: 100%;
+            position: relative;
+            top:30px;
+            left:50%;
+            text-align: center;
+            @include css3(opacity, 0);
+            @include css3(transform, translate(-50%,0));
+            transition: all 0.5s;
+            transition-delay: 0.5s;
+            z-index: 1;
+            h3{
+                text-align: center;
+                font: 500 2.3rem/2.3rem 'adinenuPro-black';
+                padding-bottom: 15px;
+                letter-spacing: 1px;
+            }
+            p{
+                text-align: center;
+                font: 500 1.2rem/1.6rem 'NotoSansKR';
+            }
+            .btn{
+                display: inline-block;
+                margin: 25px auto 0;
+                a{
+                    display: inline-block;
+                    width: 130px;
+                    color:#000;
+                    font:500 14px/35px 'NotoSansKR';
+                    border:2px solid #000;
+                    text-align: center;
+                    &:after{
+                        padding-left:5px;
+                    }
+                }
+            }
+        }
+    }
+
+    .ani{
+        position: relative;
+        img{
+            width: 100%;
+        }
+    }
+
+    .prd_statement{          
+        text-align: center;
+        .box{
+            position: relative;
+            top:10px;
+            padding: 0;
+            @include css3(opacity,0);
+            transition: all 0.5s;
+            .img{                
+                img{
+                    width: 200%;
+                    margin-left: -50%;
+                }
+            }
+            .txt{
+                position: absolute;
+                bottom: 30px;
+                left: 50%;
+                margin-left: -75px;
+                h3{
+                    padding-bottom: 10px;
+                    color:#000;
+                    font:2.5rem/2.5rem 'adinenuPro-black';
+                    text-transform: uppercase;
+                    text-align: center;                 
+                }
+                .btn{
+                    display: inline-block;
+                    margin: 10px auto 0;
+                    a{
+                        display: inline-block;
+                        width: 150px;
+                        color:#fff;
+                        font:400 14px/35px 'NotoSansKR';
+                        background: #000;
+                        text-align: center;
+                        &:after{
+                            padding-left:5px;
+                        }
+                    }
+                }
+            }            
+            &.event{
+                top:0;
+                @include css3(opacity,1);
+            }
+        }        
+    }
+
+    .bottom{
+        display: none;
+        position: relative;
+        padding-bottom: 20px;
+        &.event{
+            .txt{
+                img{
+                    top:0;
+                    @include css3(opacity,1);
+                }
+            }
+        }
+        .bg{
+            img{
+                width: 100%;
+            }
+        }
+        .video{
+            position: relative;
+            width: 100%;
+            height: 100%;
+            a.video-button{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+            }
+            img.video_bg{ width: 100%; }
+            .play{
+                position: absolute;
+                top:50%;
+                left:50%;
+                background: url("http://imagem.adidas.co.kr/images/adidas/event/pure_boost/play.png") 0 0 no-repeat;
+                background-size:100% 100%;
+                width: 6rem;
+                height: 6rem;
+                margin-top: -3rem;
+                margin-left: -3rem;
+            }
+        }      
+    }
+}

@@ -1,0 +1,354 @@
+@import "./mobile/MO/reebok/css/scss/about.scss";
+#video-layer{
+  position:fixed;top:0;left:0;width: 100%;height: 100%;z-index:1000;
+}
+
+#video-layer .bg{
+  width: 100%;
+  height: 100%;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  transform-origin:center center;
+  -webkit-transform-origin:center center;
+  transform:scale(0);
+  -webkit-transform:scale(0);
+  opacity:0;
+  background:#000;
+  z-index:1;
+
+  transition:all 0.4s;
+  -webkit-transition:all 0.4s;
+
+
+}
+
+#video-layer.loaded .bg{
+  opacity: 1;
+  transform:scale(1.2);
+  -webkit-transform:scale(1.2);
+}
+
+#video-layer .video-box{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+}
+
+#video-layer .close_x_btn{
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 5;
+  opacity: 0;
+}
+
+#video-layer.loaded .close_x_btn{
+  opacity: 1;
+}
+
+.fusion {
+    .main{
+        position: relative;
+        .bg_img{
+            width: 100%;
+        }
+        .txt_area{
+            position: absolute;
+            width: 80%;
+            top: 25%;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            h2{
+                font: 700 3.2rem/3rem 'dinpro cond';
+                letter-spacing: 0.2rem;
+                text-transform: uppercase;
+                color: #fff;
+            }
+            h3{
+                font: 200 3rem 'dinpro cond';
+                color: #fff;
+            }
+            p{
+                font: 300 1rem 'NotoSansKR';
+                color: #fff;
+            }
+        }
+        .btn_area{
+            position: absolute;
+            width: 97%;
+            margin: 0 auto;
+            bottom: 3.5%;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            a{
+                position: relative;
+                display: inline-block;
+                width: 45%;
+                margin: 0 2%;
+                border: 1px solid #fff;
+                text-align: center;
+                box-sizing: border-box;
+                font: 1rem/3.6rem 'NotoSansKR';
+                color: #fff;
+            }
+        }
+    }
+
+    .title {
+        padding: 3rem 0;
+        text-align: center;
+        background: #fff;
+        p {
+            font: 400 1rem 'NotoSansKR';
+        }
+    }
+    .prd_wrap{
+
+    }
+    .prds {
+        position: relative;
+        padding: 1.5rem 3rem 4rem;
+        opacity: 0;
+        -webkit-opacity: 0;
+        transition: all 0.5s;
+        &.effect {
+            opacity: 1;
+            -webkit-opacity: 1;
+        }
+        .logo{
+            padding-bottom: 1rem;
+            text-align: center;
+            img{
+                width: 40%;
+            }
+        }
+        .slider_wrap{
+            overflow: hidden;
+            .box{
+                width: 100%;
+                img{
+                    width: 100%;
+                }
+            }
+            .owl-carousel{
+                width: 100%;
+                position: relative;
+                z-index: 5;
+            }
+            .owl-stage-outer{
+                width: 100%;
+                position: relative;
+                overflow: hidden;
+            }
+            .owl-stage{
+                width: 100%;
+                position: relative;
+                overflow: hidden;
+            }
+            .owl-item{
+                float: left;
+                @include box-sizing(border-box);
+            }
+            .owl-item .box{
+                width: 100%;
+                img{
+                    width: 100%;
+                }
+            }
+            .owl-controls{
+                padding:0 1.5rem;
+            }
+            .owl-dots{
+                text-align: center;
+                padding-top: 1rem;
+                @extend .num_paging;
+                .owl-dot{
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 26px;
+                    margin: 0 4px;
+                    display: inline-block;
+                    box-sizing:border-box;
+                    background: #8ba0b2;
+                    transition-duration: 0s;
+                    -webkit-transition-duration: 0s;
+                }
+                .active{
+                    background: #fff;
+                }
+            }
+        }
+        .prd_txt{
+            margin-top: 1rem;
+            color: #fff;
+            text-align: center;
+            h3{
+                font:500 2rem 'NotoSansKR';
+            }
+            p{
+                font:300 1rem 'NotoSansKR';
+                padding: 1rem 0 1.5rem;
+            }
+            a.btn-buy{
+                display: inline-block;
+                width: 200px;
+                background: #fff;
+                font:500 1rem/3.5rem 'NotoSansKR';
+                color: #000;
+                text-align: center;
+                &.btn-bl{
+                    background: #000;
+                    color: #fff;
+                }
+            }
+        }
+        .deco{
+            position: absolute;
+            z-index: 1;
+            img{
+                width: 50%;
+            }
+            &.deco1{
+                top: 38%;
+                right: -23%;
+            }
+            &.deco2{
+                bottom: 30%;
+                left: 0;
+            }
+            &.deco_side{
+                top: -30%;
+                left: -4.5%;
+            }
+        }
+        &.effect{
+            .prd_con_lt{
+                top:0;
+                opacity: 1;
+            }
+            .prd_con_rt{
+                top:0;
+                opacity: 1;
+            }
+        }
+        &.prd_01{
+            background: #315575;
+        }
+        &.prd_02{
+            background: #fce186;
+            .slider_wrap{
+                .owl-dots{
+                text-align: center;
+                padding-top: 1rem;
+                @extend .num_paging;
+                .owl-dot{
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 26px;
+                    margin: 0 4px;
+                    display: inline-block;
+                    box-sizing:border-box;
+                    background: #8d7e4b;
+                    transition-duration: 0s;
+                    -webkit-transition-duration: 0s;
+                }
+                .active{
+                    background: #000;
+                }
+            }
+            }
+        }
+    }
+    .collect{
+        .slider_wrap {
+            position: relative;
+            padding: 0 0 20px;
+            background:url('/images/reebok/about/wannaone/181001/bg_slide.jpg') center top no-repeat;
+            background-size: 100% 100%;
+            opacity: 0;
+            -webkit-opacity: 0;
+            transition: all 0.5s;
+            h2{
+                padding: 3rem 0;
+                text-align: center;
+                img{
+                    width: 86%;
+                }
+            }
+            &.effect {
+                opacity: 1;
+                -webkit-opacity: 1;
+            }
+            .collections {
+                overflow: hidden;
+                position: relative;
+                ul {
+                    li {
+                        position: relative;
+                        float: left;
+                        padding-bottom: 15px;
+                        overflow: hidden;
+                        img{
+                            width: 100%;
+                        }
+                        &.on {
+                            img {
+                                left: 0;
+                                opacity: 1;
+                                -webkit-opacity: 1;
+                            }
+                        }
+                    }
+                    &:after {
+                        content: '';
+                        display: block;
+                        clear: both;
+                    }
+                }
+                .navi{
+                    a{
+                        display: inline-block;
+                        width: 30px;
+                        height: 30px;
+                        position: absolute;
+                        top: 42%;
+                        img{
+                            width: 100%;
+                        }
+                        &.prev{
+                            left: 0;
+                        }
+                        &.next{
+                            right: 0;
+                        }
+                    }
+                }
+                .num_paging {
+                    position: relative;
+                    top: 0;
+                    text-align: center;
+                    a {
+                        display: inline-block;
+                        width: 10px;
+                        height: 10px;
+                        background: #7c8a8e;
+                        border-radius: 50%;
+                        border: 0 none;
+                        &.on {
+                            background: #000;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+// always classic

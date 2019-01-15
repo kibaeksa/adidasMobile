@@ -1,0 +1,825 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src="/data/eventRouter.js"></script>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+	<meta name="format-detection" content="telephone=no">
+	<meta http-equiv="x-rim-auto-match" content="none">
+
+	<link href="/css/adidas/style.css" type="text/css" rel="stylesheet" />
+	<link href="/css/adidas/fonts.css" type="text/css" rel="stylesheet" />
+
+	<link rel="preload" href="/fonts/adineuePro/woff/adineuePRO-Bold.woff" as="font">
+
+	<script type="text/javascript" src="/js/jquery-1.12.0.min.js"></script>
+	<script type="text/javascript" src="/js/swipe.js"></script>
+	<script type="text/javascript" src="/js/owl.carousel.js"></script>
+    <script type="text/javascript" src="http://imagem.adidas.co.kr/js/modalPopup.min.js" ></script>
+
+	<title>아디다스 모바일</title>
+</head>
+<body>
+
+	<div id="wrap">
+		<div id="header" style="position: relative;">
+			<div class="nav_menu">
+				<div class="nav_menu_inner">
+
+					<div class="u_info1">
+						<a href="#" class="login"><span class="icons" data-icon=""></span>로그인</a>
+						<a href="#" class="join"><span class="icons" data-icon=""></span>회원가입</a>
+					</div>
+
+					<!-- <div class="u_info1">
+						<div class="user_box">
+							<p class="greet bronze"><span class="m">B</span>홍길동님 반갑습니다.</p>
+							<p class="noti">쿠폰 사용기간이 얼마 남지 않았습니다.</p>
+						</div>
+					</div> -->
+					<div class="u_info2">
+						<a href="#">마이페이지</a>
+						<a href="#">주문배송조회 <span>1</span></a>
+						<a href="#">나의 쿠폰 <span>12</span></a>
+					</div>
+					<ul class="gnb">
+						<li class="strong dep">
+							<a href="#">MEN</a>
+							<div class="depth_menu depth2">
+								<ul>
+									<li class="dep">
+										<a href="#">신발</a>
+										<div class="depth_menu depth3">
+											<ul>
+												<li class="all"><a href="#">전체보기</a></li>
+												<!-- <li class="tit">스포츠별</li> -->
+												<li><a href="#">라이프스타일 <span>(214)</span></a></li>
+												<li><a href="#">축구 <span>(214)</span></a></li>
+												<li><a href="#">농구 <span>(214)</span></a></li>
+												<li><a href="#">러닝 <span>(214)</span></a></li>
+												<li><a href="#">테니스 <span>(214)</span></a></li>
+												<li><a href="#">스윔 <span>(214)</span></a></li>
+												<li><a href="#">하이컷/미드컷 <span>(214)</span></a></li>
+												<li><a href="#">로우컷 <span>(214)</span></a></li>
+												<li><a href="#">샌들/슬리퍼 <span>(214)</span></a></li>
+												<li><a href="#">SPORT <span>(214)</span></a></li>
+												<li><a href="#">ORIGINALS <span>(214)</span></a></li>
+											</ul>
+										</div>
+									</li>
+									<li class="dep">
+										<a href="#">의류</a>
+										<div class="depth_menu depth3">
+											<ul>
+												<li class="all"><a href="#">전체보기</a></li>
+												<li><a href="#">라이프스타일 <span>(214)</span></a></li>
+												<li><a href="#">축구 <span>(214)</span></a></li>
+												<li><a href="#">농구 <span>(214)</span></a></li>
+												<li><a href="#">러닝 <span>(214)</span></a></li>
+												<li><a href="#">테니스 <span>(214)</span></a></li>
+												<li><a href="#">스윔 <span>(214)</span></a></li>
+												<li><a href="#">하이컷/미드컷 <span>(214)</span></a></li>
+												<li><a href="#">로우컷 <span>(214)</span></a></li>
+												<li><a href="#">샌들/슬리퍼 <span>(214)</span></a></li>
+												<li><a href="#">SPORT <span>(214)</span></a></li>
+												<li><a href="#">ORIGINALS <span>(214)</span></a></li>
+											</ul>
+										</div>
+									</li>
+									<li class="dep">
+										<a href="#">용품</a>
+										<div class="depth_menu depth3">
+											<ul>
+												<li class="all"><a href="#">전체보기</a></li>
+												<li><a href="#">라이프스타일 <span>(214)</span></a></li>
+												<li><a href="#">축구 <span>(214)</span></a></li>
+												<li><a href="#">농구 <span>(214)</span></a></li>
+												<li><a href="#">러닝 <span>(214)</span></a></li>
+												<li><a href="#">테니스 <span>(214)</span></a></li>
+												<li><a href="#">스윔 <span>(214)</span></a></li>
+												<li><a href="#">하이컷/미드컷 <span>(214)</span></a></li>
+												<li><a href="#">로우컷 <span>(214)</span></a></li>
+												<li><a href="#">샌들/슬리퍼 <span>(214)</span></a></li>
+												<li><a href="#">SPORT <span>(214)</span></a></li>
+												<li><a href="#">ORIGINALS <span>(214)</span></a></li>
+											</ul>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li class="strong dep">
+							<a href="#">WOMEN</a>
+							<div class="depth_menu depth2">
+								<ul>
+									<li class="dep">
+										<a href="#">신발</a>
+										<div class="depth_menu depth3">
+											<ul>
+												<li class="all"><a href="#">전체보기</a></li>
+												<li><a href="#">라이프스타일 <span>(214)</span></a></li>
+												<li><a href="#">축구 <span>(214)</span></a></li>
+												<li><a href="#">농구 <span>(214)</span></a></li>
+												<li><a href="#">러닝 <span>(214)</span></a></li>
+												<li><a href="#">테니스 <span>(214)</span></a></li>
+												<li><a href="#">스윔 <span>(214)</span></a></li>
+												<li><a href="#">하이컷/미드컷 <span>(214)</span></a></li>
+												<li><a href="#">로우컷 <span>(214)</span></a></li>
+												<li><a href="#">샌들/슬리퍼 <span>(214)</span></a></li>
+												<li><a href="#">SPORT <span>(214)</span></a></li>
+												<li><a href="#">ORIGINALS <span>(214)</span></a></li>
+											</ul>
+										</div>
+									</li>
+									<li class="dep">
+										<a href="#">의류</a>
+										<div class="depth_menu depth3">
+											<ul>
+												<li class="all"><a href="#">전체보기</a></li>
+												<li><a href="#">라이프스타일 <span>(214)</span></a></li>
+												<li><a href="#">축구 <span>(214)</span></a></li>
+												<li><a href="#">농구 <span>(214)</span></a></li>
+												<li><a href="#">러닝 <span>(214)</span></a></li>
+												<li><a href="#">테니스 <span>(214)</span></a></li>
+												<li><a href="#">스윔 <span>(214)</span></a></li>
+												<li><a href="#">하이컷/미드컷 <span>(214)</span></a></li>
+												<li><a href="#">로우컷 <span>(214)</span></a></li>
+												<li><a href="#">샌들/슬리퍼 <span>(214)</span></a></li>
+												<li><a href="#">SPORT <span>(214)</span></a></li>
+												<li><a href="#">ORIGINALS <span>(214)</span></a></li>
+											</ul>
+										</div>
+									</li>
+									<li class="dep">
+										<a href="#">용품</a>
+										<div class="depth_menu depth3">
+											<ul>
+												<li class="all"><a href="#">전체보기</a></li>
+												<li><a href="#">라이프스타일 <span>(214)</span></a></li>
+												<li><a href="#">축구 <span>(214)</span></a></li>
+												<li><a href="#">농구 <span>(214)</span></a></li>
+												<li><a href="#">러닝 <span>(214)</span></a></li>
+												<li><a href="#">테니스 <span>(214)</span></a></li>
+												<li><a href="#">스윔 <span>(214)</span></a></li>
+												<li><a href="#">하이컷/미드컷 <span>(214)</span></a></li>
+												<li><a href="#">로우컷 <span>(214)</span></a></li>
+												<li><a href="#">샌들/슬리퍼 <span>(214)</span></a></li>
+												<li><a href="#">SPORT <span>(214)</span></a></li>
+												<li><a href="#">ORIGINALS <span>(214)</span></a></li>
+											</ul>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li class="strong dep">
+							<a href="#">KIDS</a>
+							<div class="depth_menu depth2">
+								<ul>
+									<li class="dep">
+										<a href="#">신발</a>
+										<div class="depth_menu depth3">
+											<ul>
+												<li class="all"><a href="#">전체보기</a></li>
+												<li class="tit">스포츠별</li>
+												<li><a href="#">라이프스타일 <span>(214)</span></a></li>
+												<li><a href="#">축구 <span>(214)</span></a></li>
+												<li><a href="#">농구 <span>(214)</span></a></li>
+												<li><a href="#">러닝 <span>(214)</span></a></li>
+												<li><a href="#">테니스 <span>(214)</span></a></li>
+												<li><a href="#">스윔 <span>(214)</span></a></li>
+												<li class="tit">상품별</li>
+												<li><a href="#">하이컷/미드컷 <span>(214)</span></a></li>
+												<li><a href="#">로우컷 <span>(214)</span></a></li>
+												<li><a href="#">샌들/슬리퍼 <span>(214)</span></a></li>
+												<li class="tit">브랜드</li>
+												<li><a href="#">SPORT <span>(214)</span></a></li>
+												<li><a href="#">ORIGINALS <span>(214)</span></a></li>
+											</ul>
+										</div>
+									</li>
+									<li class="dep">
+										<a href="#">의류</a>
+										<div class="depth_menu depth3">
+											<ul>
+												<li class="all"><a href="#">전체보기</a></li>
+												<li class="tit">스포츠별</li>
+												<li><a href="#">라이프스타일 <span>(214)</span></a></li>
+												<li><a href="#">축구 <span>(214)</span></a></li>
+												<li><a href="#">농구 <span>(214)</span></a></li>
+												<li><a href="#">러닝 <span>(214)</span></a></li>
+												<li><a href="#">테니스 <span>(214)</span></a></li>
+												<li><a href="#">스윔 <span>(214)</span></a></li>
+												<li class="tit">상품별</li>
+												<li><a href="#">하이컷/미드컷 <span>(214)</span></a></li>
+												<li><a href="#">로우컷 <span>(214)</span></a></li>
+												<li><a href="#">샌들/슬리퍼 <span>(214)</span></a></li>
+												<li class="tit">브랜드</li>
+												<li><a href="#">SPORT <span>(214)</span></a></li>
+												<li><a href="#">ORIGINALS <span>(214)</span></a></li>
+											</ul>
+										</div>
+									</li>
+									<li class="dep">
+										<a href="#">용품</a>
+										<div class="depth_menu depth3">
+											<ul>
+												<li class="all"><a href="#">전체보기</a></li>
+												<li class="tit">스포츠별</li>
+												<li><a href="#">라이프스타일 <span>(214)</span></a></li>
+												<li><a href="#">축구 <span>(214)</span></a></li>
+												<li><a href="#">농구 <span>(214)</span></a></li>
+												<li><a href="#">러닝 <span>(214)</span></a></li>
+												<li><a href="#">테니스 <span>(214)</span></a></li>
+												<li><a href="#">스윔 <span>(214)</span></a></li>
+												<li class="tit">상품별</li>
+												<li><a href="#">하이컷/미드컷 <span>(214)</span></a></li>
+												<li><a href="#">로우컷 <span>(214)</span></a></li>
+												<li><a href="#">샌들/슬리퍼 <span>(214)</span></a></li>
+												<li class="tit">브랜드</li>
+												<li><a href="#">SPORT <span>(214)</span></a></li>
+												<li><a href="#">ORIGINALS <span>(214)</span></a></li>
+											</ul>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li class="dep">
+							<a href="#">SPORTS</a>
+							<div class="depth_menu depth2">
+								<ul>
+									<li class="dep">
+										<a href="#">ORIGINALS</a>
+										<div class="depth_menu depth3">
+											<ul>
+												<li class="all"><a href="#">전체보기</a></li>
+												<li><a href="#">라이프스타일 <span>(214)</span></a></li>
+												<li><a href="#">축구 <span>(214)</span></a></li>
+												<li><a href="#">농구 <span>(214)</span></a></li>
+												<li><a href="#">러닝 <span>(214)</span></a></li>
+											</ul>
+										</div>
+									</li>
+									<li class="dep">
+										<a href="#">ADIDAS NEO</a>
+										<div class="depth_menu depth3">
+											<ul>
+												<li class="all"><a href="#">전체보기</a></li>
+												<li><a href="#">라이프스타일 <span>(214)</span></a></li>
+												<li><a href="#">축구 <span>(214)</span></a></li>
+											</ul>
+										</div>
+									</li>
+									<li class="dep">
+										<a href="#">ADIDAS BY STELLA MCCARTNEY</a>
+										<div class="depth_menu depth3">
+											<ul>
+												<li class="all"><a href="#">전체보기</a></li>
+												<li><a href="#">축구 <span>(214)</span></a></li>
+												<li><a href="#">농구 <span>(214)</span></a></li>
+												<li><a href="#">러닝 <span>(214)</span></a></li>
+												<li><a href="#">테니스 <span>(214)</span></a></li>
+												<li><a href="#">스윔 <span>(214)</span></a></li>
+											</ul>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<a href="#">BRANDS</a>
+						</li>
+					</ul>
+					<div class="ctgr">
+						<div>
+							<a href="#">BEST <span class="icons" data-icon=""></span></a>
+							<a href="#">NEW <span class="icons" data-icon=""></span></a>
+						</div>
+						<div>
+							<a href="#">SALE <span class="icons" data-icon=""></span></span></a>
+							<a href="#">OUTLET <span class="icons" data-icon=""></span></a>
+						</div>
+					</div>
+					<div class="club_ctgr">
+						<a href="#">기획전</a>
+						<a href="#">아디클럽</a>
+						<a href="#">캠페인</a>
+					</div>
+					<div class="viewed_items">
+						<h3>최근 본 상품</h3>
+						<div class="item_list">
+							<div class="slider">
+								<div class="item">
+									<a href="#">
+										<p class="img"><img src="http://m.adidas.co.kr/upload/prod/basic/320/B35270-1_320X320.jpg" alt=""></p>
+										<p class="price">119,000<span>원</span></p>
+									</a>
+								</div>
+
+								<div class="item">
+									<a href="#">
+										<p class="img"><img src="http://m.adidas.co.kr/upload/prod/basic/320/S83386-1_320X320.jpg" alt=""></p>
+										<p class="price">119,000<span>원</span></p>
+									</a>
+								</div>
+
+								<div class="item">
+									<a href="#">
+										<p class="img"><img src="http://m.adidas.co.kr/upload/prod/basic/320/AF6749-1_320X320.jpg" alt=""></p>
+										<p class="price">95,200<span>원</span></p>
+									</a>
+								</div>
+
+								<div class="item">
+									<a href="#">
+										<p class="img"><img src="http://m.adidas.co.kr/upload/prod/basic/320/S75126-1_320X320.jpg" alt=""></p>
+										<p class="price">119,000<span>원</span></p>
+									</a>
+								</div>
+
+								<div class="item">
+									<a href="#">
+										<p class="img"><img src="http://m.adidas.co.kr/upload/prod/basic/320/S75556-1_320X320.jpg" alt=""></p>
+										<p class="price">119,000<span>원</span></p>
+									</a>
+								</div>
+
+								<div class="item">
+									<a href="#">
+										<p class="img"><img src="http://m.adidas.co.kr/upload/prod/basic/320/AF6441-1_320X320.jpg" alt=""></p>
+										<p class="price">119,000<span>원</span></p>
+									</a>
+								</div>
+
+								<div class="item">
+									<a href="#">
+										<p class="img"><img src="http://m.adidas.co.kr/upload/prod/basic/320/S74805-1_320X320.jpg" alt=""></p>
+										<p class="price">119,000<span>원</span></p>
+									</a>
+								</div>
+							</div>
+						</div>
+						<!-- //item_list -->
+
+					</div>
+					<!-- //viewed items -->
+
+					<div class="nav_footer">
+						<ul>
+							<li><a href="#">공지사항</a></li>
+							<li><a href="#">고객센터</a></li>
+							<li><a href="#">매장찾기</a></li>
+						</ul>
+						<div>
+							<p>교환 및 반품 문의 (본사로 반품불가) : 온라인스토어 고객센터 <a href="tel:1588-8241">1588-8241</a></p>
+							<p>(평일 9시 – 18시, 점심시간 12시 – 13시)</p>
+						</div>
+					</div>
+				</div>
+				<!-- //nav_menu_inner -->
+			</div>
+			<!-- //nav_menu -->
+
+			<div class="nav_search">
+				<div class="sch_box">
+					<form action="#" method="get">
+						<fieldset>
+							<input type="text" autocomplete="off">
+							<button type="submit" value="검색">
+								<span class="icons"></span>
+							</button>
+						</fieldset>
+					</form>
+				</div>
+				<div class="sch_tab">
+					<a href="#" class="on">최근 검색어</a>
+					<a href="#">인기 검색어</a>
+				</div>
+				<ul class="keyword_recent">
+					<li><a href="#">슈퍼스타<span class="close_x_btn"></span></a></li>
+					<li><a href="#">스탠스미스<span class="close_x_btn"></span></a></li>
+					<li><a href="#">트랙탑<span class="close_x_btn"></span></a></li>
+					<li><a href="#">MI SUPERSTAR<span class="close_x_btn"></span></a></li>
+					<li><a href="#">패딩<span class="close_x_btn"></span></a></li>
+					<li><a href="#">키엘<span class="close_x_btn"></span></a></li>
+					<!-- <li class="no_data">최근 검색하신 내역이 없습니다.</li> -->
+				</ul>
+				<ol class="sch_list" style="display:none;">
+					<li><span>1</span><a href="#">슈퍼스타</a></li>
+					<li><span>2</span><a href="#">수퍼스타</a></li>
+					<li><span>3</span><a href="#">트랙탑</a></li>
+					<li><span>4</span><a href="#">스탠스미스</a></li>
+					<li><span>5</span><a href="#">MI SUPERSTAR</a></li>
+					<li><span>6</span><a href="#">패딩</a></li>
+					<li><span>7</span><a href="#">키엘</a></li>
+					<li><span>8</span><a href="#">이큅먼트</a></li>
+					<li><span>9</span><a href="#">니고</a></li>
+					<li><span>10</span><a href="#">부스트</a></li>
+				</ol>
+				<!-- <div class="bnn"><img src="images/bnn_sch1.jpg" alt=""></div>
+				<div class="bnn"><img src="images/bnn_sch2.jpg" alt=""></div> -->
+			</div>
+
+			<div class="nav_main">
+				<a href="javascript:void(0);" class="btn_slide">
+					<span class="line1"></span>
+					<span class="line2"></span>
+					<span class="line3"></span>
+				</a>
+				<h1><a href="javascript:void(0);" class="logo icons"></a></h1>
+				<a href="#" class="btn_search icons">
+					<span class="icons"></span>
+				</a>
+				<a href="#" class="btn_market icons"></a>
+			</div>
+		</div>
+
+		<div id="container">
+<style type="text/css">@media screen and (max-width: 320px){html{font-size:10px}}@media screen and (min-width: 800px){html{font-size:12px}}.pseudo-element{content:'';display:block}#ultra_boost_keycity .button{display:inline-block}#ultra_boost_keycity .button a{display:block;background:#000;color:#fff;width:140px;font:300 14px/40px 'NotoSansKR';text-align:center;text-transform:uppercase}#ultra_boost_keycity .main{position:relative;text-align:center}#ultra_boost_keycity .main.on .txt p{top:0;opacity:1;-webkit-opacity:1;-moz-opacity:1}#ultra_boost_keycity .main.on .txt .button{top:0;opacity:1;-webkit-opacity:1;-moz-opacity:1}#ultra_boost_keycity .main .bg{background:#e5dcdd}#ultra_boost_keycity .main .bg img{width:105%}#ultra_boost_keycity .main .bg video{width:105%}#ultra_boost_keycity .main .txt{position:absolute;bottom:3%;width:100%;z-index:1}#ultra_boost_keycity .main .txt p{position:relative;top:20px;padding:0 0 10px 0;font:30px/30px 'adinenuPro-black';text-align:center;color:#fff;letter-spacing:0.2px;opacity:0;-webkit-opacity:0;-moz-opacity:0;transition:all 0.5s;-webkit-transition:all 0.5s;-moz-transition:all 0.5s}#ultra_boost_keycity .main .txt p.kor{font:12px/12px 'NotoSansKR';transition-delay:0.5s}#ultra_boost_keycity .main .txt p strong{font-weight:700}#ultra_boost_keycity .main .txt .button{position:relative;top:20px;margin:10px 0 30px 0;opacity:0;-webkit-opacity:0;-moz-opacity:0;transition:all 0.5s;-webkit-transition:all 0.5s;-moz-transition:all 0.5s;transition-delay:0.9s}#ultra_boost_keycity .main .txt .button a span{display:inline-block;width:26px;height:9px;background:url(/images//adidas/event/ultra_boost/180917_keycity/icon_arrow.png) no-repeat;background-size:cover;margin-left:10px}#ultra_boost_keycity .description{position:relative}#ultra_boost_keycity .description.on p{opacity:1;-webkit-opacity:1;-moz-opacity:1}#ultra_boost_keycity .description.on div{opacity:1;-webkit-opacity:1;-moz-opacity:1}#ultra_boost_keycity .description p{position:absolute;top:6%;width:100%;text-align:center;font:12px/16px 'NotoSansKR';opacity:0;-webkit-opacity:0;-moz-opacity:0;transition:all 0.5s;-webkit-transition:all 0.5s;-moz-transition:all 0.5s}#ultra_boost_keycity .description div{margin:30px 10px;opacity:0;-webkit-opacity:0;-moz-opacity:0;transition:all 0.5s;-webkit-transition:all 0.5s;-moz-transition:all 0.5s;transition-delay:0.5s}#ultra_boost_keycity .description div img{width:100%}#ultra_boost_keycity .shoes1{position:relative;padding-bottom:21%}#ultra_boost_keycity .shoes1.on .bg.pink{width:28%;opacity:1;-webkit-opacity:1;-moz-opacity:1}#ultra_boost_keycity .shoes1.on .txt_pink{opacity:1;-webkit-opacity:1;-moz-opacity:1}#ultra_boost_keycity .shoes1.on .shoe_wrap{width:60%;opacity:1;-webkit-opacity:1;-moz-opacity:1}#ultra_boost_keycity .shoes1 .shoe_wrap{position:relative;z-index:1;top:50px;width:0%;padding-bottom:47.5%;overflow:hidden;background:url(/images//adidas/event/ultra_boost/180917_keycity/prd_cut1.jpg) no-repeat;background-size:cover;opacity:0;-webkit-opacity:0;-moz-opacity:0;transition:all 0.5s;-webkit-transition:all 0.5s;-moz-transition:all 0.5s;transition-delay:0.5s}#ultra_boost_keycity .shoes1 .shoe_wrap .shoe img{width:100%}#ultra_boost_keycity .shoes1 .bg{position:absolute;top:0;left:0}#ultra_boost_keycity .shoes1 .bg.blue{width:45%;padding-bottom:70%;background:url("/images//adidas/event/ultra_boost/180917_keycity/prd_cut1_bg1.jpg") no-repeat;background-size:100% 100%}#ultra_boost_keycity .shoes1 .bg.pink{left:45%;width:0%;height:120px;background:url("/images//adidas/event/ultra_boost/180917_keycity/prd_cut1_bg2.jpg") no-repeat;background-size:100% 100%;opacity:0;-webkit-opacity:0;-moz-opacity:0;transition:all 0.5s;-webkit-transition:all 0.5s;-moz-transition:all 0.5s}#ultra_boost_keycity .shoes1 .txt_pink{position:absolute;top:19%;left:62%;text-transform:uppercase;color:#fff;transform:rotate(90deg);-webkit-transform:rotate(90deg);letter-spacing:0.1px;font:300 10px 'AdihausDIN-Bold';z-index:2;opacity:0;-webkit-opacity:0;-moz-opacity:0;transition:all 0.5s;-webkit-transition:all 0.5s;-moz-transition:all 0.5s;transition-delay:0.7s}#ultra_boost_keycity .shoes2{position:relative}#ultra_boost_keycity .shoes2.on .bg.blue{width:120px;opacity:1;-webkit-opacity:1;-moz-opacity:1}#ultra_boost_keycity .shoes2.on .shoe_wrap{width:46%;opacity:1;-webkit-opacity:1;-moz-opacity:1}#ultra_boost_keycity .shoes2 .shoe_wrap{position:relative;z-index:1;top:50px;left:30px;width:0%;padding-bottom:32.5%;overflow:hidden;background:url(/images//adidas/event/ultra_boost/180917_keycity/prd_cut2.jpg) no-repeat;background-size:cover;opacity:0;-webkit-opacity:0;-moz-opacity:0;transition:all 0.5s;-webkit-transition:all 0.5s;-moz-transition:all 0.5s;transition-delay:1s}#ultra_boost_keycity .shoes2 .shoe_wrap .shoe img{width:100%}#ultra_boost_keycity .shoes2 .bg.blue{background:#9494eb;position:relative;width:0px;top:-23px;left:10px;height:100px;opacity:0;-webkit-opacity:0;-moz-opacity:0;transition:all 0.5s;-webkit-transition:all 0.5s;-moz-transition:all 0.5s;transition-delay:0.5s}#ultra_boost_keycity .shoes2 .txt{position:absolute;top:0;right:15px}#ultra_boost_keycity .shoes2 .txt p{position:relative;font:10px/20px 'NotoSansKR'}#ultra_boost_keycity .shoes2 .sub_txt{position:absolute;bottom:-52%;left:-26%;font:10px/10px 'AdihausDIN-Bold';transform:rotate(-90deg);color:#b8b8b8;letter-spacing:0.1px}#ultra_boost_keycity .section_1988{position:relative;margin:50px 0 0 0;padding-bottom:14%}#ultra_boost_keycity .section_1988.on .bg .block{left:-100%}#ultra_boost_keycity .section_1988.on .shoe_wrap{opacity:1;-webkit-opacity:1;-moz-opacity:1}#ultra_boost_keycity .section_1988 .bg{position:relative;margin:0 15px}#ultra_boost_keycity .section_1988 .bg .block{position:absolute;top:0;left:0%;background:#fff;width:100%;height:100%;transition:all 0.8s;-webkit-transition:all 0.8s;-moz-transition:all 0.8s;transition-delay:0.4s}#ultra_boost_keycity .section_1988 .bg img{width:100%}#ultra_boost_keycity .section_1988 .bg .txt{position:absolute;top:0;z-index:1}#ultra_boost_keycity .section_1988 .bg .txt.left{padding-left:25%;padding-top:5%;left:0;width:50%;font:10px/20px 'NotoSansKR'}#ultra_boost_keycity .section_1988 .bg .txt.right{right:-10%;padding-top:5%;width:50%;font:10px/20px 'NotoSansKR'}#ultra_boost_keycity .section_1988 .shoe_bg{position:absolute;width:27%;bottom:7%;left:36%}#ultra_boost_keycity .section_1988 .shoe_bg img{width:100%}#ultra_boost_keycity .section_1988 .shoe_wrap{position:relative;margin:38px 0 0 0;left:10px;z-index:1;width:54%;padding-bottom:36.5%;overflow:hidden;background:url(/images//adidas/event/ultra_boost/180917_keycity/prd_cut3.jpg) no-repeat;background-size:cover;opacity:0;-webkit-opacity:0;-moz-opacity:0;transition:all 0.8s;-webkit-transition:all 0.8s;-moz-transition:all 0.8s;transition-delay:1.5s}#ultra_boost_keycity .section_1988 .shoe_wrap .shoe img{width:100%}#ultra_boost_keycity .section_1988 p{position:absolute;right:17%;top:65%;font:10px/20px 'NotoSansKR'}#ultra_boost_keycity .seoul_wrap{position:relative;margin:40px 0 0 0}#ultra_boost_keycity .seoul_wrap.on .img{top:0;opacity:1;-webkit-opacity:1;-moz-opacity:1}#ultra_boost_keycity .seoul_wrap.on .img2 div{top:22px;opacity:1;-webkit-opacity:1;-moz-opacity:1}#ultra_boost_keycity .seoul_wrap .img{position:relative;top:-30px;margin:0 10px;opacity:0;-webkit-opacity:0;-moz-opacity:0;transition:all 0.5s;-webkit-transition:all 0.5s;-moz-transition:all 0.5s;transition-delay:0.4s}#ultra_boost_keycity .seoul_wrap .img img{width:100%}#ultra_boost_keycity .seoul_wrap .img2{margin:0 30px}#ultra_boost_keycity .seoul_wrap .img2 div{margin:0 43px;top:50px;position:relative;opacity:0;-webkit-opacity:0;-moz-opacity:0;transition:all 2s;-webkit-transition:all 2s;-moz-transition:all 2s;transition-delay:0.8s}#ultra_boost_keycity .seoul_wrap .img2 img{width:100%}#ultra_boost_keycity .collection_wrap{position:relative;margin:40px 0 0 0}#ultra_boost_keycity .collection_wrap.on .bgs div{opacity:1;-webkit-opacity:1;-moz-opacity:1}#ultra_boost_keycity .collection_wrap.on .img{top:50%;opacity:1;-webkit-opacity:1;-moz-opacity:1}#ultra_boost_keycity .collection_wrap.on .img:after{height:100%}#ultra_boost_keycity .collection_wrap.on .img:before{height:100%}#ultra_boost_keycity .collection_wrap.on .img span.line_top{width:100%}#ultra_boost_keycity .collection_wrap.on .img span.line_bottom{width:100%}#ultra_boost_keycity .collection_wrap .bgs{position:relative}#ultra_boost_keycity .collection_wrap .bgs:after{content:'';display:block;clear:both}#ultra_boost_keycity .collection_wrap .bgs div{width:50%;float:left;padding-bottom:40%;opacity:0;-webkit-opacity:0;-moz-opacity:0;transition:all 0.6s;-webkit-transition:all 0.6s;-moz-transition:all 0.6s}#ultra_boost_keycity .collection_wrap .bgs div.bg1{background:url("/images//adidas/event/ultra_boost/180917_keycity/col1.jpg") no-repeat;background-size:100% 100%}#ultra_boost_keycity .collection_wrap .bgs div.bg2{background:url("/images//adidas/event/ultra_boost/180917_keycity/col2.jpg") no-repeat;background-size:100% 100%;transition-delay:0.2s}#ultra_boost_keycity .collection_wrap .bgs div.bg3{background:url("/images//adidas/event/ultra_boost/180917_keycity/col3.jpg") no-repeat;background-size:100% 100%;transition-delay:0.4s}#ultra_boost_keycity .collection_wrap .bgs div.bg4{background:url("/images//adidas/event/ultra_boost/180917_keycity/col4.jpg") no-repeat;background-size:100% 100%;transition-delay:0.6s}#ultra_boost_keycity .collection_wrap .img{position:absolute;top:80%;left:50%;transform:translate(-50%, -50%);width:85%;opacity:0;-webkit-opacity:0;-moz-opacity:0;transition:all 1.5s;-webkit-transition:all 1.5s;-moz-transition:all 1.5s;transition-delay:1s}#ultra_boost_keycity .collection_wrap .img:after{content:'';display:inline-block;width:8px;height:0%;position:absolute;left:0;top:0;z-index:1;background:#fff;transition:all 0.5s;-webkit-transition:all 0.5s;-moz-transition:all 0.5s;transition-delay:2s}#ultra_boost_keycity .collection_wrap .img:before{content:'';display:inline-block;width:8px;height:0%;position:absolute;right:0;bottom:0;z-index:1;background:#fff;transition:all 0.5s;-webkit-transition:all 0.5s;-moz-transition:all 0.5s;transition-delay:2s}#ultra_boost_keycity .collection_wrap .img span{display:inline-block;width:0%;position:absolute;z-index:1;transition:all 0.5s;-webkit-transition:all 0.5s;-moz-transition:all 0.5s;transition-delay:2.5s}#ultra_boost_keycity .collection_wrap .img span.line_top{top:0;left:0;height:8px;background:#fff}#ultra_boost_keycity .collection_wrap .img span.line_bottom{bottom:0;right:0;height:8px;background:#fff}#ultra_boost_keycity .collection_wrap .img img{width:100%}#ultra_boost_keycity .bottom{position:relative;margin:30px 0 50px 0;text-align:center}#ultra_boost_keycity .bottom p{text-align:center}#ultra_boost_keycity .bottom p.title{padding:0 0 15px 0;font:20px/20px 'AdihausDIN-Bold'}#ultra_boost_keycity .bottom p.kor{padding:15px 0 0 0;font:300 14px/14px 'NotoSansKR'}#ultra_boost_keycity .bottom p.kor span{font-weight:100}#ultra_boost_keycity .bottom .storelist{display:inline-block;margin:0 0 20px 0;font:300 14px/20px 'NotoSansKR';border-bottom:1px solid #000;color:#000}#ultra_boost_keycity .bottom .button{display:block}#ultra_boost_keycity .bottom .button a{display:inline-block;background:#000;color:#fff;width:140px;font:300 14px/40px 'NotoSansKR';text-align:center;text-transform:uppercase}#ultra_boost_keycity .bottom .button a span{display:inline-block;width:26px;height:9px;background:url(/images//adidas/event/ultra_boost/180917_keycity/icon_arrow.png) no-repeat;background-size:cover;margin-left:10px}.modal-popup-wrapper .popup .popup-contents{height:300px;overflow:scroll}.modal-popup-wrapper .popup .popup-contents .table_wrap>div{padding:10px 0;border-bottom:1px solid #ddd}.modal-popup-wrapper .popup .popup-contents .table_wrap>div div{font:400 1.1rem 'NotoSansKR';color:#000;letter-spacing:0.2px}.modal-popup-wrapper .popup .popup-contents .table_wrap>div div.title{font:600 1.1rem 'NotoSansKR'}
+</style>
+
+			<div id="ultra_boost_keycity">
+                <div class="main">
+                    <div class="bg"><img src="/images//adidas/event/ultra_boost/180917_keycity/main_visual.jpg" alt=""></div>
+                    <div class="txt">
+                        <p>ULTRABOOST 1988<br>SEOUL EDITION</p>
+                        <p class="kor">울트라부스트 서울 에디션, 2018.09.28 오전 11:00 발매</p>
+                        <div class="button">
+                            <a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=EE7150">구매하기<span></span></a>
+                        </div>
+                        <!-- <div class="button">
+                            <a href="javascript:void(0)">SOLD OUT</a>
+                        </div> -->
+                    </div>
+                </div>
+
+                <div class="description scrollEvent">
+                    <p>
+                        1988년 서울에서 개최된 세계인의 스포츠 축제.<br>환희와 영광을 기념하는 울트라부스트 서울 에디션.
+                    </p>
+                    <div><img src="/images//adidas/event/ultra_boost/180917_keycity/description_img.png" alt=""></div>
+                </div>
+
+                <div class="shoes1 scrollEvent">
+                    <div class="shoe_wrap">
+                        <div class="shoe"></div>
+                    </div>
+                    <div class="bg blue"></div>
+                    <div class="bg pink"></div>
+                    <div class="txt_pink">Red & blue</div>
+                </div>
+
+                <div class="shoes2 scrollEvent">
+                    <div class="shoe_wrap">
+                        <div class="shoe"></div>
+                    </div>
+                    <div class="bg blue"></div>
+                    <div class="txt">
+                        <p>
+                            전체적으로 화이트 컬러를 통해<br>
+                            순수하고 깨끗한 모습을 나타내며<br>
+                            힐 컵 부분을<br>
+                            빨강과 파랑으로 매치하며<br>
+                            한국적인 디자인으로 완성
+                            <span class="sub_txt">
+                                SEOUL EDITION
+                            </span>
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="section_1988 scrollEvent">
+                    <div class="bg">
+                        <img src="/images//adidas/event/ultra_boost/180917_keycity/1988.jpg" alt="">
+                        <div class="txt left">
+                            심장을 뛰게 만드는<br>
+                            한국적인 심벌,
+                        </div>
+                        <div class="txt right">
+                            1988의 환희와 영광을<br>
+                            재현하는<br>
+                            강력한 에너지의<br>
+                            울트라부스트<br>
+                            서울 에디션.
+                        </div>
+                        <div class="block"></div>
+                    </div>
+                    <div class="shoe_wrap">
+                        <div class="shoe"></div>
+                    </div>
+                    <div class="shoe_bg"><img src="/images//adidas/event/ultra_boost/180917_keycity/prd_cut3_bg.jpg" alt=""></div>
+                    <p>1988족 한정 발매</p>
+                </div>
+
+                <div class="seoul_wrap scrollEvent">
+                    <div class="img">
+                        <img src="/images//adidas/event/ultra_boost/180917_keycity/prd_cut4.jpg" alt="">
+                    </div>
+                    <div class="img2">
+                        <div>
+                            <img src="/images//adidas/event/ultra_boost/180917_keycity/seoul.png" alt="">
+                        </div>
+                        <img src="/images//adidas/event/ultra_boost/180917_keycity/prd_cut5.jpg" alt="">
+                    </div>
+                </div>
+
+                <div class="collection_wrap scrollEvent">
+                    <div class="bgs">
+                        <div class="bg1"></div>
+                        <div class="bg2"></div>
+                        <div class="bg3"></div>
+                        <div class="bg4"></div>
+                    </div>
+                    <div class="img">
+                        <span class="line_bottom"></span>
+                        <span class="line_top"></span>
+                        <img src="/images//adidas/event/ultra_boost/180917_keycity/coll_img.jpg" alt="">
+                    </div>
+                </div>
+
+                <div class="bottom scrollEvent">
+                    <p class="title">ULTRABOOST 1988 SEOUL EDITION</p>
+                    <!-- <div class="modal-popup-click storelist" data-modalpop-click="fade-popup">
+                        <p>판매처 확인하러 가기</p></div> -->
+
+                    <div class="modal-popup-click storelist" data-modalpop-click="popup_name1">판매처 확인하러 가기</div>
+
+
+                    <div class="button">
+                        <a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=EE7150">구매하기<span></span></a>
+                    </div>
+                    <!-- <div class="button">
+                        <a href="javascript:void(0)">SOLD OUT</a>
+                    </div> -->
+                    <p class="kor">2018.09.28 <span>오전</span> 11:00 <span>발매</span></p>
+                </div>
+
+                <div class="modal-popup-wrapper"
+                    data-modalpop=""
+                    data-modalpop-name="popup_name1"
+                >
+                    <div class="overlay"></div>
+                    <div class="popup">
+                        <div class="popup-header">
+                            <h2>ULTRABOOST 1988 판매처</h2>
+                            <a href="javascript:void(0)" class="close_x_btn"></a>
+                        </div>
+
+                        <div class="popup-contents">
+    						<div class="table_wrap">
+
+    							<!-- <tr class="title">
+    								<div>매장명</div>
+    								<div>QTY</div>
+    								<div>주소</div>
+    								<div>전화번호 </div>
+    							</div> -->
+    							<div>
+    								<div class="title">아디다스 온라인 스토어 </div>
+    								<div></div>
+    								<div></div>
+    								<div></div>
+    							</div>
+    							<div>
+    								<div class="title">아디다스 강남브랜드센터</div>
+    								<div>서울시 강남구 강남대로 470 1층~4층</div>
+    								<div>02-2052-1366</div>
+    							</div>
+    							<div>
+    								<div class="title">아디다스 퍼포먼스 명동</div>
+    								<div>서울시 중구 명동8길 40 </div>
+    								<div>02-2052-1366</div>
+    							</div>
+    							<div>
+    								<div class="title">아디다스 퍼포먼스 코엑스</div>
+    								<div>서울시 강남구 영동대로 513 코엑스몰 G113</div>
+    								<div>02-6002-6007</div>
+    							</div>
+    							<div>
+    								<div class="title">아디다스 퍼포먼스 롯데월드몰</div>
+    								<div>서울시 송파구 올림픽로 300 롯데월드몰 3층</div>
+    								<div>02-3213-4326</div>
+    							</div>
+    							<div>
+    								<div class="title">아디다스 퍼포먼스 타임스퀘어 </div>
+    								<div>서울시 영등포구 영중로 15 타임스퀘어 3층</div>
+    								<div>02-2638-2651</div>
+    							</div>
+    							<div>
+    								<div class="title">키카 </div>
+    								<div>서울시 중구 을지로 7가 58-1번지 핀타워 2층 아디다스 런닝</div>
+    								<div>02-2268-1369</div>
+    							</div>
+    							<div>
+    								<div class="title">아디다스 퍼포먼스 현대 중동</div>
+    								<div>경기도 부천시 원미구 길주로 180 유플렉스관 4층</div>
+    								<div>032-623-2665</div>
+    							</div>
+    							<div>
+    								<div class="title">아디다스 퍼포먼스 현대 판교</div>
+    								<div>경기도 성남시 분당구 판교역로 146번길 20 판교점 5층</div>
+    								<div>031-5170-1534</div>
+    							</div>
+    							<div>
+    								<div class="title">아디다스 퍼포먼스 현대 목동</div>
+    								<div>서울시 양천구 목동동로 257 유플렉스관 지하3층</div>
+    								<div>02-2163-3558</div>
+    							</div>
+    							<div>
+    								<div class="title">아디다스 퍼포먼스 현대 신촌</div>
+    								<div>서울시 서대문구 신촌로 83 현대백화점 신촌점 유플렉스 8층</div>
+    								<div>02-3145-2636</div>
+    							</div>
+    							<div>
+    								<div class="title">아디다스 퍼포먼스 스타필드 하남</div>
+    								<div>경기도 하남시 미사대로 750 스타필드하남 3층 아디다스</div>
+    								<div>031-8072-8404　</div>
+    							</div>
+    							<div>
+    								<div class="title">아디다스 퍼포먼스 스타필드 고양</div>
+    								<div>경기도 고양시 덕양구 고양대로 1955 스타필드고양3층 아디다스</div>
+    								<div>031-5173-3023</div>
+    							</div>
+    							<div>
+    								<div class="title">아디다스 퍼포먼스 문정 홈코트 </div>
+    								<div>서울시 송파구 동남로 121</div>
+    								<div>02-404-2258 </div>
+    							</div>
+    							<div>
+    								<div class="title">아디다스 퍼포먼스 현대 아이파크</div>
+    								<div>서울시 용산구 한강대로23길 55 6층</div>
+    								<div>02-2012-4627</div>
+    							</div>
+    							<div>
+    								<div class="title">아디다스 퍼포먼스 이태원</div>
+    								<div>서울시 용산구 이태원로 157</div>
+    								<div>02-798-9977</div>
+    							</div>
+    							<div>
+    								<div class="title"> DAS107</div>
+    								<div>서울시 마포구 와우산로 74</div>
+    								<div>02-322-7726</div>
+    							</div>
+    							<div>
+    								<div class="title">KASINA 1997</div>
+    								<div>서울시 강남구 언주로164길 13</div>
+    								<div>02-3444-6458</div>
+    							</div>
+    							<div>
+    								<div class="title">ON THE SPOT 명동점</div>
+    								<div>서울시 중구 명동8길 37-4</div>
+    								<div>02-755-8100</div>
+    							</div>
+    							<div>
+    								<div class="title">ATMOS 명동점</div>
+    								<div>서울시 중구 명동8길 37-12</div>
+    								<div>02-318-1029</div>
+    							</div>
+    							<div>
+    								<div class="title">JD 명동1가점</div>
+    								<div>서울시 중구 남대문로 78 1층</div>
+    								<div>02-6361-8400</div>
+    							</div>
+    							<div>
+    								<div class="title">JD 홍대점</div>
+    								<div>서울시 마포구 잔다리로2길 23</div>
+    								<div>02-335-2809</div>
+    							</div>
+    							<div>
+    								<div class="title">ABC GS 강남점</div>
+    								<div>서울시 강남구 강남대로 430 에이비씨마트빌딩 </div>
+    								<div>02-553-7294 </div>
+    							</div>
+    							<div>
+    								<div class="title">ABC GS명동점</div>
+    								<div>서울시 중구 충무로1가 24-11 ABC-MART GS명동점 </div>
+    								<div>02-2088-0981 </div>
+    							</div>
+    							<div>
+    								<div class="title">ABC GS 잠실롯데월드몰점</div>
+    								<div>서울시 송파구 신천동 29 롯데월드몰 4층 ABC-MART ST 잠실롯데월드몰점 </div>
+    								<div>02-3213-4431 </div>
+    							</div>
+    							<div>
+    								<div class="title">Lesmore 명동 본점</div>
+    								<div>서울시 중구 명동길 17(명동1가)</div>
+    								<div>02-755-7681</div>
+    							</div>
+    							<div>
+    								<div class="title">Lesmore 명동 중앙점</div>
+    								<div>서울시 중구 명동8길 14(명동2가)</div>
+    								<div>02-779-7277</div>
+    							</div>
+
+    						</div>
+    					</div>
+                    </div>
+                </div>
+
+			<!-- //ultra_boost_keycity -->
+
+            <script type="text/javascript">
+
+            	(function($){
+
+                    setTimeout(function(){
+                        $('.main').addClass('on');
+                    },1500);
+
+                    $(window).ready(function(){
+                        var scrollArray = [];
+                        var scrollContent = document.querySelectorAll('.scrollEvent');
+
+
+                        for(var i = 0; i<scrollContent.length; i++){
+                             var mypos = scrollContent[i].offsetTop;
+                             scrollArray.push(mypos)
+                             console.log(mypos)
+
+                        }
+
+                        $(window).scroll(function(){
+                            var thispos = $(this).scrollTop() + 500;
+                            for(var pos = 0; pos<scrollArray.length; pos++){
+                                if(thispos>scrollArray[pos]){
+                                    $('#ultra_boost_keycity .scrollEvent').eq(pos).addClass('on');
+                                }
+                            }
+                        })
+                    })
+
+
+
+
+            	})(jQuery);
+
+            </script>
+
+
+		</div>
+
+
+		<div id="footer">
+			<div class="f_menu">
+				<a href="#">로그인</a>
+				<a href="#">주문/배송조회</a>
+				<a href="#">고객센터</a>
+				<a href="#">매장찾기</a>
+			</div>
+			<div class="f_info">
+				<p class="tit">아디다스코리아(주)</p>
+				<p>137-955 서울특별시 서초구 서초대로 74길 4, 삼성생명 서초타워 9층</p>
+				<p>대표이사 : 쟝 미쉘 그라니에&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;사업자 등록번호 : 214-81-07412</p>
+				<p>교환 및 반품 문의 (본사로 반품불가) : 온라인스토어 고객센터 1588-8241</p>
+				<p>(평일 9시 – 18시, 점심시간 12시 – 13시)</p>
+				<p>제품 수선문의 : 아디다스 고객만족센터 080-022-7981 (평일 09시 – 18시)</p>
+				<p>통신판매업신고 : 2007-서울서초-10391</p>
+				<p>이메일 : adiCLUB_Korea@adidas.com</p>
+				<p>개인정보 관리책임자 : 김동일&nbsp;&nbsp;|&nbsp;&nbsp;개인정보 관리담당자 : 황선영</p>
+				<p><a href="#">개인정보취급방침 확인<span class="ico-arrow-circle"></span></a></p>
+				<ul>
+					<li><a href="#">구매이용약관</a></li>
+					<li><a href="#">채무지급보증안내 확인</a></li>
+					<li><a href="#">공정거래 자율준수</a></li>
+					<li><a href="#">공정거래 위원회 사업자 신원정보 확인</a></li>
+				</ul>
+				<p style="color:#666;">Copyright © 2011 adidas Korea Inc.</p>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="/js/adidas/common.js"></script>
+	<script type="text/javascript">
+
+		var openPopInStock;
+		(function($){
+
+			openPopInStock = function(){
+				$('#instock-notification-popup').addClass('open');
+			};
+
+			$('.view_type_btn a').bind('click',function(){
+				if($(this).hasClass('on')){
+					return;
+				}
+
+				if($(this).hasClass('box_type')){
+					$('.products_list').removeClass('list_type')
+				}else{
+					$('.products_list').addClass('list_type');
+				}
+
+				$('.view_type_btn a').removeClass('on');
+				$(this).addClass('on');
+			});
+
+		})(jQuery);
+
+	</script>
+
+</body>
+
+</html>

@@ -1,0 +1,240 @@
+@import "./app/MO/reebok/css/scss/about.scss";
+
+.aztrek{
+    .buy{
+        display: inline-block;
+        margin: 0 2px;
+        border: 1px solid #fff;        
+        color: #fff;
+        font: 400 13px/42px 'NotoSansKR';
+        width: 180px;
+        text-align: center;
+    }
+    .video_visual{
+        padding-bottom: 116%;
+        .bg{
+            z-index: 1;
+            video{
+                width:100%;
+                height: 100%;
+                -o-object-fit: cover;
+                -webkit-object-fit: cover;
+                object-fit: cover;
+            }
+        }
+        .cover{
+            transform: translate3d(0, -54%, 0);
+            -webkit-transform: translate3d(0, -54%, 0);
+            text-align: center;
+            h2{
+                font-family: 'dinpro cond';
+                font-size: 4.8rem;
+                line-height: 4.4rem;
+                color:#fff;
+                text-transform: uppercase;
+            }
+        }
+        p{
+            padding: 0 0 2rem;
+            font:300 1.4rem 'dinpro cond';
+            color:#ab2328;
+            letter-spacing: 0.4rem;
+            text-align: center;
+        }
+        .video-btn{
+            width: 60px;
+            height: 60px;
+            top: 2.5rem;
+            margin:0 auto;
+            border: 3px solid #fff;
+        }
+    }    
+    .collections1{
+        padding: 0 0 1rem;
+        background: url('/images/reebok/about/Aztrek/181019/col1_bg.jpg') 0 no-repeat;
+        background-size: 100% 100%;
+        text-align: center;
+
+         h3{
+            padding: 2.8rem 0 2rem;
+            color: #fff;
+            font: 700 3rem/3rem 'dinpro cond';
+            text-align: center;
+            text-transform: uppercase;
+            span{
+                font:100 2.5rem/3rem 'dinpro cond';
+            }
+        } 
+
+        .collection_cut{
+            position: relative;
+            overflow: hidden;
+            &.collection_slider1{
+                margin-bottom: 2rem;
+            }
+            ul{
+                overflow: hidden;
+                li{
+                    position: relative;
+                    float: left;
+                    img{
+                        width: 100%;
+                    }
+                }
+            }
+            .navi{
+                position: absolute;
+                top:50%;
+                margin-top: -34px;
+                width: 100%;
+                text-align: center;
+                img{
+                    width: 50%;
+                }
+                .next{
+                    position: absolute;
+                    right:0;
+                    text-align: right;
+                }
+                .prev{
+                    position: absolute;
+                    left:0;
+                    text-align: left;
+                }
+            }
+        }
+
+        .num_paging{
+            padding: 1rem 0px;
+            a{
+                background: rgba(255, 255, 255, 0.3);
+                border:none;
+                width: 0.8rem;
+                height: 0.8rem;
+                margin-right: 0.1rem;
+            }
+
+            .on{
+                background: #fff;
+            }
+        }
+    }
+    .collections2{
+        position: relative;
+        transition: 0.8s;
+        opacity: 0;
+        background: #000;    
+        &.on{
+            opacity: 1;
+        }
+        ul{
+            overflow: hidden;
+            li{
+                position: relative;
+                float: left;
+                width: 50%;               
+                img{
+                    width: 100%;
+                }
+                .box_effect{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: rgba(0, 0, 0, 0.6); 
+                    text-align: center;  
+                    transition: 1s;
+                    opacity: 0;                    
+                    &.on {
+                        opacity: 1;
+                    }               
+                }
+                a{
+                    display: inline-block;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    width: 58%;
+                    transform: translate(-50%, -50%);
+                    background: none;
+                    border: none;
+                    color: #fff;
+                    font-size: 18px;
+                    cursor: pointer;
+                    text-align: center;
+                    span{
+                        display: block;
+                        padding: 1rem 0;
+                        font: 300 1.2rem 'dinpro cond';
+                        &::before, &::after {
+                            content:"";
+                            width:1px;
+                            height:0;
+                            position: absolute;
+                            transition: all 0.2s linear;
+                            background: #fff;
+                        }
+                    }
+                    &:focus{
+                        outline:0 !important;
+                    }
+                    &::before, &::after{
+                        content:"";
+                        width: 0;
+                        height: 1px;
+                        position: absolute;
+                        transition: all 0.2s linear;
+                        background: #fff;
+                    }
+                    &.on{
+                        &::before, &::after{
+                            width: 100%;
+                        }
+                        span{
+                            &::before, &::after {
+                                height: 100%;
+                            }
+                        }
+                    }
+                }
+                .btn-now {
+                    &::before {
+                        left: 50%;
+                        top: 0;                        
+                        transition-duration: 0.4s;
+                    }
+                    &::after {
+                        left: 50%;
+                        bottom: 0;                        
+                        transition-duration: 0.4s;
+                    }
+                    span {
+                        &::before {
+                            left: 0;
+                            top: 50%;                            
+                            transition-duration: 0.4s;
+                        }
+                        &::after {
+                            right: 0;
+                            top: 50%;                            
+                            transition-duration: 0.4s;
+                        }
+                    }
+                    &.on {
+                        &::before, &::after {
+                            left: 0;
+                        }
+                        span {
+                            &::before, &::after {
+                                top: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// aztrek END

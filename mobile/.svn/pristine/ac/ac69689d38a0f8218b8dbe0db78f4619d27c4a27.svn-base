@@ -1,0 +1,692 @@
+@import './app/css/adidas/scss/common/mixin.scss';
+@import './app/css/adidas/scss/common/common.scss';
+
+#bts{
+	.cover{
+		position: fixed;
+		top:0px;
+		left:0;
+		width: 100%;
+		height: 100%;
+		background: rgba(255,255,255,0.9);
+		padding: 60px 0 0 0;
+		text-align: center;
+		@include css3(opacity,0);
+		@include css3(transition, all 0.5s);
+
+		&.on{
+			@include css3(opacity,1);
+			z-index: 100;
+		}
+		.img{
+		    padding: 20px;
+		}
+		.txt{
+			p{
+			    font: 400 15px/19px 'NotoSansKR';
+				text-align: center;
+			}
+			h3{
+				position: relative;
+				display: inline-block;
+				padding: 10px 0 12px 0;
+				p{
+					position: relative;
+			        font: 500 20px/19px 'NotoSansKR';
+					z-index: 1;
+				}
+				span{
+					position: absolute;
+				    bottom: 35%;
+				    left: 0;
+				    width: 100%;
+				    height: 6px;
+				    background: #fea3bd;
+				}
+			}
+		}
+	}
+
+	.navi{
+		position: fixed;
+		top:0;
+		width: 100%;
+		z-index: 100;
+		text-align: center;
+		background: #ffedf2;
+		@include css3(opacity,0);
+
+		@include css3(transition, all 0.5s);
+		&.on{
+			@include css3(opacity,1);
+		}
+		&.up{
+			top:60px;
+		}
+
+		div{
+			position: relative;
+			margin: 0 10px;
+			display: inline-block;
+			&.on{
+				p{
+					font: 600 15px/60px 'NotoSansKR';
+				}
+				&.navi2{
+					span{
+						background: #78adee;
+					}
+				}
+				&.navi3{
+					span{
+						background: #ffe283;
+					}
+				}
+				span{
+					@include css3(opacity,1);
+				}
+			}
+
+			p{
+				position: relative;
+				z-index: 1;
+				font: 500 15px/60px 'NotoSansKR';
+			}
+			span{
+				position: absolute;
+			    bottom: 38%;
+				left:0;
+				width: 100%;
+				height: 5px;
+				background: #fea3bd;
+				@include css3(opacity,0);
+				@include css3(transition, all 0.5s);
+			}
+
+		}
+	}
+
+	.main{
+		position: relative;
+		padding-bottom: 100%;
+		z-index: 2;
+		background: url('http://imagem.adidas.co.kr/images/adidas/event/bts/181127/video.jpg?v=1') no-repeat;
+		background-size: cover;
+		background-position: center center;
+		&.on{
+			>video{
+				@include css3(opacity,1);
+			}
+		}
+		// &.move{
+		// 	>video{
+		// 		left:-60%;
+		// 	}
+		// }
+		>img{
+			width: 100%;
+		}
+		.inn{
+			position: absolute;
+		    text-align: center;
+		    top: 50%;
+		    left: 50%;
+		    transform: translate(-50%,-50%);
+		    width: 16%;
+		    z-index: 5;
+			img{
+				width: 100%;
+			}
+		}
+		video{
+			position: absolute;
+			top:0;
+			left:0;
+			right:0;
+			bottom:0;
+			width: 100%;
+			height: 100%;
+			object-fit:cover;
+			@include css3(opacity,0);
+			@include css3(transition, opacity 1s);
+		}
+	}
+
+	.statement_wrap{
+		position: relative;
+
+		img{
+			padding: 14% 0 7%;
+			width: 100%;
+		}
+		.inn{
+			position: absolute;
+			top:0%;
+			width: 100%;
+			text-align: center;
+			h2{
+				padding: 9% 0 1% 0;
+			    font: 33px 'adinenuPro-black';
+			}
+			p{
+				font:14px 'NotoSansKR';
+			}
+		}
+		.btn{
+			padding: 0 25px 35px;
+			a{
+				display: block;
+		        font: 400 15px/55px 'NotoSansKR';
+				text-align: center;
+				background: #000;
+				color:#fff;
+			}
+		}
+	}
+
+	.tab_wrap{
+		position: relative;
+		.deco{
+			position: absolute;
+			&.deco1{
+				top: 2%;
+			    left: 0%;
+			}
+			&.deco2{
+				right: 2%;
+    			top: 28%;
+			}
+			&.deco3{
+				top: 84%;
+			    right: 86%;
+			}
+			img{
+				width: 60px;
+			}
+		}
+		.inn{
+    		padding: 25px 20px 10px;
+			background: #ffdfe8;
+			.tab{
+				position: relative;
+				margin: 0 0 15px 0;
+				background: #fff3f6;
+				border: 12px solid #fff;
+				@include css3(opacity,0.6);
+				z-index: 2;
+
+				&:after{
+					content: '';
+					display: block;
+					clear: both;
+				}
+				&.on{
+					@include css3(opacity,1);
+				}
+				&.tab2{
+					background: #f3faff;
+					.txt{
+
+						h3{
+							span{
+								background: #c0d8ff;
+							}
+						}
+					}
+				}
+				&.tab3{
+					background: #f6efd3;
+					.txt{
+
+						h3{
+							span{
+								background: #ffe283;
+							}
+						}
+					}
+				}
+				div{
+					width: 50%;
+					display: inline-block;
+					vertical-align: top;
+					float: left;
+				    // height: 144px;
+					img{
+						width: 100%;
+					}
+
+					&.txt{
+						text-align: center;
+						h3{
+							position: relative;
+							display: inline-block;
+
+    						padding: 10px 0 12px 0;
+							&:after{
+								position: absolute;
+							    bottom: 18%;
+							    left: 50%;
+							    margin-left: -5px;
+							    content: '';
+							    display: inline-block;
+							    width: 10px;
+							    height: 1px;
+							    background: #b9b1b3;
+							}
+							p{
+								position: relative;
+								z-index: 1;
+								font:500 14px 'NotoSansKR';
+							}
+							span{
+								position: absolute;
+							    bottom: 35%;
+								left:0;
+								width: 100%;
+								height: 5px;
+								background: #fea3bd;
+							}
+						}
+						p{
+							font:400 11px/12px 'NotoSansKR';
+							text-align: center;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.slider_wrap{
+		position: relative;
+		&.slider01{
+			.arrow_down{
+				span.bar{
+					background: #ffc9d8;
+				}
+				span.arrow{
+					&:after{
+						background: #ffc9d8;
+					}
+					&:before{
+						background: #ffc9d8;
+					}
+				}
+			}
+			.info{
+				p.h2{
+					color:#fee2ea;
+				}
+			}
+			.small_cuts{
+			    padding: 25px 0 25px;
+				background: #ffedf2;
+			}
+		}
+		&.slider02{
+			.arrow_down{
+				span.bar{
+					background: #d2e8ff;
+				}
+				span.arrow{
+					&:after{
+						background: #d2e8ff;
+					}
+					&:before{
+						background: #d2e8ff;
+					}
+				}
+			}
+			.info{
+				p.h2{
+					color:#207bec;
+				}
+			}
+			.small_cuts{
+			    padding: 25px 0 25px;
+				background: #edf6ff;
+			}
+		}
+		&.slider03{
+			.arrow_down{
+				span.bar{
+					background: #ffd237;
+				}
+				span.arrow{
+					&:after{
+						background: #ffd237;
+					}
+					&:before{
+						background: #ffd237;
+					}
+				}
+			}
+			.info{
+				p.h2{
+					color:#ffd237;
+				}
+			}
+			.small_cuts{
+			    padding: 25px 0 25px;
+				background: #fffae7;
+			}
+		}
+		.arrow_down{
+			position: relative;
+			text-align: center;
+			span.bar{
+				display: inline-block;
+			    width: 3px;
+			    height: 33px;
+			    background: #ddd;
+			}
+			span.arrow{
+				position: absolute;
+			    left: 50%;
+			    bottom: 34%;
+				&:after{
+					position: absolute;
+					    margin-left: 4px;
+					    content: '';
+					    display: inline-block;
+					    width: 3px;
+					    height: 16px;
+					    background: #ddd;
+					    transform: rotate(45deg);
+
+				}
+				&:before{
+					position: absolute;
+				    margin-left: -6px;
+				    content: '';
+				    display: inline-block;
+				    width: 3px;
+				    height: 16px;
+				    background: #ddd;
+				    transform: rotate(-45deg);
+
+				}
+			}
+		}
+		.banner_slider_wrap{
+			position: relative;
+			margin: 0 5rem;
+		    padding: 40px 0 0 0;
+			.bg{
+				position: absolute;
+			    top: 21px;
+			    left: -31px;
+			    width: 70px;
+				img{
+					width: 100%;
+				}
+			}
+			ul{
+				li{
+					div{
+						img{
+							width: 100%;
+						}
+					}
+				}
+			}
+			.owl-controls{
+				.owl-nav{
+					position: absolute;
+					top: 50%;
+					width: 100%;
+					div{
+						position: absolute;
+						right:-40px;;
+						width: 32px;
+						height: 32px;
+						background: url('http://imagem.adidas.co.kr/images/adidas/event/bts/next.png') no-repeat;
+						background-size: 100%;
+						background-position: 0 0;
+						display: inline-block;
+						text-indent: -9999px;
+						&.owl-prev{
+    						left: -40px;
+							transform: rotate(-180deg);
+							-webkit-transform: rotate(-180deg);
+						}
+					}
+				}
+				.owl-dots{
+					text-align: center;
+					.owl-dot{
+						margin: 10px 5px 0;
+						display: inline-block;
+						width: 12px;
+						height: 12px;
+						border:1px solid #000;
+						border-radius: 50px;
+						&.active{
+							background: #000;
+						}
+					}
+
+				}
+			}
+
+		}
+		.info{
+			text-align: center;
+			span{
+				display: block;
+			    padding: 0 0 3px 0;
+			    font: 1.1rem 'adinenuPro-light';
+			    color: #999;
+			}
+			p{
+				text-align: center;
+				font:400 1.1rem 'NotoSansKR';
+				color:#000;
+				&.tit{
+					font: 600 2rem/2.3rem 'NotoSansKR';
+				    padding: 0 0 5px 0;
+				}
+				&.h2{
+					font: 2.3rem/2rem 'adinenuPro-black';
+				    letter-spacing: 5px;
+				    color: #8d9398;
+				    text-transform: uppercase;
+				    padding: 22px 0 3px 0;
+				}
+				&.light{
+					padding: 0 0 3px 0;
+					font-weight: 300;
+				}
+			}
+		}
+		.btn{
+			padding: 20px 0 25px 0;
+		}
+		.cut{
+		    margin: 20px 25px 25px;
+			img{
+				width: 100%;
+			}
+			.prd_info{
+				position: relative;
+				a{
+					position: absolute;top:0;left:0;width: 100%;height: 100%;z-index: 2;
+				}
+				.code{
+					display: inline-block;
+					padding: 10px 8px 0 0;
+					img{width: 22px;}
+					&.type2{
+						padding: 0;
+					    width: 22px;
+					    height: 22px;
+					    border-radius: 50px;
+					    position: relative;
+					    top: 13px;
+					    margin-right: 8px;
+					}
+				}
+				p{
+					display: inline-block;
+					padding: 10px 0 0 0;
+					vertical-align: middle;
+					font:500 15px 'NotoSansKR';
+					em{
+						font:400 12px 'adinenuPro-regular';
+
+					}
+					&.buy{
+						position: absolute;right:0;
+						font:600 15px 'NotoSansKR';
+						span{
+							display: inline-block;
+						    margin: 0 0 0 12px;
+						    width: 35px;
+						    height: 12px;
+						    background: url(http://imagem.reebok.co.kr/images/adidas/event/bts/181127/icon_arrow.png) no-repeat;
+						    background-size: 100%;
+						}
+					}
+				}
+			}
+		}
+		.small_cuts{
+			position: relative;
+			margin: 10px 0 0 0;
+			h4{
+				padding: 0 0 10px 0;
+				text-align: center;
+				font: 400 20px 'adinenuPro-black';
+				text-transform: uppercase;
+				letter-spacing: 4px;
+			}
+			.imgs{
+				ul{
+					.owl-item{
+						@include css3(opacity,0.6);
+						li{
+							div{
+								img{
+									width: 90%;
+								}
+								.txt{
+									@include css3(opacity,0);
+								}
+							}
+						}
+						&.active{
+							@include css3(opacity,1);
+							li{
+								div{
+									img{
+										width: 100%;
+									}
+									.txt{
+										@include css3(opacity,1);
+									}
+								}
+							}
+
+						}
+					}
+					li{
+						>div{
+						    padding: 0 2.5rem;
+							text-align: center;
+							img{
+								width: 100%;
+							}
+							.txt{
+								p{
+									font:300 12px 'NotoSansKR';
+									letter-spacing: -1px;
+									&.bold{
+										padding: 10px 0 2px 0;
+									    font: 500 1.1rem 'NotoSansKR';
+									}
+								}
+							}
+						}
+					}
+					.owl-controls{
+						position: absolute;
+						top:50%;
+					    margin-top: -12%;
+						width: 100%;
+						.owl-nav{
+							div{
+								position: absolute;
+								left:50%;
+								padding: 3%;
+								text-indent: -9999px;
+								display: inline-block;
+								&.owl-prev{
+								    margin-left: -33%;
+									background: url(http://imagem.reebok.co.kr/images/adidas/event/bts/181127/next_arrow.png) no-repeat;
+								    width: 12px;
+								    height: 22px;
+								    background-size: 12px 22px;
+								    background-position: center;
+									transform: rotate(-180deg);
+								}
+								&.owl-next{
+    								margin-left: 24%;
+									background: url(http://imagem.reebok.co.kr/images/adidas/event/bts/181127/next_arrow.png) no-repeat;
+								    width: 12px;
+								    height: 22px;
+								    background-size: 12px 22px;
+								    background-position: center;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.col{
+		&.on{
+			>div{
+				top:0;
+				@include css3(opacity,1);
+			}
+		}
+		>div{
+			position: relative;
+			top:20px;
+			@include css3(opacity,0);
+			@include css3(transition, all 0.5s);
+			img{
+				width: 100%;
+			}
+			.inn{
+				position: absolute;
+				top:50%;
+				left:50%;
+				transform: translate(-50%,-50%);
+				width: 85%;
+				text-align: center;
+				p{
+					color:#fff;
+					font:18px/20px 'NotoSansKR';
+
+					strong{
+						font: 400 18px 'adinenuPro-black';
+					}
+				}
+				.btn{
+					margin: 15px 0 0 0;
+					a{
+						display: block;
+					    font: 500 14px/45px 'NotoSansKR';
+					    text-align: center;
+					    background: #fff;
+					    color: #000;
+					}
+				}
+			}
+		}
+	}
+
+}

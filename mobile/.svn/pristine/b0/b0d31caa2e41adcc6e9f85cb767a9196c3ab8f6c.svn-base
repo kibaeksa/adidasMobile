@@ -1,0 +1,1190 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src="/data/eventRouter.js"></script>
+    
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+	<meta name="format-detection" content="telephone=no">
+	<meta http-equiv="x-rim-auto-match" content="none">
+
+	<link href="/css/adidas/style.css" type="text/css" rel="stylesheet" />
+	<link href="/css/adidas/fonts.css" type="text/css" rel="stylesheet" />
+
+	<link rel="preload" href="/fonts/adineuePro/woff/adineuePRO-Bold.woff" as="font">
+
+	<script type="text/javascript" src="/js/jquery-1.12.0.min.js"></script>
+	<script type="text/javascript" src="/js/swipe.js"></script>
+	<script type="text/javascript" src="/js/owl.carousel.js"></script>
+
+
+	<title>아디다스 모바일</title>
+</head>
+<body>
+
+	<div class="modal-popup" id="instock-notification-popup">
+		<div class="popup-contents">
+			<a href="javascript:void(0)" class="close_x_btn" onclick="jQuery(this).parent().parent().removeClass('open');"></a>
+			<div class="instock-notification">
+				<div class="tit adipro-b">
+					<div class="icons" data-icon=""></div>coming soon
+				</div>
+				<div class="desc">휴대전화 번호를 남겨 주시면,<br/>제품 입고시 문자로 알려드립니다.</div>
+
+				<div class="phone">
+					<div class="sel_cmtype sel_design">
+						<a href="#" class="toggle_arw s_arw" ><span>010</span></a>
+						<select name="" id="">
+							<option value="2" selected="">010</option>
+							<option value="1">011</option>
+							<option value="5">016</option>
+							<option value="3">017</option>
+							<option value="4">019</option>
+						</select>
+					</div>
+					<input type="tel">
+					<input type="tel">
+				</div>
+
+				<div class="agr_box">
+					<div class="chk_wrap">
+						<div class="chk_box1 blue">
+							<input type="checkbox" id="agr_for_credit" name="SMS_RET_YN" value="Y">
+							<label for="agr_for_credit" class="adipro-r">개인정보 제공동의</label>
+						</div>
+					</div>
+					<a href="javascript:void(0)" class="icons aft" data-icon="" onclick="if(jQuery(this).hasClass('open')){jQuery('.instock-notification .terms').hide();jQuery(this).removeClass('open')}else{jQuery('.instock-notification .terms').show();jQuery(this).addClass('open')}">자세히보기</a>
+				</div>
+				<!-- //agr_box -->
+
+				<div class="terms">
+					<div class="cont">
+						<dl>
+							<dt>개인정보의 수집이용목적 : </dt>
+							<dd>아디다스 제품 입고 알림</dd>
+						</dl>
+						<dl>
+							<dt>수집되는 개인정보 : </dt>
+							<dd>휴대전화번호</dd>
+						</dl>
+						<dl>
+							<dt>보유기간 : </dt>
+							<dd>입고알림 이후 30일 까지(본 보유기간은 아디클럽 회원이 아닌 경우에 한함)</dd>
+						</dl>
+       					<ul class="li_hypn">
+       						<li>아래 동의를 거부할 수 있습니다. 다만 그러한 경우, 아디다스제품이 입고되는 시점에 대한 정보를 우선적으로 전달받으실 수 없습니다. 단, “통신사 사정으로 인한 발송, 수신오류, 고객휴대폰의 스팸등록 등으로 인해 SMS가 전달되지 않을 수 있으며 이러한 경우 아디다스코리아가 책임지지 않습니다.”</li>
+       						<li>입력해주신 휴대폰번호로 안내하겠습니다.</li>
+       					</ul>
+
+					</div>
+				</div>
+
+				<div class="btn_area">
+					<a class="submit">신청하기</a>
+				</div>
+
+			</div>
+			<!-- //instock-notification -->
+		</div>
+	</div>
+
+	<div id="wrap">
+		<div id="header" style="position: relative;">
+			<div class="nav_menu">
+				<div class="nav_menu_inner">
+
+					<div class="u_info1">
+						<a href="#" class="login"><span class="icons" data-icon=""></span>로그인</a>
+						<a href="#" class="join"><span class="icons" data-icon=""></span>회원가입</a>
+					</div>
+
+					<!-- <div class="u_info1">
+						<div class="user_box">
+							<p class="greet bronze"><span class="m">B</span>홍길동님 반갑습니다.</p>
+							<p class="noti">쿠폰 사용기간이 얼마 남지 않았습니다.</p>
+						</div>
+					</div> -->
+					<div class="u_info2">
+						<a href="#">마이페이지</a>
+						<a href="#">주문배송조회 <span>1</span></a>
+						<a href="#">나의 쿠폰 <span>12</span></a>
+					</div>
+					<ul class="gnb">
+						<li class="strong dep">
+							<a href="#">MEN</a>
+							<div class="depth_menu depth2">
+								<ul>
+									<li class="dep">
+										<a href="#">신발</a>
+										<div class="depth_menu depth3">
+											<ul>
+												<li class="all"><a href="#">전체보기</a></li>
+												<!-- <li class="tit">스포츠별</li> -->
+												<li><a href="#">라이프스타일 <span>(214)</span></a></li>
+												<li><a href="#">축구 <span>(214)</span></a></li>
+												<li><a href="#">농구 <span>(214)</span></a></li>
+												<li><a href="#">러닝 <span>(214)</span></a></li>
+												<li><a href="#">테니스 <span>(214)</span></a></li>
+												<li><a href="#">스윔 <span>(214)</span></a></li>
+												<li><a href="#">하이컷/미드컷 <span>(214)</span></a></li>
+												<li><a href="#">로우컷 <span>(214)</span></a></li>
+												<li><a href="#">샌들/슬리퍼 <span>(214)</span></a></li>
+												<li><a href="#">SPORT <span>(214)</span></a></li>
+												<li><a href="#">ORIGINALS <span>(214)</span></a></li>
+											</ul>
+										</div>
+									</li>
+									<li class="dep">
+										<a href="#">의류</a>
+										<div class="depth_menu depth3">
+											<ul>
+												<li class="all"><a href="#">전체보기</a></li>
+												<li><a href="#">라이프스타일 <span>(214)</span></a></li>
+												<li><a href="#">축구 <span>(214)</span></a></li>
+												<li><a href="#">농구 <span>(214)</span></a></li>
+												<li><a href="#">러닝 <span>(214)</span></a></li>
+												<li><a href="#">테니스 <span>(214)</span></a></li>
+												<li><a href="#">스윔 <span>(214)</span></a></li>
+												<li><a href="#">하이컷/미드컷 <span>(214)</span></a></li>
+												<li><a href="#">로우컷 <span>(214)</span></a></li>
+												<li><a href="#">샌들/슬리퍼 <span>(214)</span></a></li>
+												<li><a href="#">SPORT <span>(214)</span></a></li>
+												<li><a href="#">ORIGINALS <span>(214)</span></a></li>
+											</ul>
+										</div>
+									</li>
+									<li class="dep">
+										<a href="#">용품</a>
+										<div class="depth_menu depth3">
+											<ul>
+												<li class="all"><a href="#">전체보기</a></li>
+												<li><a href="#">라이프스타일 <span>(214)</span></a></li>
+												<li><a href="#">축구 <span>(214)</span></a></li>
+												<li><a href="#">농구 <span>(214)</span></a></li>
+												<li><a href="#">러닝 <span>(214)</span></a></li>
+												<li><a href="#">테니스 <span>(214)</span></a></li>
+												<li><a href="#">스윔 <span>(214)</span></a></li>
+												<li><a href="#">하이컷/미드컷 <span>(214)</span></a></li>
+												<li><a href="#">로우컷 <span>(214)</span></a></li>
+												<li><a href="#">샌들/슬리퍼 <span>(214)</span></a></li>
+												<li><a href="#">SPORT <span>(214)</span></a></li>
+												<li><a href="#">ORIGINALS <span>(214)</span></a></li>
+											</ul>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li class="strong dep">
+							<a href="#">WOMEN</a>
+							<div class="depth_menu depth2">
+								<ul>
+									<li class="dep">
+										<a href="#">신발</a>
+										<div class="depth_menu depth3">
+											<ul>
+												<li class="all"><a href="#">전체보기</a></li>
+												<li><a href="#">라이프스타일 <span>(214)</span></a></li>
+												<li><a href="#">축구 <span>(214)</span></a></li>
+												<li><a href="#">농구 <span>(214)</span></a></li>
+												<li><a href="#">러닝 <span>(214)</span></a></li>
+												<li><a href="#">테니스 <span>(214)</span></a></li>
+												<li><a href="#">스윔 <span>(214)</span></a></li>
+												<li><a href="#">하이컷/미드컷 <span>(214)</span></a></li>
+												<li><a href="#">로우컷 <span>(214)</span></a></li>
+												<li><a href="#">샌들/슬리퍼 <span>(214)</span></a></li>
+												<li><a href="#">SPORT <span>(214)</span></a></li>
+												<li><a href="#">ORIGINALS <span>(214)</span></a></li>
+											</ul>
+										</div>
+									</li>
+									<li class="dep">
+										<a href="#">의류</a>
+										<div class="depth_menu depth3">
+											<ul>
+												<li class="all"><a href="#">전체보기</a></li>
+												<li><a href="#">라이프스타일 <span>(214)</span></a></li>
+												<li><a href="#">축구 <span>(214)</span></a></li>
+												<li><a href="#">농구 <span>(214)</span></a></li>
+												<li><a href="#">러닝 <span>(214)</span></a></li>
+												<li><a href="#">테니스 <span>(214)</span></a></li>
+												<li><a href="#">스윔 <span>(214)</span></a></li>
+												<li><a href="#">하이컷/미드컷 <span>(214)</span></a></li>
+												<li><a href="#">로우컷 <span>(214)</span></a></li>
+												<li><a href="#">샌들/슬리퍼 <span>(214)</span></a></li>
+												<li><a href="#">SPORT <span>(214)</span></a></li>
+												<li><a href="#">ORIGINALS <span>(214)</span></a></li>
+											</ul>
+										</div>
+									</li>
+									<li class="dep">
+										<a href="#">용품</a>
+										<div class="depth_menu depth3">
+											<ul>
+												<li class="all"><a href="#">전체보기</a></li>
+												<li><a href="#">라이프스타일 <span>(214)</span></a></li>
+												<li><a href="#">축구 <span>(214)</span></a></li>
+												<li><a href="#">농구 <span>(214)</span></a></li>
+												<li><a href="#">러닝 <span>(214)</span></a></li>
+												<li><a href="#">테니스 <span>(214)</span></a></li>
+												<li><a href="#">스윔 <span>(214)</span></a></li>
+												<li><a href="#">하이컷/미드컷 <span>(214)</span></a></li>
+												<li><a href="#">로우컷 <span>(214)</span></a></li>
+												<li><a href="#">샌들/슬리퍼 <span>(214)</span></a></li>
+												<li><a href="#">SPORT <span>(214)</span></a></li>
+												<li><a href="#">ORIGINALS <span>(214)</span></a></li>
+											</ul>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li class="strong dep">
+							<a href="#">KIDS</a>
+							<div class="depth_menu depth2">
+								<ul>
+									<li class="dep">
+										<a href="#">신발</a>
+										<div class="depth_menu depth3">
+											<ul>
+												<li class="all"><a href="#">전체보기</a></li>
+												<li class="tit">스포츠별</li>
+												<li><a href="#">라이프스타일 <span>(214)</span></a></li>
+												<li><a href="#">축구 <span>(214)</span></a></li>
+												<li><a href="#">농구 <span>(214)</span></a></li>
+												<li><a href="#">러닝 <span>(214)</span></a></li>
+												<li><a href="#">테니스 <span>(214)</span></a></li>
+												<li><a href="#">스윔 <span>(214)</span></a></li>
+												<li class="tit">상품별</li>
+												<li><a href="#">하이컷/미드컷 <span>(214)</span></a></li>
+												<li><a href="#">로우컷 <span>(214)</span></a></li>
+												<li><a href="#">샌들/슬리퍼 <span>(214)</span></a></li>
+												<li class="tit">브랜드</li>
+												<li><a href="#">SPORT <span>(214)</span></a></li>
+												<li><a href="#">ORIGINALS <span>(214)</span></a></li>
+											</ul>
+										</div>
+									</li>
+									<li class="dep">
+										<a href="#">의류</a>
+										<div class="depth_menu depth3">
+											<ul>
+												<li class="all"><a href="#">전체보기</a></li>
+												<li class="tit">스포츠별</li>
+												<li><a href="#">라이프스타일 <span>(214)</span></a></li>
+												<li><a href="#">축구 <span>(214)</span></a></li>
+												<li><a href="#">농구 <span>(214)</span></a></li>
+												<li><a href="#">러닝 <span>(214)</span></a></li>
+												<li><a href="#">테니스 <span>(214)</span></a></li>
+												<li><a href="#">스윔 <span>(214)</span></a></li>
+												<li class="tit">상품별</li>
+												<li><a href="#">하이컷/미드컷 <span>(214)</span></a></li>
+												<li><a href="#">로우컷 <span>(214)</span></a></li>
+												<li><a href="#">샌들/슬리퍼 <span>(214)</span></a></li>
+												<li class="tit">브랜드</li>
+												<li><a href="#">SPORT <span>(214)</span></a></li>
+												<li><a href="#">ORIGINALS <span>(214)</span></a></li>
+											</ul>
+										</div>
+									</li>
+									<li class="dep">
+										<a href="#">용품</a>
+										<div class="depth_menu depth3">
+											<ul>
+												<li class="all"><a href="#">전체보기</a></li>
+												<li class="tit">스포츠별</li>
+												<li><a href="#">라이프스타일 <span>(214)</span></a></li>
+												<li><a href="#">축구 <span>(214)</span></a></li>
+												<li><a href="#">농구 <span>(214)</span></a></li>
+												<li><a href="#">러닝 <span>(214)</span></a></li>
+												<li><a href="#">테니스 <span>(214)</span></a></li>
+												<li><a href="#">스윔 <span>(214)</span></a></li>
+												<li class="tit">상품별</li>
+												<li><a href="#">하이컷/미드컷 <span>(214)</span></a></li>
+												<li><a href="#">로우컷 <span>(214)</span></a></li>
+												<li><a href="#">샌들/슬리퍼 <span>(214)</span></a></li>
+												<li class="tit">브랜드</li>
+												<li><a href="#">SPORT <span>(214)</span></a></li>
+												<li><a href="#">ORIGINALS <span>(214)</span></a></li>
+											</ul>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li class="dep">
+							<a href="#">SPORTS</a>
+							<div class="depth_menu depth2">
+								<ul>
+									<li class="dep">
+										<a href="#">ORIGINALS</a>
+										<div class="depth_menu depth3">
+											<ul>
+												<li class="all"><a href="#">전체보기</a></li>
+												<li><a href="#">라이프스타일 <span>(214)</span></a></li>
+												<li><a href="#">축구 <span>(214)</span></a></li>
+												<li><a href="#">농구 <span>(214)</span></a></li>
+												<li><a href="#">러닝 <span>(214)</span></a></li>
+											</ul>
+										</div>
+									</li>
+									<li class="dep">
+										<a href="#">ADIDAS NEO</a>
+										<div class="depth_menu depth3">
+											<ul>
+												<li class="all"><a href="#">전체보기</a></li>
+												<li><a href="#">라이프스타일 <span>(214)</span></a></li>
+												<li><a href="#">축구 <span>(214)</span></a></li>
+											</ul>
+										</div>
+									</li>
+									<li class="dep">
+										<a href="#">ADIDAS BY STELLA MCCARTNEY</a>
+										<div class="depth_menu depth3">
+											<ul>
+												<li class="all"><a href="#">전체보기</a></li>
+												<li><a href="#">축구 <span>(214)</span></a></li>
+												<li><a href="#">농구 <span>(214)</span></a></li>
+												<li><a href="#">러닝 <span>(214)</span></a></li>
+												<li><a href="#">테니스 <span>(214)</span></a></li>
+												<li><a href="#">스윔 <span>(214)</span></a></li>
+											</ul>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<a href="#">BRANDS</a>
+						</li>
+					</ul>
+					<div class="ctgr">
+						<div>
+							<a href="#">BEST <span class="icons" data-icon=""></span></a>
+							<a href="#">NEW <span class="icons" data-icon=""></span></a>
+						</div>
+						<div>
+							<a href="#">SALE <span class="icons" data-icon=""></span></span></a>
+							<a href="#">OUTLET <span class="icons" data-icon=""></span></a>
+						</div>
+					</div>
+					<div class="club_ctgr">
+						<a href="#">기획전</a>
+						<a href="#">아디클럽</a>
+						<a href="#">캠페인</a>
+					</div>
+					<div class="viewed_items">
+						<h3>최근 본 상품</h3>
+						<div class="item_list">
+							<div class="slider">
+								<div class="item">
+									<a href="#">
+										<p class="img"><img src="http://m.adidas.co.kr/upload/prod/basic/320/B35270-1_320X320.jpg" alt=""></p>
+										<p class="price">119,000<span>원</span></p>
+									</a>
+								</div>
+
+								<div class="item">
+									<a href="#">
+										<p class="img"><img src="http://m.adidas.co.kr/upload/prod/basic/320/S83386-1_320X320.jpg" alt=""></p>
+										<p class="price">119,000<span>원</span></p>
+									</a>
+								</div>
+
+								<div class="item">
+									<a href="#">
+										<p class="img"><img src="http://m.adidas.co.kr/upload/prod/basic/320/AF6749-1_320X320.jpg" alt=""></p>
+										<p class="price">95,200<span>원</span></p>
+									</a>
+								</div>
+
+								<div class="item">
+									<a href="#">
+										<p class="img"><img src="http://m.adidas.co.kr/upload/prod/basic/320/S75126-1_320X320.jpg" alt=""></p>
+										<p class="price">119,000<span>원</span></p>
+									</a>
+								</div>
+
+								<div class="item">
+									<a href="#">
+										<p class="img"><img src="http://m.adidas.co.kr/upload/prod/basic/320/S75556-1_320X320.jpg" alt=""></p>
+										<p class="price">119,000<span>원</span></p>
+									</a>
+								</div>
+
+								<div class="item">
+									<a href="#">
+										<p class="img"><img src="http://m.adidas.co.kr/upload/prod/basic/320/AF6441-1_320X320.jpg" alt=""></p>
+										<p class="price">119,000<span>원</span></p>
+									</a>
+								</div>
+
+								<div class="item">
+									<a href="#">
+										<p class="img"><img src="http://m.adidas.co.kr/upload/prod/basic/320/S74805-1_320X320.jpg" alt=""></p>
+										<p class="price">119,000<span>원</span></p>
+									</a>
+								</div>
+							</div>
+						</div>
+						<!-- //item_list -->
+
+					</div>
+					<!-- //viewed items -->
+
+					<div class="nav_footer">
+						<ul>
+							<li><a href="#">공지사항</a></li>
+							<li><a href="#">고객센터</a></li>
+							<li><a href="#">매장찾기</a></li>
+						</ul>
+						<div>
+							<p>교환 및 반품 문의 (본사로 반품불가) : 온라인스토어 고객센터 <a href="tel:1588-8241">1588-8241</a></p>
+							<p>(평일 9시 – 18시, 점심시간 12시 – 13시)</p>
+						</div>
+					</div>
+				</div>
+				<!-- //nav_menu_inner -->
+			</div>
+			<!-- //nav_menu -->
+
+			<div class="nav_search">
+				<div class="sch_box">
+					<form action="#" method="get">
+						<fieldset>
+							<input type="text" autocomplete="off">
+							<button type="submit" value="검색">
+								<span class="icons"></span>
+							</button>
+						</fieldset>
+					</form>
+				</div>
+				<div class="sch_tab">
+					<a href="#" class="on">최근 검색어</a>
+					<a href="#">인기 검색어</a>
+				</div>
+				<ul class="keyword_recent">
+					<li><a href="#">슈퍼스타<span class="close_x_btn"></span></a></li>
+					<li><a href="#">스탠스미스<span class="close_x_btn"></span></a></li>
+					<li><a href="#">트랙탑<span class="close_x_btn"></span></a></li>
+					<li><a href="#">MI SUPERSTAR<span class="close_x_btn"></span></a></li>
+					<li><a href="#">패딩<span class="close_x_btn"></span></a></li>
+					<li><a href="#">키엘<span class="close_x_btn"></span></a></li>
+					<!-- <li class="no_data">최근 검색하신 내역이 없습니다.</li> -->
+				</ul>
+				<ol class="sch_list" style="display:none;">
+					<li><span>1</span><a href="#">슈퍼스타</a></li>
+					<li><span>2</span><a href="#">수퍼스타</a></li>
+					<li><span>3</span><a href="#">트랙탑</a></li>
+					<li><span>4</span><a href="#">스탠스미스</a></li>
+					<li><span>5</span><a href="#">MI SUPERSTAR</a></li>
+					<li><span>6</span><a href="#">패딩</a></li>
+					<li><span>7</span><a href="#">키엘</a></li>
+					<li><span>8</span><a href="#">이큅먼트</a></li>
+					<li><span>9</span><a href="#">니고</a></li>
+					<li><span>10</span><a href="#">부스트</a></li>
+				</ol>
+				<!-- <div class="bnn"><img src="images/bnn_sch1.jpg" alt=""></div>
+				<div class="bnn"><img src="images/bnn_sch2.jpg" alt=""></div> -->
+			</div>
+
+			<div class="nav_main">
+				<a href="javascript:void(0);" class="btn_slide">
+					<span class="line1"></span>
+					<span class="line2"></span>
+					<span class="line3"></span>
+				</a>
+				<h1><a href="javascript:void(0);" class="logo icons"></a></h1>
+				<a href="#" class="btn_search icons">
+					<span class="icons"></span>
+				</a>
+				<a href="#" class="btn_market icons"></a>
+			</div>
+		</div>
+
+		<div id="container">
+
+
+      <div style="position:relative" id="running_guide">
+
+
+
+        <div id="pop">
+          <div class="header">당신의 러닝스타일에 맞는 러닝화를 추천합니다!<span><img src="http://imagem.adidas.co.kr/images/adidas/event/running_guide/x.png" alt="close"></span></div>
+
+          <div class="content box1">
+
+            <p class="title">다양한 환경에서도<br>자유로운 러닝</p>
+            <p class="desc">편안한 쿠셔닝과 탁월한 반응성의 <br>러닝화를 즐겨보세요.</p>
+            <div class="bar"></div>
+            <p class="sub_title">EVERYDAY RUNNER</p>
+            <p class="sub_desc">러닝 초심자. 모든 러너에게 추천</p>
+            <span class="dot_bar"><img src="http://imagem.adidas.co.kr/images/adidas/event/running_guide/dot.png" alt=""></span>
+            <div class="option">
+              <span data-icon="" class="bef icons">ULTRA BOOST</span>
+              <span data-icon="" class="bef icons">PURE BOOST</span>
+              <span data-icon="" class="bef icons">ALPHA BOUNCE</span>
+            </div>
+            <div class="detail"><a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=244" target="_blank" data-icon="" class="icons aft">자세히 보기</a></div>
+
+          </div>
+
+          <div class="content box2">
+
+            <p class="title">더 나은 기록 향상을 위한<br>최적의 러닝 훈련화</p>
+            <p class="desc">편안한 쿠셔닝을 겸비한 안정감과<br>견고함을 느껴보세요.</p>
+            <div class="bar"></div>
+            <p class="sub_title">RUNNING ENTHUSIAST</p>
+            <p class="sub_desc">중급. 상급 러너에게 추천</p>
+            <span class="dot_bar"><img src="http://imagem.adidas.co.kr/images/adidas/event/running_guide/dot.png" alt=""></span>
+            <div class="option">
+              <span data-icon="" class="bef icons">SUPERNOVA</span>
+            </div>
+            <div class="detail"><a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=206" target="_blank" data-icon="" class="icons aft">자세히 보기</a></div>
+
+          </div>
+
+          <div class="content box3">
+
+            <p class="title">더 멀리,<br>더 빠른 러닝</p>
+            <p class="desc">민첩성과 경량성으로 최고의 스피드를<br>경험하세요.</p>
+            <div class="bar"></div>
+            <p class="sub_title">ELITE RACER</p>
+            <p class="sub_desc">상급 러너에게 추천</p>
+            <span class="dot_bar"><img src="http://imagem.adidas.co.kr/images/adidas/event/running_guide/dot.png" alt=""></span>
+            <div class="option">
+              <span data-icon="" class="bef icons">ADIZERO ADIOS</span>
+            </div>
+            <div class="detail"><a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=205" target="_blank" data-icon="" class="icons aft">자세히 보기</a></div>
+
+          </div>
+
+        </div>
+
+
+
+				<div id="top">
+					<div class="view">
+						<img src="http://imagem.adidas.co.kr/images/adidas/event/running_guide/running_visual01.jpg?v=1" alt="" border="0" id="fadebox1" class="fade_in" style="display: block;">
+					</div>
+					<div class="view">
+						<img src="http://imagem.adidas.co.kr/images/adidas/event/running_guide/running_visual02.jpg" alt="" border="0" id="fadebox2" class="fade" style="display: none;">
+					</div>
+					<div class="view">
+						<img src="http://imagem.adidas.co.kr/images/adidas/event/running_guide/running_visual03.jpg" alt="" border="0" id="fadebox3" class="fade" style="display: none;">
+					</div>
+					<div class="view">
+						<img src="http://imagem.adidas.co.kr/images/adidas/event/running_guide/running_visual04.jpg" alt="" border="0" id="fadebox4" class="fade" style="display: none;">
+					</div>
+					<div class="unview">
+						<img src="http://imagem.adidas.co.kr/images/adidas/event/running_guide/running_visual00.jpg" alt="" border="0">
+					</div>
+					<div class="txt">RUNNING SHOES<br>GUIDE<br><span>당신의 더 나은 러닝을 위한 가이드</span></div>
+          <div class="bar"></div>
+          <div class="detail"><a href="javascript:void(0)" data-icon="" class="icons aft">자세히 보기</a></div>
+				</div>
+				<ul class="gnb">
+					<li class="strong dep">
+						<a href="javascript:void(0)">SELECT RUNNING SHOES</a>
+						<div class="depth_menu depth2">
+							<ul>
+								<li class="dep">
+									<a href="javascript:void(0)">ULTRA BOOST</a>
+									<div class="depth_menu depth3">
+										<ul>
+											<li><a href="/MO/Event/evtNotice.action?pn=running_guide&page=ultra_boost">ULTRA BOOST </a></li>
+											<li><a href="/MO/Event/evtNotice.action?pn=running_guide&page=ultra_boost_uncaged">ULTRA BOOST UNCAGED </a></li>
+											<li><a href="/MO/Event/evtNotice.action?pn=running_guide&page=ultra_boost_st">ULTRA BOOST ST </a></li>
+										</ul>
+									</div>
+								</li>
+
+
+								<li class="dep">
+									<a href="javascript:void(0)">PURE BOOST</a>
+									<div class="depth_menu depth3">
+										<ul>
+											<li><a href="/MO/Event/evtNotice.action?pn=running_guide&page=pure_boost_x">PURE BOOST X </a></li>
+											<li><a href="javascript:void(0)">PURE BOOST <span>(COMING SOON)</span></a></li>
+										</ul>
+									</div>
+								</li>
+
+								<li class="dep">
+									<a href="javascript:void(0)">ALPHA BOUNCE</a>
+									<div class="depth_menu depth3">
+										<ul>
+											<li><a href="/MO/Event/evtNotice.action?pn=running_guide&page=alpha_bounce">ALPHA BOUNCE</a></li>
+										</ul>
+									</div>
+								</li>
+
+								<li class="dep">
+									<a href="javascript:void(0)">FAST &amp; ENERGY</a>
+									<div class="depth_menu depth3">
+										<ul>
+											<li><a href="/MO/Event/evtNotice.action?pn=running_guide&page=adizero_adios">ADIZERO ADIOS</a></li>
+											<li><a href="/MO/Event/evtNotice.action?pn=running_guide&page=supernova">SUPERNOVA</a></li>
+										</ul>
+									</div>
+								</li>
+
+							</ul>
+						</div>
+					</li>
+				</ul>
+
+				<div id="content-wrapper">
+
+				</div>
+
+
+			</div>
+			<!-- //running_guide -->
+
+      <script type="text/javascript">
+        $('#running_guide .detail').click(function(){
+          $('#top').hide();
+          $('.gnb').hide();
+          $('#content-wrapper').hide();
+
+          $('#pop').show();
+
+        });
+        $('#running_guide #pop .header span').click(function(){
+          $('#top').show();
+          $('.gnb').show();
+          $('#content-wrapper').show();
+
+          $('#pop').hide();
+        })
+      </script>
+
+      <!-- <script type="text/javascript" src="/js/prx.min.js"></script> -->
+      <script type="text/javascript">
+
+				var hasFocusPoint = true;
+				<%
+				if("ultra_boost".equals(paramPage)){
+				%>
+					var htmlContent = `
+						<div class="title"><img src="http://imagem.adidas.co.kr/images/adidas/event/running_guide/title1_01.jpg" alt=""></div>
+							<div class="box">
+								<div class="image"><img src="http://imagem.adidas.co.kr/images/adidas/event/running_guide/cont1_01.jpg" alt=""></div>
+								<div class="txt">
+									<p class="tit">ADIDAS PRIMEKNIT</p>
+									<p class="s_tit">아디다스 프라임니트</p>
+									<p class="desc">타이트하게 발을 감싸는 핏과 탁월한 지지력의 초경량 소재.<br>
+													우수한 지면 적응력과 안정적인 지지력.<br>
+													편안하게 발을 감싸는 초경량 소재.
+													</p>
+									<a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=108" class="button">관련 제품 보러가기</a>
+								</div>
+
+							</div>
+
+							<div class="box2">
+								<div class="image"><img src="http://imagem.adidas.co.kr/images/adidas/event/running_guide/cont1_02.jpg" alt=""></div>
+								<div class="txt">
+									<p class="tit">boost</p>
+									<p class="s_tit">부스트</p>
+									<p class="desc">궁극의 에너지 리턴.<br>
+													아디다스가 개발한 테크놀로지 가운데<br>
+													가장 우수한 반응성을 선사하는 BOOST 쿠셔닝,<br>
+													달리는 만큼 파워풀한 러닝을 경험하다.
+													</p>
+									<a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=108" class="button">관련 제품 보러가기</a>
+								</div>
+
+							</div>
+
+							<div class="box3">
+								<div class="image"><img src="http://imagem.adidas.co.kr/images/adidas/event/running_guide/cont1_03.jpg" alt=""></div>
+								<div class="txt">
+									<p class="tit">STRETCHWEB OUTSOLE<br>WITH CONTINENTAL</p>
+									<p class="s_tit">컨티넨탈 스트레치웹 아웃솔</p>
+									<p class="desc">궁극의 접지력,<br>
+													뛰어난 유연성의 스트레치웹 아웃솔과 <br>
+													컨티넨탈 러버가 완성하는 궁극의 접지력.
+													</p>
+									<a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=108" class="button">관련 제품 보러가기</a>
+								</div>
+
+							</div>
+
+							<div id="footer">
+								<hr style="width:5px; height:30px; background-color:#000; margin:0 auto;">
+								<p><span style="font:1.6rem/35px 'adinenuPro-black'; color:#000; letter-spacing:0px; ">RUNNING SHOES GUIDE</span><br>ULTRA BOOST<br></p>
+								<a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=108" class="button">관련 제품 보러가기<span></span></a>
+							</div>
+					`;
+				<%
+				}else if("ultra_boost_uncaged".equals(paramPage)){
+				%>
+					var htmlContent = `
+					<div class="title"><img src="http://imagem.adidas.co.kr/images/adidas/event/running_guide/title1_02.jpg" alt=""></div>
+							<div class="box">
+								<div class="image"><img src="http://imagem.adidas.co.kr/images/adidas/event/running_guide/cont2_01.jpg" alt=""></div>
+								<div class="txt">
+									<p class="tit">ADIDAS PRIMEKNIT</p>
+									<p class="s_tit">아디다스 프라임니트</p>
+									<p class="desc">타이트하게 발을 감싸는 핏과 탁월한 지지력의 초경량 소재.<br />
+													우수한 지면 적응력과 안정적인 지지력.<br />
+													편안하게 발을 감싸는 초경량 소재.
+													</p>
+									<a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=203" class="button">관련 제품 보러가기</a>
+								</div>
+
+							</div>
+
+							<div class="box2">
+								<div class="image"><img src="http://imagem.adidas.co.kr/images/adidas/event/running_guide/cont2_02.jpg" alt=""></div>
+								<div class="txt">
+									<p class="tit">boost</p>
+									<p class="s_tit">부스트</p>
+									<p class="desc">궁극의 에너지 리턴.<br />
+													아디다스가 개발한 테크놀로지 가운데<br />
+													가장 우수한 반응성을 선사하는 BOOST 쿠셔닝,<br />
+													달리는 만큼 파워풀한 러닝을 경험하다.
+													</p>
+									<a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=203" class="button">관련 제품 보러가기</a>
+								</div>
+
+							</div>
+
+							<div class="box3">
+								<div class="image"><img src="http://imagem.adidas.co.kr/images/adidas/event/running_guide/cont2_03.jpg" alt=""></div>
+								<div class="txt">
+									<p class="tit">STRETCHWEB<br />OUTSOLE</p>
+									<p class="s_tit">스트레치웹 아웃솔</p>
+									<p class="desc">차원이 다른 내구성.<br />
+													발의 움직임에 맞춰 유연하게 적응하는 <br />
+													스트레치웹 아웃솔로 거침없이 강력한 러닝.
+													</p>
+									<a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=203" class="button">관련 제품 보러가기</a>
+								</div>
+
+							</div>
+
+							<div id="footer">
+								<hr style="width:5px; height:30px; background-color:#000; margin:0 auto;">
+								<p><span style="font:1.6rem/35px 'adinenuPro-black'; color:#000; letter-spacing:0px; ">RUNNING SHOES GUIDE</span><br>ULTRA BOOST UNCAGED<br></p>
+								<a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=203" class="button">관련 제품 보러가기<span></span></a>
+							</div>
+					`;
+				<%
+				}else if("ultra_boost_st".equals(paramPage)){
+				%>
+					var htmlContent = `
+					<div class="title"><img src="http://imagem.adidas.co.kr/images/adidas/event/running_guide/title1_03.jpg" alt=""></div>
+							<div class="box">
+								<div class="image"><img src="http://imagem.adidas.co.kr/images/adidas/event/running_guide/cont3_01.jpg" alt=""></div>
+								<div class="txt">
+									<p class="tit">ADIDAS PRIMEKNIT</p>
+									<p class="s_tit">아디다스 프라임니트</p>
+									<p class="desc">타이트하게 발을 감싸는 핏과 탁월한 지지력의 초경량 소재.<br />
+													우수한 지면 적응력과 안정적인 지지력.<br />
+													편안하게 발을 감싸는 초경량 소재.
+													</p>
+									<a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=204" class="button">관련 제품 보러가기</a>
+								</div>
+
+							</div>
+
+							<div class="box2">
+								<div class="image"><img src="http://imagem.adidas.co.kr/images/adidas/event/running_guide/cont3_02.jpg" alt=""></div>
+								<div class="txt">
+									<p class="tit">ENERGIZED<br />STABILITY</p>
+									<p class="s_tit">에너자이즈드 스태빌리티</p>
+									<p class="desc">우수한 반응성과 매끄러운 지지력.<br />
+													스텝에 안정감을 더하며 매끄럽고 <br />
+													직감적인 러닝 경험을 제공하는 <br />
+													듀얼 덴시티 BOOST 쿠셔닝.
+													</p>
+									<a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=204" class="button">관련 제품 보러가기</a>
+								</div>
+
+							</div>
+
+							<div class="box3">
+								<div class="image"><img src="http://imagem.adidas.co.kr/images/adidas/event/running_guide/cont3_03.jpg" alt=""></div>
+								<div class="txt">
+									<p class="tit">STRETCHWEB<br />OUTSOLE</p>
+									<p class="s_tit">스트레치웹 아웃솔</p>
+									<p class="desc">차원이 다른 내구성.<br />
+													발의 움직임에 맞춰 유연하게 적응하는 <br />
+													스트레치웹 아웃솔로 거침없이 강력한 러닝.
+													</p>
+									<a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=204" class="button">관련 제품 보러가기</a>
+								</div>
+
+							</div>
+
+							<div id="footer">
+								<hr style="width:5px; height:30px; background-color:#000; margin:0 auto;">
+								<p><span style="font:1.6rem/35px 'adinenuPro-black'; color:#000; letter-spacing:0px; ">RUNNING SHOES GUIDE</span><br>ULTRA BOOST ST<br></p>
+								<a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=204" class="button">관련 제품 보러가기<span></span></a>
+							</div>
+					`;
+				<%
+				}else if("pure_boost_x".equals(paramPage)){
+				%>
+					var htmlContent = `
+					<div class="title"><img src="http://imagem.adidas.co.kr/images/adidas/event/running_guide/title2_01.jpg" alt=""></div>
+							<div class="box">
+								<div class="image"><img src="http://imagem.adidas.co.kr/images/adidas/event/running_guide/cont4_01.jpg" alt=""></div>
+								<div class="txt">
+									<p class="tit">FLOATING ARCH</p>
+									<p class="s_tit">플로팅 아치</p>
+									<p class="desc">발에 맞춘 듯한 완벽한 핏.<br />
+													안정적으로 발을 감싸고 매 스텝마다 러너에게<br />
+													필요한 지지력을 제공하는 플로팅 아치.<br />
+													마치 발에 맞춘 듯한 완벽한 핏을 경험하다.
+													</p>
+									<a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=111" class="button">관련 제품 보러가기</a>
+								</div>
+
+							</div>
+
+							<div class="box3">
+								<div class="image"><img src="http://imagem.adidas.co.kr/images/adidas/event/running_guide/cont4_02.jpg" alt=""></div>
+								<div class="txt">
+									<p class="tit">STRETCHWEB<br />OUTSOLE</p>
+									<p class="s_tit">스트레치웹 아웃솔</p>
+									<p class="desc">차원이 다른 내구성.<br />
+													발의 움직임에 맞춰 유연하게 적응하는 <br />
+													스트레치웹 아웃솔로 거침없이 강력한 러닝.
+													</p>
+									<a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=111" class="button">관련 제품 보러가기</a>
+								</div>
+
+							</div>
+
+							<div class="box4">
+								<div class="image"><img src="http://imagem.adidas.co.kr/images/adidas/event/running_guide/cont4_03.jpg" alt=""></div>
+								<div class="txt">
+									<p class="tit">BOOST</p>
+									<p class="s_tit">부스트</p>
+									<p class="desc">궁극의 에너지 리턴.<br />
+													아디다스가 개발한 테크놀로지 가운데<br />
+													가장 우수한 반응성을 선사하는 BOOST 쿠셔닝.<br />
+													달리는 만큼 파워풀한 러닝을 경험하다.
+													</p>
+									<a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=111" class="button">관련 제품 보러가기</a>
+								</div>
+
+							</div>
+
+							<div id="footer">
+								<hr style="width:5px; height:30px; background-color:#000; margin:0 auto;">
+								<p><span style="font:1.6rem/35px 'adinenuPro-black'; color:#000; letter-spacing:0px; ">RUNNING SHOES GUIDE</span><br>PURE BOOST X<br></p>
+								<a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=111" class="button">관련 제품 보러가기<span></span></a>
+							</div>
+					`;
+				<%
+				}else if("alpha_bounce".equals(paramPage)){
+				%>
+					var htmlContent = `
+					<div class="title"><img src="http://imagem.adidas.co.kr/images/adidas/event/running_guide/title3_01.jpg" alt=""></div>
+							<div class="box">
+								<div class="image"><img src="http://imagem.adidas.co.kr/images/adidas/event/running_guide/cont5_01.jpg" alt=""></div>
+								<div class="txt">
+									<p class="tit">FORGED MESH</p>
+									<p class="s_tit">포지드 메쉬</p>
+									<p class="desc">뛰어난 신축성과 지지력으로<br />
+													발의 모든 움직임에 적응하는 <br />
+													봉제선을 없앤 메쉬 소재.
+													</p>
+									<a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=38" class="button">관련 제품 보러가기</a>
+								</div>
+
+							</div>
+
+							<div class="box">
+								<div class="image"><img src="http://imagem.adidas.co.kr/images/adidas/event/running_guide/cont5_02.jpg" alt=""></div>
+								<div class="txt">
+									<p class="tit">BOUNCE</p>
+									<p class="s_tit">바운스</p>
+									<p class="desc">한층 업그레이드 된 착용감과 유연함을 제공하는<br />
+													뛰어난 반응성의 바운스 쿠셔닝.
+													</p>
+									<a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=38" class="button">관련 제품 보러가기</a>
+								</div>
+
+							</div>
+
+
+
+							<div id="footer">
+								<hr style="width:5px; height:30px; background-color:#000; margin:0 auto;">
+								<p><span style="font:1.6rem/35px 'adinenuPro-black'; color:#000; letter-spacing:0px; ">RUNNING SHOES GUIDE</span><br>ALPHA BOUNCE<br></p>
+								<a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=38" class="button">관련 제품 보러가기<span></span></a>
+							</div>
+					`;
+				<%
+				}else if("adizero_adios".equals(paramPage)){
+				%>
+					var htmlContent = `
+					<div class="title"><img src="http://imagem.adidas.co.kr/images/adidas/event/running_guide/title4_01.jpg" alt=""></div>
+							<div class="box">
+								<div class="image"><img src="http://imagem.adidas.co.kr/images/adidas/event/running_guide/cont6_01.jpg" alt=""></div>
+								<div class="txt">
+									<p class="tit">MICROFIT</p>
+									<p class="s_tit">마이크로핏</p>
+									<p class="desc">거침없는 질주를 위한 최상의 핏.<br />
+													어떤 스피드에도 흔들리지 않는 완벽한 착용감.
+													</p>
+									<a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=205" class="button">관련 제품 보러가기</a>
+								</div>
+
+							</div>
+
+							<div class="box3">
+								<div class="image"><img src="http://imagem.adidas.co.kr/images/adidas/event/running_guide/cont6_02.jpg" alt=""></div>
+								<div class="txt">
+									<p class="tit">BOOST</p>
+									<p class="s_tit">부스트</p>
+									<p class="desc">궁극의 에너지 리턴.<br />
+													아디다스가 개발한 테크놀로지 가운데<br />
+													가장 우수한 반응성을 선사하는 BOOST 쿠셔닝.<br />
+													달리는 만큼 파워풀한 러닝을 경험하다.
+													</p>
+									<a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=205" class="button">관련 제품 보러가기</a>
+								</div>
+
+							</div>
+
+							<div class="box3">
+								<div class="image"><img src="http://imagem.adidas.co.kr/images/adidas/event/running_guide/cont6_03.jpg" alt=""></div>
+								<div class="txt">
+									<p class="tit">CONTINENTAL™</p>
+									<p class="s_tit">콘티넨탈 아웃솔</p>
+									<p class="desc">향상된 견인력과 파워풀한 푸쉬-오프<br />
+													(지면을 밀어내고 나아가는 힘)를 도움
+													</p>
+									<a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=205" class="button">관련 제품 보러가기</a>
+								</div>
+
+							</div>
+
+							<div id="footer">
+								<hr style="width:5px; height:30px; background-color:#000; margin:0 auto;">
+								<p><span style="font:1.6rem/35px 'adinenuPro-black'; color:#000; letter-spacing:0px; ">RUNNING SHOES GUIDE</span><br>ADIZERO ADIOS<br></p>
+								<a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=205" class="button">관련 제품 보러가기<span></span></a>
+							</div>
+					`;
+				<%
+				}else if("supernova".equals(paramPage)){
+				%>
+					var htmlContent = `
+					<div class="title"><img src="http://imagem.adidas.co.kr/images/adidas/event/running_guide/title4_02.jpg" alt=""></div>
+							<div class="box">
+								<div class="image"><img src="http://imagem.adidas.co.kr/images/adidas/event/running_guide/cont7_01.jpg" alt=""></div>
+								<div class="txt">
+									<p class="tit">ENGINEERED<br />MESH</p>
+									<p class="s_tit">엔지니어드 메쉬</p>
+									<p class="desc">인체공학적으로 설계된<br />
+													경량의 갑피 소재가 제공하는 서포티브 핏
+													</p>
+									<a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=206" class="button">관련 제품 보러가기</a>
+								</div>
+
+							</div>
+
+							<div class="box3">
+								<div class="image"><img src="http://imagem.adidas.co.kr/images/adidas/event/running_guide/cont7_02.jpg" alt=""></div>
+								<div class="txt">
+									<p class="tit">BOOST</p>
+									<p class="s_tit">부스트</p>
+									<p class="desc">궁극의 에너지 리턴.<br />
+													아디다스가 개발한 테크놀로지 가운데<br />
+													가장 우수한 반응성을 선사하는 BOOST 쿠셔닝.<br />
+													달리는 만큼 파워풀한 러닝을 경험하다.
+													</p>
+									<a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=206" class="button">관련 제품 보러가기</a>
+								</div>
+
+							</div>
+
+							<div class="box3">
+								<div class="image"><img src="http://imagem.adidas.co.kr/images/adidas/event/running_guide/cont7_03.jpg" alt=""></div>
+								<div class="txt">
+									<p class="tit">STRETCHWEB OUTSOLE<br />
+													WITH CONTINENTAL</p>
+									<p class="s_tit">컨티넨탈 스트레치웹 아웃솔</p>
+									<p class="desc">궁극의 접지력.<br />
+													뛰어난 유연성의 스트레치웹 아웃솔과 <br />
+													컨티넨탈 러버가 완성하는 궁극의 접지력.
+													</p>
+									<a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=206" class="button">관련 제품 보러가기</a>
+								</div>
+
+							</div>
+
+							<div id="footer">
+								<hr style="width:5px; height:30px; background-color:#000; margin:0 auto;">
+								<p><span style="font:1.6rem/35px 'adinenuPro-black'; color:#000; letter-spacing:0px; ">RUNNING SHOES GUIDE</span><br>SUPERNOVA<br></p>
+								<a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=206" class="button">관련 제품 보러가기<span></span></a>
+							</div>
+					`;
+				<%
+				}else{
+				%>
+					var htmlContent = '';
+					hasFocusPoint = false;
+				<%
+				}
+				%>
+				document.getElementById('content-wrapper').innerHTML = htmlContent;
+
+				;(function($){
+
+					var index = 0;
+					setInterval(function(){
+
+						if (index == 0)
+						{
+							index = 1;
+							$('#fadebox1').fadeOut(1000);
+							$('#fadebox2').fadeIn(1000);
+
+						}else if (index == 1)
+						{
+							index = 2;
+							$('#fadebox2').fadeOut(1000);
+							$('#fadebox3').fadeIn(1000);
+
+						}else if (index == 2)
+						{
+							index = 3;
+							$('#fadebox3').fadeOut(1000);
+							$('#fadebox4').fadeIn(1000);
+
+						}else{
+							index = 0;
+							$('#fadebox4').fadeOut(1000);
+							$('#fadebox1').fadeIn(1000);
+						}
+					},3000);
+
+
+
+					$('#running_guide .gnb li').bind('click',function(event){
+						 event.stopPropagation()
+
+						 if($(this).hasClass('open')){
+											  $(this).removeClass('open');
+						 }else{
+											  $(this).addClass('open');
+						 }
+					});
+
+					$('#running_guide .gnb>li').bind('click',function(event){
+						 event.stopPropagation()
+
+						 var index = $(this).index();
+
+						 if($(this).hasClass('open')){
+							  var rootTop = document.getElementById('header').getBoundingClientRect().bottom;
+							  $('#running_guide').data('prevGnbScroll',{
+													scrollTop : $('#running_guide').scrollTop()
+							  });
+
+							  var innerTop = rootTop - $('#running_guide .nav_menu_inner').offset().top;
+							  var yVal = ($(this).offset().top - rootTop) + innerTop;
+
+							  console.log(rootTop);
+							  $('#running_guide .gnb>li').each(function(idx){
+									if(index !== idx){
+														$(this).removeClass('open');
+									}
+							  });
+
+							  setTimeout(function(){
+									$('#running_guide').animate({
+														scrollTop : yVal
+									},250);
+							  },180);
+						 }else{
+							  $('#running_guide').animate({
+													scrollTop : $('#running_guide').data('prevGnbScroll').scrollTop
+							  },250);
+
+						 }
+					});
+
+					if(hasFocusPoint){
+						setTimeout(function(){
+							$('html , body').animate({
+								scrollTop : $('#content-wrapper').offset().top
+							},700);
+						},1000);
+
+					}
+				})(jQuery);
+			</script>
+
+		</div>
+		<!-- //container product_list -->
+
+		<div id="footer">
+			<div class="f_menu">
+				<a href="#">로그인</a>
+				<a href="#">주문/배송조회</a>
+				<a href="#">고객센터</a>
+				<a href="#">매장찾기</a>
+			</div>
+			<div class="f_info">
+				<p class="tit">아디다스코리아(주)</p>
+				<p>137-955 서울특별시 서초구 서초대로 74길 4, 삼성생명 서초타워 9층</p>
+				<p>대표이사 : 쟝 미쉘 그라니에&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;사업자 등록번호 : 214-81-07412</p>
+				<p>교환 및 반품 문의 (본사로 반품불가) : 온라인스토어 고객센터 1588-8241</p>
+				<p>(평일 9시 – 18시, 점심시간 12시 – 13시)</p>
+				<p>제품 수선문의 : 아디다스 고객만족센터 080-022-7981 (평일 09시 – 18시)</p>
+				<p>통신판매업신고 : 2007-서울서초-10391</p>
+				<p>이메일 : adiCLUB_Korea@adidas.com</p>
+				<p>개인정보 관리책임자 : 김동일&nbsp;&nbsp;|&nbsp;&nbsp;개인정보 관리담당자 : 황선영</p>
+				<p><a href="#">개인정보취급방침 확인<span class="ico-arrow-circle"></span></a></p>
+				<ul>
+					<li><a href="#">구매이용약관</a></li>
+					<li><a href="#">채무지급보증안내 확인</a></li>
+					<li><a href="#">공정거래 자율준수</a></li>
+					<li><a href="#">공정거래 위원회 사업자 신원정보 확인</a></li>
+				</ul>
+				<p style="color:#666;">Copyright © 2011 adidas Korea Inc.</p>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="/js/adidas/common.js"></script>
+	<script type="text/javascript">
+
+		var openPopInStock;
+		(function($){
+
+			openPopInStock = function(){
+				$('#instock-notification-popup').addClass('open');
+			};
+
+			$('.view_type_btn a').bind('click',function(){
+				if($(this).hasClass('on')){
+					return;
+				}
+
+				if($(this).hasClass('box_type')){
+					$('.products_list').removeClass('list_type')
+				}else{
+					$('.products_list').addClass('list_type');
+				}
+
+				$('.view_type_btn a').removeClass('on');
+				$(this).addClass('on');
+			});
+
+		})(jQuery);
+
+	</script>
+
+</body>
+
+</html>

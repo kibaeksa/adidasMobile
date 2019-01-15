@@ -1,0 +1,71 @@
+ @import './app/css/adidas/scss/common/mixin.scss';
+ @import './app/css/adidas/scss/common/common.scss';
+
+#sports17{
+    .button_area{
+        &:active{
+            a{
+                background: #fff;
+                color:#000;
+            }
+        }
+        div{
+            padding: 0;
+        }
+    }
+    .main{
+        span{
+            display: block;
+            img{
+                width: 100%;
+            }
+        }
+    }
+    .txt{
+        background: #f6f6ea;
+        padding: 45px 0 40px;
+        p{
+            padding: 0 0 15px 0;
+            text-align: center;
+            font:1.18rem 'NotoSansKR';
+        }
+    }
+    .banner{
+        background: #f6f6ea;
+        &.active{
+            .box{
+                img{
+                    opacity: 1;
+                }
+                .button_area{
+                    opacity: 1;
+
+                    bottom:35px;
+                }
+            }
+        }
+
+        .box{
+            position: relative;
+            img{
+                @include css3(transition, all, 0.8s);
+                opacity: 0;
+            }
+            .button_area{
+                padding: 0 4.5rem;
+                position: absolute;
+                bottom: 0px;
+                left: 0;
+                right: 0;
+                opacity: 0;
+
+                @include css3(transition, all, 0.8s);
+                transition-delay: 1.2s;
+
+            }
+            img{
+                width: 100%;
+            }
+        }
+    }
+}

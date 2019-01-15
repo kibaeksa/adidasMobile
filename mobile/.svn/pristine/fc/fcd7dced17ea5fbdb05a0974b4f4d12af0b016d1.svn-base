@@ -1,0 +1,318 @@
+@import "./app/MO/reebok/css/scss/about.scss";
+
+.freestyle{
+    .modal-popup-wrapper {
+        overflow: hidden;
+        .popup{
+            top:0 !important;
+            transform: translate3d(-50%, 0%, 0px) !important;
+        }
+        .popup-contents{
+            p{
+                font:400 1.2rem/1.5rem 'NotoSansKR';
+                color: #666666;
+                margin-bottom: 1.6rem;
+            }
+            .shop_cont{
+                border-top: 1px solid #000;
+                border-bottom: 1px solid #000;
+                overflow: auto;
+                height: 40rem;
+                table{
+                    td{
+                        padding: 1.5rem 1rem;
+                        border-bottom: 1px solid #ececec;
+                        color:#000;
+                        font:400 1.5rem/1.5rem 'NotoSansKR';
+                        text-align: left;
+                        &.middle{
+                            vertical-align: middle;
+                        }
+                        a{
+                            img{
+                                width:100%;
+                            }
+                        }
+                        ul{
+                            li{
+                                &.name{
+                                    font:700 1.5rem/2.4rem 'NotoSansKR';
+                                    color:#000;
+                                }
+                                &.adrress{
+                                    font:400 1.2rem/2rem 'NotoSansKR';
+                                    color:#000;
+                                }
+                                &.phone{
+                                    font:400 1.2rem/1.8rem 'NotoSansKR';
+                                    color:#555555;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .main{
+        position: relative;
+        .bg{
+            width: 100%;
+            img{
+                width: 100%;
+            }
+        }
+        .txt{
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            width: 100%;
+            text-align: center;
+            opacity: 0;
+            -webkit-opacity: 0;
+            transition: 0.5s;
+            -webkit-transition: 0.5s;
+
+            &.on{
+                opacity: 1;
+                -webkit-opacity: 1;
+
+            }
+            img{
+                position: absolute;
+                top: -26px;
+                left: 8px;
+                width: 75px;
+            }
+            h2{
+                font:3.5rem/3.5rem 'dinpro';
+                text-transform: uppercase;
+                text-align: center;
+                color:#fff;
+                span{
+                    display: block;
+                    text-align: center;
+                    font: 3.5rem/3.5rem 'dinpro';
+                     font-weight: 300;
+                    color:#fff;
+                }
+            }
+            p{
+                font:1.1rem 'NotoSansKR';
+                color:#fff;
+                text-align: center;
+                letter-spacing: -0.2px;
+            }
+            a{
+                display: inline-block;
+                margin: 20px 0 0 0;
+                width:126px;
+                background: rgba(0,0,0,0.3);
+                color:#fff;
+                text-align: center;
+                padding: 0.8rem 0 1rem;
+                font:1.2rem/1.9rem 'NotoSansKR';
+                border:1px solid #dfdfdf;
+
+            }
+        }
+    }
+
+    .video_visual{
+        padding-bottom: 112.4375%;
+        .cover{
+            top:53%;
+        }
+        h2{
+            margin-bottom:0.4rem;
+            width:inherit;
+            height: inherit;
+            text-indent: 0;
+            background:none;
+            text-align: center;
+            color:#fff;
+            text-transform: uppercase;
+            font:4.5rem/4.8rem 'QStencil' !important;
+        }
+        .desc{
+            margin-bottom:1.5rem;
+            text-align: center;
+            color:#fff;
+            text-transform: uppercase;
+            font:300 1.1rem 'NotoSansKR';
+        }
+        .video-btn{
+            width: 60px;
+            height: 60px;
+            margin:0 auto;
+            &:before{
+                border-top: 11px solid transparent;
+                border-bottom: 11px solid transparent;
+                border-left: 11px solid #fff;
+            }
+        }
+    }
+
+    .collections2{
+        padding: 0 1.5rem 1.5rem;
+        background: url('http://imagem.reebok.co.kr//images/reebok/about/classic/freestyle_171219/slider_bg.jpg') 0 no-repeat;
+        background-size: 100% 100%;
+
+        h3{
+            padding: 2.5rem 0px 1rem;
+            color: #fff;
+            font:2.5rem/3rem 'dinpro';
+            text-align: center;
+            text-transform: uppercase;
+            a{
+                display: inline-block;
+                border: 1px solid #fff;
+                color:#fff;
+                font:400 1.2rem/1.9rem 'NotoSansKR';
+                text-align: center;
+                width: 126px;
+                padding : 0.8rem 0 1rem;
+                margin-top: 1rem;
+                margin-bottom: 1rem;
+                &.shop{
+                    font:300 1.3rem/1.9rem 'NotoSansKR';
+                    display: block;
+                    border: none;
+                    margin-top: 0;
+                    margin-bottom: 0;
+                    &::after{
+                        content: '';
+                        display: block;
+                        width: 33%;
+                        margin: 0 auto;
+                        height: 1px;
+                        background-color: #8a8483;
+                    }
+                }
+            }
+        }
+
+        .num_paging{
+            padding: 1rem 0px;
+            a{
+                background: rgba(255, 255, 255, 0.3);
+                border:none;
+                width: 1rem;
+                height: 1rem;
+                margin-right: 0.8rem;
+            }
+
+            .on{
+                background: #fff;
+            }
+        }
+
+        .collection_cut{
+            position: relative;
+            overflow: hidden;
+            ul{
+                overflow: hidden;
+                li{
+                    position: relative;
+                    float: left;
+                    img{
+                        width: 100%;
+                    }
+                }
+            }
+            .navi{
+                position: absolute;
+                top:50%;
+                margin-top: -16.5px;
+                width: 100%;
+                text-align: center;
+                img{
+                    width: 50%;
+                }
+                .next{
+                    position: absolute;
+                    right:0;
+                    text-align: right;
+                    img{
+                        width: 40%;
+                        margin-right: 1rem;
+                    }
+                }
+                .prev{
+                    position: absolute;
+                    left:0;
+                    text-align: left;
+                    img{
+                        width: 40%;
+                        margin-left: 1rem;
+                    }
+                }
+            }
+        }
+        .prodlist_wrap{
+            position: relative;
+            padding-bottom: 190%;
+
+            .prodlist{
+                position: absolute;
+                top: 63px;
+                left: 0;
+                padding: 0;
+                opacity: 0;
+                transition:opacity 0.3s;
+                -webkit-transition:opacity 0.3s;
+                z-index: 1;
+                h4{
+                    position: absolute;
+                    top:-3.5rem;
+                    width: 100%;
+                    text-align: center;
+                    img{
+                        width: 77%;
+                    }
+                }
+                .box{
+                    .inner{
+                        padding-right: 5px;
+                        padding-left: 5px;
+                        .info{
+                            padding:20px 0 30px 12px;
+                        }
+                    }
+                }
+                .box:nth-child(2n){
+                    .inner{
+                        padding-right: 5px;
+                        padding-left: 5px;
+                    }
+
+                }
+                .tit{
+                    height: 1.4rem;
+
+                    display: -webkit-box;
+                    // overflow: hidden;
+                    // overflow: hidden;
+                    // text-overflow: ellipsis;
+                    // white-space:normal;
+                    // -webkit-line-clamp:1;
+                    // -webkit-box-orient: vertical;
+                }
+            }
+
+            .active{
+                opacity: 1;
+                z-index: 2;
+            }
+            .fake{
+                position: relative;
+                opacity: 0;
+                visibility: hidden;
+            }
+
+        }
+    }
+    
+}
+// pump_supreme

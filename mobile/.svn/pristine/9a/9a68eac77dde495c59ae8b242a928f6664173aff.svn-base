@@ -1,0 +1,704 @@
+@import './app/css/adidas/scss/common/mixin.scss';
+@import './app/css/adidas/scss/common/common.scss';
+
+#video-layer{
+   position:fixed;top:0;left:0;width: 100%;height: 100%;z-index:1000;
+}
+
+#video-layer .bg{
+   width: 100%;
+   height: 100%;
+
+   position: absolute;
+   top: 0;
+   left: 0;
+
+   transform-origin:center center;
+   -webkit-transform-origin:center center;
+   transform:scale(0);
+   -webkit-transform:scale(0);
+   opacity:0;
+   background:#000;
+   z-index:1;
+
+   transition:all 0.4s;
+   -webkit-transition:all 0.4s;
+
+
+}
+
+#video-layer.loaded .bg{
+   opacity: 1;
+   transform:scale(1.2);
+   -webkit-transform:scale(1.2);
+}
+
+#video-layer .video-box{
+   position: relative;
+   width: 100%;
+   height: 100%;
+   z-index: 3;
+}
+
+#video-layer .close_x_btn{
+   width: 70px;
+   height: 70px;
+   position: absolute;
+   top: 0;
+   right: 0;
+   z-index: 5;
+   opacity: 0;
+}
+
+#video-layer.loaded .close_x_btn{
+   opacity: 1;
+}
+
+
+#sports17{
+   .main{
+       position: relative;
+       img{ width: 100%; }
+       .play{
+           position: absolute;
+           top:50%;
+           margin-top: -50px;
+           left:50%;
+           margin-left: -52px;
+       }
+       p{
+           position: absolute;
+           top:5%;
+           left:5%;
+       }
+   }
+   //common bg
+   .sportsbg{
+       position: relative;
+       @include css3(background-size, cover);
+       background-position: 50% 50%;
+       background-repeat: no-repeat;
+       width: 100%;
+       padding-bottom: 100%;
+       p{
+           position: absolute;
+           top:50%;
+           left:50%;
+           transform: translate(-50%,-30%);
+           width: 100%;
+           text-align: center;
+           font:700 2rem/2.6rem 'NotoSansKR';
+       }
+   }
+   .soccer_bg{
+       background-image: url('http://imagem.adidas.co.kr/images/adidas/event/sports17/20170712/soccer_bg.jpg');
+   }
+   .baseball_bg{
+       background-image: url('http://imagem.adidas.co.kr/images/adidas/event/sports17/20170712/baseball_bg.jpg');
+   }
+   .football_bg{
+       background-image: url('http://imagem.adidas.co.kr/images/adidas/event/sports17/20170712/football_bg.jpg');
+   }
+   .basketball_bg{
+       background-image: url('http://imagem.adidas.co.kr/images/adidas/event/sports17/20170712/basketball_bg.jpg');
+   }
+   .volleyball_bg{
+       background-image: url('http://imagem.adidas.co.kr/images/adidas/event/sports17/20170712/volleyball_bg.jpg');
+   }
+   .training_bg{
+       position: relative;
+       background-image: url('http://imagem.adidas.co.kr/images/adidas/event/sports17/20170712/training_bg.jpg');
+   }
+   .slider_section{
+       position: relative;
+       padding:2.5rem 1rem 0 1rem;
+       background:#fff;
+       .slider_wrap{
+           position: relative;
+           // padding:2rem 0rem;
+           margin:1rem 2.5rem 0 2.5rem;
+           // overflow: hidden;
+
+           ul{
+               position: relative;
+               .owl-item.active{
+                   .num_title span{
+                       margin-right: 0;
+                       opacity: 1;
+                   }
+
+               }
+               li{
+                   float: left;
+                   position: relative;
+                   top:0;
+                   // margin-right: 20px;
+                   .title{
+                       padding-bottom: 1.5rem;
+                       text-align: center;
+                       font:1.4rem/1.8rem 'NotoSansKR';
+                       p{
+                           font:2.3rem/2.6rem 'adinenuPro-black';
+                           letter-spacing: 0;
+                           text-transform: uppercase;
+                       }
+                   }
+                   .img{
+                       img{width: 100%;}
+                   }
+                   .num_title{
+                       position: relative;
+                       padding:2rem 0 0 0;
+                       text-align: center;
+
+                   }
+                   .num_title span{
+                       position: relative;
+                       display: inline-block;
+                       height: 50px;
+                       font:700 1.8rem/2rem 'NotoSansKR';
+                       letter-spacing: 0;
+                       margin-right: -10rem;
+                       transition: all 0.6s ease;
+                       opacity: 0;
+                   }
+                   .num_title span:after{
+                       display: inline-block;
+                       content: '';
+                       width: 0%;
+                       height: 2px;
+                       background: #000;
+                       position: absolute;
+                       bottom: 24px;
+                       right:0;
+                       transition: all 0.6s ease;
+
+                   }
+               }
+
+           }
+           ul:after{
+               content: '';
+               display: block;
+               clear: both;
+           }
+           .owl-controls{
+               .owl-dot{
+                   // position: relative;
+                   float: left;
+                   text-align: center;
+                   span{
+                       display: inline-block;
+                       padding:1rem 0 0 0;
+                       font:1.5rem/2rem 'NotoSansKR';
+                       text-align: center;
+                       color:#000;
+                       letter-spacing: 0;
+                   }
+               }
+           }
+           .owl-nav{
+               position: absolute;
+               top:31%;
+               width:100%;
+               .owl-next {
+                 position: relative;
+                 right:-26px;
+                 float: right;
+                 width:20px;
+                 height: 40px;
+                 background:url('http://imagem.adidas.co.kr/images/adidas/event/sports17/next.png') no-repeat;
+                 background-size: 100%;
+                 text-indent: -9999px;
+               }
+               .owl-prev {
+                 position: relative;
+                 left:-26px;
+                 float: left;
+                 width:20px;
+                 height: 40px;
+                 background:url('http://imagem.adidas.co.kr/images/adidas/event/sports17/prev.png') no-repeat;
+                 background-size: 100%;
+                 text-indent: -9999px;
+               }
+           }
+       }
+
+   }
+   .gal{
+       position: relative;
+       padding-bottom: 330%;
+       overflow: hidden;
+       ul{
+           li{
+               float:left;
+               position: absolute;
+               top: 0;
+               left:0;
+               opacity: 0;
+               display: none;
+               @include css3(transition, opacity 0.3s)
+               img{ width: 100%; }
+               .video{
+                   position: relative;
+                   text-align: center;
+                   a.video-button{
+                       position: absolute;
+                       top:50%;
+                       left:50%;
+                       margin-top:-45px;
+                       margin-left:-45px;
+                       img{ width: 60%; }
+                   }
+               }
+               .view{
+                   position: relative;
+               }
+           }
+           li.on{
+               opacity: 1;
+               display: block;
+               width:100%;
+           }
+
+       }
+       ul:after{
+           content: '';
+           display: block;
+           clear: both;
+       }
+
+   }
+
+   .sportscol{
+       padding-bottom: 230%;
+   }
+   .soccer_col{
+       position: relative;
+       div{
+           position: relative;
+           float:left;
+           padding-bottom: 100%;
+           background-repeat: no-repeat;
+           background-size: cover;
+           background-position: center;
+           &.img1{
+               width: 50%;
+               background-image: url('http://imagem.adidas.co.kr/images/adidas/event/sports17/20170712/soccer_col01.jpg');
+           }
+           &.img2{
+               width: 50%;
+               padding-bottom: 50%;
+               height: 25%;
+               background-image: url('http://imagem.adidas.co.kr/images/adidas/event/sports17/20170712/soccer_col02.jpg');
+
+           }
+           &.img3{
+               width: 50%;
+               padding-bottom: 50%;
+               height: 25%;
+               background-image: url('http://imagem.adidas.co.kr/images/adidas/event/sports17/20170712/soccer_col04.jpg');
+
+           }
+           &.img4{
+               width: 100%;
+               padding-bottom: 80%;
+               background-image: url('/images/adidas/event/sports17/20170712/soccer_col03.jpg?v=1');
+               .txt{
+                   width: 100%;
+                   position: absolute;
+                   left: 50%;
+                   top: 50%;
+                   @include css3(transform , translate(-50%,-50%));
+                   padding-bottom: 0;
+               }
+               p{
+                   position: relative;
+                   text-align: center;
+                   color:#fff;
+                   font:400 1.5rem/2rem 'NotoSansKR';
+                   letter-spacing: 0.1rem;
+                   &.title{
+                       margin-top: 0;
+                       font: 2.3rem 'adinenuPro-black';
+                       letter-spacing: 0.5rem;
+                   }
+               }
+
+           }
+           &.img5{
+               width: 50%;
+               padding-bottom: 50%;
+               height: 25%;
+               background-image: url('http://imagem.adidas.co.kr/images/adidas/event/sports17/20170712/soccer_col05.jpg');
+           }
+           &.img6{
+               width: 50%;
+               padding-bottom: 50%;
+               height: 25%;
+               background-image: url('http://imagem.adidas.co.kr/images/adidas/event/sports17/20170712/soccer_col06.jpg');
+           }
+
+       }
+   }
+
+   .baseball_col{
+       position: relative;
+       div{
+           position: relative;
+           float:left;
+           padding-bottom: 100%;
+           background-repeat: no-repeat;
+           background-size: cover;
+           background-position: center;
+           &.img1{
+               width: 50%;
+               background-image: url('http://imagem.adidas.co.kr/images/adidas/event/sports17/20170712/baseball_col01.jpg');
+
+           }
+           &.img2{
+               width: 50%;
+               padding-bottom: 50%;
+               height: 25%;
+               background-image: url('http://imagem.adidas.co.kr/images/adidas/event/sports17/20170712/baseball_col02.jpg');
+
+           }
+           &.img3{
+               width: 50%;
+               padding-bottom: 50%;
+               height: 25%;
+               background-image: url('http://imagem.adidas.co.kr/images/adidas/event/sports17/20170712/baseball_col04.jpg');
+
+           }
+           &.img4{
+               width: 100%;
+               padding-bottom: 80%;
+               background-image: url('/images/adidas/event/sports17/20170712/baseball_col03.jpg?v=2');
+               .txt{
+                   width: 100%;
+                   position: absolute;
+                   left: 50%;
+                   top: 50%;
+                   @include css3(transform , translate(-50%,-50%));
+                   padding-bottom: 0;
+               }
+               p{
+                   position: relative;
+                   text-align: center;
+                   color:#fff;
+                   font:400 1.5rem/2rem 'NotoSansKR';
+                   letter-spacing: 0.1rem;
+                   &.title{
+                       margin-top: 0;
+                       font: 2.3rem 'adinenuPro-black';
+                       letter-spacing: 0.5rem;
+                   }
+               }
+
+           }
+           &.img5{
+               width: 50%;
+               padding-bottom: 50%;
+               height: 25%;
+               background-image: url('http://imagem.adidas.co.kr/images/adidas/event/sports17/20170712/baseball_col05.jpg');
+           }
+           &.img6{
+               width: 50%;
+               padding-bottom: 50%;
+               height: 25%;
+               background-image: url('http://imagem.adidas.co.kr/images/adidas/event/sports17/20170712/baseball_col06.jpg');
+           }
+
+       }
+   }
+   .football_col{
+       position: relative;
+       div{
+           position: relative;
+           float:left;
+           padding-bottom: 100%;
+           background-repeat: no-repeat;
+           background-size: cover;
+           background-position: center;
+           &.img1{
+               width: 50%;
+               background-image: url('http://imagem.adidas.co.kr/images/adidas/event/sports17/20170712/football_col01.jpg');
+
+           }
+           &.img2{
+               width: 50%;
+               padding-bottom: 50%;
+               height: 25%;
+               background-image: url('http://imagem.adidas.co.kr/images/adidas/event/sports17/20170712/football_col02.jpg');
+
+           }
+           &.img3{
+               width: 50%;
+               padding-bottom: 50%;
+               height: 25%;
+               background-image: url('http://imagem.adidas.co.kr/images/adidas/event/sports17/20170712/football_col04.jpg');
+
+           }
+           &.img4{
+               width: 100%;
+               padding-bottom: 80%;
+               background-image: url('/images/adidas/event/sports17/20170712/football_col03.jpg?v=1');
+               .txt{
+                   width: 100%;
+                   position: absolute;
+                   left: 50%;
+                   top: 50%;
+                   @include css3(transform , translate(-50%,-50%));
+                   padding-bottom: 0;
+               }
+               p{
+                   position: relative;
+                   text-align: center;
+                   color:#fff;
+                   font:400 1.5rem/2rem 'NotoSansKR';
+                   letter-spacing: 0.1rem;
+                   &.title{
+                       margin-top: 0;
+                       font: 2.3rem 'adinenuPro-black';
+                       letter-spacing: 0.5rem;
+                   }
+               }
+
+           }
+           &.img5{
+               width: 50%;
+               padding-bottom: 50%;
+               height: 25%;
+               background-image: url('http://imagem.adidas.co.kr/images/adidas/event/sports17/20170712/football_col05.jpg');
+           }
+           &.img6{
+               width: 50%;
+               padding-bottom: 50%;
+               height: 25%;
+               background-image: url('http://imagem.adidas.co.kr/images/adidas/event/sports17/20170712/football_col06.jpg');
+           }
+
+       }
+   }
+   .basketball_col{
+       position: relative;
+       div{
+           position: relative;
+           float:left;
+           padding-bottom: 100%;
+           background-repeat: no-repeat;
+           background-size: cover;
+           background-position: center;
+           &.img1{
+               width: 50%;
+               background-image: url('http://imagem.adidas.co.kr/images/adidas/event/sports17/20170712/basketball_col01.jpg');
+
+           }
+           &.img2{
+               width: 50%;
+               padding-bottom: 50%;
+               height: 25%;
+               background-image: url('http://imagem.adidas.co.kr/images/adidas/event/sports17/20170712/basketball_col02.jpg');
+
+           }
+           &.img3{
+               width: 50%;
+               padding-bottom: 50%;
+               height: 25%;
+               background-image: url('http://imagem.adidas.co.kr/images/adidas/event/sports17/20170712/basketball_col04.jpg');
+
+           }
+           &.img4{
+               width: 100%;
+               padding-bottom: 80%;
+               background-image: url('/images/adidas/event/sports17/20170712/basketball_col03.jpg?v=1');
+               .txt{
+                   width: 100%;
+                   position: absolute;
+                   left: 50%;
+                   top: 50%;
+                   @include css3(transform , translate(-50%,-50%));
+                   padding-bottom: 0;
+               }
+               p{
+                   position: relative;
+                   text-align: center;
+                   color:#fff;
+                   font:400 1.5rem/2rem 'NotoSansKR';
+                   letter-spacing: 0.1rem;
+                   &.title{
+                       margin-top: 0;
+                       font: 2.3rem 'adinenuPro-black';
+                       letter-spacing: 0.5rem;
+                   }
+               }
+
+           }
+           &.img5{
+               width: 50%;
+               padding-bottom: 50%;
+               height: 25%;
+               background-image: url('http://imagem.adidas.co.kr/images/adidas/event/sports17/20170712/basketball_col05.jpg');
+           }
+           &.img6{
+               width: 50%;
+               padding-bottom: 50%;
+               height: 25%;
+               background-image: url('http://imagem.adidas.co.kr/images/adidas/event/sports17/20170712/basketball_col06.jpg');
+           }
+
+       }
+   }
+   .volleyball_col{
+       position: relative;
+       div{
+           position: relative;
+           float:left;
+           padding-bottom: 100%;
+           background-repeat: no-repeat;
+           background-size: cover;
+           background-position: center;
+           &.img1{
+               width: 50%;
+               background-image: url('http://imagem.adidas.co.kr/images/adidas/event/sports17/20170712/volleyball_col01.jpg');
+
+           }
+           &.img2{
+               width: 50%;
+               padding-bottom: 50%;
+               height: 25%;
+               background-image: url('http://imagem.adidas.co.kr/images/adidas/event/sports17/20170712/volleyball_col02.jpg');
+
+           }
+           &.img3{
+               width: 50%;
+               padding-bottom: 50%;
+               height: 25%;
+               background-image: url('http://imagem.adidas.co.kr/images/adidas/event/sports17/20170712/volleyball_col04.jpg');
+
+           }
+           &.img4{
+               width: 100%;
+               padding-bottom: 80%;
+               background-image: url('/images/adidas/event/sports17/20170712/volleyball_col03.jpg?v=1');
+               .txt{
+                   width: 100%;
+                   position: absolute;
+                   left: 50%;
+                   top: 50%;
+                   @include css3(transform , translate(-50%,-50%));
+                   padding-bottom: 0;
+               }
+               p{
+                   position: relative;
+                   text-align: center;
+                   color:#fff;
+                   font:400 1.5rem/2rem 'NotoSansKR';
+                   letter-spacing: 0.1rem;
+                   &.title{
+                       margin-top: 0;
+                       font: 2.3rem 'adinenuPro-black';
+                       letter-spacing: 0.5rem;
+                   }
+               }
+
+           }
+           &.img5{
+               width: 50%;
+               padding-bottom: 50%;
+               height: 25%;
+               background-image: url('http://imagem.adidas.co.kr/images/adidas/event/sports17/20170712/volleyball_col05.jpg');
+           }
+           &.img6{
+               width: 50%;
+               padding-bottom: 50%;
+               height: 25%;
+               background-image: url('http://imagem.adidas.co.kr/images/adidas/event/sports17/20170712/volleyball_col06.jpg');
+           }
+
+       }
+   }
+   .training_col{
+       position: relative;
+       div{
+           position: relative;
+           float:left;
+           padding-bottom: 100%;
+           background-repeat: no-repeat;
+           background-size: cover;
+           background-position: center;
+           &.img1{
+               width: 50%;
+               background-image: url('http://imagem.adidas.co.kr/images/adidas/event/sports17/20170712/training_col01.jpg');
+
+           }
+           &.img2{
+               width: 50%;
+               padding-bottom: 50%;
+               height: 25%;
+               background-image: url('http://imagem.adidas.co.kr/images/adidas/event/sports17/20170712/training_col02.jpg');
+
+           }
+           &.img3{
+               width: 50%;
+               padding-bottom: 50%;
+               height: 25%;
+               background-image: url('http://imagem.adidas.co.kr/images/adidas/event/sports17/20170712/training_col04.jpg');
+
+           }
+           &.img4{
+               width: 100%;
+               padding-bottom: 80%;
+               background-image: url('/images/adidas/event/sports17/20170712/training_col03.jpg?v=1');
+               .txt{
+                   width: 100%;
+                   position: absolute;
+                   left: 50%;
+                   top: 50%;
+                   @include css3(transform , translate(-50%,-50%));
+                   padding-bottom: 0;
+               }
+               p{
+                   position: relative;
+                   text-align: center;
+                   color:#fff;
+                   font:400 1.5rem/2rem 'NotoSansKR';
+                   letter-spacing: 0.1rem;
+                   &.title{
+                       margin-top: 0;
+                       font: 2.3rem 'adinenuPro-black';
+                       letter-spacing: 0.5rem;
+                   }
+               }
+
+           }
+           &.img5{
+               width: 50%;
+               padding-bottom: 50%;
+               height: 25%;
+               background-image: url('http://imagem.adidas.co.kr/images/adidas/event/sports17/20170712/training_col05.jpg');
+           }
+           &.img6{
+               width: 50%;
+               padding-bottom: 50%;
+               height: 25%;
+               background-image: url('http://imagem.adidas.co.kr/images/adidas/event/sports17/20170712/training_col06.jpg');
+           }
+
+       }
+   }
+   .video{
+       img{
+           width:100%;
+       }
+       a{
+           position: absolute;
+           display: block;
+           width: 80%;
+           height: 8.1%;
+           bottom: 1.6%;
+           left: 10%;
+       }
+   }
+
+}

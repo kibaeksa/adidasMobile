@@ -1,0 +1,1413 @@
+@import './app/css/adidas/scss/common/mixin.scss';
+@import './app/css/adidas/scss/common/common.scss';
+
+$break-small: 1000px;
+$break-large: 1400px;
+$width320:320px;
+$width400:400px;
+$width480:480px;
+$width600:600px;
+
+/* customise_main */
+.customise_main{
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+
+	/*
+	 * Common use
+	   button
+	 */
+	.button{
+		width: 340px;
+		height: 62px;
+		display: block;
+		font:400 16px/58px 'NotoSansKR';
+		box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		color: #000;
+		text-decoration: none;
+		letter-spacing:2px;
+		border: 1px solid  #000;
+		text-align: center;
+
+		@include css3(transition,all 0.4s ease 0.1s);
+
+		.arrow{
+			margin-left: 25px;
+			position: relative;
+			display: inline-block;
+			width: 40px;
+			height: 10px;
+			background:url('http://image.adidas.co.kr/images/adidas/event/customise/miadidas-interface.png') -13px -45px;
+			opacity: 1;
+			@include css3(transition,opacity 0.4s ease 0.1s);
+		}
+
+		.over_arrow{
+			display: inline-block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 40px;
+			height: 10px;
+			background:url('http://image.adidas.co.kr/images/adidas/event/customise/miadidas-interface.png') -55px -35px;
+			opacity: 0;
+			@include css3(transition,opacity 0.4s ease 0.1s);
+		}
+
+		&.black{
+			background: #000;
+			color: #fff;
+
+			.arrow{
+				background-position: -55px -35px;
+			}
+
+			.over_arrow{
+				background-position: -13px -45px;
+			}
+
+			&:hover{
+				background: #fff;
+				color:#000;
+			}
+		}
+
+		&:hover{
+			background: #000;
+			color: #fff;
+
+			.over_arrow{
+				opacity: 1;
+			}
+		}
+	}
+	/* button END */
+
+	.mi-button{
+		width: 200px;
+		position: relative;
+		display: inline-block;
+		overflow: hidden;
+		padding: 15px 0;
+		background: #000;
+		text-align: center;
+		line-height: 1.3rem;
+
+		span.text{
+			position: relative;
+			color: #fff;
+			font-size: 1.3rem;
+			z-index: 5;
+			@include css3(transition,color 0.2s ease 0.08s);
+		}
+
+		.arrow{
+			width: 12px;
+			height: 2px;
+			position: relative;
+			margin-left: 5px;
+			display: inline-block;
+			vertical-align: middle;
+			background: #797979;
+
+			&::before , &::after{
+				content:'';
+				display: block;
+				width: 6px;
+				height: 2px;
+				position: absolute;
+				top: 0;
+				right: 0;
+				background:#797979;
+				@include css3(transform-origin,top right);
+				@include css3(transform , rotate(45deg));
+			}
+
+			&::after{
+				right: 1px;
+				@include css3(transform , rotate(-45deg));
+			}
+		}
+
+		&::after{
+			content:'';
+			display: block;
+			position: absolute;
+			top: 0;
+			left: -100%;
+			width: 100%;
+			height: 100%;
+			background: #fff;
+
+			@include css3(transition,left 0 cubic-bezier(0.46, 0.03, 0.52, 0.96));
+		}
+
+		&.hover{
+			&::after{
+				left: 0;
+				@include css3(transition-duration,0.25s);
+			}
+
+			span.text{
+				color: #000;
+			}
+		}
+
+		&.out{
+			&::after{
+				left: 100%;
+				@include css3(transition-duration,0.25s);
+			}
+
+			span.text{
+				color: #fff;
+			}
+		}
+
+
+		&.white{
+			background: #fff;
+
+			.text{
+				color: #000;
+			}
+
+			&::after{
+				background: #000;
+			}
+
+			&.hover{
+				span.text{
+					color: #fff;
+				}
+			}
+
+			&.out{
+				span.text{
+					color: #000;
+				}
+			}
+		}
+
+	}
+	/* mi-button END */
+
+	.background_img{
+		img{
+			width: 100%;
+		}
+		&#customise_top{
+			background: url('/images/adidas/event/customise/170905/01.jpg') no-repeat;
+			background-position: center center;
+			background-size: cover;
+		}
+		.bg{
+			position: relative;
+			width: 100%;
+			padding-bottom: 140%;
+			background-position: center center;
+			background-size: cover;
+			z-index: 0;
+			.bg1{
+				position: absolute;
+				top:0;
+				left:0;
+				width: 100%;
+				z-index: 1;
+				background-size: cover;
+				visibility: hidden;
+				padding-bottom: 140%;
+				z-index: 1;
+				background: url('/images/adidas/event/customise/170905/02.jpg') no-repeat;
+				background-position: center center;
+				background-size: cover;
+			}
+			.bg2{
+				position: absolute;
+				top:0;
+				left:0;
+				width: 100%;
+				z-index: 1;
+				background-size: cover;
+				visibility: hidden;
+				padding-bottom: 140%;
+				z-index: 1;
+				background: url('/images/adidas/event/customise/170905/03.jpg') no-repeat;
+				background-position: center center;
+				background-size: cover;
+			}
+		}
+	}
+
+	.masthead{
+		width: 100%;
+		padding-bottom: 100%;
+		position: relative;
+
+		.background_img{
+			width: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+
+			&.bg1{
+				top: 0;
+				left: 0;
+			}
+
+			&.bg2{
+				top: 0;
+				right: 0;
+			}
+		}
+		.contents{
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 5;
+
+			.copy_wrapper{
+				width: 100%;
+				position: absolute;
+				top:20px;
+				left: 0;
+				text-align: center;
+
+				h3{
+					margin-bottom: 0.5rem;
+				    font: 1.8rem/2rem 'adinenuPro-bold';
+				    color: #fff;
+				    letter-spacing: 5px;
+				    text-align: center;
+				}
+
+				.desc{
+					margin-bottom: 18rem;
+				    font-size: 1.3rem;
+				    color: #fff;
+				    text-align: center;
+					font-weight: 300;
+				}
+
+				&.black{
+					h3{
+						color:#000;
+					}
+					.desc{
+						color:#000;
+					}
+				}
+
+				.video_button{
+					display: block;
+					width: 8rem;
+					height: 8rem;
+					position: absolute;
+					top: -1rem;
+					left: 50%;
+					border: 1px solid  #fff;
+					border-radius: 50%;
+
+					@include css3(transform,translate3d(-50%,-100%,0));
+
+					.arrow{
+						width: 1.8rem;
+						height: 2rem;
+						border-left: 1px solid  #fff;
+						position: absolute;
+						top: 50%;
+						left: 50%;
+						margin-left: 2px;
+						@include css3(transform,translate3d(-50%,-50%,0));
+
+						&::before , &::after{
+							content:'';
+							display: block;
+							width: 100%;
+							border-top: 1px solid  #fff;
+							position: absolute;
+							top: 50%;
+							left: -0.25rem;
+							@include css3(transform,translate3d(0,-50%,0) rotate(30deg));
+							@include css3(transform-origin,top right);
+						}
+
+						&::after{
+							@include css3(transform,translate3d(0,-50%,0) rotate(-30deg));
+						}
+					}
+				}
+			}
+
+			.img_wrapper{
+				position: absolute;
+				top: 90px;
+				right: -60px;
+				z-index: 4;
+
+				.box{
+					position: absolute;
+					top: 0;
+					right: -90px;
+
+					&.video{
+						right: 0;
+						margin-top: 75px;
+						position: relative;
+						z-index: 3;
+					}
+				}
+			}
+
+
+		}
+	}
+	/* masthead END */
+
+	.inspired_wrapper{
+		width: 100%;
+		position: relative;
+		background: #000;
+
+
+		>*{
+			text-align: center;
+		}
+
+		h4{
+			padding-top: 4rem;
+			margin-bottom: 20px;
+			font-size: 2.6rem;
+			color: #fff;
+			letter-spacing: 5px;
+		}
+
+		.desc{
+			padding-bottom: 4rem;
+			font-size: 1.4rem;
+			line-height: 1.7rem;
+			color: #9e9e9e;
+			letter-spacing: 0.75px;
+			text-transform: uppercase;
+		}
+
+		ul{
+			li{
+				width: 100%;
+				padding-bottom: 124%;
+				position: relative;
+				overflow: hidden;
+
+				>*{
+					position: absolute;
+					top: 0;
+					left: 0;
+				}
+
+				.copy_wrapper{
+					width: 100%;
+					position: absolute;
+					bottom: 0;
+					left: 0;
+				}
+
+				h5{
+					width: 100%;
+					top: 50%;
+					font:2.8rem/5rem 'adinenuPro-bold';
+					color: #fff;
+					letter-spacing: 10px;
+					text-align: center;
+
+					@include css3(transform,translate3d(0,-50%,0));
+				}
+
+				.img{
+					img{
+						width: 100%;
+						transition:transform 5s;
+						-webkit-transition:transform 5s;
+					}
+				}
+
+				.mi-button{
+					width: 80%;
+					max-width: 320px;
+					position: absolute;
+					top: auto;
+					bottom: 40px;
+					left: 50%;
+
+					@include css3(transform,translate3d(-50%,0,0));
+
+					.text{
+						font-family: 'NotoSansKR';
+						font-weight: 700;
+						font-size: 1.2rem;
+					}
+				}
+
+				&.last{
+					margin-right: 0;
+				}
+
+				&:hover{
+					.img{
+						img{
+							@include css3(transform,scale(1.1));
+						}
+					}
+				}
+			}
+		}
+
+	}
+	/* inspired_wrapper END */
+
+	.features_wrapper{
+		width: 100%;
+		position: relative;
+		background:url('//imagem.adidas.co.kr/images/adidas/event/customise/170905/features_bg_tubular.jpg') 0 45% no-repeat;
+		background-size: 100% auto;
+
+		.background_img{
+			width: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+
+			img{
+				width: 100%;
+			}
+		}
+
+		.contents{
+			width: 100%;
+			margin: 0 auto;
+			position: relative;
+			overflow: hidden;
+
+			.copy_wrapper{
+				position: relative;
+				padding: 40px 40px 20px;
+				box-sizing: border-box;
+				-webkit-box-sizing: border-box;
+
+				>*{
+					text-align: center;
+				}
+
+				h4{
+					margin-bottom: 20px;
+					font:2.6rem/2.6rem 'adinenuPro-black';
+					color: #000;
+					letter-spacing: 5px;
+				}
+
+				.desc{
+					margin-bottom: 40px;
+					font:400 1.35rem/1.35rem 'NotoSansKR';
+					color: #000;
+					letter-spacing: 0.75px;
+					text-transform: uppercase;
+				}
+
+				.button_area{
+					.mi-button{
+						width: 100%;
+						position: relative;
+						display: block;
+						padding:17px 0 17px;
+						margin-bottom: 10px;
+						border: 1px solid  #000;
+					}
+				}
+			}
+
+			.slider_wrapper{
+				width: 100%;
+				margin-top: 14%;
+				padding:0 0 110%;
+				position: relative;
+				overflow: hidden;
+				box-sizing: border-box;
+				-webkit-box-sizing: border-box;
+
+				.slider{
+					width: 100%;
+					position: absolute;
+					overflow: hidden;
+					padding: 0 40px;
+					top: 0;
+					left: 0;
+					box-sizing: border-box;
+					-webkit-box-sizing: border-box;
+
+					#mi_slider{
+						width: 100%;
+						position: relative;
+						overflow: hidden;
+					}
+
+					ul{
+						width: 100%;
+						overflow: hidden;
+
+						li{
+							position: relative;
+							float: left;
+
+							img{
+								width: 100%;
+							}
+						}
+					}
+				}
+
+
+
+				.num{
+					width: 100%;
+					position: absolute;
+					bottom: 15px;
+					left: 0;
+					text-align: center;
+
+					a{
+						width: 8px;
+						height: 8px;
+						margin: 0 3px;
+						display: inline-block;
+						background: #fff;
+						border-radius: 50%;
+						opacity: 0.43;
+
+						&.on{
+							opacity:1;
+						}
+					}
+				}
+			}
+		}
+	}
+	/* features_wrapper END */
+
+	.mi_products{
+		position: relative;
+		padding: 0 0 5rem;
+
+		.mi_products_head{
+			width: 100%;
+			padding: 5rem 0 0;
+			background: #fafafa;
+
+			h4{
+				margin-bottom: 1rem;
+				padding: 0 1rem;
+				font-size: 3.2rem;
+				line-height: 3.8rem;
+				letter-spacing: 0.3rem;
+				margin-bottom: 35px;
+				font:italic 48px/48px 'adinenuPro-black';
+				color:#333;
+				text-align: center;
+			}
+
+			.desc{
+				padding: 0 1rem;
+				margin-bottom: 1.5rem;
+				font:400 1.3rem/2rem 'NotoSansKR';
+				text-align: center;
+				color: #5c5c5c;
+				letter-spacing:2px;
+				word-break:keep-all;
+			}
+
+			.mi_products_tab{
+				padding-left: 0.05%;
+				margin-top:80px;
+				text-align: center;
+
+				a{
+					width: 50%;
+					padding: 2rem 0;
+					float: left;
+					display: inline-block;
+					text-align: center;
+					font:1rem/1rem 'adinenuPro-bold';
+					letter-spacing: 3px;
+					color: #c6c6c6;
+
+					&.on{
+						color: #000;
+						background: #fff;
+					}
+				}
+			}
+		}
+
+
+		// .desc
+
+		.prodlist{
+			text-align: center;
+
+			.inner{
+				width: 100%;
+				min-width: 100%;
+				text-align: center;
+				margin:0 auto;
+			}
+			// .inner
+
+			.item_container{
+				width: 100%;
+				position: relative;
+				padding-top: 3rem;
+				display: -webkit-flex;
+				display: -ms-flex;
+				display: flex;
+				flex-wrap:wrap;
+				-webkit-flex-wrap:wrap;
+				justify-content : center;
+				-webkit-justify-content : center;
+
+				&::after{
+					content:'';
+					display: block;
+					width: 100%;
+					height: 70%;
+					background:linear-gradient(to bottom,#fff 0,#f7f7f7 40%,#f7f7f7 85%,#fff 85%);
+					position: absolute;
+					top: 0;
+					left: 0;
+				}
+			}
+
+			.item{
+				flex:0 0 50%;
+				-webkit-flex:0 0 50%;
+				display: block;
+				position: relative;
+				display: inline-block;
+				opacity: 0;
+				position: relative;
+				z-index: 5;
+
+				@include css3(transition , opacity 0.3s ease);
+
+				&.loaded{
+					opacity: 1;
+				}
+
+				a{
+					display: block;
+					position: relative;
+				}
+
+				.img{
+					width: 100%;
+					padding-bottom: 50%;
+					position: relative;
+					text-align: center;
+					margin-bottom: 1.5rem;
+
+					.loading-container{
+						background: none;
+						position: absolute;
+						z-index: 2;
+
+						.loader-icon{
+							width: 0.8rem;
+							height: 0.8rem;
+							border-width: 3px;
+						}
+					}
+
+
+					img{
+						position: absolute;
+						top: 0;
+						left:50%;
+						width: 80%;
+						max-width:370px;
+						opacity: 0;
+						z-index: 5;
+
+						@include css3(transition , opacity 0.3s ease);
+						@include css3(transform , translate3d(-50%,0,0));
+
+						&.loaded{
+							opacity: 1;
+						}
+					}
+				}
+
+				.button{
+					width: 200px;
+					height: 45px;
+					position: relative;
+					top: 0;
+					left: 0;
+					margin: 0 auto;
+					text-transform:uppercase;
+					opacity: 1;
+
+					@include css3(transition , all 0.3s ease);
+
+					.arrow{
+						&:before{
+							background: #fff;
+						}
+					}
+				}
+
+				.mi-button{
+					width: 60%;
+					max-width: 240px;
+					height: auto;
+					position: relative;
+					text-transform:uppercase;
+					font:400 1.1rem/1.1rem 'NotoSansKR';
+					background: none;
+					border: 1px solid  #000;
+					opacity: 1;
+
+					@include css3(transform , translate3d(0,15px,0));
+					@include css3(transition , all 0.3s ease);
+
+					.arrow{
+						width: 40px;
+					    height: 10px;
+						margin-left: 25px;
+					    position: relative;
+					    display: inline-block;
+					    background: url('http://image.adidas.co.kr/images/adidas/event/customise/miadidas-interface.png') -13px -45px;
+
+						@include css3(transition,background 0s ease 0.15s);
+
+						&::before , &::after{
+							display: none;
+						}
+					}
+
+					.text{
+						position: relative;
+						top: 0;
+						opacity: 1;
+						font-size: 1.2rem;
+					}
+
+					&.hover{
+						.arrow{
+							background-position:-55px -35px;
+						}
+					}
+
+					&.out{
+						.arrow{
+							background-position:-13px -45px;
+						}
+					}
+				}
+
+				.text{
+					width: 100%;
+					padding: 10px;
+					position: relative;
+					opacity: 1;
+					top: 0;
+					left: 0;
+					font:1rem/1.35rem 'adinenuPro-black';
+					color: #000;
+					text-transform: uppercase;
+					letter-spacing: 3px;
+					word-break: keep-all;
+					box-sizing: border-box;
+					-webkit-box-sizing: border-box;
+				}
+
+			}
+			// .item
+		}
+		// .prodlist
+
+		.button_area{
+			width: 100%;
+			padding-top: 5rem;
+			position: relative;
+			bottom: 0;
+			left: 0;
+			text-align: center;
+
+
+			&.howto_mi{
+				margin-bottom: 3rem;
+				padding-top: 0;
+				position: relative;
+				bottom: 0;
+
+				.mi-button{
+					width: 100%;
+				}
+			}
+
+			.mi-button{
+				width: 60%;
+				max-width: 240px;
+				margin: 0 auto;
+				line-height: 1.3rem;
+
+				.arrow{
+					width: 40px;
+					height: 10px;
+					margin-left: 25px;
+					position: relative;
+					display: inline-block;
+					background: url('http://image.adidas.co.kr/images/adidas/event/customise/miadidas-interface.png') -55px -35px;
+
+					@include css3(transition,background 0s ease 0.15s);
+
+					&::before , &::after{
+						display: none;
+					}
+				}
+
+				.text{
+					font-size: 1.2rem;
+				}
+
+				&.hover{
+					.arrow{
+						background-position:-13px -45px;
+					}
+				}
+
+				&.out{
+					.arrow{
+						background-position:-55px -35px;
+					}
+				}
+			}
+		}
+	}
+	/* End of mi_products */
+
+	/* mi_gallery */
+	.mi_gallery{
+		width: 100%;
+		position: relative;
+		padding-top: 5rem;
+		background: #fff;
+		overflow: hidden;
+
+		h4{
+			padding: 0 1rem;
+			margin-bottom: 1rem;
+			font:italic 3.2rem/3.8rem 'adinenuPro-black';
+			color:#333;
+			text-align: center;
+			letter-spacing: 0.3rem;
+		}
+		// h4
+
+		.desc{
+			margin-bottom: 1.5rem;
+			padding: 0 1rem;
+			font:400 1.3rem/2rem 'NotoSansKR';
+			text-align: center;
+			color: #5c5c5c;
+			letter-spacing:2px;
+			word-break:keep-all;
+
+			strong{
+				font:1.5rem/20px 'adinenuPro-regular';
+				letter-spacing: 0;
+			}
+		}
+		// desc
+
+		.gallery_contents{
+			position: relative;
+			width: 100%;
+			height: auto;
+			margin: 100px auto 0;
+
+			.box{
+				margin-bottom: 8rem;
+				position: relative;
+				top: 0 !important;
+				left: 0 !important;
+
+				&:nth-child(odd){
+					>.img{
+						text-align: right;
+					}
+
+					.bg{
+						left: -10% !important;
+						right : auto;
+					}
+				}
+
+
+				>.bg{
+					width: 100%;
+					height: 100%;
+					position: absolute;
+					top: -10%;
+					right : -10%;
+					opacity: 1;
+					@include css3(transition ,opacity 0.4s);
+
+
+					&.loaded{
+						opacity: 1;
+					}
+				}
+				// .bg
+
+				>.img{
+					width: 100%;
+					position: relative;
+					z-index: 1;
+
+					img{
+						width:90%;
+						opacity: 1;
+						@include css3(transition ,opacity 0.4s);
+
+						&.loaded{
+							opacity: 1;
+						}
+					}
+				}
+				// .img
+			}
+			// .box
+
+
+		}
+		// .gallery_contents
+	}
+	/* End of mi_gallery */
+
+	&.customise_story{
+
+		.product_focus{
+			width: 100%;
+			height: 820px;
+			position: relative;
+			overflow: hidden;
+
+			@media screen and (max-width:1366px) {
+				height: 600px;
+			}
+
+			@media screen and (max-width: $break-small) {
+				height: 0;
+				padding-bottom: 80%;
+			}
+
+			.bg{
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				background:url('http://image.adidas.co.kr/images/adidas/event/customise/stan_smith/header-background.jpg') center center no-repeat;
+				background-size:cover;
+
+				@include css3(transform,matrix(1.1, 0, 0, 1.1, 0, 0))
+			}
+
+			.product{
+				position: absolute;
+				bottom: -230px;
+				left: 50%;
+				z-index: 1;
+				margin-left: -600px;
+
+				@media screen and (max-width:1366px) {
+					bottom: -230px;
+					margin-left: -500px;
+
+					img{
+						width: 1000px;
+					}
+				}
+
+				@media screen and (max-width: $break-small) {
+					width: 120%;
+					bottom: 0;
+					left: 50%;
+					margin-left: 0;
+					text-align: center;
+					@include css3(transform,translate3d(-50%,30%,0));
+
+					img{
+						width: 100%;
+					}
+				}
+
+				&:hover{
+					// @include css3(transition,all 0.3s ease);
+
+				}
+			}
+		}
+		// .product_focus
+
+		.intro_mi{
+			@media screen and (max-width: $break-large){
+				margin-bottom: 80px;
+			}
+
+			h3{
+				color: #d8d8d8;
+
+				strong{
+					color: #00915a;
+
+					@media screen and (max-width: $break-small) {
+						font:1.9rem 'adinenuPro-bold';
+						margin-right:3px;
+					}
+				}
+
+				@media screen and (max-width: $break-small) {
+					font-size: 1.9rem;
+				}
+			}
+
+
+			.title{
+				margin-bottom: 60px;
+				color: #333234;
+				font:italic 38px 'adiBlack';
+				text-align: center;
+				letter-spacing: 25px;
+				text-transform: uppercase;
+
+				@media screen and (max-width: $break-small) {
+					margin-bottom: 30px;
+					font-family:'adinenuPro-black';
+					font-size: 2.1rem;
+					line-height: 3.5rem;
+					letter-spacing: 10px;
+				}
+			}
+
+			.by{
+				font:lighter 26px 'AdihausDIN-Cond';
+				color: #b2b2b2;
+				text-align: center;
+				letter-spacing:6px;
+				@media screen and (max-width: $break-small){
+					font-size: 1.8rem;
+				}
+			}
+		}
+
+		.bg_title{
+			position: absolute;
+
+			@media screen and (max-width: $break-small){
+				display: none;
+			}
+		}
+
+		.story_wrapper{
+			padding-bottom: 200px;
+
+			@media screen and (max-width: $break-small){
+				padding-bottom:70px;
+			}
+
+			.signature{
+				margin: 0 auto;
+			}
+
+			.story_overview{
+				margin-bottom:100px;
+
+				@media screen and (max-width: $break-large){
+					margin-bottom: 50px;
+				}
+
+				.bg2{
+					width: 480px;
+					left: 160px;
+					margin-top: -335px;
+				}
+
+				.textbox{
+
+					.desc{
+						@media screen and (max-width: $break-small){
+							background: #fff;
+						    width: 100%;
+						    padding: 30px 15px;
+						    margin-left: -15px;
+						    word-break:keep-all;
+						}
+					}
+				}
+			}
+
+
+			.button_area{
+				width: 100%;
+				position: absolute;
+				bottom: 150px;
+				left: 0;
+				text-align: center;
+				z-index: 10;
+
+				@media screen and (max-width: $break-small){
+					bottom: 50px;
+					padding: 0 15px;
+					@include css3(box-sizing , border-box);
+				}
+
+				a{
+					display: inline-block;
+					margin: 0 15px;
+
+					&.b1{
+						width: 450px;
+					}
+
+					&.b2{
+						width: 262px;
+					}
+
+					@media screen and (max-width: $break-small){
+						display: block;
+						width: 100%;
+						margin: 0;
+
+						&.b1 , &.b2{
+							width: 100%;
+						}
+
+						&.b1{
+							margin-bottom: 10px;
+						}
+					}
+				}
+			}
+			// .button_area
+
+			.gud_arrow{
+				width: 10px;
+				height: 40px;
+				background:url('http://image.adidas.co.kr/images/adidas/event/customise/miadidas-interface.png') -3px -3px;
+				position: absolute;
+				left: 50%;
+				margin-left: -5px;
+
+				@media screen and (max-width: $break-small){
+					display: none;
+				}
+
+				&.arw1{
+					top: 710px;
+				}
+
+				&.arw2{
+					top: 1590px;
+				}
+
+				&.arw3{
+					top: 2500px;
+				}
+			}
+
+		}
+
+		.bgt1{
+			top: -90px;
+			right: 0;
+		}
+
+		.bgt2{
+			top: 630px;
+		    margin-right: -560px;
+		    right: 50%;
+		}
+
+		.bgt3{
+		    top: 1400px;
+		    left: 50%;
+		    margin-left: -380px;
+		}
+
+		.bgt3{
+		    top: 1400px;
+		    left: 50%;
+		    margin-left: -380px;
+		}
+
+		.bgt4{
+			bottom: -500px;
+			right: 0;
+		}
+	}
+	/* End of customise_story */
+
+
+	&.story_stansmith{
+		.intro_mi{
+			margin-bottom: 180px;
+
+			.line{
+				background-image: url('http://image.adidas.co.kr/images/adidas/event/customise/stan_smith/brand-line.jpg');
+				background-position: center bottom;
+			}
+
+			.signature{
+				width: 320px;
+				height: 150px;
+				background:url('http://image.adidas.co.kr/images/adidas/event/customise/stan_smith/signature-sprite.jpg') 0 0 no-repeat;
+				position: relative;
+				left: -30px;
+			}
+		}
+
+	}
+	// stan_smith
+
+	&.story_eqt{
+		.intro_mi{
+			margin-bottom: 180px;
+
+			.line{
+				background-image: url('http://image.adidas.co.kr/images/adidas/event/customise/eqt/brand-line.jpg');
+				background-position: center bottom;
+			}
+
+			h3{
+				strong{
+					color: #4ca091;
+				}
+			}
+
+			.signature{
+				width: 360px;
+				height: 170px;
+				background:url('http://image.adidas.co.kr/images/adidas/event/customise/eqt/signature-sprite.jpg') 0 0 no-repeat;
+				position: relative;
+				left: -30px;
+			}
+		}
+
+	}
+	// story_eqt
+
+	&.story_tubular{
+		.intro_mi{
+			margin-bottom: 180px;
+
+			.line{
+				background-image: url('http://image.adidas.co.kr/images/adidas/event/customise/tubular/brand-line.jpg');
+				background-position: center bottom;
+			}
+
+			h3{
+				strong{
+					color: #e90b1a;
+				}
+			}
+
+			.signature{
+				width: 340px;
+				height: 170px;
+				background:url('http://image.adidas.co.kr/images/adidas/event/customise/tubular/signature-sprite.jpg') 0 0 no-repeat;
+				position: relative;
+				left: -30px;
+			}
+		}
+
+	}
+	// story_eqt
+
+	&.story_superstar{
+		.intro_mi{
+			margin-bottom: 180px;
+
+			.line{
+				background-image: url('http://image.adidas.co.kr/images/adidas/event/customise/superstar/brand-line.jpg');
+				background-position: center bottom;
+			}
+
+			h3{
+				strong{
+					color: #c2a65a;
+				}
+			}
+
+			.signature{
+				width: 340px;
+				height: 170px;
+				background:url('http://image.adidas.co.kr/images/adidas/event/customise/superstar/signature-sprite.jpg') 0 0 no-repeat;
+				position: relative;
+				left: -30px;
+			}
+		}
+
+	}
+	// story_eqt
+}
+/* End of customise_main */
+
+
+
+/*
+ * For ie old version
+ */
+.ie9{
+	.customise_main{
+		.visual{
+			.video_bg{
+				video{
+					top: 0;
+					left: 0;
+					@include css3(transform,translate3d(0,0,0));
+				}
+			}
+		}
+
+	}
+}
+
+
+@media screen and (max-width:640px) {
+	.customise_main{
+
+
+		.mi_gallery{
+			padding-top: 5rem;
+
+
+
+			.gallery_contents{
+
+				.box{
+
+
+
+
+
+
+
+				}
+			}
+
+		}
+	}
+}
