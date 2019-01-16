@@ -9,11 +9,16 @@
 	<link href="/css/adidas/style.css" type="text/css" rel="stylesheet" />
 	<link href="/css/adidas/fonts.css" type="text/css" rel="stylesheet" />
 
-	<script type="text/javascript" src="/designjs/common/jquery-1.12.0.min.js"></script>
-    <script type="text/javascript" src="/designjs/common/swipe.js"></script>
-	<script type="text/javascript" src="/designjs/common/owl.carousel.min.js"></script>
-	<script type="text/javascript" src="/designjs/common/modalPopup.min.js"></script>
-	<script type="text/javascript" src="/designjs/common/zoomImage.js"></script>
+	<!-- <script type="text/javascript" src="/designjs/common/jquery-1.12.0.min.js"></script> -->
+    <script type="text/javascript" src="http://imagem.adidas.co.kr/js/jquery-1.12.0.min.js" charset="UTF-8"></script>
+    <!-- <script type="text/javascript" src="/designjs/common/swipe.js"></script> -->
+    <script type="text/javascript" src="http://imagem.adidas.co.kr/js/swipe.js" charset="UTF-8"></script>
+	<!-- <script type="text/javascript" src="/designjs/common/owl.carousel.min.js"></script> -->
+    <script type="text/javascript" src="http://imagem.adidas.co.kr/js/owl.carousel.js" charset="UTF-8"></script>
+	<!-- <script type="text/javascript" src="/designjs/common/modalPopup.min.js"></script> -->
+    <script type="text/javascript" src="http://imagem.adidas.co.kr/js/modalPopup.min.js" charset="UTF-8"></script>
+	<!-- <script type="text/javascript" src="/designjs/common/zoomImage.js"></script> -->
+    <script type="text/javascript" src="http://imagem.adidas.co.kr/js/zoomImage.js"></script>
 
 	<title>아디다스 모바일</title>
 </head>
@@ -253,7 +258,9 @@
 					<ul>
 						<li>
 							<div data-zoom-image="http://shop.adidas.co.kr/upload/prod/etc/target/AQ6761-4.jpg">
-								<img src="http://shop.adidas.co.kr/upload/prod/etc/500/AQ6761-4_500X500.jpg" alt="">
+                                <!-- 190116 3d -->
+								<iframe  id="main-api-frame" class="centeralign" style="position:absolute;" src="http://3d.vrism.net/vrism_rel00/products/ADIDAS/AD01/AD01.html?cs=2&ShopUI=0&bID=0&autoload=1&brandlogo=0" allowfullscreen  mozallowfullscreen="true" webkitallowfullscreen="true" ></iframe>
+                                <!-- 190116 3d end-->
 								<!-- 160513 LABEL 추가 -->
 								<span class="label adihs-b sale">-30%</span>
 								<!-- 슈퍼위크/위켄드 세일 -->
@@ -345,7 +352,7 @@
 								<a href="http://santelglobal-adidas-mobile.herokuapp.com/html/adidas/PDP.html"><img src="http://shop.adidas.co.kr/upload/prod/basic/220/S82780-1_220X220.jpg" alt=""></a>
 								<a href="http://santelglobal-adidas-mobile.herokuapp.com/html/adidas/PDP.html"><img src="http://shop.adidas.co.kr/upload/prod/basic/220/S83385-1_220X220.jpg" alt=""></a>
 								<a href="http://santelglobal-adidas-mobile.herokuapp.com/html/adidas/PDP.html"><img src="http://shop.adidas.co.kr/upload/prod/basic/220/S75556-1_220X220.jpg" alt=""></a>
-								<a href="http://santelglobal-adidas-mobile.herokuapp.com/html/adidas/PDP.html"><img src="http://shop.adidas.co.kr/upload/prod/basic/220/B27140-1_220X220.jpg" alt=""></a>
+                                <a href="http://santelglobal-adidas-mobile.herokuapp.com/html/adidas/PDP.html"><img src="http://shop.adidas.co.kr/upload/prod/basic/220/B27140-1_220X220.jpg" alt=""></a>
 							</div>
 						</div>
 						<!--
@@ -469,7 +476,7 @@
                     </div>
                     <!-- 190110 카카오페이 PDP END -->
 
-                    <!-- 제품 3D 브리즘 테스트 START : 테스트 종료시 삭제-->
+                    <!-- 190116 제품 3D 브리즘 테스트 START : 테스트 종료시 삭제-->
                     <div class="modal-popup-wrapper"
                         data-modalpop=""
                         data-modalpop-name="popup_name1"
@@ -485,17 +492,17 @@
                                 <div class="prd3d_vrism_test">
                                     <style>
                                         #main-api-frame{
-                                         height:100%;
-                                         width:100%;
-                                         border:0}
+                                            height:100%;
+                                            width:100%;
+                                            border:0}
 
                                          .centeralign{
-                                          display: block;
-                                          margin-left: auto;
-                                          margin-right: auto;
-                                          margin-top: auto;
-                                          margin-bottom: auto;
-                                          width: 100%;
+                                              display: block;
+                                              margin-left: auto;
+                                              margin-right: auto;
+                                              margin-top: auto;
+                                              margin-bottom: auto;
+                                              width: 100%;
                                           }
                                           .wrapper {
                                             width: 100%;
@@ -533,14 +540,16 @@
                             </div>
                         </div>
                     </div>
-                    <button class="modal-popup-click" data-modalpop-click="popup_name1">제품 3D 브리즘 테스트 팝업</button>
 
-                    <!-- 제품 3D 브리즘 테스트 END-->
+                    <div class="prd3d_vrism_wrap" style="padding-bottom: 100%; position: relative;margin:20px 0;">
+                        <iframe style="position:absolute;" id="main-api-frame" class="centeralign" src="http://3d.vrism.net/vrism_rel00/products/ADIDAS/AD01/AD01.html?cs=2&ShopUI=0&bID=0&autoload=1&brandlogo=0" allowfullscreen  mozallowfullscreen="true" webkitallowfullscreen="true" ></iframe>
+                    </div>
+
+                    <button class="modal-popup-click" data-modalpop-click="popup_name1">제품 3D 브리즘 테스트 팝업</button>
+                    <!-- 190116 제품 3D 브리즘 테스트 END-->
 
                 </div>
                 <!-- //170220 -->
-
-
 
                 <!-- 170619 col3 클래스 추가 -->
 				<div class="buy_btn col3">
@@ -1957,6 +1966,7 @@
 
             <script type="text/javascript">
                 (function($){
+
                     var viewedCarousel = $("#product-viewed-list").owlCarousel({
                         stagePadding: 20,
     					margin:3,
@@ -2492,7 +2502,9 @@
     <div class="pub_300x250 pub_300x250m pub_728x90 text-ad textAd text_ad text_ads text-ads text-ad-links" style="position: absolute;">.</div>
     <script src="//widget.fitanalytics.com/widget_jq.js" type="text/javascript"></script>
 
-	<script type="text/javascript" src="/designjs/adidas/common.js"></script>
+	<!-- <script type="text/javascript" src="/designjs/adidas/common.js"></script> -->
+    <script type="text/javascript" src="http://imagem.adidas.co.kr/js/adidas/common.js" charset="UTF-8"></script>
+
 
     <!-- 170322 today_delivery locationPop -->
     <div class="layerpopup layerpopup_zipfinder layerpopup_today_delivery" id="layerpopup-zipfinder" style="display: none;">
