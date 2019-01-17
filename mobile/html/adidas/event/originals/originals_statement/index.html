@@ -846,9 +846,14 @@
        		(function($){
        			// $('.ready').on('click',function(){
        			// 	alert('coming soon');
-       			// })
+       			// })                
 
        			$('#originals_calendar .box1').addClass('on');
+
+                setTimeout(function () {
+                    $('#originals_calendar .box').eq(1).addClass('on');
+                }, 400);
+
        			var scrollArray = [];
        			var scrollContent = document.querySelectorAll('.box');
        			function getPos(){
