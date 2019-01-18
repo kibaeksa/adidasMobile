@@ -145,6 +145,19 @@ gulp.task('watch',function(){
         }
     });
 
+    // 년도 관리 폴더 경로
+    gulp.watch('./mobile/html/adidas/**/event/**/*.scss').on('change', function (file) {
+        if (!file.path.match(/\\build\\?/)) {
+            handleSassInject(file.path);
+        }
+    });
+
+    gulp.watch('./mobile/html/adidas/**/event/**/*.html').on('change', function (file) {
+        if (!file.path.match(/\\build\\?/)) {
+            handleSassInject(file.path.replace(/(\W+|\w+)\.html/, 'index.scss'));
+        }
+    });
+
     gulp.watch('./mobile/html/reebok/event/aboutus/campaign/**/*.scss').on('change',function(file){
         if(!file.path.match(/\\build\\?/)){
             handleSassInject(file.path , 'reebok');
@@ -157,18 +170,19 @@ gulp.task('watch',function(){
         }
     });
 
-    // mobile folder
-    gulp.watch('./mobile/mobile/html/reebok/event/campaign/**/*.scss').on('change',function(file){
-        if(!file.path.match(/\\build\\?/)){
-            handleSassInject(file.path , 'reebok');
+    // 년도 관리 폴더 경로
+    gulp.watch('./mobile/html/reebok/**/event/**/*.scss').on('change', function (file) {
+        if (!file.path.match(/\\build\\?/)) {
+            handleSassInject(file.path, 'reebok');
         }
     });
 
-    gulp.watch('./mobile/mobile/html/reebok/event/campaign/**/*.html').on('change',function(file){
-        if(!file.path.match(/\\build\\?/)){
-            handleSassInject(file.path.replace(/(\W+|\w+)\.html/,'index.scss') , 'reebok');
+    gulp.watch('./mobile/html/reebok/**/event/**/*.html').on('change', function (file) {
+        if (!file.path.match(/\\build\\?/)) {
+            handleSassInject(file.path.replace(/(\W+|\w+)\.html/, 'index.scss'), 'reebok');
         }
     });
+    
 
 
     gulp.watch('./mobile/js/adidas/common.js',['scriptsCommon']);
