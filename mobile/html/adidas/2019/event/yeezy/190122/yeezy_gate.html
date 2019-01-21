@@ -432,34 +432,8 @@
 		</div>
 
 		<div id="container">
+
 			<!-- yeezyboost -->
-			<script type="text/javascript">
-				;(function($){
-					var w = $(window).width();
-					var itv2,
-						imgs2,
-						idx2 = 0;
-
-
-					$(document).ready(function(){
-						var val = 0;
-						$('#yeezy .desc .desc_wrap').each(function(){
-							$this = $(this);
-							val += 300;
-							//$this.addClass('view');
-
-							return (function($t,val){
-								setTimeout(function(){
-							 		$t.addClass('view');
-							 	},val);
-							})($this,val);
-						 });
-
-					});
-
-				})(jQuery);
-			</script>
-
 			<style type="text/css">
 				@font-face {
 				font-family: 'YEEZY TSTAR-Bold';
@@ -500,7 +474,6 @@
 				#yeezy .desc .desc_wrap{
 					position:relative;
 					top:5px;
-					opacity:0;
 					transition:all 0.4s ease-in-out;
 					-webkit-transition:all 0.4s ease-in-out;
 				}
@@ -552,11 +525,21 @@
 					box-sizing: border-box;
 					-webkit-box-sizing: border-box;
 				}
+				/* logo image */
+                #yeezy .logo.icons{
+                    display: block;
+                    margin: 0 auto 30px;
+                    width: 42px;
+                    height: 42px;
+                    background: url('http://image.adidas.co.kr/images/adidas/temp/kanye/logo_lgray.png') no-repeat;
+                    background-size: 100% 100%;
+                }
 
 			</style>
-
 			<section id="yeezy">
-				<p class="logo icons" data-icon=""></p>
+				<!-- logo image -->
+				<p class="logo icons"></p>
+
 				<div class="desc">
 					<div id="desc1" class="desc_wrap">
 						<p>YEEZY BOOST 350 V2</p>
