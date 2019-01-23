@@ -1,0 +1,176 @@
+@import './mobile/css/adidas/scss/common/mixin.scss';
+@import './mobile/css/adidas/scss/common/common.scss';
+
+#container{
+	padding-top: 61px;
+}
+#kids_wnd{
+	position: relative;
+	.button_area_v2{
+		width: 140px;
+		a{
+			background: #fff;
+		    color: #000;
+		    font: 600 12px/45px 'NotoSansKR';
+		    letter-spacing: 1px;
+		    height: 45px;
+			span.arrow{
+				width: 25px;
+				&:after{
+					width: 8px;
+				}
+				&:before{
+					width: 8px;
+				}
+			}
+		}
+	}
+
+	.main_visual{
+		position: relative;
+		padding-bottom: 125%;
+		>div{
+			position: absolute;
+			top:0;
+			left:0;
+			@include css3(opacity,0);
+			@include css3(transition, all 0.5s);
+			&.on{
+				@include css3(opacity,1);
+
+			}
+
+			img{
+				width: 100%;
+			}
+		}
+		.inn{
+			position: absolute;
+			top:67%;
+			left:50%;
+			width: 90%;
+			@include css3(opacity,1);
+
+			transform: translate(-50%,-50%);
+			h2{
+				color:#fff;
+				font:40px/35px 'adinenuPro-bold';
+				letter-spacing: 1px;
+			}
+			p{
+				padding: 5px 0 15px 0;
+				font:400 15px/15px 'NotoSansKR';
+				color:#fff;
+				letter-spacing: 0.2px;
+
+			}
+		}
+	}
+
+	.statement{
+		position: relative;
+		padding: 50px 0;
+		text-align: center;
+		p{
+			text-align: center;
+			font:600 18px 'NotoSansKR';
+		}
+		.button_area_v2{
+			display: inline-block;
+			margin: 15px 0 0 0;
+			border:1px solid #000;
+			div{
+				a{
+					&:after{
+						display: none;
+					}
+				}
+			}
+		}
+	}
+
+	.cuts{
+		position: relative;
+		&.scrollevent{
+			@include css3(opacity,0);
+			@include css3(transition, all 0.5s);
+			&.on{
+				@include css3(opacity,1);
+
+			}
+		}
+		&.on{
+			.scrollevent{
+				@include css3(opacity,1);
+			}
+			.lines{
+				top:80%;
+				@include css3(opacity,1);
+
+			}
+		}
+		&.delay{
+			transition-delay: 1s;
+			-webkit-transition-delay: 1s;
+			z-index: 2;
+		}
+		>div{
+			position: relative;
+		    margin: 0 5% 20px;
+		    z-index: 2;
+			img{
+				width: 100%;
+			}
+		}
+		.lines{
+			margin: 0;
+			position: absolute;
+			top:0%;
+			width: 100%;
+			text-align: center;
+			z-index: 1;
+			@include css3(opacity,0);
+			@include css3(transition, all 0.8s);
+			transition-delay: 0.5s;
+			span{
+				display: inline-block;
+		        margin: 0 4.2%;
+				width: 13%;
+				height: 160px;
+				background: #f3f3f3;
+			}
+		}
+	}
+
+	.col{
+		position: relative;
+		&.bg{
+			padding-bottom: 50%;
+			background: url(http://imagem.adidas.co.kr//images/adidas/2019/event/kids/wnd/col2.jpg) no-repeat;
+			background-size:100% 100%;
+		}
+		.inn{
+			position: absolute;
+			top:50%;
+			left: 50%;
+			width: 100%;
+			text-align: center;
+			transform: translate(-50%,-50%);
+			h2{
+				color:#fff;
+				font:30px/25px 'adinenuPro-bold';
+				letter-spacing: 1px;
+			}
+			p{
+				padding: 5px 0 15px 0;
+				font:400 13px/13px 'NotoSansKR';
+				color:#fff;
+				letter-spacing: 0.2px;
+			}
+			.button_area_v2{display: inline-block;}
+		}
+		img{
+			width: 100%;
+		}
+	}
+}
