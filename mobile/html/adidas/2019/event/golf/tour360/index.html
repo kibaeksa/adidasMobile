@@ -442,7 +442,8 @@
 			<div id="tour360">
 
                 <div class="main">
-                    <img src="/images/adidas/2019/event/golf/tour360/main.jpg" onclick="openModalVideoViewer('jiiE0P3vYkU')" alt="">
+					<img src="/images/adidas/2019/event/golf/tour360/main.jpg" onclick="openModalVideoViewer('jiiE0P3vYkU')" alt="">
+					<h2><img src="/images/adidas/2019/event/golf/tour360/logo.png" alt=""></h2>
                 </div>
 
                 <div class="statement">
@@ -594,6 +595,11 @@
 
 		var openPopInStock;
 		(function($){
+
+			setTimeout(function(){
+				$('.main h2').addClass('on');
+				$('.statement').addClass('on');
+			},400);
 
 			openPopInStock = function(){
 				$('#instock-notification-popup').addClass('open');
