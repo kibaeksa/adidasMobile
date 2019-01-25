@@ -8,7 +8,7 @@
 		background: url('/images/adidas/2019/event/athletics/wnd/visual_bg.jpg') 100% 100% no-repeat;
 		background-size: cover;
 		background-position: top;
-	    padding: 9rem 0 1.5rem 0;
+	    padding: 3rem 0 1.5rem 0;
 		.img1{
 			img{
 				width:85%;
@@ -95,15 +95,66 @@
 		}
 	}
 
-	.vid{
+	.vids{
 		position: relative;
 		.banner_slider_wrap{
+			position: relative;
+			background: #fff;
+			&.on{
+				background: #000;
+				transition: all 1s;
+			}
+			.blk_lines{
+				position: absolute;
+				top:-166.5px;
+				left:50%;
+				transform: translateX(-43%);
+				transition: all 1s;
+				&.on{
+					top:0;
+					z-index: 0;
+				}
+				img{
+					width:115%;
+				}
+			}
+			.wht_lines{
+				position: absolute;
+				bottom:-166.5px;
+				left:50%;
+				transform: translateX(-33%);
+				z-index: 0;
+				&.on{
+					bottom:80px;
+					transition: all 1s;
+				}
+				img{
+					width:110%;
+				}
+			}
 			#slider_owl{
 				li{
 					.blk{
-						background: url("/images/adidas/2019/event/athletics/wnd/bg_blk.jpg") 100% 100% no-repeat;
-						background-position: center;
-						background-size: cover;
+						// &.on{
+						// 	.lines{
+						// 		top:0;
+						// 		z-index: 1;
+						// 	}
+						// }
+						// .lines{
+						// 	position: absolute;
+						// 	top:-166.5px;
+						// 	left:50%;
+						// 	transform: translateX(-57%);
+						// 	transition: all 1s;
+						// 	z-index: -1;
+						// 	img{
+						// 		width:45%;
+						// 	}
+						// }
+						// background: url("/images/adidas/2019/event/athletics/wnd/bg_blk.jpg") 100% 100% no-repeat;
+						// background-position: center;
+						// background-size: cover;
 						padding: 5.5rem 0 2rem;
 						.top{
 							position: relative;
@@ -134,14 +185,30 @@
 						}
 					}
 					.wht{
-						background: url("/images/adidas/2019/event/athletics/wnd/bg_wht.jpg") 0 0 no-repeat;
-						background-position: center;
-						background-size: cover;
-						.bg{
-							img{
-								width:100%;
-							}
-						}
+						// &.on{
+						// 	.lines{
+						// 		bottom:80px;
+						// 		transition: all 1s;
+						// 	}
+						// }
+						// .lines{
+						// 	position: absolute;
+						// 	bottom:-166.5px;
+						// 	left:50%;
+						// 	transform: translateX(26%);
+						// 	z-index: -1;
+						// 	img{
+						// 		width:45%;
+						// 	}
+						// }
+						// background: url("/images/adidas/2019/event/athletics/wnd/bg_wht.jpg") 0 0 no-repeat;
+						// background-position: center;
+						// background-size: cover;
+						// .bg{
+						// 	img{
+						// 		width:100%;
+						// 	}
+						// }
 						.top{
 							position: relative;
 							img{
@@ -149,6 +216,7 @@
 							}
 						}
 						.mid{
+							position: relative;
 							text-align: center;
 							padding:2rem;
 							padding-right: 2.5rem;
@@ -244,7 +312,6 @@
 	.btm{
 		position: relative;
 		padding:1.5rem 2.1rem;
-		padding-bottom: 50%;
 		.txt{
 			position: absolute;
 			top:50%;
