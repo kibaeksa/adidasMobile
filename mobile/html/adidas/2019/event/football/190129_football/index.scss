@@ -1,0 +1,261 @@
+@import './mobile/css/adidas/scss/common/mixin.scss';
+@import './mobile/css/adidas/scss/common/common.scss';
+
+html,body{
+	height: 100%;
+}
+
+
+#container{
+	.go_top a{
+	width: 100%;
+	height: 50px;
+	display: block;
+	position: relative;
+	background: url('/images/adidas/back_top.png') center 10px no-repeat;
+	background-size: 60px auto;
+	text-indent: -5000px;
+	}
+
+
+	.football{
+		background:white;
+		position: relative;
+		overflow: hidden;
+		//common
+		.button_area_v2{
+			display: inline-block;
+			a{
+				padding:0 4vw;
+				font:700 1rem/3.4rem 'NotoSansKR';
+				letter-spacing: .1rem;
+				height: 3.4rem;
+				.arrow{
+					margin-left: 14px;
+				}
+			}
+		}
+
+
+		//main
+		.main_visual{
+			position: relative;
+			.img{
+				img{
+					width:100%;
+				}
+			}
+		}
+
+
+		//tabs
+		.tabs{
+			position: relative;
+			padding:15px 0 25px 0;
+			.head{
+				margin-bottom: 10px;
+				h1{
+					text-align: center;
+					font:22px 'adinenuPro-bold';
+				}
+			}
+			.wrap{
+				// padding:1.5rem;
+				// background: #ebedee;
+				// text-align: center;
+
+				background: #ebedee;
+				width:90%;
+				margin: 0 auto;
+				text-align: center;
+				span{
+					display: inline-block;
+					padding: 4vw 6vw;
+					font:11px/9px 'Adihaus-regular';
+					cursor:pointer;
+					&:first-child{
+						padding-left: 20px;
+					}
+					&:last-child{
+						padding-right:20px;
+					}
+					em{
+						display: block;
+						opacity: 0;
+						border:.7px solid #757677;
+						&.on{
+							opacity: 1;
+						}
+					}
+				}
+			}
+		}
+
+		//contents
+		.contents{
+			font-size:0;
+			.cont{
+				position: relative;
+				display: none;
+				&.on{
+					display: block;
+				}
+				.masthead{
+					position: relative;
+					&.masthead_x{}
+					&.masthead-predator, &.masthead_nemeziz{
+						.txt{
+							h1{
+								color:#fff;
+							}
+							p{
+								color:#fff;
+							}
+						}
+					}
+					&.masthead_copa{}
+					.img{
+						img{
+							width:100%;
+						}
+					}
+					.video{
+						video{
+							width:100%;
+						}
+					}
+					.txt{
+						position: absolute;
+						bottom:7%;
+						left: 50%;
+						transform: translateX(-40%);
+					    width: 100%;
+						h1{
+							font:2.2rem/2.2rem 'adinenuPro-bold';
+							letter-spacing: .1px;
+						}
+						p{
+							font:700 12px 'NotoSansKR';
+							margin: 0 0 17px 0;
+							letter-spacing: .1px;
+						}
+
+					}
+				}
+				.head{
+					position: relative;
+					.img{
+						img{
+							width:100%;
+						}
+					}
+					.video{
+						video{
+							width:100%;
+						}
+					}
+					.txt{
+						position: absolute;
+						bottom:18%;
+						left: 50%;
+						transform: translateX(-50%);
+						width:100%;
+						p{
+							font:700 2rem/3rem 'NotoSansKR';
+							letter-spacing: .1px;
+							text-align: center;
+							color:#fff;
+						}
+					}
+				}
+				.body{
+					position: relative;
+					.img{
+						img{
+							width:100%;
+						}
+					}
+					.txt{
+						position: absolute;
+						bottom:18%;
+						left: 50%;
+						transform: translateX(-50%);
+						width:100%;
+						p{
+							font:400 1.3rem/2rem 'NotoSansKR';
+							letter-spacing: .1px;
+							text-align: center;
+							color:#fff;
+						}
+					}
+				}
+				.imageGrid{
+					position: relative;
+					padding:2rem 0;
+					&:after{
+						content: '';
+						display: inline-block;
+						width: 100%;
+						height: 10px;
+						background: #fff;
+						position: absolute;
+						bottom: 1.5rem;
+						left:0;
+						z-index: 2;
+					}
+					.img{
+						img{
+							width:100%;
+						}
+					}
+					.video{
+						video{
+							width:100%;
+						}
+					}
+				}
+			}
+		}
+
+		.windows{
+			position: relative;
+			padding:2rem 0;
+			h1{
+				font:1.7rem/1.7rem 'adinenuPro-bold';
+				letter-spacing: .1px;
+				text-align: center;
+			}
+			.wrap{
+				padding: 1.7rem 2.7rem;
+				.inner{
+					position: relative;
+					margin:2rem 0;
+					&:first-child{
+						margin-top:0;
+					}
+					&:last-child{
+						margin-bottom: 0;
+					}
+					.img{
+						img{
+							width:100%;
+						}
+					}
+					.txt{
+						position: absolute;
+						bottom:7%;
+						left:50%;
+						transform:translateX(-50%);
+						p{
+							font:400 1.3rem/2rem 'NotoSansKR';
+							letter-spacing: .1px;
+							text-align: center;
+							color:#fff;
+							margin-bottom: 5%;
+						}
+					}
+				}
+			}
+		}
+	}
+}
