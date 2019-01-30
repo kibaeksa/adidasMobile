@@ -790,7 +790,7 @@ function fn_ChangePayMethodUI(cName) {
 		</div>
 	</div>
 
-	<!-- 상단 띠배너 S -->
+	<!-- 190129 상단 띠배너 START -->
 	<div class="notice_tits" id="speeds" style="display: block;">
 		<a class="b1" style="display: none;" href="javascript:void(0)">
 			<div><span class="ico"></span>스피드 배송 서비스 안내</div>
@@ -803,10 +803,10 @@ function fn_ChangePayMethodUI(cName) {
 		</a>
 		<div class="more_ico sprite-image"></div>
 	</div>
-	<!-- 상단 띠배너 E -->
+	<!-- // 상단 띠배너 END -->
 
-	<!-- 180131 START 스피드 배송 교환/환불 안내팝업 -->
-	<div class="layerpopup popup_oneday_exchange"><!-- 20180416 추가 -->
+	<!-- 180131 스피드 배송 교환/환불 안내팝업-->
+	<div class="layerpopup popup_oneday_exchange">
 		<div class="header">
 			<a href="#" class="close_x_btn"></a>
 		</div>
@@ -825,6 +825,7 @@ function fn_ChangePayMethodUI(cName) {
 			</p>
 		</div>
 	</div>
+	<!-- // 180131 스피드 배송 교환/환불 안내팝업 END-->
 
 	<!-- 180131 스피드 배송 안내팝업 -->
 	<div class="layerpopup popup_oneday_open" id="spd">
@@ -859,70 +860,64 @@ function fn_ChangePayMethodUI(cName) {
 			</p>
 		</div>
 	</div>
-	<!-- 180131 스피드 배송 안내팝업 END-->
-	<!-- //20180416 추가 -->
+	<!-- // 180131 스피드 배송 안내팝업 END-->
 
-<script type="text/javascript">
-jQuery(function(){
-	jQuery(document).ready(function() {
-		// 170322 스피드 배송 상단 바 롤링 / 클릭 스크립트
-		var index = 0;
-		var commToday = "20180528";
-		var commTodayHh = "2018052811";
+	<script type="text/javascript">
+		jQuery(function(){
+			jQuery(document).ready(function() {
+				// 170322 스피드 배송 상단 바 롤링 / 클릭 스크립트 / 상단 공지바 (PDP, PLP만 노출)
+				var index = 0;
+				var commToday = "20180528";
+				var commTodayHh = "2018052811";
 
-		//  상단 공지바 (PDP, PLP만 노출)
+				if(commTodayHh >= 2017110710 ) {
+					jQuery('.notice_tits#speeds').css('display','block');
+					var length = jQuery('.notice_tits#speeds>a').length;
+					setInterval(function(){
+						jQuery('.notice_tits#speeds>a').removeClass('on');
 
-		if(commTodayHh >= 2017110710 ) {
-			jQuery('.notice_tits#speeds').css('display','block');
-			var length = jQuery('.notice_tits#speeds>a').length;
-			setInterval(function(){
-				jQuery('.notice_tits#speeds>a').removeClass('on');
+						setTimeout(function(){
+							jQuery('.notice_tits#speeds>a').hide();
+							if( index >= (length -1) ) {
+								index = 0;
+							} else {
+								index += 1;
+							}
 
-				setTimeout(function(){
-					jQuery('.notice_tits#speeds>a').hide();
-					if( index >= (length -1) ) {
-						index = 0;
-					} else {
-						index += 1;
+							jQuery('.notice_tits#speeds>a').eq(index).show();
+							setTimeout(function(){
+								jQuery('.notice_tits#speeds>a').eq(index).addClass('on');
+							},30);
+
+						},400);
+					},3000);
+				}
+
+				jQuery('#headerWrap .notice_tits#speeds>a').bind('click',function(){
+					if(jQuery(this).hasClass('b1')){
+						jQuery('.popup_oneday_open#spd').show();
+					}else if(jQuery(this).hasClass('b3')){
+						jQuery('.popup_oneday_exchange').show();
 					}
+				});
 
-					jQuery('.notice_tits#speeds>a').eq(index).show();
-					setTimeout(function(){
-						jQuery('.notice_tits#speeds>a').eq(index).addClass('on');
-					},30);
 
-				},400);
-			},3000);
-		}
+				jQuery('.popup_oneday_exchange .header .close_x_btn , .popup_oneday_open .header .close_x_btn').bind('click',function(){
+					jQuery(this).parent().parent().hide();
+				});
+				// 170322 스피드 배송 상단 바 스크립트 END
 
-		jQuery('#headerWrap .notice_tits#speeds>a').bind('click',function(){
-			if(jQuery(this).hasClass('b1')){
-				jQuery('.popup_oneday_open#spd').show();
-			}else if(jQuery(this).hasClass('b3')){
-				jQuery('.popup_oneday_exchange').show();
-			}
+				if (fn_getCookie('today_close_superweek')!='close') {
+					//jQuery('.modal-popup-wrapper').addClass('open');
+					//fn_weekendPopupOpen();
+				}
+				jQuery("#not_today_sw").click(function(){
+					fn_setCookie('today_close_superweek','close',1);
+					jQuery('#superWeekend').hide();
+				});
+			});
 		});
-
-
-		jQuery('.popup_oneday_exchange .header .close_x_btn , .popup_oneday_open .header .close_x_btn').bind('click',function(){
-			jQuery(this).parent().parent().hide();
-		});
-		// 170322 스피드 배송 상단 바 스크립트 끝
-
-		if (fn_getCookie('today_close_superweek')!='close') {
-			//jQuery('.modal-popup-wrapper').addClass('open');
-
-				//fn_weekendPopupOpen();
-
-		}
-		jQuery("#not_today_sw").click(function(){
-			fn_setCookie('today_close_superweek','close',1);
-			jQuery('#superWeekend').hide();
-		});
-	});
-
-})
-</script>
+	</script>
 </section>
 
 
