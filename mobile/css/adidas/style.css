@@ -3292,7 +3292,7 @@ p.holiday_delay strong{font:600 13px/18px 'NotoSansKR'; }
 }
 #header .notice_tits .notice_tits_wrap .collout_bar .img{
     position: relative;
-    top:7px;
+    top:6px;
     float:left;
 }
 #header .notice_tits .notice_tits_wrap .collout_bar .img img{
@@ -4481,6 +4481,10 @@ width: 75%;
 #container #location>*:last-child:after{
 	display: none;
 }
+
+/* Product Detail > VRISM */
+#main-api-frame{height:100%;width:100%;border:0}
+.centeralign{display: block;margin-left: auto;margin-right: auto;margin-top: auto;margin-bottom: auto;width: 100%;}
 
 /* Product Detail */
 #container.product_view .product_order{
@@ -5683,7 +5687,27 @@ div.layerpop_wrap#nomem_order_popup .inner .content .desc{
 #container.product_view .product_order>.prod_imgs_cut_num span.on{
 	background: #0286cd;
 }
-
+#container.product_view .prod_imgs_navi{
+    position: absolute;
+    top: 60%;
+    width: 100%;
+    opacity: 0;
+    -webkit-opacity: 0;
+    transition: all 0.6s;
+}
+#container.product_view .prod_imgs_navi.on{
+    top:50%;
+    opacity: 1;
+    -webkit-opacity: 1;
+}
+#container.product_view .prod_imgs_navi a.prev{
+    position: absolute;
+    left: 15px;
+}
+#container.product_view .prod_imgs_navi a.next{
+    position: absolute;
+    right: 15px;
+}
 #container.product_view .product_order ul.info{
 	padding:20px 0 15px;
 }
@@ -20666,7 +20690,9 @@ em.prd_speedy .tooltip-box:before{
     overflow: scroll;
     transform:translate3d(0, 0, 0);
     -webkit-transform:translate3d(0, 0, 0);
-    background:rgba(255,255,255,0.9);
+    background: #f6f6f6;
+    opacity: 0.96;
+    -webkit-opacity: 0.96;
 }
 .header_layerpopup .contents{
     padding: 50px 0 0;
@@ -20685,13 +20711,27 @@ em.prd_speedy .tooltip-box:before{
 .header_layerpopup .contents .main_icon span{
     color:#fff;
 }
-
 .header_layerpopup#h-pop-today-delivery .contents .main_icon span.icons:after{
     font-size: 41px;
 }
-
 .header_layerpopup#h-pop-exchange .contents .main_icon span.icons:after{
     font-size: 25px;
+}
+.header_layerpopup#h-pop-holiday-delay .contents p{
+    padding: 0;
+    text-align: center;
+    font: 400 16px/25px 'NotoSansKR';
+    letter-spacing: -0.7px;
+}
+.header_layerpopup .contents .icon{text-align: center;}
+.header_layerpopup .contents .icon img{width: 17%;}
+.header_layerpopup#h-pop-holiday-delay .contents,
+.header_layerpopup#h-pop-exchange .contents{
+    position: absolute;
+    top: 44%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
 }
 
 .header_layerpopup .contents>h2{
@@ -20704,11 +20744,9 @@ em.prd_speedy .tooltip-box:before{
     text-align: center;
     font:300 1.1rem/1.9rem 'NotoSansKR';
 }
-
 .header_layerpopup .contents p.bold{
     font:700 1.3rem/2.1rem 'NotoSansKR';
 }
-
 .header_layerpopup .contents p.bold span{
     font:700 2rem/2.1rem 'NotoSansKR';
     vertical-align: middle;
@@ -20722,7 +20760,6 @@ em.prd_speedy .tooltip-box:before{
 .header_layerpopup .contents p a:after{
     margin-left: 3px;
 }
-
 .header_layerpopup .close_x_btn{
     width: 60px;
     height: 60px;
