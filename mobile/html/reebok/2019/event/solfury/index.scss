@@ -1,0 +1,216 @@
+@import "./mobile/MO/reebok/css/scss/about.scss";
+
+.solfury{
+
+    //common
+    .btn{
+        display: inline-block;
+        border: 3px solid #fff;
+        a{
+            display: block;
+            font: 700 4vw/12vw 'NotoSansKR';
+            color: #fff;
+            padding: 0 9vw;
+            letter-spacing: .3rem;
+        }
+    }
+
+    //main
+    .visual_main{
+        position: relative;
+        .collections1{
+            padding: 0 0 1rem;
+            background: url('/images/reebok/about/nano/190116/bg_bottom.jpg') 0 no-repeat;
+            background-size: 100% 100%;
+            text-align: center;
+            position: relative;
+            bottom:0;
+            left:0;
+             h1{
+                padding: 2.8rem 0 1rem;
+                color: #fff;
+                font: 300 10vw 'dinpro cond';
+                text-align: center;
+                letter-spacing: 1.2rem;
+                span{
+                    font: 700 10vw 'dinpro cond';
+                }
+            }
+
+            .collection_cut{
+                position: relative;
+                overflow: hidden;
+                &.collection_slider1{
+                    margin-bottom: 2rem;
+                }
+                ul{
+                    overflow: hidden;
+                    li{
+                        position: relative;
+                        float: left;
+                        .btn{
+                            position: absolute;
+                            top:20%;
+                            left:5%;
+                        }
+                        img{
+                            width: 100%;
+                        }
+                    }
+                }
+                    .navi{
+                        position: absolute;
+                        top:50%;
+                        margin-top: -34px;
+                        width: 100%;
+                        text-align: center;
+                        img{
+                            width: 50%;
+                        }
+                        .next{
+                            position: absolute;
+                            right:0;
+                            text-align: right;
+                        }
+                        .prev{
+                            position: absolute;
+                            left:0;
+                            text-align: left;
+                        }
+                    }
+                }
+                .navi{
+                    display: none;
+                }
+                .num_paging{
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    padding: 1rem 0px;
+                    a{
+                        border:2px solid #fff;
+                        width: 1rem;
+                        height: 1rem;
+                        margin-right: 0.5rem;
+                    }
+
+                    .on{
+                        background: #fff;
+                    }
+                }
+            }
+        }
+    }
+
+    //USP
+    .visual_mid{
+        position: relative;
+        &.on{
+            .txt1{
+                opacity: 1;
+                transition: all 1s;
+                // @include css3(opacity,1);
+                // @include css3(transition, all 0.5s);
+            }
+            .wrap{
+                .txt2{
+                    opacity: 1;
+                    transition: all 1s;
+                    transition-delay: .5s;
+                }
+                .txt3{
+                    opacity: 1;
+                    transition: all 1s;
+                    transition-delay: 1s;
+                }
+            }
+        }
+        .bg{
+            img{
+                width:100%;
+            }
+        }
+        .img{
+            position: absolute;
+            top:0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .txt1{
+            position: absolute;
+            top: 9%;
+            left: 5%;
+            width: 100%;
+            opacity: 0;
+            img{
+                width:35%;
+            }
+        }
+        .wrap{
+            .txt2{
+                position: absolute;
+                top: 59%;
+                left: 27%;
+                width: 50%;
+                opacity: 0;
+                img{
+                    width:76%;
+                }
+            }
+            .txt3{
+                position: absolute;
+                top: 5%;
+                right: -19%;
+                width: 50%;
+                opacity: 0;
+                img{
+                    width: 51%;
+                }
+            }
+        }
+    }
+
+
+    //grid
+    .grids{
+        img{
+            width:100%;
+        }
+        .sec{
+            &::after{
+                display: block;
+                content:'';
+                clear:both;
+            }
+            .wrap{
+                float: left;
+                width:50%;
+            }
+        }
+    }
+
+    //btm
+    .btm{
+        background: url('/images/reebok/2019/event/solfury/btm_bg.jpg') 0 0 no-repeat;
+        background-size: cover;
+        background-position: center;
+        .txt{
+            text-align: center;
+            padding: 10vw 0;
+            h1{
+                font: 700 10vw/10vw 'dinpro cond';
+                color:#fff;
+                letter-spacing: .4rem;
+            }
+            p{
+                font: 500 3vw/5vw 'NotoSansKR';
+                color:#fff;
+                margin-bottom: 6vw;
+                letter-spacing: .1vw;
+            }
+        }
+}
+
+
+// nano8 END
