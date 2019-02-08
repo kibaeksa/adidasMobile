@@ -1,0 +1,49 @@
+@import './mobile/css/adidas/scss/common/mixin.scss';
+@import './mobile/css/adidas/scss/common/common.scss';
+
+#container{
+	padding-top: 61px;
+}
+#store_open{
+	position: relative;	
+	.button_area_v2{
+		margin: 25px 0 0 0;
+		display: inline-block;
+		width: 150px;
+		a{
+			font: 500 14px/49px 'NotoSansKR';
+			letter-spacing: 1px;
+			span.arrow{
+				width: 27px;
+				&:after,&:before{
+				    width: 8px;
+				}
+			}
+		}
+	}
+	.main{
+		position: relative;	
+		img{
+			width: 100%;
+		}
+		h2{
+			position: absolute;
+			top: 54%;
+			left:0;
+			text-align: center;
+			transition : all 0.4s;
+			opacity: 0;
+			img{
+				width: 60%;
+			}
+			&.on{
+				opacity: 1;
+			}
+		}
+		.btn-golfmain{
+			display: inline-block;
+			position: absolute;
+			text-indent: -3000px;
+		}
+	}	
+}
