@@ -1,5 +1,5 @@
 // @import "./app/MO/reebok/css/scss/about.scss";
-
+@import "./mobile/MO/reebok/css/scss/about.scss";
 #video-layer{
   position:fixed;top:0;left:0;width: 100%;height: 100%;z-index:1000;
 }
@@ -25,7 +25,6 @@
 
 
 }
-
 #video-layer.loaded .bg{
   opacity: 1;
   transform:scale(1.2);
@@ -109,6 +108,7 @@
             text-align: center;
             .video-btn{
                 display: inline-block;
+                
             }
             img{
                 width:50%;
@@ -148,6 +148,7 @@
                 font: 300 5.5vw/5.5vw 'NotoSansKR';
                 margin-top:10px;
                 margin-bottom:5px;
+                letter-spacing: -1px;
                     &:after{
                         position: absolute;
                         top: 0;
@@ -214,6 +215,20 @@
                 vertical-align: middle;
                 font: 700 4.5vw/4.5vw 'NotoSansKR';
                 letter-spacing: 1px;
+                position: relative;
+                &::after{
+                    display: block;
+                    position: absolute;
+                    top: 20%;
+                    left: -1px;
+                    width: 101%;
+                    height: 55%;
+                    content: '';
+                    clear: both;
+                    background: rgba(0,0,0,0.5);
+                    z-index: 2;
+                    
+                }
             }
             p.dinproBold{
                 font: 700 4.5vw/4.5vw 'dinpro';
@@ -225,8 +240,25 @@
             }
         }
         >.img{
+            position: relative;
             img{
                 width:100%;
+            }
+            .cover{
+                position: absolute;
+                top:0;
+                left:0;
+                width:100%;
+                height:100%;
+                background: rgba(0,0,0,0.5);
+                z-index: 2;
+                .text{
+                    padding: 23% 0 0 0;
+                    font: 700 1.8rem 'NotoSansKR';
+                    text-align: center;
+                    color: #fff;
+                    letter-spacing: 0;
+                }
             }
         }
     }
