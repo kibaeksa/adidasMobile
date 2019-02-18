@@ -1,0 +1,416 @@
+@import './mobile/css/adidas/scss/common/mixin.scss';
+@import './mobile/css/adidas/scss/common/common.scss';
+#container{
+	z-index: 121;
+}
+#footer{
+	&.active{
+		position:fixed;
+		bottom:0;
+		width: 100%;
+	}
+}
+#night_jogger{
+	position: relative;
+	.main{
+		position: relative;
+		.clock_wrap{
+			position: absolute;
+		    bottom: 25px;
+			left: 15px;
+			width: 100%;
+			z-index: 11;
+			.glow{
+				position: relative;
+			    display: inline-block;
+			    height: 20px;
+			    width: 20px;
+			    color: rgba(255,255,255,0.21);
+			    text-align: right;
+			    font: 18px 'adihaus';
+			    letter-spacing: 5px;
+				&.hour{
+
+				}
+				&.semi{
+					// position: absolute;
+					// left:-22px;
+					// top:50px;
+					// width: 5px;
+				}
+				&.kst{
+					text-transform: uppercase;
+				    font-size: 14px;
+				    letter-spacing: 3px;
+				    margin-left: 10px;
+				    top: 5px;
+				}
+				&:after{
+					// -webkit-filter: blur(1px);
+					// filter: blur(1px);
+					text-shadow: 0 0 2px #FFf, 0 0 10px #fff, 0 0 10px #fff, 0 0 10px #fff, 0 0 10px #FFF, 0 0 0px #fff, 0 0 1px #fff;
+					z-index: 3;
+				    // opacity: .75;
+					content: attr(data-blur);
+					color: #fff;
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+				}
+				&:before{
+				    z-index: 1;
+					content: attr(data-blur);
+				    color: #fff;
+				    position: absolute;
+				    top: 0;
+				    left: 0;
+				    width: 100%;
+				}
+			}
+		}
+		.inn{
+			position: absolute;
+			z-index: 2;
+			top:0;
+			width: 100%;
+			height: 100%;
+			img{
+				position: absolute;
+				// left:0;
+				&.logo{
+					left: 15px;
+					top: 25px;
+					width: 35%;
+				}
+				&.top_txt{
+					right: 15px;
+					top: 25px;
+					width: 35%;
+				}
+				&.bottom_txt{
+					right: 15px;
+					bottom: 25px;
+					width: 35%;
+				}
+
+			}
+		}
+		.bg{
+			position: relative;
+			padding-bottom: 147%;
+			background: #000;
+			img{
+				position: absolute;
+				top:0;
+				left:0;
+				width: 100%;
+				@include css3(opacity,0);
+				@include css3(transition, all 4s);
+
+				&.on{
+					@include css3(opacity,1);
+				}
+			}
+		}
+	}
+	.left_fixed_area{
+		position: absolute;
+		top:0;
+		left:0;
+		width: 60px;
+		height: 100%;
+		background: #000;
+		z-index: 3;
+		&.fixed{
+			position: fixed;
+
+		}
+		h2{
+			position: absolute;
+		    top: 20px;
+		    left: 6px;
+		    text-align: center;
+			img{
+				width: 75%;
+			}
+		}
+		p{
+			position: absolute;
+		    left: -238%;
+		    top: 50%;
+		    transform: rotate(-90deg);
+		    width: 347px;
+		    letter-spacing: 0.7px;
+		    font: 400 13px 'NotoSansKR';
+		    text-align: center;
+		    color: #fff;
+		}
+	}
+
+	.slider_wrap{
+		position: relative;
+		padding-left: 60px;
+        padding-bottom: 25%;
+		background: #000;
+		@include css3(transition, all 0.8s);
+		&.fixed{
+	        padding-top: 45%;
+			.top_area{
+				position: fixed;
+			    top: 0;
+			    width: 84%;
+			    z-index: 3;
+			    left: 60px;
+				&.second{
+					top:50px;
+				}
+			}
+			.bg{
+				bottom:5%;
+			}
+			.slider_owl_wrap{
+		        top: 28px;
+			}
+		}
+		&.shoes_slider_wrap{
+			background: url(/images/adidas/2019/event/jogger/day_bg.jpg) no-repeat;
+			background-size: 100% 100%;
+			background-position: center;
+
+			&.night{
+				background: url(/images/adidas/2019/event/jogger/night_bg.jpg) no-repeat;
+				background-size: 100% 100%;
+				background-position: center;
+				.bg{
+					// background: url(/images/adidas/2019/event/jogger/night_bg.jpg) no-repeat;
+					background-size: 100%;
+				}
+			}
+		}
+		&.night{
+			.bg{
+				.shoes_bg{
+					@include css3(opacity,0);
+				}
+				.btn_navi{
+					.btn{
+						span{
+							left:53%;
+						}
+					}
+					.txt{
+						p{
+							color: #838383;
+							&.night_txt{
+								color:#fff;
+							}
+						}
+					}
+				}
+			}
+		}
+		&.coll_slider_wrap{
+		    padding-bottom: 0;
+			.slider_owl_wrap{
+				top: inherit;
+				    left: inherit;
+			    overflow: hidden;
+				ul{
+					li{
+						text-align: left;
+						img{
+							width: 100%;
+						    text-align: left;
+						}
+					}
+				}
+			}
+			.bg{
+				bottom: inherit;
+				top:0;
+			}
+		}
+		.top_area{
+			position: relative;
+			background: #000;
+			border-left:1px solid #333;
+			z-index: 1;
+			@include css3(transition, all 0.8s);
+
+			p{
+				display: inline-block;
+				padding-left: 20px;
+				color:#fff;
+				font:11px/50px 'AdihausDIN-Bold';
+				text-transform: uppercase;
+				letter-spacing: 2px;
+			}
+			a{
+				position: absolute;
+			    right: 20px;
+			    top: 8px;
+			    display: inline-block;
+			    font: 500 11px/35px 'NotoSansKR';
+			    color: #000;
+			    background: #fff;
+			    padding: 0 14px;
+			}
+			&.second{
+				border-top:1px solid #333;
+				border-bottom:1px solid #333;
+				p{
+					color:#838383;
+				}
+				.navi{
+					position: absolute;
+				    display: inline-block;
+				    top: 30%;
+				    right: 20px;
+				    width: 26%;
+				    text-align: center;
+					div{
+						display: inline-block;
+						&.prev{
+							position: absolute;
+							left:0;
+							img{
+								transform: rotate(180deg);
+							}
+						}
+						&.next{
+							position: absolute;
+							right:0;
+						}
+						&.numbering{
+							color:#838383;
+
+							span{
+							    font: 11px/22px 'AdihausDIN-Bold';
+								&.selecnum{
+									padding-right: 4px;
+									color:#fff;
+								}
+								&.allnum{
+								    padding-left: 4px;
+									color:#838383;
+								}
+							}
+						}
+						img{
+							width: 11px;
+						}
+					}
+				}
+
+			}
+		}
+		.bg{
+			position: absolute;
+    		bottom: 5%;
+			.shoes_bg{
+				@include css3(opacity,0);
+				@include css3(transition, all 0.5s);
+			}
+			img{
+
+				width: 100%;
+			}
+			.line_wrap{
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				height: 100%;
+				width: 100%;
+				div{
+					position: absolute;
+					width: 100%;
+					height: 1px;
+					background: #848484;
+					&.navi{
+						top: 50%;
+						left: 15%;
+						width: 39%;
+						height: 26%;
+						background: transparent;
+						border-left: 1px solid #848484;
+						border-bottom: 1px solid #848484;
+					}
+					&.center{
+					    top: 50%;
+					}
+					&.top{
+						top: 9.8%;
+					    left: 15%;
+					    width: 39%;
+					    height: 40%;
+					    background: transparent;
+					    border: 1px solid #848484;
+					}
+					&.bottom{
+						top: 50%;
+					    left: 54.5%;
+					    width: 39%;
+					    height: 40%;
+					    background: transparent;
+					    border: 1px solid #848484;
+					}
+				}
+			}
+			.btn_navi{
+				position: absolute;
+			    top: 58%;
+			    height: 50%;
+			    z-index: 1;
+			    left: 10%;
+			    width: 50%;
+			    text-align: center;
+				.btn{
+					position: relative;
+					display: inline-block;
+				    height: 16%;
+					background: #000;
+				    width: 43%;
+				    border-radius: 50px;
+					border:1px solid #333333;
+					span{
+						position: absolute;
+					    top: 8%;
+					    left: 5%;
+					    height: 81%;
+					    background: #fff;
+					    width: 43%;
+					    border-radius: 50px;
+						@include css3(transition, all 0.5s);
+					}
+				}
+				.txt{
+					p{
+						display: inline-block;
+					    padding: 0 17px;
+					    font: 11px/11px 'AdihausDIN-Bold';
+					    text-transform: uppercase;
+					    letter-spacing: 1px;
+					    margin-top: 16%;
+						&.night_txt{
+							color:#787879;
+						}
+					}
+				}
+			}
+		}
+		.slider_owl_wrap{
+			position: relative;
+		        top: 30px;
+		    left: 14px;
+		}
+		ul{
+			li{
+				text-align: center;
+				img{
+					width: 60%;
+				}
+			}
+		}
+	}
+}
