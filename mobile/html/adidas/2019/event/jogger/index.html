@@ -459,13 +459,20 @@
                     </div>
                </div>
                <div class="slider_wrap shoes_slider_wrap">
-                   <div class="top_area">
+                   <div class="top_area first_section">
                        <div class="title">
                            <p>colorways</p>
-                           <a href="">런칭 캘린더 바로가기</a>
+                           <a href="http://m.adidas.co.kr/MO/Promotion/launchCalList.action?STATUS_CD=ALL&PAGE_CD=ALL">런칭 캘린더 바로가기</a>
                        </div>
+                       <div class="clock_wrap">
+                            <div id="clock_h2" class="glow hour" data-blur="" ></div>
+                            <div id="clock_semi2" class="glow semi" data-blur=""></div>
+                            <div id="clock_m2" class="glow min" data-blur=""></div>
+                            <div id="kst2" class="glow kst" data-blur=""></div>
+                        </div>
+
                    </div>
-                   <div class="top_area second">
+                   <div class="top_area second shoes_head">
                        <div class="title">
                            <p>CG5950</p>
                        </div>
@@ -473,6 +480,16 @@
                            <div class="prev"><img src="/images/adidas/2019/event/jogger/arrow_next.jpg" alt=""></div>
                            <div class="next"><img src="/images/adidas/2019/event/jogger/arrow_next.jpg" alt=""></div>
                            <div class="numbering"><span class="selecnum">1</span>/<span class="allnum">2</span></div>
+                       </div>
+                   </div>
+                   <div class="top_area second collection_head">
+                       <div class="title">
+                           <p>KST//GMT+9</p>
+                       </div>
+                       <div class="navi">
+                           <div class="prev"><img src="/images/adidas/2019/event/jogger/arrow_next.jpg" alt=""></div>
+                           <div class="next"><img src="/images/adidas/2019/event/jogger/arrow_next.jpg" alt=""></div>
+                           <div class="numbering"><span class="selecnum">1</span>/<span class="allnum">9</span></div>
                        </div>
                    </div>
                    <div class="bg">
@@ -493,8 +510,8 @@
                    </div>
                    <div class="slider_owl_wrap">
                         <ul id="slider_owl">
-                            <li><img src="/images/adidas/2019/event/jogger/day_cut.png" alt="" ></li>
-                            <li><img src="/images/adidas/2019/event/jogger/night_cut.png" alt="" ></li>
+                            <li><img src="/images/adidas/2019/event/jogger/day_01_BD7933.png" alt="" ></li>
+                            <li><img src="/images/adidas/2019/event/jogger/night_01_BD7933.png" alt="" ></li>
                         </ul>
                     </div>
                     <div class="left_fixed_area">
@@ -521,7 +538,20 @@
                        </ul>
                    </div>
                </div>
+                <!-- // col -->
+                <div class="video_wrap">
+                    <div class="bg" onclick="openModalVideoViewer('knzXSo8kL58')"><img src="/images/adidas/2019/event/jogger/video_bg.jpg" alt=""></div>
+                </div>
+                <div class="bottom_area">
+                    <div class="bg"><img src="/images/adidas/2019/event/jogger/bottom_bg.jpg" alt=""></div>
+                    <div class="inn">
+                        <a href="http://m.adidas.co.kr/MO/Promotion/launchCalList.action?STATUS_CD=ALL&PAGE_CD=ALL">
+                            런칭 캘린더 바로가기
+                            <span></span>
+                        </a>
 
+                    </div>
+                </div>
 
            </div>
            <!-- //night_jogger -->
@@ -541,13 +571,18 @@
                        }
                    }
                    var rolling = setInterval(auto,3500);
-                   // 시계
+                   // 시계 1 & 시계2
                    function printClock() {
                        // 출력할 장소 선택
-                       var clock_h = document.getElementById("clock_h");
-                       var clock_m = document.getElementById("clock_m");
-                       var clock_semi = document.getElementById("clock_semi");
-                     var kst = document.getElementById("kst");
+                        var clock_h = document.getElementById("clock_h");
+                        var clock_m = document.getElementById("clock_m");
+                        var clock_semi = document.getElementById("clock_semi");
+                        var kst = document.getElementById("kst");
+
+                        var clock_h2 = document.getElementById("clock_h2");
+                        var clock_m2 = document.getElementById("clock_m2");
+                        var clock_semi2 = document.getElementById("clock_semi2");
+                        var kst2 = document.getElementById("kst2");
                        // 현재시간
                        var currentDate = new Date();
                        var calendar = currentDate.getFullYear() + "-" + (currentDate.getMonth()+1) + "-" + currentDate.getDate() // 현재 날짜
@@ -560,9 +595,6 @@
                            amPm = 'PM';
                            currentHours = addZeros(currentHours - 12,2);
                        }
-                       // if(currentSeconds >= 50){// 50초 이상일 때 색을 변환해 준다.
-                       //    currentSeconds = '<span style="color:#de1951;">'+currentSeconds+'</span>'
-                       // }
 
                        // 날짜를 출력
                        // clock.innerHTML = currentHours+":"+currentMinute+" <span style='font-size:50px;'>"+ amPm+"</span>";
@@ -570,8 +602,13 @@
                        clock_semi.dataset.blur = ":";
                        clock_m.dataset.blur = currentMinute;
                        kst.dataset.blur = "kst";
-                       // 1초마다 printClock() 함수 호출
-                     // setTimeout("printClock()",1000);
+
+                       clock_h2.dataset.blur = currentHours;
+                       clock_semi2.dataset.blur = ":";
+                       clock_m2.dataset.blur = currentMinute;
+                       kst2.dataset.blur = "kst";
+                        // 1초마다 printClock() 함수 호출
+                        // setTimeout("printClock()",1000);
                    }
                    function addZeros(num, digit) { // 자릿수 맞춰주기
                          var zero = '';
@@ -584,7 +621,6 @@
                          return zero + num;
                    }
                    var clock = setInterval(printClock,1000);
-                   // console.log('s1')
 
                    //scroll
                    $(window).load(function(){
@@ -594,25 +630,16 @@
                        owlSlider.on('initialized.owl.carousel', function(event) {
                        });
                        owlSlider.on('changed.owl.carousel', function(event) {
-                           /*
-                               Callback 이벤트 (슬라이드가 실행 될 떄마다 실행되는 함수)
-                               * index 사용하기
-                               event.item.index
-
-                               * length 사용하기
-                               event.item.count
-                           */
                            var index = event.item.index-2;
                            console.log(index)
                            if(index==1||index==-1){
-                               $('.shoes_slider_wrap .numbering .selecnum').html(2);
+                               // $('.shoes_head .numbering .selecnum').html(2);
                                $('.slider_wrap').addClass('night');
-                               $('.top_area.second .title p').html('BD7933');
+
                            }
                            if(index==0||index==2){
-                               $('.shoes_slider_wrap .numbering .selecnum').html(1);
+                               // $('.shoes_head .numbering .selecnum').html(1);
                                $('.slider_wrap').removeClass('night');
-                               $('.top_area.second .title p').html('CG5950');
                            }
 
                        });
@@ -629,19 +656,48 @@
                            // nav: true
                        });
 
-                       $('.shoes_slider_wrap .next').click(function() {
-                            owlSlider.trigger('next.owl.carousel');
+                       $('.shoes_head .next').click(function() {
+                           $('.shoes_head .numbering .selecnum').html(2);
+                            $('.shoes_head .title p').html('CG5950');
+                           $('#slider_owl li').eq(0).children('img').attr("src", '/images/adidas/2019/event/jogger/day_01_CG5950.png');
+                           $('#slider_owl li').eq(2).children('img').attr("src", '/images/adidas/2019/event/jogger/day_01_CG5950.png');
+                           $('#slider_owl li').eq(4).children('img').attr("src", '/images/adidas/2019/event/jogger/day_01_CG5950.png');
+
+                           $('#slider_owl li').eq(1).children('img').attr("src", '/images/adidas/2019/event/jogger/night_01_CG5950.png');
+                           $('#slider_owl li').eq(3).children('img').attr("src", '/images/adidas/2019/event/jogger/night_01_CG5950.png');
+                           
                        });
-                       $('.shoes_slider_wrap .prev').click(function() {
-                            owlSlider.trigger('prev.owl.carousel');
+                       $('.shoes_head .prev').click(function() {
+                           $('.shoes_head .numbering .selecnum').html(1);
+
+                           $('.shoes_head .title p').html('BD7933');
+                           $('#slider_owl li').eq(0).children('img').attr("src", '/images/adidas/2019/event/jogger/day_01_BD7933.png');
+                           $('#slider_owl li').eq(2).children('img').attr("src", '/images/adidas/2019/event/jogger/day_01_BD7933.png');
+                           $('#slider_owl li').eq(4).children('img').attr("src", '/images/adidas/2019/event/jogger/day_01_BD7933.png');
+
+                           $('#slider_owl li').eq(1).children('img').attr("src", '/images/adidas/2019/event/jogger/night_01_BD7933.png');
+                           $('#slider_owl li').eq(3).children('img').attr("src", '/images/adidas/2019/event/jogger/night_01_BD7933.png');
+                           
+                       });
+                       $('.btn_navi .btn').click(function(){
+                           $( "#slider_owl .owl-next" ).trigger( "click" );
                        });
                        //coll_slider
                        var owlSlider2 = $('#slider_owl2');
                        owlSlider2.on('initialized.owl.carousel', function(event) {
+                           $('.collection_head .navi .numbering .selecnum').html('1');
+
                        });
                        owlSlider2.on('changed.owl.carousel', function(event) {
-                           var index = event.item.index-2;
-                           // console.log(index)
+                           var index = event.item.index-1;
+                           console.log(index)
+                           $('.collection_head .navi .numbering .selecnum').html(index);
+                           if(index==10){
+                               $('.collection_head .numbering .selecnum').html(1);
+                           }
+                           if(index==0){
+                               $('.collection_head .numbering .selecnum').html(9);
+                           }
 
                        });
                        owlSlider2.owlCarousel({
@@ -656,29 +712,48 @@
                            autoplaySpeed:800,
                            nav: true
                        });
+                       $('.collection_head .next').click(function() {
+                            owlSlider2.trigger('next.owl.carousel');
+                       });
+                       $('.collection_head .prev').click(function() {
+                            owlSlider2.trigger('prev.owl.carousel');
+                       });
 
-                       var slider_wrap_offset = $('.slider_wrap').offset().top;
+                       var shoes_slider_wrap_offset = $('.shoes_slider_wrap').offset().top;
+                       var coll_slider_wrap_offset = $('.coll_slider_wrap').offset().top-200;
                        var slider_wraph = $('.slider_wrap').height();
                        var mainh = $('.main').height();
-                       console.log(slider_wrap_offset)
+                       console.log(shoes_slider_wrap_offset)
 
                        $(window).scroll(function(){
                             var thispos = $(this).scrollTop();
                             console.log('this'+thispos)
-                            if(thispos>slider_wrap_offset){
-                                // $('body,html').animate({scrollTop:slider_wrap_offset}, '500');
+                            if(thispos>shoes_slider_wrap_offset&& thispos < coll_slider_wrap_offset ){
                                 $('.left_fixed_area').addClass('fixed');
                                 $('.shoes_slider_wrap').addClass('fixed');
-                            }else{
+                                $('.top_area.second.collection_head').removeClass('first');
+                                $('.left_fixed_area p').html("어둠 속을 밝게 비춰 줄 리플렉티브 슈즈");
+                                $('.top_area .clock_wrap').removeClass('on');
+                                $('.top_area.first_section .title p').css({
+                                    'opacity':'1'
+                                })
+                            }else if (thispos >= coll_slider_wrap_offset) {
+                                console.log('aaa')
+                                // $('.top_area.second .title p').html('KST//GMT+9');
+                                $('.collection_head').addClass('first');
+                                $('.left_fixed_area p').html("it's naver too late 우리의 밤은 잠들지 않아");
+                                $('.top_area .clock_wrap').addClass('on');
+                                $('.top_area.first_section .title p').css({
+                                    'opacity':'0'
+                                })
+                            }
+                            else{
                                 $('.left_fixed_area').removeClass('fixed');
                                 $('.shoes_slider_wrap').removeClass('fixed');
-
                             }
                        });
                    })
-                    $('.btn_navi .btn').click(function(){
-                        $( "#slider_owl .owl-next" ).trigger( "click" );
-                    })
+
 
 
 

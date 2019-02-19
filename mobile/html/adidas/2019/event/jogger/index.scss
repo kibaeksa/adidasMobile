@@ -4,71 +4,69 @@
 	z-index: 121;
 }
 #footer{
-	&.active{
-		position:fixed;
-		bottom:0;
-		width: 100%;
-	}
+	position: relative;
+	z-index: 122;
 }
 #night_jogger{
 	position: relative;
-	.main{
-		position: relative;
-		.clock_wrap{
-			position: absolute;
-		    bottom: 25px;
-			left: 15px;
-			width: 100%;
-			z-index: 11;
-			.glow{
-				position: relative;
-			    display: inline-block;
-			    height: 20px;
-			    width: 20px;
-			    color: rgba(255,255,255,0.21);
-			    text-align: right;
-			    font: 18px 'adihaus';
-			    letter-spacing: 5px;
-				&.hour{
+	.clock_wrap{
+		position: absolute;
+		bottom: 25px;
+		left: 15px;
+		width: 100%;
+		z-index: 11;
+		.glow{
+			position: relative;
+			display: inline-block;
+			height: 20px;
+			width: 20px;
+			color: rgba(255,255,255,0.21);
+			text-align: right;
+			font: 18px 'adihaus';
+			letter-spacing: 5px;
+			&.hour{
 
-				}
-				&.semi{
-					// position: absolute;
-					// left:-22px;
-					// top:50px;
-					// width: 5px;
-				}
-				&.kst{
-					text-transform: uppercase;
-				    font-size: 14px;
-				    letter-spacing: 3px;
-				    margin-left: 10px;
-				    top: 5px;
-				}
-				&:after{
-					// -webkit-filter: blur(1px);
-					// filter: blur(1px);
-					text-shadow: 0 0 2px #FFf, 0 0 10px #fff, 0 0 10px #fff, 0 0 10px #fff, 0 0 10px #FFF, 0 0 0px #fff, 0 0 1px #fff;
-					z-index: 3;
-				    // opacity: .75;
-					content: attr(data-blur);
-					color: #fff;
-					position: absolute;
-					top: 0;
-					left: 0;
-					width: 100%;
-				}
-				&:before{
-				    z-index: 1;
-					content: attr(data-blur);
-				    color: #fff;
-				    position: absolute;
-				    top: 0;
-				    left: 0;
-				    width: 100%;
-				}
+			}
+			&.semi{
+				// position: absolute;
+				// left:-22px;
+				// top:50px;
+				// width: 5px;
+			}
+			&.kst{
+				text-transform: uppercase;
+				font-size: 14px;
+				letter-spacing: 3px;
+				margin-left: 10px;
+				top: 5px;
+			}
+			&:after{
+				// -webkit-filter: blur(1px);
+				// filter: blur(1px);
+				text-shadow: 0 0 2px #FFf, 0 0 10px #fff, 0 0 10px #fff, 0 0 10px #fff, 0 0 10px #FFF, 0 0 0px #fff, 0 0 1px #fff;
+				z-index: 3;
+				// opacity: .75;
+				content: attr(data-blur);
+				color: #fff;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+			}
+			&:before{
+				z-index: 1;
+				content: attr(data-blur);
+				color: #fff;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
 			}
 		}
+	}
+	.main{
+		position: relative;
+
 		.inn{
 			position: absolute;
 			z-index: 2;
@@ -159,11 +157,18 @@
 			.top_area{
 				position: fixed;
 			    top: 0;
-			    width: 84%;
+			    width: 85%;
 			    z-index: 3;
 			    left: 60px;
 				&.second{
 					top:50px;
+					&.shoes_head{
+						// z-index: 5;
+					}
+					&.collection_head{
+    					top: 50px;
+						// opacity: 1;
+					}
 				}
 			}
 			.bg{
@@ -211,7 +216,11 @@
 			}
 		}
 		&.coll_slider_wrap{
-		    padding-bottom: 0;
+			background: url(/images/adidas/2019/event/jogger/col_bg.jpg) no-repeat;
+			background-size: 100% 100%;
+			background-position: center;
+	        padding: 35px 25px 25px 85px;
+		    // padding-bottom: 0;
 			.slider_owl_wrap{
 				top: inherit;
 				    left: inherit;
@@ -228,7 +237,14 @@
 			}
 			.bg{
 				bottom: inherit;
-				top:0;
+			    top: inherit;
+			    width: 100%;
+			    top: 0;
+			    left: 60px;
+			    height: 100%;
+				img{
+					opacity: 0;
+				}
 			}
 		}
 		.top_area{
@@ -237,7 +253,18 @@
 			border-left:1px solid #333;
 			z-index: 1;
 			@include css3(transition, all 0.8s);
-
+			.title{
+				position: relative;
+				z-index: 12;;
+			}
+			.clock_wrap{
+			    bottom: 16px;
+				@include css3(opacity,0);
+				@include css3(transition, all 0.8s);
+				&.on{
+					@include css3(opacity,1);
+				}
+			}
 			p{
 				display: inline-block;
 				padding-left: 20px;
@@ -259,28 +286,42 @@
 			&.second{
 				border-top:1px solid #333;
 				border-bottom:1px solid #333;
+				&.shoes_head{
+					z-index: 4;
+				}
+				&.collection_head{
+					// top: -52px;
+				    border-bottom: 1px solid #333;
+					opacity: 0;
+					&.first{
+						z-index: 5;
+						opacity: 1;
+					}
+				}
 				p{
 					color:#838383;
 				}
 				.navi{
 					position: absolute;
 				    display: inline-block;
-				    top: 30%;
+				    top: 12%;
 				    right: 20px;
 				    width: 26%;
-				    text-align: center;
+					text-align: center;
+					z-index: 12;
 					div{
 						display: inline-block;
+						padding:10px;
 						&.prev{
 							position: absolute;
-							left:0;
+							left: -10px;
 							img{
 								transform: rotate(180deg);
 							}
 						}
 						&.next{
 							position: absolute;
-							right:0;
+							right:-10px;
 						}
 						&.numbering{
 							color:#838383;
@@ -409,6 +450,53 @@
 				text-align: center;
 				img{
 					width: 60%;
+				}
+			}
+		}
+	}
+
+	.video_wrap{
+		position: relative;
+    	z-index: 6;
+		.bg{
+
+			img{
+				width: 100%;
+			}
+		}
+	}
+
+	.bottom_area{
+		position: relative;
+	    z-index: 6;
+		.bg{
+
+			img{
+				width: 100%;
+			}
+		}
+		.inn{
+			position:absolute;
+			top:50%;
+			left:50%;
+			transform: translate(-50%,-50%);
+			width: 100%;
+			text-align: center;
+
+			a{
+				display: inline-block;
+				padding: 0 20px;
+				border:1px solid #888;
+				font:500 15px/55px 'NotoSansKR';
+				color:#fff;
+				background: #000;
+				span{
+					background: url(/images/adidas/2019/event/jogger/arrow_ico.png) no-repeat;
+					display: inline-block;
+					width: 25px;
+					height: 10px;
+					background-size:100% 100%;
+					margin-left: 10px;
 				}
 			}
 		}
