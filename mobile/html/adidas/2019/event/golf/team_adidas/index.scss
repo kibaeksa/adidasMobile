@@ -1,0 +1,584 @@
+@import './mobile/css/adidas/scss/common/mixin.scss';
+@import './mobile/css/adidas/scss/common/common.scss';
+
+#team_adidas{
+	.scrollbox{
+		top:20px;
+		@include css3(opacity,0);
+		@include css3(transition, all 0.5s);
+		&.on{
+			top:0;
+			@include css3(opacity,1);
+		}
+	}
+	.btn{
+		margin: 0 0 10px 0;
+		display: block;
+		font:500 14px/46px 'NotoSansKR';
+		color:#000;
+		text-align:center;
+		border: 1px solid #000;
+	}
+
+	.visual{
+		position: relative;
+		img{
+			width: 100%;
+		}
+	}
+
+	.cont_area{
+		position: relative;
+		.tap_area{
+			position: absolute;
+			width: 100%;
+			top:40px;
+			left: 50%;
+			-ms-transform: translate(-50%,0);
+			transform: translate(-50%,0);
+			z-index: 1;
+			ul{
+				text-align: center;
+				li{
+					// width: 28.5%;
+					width: 42.5%;
+					display: inline-block;
+					font: 900 1.2rem/1.4rem 'NotoSansKR';
+					color: #fff;
+					border-bottom: 2px solid #fff;
+					text-align: center;
+					padding-bottom: 3%;
+					margin: 0 1%;
+					box-sizing:  border-box;
+					span{
+						font: 1.3rem/1.2rem 'adinenuPro-bold';
+						letter-spacing: 0.3px;
+					}
+					&.on{
+						color:#000;
+						border-bottom: 4px solid #000;
+						padding-bottom: 2.3%;
+					}
+				}
+			}
+		}
+
+		.cont1{
+			position: relative;
+			padding-bottom: 30.5%;
+			display: none;
+			.bg{
+		        width: 100%;
+		        position: absolute;
+		        top: 0;
+		        left: 0;
+				z-index: -1;
+		        img{
+		            width: 100%;
+		        }
+		    }
+			.olapic-wrapper{
+				position: relative;
+    			padding-top: 25%;
+			}
+		}
+
+		.cont2{
+			position: relative;
+			padding-bottom: 838.5%;
+			display: none;
+			padding: 0 1.4rem;
+			background: url(/images/adidas/event/golf/team_adidas/cont_bg2.jpg) no-repeat;
+			background-size:100% 100%;
+			.bg{
+					width: 100%;
+					position: absolute;
+					top: 0;
+					left: 0;
+					z-index: -1;
+					img{
+							width: 100%;
+					}
+			}
+			.player_box{
+				padding-top: 35%;
+				h3{
+					font:1.7rem 'adinenuPro-black';
+					color:#000;
+					text-align: center;
+					margin-bottom: 1.5rem;
+					letter-spacing: 0.3px;
+					span{
+						font:400 1.1rem 'NotoSansKR';
+					}
+				}
+				ul{
+					text-align: left;
+					li{
+						width: 48.2%;
+						display: inline-block;
+						margin: 3% 0.8%;
+						-webkit-box-shadow: 0 0 5px rgba(0,0,0,0.35);;
+					    -moz-box-shadow: 0 0 5px rgba(0,0,0,0.35);;
+					    box-shadow: 0 0 5px rgba(0,0,0,0.35);;
+						a{
+							img{
+								width: 100%;
+							}
+						}
+					}
+				}
+				.player_layer{
+						position: fixed;
+						top: 0;
+						left: 0;
+						width: 100%;
+						height: 100%;
+						z-index: 6;
+						display: none;
+					  .overlay{
+							width: 100%;
+							height: 100%;
+							position: fixed;
+							top: 0;
+							left: 0;
+							background: rgba(0, 0, 0, 0.7);
+							z-index: 5;
+						}
+						.layer {
+								position: absolute;
+								top: 55%;
+								left: 50%;
+								transform: translate(-50%,-50%);
+								width: 80%;
+								background: #fff;
+								z-index: 20;
+								opacity: 0;
+								padding: 5%;
+								transition: opacity 0.3s;
+								-webkit-transition: opacity 0.3s;
+								z-index: 1;
+
+								&.active {
+									opacity: 1;
+									z-index: 10;
+								}
+
+								.img {
+									position: relative;
+										padding-bottom: 67%;
+									img{
+											width: 100%;
+											position: absolute;
+											display: none;
+										}
+								}
+
+								.thumnail{
+									ul{
+										li{
+											position: relative;
+											width: 23%;
+											display: inline-block;
+											&.on{
+												&::after{
+													content: '';
+													width: 100%;
+													height: 3px;
+													background-color: #ec0000;
+													position: absolute;
+													bottom: 0;
+													left: 0;
+												}
+											}
+											img{
+												width: 100%;
+											}
+										}
+									}
+								}
+								.tit_box{
+									position: relative;
+									margin-top: 1.5rem;
+									border-bottom: 2px solid #333333;
+									padding-bottom: 4%;
+									.tit {
+										font:2.2rem/2rem 'adinenuPro-black';
+											text-transform: uppercase;
+											color: #333333;
+										letter-spacing: 0.2px;
+										}
+									.stit {
+										font:400 1.1rem/1.4rem 'NotoSansKR';
+										text-transform: uppercase;
+										color: #333333;
+										letter-spacing: 0;
+									}
+									.insta{
+										position: absolute;
+										width: 2.2rem;
+										height: 2.2rem;
+										display: block;
+										top: 0;
+										right:0;
+										a{
+											img{
+												width: 100%;
+											}
+										}
+									}
+								}
+
+								.info_box{
+									margin-top: 3%;
+									table{
+										width: 100%;
+										th{
+											width: 20%;
+											height: 2rem;
+											font:700 1rem/2rem 'NotoSansKR';
+											color:#333333;
+											text-align: left;
+											span.dot{
+												width: 3px;
+												height: 3px;
+												display: inline-block;
+												background-color: #333333;
+												vertical-align: middle;
+												margin-right: 5px;
+											}
+										}
+										td{
+											width: 30%;
+											text-align: left;
+											font:300 1rem/2rem 'NotoSansKR';
+											color:#666666;
+										}
+									}
+								}
+
+								.bottom_desc{
+									margin-top: 8%;
+									p.left{
+										float: left;
+										font:400 0.8rem 'NotoSansKR';
+										color:#afafaf;
+									}
+									p.right{
+										float: right;
+										font:400 0.8rem 'NotoSansKR';
+										color:#afafaf;
+									}
+								}
+
+								.close_x_btn {
+									width: 3rem;
+									height: 3rem;
+									background: #000;
+									position: absolute;
+									top: -3rem;
+									right: 0;
+									&::before, &::after {
+										height: 1px;
+									background: #fff;
+									}
+								}
+							}
+				}
+
+			}
+
+			.player_box3{
+				padding-top: 10%;
+				padding-bottom: 35%;
+				position: relative;
+				h3{
+					font:1.7rem 'adinenuPro-black';
+					color:#000;
+					text-align: center;
+					margin-bottom: 1.5rem;
+					letter-spacing: 0.3px;
+					span{
+						font:400 1.1rem 'NotoSansKR';
+					}
+				}
+				a.link{
+					position: absolute;
+					display: block;
+					text-indent: -9999px;
+				}
+				.more_playes_wrap{
+					table{
+						width:100%;
+						colgroup{
+							col{
+								&.gray{
+									background: rgba(0,0,0,0.03);
+								}
+							}
+						}
+						tr{
+							border-bottom: 1px solid #c0c0c0;
+
+							&.title{
+								border-top: 1px solid #c0c0c0;
+								border-bottom: 2px solid #c0c0c0;
+								td{
+									padding: 15px 0;
+									font: 500 1rem 'NotoSansKR';
+
+								}
+							}
+							td{
+								padding: 5px 0;
+								text-align: center;
+								vertical-align: middle;
+								p{
+									font: 500 0.7rem 'NotoSansKR';
+									color: #000;
+									&.eng{
+										font: 1rem 'adinenuPro-black';
+										text-transform: uppercase;
+									}
+								}
+								&.sns{
+									position: relative;
+									a{
+										position: absolute;
+										top:0;left:0;width:100%;height:100%;z-index: 1;
+									}
+								}
+								.insta_ico{
+									display: inline-block;
+									margin:5px 0 0 0;
+									width: 50px;
+									height: 24px;
+									background: url(/images/adidas/2019/event/golf/team_adidas/more_insta.png) no-repeat;
+									background-size: 100% 100%;
+								}
+							}
+						}
+					}
+				}
+			}
+
+		}
+
+		.cont3{
+			position: relative;
+			padding-bottom: 838.5%;
+			display: none;
+			padding: 0 1.4rem;
+			.bg{
+		        width: 100%;
+		        position: absolute;
+		        top: 0;
+		        left: 0;
+				z-index: -1;
+		        img{
+		            width: 100%;
+		        }
+		    }
+			.player_box4{
+				padding-top: 35%;
+				padding-bottom: 38%;
+				h3{
+					font:1.7rem 'adinenuPro-black';
+					color:#000;
+					text-align: center;
+					margin-bottom: 1.5rem;
+					letter-spacing: 0.3px;
+					span{
+						font:400 1.1rem 'NotoSansKR';
+					}
+				}
+				ul{
+					text-align: left;
+					li{
+						width: 48.2%;
+						display: inline-block;
+						margin: 3% 0.8%;
+						-webkit-box-shadow: 0 0 5px rgba(0,0,0,0.35);;
+					    -moz-box-shadow: 0 0 5px rgba(0,0,0,0.35);;
+					    box-shadow: 0 0 5px rgba(0,0,0,0.35);;
+						a{
+							img{
+								width: 100%;
+							}
+						}
+					}
+				}
+				.player_layer{
+					width: 100%;
+					height: 100%;
+					left: 0px;
+					display: block;
+					overflow: hidden;
+
+					  .overlay{
+						width: 100%;
+					    height: 100%;
+					    position: fixed;
+					    top: 0;
+					    left: 0;
+					    background: rgba(0, 0, 0, 0.7);
+					    z-index: 5;
+						display: none;
+					  }
+					.layer {
+						  position: absolute;
+						  width: 90%;
+						  max-width: 610px;
+						  // left: 50%;
+						  // top: 50%;
+						  transform: translate3d(-25.5%, -145%, 0);
+						  -webkit-transform: translate3d(-25.5%, -145%, 0);
+						  background: #fff;
+						  z-index: 15;
+						  display: none;
+						  opacity: 0;
+						  transition: opacity 0.3s;
+						  -webkit-transition: opacity 0.3s;
+						  &.active {
+						    opacity: 1;
+						  }
+
+						  .img {
+							  position: relative;
+								img{
+	  							  width: 100%;
+	  						  }
+							  a.insta_link{
+								  display: block;
+								  position: absolute;
+								  bottom: 5%;
+							    right: 4%;
+							    width: 35%;
+							    height: 10%;
+							  }
+						  }
+
+						  .close_x_btn {
+						    width: 3rem;
+						    height: 3rem;
+						    background: #000;
+						    position: absolute;
+						    top: -3.5rem;
+						    right: 0;
+						    &::before, &::after {
+						      height: 1px;
+							  background: #fff;
+						    }
+						  }
+						}
+				}
+
+			}
+
+
+		}
+
+
+	}
+
+	.modal-popup-wrapper{
+		.popup{
+			.popup-header{
+				a{
+					margin-top: -4%;
+					background: #000;
+					&:after,&:before{
+						background:#fff;;
+					}
+				}
+			}
+			.popup-contents{
+				margin:0 15px;
+				padding:0;
+				.main_img{
+					position: relative;
+					width:50%;
+					>img{
+						width:100%;
+					}
+
+				}
+				.sns{
+					position: absolute;
+					right: 3%;
+					bottom: 3%;
+					width: 44%;
+					border: 1px solid #d6d6d6;
+					border-radius: 5px;
+					-webkit-border-radius: 5px;
+					padding: 7px 0;
+					a{
+						position: absolute;
+						top:0;left:0;width:100%;height:100%;z-index: 1;
+					}
+					img{
+						width: 1.5rem;
+						margin-right: 7px;
+						margin-left: 12px;
+					}
+					p{
+						display: inline-block;
+						color: #666;
+						font: 400 0.6rem/1.5rem 'NotoSansKR';
+						text-transform: uppercase;
+					}
+				}
+				.info{
+					width: 100%;
+					position: absolute;
+					top: 14px;
+					left: 50%;
+					margin-left: 10px;
+					p{
+						&.title{
+							font: 1.8rem/1.7rem 'adinenuPro-black';
+							text-transform: uppercase;
+						}
+						&.kor{
+							font: 400 1rem 'NotoSansKR';
+							letter-spacing: 0.5px;
+							border-bottom: 2px solid #000;
+							width: 44%;
+							padding-bottom: 4px;
+						}
+					}
+					.detail{
+						padding: 4px 0 0 0;
+						ul{
+							li{
+								position: relative;
+								padding-left: 10px;
+								padding-bottom: 0.1rem;
+								&:after{
+									position: absolute;
+									left: 0px;
+									top: 9px;
+									content: '';
+									display: inline-block;
+									width: 3px;
+									height: 3px;
+									background: #000;
+								}
+								strong{
+									font: 600 0.6rem 'NotoSansKR';
+								}
+								p{
+									font: 400 0.6rem 'NotoSansKR';
+
+								}
+							}
+						}
+					}
+
+				}
+			}
+		}
+	}
+
+
+}
