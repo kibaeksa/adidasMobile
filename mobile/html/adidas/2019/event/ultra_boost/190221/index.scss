@@ -1,0 +1,312 @@
+@import './mobile/css/adidas/scss/common/mixin.scss';
+@import './mobile/css/adidas/scss/common/common.scss';
+
+#ultraboost{
+	position: relative;
+	background: #2f313b;
+	.button_area_v2{
+		display: inline-block;
+		margin-bottom: 2vh;
+		a{
+			font: 700 1rem/35px 'NotoSansKR';
+			padding: 0 4vw;
+			letter-spacing: 0;
+			height: 35px;
+			width:initial;
+			.arrow{
+				width:20px;
+				&::after{
+					width:8px;
+				}
+				&::before{
+					width:8px;
+				}
+			}
+		}
+	}
+
+	.h1{
+		font:700 1.7rem/2.3rem 'NotoSansKR';
+		color:#fff;
+		letter-spacing: 1px;
+	}
+	.p{
+		font:400 1rem/1.7rem 'NotoSansKR';
+		color:#fff;
+		letter-spacing: .1rem;
+	}
+
+	//main
+	.main{
+		position: relative;
+		.vid{
+			z-index:-1;
+			video{
+				width:100%;
+			}
+		}
+		>img{
+			position: absolute;
+			bottom:0;
+			left:0;
+			z-index:0;
+			width:100%;
+		}
+		.txt{
+			position: absolute;
+			bottom:5%;
+			left:5%;
+			z-index:1;
+			@include css3(opacity,0);
+			@include css3(transition, all 2s);
+			&.on{
+				@include css3(opacity,1);
+			}
+			img{
+				width:50%;
+			}
+			h1{
+				margin:.7rem 0;
+			}
+			p{
+				margin-bottom:15px;
+			}
+		}
+	}
+
+	//section
+	.section{
+		position: relative;
+		&.on{
+			.txt{
+				@include css3(opacity,1);
+			}
+		}
+		.img{
+			img{
+				width:100%;
+			}
+		}
+		.txt{
+			position: absolute;
+			bottom: 50%;
+			left: 50%;
+			transform: translate(-50%,135%);
+			@include css3(opacity,0);
+			@include css3(transition, all 2s);
+
+			h1{
+				text-align: center;
+				margin:1rem 0;
+			}
+			p{
+				text-align: center;
+			}
+		}
+	}
+
+	//aside
+	.aside{
+		padding: 4rem 1rem 2rem;
+		&.on{
+			.txt{
+				@include css3(opacity,1);
+			}
+		}
+		.txt{
+			text-align: center;
+			@include css3(opacity,0);
+			@include css3(transition, all 2s);
+			&.on{
+				@include css3(opacity,1);
+			}
+			h1{
+				text-align: center;
+			}
+			p{
+				margin:1rem 0;
+				text-align: center;
+			}
+		}
+	}
+
+	// tile
+	.tile_container{
+		position: relative;
+		padding: 0 .5rem;
+		background: #2f313b;
+		.wrap{
+			margin:.3rem 0;
+			padding-bottom:80%;
+			&:nth-child(2){
+				padding-bottom:85%;
+			}
+			.tile{
+				float:left;
+				position:relative;
+				width:50%;
+				text-align: center;
+				img{
+					width:95%;
+				}
+				a{
+					position: absolute;
+					top:0;
+					left:0;
+					display: block;
+					width:100%;
+					height:100%;
+				}
+				.desc{
+					position: absolute;
+					bottom:7%;
+					left:10%;
+					font:400 1rem/1rem 'NotoSansKR';
+					color:#fff;
+					letter-spacing: 0;
+					&::after{
+						display: block;
+						content:'';
+						clear:both;
+						position: absolute;
+						border-bottom: 1px solid #fff;
+						bottom: -3px;
+						width: 100%;
+					}
+				}
+			}
+			&:last-child{
+				margin-bottom:0;
+			}
+		}
+		.tile_bottom{
+			.inner{
+				position: relative;
+				text-align: center;
+				padding: 0 0 2rem 0;
+				img{
+					width:97%;
+				}
+				a{
+					position: absolute;
+					top:0;
+					left:0;
+					display: block;
+					width:100%;
+					height:86%;
+					z-index: 2;
+				}
+				.desc{
+					position: absolute;
+					bottom:30%;
+					left:5%;
+					font:400 1rem/1rem 'NotoSansKR';
+					color:#fff;
+					letter-spacing: 0;
+					&::after{
+						display: block;
+						content:'';
+						clear:both;
+						position: absolute;
+						border-bottom: 1px solid #fff;
+						bottom: -3px;
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
+
+	//video
+	.video{
+		position:relative;
+		text-align: center;
+		.img{
+			img{
+				width:100%;
+			}
+		}
+		.wrap{
+			position:absolute;
+			bottom:0;
+			left:50%;
+			transform:translateX(-50%);
+			width:100%;
+			a{
+				img{
+					width:15%;
+				}
+			}
+			.txt{
+				padding-top:30%;
+				p{
+					padding: 2rem;
+					text-align: left;
+					font: 400 1.7rem/2.2rem 'NotoSansKR';
+					color: #fff;
+					letter-spacing: 1px;
+				}
+			}
+		}
+	}
+
+	.runners_teaser{
+		position:relative;
+		padding: 2rem 1rem;
+		.img{
+			img{
+				width:100%;
+			}
+		}
+		.txt{
+			position: absolute;
+			bottom:7%;
+			left:50%;
+			transform:translateX(-50%);
+			width: 100%;
+			text-align: center;
+			p{
+				font:400 1.2rem/1.2rem 'NotoSansKR';
+				color:#fff;
+				margin-bottom: 5%;
+				letter-spacing: 0;
+			}
+
+		}
+	}
+
+
+	.grid_container{
+		position: relative; 
+		padding: 1rem 0 4rem 0;
+		&::after{
+			display: block;
+			content:'';
+			clear:both;
+		}
+		.txt{
+			text-align: center;
+			padding: 0 4rem 1.5rem;
+			h1{
+				font:400 2.4rem/2.4rem 'adinenuPro-bold';
+				color:#fff;
+				letter-spacing: 2px;
+				margin-bottom: 5%;
+			}
+		}
+		.wrap{
+			float: left;
+			width:50%;
+			background: #2f313b;
+			text-align: right;
+			&:last-child{
+				text-align: left;
+			}
+			img{
+				width:94%;
+				font-size:0;
+			}
+		}
+	}
+
+}
