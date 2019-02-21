@@ -103,7 +103,7 @@ html,body{
 				.masthead{
 					position: relative;
 					&.masthead_x{}
-					&.masthead-predator, &.masthead_nemeziz{
+					&.masthead_copa{
 						.txt{
 							h1{
 								color:#fff;
@@ -218,6 +218,7 @@ html,body{
 		}
 
 		.windows{
+			overflow: hidden;
 			position: relative;
 			padding:2rem 0;
 			h1{
@@ -226,10 +227,15 @@ html,body{
 				text-align: center;
 			}
 			.wrap{
-				padding: 1.7rem 2.7rem;
+				padding: 1.7rem 1rem;
 				.inner{
 					position: relative;
-					margin:2rem 0;
+					float: left;
+					width: 49%;
+					margin-bottom: 0.5rem;
+					&:nth-child(2n){
+						margin-left: 2%;
+					}
 					&:first-child{
 						margin-top:0;
 					}
@@ -247,7 +253,7 @@ html,body{
 						left:50%;
 						transform:translateX(-50%);
 						p{
-							font:400 1.3rem/2rem 'NotoSansKR';
+							font:400 1rem/2rem 'NotoSansKR';
 							letter-spacing: .1px;
 							text-align: center;
 							color:#fff;
