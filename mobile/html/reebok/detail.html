@@ -820,12 +820,15 @@
 					</div>
 				</div>
 
-				<!-- 190129 상단 띠배너 S -->
+				<!-- 190222 상단 띠배너 S -->
 				<div class="notice_tits" id="speeds" style="display: block;">
-					<a class="b1 on" href="javascript:void(0)" style="display: block;">
+					<!-- <a class="b1 on" href="javascript:void(0)" data-id="holiday_delay">
 						<div><span class="ico"></span>설 연휴 배송 지연 안내</div>
+					</a> -->
+					<a class="b1 on" href="javascript:void(0)" data-id="popup-blackout">
+						<div><span class="ico"></span>리복 공식 스토어 서비스 일시 중단 안내</div>
 					</a>
-					<a class="b2" href="http://m.reebok.co.kr/MO/Promotion/landingPage.action?pageNo=209" style="display: none;">
+					<a class="b2" href="http://m.reebok.co.kr/MO/Promotion/landingPage.action?pageNo=209">
 						<div><span class="ico"></span>온라인 한정상품을 만나보세요</div>
 					</a>
 					<a class="b3" href="javascript:void(0)">
@@ -833,7 +836,7 @@
 					</a>
 					<div class="more_ico sprite-image"></div>
 				</div>
-				<!-- 190129 상단 띠배너 E -->
+				<!-- 190222 상단 띠배너 E -->
 
 				<!-- 190129 설 연휴 배송 지연 안내팝업-->
 				<div class="layerpopup popup_oneday_open" id="holiday_delay" style="display: none;">
@@ -849,6 +852,28 @@
 							1월 29일(화) 이후 주문 건은<br>
 							2월 7일(목) 부터 순차적으로 배송됩니다. <br>
 							이점 양해 부탁 드립니다.
+						</p>
+					</div>
+				</div>
+
+				<!-- 190222 서비스 일시 중단 안내팝업-->
+				<div class="layerpopup popup_oneday_open" id="popup-blackout" style="display: none;">
+					<div class="header">
+						<a href="#" class="close_x_btn"></a>
+					</div>
+					<div class="contents">
+						<div class="ico">
+							<img src="/images/reebok/common/ico_pop_alert.png" alt="">
+						</div>
+						<h2>리복 공식 스토어<br>서비스 일시 중단 안내</h2>
+						<p>
+							2019.3.4 00시 ~3.5 00시<br><br>
+							리복 공식 스토어 및<br>
+							멤버십 시스템 업그레이드를 진행하게 되어<br>
+							점검 기간동안 공식몰 이용이 불가하며,<br>
+							오프라인 매장 이용 시<br>
+							일부 리클럽 서비스가 제한됩니다.<br><br>							 
+							고객님의 양해 부탁 드립니다.
 						</p>
 					</div>
 				</div>
@@ -911,7 +936,7 @@
 				<script type="text/javascript">
 					jQuery(function(){
 						jQuery(document).ready(function() {
-							// 190129 스피드 배송 상단 바 롤링 / 클릭 스크립트 / 상단 공지바 (PDP, PLP만 노출)
+							// 190222 상단 바 롤링 / 클릭 스크립트 / 상단 공지바 (PDP, PLP만 노출)
 							var index = 0;
 							var commToday = "20180528";
 							var commTodayHh = "2018052811";
@@ -939,7 +964,10 @@
 							}
 							jQuery('#headerWrap .notice_tits#speeds>a').bind('click',function(){
 								if(jQuery(this).hasClass('b1')){
-									jQuery('#holiday_delay').show();
+									var dataId = $(this).attr('data-id');
+									$('#'+ dataId).show();
+									
+									//jQuery('#holiday_delay').show();
 								}else if(jQuery(this).hasClass('b3')){
 									jQuery('.popup_oneday_exchange').show();
 								}
@@ -947,7 +975,7 @@
 							jQuery('.popup_oneday_exchange .header .close_x_btn , .popup_oneday_open .header .close_x_btn').bind('click',function(){
 								jQuery(this).parent().parent().hide();
 							});
-							// 190129 스피드 배송 상단 바 스크립트 끝
+							// 190222 상단 바 스크립트 끝
 
 							if (fn_getCookie('today_close_superweek')!='close') {
 								//jQuery('.modal-popup-wrapper').addClass('open');
