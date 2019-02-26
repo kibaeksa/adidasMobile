@@ -442,8 +442,9 @@
            <div id="ultraboost">
 
             <div class="main">
-                <div class="vid">
+                <div class="vid" id="customizing">
                     <video src="/images/adidas/2019/event/ultra_boost/190221/adi_ultraboost_main.mp4" loop autoplay playsinline muted></video>
+                    <!-- <img src="/images/adidas/2019/event/ultra_boost/190221/video_bg.jpg" alt=""> -->
                 </div>
                 <img src="/images/adidas/2019/event/ultra_boost/190221/black_layer.png" alt="">
                 <div class="txt">
@@ -630,8 +631,51 @@
            <script type="text/javascript">
 
                (function($){
+                var varUA = navigator.userAgent.toLowerCase(); //userAgent 값 얻기
+ 
+ 
+                    if (varUA.match('android') != null) { 
+                        $('#customizing').html('<video src="/images/adidas/2019/event/ultra_boost/190221/adi_ultraboost_main.mp4" loop autoplay playsinline muted></video>');
+                    
+                    } else if (varUA.indexOf("iphone")>-1||varUA.indexOf("ipad")>-1||varUA.indexOf("ipod")>-1) { 
+                        //IOS 일때 처리
+                        function iOS_version() { 
+                            if(navigator.userAgent.match(/ipad|iphone|ipod/i)){ //if the current device is an iDevice
+                                var ios_info ={};
+                                ios_info.User_Agent=navigator.userAgent;
+                                ios_info.As_Reported=(navigator.userAgent).match(/OS (\d)?\d_\d(_\d)?/i)[0];
+                                ios_info.Major_Release=(navigator.userAgent).match(/OS (\d)?\d_\d(_\d)?/i)[0].split('_')[0];
+                                ios_info.Full_Release=(navigator.userAgent).match(/OS (\d)?\d_\d(_\d)?/i)[0].replace(/_/g,".");
+                                ios_info.Major_Release_Numeric=+(navigator.userAgent).match(/OS (\d)?\d_\d(_\d)?/i)[0].split('_')[0].replace("OS ","");
+                                ios_info.Full_Release_Numeric=+(navigator.userAgent).match(/OS (\d)?\d_\d(_\d)?/i)[0].replace("_",".").replace("_","").replace("OS ","");   //converts versions like 4.3.3 to numeric value 4.33 for ease of numeric comparisons
+                                return(ios_info);
+                            }
+                        }
+                        var iOS=iOS_version();
+                        // console.log(iOS.Major_Release); 
+                        //returns values in form of "OS 6"
+                        // console.log(iOS.Major_Release_Numeric); 
+                        //returns values in form of 6
+                        //useful for comparisons like if(iOS.Major_Release_Numeric >7)
+                        
+                        if(iOS.Major_Release_Numeric>10){
+                            // alert(iOS.Major_Release_Numeric)
+                            $('#customizing').html('<video src="/images/adidas/2019/event/ultra_boost/190221/adi_ultraboost_main.mp4" loop autoplay playsinline muted></video>');
+                        }else{
+                            $('#customizing').html('<img src="/images/adidas/2019/event/ultra_boost/190221/video_bg.jpg" alt="">');
+                            // alert('ios 10이하!!!')
+                        }
+                    
+                    } else {
+                    
+                        $('#customizing').html('<video src="/images/adidas/2019/event/ultra_boost/190221/adi_ultraboost_main.mp4" loop autoplay playsinline muted></video>');
+                    }
+ 
+ 
+ 
+                        
 
-                setTimeout(function(){
+                        setTimeout(function(){
 							$('#ultraboost .main .txt').addClass('on');
 						},900);
 
