@@ -440,9 +440,10 @@
         <!-- football -->
 		<div id="football_challenge">
 				<div class="inn tab">
+						<a href="#" alt="개인미션" class="tab1"></a>
+						<a href="#" alt="팀미션" class="tab2"></a>
 					<img src="/images/adidas/2019/event/football/challenge/mo02_wanted800_01.jpg" alt="">
-					<a href="#" alt="개인미션" class="tab1"></a>
-					<a href="#" alt="팀미션" class="tab2"></a>
+
 				</div>
 				<div class="inn section1 scrollarea">
 					<img src="/images/adidas/2019/event/football/challenge/mo02_wanted800_02.jpg" alt="">
@@ -470,7 +471,7 @@
             $('#football_challenge .tab a').bind('click',function(){
 				// alert()
 				var index = $(this).index();
-				$('body,html').animate({scrollTop:($('.scrollarea').eq(index-1).offset().top)},1000);
+				$('body,html').animate({scrollTop:($('.scrollarea').eq(index).offset().top)},1000);
             });
 
 
