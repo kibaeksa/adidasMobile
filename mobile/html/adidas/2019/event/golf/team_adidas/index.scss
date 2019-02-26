@@ -527,6 +527,36 @@
 						font: 400 0.6rem/1.5rem 'NotoSansKR';
 						text-transform: uppercase;
 					}
+					em{
+						position: absolute;
+						right:10px;
+						top:50%;
+						display: inline-block;
+						width:20px;
+						height:1px;background:#888;
+						&:after{
+							position: absolute;
+							right: 0;
+							top: -2px;
+							content: '';
+							display: inline-block;
+							width: 5px;
+							height: 1px;
+							transform: rotate(45deg);
+							background: #888;
+						}
+						&:before{
+							position: absolute;
+							right: 0;
+							top: 2px;
+							content: '';
+							display: inline-block;
+							width: 5px;
+							height: 1px;
+							transform: rotate(-45deg);
+							background: #888;
+						}
+					}
 				}
 				.info{
 					width: 100%;
