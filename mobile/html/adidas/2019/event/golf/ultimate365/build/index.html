@@ -820,7 +820,7 @@
 
                         }
                    };
-                   var auto1 = setInterval(auto1, 5000);
+                   var auto1 = setInterval(auto1, 3000);
 
                    var index2 = 1;
                    function auto2(){
@@ -836,18 +836,18 @@
 
                         }
                    };
-                   var auto2 = setInterval(auto2, 5000);
+                   var auto2 = setInterval(auto2, 3000);
 
-                //    최상단 셋타임아웃
+                    //  최상단 셋타임아웃
                     setTimeout(function(){
                         $('#ultimate365 .visual_main .slide').addClass('on');
                     },900);
 
 
 
-						// sec1 스크롤
-						$(window).scroll(function(){
-							var thisScroll = $(this).scrollTop()+$(window).height()-400;
+                    //  스크롤
+                    $(window).scroll(function(){
+							var thisScroll = $(this).scrollTop()+$(window).height()-200;
 							var slideLineup1 = $('#ultimate365 .sec1').offset().top;
 							var slideLineup2 = $('#ultimate365 .sec2').offset().top;
 							var slideLineup3 = $('#ultimate365 .sec3').offset().top;
@@ -998,7 +998,7 @@
                         margin:2,
                         items : 2,
                         merge: true,
-                        loop : true,
+                        // loop : true,
                         navigation: true,
                         nav: true
                     });
@@ -1055,7 +1055,7 @@
                         margin:2,
                         items : 2,
                         merge: true,
-                        loop : true,
+                        // loop : true,
                         navigation: true,
                         nav: true
                     });
