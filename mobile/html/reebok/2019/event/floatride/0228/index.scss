@@ -1,0 +1,265 @@
+@import "./mobile/MO/reebok/css/scss/about.scss";
+
+.nano8{
+    .visual_main{
+        position: relative;
+         &.on{
+            .txt{
+                h2{opacity: 1;}
+                h1{opacity: 1;margin-left: -20px;}
+                h3{opacity: 1;}
+                >span{opacity: 1;}
+                .btn{opacity: 1;}
+            }
+        }
+        .img{
+            img{
+                width:100%;
+            }
+        }
+        .txt{
+            // outline: 1px solid #fff;
+            width: 50%;
+            position: absolute;
+            bottom: 6%;
+            right: 4%;
+            text-transform: uppercase;
+            text-align: center;
+            h2{
+                font: 900 3.5rem/3rem 'dinpro cond';
+                font-style: italic;
+                color:#fff;
+                text-align: center;
+                opacity: 0;
+                transition: all .6s;
+            }
+            h1{
+                font: 900 3.5rem/3rem 'dinpro cond';
+                font-style: italic;
+                color:#fff;
+                text-align: left;
+                margin-left: 20px;
+                opacity: 0;
+                transition: all .6s;
+                transition-delay: .4s;
+            }
+            h3{
+                font: 300 3.5rem/3rem 'dinpro cond';
+                font-style: italic;
+                color:#fff;
+                text-align: right;
+                letter-spacing: 0.6rem;
+                opacity: 0;
+                transition: all .6s;
+            }
+            >span{
+                display: inline-block;
+                font: 300 1rem 'NotoSansKR';
+                color:#fff;
+                opacity: 0;
+                transition: all .6s;
+                transition-delay: 1s;
+            }
+            .btn{
+                display: inline-block;
+                margin-top: 1.5rem;
+                border:1px solid #fff;
+                width: 110px;
+                a{
+                    display: block;
+                    color:#fff;
+                    font: 400 1rem/3rem 'NotoSansKR';
+                    text-align: center;
+                    letter-spacing: 1px;
+                    span.arrow{
+                        display: inline-block;
+                        width: 20px;
+                        height: 10px;
+                        margin-left: 8px;
+                        background: url('/images/reebok/2019/event/floatride/0228/arrow.png') no-repeat;
+                        background-size: auto 100%;
+                    }
+                }
+                &:hover{
+                    background: rgba(0, 0, 0, 0.4);
+                    transition: all .5s;
+                    a{
+                        color:#fff;
+                    }
+                }
+            }
+        }
+    }
+    .visual_mid{
+        position: relative;
+        &.on{
+            .ltxt{
+                .txt1{
+                    opacity: 1;
+                    transition: all 1s;
+                }
+                .txt2{
+                    opacity: 1;
+                    transition: all 1s;
+                    transition-delay: .5s;
+                }
+                .txt3{
+                    opacity: 1;
+                    transition: all 1s;
+                    transition-delay: 1s;
+                }
+            }
+        }
+        .bg{
+            img{
+                width:100%;
+            }
+        }
+        .img{
+            position: absolute;
+            top:0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .ltxt{
+            .txt1{
+                position: absolute;
+                top:17%;
+                left: 0;
+                width:100%;
+                opacity: 0;
+                img{
+                    width:100%;
+                }
+            }
+            .txt2{
+                position: absolute;
+                top:32%;
+                left:0;
+                width:100%;
+                opacity: 0;
+                img{
+                    width:100%;
+                }
+            }
+            .txt3{
+                position: absolute;
+                top:39%;
+                left:0;
+                width:100%;
+                opacity: 0;
+                img{
+                    width: 100%;
+                }
+            }
+        }
+
+        .mid_vid{
+            display: inline-block;
+            width: 45%;
+            position: absolute;
+            video{
+                width: 100%;
+            }
+            &.vid1{
+                top: 53%;
+                left: 3%;
+            }
+            &.vid2{
+                top: 67%;
+                right: 3%;
+            }
+            a{
+                display: inline-block;
+                width: 3rem;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                img{
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .collections1{
+        padding: 0 0 1rem;
+        background:#1c2031;
+        text-align: center;
+        position: relative;
+        bottom:0;
+        left:0;
+         h1{
+            padding: 2.8rem 0 1rem;
+            color: #fff;
+            font: 300 10vw 'dinpro cond';
+            text-align: center;
+            letter-spacing: 1.2rem;
+            span{
+                font: 700 10vw 'dinpro cond';
+            }
+        }
+
+        .collection_cut{
+            position: relative;
+            overflow: hidden;
+            &.collection_slider1{
+                margin-bottom: 2rem;
+            }
+            ul{
+                overflow: hidden;
+                li{
+                    position: relative;
+                    float: left;
+                    img{
+                        width: 100%;
+                    }
+                }
+            }
+            .navi{
+                position: absolute;
+                top:50%;
+                margin-top: -34px;
+                width: 100%;
+                text-align: center;
+                img{
+                    width: 50%;
+                }
+                .next{
+                    position: absolute;
+                    right:0;
+                    text-align: right;
+                }
+                .prev{
+                    position: absolute;
+                    left:0;
+                    text-align: left;
+                }
+            }
+        }
+        .navi{
+            display: none;
+        }
+        .num_paging{
+            padding: 1rem 0px;
+            a{
+                background: rgba(255, 255, 255, 0.4);
+                border:none;
+                width: 9px;
+                height: 9px;
+                margin-right: 3px;
+            }
+
+            .on{
+                background: #fff;
+            }
+        }
+    }
+
+
+
+}
+
+// nano8 END
