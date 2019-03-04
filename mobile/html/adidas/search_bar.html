@@ -20,6 +20,7 @@
 	<script type="text/javascript" src="http://imagem.adidas.co.kr/js/owl.carousel.min.js"></script>
 	<script type="text/javascript" src="http://imagem.adidas.co.kr/js/customForm.js"></script>
 	<script type="text/javascript" src="http://imagem.adidas.co.kr/js/adidas/adidas.js"></script>
+	<script type="text/javascript" src="http://imagem.adidas.co.kr/js/search/dqAutoCompleteTopAdidas.js"></script>
 
 	<title>아디다스 모바일</title>
 </head>
@@ -1096,18 +1097,117 @@
 				#header .nav_search_test .keyword_recent .no_data{
 					color: #000;
 				}				
+
+				#header .nav_search_test #dqAutoTop{
+					top: 0 !important;
+				}
+
+				#header .nav_search_test #dqAutoTop ul{
+					width: 100%;
+					padding: 0 15px;
+					margin-left: -15px;
+					background: #fff;
+					overflow: auto;
+				}
+
+				#header .nav_search_test #dqAutoTop li:last-child{
+					border-bottom-width: 0;
+				}
+
+				#header .nav_search_test #dqAutoTop li{
+					width: calc(100% + 30px);
+					height: auto;
+					position: relative;
+					left: -15px;
+					border-bottom-color: #ccc;
+				}
+
+				#header .nav_search_test #dqAutoTop li a{
+					height: auto;
+					padding: 20px 20px 18px;
+					color: #000;
+					/*font-size: 13px;*/
+					font:400 13px 'adinenuPro-regular','NotoSansKR';
+					letter-spacing: 0;
+				}
+
+				#header .nav_search_test #dqAutoTop li a span{
+					font-weight:bold;
+					font:700 13px 'adinenuPro-bold','NotoSansKR';
+				}
+
+				#header .nav_search_test #dqAutoTop .close{
+					text-align: right;
+					display: none;
+				}
+
+				#header .nav_search_test #dqAutoTop .close a{
+					width:40px;
+					height:40px;
+					margin-top: 1px;
+					position: relative;
+					display: inline-block;
+					background: #fff;
+					text-indent:-9999px;
+					text-align: left;
+				}
+
+				#header .nav_search_test #dqAutoTop .close a:after,
+				#header .nav_search_test #dqAutoTop .close a:before{
+					content:'';
+					width:50%;
+					height: 2px;
+					position: absolute;
+					top:50%;
+					left:50%;
+					transform:translate3d(-50%,-50%,0) rotate(45deg);
+					-webkit-transform:translate3d(-50%,-50%,0) rotate(45deg);
+					background: #000;
+				}
+				#header .nav_search_test #dqAutoTop .close a:after{
+					transform:translate3d(-50%,-50%,0) rotate(-45deg);
+					-webkit-transform:translate3d(-50%,-50%,0) rotate(-45deg);
+				}
 			</style>
 			<div class="nav_search_test">
 				<div class="sch_box">
-					<form action="#" method="get">
+					<input type="search" id="S_PROD_NM" name="S_PROD_NM" value="검색어를 입력하세요" onkeypress="return handle_enter_top(1,event);"
+						onfocus="javascript:this.value='';" onmousedown="javascript:dqtop_setTextbox('1',event);" title="검색어를 입력하세요"
+						autocomplete="off">
+					<form name="frmSrch" id="frmSrch" action="#" method="post" onsubmit="return false">
+						<input type="hidden" name="keyword" value="">
+						<input type="hidden" name="query" value="">
+						<input type="hidden" name="siteNm" value="">
+						<input type="hidden" name="siteCD" value="1">
 						<fieldset>
-							<input class="simplesearchinput textinput" id="S_PROD_NM" type="text" name="S_PROD_NM" placeholder="Search"
-							 autocomplete="off">
-							<button type="submit" value="검색">
+							<input type="search" id="S_PROD_NM" name="S_PROD_NM" value="검색어를 입력하세요" onkeypress="return handle_enter_top(1,event);"
+								onfocus="javascript:this.value='';" onmousedown="javascript:dqtop_setTextbox('1',event);" title="검색어를 입력하세요"
+								autocomplete="off">
+							<button type="submit" value="검색" onclick="javascript:doKeywordSearch();">
 								<span class="icons"></span>
 							</button>
 						</fieldset>
 					</form>
+				</div>
+
+				<!-- 자동완성 리스트 영역 -->
+				<div style="position:relative;z-index:1000;">
+					<div id="dqAutoTop" style="position: absolute;left: 0px;top: 0px;z-index: 1000;width: 100%;display: block;"
+						onmouseover="dqtop_setMouseon();" onmouseout="dqtop_setMouseoff();">
+						<ul class="search_list">
+							<li class="search_word" id="dqtop_ac1" onmouseover="dqtop_setAcPos('1')" onfocus="dqtop_setAcPos('1');"
+								onmouseout="dqtop_setAcPos(0);" onblur="dqtop_setAcPos(0);"
+								onclick="dqtop_setAcInput('ADICROSS W KNEE SOCKS');dqtop_keywordSearch('ADICROSS W KNEE SOCKS');"
+								onkeypress="dqtop_setAcInput('ADICROSS W KNEE SOCKS');" style="this.style.backgroundColor=''"><a
+									href="#">ADICROSS W KNEE SOCKS</a><input type="hidden" id="dqtop_acqHidden1" value="ADICROSS W KNEE SOCKS">
+							</li>
+							<li class="search_word" id="dqtop_ac2" onmouseover="dqtop_setAcPos('2')" onfocus="dqtop_setAcPos('2');"
+								onmouseout="dqtop_setAcPos(0);" onblur="dqtop_setAcPos(0);"
+								onclick="dqtop_setAcInput('adicross bounce');dqtop_keywordSearch('adicross bounce');"
+								onkeypress="dqtop_setAcInput('adicross bounce');" style="this.style.backgroundColor=''"><a href="#">adicross
+									bounce</a><input type="hidden" id="dqtop_acqHidden2" value="adicross bounce"> </li>
+						</ul>
+					</div>
 				</div>
 				
 				<div class="search_sub">
