@@ -1,0 +1,234 @@
+@import "./mobile/MO/reebok/css/scss/about.scss";
+
+.aztrek{
+    background: #000e21;
+    .visual_main{
+        position: relative;
+         &.on{
+            .txt{
+                h1{opacity: 1;margin-left: 0;}
+                >p{opacity: 1;}
+                .btn{opacity: 1;}
+            }
+        }
+        .img{
+            img{
+                width:100%;
+            }
+        }
+        .txt{
+            // outline: 1px solid #fff;
+            width: 88%;
+            position: absolute;
+            bottom: 8%;
+            left: 6%;
+            text-transform: uppercase;
+            text-align: left;
+            h1{
+                font: 600 3.5rem/3rem 'dinpro cond';
+                color:#fff;
+                text-align: left;
+                margin-left: 20px;
+                opacity: 0;
+                transition: all .6s;
+            }           
+            >p{
+                display: inline-block;
+                font: 300 1rem 'NotoSansKR';
+                color:#fff;
+                opacity: 0;
+                transition: all .6s;
+                transition-delay: .4s;
+            }
+            .btn{
+                display: inline-block;
+                margin-top: 1.5rem;
+                border:1px solid #fff;
+                width: 110px;
+                opacity: 0;
+                transition: all .6s;
+                transition-delay: .8s;
+                a{
+                    display: block;
+                    color:#fff;
+                    font: 400 1rem/3rem 'NotoSansKR';
+                    text-align: center;
+                    letter-spacing: 1px;
+                    span.arrow{
+                        display: inline-block;
+                        width: 20px;
+                        height: 10px;
+                        margin-left: 8px;
+                        background: url('/images/reebok/2019/event/floatride/0228/arrow.png') no-repeat;
+                        background-size: auto 100%;
+                    }
+                }
+                &:hover{
+                    background: rgba(0, 0, 0, 0.4);
+                    transition: all .5s;
+                    a{
+                        color:#fff;
+                    }
+                }
+            }
+        }
+    }
+
+    .section_vid{
+        >div{
+            text-align: center;
+            position: relative;
+            width: 100%;
+            video{
+                width: 100%;
+            }
+            .btn-play{
+                position: absolute;
+                top:50%;
+                left: 50%;
+                transform: translate(-50%, -10%);    
+                transition: all .4s;
+                transition-delay: .2s;
+                img{
+                    transform: rotate(30deg);
+                    transition: all .4s;
+                    transition-delay: .2s;
+                }
+            }
+        }
+        &.on{
+            .btn-play{
+                transform: translate(-50%, -50%); 
+                img{
+                    transform: rotate(0);
+                }
+            }   
+        }
+    }
+
+    .section_prd{
+        padding: 2rem 0;
+        text-align: center;
+        ul{
+            overflow: hidden;
+            display: inline-block;
+            width: 100%;
+            li{
+                float: left;
+                width: 50%;
+                a{
+                    position: relative;
+                    display: block;
+                    &::before{
+                        display: inline-block;
+                        content: '';
+                        width: 50%;
+                        height: 100%;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        background: #000e21;
+                        transition: cubic-bezier(1,0,.59,1) .4s;
+                        transition-delay: .4s;
+                    }
+                     &::after{
+                        display: inline-block;
+                        content: '';
+                        width: 50%;
+                        height: 100%;
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        background: #000e21;
+                        transition: cubic-bezier(1,0,.59,1) .4s;
+                        transition-delay: .4s;
+                    }
+                    img{
+                        width: 100%;
+                        display: block;
+                    }
+                }
+            }
+        }
+        &.on{
+            ul{
+                li{
+                    a{
+                         &::before{
+                             width: 0;
+                         }
+                         &::after{
+                             width: 0;
+                         }
+                    }
+                }
+            }
+        }
+    }
+
+    .bottom{
+        position: relative;
+        .bg{
+           img{
+               width: 100%;
+           }
+        }
+        .txt{
+            width: 100%;
+            text-align: left;
+            padding: 0.5rem 0 4rem;
+            h1{
+                padding-left: 1.5rem;
+                font: 600 3.5rem/3rem 'dinpro cond';
+                color:#fff;
+                text-align: left;
+                opacity: 0;
+                transition: all .6s;
+            } 
+            .btn{
+                display: inline-block;
+                margin-top: 1rem;
+                margin-left: 1.5rem;
+                border:1px solid #fff;
+                width: 110px;
+                opacity: 0;
+                transition: all .6s;
+                transition-delay: .8s;
+                a{
+                    display: block;
+                    color:#fff;
+                    font: 400 1rem/3rem 'NotoSansKR';
+                    text-align: center;
+                    letter-spacing: 1px;
+                    span.arrow{
+                        display: inline-block;
+                        width: 20px;
+                        height: 10px;
+                        margin-left: 8px;
+                        background: url('/images/reebok/2019/event/floatride/0228/arrow.png') no-repeat;
+                        background-size: auto 100%;
+                    }
+                }
+                &:hover{
+                    background: rgba(0, 0, 0, 0.4);
+                    transition: all .5s;
+                    a{
+                        color:#fff;
+                    }
+                }
+            }
+        }
+        &.on{
+            .txt{
+                h1{
+                    opacity: 1;
+                }
+                .btn{
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+// nano8 END
