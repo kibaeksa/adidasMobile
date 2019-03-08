@@ -955,7 +955,7 @@
 				</a>
 			</div>
 
-			<!-- 181211 search test -->
+			<!-- 181211 190308 search test -->
 			<style>
 				#header .nav_main a.icons.open{
 					background: #fff;
@@ -967,12 +967,10 @@
 				#header .nav_main a.btn_search span{
 					display: block;
 					height: 60px;
-					/*background:url('/images/icon-search.png') center center no-repeat;*/
 					box-sizing:border-box;
 					-webkit-box-sizing:border-box;
 					text-align: center;
 				}
-
 				#header .nav_main a.btn_search span:before{
 					display:inline-block;
 					margin-top:23px;
@@ -980,26 +978,19 @@
 					color: #fff;
 					font-size:18px;
 					opacity:1;
-					/* transition:opacity 0.2s ease-in 0.3s;
-					-webkit-transition:opacity 0.2s ease-in 0.3s; */
 				}
 				#header .nav_main a.btn_search.open span:before{
 					color: #000;
 					opacity: 1;
-					/* transition:opacity 0.05s ease-in;
-					-webkit-transition:opacity 0.05s ease-in; */
 				}
-
 				#header .nav_main a.btn_search:before,
 				#header .nav_main a.btn_search:after{
 					content: none !important;
 				}			
-
 				#header .nav_search_test{
 					display: none;
 					overflow:hidden !important;
 					width: 100%;
-					padding: 5px;
 					position: absolute;
 					top:60px;
 					left: 0;
@@ -1009,22 +1000,20 @@
 					-webkit-box-sizing:border-box;
 					transition: all 0.4s;
 					-webkit-transition: all 0.4s;
-					/*transform:translate3d(0,-100%,0);
-					-webkit-transform:translate3d(0,-100%,0); */
 				}
 				#header .nav_search_test .sch_box{
 					position: relative;
 					height: 45px;
 				}
 				#header .nav_search_test li{
-					height: 30px;
+					height: 40px;
 					position: relative;
 				}	
 				#header .nav_search_test li a{
 					display: block;
-					height: 35px;
-					font:400 13px/35px 'NotoSansKR';
-					padding-left: 10px;
+					height: 40px;
+					font:400 13px/40px 'NotoSansKR';
+					padding-left: 20px;
 				}
 				#header .nav_search_test .sch_box input{
 					width: 100%;
@@ -1092,7 +1081,7 @@
 				#header .nav_search_test .keyword_recent a{
 					position: relative;					
 					color: #000;
-					padding-left: 10px;
+					padding-left: 20px;
 				}				
 				#header .nav_search_test .keyword_recent .no_data{
 					color: #000;
@@ -1106,7 +1095,7 @@
 					width: 100%;
 					padding: 0 15px;
 					margin-left: -15px;
-					background: #fff;
+					background: #000;
 					overflow: auto;
 				}
 
@@ -1118,16 +1107,12 @@
 					width: calc(100% + 30px);
 					height: auto;
 					position: relative;
-					left: -15px;
 					border-bottom-color: #ccc;
 				}
 
 				#header .nav_search_test #dqAutoTop li a{
-					height: auto;
-					padding: 20px 20px 18px;
-					color: #000;
-					/*font-size: 13px;*/
-					font:400 13px 'adinenuPro-regular','NotoSansKR';
+					color: #fff;
+					font:400 13px/40px 'adinenuPro-regular','NotoSansKR';
 					letter-spacing: 0;
 				}
 
@@ -1171,9 +1156,6 @@
 			</style>
 			<div class="nav_search_test">
 				<div class="sch_box">
-					<input type="search" id="S_PROD_NM" name="S_PROD_NM" value="검색어를 입력하세요" onkeypress="return handle_enter_top(1,event);"
-						onfocus="javascript:this.value='';" onmousedown="javascript:dqtop_setTextbox('1',event);" title="검색어를 입력하세요"
-						autocomplete="off">
 					<form name="frmSrch" id="frmSrch" action="#" method="post" onsubmit="return false">
 						<input type="hidden" name="keyword" value="">
 						<input type="hidden" name="query" value="">
@@ -1183,9 +1165,7 @@
 							<input type="search" id="S_PROD_NM" name="S_PROD_NM" value="검색어를 입력하세요" onkeypress="return handle_enter_top(1,event);"
 								onfocus="javascript:this.value='';" onmousedown="javascript:dqtop_setTextbox('1',event);" title="검색어를 입력하세요"
 								autocomplete="off">
-							<button type="submit" value="검색" onclick="javascript:doKeywordSearch();">
-								<span class="icons"></span>
-							</button>
+							<button type="submit" value="검색" onclick="javascript:doKeywordSearch();"><span class="icons"></span></button>
 						</fieldset>
 					</form>
 				</div>
@@ -1199,13 +1179,12 @@
 								onmouseout="dqtop_setAcPos(0);" onblur="dqtop_setAcPos(0);"
 								onclick="dqtop_setAcInput('ADICROSS W KNEE SOCKS');dqtop_keywordSearch('ADICROSS W KNEE SOCKS');"
 								onkeypress="dqtop_setAcInput('ADICROSS W KNEE SOCKS');" style="this.style.backgroundColor=''"><a
-									href="#">ADICROSS W KNEE SOCKS</a><input type="hidden" id="dqtop_acqHidden1" value="ADICROSS W KNEE SOCKS">
+									href="#">한글 자동 완성 검색어</a><input type="hidden" id="dqtop_acqHidden1" value="ADICROSS W KNEE SOCKS">
 							</li>
 							<li class="search_word" id="dqtop_ac2" onmouseover="dqtop_setAcPos('2')" onfocus="dqtop_setAcPos('2');"
 								onmouseout="dqtop_setAcPos(0);" onblur="dqtop_setAcPos(0);"
 								onclick="dqtop_setAcInput('adicross bounce');dqtop_keywordSearch('adicross bounce');"
-								onkeypress="dqtop_setAcInput('adicross bounce');" style="this.style.backgroundColor=''"><a href="#">adicross
-									bounce</a><input type="hidden" id="dqtop_acqHidden2" value="adicross bounce"> </li>
+								onkeypress="dqtop_setAcInput('adicross bounce');" style="this.style.backgroundColor=''"><a href="#">eng auto complete keyword</a><input type="hidden" id="dqtop_acqHidden2" value="adicross bounce"> </li>
 						</ul>
 					</div>
 				</div>
@@ -1217,22 +1196,22 @@
 					</div>
 					
 					<ul class="keyword_recent" id="keyword_recent">
-						<li><a href="#">스텔라매카트니</a></li>
-						<li><a href="#">zx</a></li>
-						<li><a href="#">슈퍼스타</a></li>
-						<li><a href="#">슈퍼스타</a></li>
-						<li><a href="#">슈퍼스타</a></li>
-						<li><a href="#">슈퍼스타</a></li>
+						<li><a href="#">최근 검색어</a></li>
+						<li><a href="#">최근 검색어2</a></li>
+						<li><a href="#">최근 검색어3</a></li>
+						<li><a href="#">최근 검색어4</a></li>
+						<li><a href="#">최근 검색어5</a></li>
+						<li><a href="#">최근 검색어6</a></li>
 					</ul>
 					
 					<ol class="sch_list">
-						<li><a href="#">슈퍼스타</a></li>
-						<li><a href="#">수퍼스타</a></li>
-						<li><a href="#">트랙탑</a></li>
+						<li><a href="#">인기 검색어</a></li>
+						<li><a href="#">인기 검색어2</a></li>
+						<li><a href="#">인기 검색어3</a></li>
 					</ol>
 				</div>		
 			</div>
-			<!-- 181211 search test END -->
+			<!-- 181211 190308 search test END -->
 
 			<div class="notice_tits recall">
 				<div class="notice_tits_wrap">
