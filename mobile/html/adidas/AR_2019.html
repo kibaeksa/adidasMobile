@@ -7,10 +7,13 @@
 	<meta http-equiv="x-rim-auto-match" content="none">
 	<link href="/css/adidas/style.css" type="text/css" rel="stylesheet" />
 	<link href="/css/adidas/fonts.css" type="text/css" rel="stylesheet" />
-	<script type="text/javascript" src="/js/jquery-1.12.0.min.js"></script>
-    <script type="text/javascript" src="/js/modalPopup.min.js"></script>
-	<script type="text/javascript" src="/js/swipe.js"></script>
-	<script type="text/javascript" src="/js/owl.carousel.js"></script>   
+	
+	<script type="text/javascript" src="/designjs/common/jquery-1.12.0.min.js"></script>
+	<script type="text/javascript" src="/designjs/common/swipe.js"></script>
+	<script type="text/javascript" src="/designjs/common/owl.carousel.min.js"></script>
+	<script type="text/javascript" src="/designjs/common/modalPopup.min.js"></script>
+	<script type="text/javascript" src="/designjs/common/zoomImage.js"></script>
+	
 
 	<title>아디다스 모바일</title>
 </head>
@@ -711,446 +714,46 @@
             </div>
             <!-- section5 end-->
 
-            <!-- section6 -->
+			<!-- section6 -->
+			<!-- 190313 
+				1. 텍스트 구조 및 문구 변경
+				2. 올라픽 삭제
+				3. 일반 슬라이드 추가
+			-->
             <div class="section_ar6">
 
             	<div class="contain">
             		<h3 class="title">This is</h3>
-            		<p class="tags">#TAKECHARGE</p>
+            		<p class="tags">#ADIDASRUNNERSSEOUL</p>
             	</div>
 
             	<div class="box_inner">
-            		<p class="text1" style="text-align:left;margin-left:10px;">ADIDAS RUNNERS와 함께한 순간들</p>
-            		<p class="text2" style="text-align:left;margin-left:10px;">인스타그램에 #TAKECHARGESEOUL #adidasrunnersseoul #AR_SEOUL 해시태그 하고 아디다스 러너스와 함께한 순간을 공유 해주세요.</p>
+            		<p class="text1" style="text-align:left;margin-left:10px;"><span>ADIDAS RUNNERS SEOUL</span>과 함께한 순간들</p>            		
             	</div>
 
-            	<!-- id="olapic_specific_widget" -->
-            	<div class="olapic-wrapper customization-title">
-            		<div id="olapic_specific_widget" class="olapic olapic-widget-rendered olapic-safari olapic-mobile olapic_items_10 olapic_slide_horizontal">
-                    	 <!--
-                        The content of this template along with Styles are renderd before any API call.
-                        You can place here the HTML needed to show a loading step. Use the template Styles
-                        to define the CSS rules.
-                        -->
-
-                        <style>
-                            .olapic {
-                                text-align: center;
-                                margin: 0 auto;
-                            }
-
-                            .olapic #viewer-wrapper h3,
-                            .olapic #viewer-wrapper .title-28 {
-                                font: 400 28px/28px 'adiNeueBold', Arial, Helvetica, Verdana, sans-serif;
-                                margin-top: 0;
-                            	margin-bottom: 20px;
-                            }
-                            .olapic #viewer-wrapper h4,
-                            .olapic #viewer-wrapper .title-22 {
-                            	font: 400 22px/22px 'adiNeueBold', Arial, Helvetica, Verdana, sans-serif;
-                            	margin-top: 0;
-                            	margin-bottom: 16px;
-                            }
-
-                            .olapic #viewer-wrapper h5,
-                            .olapic #viewer-wrapper .title-16 {
-                            	font: 400 16px/16px 'adiNeueBold', Arial, Helvetica, Verdana, sans-serif;
-                            	margin-top: 0;
-                            	margin-bottom: 10px;
-                            }
-
-                            .olapic .carousel-title {
-                            	font: 400 32px/33px 'adiNeueBold', Arial, Helvetica, Verdana, sans-serif;
-                            	text-align: center;
-                            	margin: 20px 0 10px 0;
-                            }
-                            .olapic .carousel-description {
-                            	overflow: visible;
-                            	max-height: none;
-                            	margin-bottom: 0;
-                            }
-                            .olapic .pl-black {
-                            	color: #000;
-                            }
-                            .olapic.carousel-content-inner .jcarousel-holder {
-                            	overflow: hidden;
-                            	height: 530px;
-                            }
-                            .olapic > .primary-label,
-                            .olapic .primary-label.pl-ctasec-icon {
-                            	display: inline-block;
-                            	float: none;
-                            }
-
-                            .olapic .olapic-wall.grid .item_wall {
-                            	float: left;
-                            	border-bottom: 1px solid #fff;
-                            	border-left: 1px solid #fff;
-                            }
-                            .olapic.olapic_items_0,
-                            .olapic.olapic_items_1,
-                            .olapic.olapic_items_2,
-                            .olapic.olapic_items_3{
-                                display:none;
-                            }
-                            .olapic .olapic-wall.grid .item_wall:hover .olapic-item-media {
-                            	box-shadow: 0 0 0 2px #ccc inset;
-                            }
-
-                            .olapic .olapic-wall.grid .item_wall .olapic-item-media {
-                            	display: block;
-                            }
-                            .olapic.carousel-content-inner .jcarousel-holder {
-                            	padding-bottom: 60px;
-                            	height: 530px;
-                            }
-                            .olapic.carousel-content-inner .grid-segment .jcarousel-control-prev,
-                            .olapic.carousel-content-inner .grid-segment .jcarousel-control-next {
-                            	top: 226px;
-                            }
-                            .olapic .grid-segment .jcarousel-control-prev,
-                            .olapic .grid-segment .jcarousel-control-next {
-                            	background-color: #000;
-                            	top: 227px;
-                            }
-                            .olapic .olapic-carousel-list-container .item:nth-child(2n) {
-                            	margin: 239px 0 0 -239px;
-                            }
-                            .olapic .olapic-carousel-list-container .olapic-carousel {
-                            	height: 295px;
-                                width: 20000px;
-                            }
-                            .olapic-slider-wrapper {
-
-                            }
-                            .olapic-carousel-list-container {
-                            	position: relative;
-                            	-webkit-transition: all 0.3s ease-in-out;
-                            	-moz-transition: all 0.3s ease-in-out;
-                            	-o-transition: all 0.3s ease-in-out;
-                            	transition: all 0.3s ease-in-out;
-                            }
-                            .olapic .olapic-slider-body {
-                            	height: 500px;
-                            }
-                            .olapic-slider-widget {
-                            	position: relative;
-                            }
-                            .olapic-mobile #viewer-wrapper h3,
-                            .olapic-mobile #viewer-wrapper .title-28 {
-                                font: 400 34px/56px 'adiNeueBold', Arial, Helvetica, Verdana, sans-serif;
-                                margin: 0 0 20px;
-                            }
-                            .olapic-mobile #viewer-wrapper h4,
-                            .olapic-mobile #viewer-wrapper .title-22 {
-                            	font: 400 44px/44px 'adiNeueBold', Arial, Helvetica, Verdana, sans-serif;
-                            	margin-top: 0;
-                            	margin-bottom: 16px;
-                            }
-
-                            .olapic-mobile #viewer-wrapper h5,
-                            .olapic-mobile #viewer-wrapper .title-16 {
-                            	font: 400 32px/32px 'adiNeueBold', Arial, Helvetica, Verdana, sans-serif;
-                            	margin-top: 0;
-                            	margin-bottom: 10px;
-                            }
-                            .olapic-mobile {
-                            	text-align: center;
-                            	margin: 0 auto;
-                            	width: 100%;
-                            }
-                            .olapic-mobile .olapic-slider-widget {
-                                margin: 20px 0;
-                            }
-                            .olapic-mobile .olapic-slider-header {
-                                margin: 0 0 10px 0;
-                            }
-                            .olapic-mobile .olapic-slider-header .carousel-title {
-                                font: 400 20px 'adiNeueBold', Arial, Helvetica, Verdana, sans-serif;
-                                margin: 0;
-                                padding: 0;
-                                letter-spacing: .4px;
-                            }
-                            .olapic-mobile .olapic-slider-header .product-hashtag {
-                                display: block;
-                                height: 25px;
-                                line-height: 25px;
-                                font-size: 15px !important;
-                                letter-spacing: -.3px;
-                            }
-                            .olapic-mobile .carousel-description {
-                                margin: -9px 0 0 0;
-                                max-height: none;
-                                overflow: visible;
-                                font-size: 12px;
-                                letter-spacing: 0;
-                                line-height: 1.4em;
-                            }
-                            .olapic-mobile .olapic-carousel-list-container .olapic-carousel {
-                                height: 281px;
-                            }
-                            .olapic-mobile .pl-black {
-                            	color: #000;
-                            }
-                            .olapic-mobile.carousel-content-inner .jcarousel-holder {
-                            	overflow: hidden;
-                            	height: 530px;
-                            }
-                            .olapic-mobile > .primary-label {
-                            	display: inline-block;
-                            	float: none;
-                            }
-                            .olapic-mobile .olapic-slider-body.jcarousel-holder {
-                            	height: 278px;
-                            	width: 100%;
-                                margin: 0 0 20px 20px;
-                            }
-                            .olapic-mobile .olapic-slider-body  .item_wal {
-                            	height: 280px;
-                            	width: 280px;
-                            }
-                            .olapic-mobile .olapic-wall.grid .item_wall {
-                            	float: left;
-                            	border-bottom: 1px solid #fff;
-                            	border-right: 1px solid #fff;
-                                border-left: none;
-                            }
-                            .olapic-mobile .olapic-carousel-list-container .item:nth-child(2n) {
-                            	margin: 141px 0 0 -141px;
-                            }
-                            .olapic-mobile .olapic-wall.grid .item_wall:hover .olapic-item-media {
-                            	box-shadow: 0 0 0 2px #ccc inset;
-                            }
-                            .olapic-mobile .olapic-wall.grid .item_wall .olapic-item-media.large-image {
-                            	width: 476px;
-                            	height: 476px;
-                            }
-                            .olapic-mobile .olapic-wall.grid .item_wall .olapic-item-media {
-                                position: relative;
-                            	height: 140px;
-                            	width: 140px;
-                            	background-size: 100% auto;
-                            	background-position: center center;
-                            }
-                            .olapic-mobile.carousel-content-inner .jcarousel-holder {
-                            	padding-bottom: 60px;
-                            	height: 530px;
-                            }
-                            .olapic-mobile.carousel-content-inner .grid-segment .jcarousel-control-prev,
-                            .olapic-mobile.carousel-content-inner .grid-segment .jcarousel-control-next {
-                            	top: 226px;
-                            }
-                            .olapic-mobile .olapic-slider-footer {
-                                padding: 0 21px;
-                            }
-                            .olapic-mobile .newcopyright-olapic, .olapic-slider-copy {
-                            	position: static;
-                            	color: transparent;
-                                text-align: right;
-                            }
-                            .olapic-mobile .olapic-slider-copy a, .newcopyright-olapic-with-icon a {
-                            	color: transparent!important;
-                            }
-                            .olapic-footer-buttons {
-                                display: none;
-                            }
-                            .olapic-slider-copy a:after, .newcopyright-olapic-with-icon a:after {
-                              margin-left: 5px;
-                              content: url('//olapic-data.s3.amazonaws.com/adidas/images/olapic-icon.png');
-                            }
-                            .olapic-mobile .olapic-slider-footer .primary-label.pl-ctasec-icon:after {
-                                content: "\e600";
-                                font-size: 28px;
-                                font-family: 'icomoonregular';
-                                display: inline;
-                                margin-left: 10px;
-                            }
-                            .olapic-mobile .olapic-slider-footer .primary-label.pl-ctasec-icon {
-                                font: 400 32px/40px 'adiNeueBold', Arial, Helvetica, Verdana, sans-serif;
-                            }
-
-                            .olapic-mobile .olapic-wall.grid .item_wall:hover .olapic-item-media {
-                                box-shadow: none;
-                            }
-
-                            .olapic-mobile .olapic-carousel-list-container {
-                                white-space: nowrap;
-                                overflow-y: hidden;
-                                overflow-x: scroll;
-                                -webkit-overflow-scrolling: touch;
-                            }
-                            .olapic-mobile .olapic-carousel-list-container::-webkit-scrollbar {
-                                height: 10px;
-                            }
-
-
-                            /* conditional for hiding widget when there's 0 photos */
-                            .olapic.olapic_items_0,
-                            .olapic.olapic_items_1{
-                                display: none;
-                            }
-
-                            .olapic.olapic-hide {
-                                display: none;
-                            }
-
-                            .olapic .olapic-type-video {
-                                position: absolute;
-                                z-index: 1;
-                                left: 0;
-                                width: 100%;
-                                height: 100%;
-                            	pointer-events: none;
-                            }
-                            .olapic .olapic-type-video i {
-                            	position: absolute;
-                            	z-index: 3;
-                            	top: 50%;
-                            	left: 50%;
-                            	width: 65px;
-                            	height: 68px;
-                            	margin: -34px 0 0 -32px;
-                            	cursor: pointer;
-                            	background: url('//photorankstatics-a.akamaihd.net/static/images/Viewer2/olapic/video-controls.png') no-repeat -38px -30px;
-                            }
-                        </style>
-
-                        <div class="olapic-slider-widget olapic-slider">
-
-                    <div class="olapic-slider-header">
-                        <h3 class="carousel-title">당신만의 아디다스 스타일을 보여주세요</h3>
-                        <span class="product-hashtag">#adidas</span>
-                    </div>
-
-
-                    <div class="olapic-slider-body jcarousel-holder grid-segment hoverable fullwidth">
-
-                    <a class="olapic-nav-button olapic-nav-prev jcarousel-control-prev" href="#"></a>
-
-                    <div class="olapic-slider-wrapper">
-
-                    <div class="olapic-carousel-list-container noSwipe" data-min-items-for-slider="">
-                    	<ul class="olapic-carousel olapic-wall grid mode_packery noSwipe" style="width: 705px;">
-
-                    		<li class="instagram item item_wall" data-olapic-photo-id="2768706826">
-                        		<a class="olapic-item olapic-item-media" style="background-image: url(https://z3photorankmedia-a.akamaihd.net/media/v/i/d/vidor64/mobile.jpg);" data-url="//photorankapi-a.akamaihd.net/media/2768706826?auth_token=9e9c4f3a8aa4a5cd0abbc84d02e10fbfc1689b7cd22b3bf2b6043a41121db91b&amp;version=v2.2" href="#" title="#AR_SEOUL #adidasrunners #pacer
-                                    #adidasrunnersseoul#WhyIRunSeoul
-                                    자신의 한계를 뛰어넘고 목표를 현실로 만들다.
-                                    .
-                                    .
-                                    #아이오닉 #아이오닉롱기스트런 #아이오닉포스터#세바달">
-                                    <span class="olapic-type-IMAGE"><i></i></span>
-                                </a>
-                    		</li>
-
-                    		<li class="instagram item item_wall" data-olapic-photo-id="2768707379">
-                        		<a class="olapic-item olapic-item-media" style="background-image: url(https://z2photorankmedia-a.akamaihd.net/media/n/2/e/n2eor64/mobile.jpg);" data-url="//photorankapi-a.akamaihd.net/media/2768707379?auth_token=9e9c4f3a8aa4a5cd0abbc84d02e10fbfc1689b7cd22b3bf2b6043a41121db91b&amp;version=v2.2" href="#" title="🎽 ADIDAS RUNNERS CITY RUN
-                                    #picterval #snap #nikon #nikond610 #run #runner #running #marathon #sports #instarunners #adidas #adidasrunnersseoul #AR_SEOUL #WhyIRunSeoul #cityrun #러닝 #런 #운동 #마라톤 #달리기 #스포츠 #스냅 #일상 #감성러닝 #런스타그램 #아디다스 #아디다스러너스 #홍대 #니콘 #픽터벌">
-                                    <span class="olapic-type-IMAGE"><i></i></span>
-                                </a>
-                    		</li>
-
-                    		<li class="instagram item item_wall" data-olapic-photo-id="2768707283">
-                        		<a class="olapic-item olapic-item-media" style="background-image: url(https://z3photorankmedia-a.akamaihd.net/media/q/x/d/qxdor64/mobile.jpg);" data-url="//photorankapi-a.akamaihd.net/media/2768707283?auth_token=9e9c4f3a8aa4a5cd0abbc84d02e10fbfc1689b7cd22b3bf2b6043a41121db91b&amp;version=v2.2" href="#" title="홍대는 우리가 접수한다 @adidasrunnersseoul
-                                    홍대다뿌시고다닌날👊🏻👊🏻다덤벼👊🏻👊🏻
-                                    •
-                                    #running #adidasrunnersseoul #adidas #ar_seoul #whyirunseoul #whyirun #run #아디다스 #런베이스 #러닝 #런 #마라톤 #달리기 #육상">
-                                                    <span class="olapic-type-IMAGE"><i></i></span>
-                                </a>
-                    		</li>
-
-                    		<li class="instagram item item_wall" data-olapic-photo-id="2768707123">
-                        		<a class="olapic-item olapic-item-media" style="background-image: url(https://z1photorankmedia-a.akamaihd.net/media/v/s/d/vsdor64/mobile.jpg);" data-url="//photorankapi-a.akamaihd.net/media/2768707123?auth_token=9e9c4f3a8aa4a5cd0abbc84d02e10fbfc1689b7cd22b3bf2b6043a41121db91b&amp;version=v2.2" href="#" title="🎽 ADIDAS RUNNERS PARK RUN
-                                #picterval #snap #nikon #nikond610 #run #runner #running #marathon #sports #instarunners #adidas #adidasrunnersseoul #AR_SEOUL #WhyIRunSeoul #cityrun #러닝 #런 #운동 #마라톤 #달리기 #스포츠 #스냅 #일상 #감성러닝 #런스타그램 #아디다스 #아디다스러너스 #올림픽공원 #니콘 #픽터벌">
-                                    <span class="olapic-type-IMAGE"><i></i></span>
-                                </a>
-                    		</li>
-
-                    		<li class="instagram item item_wall" data-olapic-photo-id="2768707196">
-                        		<a class="olapic-item olapic-item-media" style="background-image: url(https://photorankmedia-a.akamaihd.net/media/4/v/d/4vdor64/mobile.jpg);" data-url="//photorankapi-a.akamaihd.net/media/2768707196?auth_token=9e9c4f3a8aa4a5cd0abbc84d02e10fbfc1689b7cd22b3bf2b6043a41121db91b&amp;version=v2.2" href="#" title="🎽 ADIDAS RUNNERS PARK RUN
-                                #picterval #snap #nikon #nikond610 #run #runner #running #marathon #sports #instarunners #adidas #adidasrunnersseoul #AR_SEOUL #WhyIRunSeoul #cityrun #러닝 #런 #운동 #마라톤 #달리기 #스포츠 #스냅 #일상 #감성러닝 #런스타그램 #아디다스 #아디다스러너스 #올림픽공원 #니콘 #픽터벌">
-                                    <span class="olapic-type-IMAGE"><i></i></span>
-                                </a>
-                    		</li>
-
-                    		<li class="instagram item item_wall" data-olapic-photo-id="2768707540">
-                        		<a class="olapic-item olapic-item-media" style="background-image: url(https://z1photorankmedia-a.akamaihd.net/media/i/7/e/i7eor64/mobile.jpg);" data-url="//photorankapi-a.akamaihd.net/media/2768707540?auth_token=9e9c4f3a8aa4a5cd0abbc84d02e10fbfc1689b7cd22b3bf2b6043a41121db91b&amp;version=v2.2" href="#" title="8/12 AR METRO RACE
-                                서울시청광장에서 광화문까지 왕복런.
-                                #adidas #아디다스 #AR #adidasrunning #adidasrunners #adidasrunnersseoul #AR_SEOUL #AR_METRORACE #WhyIRun #WhyIRunseoul #서울시청광장 #광화문">
-                                <span class="olapic-type-IMAGE"><i></i></span>
-                                </a>
-                    		</li>
-
-                    		<li class="instagram item item_wall" data-olapic-photo-id="2768707295">
-                        		<a class="olapic-item olapic-item-media" style="background-image: url(https://z2photorankmedia-a.akamaihd.net/media/4/y/d/4ydor64/mobile.jpg);" data-url="//photorankapi-a.akamaihd.net/media/2768707295?auth_token=9e9c4f3a8aa4a5cd0abbc84d02e10fbfc1689b7cd22b3bf2b6043a41121db91b&amp;version=v2.2" href="#" title="#adidas #adidasruning #AR_SEOUL #adidasrunners #adidasrunnersseoul #whyirun #whyirunseoul #runninglove #runstagram #runninglife #runningcrew #runningculture #runningclub #runninggirl #runningman #runner #running #cityrun #nightrun #nightrunning #cityrunning #adidaspacer">
-                                    <span class="olapic-type-IMAGE"><i></i></span>
-                                </a>
-                    		</li>
-
-                    		<li class="instagram item item_wall" data-olapic-photo-id="2768707277">
-                        		<a class="olapic-item olapic-item-media" style="background-image: url(https://z1photorankmedia-a.akamaihd.net/media/j/x/d/jxdor64/mobile.jpg);" data-url="//photorankapi-a.akamaihd.net/media/2768707277?auth_token=9e9c4f3a8aa4a5cd0abbc84d02e10fbfc1689b7cd22b3bf2b6043a41121db91b&amp;version=v2.2" href="#" title="#AR_SEOUL #adidasrunners #pacer
-                                #adidasrunnersseoul#WhyIRunSeoul
-                                자신의 한계를 뛰어넘고 목표를 현실로 만들다.
-                                .
-                                .
-                                #others_crew #아더스크루#함께의가치 #exercisecrew
-                                바쁜삶 속에서 다양한 즐거움을 추구하는 사랑들.
-                                .
-                                시청 #metro#run #메트로런
-                                지정된 역에서 출발해 시청역에 도착하라.
-                                재미있고 즐거운 러닝이였습니다
-                                photo by @picterval 🙏🙏🙏">
-                                    <span class="olapic-type-IMAGE"><i></i></span>
-                                </a>
-                    		</li>
-
-                    		<li class="instagram item item_wall" data-olapic-photo-id="2768707172">
-                        		<a class="olapic-item olapic-item-media" style="background-image: url(https://z1photorankmedia-a.akamaihd.net/media/d/u/d/dudor64/mobile.jpg);" data-url="//photorankapi-a.akamaihd.net/media/2768707172?auth_token=9e9c4f3a8aa4a5cd0abbc84d02e10fbfc1689b7cd22b3bf2b6043a41121db91b&amp;version=v2.2" href="#" title="🎽 ADIDAS RUNNERS PARK RUN
-                                    #picterval #snap #nikon #nikond610 #run #runner #running #marathon #sports #instarunners #adidas #adidasrunnersseoul #AR_SEOUL #WhyIRunSeoul #cityrun #러닝 #런 #운동 #마라톤 #달리기 #스포츠 #스냅 #일상 #감성러닝 #런스타그램 #아디다스 #아디다스러너스 #올림픽공원 #니콘 #픽터벌">
-                                    <span class="olapic-type-IMAGE"><i></i></span>
-                                </a>
-                    		</li>
-
-                    		<li class="instagram item item_wall" data-olapic-photo-id="2768706075">
-                        		<a class="olapic-item olapic-item-media" style="background-image: url(https://photorankmedia-a.akamaihd.net/media/5/u/c/5ucor64/mobile.jpg);" data-url="//photorankapi-a.akamaihd.net/media/2768706075?auth_token=9e9c4f3a8aa4a5cd0abbc84d02e10fbfc1689b7cd22b3bf2b6043a41121db91b&amp;version=v2.2" href="#" title="🎽 ADIDAS RUNNERS CLINIC
-                                    #picterval #snap #nikon #nikond610 #run #runner #running #marathon #sports #instarunners #adidas #adidasrunnersseoul #AR_SEOUL #WhyIRunSeoul #러닝 #런 #운동 #마라톤 #달리기 #스포츠 #스냅 #일상 #감성러닝 #런스타그램 #아디다스 #아디다스러너스 # #니콘 #런베이스서울 #픽터벌">
-                                    <span class="olapic-type-IMAGE"><i></i></span>
-                                </a>
-                    		</li>
-
-                    	</ul>
-                        <div class="olapic-carousel-partial-container">
-                        </div>
-                    </div>
-
-                    </div>
-
-                    <a class="olapic-nav-button olapic-nav-next jcarousel-control-next" href="#"></a>
-
-                    </div>
-
-                    <div class="olapic-pagination jcarousel-pagination">
-
-                    </div>
-
-
-                    <div class="olapic-slider-footer">
-                        <p class="carousel-description">
-                            게시물에 #3stripesstyle 해시태그를 추가하여 전 세계 아디다스 크루들과 공유해보세요<span class="product-hashtag"></span>.
-                        </p>
-                        <!-- ************************************************************************
-                        The following attribution MUST NOT be removed as per our licensing agreement.
-                        You may change the location or the styling to better match your site, but the wording and the link must remain in the template and visible to all end users.
-                        ************************************************************************ -->
-                        <div class="olapic-slider-copy">
-                            <a rel="nofollow" href="http://www.olapic.com/?utm_source=referral&amp;utm_medium=powered-by-olapic&amp;utm_campaign=adidassouthkorea" target="_blank"></a>
-                        </div>
-                    </div>
-
-                </div>
-                    </div>
-                    <script type="text/javascript" src="https://photorankstatics-a.akamaihd.net/81b03e40475846d5883661ff57b34ece/static/frontend/latest/build.min.js" data-olapic="olapic_specific_widget" data-instance="8d59aafd4d42629c4dc0f24d38906afd" data-lang="KO_KO" data-apikey="9e9c4f3a8aa4a5cd0abbc84d02e10fbfc1689b7cd22b3bf2b6043a41121db91b" async="async"></script>
-            	</div>
+				<!-- Visual Swipe -->
+				<div class="slider_ar6">
+					<div class="img_box" id="slide_swipe">
+						<ul>
+							<li style="display:block"><img src="/images/adidas/club/img_section_ar6_1.jpg" alt=""></li>
+							<li><img src="/images/adidas/club/img_section_ar6_2.jpg" alt=""></li>
+							<li><img src="/images/adidas/club/img_section_ar6_3.jpg" alt=""></li>
+							<li><img src="/images/adidas/club/img_section_ar6_4.jpg" alt=""></li>
+						</ul>
+					</div>
+					<div class="navigator">
+						<a class="nav-arrow prev-button" href="javascript:void(0)"><img src="/images/adidas/club/btn_ar6_prev.jpg" alt=""></a>
+						<a class="nav-arrow next-button" href="javascript:void(0)"><img src="/images/adidas/club/btn_ar6_next.jpg" alt=""></a>
+					</div>
+					<div class="indicator">
+						<li><a href="javascript:void(0)" class="on"></a></li>
+						<li><a href="javascript:void(0)"></a></li>
+						<li><a href="javascript:void(0)"></a></li>
+						<li><a href="javascript:void(0)"></a></li>
+					</div>
+				</div>
+				<!-- Visual Swipe -->
+				
             	<div class="box_buttons">
             		<span class="btn_link_type1"><a href="javascript:fn_goRsList('02')">프로그램 참여 신청하기<span class="icon_button"></span></a></span>
             	</div>
@@ -1191,7 +794,8 @@
 					<h3 class="title">FOLLOW ADIDAS RUNNERS</h3>
 					<div class="box_snsbuttons">
 						<span class="btn_facebook"><a href="https://www.facebook.com/groups/adidasrunnersseoul/">Facebook</a></span>
-						<span class="btn_instagram"><a href="https://www.instagram.com/adidasrunnersseoul/">instagram</a></span>
+						<!-- 190313 인스타 버튼 삭제 -->
+						<!-- <span class="btn_instagram"><a href="https://www.instagram.com/adidasrunnersseoul/">instagram</a></span> -->
 					</div>
 				</div>
 			</div>
@@ -1276,26 +880,45 @@
 
             <script>
 
-                (function($){
+                $(document).ready(function(){
 
-                    jQuery(document).ready(function() {
-                        jQuery(".close_x_btn").click(function(){
-                            jQuery(".layerpopup-wrapper").css('display', 'none'); // 팝업창 닫기
-                        });
-                    });
+					$(document).ready(function () {
+						$(".close_x_btn").click(function () {
+							$(".layerpopup-wrapper").css('display', 'none'); // 팝업창 닫기
+						});
+					});
 
-                })(jQuery);
+					// section_ar5
+					var swiper = new Swiper('.swiper-container', {
+						pagination: '.swiper-pagination',
+						nextButton: '.swiper-button-next',
+						prevButton: '.swiper-button-prev',
+						slidesPerView: 1,
+						paginationClickable: true,
+						spaceBetween: 0,
+						loop: true
+					});
 
-                // section_ar5
-                var swiper = new Swiper('.swiper-container', {
-                    pagination: '.swiper-pagination',
-                    nextButton: '.swiper-button-next',
-                    prevButton: '.swiper-button-prev',
-                    slidesPerView: 1,
-                    paginationClickable: true,
-                    spaceBetween: 0,
-                    loop: true
-                });
+					var mainSwipe = Swipe(document.getElementById('slide_swipe'), {
+						stopPropagation: true,
+						callback: function (index, element) {
+							$('.indicator li a').removeClass('on').eq(index).addClass('on');
+						}
+					});
+
+					$('.prev-button').bind('click', function () {
+						mainSwipe.prev();
+					});
+
+					$('.next-button').bind('click', function () {
+						mainSwipe.next();
+					});
+
+					$('.indicator li a').bind('click', function () {
+						mainSwipe.slide($(this).index());
+					});
+
+				});				
 
             </script>
 
@@ -1357,8 +980,7 @@
     <!-- 170613 올라픽코드 -->
     <script type="text/javascript" src="https://photorankstatics-a.akamaihd.net/81b03e40475846d5883661ff57b34ece/static/frontend/latest/build.min.js"  data-olapic="olapic_specific_widget" data-instance="d087e63beffe97f10054d1abf0ed486d" data-lang="KO_KO"  data-apikey="9e9c4f3a8aa4a5cd0abbc84d02e10fbfc1689b7cd22b3bf2b6043a41121db91b" async="async"></script>
     <!-- 170613 올라픽코드 end -->
-
-	<script type="text/javascript" src="/js/adidas/common.js"></script>
+	<script type="text/javascript" src="/designjs/adidas/common.js"></script>
 	<script type="text/javascript">
 
 		(function($){            
