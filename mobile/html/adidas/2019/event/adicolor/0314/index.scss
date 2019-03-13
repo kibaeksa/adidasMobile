@@ -1,0 +1,324 @@
+@import './mobile/css/adidas/scss/common/mixin.scss';
+@import './mobile/css/adidas/scss/common/common.scss';
+#header.hide{
+	// transform: none;
+}
+#adicolor{
+	position: relative;
+
+	//common
+	.button_area_v2{
+		display: inline-block;
+		margin-bottom: 2vh;
+		a{
+			font: 500 1rem/35px 'NotoSansKR';
+			padding: 0 4vw;
+			letter-spacing: 0;
+			height: 35px;
+			width:initial;
+			.arrow{
+				width:20px;
+				&::after{
+					width:8px;
+				}
+				&::before{
+					width:8px;
+				}
+			}
+		}
+	}
+	h1{
+		font:700 1.7rem/2.3rem 'adinenuPro-bold';
+		color:#000;
+		letter-spacing: 0;
+		text-align: center;
+		padding: 8.5rem 0 1.8rem;
+	}
+	p{
+		font:700 1.6rem/1.6rem 'NotoSansKR';
+		color:#000;
+		letter-spacing: 0.7px;
+	}
+	.slider_wrap{
+		position:relative;
+		text-align: center;
+		>img{
+			width:50%;
+			padding-top: 7%;
+			padding-bottom: 1%;
+		}
+		.img{
+			position: absolute;
+			top:0;
+			left:50%;
+			transform: translateX(-50%);
+			z-index:-1;
+		}
+		ul.slider{
+			li{
+				img{
+					width:100%;
+				}
+			}
+			.owl-controls{
+				padding:2.3rem 0;
+				.owl-dots{
+					text-align: center;
+					.owl-dot{
+						display:inline-block;
+						border: 1px solid #000;
+						border-radius: 50%;
+						width: .7rem;
+						height: .7rem;
+						margin: 0 .4rem;
+						&.active{
+							background:#000;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	// 서브
+	.banner_slider_wrap{
+		position:relative;
+		padding:1rem 0 0 0;
+		background: #fff;
+		h1{
+			font:500 1.3rem/5.5rem 'NotoSansKR';
+			color:#000;
+		}
+		ul{
+			.owl-controls{
+				text-align: center;
+				padding-top:3%;
+				.owl-nav{
+					display: none;
+				}
+				.owl-dots{
+					.owl-dot{
+						width:9px;
+						height:9px;
+						border-radius : 50%;
+						border:1px solid #000;
+						display: inline-block;
+						margin:1vw;
+						&.active{
+							background:#000;
+						}
+						span{
+
+						}
+					}
+				}
+			}
+			li{
+				a{
+					img{
+						width:100%;
+					}
+				}
+			}
+		}
+	}
+
+	//시작
+	.main{
+		position: relative;
+		.img{
+			img{
+				width:100%;
+			}
+		}
+		.word{
+			position: absolute;
+			top:15%;
+			left:0;
+			.wrap{
+				padding: 2.2rem;
+				background:rgba(0, 0, 0, 0.9);
+				p{
+					font:700 1.4rem/1.7rem 'NotoSansKR';
+					color:#fff;
+					letter-spacing: 0.7px;
+				}
+			}
+		}
+		.txt{
+			position: absolute;
+			bottom: 15%;
+			right: 15%;
+			img{
+				width:50%;
+			}
+			p{
+				margin: 1rem 0 1.5rem 0;
+			}
+		}
+	}
+	.aside{
+		position: relative;
+		background:#e6b498;
+		padding:1.9rem 0;
+		text-align: center;
+		p{
+			color:#000;
+			line-height: 2rem;
+			text-align:center;
+			font:700 1.1rem/1.6rem 'NotoSansKR';
+		}
+		>img{
+			margin-top:1rem;
+			width:5%;
+		}
+	}
+	.space{
+		position: relative;
+		img{
+			width:100%;
+		}
+		&.on{
+			.anchors{
+				position: fixed;
+				top:0;
+				left: 50%;
+				width:100%;
+				transform: translateX(-50%);
+			}
+		}
+		.anchors{
+			position: absolute;
+			top:0;
+			z-index: 9;
+			background:#fff;
+			width:100%;
+			padding: 1% 0;
+			.wrap{
+				text-align: center;
+				.tab{
+					float:left;
+					width:25%;
+					text-align: center;
+					vertical-align: middle;
+					a{
+						font: 1rem/1rem 'adinenuPro-bold';
+						color:#000;
+						padding:17px 0;
+						display: block;
+						text-align: center;
+						letter-spacing: 2px;
+					}
+					&.bw{
+						text-align: center;
+						a{
+							padding:11px 0;
+						}
+						&.on{
+							background:#000;
+							a{
+								color:#fff;
+							}
+						}
+					}
+					&.color{
+						text-align: center;
+						&.on{
+							background:#2c9196;
+							a{
+								color:#fff;
+							}
+						}
+					}
+					&.graphic{
+						text-align: center;
+						&.on{
+							background:url('/images/adidas/2019/event/adicolor/0314/tab_graphic.jpg');
+							a{
+								color:#fff;
+							}
+						}
+					}
+					&.mixnmatch{
+						text-align: center;
+						a{
+							padding:11px 0;
+						}
+						&.on{
+							background:#efcb0f;
+							a{
+								color:#000;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	#slide1{
+		// background: url(/images/adidas/2019/event/adicolor/0314/sec1.jpg) 100% 100% no-repeat;
+		// background-size: cover;
+		// background-position: top;
+		// padding-top:25%;
+		h1{
+			font:4.2rem/4.2rem 'adinenuPro-bold';
+			color:#aaaaaa;
+			letter-spacing: 1px;
+			padding:3.5rem 0 0 0;
+		}
+	}
+	#slide2{
+		>img{
+			width:40%;
+		}
+	}
+	#slide3{
+
+	}
+	.grid_con{
+		position: relative;
+		.head{
+			position: relative;
+			background:#ececec;
+			padding: 2.5rem 0;
+			text-align: center;
+			img{
+				width:80%;
+			}
+			p{
+				font: 700 1rem/1.5rem 'NotoSansKR';
+				color:#000;
+				margin-top:2%;
+				text-align: center;
+			}
+		}
+		.wrap{
+			position: relative;
+			img{
+				width:100%;
+			}
+
+		}
+	}
+	
+	.btm{
+		position: relative;
+		text-align: center;
+		padding: 6rem 0;
+		background: #fff;
+		.wrap{
+			img{
+				width:35%;
+			}
+			p{
+				letter-spacing: .3rem;
+				margin:2rem 0 3rem 0;
+				line-height: 2.2rem;
+			}
+			.button_area_v2{
+			}
+		}
+	}
+
+}
