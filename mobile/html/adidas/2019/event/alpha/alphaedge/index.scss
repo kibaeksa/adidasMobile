@@ -1,0 +1,207 @@
+@import './mobile/css/adidas/scss/common/mixin.scss';
+@import './mobile/css/adidas/scss/common/common.scss';
+
+#alphaedge{
+	position: relative;
+	.button_area_v2{
+		display: inline-block;
+		margin-bottom: 2vh;
+		a{
+			font: 700 .9rem/32px 'NotoSansKR';
+			padding: 0 5vw;
+			letter-spacing: 0;
+			height: 38px;
+			.arrow{
+				width:20px;
+				&::after{
+					width:8px;
+				}
+				&::before{
+					width:8px;
+				}
+			}
+		}
+	}
+	img{
+		width:100%;
+	}
+	.main{
+		position: relative;
+		.bg{
+			img{
+				width:100%;
+			}
+		}
+		.b_box{
+			width: 100%;
+			position: absolute;
+			top:58%;
+			left:0;
+			text-align: center;
+			h1{
+				font: 28px 'adinenuPro-bold';
+				color: #000;
+				text-align: center;
+				letter-spacing: 2px;
+
+				transition: all .4s;
+				opacity: 0;
+			}
+			h3{
+				font: 500 16px 'NotoSansKR';
+				color: #000;
+				text-align: center;
+				letter-spacing: 2px;
+
+				transition: all .4s;
+				transition-delay: 0.4s;
+				opacity: 0;
+			}
+			p{
+				padding-top: 10px;
+				font: 300 13px/21px 'NotoSansKR';
+				color: #000;
+				text-align: center;
+
+				transition: all .4s;
+				transition-delay: 0.8s;
+				opacity: 0;
+				span{
+					display: inline-block;
+					padding-top: 5px;
+					font-size: 11px;
+				}
+			}
+			.button_area_v2{
+				margin: 1.5rem 0 0 0;
+
+				transition: all .4s;
+				transition-delay: 1s;
+				opacity: 0;
+				a{
+					width: auto;
+					height: 38px;
+					padding: 0 20px;
+					letter-spacing: 2px;
+					font: 500 .9rem/38px 'NotoSansKR';
+					span{
+						margin-left: 0;
+						transition: all .4s;
+						transition-delay: 1.2s;
+					}
+				}
+			}
+		}
+		&.on{
+			.b_box{
+				>*{
+					opacity: 1;
+				}
+				.button_area_v2{
+					a{
+						span{
+							margin-left: 1rem;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.btm{
+		padding: 3rem 4rem 1rem;
+		background: #f8faf5;
+		background-size: cover;
+		.wrap{
+			text-align: center;
+			.txt{
+				padding:1.5rem 0 3rem 0;
+				p{
+					font: 700 20px/20px 'NotoSansKR';
+					color:#000000;
+					letter-spacing: 2px;
+				}
+				span{
+					display: inline-block;
+					padding-top: 5px;
+					font: 500 13px/21px 'NotoSansKR';
+					color:#333333;
+					letter-spacing: 0;
+				}
+			}
+		}
+	}
+
+	.aside{
+		position: relative;
+		text-align: center;
+		>img{
+			width:100%;
+			display: block;
+		}
+		.b_box{
+			width: 72%;
+			position: absolute;
+			top:38%;
+			left:0;
+			text-align: center;
+			h1{
+				font: 25px 'adinenuPro-bold';
+				color: #fff;
+				text-align: center;
+				letter-spacing: 2px;
+
+				transition: all .4s;
+				opacity: 0;
+			}
+			p{
+				padding-top: 5px;
+				font: 300 11px 'NotoSansKR';
+				color: #fff;
+				text-align: center;
+
+				transition: all .4s;
+				transition-delay: 0.4s;
+				opacity: 0;
+				span{
+					display: inline-block;
+					font-size: 11px;
+					font-weight: 100;
+				}
+			}
+			.button_area_v2{
+				margin: 1.5rem 0 0 0;
+
+				transition: all .4s;
+				transition-delay: 0.8s;
+				opacity: 0;
+				a{
+					width: auto;
+					height: 38px;
+					padding: 0 20px;
+					letter-spacing: 2px;
+					font: 500 .9rem/38px 'NotoSansKR';
+					span{
+						margin-left: 0;
+						transition: all .4s;
+						transition-delay: 1.2s;
+					}
+				}
+			}
+		}
+		&.on{
+			.b_box{
+				>*{
+					opacity: 1;
+				}
+				.button_area_v2{
+					a{
+						span{
+							margin-left: 1rem;
+						}
+					}
+				}
+			}
+		}
+	}
+}
