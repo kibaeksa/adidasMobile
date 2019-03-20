@@ -128,7 +128,7 @@
 			<section id="contents">
 				<div class="campaign about_campaign smartvent">
 					<div class="visual_main">
-						<div class="collection_cut collection_slider1">
+						<div class="collection_cut1 collection_slider1">
 							<div class="slider" id="collection_slider1">
 								<ul>
 									<li>
@@ -197,7 +197,7 @@
 						</div>
 
 
-						<div class="collection_cut collection_slider3">
+						<div class="collection_cut3 collection_slider3">
 							<h1>SMARTVENT TECHNOLOGY</h1>
 							<div class="slider" id="collection_slider3">
 								<ul>
@@ -267,7 +267,7 @@
 
 							callback: function (index, element) {
 								$('.collection_slider1 .num_paging a').removeClass('on').eq(index-2).addClass('on');
-								console.log(index);
+								// console.log(index);
 								$('.collection_slider1 .prodlist_wrap .prodlist').removeClass('active').eq(index).addClass('active');
 							}
 						});
@@ -290,7 +290,7 @@
 						});
 
 						var auto = setInterval(function(){
-							$('.navi .next').trigger('click')
+							$('.collection_slider1 .navi .next').trigger('click')
 						},5000);
 
 
@@ -301,7 +301,7 @@
 
 							callback: function (index, element) {
 								$('.collection_slider2 .num_paging a').removeClass('on').eq(index-2).addClass('on');
-								console.log(index);
+								// console.log(index);
 								$('.collection_slider2 .prodlist_wrap .prodlist').removeClass('active').eq(index).addClass('active');
 							}
 						});
@@ -324,7 +324,7 @@
 						});
 
 						var auto = setInterval(function(){
-							$('.navi .next').trigger('click')
+							$('.collection_slider2 .navi .next').trigger('click')
 						},5000);
 
 
@@ -335,8 +335,8 @@
 							stopPropagation: true,
 
 							callback: function (index, element) {
-								$('.collection_slider3 .num_paging a').removeClass('on').eq(index-2).addClass('on');
-								console.log(index);
+								$('.collection_slider3 .num_paging a').removeClass('on').eq(index).addClass('on');
+								// console.log(index);
 								$('.collection_slider3 .prodlist_wrap .prodlist').removeClass('active').eq(index).addClass('active');
 							}
 						});
@@ -352,6 +352,7 @@
 						$('.collection_slider3 .next').click(function () {
 							productsSlider3.next();
 							return false;
+							console.log(index);
 						});
 						$('.collection_slider3 .prev').click(function () {
 							productsSlider3.prev();
@@ -359,27 +360,10 @@
 						});
 
 						var auto = setInterval(function(){
-							$('.navi .next').trigger('click')
+							$('.collection_slider3 .navi .next').trigger('click')
 						},5000);
 
 
-
-
-						// 스크롤
-						var scrollArray = [];
-						var scrollContents = document.querySelectorAll('.scroll');
-						for (var i = 0; i < scrollContents.length; i++) {
-							var mypos = scrollContents[i].offsetTop;
-							scrollArray.push(mypos)
-						}
-						$(window).scroll(function () {
-							var thisPos = $(this).scrollTop()+$(window).height() + 300;
-							for (var pos = 0; pos < scrollArray.length; pos++) {
-								if (thisPos > scrollArray[pos]) {
-									$('.scroll').eq(pos).addClass('on');
-								}
-							}
-						});
 
 
 
