@@ -956,261 +956,266 @@
 			</div>
 
 			<!-- 181211 190308 search test -->
-			<style>
-				#header .nav_main a.icons.open{
-					background: #fff;
-				}			
-				#header .nav_main a.btn_search{
-					top: 0;
-					right : 60px;
-				}
-				#header .nav_main a.btn_search span{
-					display: block;
-					height: 60px;
-					box-sizing:border-box;
-					-webkit-box-sizing:border-box;
-					text-align: center;
-				}
-				#header .nav_main a.btn_search span:before{
-					display:inline-block;
-					margin-top:23px;
-					content:'\E625';
-					color: #fff;
-					font-size:18px;
-					opacity:1;
-				}
-				#header .nav_main a.btn_search.open span:before{
-					color: #000;
-					opacity: 1;
-				}
-				#header .nav_main a.btn_search:before,
-				#header .nav_main a.btn_search:after{
-					content: none !important;
-				}			
-				#header .nav_search_test{
-					display: none;
-					overflow:hidden !important;
-					width: 100%;
-					position: absolute;
-					top:60px;
-					left: 0;
-					background: #fff;
-					z-index:100;
-					box-sizing:border-box;
-					-webkit-box-sizing:border-box;
-					transition: all 0.4s;
-					-webkit-transition: all 0.4s;
-				}
-				#header .nav_search_test .sch_box{
-					position: relative;
-					height: 45px;
-				}
-				#header .nav_search_test li{
-					height: 40px;
-					position: relative;
-				}	
-				#header .nav_search_test li a{
-					display: block;
-					height: 40px;
-					font:400 13px/40px 'NotoSansKR';
-					padding-left: 20px;
-				}
-				#header .nav_search_test .sch_box input{
-					width: 100%;
-					height: 45px;
-					border-width: 0;
-					padding: 0;
-					display: block;
-					padding:0 10px 0 45px;
-					box-sizing:border-box;
-					-webkit-box-sizing:border-box;
-					font:400 13px 'NotoSansKR';
-					outline: none;
-				}
-				#header .nav_search_test .sch_box button{
-					width: 45px;
-					height: 45px;
-					position: absolute;
-					top: 0;
-					left: 0;
-					background: none;
-					border:none;
-				}
-				#header .nav_search_test .sch_box button span:before{
-					margin-top:7px;
-					content:'\E625';
-					color: #000;
-					font-size:18px;
-				}
-				#header .nav_search_test .sch_tab{
-					height: 45px;
-					overflow: hidden;
-				}				
-				#header .nav_search_test .sch_tab a{
-					width: 50%;
-					height: 45px;
-					display: block;
-					float: left;
-					text-align: center;
-					color: #888;
-					font:300 14px/45px 'NotoSansKR';
-					box-sizing: border-box;
-					-webkit-box-sizing: border-box;
-				}
-				#header .nav_search_test .sch_tab a:first-child{
-					/* background: url(/images/adidas/temp/sc_tab_line.png) right center no-repeat; */
-					background: url(http://imagem.adidas.co.kr/images/adidas/sc_tab_line.png) right center no-repeat;
-				}
-				#header .nav_search_test .sch_tab a.on{
-					color:#000;
-					font-weight:bold;
-				}
-				#header .nav_search_test .sch_list{
-					display: none;
-					margin-bottom: 20px;
-				}
-				#header .nav_search_test .sch_list li{
-					background: none;
-				}						
-				#header .nav_search_test .sch_list li a{
-					color:#000;
-				}				
-				#header .nav_search_test .keyword_recent{
-					margin-bottom: 20px;
-				}
-				#header .nav_search_test .keyword_recent a{
-					position: relative;					
-					color: #000;
-					padding-left: 20px;
-				}				
-				#header .nav_search_test .keyword_recent .no_data{
-					color: #000;
-				}				
+				<!-- 190327 css 수정 -->
+				<style>
+					#header .nav_main a.icons.open{
+						background: #fff;
+					}			
+					#header .nav_main a.btn_search{
+						top: 0;
+						right : 60px;
+					}
+					#header .nav_main a.btn_search span{
+						display: block;
+						height: 60px;
+						box-sizing:border-box;
+						-webkit-box-sizing:border-box;
+						text-align: center;
+					}
+					#header .nav_main a.btn_search span:before{
+						display:inline-block;
+						margin-top:23px;
+						content:'\E625';
+						color: #fff;
+						font-size:18px;
+						opacity:1;
+					}
+					#header .nav_main a.btn_search.open span:before{
+						color: #000;
+						opacity: 1;
+					}
+					#header .nav_main a.btn_search:before,
+					#header .nav_main a.btn_search:after{
+						content: none !important;
+					}			
+					#header .nav_search_test{
+						display: none;
+						overflow:hidden !important;
+						width: 100%;
+						position: absolute;
+						top:60px;
+						left: 0;
+						background: #fff;
+						z-index:100;
+						box-sizing:border-box;
+						-webkit-box-sizing:border-box;
+						transition: all 0.4s;
+						-webkit-transition: all 0.4s;
+					}
+					#header .nav_search_test .sch_box{
+						position: relative;
+						/* height: 45px; */
+					}
+					#header .nav_search_test li{
+						height: 40px;
+						position: relative;
+					}	
+					#header .nav_search_test li a{
+						display: block;
+						height: 40px;
+						font:400 13px/40px 'NotoSansKR';
+						padding-left: 20px;
+					}
+					#header .nav_search_test .sch_box input{
+						width: 100%;
+						height: 45px;
+						border-width: 0;
+						padding: 0;
+						display: block;
+						padding:0 10px 0 45px;
+						box-sizing:border-box;
+						-webkit-box-sizing:border-box;
+						font:400 13px 'NotoSansKR';
+						outline: none;
+					}
+					#header .nav_search_test .sch_box button{
+						width: 45px;
+						height: 45px;
+						position: absolute;
+						top: 0;
+						left: 0;
+						background: none;
+						border:none;
+					}
+					#header .nav_search_test .sch_box button span:before{
+						margin-top:7px;
+						content:'\E625';
+						color: #000;
+						font-size:18px;
+					}
+					#header .nav_search_test .sch_tab{
+						height: 45px;
+						overflow: hidden;
+					}				
+					#header .nav_search_test .sch_tab a{
+						width: 50%;
+						height: 45px;
+						display: block;
+						float: left;
+						text-align: center;
+						color: #888;
+						font:300 14px/45px 'NotoSansKR';
+						box-sizing: border-box;
+						-webkit-box-sizing: border-box;
+					}
+					#header .nav_search_test .sch_tab a:first-child{
+						/* background: url(/images/adidas/temp/sc_tab_line.png) right center no-repeat; */
+						background: url(http://imagem.adidas.co.kr/images/adidas/sc_tab_line.png) right center no-repeat;
+					}
+					#header .nav_search_test .sch_tab a.on{
+						color:#000;
+						font-weight:bold;
+					}
+					#header .nav_search_test .sch_list{
+						display: none;
+						margin-bottom: 20px;
+					}
+					#header .nav_search_test .sch_list li{
+						background: none;
+					}						
+					#header .nav_search_test .sch_list li a{
+						color:#000;
+					}				
+					#header .nav_search_test .keyword_recent{
+						margin-bottom: 20px;
+					}
+					#header .nav_search_test .keyword_recent a{
+						position: relative;					
+						color: #000;
+						padding-left: 20px;
+					}				
+					#header .nav_search_test .keyword_recent .no_data{
+						color: #000;
+					}				
 
-				#header .nav_search_test #dqAutoTop{
-					top: 0 !important;
-				}
+					#header .nav_search_test #dqAutoTop{
+						top: 0 !important;
+					}
 
-				#header .nav_search_test #dqAutoTop ul{
-					width: 100%;
-					padding: 0 15px;
-					margin-left: -15px;
-					background: #000;
-					overflow: auto;
-				}
+					#header .nav_search_test #dqAutoTop ul{
+						width: 100%;
+						padding: 0 15px;
+						margin-left: -15px;
+						background: #000;
+						overflow: auto;
+					}
 
-				#header .nav_search_test #dqAutoTop li:last-child{
-					border-bottom-width: 0;
-				}
+					#header .nav_search_test #dqAutoTop li:last-child{
+						border-bottom-width: 0;
+					}
 
-				#header .nav_search_test #dqAutoTop li{
-					width: calc(100% + 30px);
-					height: auto;
-					position: relative;
-					border-bottom-color: #ccc;
-				}
+					#header .nav_search_test #dqAutoTop li{
+						width: calc(100% + 30px);
+						height: auto;
+						position: relative;
+						border-bottom-color: #ccc;
+					}
 
-				#header .nav_search_test #dqAutoTop li a{
-					color: #fff;
-					font:400 13px/40px 'adinenuPro-regular','NotoSansKR';
-					letter-spacing: 0;
-				}
+					#header .nav_search_test #dqAutoTop li a{
+						color: #fff;
+						font:400 13px/40px 'adinenuPro-regular','NotoSansKR';
+						letter-spacing: 0;
+					}
 
-				#header .nav_search_test #dqAutoTop li a span{
-					font-weight:bold;
-					font:700 13px 'adinenuPro-bold','NotoSansKR';
-				}
+					#header .nav_search_test #dqAutoTop li a span{
+						font-weight:bold;
+						font:700 13px 'adinenuPro-bold','NotoSansKR';
+					}
 
-				#header .nav_search_test #dqAutoTop .close{
-					text-align: right;
-					display: none;
-				}
+					#header .nav_search_test #dqAutoTop .close{
+						text-align: right;
+						display: none;
+					}
 
-				#header .nav_search_test #dqAutoTop .close a{
-					width:40px;
-					height:40px;
-					margin-top: 1px;
-					position: relative;
-					display: inline-block;
-					background: #fff;
-					text-indent:-9999px;
-					text-align: left;
-				}
+					#header .nav_search_test #dqAutoTop .close a{
+						width:40px;
+						height:40px;
+						margin-top: 1px;
+						position: relative;
+						display: inline-block;
+						background: #fff;
+						text-indent:-9999px;
+						text-align: left;
+					}
 
-				#header .nav_search_test #dqAutoTop .close a:after,
-				#header .nav_search_test #dqAutoTop .close a:before{
-					content:'';
-					width:50%;
-					height: 2px;
-					position: absolute;
-					top:50%;
-					left:50%;
-					transform:translate3d(-50%,-50%,0) rotate(45deg);
-					-webkit-transform:translate3d(-50%,-50%,0) rotate(45deg);
-					background: #000;
-				}
-				#header .nav_search_test #dqAutoTop .close a:after{
-					transform:translate3d(-50%,-50%,0) rotate(-45deg);
-					-webkit-transform:translate3d(-50%,-50%,0) rotate(-45deg);
-				}
-			</style>
-			<div class="nav_search_test">
-				<div class="sch_box">
-					<form name="frmSrch" id="frmSrch" action="#" method="post" onsubmit="return false">
-						<input type="hidden" name="keyword" value="">
-						<input type="hidden" name="query" value="">
-						<input type="hidden" name="siteNm" value="">
-						<input type="hidden" name="siteCD" value="1">
-						<fieldset>
-							<input type="search" id="S_PROD_NM" name="S_PROD_NM" value="검색어를 입력하세요" onkeypress="return handle_enter_top(1,event);"
-								onfocus="javascript:this.value='';" onmousedown="javascript:dqtop_setTextbox('1',event);" title="검색어를 입력하세요"
-								autocomplete="off">
-							<button type="submit" value="검색" onclick="javascript:doKeywordSearch();"><span class="icons"></span></button>
-						</fieldset>
-					</form>
-				</div>
+					#header .nav_search_test #dqAutoTop .close a:after,
+					#header .nav_search_test #dqAutoTop .close a:before{
+						content:'';
+						width:50%;
+						height: 2px;
+						position: absolute;
+						top:50%;
+						left:50%;
+						transform:translate3d(-50%,-50%,0) rotate(45deg);
+						-webkit-transform:translate3d(-50%,-50%,0) rotate(45deg);
+						background: #000;
+					}
+					#header .nav_search_test #dqAutoTop .close a:after{
+						transform:translate3d(-50%,-50%,0) rotate(-45deg);
+						-webkit-transform:translate3d(-50%,-50%,0) rotate(-45deg);
+					}
+					#header .nav_search_test .sch_box form {
+						border: 2px solid #000;
+					}
+				</style>
+				<!-- 190327 css 수정 //-->
+				<div class="nav_search_test">
+					<div class="sch_box">
+						<form name="frmSrch" id="frmSrch" action="#" method="post" onsubmit="return false">
+							<input type="hidden" name="keyword" value="">
+							<input type="hidden" name="query" value="">
+							<input type="hidden" name="siteNm" value="">
+							<input type="hidden" name="siteCD" value="1">
+							<fieldset>
+								<input type="search" id="S_PROD_NM" name="S_PROD_NM" value="검색어를 입력하세요" onkeypress="return handle_enter_top(1,event);"
+									onfocus="javascript:this.value='';" onmousedown="javascript:dqtop_setTextbox('1',event);" title="검색어를 입력하세요"
+									autocomplete="off">
+								<button type="submit" value="검색" onclick="javascript:doKeywordSearch();"><span class="icons"></span></button>
+							</fieldset>
+						</form>
+					</div>
 
-				<!-- 자동완성 리스트 영역 -->
-				<div style="position:relative;z-index:1000;">
-					<div id="dqAutoTop" style="position: absolute;left: 0px;top: 0px;z-index: 1000;width: 100%;display: block;"
-						onmouseover="dqtop_setMouseon();" onmouseout="dqtop_setMouseoff();">
-						<ul class="search_list">
-							<li class="search_word" id="dqtop_ac1" onmouseover="dqtop_setAcPos('1')" onfocus="dqtop_setAcPos('1');"
-								onmouseout="dqtop_setAcPos(0);" onblur="dqtop_setAcPos(0);"
-								onclick="dqtop_setAcInput('ADICROSS W KNEE SOCKS');dqtop_keywordSearch('ADICROSS W KNEE SOCKS');"
-								onkeypress="dqtop_setAcInput('ADICROSS W KNEE SOCKS');" style="this.style.backgroundColor=''"><a
-									href="#">한글 자동 완성 검색어</a><input type="hidden" id="dqtop_acqHidden1" value="ADICROSS W KNEE SOCKS">
-							</li>
-							<li class="search_word" id="dqtop_ac2" onmouseover="dqtop_setAcPos('2')" onfocus="dqtop_setAcPos('2');"
-								onmouseout="dqtop_setAcPos(0);" onblur="dqtop_setAcPos(0);"
-								onclick="dqtop_setAcInput('adicross bounce');dqtop_keywordSearch('adicross bounce');"
-								onkeypress="dqtop_setAcInput('adicross bounce');" style="this.style.backgroundColor=''"><a href="#">eng auto complete keyword</a><input type="hidden" id="dqtop_acqHidden2" value="adicross bounce"> </li>
+					<!-- 자동완성 리스트 영역 -->
+					<div style="position:relative;z-index:1000;">
+						<div id="dqAutoTop" style="position: absolute;left: 0px;top: 0px;z-index: 1000;width: 100%;display: block;"
+							onmouseover="dqtop_setMouseon();" onmouseout="dqtop_setMouseoff();">
+							<ul class="search_list">
+								<li class="search_word" id="dqtop_ac1" onmouseover="dqtop_setAcPos('1')" onfocus="dqtop_setAcPos('1');"
+									onmouseout="dqtop_setAcPos(0);" onblur="dqtop_setAcPos(0);"
+									onclick="dqtop_setAcInput('ADICROSS W KNEE SOCKS');dqtop_keywordSearch('ADICROSS W KNEE SOCKS');"
+									onkeypress="dqtop_setAcInput('ADICROSS W KNEE SOCKS');" style="this.style.backgroundColor=''"><a
+										href="#">한글 자동 완성 검색어</a><input type="hidden" id="dqtop_acqHidden1" value="ADICROSS W KNEE SOCKS">
+								</li>
+								<li class="search_word" id="dqtop_ac2" onmouseover="dqtop_setAcPos('2')" onfocus="dqtop_setAcPos('2');"
+									onmouseout="dqtop_setAcPos(0);" onblur="dqtop_setAcPos(0);"
+									onclick="dqtop_setAcInput('adicross bounce');dqtop_keywordSearch('adicross bounce');"
+									onkeypress="dqtop_setAcInput('adicross bounce');" style="this.style.backgroundColor=''"><a href="#">eng auto complete keyword</a><input type="hidden" id="dqtop_acqHidden2" value="adicross bounce"> </li>
+							</ul>
+						</div>
+					</div>
+					
+					<div class="search_sub">
+						<div class="sch_tab">
+							<a href="#" class="on">최근 검색어</a>
+							<a href="#">인기 검색어</a>
+						</div>
+						
+						<ul class="keyword_recent" id="keyword_recent">
+							<li><a href="#">최근 검색어</a></li>
+							<li><a href="#">최근 검색어2</a></li>
+							<li><a href="#">최근 검색어3</a></li>
+							<li><a href="#">최근 검색어4</a></li>
+							<li><a href="#">최근 검색어5</a></li>
+							<li><a href="#">최근 검색어6</a></li>
 						</ul>
-					</div>
+						
+						<ol class="sch_list">
+							<li><a href="#">인기 검색어</a></li>
+							<li><a href="#">인기 검색어2</a></li>
+							<li><a href="#">인기 검색어3</a></li>
+						</ol>
+					</div>		
 				</div>
-				
-				<div class="search_sub">
-					<div class="sch_tab">
-						<a href="#" class="on">최근 검색어</a>
-						<a href="#">인기 검색어</a>
-					</div>
-					
-					<ul class="keyword_recent" id="keyword_recent">
-						<li><a href="#">최근 검색어</a></li>
-						<li><a href="#">최근 검색어2</a></li>
-						<li><a href="#">최근 검색어3</a></li>
-						<li><a href="#">최근 검색어4</a></li>
-						<li><a href="#">최근 검색어5</a></li>
-						<li><a href="#">최근 검색어6</a></li>
-					</ul>
-					
-					<ol class="sch_list">
-						<li><a href="#">인기 검색어</a></li>
-						<li><a href="#">인기 검색어2</a></li>
-						<li><a href="#">인기 검색어3</a></li>
-					</ol>
-				</div>		
-			</div>
 			<!-- 181211 190308 search test END -->
 
 			<div class="notice_tits recall">
