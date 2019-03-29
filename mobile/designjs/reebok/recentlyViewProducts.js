@@ -42,7 +42,7 @@
 	// 최근 본상품 html 작성
 	function fn_recentlyViewProductsHtml(oProd) {
 
-		var imageRoot = (typeof _REEBOK_IMG_PATH == 'string' && _REEBOK_IMG_PATH != '' ? _REEBOK_IMG_PATH : 'http://image.reebok.co.kr');
+		var imageRoot = (typeof _REEBOK_IMG_PATH == 'string' && _REEBOK_IMG_PATH != '' ? _REEBOK_IMG_PATH : '//image.reebok.co.kr');
 		var listHtml = new StringBuilder();
 
 		listHtml.append("<h4 class='tit'>최근 본 상품</h4>");
