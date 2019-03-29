@@ -484,7 +484,7 @@
                        <div class="navi">
                            <div class="prev"><img src="/images/adidas/2019/event/jogger/arrow_next.jpg" alt=""></div>
                            <div class="next"><img src="/images/adidas/2019/event/jogger/arrow_next.jpg" alt=""></div>
-                           <div class="numbering"><span class="selecnum">1</span>/<span class="allnum">2</span></div>
+                           <div class="numbering"><span class="selecnum">1</span>/<span class="allnum">4</span></div>
                        </div>
                    </div>
                    <div class="top_area second collection_head">
@@ -515,15 +515,32 @@
                    </div>
                    <div class="slider_owl_wrap">
                         <ul id="slider_owl">
-                            <li><img src="/images/adidas/2019/event/jogger/day_01_BD7933.png" alt="" ></li>
-                            <li><img src="/images/adidas/2019/event/jogger/night_01_BD7933.png" alt="" ></li>
+                            <li>
+                                <img src="/images/adidas/2019/event/jogger/day_01_BD7933.png" alt="1" class="day_prd">
+                                <img src="/images/adidas/2019/event/jogger/night_01_BD7933.png" alt="" class="night_prd">
+                            </li>
+                            <li>
+                                <img src="/images/adidas/2019/event/jogger/day_01_CG5950.png" alt="2" class="day_prd">
+                                <img src="/images/adidas/2019/event/jogger/night_01_CG5950.png" alt="" class="night_prd">
+                            </li>
+                            <li>
+                                <img src="/images/adidas/2019/event/jogger/day_01_CG5950.png" alt="3" class="day_prd">
+                                <img src="/images/adidas/2019/event/jogger/night_01_CG5950.png" alt="" class="night_prd">
+                            </li>
+                            <li>
+                                <img src="/images/adidas/2019/event/jogger/day_01_BD7933.png" alt="4" class="day_prd">
+                                <img src="/images/adidas/2019/event/jogger/night_01_BD7933.png" alt="" class="night_prd">
+                            </li>
                         </ul>
                     </div>
                     <div class="left_fixed_area">
                         <h2><img src="/images/adidas/2019/event/jogger/left_logo.png" alt=""></h2>
+                    </div>
+                    <div class="left_fixed_area2">
                         <p>어둠 속을 밝게 비춰 줄 리플렉티브 슈즈</p>
                     </div>
                </div>
+               배너 들어갈 자리
                <!-- //shoe -->
                <div class="slider_wrap coll_slider_wrap">
                    <div class="bg">
@@ -542,6 +559,9 @@
                            <li><img src="/images/adidas/2019/event/jogger/col9.jpg" alt="" ></li>
                        </ul>
                    </div>
+                   <div class="left_fixed_area2">
+                        <p>it's never too late 우리의 밤은 잠들지 않아</p>
+                    </div>
                </div>
                 <!-- // col -->
                 <div class="video_wrap">
@@ -627,22 +647,34 @@
 
                    //scroll
                    $(window).load(function(){
-                       console.log('s')
+                       
                        //shoes_slider
                        var owlSlider = $('#slider_owl');
+                       var imgcode = ['BD7933','CG5950','CG5950','BD7933'];
                        owlSlider.on('initialized.owl.carousel', function(event) {
+                        $('.shoes_head .numbering .selecnum').html('1');
+                        $('.shoes_head .title p').html(imgcode[0]);
+
                        });
                        owlSlider.on('changed.owl.carousel', function(event) {
                            var index = event.item.index-2;
                            console.log(index)
-                           if(index==1||index==-1){
-                               // $('.shoes_head .numbering .selecnum').html(2);
-                               $('.slider_wrap').addClass('night');
-
+                           $('.btn_navi .btn').click(function(){
+                                
+                           });
+                           $('.shoes_head .numbering .selecnum').html(index+1);
+                           $('.shoes_head .title p').html(imgcode[index]);
+                           if(index==4){
+                            $('.shoes_head .numbering .selecnum').html('1');
                            }
-                           if(index==0||index==2){
-                               // $('.shoes_head .numbering .selecnum').html(1);
-                               $('.slider_wrap').removeClass('night');
+                           if(index==5){
+                            $('.shoes_head .numbering .selecnum').html('2');
+                           }
+                           if(index==6){
+                            $('.shoes_head .numbering .selecnum').html('3');
+                           }
+                           if(index==-1){
+                            $('.shoes_head .numbering .selecnum').html('4');
                            }
 
                        });
@@ -658,33 +690,19 @@
                            autoplaySpeed:800,
                            // nav: true
                        });
-
                        $('.shoes_head .next').click(function() {
-                           $('.shoes_head .numbering .selecnum').html(2);
-                            $('.shoes_head .title p').html('CG5950');
-                           $('#slider_owl li').eq(0).children('img').attr("src", '/images/adidas/2019/event/jogger/day_01_CG5950.png');
-                           $('#slider_owl li').eq(2).children('img').attr("src", '/images/adidas/2019/event/jogger/day_01_CG5950.png');
-                           $('#slider_owl li').eq(4).children('img').attr("src", '/images/adidas/2019/event/jogger/day_01_CG5950.png');
-
-                           $('#slider_owl li').eq(1).children('img').attr("src", '/images/adidas/2019/event/jogger/night_01_CG5950.png');
-                           $('#slider_owl li').eq(3).children('img').attr("src", '/images/adidas/2019/event/jogger/night_01_CG5950.png');
-                           
-                       });
-                       $('.shoes_head .prev').click(function() {
-                           $('.shoes_head .numbering .selecnum').html(1);
-
-                           $('.shoes_head .title p').html('BD7933');
-                           $('#slider_owl li').eq(0).children('img').attr("src", '/images/adidas/2019/event/jogger/day_01_BD7933.png');
-                           $('#slider_owl li').eq(2).children('img').attr("src", '/images/adidas/2019/event/jogger/day_01_BD7933.png');
-                           $('#slider_owl li').eq(4).children('img').attr("src", '/images/adidas/2019/event/jogger/day_01_BD7933.png');
-
-                           $('#slider_owl li').eq(1).children('img').attr("src", '/images/adidas/2019/event/jogger/night_01_BD7933.png');
-                           $('#slider_owl li').eq(3).children('img').attr("src", '/images/adidas/2019/event/jogger/night_01_BD7933.png');
-                           
-                       });
+                            owlSlider.trigger('next.owl.carousel');
+                            // $('.shoes_head .title p').html('CG5950');
+                        });
+                        $('.shoes_head .prev').click(function() {
+                            owlSlider.trigger('prev.owl.carousel', [300]);
+                            // $('.shoes_head .title p').html('BD7933');
+                        });
                        $('.btn_navi .btn').click(function(){
-                           $( "#slider_owl .owl-next" ).trigger( "click" );
+                            //  $( "#slider_owl .owl-next" ).trigger( "click" );
+                           $('.slider_wrap').toggleClass('night');
                        });
+
                        //coll_slider
                        var owlSlider2 = $('#slider_owl2');
                        owlSlider2.on('initialized.owl.carousel', function(event) {
@@ -735,7 +753,7 @@
                                 $('.left_fixed_area').addClass('fixed');
                                 $('.shoes_slider_wrap').addClass('fixed');
                                 $('.top_area.second.collection_head').removeClass('first');
-                                $('.left_fixed_area p').html("어둠 속을 밝게 비춰 줄 리플렉티브 슈즈");
+                                // $('.left_fixed_area p').html("어둠 속을 밝게 비춰 줄 리플렉티브 슈즈");
                                 $('.top_area .clock_wrap').removeClass('on');
                                 $('.top_area.first_section .title p').css({
                                     'opacity':'1'
@@ -744,7 +762,7 @@
                                 console.log('aaa')
                                 // $('.top_area.second .title p').html('KST//GMT+9');
                                 $('.collection_head').addClass('first');
-                                $('.left_fixed_area p').html("it's naver too late 우리의 밤은 잠들지 않아");
+                                // $('.left_fixed_area p').html("it's naver too late 우리의 밤은 잠들지 않아");
                                 $('.top_area .clock_wrap').addClass('on');
                                 $('.top_area.first_section .title p').css({
                                     'opacity':'0'

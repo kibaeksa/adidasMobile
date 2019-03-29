@@ -118,6 +118,14 @@
 				position: absolute;
 				right: 15px;
 				top: 11%;
+				a{
+					width: 142px;
+					font: 500 0.9rem/3.5rem 'NotoSansKR';
+					letter-spacing: 0.1px;
+					text-transform: uppercase;
+					width: 147px;
+
+				}
 			}
 		}
 		.bg{
@@ -172,7 +180,7 @@
 		}
 		h2{
 			position: absolute;
-		    top: 20px;
+		    top: 10px;
 		    left: 6px;
 		    text-align: center;
 			img{
@@ -267,11 +275,10 @@
 			}
 		}
 		&.coll_slider_wrap{
-			background: url(/images/adidas/2019/event/jogger/col_bg.jpg) no-repeat;
+			background:#000 url(/images/adidas/2019/event/jogger/0401/col_bg.jpg) no-repeat;
 			background-size: 100% 100%;
 			background-position: center;
-	        padding: 35px 25px 25px 85px;
-		    // padding-bottom: 0;
+			padding: 2rem 2rem 2rem 7rem;
 			.slider_owl_wrap{
 				top: inherit;
 				    left: inherit;
@@ -283,6 +290,9 @@
 							width: 100%;
 						    text-align: left;
 						}
+					}
+					.owl-controls{
+						opacity: 0;
 					}
 				}
 			}
@@ -333,7 +343,30 @@
 					color: #000;
 					background: #fff;
 					border:0;
+					// font:11px/60px 'AdihausDIN-Bold';
+					em{
+						font: 600 0.9rem/3.3rem 'NotoSansKR';
+						letter-spacing: 0.1px;
+					}
+					
+
 				}
+			}
+
+			&.first_section{
+				&.eventscroll{
+					.title{
+						.btn{
+							width: 115px;
+							top: 37%;
+							right: 15px;
+							img{
+								width:100%;
+							}
+						}
+					}
+				}
+
 			}
 
 			&.second{
@@ -349,6 +382,13 @@
 					&.first{
 						z-index: 5;
 						opacity: 1;
+					}
+				}
+				&.eventscroll{
+					left:0;
+					width:100%;
+					.title{
+						text-align:center;
 					}
 				}
 				p{
@@ -497,13 +537,23 @@
 			position: relative;
 			top: 30px;
 			left: 14px;
+
 			ul{
 				li{
 					position: relative;
 					text-align: center;
-					padding-bottom: 120%;
-					/* top: 24%; */
+					padding-bottom: 152%;
 					text-align: center;
+					P{
+						position: absolute;
+						bottom: 1%;
+						right: 0;
+						z-index: 2;
+						font: 3rem/2.7rem 'AdihausDIN-Bold';
+						color: #fff;
+						letter-spacing: 1.9px;
+		
+					}
 					img{
 						position: absolute;
 						top: 50%;
@@ -525,13 +575,139 @@
 
 	}
 
+	.pre_event{
+		position: relative;
+		// padding-top:50px;
+		background:#080605;
+		img{
+			width:100%;
+		}
+		a{
+			position: absolute;
+			display: inline-block;
+			width:50%;
+			height:50px;
+			top: 71%;
+			&.pre{
+				left:0;
+			}
+			&.pre2{
+				right:0;
+			}
+		}
+	}
+
 	.video_wrap{
 		position: relative;
+		padding: 20px 0;
+		background: url('/images/adidas/2019/event/jogger/0401/video_bg.jpg') no-repeat;
+		background-size:100% 100%;
     	z-index: 6;
 		.bg{
 
 			img{
 				width: 100%;
+			}
+		}
+		.inn{
+			width:100%;
+			position: absolute;
+			top:50%;
+			left:50%;
+			transform: translate(-50%,-50%);
+			.row{
+				text-align: center;
+				img{
+					width: 45%;
+					display: inline-block;
+					margin: 7px;
+				}
+			}
+		}
+	}
+
+	.offline_wrap{
+		position: relative;
+		img{
+			width:100%;
+		}
+		a{
+			width:100%;
+			height:30px;
+			position: absolute;
+			top:41%;
+			left:0;
+			display:inline-block;
+		}
+	}
+
+	.line_up_wrap{
+		position: relative;
+		padding:30px 0;
+		background: url('/images/adidas/2019/event/jogger/0401/offline_bg.jpg');
+		.title{
+			padding: 0 0 10px 0;
+			text-align: center;
+			img{
+				width:55%;
+			}
+		}
+		.banner_slider_wrap{
+			margin: 0 55px;
+			
+			overflow: hidden;
+			ul{
+				li{
+					img{
+						width:100%;
+					}
+				}
+				.owl-controls{
+					padding-top:12px;
+					.owl-dots{
+						text-align:center;
+						.owl-dot{
+							display: inline-block;
+							margin: 0 2px;
+							&.active{
+								span{
+									background: #fff;
+								}
+							}
+							
+
+							span{
+								display: inline-block;
+								width:30px;
+								height:4px;
+								border:1px solid #fff;
+							}
+						}
+					}
+					.owl-nav{
+						position: absolute;
+						top:50%;
+						left:0;
+						width:100%;
+						
+						div{
+							position: absolute;
+							width:3rem;
+							height:3rem;
+						}
+						.owl-next{
+							right:8px;
+							background: url('/images/adidas/2019/event/jogger/0401/arrow_next.png') no-repeat;
+							background-size:100% 100%;
+						}
+						.owl-prev{
+							left:8px;
+							background: url('/images/adidas/2019/event/jogger/0401/arrow_next.png') no-repeat;
+							background-size:100% 100%;
+							transform: rotate(-180deg);
+						}
+					}
+				}
 			}
 		}
 	}
