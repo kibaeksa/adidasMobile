@@ -1,228 +1,142 @@
 <div id="container">
-<style type="text/css">@media screen and (max-width: 320px){html{font-size:10px}}@media screen and (min-width: 800px){html{font-size:12px}}.pseudo-element{content:'';display:block}#video-layer{position:fixed;top:0;left:0;width:100%;height:100%;z-index:1000}#video-layer .bg{width:100%;height:100%;position:absolute;top:0;left:0;transform-origin:center center;-webkit-transform-origin:center center;transform:scale(0);-webkit-transform:scale(0);opacity:0;background:#000;z-index:1;transition:all 0.4s;-webkit-transition:all 0.4s}#video-layer.loaded .bg{opacity:1;transform:scale(1.2);-webkit-transform:scale(1.2)}#video-layer .video-box{position:relative;width:100%;height:100%;z-index:3}#video-layer .close_x_btn{width:70px;height:70px;position:absolute;top:0;right:0;z-index:5;opacity:0}#video-layer.loaded .close_x_btn{opacity:1}#pure_boost .dn{display:none}#pure_boost .main{position:relative;padding-bottom:135%}#pure_boost .main .bg{position:absolute;top:0;width:100%}#pure_boost .main .bg img{width:100%}#pure_boost .main .img{position:relative;width:100%}#pure_boost .main .main-txt{position:absolute;width:100%;top:70%;z-index:2;text-align:center}#pure_boost .main .main-txt .title{font:3rem/3rem 'adinenuPro-bold';color:#000;letter-spacing:1px}#pure_boost .main .main-txt .desc{font:500 1rem/1.7rem 'NotosansKR';color:#000}#pure_boost .main .buy{position:absolute;bottom:7%;width:100%;text-align:center}#pure_boost .main .buy a{display:inline-block;padding:0 10rem;background:#000;color:#fff;font:1rem/3.5rem 'NotosansKR';letter-spacing:0px}#pure_boost .main .buy a:after{display:inline-block;margin-left:3px}#pure_boost .txt-area{position:relative;background:url("http://imagem.adidas.co.kr/images/adidas/event/pure_boost/180829/bg_txt.jpg") 0 0 no-repeat;background-size:100% 100%;text-align:center;padding-bottom:5rem}#pure_boost .txt-area .title{position:relative;top:100px;padding:1rem 0 1.5rem;font:600 2rem/2.6rem 'NotosansKR';color:#000;opacity:0;transition:top,opacity,0.8s;-webkit-transition:top,opacity,0.8s;-moz-transition:top,opacity,0.8s}#pure_boost .txt-area .desc{position:relative;top:100px;font:1rem/1.6rem 'NotosansKR';color:#000;letter-spacing:normal;opacity:0;transition:top,opacity,0.8s;-webkit-transition:top,opacity,0.8s;-moz-transition:top,opacity,0.8s}#pure_boost .txt-area.txt-area2{background:url("http://imagem.adidas.co.kr/images/adidas/event/pure_boost/180829/bg_txt2.jpg") 0 0 no-repeat;background-size:100% 100%;padding-bottom:4rem}#pure_boost .txt-area.txt-area2 .title{padding:3rem 0 1rem}#pure_boost .shoes .box{position:relative}#pure_boost .shoes .box.type1>img{opacity:0;transition:opacity 0.8s;-webkit-transition:opacity 0.8s;-moz-transition:opacity 0.8s}#pure_boost .shoes .box.type1 .txt{width:80%;position:absolute;top:500px;left:50%;transform:translateX(-50%);opacity:0;transition:opacity 0.8s;-webkit-transition:opacity 0.8s;-moz-transition:opacity 0.8s}#pure_boost .shoes .box.type2>img{opacity:0;transition:opacity 0.8s;-webkit-transition:opacity 0.8s;-moz-transition:opacity 0.8s}#pure_boost .shoes .box.type2 .txt{width:80%;position:absolute;top:500px;left:50%;transform:translateX(-50%);opacity:0;transition:opacity 0.8s;-webkit-transition:opacity 0.8s;-moz-transition:opacity 0.8s}#pure_boost .shoes .box.type3>img{opacity:0;transition:opacity 0.8s;-webkit-transition:opacity 0.8s;-moz-transition:opacity 0.8s}#pure_boost .shoes .box.type3 .txt{width:80%;position:absolute;top:500px;left:50%;transform:translateX(-50%);opacity:0;transition:opacity 0.8s;-webkit-transition:opacity 0.8s;-moz-transition:opacity 0.8s}#pure_boost .shoes .box>img{width:100%}#pure_boost .shoes .box .txt{text-align:center}#pure_boost .shoes .box .txt .title{font:600 2rem/2rem 'NotosansKR';color:#000;text-align:center}#pure_boost .shoes .box .txt .desc{padding:1.5rem 0 1.5rem 0;font:1rem/1.8rem 'NotosansKR';color:#000;text-align:center}#pure_boost .shoes .box .txt .buy{position:relative;display:block;padding:0 2rem 0 2rem;background:#000;color:#fff;font:1rem/3.5rem 'NotosansKR';letter-spacing:0px;text-align:center}#pure_boost .shoes .box .txt .buy:after{display:inline-block;margin-left:8px}#pure_boost .prd_section{position:relative;padding:0 2rem}#pure_boost .prd_section ul{overflow:hidden}#pure_boost .prd_section ul li{float:left;width:47%;margin-right:1.5rem}#pure_boost .prd_section ul li:nth-child(2n){margin-right:0}#pure_boost .prd_section ul li a{display:inline-block;padding-bottom:2rem}#pure_boost .prd_section ul li a img{width:100%}#pure_boost .prd_section ul li a h3{font:500 1.2rem/2.6rem 'NotoSansKR';color:#000}#pure_boost .prd_section ul li a p{font:1rem/1rem 'adinenuPro-light';color:#000;letter-spacing:normal}#pure_boost .prd_section ul li a span{font:1rem 'AdihausDIN', 'NotoSansKR';color:#000}#pure_boost .runners_area>img{width:100%}#pure_boost .runners_area .txt{margin-top:-1rem;padding:0 3rem 4rem}#pure_boost .runners_area .txt .title{font:600 3rem/3rem 'adinenuPro-black';color:#000}#pure_boost .runners_area .txt .desc{padding:0.5rem 0 1.5rem 0;font:1rem/1.6rem 'NotosansKR';color:#000}#pure_boost .runners_area .txt .buy{position:relative;display:block;padding:0 2rem 0 2rem;background:#000;color:#fff;font:1.1rem/3.5rem 'adinenuPro-regular';letter-spacing:0px;text-align:center;text-transform:uppercase}#pure_boost .runners_area .txt .buy span{font:1rem/3rem 'NotosansKR'}#pure_boost .runners_area .txt .buy:after{display:inline-block;margin-left:8px}#pure_boost .slider_section{position:relative;padding-bottom:3.7rem;background:#fff}#pure_boost .slider_section .slider_wrap{position:relative}#pure_boost .slider_section .slider_wrap ul{position:relative}#pure_boost .slider_section .slider_wrap ul .owl-item.active .num_title span{margin-right:0;opacity:1}#pure_boost .slider_section .slider_wrap ul .owl-item.active .num_title span:after{width:100%}#pure_boost .slider_section .slider_wrap ul li{float:left;position:relative;top:0}#pure_boost .slider_section .slider_wrap ul li .title{padding-bottom:1.5rem;text-align:center;font:600 1.4rem/1.8rem 'NotoSansKRMedium'}#pure_boost .slider_section .slider_wrap ul li .title p{font:2.3rem/2.6rem 'adinenuPro-black';letter-spacing:0;text-transform:uppercase}#pure_boost .slider_section .slider_wrap ul li .img img{width:100%}#pure_boost .slider_section .slider_wrap ul li .num_title{position:absolute;padding:2rem 0 0 0;text-align:center}#pure_boost .slider_section .slider_wrap ul li .num_title span{position:relative;display:inline-block;height:50px;font:1.8rem/2rem 'NotoSansKR';letter-spacing:0;margin-right:-10rem;transition:all 0.6s ease;opacity:0}#pure_boost .slider_section .slider_wrap ul li .num_title span:after{display:inline-block;content:'';width:0%;height:2px;background:#000;position:absolute;bottom:24px;right:0;transition:all 0.6s ease}#pure_boost .slider_section .slider_wrap ul:after{content:'';display:block;clear:both}#pure_boost .slider_section .slider_wrap .owl-controls .owl-dot{float:left;text-align:center}#pure_boost .slider_section .slider_wrap .owl-controls .owl-dot span{display:inline-block;padding:1rem 0 0 0;font:1.5rem/2rem 'NotoSansKR';text-align:center;color:#000;letter-spacing:0}#pure_boost .slider_section .slider_wrap .owl-dots{position:absolute;width:100%;text-align:center;background:#000;padding:1.5rem 0}#pure_boost .slider_section .slider_wrap .owl-dots .owl-dot{display:inline-block;float:none;margin:0 5px;width:1rem;height:1rem;background:#c8c8c8;border-radius:50px;-webkit-border-radius:50px}#pure_boost .slider_section .slider_wrap .owl-dots .owl-dot.active{background:#772f44}
+<style type="text/css">@media screen and (max-width: 320px){html{font-size:10px}}@media screen and (min-width: 800px){html{font-size:12px}}.pseudo-element{content:'';display:block}#pureboost{position:relative}#pureboost .button_area_v2{display:inline-block;margin-bottom:2vh}#pureboost .button_area_v2 a{font:700 .9rem/32px 'NotoSansKR';padding:0 5vw;letter-spacing:0;height:38px}#pureboost .button_area_v2 a .arrow{width:20px}#pureboost .button_area_v2 a .arrow::after{width:8px}#pureboost .button_area_v2 a .arrow::before{width:8px}#pureboost img{width:100%}#pureboost .main{position:relative}#pureboost .main .bg img{width:100%}#pureboost .main .b_box{width:100%;position:absolute;top:65%;left:1rem;text-align:left}#pureboost .main .b_box h1{font:28px 'adinenuPro-bold';color:#000;text-align:left;letter-spacing:2px;transition:all .4s;opacity:0}#pureboost .main .b_box h1 img{width:50%}#pureboost .main .b_box .button_area_v2{margin:1rem 0 0 1rem;transition:all .4s;transition-delay:0.4s;opacity:0}#pureboost .main .b_box .button_area_v2 a{width:auto;height:38px;padding:0 20px;letter-spacing:2px;font:500 .9rem/38px 'NotoSansKR'}#pureboost .main .b_box .button_area_v2 a span{margin-left:0;transition:all .4s;transition-delay:1.2s}#pureboost .main.on .b_box>*{opacity:1}#pureboost .main.on .b_box .button_area_v2 a span{margin-left:1rem}#pureboost .btm{padding:111% 6rem 0;background:url("/images/adidas/2019/event/pure_boost/0404/bg_section.jpg") 0 0 no-repeat;background-size:100% auto}#pureboost .btm .wrap{text-align:center}#pureboost .btm .wrap .txt{padding:1.5rem 0 3rem 0}#pureboost .btm .wrap .txt h3 img{width:76%}#pureboost .btm .wrap .txt p{padding:0.8rem 0 0.4rem;font:500 2rem/2rem 'AdihausDIN-Cond';color:#000000}#pureboost .btm .wrap .txt span{display:inline-block;font:500 13px/21px 'NotoSansKR';color:#333333;letter-spacing:0}#pureboost .bottom{position:relative;text-align:center;padding-bottom:3rem}#pureboost .bottom .banner_slider_wrap{position:relative;padding:2rem 0;background:#fff}#pureboost .bottom .banner_slider_wrap ul .owl-controls{text-align:center;padding-top:3%}#pureboost .bottom .banner_slider_wrap ul .owl-controls .owl-nav{display:none}#pureboost .bottom .banner_slider_wrap ul .owl-controls .owl-dots .owl-dot{width:9px;height:9px;border-radius:50%;border:1px solid #000;display:inline-block;margin:1vw}#pureboost .bottom .banner_slider_wrap ul .owl-controls .owl-dots .owl-dot.active{background:#000}#pureboost .bottom .banner_slider_wrap ul li a img{width:100%}
 </style>
-	<div id="pure_boost">
 
-		<div class="main">
-			<div class="bg"><img src="http://imagem.adidas.co.kr/images/adidas/event/pure_boost/180829/visual.jpg" alt=""></div>
-			<div class="main-txt">
-				<p class="title">PUREBOOST GO</p>
-				<p class="desc">원하는 대로 러닝의 방향을 바꿀 것.</p>
-			</div>
-			<div class="buy"><a href="http://shop.adidas.co.kr/PF070801.action?pageNo=680" class="aft icons" data-icon="">구매하기</a></div>
-		</div>
+           <div id="pureboost">
+                <div class="main">
+                    <div class="bg">
+                        <img src="/images/adidas/2019/event/pure_boost/0404/visual.jpg" alt="main_icon">
+                    </div>
+                    <div class="b_box">
+                        <h1><img src="/images/adidas/2019/event/pure_boost/0404/visual_txt.png" alt=""></h1>
+                        <div class="button_area_v2">
+                            <div class="">
+                                <a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=680">
+                                    구매하기
+                                    <span class="arrow"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>                
 
-		<div class="txt-area">
-			<p class="title">도심 속 러닝,<br />그 짜릿한 자유를 경험하라</p>
-			<p class="desc">
-				퓨어부스트 GO는 직감적인 방향 전환으로<br>
-				혼잡한 도심 환경을 자유롭게 누비는 러닝화입니다.<br>
-				크루 러너들과 함께 도시의 새로운 영역을 개척하고,<br>
-				스트리트 러닝의 자유를 만끽해보세요.
-			</p>
-		</div>
+                <div class="btm">
+                    <div class="wrap">
+                        <img src="/images/adidas/2019/event/pure_boost/0404/tech_01.jpg" alt="">
+                        <div class="txt">
+                            <h3><img src="/images/adidas/2019/event/pure_boost/0404/tech_01_tit.png" alt=""></h3>
+                            <p>EXPANDED LANDING ZONE</p>
+                            <span>땅에 닿는 랜딩 존이 더욱 넓어져<br>
+                                불규칙한 도심 속 러닝을 위한<br>
+                                안정적인 서포트를 제공합니다.</span>
+                        </div>
+                    </div>
+                    <div class="wrap">
+                        <img src="/images/adidas/2019/event/pure_boost/0404/tech_02.jpg" alt="">
+                        <div class="txt">
+                            <h3><img src="/images/adidas/2019/event/pure_boost/0404/tech_02_tit.png" alt=""></h3>
+                            <p>BOOST</p>
+                            <span>아디다스의 최상급 쿠셔닝인<br>
+                                부스트가 달릴수록 더욱 강력한<br>
+                                에너지를 발산합니다.</span>
+                        </div>
+                    </div>
+                    <div class="wrap">
+                        <img src="/images/adidas/2019/event/pure_boost/0404/tech_03.jpg" alt="">
+                        <div class="txt">
+                            <h3><img src="/images/adidas/2019/event/pure_boost/0404/tech_03_tit.png" alt=""></h3>
+                            <p>CIRCULAR KNIT UPPER</p>
+                            <span>발을 감싸는 서큘러 니트 갑피가<br>
+                                러너의 움직임에 빠르게 적응하며<br>
+                                러닝에 자유를 더합니다.</span>
+                        </div>
+                    </div>
+                </div>
 
-		<div class="shoes">
-			<div class="box type1">
-				<img src="http://imagem.adidas.co.kr/images/adidas/event/pure_boost/180829/shoe1.jpg" alt="">
-				<div class="txt">
-					<p class="title">더욱 넓어진 접지면</p>
-					<p class="desc">
-						땅에 닿는 랜딩 존이 더욱 넓어져 불규칙한 도심 속 러닝을 위한<br>
-						안정적인 서포트를 제공합니다.
-					</p>
-					<a href="http://shop.adidas.co.kr/PF070801.action?pageNo=680" class="aft icons buy" data-icon="">구매하기</a>
-				</div>
-			</div>
-			<div class="box type2">
-				<img src="http://imagem.adidas.co.kr/images/adidas/event/pure_boost/180829/shoe2.jpg" alt="">
-				<div class="txt">
-					<p class="title">지치지 않는 에너지</p>
-					<p class="desc">
-						아디다스가 개발한 최상급 쿠셔닝인 부스트가<br>
-						달릴 수록 더욱 강력한 에너지를 발산합니다.
-					</p>
-					<a href="http://shop.adidas.co.kr/PF070801.action?pageNo=680" class="aft icons buy" data-icon="">구매하기</a>
-				</div>
-			</div>
-			<div class="box type3">
-				<img src="http://imagem.adidas.co.kr/images/adidas/event/pure_boost/180829/shoe3.jpg" alt="">
-				<div class="txt">
-					<p class="title">직감적인 움직임</p>
-					<p class="desc">
-						발을 감싸는 서큘러 니트 갑피가 러너의 움직임에<br>
-						빠르게 적응하며 러닝에 자유를 더합니다.
-					</p>
-					<a href="http://shop.adidas.co.kr/PF070801.action?pageNo=680" class="aft icons buy" data-icon="">구매하기</a>
-				</div>
-			</div>
-		</div>
+                <div class="bottom">
+                    <div class="banner_slider_wrap slider1">
+                        <ul id="slider_owl1">
+                            <li>
+                                <a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=B37802">
+                                    <img src="/images/adidas/2019/event/pure_boost/0404/prds_01.jpg" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=B37803">
+                                    <img src="/images/adidas/2019/event/pure_boost/0404/prds_02.jpg" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=B75821">
+                                    <img src="/images/adidas/2019/event/pure_boost/0404/prds_03.jpg" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=B75822">
+                                    <img src="/images/adidas/2019/event/pure_boost/0404/prds_04.jpg" alt="">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                
+                    <div class="button_area_v2">
+                        <div class="">
+                            <a href="http://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=680">
+                                구매하기
+                                <span class="arrow"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
 
-		<div class="txt-area txt-area2">
-			<p class="title">도심 속 러닝을 위해 탄생하다</p>
-			<p class="desc">
-				퓨어부스트는 예측하기 힘든 도심 환경에서 크루들과 함께<br>
-				자유롭게 러닝을 즐길 수 있도록 제작된 러닝화입니다.<br>
-				퓨어부스트와 함께 혼잡한 도심 속 카오스를<br>
-				나만의 러닝 에너지로 바꿔보세요.
-			</p>
-		</div>
+           </div>
+           <!-- //pureboost -->
 
-		<div class="prd_section">
-			<ul>
-				<li><a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=AH2311">
-					<img src="http://imagem.adidas.co.kr/images/adidas/event/pure_boost/180829/prd1.jpg" alt="">
-					<h3>퓨어부스트 고</h3>
-					<p>MEN'S RUNNING</p>
-					<span>149,000 원</span>
-				</a></li>
-				<li><a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=AH2319">
-					<img src="http://imagem.adidas.co.kr/images/adidas/event/pure_boost/180829/prd2.jpg" alt="">
-					<h3>퓨어부스트 고</h3>
-					<p>MEN'S RUNNING</p>
-					<span>149,000 원</span>
-				</a></li>
-				<li><a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=AH2323">
-					<img src="http://imagem.adidas.co.kr/images/adidas/event/pure_boost/180829/prd3.jpg" alt="">
-					<h3>퓨어부스트 고</h3>
-					<p>MEN'S RUNNING</p>
-					<span>149,000 원</span>
-				</a></li>
-				<li><a href="http://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=B75667">
-					<img src="http://imagem.adidas.co.kr/images/adidas/event/pure_boost/180829/prd4.jpg" alt="">
-					<h3>퓨어부스트 고</h3>
-					<p>WOMEN'S RUNNING</p>
-					<span>149,000 원</span>
-				</a></li>
-			</ul>
-		</div>
+           <script type="text/javascript">
 
-		<div class="runners_area">
-			<img src="http://imagem.adidas.co.kr/images/adidas/event/pure_boost/180829/runners.jpg" alt="">
-			<div class="txt">
-				<p class="title">ADIDAS<br />RUNNERS</p>
-				<p class="desc">
-					아디다스는 단순한 러닝 동호회를 넘어 러닝에 대한<br>
-					열정을 공유하는 모두를 하나로 묶는 지역과 경계를 뛰어넘는<br>
-					러닝 커뮤니티입니다.<br>
-					맞춤형 트레이닝 플랜과 전문가 코칭 서비스, 아디다스만의 <br>
-					러닝 노하우를 통해 더욱 빠르고 즐거운 러닝을 시작해보세요.
-				</p>
-				<a href="http://m.adidas.co.kr/MO/Club/adidasrunners.action" class="aft icons buy" data-icon="">adidas runners <span>자세히 보기</span></a>
-			</div>
-		</div>
+                $(document).ready(function () {
 
-		<div class="slider_section dn">
-			<div class="slider_wrap" id="slider">
-				<ul class="slider">
-					<li data-index="1">
-						<div class="img">
-							<img src="http://imagem.adidas.co.kr/images/adidas/event/pure_boost/gal1.jpg" alt="">
-						</div>
-						<!-- <div class="num_title"><span>칼리클로스</span></div> -->
-					</li>
-					<li data-index="2">
-						<div class="img">
-							<img src="http://imagem.adidas.co.kr/images/adidas/event/pure_boost/gal2.jpg" alt="">
-						</div>
-					</li>
-					<li data-index="3">
-						<div class="img">
-							<img src="http://imagem.adidas.co.kr/images/adidas/event/pure_boost/gal3.jpg" alt="">
-						</div>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</div>
-	<!-- //pure_boost -->
-	<script type="text/javascript" src="/js/prx.min.js"></script>
-	<script type="text/javascript">
-		(function($) {
+                    // 서브
+                    var owlSlider1 = $('#slider_owl1');
 
-			// pure_boost
-			var top_txt = 88;
-			var shoe_type1 = 560;
-			var shoe_type2 = 860;
-			var shoe_type3 = 1460;
-			$(window).scroll(function() {
-				var scrollPX = $(this).scrollTop();
+                    owlSlider1.owlCarousel({
+                        stagePadding: 0,
+                        margin: 2,
+                        items: 2,
+                        merge: true,
+                        // loop : true,
+                        navigation: true,
+                        nav: true
+                    });
 
-				if (scrollPX > top_txt) {
-					$("#pure_boost .txt-area .desc").css({
-						"opacity": "1",
-						"top": "0"
-					});
-					$("#pure_boost .txt-area .title").css({
-						"opacity": "1",
-						"top": "0"
-					});
-				}
 
-				if (scrollPX > shoe_type1) {
-					$("#pure_boost .shoes .type1>img").css({
-						"opacity": "1"
-					});
-					setTimeout(function() {
-						$("#pure_boost .shoes .type1 .txt").css({
-							"opacity": "1",
-							"top": "55%"
-						});
-					}, 200)
-				}
-				if (scrollPX > shoe_type2) {
-					$("#pure_boost .shoes .type2>img").css({
-						"opacity": "1"
-					});
-					setTimeout(function() {
-						$("#pure_boost .shoes .type2 .txt").css({
-							"opacity": "1",
-							"top": "56%"
-						});
-					}, 200)
-				}
-				if (scrollPX > shoe_type3) {
-					$("#pure_boost .shoes .type3>img").css({
-						"opacity": "1"
-					});
-					setTimeout(function() {
-						$("#pure_boost .shoes .type3 .txt").css({
-							"opacity": "1",
-							"top": "65%"
-						});
-					}, 200)
-				}
+                    setTimeout(function () {
+                        $('#pureboost .main').addClass('on');
+                    }, 500);
 
-				// console.log(scrollPX)
 
-			});
+                    var scrollArray = [];
+                    var scrollContents = document.querySelectorAll('.scr_evt');
+                    for (var i = 0; i < scrollContents.length; i++) {
+                        var mypos = scrollContents[i].offsetTop;
 
-			$('#pure_boost .slider_section .owl-prev').innerHTML = "1";
+                        scrollArray.push(mypos);
+                    };
+                    $(window).scroll(function () {
+                        
+                        var thisPos = $(this).scrollTop() + $(window).height();                        
+                        
+                        for (var pos = 0; pos < scrollArray.length; pos++) {
+                            if (thisPos > scrollArray[pos]) {
+                                $('#pureboost .scr_evt').eq(pos).addClass('on');
+                            }
+                        }
 
-			var owlProducts = $('.slider_section .slider').owlCarousel({
-				navigation: true,
-				stagePadding: 0,
-				nav: true,
-				pagination: true,
-				paginationNumbers: false,
-				margin: 50,
-				items: 1,
-				merge: true,
-				loop: true,
+                    });
 
-			});
+                });
 
-			owlProducts.on('changed.owl.carousel', function(event) {
+           </script>
 
-			});
-
-			// $('.slider_section .owl-dots .owl-dot').each(function(index){
-			// 	$(this).find('span').text(ctgrAry[index]);
-			// });
-
-			var _index = $('.slider_section .owl-item.active').children('li').attr('data-index'); //0 ~ 9
-
-		})(jQuery);
-	</script>
-
-</div>
+       </div>
+       <!-- //container product_list -->
