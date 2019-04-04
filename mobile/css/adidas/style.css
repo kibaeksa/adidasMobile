@@ -2836,7 +2836,7 @@ p.holiday_delay strong{font:600 13px/18px 'NotoSansKR'; }
 	top:61px;
     left: 0;
 	background: #000;
-	/*overflow:hidden !important;	*/
+	/*overflow:hidden !important; */
 	z-index:100;
 	box-sizing:border-box;
 	-webkit-box-sizing:border-box;
@@ -3056,6 +3056,98 @@ p.holiday_delay strong{font:600 13px/18px 'NotoSansKR'; }
 
 #header .nav_search .bnn{margin-bottom:10px;display: block;}
 #header .nav_search .bnn img{width: 100%;}
+
+/* 190404 nav_search update */
+#header .nav_main.nav_field a.icons.open{ background: #fff; }			
+#header .nav_main.nav_field a.btn_search span:before{ opacity:1; }
+#header .nav_main.nav_field a.btn_search.open span:before{color: #000;opacity: 1;}
+#header .nav_field a.btn_search:before,
+#header .nav_field a.btn_search:after{content: none !important;}			
+#header .nav_search.gnb_search_field{
+	display: none;
+	padding:0;
+	top:60px;
+	background: #fff;
+	z-index:100;
+	transform: translate3d(0%,0,0);
+	transition: all 0.4s;
+	-webkit-transition: all 0.4s;
+}
+#header .nav_search.gnb_search_field li{
+	height: 40px;
+	border-bottom: none;
+}	
+#header .nav_search.gnb_search_field li a{
+    background: none;
+}
+#header .nav_search.gnb_search_field li a::after{display:none;}
+#header .gnb_search_field .sch_box{height:auto;}
+#header .gnb_search_field .sch_box input{
+    display: block;
+    padding: 0 10px 0 45px;
+    outline: none;
+}
+#header .gnb_search_field .sch_box button{
+    top: 2px;
+    left: 0;
+}		
+#header .gnb_search_field .sch_tab a{
+	width: 50%;
+	height: 45px;
+	display: block;
+	float: left;
+	text-align: center;
+	color: #888;
+	font:300 14px/45px 'NotoSansKR';
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+#header .gnb_search_field .sch_tab a:first-child{
+	/* background: url(/images/adidas/temp/sc_tab_line.png) right center no-repeat; */
+	background: url(http://imagem.adidas.co.kr/images/adidas/sc_tab_line.png) right center no-repeat;
+}
+#header .gnb_search_field .sch_tab a.on{
+	color:#000;
+}
+#header .gnb_search_field .sch_list li{
+	background: none;
+}						
+#header .nav_search.gnb_search_field .sch_list li a{
+	color:#000 !important;
+}				
+#header .nav_search.gnb_search_field .keyword_recent a{
+    color: #000;
+    padding-left: 20px;
+}				
+#header .gnb_search_field .keyword_recent .no_data{
+	color: #000;
+}				
+#header .gnb_search_field #dqAutoTop{
+	top: 0 !important;
+}
+#header .gnb_search_field #dqAutoTop ul{
+    margin-left: 0;
+    background: #000;
+}
+#header .nav_search.gnb_search_field #dqAutoTop li a{
+    padding: 0;
+    color: #fff;
+    font: 400 13px/40px 'adinenuPro-regular','NotoSansKR';
+    padding-left: 20px;
+}
+#header .gnb_search_field #dqAutoTop li a span{
+	font-weight:bold;
+	font:700 13px 'adinenuPro-bold','NotoSansKR';
+}
+
+#header .gnb_search_field #dqAutoTop .close a:after{
+	transform:translate3d(-50%,-50%,0) rotate(-45deg);
+	-webkit-transform:translate3d(-50%,-50%,0) rotate(-45deg);
+}
+#header .gnb_search_field .sch_box form {
+	border: 2px solid #000;
+}
+/* 190404 search update end */
 
 #header .nav_main{
 	width:100%;
