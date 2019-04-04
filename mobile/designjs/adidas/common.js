@@ -21,7 +21,7 @@ adiApp.getNodefromString = function (htmlString) {
 	});
 
 	$('#nav_menu_overlay , .navmenu_close').bind('click',function(){
-		$('.nav_main .btn_slide').removeClass('open');
+		$('.nav_main .btn_slide').removeClass('open')
 		$('html').removeClass('no_srl');
 		$('#header .nav_menu').removeClass('slide-open').css({
 			transform : 'translate3d(-100% ,0 ,0)'
@@ -38,7 +38,7 @@ adiApp.getNodefromString = function (htmlString) {
 
 	$('.nav_main .btn_slide').bind('click',function(){
 		if($(this).hasClass('open')){
-			$(this).removeClass('open');
+			$(this).removeClass('open')
 
 			$('html').removeClass('no_srl');
 			$('#header .nav_menu').removeClass('slide-open').css({
@@ -54,15 +54,13 @@ adiApp.getNodefromString = function (htmlString) {
 
 		}else{
 			var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-			var topBnnElem = $('.top_bnn').get(0);
+			var topBnnElem = $('.top_bnn').get(0)
 			var offsetTop = !topBnnElem ? 61 : topBnnElem.getBoundingClientRect().bottom - topBnnElem.getBoundingClientRect().top + 61;
 			var elemH = $(window).height() - document.querySelector('#header>.nav_main').getBoundingClientRect().bottom;
 
 			if($('.nav_main .btn_search').hasClass('open')){
 				$('#S_PROD_NM').blur();
-				$('#header .nav_search').removeClass('slide-open').css({
-					transform : 'translate3d(100% ,0 ,0)'
-				});
+				$('#header .gnb_search_field').removeClass('slide-open').fadeOut(0);
 				$('.nav_main .btn_search').removeClass('open');
 				setTimeout(function(){
 					setTimeout(function(){
@@ -118,13 +116,20 @@ adiApp.getNodefromString = function (htmlString) {
 
 
 	$('.nav_main .btn_search').bind('click',function(){
+		// search area가 열려있다면 아래 실행
 		if($(this).hasClass('open')){
-			$(this).removeClass('open');
+			$(this).removeClass('open')
 
 			$('html').removeClass('no_srl');
-			$('#header .nav_search').removeClass('slide-open').css({
-				transform : 'translate3d(100% ,0 ,0)'
-			});
+			
+			// 181211 search test
+			$('#header .gnb_search_field').removeClass('slide-open').css({
+				//$(this).css({"display":"none"});
+				// transform: 'translate3d(0 ,-100% ,0)'
+			}).fadeOut(0);
+			// 181211 search test END
+
+			$("#textarea").blur();
 
 			$('html,body').animate({
 				scrollTop : $('.nav_main').data('prevScrollTop').scrollTop
@@ -132,10 +137,10 @@ adiApp.getNodefromString = function (htmlString) {
 
 			$('#nav_menu_overlay').removeClass('active').hide();
 			$('.navmenu_close').removeClass('open').hide();
-
+		// search area가 닫혀있다면 아래 실행
 		}else{
 			var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-			var topBnnElem = $('.top_bnn').get(0);
+			var topBnnElem = $('.top_bnn').get(0)
 			var offsetTop = !topBnnElem ? 61 : topBnnElem.getBoundingClientRect().bottom - topBnnElem.getBoundingClientRect().top + 61;
 			var elemH = $(window).height() - document.querySelector('#header>.nav_main').getBoundingClientRect().bottom;
 			var windowH = $(window).height();
@@ -154,21 +159,35 @@ adiApp.getNodefromString = function (htmlString) {
 			}
 
 			$(this).addClass('open');
-			$('html').addClass('no_srl');
-			$('#header .nav_search').addClass('slide-open').css({
-				top: document.querySelector('#header>.nav_main').getBoundingClientRect().bottom,
-				minHeight : elemH_windowAll,
-				height : elemH_windowAll,
-				transform : 'translate3d(0 ,0 ,0)',
-			});
-			$('#nav_menu_overlay').show().addClass('active');
+			// $('html').addClass('no_srl');
 
+			// 181211 search test
+			$('#header .gnb_search_field').addClass('slide-open').css({
+				top: document.querySelector('#header>.nav_main').getBoundingClientRect().bottom - 1
+			}).fadeIn(0);
+            
+			// $('#nav_menu_overlay').show().addClass('active');
+			$('#nav_menu_overlay').removeClass('active').hide();
+			// 181211 search test END
+			
 			setTimeout(function(){
 				$('#S_PROD_NM').focus();
-			},600);
+				// $("#S_PROD_NM").attr("placeholder", "");
+			},200);
+
+			$("#container").on('click',function(){
+				$(".nav_main .btn_search").removeClass("open");
+				$('#header .gnb_search_field').removeClass('slide-open').css({
+					//$(this).css({"display":"none"});
+					// transform: 'translate3d(0 ,-100% ,0)'
+					'z-index': 0,
+					'opacity': 0
+				});
+			});
 		}
 		return false;
 	});
+	
 
 	$('#header .nav_menu .gnb>li li').bind('click',function(event){
 		event.stopPropagation();
@@ -195,7 +214,7 @@ adiApp.getNodefromString = function (htmlString) {
 	});
 
 	$('#header .nav_menu .gnb>li').bind('click',function(event){
-		event.stopPropagation();
+		event.stopPropagation()
 
 		if(!$(this).hasClass('open')){
 
@@ -224,7 +243,7 @@ adiApp.getNodefromString = function (htmlString) {
 	});
 
 	$('#container.main .category_menu_wrapper .gnb>li').bind('click',function(event){
-		event.stopPropagation();
+		event.stopPropagation()
 		if(!$(this).hasClass('open')){
 
 			$('#container.main .category_menu_wrapper .gnb>li').removeClass('open');
@@ -279,8 +298,8 @@ adiApp.getNodefromString = function (htmlString) {
 					(function(index , counter){
 						setTimeout(function(){
 							$(btnItems[counter]).addClass('opened');
-						} , index * 30);
-					})(index , counter);
+						} , index * 30)
+					})(index , counter)
 				}
 			},100);
 
@@ -372,6 +391,28 @@ adiApp.getNodefromString = function (htmlString) {
 
 		return false;
 	});
+
+	// 181211 search test
+	$('#header .gnb_search_field .sch_tab>a').bind('click', function () {
+		if ($(this).hasClass('on')) {
+			return false;
+		}
+
+		if ($(this).index() == 0) {
+			$('#header .gnb_search_field .keyword_recent').show();
+			$('#header .gnb_search_field .sch_list').hide();
+			$('#header .gnb_search_field .sch_tab>a').eq(1).removeClass('on');
+			$(this).addClass('on');
+		} else {
+			$('#header .gnb_search_field .sch_list').show();
+			$('#header .gnb_search_field .keyword_recent').hide();
+			$('#header .gnb_search_field .sch_tab>a').eq(0).removeClass('on');
+			$(this).addClass('on');
+		}
+
+		return false;
+	});
+	// 181211 search test END
 
 	$('.top_bnn .top_bnn_close').bind('click',function(){
 		var $this = $(this);
@@ -583,10 +624,10 @@ adiApp.getNodefromString = function (htmlString) {
 			var htmlString = '<div class="loading-container"><div class="loader-icon"></div></div>';
 			$('body').append(htmlString);
 		}
-	};
+	}
 
 	window.removeLoading = function(){
 		$('.loading-container').remove();
-	};
+	}
 
 })(jQuery);
