@@ -6687,36 +6687,42 @@ div.layerpop_wrap#nomem_order_popup .inner .content .desc{
 	padding: 15px 0;
 }
 
-/* PDP > ABTEST SIZE BOX*/
-#container.product_view .product_order ul.info>li.size_box{
-    padding: 0 15px;
+/* PDP > ABTEST SIZE BOX 190403size(modified)*/
+#container.product_view .product_order ul{
+    border-top: 1px solid #ccc;
+    border-left: 1px solid #ccc;
 }
-
+#container.product_view .product_order ul.info>li.size_box{
+	padding: 0 15px;
+}
 #container.product_view .product_order ul.info>li.size_box>div ul::after{content: '';display: block;clear: both;}
 
 #container.product_view .product_order ul.info>li.size_box>div ul li{
-    width: 36px;
-    height: 36px;
-    margin: 0 5px 5px 0;
+    width: 20%;
+    /* height: 36px; */
+    /* margin: 0 5px 5px 0; */
     float: left;
 }
 
 #container.product_view .product_order ul.info>li.size_box>div ul li a{
     display: inline-block;
-    width: 34px;
-    height: 34px;
-    border: 1px solid #ccc;
+    width: 100%;
+    /* height: 34px; */
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
     padding: 0;
     text-align: center;
-    font: 12px/34px 'AdihausDIN-Bold';
+    font: 17px/40px 'AdihausDIN-Bold';
     color: #000;
 }
-
+#container.product_view .product_order ul.abtest>li.size_box>div ul li a.disable{
+	color: #dadada;
+}
 #container.product_view .product_order ul.info>li.size_box>div ul li a.on{
-	background: #0286cd;
+	background: #000;
 	color: #fff;
 }
-/* PDP > ABTEST SIZE BOX END*/
+/* PDP > ABTEST SIZE BOX END 190403size(modified)*/
 
 #container.product_view .product_order ul.info>li.util>div>a.on+.card_bft_layer{
 	display: block;
@@ -22337,3 +22343,57 @@ em.prd_speedy .tooltip-box:before{
 	font: 500 1rem/2rem 'NotoSansKR';
 	color:#444;
 }
+
+
+
+/* 190403 abtest size(quantity) start*/
+
+#container.product_view .product_order ul.abtest>li.size_select>div:last-child {
+	width:100%;
+	padding: 1rem 0;
+}
+#container.product_view .product_order ul.abtest>li.size_select>div:last-child div{
+	display:inline-block;
+	width:30%;
+}
+#container.product_view .product_order ul.abtest>li.size_select>div:last-child span{
+	padding-right: 1rem;
+    font: 500 1.2rem/1.5rem 'NotoSansKR';
+    vertical-align: middle;
+}
+#container.product_view .product_order ul.abtest>li.size_select>div:last-child div span{
+	padding: 0 0 0 2rem;
+
+}
+/* 190403 abtest size(quantity) end*/
+
+
+
+
+
+/* 190403 abtest bag */
+#header .nav_main a.abtest{
+	background:none;
+	text-align:center;
+}
+#header .nav_main a.abtest img{
+	width:40%;
+	padding: 1.3rem 1rem 1rem 1rem;
+}
+#header .nav_main a.abtest span{
+    background: #0286cd;
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 50%;
+    position: absolute;
+    top: 11%;
+    right: 6%;
+    color: #fff;
+	font: 500 1rem/1.7rem 'NotoSansKR';
+	opacity:0;
+}
+#header .nav_main a.abtest span.on{
+	opacity:1;
+}
+/* 190403 abtest bag */
+
