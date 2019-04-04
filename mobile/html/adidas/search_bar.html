@@ -955,8 +955,8 @@
 				</a>
 			</div>
 
-			<!-- 181211 190308 search test -->
-				<!-- 190327 css 수정 -->
+			<!-- 190404 search test :: 기존 nav_search class 추가 -->
+				<!-- 190404 css 수정 -->
 				<style>
 					#header .nav_main a.icons.open{
 						background: #fff;
@@ -988,8 +988,9 @@
 					#header .nav_main a.btn_search:after{
 						content: none !important;
 					}			
-					#header .nav_search_test{
+					#header .nav_search.nav_search_test{
 						display: none;
+						padding:0;
 						overflow:hidden !important;
 						width: 100%;
 						position: absolute;
@@ -999,22 +1000,29 @@
 						z-index:100;
 						box-sizing:border-box;
 						-webkit-box-sizing:border-box;
+						transform: translate3d(0%,0,0);
 						transition: all 0.4s;
 						-webkit-transition: all 0.4s;
 					}
-					#header .nav_search_test .sch_box{
+					#header .nav_search.nav_search_test .sch_box{
 						position: relative;
-						/* height: 45px; */
+						height:auto;
 					}
-					#header .nav_search_test li{
+					#header .nav_search.nav_search_test li{
 						height: 40px;
 						position: relative;
+						border-bottom: none;
 					}	
-					#header .nav_search_test li a{
+					#header .nav_search.nav_search_test li a{
 						display: block;
+						margin-left: 0;
 						height: 40px;
 						font:400 13px/40px 'NotoSansKR';
 						padding-left: 20px;
+						color:#000;
+					}
+					#header .nav_search.nav_search_test li a::after{
+						display:none;
 					}
 					#header .nav_search_test .sch_box input{
 						width: 100%;
@@ -1042,11 +1050,7 @@
 						content:'\E625';
 						color: #000;
 						font-size:18px;
-					}
-					#header .nav_search_test .sch_tab{
-						height: 45px;
-						overflow: hidden;
-					}				
+					}			
 					#header .nav_search_test .sch_tab a{
 						width: 50%;
 						height: 45px;
@@ -1073,16 +1077,17 @@
 					#header .nav_search_test .sch_list li{
 						background: none;
 					}						
-					#header .nav_search_test .sch_list li a{
-						color:#000;
+					#header .nav_search.nav_search_test .sch_list li a{
+						color:#000 !important;
 					}				
 					#header .nav_search_test .keyword_recent{
 						margin-bottom: 20px;
 					}
-					#header .nav_search_test .keyword_recent a{
+					#header .nav_search.nav_search_test .keyword_recent a{
 						position: relative;					
 						color: #000;
 						padding-left: 20px;
+						background:none;
 					}				
 					#header .nav_search_test .keyword_recent .no_data{
 						color: #000;
@@ -1095,7 +1100,7 @@
 					#header .nav_search_test #dqAutoTop ul{
 						width: 100%;
 						padding: 0 15px;
-						margin-left: -15px;
+						margin-left: 0;
 						background: #000;
 						overflow: auto;
 					}
@@ -1104,17 +1109,20 @@
 						border-bottom-width: 0;
 					}
 
-					#header .nav_search_test #dqAutoTop li{
+					#header .nav_search.nav_search_test #dqAutoTop li{
 						width: calc(100% + 30px);
 						height: auto;
 						position: relative;
-						border-bottom-color: #ccc;
+						border-bottom: none;
 					}
 
-					#header .nav_search_test #dqAutoTop li a{
+					#header .nav_search.nav_search_test #dqAutoTop li a{
+						padding:0;
+						height: 40px;
 						color: #fff;
 						font:400 13px/40px 'adinenuPro-regular','NotoSansKR';
 						letter-spacing: 0;
+						padding-left: 20px;
 					}
 
 					#header .nav_search_test #dqAutoTop li a span{
@@ -1158,8 +1166,8 @@
 						border: 2px solid #000;
 					}
 				</style>
-				<!-- 190327 css 수정 //-->
-				<div class="nav_search_test">
+				<!-- 190404 css 수정 //-->
+				<div class="nav_search_test nav_search">
 					<div class="sch_box">
 						<form name="frmSrch" id="frmSrch" action="#" method="post" onsubmit="return false">
 							<input type="hidden" name="keyword" value="">
@@ -1216,7 +1224,7 @@
 						</ol>
 					</div>		
 				</div>
-			<!-- 181211 190308 search test END -->
+			<!-- 190404 search test END -->
 
 			<div class="notice_tits recall">
 				<div class="notice_tits_wrap">
