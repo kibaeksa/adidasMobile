@@ -60,7 +60,7 @@ adiApp.getNodefromString = function (htmlString) {
 
 			if($('.nav_main .btn_search').hasClass('open')){
 				$('#S_PROD_NM').blur();
-				$('#header .gnb_search_field').removeClass('slide-open').fadeOut(0);
+				$('#header .nav_search').removeClass('slide-open').fadeOut(0);
 				$('.nav_main .btn_search').removeClass('open');
 				setTimeout(function(){
 					setTimeout(function(){
@@ -123,7 +123,7 @@ adiApp.getNodefromString = function (htmlString) {
 			$('html').removeClass('no_srl');
 			
 			// 181211 search test
-			$('#header .gnb_search_field').removeClass('slide-open').css({
+			$('#header .nav_search').removeClass('slide-open').css({
 				//$(this).css({"display":"none"});
 				// transform: 'translate3d(0 ,-100% ,0)'
 			}).fadeOut(0);
@@ -162,7 +162,7 @@ adiApp.getNodefromString = function (htmlString) {
 			// $('html').addClass('no_srl');
 
 			// 181211 search test
-			$('#header .gnb_search_field').addClass('slide-open').css({
+			$('#header .nav_search').addClass('slide-open').css({
 				top: document.querySelector('#header>.nav_main').getBoundingClientRect().bottom - 1
 			}).fadeIn(0);
             
@@ -177,7 +177,7 @@ adiApp.getNodefromString = function (htmlString) {
 
 			$("#container").on('click',function(){
 				$(".nav_main .btn_search").removeClass("open");
-				$('#header .gnb_search_field').removeClass('slide-open').css({
+				$('#header .nav_search').removeClass('slide-open').css({
 					//$(this).css({"display":"none"});
 					// transform: 'translate3d(0 ,-100% ,0)'
 					'z-index': 0,
@@ -393,20 +393,20 @@ adiApp.getNodefromString = function (htmlString) {
 	});
 
 	// 181211 search test
-	$('#header .gnb_search_field .sch_tab>a').bind('click', function () {
+	$('#header .nav_search .sch_tab>a').bind('click', function () {
 		if ($(this).hasClass('on')) {
 			return false;
 		}
 
 		if ($(this).index() == 0) {
-			$('#header .gnb_search_field .keyword_recent').show();
-			$('#header .gnb_search_field .sch_list').hide();
-			$('#header .gnb_search_field .sch_tab>a').eq(1).removeClass('on');
+			$('#header .nav_search .keyword_recent').show();
+			$('#header .nav_search .sch_list').hide();
+			$('#header .nav_search .sch_tab>a').eq(1).removeClass('on');
 			$(this).addClass('on');
 		} else {
-			$('#header .gnb_search_field .sch_list').show();
-			$('#header .gnb_search_field .keyword_recent').hide();
-			$('#header .gnb_search_field .sch_tab>a').eq(0).removeClass('on');
+			$('#header .nav_search .sch_list').show();
+			$('#header .nav_search .keyword_recent').hide();
+			$('#header .nav_search .sch_tab>a').eq(0).removeClass('on');
 			$(this).addClass('on');
 		}
 
