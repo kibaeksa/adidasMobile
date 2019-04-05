@@ -60,7 +60,9 @@ adiApp.getNodefromString = function (htmlString) {
 
 			if($('.nav_main .btn_search').hasClass('open')){
 				$('#S_PROD_NM').blur();
+				// 190405
 				$('#header .nav_search').removeClass('slide-open').fadeOut(0);
+				// 190405 end
 				$('.nav_main .btn_search').removeClass('open');
 				setTimeout(function(){
 					setTimeout(function(){
@@ -114,7 +116,7 @@ adiApp.getNodefromString = function (htmlString) {
 		return false;
 	});
 
-
+	
 	$('.nav_main .btn_search').bind('click',function(){
 		// search area가 열려있다면 아래 실행
 		if($(this).hasClass('open')){
@@ -122,12 +124,12 @@ adiApp.getNodefromString = function (htmlString) {
 
 			$('html').removeClass('no_srl');
 			
-			// 181211 search test
+			// 190405 search
 			$('#header .nav_search').removeClass('slide-open').css({
 				//$(this).css({"display":"none"});
 				// transform: 'translate3d(0 ,-100% ,0)'
 			}).fadeOut(0);
-			// 181211 search test END
+			// 190405 search END
 
 			$("#textarea").blur();
 
@@ -137,6 +139,7 @@ adiApp.getNodefromString = function (htmlString) {
 
 			$('#nav_menu_overlay').removeClass('active').hide();
 			$('.navmenu_close').removeClass('open').hide();
+
 		// search area가 닫혀있다면 아래 실행
 		}else{
 			var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
@@ -158,10 +161,10 @@ adiApp.getNodefromString = function (htmlString) {
 				});
 			}
 
+			// 190405 
 			$(this).addClass('open');
 			// $('html').addClass('no_srl');
 
-			// 181211 search test
 			$('#header .nav_search').addClass('slide-open').css({
 				top: document.querySelector('#header>.nav_main').getBoundingClientRect().bottom - 1
 			}).fadeIn(0);
@@ -184,6 +187,7 @@ adiApp.getNodefromString = function (htmlString) {
 					'opacity': 0
 				});
 			});
+			// 190405 end
 		}
 		return false;
 	});
@@ -392,7 +396,7 @@ adiApp.getNodefromString = function (htmlString) {
 		return false;
 	});
 
-	// 181211 search test
+	// 190405 search
 	$('#header .nav_search .sch_tab>a').bind('click', function () {
 		if ($(this).hasClass('on')) {
 			return false;
@@ -412,7 +416,7 @@ adiApp.getNodefromString = function (htmlString) {
 
 		return false;
 	});
-	// 181211 search test END
+	// 190405 search END
 
 	$('.top_bnn .top_bnn_close').bind('click',function(){
 		var $this = $(this);
