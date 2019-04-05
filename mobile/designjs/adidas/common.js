@@ -118,6 +118,11 @@ adiApp.getNodefromString = function (htmlString) {
 
 	
 	$('.nav_main .btn_search').bind('click',function(){
+		// 190405_2
+		$('#header .nav_search').css({
+			'z-index': 100,
+			'opacity': 1
+		});
 		// search area가 열려있다면 아래 실행
 		if($(this).hasClass('open')){
 			$(this).removeClass('open')
@@ -139,6 +144,8 @@ adiApp.getNodefromString = function (htmlString) {
 
 			$('#nav_menu_overlay').removeClass('active').hide();
 			$('.navmenu_close').removeClass('open').hide();
+
+
 
 		// search area가 닫혀있다면 아래 실행
 		}else{
