@@ -225,6 +225,7 @@ adiApp.getNodefromString = function (htmlString) {
 		return false;
 	});
 
+	// test1
 	// $('#header .nav_menu .gnb>li').bind('click',function(event){
 	// 	event.stopPropagation();
 
@@ -253,7 +254,7 @@ adiApp.getNodefromString = function (htmlString) {
 	// 		},250);
 	// 	}
 	// });
-
+	// test1
 	$('#header .nav_menu .gnb>li').click(function(){
 		if(!$(this).hasClass('open')){
 
