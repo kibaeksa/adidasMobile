@@ -118,7 +118,7 @@ adiApp.getNodefromString = function (htmlString) {
 
 	
 	$('.nav_main .btn_search').bind('click',function(){
-		// 190405_2
+		// 190408
 		$('#header .nav_search').css({
 			'z-index': 100,
 			'opacity': 1
