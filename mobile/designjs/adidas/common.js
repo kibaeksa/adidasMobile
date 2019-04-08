@@ -225,7 +225,7 @@ adiApp.getNodefromString = function (htmlString) {
 	});
 
 	$('#header .nav_menu .gnb>li').bind('click',function(event){
-		event.stopPropagation()
+		event.stopPropagation();
 
 		if(!$(this).hasClass('open')){
 
