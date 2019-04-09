@@ -176,6 +176,63 @@
 						</div>
 					</div>
 
+					<div class="event_sect">
+						<div class="bg"><img src="/images/reebok/2019/event/floatride/0411/bg_event_sect.jpg" alt=""></div>
+						
+						<div class="lt_con">
+							<h4>러너스월드와 함께한</h4>
+							<h3>INTERVAL SESSION</h3>
+							<p>인터벌 훈련은 빨라지고 싶은 러너라면 반드시 해야 하는<br />
+							고강도 훈련 중 하나다. 단점은 혼자서 하기 어렵다는 것.<br /><br />
+							
+							그래서 “러너스월드”에서 마련한 금요일 밤 인터벌 세션에<br />
+							리복의 새로운 러닝화 ‘포에버 플로트라이드 에너지’가 함께 했다.<br />
+							서울의 밤을 가로지른 러너들의 멋진 모습을 영상으로 만나보자.
+							</p>
+							<div class="btn_area">
+								<div class="btn btn-play" data-video-id="EuHqeZfwL2s">
+									<a href="javascript:void(0)">영상 보기<span class="arrow"></span></a>
+								</div>
+								<div class="btn">
+									<a href="http://runnersworldkorea.com/bbs/board.php?bo_table=contents&wr_id=3751" target="_blank">기사
+										보기<span class="arrow"></span></a>
+								</div>
+							</div>
+						</div>
+				
+						<div class="rt_con">
+							<div class="slider" id="event_slider">
+								<ul>
+									<li><img src="/images/reebok/2019/event/floatride/0411/01.jpg" alt=""></li>
+									<li><img src="/images/reebok/2019/event/floatride/0411/02.jpg" alt=""></li>
+									<li><img src="/images/reebok/2019/event/floatride/0411/03.jpg" alt=""></li>
+									<li><img src="/images/reebok/2019/event/floatride/0411/04.jpg" alt=""></li>
+									<li><img src="/images/reebok/2019/event/floatride/0411/05.jpg" alt=""></li>
+									<li><img src="/images/reebok/2019/event/floatride/0411/06.jpg" alt=""></li>
+									<li><img src="/images/reebok/2019/event/floatride/0411/07.jpg" alt=""></li>
+									<li><img src="/images/reebok/2019/event/floatride/0411/08.jpg" alt=""></li>
+									<li><img src="/images/reebok/2019/event/floatride/0411/09.jpg" alt=""></li>
+								</ul>
+							</div>
+							<div class="navi">
+								<a href="#none" class="prev"><img src="/images/reebok/2019/event/floatride/0228/prev.png" alt=""></a>
+								<a href="#none" class="next"><img src="/images/reebok/2019/event/floatride/0228/next.png" alt=""></a>
+							</div>
+							<div class="num_paging">
+								<a class="on" href="javascript:void(0)"></a>
+								<a href="javascript:void(0)"></a>
+								<a href="javascript:void(0)"></a>
+								<a href="javascript:void(0)"></a>
+								<a href="javascript:void(0)"></a>
+								<a href="javascript:void(0)"></a>
+								<a href="javascript:void(0)"></a>
+								<a href="javascript:void(0)"></a>
+								<a href="javascript:void(0)"></a>
+							</div>
+						</div>
+						
+					</div>
+
 					<div class="collections1">						
 						<div class="collection_cut collection_slider1">
 							<div class="slider" id="collection_slider1">
@@ -227,6 +284,34 @@
 							$('.visual_main').addClass('on');
 						}, 800)
 
+						// 하단 갤러리
+						var eventSlider = Swipe(document.getElementById('event_slider'), {
+							stopPropagation: true,
+
+							callback: function (index, element) {
+								$('.rt_con .num_paging a').removeClass('on').eq(index).addClass('on');
+							}
+						});
+
+						// 하단 갤러리넘버링
+
+						$('.rt_con .num_paging a').bind('click', function () {
+							if ($(this).hasClass('on')) {
+								return;
+							}
+							eventSlider.slide($(this).index());
+						});
+
+						$('.rt_con .next').click(function () {
+							eventSlider.next();
+							return false;
+						});
+						$('.rt_con .prev').click(function () {
+							eventSlider.prev();
+							return false;
+						});
+
+
 						// 1 하단 갤러리
 						var productsSlider1 = Swipe(document.getElementById('collection_slider1'), {
 							stopPropagation: true,
@@ -256,7 +341,8 @@
 						});
 
 						var auto = setInterval(function(){
-							$('.navi .next').trigger('click')
+							$('.rt_con .navi .next').trigger('click');
+							$('.collection_cut .navi .next').trigger('click');
 						},5000);
 
 
