@@ -1,0 +1,363 @@
+@import "./mobile/MO/reebok/css/scss/about.scss";
+
+.smartvent{
+    background:url('/images/reebok/2019/event/menshealth/1904_bg.jpg') 100% 100% no-repeat;
+    background-position: top;
+    background-size: cover;
+    .visual_main{
+        position: relative;
+        .txt{
+            position: absolute;
+            padding-top:5%;
+            left:50%;
+            transform: translateX(-50%);
+            text-align:center;
+            width:90%;
+            h1{
+                font: italic 700 3.4rem 'NotoSansKR';
+                color: #fff;
+                position: relative;
+                z-index: 1;
+                text-align: center;
+                &::after{
+                    display: block;
+                    content: '';
+                    clear: both;
+                    position: absolute;
+                    top: 2.8rem;
+                    left: -1rem;
+                    right: -1rem;
+                    bottom: .5rem;
+                    background: #e93c3c;
+                    z-index: -1;
+                    width: 76%;
+                    margin: 0 auto;
+                }
+            }
+            span{
+                font: 500 2.4rem 'NotoSansKR';
+                color:#fff;
+                position: relative;
+                z-index: 1;
+                text-align: center;
+                &::after{
+                    display: block;
+                    content: '';
+                    clear: both;
+                    position: absolute;
+                    top: 1.8rem;
+                    left: -1rem;
+                    right: -1rem;
+                    bottom: 0.5rem;
+                    background: #e93c3c;
+                    z-index: -1;
+                    width: 102%;
+                    margin: 0 auto;
+                }
+            }
+        }
+        .img{
+            img{
+                width:100%;
+            }
+        }
+    }
+    .tapSlide{
+        position: relative;
+        h1{
+            font: 700 1.9rem/6.5rem 'NotoSansKR';
+            color:#fff;
+            text-align: center;
+        }
+        .tabs{
+            font-size:0;
+            &::after{
+                display: block;
+                content:'';
+                clear:both;
+            }
+            .tab{
+                float:left;
+                width:20%;
+                text-align: center;
+                .wrap{
+                    border: 1px solid #000;
+                    background:#fff;
+                    padding:2rem 0;
+                    h1{
+                        font: 900 .9rem/1rem'dinpro cond';
+                        color:#b0b0b0;
+                        text-align: center;
+                    }
+                    span{
+                        font: 500 .9rem/1rem'NotoSansKR';
+                        color:#b0b0b0;
+                        display:block;
+                    }
+                } 
+                &:nth-child(3){
+                    .wrap{
+                    padding:1rem 0;
+                    }
+                }
+                &:nth-child(4){
+                    .wrap{
+                    padding:1.5rem 0;
+                    }
+                }
+                &:first-child{
+                    &.on{
+                        .wrap{
+                            border-left:1px solid #e93c3c;
+                        }
+                    }
+                    .wrap{
+                        border-left:1px solid #fff;
+                    }
+                }
+                &:last-child{
+                    &.on{
+                        .wrap{
+                            border-right:1px solid #e93c3c;
+                        }
+                    }
+                    .wrap{
+                        border-right:1px solid #fff;
+                    }
+                }
+                &.on{
+                    .wrap{
+                        background:#e93c3c;
+                        h1{
+                            color:#fff;
+                        }
+                        span{
+                            color:#fff;
+                        }
+                    }
+                }
+            }
+        }
+        
+        .btn{
+            position: absolute;
+            bottom:2rem;
+            left:50%;
+            transform:translateX(-50%);
+            display: block;
+            border: 1px solid #fff;
+            width: 90%;
+            text-align: center;
+            a{
+                display: block;
+                color:#fff;
+                font: 700 1rem/4rem 'NotoSansKR';
+                letter-spacing: .2rem;
+                img{
+                    vertical-align: middle !important;
+                    width:5%;
+                    margin-left:.1rem;
+                }
+            }
+        }
+        .collection_cut1{
+            position: relative;
+            overflow: hidden;
+            &.collection_slider1{
+                .navi{
+                    display: none;
+                }
+                // .num_paging{
+                //     display: none;
+                // }
+            }
+            ul{
+                overflow: hidden;
+                li{
+                    position: relative;
+                    float: left;
+                    .btn{
+                        position: absolute;
+                        top:20%;
+                        left:5%;
+                    }
+                    img{
+                        width: 100%;
+                    }
+                }
+            }
+            .navi{
+                position: absolute;
+                top:50%;
+                margin-top: -34px;
+                width: 100%;
+                text-align: center;
+                img{
+                    width: 50%;
+                }
+                .next{
+                    position: absolute;
+                    right:0;
+                    text-align: right;
+                }
+                .prev{
+                    position: absolute;
+                    left:0;
+                    text-align: left;
+                }
+            }
+            .num_paging{
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                padding: 1rem 0px;
+                a{
+                    border:2px solid #fff;
+                    width: 1rem;
+                    height: 1rem;
+                    margin-right: 0.5rem;
+                }
+
+                .on{
+                    background: #fff;
+                }
+            }
+        }
+
+        .texts{
+            padding:1.5rem 1rem 4rem;
+            .tab{
+                display: none;
+                width:90%;
+                // height: 170px;
+                margin:0 auto;
+                border: 1px solid #909595;
+                background:rgba(255,255,255,.1);
+                z-index: -1;
+                padding:1rem;
+                &.on{
+                    display: block;
+                }
+                h1{
+                    font: 700 1.6rem/1.5rem 'dinpro cond';
+                    color: #fff;
+                    text-align: left;
+                    z-index: 1;
+                    display: inline-block;
+                    position: relative;
+                    left: .5rem;
+                    letter-spacing: .5rem;
+                    &::after{
+                        display: block;
+                        position: absolute;
+                        clear: both;
+                        content: '';
+                        left: -.5rem;
+                        right: 0rem;
+                        top: -.2rem;
+                        height: 1.5rem;
+                        background: #e93c3c;
+                        z-index: -1;
+                    }
+                }
+                p{
+                    font: 500 1.1rem/1.5rem 'NotoSansKR';
+                    color:#fff;
+                    margin:.5rem 0;
+                }
+                ul{
+                    li{
+                        float:none;
+                        font: 300 .8rem/1.7rem 'NotoSansKR';
+                        color:#b0b0b0;
+                        // padding-right:  30px;    
+                        letter-spacing: -1px;               
+                    }
+                }
+            }
+
+        }
+    }
+
+    .btm{
+        padding:1rem;
+        &::after{
+            display: block;
+            clear: both;
+            content: '';
+        }
+        .wrap{
+            position:relative;
+            width:50%;
+            float:left;
+            text-align: center;
+            &:nth-child(2){
+                text-align: center;
+                h1{
+                    position:relative;
+                    left: 0;
+                    &::after{
+                        background: #7c4c2c;
+                    }
+                }
+            }
+            h1{
+                font: 700 1.5rem/3rem 'NotoSansKR';
+                color: #fff;
+                text-align: center;
+                position: relative;
+                display: inline-block;
+                right: 0;
+                z-index: 1;
+                margin-bottom: .5rem;
+                &::after{
+                    display: block;
+                    position: absolute;
+                    clear: both;
+                    content: '';
+                    left: -10px;
+                    right: -10px;
+                    top: 1.5rem;
+                    bottom: .5rem;
+                    background: #1f506b;
+                    z-index: -1;
+                }
+            }
+            .img{
+                padding:.2rem;                
+                img{
+                    width:100%;
+                }
+            }
+            .btn_wrap{
+                position: absolute;
+                bottom:2%;
+                padding:1rem;
+                .btn{
+                    display: inline-block;
+                    border:1px solid #fff;
+                    margin-right:10px;
+                    margin-bottom:.5rem;
+                    width:100%;
+                    text-align: center;
+                    a{
+                        font: 700 1rem/3.2rem 'NotoSansKR';
+                        color:#fff;
+                        padding: 0 .5rem;
+                        display: block;
+                        img{
+                            padding-left:.5rem;
+                            width:1.2rem;
+                            vertical-align: middle;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+}
+
+// smartvent END
