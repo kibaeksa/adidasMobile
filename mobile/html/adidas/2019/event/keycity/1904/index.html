@@ -449,29 +449,90 @@
            <div id="keycity">
 
                 <div class="main">                    
-                    <video id="video" poster="/images/adidas/2019/event/keycity/1904/visual.jpg" loop muted autoplay playsinline>
+                    <!-- <video id="video" poster="/images/adidas/2019/event/keycity/1904/visual.jpg" loop muted autoplay playsinline>
                         <source src="/images/adidas/2019/event/keycity/1904/video.mp4" type="video/mp4">
+                    </video> -->
+                    <video id="video" poster="/images/adidas/2019/event/keycity/1904/visual2.jpg" loop muted autoplay playsinline>
+                        <source src="/images/adidas/2019/event/keycity/1904/video2.mp4" type="video/mp4">
                     </video>
+                    <div class="m_txt" onclick="openModalVideoViewer('l6LWbJCtziA')">
+                        <h1>THIS IS SEOUL</h1>
+                        <a href="javascript:void(0)"><img src="/images/adidas/2019/event/keycity/1904/play.png" alt=""></a>
+                    </div>
                 </div>
-
+                
                 <div class="anchors_wrap">
-                    <div class="anchors">
-                        <div class="wrap">
-                            <div class="tab on" onclick="fnMove('1')">
-                                <a href="javascript:void(0)">RUNNING</a>
-                            </div>
-                            <div class="tab" onclick="fnMove('2')">
-                                <a href="javascript:void(0)">ORIGINALS</a>
-                            </div>
-                            <div class="tab" onclick="fnMove('3')">
-                                <a href="javascript:void(0)">FOOTBALL</a>
-                            </div>
-                            <div class="tab" onclick="fnMove('4')">
-                                <a href="javascript:void(0)">PRODUCT</a>
+                    <div id="row">
+                        <div class="items on" onclick="fnMove('0')">
+                            <a href="javascript:void(0)">ACTIVATION</a>
+                        </div>
+                        <div class="items" onclick="fnMove('1')">
+                            <a href="javascript:void(0)">RUNNING</a>
+                        </div>
+                        <div class="items" onclick="fnMove('2')">
+                            <a href="javascript:void(0)">ORIGINALS</a>
+                        </div>
+                        <div class="items" onclick="fnMove('3')">
+                            <a href="javascript:void(0)">FOOTBALL</a>
+                        </div>
+                        <div class="items" onclick="fnMove('4')">
+                            <a href="javascript:void(0)">PRODUCT</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="space space0 scroll">
+                    <div class="sp_head">
+                        <img src="/images/adidas/2019/event/keycity/1904/bg_sp0_head.jpg" alt="">
+                        <div class="sp_head_cont">
+                            <h2>활기가 넘치는 서울, 다양한 활동</h2>
+                            <p>ACTIVITY IN SEOUL</p>
+                        </div>
+                    </div>
+                
+                    <div class="slider_wrap" id="slide0">
+                        <ul class="slider">
+                            <li><img src="/images/adidas/2019/event/keycity/1904/slide/img_sp0_slide_01.jpg" alt=""></li>
+                            <li><img src="/images/adidas/2019/event/keycity/1904/slide/img_sp0_slide_02.jpg" alt=""></li>
+                            <li><img src="/images/adidas/2019/event/keycity/1904/slide/img_sp0_slide_03.jpg" alt=""></li>
+                            <li><img src="/images/adidas/2019/event/keycity/1904/slide/img_sp0_slide_04.jpg" alt=""></li>
+                            <li><img src="/images/adidas/2019/event/keycity/1904/slide/img_sp0_slide_05.jpg" alt=""></li>                            
+                        </ul>
+                
+                        <div class="stxt">
+                            <h3>NITE JOGGER 아티스트 협업 전시와 쇼케이스</h3>
+                            <p>nite jogger showcase</p>
+                        </div>
+
+                        <div class="button_area_v2">
+                            <div class="white">
+                                <a
+                                    href="http://m.adidas.co.kr/MO/Event/pnEvtView.action?pn=nite_jogger">
+                                    나이트 조거 바로가기
+                                    <span class="arrow"></span>
+                                </a>
                             </div>
                         </div>
                     </div>
-                </div>                
+
+                    <div class="sp0_bot">
+                        <img src="/images/adidas/2019/event/keycity/1904/img_sp0_bot.jpg" alt="">
+                        <div class="stxt">
+                            <h3>챔피언스 리그 결승전 티켓 미션 챌린지</h3>
+                            <p>Champions League<br />
+                            mission challenge 2019</p>
+                        </div>
+                        <div class="button_area_v2">
+                            <div class="white">
+                                <a
+                                    href="http://m.adidas.co.kr/MO/Event/pnEvtView.action?pn=SEOUL">
+                                    축구 미션 챌린지 바로가기
+                                    <span class="arrow"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="space space1 scroll">
                     <div class="sp_head">
@@ -707,6 +768,29 @@
 
            <script type="text/javascript">
 
+                // 슬라이드0
+                var owlProducts0 = $('#slide0 .slider');
+
+                owlProducts0.on('initialized.owl.carousel', function (event) {
+                    var index = (event.item.index - 2) + 2;
+                    //console.log(index);
+                    $('#slide0 .owl-dots .owl-dot').eq(index).trigger('click');
+                });
+
+                owlProducts0.owlCarousel({
+                    stagePadding: 0,
+                    margin: 0,
+                    items: 1,
+                    // merge: true,
+                    loop: true,
+                    navigation: true,
+                    // nav: true,
+                    // autoplay: true,
+                    // autoplaySpeed: 2000,
+                    // autoplayTimeout: 2000,
+                    // autoplayHoverPause: true
+                });
+
                 // 슬라이드1
                 var owlProducts1 = $('#slide1 .slider');
 
@@ -817,11 +901,12 @@
                 $(window).load(function(){
 
                     //탭 변경
-                    $('#keycity .anchors .tab').bind('click', function () {
+                    $('#keycity #row .items').bind('click', function () {
                         var index = $(this).index();
-                        $('#keycity .anchors .tab').removeClass('on').eq(index).addClass('on');
+                        $('#keycity #row .items').removeClass('on').eq(index).addClass('on');
                     })
 
+                    // 스크롤 이벤트
                     var scrollArray = [];
                     var scrollContents = document.querySelectorAll('.scroll');
 
@@ -831,34 +916,53 @@
                     }
                     console.log(scrollArray);
 
+                    var scrollArrayRow = [];
+                    var scrollContentsRow = document.querySelectorAll('.items');
+
+                    for (var i = 0; i < scrollContentsRow.length; i++) {
+                        var myposRow = scrollContentsRow[i].offsetLeft;
+                        scrollArrayRow.push(myposRow);
+                    }
+                    console.log(scrollArrayRow);
+
 
                     $(window).scroll(function () {
                         var thisPos = $(this).scrollTop(); //+ $(window).height()
-                        console.log(thisPos);
+                        // console.log(thisPos);
 
                         for (var pos = 0; pos < scrollArray.length; pos++) {
                             if (thisPos > scrollArray[pos]) {
-                                $('#keycity .anchors .tab').removeClass('on').eq(pos).addClass('on');
+                                // 스크롤메뉴 하위 엘레먼트 활성화
+                                $('#keycity #row .items').removeClass('on').eq(pos).addClass('on');
+
+                                // 메뉴 스크롤 처리
+                                if (thisPos > scrollArray[3]){
+                                    $('#keycity #row').stop().animate({ scrollLeft: scrollArrayRow[pos] });
+                                }else{
+                                    $('#keycity #row').stop().animate({ scrollLeft: scrollArrayRow[0] });
+                                }
                             }
                         }
 
-                        if (thisPos > scrollArray[4] - 500) {
-                            $('#keycity .scroll').eq(4).addClass('on');
+                        // 스크롤 이벤트 : bottom 
+                        if (thisPos > scrollArray[5] - 500) {
+                            $('#keycity .scroll').eq(5).addClass('on');
                         }
 
-                        var objStart = $(".space1").offset().top;
+                        // 스크롤 메뉴 헤더관계 처리
+                        var objStart = $(".space0").offset().top;
                         var lastScrollValue = 0;
                         var headerHide = $('#header').hasClass('hide');
 
                         if (thisPos > objStart) {
-                            $('.anchors').addClass('on');
+                            $('#row').addClass('on');
                             if (!headerHide) {
-                                $('.anchors').css("top", "60px");
+                                $('#row').css("top", "60px");
                             } else {
-                                $('.anchors').css("top", "0");
+                                $('#row').css("top", "0");
                             }
                         } else {
-                            $('.anchors').removeClass('on').css("top", "0");
+                            $('#row').removeClass('on').css("top", "0");
                             if (thisPos == objStart) {
                                 $('#header').addClass("hide");
                             }
@@ -866,6 +970,14 @@
                         thisPos = lastScrollValue;
                     })
 
+
+                    
+
+
+                    $('#row').scroll(function () {
+                        var thisPosRow = $(this).scrollLeft(); //+ $(window).height()
+                        // console.log(thisPosRow);
+                    });
                });
 
            </script>

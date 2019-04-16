@@ -98,30 +98,44 @@
 				}
 			}
 		}
-		.txt{
+		.m_txt{
 			position: absolute;
-			bottom: 15%;
-			right: 15%;
-			img{
-				width:50%;
+			width: 100%;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			text-align: center;
 			}
-			p{
-				margin: 1rem 0 1.5rem 0;
+			h1{
+				font: 2.6rem/2.6rem 'adinenuPro-bold';
+				color:#fff;
+				text-align: center;
+				letter-spacing: 0.3rem;
+			}
+			a{
+				text-align: center;
+				img{
+				width:8%;
 			}
 		}
-	}
+	}	
 	
 	.anchors_wrap{
 		width: 100%;
 		height: 45px;
-		.anchors{
+		#row{
 			position: relative;
-			height: 37px;
+			height: 35px;
 			top:0;
 			z-index: 9;
-			background:#fff;
-			width:100%;
-			padding: 1% 0;
+
+
+			white-space: nowrap;
+			overflow-x: auto;
+			overflow-y: hidden;
+			padding: 5px 0;
+			background: #efefef;
+			width: 100%;
 			&.on{
 				position: fixed;
 				top:0;
@@ -129,24 +143,24 @@
 				width:100%;
 				transform: translateX(-50%);
 			}	
-			.wrap{
-				text-align: center;
-				.tab{
-					float:left;
-					width:25%;
+			.items{
+				display: inline-block;
+				margin-left: 10px;
+				width: 92px;
+				&:first-child{
+					margin-left: 0;
+				}
+				a{
+					font: 1rem/35px 'adinenuPro-bold';
+					color:#000;
+					display: block;
 					text-align: center;
+					letter-spacing: 1px;
+				}
+				&.on{
+					background:#000;
 					a{
-						font: 1rem/37px 'adinenuPro-bold';
-						color:#000;
-						display: block;
-						text-align: center;
-						letter-spacing: 1px;
-					}
-					&.on{
-						background:#000;
-						a{
-							color:#fff;
-						}
+						color:#fff;
 					}
 				}
 			}
@@ -266,8 +280,78 @@
 		}
 	}
 
-	.space1{
+	.space0{
 		padding-top: 0;
+		.sp_head{
+			.sp_head_cont{
+				transform: translate(-50%, -50%);
+				h2{
+					font: 400 1.8rem/2.6rem 'NotoSansKR';
+				}
+				p{
+					margin: 1rem 0 0;
+					font: 1rem/1rem 'adinenuPro-regular';
+					color: #fff;
+					letter-spacing: 0.45rem;
+					text-align: center;
+				}
+			}
+		}
+		.slider_wrap{
+			padding: 5% 0 1rem;
+			background: url('/images/adidas/2019/event/keycity/1904/bg_sp0_slide.jpg') top left no-repeat;
+			background-size: 100% auto;
+			ul.slider{
+				li{
+					img{
+						width: 90%;
+					}
+				}
+				.owl-controls{
+					padding: 2rem 0 1.5rem;
+					.owl-dots{
+						.owl-dot{
+							&.active{
+								background:#f3ff00;
+							}
+						}
+					}
+				}
+			}
+			.button_area_v2{
+				margin: 1rem 0 2rem;
+			}
+		}
+		.sp0_bot{
+			text-align: center;
+			>img{
+				width: 100%;
+			}
+			.stxt{
+				margin: 1.5rem 0;
+				h3{
+					font: 400 1.2rem/1.2rem 'NotoSansKR';
+					color: #fff;
+					letter-spacing: 0.15rem;
+					text-align: center;
+				}
+				p{
+					margin: 1rem 0 0;
+					font: 10px 'adinenuPro-light';
+					color: #fff;
+					letter-spacing: 0.25rem;
+					text-align: center;
+					text-transform: uppercase;
+				}
+			}
+			.button_area_v2{
+				margin: 0 0.5rem;
+			}
+		}
+	}
+
+	.space1{
+
 	}
 
 	.space2{
