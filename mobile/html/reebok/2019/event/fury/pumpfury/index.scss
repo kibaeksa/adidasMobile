@@ -1,0 +1,161 @@
+@import "./mobile/MO/reebok/css/scss/about.scss";
+
+.solfury{
+
+    //common
+    .btn{
+        display: inline-block;
+        border: 1px solid #000;
+        text-align: center;
+        a{
+            display: block;
+            font: 500 1rem/40px 'NotoSansKR';
+            color: #000;
+            /* padding: 0 3rem; */
+            letter-spacing: .1rem;
+            width: 131px;
+            span{
+                display: inline-block;
+                width: 20px;
+                height: 9px;
+                background: url(/images/reebok/2019/event/fury/pumpfury/icons_arrow.png) no-repeat;
+                background-size: 100% 100%;
+                margin-left: 18px;
+            }
+        }
+    }
+
+    .top_bnn{
+        img{
+            width:100%;
+        }
+    }
+    .main_video_wrapper{
+        position: relative;
+        overflow: hidden;
+        height: 35rem;
+    }
+
+    .main_video_wrap{
+        position: relative;
+        overflow: hidden;
+        height: 95vh;
+        background: #000 url(/images/reebok/2019/event/fury/pumpfury/main_poster.jpg) no-repeat;
+        background-size: cover;
+        background-position: top center;
+        .main_video{
+            top: -8rem;
+            left: 0;
+            width: 100%;
+            position: absolute;
+            height: 100%;
+            overflow: hidden;
+            video{
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transform: none;
+            }
+        }
+        .play{
+            position: absolute;
+            top: 34%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            z-index: 2;
+            width: 17%;
+            img{
+                width:100%;
+            }
+        }
+    }
+
+    .statement{
+        position: relative;
+        .bg{
+            img{
+                width:100%;
+            }
+        }
+        &.type2{
+            .inn{
+                p{
+                    color:#fff;
+                    padding:0 0 10px 0;
+                }
+            }
+        }
+        .inn{
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            width:100%;
+            text-align:center;
+
+            p{
+                text-align:center;
+                font: 300 1rem 'NotoSansKR';
+
+                &.strong{
+                    font: 600 25px 'NotoSansKR';
+                }
+            }
+            .btn{
+                margin: 25px 0 0 0;
+                a{
+                    
+                }
+            }
+        }
+    }
+
+    .middle_video_wrap{
+        margin: 0 0 -5px 0;
+        background:#000;
+        .middle_video{
+            video{
+                width:100%;
+            }
+        }
+    }
+
+    //grid
+    .grids{
+        img{
+            width:100%;
+        }
+        .sec{
+            &::after{
+                display: block;
+                content:'';
+                clear:both;
+            }
+            &.sec2{
+                position: relative;
+                .inn{
+                    position: absolute;
+                    top:50%;
+                    left:50%;
+                    transform: translate(-50%,-50%);
+                    .btn{
+                        background:#fff;
+                        a{
+                            color:#000;
+                        }
+                    }
+                }
+            }
+            .wrap{
+                float: left;
+                width:50%;
+            }
+        }
+    }
+
+}
+
+
+// nano8 END
