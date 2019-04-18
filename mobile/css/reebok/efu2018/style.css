@@ -17064,30 +17064,24 @@ border-top:3px solid #000;
 	margin-top:5px;
 	font-size:50px;
 }
-
+/*cs center>cs_link kakao add 190418 */
 #container .cs_center>.cs_link{
 	width: 100%;
 	height:80px;
-	margin-bottom: 30px;
-	border-bottom: 1px solid  #d7d7d7;
+	/* margin-bottom: 30px; */
+	border-bottom: 1px solid #aeaeae;
 	overflow: hidden;
 }
-
 #container .cs_center>.cs_link>*{
-	width: 50%;
+	width:33%;
 	height:100%;
 	float: left;
 	text-align: center;
 	box-sizing:border-box;
 	-webkit-box-sizing:border-box;
 	color:#000;
-	font:400 13px/80px 'NotoSansKR';
+	font: 400 13px/13px 'NotoSansKR';
 }
-
-#container .cs_center>.cs_link>*:first-child{
-	border-right: 1px solid  #d7d7d7;
-}
-
 #container .cs_center>.cs_link>*:before{
 	position: relative;
 	top: 4px;
@@ -17095,13 +17089,52 @@ border-top:3px solid #000;
 	font-size: 18px;
 	vertical-align: middle;
 }
-
 #container .cs_center>.cs_link>*:last-child:before{
 	position: relative;
 	top:2px;
 	margin-right:5px;
 	font-size: 13px;
 }
+#container .cs_center>.cs_link>*:before{
+	position: relative;
+	top: 4px;
+	display: inline-block;
+	font-size: 18px;
+	vertical-align: middle;
+}
+#container .cs_center>.cs_link>*:last-child:before{
+	position: relative;
+	top:2px;
+	margin-right:5px;
+	font-size: 13px;
+}
+#container .cs_center>.cs_link.cs_kakao>*:nth-child(2){
+	border-left: 1px solid #d7d7d7;
+	border-right: 1px solid #d7d7d7;
+}
+#container .cs_center>.cs_link.cs_kakao>*:before{
+	content: none;
+}
+#container .cs_center>.cs_link.cs_kakao a .cs_ico{
+	display: inline-block;
+	width: 24px;
+	height: 18px;
+	margin: 22px auto 3px;
+	background-size: 100% auto;
+}
+#container .cs_center>.cs_link.cs_kakao a .ico_01{
+	background: url('/images/reebok/efu2018/mypage/cs_ico_01.png') 0 0 no-repeat;
+	background-size: 100% auto;
+}
+#container .cs_center>.cs_link.cs_kakao a .ico_02{
+	background: url('/images/reebok/efu2018/mypage/cs_ico_02.png') 0 0 no-repeat;
+	background-size: 100% auto;
+}
+#container .cs_center>.cs_link.cs_kakao a .ico_03{
+	background: url('/images/reebok/efu2018/mypage/cs_ico_03.png') 0 0 no-repeat;
+	background-size: 100% auto;
+}
+/*cs center kakao add 190418 end */
 
 #container .cs_center .cs_list{
 	padding: 0 15px;
@@ -21202,6 +21235,7 @@ div.searchbox_info .title_sub ul li a{font: 300 14px/14px 'NotoSansKR'; color:#b
 .topArea p {position:absolute; left:50%; top:50%; margin:-50px 0 0 -121px; padding-bottom:5px; width:242px; font-size:45px; color:#fff; font-family:'NotoSansKR'; font-weight:bold; text-align:center; border-bottom:5px solid #fff;}
 .storeFinder .topArea p {width:316px; margin:-23px 0 0 -158px;}
 .topArea p span {display:block; font-weight:bold; letter-spacing:8px;}
+/* centerLink01 삭제 -> cs_link : 카카오 상담톡 리스트 추가로 리뉴얼 */
 .cs_center .centerLink01 {height:80px; border-bottom:1px solid #aeaeae;}
 .cs_center .centerLink01:after {content:""; display:block; clear:bpth;}
 .cs_center .centerLink01 li {float:left; width:50%; text-align:center; background:#ededed;}
