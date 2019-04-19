@@ -1,0 +1,129 @@
+<section id="contents">
+		
+		<!-- solefury start -->
+		<div class="campaign about_campaign solfury">
+				로컬 gif
+				<div class="top_bnn" id="">
+					<img src="/images/reebok/2019/event/fury/pumpfury/top.gif" alt="">
+				</div>
+				---
+				us gif cdn 끌어오기
+				<div class="top_bnn" id="">
+					<img src="https://images.reebok.com/image/upload/f_auto,q_auto,fl_lossy/reebok_enUS/Images/04-05-2019-InstaPumpRefresh-StatementStack-MB-TITLE_tcm274-345004.gif" alt="">
+				</div>
+				---
+				us cdn 파일 다운 받아서 로컬 경로 지정
+				<div class="top_bnn" id="">
+					<img src="/images/reebok/2019/event/fury/pumpfury/testgif2.gif" alt="">
+				</div>
+				---
+				us cdn 파일 다운 받아서 절대 경로 지정
+				<div class="top_bnn" id="">
+					<img src="http://m.reebok.co.kr/images/reebok/2019/event/fury/pumpfury/testgif2.gif" alt="">
+				</div>
+
+			<div class="list">
+				<a href="http://m.reebok.co.kr/brand/campaign/list.action">
+					<span><img src="http://imagem.reebok.co.kr/images/reebok/about/list_txt.png" alt=""></span>
+					<em class="icons aft" data-icon=""></em>
+				</a>
+			</div>
+		</div>
+		<!-- //about_camapign -->
+		<!-- solefury end -->
+
+		<script type="text/javascript">
+			(function($){
+				if( /Android/i.test(navigator.userAgent)) {
+					// 안드로이드
+				} else if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+					// iOS 아이폰, 아이패드, 아이팟
+					$('.main_video').fadeOut();
+					$('.middle_video').fadeOut();
+					$('#top_bnn img').attr("src", '/images/reebok/2019/event/fury/pumpfury/top_bnn.jpg');
+					$('#img1 img').attr("src", '/images/reebok/2019/event/fury/pumpfury/img1.jpg');
+					$('#img2 img').attr("src", '/images/reebok/2019/event/fury/pumpfury/img2.jpg');
+				} else {
+					// 그 외 디바이스
+				}
+
+				$('.video-btn-id').bind('click',function(){
+					//alert('동영상이 준비중입니다');
+					var ytbId = $(this).attr('data-video-id');
+					var html = '<div id="video-layer" style="">';
+					html += '	<div class="bg" ></div>';
+					html += '	<div class="video-box"></div>';
+					html += '	<a href="javascript:void(0)" class="close_x_btn white"></a>';
+					html += '</div>';
+
+					$('html').css({overflow: 'hidden'});
+					$('body').append(html);
+
+					$('#video-layer .close_x_btn').bind('click',function(){
+						$('html').css({overflow: 'scroll'});
+						$('#video-layer ').remove();
+					});
+
+
+					setTimeout(function(){
+						$('#video-layer').addClass('loaded');
+
+						$('#video-layer .video-box').append('<iframe width="100%" height="100%" src="http://www.youtube.com/embed/'+ytbId+'?rel=0" frameborder="0" allowfullscreen></iframe>')
+					},100);
+				});
+
+				// 1 하단 갤러리
+				var productsSlider1 = Swipe(document.getElementById('collection_slider1'), {
+					stopPropagation: true,
+
+					callback: function (index, element) {
+						$('.collection_slider1 .num_paging a').removeClass('on').eq(index-2).addClass('on');
+						console.log(index);
+						$('.collection_slider1 .prodlist_wrap .prodlist').removeClass('active').eq(index).addClass('active');
+					}
+				});
+
+				// 1 하단 갤러리넘버링
+
+				$('.collection_slider1 .num_paging a').bind('click', function () {
+					if ($(this).hasClass('on')) {
+						return;
+					}
+					productsSlider1.slide($(this).index());
+				});
+
+				$('.collection_slider1 .next').click(function () {
+					productsSlider1.next();
+					return false;
+				});
+				$('.collection_slider1 .prev').click(function () {
+					productsSlider1.prev();
+					return false;
+				});
+
+				var auto = setInterval(function(){
+					$('.navi .next').trigger('click')
+				},5000);
+
+
+				var scrollArray = [];
+				var scrollContents = document.querySelectorAll('.scroll');
+				for (var i = 0; i < scrollContents.length; i++) {
+					var mypos = scrollContents[i].offsetTop;
+					scrollArray.push(mypos)
+				}
+				$(window).scroll(function () {
+					var thisPos = $(this).scrollTop()+$(window).height() + 300;
+					for (var pos = 0; pos < scrollArray.length; pos++) {
+						if (thisPos > scrollArray[pos]) {
+							$('.scroll').eq(pos).addClass('on');
+						}
+					}
+				});
+
+			})(jQuery);
+
+		</script>
+		
+					</section>
+					<!-- //contents -->
