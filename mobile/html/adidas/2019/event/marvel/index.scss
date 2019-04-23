@@ -1,0 +1,366 @@
+@import './mobile/css/adidas/scss/common/mixin.scss';
+@import './mobile/css/adidas/scss/common/common.scss';
+
+#marvel{
+	position: relative;
+	.button_area_v2{
+		display: inline-block;
+		margin-bottom: 2vh;
+		a{
+			font: 700 .9rem/32px 'NotoSansKR';
+			padding: 0 5vw;
+			letter-spacing: 0;
+			height: 38px;
+			.arrow{
+				width:20px;
+				&::after{
+					width:8px;
+				}
+				&::before{
+					width:8px;
+				}
+			}
+		}
+	}
+	img{
+		width:100%;
+	}
+	.main{
+		position: relative;
+		.bg{
+			img{
+				width:100%;
+				
+				-webkit-animation: brightness 1.5s;
+				animation: brightness 1.5s;
+				-webkit-animation-delay: 1s;
+				animation-delay: 1s;
+			}
+		}
+		.h_box{
+			position: absolute;
+			width: 100%;
+			top: 0;
+			-webkit-animation: brightness 3s;
+			animation: brightness 3s;
+			transition: all 3s;
+			opacity: 0;
+		}
+		.b_box{
+			width: 100%;
+			position: absolute;
+			top:0;
+			left:0;
+			text-align: center;
+			p{
+				padding-top: 5%;
+				text-align: center;
+
+				transition: all .4s;
+				opacity: 0;
+				img{
+					width: 34%;
+				}
+			}
+			h3{
+				padding: 22% 0 2%;
+				text-align: center;
+				
+				filter: blur(10px);
+				transition: all .4s;
+				transition-delay: 0.4s;
+				opacity: 0;
+				img{
+					width: 42%;
+				}
+			}
+			h1{	
+				text-align: center;
+
+				filter: blur(10px);
+				transition: all .4s;
+				transition-delay: 0.8s;
+				opacity: 0;
+				img{
+					width: 94%;
+				}
+			}
+			.button_area_v2{
+				margin: 24% 0 0;
+
+				transition: all .4s;
+				transition-delay: 1s;
+				opacity: 0;
+				a{
+					width: auto;
+					height: 38px;
+					padding: 0 20px;
+					letter-spacing: 2px;
+					font: 500 .9rem/38px 'NotoSansKR';
+					span{
+						margin-left: 0;
+						transition: all .4s;
+						transition-delay: 1.2s;
+					}
+				}
+			}
+		}
+		&.on{
+			.h_box{
+				opacity: 1;
+			}
+			.b_box{
+				>*{
+					transform: scaleY(1);
+					filter: blur(0);
+					opacity: 1;
+				}
+				.button_area_v2{
+					a{
+						span{
+							margin-left: 1rem;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.lookbook{
+		position: relative;
+		.bg{
+			position: absolute;
+			width: 100%;
+			img{
+				width:100%;
+			}
+		}
+		.inner{
+			.sec_taps{
+				padding: 2rem 1rem 0;
+				box-sizing: border-box;
+				position: relative;
+				width: 100%;
+				overflow: hidden;
+				a{
+					float: left;
+					width: 24%;
+					padding-bottom: 24%;
+					box-sizing: border-box;
+					text-align: center;
+					margin-right: 1.3333%;
+					background-size: cover !important;
+					&:last-child{
+						margin: 0;
+					}
+					&.tab_h1{
+						background: url('/images/adidas/2019/event/marvel/look_tab_1.jpg') 0 0 no-repeat;
+						transition: all 0.4s;
+						&.on {
+							background: url('/images/adidas/2019/event/marvel/look_tab_1_on.jpg') 0 0 no-repeat;
+						}
+					}
+					&.tab_h2{
+						background: url('/images/adidas/2019/event/marvel/look_tab_2.jpg') 0 0 no-repeat;
+						transition: all 0.4s;
+						&.on {
+							background: url('/images/adidas/2019/event/marvel/look_tab_2_on.jpg') 0 0 no-repeat;
+						}
+					}
+					&.tab_h3{
+						background: url('/images/adidas/2019/event/marvel/look_tab_3.jpg') 0 0 no-repeat;
+						transition: all 0.4s;
+						&.on {
+							background: url('/images/adidas/2019/event/marvel/look_tab_3_on.jpg') 0 0 no-repeat;
+						}
+					}
+					&.tab_h4{
+						background: url('/images/adidas/2019/event/marvel/look_tab_4.jpg') 0 0 no-repeat;
+						transition: all 0.4s;
+						&.on {
+							background: url('/images/adidas/2019/event/marvel/look_tab_4_on.jpg') 0 0 no-repeat;
+						}
+					}
+					
+				}
+			}
+			
+			.sec{
+				position: relative;
+				width: 100%;
+				box-sizing: border-box;
+				.sec_con{
+					display: none;
+					position: relative;
+					left:0;
+					top:0;
+					width: 100%;
+					box-sizing: border-box;
+					&.active{
+						display: block;
+					}
+				}
+			}
+
+			.slider_wrap{
+				position: relative;
+				padding: 5px 1rem 2rem;
+				text-align: center;
+				ul.slider{
+					position: relative;
+					li{
+						float: left;
+						
+						img{
+							width:100%;
+						}
+					}
+					.owl-nav{
+						display: none;
+					}
+					.owl-dots{
+						margin-top: 1rem;
+						text-align: center;
+						.owl-dot{
+							display:inline-block;
+							background: #fff;
+							border-radius: 50%;
+							width: 8px;
+							height: 8px;
+							margin: 0 2px;
+							&.active{
+								background:#eb1c24;
+							}
+						}
+					}
+				}
+			}
+		}
+		&.on{
+			// empty
+		}
+	}
+
+	//prds
+	.prds{
+		position: relative;
+		background: #fff;
+		.inner{
+			padding: 2rem 2rem 4rem;
+			ul{
+				// overflow: hidden;
+				li{
+					position: relative;
+					float: left;
+					width: 50%;
+					transition: ease-out 0.4s;
+					opacity: 0;
+					&::after{
+						content: '';
+						position: absolute;
+						top: 0;
+						left: 0;
+						right: 0;
+						bottom: 0;
+						filter: blur(5px);
+						transition: 0.4s;
+						transition-delay: 0.4s;
+						opacity: 0;
+					}
+					&:nth-child(1){
+						transform: translate(-1rem, -1rem);
+						&::after{
+							background: url('/images/adidas/2019/event/marvel/prd_item_tit_1.png') center center no-repeat;							
+							background-size: cover;
+						}
+					}
+					&:nth-child(2){
+						transform: translate(1rem, -1rem);
+						&::after{
+							background: url('/images/adidas/2019/event/marvel/prd_item_tit_2.png') center center no-repeat;							
+							background-size: cover;
+						}
+					}
+					&:nth-child(3){
+						width: 100%;
+						&::after{
+							background: url('/images/adidas/2019/event/marvel/prd_item_tit_3.png') center center no-repeat;							
+							background-size: cover;
+						}
+					}
+					&:nth-child(4){
+						transform: translate(-1rem, 1rem);
+						&::after{
+							background: url('/images/adidas/2019/event/marvel/prd_item_tit_4.png') center center no-repeat;							
+							background-size: cover;
+						}
+					}
+					&:nth-child(5){
+						transform: translate(1rem, 1rem);
+						&::after{
+							background: url('/images/adidas/2019/event/marvel/prd_item_tit_5.png') center center no-repeat;							
+							background-size: cover;
+						}
+					}
+					img{
+						display: block;
+					}
+				}
+			}
+			.b_box{
+				text-align: center;
+				.button_area_v2{
+					margin: 2rem 0 4rem;
+					transition: all .4s;
+					transition-delay: 0.4s;
+					opacity: 0;
+					a{
+						width: auto;
+						padding: 0 30px;
+						letter-spacing: 2px;
+					}
+				}
+				p{					
+					text-align: center;
+					transition: all .4s;
+					transition-delay: 0.8s;
+					opacity: 0;
+					img{
+						width: 50%;
+					}
+				}	
+			}
+		}
+		&.on{
+			.inner{
+				ul{
+					li{
+						opacity: 1;
+						transform: translate(0);
+						&::after{
+							opacity: 1;
+							filter: blur(0);
+						}
+					}
+				}
+			}
+			.b_box{
+				.button_area_v2{
+					opacity: 1;
+				}
+				p{
+					opacity: 1;
+				}
+			}
+		}
+	}
+
+	.brightness {
+		-webkit-animation: brightness 3s infinite;
+	}
+
+	@-webkit-keyframes brightness {
+		0%, 100%  { -webkit-filter: brightness(none); }
+		50% { -webkit-filter: brightness(10); }
+	}
+}
