@@ -1,0 +1,310 @@
+@import './mobile/css/adidas/scss/common/mixin.scss';
+@import './mobile/css/adidas/scss/common/common.scss';
+#container{
+	// z-index: 121;
+}
+#footer{
+	position: relative;
+	z-index: 122;
+}
+#missoni{
+	position: relative;
+	//common
+	.button_area_v2{
+		display: inline-block;
+		a{
+			padding:0 4vw;
+			font:700 1rem/3.4rem 'NotoSansKR';
+			letter-spacing: .1rem;
+			height: 3.4rem;
+			.arrow{
+				margin-left: 1rem;
+				width: 20px;
+				&::after, &::before{
+					width: 7px;
+					height: 2px;
+				}
+				&::before{
+					bottom:-3px;
+				}
+				&::after{
+					top:-2px;
+				}
+			}
+		}
+	}
+
+	// modal pop
+    .modal-popup-wrapper{
+        .overlay{
+            background: rgba(0, 0, 0, 0.9);
+		}
+		.popup{
+			// background:none;
+			// top:0 !important;
+			// transform: translate3d(-50%, 0%, 0px) !important;
+			// height:100%;
+			.popup-contents{
+				padding: 0;
+				background:none;
+				width: 100%;
+				height:100%;
+				.close{
+					display: inline-block;
+					position: absolute;
+					top: -17rem;
+					right: 3%;
+					box-sizing: border-box;
+					text-align: center;
+					img{
+						width: 50%;
+					}
+				}
+				.slider{
+					// position: relative;
+					// width: 100%;
+					height:100%;
+					ul{
+						position: relative;
+						// width: 100%;
+						height:100%;
+						z-index:-1;
+						&:after{
+							content: '';
+							display: block;
+							clear: both;
+						}
+						li{
+							position: absolute;
+							display: none;
+							width: 100%;
+							img{
+								width:100%;
+							}
+							&.on{
+								display: block;
+							}
+							&:first-child{
+								top:50%;
+								left:50%;
+								transform: translate(-50%,-50%);
+							}
+							&:nth-child(2),
+							&:nth-child(3),
+							&:nth-child(4),
+							&:nth-child(5),
+							&:nth-child(6),
+							&:nth-child(7),
+							&:nth-child(8),
+							&:nth-child(9),
+							&:last-child{
+								top:50%;
+								left:50%;
+								transform: translate(-50%,-50%);
+							}
+						}
+					}
+				}
+				a.btn{
+					display: inline-block;
+					position: absolute;
+					top: 50%;
+					display: inline-block;
+					width: 5rem;
+					height: 5rem;
+					transform: translateY(-50%);
+					// text-indent: -3000px;
+					&.prev{
+						left: 1rem;
+						background: url('/images/adidas/2019/event/missoni/1904_a_missoni_prev_MO.png') 0 0 no-repeat;
+						background-size:50%;
+						background-position: center;
+					}
+					&.next{
+						right: 1rem;
+						background: url('/images/adidas/2019/event/missoni/1904_a_missoni_next_MO.png') 0 0 no-repeat;
+						background-size:50%;
+						background-position: center;
+					}
+				}
+			}
+		}
+	}
+
+
+	.visual_main{
+		position: relative;
+		&.on{
+			.img{
+				opacity: 1;
+			}
+			.txt{
+				opacity: 1;
+			}
+		}
+		.img{
+			opacity: 0;
+			transition: all 1s;
+			img{
+				width:100%;
+			}
+		}
+		.txt{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -370%);
+			opacity: 0;
+			transition: all 1s;
+			transition-delay: .5s;
+			.button_area_v2{
+			}
+		}
+	}
+
+	.grid_cont{
+		&.on{
+			.sec{
+				opacity: 1;
+			}
+		}
+		.sec{
+			opacity: 0;
+			transition: all 1s;
+
+			&::after{
+				display: block;
+				content:'';
+				clear:both;
+			}
+			&.sec1{
+				position: relative;
+				.grids{
+					float: left;
+					width:50%;
+					background:#000;
+					a{
+						img{
+							width:100%;
+						}
+					}
+					&.grid1{
+						
+					}
+				}
+			}
+			&.sec2{
+				position: relative;
+				transition-delay: .8s;
+				.grids{
+					a{
+						img{
+							width:100%;
+						}
+					}
+					&.grid4, &.grid5{
+						float: left;
+						width:50%;
+					}
+					&.grid6{
+						width:100%;
+					}
+				}
+			}
+			&.sec3{
+				position: relative;
+				transition-delay: 1.3s;
+				.grids{
+					float: left;
+					width:50%;
+					a{
+						img{
+							width:100%;
+						}
+					}
+				}
+			}
+		}
+
+	}
+
+	@-webkit-keyframes effect {
+		0% {
+			transform: rotate(0deg)
+		}
+		25% {
+			transform: rotate(4deg)
+		}
+		50% {
+			transform: rotate(0deg)
+		}
+		75% {
+			transform: rotate(-4deg)
+		}
+		100% {
+			transform: rotate(0deg)
+		}
+	}
+	.video{
+		position: relative;
+		// background: url('/images/adidas/2019/event/missoni/1904_a_missoni_video_MO.jpg') no-repeat;
+		// background-size: cover;
+		// padding-top:100%;
+    	height: 45vh;
+		&.on{
+			.video_wrap,.play{
+				opacity:1;
+			}
+			.play{
+				img{
+					-webkit-animation: effect 1s; /* Safari 4.0 - 8.0 */
+					animation: effect 1s;
+					animation-timing-function: ease-out;
+					animation-delay: 1s; 
+				}
+			}
+		}
+		.video_wrap{
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			opacity: 0;
+			transition: all 3s;
+			video{
+				width:100%;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				transform: none;
+			}
+		}
+		.play{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			text-align: center;
+			opacity: 0;
+			transition: all 1s;
+			transition-delay: .8s;
+			img{
+				width:50%;
+			}
+		}
+	}
+	.footer{
+		position: relative;
+		.img{
+			img{
+				width:100%;
+			}
+		}
+	}
+
+
+
+}
