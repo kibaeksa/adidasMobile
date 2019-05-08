@@ -1,0 +1,182 @@
+@import './mobile/css/adidas/scss/common/mixin.scss';
+@import './mobile/css/adidas/scss/common/common.scss';
+
+#climacool_cp{
+	position: relative;
+
+	.button_area_v2{
+		display: inline-block;
+		// margin-bottom: 2vh;
+		a{
+			font: 500 .9rem/37px 'NotoSansKR';
+			padding: 0 16px;
+			letter-spacing: 0;
+			height: 38px;
+			.arrow{
+				width:20px;
+				height: 2px;
+				&::after{
+					width:7px;
+					height: 2px;
+					top: -2px;
+    				right: -2px;
+				}
+				&::before{
+					width:7px;
+					height: 2px;
+					bottom: -2px;
+					right: -2px;
+				}
+			}
+		}
+	}
+
+	img{
+		width:100%;
+	}
+
+	.main{
+		position: relative;
+		.bg{
+			padding-bottom: 120%;
+			img{
+				position: absolute;
+				top:0;
+				left:0;
+				width:100%;
+				@include css3(opacity,0);
+				@include css3(transition,all 0.5s ease);
+				&.on{
+					@include css3(opacity,1);
+				}
+				
+			}
+		}
+		.inn{
+			position: absolute;
+			top:78%;
+			left:50%;
+			transform: translate(-50%,-50%);
+		}
+	}
+
+	.logo{
+		position: relative;
+		background: url('/images/adidas/2019/event/clima/usp_bg.jpg') no-repeat;
+		background-size:100% 100%;
+		padding: 6rem 10rem;
+		img{
+			width:100%;
+		}
+	}
+
+	.usp_section{
+		position: relative;
+		
+		.bg{
+			img{
+				width:100%;
+			}
+		}
+		&.on{
+			.inn{
+				img{
+					@include css3(opacity,1);
+
+				}
+			}
+		}
+		&.cut1{
+			&.on{
+				.inn{
+					img{
+						&.left_cut{
+						}
+						&.shoe_cut{
+							left: -35%;
+
+						}
+					}
+				}
+			}
+			.inn{
+				right:0;
+				img{
+					
+
+					&.left_cut{
+						transition-delay: 0.5s;
+					}
+					&.shoe_cut{
+						position: absolute;
+						left: -15%;
+						top: 0;
+						width: 13rem;
+					}
+				}
+			}
+		}
+		&.cut2{
+			&.on{
+				.inn{
+					left:0;
+					@include css3(opacity,1);
+
+				}
+			}
+			.inn{
+				top: -4%;
+				left:20%;
+				@include css3(opacity,0);
+				@include css3(transition,all 0.5s ease-out);
+				// transition-delay: 0.2s;
+
+				img{
+					width: 29rem;
+					// transition-delay: 1s;
+
+				}
+			}
+		}
+		&.cut3{
+			padding-bottom: 25%;
+			background: url('/images/adidas/2019/event/clima/usp_bg.jpg') no-repeat;
+			background-size:auto 100%;
+			&.on{
+				.inn{
+					left:5%;
+					@include css3(opacity,1);
+				}
+				
+
+			}
+			.inn{
+				top: -16%;
+				left: -15%;
+				@include css3(opacity,0);
+				@include css3(transition,all 0.5s ease-out);
+				// transition-delay: 0.4s;
+
+				img{
+					width: 26rem;
+				}
+			}
+		}
+		.inn{
+			
+			position: absolute;
+			top:3.5%;
+			// right:0;
+			img{
+				width:21rem;
+				@include css3(opacity,0);
+				@include css3(transition,all 0.5s ease-out);
+
+
+			}
+		}
+
+	}
+
+
+}
