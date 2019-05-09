@@ -276,8 +276,8 @@ adiApp.getNodefromString = function (htmlString) {
 		}else{
 			$(this).removeClass('open');
 		}
-
-		return false;
+		// 190508 return false 삭제
+		// return false;
 	});
 
 	(function(){
