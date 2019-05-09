@@ -1,0 +1,199 @@
+@import './mobile/css/adidas/scss/common/mixin.scss';
+@import './mobile/css/adidas/scss/common/common.scss';
+#container{
+	// z-index: 121;
+}
+
+#threemc{
+	position: relative;
+	//common
+	.button_area_v2{
+		display: inline-block;
+		a{
+			padding: 0 6vw;
+			font: 700 1rem/3.4rem 'NotoSansKR';
+			letter-spacing: .15rem;
+			height: 3.4rem;
+			.arrow{
+				margin-left: 1rem;
+				width: 20px;
+				&::after, &::before{
+					width: 7px;
+					height: 2px;
+				}
+				&::before{
+					bottom:-3px;
+				}
+				&::after{
+					top:-2px;
+				}
+			}
+		}
+	}
+
+	.visual_main{
+		position: relative;
+		&.on{
+			video,.txt{
+				opacity: 1;
+			}
+		}
+		video{
+			width:100%;
+			opacity: 0;
+			transition: all 1s;
+			-webkit-opacity: 0;
+			-webkit-transition: all 1s;
+		}
+		.txt{
+			position: absolute;
+			bottom:8%;
+			left:8%;
+			opacity: 0;
+			transition: all 1s;
+			transition-delay: .8s;
+			-webkit-opacity: 0;
+			-webkit-transition: all 1s;
+			-webkit-transition-delay: .8s;
+			img{
+				width:50%;
+			}
+			p{
+				font: 1rem/3rem 'NotoSansKR';
+				color:#fff;
+				letter-spacing: .1rem;
+			}
+			.wrap{
+				display: block;
+				margin-top: .8rem;
+				.button_area_v2{
+				}
+			}
+		}
+	}
+
+	.section{
+		position: relative;
+		&.on{
+			.img,.txt{
+				opacity: 1;
+			}
+		}
+		.img{
+			opacity: 0;
+			transition: all 1s;
+			-webkit-opacity: 0;
+			-webkit-transition: all 1s;
+			img{
+				width:100%;
+			}
+		}
+		.txt{
+			position: absolute;
+			top:50%;
+			left:50%;
+			transform:translate(-50%,-50%);
+			text-align:center;
+			width: 100%;
+			opacity: 0;
+			transition: all 1s;
+			transition-delay: .8s;
+			-webkit-opacity: 0;
+			-webkit-transition: all 1s;
+			-webkit-transition-delay: .8s;
+			p{
+				text-align:center;
+				color:#fff;
+				font:2.4rem 'AdihausDIN-Bold';
+				letter-spacing: .1rem;
+			}
+			span{
+				color:#fff;
+				font:1rem 'NotoSansKR';
+				letter-spacing: .05rem;
+				display: block;
+				margin:0 0 1rem 0;
+			}
+			img{
+				width:25%;
+			}
+		}
+	}
+	
+	.aside{
+		position: relative;
+		text-align: center;
+		p{
+			font:2rem/4rem 'AdihausDIN-Bold';
+			color:#000;
+		}
+		.button_area_v2{
+			padding-bottom:2.5rem;
+		}
+	}
+
+	.grid_cont{
+		position: relative;
+		&.on{
+			.grid{
+				opacity: 1;
+				.button_area_v2{
+					opacity: 1!important;
+				}
+			}
+		}
+		img{
+			width:100%;
+		}
+		&::after{
+			display: block;
+			content:'';
+			clear:both;
+		}
+		.grid{
+			position: relative;
+			float: left;
+			width:50%;
+			opacity: 0;
+			top:1rem;
+			transition: all 1s;
+			-webkit-opacity: 0;
+			-webkit-transition: all 1s;
+			&:first-child{
+			}
+			&:nth-child(2){
+				transition-delay: .5s;
+				-webkit-transition-delay: .5s;
+			}
+			&:nth-child(3){
+				transition-delay: 1s;
+				-webkit-transition-delay: 1s;
+			}
+			&:nth-child(4){
+				width:100%;
+				transition-delay: 1.5s;
+				-webkit-transition-delay: 1.5s;
+				.button_area_v2{
+					position: absolute;
+					top:50%;
+					left:50%;
+					transform: translate(-50%,-50%);
+					opacity: 0;
+					transition: all 1s;
+					transition-delay: 3s;
+					-webkit-transition: all 1s;
+					-webkit-transition-delay: 3s;
+				}
+			}
+			&:nth-child(5){
+				transition-delay: 2s;
+				-webkit-transition-delay: 2s;
+			}
+			&:last-child{
+				transition-delay: 2.5s;
+				-webkit-transition-delay: 2.5s;
+			}
+		}
+	}
+
+}
