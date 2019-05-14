@@ -30,7 +30,7 @@
 
 	.main{
 		position: relative;
-		padding-bottom: 8%;
+		// padding-bottom: 8%;
 		&.on{
 			.inn{
 				h2{
@@ -54,7 +54,7 @@
 		}
 		.inn{
 			position: absolute;
-			top:75%;
+			top:77%;
 			left:50%;
 			transform: translate(-50%,-50%);
 			width: 100%;
@@ -345,106 +345,171 @@
 		}
 	}
 
-	.lookbook{
+	// .lookbook{
+	// 	position: relative;
+	// 	padding: 40px 0 50px 0;
+	// 	.bg{
+	// 		position: absolute;
+	// 		width: 100%;
+	// 		img{
+	// 			width:100%;
+	// 		}
+	// 	}
+	// 	.inner{			
+	// 		.sec{
+	// 			position: relative;
+	// 			width: 100%;
+	// 			box-sizing: border-box;
+	// 			text-align: center;
+	// 			.sec_con{
+	// 				display: none;
+	// 				position: relative;
+	// 				left:0;
+	// 				top:0;
+	// 				width: 100%;
+	// 				box-sizing: border-box;
+	// 				&.active{
+	// 					display: block;
+	// 				}
+	// 				.desc{
+	// 					font:400 1.2rem 'NotoSansKR';
+	// 					text-align: center;
+	// 				}
+	// 				.button_area_v2{
+	// 					margin:2rem 0 0 0;
+	// 				}
+	// 			}
+	// 		}
+
+	// 		.slider_wrap{
+	// 			position: relative;
+	// 			text-align: center;
+	// 			ul.slider{
+	// 				position: relative;
+	// 				li{
+	// 					float: left;
+						
+	// 					img{
+	// 						width:100%;
+	// 					}
+	// 				}
+	// 				.owl-nav{
+	// 					display: none;
+	// 				}
+	// 				.owl-dots{
+	// 					position: relative;
+	// 					margin-top: 1rem;
+	// 					text-align: center;
+	// 					@include css3(transition, all 0.5s);
+	// 					.owl-dot{
+	// 						display:inline-block;
+	// 						width: 33.333%;
+	// 						margin-top: 1rem;
+	// 						text-align: center;
+	// 						padding-bottom: 1rem;
+							
+	// 						p{
+	// 							position: relative;
+	// 							display:inline-block;
+	// 							font:1.2rem 'adinenuPro-light';
+	// 							text-transform: uppercase;
+	// 							letter-spacing: 2px;
+	// 							color:#cdcdcd;
+	// 							span{
+	// 								position: absolute;
+	// 								bottom: -2px;
+	// 								left: 50%;
+	// 								margin-left: -30%;
+	// 								width: 60%;
+	// 								height: 2px;
+	// 								background: #000;
+	// 								@include css3(opacity,0);
+	// 								@include css3(transition, all 0.2s)
+	// 							}
+	// 						}
+
+	// 						&.active{
+	// 							p{
+	// 								font:1.2rem 'adinenuPro-bold';
+	// 								color:#000;
+	// 								span{
+	// 									@include css3(opacity,1);
+	// 								}
+	// 							}
+
+	// 						}
+	// 					}
+	// 				}
+	// 			}
+	// 		}
+	// 	}
+	// 	&.on{
+	// 		// empty
+	// 	}
+	// }
+
+	.shoes_cut{
 		position: relative;
-		padding: 40px 0 50px 0;
-		.bg{
+		margin: 40px 0;
+		&.on{
+			.con{
+				>img{
+					top:0;
+					@include css3(opacity,1);
+				}
+			}
+		}
+		.imgbg{
 			position: absolute;
-			width: 100%;
+			left:0;
 			img{
 				width:100%;
 			}
 		}
-		.inner{			
-			.sec{
+		.con{
+			position: relative;
+			z-index: 1;
+			text-align: center;
+			padding: 28% 0 0;
+			>img{
 				position: relative;
-				width: 100%;
-				box-sizing: border-box;
-				text-align: center;
-				.sec_con{
-					display: none;
-					position: relative;
-					left:0;
-					top:0;
-					width: 100%;
-					box-sizing: border-box;
-					&.active{
-						display: block;
-					}
-					.desc{
-						font:400 1.2rem 'NotoSansKR';
-						text-align: center;
-					}
-					.button_area_v2{
-						margin:2rem 0 0 0;
-					}
-				}
+				top:20px;
+				width: 70%;;
+				@include css3(opacity,0);
+				@include css3(transition,all 0.5s);
+
 			}
-
-			.slider_wrap{
-				position: relative;
+			div{
 				text-align: center;
-				ul.slider{
-					position: relative;
-					li{
-						float: left;
-						
-						img{
-							width:100%;
-						}
-					}
-					.owl-nav{
-						display: none;
-					}
-					.owl-dots{
-						position: relative;
-						margin-top: 1rem;
-						text-align: center;
-						@include css3(transition, all 0.5s);
-						.owl-dot{
-							display:inline-block;
-							width: 33.333%;
-							margin-top: 1rem;
-							text-align: center;
-							padding-bottom: 1rem;
-							
-							p{
-								position: relative;
-								display:inline-block;
-								font:1.2rem 'adinenuPro-light';
-								text-transform: uppercase;
-								letter-spacing: 2px;
-								color:#cdcdcd;
-								span{
-									position: absolute;
-									bottom: -2px;
-									left: 50%;
-									margin-left: -30%;
-									width: 60%;
-									height: 2px;
-									background: #000;
-									@include css3(opacity,0);
-									@include css3(transition, all 0.2s)
-								}
-							}
+				
+				&.title{
+					text-align: center;
+					margin-bottom: 4%;
+					p{
+						font:400 1.1rem 'NotoSansKR';
+						letter-spacing: 1px;
 
-							&.active{
-								p{
-									font:1.2rem 'adinenuPro-bold';
-									color:#000;
-									span{
-										@include css3(opacity,1);
-									}
-								}
-
+						&.strong{
+							position: relative;
+							padding-bottom: 1.5%;
+							margin-bottom: 4%;
+							display: inline-block;
+							font:900 1.5rem 'NotoSansKR';
+							&:after{
+								position: absolute;
+								bottom:1.5%;
+								content: '';
+								display: inline-block;
+								width:70%;
+								left: 50%;
+								margin-left: -35%;
+								height:2px;
+								background: #000;
 							}
 						}
 					}
 				}
 			}
-		}
-		&.on{
-			// empty
 		}
 	}
 
