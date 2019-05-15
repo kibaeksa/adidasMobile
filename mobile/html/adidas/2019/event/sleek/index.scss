@@ -1,0 +1,206 @@
+@import './mobile/css/adidas/scss/common/mixin.scss';
+@import './mobile/css/adidas/scss/common/common.scss';
+
+#sleek_cp{
+	position: relative;
+
+	.button_area_v2{
+		display: inline-block;
+		margin-bottom: 2vh;
+		a{
+			width: auto;
+			padding:0 1.3rem;
+			font: 500 1rem/46px 'NotoSansKR';
+			letter-spacing: 0;
+			height: 46px;
+			.arrow{
+				width:20px;
+				&::after{
+					width:8px;
+				}
+				&::before{
+					width:8px;
+				}
+			}
+		}
+	}
+
+	img{
+		width:100%;
+	}
+
+	.main{
+		position: relative;
+		padding-bottom: 127%;
+		&.on{
+			.thumb1{
+				top: 50%;
+				@include css3(opacity,1);
+			}
+			.thumb2{
+				top:0;
+				@include css3(opacity,1);
+				transition-delay: 0.2s;
+			}
+		}
+		.bg{
+			img{
+				width:100%;
+			}
+		}
+		img{
+			position: absolute;
+			&.thumb1{
+				width: 41%;
+				top: 60%;
+				left: 5%;
+				z-index: 1;
+				@include css3(opacity,0);
+				@include css3(transition, all 0.3s);
+			}
+			&.thumb2{
+				
+				top:10px;
+				right: 0;
+				width: 60%;
+				@include css3(opacity,0);
+				@include css3(transition, all 0.3s);
+			}
+		}
+		.inn{
+			position: absolute;
+			top:6%;
+			left:15px;
+			width: 100%;
+			text-align: left;
+			h2{
+				position: relative;
+				margin:0 0 1rem 0;
+				width: 9.5rem;
+				top:10px;
+				font:2.3rem/2rem 'adinenuPro-bold';
+				letter-spacing: 1.5px;
+
+				img{position: relative;}
+			}
+			p{
+				position: relative;
+				top:10px;
+				font:400 1rem 'NotoSansKR';
+				letter-spacing: 0.7px;
+
+				transition-delay:0.3s;
+			}
+			.button_area_v2{
+				position: relative;
+				top:10px;
+				margin:1rem 0 0 0;
+
+				transition-delay:0.5s;
+			}
+		}
+
+		&.on{
+
+		}
+	}
+
+	.statement{
+		position: relative;
+		img{
+			width:100%;
+		}
+		p{
+			position: absolute;
+			top:50%;left:50%;
+			transform: translate(-50%,-50%);
+			width:100%;text-align: center;
+			font:400 1.1rem/1.9rem 'NotoSansKR';
+		}
+	}
+
+	.cuts_wrap{
+		position: relative;
+		background: #b4b3bc;
+		padding-bottom: 93%;
+		img{
+			position: absolute;
+			top:0;
+			left:0;
+			width:100%;
+			@include css3(opacity,0);
+			@include css3(transition, all 0.3s ease-in);
+
+			&.on{
+				@include css3(opacity,1);
+			}
+		}
+		p{
+			position: absolute;
+			top: 77%;
+			left:50%;
+			transform: translate(-50%,-50%);
+			width:100%;
+			text-align: center;
+			font:500 1.2rem 'NotoSansKR';
+			span{
+				display: inline-block;
+				margin-left: 0.4rem;
+				padding: 0 0.2rem;
+				background: #000;
+				color:#fff;
+				font: 400 1.2rem/1.5rem 'NotoSansKR';
+
+			}
+
+		}
+	}
+
+	.col_wrap{
+		position: relative;
+		&.on{
+			.col{
+				img{
+					@include css3(opacity,1);
+
+				}
+			}
+		}
+		&.opacity{
+			.col{
+				img{
+					@include css3(opacity,1);
+
+				}
+			}
+		}
+		.col{
+			position: relative;
+			&::after{
+				content: '';
+				display: block;
+				clear: both;
+			}
+			&.col2{
+				img{
+					width:100%;
+				}
+			}
+			img{
+				float: left;
+				width: 50%;
+				@include css3(opacity,0);
+				@include css3(transition, all 0.3s ease-in);
+				&.img2{
+					transition-delay: 0.2s;
+				}
+				&.img3{
+					transition-delay: 0.4s;
+				}
+			}
+		}
+	}
+
+
+
+}
