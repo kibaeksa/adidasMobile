@@ -1,0 +1,276 @@
+@import './mobile/css/adidas/scss/common/mixin.scss';
+@import './mobile/css/adidas/scss/common/common.scss';
+
+html,body{
+	height: 100%;
+}
+
+
+#container{
+	.go_top a{
+	width: 100%;
+	height: 50px;
+	display: block;
+	position: relative;
+	background: url('/images/adidas/back_top.png') center 10px no-repeat;
+	background-size: 60px auto;
+	text-indent: -5000px;
+	}
+
+
+	.football{
+		background:white;
+		position: relative;
+		overflow: hidden;
+		//common
+		.button_area_v2{
+			display: inline-block;
+			a{
+				padding:0 4vw;
+				font:700 1rem/3.4rem 'NotoSansKR';
+				letter-spacing: .1rem;
+				height: 3.4rem;
+				.arrow{
+					margin-left: 1rem;
+					width: 20px;
+					&::after, &::before{
+						width: 7px;
+    					height: 2px;
+					}
+					&::before{
+						bottom:-3px;
+					}
+					&::after{
+						top:-2px;
+					}
+				}
+			}
+		}
+
+
+		//main
+		.visual_main{
+			position: relative;
+			.img{
+				display: none;
+				&.on{
+					display: block;
+				}
+				img{
+					width:100%;
+				}
+				video{
+					width: 100%;
+				}
+			}
+			.txt{
+				position: absolute;
+				bottom:9%;
+				left:9%;
+				z-index: 3;
+				h1{
+					font:500 2.3rem/2.3rem 'NotoSansKR';
+					color:#fff;
+					letter-spacing: 0;
+				}
+				P{
+					font:300 1rem/1.5rem 'NotoSansKR';
+					color:#fff;
+					letter-spacing: 0;
+					margin: 0.4rem 0 1.8rem;
+				}
+			}
+		}
+
+		//tabs
+		.tabs{
+			position: relative;
+			padding:15px 0 0;
+			background: url('/images/adidas/2019/event/football/0515/tab_bg.jpg') no-repeat;
+			background-size: auto 100%;
+			.head{
+				margin-bottom: 10px;
+				h1{
+					text-align: center;
+					font:22px 'adinenuPro-bold';
+					letter-spacing: 1px;
+				}
+			}
+			.wrap{
+				// padding:1.5rem;
+				// background: #ebedee;
+				// text-align: center;
+
+				background: #ebedee;
+				width:90%;
+				margin: 0 auto;
+				text-align: center;
+				span{
+					display: inline-block;
+					padding: 4vw 6vw;
+					font:11px/9px 'Adihaus-regular';
+					cursor:pointer;
+					letter-spacing: normal;
+					&:first-child{
+						padding-left: 20px;
+					}
+					&:last-child{
+						padding-right:20px;
+					}
+					em{
+						display: block;
+						opacity: 0;
+						border:.7px solid #757677;
+						&.on{
+							opacity: 1;
+						}
+					}
+				}
+			}
+		}
+
+		//contents
+		.contents{
+			position: relative;
+			padding-bottom: 725%;
+			background: #000;
+			.cont{
+				position: absolute;
+				@include css3(opacity,0);
+				@include css3(transition,all 1s);
+				top: 0;
+				z-index: 1;
+				&.on{
+					// display: block;
+				@include css3(opacity,1);
+				}
+				.wrapper{
+					position: relative;
+					>div{
+						position: relative;
+						>.img{
+							width: 100%;
+							video{
+								width: 100%;
+							}
+							img{
+								width: 100%;
+							}
+						}
+						>.inner{
+							width: 100%;
+							position: absolute;
+							bottom: 6%;
+							left: 3rem;
+							>.txt{
+								h1{
+									font: 600 1.8rem/1.8rem 'adinenuPro-bold';
+									color:#fff;
+								}
+								p{
+									font: 200 1.1rem/1.6rem 'NotoSansKR';
+									color:#fff;
+									margin: 10px 0 20px 0;
+								}
+							}
+						}
+					}
+					.cont_1{
+						>.inner{
+							width: 100%;
+							position: absolute;
+							top: 10rem;
+							left: 50%;
+							transform: translateX(-50%);
+							>.txt{
+								h1{
+									font: 600 1.8rem/1.8rem 'adinenuPro-bold';
+									color:#fff;
+									text-align: center;
+								}
+								p{
+									font: 300 1.1rem/1.6rem 'NotoSansKR';
+									color:#fff;
+									margin: 20px 0;
+									text-align: center;
+								}
+							}
+						}
+					}
+					.cont_2{}
+					.cont_3{}
+					.cont_4{
+						>.inner{
+							width: 100%;
+							position: absolute;
+							bottom: 11%;
+							left: 3rem;
+						}
+					}
+					.cont_video{
+						overflow: hidden;
+						width: 100%;
+						a{
+							display: block;
+							img{
+								width: 100%;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		//banner
+		.banner{
+			overflow: hidden;
+			position: relative;
+			padding: 0 0 6rem 0;
+			z-index: 2;
+			.bg{
+				display: none;
+				position: relative;
+				.img{
+					position: absolute;
+					top:0;
+					left:50%;
+					margin-left:-50%;
+					padding-top: 93%;
+					img{
+						width: 100%;
+						opacity: 0;
+						&.on{
+							opacity: 1;
+						}
+					}
+				}
+			}
+			.wrap{
+				padding: 3rem 3rem 6rem;
+				.inner{
+					position: relative;
+					float: left;
+					width: 100%;
+					margin-bottom: 0.9rem;
+					.img{
+						position: relative;
+						img{
+							width:100%;
+						}
+					}
+					.button_area_v2{
+						position: absolute;
+						bottom:8%;
+						left:50%;
+						transform: translateX(-50%);
+						width: 40%;
+						a{
+							.arrow{
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
