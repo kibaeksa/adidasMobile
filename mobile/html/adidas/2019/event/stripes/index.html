@@ -447,7 +447,7 @@
 
            <div id="stripes_cp">
 
-                <div class="main ">
+                <div class="main on">
                     <div class="bg">
                         <img src="/images/adidas/2019/event/stripes/main_visual.jpg" alt="">
                     </div>
@@ -705,40 +705,30 @@
                 });
                 $('.owl-dots .owl-dot').eq(1).trigger('click');
 
+                setTimeout(function () {
+                    $('#stripes_cp .main').addClass('on');
+                }, 500);
 
 
 
-                $(window).load(function () {
+                var scrollArray = [];
+                var scrollContents = document.querySelectorAll('.scroll');
+                for (var i = 0; i < scrollContents.length; i++) {
+                    var mypos = scrollContents[i].offsetTop;
+
+                    scrollArray.push(mypos);
+                };
+                $(window).scroll(function () {
+                    var thisPos = $(this).scrollTop() + $(window).height() - 300;                        
+                    
+                    for (var pos = 0; pos < scrollArray.length; pos++) {
+                        if (thisPos > scrollArray[pos]) {
+                            $('#stripes_cp .scroll').eq(pos).addClass('on');
+                        }
+                    }
+                });
 
                 
-                    setTimeout(function () {
-                        $('#stripes_cp .main').addClass('on');
-                    }, 500);
-
-                    
-
-
-
-                    var scrollArray = [];
-                    var scrollContents = document.querySelectorAll('.scroll');
-                    for (var i = 0; i < scrollContents.length; i++) {
-                        var mypos = scrollContents[i].offsetTop;
-
-                        scrollArray.push(mypos);
-                    };
-                    $(window).scroll(function () {
-                        
-                        var thisPos = $(this).scrollTop() + $(window).height() - 300;                        
-                        
-                        for (var pos = 0; pos < scrollArray.length; pos++) {
-                            if (thisPos > scrollArray[pos]) {
-                                $('#stripes_cp .scroll').eq(pos).addClass('on');
-                            }
-                        }
-
-                    });
-
-                });
 
            </script>
 
