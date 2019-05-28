@@ -1,0 +1,72 @@
+@import "./mobile/MO/reebok/css/scss/about.scss";
+#contents{
+    img{
+        vertical-align: middle;
+    }
+}
+.zico{
+    .visual_main{
+        background:url('/images/reebok/2019/event/vector/0529/1905_r_vectorcity_bg_MO.jpg') 100% 100% no-repeat;
+        background-size: cover;
+        position: relative;
+        &.on{
+            .img{
+                @include opacity(1);
+            }
+            .txt{
+                @include opacity(1);
+            }
+        }
+        .txt{
+            text-align: center;
+            padding: 1.5rem 0;
+            @include opacity(0);
+            @include prefix-css3(transition, all 1s ease-out);
+            @include prefix-css3(transition-delay,.8s);
+            h1,p,span,em{
+                color:#fff;
+                text-align: center;
+            }
+            h1{
+                font: 3rem 'PFDinMonoPro-Bold';
+                letter-spacing: .3rem;
+            }
+            p{
+                font: 400 1.5rem/1.5rem 'NotoSansKR';
+                letter-spacing: 2px;
+                margin: 0 0 1rem;
+            }
+            span{
+                font: 400 .9rem/.9rem 'NotoSansKR';
+                position: relative;
+                z-index: 1;
+                letter-spacing: .1rem;
+                em{
+                    font: 1.1rem/1.1rem 'PFDinMonoPro-Bold';
+                }
+                &::after{
+                    display: block;
+                    content:'';
+                    clear:both;
+                    position: absolute;
+                    top:-5px;
+                    bottom:-5px;
+                    left:-25px;
+                    right:-25px;
+                    background:rgba(0,0,0,0.59);
+                    z-index: -1;
+                }
+            }
+        }
+        .img{
+            @include opacity(0);
+            // @include prefix-css3(transition ,opacity 1s ease-in);
+            @include prefix-css3(transition, all 1s ease-out);
+            padding-bottom:12%;
+            img{
+                width:100%;
+            }            
+        }
+    }
+}
+// zico
