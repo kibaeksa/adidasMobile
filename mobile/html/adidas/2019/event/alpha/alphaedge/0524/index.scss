@@ -1,0 +1,358 @@
+@import './mobile/css/adidas/scss/common/mixin.scss';
+@import './mobile/css/adidas/scss/common/common.scss';
+
+#alphaedge_cp{
+	position: relative;
+
+	.button_area_v2{
+		display: inline-block;
+		a{
+			font: 500 1rem/42px 'NotoSansKR';
+			height: 42px;
+			padding: 0 2rem;
+			letter-spacing: 0.7px;
+			.arrow{
+				margin-left: 12px;
+				width:20px;
+				&::after{
+					top: -2px;
+					height: 2px;
+					width: 8px;
+				}
+				&::before{
+					width: 8px;
+					bottom: -2px;
+					height: 2px;
+				}
+			}
+		}
+	}
+
+	img{
+		width:100%;
+	}
+
+	.main{
+		position: relative;
+		.bg{
+			img{
+				width:100%;
+			}
+		}
+		.b_box{
+			width: 100%;
+			position: absolute;
+			top:62%;
+			left:0;
+			text-align: center;
+			h1{
+				padding: 0 5rem;
+			}
+			h2{
+				padding:5px 0 0 0;
+				font: 600 1.4rem 'NotoSansKR';
+				color: #000;
+				text-align: center;
+			}
+			
+			.button_area_v2{
+				margin: 1.5rem 0 0 0;
+
+			}
+		}
+
+	}
+
+	.title_sec{
+		position: relative;
+		padding: 25px 0;
+		text-align: center;
+		p{
+			position: relative;
+			text-align: center;
+			font: 300 1.3rem 'NotoSansKR';
+			top: 4px;
+		}
+		h3{
+			padding: 0 6rem;
+		}
+		strong{
+			display: inline-block;
+			margin: 5px 0 0 0;
+			text-align: center;
+			font: 500 1.2rem 'NotoSansKR';
+			letter-spacing: 0.2px;
+		}
+	}
+
+	.sec{
+		position: relative;
+		margin: 0 0 32px 0;
+		overflow: hidden;
+		&.on{
+			div{
+				img{
+					transform: scale(1);
+					@include css3(opacity,1);
+				}
+			}
+		}
+		div{
+			display: inline-block;
+			width:50%;
+			float: left;
+			img{
+				width:100%;
+				transform: scale(0);
+				@include css3(opacity,0);
+				@include css3(transition,all 0.8s);
+			}
+		}
+	}
+
+	.img_sec{
+		position: relative;
+		margin:0 0 25px 0;
+	}
+
+	.middle_section{
+		position: relative;
+		background: #ecf5ec;
+		overflow: hidden;
+		margin:35px 0 0 0;
+
+		&.on{
+			.inn{
+				.tool{
+					.desc{
+						@include css3(opacity,1);
+					}
+					p{
+						span{
+							em{
+								opacity: 1 !important;
+							}
+						}
+					}
+
+					&.top{
+						p{
+							span{
+								width: 102%;
+							}
+						}
+					}
+					&.bottom{
+						p{
+							span{
+								width:97%;
+							}
+						}
+					}
+				}
+			}
+		}
+		.bg{
+			position: absolute;
+			left:0;
+			img{width:100%;}
+			&.top{
+				top: -5%;
+				@include css3(opacity,0.27);
+				animation-duration: 15s;
+				animation-name: middletop;
+				animation-iteration-count: infinite;
+			}
+			&.bottom{
+				bottom: -4%;
+				@include css3(opacity,0.27);
+				animation-duration: 15s;
+				animation-name: middlebottom;
+				animation-iteration-count: infinite;
+
+			}
+			&.shoes{
+				right: -4%;
+				top: -10%;
+				left: inherit;
+				text-align: right;
+				img{
+					width: 56%;
+				}
+			}
+		}
+		.inn{
+			position: relative;
+			left: 15px;
+			margin: 14% 0 0 0;
+			width: 100%;
+			z-index: 1;
+
+			h4{
+				img{
+					width:50%;
+				}
+			}
+			p{
+				font:400 0.9rem 'NotoSansKR';
+				letter-spacing: -0.2px;
+				&.title{
+					padding: 5px 0 16px;
+					font:600 1.3rem 'NotoSansKR';
+
+				}
+				&.desc{
+					padding: 0 0 16px 0;
+					strong{
+						font:600 1rem 'NotoSansKR';
+					}
+				}
+
+			}
+
+			.tool{
+				&.top{
+					width: 84%;
+					margin: 13% 0 0 0;
+
+				}
+				&.bottom{
+					width: 66%;
+    				margin: 11% 0 20% 0;
+					p.desc{
+						transition-delay: 2.5s;
+						span{
+							transition-delay: 2.5s;
+							em{
+								transition-delay: 4s;
+
+							}
+						}
+					}
+					
+				}
+				p.desc{
+					padding: 0 0 5px 0;;
+					position: relative;
+					font:400 1rem 'NotoSansKR';
+					letter-spacing: -0.2px;
+					@include css3(opacity,0);
+					@include css3(transition,all 0.5s);
+
+					strong{
+						display: block;
+						font: 600 1.1rem 'NotoSansKR';
+					}
+					span{
+						position: absolute;
+						bottom:0;
+						left:0;
+						width:100%;
+						height:1px;
+						background: #000;
+						width:0px;
+						@include css3(transition, all 1.5s);
+						transition-delay: 1s;
+
+						em{
+							position: absolute;
+							top: -3px;
+							right: 0;
+							display: inline-block;
+							width:8px;
+							height:8px;
+							background: #000;
+							border-radius: 50px;
+							@include css3(opacity, 0);
+							@include css3(transition, all 0.2s);
+							transition-delay: 2.5s;
+
+						}
+					}
+				}
+			}
+		}
+
+	}
+
+	@keyframes middletop {
+		0% {
+			top: -5%;
+			left:-15%;
+		}
+		50% {
+			top: 0%;
+			left:0;
+		}
+		100%{
+			top: -5%;
+			left:-15%;
+
+		}
+	}
+	@keyframes middlebottom {
+		0% {
+			bottom: -4%;
+			left:-15%;
+
+		}
+		50% {
+			bottom: 0%;
+			left:0%;
+
+		}
+		100%{
+			bottom: -4%;
+			left:-15%;
+
+		}
+	}
+
+	.btm{
+		padding: 40px 0 10px 0;
+		// padding: 3rem 4rem 1rem;
+		.wrap{
+			text-align: center;
+			img{
+				width: 61%;
+
+			}
+			.txt{
+				padding:1rem 0 3rem 0;
+				.title{
+					letter-spacing: 0.7px;
+					color:#b8d2aa;
+					strong{
+						display: block;
+						text-align: center;
+						font:1.3rem 'adinenuPro-bold';
+						color:#000;
+						letter-spacing: 0.2px;
+					}
+					font:1.2rem 'adinenuPro-bold';
+
+				}
+				p{
+					font: 400 1rem 'NotoSansKR';
+					letter-spacing: -0.2px;
+				}
+				span{
+					display: inline-block;
+					padding-top: 5px;
+					font: 500 13px/21px 'NotoSansKR';
+					color:#333333;
+					letter-spacing: 0;
+				}
+			}
+		}
+	}
+
+	.logo{
+		position: relative;
+		padding: 3rem 0 5rem;
+		text-align: center;
+		img{
+			width: 21%;
+		}
+	}
+}
