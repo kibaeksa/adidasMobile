@@ -263,7 +263,7 @@
 					<ul>
 						<li>
 							<div data-zoom-image="http://shop.adidas.co.kr/upload/prod/basic/target/AQ6761-1.jpg">
-								<img src="http://shop.adidas.co.kr/upload/prod/basic/500/AQ6761-1_500X500.jpg" alt="">
+								<img src="//image.adidas.co.kr/upload/prod/basic/500/BA8775-1_500X500.jpg" alt="">
 								<!-- 160513 LABEL 변경 -->
 								<span class="label adihs-b o-only">ONLINE ONLY</span>
 							</div>
@@ -288,7 +288,7 @@
                         </li>
 						<li>
 							<div data-zoom-image="http://shop.adidas.co.kr/upload/prod/etc/target/AQ6761-2.jpg">
-								<img src="http://shop.adidas.co.kr/upload/prod/etc/500/AQ6761-2_500X500.jpg" alt="">
+								<img src="//image.adidas.co.kr/upload/prod/basic/500/BA8775-1_500X500.jpg" alt="">
 								<!-- 160513 LABEL 추가 -->
 								<span class="label adihs-b new">NEW</span>
 							</div>
@@ -353,18 +353,20 @@
 							<div class="list">
 								<a href="http://santelglobal-adidas-mobile.herokuapp.com/html/adidas/PDP.html" class="on">
 									<span class="oo_label size60"><img src="http://m.adidas.co.kr/images/adidas/bg_oo_label_ss.jpg" alt="온라인단독 상품"></span>
-									<img src="http://shop.adidas.co.kr/upload/prod/basic/220/S79476-1_220X220.jpg" alt="">
+									<img src="//image.adidas.co.kr/upload/prod/basic/220/BA8775-1_220X220.jpg" alt="">
 								</a>
 								<a href="#">
 									<span class="oo_label size60"><img src="http://m.adidas.co.kr/images/adidas/bg_oo_label_ss.jpg" alt="온라인단독 상품"></span>
-									<img src="http://shop.adidas.co.kr/upload/prod/basic/220/S83382-1_220X220.jpg" alt="">
+									<img src="//image.adidas.co.kr/upload/prod/basic/220/BA8775-1_220X220.jpg" alt="">
 								</a>
-								<a href="http://santelglobal-adidas-mobile.herokuapp.com/html/adidas/PDP.html"><img src="http://shop.adidas.co.kr/upload/prod/basic/220/S83386-1_220X220.jpg" alt=""></a>
-								<a href="http://santelglobal-adidas-mobile.herokuapp.com/html/adidas/PDP.html"><img src="http://shop.adidas.co.kr/upload/prod/basic/220/S83358-1_220X220.jpg" alt=""></a>
-								<a href="http://santelglobal-adidas-mobile.herokuapp.com/html/adidas/PDP.html"><img src="http://shop.adidas.co.kr/upload/prod/basic/220/S82780-1_220X220.jpg" alt=""></a>
-								<a href="http://santelglobal-adidas-mobile.herokuapp.com/html/adidas/PDP.html"><img src="http://shop.adidas.co.kr/upload/prod/basic/220/S83385-1_220X220.jpg" alt=""></a>
-								<a href="http://santelglobal-adidas-mobile.herokuapp.com/html/adidas/PDP.html"><img src="http://shop.adidas.co.kr/upload/prod/basic/220/S75556-1_220X220.jpg" alt=""></a>
-                                <a href="http://santelglobal-adidas-mobile.herokuapp.com/html/adidas/PDP.html"><img src="http://shop.adidas.co.kr/upload/prod/basic/220/B27140-1_220X220.jpg" alt=""></a>
+								<a href="http://santelglobal-adidas-mobile.herokuapp.com/html/adidas/PDP.html" class="">
+									<span class="oo_label size60"><img src="http://m.adidas.co.kr/images/adidas/bg_oo_label_ss.jpg" alt="온라인단독 상품"></span>
+									<img src="//image.adidas.co.kr/upload/prod/basic/220/BA8775-1_220X220.jpg" alt="">
+								</a>
+								<a href="#">
+									<span class="oo_label size60"><img src="http://m.adidas.co.kr/images/adidas/bg_oo_label_ss.jpg" alt="온라인단독 상품"></span>
+									<img src="//image.adidas.co.kr/upload/prod/basic/220/BA8775-1_220X220.jpg" alt="">
+								</a>
 							</div>
 						</div>
 						<!--
@@ -554,12 +556,15 @@
                 </div>
                 <!-- //170220 -->
 
-                <!-- 170619 col3 클래스 추가 -->
+                <!-- buy_btn -->
 				<div class="buy_btn col3">
 					<a href="#"><span class="icons aft" data-icon="">바로구매</span></a>
-                    <!-- 170619 기존 아이콘 ==> 문구로 변경 -->
-    				<a href="javascript:void(0)" class="add_cart">장바구니</a>
-                    <!-- 170619 btn_npay 추가 -->
+                    
+					<!-- <a href="javascript:void(0)" class="add_cart">장바구니</a> -->
+					<!-- 190605 재입고 알림 -->
+					<a href="javascript:void(0)" class="add_cart restock">재입고 알림</a>
+					<!-- // 190605 재입고 알림 -->
+					
                     <a href="javascript:void(0)" class="btn_npay"></a>
 				</div>
 				<!-- //buy_btn -->
@@ -3052,7 +3057,7 @@
 						margin:5,
 						items : 4,
 						merge: true,
-						loop : true,
+						loop : false,
 					});
 				}else{
 					$(".product_order .list_wrap .list").owlCarousel({
@@ -3060,7 +3065,7 @@
 						margin:5,
 						items : 4,
 						merge: true,
-						loop : true,
+						loop : false,
 					});
 				}
 				//160303
