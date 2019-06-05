@@ -463,22 +463,90 @@
                 
                 <div class="anchors_wrap">
                     <div id="row">
-                        <div class="items on" onclick="fnMove('0')">
-                            <a href="javascript:void(0)">ACTIVATION</a>
+                        <div class="items on" onclick="fnMove('10')">
+                            <a href="javascript:void(0)">사회공헌</a>
+                        </div>
+                        <div class="items" onclick="fnMove('0')">
+                            <a href="javascript:void(0)">이벤트</a>
                         </div>
                         <div class="items" onclick="fnMove('4')">
-                            <a href="javascript:void(0)">PRODUCT</a>
+                            <a href="javascript:void(0)">한정상품</a>
+                        </div>
+                        <div class="devide">
+                            <span>//</span>
                         </div>
                         <div class="items" onclick="fnMove('1')">
-                            <a href="javascript:void(0)">RUNNING</a>
+                            <a href="javascript:void(0)">러닝</a>
                         </div>
                         <div class="items" onclick="fnMove('2')">
-                            <a href="javascript:void(0)">ORIGINALS</a>
+                            <a href="javascript:void(0)">오리지널스</a>
                         </div>
                         <div class="items" onclick="fnMove('3')">
-                            <a href="javascript:void(0)">FOOTBALL</a>
+                            <a href="javascript:void(0)">축구</a>
                         </div>
                         
+                    </div>
+                </div>
+
+                
+
+                <div class="space space10 scroll" id="socialpos" name="socialpos">
+                    <div class="sp_head">
+                        <div class="sp_head_cont">
+                            <h2>스포츠가 살아있는 역동적인<br>서울을 만들다</h2>
+                            <p>ADIDAS X SEOUL<br>SPORT NEEDS SPACE PROJECT</p>
+                        </div>
+                    </div>
+                    
+                    <div class="slider_wrap" id="slide8">
+                        <ul class="slider">
+                            <li><img src="/images/adidas/2019/event/keycity/1904/slide/img_sp10_slide_01.jpg" alt="" onclick="openModalVideoViewer('RVJDnvPWfEI')"></li>
+                            <li><img src="/images/adidas/2019/event/keycity/1904/slide/img_sp10_slide_02.jpg" alt=""></li>
+                            <li><img src="/images/adidas/2019/event/keycity/1904/slide/img_sp10_slide_03.jpg" alt=""></li>
+                            <li><img src="/images/adidas/2019/event/keycity/1904/slide/img_sp10_slide_04.jpg" alt=""></li>
+                            <li><img src="/images/adidas/2019/event/keycity/1904/slide/img_sp10_slide_05.jpg" alt=""></li>
+                            <li><img src="/images/adidas/2019/event/keycity/1904/slide/img_sp10_slide_06.jpg" alt=""></li>
+                            <li><img src="/images/adidas/2019/event/keycity/1904/slide/img_sp10_slide_07.jpg" alt=""></li>
+                        </ul>
+                    
+                        <div class="stxt">
+                            <p>스포츠로 서울을, 세상을 변화시키다.<br>
+                            보다 더 많은 사람들이 스포츠의 파워와<br>
+                            변화의 에너지를 느낄 수 있도록.<br>
+                            서울의 스포츠 공간을 더욱 안전하고,<br>
+                            활기 넘치게 변화시키는 아디다스의<br>
+                            4개년 사회공헌프로젝트</p>
+                        </div>
+                    </div>
+
+                    <div class="space space11" id="socialpos" name="socialpos">
+                        <div class="sp_head">
+                            <div class="sp_head_cont">
+                                <h2>스포츠를 통해 서울의 미래,<br>아이들의 꿈을 키우다</h2>
+                                <p>ADIDAS MIDREAM FC</p>
+                            </div>
+                        </div>
+                    
+                        <div class="slider_wrap" id="slide9">
+                            <ul class="slider">
+                                <li><img src="/images/adidas/2019/event/keycity/1904/slide/img_sp11_slide_11.jpg" alt=""></li>
+                                <li><img src="/images/adidas/2019/event/keycity/1904/slide/img_sp11_slide_12.jpg" alt=""></li>
+                                <li><img src="/images/adidas/2019/event/keycity/1904/slide/img_sp11_slide_13.jpg" alt=""></li>
+                                <li><img src="/images/adidas/2019/event/keycity/1904/slide/img_sp11_slide_14.jpg" alt=""></li>
+                                <li><img src="/images/adidas/2019/event/keycity/1904/slide/img_sp11_slide_15.jpg" alt=""></li>
+                                <li><img src="/images/adidas/2019/event/keycity/1904/slide/img_sp11_slide_16.jpg" alt=""></li>
+                                <li><img src="/images/adidas/2019/event/keycity/1904/slide/img_sp11_slide_17.jpg" alt=""></li>
+                            </ul>
+                    
+                            <div class="stxt">
+                                <p>스포츠를 통해 삶을, 미래를 변화시키다</p>
+                                <p class="en">
+                                    Through Sports,<br>
+                                    We have the Power<br>
+                                    to Change Lives
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
@@ -976,14 +1044,8 @@
                     stagePadding: 0,
                     margin: 0,
                     items: 1,
-                    // merge: true,
                     loop: true,
                     navigation: true,
-                    // nav: true,
-                    // autoplay: true,
-                    // autoplaySpeed: 2000,
-                    // autoplayTimeout: 2000,
-                    // autoplayHoverPause: true
                 });
 
 
@@ -1081,10 +1143,46 @@
                 owlProducts7.on('initialized.owl.carousel', function (event) {
                     var index = (event.item.index - 2);
                     //console.log(index);
-                    $('#slide5 .owl-dots .owl-dot').eq(index).trigger('click');
+                    $('#slide7 .owl-dots .owl-dot').eq(index).trigger('click');
                 });
 
                 owlProducts7.owlCarousel({
+                    stagePadding: 0,
+                    margin: 0,
+                    items: 1,
+                    // merge: true,
+                    loop: true,
+                    navigation: true
+                });
+
+                // 슬라이드8
+                var owlProducts8 = $('#slide8 .slider');
+
+                owlProducts8.on('initialized.owl.carousel', function (event) {
+                    var index = (event.item.index - 2);
+                    //console.log(index);
+                    $('#slide8 .owl-dots .owl-dot').eq(index).trigger('click');
+                });
+
+                owlProducts8.owlCarousel({
+                    stagePadding: 0,
+                    margin: 0,
+                    items: 1,
+                    // merge: true,
+                    loop: true,
+                    navigation: true
+                });
+
+                // 슬라이드9
+                var owlProducts9 = $('#slide9 .slider');
+
+                owlProducts9.on('initialized.owl.carousel', function (event) {
+                    var index = (event.item.index - 2);
+                    //console.log(index);
+                    $('#slide9 .owl-dots .owl-dot').eq(index).trigger('click');
+                });
+
+                owlProducts9.owlCarousel({
                     stagePadding: 0,
                     margin: 0,
                     items: 1,
@@ -1159,7 +1257,7 @@
                         }
 
                         // 스크롤 메뉴 헤더관계 처리
-                        var objStart = $(".space9").offset().top;
+                        var objStart = $(".space10").offset().top;
                         var lastScrollValue = 0;
                         var headerHide = $('#header').hasClass('hide');
 
@@ -1178,9 +1276,6 @@
                         }
                         thisPos = lastScrollValue;
                     })
-
-
-                    
 
 
                     $('#row').scroll(function () {

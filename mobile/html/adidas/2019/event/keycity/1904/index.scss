@@ -129,7 +129,6 @@
 			top:0;
 			z-index: 9;
 
-
 			white-space: nowrap;
 			overflow-x: auto;
 			overflow-y: hidden;
@@ -144,24 +143,47 @@
 				transform: translateX(-50%);
 			}	
 			.items{
+				position: relative;
 				display: inline-block;
-				margin-left: 10px;
-				width: 92px;
+				width: 88px;
+				&::after{
+					display: inline-block;
+					content: '';
+					position: absolute;
+					bottom: -5px;left: 50%;
+					width: 60px;
+					height: 0;
+					transform: translateX(-50%);
+					background: #000;
+					transition: all 0.4s;
+					opacity: 0;
+				}
 				&:first-child{
 					margin-left: 0;
 				}
 				a{
-					font: 1rem/35px 'adinenuPro-bold';
+					font: 500 1rem/35px 'NotoSansKR';
 					color:#000;
 					display: block;
 					text-align: center;
 					letter-spacing: 1px;
 				}
 				&.on{
-					background:#000;
-					a{
-						color:#fff;
+					&::after{
+						opacity: 1;
+						height: 5px;
 					}
+				}
+			}
+			.devide{
+				display: inline-block;
+				width: 20px;
+				text-align: center;
+				span{
+					font: 1rem/35px 'NotoSansKR';
+					color:#000;
+					display: block;
+					text-align: center;
 				}
 			}
 		}
@@ -821,7 +843,123 @@
 			}
 		}
 	}
+	
+	.space10{
+		padding: 0;
+		background: url('/images/adidas/2019/event/keycity/1904/bg_sp10.jpg') 0 0 no-repeat;
+		background-size: 100% auto;
+		.sp_head{
+			padding-bottom: 49%;
+			.sp_head_cont{
+				transform: translate(-50%, -50%);
+				h2{
+					font: 400 1.8rem/2.2rem 'NotoSansKR';
+					i{
+						font: 400 2.1rem/2.6rem 'adinenuPro-regular';
+						letter-spacing: 0.2rem;
+					}
+				}
+				p{
+					margin: 1rem 0 0;
+					font: 1rem/1.4rem 'adinenuPro-regular';
+					color: #fff;
+					letter-spacing: 0.45rem;
+					text-align: center;
+				}
+			}
+		}
+		.slider_wrap{
+			padding: 0 0 4rem;
+			margin-top: 0;
+			ul.slider{
+				li{
+					img{
+						width: 100%;
+					}
+				}
+				.owl-controls{
+					padding: 0.5rem 0 1.5rem;
+					.owl-dots{
+						.owl-dot{
+							&.active{
+								background:#e4ff00;
+							}
+						}
+					}
+				}
+			}			
+			.stxt{
+				p{
+					margin: 1rem 0 0;
+					font: 1rem/2rem 'adinenuPro-regular','NotoSansKR';
+					color: #fff;
+					letter-spacing: 3px;
+					text-align: center;
+				}
+			}
+		}
+	}
 
+	.space11{
+		padding: 0;
+		background: url('/images/adidas/2019/event/keycity/1904/bg_sp11.jpg') 0 0 no-repeat;
+		background-size: 100% auto;
+		.sp_head{
+			padding-bottom: 49%;
+			.sp_head_cont{
+				transform: translate(-50%, -50%);
+				h2{
+					font: 400 1.8rem/2.6rem 'NotoSansKR';
+					i{
+						font: 400 2.1rem/2.6rem 'adinenuPro-regular';
+						letter-spacing: 0.2rem;
+					}
+				}
+				p{
+					margin: 0.8rem 0 0;
+					font: 1rem/1rem 'adinenuPro-regular';
+					color: #fff;
+					letter-spacing: 0.45rem;
+					text-align: center;
+				}
+			}
+		}
+		.slider_wrap{
+			padding: 0 0 4rem;
+			margin-top: 0;
+			ul.slider{
+				li{
+					img{
+						width: 100%;
+					}
+				}
+				.owl-controls{
+					padding: 0.5rem 0 1.5rem;
+					.owl-dots{
+						.owl-dot{
+							background: rgba(255, 255, 255, 0.6);
+							&.active{
+								background:#fff;
+							}
+						}
+					}
+				}
+			}			
+			.stxt{
+				p{
+					font: 1rem/2rem 'NotoSansKR';
+					color: #fff;
+					letter-spacing: 3px;
+					text-align: center;
+					&.en{
+						margin-top: 0.5rem;
+						font: 1.1rem/2rem 'adinenuPro-regular';
+						letter-spacing: 5px;
+					}
+				}
+			}
+		}
+	}
 
 	.btm{
 		position: relative;
