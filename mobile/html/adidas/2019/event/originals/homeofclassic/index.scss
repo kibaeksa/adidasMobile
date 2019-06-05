@@ -7,7 +7,7 @@
 	background: #d1c5b7;
 	.button_area_v2{
 		display: inline-block;
-		width: 75%;
+		width: 35%;
 		div{
 			a{
 				height: 48px;
@@ -61,7 +61,7 @@
 		}
 	}
 
-	.statement2{
+	.statement{
 		position: relative;
 		padding: 38px 0 45px;
 		text-align: center;
@@ -70,6 +70,9 @@
 			color: #fff;
 			letter-spacing: 1px;
 			text-transform: uppercase;
+			&.ko{
+				font:500 2rem 'NotoSansKR';
+			}
 		}
 		p{
 			padding-top: 0.5rem;
@@ -83,6 +86,14 @@
 				padding: 0 0 10px 0;
 				font:600 1.3rem 'NotoSansKR';
 			}
+		}
+		span.alert{
+			margin: 0.5rem auto 0;
+			padding: 0 4px;
+			display: inline-block;
+			font:300 0.9rem 'NotoSansKR';
+			color: #d1c5b7;
+			background: #fff;
 		}
 		.button_area_v2{
 			margin:20px 0 0 0;
@@ -154,16 +165,40 @@
 			.wrap{
 				.item{
 					position: relative;
-					.item_txt{
+					.item_box{
 						position: absolute;
 						bottom: 1rem;
 						left: 1rem;
-						border-bottom: 1px solid #fff;
-						span{
-							font: 1rem/1rem 'adinenuPro-regular';
+						h3{
+							display: inline-block;
+							font: 1rem/1rem 'adinenuPro-regular','NotoSansKR';
 							color: #fff;
 							text-transform: uppercase;
 							letter-spacing: normal;
+							border-bottom: 1px solid #fff;
+						}
+						p{
+							padding-top: 6px;
+							font: 300 0.8rem/1.2rem 'NotoSansKR';
+							color: #fff;
+						}
+					}
+					.banner_slider_wrap{
+						.owl-dots{
+							position: absolute;
+							bottom: 1rem;
+							right: 1rem;
+							.owl-dot{
+								display: inline-block;
+								width: 6px;
+								height: 6px;
+								border-radius: 50%;
+								border: 1px solid #fff;
+								margin-left: 4px;
+								&.active{
+									background: #fff;
+								}
+							}
 						}
 					}
 				}
@@ -293,6 +328,81 @@
 								top: 50%;
 								left: 50%;
 								transform: translate(-50%, -50%);
+							}
+						}
+					}
+				}
+			}
+		}
+		
+
+		// sec3
+		.sec3{
+			&::after{
+				display: block;
+				content: '';
+				clear: both;
+			}
+			.wrap{
+				overflow: hidden;
+				position: relative;
+			}
+			.wrap1{
+				.item{
+					.img{
+						display: inline-block;
+						width:100%;
+						video,
+						img{
+							width:100%;
+						}
+					}
+					
+				}
+			}
+			.wrap2{
+				&::after{
+					display: block;
+					content: '';
+					clear: both;
+				}
+				.item{
+					float: left;
+					width: 50%;
+					.img{
+						float: left;
+						width: 100%;
+						video,
+						img{
+							width:100%;
+						}
+					}
+				}
+			}
+			.wrap3{
+				&::after{
+					display: block;
+					content: '';
+					clear: both;
+				}
+				.item{
+					float: left;
+					&.item1{
+						float: left;
+						width: 100%;
+						video,
+						img{
+							width:100%;
+						}
+					}
+					&.item2{
+						width: 100%;
+						.img{
+							float: left;
+							width: 50%;
+							video,
+							img{
+								width:100%;
 							}
 						}
 					}
