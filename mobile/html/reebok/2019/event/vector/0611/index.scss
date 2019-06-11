@@ -1,0 +1,313 @@
+@import "./mobile/MO/reebok/css/scss/about.scss";
+
+// @include opacity(1);
+// @include opacity(0);
+// @include prefix-css3(transition, all 1s ease-out);
+// @include prefix-css3(transition-delay,.8s);
+// background:url('/images/reebok/2019/event/vector/0529/1905_r_vectorcity_bg_MO.jpg') 100% 100% no-repeat;
+// background-size: cover;
+#contents{
+    img{
+        vertical-align: middle;
+    }
+}
+.visual_main{
+    position: relative;
+}
+//common
+.btn{
+    text-align: center;
+    a{
+        font: 700 .9rem/3.1rem 'NotoSansKR';
+        color:#fff;
+        padding:0 1rem;
+        border:.2rem solid #fff;
+        display: inline-block;
+        letter-spacing: .1rem;
+        img{
+            padding-left:.5rem;
+            vertical-align: middle;
+            width:20%;
+        }
+    }
+}
+.video{
+    font-size: 0;
+    video{
+        width:100%;
+    }            
+}
+.txt{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    >a{
+        display: inline-block;
+        border:0 !important;
+        text-align: center;
+        width:45px;
+        height:50px;
+        &::before{
+            border:0!important;
+        }
+        img{
+            width:100%;
+        }
+    }
+}
+
+.zico{
+    .visual_main{
+        position: relative;
+        background:#000;
+        .img{
+            img{
+                width:100%;
+            }
+        }
+        .txt{
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-40%);
+            text-align: center;
+            width:100%;
+            h1,p{
+                letter-spacing: .1rem;
+                color:#fff;
+            }
+            h1{
+                font: 2.9rem 'PFDinMonoPro-Bold';
+                text-shadow: 3px 3px 1px #000;
+            }
+            p{
+                font: 400 1.4rem/1.4rem 'NotoSansKR';
+                margin:.5rem 0 2rem;
+                text-shadow: 1.5px 1.5px 1px #000;
+            }
+            a{
+                display: inline-block;
+                border:0;
+                text-align: center;
+                width:45px;
+                height:50px;
+                &::before{
+                    border:0;
+                }
+                img{
+                    width:100%;
+                }
+            }
+        }
+  
+    }
+    .aside{
+        position: relative;
+        .img{
+            img{
+                width:100%;
+            }
+        }
+        .txt{
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);            
+            width: 100%;
+            text-align: center;
+            span,p{
+                letter-spacing: .1rem;
+                color:#fff;
+            }
+            span{
+                font: 400 1rem/1.5rem 'NotoSansKR';
+            }
+            p{
+                font: 400 1.9rem/2.5rem 'NotoSansKR';
+                margin: 1rem 0;
+            }
+
+        }
+    }
+   
+    .common_slide{
+        position: relative;
+        overflow: hidden;
+        z-index: 2;
+        .bg{
+            z-index: 0;
+            img{
+                width:100%;
+                @include opacity(0);
+                @include prefix-css3(transition, all 1s ease-out);
+                position: absolute;                
+                top:50%;
+                left:50%;
+                transform: translate(-50%,-50%);
+                &.on{
+                    @include opacity(1);
+                }
+            }
+        }
+        ul{
+            overflow: hidden;
+            li{
+                position: relative;
+                float: left;
+                img{
+                    width:100%;
+                }
+            }
+        }
+        .num_paging{
+            padding: 1rem 0 2.5rem 0;
+            a{
+                background:#666670;
+                width:.8rem;
+                height:.8rem;
+                border:0;
+                margin:0 .5rem;
+                &.on{
+                    background: #fff;
+                }
+            }
+        }
+        .navi{
+            text-align: center;
+            padding: 1rem 0 3rem;
+            width: 90%;
+            margin: 0 auto;
+            &::after{
+                display: block;
+                content:'';
+                clear:both;
+            }
+            p{
+                font: 1.3rem 'PFDinMonoPro-Bold';
+                color: #fff;
+                letter-spacing: .1rem;
+                display: inline-block;
+                em{
+                    color:#9353c6;
+                }
+            }
+            .prev,.next{
+                padding-top: .5rem;
+                img{
+                    vertical-align: middle;
+                    width: 50%;
+                }
+            }
+            .prev{
+                float: left;
+            }
+            .next{
+                float: right;
+            }
+        }
+        &.collection_slider01{
+            position: relative;
+            background:url('/images/reebok/2019/event/vector/0531/1905_r_vectorcity_bg01_MO.jpg') no-repeat;
+            background-size: 100% 100%;
+        }
+        &.collection_slider02{
+            position: relative;
+            background:url('/images/reebok/2019/event/vector/0531/1905_r_vectorcity_bg02_MO.jpg') no-repeat;
+            background-size: 100% 100%;
+            .txt{
+                position: static;
+                top:initial;
+                left:initial;
+                transform: initial;
+                p{
+                    font: 1.7rem 'PFDinMonoPro-Bold';
+                    color: #fff;
+                    letter-spacing: .2rem;
+                    text-shadow: 3px 3px 1px #000;
+                }
+                .btn{
+                    padding:1rem 0 5rem 0;
+                }
+            }
+        }
+    }
+
+    .midvid{
+        position: relative;
+        .img{
+            img{
+                width:100%;
+            }
+        }
+        .txt{
+            text-align: center;
+            width:100%;
+            transform: translate(-50%,-45%);
+            h2{
+                font: 1.7rem 'PFDinMonoPro-Bold';
+                color:#fff;
+                letter-spacing: .1rem;
+                text-shadow: 3px 3px 1px #000;
+                margin-bottom: 1.5rem;
+            }
+            a{
+                margin: 0 auto;
+                img{
+                    width:65%;
+                }
+            }
+        }
+    }
+    .event_cont{
+        img{
+            width:100%;
+        }
+    }
+    .btm{
+        position: relative;
+        background:#00dacd;
+        .img{
+            img{
+                width:100%;
+            }
+        }
+        .txt{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-45%, -137%);
+            width: 100%;
+            text-align: initial;
+            h3{
+                font: 900 2.2rem/2.2rem 'NotoSansKR';
+                color: #fff;
+                letter-spacing: .1rem;
+                margin-bottom: .5rem;
+                em{
+                    color:#98ffff;
+                    font: inherit;
+                }
+            }
+            span{
+                font: 900 1rem/1rem 'NotoSansKR';
+                color: #fff;
+                letter-spacing: .2rem;
+                margin: 0 0 1rem 0;
+                display: inline-block;
+            }
+            .btn{
+                text-align: left;
+                a{
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+
+
+}
+
+// zico
