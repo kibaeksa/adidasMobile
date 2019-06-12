@@ -2948,6 +2948,45 @@
 					$('.modal-popup-wrapper').removeClass('open');
 					bodyScroll();
 				})
+				setTimeout(function(){
+                 // 슬라이더1
+				 var owlSlider1 = $('#slider_owl1');
+                    
+                    owlSlider1.on('initialized.owl.carousel', function(event) {
+                        /*
+                            최초 로딩 시 한번만 호출하는 함수
+                        */
+                    });
+                    
+                    owlSlider1.on('changed.owl.carousel', function(event) {
+                        /*
+                            Callback 이벤트 (슬라이드가 실행 될 떄마다 실행되는 함수)
+                            * index 사용하기
+                            event.item.index
+                    
+                            * length 사용하기
+                            event.item.count
+                        */
+                        // var index1 = event.item.index - 2;
+                        // $('#slider1 .owl-controls .owl-dots .owl-dot').removeClass('active').eq(index1).addClass('active');
+                        // console.log(index1);
+                    });
+                    
+                    owlSlider1.owlCarousel({
+                        stagePadding: 60,
+                        margin:10,
+                        items : 1,
+                        merge: true,
+                        // loop : true,
+                        navigation: true,
+                        nav: true
+                    });
+
+				}, 3000);
+   
+
+
+
 				// 190611 팝업 사이즈차트
 
 
@@ -3517,8 +3556,9 @@
 			</div>
 			<div class="popup-contents">
 				<style type="text/css">
-					.popup-sizechart{overflow-y: auto;overflow-x:hidden;}
-					.popup-sizechart .popup-contents{box-sizing: border-box;}
+					.popup-sizechart{overflow-y: auto;overflow-x:hidden;top:60px!important;}
+					.popup-sizechart .popup{transform:none!important;top:initial!important;left:initial!important;}
+					.popup-sizechart .popup-contents{box-sizing: border-box;text-align: center;padding-bottom: 10rem!important;}
 					.popup-sizechart .popup-header{background:#fff!important;line-height: 50px;font-size: 16px;padding-left: 20px;border:1px solid #ccc;}
 					.popup-sizechart .clothes{overflow-y: hidden;white-space: nowrap;display:inline-block;}
 					.popup-sizechart .clothes::after{display:block;content:'';clear:both;}    
@@ -3526,16 +3566,22 @@
 					.popup-sizechart .clothes .section{display:inline-block;}
 					.popup-sizechart .clothes01 .section{width: 96px;}
 					.popup-sizechart .clothes02 .section{width: 99px;}
-					.popup-sizechart .clothes03 .section{width: 105px;}
-					.popup-sizechart .section:last-child{width: 250px;overflow-x:scroll; overflow-y:hidden; white-space:nowrap;}
+					.popup-sizechart .clothes03 .section{width: 99px;}
+					.popup-sizechart .section:last-child{width: 200px;overflow-x:scroll; overflow-y:hidden; white-space:nowrap;}
+					.popup-sizechart .clothes03 .section .head_cont{padding:0 16px;}
 				
 					.popup-sizechart .section{border-collapse:collapse;border-spacing:0;font-size:11px!important;}
-					.popup-sizechart .section td{border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
-					.popup-sizechart .section th{font-weight:normal;border-style:solid;border-width:1px;border-color:black;}
-					.popup-sizechart .section tr:first-child{border-top: 1px solid #000;}
+					.popup-sizechart .section td{border:1px solid #999;border-right: 1px solid #000;overflow:hidden;word-break:normal;}
+					.popup-sizechart .section th{border:1px solid #ccc;border-bottom:0;}
+					.popup-sizechart .section th:first-child{border:1px solid #ccc;border-bottom:0;border-left:0;}
+					.popup-sizechart .section:last-child tr:last-child{border-bottom: 1px solid #ccc;}
 					.popup-sizechart .section .head_cont:first-child{background:#ebedee;}
 					.popup-sizechart .section .head_cont{text-align:center;vertical-align:middle;height:37.5px;width:95px;padding: 0 19px;}
 					.popup-sizechart .section .body_cont{text-align: center;vertical-align: middle;height: 37px;width: 40px;line-height: 33px;display: inline-block;margin-right: -1px;}
+
+					.banner_slider_wrap{position:relative;}
+					.banner_slider_wrap h1{}
+					.banner_slider_wrap ul li a img{width:100%;}
 					/* .test_sect{display:block;}
 					.test_sect ul{width: 100%;overflow-x:scroll; overflow-y:hidden; white-space:nowrap;}
 					.test_sect ul li{width:180px;height:50px;background:#ccc;display:inline-block;} */
@@ -3551,7 +3597,7 @@
 					<h1>상의 : TOP/DRESS</h1>
 					<table class="section">
 						<tr>
-							<th class="head_cont">adidas SIZE</th>
+							<td class="head_cont">adidas SIZE</td>
 						</tr>
 						<tr>
 							<td class="head_cont">일반 상의 표시</td>
@@ -3610,7 +3656,7 @@
 					<h1>하의 : PANTS / SKIRT</h1>
 					<table class="section">
 						<tr>
-							<th class="head_cont">adidas SIZE</th>
+							<td class="head_cont">adidas SIZE</td>
 						</tr>
 						<tr>
 							<td class="head_cont">허리둘레(inch)</td>
@@ -3669,7 +3715,7 @@
 					<h1>스포츠 브라 : SPORTS BRAS</h1>
 					<table class="section">
 						<tr>
-							<th class="head_cont">adidas SIZE</th>
+							<td class="head_cont">adidas SIZE</td>
 						</tr>
 						<tr>
 							<td class="head_cont">아디다스 상의<br>사이즈 기준</td>
@@ -3757,6 +3803,36 @@
 					</table>
 				</div>
 
+				<div class="banner_slider_wrap slider1">
+                    <h1>관련제품</h1>
+                    <ul id="slider_owl1">
+                        <li>
+                            <a href="https://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=DW5769">
+                                <img src="/images/adidas/2019/event/golf/ultimate365/pd01_01.jpg" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=CV8847">
+                                <img src="/images/adidas/2019/event/golf/ultimate365/pd01_02.jpg" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=DW5512">
+                                <img src="/images/adidas/2019/event/golf/ultimate365/pd01_03.jpg" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=DW5509">
+                                <img src="/images/adidas/2019/event/golf/ultimate365/pd01_04.jpg" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=BB7841">
+                                <img src="/images/adidas/2019/event/golf/ultimate365/pd01_05.jpg" alt="">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
 			</div>
 		</div>
 	</div>
