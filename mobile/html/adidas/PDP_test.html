@@ -2935,18 +2935,18 @@
 				var body = $('.popup-sizechart .body');
 				$('.sns_btn .fb').on('click', function () {
 					$('.popup-sizechart').addClass('open');
-					// bodyScrollStop();
+					bodyScrollStop();
 				});
 
 				$('.modal-popup-wrapper').find('.close_x_btn').bind('click',function(){
 					// alert();
 					$('.modal-popup-wrapper').removeClass('open');
-					// bodyScroll();
+					bodyScroll();
 				})
 
 				$('.modal-popup-wrapper .overlay').bind('click',function(){
 					$('.modal-popup-wrapper').removeClass('open');
-					// bodyScroll();
+					bodyScroll();
 				})
 				setTimeout(function(){
                  // 슬라이더1
@@ -3555,7 +3555,7 @@
 				<style type="text/css">
 					.popup-sizechart{overflow-x:hidden;/*top:60px!important;*/}
 					.popup-sizechart .popup{transform:none!important;top:initial!important;left:initial!important;}
-					.popup-sizechart .popup-header{background:#fff!important;line-height: 50px;font-size: 16px;padding-left: 20px;border:1px solid #ccc;}
+					.popup-sizechart .popup-header{background:#fff!important;line-height: 50px;font-size: 16px;padding-left: 20px;border:1px solid #ccc;position: fixed!important;width: 100%;}
 					.popup-sizechart .popup-contents{box-sizing: border-box;text-align: center;padding-bottom: 10rem!important;overflow-y: auto;-webkit-overflow-scrolling: touch;z-index:130;}
 					.popup-sizechart .clothes{display:inline-block;}
 					.popup-sizechart .clothes::after{display:block;content:'';clear:both;}    
