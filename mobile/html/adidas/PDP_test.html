@@ -2938,18 +2938,15 @@
 				$('.info .size_chart_btn').on('click', function () {
 					$('.popup-sizechart').addClass('open');
 					$('#header').css('display','none');
-					bodyScrollStop();
 				});
 
 				$('.modal-popup-wrapper').find('.close_x_btn').bind('click',function(){
 					// alert();
 					$('.modal-popup-wrapper').removeClass('open');
-					bodyScroll();
 				})
 
 				$('.modal-popup-wrapper .overlay').bind('click',function(){
 					$('.modal-popup-wrapper').removeClass('open');
-					bodyScroll();
 				})
 
 				setTimeout(function(){
@@ -3560,7 +3557,7 @@
 
 	<!-- 190611 사이즈차트팝업 -->
 	<!-- 남자 -->
-	<!-- <div class="modal-popup-wrapper popup-sizechart size_chart_men" data-modalpop=""
+	<div class="modal-popup-wrapper popup-sizechart size_chart_men" data-modalpop=""
 		data-modalpop-name="popup-sizechart">
 		<div class="overlay"></div>
 		<div class="popup">
@@ -3570,6 +3567,33 @@
 			</div>
 			<div class="popup-contents">
 				<style type="text/css">
+					/* 190611 사이즈차트 리뉴얼 */
+					.popup-sizechart{overflow-x:hidden;overflow-y: scroll;-webkit-overflow-scrolling: touch;}
+					.popup-sizechart .popup{transform:none!important;top:initial!important;left:initial!important;}
+					.popup-sizechart .popup-header{background:#fff!important;line-height: 50px;font-size: 16px;padding-left: 20px;border-bottom:1px solid #ccc;z-index:131;}
+					.popup-sizechart .popup-contents{box-sizing: border-box;text-align: center;padding-bottom: 10rem!important;overflow-x: hidden;overflow-y: auto;-webkit-overflow-scrolling: touch;z-index:130;padding: 2rem!important;}
+					.popup-sizechart .clothes{white-space: nowrap;display:inline-block;display: inline-block;overflow: hidden;width: 100%;}
+					.popup-sizechart .clothes h1,.banner_slider_wrap h1{margin: 20px 0 10px .3rem;text-align: left;font-size: 1.2rem;font-weight: 700;}
+					.popup-sizechart .section{display:inline-block;border-spacing:0;font-size:11px!important;margin-right: -2px;}
+					.popup-sizechart .section .head_cont{text-align:center;vertical-align:middle;height:37.5px;/*width:95px;*/width:8.5rem;}
+					.popup-sizechart .section .body_cont{text-align:center;vertical-align:middle;height: 37.5px;width: 40px;padding: 0 10.5px;border-bottom: 1px solid #ccc;border-right: 1px solid #ccc;}
+					/* .popup-sizechart .section .body_cont:last-child{border-right:0;} */
+					.popup-sizechart .section .body_cont:first-child{border-left:1px solid #000;}
+					.popup-sizechart .section01{overflow-y:hidden; white-space:nowrap;background:#ebedee;border:1px solid #999;/*border-right: 1px solid #000;*/}
+					.popup-sizechart .section01 .head_cont{border-bottom:1px solid #999;overflow:hidden;word-break:normal;}
+					.popup-sizechart .section01 tr:last-child .head_cont{border-bottom:0;}
+					.popup-sizechart .section02{/*width: 200px;*/width:18rem;overflow-x:scroll;transform:translateZ(0);-webkit-transform:translateZ(0); white-space:nowrap;border:1px solid #ccc;border-left: 0;-webkit-overflow-scrolling: touch;}
+					.popup-sizechart .section02	tr:last-child .body_cont{border-bottom:0;}
+					.popup-sizechart .popup-contents .swipe{text-align: left;padding: 1rem .5rem;}
+					@media (min-width:414px){.popup-sizechart .section02{width:21rem;}}
+					.banner_slider_wrap{position:relative;}
+					.banner_slider_wrap ul li{text-align: left;}
+					.banner_slider_wrap ul li a img{width:100%;}
+					.banner_slider_wrap .owl-stage-outer{overflow:hidden;}
+					.banner_slider_wrap .tips{margin: 1rem 0;}
+					.banner_slider_wrap .tips li{line-height: 1.3rem;}
+					.size_chart_btn strong{top:-2px!important; left:14px!important;border:1px solid #027dbf; padding:5px 15px;color:#027dbf;}
+					/* 190611 사이즈차트 리뉴얼 끝*/
 				</style>
 				<div class="clothes">
 					<h1>상의 : TOPS</h1>
@@ -3711,12 +3735,12 @@
                     <h1>사이즈 측정 방법</h1>
 					<ul id="slider_owl1">
                         <li>
-                            <a href="https://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=DW5769">
+                            <a href="javascript:void(0)">
                                 <img src="/images/adidas/common/sizechart_men_01.jpg" alt="">
                             </a>
                         </li>
                         <li>
-                            <a href="https://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=CV8847">
+                            <a href="javascript:void(0)">
                                 <img src="/images/adidas/common/sizechart_men_02.jpg" alt="">                                                              
                             </a>
                         </li>
@@ -3728,7 +3752,7 @@
                 </div>
 			</div>
 		</div>
-	</div> -->
+	</div>
 	<!-- //남자 -->
 
 	<!-- 여자 -->
@@ -3959,17 +3983,17 @@
                     <h1>사이즈 측정 방법</h1>
 					<ul id="slider_owl1">
                         <li>
-                            <a href="https://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=DW5769">
+                            <a href="javascript:void(0)">
                                 <img src="/images/adidas/common/sizechart_women_01.jpg" alt="">
                             </a>
                         </li>
                         <li>
-                            <a href="https://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=CV8847">
+                            <a href="javascript:void(0)">
                                 <img src="/images/adidas/common/sizechart_women_02.jpg" alt="">                                                              
                             </a>
                         </li>
                         <li>
-                            <a href="https://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=DW5512">
+                            <a href="javascript:void(0)">
                                 <img src="/images/adidas/common/sizechart_women_03.jpg" alt="">                                
                             </a>
                         </li>
@@ -4178,17 +4202,17 @@
                     <h1>사이즈 측정 방법</h1>
                     <ul id="slider_owl1">
                         <li>
-                            <a href="https://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=DW5769">
+                            <a href="javascript:void(0)">
                                 <img src="/images/adidas/common/sizechart_shoes_01.jpg" alt="">
                             </a>
                         </li>
                         <li>
-                            <a href="https://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=CV8847">
+                            <a href="javascript:void(0)">
                                 <img src="/images/adidas/common/sizechart_shoes_02.jpg" alt="">                                                              
                             </a>
                         </li>
                         <li>
-                            <a href="https://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=DW5512">
+                            <a href="javascript:void(0)">
                                 <img src="/images/adidas/common/sizechart_shoes_03.jpg" alt="">                                
                             </a>
                         </li>
@@ -4201,17 +4225,17 @@
 					<h1>사이즈 측정 방법</h1>
 					<ul id="slider_owl2">
 						<li>
-							<a href="https://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=DW5769">
+							<a href="javascript:void(0)">
 								<img src="/images/adidas/common/sizechart_shoesFit_01.jpg" alt="">
 							</a>
 						</li>
 						<li>
-							<a href="https://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=CV8847">
+							<a href="javascript:void(0)">
 								<img src="/images/adidas/common/sizechart_shoesFit_02.jpg" alt="">                                                              
 							</a>
 						</li>
 						<li>
-							<a href="https://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=DW5512">
+							<a href="javascript:void(0)">
 								<img src="/images/adidas/common/sizechart_shoesFit_03.jpg" alt="">                                
 							</a>
 						</li>
@@ -4229,7 +4253,7 @@
 	<!-- //신발 -->
 
 	<!-- 키즈 -->
-	<div class="modal-popup-wrapper popup-sizechart size_chart_kids" data-modalpop=""
+	<!-- <div class="modal-popup-wrapper popup-sizechart size_chart_kids" data-modalpop=""
 		data-modalpop-name="popup-sizechart">
 		<div class="overlay"></div>
 		<div class="popup">
@@ -4239,33 +4263,6 @@
 			</div>
 			<div class="popup-contents">
 				<style type="text/css">
-				/* 190611 사이즈차트 리뉴얼 */
-				.popup-sizechart{overflow-x:hidden;overflow-y: scroll;-webkit-overflow-scrolling: touch;}
-				.popup-sizechart .popup{transform:none!important;top:initial!important;left:initial!important;}
-				.popup-sizechart .popup-header{background:#fff!important;line-height: 50px;font-size: 16px;padding-left: 20px;border-bottom:1px solid #ccc;z-index:131;}
-				.popup-sizechart .popup-contents{box-sizing: border-box;text-align: center;padding-bottom: 10rem!important;overflow-x: hidden;overflow-y: auto;-webkit-overflow-scrolling: touch;z-index:130;padding: 2rem!important;}
-				.popup-sizechart .clothes{white-space: nowrap;display:inline-block;display: inline-block;overflow: hidden;width: 100%;}
-				.popup-sizechart .clothes h1,.banner_slider_wrap h1{margin: 20px 0 10px .3rem;text-align: left;font-size: 1.2rem;font-weight: 700;}
-				.popup-sizechart .section{display:inline-block;border-spacing:0;font-size:11px!important;margin-right: -2px;}
-				.popup-sizechart .section .head_cont{text-align:center;vertical-align:middle;height:37.5px;/*width:95px;*/width:8.5rem;}
-				.popup-sizechart .section .body_cont{text-align:center;vertical-align:middle;height: 37.5px;width: 40px;padding: 0 10.5px;border-bottom: 1px solid #ccc;border-right: 1px solid #ccc;}
-				/* .popup-sizechart .section .body_cont:last-child{border-right:0;} */
-				.popup-sizechart .section .body_cont:first-child{border-left:1px solid #000;}
-				.popup-sizechart .section01{overflow-y:hidden; white-space:nowrap;background:#ebedee;border:1px solid #999;/*border-right: 1px solid #000;*/}
-				.popup-sizechart .section01 .head_cont{border-bottom:1px solid #999;overflow:hidden;word-break:normal;}
-				.popup-sizechart .section01 tr:last-child .head_cont{border-bottom:0;}
-				.popup-sizechart .section02{/*width: 200px;*/width:18rem;overflow-x:scroll;transform:translateZ(0);-webkit-transform:translateZ(0); white-space:nowrap;border:1px solid #ccc;border-left: 0;-webkit-overflow-scrolling: touch;}
-				.popup-sizechart .section02	tr:last-child .body_cont{border-bottom:0;}
-				.popup-sizechart .popup-contents .swipe{text-align: left;padding: 1rem .5rem;}
-				@media (min-width:414px){.popup-sizechart .section02{width:21rem;}}
-				.banner_slider_wrap{position:relative;}
-				.banner_slider_wrap ul li{text-align: left;}
-				.banner_slider_wrap ul li a img{width:100%;}
-				.banner_slider_wrap .owl-stage-outer{overflow:hidden;}
-				.banner_slider_wrap .tips{margin: 1rem 0;}
-				.banner_slider_wrap .tips li{line-height: 1.3rem;}
-				.size_chart_btn strong{top:-2px!important; left:14px!important;border:1px solid #027dbf; padding:5px 15px;color:#027dbf;}
-				/* 190611 사이즈차트 리뉴얼 끝*/
 				</style>
 				<div class="clothes">
 					<h1>상의 : TOPS/DRESS</h1>
@@ -4642,17 +4639,17 @@
                     <h1>사이즈 측정 방법</h1>
                     <ul id="slider_owl1">
                         <li>
-                            <a href="https://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=DW5769">
+                            <a href="javascript:void(0)">
                                 <img src="/images/adidas/common/sizechart_kids_01.jpg" alt="">
                             </a>
                         </li>
                         <li>
-                            <a href="https://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=CV8847">
+							<a href="javascript:void(0)">
                                 <img src="/images/adidas/common/sizechart_kids_02.jpg" alt="">                                                              
                             </a>
                         </li>
                         <li>
-                            <a href="https://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=DW5512">
+							<a href="javascript:void(0)">                            
                                 <img src="/images/adidas/common/sizechart_kids_03.jpg" alt="">                                
                             </a>
                         </li>
@@ -4664,7 +4661,7 @@
                 </div>
 			</div>
 		</div>
-	</div>
+	</div> -->
 	<!-- //키즈 -->
 	<!-- //190611 사이즈차트팝업 -->
 
