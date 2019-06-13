@@ -374,8 +374,11 @@
 						<div class="dotted_grid"></div>
 						 -->
 					</li>
-					<li class="size">
-						<strong>사이즈/수량</strong>
+					<li class="size size_chart_btn">
+						<!-- 190611 사이즈차트 -->
+						<strong data-modalpop-click="popup-sizechart">사이즈 차트 보기</strong>
+						<!-- <strong>사이즈/수량</strong> -->
+						<!-- //190611 사이즈차트 -->
 						<div class="r_box">
 							<!-- <a href="" class="alarm_stock">입고알림 신청 바로가기</a> -->
 							<!-- 160330 a태그->span태그로 변경 -->
@@ -612,7 +615,7 @@
                 </div>
 
 				<div class="sns_btn modify0109 clearfix">
-					<a href="#" class="fb icons" data-icon="" data-modalpop-click="popup-sizechart"></a>
+					<a href="#" class="fb icons" data-icon=""></a>
 					<!-- <a href="#" class="kko"></a> -->
 					<a href="#" class="ks"></a>
 					<a href="#" class="copy_url icons" data-icon=""></a>
@@ -2914,10 +2917,10 @@
 
 
   <script type="text/javascript">
+	
 		(function($){
-
 			$(document).ready(function() {
-
+				
 				// 190611 팝업 사이즈차트
 				function bodyScrollStop() {
 					$('html, body').css({
@@ -2932,7 +2935,7 @@
 					});
 				}
 				// var body = $('.popup-sizechart .body');
-				$('.sns_btn .fb').on('click', function () {
+				$('.info .size_chart_btn').on('click', function () {
 					$('.popup-sizechart').addClass('open');
 					$('#header').css('display','none');
 					bodyScrollStop();
@@ -2950,34 +2953,50 @@
 				})
 
 				setTimeout(function(){
-                 // 슬라이더1
+                 // 사이즈차트 슬라이더1
 				 var owlSlider1 = $('#slider_owl1');
                     
                     owlSlider1.on('initialized.owl.carousel', function(event) {
+						$('.banner_slider_wrap .owl-stage').css({'padding-left':'0'});
                     });
                     
                     owlSlider1.on('changed.owl.carousel', function(event) {
-                        /*
-                            Callback 이벤트 (슬라이드가 실행 될 떄마다 실행되는 함수)
-                            * index 사용하기
-                            event.item.index
-                    
-                            * length 사용하기
-                            event.item.count
-                        */
-                        // var index1 = event.item.index - 2;
-                        // $('#slider1 .owl-controls .owl-dots .owl-dot').removeClass('active').eq(index1).addClass('active');
-                        // console.log(index1);
+
                     });
                     
                     owlSlider1.owlCarousel({
-                        stagePadding:0,
-                        margin:0,
-                        items : 1,
+                        stagePadding:30,
+                        margin:15,
+                        items :1,
                         merge: true,
                         // loop : true,
-                        navigation: true,
-                        nav: true
+                        navigation: false,
+                        nav: false
+                    });
+
+				}, 3000);
+
+				setTimeout(function(){
+                 // 사이즈차트 슬라이더2
+				 var owlSlider2 = $('#slider_owl2');
+                    
+                    owlSlider2.on('initialized.owl.carousel', function(event) {
+						$('.banner_slider_wrap .owl-stage').css({'padding-left':'0'});
+                    });
+                    
+                    owlSlider2.on('changed.owl.carousel', function(event) {
+						$('.banner_slider_wrap .owl-stage').css({'padding-left':'0'});
+
+                    });
+                    
+                    owlSlider2.owlCarousel({
+                        stagePadding:30,
+                        margin:15,
+                        items :1,
+                        merge: true,
+                        // loop : true,
+                        navigation: false,
+                        nav: false
                     });
 
 				}, 3000);
@@ -3538,53 +3557,197 @@
             </div>
         </div>
 	</div>
-	
+
 	<!-- 190611 사이즈차트팝업 -->
-	<div class="modal-popup-wrapper popup-sizechart" data-modalpop=""
+	<!-- 남자 -->
+	<div class="modal-popup-wrapper popup-sizechart size_chart_men" data-modalpop=""
 		data-modalpop-name="popup-sizechart">
 		<div class="overlay"></div>
 		<div class="popup">
 			<div class="popup-header">
-				여성 사이즈 차트(의류)
+				남성 사이즈 가이드
 				<a href="javascript:void(0)" class="close_x_btn"></a>
 			</div>
 			<div class="popup-contents">
 				<style type="text/css">
-					.popup-sizechart{overflow-x:hidden;overflow-y: scroll;-webkit-overflow-scrolling: touch;}
-					.popup-sizechart .popup{transform:none!important;top:initial!important;left:initial!important;}
-					.popup-sizechart .popup-header{background:#fff!important;line-height: 50px;font-size: 16px;padding-left: 20px;border:1px solid #ccc;/*position: fixed!important;width: 95%;*/z-index:131;}
-					.popup-sizechart .popup-contents{box-sizing: border-box;text-align: center;padding-bottom: 10rem!important;overflow-y: auto;-webkit-overflow-scrolling: touch;z-index:130;}
-					.popup-sizechart .clothes{white-space: nowrap;display:inline-block;}
-					.popup-sizechart .clothes::after{display:block;content:'';clear:both;}    
-					.popup-sizechart .clothes h1{margin: 20px 0 10px 0;text-align: left;}
-					.popup-sizechart .clothes .section{display:inline-block;}
-					.popup-sizechart .section{border-spacing:0;font-size:11px!important;margin-right: -2px;}
-					.popup-sizechart .section .head_cont{text-align:center;vertical-align:middle;height:37.5px;width:95px;}
-					.popup-sizechart .section .body_cont{text-align:center;vertical-align: middle;height: 37.5px;width: 40px;padding: 0 11.5px;margin-right:-1px;margin-top:.5px;border-bottom: 1px solid #ccc;border-right: 1px solid #ccc;}
-					.popup-sizechart .section .body_cont:last-child{border-right:0;}
-					.popup-sizechart .section01{overflow-y:hidden; white-space:nowrap;background:#ebedee;border:1px solid #999;/*border-right: 1px solid #000;*/}
-					.popup-sizechart .section01 .head_cont{border-bottom:1px solid #999;overflow:hidden;word-break:normal;}
-					.popup-sizechart .section01 tr:last-child .head_cont{border-bottom:0;}
-					.popup-sizechart .section02{width: 200px;overflow-x:scroll;transform:translateZ(0);-webkit-transform:translateZ(0); white-space:nowrap;border:1px solid #ccc;border-left: 0;}
-					.popup-sizechart .section02	tr:last-child .body_cont{border-bottom:0;}
-					.banner_slider_wrap{position:relative;overflow:hidden;}
-					.banner_slider_wrap h1{}
-					.banner_slider_wrap ul li{text-align: left;}
-					.banner_slider_wrap ul li a img{width:90%;}
-					/* .popup-sizechart .section02::-webkit-scrollbar {
-						-webkit-appearance: none;
-						height:1px;
-					}
-					.popup-sizechart .section02::-webkit-scrollbar-thumb {
-						background-color: rgba(0,0,0,.5);
-					} */
 				</style>
 				<div class="clothes">
-					<h1>상의 : TOP/DRESS</h1>
-					<!-- <div class="wrap"> -->
+					<h1>상의 : TOPS</h1>
 					<table class="section section01">
 						<tr>
-							<td class="head_cont">adidas SIZE</td>
+							<td class="head_cont">아디다스 사이즈</td>
+						</tr>
+						<tr>
+							<td class="head_cont">일반 상의 표시</td>
+						</tr>
+						<tr>
+							<td class="head_cont">가슴둘레(cm)</td>
+						</tr>
+						<tr>
+							<td class="head_cont">신장(cm)</td>
+						</tr>
+					</table>
+					<table class="section section02">
+						<tr>
+							<th class="body_cont">3XS</th>
+							<th class="body_cont">2XS</th>
+							<th class="body_cont">XS</th>
+							<th class="body_cont">S</th>
+							<th class="body_cont">M</th>
+							<th class="body_cont">L</th>
+							<th class="body_cont">XL</th>
+							<th class="body_cont">2XL</th>
+							<th class="body_cont">3XL</th>
+							<th class="body_cont">4XL</th>
+						</tr>
+						<tr>
+							<th class="body_cont">075</th>
+							<th class="body_cont">080</th>
+							<th class="body_cont">085</th>
+							<th class="body_cont">090</th>
+							<th class="body_cont">095</th>
+							<th class="body_cont">100</th>
+							<th class="body_cont">105</th>
+							<th class="body_cont">110</th>
+							<th class="body_cont">115</th>
+							<th class="body_cont">120</th>
+						</tr>
+						<tr>
+							<th class="body_cont">75</th>
+							<th class="body_cont">80</th>
+							<th class="body_cont">85</th>
+							<th class="body_cont">90</th>
+							<th class="body_cont">95</th>
+							<th class="body_cont">100</th>
+							<th class="body_cont">105</th>
+							<th class="body_cont">110</th>
+							<th class="body_cont">115</th>
+							<th class="body_cont">120</th>
+						</tr>
+						<tr>
+							<th class="body_cont">153</th>
+							<th class="body_cont">158</th>
+							<th class="body_cont">163</th>
+							<th class="body_cont">168</th>
+							<th class="body_cont">173</th>
+							<th class="body_cont">178</th>
+							<th class="body_cont">183</th>
+							<th class="body_cont">188</th>
+							<th class="body_cont">193</th>
+							<th class="body_cont">198</th>
+						</tr>
+					</table>
+				</div>
+				<div class="swipe">좌우로 움직여 사이즈를 찾아보세요.</div>
+				<div class="clothes">
+					<h1>하의 : PANTS</h1>
+					<table class="section section01">
+						<tr>
+							<td class="head_cont">아디다스 사이즈</td>
+						</tr>
+						<tr>
+							<td class="head_cont">허리둘레(inch)</td>
+						</tr>
+						<tr>
+							<td class="head_cont">허리둘레(cm)</td>
+						</tr>
+						<tr>
+							<td class="head_cont">신장(cm)</td>
+						</tr>
+					</table>
+					<table class="section section02">
+						<tr>
+							<th class="body_cont">3XS</th>
+							<th class="body_cont">2XS</th>
+							<th class="body_cont">XS</th>
+							<th class="body_cont">S</th>
+							<th class="body_cont">M</th>
+							<th class="body_cont">L</th>
+							<th class="body_cont">XL</th>
+							<th class="body_cont">2XL</th>
+							<th class="body_cont">3XL</th>
+							<th class="body_cont">4XL</th>
+						</tr>
+						<tr>
+							<th class="body_cont">25</th>
+							<th class="body_cont">26</th>
+							<th class="body_cont">27</th>
+							<th class="body_cont">28</th>
+							<th class="body_cont">30</th>
+							<th class="body_cont">32</th>
+							<th class="body_cont">34</th>
+							<th class="body_cont">36</th>
+							<th class="body_cont">38</th>
+							<th class="body_cont">40</th>
+						</tr>
+						<tr>
+							<th class="body_cont">68</th>
+							<th class="body_cont">71</th>
+							<th class="body_cont">74</th>
+							<th class="body_cont">76</th>
+							<th class="body_cont">80</th>
+							<th class="body_cont">84</th>
+							<th class="body_cont">88</th>
+							<th class="body_cont">92</th>
+							<th class="body_cont">96</th>
+							<th class="body_cont">100</th>
+						</tr>
+						<tr>
+							<th class="body_cont">153</th>
+							<th class="body_cont">158</th>
+							<th class="body_cont">163</th>
+							<th class="body_cont">168</th>
+							<th class="body_cont">173</th>
+							<th class="body_cont">178</th>
+							<th class="body_cont">183</th>
+							<th class="body_cont">188</th>
+							<th class="body_cont">193</th>
+							<th class="body_cont">198</th>
+						</tr>
+					</table>
+				</div>
+				<div class="swipe">좌우로 움직여 사이즈를 찾아보세요.</div>
+				<div class="banner_slider_wrap slider1">
+                    <h1>사이즈 측정 방법</h1>
+					<ul id="slider_owl1">
+                        <li>
+                            <a href="https://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=DW5769">
+                                <img src="/images/adidas/common/sizechart_men_01.jpg" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=CV8847">
+                                <img src="/images/adidas/common/sizechart_men_02.jpg" alt="">                                                              
+                            </a>
+                        </li>
+					</ul>
+					<ul class="tips">
+						<li>* 유의사항 : 소재와 디자인 특성상 약간의 오차는 있을 수 있습니다.</li>
+						<li>* 아디다스 사이즈 기준은 제품 선택을 위한 참고용입니다.</li>
+					</ul>
+                </div>
+			</div>
+		</div>
+	</div>
+	<!-- //남자 -->
+
+	<!-- 여자 -->
+	<!-- <div class="modal-popup-wrapper popup-sizechart size_chart_women" data-modalpop=""
+		data-modalpop-name="popup-sizechart">
+		<div class="overlay"></div>
+		<div class="popup">
+			<div class="popup-header">
+				여성 사이즈 가이드
+				<a href="javascript:void(0)" class="close_x_btn"></a>
+			</div>
+			<div class="popup-contents">
+				<style type="text/css">
+				</style>
+				<div class="clothes">
+					<h1>상의 : TOPS/DRESS</h1>
+					<table class="section section01">
+						<tr>
+							<td class="head_cont">아디다스 사이즈</td>
 						</tr>
 						<tr>
 							<td class="head_cont">일반 상의 표시</td>
@@ -3638,13 +3801,13 @@
 							<th class="body_cont">188</th>
 						</tr>
 					</table>
-					<!-- </div> -->
 				</div>
+				<div class="swipe">좌우로 움직여 사이즈를 찾아보세요.</div>
 				<div class="clothes">
 					<h1>하의 : PANTS / SKIRT</h1>
 					<table class="section section01">
 						<tr>
-							<td class="head_cont">adidas SIZE</td>
+							<td class="head_cont">아디다스 사이즈</td>
 						</tr>
 						<tr>
 							<td class="head_cont">허리둘레(inch)</td>
@@ -3699,11 +3862,12 @@
 						</tr>
 					</table>
 				</div>
+				<div class="swipe">좌우로 움직여 사이즈를 찾아보세요.</div>
 				<div class="clothes">
 					<h1>스포츠 브라 : SPORTS BRAS</h1>
 					<table class="section section01">
 						<tr>
-							<td class="head_cont">adidas SIZE</td>
+							<td class="head_cont">아디다스 사이즈</td>
 						</tr>
 						<tr>
 							<td class="head_cont">아디다스 상의<br>사이즈 기준</td>
@@ -3790,41 +3954,694 @@
 						</tr>
 					</table>
 				</div>
-
+				<div class="swipe">좌우로 움직여 사이즈를 찾아보세요.</div>
 				<div class="banner_slider_wrap slider1">
-                    <h1>관련제품</h1>
-                    <ul id="slider_owl1">
+                    <h1>사이즈 측정 방법</h1>
+					<ul id="slider_owl1">
                         <li>
                             <a href="https://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=DW5769">
-                                <img src="/images/adidas/common/1906_a_women_sizechart_MO.jpg" alt="">
+                                <img src="/images/adidas/common/sizechart_women_01.jpg" alt="">
                             </a>
                         </li>
                         <li>
                             <a href="https://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=CV8847">
-                                <img src="/images/adidas/common/1906_a_women_sizechart_MO.jpg" alt="">                               
+                                <img src="/images/adidas/common/sizechart_women_02.jpg" alt="">                                                              
                             </a>
                         </li>
                         <li>
                             <a href="https://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=DW5512">
-                                <img src="/images/adidas/common/1906_a_women_sizechart_MO.jpg" alt="">                            
+                                <img src="/images/adidas/common/sizechart_women_03.jpg" alt="">                                
+                            </a>
+                        </li>
+					</ul>
+					<ul class="tips">
+						<li>* 유의사항 : 소재와 디자인 특성상 약간의 오차는 있을 수 있습니다.</li>
+						<li>* 아디다스 사이즈 기준은 제품 선택을 위한 참고용입니다.</li>
+					</ul>
+                </div>
+			</div>
+		</div>
+	</div> -->
+	<!-- //여자 -->
+
+	<!-- 신발 -->
+	<!-- <div class="modal-popup-wrapper popup-sizechart size_chart_shoes" data-modalpop=""
+		data-modalpop-name="popup-sizechart">
+		<div class="overlay"></div>
+		<div class="popup">
+			<div class="popup-header">
+				신발 사이즈 가이드
+				<a href="javascript:void(0)" class="close_x_btn"></a>
+			</div>
+			<div class="popup-contents">
+				<style type="text/css">
+				</style>
+				<div class="clothes">
+					<h1>남성</h1>
+					<table class="section section01">
+						<tr>
+							<td class="head_cont">아디다스<br>사이즈(JP표기)</td>
+						</tr>
+						<tr>
+							<td class="head_cont">미국 남성 사이즈</td>
+						</tr>
+						<tr>
+							<td class="head_cont">발길이(mm)</td>
+						</tr>
+					</table>
+					<table class="section section02">
+						<tr>
+							<th class="body_cont">230</th>
+							<th class="body_cont">235</th>
+							<th class="body_cont">240</th>
+							<th class="body_cont">245</th>
+							<th class="body_cont">250</th>
+							<th class="body_cont">255</th>
+							<th class="body_cont">260</th>
+							<th class="body_cont">265</th>
+							<th class="body_cont">270</th>
+							<th class="body_cont">275</th>
+							<th class="body_cont">280</th>
+							<th class="body_cont">285</th>
+							<th class="body_cont">290</th>
+							<th class="body_cont">295</th>
+							<th class="body_cont">300</th>
+						</tr>
+						<tr>
+							<th class="body_cont">5</th>
+							<th class="body_cont">5.5</th>
+							<th class="body_cont">6</th>
+							<th class="body_cont">6.5</th>
+							<th class="body_cont">7</th>
+							<th class="body_cont">7.5</th>
+							<th class="body_cont">8</th>
+							<th class="body_cont">8.5</th>
+							<th class="body_cont">9</th>
+							<th class="body_cont">9.5</th>
+							<th class="body_cont">10</th>
+							<th class="body_cont">10.5</th>
+							<th class="body_cont">11</th>
+							<th class="body_cont">11.5</th>
+							<th class="body_cont">12</th>
+						</tr>
+						<tr>
+							<th class="body_cont">230</th>
+							<th class="body_cont">235</th>
+							<th class="body_cont">240</th>
+							<th class="body_cont">245</th>
+							<th class="body_cont">250</th>
+							<th class="body_cont">255</th>
+							<th class="body_cont">260</th>
+							<th class="body_cont">265</th>
+							<th class="body_cont">270</th>
+							<th class="body_cont">275</th>
+							<th class="body_cont">280</th>
+							<th class="body_cont">285</th>
+							<th class="body_cont">290</th>
+							<th class="body_cont">295</th>
+							<th class="body_cont">300</th>
+						</tr>
+					</table>
+				</div>
+				<div class="swipe">좌우로 움직여 사이즈를 찾아보세요.</div>
+				<div class="clothes">
+					<h1>여성</h1>
+					<table class="section section01">
+						<tr>
+							<td class="head_cont">아디다스<br>사이즈(JP표기)</td>
+						</tr>
+						<tr>
+							<td class="head_cont">미국 남성 사이즈</td>
+						</tr>
+						<tr>
+							<td class="head_cont">발길이(mm)</td>
+						</tr>
+					</table>
+					<table class="section section02">
+						<tr>
+							<th class="body_cont">230</th>
+							<th class="body_cont">235</th>
+							<th class="body_cont">240</th>
+							<th class="body_cont">245</th>
+							<th class="body_cont">250</th>
+							<th class="body_cont">255</th>
+							<th class="body_cont">260</th>
+						</tr>
+						<tr>
+							<th class="body_cont">6</th>
+							<th class="body_cont">6.5</th>
+							<th class="body_cont">7</th>
+							<th class="body_cont">7.5</th>
+							<th class="body_cont">8</th>
+							<th class="body_cont">8.5</th>
+							<th class="body_cont">9</th>
+						</tr>
+						<tr>
+							<th class="body_cont">230</th>
+							<th class="body_cont">235</th>
+							<th class="body_cont">240</th>
+							<th class="body_cont">245</th>
+							<th class="body_cont">250</th>
+							<th class="body_cont">255</th>
+							<th class="body_cont">260</th>
+						</tr>
+					</table>
+				</div>
+				<div class="swipe">좌우로 움직여 사이즈를 찾아보세요.</div>
+				<div class="clothes">
+					<h1>키즈</h1>
+					<table class="section section01">
+						<tr>
+							<td class="head_cont">아디다스<br>사이즈(JP표기)</td>
+						</tr>
+						<tr>
+							<td class="head_cont">사용 연령</td>
+						</tr>
+						<tr>
+							<td class="head_cont">발길이(mm)</td>
+						</tr>
+					</table>
+					<table class="section section02">
+						<tr>
+							<th class="body_cont">70</th>
+							<th class="body_cont">80</th>
+							<th class="body_cont">90</th>
+							<th class="body_cont">100</th>
+							<th class="body_cont">110</th>
+							<th class="body_cont">120</th>
+							<th class="body_cont">130</th>
+							<th class="body_cont">140</th>
+							<th class="body_cont">150</th>
+							<th class="body_cont">160</th>
+							<th class="body_cont">170</th>
+							<th class="body_cont">180</th>
+							<th class="body_cont">190</th>
+							<th class="body_cont">200</th>
+							<th class="body_cont">210</th>
+							<th class="body_cont">215</th>
+							<th class="body_cont">220</th>
+							<th class="body_cont">225</th>
+							<th class="body_cont">230</th>
+							<th class="body_cont">235</th>
+							<th class="body_cont">245</th>
+						</tr>
+						<tr>
+							<th class="body_cont" colspan="21" style="text-align:left;padding-left:1rem;">36개월 미만</th>
+						</tr>
+						<tr>
+							<th class="body_cont">70</th>
+							<th class="body_cont">80</th>
+							<th class="body_cont">90</th>
+							<th class="body_cont">100</th>
+							<th class="body_cont">110</th>
+							<th class="body_cont">120</th>
+							<th class="body_cont">130</th>
+							<th class="body_cont">140</th>
+							<th class="body_cont">150</th>
+							<th class="body_cont">160</th>
+							<th class="body_cont">170</th>
+							<th class="body_cont">180</th>
+							<th class="body_cont">190</th>
+							<th class="body_cont">200</th>
+							<th class="body_cont">210</th>
+							<th class="body_cont">215</th>
+							<th class="body_cont">220</th>
+							<th class="body_cont">225</th>
+							<th class="body_cont">230</th>
+							<th class="body_cont">235</th>
+							<th class="body_cont">245</th>
+						</tr>
+					</table>
+				</div>
+				<div class="swipe">좌우로 움직여 사이즈를 찾아보세요.</div>
+				<div class="banner_slider_wrap slider1">
+                    <h1>사이즈 측정 방법</h1>
+                    <ul id="slider_owl1">
+                        <li>
+                            <a href="https://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=DW5769">
+                                <img src="/images/adidas/common/sizechart_shoes_01.jpg" alt="">
                             </a>
                         </li>
                         <li>
-                            <a href="https://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=DW5509">
-                                <img src="/images/adidas/common/1906_a_women_sizechart_MO.jpg" alt="">                              
+                            <a href="https://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=CV8847">
+                                <img src="/images/adidas/common/sizechart_shoes_02.jpg" alt="">                                                              
                             </a>
                         </li>
                         <li>
-                            <a href="https://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=BB7841">
-                                <img src="/images/adidas/common/1906_a_women_sizechart_MO.jpg" alt="">                                
+                            <a href="https://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=DW5512">
+                                <img src="/images/adidas/common/sizechart_shoes_03.jpg" alt="">                                
                             </a>
                         </li>
-                    </ul>
+					</ul>
+					<ul class="tips">
+						<li>* 보다 정확한 사이즈를 위해 아침보다는 저녁에 측정하는것이 좋습니다.</li>
+					</ul>
+				</div>
+				<div class="banner_slider_wrap slider2">
+					<h1>사이즈 측정 방법</h1>
+					<ul id="slider_owl2">
+						<li>
+							<a href="https://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=DW5769">
+								<img src="/images/adidas/common/sizechart_shoesFit_01.jpg" alt="">
+							</a>
+						</li>
+						<li>
+							<a href="https://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=CV8847">
+								<img src="/images/adidas/common/sizechart_shoesFit_02.jpg" alt="">                                                              
+							</a>
+						</li>
+						<li>
+							<a href="https://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=DW5512">
+								<img src="/images/adidas/common/sizechart_shoesFit_03.jpg" alt="">                                
+							</a>
+						</li>
+					</ul>
+					<ul class="tips">
+						<li>* 기존의 아디다스 키즈 신발을 가지고 계신경우 신발깔창을 사용해서 측정하실 수 있습니다.</li>
+						<li>* 아이들은 빠르게 성장하므로 정기적으로 사이즈를 측정하는것이 좋습니다.</li>
+						<li>* 아디다스 코리아에서 수입하는 신발 제품은 JAPAN(JP) 사이즈와 동일합니다.</li>
+						<li>* 소재와 디자인 특성상 약간의 오차는 있을 수 있습니다.</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div> -->
+	<!-- //신발 -->
+
+	<!-- 키즈 -->
+	<div class="modal-popup-wrapper popup-sizechart size_chart_kids" data-modalpop=""
+		data-modalpop-name="popup-sizechart">
+		<div class="overlay"></div>
+		<div class="popup">
+			<div class="popup-header">
+				키즈 의류 사이즈 가이드
+				<a href="javascript:void(0)" class="close_x_btn"></a>
+			</div>
+			<div class="popup-contents">
+				<style type="text/css">
+				</style>
+				<div class="clothes">
+					<h1>상의 : TOPS/DRESS</h1>
+					<table class="section section01">
+						<tr>
+							<td class="head_cont">연령별</td>
+						</tr>
+						<tr>
+							<td class="head_cont">사용연령</td>
+						</tr>
+						<tr>
+							<td class="head_cont">아디다스 사이즈</td>
+						</tr>
+						<tr>
+							<td class="head_cont">참고 개월 수<br>(month)<td>
+						</tr>
+						<tr>
+							<td class="head_cont">참고 몸무게(kg)</td>
+						</tr>
+						<tr>
+							<td class="head_cont">가슴둘레(cm)</td>
+						</tr>
+						<tr>
+							<td class="head_cont">신장(cm)</td>
+						</tr>
+					</table>
+					<table class="section section02">
+						<tr>
+							<th class="body_cont" colspan="5">INFANT</th>
+							<th class="body_cont" colspan="5">TODDLER</th>
+							<th class="body_cont" colspan="5">JUNIOR</th>
+						</tr>
+						<tr>
+							<th class="body_cont" colspan="5">065</th>
+							<th class="body_cont" colspan="10">070</th>
+						</tr>
+						<tr>
+							<th class="body_cont">065</th>
+							<th class="body_cont">070</th>
+							<th class="body_cont">075</th>
+							<th class="body_cont">080</th>
+							<th class="body_cont">085</th>
+							<th class="body_cont">090</th>
+							<th class="body_cont">095</th>
+							<th class="body_cont">100</th>
+							<th class="body_cont">110</th>
+							<th class="body_cont">120</th>
+							<th class="body_cont">130</th>
+							<th class="body_cont">140</th>
+							<th class="body_cont">150</th>
+							<th class="body_cont">160</th>
+							<th class="body_cont">170</th>
+						</tr>
+						<tr>
+							<th class="body_cont">006</th>
+							<th class="body_cont">009</th>
+							<th class="body_cont">012</th>
+							<th class="body_cont">018</th>
+							<th class="body_cont">024</th>
+							<th class="body_cont">036</th>
+							<th class="body_cont">048</th>
+							<th class="body_cont">052</th>
+							<th class="body_cont">055</th>
+							<th class="body_cont">058</th>
+							<th class="body_cont">061</th>
+							<th class="body_cont">067</th>
+							<th class="body_cont">073</th>
+							<th class="body_cont">079</th>
+							<th class="body_cont">082</th>
+						</tr>
+						<tr>
+							<th class="body_cont">5.8</th>
+							<th class="body_cont">7.7</th>
+							<th class="body_cont">10.0</th>
+							<th class="body_cont">11.3</th>
+							<th class="body_cont">12.7</th>
+							<th class="body_cont">15.0</th>
+							<th class="body_cont" colspan="2">17.2</th>
+							<th class="body_cont" colspan="2">24.5</th>
+							<th class="body_cont" colspan="5"></th>
+						</tr>
+						<tr>
+							<th class="body_cont">38</th>
+							<th class="body_cont">42</th>
+							<th class="body_cont">45</th>
+							<th class="body_cont">47</th>
+							<th class="body_cont">48</th>
+							<th class="body_cont">50</th>
+							<th class="body_cont">51</th>
+							<th class="body_cont">52</th>
+							<th class="body_cont">55</th>
+							<th class="body_cont">58</th>
+							<th class="body_cont">61</th>
+							<th class="body_cont">67</th>
+							<th class="body_cont">73</th>
+							<th class="body_cont">79</th>
+							<th class="body_cont">82</th>
+						</tr>
+						<tr>
+							<th class="body_cont">64</th>
+							<th class="body_cont">69</th>
+							<th class="body_cont">75</th>
+							<th class="body_cont">78</th>
+							<th class="body_cont">84</th>
+							<th class="body_cont">92</th>
+							<th class="body_cont">95</th>
+							<th class="body_cont">100</th>
+							<th class="body_cont">110</th>
+							<th class="body_cont">120</th>
+							<th class="body_cont">130</th>
+							<th class="body_cont">140</th>
+							<th class="body_cont">150</th>
+							<th class="body_cont">160</th>
+							<th class="body_cont">170</th>
+						</tr>
+					</table>
+				</div>
+				<div class="swipe">좌우로 움직여 사이즈를 찾아보세요.</div>
+				<div class="clothes">
+					<h1>하의 : PANTS/SKIRT</h1>
+					<table class="section section01">
+						<tr>
+							<td class="head_cont">연령별</td>
+						</tr>
+						<tr>
+							<td class="head_cont">사용연령</td>
+						</tr>
+						<tr>
+							<td class="head_cont">아디다스 사이즈</td>
+						</tr>
+						<tr>
+							<td class="head_cont">참고 개월 수<br>(month)<td>
+						</tr>
+						<tr>
+							<td class="head_cont">참고 몸무게(kg)</td>
+						</tr>
+						<tr>
+							<td class="head_cont">허리둘레(cm)</td>
+						</tr>
+						<tr>
+							<td class="head_cont">신장(cm)</td>
+						</tr>
+					</table>
+					<table class="section section02">
+						<tr>
+							<th class="body_cont" colspan="5">INFANT</th>
+							<th class="body_cont" colspan="5">TODDLER</th>
+							<th class="body_cont" colspan="5">JUNIOR</th>
+						</tr>
+						<tr>
+							<th class="body_cont" colspan="5">065</th>
+							<th class="body_cont" colspan="10">070</th>
+						</tr>
+						<tr>
+							<th class="body_cont">065</th>
+							<th class="body_cont">070</th>
+							<th class="body_cont">075</th>
+							<th class="body_cont">080</th>
+							<th class="body_cont">085</th>
+							<th class="body_cont">090</th>
+							<th class="body_cont">095</th>
+							<th class="body_cont">100</th>
+							<th class="body_cont">110</th>
+							<th class="body_cont">120</th>
+							<th class="body_cont">130</th>
+							<th class="body_cont">140</th>
+							<th class="body_cont">150</th>
+							<th class="body_cont">160</th>
+							<th class="body_cont">170</th>
+						</tr>
+						<tr>
+							<th class="body_cont">006</th>
+							<th class="body_cont">009</th>
+							<th class="body_cont">012</th>
+							<th class="body_cont">018</th>
+							<th class="body_cont">024</th>
+							<th class="body_cont">036</th>
+							<th class="body_cont">048</th>
+							<th class="body_cont">052</th>
+							<th class="body_cont">055</th>
+							<th class="body_cont">058</th>
+							<th class="body_cont">061</th>
+							<th class="body_cont">067</th>
+							<th class="body_cont">073</th>
+							<th class="body_cont">079</th>
+							<th class="body_cont">082</th>
+						</tr>
+						<tr>
+							<th class="body_cont">5.8</th>
+							<th class="body_cont">7.7</th>
+							<th class="body_cont">10.0</th>
+							<th class="body_cont">11.3</th>
+							<th class="body_cont">12.7</th>
+							<th class="body_cont">15.0</th>
+							<th class="body_cont" colspan="2">17.2</th>
+							<th class="body_cont" colspan="2">24.5</th>
+							<th class="body_cont" colspan="5"></th>
+						</tr>
+						<tr>
+							<th class="body_cont">42</th>
+							<th class="body_cont">43</th>
+							<th class="body_cont">44</th>
+							<th class="body_cont">45</th>
+							<th class="body_cont">46</th>
+							<th class="body_cont">47</th>
+							<th class="body_cont">48</th>
+							<th class="body_cont">49</th>
+							<th class="body_cont">51</th>
+							<th class="body_cont">54</th>
+							<th class="body_cont">57</th>
+							<th class="body_cont">60</th>
+							<th class="body_cont">64</th>
+							<th class="body_cont">67</th>
+							<th class="body_cont">70</th>
+						</tr>
+						<tr>
+							<th class="body_cont">64</th>
+							<th class="body_cont">69</th>
+							<th class="body_cont">75</th>
+							<th class="body_cont">78</th>
+							<th class="body_cont">84</th>
+							<th class="body_cont">92</th>
+							<th class="body_cont">95</th>
+							<th class="body_cont">100</th>
+							<th class="body_cont">110</th>
+							<th class="body_cont">120</th>
+							<th class="body_cont">130</th>
+							<th class="body_cont">140</th>
+							<th class="body_cont">150</th>
+							<th class="body_cont">160</th>
+							<th class="body_cont">170</th>
+						</tr>
+					</table>
+				</div>
+				<div class="swipe">좌우로 움직여 사이즈를 찾아보세요.</div>
+				<div class="clothes">
+					<h1>상하의 세트 : TOPS & PANTS SET</h1>
+					<table class="section section01">
+						<tr>
+							<td class="head_cont">연령별</td>
+						</tr>
+						<tr>
+							<td class="head_cont">사용연령</td>
+						</tr>
+						<tr>
+							<td class="head_cont">아디다스 사이즈</td>
+						</tr>
+						<tr>
+							<td class="head_cont">참고 개월 수<br>(month)<td>
+						</tr>
+						<tr>
+							<td class="head_cont">참고 몸무게(kg)</td>
+						</tr>
+						<tr>
+							<td class="head_cont">가슴둘레(cm)</td>
+						</tr>
+						<tr>
+							<td class="head_cont">허리둘레(cm)</td>
+						</tr>
+						<tr>
+							<td class="head_cont">신장(cm)</td>
+						</tr>
+					</table>
+					<table class="section section02">
+						<tr>
+							<th class="body_cont" colspan="5">INFANT</th>
+							<th class="body_cont" colspan="5">TODDLER</th>
+							<th class="body_cont" colspan="5">JUNIOR</th>
+						</tr>
+						<tr>
+							<th class="body_cont" colspan="5">065</th>
+							<th class="body_cont" colspan="10">070</th>
+						</tr>
+						<tr>
+							<th class="body_cont">065</th>
+							<th class="body_cont">070</th>
+							<th class="body_cont">075</th>
+							<th class="body_cont">080</th>
+							<th class="body_cont">085</th>
+							<th class="body_cont">090</th>
+							<th class="body_cont">095</th>
+							<th class="body_cont">100</th>
+							<th class="body_cont">110</th>
+							<th class="body_cont">120</th>
+							<th class="body_cont">130</th>
+							<th class="body_cont">140</th>
+							<th class="body_cont">150</th>
+							<th class="body_cont">160</th>
+							<th class="body_cont">170</th>
+						</tr>
+						<tr>
+							<th class="body_cont">006</th>
+							<th class="body_cont">009</th>
+							<th class="body_cont">012</th>
+							<th class="body_cont">018</th>
+							<th class="body_cont">024</th>
+							<th class="body_cont">036</th>
+							<th class="body_cont">048</th>
+							<th class="body_cont">052</th>
+							<th class="body_cont">055</th>
+							<th class="body_cont">058</th>
+							<th class="body_cont">061</th>
+							<th class="body_cont">067</th>
+							<th class="body_cont">073</th>
+							<th class="body_cont">079</th>
+							<th class="body_cont">082</th>
+						</tr>
+						<tr>
+							<th class="body_cont">5.8</th>
+							<th class="body_cont">7.7</th>
+							<th class="body_cont">10.0</th>
+							<th class="body_cont">11.3</th>
+							<th class="body_cont">12.7</th>
+							<th class="body_cont">15.0</th>
+							<th class="body_cont" colspan="2">17.2</th>
+							<th class="body_cont" colspan="2">24.5</th>
+							<th class="body_cont" colspan="5"></th>
+						</tr>
+						<tr>
+							<th class="body_cont">38</th>
+							<th class="body_cont">42</th>
+							<th class="body_cont">45</th>
+							<th class="body_cont">47</th>
+							<th class="body_cont">48</th>
+							<th class="body_cont">50</th>
+							<th class="body_cont">51</th>
+							<th class="body_cont">52</th>
+							<th class="body_cont">55</th>
+							<th class="body_cont">58</th>
+							<th class="body_cont">61</th>
+							<th class="body_cont">67</th>
+							<th class="body_cont">73</th>
+							<th class="body_cont">79</th>
+							<th class="body_cont">82</th>
+						</tr>
+						<tr>
+							<th class="body_cont">42</th>
+							<th class="body_cont">43</th>
+							<th class="body_cont">44</th>
+							<th class="body_cont">45</th>
+							<th class="body_cont">46</th>
+							<th class="body_cont">47</th>
+							<th class="body_cont">48</th>
+							<th class="body_cont">49</th>
+							<th class="body_cont">51</th>
+							<th class="body_cont">54</th>
+							<th class="body_cont">57</th>
+							<th class="body_cont">60</th>
+							<th class="body_cont">64</th>
+							<th class="body_cont">67</th>
+							<th class="body_cont">70</th>
+						</tr>
+						<tr>
+							<th class="body_cont">64</th>
+							<th class="body_cont">69</th>
+							<th class="body_cont">75</th>
+							<th class="body_cont">78</th>
+							<th class="body_cont">84</th>
+							<th class="body_cont">92</th>
+							<th class="body_cont">95</th>
+							<th class="body_cont">100</th>
+							<th class="body_cont">110</th>
+							<th class="body_cont">120</th>
+							<th class="body_cont">130</th>
+							<th class="body_cont">140</th>
+							<th class="body_cont">150</th>
+							<th class="body_cont">160</th>
+							<th class="body_cont">170</th>
+						</tr>
+					</table>
+				</div>
+				<div class="swipe">좌우로 움직여 사이즈를 찾아보세요.</div>
+				<div class="banner_slider_wrap slider1">
+                    <h1>사이즈 측정 방법</h1>
+                    <ul id="slider_owl1">
+                        <li>
+                            <a href="https://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=DW5769">
+                                <img src="/images/adidas/common/sizechart_kids_01.jpg" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=CV8847">
+                                <img src="/images/adidas/common/sizechart_kids_02.jpg" alt="">                                                              
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=DW5512">
+                                <img src="/images/adidas/common/sizechart_kids_03.jpg" alt="">                                
+                            </a>
+                        </li>
+					</ul>
+					<ul class="tips">
+						<li>* 유의사항 : 소재와 디자인 특성상 약간의 오차는 있을 수 있습니다.</li>
+						<li>* 아디다스 사이즈 기준은 제품 선택을 위한 참고용입니다.</li>
+					</ul>
                 </div>
 			</div>
 		</div>
 	</div>
+	<!-- //키즈 -->
 	<!-- //190611 사이즈차트팝업 -->
+
+
 
 </body>
 
