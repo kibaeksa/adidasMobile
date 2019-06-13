@@ -1,0 +1,496 @@
+@import './mobile/css/adidas/scss/common/mixin.scss';
+@import './mobile/css/adidas/scss/common/common.scss';
+
+#homeofclassic{
+	position: relative;
+	border-bottom: 1px solid #000;
+	background: #d1c5b7;
+	.button_area_v2{
+		display: inline-block;
+		width: 35%;
+		div{
+			a{
+				height: 48px;
+				letter-spacing: 0.5px;
+				font: 400 1.1rem/48px 'NotoSansKR';
+				.arrow{
+					top: -1px;
+					margin-left: 10px;
+					width:24px;
+					&:before{
+						width:9px;
+					}
+					&:after{
+						width:9px;
+					}
+				}
+			}
+		}
+	}
+
+
+	div{
+		img{
+			width: 100%;
+		}
+		.link{
+			position: absolute;
+			text-indent: -9999px;
+			display: block;
+		}
+	}
+	.visual,.cont,.video_area,.bottom{
+		position: relative;
+	}
+
+	.visual{
+		position: relative;
+		&.on{
+			.txt{
+				opacity: 1;
+				-webkit-opacity: 1;
+				.btn-buy{
+					opacity: 1;
+					-webkit-opacity: 1;
+				}
+			}
+		}
+		video{
+			width:100%;
+			display: block;
+		}
+		h2{
+			position: absolute;
+			top: 19px;
+			left: 0;
+			width: 100%;
+			font: 2.6rem 'adinenuPro-black';
+			text-transform: uppercase;
+			color: #fff;
+			text-align: center;
+			z-index: 2;
+			letter-spacing: 0.1rem;
+		}
+		.banner_slider_wrap{
+			position: relative;
+			padding: 40px 15px 15%;
+			background: url('/images/adidas/2019/event/originals/homeofclassic/0614/mainbg.jpg') no-repeat;
+			background-size: 100% 100%;
+			#mainslider_owl{
+				overflow: hidden;
+			}
+			.owl-controls{
+				position: relative;
+				padding:10px 0 0 0;
+				text-align: center;
+				.owl-dots{
+					.owl-dot{
+						display: inline-block;
+						margin:0 3px;
+						width:8px;
+						height:8px;
+						background: #9a9590;
+						border-radius: 50px;
+						&.active{
+							background: #000;
+						}
+					}
+				}
+			}
+		}
+		.logoimg{
+			position: absolute;
+			bottom: -10%;
+			left: 50%;
+			margin-left: -12%;
+			width: 24%;
+		}
+	}
+
+	.statement{
+		position: relative;
+		padding: 55px 0 45px;
+		text-align: center;
+		h2{
+			font: 1.5rem 'adinenuPro-bold';
+			color: #fff;
+			letter-spacing: 1px;
+			text-transform: uppercase;
+			&.ko{
+				font:500 2rem 'NotoSansKR';
+			}
+		}
+		p{
+			padding-top: 0.5rem;
+			font:300 1rem/22px 'NotoSansKR';
+			color: #fff;
+			letter-spacing: 0px;
+			// transition: all 0.6s;
+			// -webkit-transition: all 0.6s;
+			// @include css3(opacity,0);
+			&.title{
+				padding: 0 0 10px 0;
+				font:600 1.3rem 'NotoSansKR';
+			}
+		}
+		span.alert{
+			margin: 0.5rem auto 0;
+			padding: 0 4px;
+			display: inline-block;
+			font:300 0.9rem 'NotoSansKR';
+			color: #d1c5b7;
+			background: #fff;
+		}
+		.button_area_v2{
+			margin:20px 0 0 0;
+		}
+	}
+
+	.grids{
+		
+		.video_btn{
+			width: 16%;
+			position: absolute;
+			top:50%;
+			left:50%;
+			transform: translate(-50%,-50%);
+		}
+		.txt{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 100%;
+			transform: translate(-50%, -50%);
+			text-align: center;
+			p{
+				font: 700 .8rem/1.5rem 'NotoSansKR';
+				color:#fff;
+				letter-spacing: 0;
+				span{
+					font: 1rem/1.5rem 'AdihausDIN-Bold';
+					color:#fff;
+					letter-spacing: 0;
+				}
+			}
+		}
+		.vid{
+			p{
+				font: 700 1.3rem/1.6rem 'AdihausDIN-Bold';
+				color:#fff;
+				margin-top:.5rem;
+				letter-spacing: 0;
+			}
+		}
+		.img{
+			position: relative;
+			transition: all 0.6s;
+			-webkit-transition: all 0.6s;
+			@include css3(opacity,0);
+		}
+
+		@keyframes scale {
+			0% {
+				transform: scale(0);
+			}
+
+			100% {
+				transform: scale(1);
+			}
+		}
+
+		.wrap{
+			&.on{
+				.img{
+					opacity: 1;
+					animation: scale 1s 1;
+				}
+			}
+		}
+
+		.sec{
+			.wrap{
+				.item{
+					position: relative;
+					.item_box{
+						position: absolute;
+						bottom: 1rem;
+						left: 1rem;
+						h3{
+							display: inline-block;
+							font: 1rem/1rem 'adinenuPro-regular','NotoSansKR';
+							color: #fff;
+							text-transform: uppercase;
+							letter-spacing: normal;
+							border-bottom: 1px solid #fff;
+						}
+						p{
+							padding-top: 6px;
+							font: 300 0.8rem/1.2rem 'NotoSansKR';
+							color: #fff;
+						}
+					}
+					.banner_slider_wrap{
+						.owl-dots{
+							position: absolute;
+							bottom: 1rem;
+							right: 1rem;
+							.owl-dot{
+								display: inline-block;
+								width: 6px;
+								height: 6px;
+								border-radius: 50%;
+								border: 1px solid #fff;
+								margin-left: 4px;
+								&.active{
+									background: #fff;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		// sec1
+		.sec1{
+			.wrap1{
+				position: relative;
+				&::after{
+					display: block;
+					content: '';
+					clear: both;
+				}
+				.item{
+					.img{
+						float: left;
+						width: 50%;
+						video,
+						img{
+							width:100%;
+						}
+					}
+				}
+			}
+			.wrap2{
+				position: relative;
+				padding-bottom: 60%;
+				.item{
+					.img{
+						video,
+						img{
+							width:100%;
+						}
+					}
+					&.item3{
+						.txt{
+							p{
+								padding-top: 0.5rem;
+								font:300 1rem/22px 'NotoSansKR';
+								color: #fff;
+								transition: all 0.6s;
+								-webkit-transition: all 0.6s;
+								// @include css3(opacity,0);
+								letter-spacing: 0px;
+								&.title{
+									font: 1.5rem 'adinenuPro-bold';
+									color: #fff;
+									letter-spacing: 1px;
+									text-transform: uppercase;
+								}
+							}
+							.button_area_v2{
+								margin:20px 0 0 0;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		// sec2
+		.sec2{
+			&::after{
+				display: block;
+				content: '';
+				clear: both;
+			}
+			.wrap{
+				overflow: hidden;
+				position: relative;
+			}
+			.wrap1{
+				.item4{
+					.img{
+						display: inline-block;
+						float: left;
+						width:50%;
+						video,
+						img{
+							width:100%;
+						}
+					}
+					
+				}
+			}
+			.wrap2{
+				&::after{
+					display: block;
+					content: '';
+					clear: both;
+				}
+				.item{
+					.img{
+						float: left;
+						width: 50%;
+						video,
+						img{
+							width:100%;
+						}
+					}
+				}
+			}
+			.wrap3{
+				&::after{
+					display: block;
+					content: '';
+					clear: both;
+				}
+				.item{
+					.img{
+						float: left;
+						width: 50%;
+						video,
+						img{
+							display: inline-block;
+							width:100%;
+						}
+					}
+					&.item1{
+						.img{
+							video{
+								position: absolute;
+								display: block;
+								width: 100%;
+								top: 50%;
+								left: 50%;
+								transform: translate(-50%, -50%);
+							}
+						}
+					}
+				}
+			}
+		}
+		
+
+		// sec3
+		.sec3{
+			&::after{
+				display: block;
+				content: '';
+				clear: both;
+			}
+			.wrap{
+				overflow: hidden;
+				position: relative;
+			}
+			.wrap1{
+				.item{
+					.img{
+						display: inline-block;
+						width:100%;
+						video,
+						img{
+							width:100%;
+						}
+					}
+					
+				}
+			}
+			.wrap2{
+				&::after{
+					display: block;
+					content: '';
+					clear: both;
+				}
+				.item{
+					float: left;
+					width: 50%;
+					.img{
+						float: left;
+						width: 100%;
+						video,
+						img{
+							width:100%;
+						}
+					}
+				}
+			}
+			.wrap3{
+				&::after{
+					display: block;
+					content: '';
+					clear: both;
+				}
+				.item{
+					float: left;
+					&.item1{
+						float: left;
+						width: 100%;
+						video,
+						img{
+							width:100%;
+						}
+					}
+					&.item2{
+						width: 100%;
+						.img{
+							float: left;
+							width: 50%;
+							video,
+							img{
+								width:100%;
+							}
+						}
+					}
+				}
+			}
+		}
+
+	}
+
+	.bottom_wrap{
+		position: relative;
+		padding: 0 0 25px 0;
+		.title{
+			padding:30px 0 28px;
+			font:25px 'adinenuPro-bold';
+			text-transform: uppercase;
+			text-align: center;
+		}
+		.box{
+			position: relative;
+			padding:0 35px;
+			margin:0 0 15px 0;
+			.button_area_v2{
+				width:35%;
+				position: absolute;
+				top: 82%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				div{
+					a{
+						font: 500 1.1rem/51px 'AdihausDIN-Bold';
+					}
+				}
+			}
+			video{
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				transform: none;
+			}
+		}
+	}
+}
