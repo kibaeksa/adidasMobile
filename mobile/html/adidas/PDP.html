@@ -376,7 +376,7 @@
 					</li>
 					<li class="size size_chart_btn">
 						<!-- 190611 사이즈차트 -->
-						<strong data-modalpop-click="popup-sizechart">사이즈 차트 보기</strong>
+						<strong class="modal-popup-click" data-modalpop-click="popup-sizechart">사이즈 차트 보기</strong>
 						<!-- <strong>사이즈/수량</strong> -->
 						<!-- //190611 사이즈차트 -->
 						<div class="r_box">
@@ -2793,8 +2793,10 @@
     <div class="pub_300x250 pub_300x250m pub_728x90 text-ad textAd text_ad text_ads text-ads text-ad-links" style="position: absolute;">.</div>
     <script src="//widget.fitanalytics.com/widget_jq.js" type="text/javascript"></script>
 
-	<!-- <script type="text/javascript" src="/designjs/adidas/common.js"></script> -->
-    <script type="text/javascript" src="/designjs/adidas/common.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="/designjs/adidas/common.js"></script>
+	<!-- <script type="text/javascript" src="/designjs/adidas/common.js" charset="UTF-8"></script> -->
+	<!-- <script type="text/javascript" src="/js/adidas/common.js"></script> -->
+	
 
 
     <!-- 170322 today_delivery locationPop -->
@@ -2942,76 +2944,80 @@
 				// 	$('#header').css('display','none');
 				// 	scrollstop();
 				// });
-
-				$('.info .size_chart_btn').on('click', function () {
-					$('.popup-sizechart').addClass('open');
-					$('#header').css('display','none');
-					scrollstop()
-				});
-
+				// 스크롤 가능 함수
 				function scrollstop(){
 					$('html,body').css('overflow','hidden');
 				}
 				function scrollauto(){
 					$('html,body').css('overflow','auto');
 				}
+				
+				$('.info .size_chart_btn').on('click', function () {
+					// $('.popup-sizechart').addClass('open');
+					// alert();
+					scrollstop();
 
-				$('.modal-popup-wrapper').find('.close_x_btn').bind('click',function(){
-					$('.modal-popup-wrapper').removeClass('open');
-					scrollauto()
-				})
-
-				$('.modal-popup-wrapper .overlay').bind('click',function(){
-					$('.modal-popup-wrapper').removeClass('open');
-					scrollauto()
-				})
-
-				setTimeout(function(){
+					setTimeout(function(){
 					
-                 // 사이즈차트 슬라이더1
-				 var owlSlider1 = $('#slider_owl1');
-                    
-                    owlSlider1.on('initialized.owl.carousel', function(event) {
+					// 사이즈차트 슬라이더1 :
+					
+					var owlSlider1 = $('#slider_owl1');
+					owlSlider1.on('initialized.owl.carousel', function(event) {
 						$('.banner_slider_wrap .owl-stage').css({'padding-left':'0'});
-                    });
-                    
-                    owlSlider1.on('changed.owl.carousel', function(event) {
+					});
+					
+					owlSlider1.on('changed.owl.carousel', function(event) {
 
-                    });
-                    
-                    owlSlider1.owlCarousel({
-                        stagePadding:30,
-                        margin:15,
-                        items :1,
-                        merge: true,
-                        // loop : true,
-                        navigation: false,
-                        nav: false
-                    });
-                 // 사이즈차트 슬라이더2
-				 var owlSliderSub = $('#slider_owl2');
-                    
-					 owlSliderSub.on('initialized.owl.carousel', function(event) {
-						$('.banner_slider_wrap .owl-stage').css({'padding-left':'0'});
-                    });
-                    
-                    owlSliderSub.on('changed.owl.carousel', function(event) {
-						$('.banner_slider_wrap .owl-stage').css({'padding-left':'0'});
+					});
+					
+					owlSlider1.owlCarousel({
+						stagePadding:30,
+						margin:15,
+						items :1,
+						merge: true,
+						// loop : true,
+						navigation: false,
+						nav: false
+					});
+					// 사이즈차트 슬라이더2 : 팝업 하단 사이즈 측정 방법 슬라이드
+					var owlSliderSub = $('#slider_owl2');
+					   
+						owlSliderSub.on('initialized.owl.carousel', function(event) {
+						   $('.banner_slider_wrap .owl-stage').css({'padding-left':'0'});
+					   });
+					   
+					   owlSliderSub.on('changed.owl.carousel', function(event) {
+						   $('.banner_slider_wrap .owl-stage').css({'padding-left':'0'});
+   
+					   });
+					   
+					   owlSliderSub.owlCarousel({
+						   stagePadding:30,
+						   margin:15,
+						   items :1,
+						   merge: true,
+						   // loop : true,
+						   navigation: false,
+						   nav: false
+					   });
+   
+				   }, 3000);
+				   // 190611 팝업 사이즈차트
+				});
 
-                    });
-                    
-                    owlSliderSub.owlCarousel({
-                        stagePadding:30,
-                        margin:15,
-                        items :1,
-                        merge: true,
-                        // loop : true,
-                        navigation: false,
-                        nav: false
-                    });
 
-				}, 3000);
-				// 190611 팝업 사이즈차트
+
+				// $('.modal-popup-wrapper').find('.close_x_btn').bind('click',function(){
+				// 	$('.modal-popup-wrapper').removeClass('open');
+				// 	scrollauto()
+				// })
+
+				// $('.modal-popup-wrapper .overlay').bind('click',function(){
+				// 	$('.modal-popup-wrapper').removeClass('open');
+				// 	scrollauto()
+				// })
+
+
 
 
 
