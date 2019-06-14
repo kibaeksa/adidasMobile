@@ -2042,53 +2042,21 @@
 
 
 							// 190611 팝업 사이즈차트
-							
-							// $('.mens').on('click', function () {
-							// 	$('.size_chart_men').addClass('open');
-							// 	$('#header').css('display','none');
-							// 	scrollstop()
-							// });
-							// $('.womens').on('click', function () {
-							// 	$('.size_chart_women').addClass('open');
-							// 	$('#header').css('display','none');
-							// 	scrollstop()
-							// });
-							// $('.kids').on('click', function () {
-							// 	$('.size_chart_kids').addClass('open');
-							// 	$('#header').css('display','none');
-							// 	scrollstop()
-							// });
-							// $('.shoes').on('click', function () {
-							// 	$('.size_chart_shoes').addClass('open');
-							// 	$('#header').css('display','none');
-							// 	scrollstop()
-							// });
-
-
-							$('.info .size_chart_btn').on('click', function () {
-								$('.popup-sizechart').addClass('open');
-								$('#header').css('display','none');
-								scrollstop()
-							});
-
-							$('.modal-popup-wrapper').find('.close_x_btn').bind('click',function(){
-								$('.modal-popup-wrapper').removeClass('open');
-							})
-
-							$('.modal-popup-wrapper .overlay').bind('click',function(){
-								$('.modal-popup-wrapper').removeClass('open');
-							})
+							// PDP메인 스크롤 ON/OFF 함수
 							function scrollstop(){
 								$('html,body').css('overflow','hidden');
 							}
 							function scrollauto(){
 								$('html,body').css('overflow','auto');
 							}
+							
+							$('.info .size_chart_btn').on('click', function () {
+								scrollstop();
 
-							setTimeout(function(){
-								// 사이즈차트 슬라이더1
-								var owlSlider1 = $('#slider_owl1');
+								setTimeout(function(){
 								
+								// 사이즈차트 슬라이더1 : 팝업 상단 사이즈 측정 방법 슬라이드
+								var owlSlider1 = $('#slider_owl1');
 								owlSlider1.on('initialized.owl.carousel', function(event) {
 									$('.banner_slider_wrap .owl-stage').css({'padding-left':'0'});
 								});
@@ -2107,16 +2075,16 @@
 									nav: false
 								});
 
-								// 사이즈차트 슬라이더2
+								// 사이즈차트 슬라이더2 : 팝업 하단 사이즈 측정 방법 슬라이드
 								var owlSliderSub = $('#slider_owl2');
 								
-								owlSliderSub.on('initialized.owl.carousel', function(event) {
+									owlSliderSub.on('initialized.owl.carousel', function(event) {
 									$('.banner_slider_wrap .owl-stage').css({'padding-left':'0'});
 								});
 								
 								owlSliderSub.on('changed.owl.carousel', function(event) {
 									$('.banner_slider_wrap .owl-stage').css({'padding-left':'0'});
-
+			
 								});
 								
 								owlSliderSub.owlCarousel({
@@ -2128,8 +2096,9 @@
 									navigation: false,
 									nav: false
 								});
-
-							}, 3000);
+			
+							}, 800);
+							});
 							// 190611 팝업 사이즈차트
 
 						});
@@ -2288,7 +2257,7 @@
 							</li>
 							<li class="size size_chart_btn">
 								<!-- 190611 사이즈차트 -->
-								<strong data-modalpop-click="popup-sizechart">사이즈 차트 보기</strong>
+								<strong  class="modal-popup-click" data-modalpop-click="popup-sizechart">사이즈 차트 보기</strong>
 								<!-- <strong>사이즈/수량</strong> -->
 								<!-- //190611 사이즈차트 -->
 								<div class="r_box">

@@ -2921,30 +2921,9 @@
   <script type="text/javascript">
 	
 		(function($){
-			$(window).load(function() {
-				// 190611 팝업 사이즈차트				
-
-				// $('.mens').on('click', function () {
-				// 	$('.size_chart_men').addClass('open');
-				// 	$('#header').css('display','none');
-				// 	scrollstop();
-				// });
-				// $('.womens').on('click', function () {
-				// 	$('.size_chart_women').addClass('open');
-				// 	$('#header').css('display','none');
-				// 	scrollstop();
-				// });
-				// $('.kids').on('click', function () {
-				// 	$('.size_chart_kids').addClass('open');
-				// 	$('#header').css('display','none');
-				// 	scrollstop();
-				// });
-				// $('.shoes').on('click', function () {
-				// 	$('.size_chart_shoes').addClass('open');
-				// 	$('#header').css('display','none');
-				// 	scrollstop();
-				// });
-				// 스크롤 가능 함수
+			$(document).ready(function() {
+				// 190611 팝업 사이즈차트
+				// PDP메인 스크롤 ON/OFF 함수
 				function scrollstop(){
 					$('html,body').css('overflow','hidden');
 				}
@@ -2953,14 +2932,11 @@
 				}
 				
 				$('.info .size_chart_btn').on('click', function () {
-					// $('.popup-sizechart').addClass('open');
-					// alert();
 					scrollstop();
 
 					setTimeout(function(){
 					
-					// 사이즈차트 슬라이더1 :
-					
+					// 사이즈차트 슬라이더1 : 팝업 상단 사이즈 측정 방법 슬라이드
 					var owlSlider1 = $('#slider_owl1');
 					owlSlider1.on('initialized.owl.carousel', function(event) {
 						$('.banner_slider_wrap .owl-stage').css({'padding-left':'0'});
@@ -2979,6 +2955,7 @@
 						navigation: false,
 						nav: false
 					});
+
 					// 사이즈차트 슬라이더2 : 팝업 하단 사이즈 측정 방법 슬라이드
 					var owlSliderSub = $('#slider_owl2');
 					   
@@ -3001,24 +2978,9 @@
 						   nav: false
 					   });
    
-				   }, 3000);
-				   // 190611 팝업 사이즈차트
+				   }, 800);
 				});
-
-
-
-				// $('.modal-popup-wrapper').find('.close_x_btn').bind('click',function(){
-				// 	$('.modal-popup-wrapper').removeClass('open');
-				// 	scrollauto()
-				// })
-
-				// $('.modal-popup-wrapper .overlay').bind('click',function(){
-				// 	$('.modal-popup-wrapper').removeClass('open');
-				// 	scrollauto()
-				// })
-
-
-
+				// 190611 팝업 사이즈차트
 
 
                 // 180618 scrollTop
