@@ -924,9 +924,9 @@
 					</div>
 				</div>
 
-				<!-- 190611 사이즈차트팝업 -->
+				<!-- 190611 팝업 사이즈차트 -->
 				<!-- 남자 -->
-				<div class="modal-popup-wrapper popup-sizechart size_chart_men" data-modalpop=""
+				<!-- <div class="modal-popup-wrapper popup-sizechart size_chart_men" data-modalpop=""
 				data-modalpop-name="popup-sizechart">
 				<div class="overlay"></div>
 				<div class="popup">
@@ -1094,7 +1094,7 @@
 						</div>
 					</div>
 				</div>
-				</div>
+				</div> -->
 				<!-- //남자 -->
 
 				<!-- 여자 -->
@@ -1351,7 +1351,7 @@
 				<!-- //여자 -->
 
 				<!-- 신발 -->
-				<!-- <div class="modal-popup-wrapper popup-sizechart size_chart_shoes" data-modalpop=""
+				<div class="modal-popup-wrapper popup-sizechart size_chart_shoes" data-modalpop=""
 					data-modalpop-name="popup-sizechart">
 					<div class="overlay"></div>
 					<div class="popup">
@@ -1568,7 +1568,7 @@
 							</div>
 						</div>
 					</div>
-				</div> -->
+				</div>
 				<!-- //신발 -->
 
 				<!-- 키즈 -->
@@ -1982,7 +1982,7 @@
 					</div>
 				</div> -->
 			<!-- //키즈 -->
-			<!-- //190611 사이즈차트팝업 -->
+			<!-- //190611 팝업 사이즈차트 -->
 
 				<script type="text/javascript">
 					jQuery(function(){
@@ -2053,9 +2053,13 @@
 							$('.info .size_chart_btn').on('click', function () {
 								scrollstop();
 
+								$('.modal-popup-wrapper').find('.close_x_btn').bind('click',function(){
+									scrollauto();
+								})
+
 								setTimeout(function(){
 								
-								// 사이즈차트 슬라이더1 : 팝업 상단 사이즈 측정 방법 슬라이드
+								// 사이즈차트 슬라이더1
 								var owlSlider1 = $('#slider_owl1');
 								owlSlider1.on('initialized.owl.carousel', function(event) {
 									$('.banner_slider_wrap .owl-stage').css({'padding-left':'0'});
@@ -2075,7 +2079,7 @@
 									nav: false
 								});
 
-								// 사이즈차트 슬라이더2 : 팝업 하단 사이즈 측정 방법 슬라이드
+								// 사이즈차트 슬라이더2 : 팝업 사이즈 측정 방법 추가 슬라이드(신발)								
 								var owlSliderSub = $('#slider_owl2');
 								
 									owlSliderSub.on('initialized.owl.carousel', function(event) {
@@ -2256,10 +2260,10 @@
 								</div>
 							</li>
 							<li class="size size_chart_btn">
-								<!-- 190611 사이즈차트 -->
+								<!-- 190611 팝업 사이즈차트 버튼-->
 								<strong  class="modal-popup-click" data-modalpop-click="popup-sizechart">사이즈 차트 보기</strong>
 								<!-- <strong>사이즈/수량</strong> -->
-								<!-- //190611 사이즈차트 -->
+								<!-- //190611 팝업 사이즈차트 버튼-->
 								<div class="r_box">
 									<!-- <a href="" class="alarm_stock">입고알림 신청 바로가기</a> -->
 									<!-- 160330 a태그->span태그로 변경 -->
