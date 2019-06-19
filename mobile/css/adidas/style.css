@@ -2345,6 +2345,21 @@ p.holiday_delay strong{font:600 13px/18px 'NotoSansKR'; }
 	box-sizing:border-box;
 	-webkit-box-sizing:border-box;
 }
+#header .nav_menu.update .u_info a{
+	width:50%;
+	letter-spacing: 0.2px;
+}
+#header .nav_menu.update .u_info a.ico_mypage::before{
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 18px;
+    position: relative;
+    top: 3px;
+    margin-right: 3px;
+    background: url(/images/adidas/common/ico_gnb_mypage.png) no-repeat;
+    background-size: 100% 100%;
+}
 
 #header .nav_menu .u_info a:last-child{
 	border-right-width: 0;
@@ -2454,6 +2469,15 @@ p.holiday_delay strong{font:600 13px/18px 'NotoSansKR'; }
 	top: 26px;
 	transform:rotate(45deg);
 	-webkit-transform:rotate(45deg);
+}    
+#header .nav_menu.update .gnb li>a:before{
+	right: 33px;
+}
+#header .nav_menu.update .gnb li>a:before,
+#header .nav_menu.update .gnb li>a:after{
+    background: #000;
+    height: 1px;
+    width: 12px;
 }
 
 #header .nav_menu .gnb li.dep>a:after{
@@ -2497,7 +2521,6 @@ p.holiday_delay strong{font:600 13px/18px 'NotoSansKR'; }
 #header .nav_menu .gnb>li>.depth2>ul>li{
 	border-bottom:1px solid #eceaed;
 }
-
 #header .nav_menu .gnb>li>.depth2>ul>li>a{
 	display: block;
 	position: relative;
@@ -2505,6 +2528,13 @@ p.holiday_delay strong{font:600 13px/18px 'NotoSansKR'; }
 	background: #f8f6f9;
 	color: #000;
 	font-size: 16px;
+}
+#header .nav_menu.update .gnb>li>.depth2>ul>li>a{
+	background: #fff;
+	font-weight:400;
+}
+#header .nav_menu.update .gnb>li>.depth2>ul>li.open>a{
+	border-bottom:1px solid #eceaed;
 }
 #header .nav_menu .gnb>li>.depth2>ul>li.dep>a:after,
 #header .nav_menu .gnb>li>.depth2>ul>li.dep>a:before{
@@ -2534,6 +2564,10 @@ p.holiday_delay strong{font:600 13px/18px 'NotoSansKR'; }
 	background: #fff;
 	font-size:13px;
 	color: #000;
+}
+#header .nav_menu.update .gnb>li>.depth2>ul>li>.depth3>ul>li>a{
+	padding:14px 32px;
+	font-weight: 400;
 }
 
 #header .nav_menu .gnb>li>.depth2>ul>li>.depth3>ul>li.all>a{
@@ -2606,6 +2640,23 @@ p.holiday_delay strong{font:600 13px/18px 'NotoSansKR'; }
 	background: #fff;
 }
 
+#header .nav_menu .gnb_bottom{
+	padding: 15px 0;
+	background: #1e1e1e;
+}
+#header .nav_menu .gnb_bottom li>a{
+	display: block;
+    height: 42px;
+    position: relative;
+    font:300 16px/42px 'NotoSansKR';
+    color: #fff;
+    text-align: center;
+    transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+    letter-spacing: 0.7px;
+}
+
+/* 190621 .gnb_bottom 이전 버전 클래스 */
 #header .nav_menu .ctgr{
 	width:80%;
 	max-width: 480px;
@@ -2638,7 +2689,6 @@ p.holiday_delay strong{font:600 13px/18px 'NotoSansKR'; }
 	right:1px;
 	font-size:13px;
 }
-
 #header .nav_menu .club_ctgr{
 	height: 50px;
 	overflow: hidden;
@@ -2662,7 +2712,6 @@ p.holiday_delay strong{font:600 13px/18px 'NotoSansKR'; }
 	border-right-width:0;
 	width: 33.4%;
 }
-/* 180112 feedback 추가 */
 #header .nav_menu .feedback{
 	width: 80%;
     max-width: 480px;
@@ -2684,7 +2733,7 @@ p.holiday_delay strong{font:600 13px/18px 'NotoSansKR'; }
 	letter-spacing: 0.1rem;
 	text-transform: uppercase;
 }
-/* 180112 feedback 추가 END */
+/* 190621 .gnb_bottom 이전 버전 클래스 END */
 
 #header .nav_menu .viewed_items{
 	padding:25px 0;
@@ -20099,6 +20148,10 @@ em.prd_speedy .tooltip-box:before{
 	text-align: center;
 }
 
+#footer .f_menu.col4 a{
+	width: 25%;
+}
+
 #footer .f_menu.col5 a{
 	width: 20%;
 }
@@ -20109,15 +20162,26 @@ em.prd_speedy .tooltip-box:before{
 }
 
 #footer .f_info>*{
-	margin-bottom:1px;
 	text-align: center;
 	color:#999;
 	font:300 10px 'NotoSansKR';
+	width: 320px;
+    margin: 0 auto;
 }
 #footer .f_info .tit{
 	margin-bottom: 10px;
 	color: #fff;
 	font:400 13px 'NotoSansKR';
+	font-size: 1.3rem;
+}
+#footer .f_info p{
+    text-align: left;
+    color: #d9d9d9;
+    font-size: 1rem;
+    line-height: 1.8rem;
+    font-family: 'NotoSansKR';
+    font-weight: 300;
+    letter-spacing: 0;
 }
 #footer .f_info p a{
 	color: #0286ce;
@@ -20129,74 +20193,45 @@ em.prd_speedy .tooltip-box:before{
 	border-color: #0286ce;
 }
 #footer .f_info ul{
-	padding: 15px 0;
-	text-align: center;
+	text-align: left;
+    padding: 2.5rem 0px;
 }
 #footer .f_info ul li{
-	margin-bottom: 2px;
 	display: inline-block;
 	font:300 10px 'NotoSansKR';
+	position: relative;
+    padding-right: 15px;
+    margin-right: 10px;
+    margin-bottom: 0.7rem;
 }
 #footer .f_info ul li:after{
 	display: inline-block;
 	content:'|';
 	margin: 0 5px;
 	color: #fff;
+	margin: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 #footer .f_info ul li:nth-child(3):after{
 	margin: 0;
 	display: none;
 }
 #footer .f_info ul li:last-child{
-	display: block;
+	margin-bottom: 0;
+    display: inline-block;
 }
 #footer .f_info ul li:last-child:after{
 	margin: 0;
 	display: none;
 }
-#footer .f_info ul li a{
-	color: #fff;
-}
 
-#footer.footer_upt_161121 .f_info .inner{
-	width: 320px;
-	margin: 0 auto;
-}
-
-#footer.footer_upt_161121 .f_info p.tit{
-	font-size: 1.3rem;
-	color: #fff;
-	font-family:'NotoSansKR';
-    font-weight: 400;
-}
-
-#footer.footer_upt_161121 .f_info p{
-	text-align: left;
-	color: #d9d9d9;
-	font-size:1rem;
-	line-height:1.8rem;
-	font-family:'NotoSansKR';
-    font-weight: 300;
-	letter-spacing: 0;
-}
-
-#footer.footer_upt_161121 .f_info p a.tel{
+#footer .f_info p a.tel{
 	color:#d9d9d9;
 }
 
-#footer.footer_upt_161121 .f_info ul{
-	text-align: left;
-	padding: 2.5rem 0px;
-}
-
-#footer.footer_upt_161121 .f_info ul li{
-	position: relative;
-	padding-right: 15px;
-	margin-right: 10px;
-	margin-bottom: 0.7rem;
-}
-
-#footer.footer_upt_161121 .f_info ul li a{
+#footer .f_info ul li a{
 	color: #fff;
 	font-size:1rem;
 	font-family:'NotoSansKR';
@@ -20204,35 +20239,28 @@ em.prd_speedy .tooltip-box:before{
 	letter-spacing: 0;
 }
 
-#footer.footer_upt_161121 .f_info ul li a strong{
+#footer .f_info ul li a strong{
     font-weight: normal;
     color: #82b4e6;
 }
 
-#footer.footer_upt_161121 .f_info ul li::after{
-	margin: 0;
-	position: absolute;
-	top: 0;
-	right: 0;
-}
-
-#footer.footer_upt_161121 .f_info ul li:nth-child(3){
+#footer .f_info ul li:nth-child(3){
 	padding-right: 0;
 	margin-right: 0;
 }
 
-#footer.footer_upt_161121 .f_info ul li:nth-child(3)::after{
+#footer .f_info ul li:nth-child(3)::after{
 	display: none;
 }
 
-#footer.footer_upt_161121 .f_info ul li:nth-child(4){
+#footer .f_info ul li:nth-child(4){
 	margin-bottom: 0;
 }
 
-#footer.footer_upt_161121 .f_info ul li:last-child{
+/* #footer .f_info ul li:last-child{
 	margin-bottom: 0;
 	display: inline-block;
-}
+} */
 
 .layerpopup.layerpopup_payment .payment_options{
 	padding: 15px;
