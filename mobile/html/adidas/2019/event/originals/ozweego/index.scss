@@ -1,0 +1,195 @@
+@import './mobile/css/adidas/scss/common/mixin.scss';
+@import './mobile/css/adidas/scss/common/common.scss';
+#container{
+	// z-index: 121;
+}
+
+#ozweego{
+	position: relative;
+	//common
+	.button_area_v2{
+		display: inline-block;
+		a{
+			padding: 0 6vw;
+			font: 500 1rem/3.4rem 'NotoSansKR';
+			letter-spacing: .15rem;
+			height: 3.4rem;
+			.arrow{
+				margin-left: 1rem;
+				width: 20px;
+				&::after, &::before{
+					width: 7px;
+					height: 2px;
+				}
+				&::before{
+					bottom:-2px;
+				}
+				&::after{
+					top:-2px;
+				}
+			}
+		}
+	}
+
+	.visual_main{
+		position: relative;
+		video{
+			display: block;
+			width: 100%;
+		}
+	}
+
+	.statement{
+		position: relative;
+		background : #cfdc00;
+		.inner{
+			width: 100%;
+			padding: 2rem 0 3rem;
+			color: #000;
+			text-align: center;
+			h2{
+				font: 2.1rem 'adinenuPro-bold';
+				letter-spacing: 2px;
+				text-align: center;
+			}
+			p{
+				font: 1.1rem 'NotoSansKR';
+				text-align: center;
+			}
+			.button_area_v2{
+				display: inline-block;
+				margin-top: 20px;
+				a{
+					padding: 0 20px;
+				}
+			}
+		}
+	}
+
+	.main_cuts{
+		position: relative;
+		background: #cfdc00;
+		.banner_slider_wrap{
+			width: 80%;
+			margin: 0 auto;
+			text-align: center;
+			ul{
+				overflow: hidden;
+				li{
+					img{
+						display: block;
+						width: 100%;
+					}
+				}
+				.owl-dots{
+					padding-top: 1.2rem;
+					.owl-dot{
+						display: inline-block;
+						width: 8px;
+						height: 8px;
+						border: 2px solid #000;
+						border-radius: 50%;
+						margin: 0 5px;
+						&.active{
+							background: #000;
+						}
+					}
+				}
+			}
+		}
+		p{
+			padding: 2.4rem 0 3rem;
+			font : 500 1.4rem "NotoSansKR";
+			text-align: center;
+		}
+	}
+
+	.box2{
+		position: relative;
+		&.on{
+			ul.tech_con{
+				li{
+					@include css3(opacity,1);
+				}
+			}
+		}
+		>img{
+			display: block;
+			width: 100%;
+		}
+		ul.tech_con{
+			li{
+				width: 45%;
+				position: absolute;
+				transition: .4s;
+				opacity: 0;
+				&:nth-child(1){
+					top: 6%;
+					left: 5%;
+					transition-delay: .2s;
+				}
+				&:nth-child(2){
+					top: 24%;
+					right: 5%;
+					transition-delay: .4s;
+				}
+				&:nth-child(3){
+					top: 53%;
+					left: 5%;
+					transition-delay: .6s;
+				}
+				img{
+					width: 100%;
+					display: inline-block;
+				}
+			}
+		} 
+	}
+
+	.bot{
+		position: relative;
+		&.on{
+			.inner{
+				top: 62%;
+				@include css3(opacity,1);
+			}
+		}
+		>img{
+			display: block;
+			width: 100%;
+		}
+		.inner{
+			position: absolute;
+			left: 50%;
+			top: 64%;
+			width: 100%;
+			transform: translateX(-50%);
+			color: #000;
+			text-align: left;
+			z-index: 2;
+			transition: .4s;
+			transition-delay: .6s;
+			opacity: 0;
+			.buy_box{
+				text-align: center;
+				h2{
+					font: 2.1rem 'adinenuPro-bold';
+					letter-spacing: 2px;
+					text-align: center;
+				}
+				p{
+					font: 1.1rem 'NotoSansKR';
+					text-align: center;
+				}
+				.button_area_v2{
+					display: inline-block;
+					margin-top: 20px;
+					a{
+						padding: 0 20px;
+					}
+				}
+			}
+		}
+	}
+
+}
