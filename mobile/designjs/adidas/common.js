@@ -199,30 +199,33 @@ adiApp.getNodefromString = function (htmlString) {
 		return false;
 	});
 	
-
+	// 190618 
 	$('#header .nav_menu .gnb>li li').bind('click',function(event){
 		event.stopPropagation();
 
 		if($(this).hasClass('open')){
 			$(this).removeClass('open');
+			
 		}else{
 			$(this).addClass('open');
+
+
+			$('#header .nav_menu').data('prevGnbScroll',{
+				scrollTop : $('#header .nav_menu').scrollTop()
+			});
+
+			var yVal = Math.abs(Math.abs($('#header .nav_menu').scrollTop()) + $(this).get(0).getBoundingClientRect().top) - 61;
+
+			setTimeout(function(){
+				$('#header .nav_menu').animate({
+					scrollTop : yVal
+				},200);
+			},500);
 		}
+		
 	});
 
-	$('#container.main .category_menu_wrapper .gnb>li li').bind('click',function(event){
-		event.stopPropagation();
-		if(!$(this).hasClass('dep')){
-			return;
-		}
 
-		if($(this).hasClass('open')){
-			$(this).removeClass('open');
-		}else{
-			$(this).addClass('open');
-		}
-		return false;
-	});
 
 	$('#header .nav_menu .gnb>li').bind('click',function(event){
 		event.stopPropagation();
@@ -230,6 +233,7 @@ adiApp.getNodefromString = function (htmlString) {
 		if(!$(this).hasClass('open')){
 
 			$('#header .nav_menu .gnb>li').removeClass('open');
+			$('#header .nav_menu .gnb>li li').removeClass('open');
 			$(this).addClass('open');
 
 
@@ -253,11 +257,40 @@ adiApp.getNodefromString = function (htmlString) {
 		}
 	});
 
+	
+	// 190618 	
+	$('#container.main .category_menu_wrapper .gnb>li li').bind('click',function(event){
+		event.stopPropagation();
+
+		if(!$(this).hasClass('dep')){
+			return;
+		}
+
+		if($(this).hasClass('open')){
+			$(this).removeClass('open');
+		}else{
+			$(this).addClass('open');
+			$(this).siblings('li').removeClass('open');
+
+			var yVal = $(this).offset().top;
+
+			setTimeout(function(){
+				$('html,body').animate({
+					scrollTop : yVal
+				},460);
+			},100);
+		}
+		// return false;
+	});
+
+	// 190618 
 	$('#container.main .category_menu_wrapper .gnb>li').bind('click',function(event){
 		event.stopPropagation()
 		if(!$(this).hasClass('open')){
 
 			$('#container.main .category_menu_wrapper .gnb>li').removeClass('open');
+			$('#container.main .category_menu_wrapper .gnb>li li').removeClass('open');
+
 			$(this).addClass('open');
 
 
@@ -275,6 +308,7 @@ adiApp.getNodefromString = function (htmlString) {
 
 		}else{
 			$(this).removeClass('open');
+			$('#container.main .category_menu_wrapper .gnb>li li').removeClass('open');
 		}
 		// 190508 return false 삭제
 		// return false;
@@ -573,9 +607,9 @@ adiApp.getNodefromString = function (htmlString) {
 					if(sTop < document.getElementById('header').offsetHeight){
 						$(headerElem).removeClass('hide');
 					}else{
-						if(prevScroll - sTop > 10){
+						if(prevScroll - sTop > 3){
 							$(headerElem).removeClass('hide');
-						}else if(prevScroll - sTop < -10){
+						}else if(prevScroll - sTop < -3){
 							$(headerElem).addClass('hide');
 						}
 					}
