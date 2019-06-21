@@ -7138,7 +7138,18 @@ div.layerpop_wrap#nomem_order_popup .inner .content .desc{
     -webkit-flex:0 0 100px;
 }
 
-#container.product_view .product_order .buy_btn.col3>.restock{background: #000;color:#fff;}
+#container.product_view .product_order .buy_btn.col3>.btn_restock{
+	display: none;
+	position: absolute;
+	width: 100%;
+	background: #000;
+	color:#fff; 
+	z-index: 2;
+}
+
+#container.product_view .product_order .buy_btn.col3>.btn_restock.on{
+	display: block;
+}
 
 #container.product_view .product_order .today_delivery{
   position: relative;
