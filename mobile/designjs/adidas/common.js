@@ -233,6 +233,7 @@ adiApp.getNodefromString = function (htmlString) {
 		if(!$(this).hasClass('open')){
 
 			$('#header .nav_menu .gnb>li').removeClass('open');
+			$('#header .nav_menu .gnb>li li').removeClass('open');
 			$(this).addClass('open');
 
 
@@ -258,23 +259,8 @@ adiApp.getNodefromString = function (htmlString) {
 
 	
 	// 190618 	
-	var depth1menuli = $('#container.main .category_menu_wrapper .gnb>li');
-	// var depth1menulilen = $('#container.main .category_menu_wrapper .gnb>li').length;
-	var depth2menuli = $('#container.main .category_menu_wrapper .gnb>li li.dep');
-	
-	$('#container.main .category_menu_wrapper .gnb>li li.dep').bind('click',function(event){
+	$('#container.main .category_menu_wrapper .gnb>li li').bind('click',function(event){
 		event.stopPropagation();
-
-		var liindex = $(this).index();
-		var depth1H = 45;
-		var depth2H = $(this).parent('ul').parent('.depth2').parent('li').height();
-		var depth3Hlen = $(this).children('.depth3').children('ul').children('li').length;
-		var depth3H = $(this).children('.depth3').height() + depth3Hlen;
-		
-		var depthHcal = 45 + depth3H;
-
-		console.log(depth2H)
-
 
 		if(!$(this).hasClass('dep')){
 			return;
@@ -282,84 +268,49 @@ adiApp.getNodefromString = function (htmlString) {
 
 		if($(this).hasClass('open')){
 			$(this).removeClass('open');
-			$(this).css({
-				height : depth1H +'px'
-			})
-			$(this).parent('ul').parent('.depth2').parent('li').css({
-				'height': depth2H - (depth3H) + 'px'
-			})
 		}else{
 			$(this).addClass('open');
-			// $(this).siblings('li').removeClass('open');
-			// depth2menuli.css({
-			// 	height : 45 + 'px'
-			// })
-			$(this).css({
-				height : depthHcal +'px'
-			});
-			// dep2 의 부모 li 높이값
-			$(this).parent('ul').parent('.depth2').parent('li').css({
-				height : depth2H + depth3H + 'px'
-			});
-			
-			
-			// console.log(depth3H)
-			
+			$(this).siblings('li').removeClass('open');
+
 			var yVal = $(this).offset().top;
+
 			setTimeout(function(){
 				$('html,body').animate({
 					scrollTop : yVal
-				},300);
-			},500);
+				},460);
+			},100);
 		}
-		return false;
+		// return false;
 	});
-	// 190618 
 
+	// 190618 
 	$('#container.main .category_menu_wrapper .gnb>li').bind('click',function(event){
 		event.stopPropagation()
-
-		var liindex = $(this).index();
-		var depth1H = 55;
-		var depth2Hlen = $(this).children('.depth2').children('ul').children('li').length;
-		var depth2H = $(this).children('.depth2').height() + depth2Hlen;
-		var depthHcal = 55 + depth2H;
-		// console.log(depth2Hlen)
-
 		if(!$(this).hasClass('open')){
 
-			depth1menuli.removeClass('open');
-			depth2menuli.removeClass('open');
-			depth2menuli.css({
-				height : 45 + 'px'
-			})
-			$(this).siblings('li').css({
-				height : depth1H +'px'
-			})
+			$('#container.main .category_menu_wrapper .gnb>li').removeClass('open');
+			$('#container.main .category_menu_wrapper .gnb>li li').removeClass('open');
+
+			$(this).addClass('open');
+
+
+			$('#container.main .category_menu_wrapper').data('prevGnbScroll',{
+				scrollTop : $('#header .nav_menu').scrollTop()
+			});
+
+			var yVal = $(this).offset().top;
+
 			setTimeout(function(){
-				
-				var $this = depth1menuli.eq(liindex);
-				var yVal = $this.offset().top;
-				$this.addClass('open');
-				$this.css({
-					height : depthHcal +'px'
-				})
+				$('html,body').animate({
+					scrollTop : yVal
+				},460);
+			},100);
 
-				// console.log(yVal)
-				setTimeout(function(){
-					$('html,body').animate({
-						scrollTop : yVal
-					},300);
-				},500);
-			},300)
-
-		
-		}else{	
+		}else{
 			$(this).removeClass('open');
-			$(this).css({
-				height : depth1H +'px'
-			})
+			$('#container.main .category_menu_wrapper .gnb>li li').removeClass('open');
 		}
+		// 190508 return false 삭제
 		// return false;
 	});
 
