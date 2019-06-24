@@ -208,6 +208,7 @@ adiApp.getNodefromString = function (htmlString) {
 			
 		}else{
 			$(this).addClass('open');
+			$(this).siblings('li').removeClass('open');
 
 
 			$('#header .nav_menu').data('prevGnbScroll',{
@@ -225,8 +226,7 @@ adiApp.getNodefromString = function (htmlString) {
 		
 	});
 
-
-
+	// 190618 
 	$('#header .nav_menu .gnb>li').bind('click',function(event){
 		event.stopPropagation();
 
@@ -257,7 +257,6 @@ adiApp.getNodefromString = function (htmlString) {
 		}
 	});
 
-	
 	// 190618 	
 	$('#container.main .category_menu_wrapper .gnb>li li').bind('click',function(event){
 		event.stopPropagation();
@@ -310,8 +309,7 @@ adiApp.getNodefromString = function (htmlString) {
 			$(this).removeClass('open');
 			$('#container.main .category_menu_wrapper .gnb>li li').removeClass('open');
 		}
-		// 190508 return false 삭제
-		// return false;
+
 	});
 
 	(function(){
