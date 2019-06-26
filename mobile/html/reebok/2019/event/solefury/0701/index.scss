@@ -1,0 +1,238 @@
+@import "./mobile/MO/reebok/css/scss/about.scss";
+
+#contents{
+    img{
+        vertical-align: middle;
+    }
+}
+//common
+html,body{
+    // height:100%;
+}
+.btn{
+    a{
+        font: 700 .8rem/2.7rem 'NotoSansKR';
+        color: #000;
+        padding: 0 1rem;
+        display: inline-block;
+        letter-spacing: .1rem;
+        border: 1px solid #000;
+        .arrow{
+            position: relative;
+            top: -1px;
+            display: inline-block;
+            margin-left: 6px;
+            width: 16px;
+            height: 2px;
+            background: #000;
+            vertical-align: middle;
+            &::before{
+                position: absolute;
+                bottom: -2px;
+                right: -2px;
+                content: '';
+                display: inline-block;
+                width: 5px;
+                height: 2px;
+                background: #000;
+                transform: rotate(-45deg);
+                -webkit-transform: rotate(-45deg);
+            }
+            &::after{
+                position: absolute;
+                top: -2px;
+                right: -2px;
+                content: '';
+                display: inline-block;
+                width: 5px;
+                height: 2px;
+                background: #000;
+                transform: rotate(45deg);
+                -webkit-transform: rotate(45deg);
+            }
+        }
+    }
+}
+h1{
+    font: 700 4.5rem/1rem "dinpro cond";
+    letter-spacing: 0;
+}   
+p{
+    margin: 1.5rem 0;
+    font: 400 1rem/1.9rem 'NotoSansKR';
+    letter-spacing: .3px;
+}
+.solefury{
+    .main{
+        position: relative;
+        &.on{
+            img,.txt{
+                @include opacity(1);
+            }
+        }
+        >img{
+            width:100%;
+            @include opacity(0);
+            @include prefix-css3(transition, all 1s ease-out);
+        }
+        .txt{
+            position: absolute;
+            left: 6.5%;
+            bottom: 13%;
+            @include opacity(0);
+            @include prefix-css3(transition, all 1s ease-out);
+            @include prefix-css3(transition-delay,.5s);
+        }
+    }
+
+
+    .vid_cont{
+        position: relative;
+        &.on{
+            @include opacity(1);
+        }
+        @include opacity(0);
+		@include prefix-css3(transition, all 1s ease-out);
+        .img{
+            img{
+
+                width:100%;
+            }
+        }
+        a{  
+            text-align: center;
+            position:absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            border:0;
+            margin: 0 auto;
+            &::before{
+                border:0;
+            }
+            img{
+                width:65%;
+            }
+        }
+    }
+    .aside{
+        position: relative;
+        padding: 3rem 0;
+        &.on{
+            @include opacity(1);
+        }
+        @include opacity(0);
+		@include prefix-css3(transition, all 1s ease-out);
+        h1{
+            font: 700 4rem/4.3rem "dinpro cond";
+            letter-spacing: 0;
+            text-align: center;
+        }
+        p{
+            margin: .5rem 0;
+            font: 400 .9rem/1.5rem 'NotoSansKR';
+            letter-spacing: 0;
+            text-align: center;
+        }
+    }
+    .common_slide{
+        position: relative;
+        overflow: hidden;
+        z-index: 2;
+        padding: 5rem 0;
+        background:#171994;
+        @include opacity(0);
+        @include prefix-css3(transition, all 1s ease-out);
+        &.on{
+            @include opacity(1);
+        }
+        &.collection_slider01{
+            background:url('/images/reebok/2019/event/solfury/0701/1907_r_solefury_slideBg01_MO.jpg') no-repeat;
+            background-position: top;
+            background-size: 100% 100%;
+            ul{
+                overflow: hidden;
+                li{
+                    img{
+                        width:80%;
+                    }
+                }
+            }
+        }
+        &.collection_slider02{
+            padding:0;
+            h1{
+                font: 900 4.3rem/4.3rem "dinpro cond";
+                color:#e8fc04;
+                padding: 2rem 0;
+                text-align: center;
+            }
+            .num_paging{
+                position:static;
+                bottom:0;
+                padding: 2rem 0;
+                a{
+                    border:1px solid #e8fe06;
+                    &.on{
+                        background:#e8fe06;
+                    }
+                }
+            }
+        }
+        .navi{
+            display: none;
+        }
+        ul{
+            overflow: hidden;
+            li{
+                position: relative;
+                float: left;
+                text-align: center;
+                img{
+                    width:100%;
+                }
+            }
+        }
+        .num_paging{
+            position: relative;
+            bottom: -3.5rem;
+            a{
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                margin: 0 2.5px;
+                display: inline-block;
+                border: 1px solid #000;
+                transition-duration: 0s;
+                -webkit-transition-duration: 0s;
+                &.on{
+                    background:#000;
+                }
+            }
+        }
+
+        // @media (max-width:320px){
+        //     .common_slide{
+        //         .txt{
+        //             p{
+        //                 font-size:3.5rem;
+        //             }
+        //         }
+        //     }
+        //     .num_paging{
+        //         a{
+        //             &.on{
+        //                 &::after{
+        //                     right: -.1rem!important;
+        //                 }
+        //             }
+        //         }
+        //     }
+        // }
+    }
+
+
+}
+
+// zico
