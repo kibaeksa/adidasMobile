@@ -1,0 +1,168 @@
+@import "./mobile/MO/reebok/css/scss/about.scss";
+
+.myt{
+
+    //common
+    .btn{
+        display: inline-block;
+        background: #000;
+        text-align: center;
+        a{
+            position: relative;
+            display: block;
+            font: 500 1rem/40px 'NotoSansKR';
+            color: #fff;
+            /* padding: 0 3rem; */
+            letter-spacing: .1rem;
+            width: 131px;
+            span{
+                display: inline-block;
+                width: 20px;
+                height: 9px;
+                background: url(/images/reebok/2019/event/myt/icons_arrow_w.png) no-repeat;
+                background-size: 100% 100%;
+                margin-left: 18px;
+            }
+            &:after{
+                display: inline-block;
+                content: '';
+                border: 1px solid #000;
+                position: absolute;
+                top: 0;left: 0;right: 0;bottom: 0;
+                transform: translate(3px, 3px);
+            }
+        }
+    }
+
+    .main_visual{
+        position: relative;
+        &.on{
+            .inner{
+                >*{
+                    transform: translateY(0) !important;
+                    opacity: 1 !important;
+                }
+            }
+        }
+        >img{
+            display: block;
+            width: 100%;
+        }
+        
+        .inner{
+            position: absolute;
+            width: 100%;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            >img{
+                display: inline-block;
+                width: 77%;
+                padding-top: 1rem;
+                transform: translateY(30px);
+                transition: .4s;
+                opacity: 0;
+            }
+            p{
+                padding: 1.5rem 0;
+                font: 500 1.2rem "NotoSansKR";
+                color: #000;
+                text-align: center;
+                transform: translateY(30px);                
+                transition: .4s;
+                transition-delay: .4s;
+                opacity: 0;
+            }
+            .btn{
+                transform: translateY(30px);
+                transition: .4s;
+                transition-delay: .8s;
+                opacity: 0;
+            }
+        }
+    }
+  
+    .sect_video{
+        position: relative;
+        overflow: hidden;
+        video{
+            display: block;
+            width: 100%;
+        }
+        .play{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            z-index: 2;
+            width: 15%;
+            img{
+                width:100%;
+            }
+        }
+    }
+
+    .statement{
+        position: relative;
+        padding: 3rem 0 3rem;
+        background : #009278;
+        text-align: center;
+        h1{
+            text-align: center;
+            font:700 3rem/3rem 'PFDinMonoPro-Bold';
+            letter-spacing: -1px;
+            word-spacing: -9px;
+            color:#fff;
+        }
+        .btn{
+            margin:1rem 0 0 0;
+            background: #fff;
+            a{
+                color: #000;
+                span{
+                    background: url(/images/reebok/2019/event/myt/icons_arrow.png) no-repeat;
+                    background-size: 100% 100%;
+                }
+                &:after{                    
+                    border: 1px solid #fff;
+                }
+            }
+        }
+    }   
+
+    //grid
+    .grids{
+        img{
+            width:100%;
+        }
+        .sec{
+            &.sec1{
+                #img1{
+                    overflow: hidden;
+                    img{
+                        width: 100%;
+                    }
+                }
+            }
+            &::after{
+                display: block;
+                content:'';
+                clear:both;
+            }
+            &.sec2{
+                position: relative;
+            }
+            .wrap{
+                float: left;
+                width:50%;
+            }
+            img{
+                display: block;
+            }
+        }
+    }
+}
+
+
+// MYT END
