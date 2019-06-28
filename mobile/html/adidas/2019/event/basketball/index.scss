@@ -1,0 +1,238 @@
+@import './mobile/css/adidas/scss/common/mixin.scss';
+@import './mobile/css/adidas/scss/common/common.scss';
+
+#basketball_marvel{
+	position: relative;
+
+	.button_area_v2{
+		display: inline-block;
+		// margin-bottom: 2vh;
+		a{
+			font: 500 1rem/37px 'NotoSansKR';
+			padding: 0 5vw;
+			letter-spacing: 0.1px;
+			height: 38px;
+			.arrow{
+				width:20px;
+				&::after{
+					width:8px;
+				}
+				&::before{
+					width:8px;
+				}
+			}
+		}
+	}
+	img{
+		width:100%;
+	}
+
+	.main{
+		position: relative;
+		.bg{
+			img{
+				width:100%;
+			}
+		}
+		&.on{
+			.h_box_tle{
+				top: 3%;
+				right: 12%;
+				@include css3(opacity,1);
+			}
+			.h_box_men{
+				transform: rotate(0);
+				@include css3(opacity,1);
+			}
+			.h_box_img{
+				@include css3(opacity,1);	
+			}
+		}
+		.h_box_tle{
+			position: absolute;
+			top: -5%;
+			right: -5%;
+			display: inline-block;
+			width: 68%;
+			@include css3(opacity,0);
+			@include css3(transition, all 0.2s);
+			img{
+				width:100%;
+			}
+		}
+		.h_box_men{
+			position: absolute;
+			top: 15%;
+			left: 0;
+			display: inline-block;
+			width: 94%;
+			transform: rotate(-15deg);
+			@include css3(opacity,0);
+			@include css3(transition, all 0.2s);
+			transition-delay: 0.4s;
+		}
+		.h_box_img{
+			position: absolute;
+			top: 68%;
+			right: 15px;
+			display: inline-block;
+			width: 55%;
+			@include css3(opacity,1);
+			@include css3(transition, all 0.2s);
+			transition-delay: 0.6s;
+		}
+		.h_box_logo{
+			position: absolute;
+			top: 49%;
+			right: 15px;
+			display: inline-block;
+			width: 40%;
+			.button_area_v2{
+				margin: 16% 0 0 0;
+			}
+		}
+
+	}
+
+	.statement{
+		position: relative;
+		&.on{
+			.h_box_tle{
+				transform: rotate(0);
+				@include css3(opacity,1);
+			}
+		}
+		.h_box_tle{
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 100%;
+			transform: rotate(15deg);
+			@include css3(opacity,0);
+			@include css3(transition, all 0.2s);
+			img{
+				width:100%;
+			}
+		}
+		.txt{
+			position: absolute;
+			top: 51%;
+			left: 11%;
+			width: 100%;
+			p{
+				font: 400 1.1rem/1.9rem 'NotoSansKR';
+				letter-spacing: 0.1px;
+			}
+			.button_area_v2{
+				margin: 3% 0 0 0;
+			}
+		}
+	}
+
+	.video_wrap{
+		position: relative;
+		&.on{
+			.h_box_tle{
+				transform: scale(1);
+				@include css3(opacity,1);
+
+			}
+		}
+		.h_box_tle{
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 100%;
+			transform: scale(0);
+			@include css3(opacity,0);
+			@include css3(transition, all 0.4s);
+		}
+	}
+
+	.lookbook{
+		position: relative;
+		.bg{
+			position: absolute;
+			width: 100%;
+			img{
+				width:100%;
+			}
+		}
+		&.on{
+			// empty
+		}
+		.inner{
+			ul{
+
+			}
+			.owl-controls{
+				.owl-dots{
+					position: relative;
+					text-align: center;
+					.owl-dot{
+						display: inline-block;
+						margin:0 5px;
+						width: 20px;
+						height:4px;
+						background: #aea8a3;
+						transition: all 0.5s;
+						&.active{
+							width: 58px;
+							background: #000;
+
+						}
+					}
+				}
+			}
+		}
+	}
+
+	//bottom_wrap
+	.bottom_wrap{
+		position: relative;
+		&.on{
+			&.title{
+				.inn{
+					img{
+						transform: rotate(0deg)
+					}
+				}
+			}
+			.inn{
+				img{
+					opacity: 1;
+					transform: rotateY(0deg);
+					
+				}
+			}
+		}
+		&.title{
+			padding: 10px 0 0 0;
+			.inn{
+				top:10px;
+				img{
+					transform: rotate(15deg)
+				}
+				.button_area_v2{
+					position: absolute;
+					bottom: 5%;
+					left: 50%;
+					transform: translate(-50%,-50%);
+					width: 35%;
+				}
+			}
+		}
+		.inn{
+			position: absolute;
+			top:0;
+			width:100%;
+			img{
+				opacity: 0;
+				transform: rotateY(180deg);
+				transition: all 0.5s;
+			}
+		}
+	}
+
+
+}
