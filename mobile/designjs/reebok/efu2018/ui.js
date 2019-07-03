@@ -145,18 +145,46 @@ jQuery(function(){
 		jQuery("#wrap, #brand_navWrap").height(jQuery(window).height())
 	});			
 	
-	//deth2
+	// 190703 deth1
 
-	jQuery(".menu .menuTit>a.tit").click(function(){
-		if(!jQuery(this).parent(".menu li.menuTit").hasClass("on")) {
-			jQuery(this).parent(".menu li.menuTit").removeClass("on");
-			jQuery(this).parent().addClass("on");
-			jQuery(this).parent().find(".deth2").addClass("open");
-		} else {
-			jQuery(this).parent().removeClass("on");
-			jQuery(this).parent().find(".deth2").removeClass("open");
+	jQuery(".menu .menuTit").click(function(){
+		console.log('aaa')
+
+		// if(!jQuery(this).parent(".menu li.menuTit").hasClass("on")) {
+		// 	jQuery(this).parent(".menu li.menuTit").removeClass("on");
+		// 	jQuery(this).parent().addClass("on");
+		// 	jQuery(this).parent().find(".deth2").addClass("open");
+		// } else {
+		// 	jQuery(this).parent().removeClass("on");
+		// 	jQuery(this).parent().find(".deth2").removeClass("open");
+		// }
+		// return false;
+		if(!jQuery(this).hasClass('on')){
+
+			// jQuery('#header .nav_menu .gnb>li').removeClass('on');
+			// jQuery('#header .nav_menu .gnb>li li').removeClass('on');
+			jQuery(this).addClass('on');
+
+
+			// jQuery('#header .nav_menu').data('prevGnbScroll',{
+			// 	scrollTop : $('#header .nav_menu').scrollTop()
+			// });
+
+			var yVal = Math.abs(Math.abs(jQuery('#header .menuWrap').scrollTop()) + jQuery(this).get(0).getBoundingClientRect().top) - 61;
+			console.log(yVal)
+			setTimeout(function(){
+				jQuery('#header .menuWrap').animate({
+					scrollTop : yVal
+				},250);
+			},100);
+
+		}else{
+			jQuery(this).removeClass('on');
+
+			jQuery('#header .menuWrap').animate({
+				scrollTop : jQuery('#header .menuWrap').data('prevGnbScroll').scrollTop
+			},250);
 		}
-		return false;
 	});
 	
 	//deth3
@@ -218,34 +246,41 @@ jQuery(function(){
 		jQuery(".bacodeDetail").removeClass("on");
 	});
 	 
-	 
-	 jQuery(".menu a.tit").click(function() {
-		if($('.menu .deth2 li').hasClass('on')){
-			//  $('.menuWrap').data('prevGnbScroll',{
-			// 	scrollTop : $('.menuWrap').scrollTop()
-			// });
-			var yVal = Math.abs(Math.abs($('.menuWrap').scrollTop()) + $(this).get(0).getBoundingClientRect().top) - 61;
+	// gnb 2뎁스
+	jQuery(".menu a.tit").click(function() {
+		// if($('.menu .deth2 li').hasClass('on')){
+		//  $('.menuWrap').data('prevGnbScroll',{
+		// 	scrollTop : $('.menuWrap').scrollTop()
+		// });
 
-			setTimeout(function(){
-				$('.menuWrap').stop().animate({
-					scrollTop : yVal + 13
-				},200);
-			},500);
-		 }
+		// var yVal = Math.abs(Math.abs($('.menuWrap').scrollTop()) + $(this).get(0).getBoundingClientRect().top) - 61;
 
-		 if($('.menu .menuTit').hasClass('on')){
-			jQuery(".menuWrap").stop().animate({
-				scrollTop: jQuery(this).position().top - 1
-			}, 500);
-			return false; 
-		 }
-		jQuery(".menuWrap").stop().animate({
-			scrollTop: jQuery(this).position().top - 1
-		}, 500);
-		return false; 
+		// 	setTimeout(function(){
+		// 		$('.menuWrap').stop().animate({
+		// 			scrollTop : yVal + 13
+		// 		},200);
+		// 	},500);
+		// }
+
+		// if($('.menu .menuTit').hasClass('on')){
+		// 	jQuery(".menuWrap").stop().animate({
+		// 		scrollTop: jQuery(this).position().top - 1
+		// 	}, 500);
+		// 	return false; 
+		// }
+		// jQuery(".menuWrap").stop().animate({
+		// 	scrollTop: jQuery(this).position().top - 1
+		// }, 500);
+		// return false; 
 	});
+
+	// gnb 1뎁스
+	// jQuery("#header .menuTit").click(function() {
+
+	// });
+
 	//쿠폰 레이어 팝업
-	 jQuery("#top_banner_mycpn .close").click(function(){
+	jQuery("#top_banner_mycpn .close").click(function(){
 		jQuery("#top_banner_mycpn").css("display", "none");
 	});
 });
