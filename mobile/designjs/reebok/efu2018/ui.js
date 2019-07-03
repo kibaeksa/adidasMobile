@@ -220,10 +220,29 @@ jQuery(function(){
 	 
 	 
 	 jQuery(".menu a.tit").click(function() {
-	    jQuery(".menuWrap").stop().animate({
-	    	scrollTop: jQuery(this).position().top - 1
-	    }, 500);
-	    return false; 
+		if($('.menu .deth2 li').hasClass('on')){
+			//  $('.menuWrap').data('prevGnbScroll',{
+			// 	scrollTop : $('.menuWrap').scrollTop()
+			// });
+			var yVal = Math.abs(Math.abs($('.menuWrap').scrollTop()) + $(this).get(0).getBoundingClientRect().top) - 61;
+
+			setTimeout(function(){
+				$('.menuWrap').stop().animate({
+					scrollTop : yVal + 13
+				},200);
+			},500);
+		 }
+
+		 if($('.menu .menuTit').hasClass('on')){
+			jQuery(".menuWrap").stop().animate({
+				scrollTop: jQuery(this).position().top - 1
+			}, 500);
+			return false; 
+		 }
+		jQuery(".menuWrap").stop().animate({
+			scrollTop: jQuery(this).position().top - 1
+		}, 500);
+		return false; 
 	});
 	//쿠폰 레이어 팝업
 	 jQuery("#top_banner_mycpn .close").click(function(){
