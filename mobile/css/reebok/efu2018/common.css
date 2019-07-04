@@ -636,7 +636,8 @@ html.noScroll {height:100%; overflow:hidden;}
 
 /* 190701 gnb 리뉴얼 */
 #headerWrap .gnb_renewal{
-    overflow: scroll !important;
+	overflow: scroll !important;
+	background: #000;
 }
 #headerWrap .gnb_renewal .menuArea{
     height:auto;
@@ -644,22 +645,26 @@ html.noScroll {height:100%; overflow:hidden;}
 #headerWrap .menuWrap.gnb_renewal .menu li.menuTit.on .deth2{
 	display: block;
 }
+#headerWrap .menuWrap.gnb_renewal .menu li.menuTit.on .tit img{
+	display:block;position: absolute;width: 6%;top: 50%;right: 10%;transform: translate(0, -70%);
+}
+#headerWrap .gnb_renewal .menu{padding:2rem 0;}
 #headerWrap .gnb_renewal .menu li a{font-size: 30px;}
 #headerWrap .gnb_renewal .menu li.menuTit li>div.deth3 ul li,
 #headerWrap .gnb_renewal .menu li.menuTit .deth2>li{border-top:1px solid #ebedee!important;}
 #headerWrap .gnb_renewal ul.utilArea{border-bottom:1px solid #4c5252;}
-#headerWrap .gnb_renewal ul.utilArea li{width:50%;}
+#headerWrap .gnb_renewal ul.utilArea li{width:50%;padding:0;}
+#headerWrap .gnb_renewal ul.utilArea li a{line-height: 55px;display: block;}
 #headerWrap .gnb_renewal ul.utilArea li:last-child a:before{content: '';display: inline-block;width: 20px;height: 18px;position: relative;
 	margin-right: 3px;background: url(/images/reebok/common/gnbMyinfo_MO.png) no-repeat;background-size: 100% 100%;vertical-align: middle;}
 #headerWrap .gnb_renewal .menu li.menuTit>a {display:block; padding:1.1rem 0;position:relative;}
 #headerWrap .gnb_renewal .menu li.menuTit>a img{display:none;position: absolute;width: 6%;top: 50%;right: 10%;transform: translate(0, -70%);}
-#headerWrap .gnb_renewal .menu li.menuTit>a img.on{display:block;position: absolute;width: 6%;top: 50%;right: 10%;transform: translate(0, -70%);}
+/* #headerWrap .gnb_renewal .menu li.menuTit>a img.on{display:block;position: absolute;width: 6%;top: 50%;right: 10%;transform: translate(0, -70%);} */
 #headerWrap .gnb_renewal .menu li.menuTit:first-child>a img{position: absolute;width: 6%;top: 50%;right: 10%;transform: translate(0, -15%);}
 #headerWrap .gnb_renewal .menu li.menuTit:last-child>a img{position: absolute;width: 6%;top: 50%;right: 10%;transform: translate(0, -150%);}
 #headerWrap .gnb_renewal .menu li.on .all{background:#ebedee;}
-#headerWrap .gnb_renewal .menu li.menuTit:first-child a{padding-top:3rem;}
-#headerWrap .gnb_renewal .menu li.menuTit:last-child a{padding-bottom:3rem;}
 #headerWrap .gnb_renewal .menu li.menuTit .deth2 li>a{font:700 16px/16px 'reefont-bold'!important;}
+#headerWrap .gnb_renewal .menu li.menuTit .deth2>li.on a::after{background-position-y: -8px;}
 #headerWrap .gnb_renewal .menu li.menuTit li a.ko{font:500 15px/15px 'NotoSansKR'!important;}
 #headerWrap .gnb_renewal .menu li.menuTit li.on a.tit{background:#ebedee!important;}
 #headerWrap .gnb_renewal .menu li.menuTit li a{background:#fff;}
@@ -669,10 +674,12 @@ html.noScroll {height:100%; overflow:hidden;}
 #headerWrap .gnb_renewal .menu li.menuTit li>div.deth3 .sort.ko,
 #headerWrap .gnb_renewal .menu li.menuTit li>div.deth3 .sort.all,
 #headerWrap .gnb_renewal .menu li.menuTit li>div.deth3 ul li {border:0!important;}
+#headerWrap .gnb_renewal .menu li.menuTit li>div.deth3 ul li:last-child a{border:0!important;}
 #headerWrap .gnb_renewal .menu li.menuTit li>div.deth3 ul li a{border-bottom:1px solid #ebedee;}
 #headerWrap .gnb_renewal .menu li.menuTit li>div.deth3 ul {background:none!important;}
-#headerWrap .gnb_renewal ul.btm_menu{height:200px;background:#1e1e1e;padding:2.6rem 0;}
-@media screen and (min-width: 414px) {#headerWrap .gnb_renewal ul.btm_menu{height:250px;padding: 5rem 0 3rem;}}
+#headerWrap .gnb_renewal ul.btm_menu{height:17rem;background:#1e1e1e;padding:2.5rem 0 3.5rem;}
+@media screen and (max-width: 320px) {#headerWrap .gnb_renewal ul.btm_menu{padding: 2rem 0 1rem;}}
+@media screen and (min-width: 414px) {#headerWrap .gnb_renewal ul.btm_menu{padding: 5rem 0;}}
 #headerWrap .gnb_renewal ul.btm_menu li {text-align: center;}
 #headerWrap .gnb_renewal ul.btm_menu li a {display: block;padding: 1.5rem 0;color: #fff;font:400 1.5rem/1.5rem 'NotoSansKR';}
 /* 190701 gnb 리뉴얼 */
