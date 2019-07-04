@@ -246,9 +246,16 @@ jQuery(function(){
 	 jQuery(".bacodeDetail .close").click(function(){
 		jQuery(".bacodeDetail").removeClass("on");
 	});
-	 
+	// 190701 gnb 삭제
+	//  jQuery(".menu a.tit").click(function() {
+	//     jQuery(".menuWrap").stop().animate({
+	//     	scrollTop: jQuery(this).position().top - 1
+	//     }, 500);
+	//     return false; 
+	// });
+	// 190701 gnb 삭제
 	//쿠폰 레이어 팝업
-	jQuery("#top_banner_mycpn .close").click(function(){
+	 jQuery("#top_banner_mycpn .close").click(function(){
 		jQuery("#top_banner_mycpn").css("display", "none");
 	});
 });
