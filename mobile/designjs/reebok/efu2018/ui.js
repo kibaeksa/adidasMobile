@@ -97,7 +97,7 @@ function youtubePopup(id){
 }
 
 jQuery(function(){
-	//메뉴펼침
+	//190701 gnb 메뉴펼침 수정
 	jQuery("#header .menuBtn").click(function(e) {
 		jQuery(".menuWrap, #bgOverlay").addClass("active");
 		jQuery("html, body").addClass("noScroll");	
@@ -114,10 +114,6 @@ jQuery(function(){
 				transform : 'translate3d(0 ,0 ,0)'
 			});
 		},100);
-
-		// $('#wrap .menuWrap').css({
-		// 	transform : 'translate3d(0 ,0 ,0)'
-		// });
 		e.preventDefault();
 	});
 	//메뉴닫기
