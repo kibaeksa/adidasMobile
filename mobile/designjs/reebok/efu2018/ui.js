@@ -105,7 +105,7 @@ jQuery(function(){
 		jQuery("#brand_navWrap, #global-search-slide").removeClass("active");
 		jQuery(".searchBtn a, .brandmenuClose").removeClass("on");
 		jQuery("#wrap, .menuWrap").height(jQuery(window).height())
-		$('#wrap .menuWrap').removeClass('slide-open').css({
+		$('#wrap .menuWrap').css({
 			transform : 'translate3d(0 ,0 ,0)'
 		});
 		e.preventDefault();
