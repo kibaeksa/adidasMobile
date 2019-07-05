@@ -104,10 +104,20 @@ jQuery(function(){
 		jQuery("a.menuClose").addClass("on");
 		jQuery("#brand_navWrap, #global-search-slide").removeClass("active");
 		jQuery(".searchBtn a, .brandmenuClose").removeClass("on");
-		jQuery("#wrap, .menuWrap").height(jQuery(window).height())
-		$('#wrap .menuWrap').css({
-			transform : 'translate3d(0 ,0 ,0)'
-		});
+		// jQuery("#wrap, .menuWrap").height(jQuery(window).height())
+		var elemH = $(window).height() - document.querySelector('#header').getBoundingClientRect().bottom;
+		setTimeout(function(){
+			$('#wrap .menuWrap').css({
+				top: document.querySelector('#header').getBoundingClientRect().bottom,
+				minHeight : elemH,
+				height : elemH,
+				transform : 'translate3d(0 ,0 ,0)'
+			});
+		},100);
+
+		// $('#wrap .menuWrap').css({
+		// 	transform : 'translate3d(0 ,0 ,0)'
+		// });
 		e.preventDefault();
 	});
 	//메뉴닫기
