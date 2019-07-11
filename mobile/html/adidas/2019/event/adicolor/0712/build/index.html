@@ -11,7 +11,7 @@
    <link href="/css/adidas/style.css" type="text/css" rel="stylesheet" />
    <link href="/css/adidas/fonts.css" type="text/css" rel="stylesheet" />
 
-   <link rel="preload" href="/fonts/adineuePro/woff/adineuePRO-Bold.woff" as="font">
+   <!-- <link rel="preload" href="/fonts/adineuePro/woff/adineuePRO-Bold.woff" as="font"> -->
 
    <script type="text/javascript" src="/designjs/common/jquery-1.12.0.min.js"></script>
    <script type="text/javascript" src="/designjs/common/swipe.js"></script>
@@ -445,7 +445,7 @@
 
                 <div class="main">
                     <video id="video" poster="/images/adidas/2019/event/adicolor/0712/bg_main.jpg" loop muted autoplay playsinline>
-                        <source src="http://imagem.adidas.co.kr/upload/design_temp/video/2019/a/adicolor/0712/video_main_MO.mp4"
+                        <source src="https://imagem.adidas.co.kr/upload/design_temp/video/2019/a/adicolor/0712/video_main_MO.mp4"
                             type="video/mp4">
                     </video>
                 </div>
@@ -536,7 +536,7 @@
                 
                 <div class="sect_video">
                     <video id="video" poster="/images/adidas/2019/event/adicolor/0712/bg_sect.jpg" loop muted autoplay playsinline>
-                        <source src="http://image.adidas.co.kr/upload/design_temp/video/2019/a/adicolor/0712/video_sect_MO.mp4"
+                        <source src="https://image.adidas.co.kr/upload/design_temp/video/2019/a/adicolor/0712/video_sect_MO.mp4"
                             type="video/mp4">
                     </video>
                 </div>
@@ -575,30 +575,40 @@
 
                 $(document).ready(function(){
 
-                    $(window).load(function(){
-                        var scrollArray = [];
-                        var scrollContents = document.querySelectorAll('.scroll');
-                        for (var i = 0; i < scrollContents.length; i++) {
-                            var mypos = scrollContents[i].offsetTop;
+                    // $(window).scroll(function () {
 
-                            scrollArray.push(mypos);
-                            // console.log(scrollArray)
-                        };
-                        $(window).scroll(function () {
+                    //     var thisPos2 = $(this).scrollTop() + $(window).height() - 100;
+                    //     console.log(thisPos2);
+                    //     if (thisPos2 > 3150) {
+                    //         $('#adicolor .scroll').addClass('on');
+                    //     }
 
-                            var thisPos = $(this).scrollTop() + $(window).height() - 100;
-                            // console.log(thisPos);
-                            
-                            for (var pos = 0; pos < scrollArray.length; pos++) {
-                                if (thisPos > scrollArray[pos]) {
-                                    $('#adicolor .scroll').eq(pos).addClass('on');
-                                }
-                            }
-
-                        });
-                    })                    
+                    // });             
                     
                 });
+
+                $(window).load(function () {
+                    var scrollArray = [];
+                    var scrollContents = document.querySelectorAll('.scroll');
+                    for (var i = 0; i < scrollContents.length; i++) {
+                        var mypos = scrollContents[i].offsetTop;
+
+                        scrollArray.push(mypos);
+                        // console.log(scrollArray)
+                    };
+                    $(window).scroll(function () {
+
+                        var thisPos = $(this).scrollTop() + $(window).height() - 100;
+                        // console.log(thisPos);
+
+                        for (var pos = 0; pos < scrollArray.length; pos++) {
+                            if (thisPos > scrollArray[pos]) {
+                                $('#adicolor .scroll').eq(pos).addClass('on');
+                            }
+                        }
+
+                    });
+                })    
 
            </script>
 
