@@ -1,0 +1,242 @@
+@import "./mobile/MO/reebok/css/scss/about.scss";
+
+.interval_og{
+    background: #fff;
+    .visual_main{
+        position: relative;
+         &.on{
+            .txt{
+                h1{opacity: 1;margin-left: 0;}
+                >p{opacity: 1;}
+                .btn{opacity: 1;}
+            }
+        }
+        .img{
+            img{
+                width:100%;
+            }
+        }
+        .txt{
+            // outline: 1px solid #fff;
+            width: 88%;
+            position: absolute;
+            bottom: 8%;
+            left: 6%;
+            text-transform: uppercase;
+            text-align: center;
+            h1{
+                font: 900 2.4rem 'neueplak-wide';
+                color:#000;
+                text-align: left;
+                margin-left: 20px;
+                text-align: center;
+                opacity: 0;
+                transition: all .6s;
+            }           
+            >p{
+                padding-top: 0.5rem;
+                display: inline-block;
+                font: 400 1.1rem 'NotoSansKR';
+                color:#000;
+                opacity: 0;
+                transition: all .6s;
+                transition-delay: .4s;
+            }
+            .btn{
+                margin-top: 1.5rem;
+                opacity: 0;
+                transition: all .6s;
+                transition-delay: .8s;
+                a{
+                    position: relative;
+                    background-color: transparent;
+                    border: 1px solid #000;
+                    color: #000;
+                    align-items: center;
+                    display: inline-block;
+                    padding: 0 1.5rem;
+                    text-decoration: none;
+                    transition: transform .1s cubic-bezier(.3,0,.45,1),color .1s cubic-bezier(.3,0,.45,1),border .1s cubic-bezier(.3,0,.45,1),background .1s cubic-bezier(.3,0,.45,1);
+                    white-space: nowrap;
+                    font: 700 .9rem/3.5rem 'NotoSansKR';
+                    color:#000;
+                    letter-spacing: .1rem;
+                    &::before{
+                        border-bottom: 1px solid #000;
+                        border-left: 1px solid #000;
+                        bottom: -4px;
+                        height: 3px;
+                        left: 2px;
+                        width: calc(100% + 1px);
+                        content: "";
+                        display: block;
+                        position: absolute;
+                    }
+                    &::after{
+                        border-right: 1px solid #000;
+                        border-top: 1px solid #000;
+                        height: calc(100% + 1px);
+                        right: -4px;
+                        top: 2px;
+                        width: 3px;
+                        content: "";
+                        display: block;
+                        position: absolute;
+                    }
+                    span.arrow{
+                        display: inline-block;
+                        width: 20px;
+                        height: 10px;
+                        margin-left: 8px;
+                        background: url('/images/reebok/2019/event/interval_og/arrow.png') no-repeat;
+                        background-size: auto 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    .statement{
+        position: relative;
+        overflow: hidden;
+        &.on{
+            .txt{
+                opacity: 1;
+            }
+            .deco{
+                opacity: 1;
+                bottom: -36%;
+            }
+        }
+        .bg{
+            width: 100%;
+            img{
+                display: block;
+                width: 100%;
+            }
+        }
+        .txt{
+            position: absolute;
+            top:15%;
+            left: 50%;
+            width: 100%;
+            transform:translateX(-50%);
+            
+            font: 1.2rem/1.7rem 'NotoSansKR';
+            color: #000;
+            text-transform: uppercase;
+            text-align: center;
+
+            -webkit-transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+            transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+            -webkit-transition-delay: .6s;
+            transition-delay: 1s;
+            -webkit-opacity: 0;
+            opacity: 0;
+            span{
+                font: inherit;
+                display: inline-block;
+                background: #e42217;
+                padding: 0 2px;
+                color: #fff;
+            }
+        }
+        .deco{
+            width: 74%;
+            position: absolute;
+            bottom: -44%;
+            left: 50%;
+            transform: translateX(-50%);
+            -webkit-transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+            transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+            -webkit-transition-delay: .4s;
+            transition-delay: .4s;
+            -webkit-opacity: 0;
+            opacity: 0;
+            img{
+                display: inline-block;
+                width: 100%;
+            }
+        }        
+    }
+
+    .section_vid{
+        video{
+            display: block;
+            width: 100%;
+        }
+        .btn-play{
+            position: absolute;
+            top:50%;
+            left: 50%;
+            transform: translate(-50%, -10%);    
+            transition: all .4s;
+            transition-delay: .2s;
+            img{
+                transform: rotate(30deg);
+                transition: all .4s;
+                transition-delay: .2s;
+            }
+        }
+    }
+
+    .section_prd{
+        position: relative;
+        text-align: center;
+        ul{
+            overflow: hidden;
+            display: inline-block;
+            width: 100%;
+            li{
+                float: left;
+                width: 100%;
+                a{
+                    position: relative;
+                    display: block;
+                    img{
+                        width: 100%;
+                        display: block;
+                    }
+                }
+            }
+            .owl-nav{
+                display: none;
+            }
+            .owl-dots{
+                margin: 2rem 0 4rem;
+                text-align: center;
+                .owl-dot{
+                    margin: 0 0.5rem;
+                    display: inline-block;
+                    width: 1.2rem;
+                    height: 1.2rem;
+                    border: 3px solid #000;
+                    border-radius: 50%;
+                    -webkit-box-sizing: border-box;
+                    box-sizing: border-box;
+                    &.active{
+                        background: #000;
+                    }
+                }
+            }
+        }
+    }
+
+    .bottom{
+        position: relative;
+        img{
+            display: block;
+            width: 100%;
+        }
+        a{
+            position: absolute;
+            width: 40%;
+            height: 5%;
+            top: 51%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+}
+
+// nano8 END
