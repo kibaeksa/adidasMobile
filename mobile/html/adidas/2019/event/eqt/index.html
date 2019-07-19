@@ -614,7 +614,9 @@
                     setTimeout(function () {
                         $('#eqt .top_cont').addClass('on');
                     }, 500);
-
+                    setTimeout(function () {
+                        $('#eqt .aside').addClass('on');
+                    }, 700);
                     var scrollArray = [];
                     var scrollContents = document.querySelectorAll('.scroll');
                     for (var i = 0; i < scrollContents.length; i++) {
@@ -624,7 +626,7 @@
                     };
                     $(window).scroll(function () {
                         
-                        var thisPos = $(this).scrollTop() + $(window).height() - 300;                        
+                        var thisPos = $(this).scrollTop() + $(window).height() - 100;                        
                         
                         for (var pos = 0; pos < scrollArray.length; pos++) {
                             if (thisPos > scrollArray[pos]) {
@@ -640,7 +642,7 @@
 
        </div>
        <!-- //container product_list -->
-
+       <!-- eqt -->
        <div id="footer">
            <div class="f_menu">
                <a href="#">로그인</a>
