@@ -389,44 +389,46 @@
 						nav: false
 				});
 
-				$(document).ready(function () {
-						function bodyScrollStop() {
-							$('html, body').css({
-								'height': '100%',
-								'overflow': 'auto'
-							});
-						}
+                $(document).ready(function () {
+                    function bodyScrollStop() {
+                        $('html, body').css({
+                            'height': '100%',
+                            'overflow': 'auto'
+                        });
+                    }
 
-						function bodyBasic() {
-							$('html, body').css({
-								'height': 'auto',
-								'overflow': 'static'
-							});
-						}
+                    function bodyBasic() {
+                        $('html, body').css({
+                            'height': 'auto',
+                            'overflow': 'static'
+                        });
+                    }
 
-						// OUR PEOPLE 팝업
-						$('.rct_our_people_01').on('click', function () {
-							$('.rct_our_people_pop_01').addClass('open');
-							bodyScrollStop();
-						});
-						$('.rct_our_people_02').on('click', function () {
-							$('.rct_our_people_pop_02').addClass('open');
-							bodyScrollStop();
-						});
-						$('.rct_our_people_03').on('click', function () {
-							$('.rct_our_people_pop_03').addClass('open');
-							bodyScrollStop();
-						});
-						$('.rct_our_people_04').on('click', function () {
-							$('.rct_our_people_pop_04').addClass('open');
-							bodyScrollStop();
-						});
+                    // OUR PEOPLE 팝업
+                    $('.rct_our_people_01').click(function(){
+                        $('.rct_our_people_pop_01').addClass('open');
+                        bodyScrollStop();
+                    });
 
-						$('.close_x_btn').on('click', function () {
-							bodyBasic();
-						});
-					});
-    
+                    $('.rct_our_people_02').click(function(){
+                        $('.rct_our_people_pop_02').addClass('open');
+                        bodyScrollStop();
+                    });
+
+                    $('.rct_our_people_03').click(function(){
+                        $('.rct_our_people_pop_03').addClass('open');
+                        bodyScrollStop();
+                    });
+
+                    $('.rct_our_people_04').click(function(){
+                        $('.rct_our_people_pop_04').addClass('open');
+                        bodyScrollStop();
+                    })
+                    $('.close_x_btn').click(function(){
+                        bodyBasic();
+                    })
+
+                });
                </script>
     
            </div>

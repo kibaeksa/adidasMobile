@@ -361,63 +361,63 @@
         </div>
     </div>
     
-               <script type="text/javascript">
-                
-// 슬라이드
-var owlSlider = $('#slider_owl');
-
-owlSlider.on('initialized.owl.carousel', function (event) {
+    <script type="text/javascript">
     
-});
+        // 슬라이드
+        var owlSlider = $('#slider_owl');
 
-owlSlider.on('changed.owl.carousel', function (event) {
-    
-});
-
-owlSlider.owlCarousel({
-    stagePadding: 20,
-    margin: 20,
-    items: 1,
-    merge: true,
-    loop: true,
-    navigation: true,
-    autoplay: true,
-    autoplayTimeout: 6000,
-    autoplaySpeed: 800,
-    // nav: true
-});
-
-$(document).ready(function () {
-    function bodyScrollStop() {
-        $('html, body').css({
-            'height': '100%',
-            'overflow': 'auto'
+        owlSlider.on('initialized.owl.carousel', function (event) {
+            
         });
-    }
 
-    function bodyBasic() {
-        $('html, body').css({
-            'height': 'auto',
-            'overflow': 'static'
+        owlSlider.on('changed.owl.carousel', function (event) {
+            
         });
-    }
 
-    // brand 팝업
-    $('.btn_pop_adi').on('click', function () {
-        $('.brand_popup_adidas').addClass('open');
-        bodyScrollStop();
-    });
-    $('.btn_pop_ree').on('click', function () {
-        $('.brand_popup_reebok').addClass('open');
-        bodyScrollStop();
-    });
+        owlSlider.owlCarousel({
+            stagePadding: 20,
+            margin: 20,
+            items: 1,
+            merge: true,
+            loop: true,
+            navigation: true,
+            autoplay: true,
+            autoplayTimeout: 6000,
+            autoplaySpeed: 800,
+            // nav: true
+        });
 
-    $('.close_x_btn').on('click', function () {
-        bodyBasic();
-    });
-});
-    
-               </script>
+        $(document).ready(function () {
+            function bodyScrollStop() {
+                $('html, body').css({
+                    'height': '100%',
+                    'overflow': 'auto'
+                });
+            }
+
+            function bodyBasic() {
+                $('html, body').css({
+                    'height': 'auto',
+                    'overflow': 'static'
+                });
+            }
+
+            // brand 팝업
+            $('.btn_pop_adi').click(function(){
+                $('.brand_popup_adidas').addClass('open');
+                bodyScrollStop();
+            });
+            $('.btn_pop_ree').click(function(){
+                $('.brand_popup_reebok').addClass('open');
+                bodyScrollStop();
+            });
+            $('.close_x_btn').click(function(){
+                bodyBasic();
+            });
+
+        });
+
+    </script>
     
            </div>
            <!-- //container product_list -->
