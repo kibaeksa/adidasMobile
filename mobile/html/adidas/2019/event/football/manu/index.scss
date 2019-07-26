@@ -1,0 +1,192 @@
+@import './mobile/css/adidas/scss/common/mixin.scss';
+@import './mobile/css/adidas/scss/common/common.scss';
+
+#manu_cp{
+	position: relative;
+	.button_area_v2{
+		display: inline-block;
+		a{
+			font: 700 1rem/40px 'NotoSansKR';
+			padding: 0 3px;
+			letter-spacing: 0;
+			height: 40px;
+			width: 118px;
+			.arrow{
+				width:20px;
+				margin-left:15px;
+				&::after{
+					width:8px;
+				}
+				&::before{
+					width:8px;
+				}
+			}
+		}
+	}
+
+	img{
+		width:100%;
+	}
+	font:600 1.5rem 'NotoSansKR';
+
+
+	.top_cont{
+		position: relative;
+		&.on{
+			.txt{
+				opacity: 1;
+			}
+		}
+		.txt{
+			position: absolute;
+			top:7%;
+			left:5%;
+			opacity: 0;
+			transition : all 1s ease-out;
+			>img{
+				width:72%;
+				display: block;
+			}
+			.button_area_v2{
+				margin:.5rem 0 0 0;
+			}
+		}
+	}
+
+	.aside{
+		position: relative;
+		background:url('/images/adidas/2019/event/football/manu/1907_manU_aside_MO.jpg') no-repeat;
+		background-position:center;
+		background-size: cover;
+		text-align: center;
+		padding: 6.5rem 0;
+		&.on{
+			h1,p{
+				opacity: 1;
+			}
+		}
+		h1{
+			font:700 1.4rem/1.4rem 'NotoSansKR';
+			color:#000;
+			position: relative;
+			display: inline-block;
+			z-index: 1;
+			margin: 0 0 1.5rem 0;
+			opacity: 0;
+			transition : all 1s ease-out;
+			em{
+				font:100 1.4rem/1.4rem 'NotoSansKR';
+			}
+			span{
+				font:400 1.4rem/1.4rem 'NotoSansKR';
+			}
+			&::after{
+				position: absolute;
+				top:-1px;
+				bottom:-1px;
+				left:-2px;
+				right:-2px;
+				display: block;
+				content:'';
+				clear:both;
+				background:#fff;
+				z-index: -1;
+			}
+		}
+		p{
+			text-align: center;
+			font:300 1rem/1.5rem 'NotoSansKR';
+			color:#fff;
+			letter-spacing: .05rem;
+			opacity: 0;			
+			transition : all 1s ease-out;
+			transition-delay: .5s;
+			span{
+				color: #fff;
+				font: 300 1.1rem/1.5rem 'AdihausDIN-Cond';
+				margin: 1rem 0 0 0;
+				display: inline-block;
+				text-align: center;
+				letter-spacing: .05rem;
+			}
+		}
+	}
+
+	.grid_cont{
+		position: relative;
+		background:url('/images/adidas/2019/event/football/manu/1907_manU_gridCont_MO.jpg') no-repeat;
+		background-position:center;
+		background-size: cover;
+		padding: 2.5rem 0;
+		&.on{
+			img{
+				opacity: 1;
+			}
+		}
+		img{
+			margin: 0 0 1.5rem 0;
+			opacity: 0;			
+			transition : all 1s ease-out;
+			&:first-child{
+
+			}
+			&:nth-child(2){
+				transition-delay: .3s;
+			}
+			&:nth-child(3){
+				transition-delay: .8s;
+			}
+			&:nth-child(4){
+				transition-delay: 1.3s;
+			}
+			&:last-child{
+				transition-delay: 1.7s;
+				margin:0;
+			}
+		}
+	}
+
+	.btm{
+		position: relative;
+		text-align: center;
+		@-webkit-keyframes brightness {
+			0%, 100%  { -webkit-filter: brightness(none); }
+			50% { -webkit-filter: brightness(4); }
+		}
+
+		&.on{
+			.txt{
+				opacity: 1;
+			}
+			img{
+				-webkit-animation: brightness 1.5s;
+				animation: brightness 1.5s;
+				-webkit-animation-delay: .5s;
+				animation-delay: .5s;
+			}
+		}
+		.txt{
+			position: absolute;
+			top:50%;
+			left:50%;
+			transform: translate(-50%,-50%);
+			text-align: center;
+			opacity: 0;			
+			transition : all 1s ease-out;
+			width:100%;
+			p{
+				font: 700 1.9rem/1.9rem 'AdihausDIN-Cond';
+				color: #fff;
+				text-align: center;
+				letter-spacing: 3px;
+				margin: 0 0 1rem 0;
+				em{
+					font: 200 1.6rem/1.6rem 'adinenuPro-light';
+				}
+			}
+		}
+	}
+
+
+
+}
