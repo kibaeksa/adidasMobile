@@ -1,0 +1,238 @@
+@import './mobile/css/adidas/scss/common/mixin.scss';
+@import './mobile/css/adidas/scss/common/common.scss';
+
+#smtm{
+	position: relative;
+	.button_area_v2{
+		display: inline-block;
+		margin-bottom: 2vh;
+		a{
+			font: 700 .9rem/32px 'NotoSansKR';
+			padding: 0 5vw;
+			letter-spacing: 0;
+			height: 38px;
+			.arrow{
+				width:20px;
+				&::after{
+					width:8px;
+				}
+				&::before{
+					width:8px;
+				}
+			}
+		}
+	}
+	img{
+		width:100%;
+	}
+	.main{
+		position: relative;
+		border-bottom: 2px solid #e09853;
+		.bg{
+			img{
+				width:100%;
+			}
+		}
+		.b_box{
+			width: 100%;
+			position: absolute;
+			top:0;
+			left:0;
+			text-align: center;
+			h1{
+				padding: 1rem 0;
+				font: 1rem 'adinenuPro-bold';
+				color: #fff;
+				text-align: center;
+				letter-spacing: 2px;
+				text-transform: uppercase;
+
+				transition: all .4s;
+				opacity: 0;
+			}
+			h3{				
+				text-align: center;
+				img{
+					display: block;
+					width: 100%;
+				}
+			}
+			p{
+				padding-top: 2rem;
+				font: 500 1rem/21px 'NotoSansKR';
+				color: #fff;
+				text-align: center;
+				letter-spacing: normal;
+
+				transition: all .4s;
+				transition-delay: 0.4s;
+				opacity: 0;
+				span{
+					display: inline-block;
+					padding-top: 5px;
+					font-size: 11px;
+				}
+			}
+			.button_area_v2{
+				margin: 1.5rem 0 0 0;
+
+				transition: all .4s;
+				transition-delay: .8s;
+				opacity: 0;
+				a{
+					width: auto;
+					height: 38px;
+					padding: 0 20px;
+					letter-spacing: 2px;
+					font: 500 .9rem/38px 'NotoSansKR';
+					span{
+						margin-left: 0;
+						transition: all .4s;
+						transition-delay: 1s;
+					}
+				}
+			}
+		}
+		&.on{
+			.b_box{
+				>*{
+					opacity: 1;
+				}
+				.button_area_v2{
+					a{
+						span{
+							margin-left: 1rem;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.section{
+		position: relative;
+		background: #fff;
+		border-top: 6px solid #000;
+		border-bottom: 6px solid #000;
+		.sect_tit{
+			text-align: center;
+			h3{
+				margin-top: -6px;
+				display: inline-block;
+				width: 80%;
+				height: 3rem;
+				background: #000;
+				font: 500 1.3rem/3rem 'NotoSansKR';
+				color: #fff;
+				text-align: center;
+			}
+			p{
+				font: 500 0.9rem/3rem 'adinenuPro-black';
+				color: #000;
+				text-align: center;
+				letter-spacing: 2px;
+			}
+		}
+		.sect_stylist{
+			padding: 2.5rem 0 2rem;
+			text-align: center;
+			ul{
+				li{
+					&:nth-child(1){
+						text-align: center;
+						img{
+							display: inline-block;
+							width: 40%;
+						}
+					}
+					&:nth-child(2){
+						padding: 1.5rem 0 0.5rem;
+						font: 600 2rem/2rem 'NotoSansKR';
+						color: #000;
+						letter-spacing: 5px;
+					}
+					&:nth-child(3){
+						.sect_sl_line{
+							display: inline-block;
+							width: 100px;
+							height: 1px;
+							background: #000;
+						}
+					}
+					&:nth-child(4){
+						padding-top: 1rem;
+						font: 300 1rem/1.5rem 'NotoSansKR';
+						color: #000;
+					}
+				}
+			}
+			>p{
+				padding-top: 2rem;
+				font: 500 1.2rem 'NotoSansKR';
+				color: #000;
+				text-align: center;
+				em{
+					display: block;
+					img{
+						width: 1rem;
+						vertical-align: middle;
+					}
+				}
+			}
+		}
+		.sect_prdbox{
+			img{
+				display: block;
+				width: 100%;
+			}
+		}
+		.sect_prds{
+			ul{
+				overflow: hidden;
+				li{
+					float: left;
+					width: 20%;
+					margin-right: 3px;
+					&:nth-child(1){width: 298px;}
+					&:nth-child(2){width: 235px;}
+					&:nth-child(3){width: 235px;}
+					&:nth-child(4){width: 235px;}
+					&:nth-child(5){
+						margin-right: 0;
+						width: 235px;
+					}
+					div.item{
+						margin-bottom: 3px;
+						background: #000;
+						img{
+							display: block;
+							width: 100%;
+						}
+						&:last-child{
+							margin-bottom: 0;
+						}
+					}
+				}
+			}
+		}
+		.sect_buybox{
+			padding: 2rem 0;
+			text-align: center;
+			h2{
+				font: 500 1.4rem/1.4rem 'adinenuPro-black';
+				color: #000;
+				text-align: center;
+				letter-spacing: 2px;
+			}
+			.button_area_v2{
+				margin-top: 1.5rem;
+			}
+		}
+	}
+
+	.section_line{
+		position: relative;
+		height: 1rem;
+		background: #000;
+	}
+}
