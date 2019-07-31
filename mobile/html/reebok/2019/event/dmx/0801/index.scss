@@ -113,46 +113,63 @@ html,body{
         padding: 2.5rem 0 0 0;
         background:#c7c9c5;
         text-align: center;
-        .commons{
+        .common_slide{
+            text-align: center;
             position: relative;
-            padding:0 0 5rem 0;
-            .banner_slider_wrap{
-                position: relative;
-                padding: 0 0 3rem 0;
+            bottom:0;
+            left:0;
+            &::after{
+                position: absolute;
+                bottom: 34%;
+                right: 11%;
+                width: 78%;
+                height: 20rem;
+                display: block;
+                content: '';
+                clear: both;
+                background:#264797;
+                z-index: -1;
+            }
+            &.slide02{
                 &::after{
                     position: absolute;
-                    bottom: 4%;
-                    right: 12%;
-                    width: 77%;
+                    bottom: 34%;
+                    right: 11%;
+                    width: 78%;
                     height: 20rem;
                     display: block;
                     content: '';
                     clear: both;
-                    background:#264797;
+                    background:#faff00;
                     z-index: -1;
                 }
-                ul{
-                    overflow: hidden;
-                    position: relative;
-                    .owl-stage-outer{
+                .collection_cut{
+                    .collection_slider{
+                        margin: 0 2rem 0 auto!important;                        
+                        width: 67%;
                         overflow: hidden;
-                        width: 75%;
-                        .owl-item{
+                        ul{
+                            overflow: hidden;
                             li{
                                 position: relative;
                                 float: left;
                                 text-align: left;
-                                padding: 0 8rem 0 2rem;
+                                .btn{
+                                    position: absolute;
+                                    top:20%;
+                                    left:5%;
+                                }
                                 img{
-                                    width:100%;
+                                    width: 100%;
                                 }
                             }
                         }
                     }
-                    .owl-dots{
+                    .num_paging{
                         position: absolute;
                         top:0 ;
-                        .owl-dot{
+                        left:17%!important;
+                        a{
                             display: block;
                             margin:0 2px;
                             font: 1.7rem/1.7rem 'PFDinMonoPro-Bold';
@@ -161,11 +178,7 @@ html,body{
                             color:#898989;
                             border:none;
                             border-radius: 0;
-                            content:'1';
-                            &:nth-child(2){
-                                content:'2';
-                            }
-                            &.active{
+                            &.on{
                                 color:#264797;
                                 background:transparent;
                                 &::after{
@@ -182,10 +195,84 @@ html,body{
                         }
                     }
                 }
+                .txt{
+                    text-align: right;
+                    padding: 11% 11% 15%;
+                    h1{
+                        text-align: right;
+                        em{
+                            font: 2rem/2rem 'NotoSansKR';                    
+                        }
+                    }
+                    .btn{
+                        text-align: right;
+                    }
+                }
+            }
+
+            //공통
+            .collection_cut{
+                position: relative;
+                overflow: hidden;
+                .collection_slider{
+                    margin: 0 auto 0 2rem;
+                    width: 67%;
+                    overflow: hidden;
+                    ul{
+                        overflow: hidden;
+                        li{
+                            position: relative;
+                            float: left;
+                            text-align: left;
+                            .btn{
+                                position: absolute;
+                                top:20%;
+                                left:5%;
+                            }
+                            img{
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+                .navi{
+                    display: none;
+                }
+                .num_paging{
+                    position: absolute;
+                    top:0 ;
+                    right:17%;
+                    a{
+                        display: block;
+                        margin:0 2px;
+                        font: 1.7rem/1.7rem 'PFDinMonoPro-Bold';
+                        position: relative;
+                        margin: 1.5rem 0;
+                        color:#898989;
+                        border:none;
+                        border-radius: 0;
+                        width: 20px;
+                        height:20px;
+                        &.on{
+                            color:#264797;
+                            background:transparent;
+                            &::after{
+                                content: '';
+                                clear: both;
+                                display: block;
+                                position: absolute;
+                                bottom: -3px;
+                                left: 0;
+                                right: 0;
+                                border-bottom: 3px solid #264797;
+                            }
+                        }
+                    }
+                }
             }
             .txt{
                 text-align: left;
-                padding: 0 11%;
+                padding: 11% 11% 15%;
                 span{
                     font: 1.1rem/1.1rem 'PFDinMonoPro-Bold';  
                     color: #264797;
@@ -195,77 +282,17 @@ html,body{
                     font: 2.7rem/2.7rem 'PFDinMonoPro-Bold';  
                     color:#000;
                     margin:.5rem 0 1.5rem;
+                    letter-spacing: -.15rem;
+                    em{
+                        font: 2rem/2rem 'NotoSansKR';                    
+                    }
                 }
                 .btn{
                     text-align: left;
                 }
             }
-
-            //개별 적용 css(슬라이드)
-            &.slide01{
-                ul{
-                    .owl-dots{
-                        position: absolute;
-                        right:18%;
-                    }
-                }
-            }
-            &.slide02{
-                .banner_slider_wrap{
-                    &::after{
-                        position: absolute;
-                        bottom: 4%;
-                        right: 12%;
-                        width: 77%;
-                        height: 20rem;
-                        display: block;
-                        content: '';
-                        clear: both;
-                        background: #faff00;
-                        z-index: -1;
-                    }
-                    ul{
-                        .owl-stage-outer{
-                            margin: 0 0 0 auto;
-                            li{
-                                padding: 0 10rem 0 0 !important;
-                            }
-                        }
-                        .owl-dots{
-                            position: absolute;
-                            left:18%;
-                        }
-                    }
-                }
-
-                .txt{
-                    text-align: right;
-                    padding: 0 11%;
-                    span{
-                        font: 1.1rem/1.1rem 'PFDinMonoPro-Bold';  
-                        color: #264797;
-                    }
-                    h1{
-                        text-align: right;
-                        font: 2.7rem/2.7rem 'PFDinMonoPro-Bold';  
-                        color:#000;
-                        margin:.5rem 0 1.5rem;
-                    }
-                    .btn{
-                        text-align: right;
-                    }
-                }
-            }
-            &.slide03{
-                ul{
-                    .owl-dots{
-                        position: absolute;
-                        right:18%;
-                    }
-                }
-            }
         }
-
+   
     }
 
 }
