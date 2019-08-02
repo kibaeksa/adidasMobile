@@ -4426,6 +4426,10 @@ div.layerpop_wrap#nomem_order_popup .inner .content .desc{
     -webkit-transform: translate3d(0,-50%,0);
     right: 1.2rem;
 }
+.modal-popup-wrapper>.popup>.popup-header .close_x_btn.btn_dn::before,
+.modal-popup-wrapper>.popup>.popup-header .close_x_btn.btn_dn::after{
+	display: none;
+}
 
 .modal-popup-wrapper>.popup>.popup-contents{
     position: relative;
@@ -7323,6 +7327,7 @@ div.layerpop_wrap#nomem_order_popup .inner .content .desc{
 
 
 #contents>.product_view .product_order ul.info>li.size{
+	height: 30px;
 	margin-bottom:8px;
 }
 #contents>.product_view .product_order ul.info>li.size>strong{
@@ -7331,6 +7336,12 @@ div.layerpop_wrap#nomem_order_popup .inner .content .desc{
 
 #contents>.product_view .product_order ul.info>li.size .r_box{
 	text-align: right;
+}
+#contents>.product_view .product_order ul.info>li.size .r_box .modal-popup-click{
+	font: 1rem/30px 'NotoSansKR';
+	color: #000;
+	vertical-align: bottom;
+	text-decoration: underline;
 }
 #contents>.product_view .product_order ul.info>li.size .alarm_stock{
 	width: 150px;
@@ -7721,7 +7732,7 @@ div.layerpop_wrap#nomem_order_popup .inner .content .desc{
 
 #contents>.product_view .product_info>.detail_info .info_table:after{
 	content:'';
-	display: block;
+	display: none;
 	width: 100%;
 	height:70%;
 	position: absolute;
@@ -7897,6 +7908,7 @@ div.layerpop_wrap#nomem_order_popup .inner .content .desc{
 }
 
 #contents>.product_view .product_info>.detail_info .info_table .toggle_circle{
+	display: none;
 	background: #000;
 	position: absolute;
 	bottom:30px;
@@ -12302,3 +12314,7 @@ div.layerpop_wrap#nomem_order_popup .inner .content .desc{
 .popup-sizechart .banner_slider_wrap .tips li{line-height: 1.3rem;font-size:12px;}
 .size_chart_btn strong{top:-2px!important; left:14px!important;border:1px solid #027dbf; padding:5px 15px;color:#027dbf;}
 /* 190611 사이즈차트 리뉴얼 끝*/
+
+.modal-popup-wrapper.size_chart_temp .popup .popup-header .close_x_btn{width: 14%; height: 8vh;top:0;right:0;transform:translate3d(0, 0, 0);z-index:5;}
+.modal-popup-wrapper.size_chart_temp .popup .popup-contents{padding: 0; overflow-y: scroll;}
+.modal-popup-wrapper.size_chart_temp .popup .popup-contents img{display: block; width: 100%;}
