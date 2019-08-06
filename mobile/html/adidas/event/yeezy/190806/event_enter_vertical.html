@@ -6,12 +6,14 @@
 	<meta name="format-detection" content="telephone=no">
 	<meta http-equiv="x-rim-auto-match" content="none">
 
-	<link href="http://imagem.adidas.co.kr/css/adidas/style.css" type="text/css" rel="stylesheet" />
-	<link href="http://imagem.adidas.co.kr/css/adidas/fonts.css" type="text/css" rel="stylesheet" />
+	<link href="/css/adidas/style.css" type="text/css" rel="stylesheet" />
+	<link href="/css/adidas/fonts.css" type="text/css" rel="stylesheet" />
 
-	<script type="text/javascript" src="http://imagem.adidas.co.kr/js/jquery-1.12.0.min.js"></script>
-	<script type="text/javascript" src="http://imagem.adidas.co.kr/js/swipe.js"></script>
-	<script type="text/javascript" src="http://imagem.adidas.co.kr/js/owl.carousel.js"></script>
+	<script type="text/javascript" src="/designjs/common/jquery-1.12.0.min.js"></script>
+    <script type="text/javascript" src="/designjs/common/swipe.js"></script>
+	<script type="text/javascript" src="/designjs/common/owl.carousel.min.js"></script>
+	<script type="text/javascript" src="/designjs/common/modalPopup.min.js"></script>
+	<script type="text/javascript" src="/designjs/common/zoomImage.js"></script>
 
 
 	<title>아디다스 모바일</title>
@@ -435,129 +437,435 @@
 
 			<!-- yeezyboost -->
 			<style type="text/css">
+				/* 190806 이지부스트 폰트 연결 */
 				@font-face {
 				font-family: 'YEEZY TSTAR-Bold';
-				src: url('//imagem.adidas.co.kr/fonts/yeezy/woff/YEEZY TSTAR-Bold.woff') format('woff');
+				src: url('/fonts/yeezy/woff/YEEZY_TSTAR-Bold.woff') format('woff');
 				}
 				@font-face {
 				font-family: 'YEEZY TSTAR-Heavy';
-				src: url('//imagem.adidas.co.kr/fonts/yeezy/woff/YEEZY TSTAR-Heavy.woff') format('woff');
+				src: url('/fonts/yeezy/woff/YEEZY_TSTAR-Heavy.woff') format('woff');
+				}
+				@font-face {
+				font-family: 'YEEZY TSTAR-Regular';
+				src: url('/fonts/yeezy/woff/YEEZY_TSTAR-Regular.woff') format('woff');
 				}
 				@font-face {
 				font-family: 'YEEZY TSTAR-Light';
-				src: url('//imagem.adidas.co.kr/fonts/yeezy/woff/YEEZY TSTAR-Light.woff') format('woff');
+				src: url('/fonts/yeezy/woff/YEEZY_TSTAR-Light.woff') format('woff');
 				}
-				#yeezy{
-					width:100%;
-					padding: 100px 0 120px;
-					position:relative;
-					/* background:#f55743 url('http://imagem.adidas.co.kr/images/adidas/event/kanye/171116/bg.jpg') 0 bottom no-repeat; */
-					background:#eeeee4;
-					background-size:100% auto;
+				/* 190806 이지부스트 폰트 연결 END */
+				#event_pre_etr{
+					padding-top: 20px;
+					background: #d7d7d7;
 				}
-				#yeezy .logo{
-					margin-bottom: 40px;
-				    text-align: center;
-				    font-size: 50px;
-				    color: #a5a7a6;
+				#event_pre_etr *{
+					font:300 13px 'NotoSansKR';
+					color: #000;
 				}
-				#yeezy .desc{
+
+				#event_pre_etr h2{
+					margin-bottom: 35px;
+					font-size:57px;
+					line-height:60px;
+					font-family:'NotoSansKRLight';
 					text-align: center;
 				}
-				#yeezy .desc p{
-					position:relative;
-					margin-bottom:10px;
-					text-align:center;
-					color:#a3a4a6;
-					font:24px/24px 'YEEZY TSTAR-Bold';
-				}
-				#yeezy .desc .desc_wrap{
-					position:relative;
-					top:5px;
-					transition:all 0.4s ease-in-out;
-					-webkit-transition:all 0.4s ease-in-out;
-				}
-				#yeezy .desc .desc_wrap.view{top:0;opacity:1;}
-
-				#yeezy .desc .noti{
-					margin-top: 10px;
-					color:#a3a4a6;
-					font:14px 'NotoSansKR';
+				#event_pre_etr h2 strong{
+				    font: 24px/25px 'YEEZY TSTAR-Bold';
+					letter-spacing: -0.5px;
 				}
 
-				#yeezy .desc .button{
-					padding:15px 50px;
-					display: inline-block;
-					font:14px 'NotoSansKR';
-					background: #a6a8a7;
+				#event_pre_etr .user_box{
+					margin: 0 15px 20px;
+				    padding: 12px 22px;
+				    border: 3px solid #000;
+				}
+				#event_pre_etr .user_box li{
+					margin-bottom:5px;
+					position: relative;
+    				padding-left: 20px;
+					overflow: hidden;
 				}
 
-				#yeezy .desc .button *{
-					color:#ecece2;
+				#event_pre_etr .user_box li:last-child{
+					margin-bottom: 0;
 				}
 
-				#yeezy .desc .button span{
+				#event_pre_etr .user_box li:before{
+					content:'';
+					width:3px;
+					height:3px;
+					border-radius:10px;
+					-webkit-border-radius:10px;
+					background: #000;
+					position: absolute;
+					top:8px;
+					left: 0;
+				}
+
+				#event_pre_etr .user_box li>*{
+					width: 50%;
+					line-height:20px;
 					display: block;
+					float: left;
 				}
 
-				#yeezy .desc .button span:first-child{
+				#event_pre_etr .user_box li>strong{
+					font-family:'NotoSansKR';
+					font-weight: 600;
+				}
+
+				#event_pre_etr .select_box{
+					margin: 0 15px 25px;
+				}
+
+				#event_pre_etr .select_box p.tit{
+					margin-bottom:5px;
+					font-size: 17px;
+					font-family:'NotoSansKR';
+					font-weight: 400;
+				}
+
+				#event_pre_etr .select_box p.desc{
+					font-size:11px;
+					font-family:'NotoSansKRRegular';
+				}
+
+				#event_pre_etr .select_box p span{
+					display: block;
+					margin-top:5px;
+					font-size: 10px;
+					color:#bcbcbc;
+				}
+
+				#event_pre_etr .select_box .s{
+					width: 100%;
+					height: 40px;
 					margin-bottom: 5px;
-					font:18px/18px 'NotoSansKRBold';
+					position: relative;
 				}
 
-				#yeezy .desc .button span strong{
-					margin-right: 5px;
-					font:16px 'YEEZY TSTAR-Light';
-					letter-spacing: 0;
+				#event_pre_etr .select_box .s::before,
+				#event_pre_etr .select_box .s::after{
+					background: #e0dbc8;
 				}
 
-				#yeezy .desc .button span strong span{
-					font-size: 13px !important;
-					display: inline;
+				#event_pre_etr .select_box select{
+					width: 100%;
+					height:100%;
+					padding-left: 10px;
+					-webkit-appearance: none;
+					-moz-appearance: none;
+					background: #000;
+					border-radius: 0;
+					color: #fff;
+					border-width:0;
 				}
 
-				#yeezy .desc .noti_box{
-					min-width: 240px;
-					padding: 15px;
+				#event_pre_etr .select_box select option{
+					color: #fff;
+				}
+
+				#event_pre_etr .bottom{
+					padding:30px 15px;
+					background: #000;
+				}
+
+				#event_pre_etr .bottom *{
+					color: #d7d7d7;
+				}
+
+				#event_pre_etr .bottom dl{
+					margin-bottom: 20px;
+				}
+
+				#event_pre_etr .bottom dt{
+					margin-bottom:10px;
+					font-size: 14px;
+				}
+
+				#event_pre_etr .bottom dd{
+					width: 100%;
+					height:350px;
+					overflow: auto;
+					-webkit-overflow-scrolling:touch;
+					background: #d7d7d7;
+    				padding: 12px 10px 10px;
+					box-sizing:border-box;
+					-webkit-box-sizing:border-box;
+				}
+
+				#event_pre_etr .bottom dd p{
+					font-size: 14px;
+					margin-bottom: 10px;
+					color: #232323;
+					letter-spacing:-.5px;
+				}
+				#event_pre_etr .bottom .noti.tips dd li::before{
+					content: '';
+					width: 2px;
+					height: 2px;
+					border-radius: 10px;
+					-webkit-border-radius: 10px;
+					background: #666;
+					position: absolute;
+					top: 8px;
+					left: 0;
+				}
+				#event_pre_etr .bottom dd li{
+					line-height: 16px;
+					padding-left:6px;
+					margin-bottom:3px;
+					position: relative;
+					font-size: 11px;
+					color: #2f2f2f;
+				}
+
+				#event_pre_etr .bottom dd li strong{
+					font-size:11px;
+					color: #000;
+					font-family:'NotoSansKR';
+					font-weight: 500;
+				}
+
+				#event_pre_etr .bottom .noti.tips dd li.org {
+					color: #d63e0c;
+					font-weight: 600;
+				}
+
+				#event_pre_etr .bottom .noti.tips dd li.org:before{
+					background: #d63e0c;
+				}
+				#event_pre_etr .bottom .radio_box {
+					margin-bottom: 40px;
+				}
+
+				#event_pre_etr .bottom .rdo {
 					display: inline-block;
-					border: 2px solid  rgba(0,0,0,0.2);
-					font:15px/22px 'NotoSansKRBold';
+					margin-right: 20px;
+				}
+
+				#event_pre_etr .bottom input{
+					background: #e0dbc8;
+					vertical-align: middle;
+					border-width: 0;
+					color: #000;
+				}
+
+				#event_pre_etr .bottom input[type=checkbox]:checked{
+					background: #a39f8f;
+				}
+
+				#event_pre_etr .bottom input[type=radio]:checked{
+					background: #a39f8f;
+				}
+
+				#event_pre_etr .bottom .btn_area{
+					padding: 15px 0;
+				}
+				#event_pre_etr .bottom .btn_area .button{
+					width: 100%;
+					padding:15px 0;
+					display: block;
+					border: 5px solid  #fff;
 					box-sizing: border-box;
 					-webkit-box-sizing: border-box;
 				}
-				/* logo image */
-                #yeezy .logo.icons{
-                    display: block;
-                    margin: 0 auto 30px;
-                    width: 42px;
-                    height: 42px;
-                    background: url('http://image.adidas.co.kr/images/adidas/temp/kanye/logo_lgray.png') no-repeat;
-                    background-size: 100% 100%;
-                }
+
+				#event_pre_etr .bottom .btn_area .button span{
+					display: block;
+					text-align: center;
+				}
+
+				#event_pre_etr .bottom .btn_area .button span.t1{
+					margin-bottom: 5px;
+					font-size:26px;
+					line-height: 26px;
+					color:#fff;
+				}
+
+				#event_pre_etr .bottom .btn_area .button span.t2{
+					font-size: 14px;
+					color:#fff;
+					font-family: 'NotosansKRBold';
+				}
+
+				#event_pre_etr .bottom .btn_area .button span.t2 strong{
+					margin-right: 3px;
+					font:17px 'YEEZY TSTAR-Bold';
+					letter-spacing: 0;
+					color:#fff;
+				}
+
+				#event_pre_etr .bottom .btn_area .button span.t2 strong span{
+					display: inline;
+					font-family: 'NotosansKRBold';
+					color:#fff;
+				}
+
 
 			</style>
-			<section id="yeezy">
-				<!-- logo image -->
-				<p class="logo icons"></p>
 
-				<div class="desc">
-					<div id="desc1" class="desc_wrap">
-						<p>YEEZY BOOST 350 V2</p>
-						<p>TRIPLE WHITE</p>
-						<p>design</p>
-						<p>by</p>
-						<p style="margin-bottom:35px;">kanye west</p>
-					</div>
-					<a href="#" class="button">
-						<span>신청하기</span>
-						<span><strong>2019.1.23<span>(수)</span> 14:00PM</strong> 마감</span>
-					</a>
-					<p class="noti">&#39;로그인이 필요합니다.&#39;</p>
+			<section id="event_pre_etr">
+				<h2><strong>YEEZY BOOST 700 MAUVE</strong><br/>신청 페이지</h2>
+				<div class="user_box">
+					<ul>
+						<li><span>이름</span><strong>홍길동</strong></li>
+						<li><span>회원번호</span><strong>02264879</strong></li>
+						<li><span>ID</span><strong>honggil</strong></li>
+						<li><span>휴대폰</span><strong>010-555-5555</strong></li>
+					</ul>
 				</div>
-				<!-- //desc -->
+				<!-- 190806 select 순서 변경 -->
+				
+				<div class="select_box">
+					<p class="tit">1. 제품 선택</p>
+					<div class="s toggle_arw">
+						<select name="" id="">
+							<option value="">YEEZY BOOST 350 V2</option>
+							<option value="">YEEZY BOOST 350 V3</option>
+						</select>
+					</div>
+				</div>
+				<div class="select_box">
+					<p class="tit">2. 제품 옵션 선택</p>
+					<div class="s toggle_arw">
+						<select name="" id="">
+							<option value="">제품 옵션1</option>
+							<option value="">제품 옵션2</option>
+						</select>
+					</div>
+					<p class="desc">* 구매를 원하는 제품의 옵션을 선택</p>
+				</div>
+				<div class="select_box">
+					<p class="tit">3. 선호 지역 선택</p>
+					<div class="s toggle_arw">
+						<select name="" id="">
+							<option value="">서울</option>
+							<option value="">부산</option>
+							<option value="">온라인 스토어</option>
+						</select>
+					</div>
+					<p class="desc">* 온라인 구매를 원할 경우, 온라인 스토어 선택</p>
+				</div>
+				<div class="select_box">
+					<p class="tit">4. 스토어 선택</p>
+					<div class="s toggle_arw">
+						<select name="" id="">
+							<option value="">카시나 해운대</option>
+							<option value="">압구정</option>
+						</select>
+					</div>
+				</div>
+
+				<!-- 190806 select 순서 변경 end-->
+
+				<div class="bottom">
+					<div class="noti">
+						<dl>
+							<dt>경품, 이벤트를 위한 개인정보 수집 이용</dt>
+							<dd style="height:175px;">
+								<ul>
+								<li><strong>개인정보 수집 이용 목적</strong><br />
+									-이벤트 당첨자 본인 확인, 당첨여부 조회, 제품 구매/교부 등 관련 제반 업무 수행 목적</li>
+								<li><strong>수집하는 개인정보의 항목</strong><br />
+									-이름/ 생년월일 / 핸드폰번호 / 이메일 / 아디클럽번호 / 시럽번호/카카오멤버십번호</li>
+								<li><strong>개인정보의 보유 및 이용 기간</strong><br />
+									-이벤트 종료 시(이벤트 제품 구매기간 완료 후)</li>
+							</ul>
+							</dd>
+						</dl>
+					</div>
+					<div class="radio_box">
+						<div class="rdo">
+							<input type="radio" id="agree_event_etr1" name="agree_event_etr" />
+							<label for="agree_event_etr1">동의함</label>
+						</div>
+						<div class="rdo">
+							<input type="radio" id="disagree_event_etr2" name="agree_event_etr" />
+							<label for="disagree_event_etr2">동의하지 않음</label>
+						</div>
+					</div>
+
+					<div class="noti">
+						<dl>
+							<dt>경품, 이벤트를 위한 개인정보 취급 위탁 동의</dt>
+							<dd style="height:105px;">
+								<ul>
+								<li><strong>개인정보취급위탁을 하는 업무의 내용</strong><br />
+									-이벤트 당첨자 본인 확인, 당첨여부 조회, 제품 구매/교부 등 관련 제반 업무</li>
+								<li><strong>개인정보 취급 위탁을 받는 자(수탁자)</strong><br />
+									-㈜제니엘 , ㈜제니엘 , ㈜제니엘 , ㈜제니엘 , ㈜제니엘 , </li>
+							</ul>
+							</dd>
+						</dl>
+					</div>
+					<div class="radio_box">
+						<div class="rdo">
+							<input type="radio" id="agree_event_etr2_1" name="agree_event_etr2" />
+							<label for="agree_event_etr2_1">동의함</label>
+						</div>
+						<div class="rdo">
+							<input type="radio" id="agree_event_etr2_2" name="agree_event_etr2" />
+							<label for="agree_event_etr2_2">동의하지 않음</label>
+						</div>
+					</div>
+
+					<div class="noti tips">
+						<dl>
+							<dt>신청시 유의사항을 확인해주세요.</dt>
+							<dd>
+								<ul>
+								<li>본 온라인 래플은 무작위 추첨제로 진행됩니다. (선착순 응모 아님)</li>
+								<li class="org">아디클럽 회원가입이 필수이며 회원 ID 1개당 1회 응모가 가능합니다. </li>
+
+								<!-- 날짜수정 -->
+								<li>2018.10.21(일)까지 가입한 아디클럽 회원에 한해 온라인 래플 응모에 참여 가능합니다.</li>
+								<!-- 날짜수정 end-->
+
+								<li>[마이페이지>나의 회원정보]에 등록된 이메일주소와 휴대폰번호로 신청 페이지 링크 및 관련 공지 사항이 발송됩니다. </li>
+
+								<!-- 날짜수정 -->
+								<li>반드시 2018.10.21(일)까지 이메일주소 / 휴대폰번호 및 수신 동의 여부를 확인 후 업데이트해주시기 바랍니다. </li>
+								<!-- 날짜수정 end-->
+
+								<li>입력하신 이메일 주소 / 휴대폰번호 등의 개인정보가 사실과 다르거나 수신에 동의하지 않은 경우, 불이익이 발생할 수 있으며, 당사는 그에 대한 책임을 지지 않습니다.</li>
+								<!-- 날짜수정 -->
+								<li>당첨자는 2018.10.27(토) 11:00 AM ~ 2018.10.29(월) 08:00 PM까지 선택한 온라인/오프라인 스토어에서 결제 및 구매를 완료해주시기 바랍니다.  </li>
+								<!-- 날짜수정 end-->
+								<li>당첨자 본인만 구매가 가능합니다.</li>
+								<li>당첨자 본인이 사전에 신청한 제품, 스토어 및 사이즈로만 구매가 가능합니다. </li>
+								<li>오프라인 스토어를 선택한 당첨자는 발매 당일, 당첨자 본인임을 증명할 수 있는 신분증 (주민등록증, 운전면허증, 여권, 사진이 부착된 학생증 (미성년자일 경우)),<br>
+									아디클럽 모바일 멤버십 카드를 반드시 소지해주시기 바랍니다.</li>
+								<li>마감 시간 이내에 미구매시 당첨이 취소됩니다.</li>
+								<li>당첨 취소에 따라 재추첨이 이루어질 수 있으며, 재추첨시 본인이 선택하지 않은 스토어로 당첨될 수 있습니다.</li>
+								<li>응모 및 온라인 스토어 결제 시 사이트 트래픽 폭주로 접속이 원활치 않을 수 있습니다.</li>
+								<li><strong>온라인 구매는 구매가 완료된 후, 아디클럽 ID 성함과 결제 수단(신용/직불/체크 카드)의 성명을 비교 확인할 예정이며, 성명정보가 일치하지 않을 경우 주문이 취소됩니다. </strong></li>
+								<li class="org">신청된 매장에서 본인 명의의 신용/직불/체크카드로만 결제가 가능합니다. (본인 카드가 아닌 경우 판매가 불가합니다.)</li>
+								<li class="org">미성년자 구매의 경우, 신청된 매장에서 학생증 또는 여권과 본인 명의의 직불/체크카드 확인 후 결제가 가능합니다. (본인 카드가 아닌 경우 판매가 불가합니다.)</li>
+								<li><strong>기념일 및 포인트 쿠폰 이외에, 다른 쿠폰은 사용이 불가합니다.</strong></li>
+								<li><strong>부정한 방법 또는 인위적 조작으로 당첨된 경우에는 당첨사실이 무효처리 됩니다.</strong></li>
+								<li class="org">온라인 래플 신청자 중, 휴대폰번호 / 이메일주소 / 배송지 주소가 다른 신청자와 동일한 경우, 당첨사실이 무효 처리됩니다.</li>
+								<li class="org">동의여부에 상관 없이 타인의 아이디를 이용하여 이벤트를 신청하여 당첨된 경우, 당첨사실이 무효처리 될 수 있습니다.</li>
+							</ul>
+							</dd>
+						</dl>
+					</div>
+					<div class="chk">
+						<input type="checkbox" id="agree_event_etr3" />
+						<label for="agree_event_etr3">내용을 읽었으며, 숙지 하였습니다.</label>
+					</div>
+					<div class="btn_area">
+						<a href="" class="button">
+							<span class="t1">응모하기</span>
+							<span class="t2"><strong>2018.10.24 <span>(수)</span> 06:00 PM</strong> 마감</span>
+						</a>
+					</div>
+				</div>
+
 			</section>
 			<!-- //yeezyboost -->
-
 
 			<div class="go_top">
 				<a href="#">BACK TO TOP</a>
@@ -594,7 +902,7 @@
 		</div>
 	</div>
 
-	<script type="text/javascript" src="http://imagem.adidas.co.kr/js/adidas/common.js"></script>
+	<script type="text/javascript" src="/designjs/adidas/common.js"></script>
 
 
 </body>
