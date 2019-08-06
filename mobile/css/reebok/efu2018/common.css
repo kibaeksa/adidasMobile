@@ -811,8 +811,9 @@ background:#fff;
 /* btn */
 .btnTypeA{display:inline-block; width:94px; height:30px; border:1px solid #5c5b53; letter-spacing:4px; text-align:center; color:#000; font-family:'dinpro cond'; font-size:14px; font-weight:500; line-height:30px; }
 .btnTypeB{display:inline-block; width:82px; height:32px; font-size:20px; color:#fff; text-align:center; line-height:34px; font-family: 'reefont-condensed'; letter-spacing: 2px; background:#000;}
-.btnTypeC{display:inline-block; padding: 0 20px; height:38px; font-size:20px; color:#fff !important; text-align:center; font: 500 16px/40px 'dinpro cond'; letter-spacing: 2px; background:#000; border:1px solid #fff; letter-spacing: 4px;}
-.btnTypeC span{    
+/* 190805 메인/리클럽 버튼 충돌 수정 */
+.main .btnTypeC{display:inline-block; padding: 0 20px; height:38px; font-size:20px; color:#fff !important; text-align:center; font: 500 16px/40px 'dinpro cond'; letter-spacing: 2px; background:#000; border:1px solid #fff; letter-spacing: 4px;}
+.main .btnTypeC span{    
 	position: relative;
     top: -1px;
     display: inline-block;
@@ -821,7 +822,7 @@ background:#fff;
     height: 2px;
     background: #fff;
 	vertical-align: middle;}
-.btnTypeC span::before{
+.main .btnTypeC span::before{
 		position: absolute;
     bottom: -2px;
     right: -2px;
@@ -833,7 +834,7 @@ background:#fff;
     transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
 	}
-.btnTypeC span::after{
+.main .btnTypeC span::after{
 	position: absolute;
     top: -2px;
     right: -2px;
@@ -845,6 +846,8 @@ background:#fff;
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
 	}
+/* 190805 메인/리클럽 버튼 충돌 수정 */
+
 /* 장차법 */
 .nHide{ position: absolute; overflow: hidden; clip: rect(0 0 0 0); margin: -1px; width: 1px; height: 1px;}
 /* slick  Common */
