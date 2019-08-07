@@ -1,0 +1,346 @@
+@import './mobile/css/adidas/scss/common/mixin.scss';
+@import './mobile/css/adidas/scss/common/common.scss';
+#container{
+	// z-index: 121;
+}
+
+#ozweego{
+	position: relative;
+	//common
+	>div{
+		>img{
+			display: block;
+			width: 100%;
+		}
+		.inner{
+			transition: .4s;
+			opacity: 0;
+		}
+		&.on{
+			.inner{
+				opacity: 1;
+			}
+		}
+	}
+	.button_area_v2{
+		display: inline-block;
+		a{
+			padding: 0 6vw;
+			font: 500 1rem/3.4rem 'NotoSansKR';
+			letter-spacing: .15rem;
+			height: 3.4rem;
+			.arrow{
+				margin-left: 1rem;
+				width: 20px;
+				&::after, &::before{
+					width: 7px;
+					height: 2px;
+				}
+				&::before{
+					bottom:-2px;
+				}
+				&::after{
+					top:-2px;
+				}
+			}
+		}
+	}
+
+	.visual_main{
+		position: relative;
+		video{
+			display: block;
+			width: 100%;
+		}
+	}
+
+	.sect_date{
+		position: relative;
+		padding: 1rem 0;
+		background: #000;
+		text-align: center;
+		h5{
+			padding-bottom: 2px;
+			font: 500 1.1rem 'NotoSansKR';
+			color: #fff;
+			text-align: center;
+			letter-spacing: normal;
+		}
+		p{
+			padding-bottom: 0.5rem;
+			font: 1.1rem 'adinenuPro-bold';
+			color: #d3e869;
+			text-align: center;
+			letter-spacing: 1px;
+			text-transform: uppercase;
+			&:last-child{
+				padding-bottom: 0;
+			}
+		}
+	}
+
+	.statement{
+		position: relative;
+		background :#d3e869;
+		&.state2{
+			.inner{
+				top: 47%;
+				transition-delay: .4s;
+			}
+		}
+		.inner{
+			position: absolute;
+			top: 16%;
+			width: 100%;
+			color: #000;
+			text-align: center;
+			
+			h3{
+				padding-bottom: 1rem;
+				text-align: center;
+				img{
+					display: inline-block;
+					width: 11%;
+				}
+			}
+			h2{
+				font: 2.1rem/2.1rem 'adinenuPro-bold';
+				letter-spacing: 2px;
+				text-align: center;
+				span.txt_img{
+					display: inline-block;
+					img{
+						height: 1.7rem;
+    					vertical-align: bottom;
+					}
+				}
+			}
+			h4{
+				font: 600 1.4rem 'NotoSansKR';
+				padding: 0.5rem 0;
+				&.en{
+					
+					font: 1.1rem 'adinenuPro-bold';
+					letter-spacing: normal;
+				}
+			}
+			p{
+				font: 1.2rem/2rem 'NotoSansKR';
+				text-align: center;
+			}
+			.button_area_v2{
+				display: inline-block;
+				margin-top: 20px;
+				a{
+					padding: 0 20px;
+				}
+			}
+		}
+	}
+
+	.sect_event{
+		position: relative;
+		background :#d3e869;
+		.inner{
+			position: absolute;
+			top: 43%;
+			width: 100%;
+			color: #000;
+			text-align: center;
+			transition-delay: .4s;
+			h2{
+				font: 2.1rem 'adinenuPro-bold';
+				letter-spacing: 1px;
+				text-align: center;
+			}
+			h3{
+				display: inline-block;
+				padding: 0 0.5rem;
+				font: 600 2.4rem/2.8rem 'NotoSansKR';
+				color: #d3e869;
+				text-align: center;
+				background: #000;
+			}
+			p{
+				padding: 1rem 0;
+				font: 1.2rem/2rem 'NotoSansKR';
+				text-align: center;
+			}
+			h5{
+				padding-bottom: 2px;
+				font: 600 1.1rem 'NotoSansKR';
+				color: #000;
+				text-align: center;
+				letter-spacing: normal;
+			}
+			p.e_date{
+				padding-top: 0;
+				padding-bottom: 0.5rem;
+				font: 1.1rem 'adinenuPro-bold';
+				color: #000;
+				text-align: center;
+				letter-spacing: 1px;
+				text-transform: uppercase;
+			}
+			span{
+				font: 0.9rem 'NotoSansKR';
+			}
+		}
+	}
+
+	.main_cuts{
+		padding-top: 2rem;
+		position: relative;
+		background: url('/images/adidas/2019/event/originals/ozweego/0802/cuts_bg.jpg') 0 0 no-repeat;
+		background-size: cover;
+		.banner_slider_wrap{
+			width: 100%;
+			margin: 0 auto;
+			text-align: center;
+			ul{
+				overflow: hidden;
+				li{
+					img{
+						display: block;
+						width: 100%;
+					}
+				}
+				.owl-dots{
+					padding: 2.5rem 0;
+					.owl-dot{
+						display: inline-block;
+						width: 8px;
+						height: 8px;
+						border: 2px solid #fff;
+						border-radius: 50%;
+						margin: 0 5px;
+						&.active{
+							background: #fff;
+						}
+					}
+				}
+			}
+		}
+		p{
+			padding: 2.4rem 0 3rem;
+			font : 500 1.4rem "NotoSansKR";
+			text-align: center;
+		}
+	}
+
+	.sect_video{
+		position: relative;
+		background: #d3e869;
+		padding: 1rem;
+		box-sizing: border-box;
+		video{
+			width: 100%;
+		}
+		.btn_play{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			img{
+				display: inline-block;
+			}
+		}
+	}
+
+	.sect_showcase{
+		position: relative;
+		background: #000;
+		color: #fff;
+		.inner{
+			position: absolute;
+			top: 50%;
+			left: 0;
+			width: 100%;
+			transform: translateY(-50%);
+			text-align: center;
+			h3{
+				display: inline-block;
+				padding: 0 5px;
+				font : 600 1rem/1.5rem "adinenuPro-bold", "NotoSansKR";
+				color: #000;
+				letter-spacing: 1px;
+				background:#d3e869;
+			}
+			h2{
+				padding: 1rem 0;
+				font: 2.4rem/2.5rem 'adinenuPro-bold';
+				color: #d3e869;
+				letter-spacing: 1px;
+			}
+			p{
+				padding: 1rem 0;
+				font : 300 1rem/1.8rem "NotoSansKR";
+				color: #fff;
+				letter-spacing: normal;
+				span{
+					display:block;
+					text-align: center;
+					em{
+						font: 1.4rem/1.8rem 'adinenuPro-bold';
+						color:#fff;
+						letter-spacing: .1rem;
+						position: relative;
+						&::after{
+							display:block;
+							content:'';
+							clear:both;
+							position: absolute;
+							bottom:.1rem;
+							left:0;
+							right:0;
+							border-bottom:1px solid #fff;
+						}
+					}
+				}
+				&.e_date{
+					padding: 0;
+					font: 1.4rem 'adinenuPro-bold';
+					color: #d3e869;
+					letter-spacing: 1px;
+				}
+				&.info{
+					font : 300 .9rem/.9rem "NotoSansKR";
+					color:#bfbfbf;
+				}
+			}
+			h5{
+				font : 600 1rem "NotoSansKR";
+				letter-spacing: normal;
+			}
+			.button_area_v2{
+				margin-top: 2rem;
+			}
+		}
+	}
+	
+	.bot{
+		position: relative;
+		background: #d3e869;
+		&.on{
+			.inner{
+				top: 62%;
+				@include css3(opacity,1);
+			}
+		}
+		.bot_box{
+			padding: 3rem 0;
+			text-align: center;
+			>img{
+				display: block;
+				width: 100%;
+			}
+			.button_area_v2{
+				display: inline-block;
+				margin-top: 20px;
+				a{
+					padding: 0 20px;
+				}
+			}
+		}
+	}
+}
