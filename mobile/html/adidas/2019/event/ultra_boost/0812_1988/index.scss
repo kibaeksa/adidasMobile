@@ -1,0 +1,252 @@
+@import './mobile/css/adidas/scss/common/mixin.scss';
+@import './mobile/css/adidas/scss/common/common.scss';
+
+#ultraboost_cp{
+	position: relative;
+	.button_area_v2{
+		display: inline-block;
+		margin-bottom: 2vh;
+		a{
+			font: 500 1rem/40px 'NotoSansKR';
+			padding: 0 5vw;
+			letter-spacing: 0;
+			height: 40px;
+			text-transform: uppercase;
+			.arrow{
+				width:20px;
+				&::after{
+					width:8px;
+				}
+				&::before{
+					width:8px;
+				}
+			}
+		}
+	}
+	img{
+		width:100%;
+	}
+
+	.main{
+		position: relative;
+		.bg{
+			img{
+				width:100%;
+			}
+		}
+		.inn{
+			position: absolute;
+			top: 31%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 92%;
+			img{
+				transform: rotate(-180deg);
+				opacity: 0;
+				transition: all 0.4s;
+			}
+			h2{
+				margin: 0 0 5px 0;
+				font:22px 'adinenuPro-bold';
+				text-transform: uppercase;
+				color:#112469;
+				letter-spacing:0.7px;
+				strong{
+					display: inline-block;
+					margin-right:5px;
+					color:#99071c;
+					font:22px 'adinenuPro-regular';
+				}
+			}
+			p{
+				font: 400 1rem/1.5rem 'NotoSansKR';
+				color:#000;
+				span{
+					display: block;
+					margin:0 0 10px 0;
+					font:1rem/1.5rem 'adinenuPro-regular';
+					letter-spacing: 0.5px;
+				}
+				&.small{
+					margin-bottom: 2%;
+					font:1.09rem 'adinenuPro-regular';
+					color:#112469;
+					letter-spacing: 0;
+					small{
+						font: 400 0.9rem 'NotoSansKR';
+						letter-spacing: -0.5px;
+
+					}
+					span{
+						width: 25%;
+						margin-bottom: 0;
+						margin-right: 1%;
+						text-align: center;
+						display: inline-block;
+						background: #112469;
+						color: #fff;
+						font: 300 0.9rem/1.4rem 'NotoSansKR';
+						letter-spacing: 0;
+					}
+				}
+			}
+			.button_area_v2{
+				margin:20px 0 0 0 ;
+				a{
+					font: 1rem/44px 'adinenuPro-regular';
+					text-transform: uppercase;
+					letter-spacing: 0.7px;
+
+				}
+			}
+		}
+		&.on{
+			.inn{
+				img{
+					opacity: 1;
+
+					transform: rotate(0deg);
+				}
+			}
+		}
+	}
+
+	.store_list{
+		position: relative;
+		padding: 30px 0;
+		h3{
+			font: 600 1.6rem 'NotoSansKR';
+			text-align: center;
+		}
+		span{
+			display: block;
+			font: 400 0.9rem 'NotoSansKR';
+			text-align: center;
+			letter-spacing: 0.1px;
+		}
+		ul{
+			display: block;
+			padding:20px 0 0 0 ;
+			width:92%;
+			li{
+				font: 300 1rem 'NotoSansKR';
+				padding:0 0 0 35px;
+			letter-spacing: 0.1px;
+
+			}
+		}
+		.tip{
+			margin:14px 35px 0;
+			padding:10px 16px;
+			background: #dbdbdb;
+			p{
+				
+				font: 600 1rem 'NotoSansKR';
+				text-transform: uppercase;
+			letter-spacing: 0px;
+
+			}
+		}
+	}
+
+	.section{
+		position: relative;
+		overflow: hidden;
+		text-align: center;
+		&.col{
+			margin: 5% 0 3% 0;
+			&.on{
+				.box{
+					img{
+						left:0;
+					}
+				}
+			}
+		}
+		.inn{
+			position: absolute;
+			right: 20px;
+			top: 15%;
+			width: 36%;
+		}
+		.bg{
+			video{
+				width:100%;
+			}
+		}
+		.box{
+			display: inline-block;
+			width: 44%;
+			margin-right: 2%;
+			margin-bottom: 2%;
+			overflow: hidden;
+			
+			img{
+				position: relative;
+				left: 100%;
+				transition: all 0.5s;
+				&.prd1{
+
+				}
+				&.prd2{
+					transition-delay: 0.2s;
+				}
+				&.prd3{
+					transition-delay: 0.3s;
+				}
+				&.prd4{
+					transition-delay: 0.4s;
+				}
+			}
+			&.last{
+				margin-right: 0;
+			}
+		}
+	}
+
+	.statement{
+		position: relative;
+		p{
+			padding:35px 0;
+			font:400 1.1rem/1.8rem 'NotoSansKR';
+			text-align: center;
+		}
+	}
+
+	.bottom_wrap{
+		position: relative;
+		.inn{
+			position: absolute;
+			top: 55%;
+			left:50%;
+			transform: translate(-50%,-50%);
+			width:100%;
+			text-align: center;
+
+			h2{
+				font:19px 'adinenuPro-bold';
+				text-transform: uppercase;
+				color:#112469;
+				letter-spacing:1px;
+				strong{
+					display: inline-block;
+					margin-right:5px;
+					color:#99071c;
+				letter-spacing:1px;
+
+					font:19px 'adinenuPro-regular';
+				}
+			}
+			.button_area_v2{
+				margin:10px 0 0 0;
+				a{
+					font: 1rem/44px 'adinenuPro-regular';
+					text-transform: uppercase;
+					letter-spacing: 0.7px;
+
+				}
+			}
+		}
+	}
+
+}
