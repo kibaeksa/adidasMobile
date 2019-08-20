@@ -1,0 +1,185 @@
+@import "./mobile/MO/reebok/css/scss/about.scss";
+
+.pumpfury{
+
+    //common
+    .btn{
+        a{
+            position: relative;
+            background-color: transparent;
+            border: 1px solid #000;
+            align-items: center;
+            display: inline-block;
+            padding: 0 1.5rem;
+            text-decoration: none;
+            transition: transform .1s cubic-bezier(.3,0,.45,1),color .1s cubic-bezier(.3,0,.45,1),border .1s cubic-bezier(.3,0,.45,1),background .1s cubic-bezier(.3,0,.45,1);
+            white-space: nowrap;
+            font: 500 1.1rem/3.5rem 'NotoSansKR';
+            color:#fff;
+            background: #000;
+            letter-spacing: .1rem;
+            &::before{
+                border-bottom: 1px solid #000;
+                border-left: 1px solid #000;
+                bottom: -4px;
+                height: 3px;
+                left: 2px;
+                width: calc(100% + 1px);
+                content: "";
+                display: block;
+                position: absolute;
+            }
+            &::after{
+                border-right: 1px solid #000;
+                border-top: 1px solid #000;
+                height: calc(100% + 1px);
+                right: -4px;
+                top: 2px;
+                width: 3px;
+                content: "";
+                display: block;
+                position: absolute;
+            }
+            span.arrow{
+                display: inline-block;
+                width: 20px;
+                height: 10px;
+                margin-left: 17px;
+                vertical-align: middle;
+                background: url('/images/reebok/2019/event/fury/pumpfury/0821/arrow.png') no-repeat;
+                background-size: auto 100%;
+            }
+        }
+    }
+  
+    .main_visual{
+        position: relative;
+        >img{
+            display: block;
+            width: 100%;
+        }
+        .txt{
+            position: absolute;
+            top:45%;
+            left:5%;
+            z-index: 2;
+            >*{
+                transform: translateX(20px);
+                transition: .6s;
+                opacity: 0;
+            }
+            h2{ 
+                font: 3.2rem/3.2rem 'PFDinMonoPro-Bold';
+                transition-delay: 0;
+            }
+            p{
+                padding: 1rem 0 2.5rem;
+                font: 400 0.9rem 'NotoSansKR';
+                color: #000;
+                transition-delay: .4s;
+            }
+            .btn{
+                display: inline-block;
+                transition-delay: .8s;
+            }
+        }
+        &.on{
+            .txt{
+                >*{
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+            }
+        }
+    }
+
+    .sect_look{
+        .slide_area{
+            position: relative;
+            padding: 4rem 1.5rem 1.5rem;
+            &.slide_women{
+                margin-top: 3rem;
+                background: #cf7bbb;
+                .deco{
+                    position: absolute;
+                    width: 40%;
+                    top: -14.2%;
+                    left: 1.5rem;
+                    img{
+                        display: block;
+                        width: 100%;
+                    }
+                }
+            }
+            &.slide_man{
+                padding-top: 2rem;
+                background: #0e51bf;
+            }
+            &.slide_together{
+                background: #cf7bbb;
+            }
+            ul{
+                overflow: hidden;
+                width: 100%;
+                li{
+                    img{
+                        display: inline-block;
+                        width: 100%;
+                    }
+                }
+                .owl-dots{
+                    text-align: center;
+                    padding: 10px 0;
+                    .owl-dot{
+                        margin: 0 4px;
+                        display: inline-block;
+                        width: 8px;
+                        height: 8px;
+                        border: 1px solid #fff;
+                        border-radius: 50%;
+                        &.active{
+                            background:#fff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .statement{
+        position: relative;
+        padding: 3rem 0;
+        background: #fff;
+        .txt{
+            text-align:center;
+            >*{
+                transform: translateY(20px);
+                transition: .6s;
+                opacity: 0;
+            }
+            h2{ 
+                font: 2.8rem/2.8rem 'PFDinMonoPro-Bold';
+                transition-delay: 0;
+            }
+            p{
+                padding: 0 0 1.8rem;
+                font: 400 0.9rem 'NotoSansKR';
+                color: #000;
+                transition-delay: .4s;
+            }
+            .btn{
+                display: inline-block;
+                transition-delay: .8s;
+            }
+        }
+        &.on{
+            .txt{
+                >*{
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        }
+    }
+}
+// pumpfury END
