@@ -53,6 +53,10 @@
                 autoplay: true
             });
 
+            jQuery('.nViewSlide').bind('touchmove', function (e) {
+                mainSlide.slick('slickPlay');
+            }); 
+
             jQuery('.nbSlide').slick({
                 centerMode: true,
                 centerPadding: '65px',
