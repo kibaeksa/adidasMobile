@@ -21,7 +21,7 @@
 	<script type="text/javascript" src="/designjs/reebok/iscroll.js"></script>
 	<script type="text/javascript" src="/designjs/reebok/FlickKkb.js"></script>
 	<script type="text/javascript" src="/designjs/reebok/jquery.touchSlider.js"></script>
-
+	<script type="text/javascript" src="/designjs/common/modalPopup.min.js"></script>
 
 
 
@@ -175,7 +175,7 @@
 					</div>
 
 					<div class="section_vid">
-						<div class="vid1">
+						<div class="vid1" >
 							<video id="video" poster="/images/reebok/2019/event/interval_og/0823/video_bg.jpg" loop="" muted="" autoplay="" playsinline="">
 								<source src="https://image.reebok.co.kr/upload/design_temp/video/2019/r/og/0823/video_MO.mp4" type="video/mp4">
 							</video>
@@ -227,32 +227,6 @@
 							$('.visual_main').addClass('on');
 						}, 400);
 
-						var owlSlider = $('#slider_owl');
-
-						owlSlider.on('initialized.owl.carousel', function (event) {
-							/*
-								최초 로딩 시 한번만 호출하는 함수
-							*/
-						});
-
-						owlSlider.on('changed.owl.carousel', function (event) {
-							/*
-								Callback 이벤트 (슬라이드가 실행 될 떄마다 실행되는 함수)
-								* index 사용하기
-								event.item.index
-						 
-								* length 사용하기
-								event.item.count
-							*/
-						});
-
-						owlSlider.owlCarousel({
-							stagePadding: 0,
-							margin: 2,
-							items: 2,
-							merge: true,
-							loop: true
-						});
 
 						var scrollArray = [];
 						var scrollContents = document.querySelectorAll('.scrollbox');
@@ -269,8 +243,9 @@
 							}
 						});
 
-						$('.video-btn-id').bind('click', function () {
+						$('.video-btn-id').click(function(){
 							//alert('동영상이 준비중입니다');
+							console.log('aa')
 							var ytbId = $(this).attr('data-video-id');
 							var html = '<div id="video-layer" style="">';
 							html += '	<div class="bg" ></div>';
@@ -285,6 +260,7 @@
 								$('html').css({ overflow: 'scroll' });
 								$('#video-layer ').remove();
 							});
+							console.log('bb')
 
 
 							setTimeout(function () {
@@ -293,6 +269,7 @@
 								$('#video-layer .video-box').append('<iframe width="100%" height="100%" src="http://www.youtube.com/embed/' + ytbId + '?rel=0" frameborder="0" allowfullscreen></iframe>')
 							}, 100);
 						});
+
 
 					})(jQuery);
 
