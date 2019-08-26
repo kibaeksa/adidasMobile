@@ -1,0 +1,248 @@
+@import "./mobile/MO/reebok/css/scss/about.scss";
+
+.interval_og{
+    background: #fff;
+    .btn{
+        margin-top: 5%;
+        opacity: 0;
+        transition: all .6s;
+        transition-delay: .8s;
+        a{
+            position: relative;
+            background-color: transparent;
+            border: 1px solid #000;
+            color: #000;
+            background: #fff;
+            align-items: center;
+            display: inline-block;
+            padding: 0 1.5rem;
+            text-decoration: none;
+            transition: transform .1s cubic-bezier(.3,0,.45,1),color .1s cubic-bezier(.3,0,.45,1),border .1s cubic-bezier(.3,0,.45,1),background .1s cubic-bezier(.3,0,.45,1);
+            white-space: nowrap;
+            font: 700 .9rem/3.5rem 'NotoSansKR';
+            letter-spacing: .1rem;
+            &::before{
+                border-bottom: 1px solid #000;
+                border-left: 1px solid #000;
+                bottom: -4px;
+                height: 3px;
+                left: 2px;
+                width: calc(100% + 1px);
+                content: "";
+                display: block;
+                position: absolute;
+            }
+            &::after{
+                border-right: 1px solid #000;
+                border-top: 1px solid #000;
+                height: calc(100% + 1px);
+                right: -4px;
+                top: 2px;
+                width: 3px;
+                content: "";
+                display: block;
+                position: absolute;
+            }
+            span.arrow{
+                display: inline-block;
+                width: 20px;
+                height: 10px;
+                margin-left: 8px;
+                background: url('/images/reebok/2019/event/interval_og/arrow.png') no-repeat;
+                background-size: auto 100%;
+            }
+        }
+    }
+    .visual_main{
+        position: relative;
+         &.on{
+            .txt{
+                h1{opacity: 1;margin-left: 0;}
+                >p{opacity: 1;}
+                .btn{opacity: 1;}
+            }
+        }
+        .img{
+            img{
+                width:100%;
+            }
+        }
+        .txt{
+            width: 88%;
+            position: absolute;
+            top: 78%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-transform: uppercase;
+            text-align: center;
+            h1{
+                font: 900 2.3rem 'neueplak-wide';
+                color:#000;
+                text-align: left;
+                margin-left: 20px;
+                text-align: center;
+                opacity: 0;
+                transition: all .6s;
+            }           
+            >p{
+                padding-top: 0.5rem;
+                display: inline-block;
+                font: 400 1.15rem/2rem 'NotoSansKR';
+                color:#000;
+                opacity: 0;
+                transition: all .6s;
+                transition-delay: .4s;
+                &.bold{
+                    font: 700 1.5rem 'neueplak-wide';
+                    color:#e62318;
+
+                }
+            }
+
+        }
+    }
+
+    .statement{
+        position: relative;
+        padding: 0 0 8% 0;
+        overflow: hidden;
+        background: url(/images/reebok/2019/event/interval_og/0823/statement_bg.jpg) no-repeat;
+        background-position: top center;
+        background-size: 100% 100%;
+        &.on{
+            .txt{
+                opacity: 1;
+            }
+            .deco{
+                opacity: 1;
+                bottom: -36%;
+            }
+        }
+        .bg{
+            width: 100%;
+            img{
+                display: block;
+                width: 100%;
+            }
+        }
+        h2{
+            padding: 8% 0 7% 0;
+            font: 900 1.6rem 'neueplak-wide';
+            color: #000;
+        }
+        .txt{
+            text-align: center;
+            padding: 0 3rem;
+            text-align: center;
+            ul{
+                li{
+                    position: relative;
+                    font: 1rem/1.7rem 'NotoSansKR';
+                    color: #000;
+                    text-align: left;
+                    letter-spacing: -0.7px;
+                    padding: 0 0 2% 0;
+                    &:before{
+                        position: absolute;
+                        top: 19%;
+                        left: -3%;
+                        content: '';
+                        display: inline-block;
+                        width: 2px;
+                        height: 2px;
+                        border-radius: 50px;
+                        background: #000;
+                    }
+                }
+            }
+        }    
+    }
+
+    .section_evt{
+        position: relative;
+        background: #2d64ac;
+        img{
+            width:100%;
+        }
+    }
+
+    .section_vid{
+        position: relative;
+        video{
+            display: block;
+            width: 100%;
+        }
+        .btn-play{
+            position: absolute;
+            top:50%;
+            left: 50%;
+            transform: translate(-50%, -10%);    
+            transition: all .4s;
+            transition-delay: .2s;
+            img{
+                // transform: rotate(30deg);
+                transition: all .4s;
+                transition-delay: .2s;
+            }
+        }
+    }
+
+    .section_col{
+        position: relative;
+        .row{
+            position: relative;
+            overflow: hidden;
+            &.col2{
+                img{
+                    width:100%;
+                }
+                .btn{
+                    margin-top: 0;
+                    position: absolute;
+                    top:72%;
+                    left:50%;
+                    transform: translate(-50%,-50%);
+                    width:100%;
+                    z-index: 2;
+                    opacity: 1;
+                    text-align: center;
+                }
+            }
+            &.row2{
+                .box{
+                    width:100%;
+                    overflow: hidden;
+                    img{
+                        width:50%;
+                        float: left;
+                    }
+                }
+            }
+            .box{
+                width:50%;
+                float: left;
+                img{
+                    width:100%;
+                }
+            }
+        }
+    }
+
+    .bottom{
+        position: relative;
+        img{
+            display: block;
+            width: 100%;
+        }
+        a{
+            position: absolute;
+            width: 40%;
+            height: 5%;
+            top: 51%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+}
+
+// nano8 END
