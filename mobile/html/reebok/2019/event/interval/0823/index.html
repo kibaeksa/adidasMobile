@@ -179,8 +179,7 @@
 							<video id="video" poster="/images/reebok/2019/event/interval_og/0823/video_bg.jpg" loop="" muted="" autoplay="" playsinline="">
 								<source src="https://image.reebok.co.kr/upload/design_temp/video/2019/r/og/0823/video_MO.mp4" type="video/mp4">
 							</video>
-							<a href="javascript:void(0)" class="btn-play" data-video-id="ysMQqaoDK98"><img
-									src="/images/reebok/2019/event/aztrek/0311/play.png" alt=""></a>
+							<a href="javascript:void(0)" class="btn-play video-btn-id" data-video-id="ysMQqaoDK98"><img src="/images/reebok/2019/event/aztrek/0311/play.png" alt=""></a>
 						</div>
 					</div>
 					
@@ -270,7 +269,7 @@
 							}
 						});
 
-						$('.btn-play').bind('click', function () {
+						$('.video-btn-id').bind('click', function () {
 							//alert('동영상이 준비중입니다');
 							var ytbId = $(this).attr('data-video-id');
 							var html = '<div id="video-layer" style="">';
