@@ -27,21 +27,25 @@
 	}
 	.main{
 		position: relative;
-		background:url('/images/adidas/2019/event/originals/supercourt/1908_a_supercourt_bg01_MO.jpg') no-repeat;
-		background-position: center;
-		background-size: 100% 100%;
-		padding-top:52%;
-		>img{
+		// background:url('/images/adidas/2019/event/originals/supercourt/1908_a_supercourt_bg01_MO.jpg') no-repeat;
+		// background-position: center;
+		// background-size: 100% 100%;
+		// padding-top:52%;
+		.prd_shoe{
 			position: absolute;
-			top:50%;
-			left:50%;
-			transform: translate(-46%, -120%);
+			top: 50%;
+			left: 50%;
+			transform: translate(-46%, -125%);
 			z-index: 2;
-			width:90%
+			width: 84%;
+		}
+		.bg01{
+			width:100%;
 		}
 		.slide{
-			position: relative;
+			position: absolute;
 			left: 5%;
+			top: 25%;
 			>div{
 				img{
 					width:60%;
@@ -62,7 +66,12 @@
 		}
 		.txt{
 			text-align: center;
-			padding:4rem 0 2rem;
+			position: absolute;
+			bottom: 50%;
+			left: 50%;
+			transform: translate(-50%, 178%);
+			width: 100%;
+			// padding:4rem 0 2rem;
 			h1{
 				font: 2.9rem/2.9rem 'adinenuPro-bold';
 				color:#000;
@@ -253,6 +262,12 @@
 
 }
 
-@media screen and (max-width:320px) {
-
+@media screen and (min-width:414px) {
+	#supercourt{
+		.main{
+			.txt{
+				transform: translate(-50%, 190%);
+			}
+		}
+	}
 }
