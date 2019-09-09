@@ -1,0 +1,217 @@
+@import "./mobile/MO/reebok/css/scss/about.scss";
+
+.interval_og{
+    background: #fff;
+    .btn{
+        margin-top: 5%;
+        opacity: 0;
+        transition: all .6s;
+        transition-delay: .8s;
+        a{
+            position: relative;
+            background-color: transparent;
+            border: 1px solid #000;
+            color: #000;
+            background: #fff;
+            align-items: center;
+            display: inline-block;
+            padding: 0 1.5rem;
+            text-decoration: none;
+            transition: transform .1s cubic-bezier(.3,0,.45,1),color .1s cubic-bezier(.3,0,.45,1),border .1s cubic-bezier(.3,0,.45,1),background .1s cubic-bezier(.3,0,.45,1);
+            white-space: nowrap;
+            font: 700 .9rem/3.5rem 'NotoSansKR';
+            letter-spacing: .1rem;
+            &::before{
+                border-bottom: 1px solid #000;
+                border-left: 1px solid #000;
+                bottom: -4px;
+                height: 3px;
+                left: 2px;
+                width: calc(100% + 1px);
+                content: "";
+                display: block;
+                position: absolute;
+            }
+            &::after{
+                border-right: 1px solid #000;
+                border-top: 1px solid #000;
+                height: calc(100% + 1px);
+                right: -4px;
+                top: 2px;
+                width: 3px;
+                content: "";
+                display: block;
+                position: absolute;
+            }
+            span.arrow{
+                display: inline-block;
+                width: 20px;
+                height: 10px;
+                margin-left: 8px;
+                background: url('/images/reebok/2019/event/interval_og/arrow.png') no-repeat;
+                background-size: auto 100%;
+            }
+        }
+    }
+
+    .visual_main{
+        position: relative;
+        z-index: 1;
+         &.on{
+            .txt{
+                h1{opacity: 1;margin-left: 0;}
+                >p{opacity: 1;}
+                .btn{opacity: 1;}
+            }
+        }
+        .img{
+            img{
+                width:100%;
+            }
+        }
+        .txt{
+            width: 88%;
+            position: absolute;
+            top: 78%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-transform: uppercase;
+            text-align: center;
+            h1{
+                font: 900 2.3rem 'neueplak-wide';
+                color:#000;
+                text-align: left;
+                margin-left: 20px;
+                text-align: center;
+                opacity: 0;
+                transition: all .6s;
+            }           
+            >p{
+                padding-top: 0.5rem;
+                display: inline-block;
+                font: 500 1rem/1.8rem 'NotoSansKR';
+                color:#000;
+                opacity: 0;
+                transition: all .6s;
+                transition-delay: .4s;
+                &.bold{
+                    display: block;
+                    font: 700 1.5rem 'neueplak-wide';
+                    color:#e62318;
+
+                }
+                &.tip{
+                font: 500 1.15rem/1.5rem 'NotoSansKR';
+
+                }
+            }
+
+        }
+    }
+
+    .grid_cont{
+		position: relative;
+		padding: 0;
+		// grid common
+		img{
+			width:100%;
+		}
+		.btn{
+			display: inline-block;
+			position: absolute;
+			bottom:8%;
+			left:50%;
+            transform: translateX(-50%);
+            border-color: #fff;
+            opacity: 1;
+            a{
+                background: #000;
+                color: #fff;
+                border-color: #fff;
+                &::before,
+                &::after{
+                    border-color: #fff;
+                }
+                span{
+                    background: url(/images/reebok/2019/event/interval_og/arrow_w.png) no-repeat;
+                }
+            }
+		}
+		.grids{
+			overflow: hidden;
+			position: relative;
+			display: inline-block;
+			&:hover{
+				img{
+					transform: scale(1.1);
+					transition: all 5s ease-in-out;
+				}
+			}
+		}
+
+		
+		//grid section start
+		.top, .bottom{
+			&::after{
+				clear: both;
+				display: block;
+				content:'';
+			}
+			.inner{
+				width:100%;
+				float:left;
+				&::after{
+					clear: both;
+					display: block;
+					content:'';
+				}
+				.grids{
+					width:50%;
+					float:left;
+				}
+				&.lt{
+					.grids{
+						&:last-child{
+							clear: both;
+							width:100%;
+						}
+					}
+				}
+				&.rt{
+					.grids{
+						&:last-child{
+							clear: both;
+							width:100%;
+						}
+						&:nth-child(1){
+							float: right;
+						}
+					}
+				}
+			}
+		}		
+	}
+
+    .section_vid{
+        position: relative;
+        video{
+            display: block;
+            width: 100%;
+        }
+        .btn-play{
+            position: absolute;
+            top:50%;
+            left: 50%;
+            transform: translate(-50%, -10%);    
+            transition: all .4s;
+            transition-delay: .2s;
+            img{
+                // transform: rotate(30deg);
+                transition: all .4s;
+                transition-delay: .2s;
+            }
+        }
+    }
+}
+
+// nano8 END
