@@ -448,6 +448,19 @@
                         <h1>show me the money - style guide</h1>
                         <h3><img src="/images/adidas/2019/event/originals/smtm/visual_img.jpg" alt=""></h3>
                         <div class="vs_event">
+                            <img src="/images/adidas/2019/event/originals/smtm/0916/event_bg.jpg" alt="">
+                            <a href="https://m.adidas.co.kr/MO/Event/pnEvtView.action?pn=SMTM" target="_blank"
+                                style="width:38%; height: 7%; top: 88%; left: 31%;">쇼미더머니 울트라부스트 자세히보기</a>
+                            <div id="slideshow">
+                                <div>
+                                    <img src="/images/adidas/2019/event/originals/smtm/0916/ub_01.jpg">
+                                </div>
+                                <div>
+                                    <img src="/images/adidas/2019/event/originals/smtm/0916/ub_02.jpg">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="vs_event">
                             <img src="/images/adidas/2019/event/originals/smtm/0909/event_img.jpg" alt="">
                             <a href="https://m.adidas.co.kr/MO/Club/clubCampainView.action?event_id=6866" target="_blank" style="width:30%; height: 7%; top: 38%; left: 35%;">공연 초대 이벤트 응모하기</a>
                             <a href="https://m.adidas.co.kr/MO/Club/clubCampainView.action?event_id=6867" target="_blank" style="width:30%; height: 7%; top: 70%; left: 35%;">결승전 방청 참가 응모하기</a>
@@ -763,6 +776,18 @@
                     setTimeout(function () {
                         $('#smtm .main').addClass('on');
                     }, 500);
+
+                    // 울부 이벤트 슬라이드
+                    $("#slideshow > div:gt(0)").hide();
+
+                    setInterval(function () {
+                        $('#slideshow > div:first')
+                            .fadeOut(1000)
+                            .next()
+                            .fadeIn(1000)
+                            .end()
+                            .appendTo('#slideshow');
+                    }, 3500);
 
                     $('.nav_bar li').on('click', function () {
                         $('.nav_bar li').removeClass('on')
