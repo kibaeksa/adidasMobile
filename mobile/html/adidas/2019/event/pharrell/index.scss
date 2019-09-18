@@ -1,0 +1,225 @@
+@import './mobile/css/adidas/scss/common/mixin.scss';
+@import './mobile/css/adidas/scss/common/common.scss';
+
+#adicolor{
+	position: relative;
+
+	//common
+	.button_area_v2{
+		display: inline-block;
+		a{
+			font: 400 1rem/40px 'NotoSansKR';
+			padding: 0 4vw;
+			letter-spacing: 0;
+			height: 40px;
+			width:initial;
+			.arrow{
+				width:20px;
+				&::after{
+					width:8px;
+				}
+				&::before{
+					width:8px;
+				}
+			}
+		}
+	}
+	h1{
+		font:700 1.7rem/2.3rem 'adinenuPro-bold';
+		color:#000;
+		letter-spacing: 0;
+		text-align: center;
+		padding: 2.5rem 0 1.8rem;
+	}
+	p{
+		font:700 1.6rem/1.6rem 'NotoSansKR';
+		color:#000;
+		letter-spacing: 0.7px;
+	}
+
+	//시작
+	.main{
+		position: relative;
+		video{
+			width:100%;
+		}
+		.inn{
+			position: absolute;
+			top:72%;
+			left:50%;
+			transform: translate(-50%,-50%);
+			width:100%;
+			text-align: center;
+			>*{
+				color:#fff;
+			}
+			img{
+				width: 38%;
+				margin:0 0 2rem 0 ;
+			}
+			p{
+				letter-spacing: 2px;
+				font: 700 1.2rem 'NotoSansKR';
+				&.title{
+					font: 2.6rem/2rem 'adinenuPro-bold';
+				}
+			}
+			.button_area_v2{
+				margin:2rem 0 0 0;
+			}
+		}	
+	}
+	.statement{
+		position: relative;
+		padding: 2.8rem 0 3rem;
+		text-align: center;
+		p{
+			font: 400 1.1rem/2rem 'NotoSansKR';
+			color:#000;
+			text-align:center;
+		}
+	}
+
+	.img_cut{
+		position: relative;
+		.box{
+			overflow: hidden;
+			position: relative;
+			margin:0 15px 15px 15px;
+			img{
+				width:100%;
+			}
+			video{
+				width:100%;
+			}
+			&.video_wrap{
+				padding-bottom: 110%;
+				video{
+					position: absolute;
+					top:0;
+					left:0;
+					bottom:0;
+					right:0;
+					height:100%;
+					object-fit: cover;
+
+				}
+			}
+		}
+	}
+
+	.statement2{
+		padding: 1rem 0 2rem;
+		strong{
+			display: block;
+			font: 900 1.5rem/2.5rem 'NotoSansKR';
+			text-align: center;
+		}
+	}
+
+	.video_wrap{
+		position: relative;
+		p{
+			padding:2.5rem 0 1.5rem;
+			text-align: center;
+			font: 400 1.1rem 'NotoSansKR';
+		}
+		img{
+			width:100%;
+		}
+		video{
+			width:100%;
+		}
+		.button_area_v2{
+			position: absolute;
+			top:86%;
+			left:50%;
+			transform: translate(-50%,-50%);
+			text-align: center;
+		}
+	}
+
+	.banner_slider_wrap{
+		position: relative;
+		padding: 50px 0 60px;
+		ul{
+			li{
+				&.on{
+					.inn{
+						.title{
+							span{
+								width:80%;
+
+							}
+						}
+						p{
+							top:0;
+							opacity: 1;
+						}
+						strong{
+							top:0;
+							opacity: 1;
+
+						}
+					}
+				}
+				.inn{
+					position: relative;
+					text-align: center;
+					img{
+						width:100%;
+					}
+					.txt_area{
+						// position: absolute;
+						// bottom:0;
+						// width: 100%;
+						// left:0;
+					}
+					.title{
+						position: relative;
+						display: inline-block;
+						padding: 15px 0 0 0;
+						margin-bottom: 20px;
+						text-align: center;
+						font: 1.2rem 'adinenuPro-bold';
+						letter-spacing: 0.5px;
+						span{
+							position: absolute;
+							bottom:-8px;
+							left:50%;
+							width:0%;
+							margin-left: -40%;
+							display: inline-block;
+							height: 2px;
+							background: #000;
+						transition: all 0.5s;
+
+						}
+					}
+					p{
+						position: relative;
+						top:10px;
+						padding: 0 0 5px 0;
+						text-align: center;
+						font: 400 .9rem 'NotoSansKR';
+						letter-spacing: 0;
+						opacity: 0;
+						transition: all 0.5s;
+					}
+					strong{
+						position: relative;
+						top:10px;
+						display: block;
+						text-align: center;
+						font: 600 .9rem 'NotoSansKR';
+						opacity: 0;
+						letter-spacing: 0;
+
+						transition: all 0.5s;
+					}
+				}
+			}
+		}
+	}
+
+}
