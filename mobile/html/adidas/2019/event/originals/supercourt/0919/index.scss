@@ -117,13 +117,92 @@
 	}
 	.mov{
 		position: relative;
+		background: url('/images/adidas/2019/event/originals/supercourt/0919/mov_slider_bg.jpg') no-repeat;
+		background-position: 50% 50%;
+		background-size: 100% 100%;
 		img{
 			width:100%;
 		}
-		a{
-			position: absolute;
-			width: 44%;
-			height: 6.2%;
+		// a{
+		// 	position: absolute;
+		// 	width: 44%;
+		// 	height: 6.2%;
+		// }
+		.title{
+			padding: 25px 0;
+			text-align: center;
+			font: 600 1.1rem/1.7rem 'NotoSansKR';
+			letter-spacing: 0;
+			em{
+				position: relative;
+				top:2px;
+				margin-right:2px;
+				display: inline-block;
+				width:10px;
+				height:14px;
+				background: url('/images/adidas/2019/event/originals/supercourt/0919/ico_ping.png') no-repeat;
+				background-size: 100%;
+			}
+		}
+		.banner_slider_wrap{
+			position: relative;
+			margin: 0 20px;
+			overflow: hidden;
+			padding: 3.5rem 0 5rem 0;
+		}
+		ul{
+			li{
+				.box{
+					.row{
+						display: flex;
+						overflow: hidden;
+						img{
+							margin: 1%;
+							width: 48%;
+						
+						}
+					}
+				}
+			}
+			.owl-controls{
+				position: absolute;
+				top:0;
+				width:100%;
+				.owl-nav{
+					div{
+						position: absolute;
+						display: inline-block;
+						text-indent: -9999px;
+						width: 39px;
+						height: 22px;
+					}
+					.owl-next{
+						right:0;
+						background: url('/images/adidas/2019/event/originals/supercourt/0919/arrow_next.png') no-repeat;
+						background-size:100% 100%;
+					}
+					.owl-prev{
+						left:0;
+						background: url('/images/adidas/2019/event/originals/supercourt/0919/arrow_prev.png') no-repeat;
+						background-size:100% 100%;
+					}
+				}
+				.owl-dots{
+					position: relative;
+					top: 4px;
+					text-align: center;
+					.owl-dot{
+						margin:0 3px;
+						display: inline-block;
+						width:25px;
+						height:4px;
+						background: #b3b3b3;
+						&.active{
+							background: #ddf653;
+						}
+					}
+				}
+			}
 		}
 	}
 	.content_container{
