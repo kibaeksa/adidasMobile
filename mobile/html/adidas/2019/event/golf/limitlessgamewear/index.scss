@@ -1,0 +1,192 @@
+@import './mobile/css/adidas/scss/common/mixin.scss';
+@import './mobile/css/adidas/scss/common/common.scss';
+
+
+#lgamewear{
+	position: relative;
+	// background: #000;
+	.button_area_v2{
+		// display: inline-block;
+		// width: 120px;
+		width: 36%;
+		a{
+			font: 500 1rem/42px 'NotoSansKR';
+			height: 42px;
+			letter-spacing: 1px;
+			text-align: left;
+			padding-left: 1.8rem;
+			span.arrow{
+				position: absolute;
+				top: 50%;
+				right: 1.8rem;
+				width: 18px;
+			    // margin-left: 12px;
+				&:after{
+				    height: 2px;
+					top: -2px;
+				    width: 7px;
+				}
+				&:before{
+				    height: 2px;
+					bottom: -2px;
+					width: 7px;
+				}
+			}
+		}
+	}
+	img{
+		width:100%;
+	}
+	// position: absolute;
+	// top: 78%;
+	// left: 50%;
+	// transform: translate(-50%, -50%);
+	// font: 500 1.8rem 'NotoSansKR';
+	// font:2rem 'adinenuPro-bold';
+
+	// 다른 슬라이드
+	
+
+	// basic slide
+	.banner_slider_wrap{
+		position: relative;
+		text-align: center;
+		.swiper_element{
+			position: relative;
+			ul{
+				overflow: hidden;
+				&::after{
+					display: block;
+					content:'';
+					clear:both;
+				}
+				li{
+					position: relative;
+					float: left;
+					img{
+						width:80%;
+					}
+				}
+			}
+		}
+	}
+	.controls{
+		padding:2.5rem 2.7rem;
+		text-align:center;
+		&::after{
+			display: block;
+			content:'';
+			clear:both;
+		}
+		a{
+			float: left;
+			display: inline-block;
+			font:1.2rem/1.2rem 'adinenuPro-regular';
+			color: #000;
+			letter-spacing: .1rem;
+			width:25%;
+			&.next{
+				float: right;
+				img{
+					transform: rotate(-180deg);
+					padding-right:1rem;
+					padding-left:0;
+				}
+			}
+			img{
+				width:10%;
+				vertical-align: middle;
+				padding-right:1rem;
+			}
+		}
+		.num01{
+			font:16px 'adinenuPro-black';
+			color:#000;
+			letter-spacing: .5rem;
+		}
+		.num02{
+			font:16px 'adinenuPro-regular';
+			color:#000;
+			letter-spacing: .5rem;
+		}
+	}
+
+
+	.scrollTab{
+		position: fixed;
+		display: none;
+	}
+	.tab_cont{
+		position: absolute;
+		top:0;
+		z-index:5;
+		.tab{
+			padding:1rem;
+			font-size:0;
+			div{
+				display: inline-block;
+				width:50%;
+				img{
+					display: none;
+					&.on{
+						display: block!important;
+					}
+				}
+
+			}
+		}
+	}
+	.visual_main{
+		position: relative;
+		// height: 965px;
+		&.active{
+			.slide{
+				.txt{
+					@include css3(opacity,1);
+					@include css3(transition,all 1s);
+					@include css3(transition-delay,.5s);
+				}
+			}
+		}
+		.slide{
+			position: relative;
+			// @include css3(opacity,0);
+			// @include css3(transition, all .5s ease-in);
+			&.on{
+				@include css3(opacity,1);
+			}
+			.fake{
+				img{
+					position: relative;
+					width:100%;
+					z-index: -1;
+				}
+			}
+			>img{
+				position: absolute;
+				top:0;
+				left: 50%;
+				transform: translateX(-50%);
+				opacity: 0;
+				transition: all 1s;
+				&.on{
+					opacity: 1;
+				}
+			}
+		}
+	}
+
+	.conts01{
+		position: relative;
+	}
+	.conts02{
+		position: relative;
+		background:green;
+		&::after{
+			display:block;
+			content:'';
+			clear:both;
+			height:500px;
+		}
+	}
+}
