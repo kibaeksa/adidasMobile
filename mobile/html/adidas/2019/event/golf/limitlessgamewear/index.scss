@@ -144,7 +144,29 @@
 
 	.scrollTab{
 		position: fixed;
-		display: none;
+		height: 160px;
+		display:none;
+		width:100%;
+		margin: 0 auto;
+		z-index: 5;
+		top:0;
+		&.active{
+			display: block;
+		}
+		.tab{
+			font-size: 0;
+			div{
+				display:inline-block;
+			    width: 50%;
+				img{
+					display: none;
+					width:100%;
+					&.on{
+						display: block;
+					}
+				}
+			}
+		}
 	}
 	.tab_cont{
 		position: absolute;
