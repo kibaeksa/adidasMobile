@@ -5,20 +5,24 @@
 #limitlessgamewear{
 	position: relative;
 	// background: #000;
+
+	//common css
 	.button_area_v2{
 		// display: inline-block;
 		// width: 120px;
-		width: 36%;
+		width: 85%;
+		margin: 0 auto;
+		padding: 3rem 0 6rem;
 		a{
 			font: 500 1rem/42px 'NotoSansKR';
 			height: 42px;
 			letter-spacing: 1px;
 			text-align: left;
-			padding-left: 1.8rem;
+			padding-left: 6.8rem;
 			span.arrow{
 				position: absolute;
 				top: 50%;
-				right: 1.8rem;
+				// right: 1.8rem;
 				width: 18px;
 			    // margin-left: 12px;
 				&:after{
@@ -44,8 +48,20 @@
 	// font: 500 1.8rem 'NotoSansKR';
 	// font:2rem 'adinenuPro-bold';
 
-	// 다른 슬라이드
-	
+	.scroll{
+		@include css3(opacity,0);
+		@include css3(transition,all 1s);
+		&.active{
+			@include css3(opacity,1);
+			.line{
+				@include css3(opacity,1);
+			}
+		}
+		.line{
+			@include css3(opacity,0);
+			@include css3(transition,all 1s);
+		}
+	}
 
 
 	// basic slide
@@ -114,14 +130,13 @@
 			letter-spacing: .5rem;
 		}
 	}
-
 	.txt{
 		text-align: left;
 		padding:0 1.5rem;
-		margin:3rem 0 5.5rem 0;
+		margin:3rem 0 4rem 0;
 		h1{
-			font:2.3rem/2.3rem 'AdihausDIN-Bold';
-			color:#000;
+			font: 2.1rem/2.3rem 'AdihausDIN-Bold';
+			color: #000;
 			// letter-spacing: .1rem;
 		}
 		p{
@@ -141,17 +156,15 @@
 		}
 	}
 	.main_img{
-		padding:2rem 0 5rem;
 		width:70%;
 	}
-
 	.scrollTab{
 		position: fixed;
-		height: 160px;
+		height: 5rem;
 		display:none;
 		width:100%;
 		margin: 0 auto;
-		z-index: 5;
+		z-index: 9;
 		top:0;
 		&.active{
 			display: block;
@@ -174,7 +187,7 @@
 	.tab_cont{
 		position: absolute;
 		top:0;
-		z-index:5;
+		z-index:9;
 		.tab{
 			padding:1rem;
 			font-size:0;
@@ -191,6 +204,11 @@
 			}
 		}
 	}
+	.line{
+		position: absolute;
+		z-index: 6;
+	}
+
 
 
 
@@ -237,9 +255,11 @@
 		position: relative;
 		text-align: center;
 		.txt{
-
+			margin: 0 0 3rem 0;
 		}
-
+		.main_img{
+			padding: 0 0 5rem;
+		}
 	}
 	.conts02{
 		position: relative;
@@ -283,6 +303,11 @@
 	}
 	.conts09{
 		position: relative;
+		.banner_slider_wrap{
+			overflow:unset;
+			margin:0 auto;
+			width:70%;
+		}
 	}
 	.conts10{
 		position: relative;
@@ -301,7 +326,158 @@
 		position: relative;
 		text-align: center;
 		img{
-			padding: 2rem 0 0;
+			padding: 5rem 0 0;
 		}
+		.txt{
+			margin: 3rem 0 6rem 0;
+		}
+	}
+	.conts14{
+		position: relative;
+		.txt{
+			margin: 3rem 0 5rem 0;
+		}
+	}
+	.conts15{
+		position: relative;
+	}
+	.conts16{
+		position: relative;
+		padding:2rem 0 3rem;
+	}
+	.conts17{
+		.banner_slider_wrap{
+			overflow:unset;
+			margin:0 auto;
+			width:70%;
+		}
+	}
+	.conts18{
+		text-align: center;
+		img{
+			width:70%;
+			padding: 5rem 0;			
+		}
+	}
+	.conts19{
+		position: relative;
+	}
+	.conts20{
+		position: relative;
+		padding: 7rem 0 4rem;
+	}
+	.conts21{
+		position: relative;
+	}
+	.conts22{
+		position: relative;
+		padding: 5rem 0;
+	}
+	.conts23{
+		position: relative;		
+	}
+	.conts24{
+		position: relative;
+		padding: 2rem 0 5rem;		
+	}
+	.conts25{
+		position: relative;		
+	}
+	.conts26{
+		position: relative;
+		padding:4rem 0 0 0;
+		.banner_slider_wrap{
+			overflow:unset;
+			margin:0 auto;
+			width:70%;
+		}
+	}
+
+	.line01{
+		bottom: -16%;
+		right: 5%;
+		width: 22%;			
+	}
+	.line02{
+		top: 40%;
+		left: 3%;
+		width: 25%;
+	}
+	.line03{
+		bottom: -2%;
+		right: 3%;
+		width: 30%;
+		top:initial;
+		left:initial;
+	}
+	.line04{
+		top: 9%;
+		right: -13%;
+		width: 24%;			
+	}
+	.line05{
+		bottom: 9%;
+		right: 5%;
+		width: 30%;
+	}
+	.line06{
+		top: 9%;
+		left: 5%;
+		width: 30%;
+	}
+	.line07{
+		top: 8%;
+		left: 5%;
+		width: 27%;
+	}
+	.line08{
+		bottom: 10%;
+		right: 1%;
+		width: 33%;
+	}
+	.line09{
+		bottom: -12%;
+		left: -11%;
+		width: 27%;
+	}
+	.line10{
+		top: -7%;
+		left: 37%;
+		width: 30%;
+	}
+	.line11{
+		bottom: -1%;
+		right: 3%;
+		width: 35%;
+	}
+	.line12{
+		bottom: -10%;
+		left: 4%;
+		width: 27%;	
+	}
+	.line13{
+		top: -43%;
+		right: 0%;
+		width: 33%;
+	}
+	.line14{
+		bottom: -33%;
+		left: 2%;
+		width: 27%;
+	}
+	.line15{
+		top: -22%;
+		right: -2%;
+		width: 33%;
+	}
+	.line16{
+		bottom: 6%;
+		left: 2%;
+		width: 24%;
+	}
+	.line17{
+		top: -37%;
+		right: 0%;
+		width: 27%;
 	}
 }
