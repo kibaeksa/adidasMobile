@@ -1,0 +1,237 @@
+@import "./mobile/MO/reebok/css/scss/about.scss";
+
+.interval_og{
+    background: #fff;
+    .btn{
+        margin-top: 5%;
+        opacity: 1;
+        transition: all .6s;
+        transition-delay: .8s;
+        a{
+            position: relative;
+            background-color: transparent;
+            border: 1px solid #fff;
+            color: #fff;
+            background: #000;
+            align-items: center;
+            display: inline-block;
+            padding: 0 2rem;
+            text-decoration: none;
+            transition: transform .1s cubic-bezier(.3,0,.45,1),color .1s cubic-bezier(.3,0,.45,1),border .1s cubic-bezier(.3,0,.45,1),background .1s cubic-bezier(.3,0,.45,1);
+            white-space: nowrap;
+            font: 700 .9rem/4rem 'NotoSansKR';
+            letter-spacing: .1rem;
+            &::before{
+                border-bottom: 1px solid #fff;
+                border-left: 1px solid #fff;
+                bottom: -4px;
+                height: 3px;
+                left: 2px;
+                width: calc(100% + 1px);
+                content: "";
+                display: block;
+                position: absolute;
+            }
+            &::after{
+                border-right: 1px solid #fff;
+                border-top: 1px solid #fff;
+                height: calc(100% + 1px);
+                right: -4px;
+                top: 2px;
+                width: 3px;
+                content: "";
+                display: block;
+                position: absolute;
+            }
+            span.arrow{
+                display: inline-block;
+                width: 20px;
+                height: 10px;
+                margin-left: 20px;
+                background: url('/images/reebok/2019/event/interval_og/arrow_w.png') no-repeat;
+                background-size: auto 100%;
+            }
+        }
+    }
+
+    .visual_main{
+        position: relative;
+        z-index: 1;
+         &.on{
+            .txt{
+                h1{opacity: 1;margin-left: 0;}
+                >p{opacity: 1;}
+                .btn{opacity: 1;}
+            }
+        }
+        .img{
+            video{
+                display: block;
+                width:100%;
+            }
+        }
+        .txt{
+            width: 88%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-transform: uppercase;
+            text-align: center;
+            h1{
+                opacity: 0;
+                transition: all .6s;
+                transition-delay: .4s;
+                img{
+                    display: inline-block;
+                    width: 76%;
+                }
+            }
+            a.btn-play{
+                padding: 2rem 0 1.5rem;
+                width: 100%;
+                display: inline-block;
+                img{
+                    width: 15%;
+                }
+            }
+            >p{
+                padding-top: 0.5rem;
+                display: inline-block;
+                font: 400 1.1rem/1.8rem 'NotoSansKR';
+                color:#fff;
+                opacity: 0;
+                transition: all .6s;
+                transition-delay: .4s;
+            }
+            .btn{
+                opacity: 0;
+                transition: all .6s;
+                transition-delay: .4s;
+            }
+        }
+    }
+
+    .section{
+        position: relative;
+        .bg{
+            img{
+                display: block;
+                width: 100%;
+            }
+        }
+        &.sect1{
+            .cont{
+                position: absolute;
+                width: 100%;
+                top: 0;
+                padding-top: 3rem;
+                text-align: center;
+                >img{
+                    display: block;
+                    width: 100%;
+                    &:last-child{
+                        padding-top: 4.5rem;
+                    }
+                }
+                .tit{
+                    overflow: hidden;
+                    width: 80%;
+                    height: 5%;
+                    padding: 0 0 5px 5px;
+                    text-align-last: left;
+
+                    position: absolute;
+                    top: 29%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    z-index: 5;
+                    >img{
+                        width: 99%;
+                        position: absolute;
+                        // left: 50%;
+                        // transform: translateX(-50%);
+                        transition: .6s cubic-bezier(0.39, 0.575, 0.565, 1);
+                        transition-delay: .6s;
+                        &:first-child{ // 빨간거
+                            
+                            transition-delay: 1.2s;
+                        }
+                        &:last-child{ // 흰거
+                            top: 100%;
+                        }
+                    }
+                }
+            }
+            &.on{
+                .cont{
+                    .tit{
+                        >img{
+                            &:first-child{
+                                transform: translate(-2px, 2px);
+                            }
+                            &:last-child{
+                               top: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &.sect2{
+            .cont{
+                position: absolute;
+                width: 100%;
+                top: 0;
+                padding-top: 3rem;
+                text-align: center;
+                >img{
+                    display: block;
+                    width: 100%;
+                    &:last-child{
+                        padding-top: 11rem;
+                        
+                    }
+                }
+                .tit{
+                    position: absolute;
+                    overflow: visible;
+                    width: 100%;
+                    height: 10%;
+                    padding: 0;
+                    top: 34%;
+                    left: 0;
+                    text-align: center;
+                    z-index: 1;
+                    >img{
+                        position: static;
+                        display: inline-block;
+                        width: 74%;
+                    }
+                    .btn{
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+
+    .end_area{
+        position: relative;
+        .bg{
+            img{
+                display: block;
+                width: 100%;
+            }
+        }
+        .btn{
+            margin-top: 0.5rem;
+            position: absolute;
+            top: 71%;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+            opacity: 1;
+        }
+    }
+}
