@@ -195,9 +195,16 @@
 			<!-- // 190222 상단 띠배너 E -->
         </div>
 
-
-		<div id="container" class="product_view pdp_renew">
-			<!-- 190717 product_order 리뉴얼 -->
+		<!-- product_order 리뉴얼 :: pdp_renew 추가 (default) / buy_box_restock(출시예정시 추가) -->
+		<div id="container" class="product_view pdp_renew buy_box_restock">
+			<!-- product_order 리뉴얼 -->
+			<div class="top_ctgr">
+				<span class="adihaus">HOME</span>/
+				<span class="adihaus">WOMEN</span>/
+				<span>신발</span>/
+				<span>상품별</span>/
+				<span>로우컷</span>
+			</div>
 			<div class="product_order">
 				<p class="ctgr">UNISEX ORIGINALS</p>
 				<h3>울트라 부스트</h3>
@@ -304,7 +311,7 @@
 					<span></span>
 				</div>
 
-				<ul class="info">
+				<ul class="info ">
 					<li class="c">
 						<div class="r_box">
 							WHITE / BLACK
@@ -344,7 +351,7 @@
 
 					<li class="size_box_tit clearfix">
 						<span><img src="/images/adidas/common/ico_sizechart.png" alt=""></span>
-						<a href="javascript:void(0)" class="modal-popup-click" data-modalpop-click="popup-sizechart">사이즈 차트</a>
+						<a href="javascript:void(0)" class="modal-popup-click" data-modalpop-click="size_chart_temp">사이즈 차트</a>
 						<em>/</em>
 						<a href="javascript:void(0)" class="modal-popup-click" data-modalpop-click="modal-popup-size-statistics">사이즈 통계</a>
 					</li>
@@ -422,10 +429,20 @@
 				<!-- 190116 제품 3D 브리즘 테스트 END-->
 			 
 				<div class="btn_wrap">
+					<div class="buy_restock_alert"><span></span><a href="#">입고 알림 신청</a></div>
 					<div class="buy_btn clearfix on">
-						<a href="javascript:void(0)" class="btn_buy">구매하기</a>
+
+						<!-- product_order 리뉴얼 default :: id="container" 태그의 클래스 부분에 buy_box_restock 삭제 -->
+						<!-- <a href="javascript:void(0)" class="btn_buy">구매하기</a>
 						<a href="javascript:void(0)" class="add_cart">장바구니</a>
-						<a href="javascript:void(0)" class="btn_npay"></a>
+						<a href="javascript:void(0)" class="btn_npay"></a> -->
+
+						<!-- product_order 리뉴얼 출시예정 :: id="container" 태그의 클래스 부분에 buy_box_restock 추가 -->
+						<a href="javascript:void(0)" class="btn_buy">출시예정</a>
+
+						<!-- product_order 리뉴얼 품절 :: id="container" 태그의 클래스 부분에 buy_box_restock 추가 -->
+						<!-- <a href="javascript:void(0)" class="btn_buy">품절</a>  -->
+
 					</div>
 					
 					<div class="buy_btn clearfix">
@@ -438,22 +455,35 @@
 							<dd>5만원 이상 구매시 무료배송 (도서 산간 지역은 추가 배송비 발생)</dd>
 						</dl>
 					</div>
+					<div id="fitanalytics__button">
+						<img src="//integrations.fitanalytics.com/assets/button/fit-finder-pdp.svg">
+						<a class="fitanalytics__button-text">고객님께 꼭 맞는 사이즈를 찾아보세요!</a>
+					</div>
+					<div id="fit_note">단, 실측 사이즈가 아닌 추천 사이즈이므로 구입 시 참고바랍니다.</div>
+
 				</div>
 
-				<div id="fitanalytics__button">
-					<img src="//integrations.fitanalytics.com/assets/button/fit-finder-pdp.svg">
-					<a class="fitanalytics__button-text">고객님께 꼭 맞는 사이즈를 찾아보세요!</a>
-				</div>
-				
-				<div id="fit_note">단, 실측 사이즈가 아닌 추천 사이즈이므로 구입 시 참고바랍니다.</div>
-				
+
 				<div class="temp_bnn" style="padding:0 15px; margin: 20px 0 0;">
 					<img src="/images/adidas/common/pdp_bann_test.jpg" width="100%" alt="">
 				</div>
 
+				<!-- 190517 추가 부분 -->
+				<div class="related-ctr">
+					<p>연관 카테고리</p>
+					<div class="related-words">
+						<a href="#">라이프스타일</a>
+						<a href="#">로우컷</a>
+						<a href="#">신발</a>
+						<a href="#">originals</a>
+					</div>
+				</div>
+				
+				
+
+
 			</div>
-			<!-- //product_order -->
-			<!-- 190717 product_order 리뉴얼 End -->
+			<!-- // product_order 리뉴얼 End -->
 
 			<div class="product_info">
 				<div class="detail_info">
@@ -1024,16 +1054,7 @@
 				</div>
 				<!-- //detail_info -->
 
-				<!-- 190517 추가 부분 -->
-                <!-- <div class="related-ctr">
-                    <p>연관 카테고리</p>
-                    <div class="related-words">
-                        <a href="#">라이프스타일</a>
-                        <a href="#">로우컷</a>
-                        <a href="#">신발</a>
-                        <a href="#">originals</a>
-                    </div>
-                </div> -->
+
 				<div class="info_table">
 					<table>
 							<tbody>
@@ -2579,15 +2600,15 @@
 					return false;
 				});
 
-                // 190130 프리즘에 좌우 버튼 추가
+                // product_order 리뉴얼 callback 부분 주석
 				var productsCutSlider = new Swipe(document.getElementById('products_cut'),{
 					callback : function(index,element){
 						$('.product_order>.prod_imgs_cut_num span').removeClass('on').eq(index).addClass('on');
-                        if(index ==1){
-                            $('#container.product_view .prod_imgs_navi').addClass('on');
-                        }else {
-                            $('#container.product_view .prod_imgs_navi').removeClass('on');
-                        }
+                        // if(index ==1){
+                        //     $('#container.product_view .prod_imgs_navi').addClass('on');
+                        // }else {
+                        //     $('#container.product_view .prod_imgs_navi').removeClass('on');
+                        // }
 					},
 					stopPropagation : false
 				});
@@ -2598,7 +2619,7 @@
                 $('.product_order .prod_imgs_navi .next').bind('click',function(){
                     productsCutSlider.next();
                 });
-                // 190130 프리즘에 좌우 버튼 추가 end
+                // product_order 프리즘에 좌우 버튼 추가 end
 
 				var lookbookSlider = new Swipe(document.getElementById('lookbook_slider'),{
 					callback : function(index,element){
@@ -4197,6 +4218,24 @@
 			</div>
 		</div>
 	</div>
+
+	<!-- product_order 리뉴얼 사이즈차트 임시 -->
+	<div class="modal-popup-wrapper size_chart_temp" 
+		data-modalpop=""
+		data-modalpop-valign="top"
+		data-modalpop-name="size_chart_temp"
+	>		
+		<div class="overlay"></div>
+		<div class="popup">
+			<div class="popup-header">
+				<a href="javascript:void(0)" class="close_x_btn btn_dn"></a>
+			</div>
+			<div class="popup-contents">				
+				<img src="/images/adidas/new_size/1907_a_sizechart_kids_clothing_pants_MO.jpg" width="100%" alt="임시 이미지">
+			</div>
+		</div>
+	</div>
+	<!-- // product_order 리뉴얼 사이즈차트 임시 -->
 
 </body>
 

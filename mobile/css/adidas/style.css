@@ -23341,14 +23341,44 @@ em.prd_speedy .tooltip-box:before{
 
 
 /* product_order_renew start */
-
-
+#container.product_view.pdp_renew .top_ctgr{
+	padding:15px 15px;
+	border-bottom:1px solid #d7d7d7
+}
+#container.product_view.pdp_renew .top_ctgr span{
+	display: inline-block;
+	padding:0 5px;
+	font: 12px 'Adihaus-regular';
+}
+#container.product_view.pdp_renew .top_ctgr span.adihaus{
+    font: 12px 'Adihaus-regular';
+}
+#container.product_view.pdp_renew .prod_imgs_navi a{
+	background-size: 50%;
+	width: 3px;
+    height: 3px;
+    padding: 8px 8px;
+}
+#container.product_view.pdp_renew .top_ctgr span:nth-child(1){
+	padding-left:0;
+}
 #container.product_view.pdp_renew .product_order>.ctgr{
 	margin: 25px 0 0;
 	padding: 0 15px;
 	color: #888;
 	font:12px 'Adihaus-regular';
 	letter-spacing: normal;
+}
+#container.product_view.pdp_renew .prod_imgs_navi{
+	opacity: 1;
+	top: 50%;
+    margin-top: -20px;
+}
+#container.product_view.pdp_renew .prod_imgs_navi a.next{
+	right:10px;
+}
+#container.product_view.pdp_renew .prod_imgs_navi a.prev{
+	left:10px;
 }
 #container.product_view.pdp_renew .product_order>h3{
 	padding: 0 15px;
@@ -23652,15 +23682,16 @@ em.prd_speedy .tooltip-box:before{
 	border-bottom: 1px solid  #ccc;
 }
 #container.product_view.pdp_renew .product_order>.prod_imgs_cut_num span{
-	width: 8px;
-    height: 8px;
+	width: 20px;
+    height: 2px;
     display: inline-block;
-    margin: 0 2px;
-    background: #dedede;
-    border-radius: 8px;
+    margin: 0 3px;
+    background: #000;
+    border-radius: 0px;
 }
 #container.product_view.pdp_renew .product_order>.prod_imgs_cut_num span.on{
-	background: #0286cd;
+	background: #000;
+	height: 4px
 }
 
 
@@ -23742,6 +23773,88 @@ em.prd_speedy .tooltip-box:before{
 	margin:20px 15px;
 	height: 2px;
 }
+
+/* 출시예정 클래스 buy_box_restock */
+
+#container.product_view.pdp_renew.buy_box_restock .product_order ul.info .size_select ul li{
+	background: #ddd;
+	border:0;
+	color:#999;
+	pointer-events: none;
+}
+#container.product_view.pdp_renew.buy_box_restock .product_order ul.info .size_select ul li.on::after{
+	background: #ddd;
+}
+#container.product_view.pdp_renew.buy_box_restock .product_order ul.info .size_box_tit em{
+	display: none;
+}
+#container.product_view.pdp_renew.buy_box_restock .product_order ul.info .size_box_tit a:nth-child(4){
+	display: none;
+}
+#container.product_view.pdp_renew.buy_box_restock .product_order .select_amount a#incQuantity{
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    background: url(/images/adidas/common/ico_incQ_disabled.png) no-repeat;
+	text-indent: -9999px;
+	pointer-events: none;
+}
+#container.product_view.pdp_renew.buy_box_restock .product_order .select_amount a#incQuantity img{
+	display: inline-block;
+}
+#container.product_view.pdp_renew.buy_box_restock .product_order .btn_wrap .buy_btn a.btn_buy{
+	background: #fff;
+	color:#000;
+	line-height: 53px;
+}
+#container.product_view.pdp_renew.buy_box_restock .product_order .btn_wrap .buy_btn a.add_cart,
+#container.product_view.pdp_renew.buy_box_restock .product_order .btn_wrap .buy_btn a.btn_npay{
+	display: none;
+}
+#container.product_view.pdp_renew .product_order .btn_wrap .buy_restock_alert{
+	display: none;
+}
+#container.product_view.pdp_renew.buy_box_restock .product_order .btn_wrap .buy_restock_alert{
+	display: block;
+	padding-bottom: 1.5rem;
+}
+#container.product_view.pdp_renew.buy_box_restock .product_order .btn_wrap .buy_restock_alert span{
+    position: relative;
+    top: 2px;
+    display: inline-block;
+    width: 13px;
+    height: 14px;
+    background: url(/images/adidas/common/ico_buy_restock.png) no-repeat;
+    background-size: 100% 100%;
+}
+#container.product_view.pdp_renew.buy_box_restock .product_order .btn_wrap .buy_restock_alert a{
+	position: relative;
+	padding-bottom: 5px;
+	display: inline-block;
+	margin-left: 5px;
+	font: 300 14px/14px 'NotoSansKR';
+	color:#000;
+}
+#container.product_view.pdp_renew.buy_box_restock .product_order .btn_wrap .buy_restock_alert a::after{
+	position: absolute;
+	bottom:0px;
+	left:0;
+	display: inline-block;
+	width:100%;
+	height:1px;
+	content: '';
+	background: #000;
+}
+#container.product_view.pdp_renew.buy_box_restock .product_order .btn_wrap{
+
+}
+#container.product_view.pdp_renew.buy_box_restock .product_order .btn_wrap .etc_info{
+	padding:35px 0 10px;
+}
+#container.product_view.pdp_renew.buy_box_restock .product_order .btn_wrap .etc_info dd{
+	color:#767677;
+}
+
 
 #container.product_view.pdp_renew .product_order .button_area.customize{
 	padding: 15px 0;
@@ -23945,7 +24058,7 @@ em.prd_speedy .tooltip-box:before{
 #container.product_view.pdp_renew .product_order #fitanalytics__button{
 	cursor: pointer;
 	display: inline-block;
-	padding: 30px 0 2px 15px;
+	padding: 20px 0 2px 0px;
 }
 #container.product_view.pdp_renew .product_order #fitanalytics__button img{
 	height: 18px;
@@ -23963,7 +24076,7 @@ em.prd_speedy .tooltip-box:before{
 	color: rgb(0, 0, 0);
 }
 #container.product_view.pdp_renew .product_order #fit_note{
-	padding-left: 15px;
+	padding-left: 0px;
 	font: 300 11px 'NotoSansKR';
 	color: #7a7a7a;
 }
@@ -24008,18 +24121,19 @@ em.prd_speedy .tooltip-box:before{
 #container.product_view.pdp_renew .product_order .related-ctr{
     margin: 0 15px;
     border-top:1px solid #e6e6e6;
-    padding: 25px 0 20px 0;
+	padding: 25px 0 10px 0;
+	border-bottom: 2px solid #000;
 }
 
 #container.product_view.pdp_renew .product_order .related-ctr p{
-    font:700 1.3rem 'NotoSansKR';
+    font:600 1.1rem 'NotoSansKR';
     color:#000;
 }
 
 #container.product_view.pdp_renew .product_order .related-ctr .related-words a{
     display: inline-block;
     padding: 10px 25px 10px 0;
-    font:400 1.15rem 'NotoSansKR';
+    font:400 1rem 'NotoSansKR';
     color:#636363;
 }
 
@@ -24227,7 +24341,8 @@ em.prd_speedy .tooltip-box:before{
     top: 0;
     left: 0;
     height: 100%;
-    background: #fdb414;
+	/* background: #fdb414; */
+	background:#2ada71;
     border-radius:3px;
 }
 
