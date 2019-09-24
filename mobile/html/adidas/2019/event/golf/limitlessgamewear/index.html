@@ -571,9 +571,11 @@
 					<div class="txt">
 						<h1>ENGINEERED STRETCH</h1>
 						<p>
-							신축성이 우수한 스트레치 소재를 사용하여<br>
-							더 편안한 스윙을 도움
+							신축성이 우수한 스트레치 소재를 사용하여
 						</p>
+						<span>
+							더 편안한 스윙을 도움
+						</span>
 					</div>
 				</div>
 				<div class="conts08 scroll">
@@ -641,6 +643,31 @@
 							</li>
 						</ul>
 					</div>
+					<!-- <div class="test_wrap">
+						<div class="test">
+							<div class="item" style="margin-left:40px;">
+								<a href="https://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=G26216&spst_id=&srch_nm=&INFLW_TC_CD=">
+									<img src="/images/adidas/2019/event/golf/limitlessgamewear/cont09_slide01_MO.jpg" alt="">																
+								</a>
+							</div>
+							<div class="item" style="">
+								<a href="https://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=ED1629&spst_id=&srch_nm=&INFLW_TC_CD=">
+									<img src="/images/adidas/2019/event/golf/limitlessgamewear/cont09_slide02_MO.jpg" alt="">																
+								</a>
+							</div>
+							<div class="item" >
+								<a href="https://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=CL6731&spst_id=&srch_nm=&INFLW_TC_CD=">
+									<img src="/images/adidas/2019/event/golf/limitlessgamewear/cont09_slide03_MO.jpg" alt="">																
+								</a>
+							</div>
+							<div class="item" >
+								<a href="https://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=ED1639&spst_id=&srch_nm=&INFLW_TC_CD=">
+									<img src="/images/adidas/2019/event/golf/limitlessgamewear/cont09_slide04_MO.jpg" alt="">								
+								</a>
+							</div>
+						</div>
+					</div> -->
+
 				</div>
 				<div class="conts10 scroll">
 					<img src="/images/adidas/2019/event/golf/limitlessgamewear/deco02_MO.png" alt="" class="line07 line">
@@ -750,7 +777,7 @@
 					
 					<div class="button_area_v2">
 						<div class="">
-							<a href="https://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=991&term=1" style="    font-size: 1rem;">
+							<a href="https://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=1009&term=1" style="    font-size: 1rem;">
 								아디 골프 제품 보러가기
 								<span class="arrow"></span>
 							</a>
@@ -880,7 +907,7 @@
 					</div>
 					<div class="button_area_v2">
 						<div class="">
-							<a href="https://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=991&term=1" style="    font-size: 1rem;">
+							<a href="https://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=1010&term=1" style="    font-size: 1rem;">
 								아디 퓨어 제품 보러가기
 								<span class="arrow"></span>
 							</a>
@@ -895,6 +922,20 @@
 						$('html, body').stop().animate({scrollTop : offset.top},1000 );
 					}
                     (function($){
+
+						
+
+						// var itemlength = $('.item').length;
+						// var winwidth = $(window).width();
+						// console.log(winwidth)
+						// console.log(itemlength)
+						// $('.item').css({
+						// 	'width': winwidth*0.6 +'px'
+						// });
+
+						// $('.test').css({
+						// 	'width': (( (winwidth*0.19)+20)*itemlength) + 15 + 13							
+						// })
 
 
 
@@ -1247,6 +1288,19 @@
 								* length 사용하기
 								event.item.count
 							*/
+							var index=event.item.index;
+							var h1 = [
+								'ENGINEERED STRETCH','SIDE POCKET','COMFORT'
+							]
+							var p = [
+								'신축성이 우수한 스트레치 소재를 사용하여','측면에 다용도 포켓을 배치','편안한 움직임을 돕는 액션 패널을'
+							]
+							var span = [
+								'더 편안한 스윙을 도움','','허리 뒤쪽에 배치해 안정적인 스윙을 도움'
+							]
+								$('.conts07 .txt h1').text(h1[index]);
+								$('.conts07 .txt p').text(p[index]);
+								$('.conts07 .txt span').text(span[index]);
 						});						
 						owlSlider_style.owlCarousel({
 							stagePadding: 60,
