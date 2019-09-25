@@ -1,0 +1,354 @@
+@import './mobile/css/adidas/scss/common/mixin.scss';
+@import './mobile/css/adidas/scss/common/common.scss';
+// .animated  {
+// 	-webkit-animation-duration : 1000 ms  ;
+// 	animation-duration : 1000 ms  ;
+// 	-webkit-animation-fill-mode : both  ;
+// 	animation-fill-mode : both  ;
+//   }  
+  
+//   .owl-animated-out {
+// 	z-index : 1 
+// 	 }
+  
+//   .owl-animated-in {
+// 	z-index : 0 
+// 	 }
+  
+//   .fadeIn  {
+// 	-webkit-animation-name : fadeIn  ;
+// 	animation-name : fadeIn  ;
+//   }  
+//   @-webkit-keyframes  fadeIn  {
+// 	0% {
+// 	  opacity : 1   ;
+// 	}  
+// 	100% {
+// 	  opacity : 0   ;
+// 	}  
+//   }
+//   @keyframes  fadeIn  {
+// 	0% {
+// 	  opacity : 1   ;
+// 	}  
+// 	100% {
+// 	  opacity : 0   ;
+// 	}  
+//   }
+#basketball_cp{
+	position: relative;
+
+	.button_area_v2{
+		display: inline-block;
+		// margin-bottom: 2vh;
+		a{
+			font: 500 1rem/37px 'NotoSansKR';
+			padding: 0 5vw;
+			letter-spacing: 0.1px;
+			height: 38px;
+			.arrow{
+				width:20px;
+				&::after{
+					width:8px;
+				}
+				&::before{
+					width:8px;
+				}
+			}
+		}
+	}
+	img{
+		width:100%;
+	}
+
+	.main{
+		position: relative;
+		.imgbg{
+			img{
+				width:100%;
+			}
+		}
+		&.on{
+			.h_box_tle{
+				top: 3%;
+				right: 12%;
+				@include css3(opacity,1);
+			}
+			.h_box_men{
+				transform: rotate(0);
+				@include css3(opacity,1);
+			}
+			.h_box_img{
+				@include css3(opacity,1);	
+			}
+		}
+		.txt_area{
+			position: absolute;
+			top: 71%;
+			left:50%;
+			display: inline-block;
+			width: 100%;
+			text-align: center;
+			transform: translate(-50%,-50%);
+			@include css3(opacity,1);
+			@include css3(transition, all 0.2s);
+			p{
+				text-align: center;
+				color:#fff;
+				font:300 1.5rem 'NotoSansKR';
+				letter-spacing: 0;
+
+			}
+			h2{
+				margin:6px 0 0 0;
+
+				font:1.9rem 'adinenuPro-black';
+				color:#fff;
+				text-align: center;
+				letter-spacing: 1px;
+			}
+			.button_area_v2{
+				margin:16px 0 0 0;
+			}
+		}
+
+	}
+
+	.statement{
+		position: relative;
+		&.on{
+			.h_box_tle{
+				transform: rotate(0);
+				@include css3(opacity,1);
+			}
+		}
+		.txt{
+			position: absolute;
+			top: 23%;
+			left: 20px;
+			width: 100%;
+			p{
+				padding: 0 0 5% 0;
+				font: 300 1rem/1.9rem 'NotoSansKR';
+				letter-spacing: 0.1px;
+				color:#fff;
+				text-transform: uppercase;
+			}
+		}
+	}
+
+	.lookbook{
+		position: relative;
+		background: url('/images/adidas/2019/event/basketball/0923/slider_bg.jpg') no-repeat;
+		background-size:100% 100%;
+		.bg{
+			position: absolute;
+			width: 100%;
+			img{
+				width:100%;
+			}
+		}
+		&.on{
+			// empty
+		}
+		.thumb_li{
+			display: flex;
+			padding: 30px 15px 20px;
+			div{
+				box-sizing: border-box;
+				display: inline-block;
+				width: 25%;
+				padding-bottom: 18%;
+				border: 3px solid transparent;
+				margin: 0 1.2%;
+				
+				&.thumb1{
+					background: url('/images/adidas/2019/event/basketball/0923/thumb01.jpg') no-repeat;
+					background-size: 100% 100%;
+					background-position: center;
+				}
+				&.thumb2{
+					background: url('/images/adidas/2019/event/basketball/0923/thumb02.jpg') no-repeat;
+					background-size: 100% 100%;
+					background-position: center;
+				}
+				&.thumb3{
+					background: url('/images/adidas/2019/event/basketball/0923/thumb03.jpg') no-repeat;
+					background-size: 100% 100%;
+					background-position: center;
+				}
+				&.thumb4{
+					background: url('/images/adidas/2019/event/basketball/0923/thumb04.jpg') no-repeat;
+					background-size: 100% 100%;
+					background-position: center;
+				}
+				&.on{
+					border:3px solid #db000f;
+				}
+			}
+		}
+		.inner{
+			ul{
+				li{
+					.contents{
+						
+						margin:0 15px;
+						.topimg{
+							position: relative;
+						}
+						.btn{
+							position: absolute;
+							top: 87%;
+							left: 50%;
+							transform: translate(-50%, -50%);
+							color: #fff;
+							background: rgba(0,0,0,0.8);
+							letter-spacing: 1px;
+							font: 300 .9rem/27px 'NotoSansKR';
+							text-align: center;
+							width: 54%;
+							span{
+								display: inline-block;
+								font: 1rem/25px 'adinenuPro-black';
+								text-transform: uppercase;
+								letter-spacing: 1.7px;
+
+							}
+						}
+					}
+					&.on{
+						// opacity: 1;
+	
+					}
+				}
+				
+			}
+			.owl-controls{
+				padding: 15px 0 30px;
+				.owl-dots{
+					position: relative;
+					text-align: center;
+					.owl-dot{
+						display: inline-block;
+						margin:0 5px;
+						width: 10px;
+						height:10px;
+						border-radius: 50px;
+						// background: #aea8a3;
+						box-sizing: border-box;
+						border:1px solid #fff;
+						transition: all 0.5s;
+						&.active{
+							background: #fff;
+
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.shoes_wrap{
+		position: relative;
+		background: #002245;
+		.shoes_top{
+			position: relative;
+			.txt_area{
+				position: absolute;
+				top:79%;
+				left:50%;
+				transform: translate(-50%,-50%);
+				width: 100%;
+			}
+			h3{
+				padding: 0 0 5px 0;
+				color:#fff;
+				text-align: center;
+				font: 600 1.8rem 'NotoSansKR';
+    			letter-spacing: 3px;
+			}
+			p{
+				color:#fff;
+				text-align: center;
+				font: 300 .9rem/1.4rem 'NotoSansKR';
+				letter-spacing: 1px;
+			}
+			strong{
+				display: block;
+				padding: 15px 0 0 0;
+				color:#fff;
+				text-align: center;
+				font: 1.9rem 'adinenuPro-black';
+				letter-spacing: 1px;
+			}
+		}
+		.shoes_cuts{
+			padding:0 20px;
+			.row{
+				display: flex;
+				padding:0 0 35px 0;
+				.img{
+					width:55%;
+				}
+				.desc{
+					width:45%;
+				}
+				.desc{
+					p{
+						color:#fff;
+						font: 300 .9rem/1.6rem 'NotoSansKR';
+						letter-spacing: 0;
+						&.title{
+							padding:20px 0 3px 0;
+							font: 500 1.2rem 'NotoSansKR';
+							letter-spacing: 1.9px;;
+
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.bottom_wrap{
+		position: relative;
+		padding: 35px 0;
+		.txt_area{
+			display: inline-block;
+			width: 100%;
+			text-align: center;
+			// transform: translate(-50%,-50%);
+			@include css3(opacity,1);
+			@include css3(transition, all 0.2s);
+			p{
+				text-align: center;
+				color:#000;
+				font:400 1.5rem 'NotoSansKR';
+				letter-spacing: 0;
+
+			}
+			h2{
+				margin:6px 0 0 0;
+
+				font:1.9rem 'adinenuPro-black';
+				color:#000;
+				text-align: center;
+				letter-spacing: 1px;
+			}
+			.button_area_v2{
+				margin:16px 0 0 0;
+			}
+		}
+	}
+
+.owl-item{
+	opacity: 0;
+	transition: all 0.6s;
+	&.active{
+		opacity: 1;
+
+	}
+}
+
+}
+
