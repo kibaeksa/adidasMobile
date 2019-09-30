@@ -204,28 +204,31 @@
 				<script type="text/javascript">
 					$(document).ready(function () {
 						
-						setTimeout(function () {
-							$('.top_cont').addClass('on');
-						}, 200);
-
-
-						var scrollArray = [];
-						var scrollContents = document.querySelectorAll('.scroll');
-						for (var i = 0; i < scrollContents.length; i++) {
-							var mypos = scrollContents[i].offsetTop;
-							scrollArray.push(mypos)
-						}
-
-						$(window).scroll(function () {
-							var thisPos = $(this).scrollTop()+$(window).height() - 100;
-							for (var pos = 0; pos < scrollArray.length; pos++) {
-								if (thisPos > scrollArray[pos]) {
-									$('.scroll').eq(pos).addClass('on');
-								}
-							}
-						});
 
 					});
+					window.onload = function(){
+
+						setTimeout(function () {
+								$('.top_cont').addClass('on');
+							}, 200);
+
+
+							var scrollArray = [];
+							var scrollContents = document.querySelectorAll('.scroll');
+							for (var i = 0; i < scrollContents.length; i++) {
+								var mypos = scrollContents[i].offsetTop;
+								scrollArray.push(mypos)
+							}
+
+							$(window).scroll(function () {
+								var thisPos = $(this).scrollTop()+$(window).height() - 100;
+								for (var pos = 0; pos < scrollArray.length; pos++) {
+									if (thisPos > scrollArray[pos]) {
+										$('.scroll').eq(pos).addClass('on');
+									}
+								}
+							});
+					};
 
 				</script>
 
