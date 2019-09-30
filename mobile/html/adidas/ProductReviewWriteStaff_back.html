@@ -1,22 +1,21 @@
  <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
-		<meta name="format-detection" content="telephone=no">
-		<meta http-equiv="x-rim-auto-match" content="none">
-	
-		<link href="/css/adidas/style.css" type="text/css" rel="stylesheet" />
-		<link href="/css/adidas/fonts.css" type="text/css" rel="stylesheet" />
-	
-		<script type="text/javascript" src="/designjs/common/jquery-1.12.0.min.js"></script>    
-		<script type="text/javascript" src="/designjs/common/swipe.js"></script>    
-		<script type="text/javascript" src="/designjs/common/owl.carousel.min.js"></script>    
-		<script type="text/javascript" src="/designjs/common/modalPopup.min.js"></script>    
-		<script type="text/javascript" src="/designjs/common/zoomImage.js"></script>    
-	
-		<title>아디다스 모바일</title>
-	</head>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+	<meta name="format-detection" content="telephone=no">
+	<meta http-equiv="x-rim-auto-match" content="none">
+
+	<link href="/css/adidas/style.css" type="text/css" rel="stylesheet" />
+	<link href="/css/adidas/fonts.css" type="text/css" rel="stylesheet" />
+
+	<script type="text/javascript" src="/js/jquery-1.12.0.min.js"></script>
+	<script type="text/javascript" src="/js/swipe.js"></script>
+	<script type="text/javascript" src="/js/owl.carousel.js"></script>
+
+
+	<title>아디다스 모바일</title>
+</head>
 <body>
 	<div id="wrap">
 		<div id="header" style="position: relative;">
@@ -433,8 +432,8 @@
 		</div>
 
 		<div id="container">
-			<!-- review renew :: review_write_renew 클래스 추가 -->
-			<div class="review_write review_write_renew ">
+
+			<div class="review_write review_write_update">
 				<h2>스탭리뷰 쓰기</h2>
 				<h3>수퍼스타 파운데이션</h3>
 
@@ -443,78 +442,52 @@
                         <p class="tit">매장 선택*</p>
                         <div>
                             <div class="sel_boxtype sel_design">
-								<!-- review renew :: 인라인 css 삭제-->
-                                <a href="#" class="toggle_arw"><span >오리지널스</span></a>
+                                <a href="#" class="toggle_arw"><span style="color:#b5b5b5;">브랜드 선택</span></a>
                                 <select name="select_size" id="select_size">
-                                    <option value="">오리지널스</option>
-                                    <option value="">오리지널스</option>
-                                    <option value="">오리지널스</option>
-                                    <option value="">오리지널스</option>
+                                    <option value="">240</option>
+                                    <option value="">250</option>
+                                    <option value="">260</option>
+                                    <option value="">270</option>
                                 </select>
                             </div>
                         </div>
                         <div>
                             <div class="sel_boxtype sel_design">
-								<!-- review renew :: 인라인 css 삭제-->
-                                <a href="#" class="toggle_arw"><span>압구정</span></a>
+                                <a href="#" class="toggle_arw"><span style="color:#b5b5b5;">매장 선택</span></a>
                                 <select name="select_size" id="select_size">
-                                    <option value="">압구정</option>
-                                    <option value="">압구정</option>
-                                    <option value="">압구정</option>
-                                    <option value="">압구정</option>
+                                    <option value="">240</option>
+                                    <option value="">250</option>
+                                    <option value="">260</option>
+                                    <option value="">270</option>
                                 </select>
                             </div>
                         </div>
 					</div>
-
-					<div class="chk_box1 blue" style="padding:0; margin:0 15px;">
-						<!-- review renew :: checked-->
-                        <input type="checkbox" name="memoryID" id="save_store" checked>
+                    <div class="chk_box1 blue" style="padding:0; margin:0 15px;">
+                        <input type="checkbox" name="memoryID" id="save_store">
                         <label for="save_store">매장 저장</label>
                     </div>
 
-					<!-- review renew:: 스탭 신체 사이즈 묶음 -->
-					<div class="box col2" style="">
-							<p class="tit">스탭 신체 사이즈*</p>
-						<div class="row">
-							
-							<div>
-								<input type="tel" placeholder="177">
-								<span class="unit">cm</span>
-							</div>
-							<div>
-								<input type="tel" placeholder="79">
-								<span class="unit">kg</span>
-							</div>
+					<div class="box col2" style="margin-top:25px;">
+						<p class="tit">스탭 신체 사이즈*</p>
+						<div>
+							<input type="tel" placeholder="키">
+							<span class="unit">cm</span>
 						</div>
-						<div class="row">
-							<div>
-								<input type="tel" placeholder="35">
-								<span class="unit">세</span>
-							</div>
-							<div>
-								<div class="sel_boxtype sel_design">
-									<!-- review renew :: 인라인 css 삭제-->
-									<a href="#" class="toggle_arw"><span >착장 사이즈</span></a>
-									<select name="select_size" id="select_size">
-										<option value="">240</option>
-										<option value="">250</option>
-										<option value="">260</option>
-										<option value="">270</option>
-									</select>
-								</div>
-							</div>
+						<div>
+							<input type="tel" placeholder="체중">
+							<span class="unit">kg</span>
 						</div>
 					</div>
-					
-					<!-- <div class="box col2">
+					<!-- 나이 착장사이즈 -->
+					<div class="box col2">
 						<div>
-							<input type="tel" placeholder="35">
+							<input type="tel" placeholder="나이">
 							<span class="unit">세</span>
 						</div>
 						<div>
 							<div class="sel_boxtype sel_design">
-								<a href="#" class="toggle_arw"><span >착장 사이즈</span></a>
+								<a href="#" class="toggle_arw"><span style="color:#b5b5b5;">착장 사이즈</span></a>
 								<select name="select_size" id="select_size">
 									<option value="">240</option>
 									<option value="">250</option>
@@ -523,44 +496,27 @@
 								</select>
 							</div>
 						</div>
-					</div> -->
-
+					</div>
 					<!-- 스탭성별 -->
-					<div class="box" style="">
+
+					<div class="box" style="margin-top:25px;">
 						<p class="tit">스탭 성별*</p>
-						<div class="check_point">
-							<div class="rdo_box1">
-								<input type="radio" id="staff_gender1" name="staff_gender" value="" checked>
-								<label for="staff_gender1" class="adipro-r">남성</label>
-							</div>
-							<div class="rdo_box1">
-								<input type="radio" id="staff_gender2" name="staff_gender" value="">
-								<label for="staff_gender2" class="adipro-r">여성</label>
-							</div>
-						</div>
-					</div>
+						<!-- <div class="eval"> -->
+							<div class="check_point">
+								<div class="rdo_box1">
+									<input type="radio" id="staff_gender1" name="staff_gender" value="">
+									<label for="staff_gender1" class="adipro-r">남성</label>
+								</div>
+								<div class="rdo_box1">
+									<input type="radio" id="staff_gender2" name="staff_gender" value="">
+									<label for="staff_gender2" class="adipro-r">여성</label>
+								</div>
 
-					<!-- review renew :: 카테고리 추가 -->
-					<div class="box staff_ctgr_box" style="">
-						<p class="tit">카테고리*</p>
-						<div class="check_point">
-							<div class="rdo_box1">
-								<input type="radio" id="staff_ctgr1" name="staff_ctgr" value="" checked>
-								<label for="staff_ctgr1" class="adipro-r">의류</label>
 							</div>
-							<div class="rdo_box1">
-								<input type="radio" id="staff_ctgr2" name="staff_ctgr" value="">
-								<label for="staff_ctgr2" class="adipro-r">신발</label>
-							</div>
-							<div class="rdo_box1">
-								<input type="radio" id="staff_ctgr3" name="staff_ctgr" value="">
-								<label for="staff_ctgr3" class="adipro-r">용품</label>
-							</div>
-						</div>
+						<!-- </div> -->
 					</div>
-
 					<!-- 사이즈팁 -->
-					<div class="box" style="">
+					<div class="box" style="margin-top:25px;">
 						<p class="tit">사이즈 팁*</p>
 						<div class="eval">
 							<div class="check_point">
@@ -606,24 +562,9 @@
 						</div>
 					</div>
 
-					<!-- review renew :: box 클래스 추가-->
-					<div class="box review_form" style="border-top-width: 0;">
-						<p class="tit">사이즈 설명*</p>
-						<table class="form_table">
-							<tr class="no_line">
-								<td>
-									<textarea name="" id="textbox" class="focused" cols="30" rows="10" placeholder="예 : 사이즈에 관한 설명을 적어주세요."></textarea>
-									<div class="contents_desc">
-										<p class="field_helper active">100자 이내로 작성해주세요</p>
-										<p class="field_counter" style=" ">187자 입력가능</p>
-									</div>
-								</td>
-							</tr>
-						</table>
-					</div>
 				</div>
 
-				<!-- <div class="review_form" style="border-top-width: 0;">
+				<div class="review_form" style="border-top-width: 0;">
 					<h3 class="tit">사이즈 설명*</h3>
 					<table class="form_table">
 						<tr class="no_line">
@@ -636,118 +577,9 @@
 							</td>
 						</tr>
 					</table>
-				</div> -->
-
-				<!-- review renew :: 의류 추가 옵션 -->
-				<div class="step_spec step_spec_clothes">
-					<!-- 의류추가옵션 -->
-					<div class="box opt" style="margin-top:25px;">
-						<p class="tit">의류 추가 옵션*</p>
-						<div class="eval">
-							<strong>두께감</strong>
-							<div class="check_point">
-								<div class="cbox">
-									<p class="chk">
-										<input type="radio" name="opt" id="opt1">
-										<label for="opt1" title="두꺼움"></label>
-									</p>
-									<p class="label">두꺼움</p>
-								</div>
-								<div class="cbox">
-									<p class="chk">
-										<input type="radio" name="opt" id="opt2">
-										<label for="opt2" title="보통"></label>
-									</p>
-									<p class="label">보통</p>
-								</div>
-								<div class="cbox">
-									<p class="chk">
-										<input type="radio" name="opt" id="opt3" checked="checked">
-										<label for="opt3" title="얇음"></label>
-									</p>
-									<p class="label">얇음</p>
-								</div>
-							</div>
-							<!-- //check_point -->
-						</div>
-						<div class="eval">
-							<strong>비침</strong>
-							<div class="check_point">
-								<div class="cbox">
-									<p class="chk">
-										<input type="radio" name="opt2" id="opt2_1">
-										<label for="opt2_1" title="있음"></label>
-									</p>
-									<p class="label">있음</p>
-								</div>
-								<div class="cbox">
-									<p class="chk">
-										<input type="radio" name="opt2" id="opt2_2">
-										<label for="opt2_2" title="약간있음"></label>
-									</p>
-									<p class="label">약간있음</p>
-								</div>
-								<div class="cbox">
-									<p class="chk">
-										<input type="radio" name="opt2" id="opt2_3" checked="checked">
-										<label for="opt2_3" title="없음"></label>
-									</p>
-									<p class="label">없음</p>
-								</div>
-							</div>
-							<!-- //check_point -->
-						</div>
-						<div class="eval">
-							<strong>신축성</strong>
-							<div class="check_point">
-								<div class="cbox">
-									<p class="chk">
-										<input type="radio" name="opt3" id="opt3_1">
-										<label for="opt3_1" title="좋음"></label>
-									</p>
-									<p class="label">좋음</p>
-								</div>
-								<div class="cbox">
-									<p class="chk">
-										<input type="radio" name="opt3" id="opt3_1">
-										<label for="opt3_1" title="약간있음"></label>
-									</p>
-									<p class="label">약간있음</p>
-								</div>
-								<div class="cbox">
-									<p class="chk">
-										<input type="radio" name="opt3" id="opt3_1" checked="checked">
-										<label for="opt3_1" title="없음"></label>
-									</p>
-									<p class="label">없음</p>
-								</div>
-							</div>
-							<!-- //check_point -->
-						</div>
-						<div class="eval">
-							<strong>기모</strong>
-							<div class="check_point">
-								<div class="cbox">
-									<p class="chk">
-										<input type="radio" name="opt4" id="opt4_1" >
-										<label for="opt4_1" title="있음"></label>
-									</p>
-									<p class="label">있음</p>
-								</div>
-								<div class="cbox">
-									<p class="chk">
-										<input type="radio" name="opt4" id="opt4_2" checked>
-										<label for="opt4_2" title="없음"></label>
-									</p>
-									<p class="label">없음</p>
-								</div>
-							</div>
-							<!-- //check_point -->
-						</div>
-					</div>
 				</div>
 
-				<!-- <dl class="noti_staffreview">
+				<dl class="noti_staffreview">
 					<dt>스토어 리뷰 작성 시 유의사항</dt>
 					<dd>
 						<ul class="li_dot">
@@ -756,7 +588,7 @@
 							<li>이메일, 전화번호 등의 개인정보는 어떠한 경우에도 남기지 마세요.</li>
 						</ul>
 					</dd>
-				</dl> -->
+				</dl>
 				<!-- 리뷰추가 -->
 				<div id="commentbox_wrapper" class="review_form">
                     <div class="box">
@@ -776,11 +608,8 @@
     										<img src="http://image.adidas.co.kr/upload/prod/basic/170/BB8824-1_170X170.jpg" alt=""/>
     									</div>
     								</div>
-								</td>
-								<!-- review renew :: 리뷰 삭제 추가-->
-								<td class="remove">
-									<a href="">리뷰 삭제<span></span></a>
-								</td>
+    							</td>
+    							<td style="text-align:right;"></td>
     						</tr>
 
     						<tr class="no_line">
@@ -794,58 +623,23 @@
     						</tr>
     					</table>
                     </div>
-					<div class="box">
-						<table class="form_table">
-							<colgroup>
-								<col width="18%" />
-								<col width="*" />
-								<col width="28%" />
-							</colgroup>
-							<tr class="no_line">
-								<td>리뷰 1*</td>
-								<td>
-									<div class="photo_uplpad_container clearfix">
-										<!-- <a href="javascript:void(0)" class="upload_btn"></a> -->
-										<div class="photo_box">
-											<a href="javascript:void(0)" class="close_x_btn white"></a>
-											<img src="http://image.adidas.co.kr/upload/prod/basic/170/BB8824-1_170X170.jpg" alt=""/>
-										</div>
-									</div>
-								</td>
-								<td class="remove">
-									<a href="">리뷰 삭제<span></span></a>
-								</td>
-							</tr>
 
-							<tr class="no_line">
-								<td colspan="3">
-									<textarea name="PRODREW_CONTENT1" id="textbox1" cols="30" rows="10" placeholder="예 : 제품에 관한 설명을 적어주세요." data-text-length="100"></textarea>
-									<div class="contents_desc">
-										<p class="field_helper active">100자 이내로 작성해주세요</p>
-										<p class="field_counter"></p>
-									</div>
-								</td>
-							</tr>
-						</table>
-					</div>
 				</div>
-				<!-- <div class="button_area" style="padding: 15px 0;">
+				<div class="button_area" style="padding: 15px 0;">
 					<div class="l_gray">
                         <a href="javascript:void(0)" id="add_commentbox"><span class="plus icons aft" data-icon="">사진 및 설명 추가</span></a>
                     </div>
-				</div> -->
-
-				<!-- //review_form -->
-
-				<!-- review renew :: 인라인 css 삭제 -->
-				<div class="button_area no_pdg" style="">
-					<div class="blue" style=""><a href="#">스탭 리뷰 등록</a></div>
-					<div class="l_gray" style=""><a href="#">취소</a></div>
 				</div>
 
+
+
+				<!-- //review_form -->
 			</div>
 
-
+			<div class="button_area button_area_update no_pdg" style="padding-top:15px;border-top:1px solid #d7d7d7;">
+				<div class="blue" style="margin-bottom:5px;padding:0 15px;"><a href="#">스탭 리뷰 등록</a></div>
+				<div class="l_gray" style="padding:0 15px;"><a href="#">취소</a></div>
+			</div>
 
 			<div class="go_top">
 				<a href="#">BACK TO TOP</a>
@@ -882,22 +676,9 @@
 		</div>
 	</div>
 
-	<script type="text/javascript" src="/designjs/adidas/common.js"></script>
+	<script type="text/javascript" src="/js/adidas/common.js"></script>
 	<script type="text/javascript">
 		(function($){
-
-			// review renew :: staff_ctgr1 의류 선택 시만 하단 옵션 보이기
-			var staffCtgrBox = $('.staff_ctgr_box').find('.rdo_box1');
-			var staffCtgrBoxinput = staffCtgrBox.find('input');
-			
-			staffCtgrBoxinput.click(function(){
-				
-				if($(this).attr('id')=='staff_ctgr1'){
-					$('.step_spec_clothes').show();
-				}else{
-					$('.step_spec_clothes').hide();
-				}
-			});
 
             $('#add_commentbox').bind('click',function(){
 
@@ -983,15 +764,13 @@
                         elemFieldHelper.addClass('active');
                     });
 
-					// review renew
                     obj.bind('keyup',function(e){
                         var thisVal = $(this).val().replace(/\n{3,}/g,'\n\n');
                         if(thisVal.length == 0){
                             elemFieldCounter.css({color : '#333'}).text(defaultCounterText);
                         }else{
                             if(totalCharacters - thisVal.length <= 0){
-                                elemFieldCounter.css({color : '#72a963'}).text('최대 글자 수를 넘겼습니다.');
-								elemFieldCounter.prepend('<span></span>')
+                                elemFieldCounter.css({color : '#72a963'}).text('최대 글자수 초과');
                             }else{
                                 elemFieldCounter.css({color : '#333'}).text((totalCharacters - thisVal.length)+'자 입력가능');
                             }
