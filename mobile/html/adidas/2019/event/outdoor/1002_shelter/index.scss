@@ -1,0 +1,372 @@
+@import './mobile/css/adidas/scss/common/mixin.scss';
+@import './mobile/css/adidas/scss/common/common.scss';
+
+
+#outdoor_cp{
+	position: relative;
+	// background: #000;
+	.button_area_v2{
+		display: inline-block;
+		// width: 120px;
+		a{
+			padding: 0 1.5rem;
+			font: 600 1rem/38px 'NotoSansKR';
+			height: 38px;
+			letter-spacing: 1px;
+			span.arrow{
+				width: 18px;
+			    margin-left: 12px;
+				&:after{
+				    height: 2px;
+					top: -2px;
+				    width: 7px;
+				}
+				&:before{
+				    height: 2px;
+					bottom: -2px;
+					width: 7px;
+				}
+			}
+		}
+	}
+
+	.main{
+		position: relative;
+		.bg_wrap{
+			position: relative;
+			padding-bottom: 145%;
+			img{
+				position: absolute;
+				top:0;left:0;
+				width: 100%;
+				@include css3(opacity,0);
+				@include css3(transition, all 0.5s);
+
+				&.on{
+					@include css3(opacity,1);
+				}
+			}
+		}
+		.inn_wrap{
+			position: absolute;
+			top: 76%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 100%;
+			text-align: center;
+			.logo{
+				padding: 0 8rem;
+				img{
+					width:100%;
+				}
+			}
+			p{
+				&.title{
+					padding: 6px 0 3.5%;
+					font: 600 1.5rem 'NotoSansKR';
+				}
+				font:300 1.1rem/1.9rem 'NotoSansKR';
+				color: #000;
+				letter-spacing: 0.5px;
+			}
+			.button_area_v2{
+				margin: 5% 0 0 0;
+				a{
+					font-weight: 500;
+				}
+			}
+		}
+	}
+
+	.statement{
+		position: relative;
+		.bg{
+			img{
+				width: 100%;
+			}
+		}
+		.inbox{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 100%;
+			text-align: center;
+			p{
+				text-align: center;
+				color:#c6c6c6;
+				font: 300 1.1rem/2rem 'NotoSansKR';
+				letter-spacing: 0.1px;
+				&.title{
+					color:#fff;
+					margin: 0 0 5% 0;
+					font: 600 1.8rem/2.5rem 'NotoSansKR';
+					letter-spacing: 3.5px;
+				}
+			}
+			.button_area_v2{
+				margin: 5% 0 0 0;
+
+				display: inline-block;
+			}
+		}
+	}
+
+	.navi_wrap{
+		position: relative;
+		display: flex;
+		.navi{
+			flex: 1;
+			height: 6.5rem;
+			box-sizing: border-box;
+			// border:5px solid #c69714;
+			&.on{
+				p{
+					color:#fabf1c;
+				}
+			}
+			&.left{
+				background: url('/images/adidas/2019/event/outdoor/1002_shelter/navi_left.jpg') no-repeat;
+				background-position: center center;
+				background-size: 100% 100%;
+				&.on{
+					background: url('/images/adidas/2019/event/outdoor/1002_shelter/navi_left_on.jpg') no-repeat;
+					background-position: center center;
+					background-size: 100% 100%;
+				}
+			}
+			&.right{
+				background: url('/images/adidas/2019/event/outdoor/1002_shelter/navi_right.jpg') no-repeat;
+				background-position: center center;
+				background-size: 100% 100%;
+				&.on{
+					background: url('/images/adidas/2019/event/outdoor/1002_shelter/navi_right_on.jpg') no-repeat;
+					background-position: center center;
+					background-size: 100% 100%;
+
+				}
+			}
+			p{
+				text-align: center;
+				font: 400 13px/6.5rem 'NotoSansKR';
+				color:#fff;
+				letter-spacing: 1px;
+			}
+		}
+		&.fixed{
+			position: fixed;
+			top:0;
+			left:0;
+			width:100%;
+			z-index: 10;
+		}
+	}
+
+	.items_wrapper{
+		position: relative;
+		padding-bottom: 961%;
+		.item{
+			position: absolute;
+			top:0;
+			left:0;
+			width:100%;
+			opacity: 0;
+			&.on{
+				opacity: 1;
+
+				z-index: 5;
+			}
+			&.item2{
+				.slideitem_wrap{
+					.owl-controls{
+						padding: 10px 0 0 0;
+						.owl-dots{
+							text-align: left;
+							.owl-dot{
+								width: 8px;
+								height: 8px;
+								border:1px solid #fff;
+							}
+						}
+					}
+					.imgbg{
+						img{
+							width: 100%;
+						}
+					}
+					.s_slider_wrap{
+						position: absolute;
+						bottom: 5%;
+						left: 15px;
+						width: 70%;
+						box-sizing: border-box;
+						overflow: hidden;
+						ul{
+							// position: absolute;
+							// top: 0;
+						}
+					}
+				}
+			}
+			.item_top{
+				position: relative;
+				.imgbg{
+					img{
+						width: 100%;
+					}
+				}
+				.txt{
+					position: absolute;
+					top:73%;
+					left:50%;
+					transform: translate(-50%,-50%);
+					width:100%;
+					text-align: center;
+					strong{
+						display: block;
+						padding: 0 0 10px 0;
+
+						font:600 18px 'NotoSansKR';
+						color: #fff;
+						letter-spacing: 3px;
+					}
+					p{
+						padding: 0 0 15px 0;
+						color: #fff;
+						font:300 .9rem 'NotoSansKR';
+						letter-spacing: 0px;
+						span{
+
+						}
+					}
+				}
+			}
+			.slideitem_wrap{
+				position: relative;
+				background: #000;
+				ul{
+					li{
+						img{
+							width:100%;
+						}
+					}
+				}
+				.owl-controls{
+					padding:20px 0 0 0;
+					.owl-dots{
+						text-align: center;
+						.owl-dot{
+							margin:0 5px;
+							display: inline-block;
+							width: 10px;
+							height: 10px;
+							border-radius: 50px;
+							border:2px solid #fff;
+							&.active{
+								background: #fff;
+							}
+						}
+					}
+				}
+				&.CL{
+					background: url('/images/adidas/2019/event/outdoor/1002_shelter/item1_slidebottom_bg.jpg') no-repeat;
+					background-size: 100% 100%;
+				}
+				.txt_area{
+					padding: 20px 0 40px;
+					text-align: center;
+					p{
+						color:#fff;
+						font: 500 16px 'NotoSansKR';
+						letter-spacing: 2px;
+						span{
+							font: 18px 'adinenuPro-bold';
+						letter-spacing: 3px;
+
+						}
+					}
+					.button_area_v2{
+						padding: 15px 0 0 ;
+					}
+				}
+				.txt_slide_inn{
+					position: absolute;
+					right: 15px;
+					bottom: 5%;
+					box-sizing: border-box;
+					width: 13rem;
+					height: 11rem;
+					padding: 11px 0 10px 11px;
+					text-align: left;
+					>*{
+						color:#fff;
+						text-align: left;
+					}
+					span{
+						display: inline-block;
+						font: 12px 'adinenuPro-light';
+						letter-spacing: 1px;
+						text-align: left;
+					}
+					p{
+						font: 300 13px 'NotoSansKR';	
+						letter-spacing: 0;
+					}
+					.price{
+						font: 300 13px 'NotoSansKR';	
+
+						span{
+							font: 14px 'adinenuPro-regular';
+
+						}
+					}
+				}
+				&.right{
+					.owl-dots{
+						text-align: right !important;
+					}
+				}
+			}
+			.s_slder_wrap{
+
+			}
+			.video_wrap{
+				img{
+					width:100%;
+				}
+			}
+		}
+	}
+
+
+	.video_wrap{
+		position: relative;
+		background: #000;
+		&.right{
+			.txt{
+				p{
+					text-align: right;
+				}
+			}
+		}
+		video{
+			width:100%;
+		}
+		.txt{
+			position: absolute;
+			top:75%;
+			left:50%;
+			transform: translate(-50%,-50%);
+			width:90%;
+			p{
+				font: 300 1rem/1.8rem 'NotoSansKR';
+				color:#fff;
+				letter-spacing: 0.2px;
+				&.bold{
+					padding: 0 0 2% 0;
+					font: 600 1.8rem/2.5rem 'NotoSansKR';
+				}
+			}
+		}
+	}
+}
