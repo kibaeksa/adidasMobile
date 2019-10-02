@@ -843,30 +843,30 @@
 
 
 				
-						var slideitem1_1 = $('#slideitem1_1');
-						slideitem1_1.owlCarousel({
-							stagePadding: 0,
-							margin:0,
-							items : 1,
-							merge: true,
-							loop : true,
-							autoplay:true,
-							navigation: true,
-							nav: false
-						});
-						var slideitem1_2 = $('#slideitem1_2');
-						slideitem1_2.owlCarousel({
-							stagePadding: 0,
-							margin:0,
-							items : 1,
-							merge: true,
-							loop : true,
-							autoplay:true,
-							navigation: true,
-							nav: false
-						});
+							var slideitem1_1 = $('#slideitem1_1');
+							slideitem1_1.owlCarousel({
+								stagePadding: 0,
+								margin:0,
+								items : 1,
+								merge: true,
+								loop : true,
+								autoplay:true,
+								navigation: true,
+								nav: false
+							});
+							var slideitem1_2 = $('#slideitem1_2');
+							slideitem1_2.owlCarousel({
+								stagePadding: 0,
+								margin:0,
+								items : 1,
+								merge: true,
+								loop : true,
+								autoplay:true,
+								navigation: true,
+								nav: false
+							});
 
-						setTimeout(function(){
+							setTimeout(function(){
 								var slideitem2_1 = $('#slideitem2_1');
 									slideitem2_1.owlCarousel({
 										stagePadding: 0,
@@ -925,7 +925,7 @@
 
 						},500)
 
-						$('.navi_wrap .navi').click(function(){
+							$('.navi_wrap .navi').click(function(){
 								var itemchildDivArray = [];
 								var index = $(this).index();
 								var thisitem = $('.items_wrapper .item').eq(index);
@@ -950,51 +950,11 @@
 									});
 							});
 
-
-                        $(window).load(function () {		
-
-							$('.navi_wrap .navi').click(function(){
-								var itemchildDivArray = [];
-								var index = $(this).index();
-								var thisitem = $('.items_wrapper .item').eq(index);
-								var itemchildDiv = thisitem.children('.h');
-
-								$('.navi_wrap .navi').removeClass('on').eq(index).addClass('on');
-								$('.items_wrapper .item').removeClass('on').eq(index).addClass('on');
-								// 해당하는 각 div 높이 값 구해서 더하기
-								
-									$(itemchildDiv).each(function(index, item){ 
-										var geth = Math.round(itemchildDiv.eq(index).height())
-										itemchildDivArray.push(geth);
-										// console.log(itemchildDivArray)
-									});
-									var totalh = 0;
-									for( var i = 0; i<itemchildDivArray.length; i++){
-										totalh += itemchildDivArray[i];
-										// console.log(totalh)
-									}
-									$('.items_wrapper').css({
-										'padding-bottom': totalh + 'px'
-									});
-							});
-
-							$('.navi_wrap .left').trigger('click');
-
-                            var scrollArray = [];
-                            var scrollContents = document.querySelectorAll('.scrollevent');
-
-                            for (var i = 0; i < scrollContents.length; i++) {
-                                var mypos = scrollContents[i].offsetTop;
-                                scrollArray.push(mypos);
-                                console.log(scrollArray)
-                            };
-
-
 							var navipos = $('.navi_wrap').offset().top;
-                            $(window).scroll(function () {
-                                var thisPos = $(this).scrollTop()  ;
+							$(window).scroll(function () {
+								var thisPos = $(this).scrollTop()  ;
 								
-                                console.log(navipos)
+								console.log(navipos)
 								if(thisPos>navipos){
 									$('.navi_wrap').addClass('fixed');
 									if(!$('#header').hasClass('hide')){
@@ -1016,18 +976,87 @@
 								}
 								
 
-                                for (var pos = 0; pos < scrollArray.length; pos++) {
-                                    if (thisPos > scrollArray[pos]) {
+								// for (var pos = 0; pos < scrollArray.length; pos++) {
+								// 	if (thisPos > scrollArray[pos]) {
 
-                                        $('#outdoor_cp .scrollevent').eq(pos).addClass('on');
-                                    }
-                                }
-                            });
-                        });
+								// 		$('#outdoor_cp .scrollevent').eq(pos).addClass('on');
+								// 	}
+								// }
+						});
+							
+							$(window).load(function () {		
+
+								$('.navi_wrap .navi').click(function(){
+									var itemchildDivArray = [];
+									var index = $(this).index();
+									var thisitem = $('.items_wrapper .item').eq(index);
+									var itemchildDiv = thisitem.children('.h');
+
+									$('.navi_wrap .navi').removeClass('on').eq(index).addClass('on');
+									$('.items_wrapper .item').removeClass('on').eq(index).addClass('on');
+									// 해당하는 각 div 높이 값 구해서 더하기
+									
+										$(itemchildDiv).each(function(index, item){ 
+											var geth = Math.round(itemchildDiv.eq(index).height())
+											itemchildDivArray.push(geth);
+											// console.log(itemchildDivArray)
+										});
+										var totalh = 0;
+										for( var i = 0; i<itemchildDivArray.length; i++){
+											totalh += itemchildDivArray[i];
+											// console.log(totalh)
+										}
+										$('.items_wrapper').css({
+											'padding-bottom': totalh + 'px'
+										});
+								});
+
+								$('.navi_wrap .left').trigger('click');
+
+								var scrollArray = [];
+								var scrollContents = document.querySelectorAll('.scrollevent');
+
+								for (var i = 0; i < scrollContents.length; i++) {
+									var mypos = scrollContents[i].offsetTop;
+									scrollArray.push(mypos);
+									console.log(scrollArray)
+								};
 
 
+								var navipos = $('.navi_wrap').offset().top;
+								$(window).scroll(function () {
+									var thisPos = $(this).scrollTop()  ;
+									
+									console.log(navipos)
+									if(thisPos>navipos){
+										$('.navi_wrap').addClass('fixed');
+										if(!$('#header').hasClass('hide')){
+											$('.navi_wrap.fixed').css({
+												
+												top:'61px'
+											})
+										}else{
+											$('.navi_wrap.fixed').css({
+												top:'0px'
+											})
+										}
+										
+									}else{
+										$('.navi_wrap').removeClass('fixed');
+										$('.navi_wrap').css({
+												top:'0px'
+											})
+									}
+									
 
+									for (var pos = 0; pos < scrollArray.length; pos++) {
+										if (thisPos > scrollArray[pos]) {
 
+											$('#outdoor_cp .scrollevent').eq(pos).addClass('on');
+										}
+									}
+								});
+							});
 
 
                     })(jQuery)
