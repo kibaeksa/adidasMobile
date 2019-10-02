@@ -457,7 +457,7 @@
 						</p>
 						<div class="button_area_v2">
 							<div class="">
-								<a href="https://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=955&term=1" style="    font-size: 1rem;">
+								<a href="https://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=955&term=1" campaign-label="구매하기" style="    font-size: 1rem;">
 									구매하기
 									<span class="arrow"></span>
 								</a>
@@ -528,7 +528,7 @@
 								</p>
 								<div class="button_area_v2">
 									<div class="white">
-										<a href="https://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=DZ1417" style="    font-size: 1rem;">
+										<a href="https://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=DZ1417" campaign-label="구매하기" style="    font-size: 1rem;">
 											구매하기
 											<span class="arrow"></span>
 										</a>
@@ -568,7 +568,7 @@
 								</p>
 								<div class="button_area_v2">
 									<div class="white">
-										<a href="https://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=DZ1475" style="    font-size: 1rem;">
+										<a href="https://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=DZ1475" campaign-label="구매하기" style="    font-size: 1rem;">
 											구매하기
 											<span class="arrow"></span>
 										</a>
@@ -670,7 +670,7 @@
 								</div>
 								<div class="button_area_v2">
 									<div class="white">
-										<a href="https://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=DZ1473" style="    font-size: 1rem;">
+										<a href="https://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=DZ1473" campaign-label="구매하기" style="    font-size: 1rem;">
 											구매하기
 											<span class="arrow"></span>
 										</a>
@@ -707,7 +707,7 @@
 								</div>
 								<div class="button_area_v2">
 									<div class="white">
-										<a href="https://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=DZ1501" style="    font-size: 1rem;">
+										<a href="https://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=DZ1501" campaign-label="구매하기" style="    font-size: 1rem;">
 											구매하기
 											<span class="arrow"></span>
 										</a>
@@ -743,7 +743,7 @@
 								</div>
 								<div class="button_area_v2">
 									<div class="white">
-										<a href="https://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=DZ1413" style="    font-size: 1rem;">
+										<a href="https://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=DZ1413" campaign-label="구매하기" style="    font-size: 1rem;">
 											구매하기
 											<span class="arrow"></span>
 										</a>
@@ -780,7 +780,7 @@
 								<div class="button_area_v2">
 									<div class="white">
 										<!-- <a href="https://m.adidas.co.kr/MO/Product/prdDispBas.action?prodCD=DZ1411" style="    font-size: 1rem;"> -->
-										<a href="javascript:void(0)" onclick="javascript:alert('재입고예정')" style="    font-size: 1rem;">
+										<a href="javascript:void(0)" onclick="javascript:alert('재입고예정')" campaign-label="구매하기" style="    font-size: 1rem;">
 											구매하기
 											<span class="arrow"></span>
 										</a>
@@ -925,11 +925,9 @@
 										nav: false
 									});
 
-			},500)
+						},500)
 
-
-                        $(window).load(function () {							
-							$('.navi_wrap .navi').click(function(){
+						$('.navi_wrap .navi').click(function(){
 								var itemchildDivArray = [];
 								var index = $(this).index();
 								var thisitem = $('.items_wrapper .item').eq(index);
@@ -952,11 +950,36 @@
 									$('.items_wrapper').css({
 										'padding-bottom': totalh + 'px'
 									});
-								
-
-								
-
 							});
+
+
+                        $(window).load(function () {		
+
+							$('.navi_wrap .navi').click(function(){
+								var itemchildDivArray = [];
+								var index = $(this).index();
+								var thisitem = $('.items_wrapper .item').eq(index);
+								var itemchildDiv = thisitem.children('.h');
+
+								$('.navi_wrap .navi').removeClass('on').eq(index).addClass('on');
+								$('.items_wrapper .item').removeClass('on').eq(index).addClass('on');
+								// 해당하는 각 div 높이 값 구해서 더하기
+								
+									$(itemchildDiv).each(function(index, item){ 
+										var geth = Math.round(itemchildDiv.eq(index).height())
+										itemchildDivArray.push(geth);
+										// console.log(itemchildDivArray)
+									});
+									var totalh = 0;
+									for( var i = 0; i<itemchildDivArray.length; i++){
+										totalh += itemchildDivArray[i];
+										// console.log(totalh)
+									}
+									$('.items_wrapper').css({
+										'padding-bottom': totalh + 'px'
+									});
+							});
+
 							$('.navi_wrap .left').trigger('click');
 
                             var scrollArray = [];
