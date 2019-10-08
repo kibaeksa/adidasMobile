@@ -1,0 +1,189 @@
+@import './mobile/css/adidas/scss/common/mixin.scss';
+@import './mobile/css/adidas/scss/common/common.scss';
+
+#pulseboost{
+	position: relative;
+	.button_area_v2{
+		display: inline-block;
+		margin-bottom: 2vh;
+		a{
+			font: 400 .9rem/36px 'NotoSansKR';
+			padding: 0 5vw;
+			letter-spacing: 0;
+			height: 38px;
+			.arrow{
+				width:20px;
+				&::after{
+					width:8px;
+				}
+				&::before{
+					width:8px;
+				}
+			}
+		}
+	}
+	img{
+		width:100%;
+	}
+	.main{
+		position: relative;
+		.bg{
+			img{
+				width:100%;
+			}
+		}
+		.b_box{
+			width: 100%;
+			position: absolute;
+			top:54%;
+			left:1.5rem;
+			text-align: left;
+			h1{
+				font: 2.8rem/2.8rem 'adinenuPro-regular';
+				color: #fff;
+				text-align: left;
+				letter-spacing: 2px;
+				text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.8);
+
+				transition: all .2s;
+				opacity: 0;
+				img{
+					width: 50%;
+				}
+			}
+			p{
+				padding: 0.5rem 0;
+				font: 300 1.1rem 'NotoSansKR';
+				color: #fff;
+				text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.8);
+
+				transition: all .4s;
+				transition-delay: 0.4s;
+				opacity: 0;
+			}
+			.button_area_v2{
+				margin-top: 1rem;
+
+				transition: all .4s;
+				transition-delay: 0.6s;
+				opacity: 0;
+				a{
+					width: auto;
+					height: 38px;
+					padding: 0 20px;
+					letter-spacing: 1px;
+					font: 500 .9rem/36px 'NotoSansKR';
+					span{
+						margin-left: 0;
+						transition: all .4s;
+						transition-delay: 1.2s;
+					}
+				}
+			}
+		}
+		&.on{
+			.b_box{
+				>*{
+					opacity: 1;
+				}
+				.button_area_v2{
+					a{
+						span{
+							margin-left: 1rem;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.sect_vid{
+		position: relative;
+		.bg{
+			width: 100%;
+			img{
+				display: block;
+				width: 100%;
+			}
+		}
+		.vid_box{
+			position: absolute;
+			top: 40%;
+			left: 5%;
+			width: 50%;
+			video{
+				display: block;
+				width: 100%;
+			}
+			.btn-play{
+				width: 20%;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				z-index: 5;
+				img{
+					display: block;
+					width: 100%;
+				}
+			}
+		}
+	}
+
+	.sect_feature{
+		position: relative;
+		.bg{
+			width: 100%;
+			img{
+				display: block;
+				width: 100%;
+			}
+		}
+	}
+
+	.bottom{
+		position: relative;
+		text-align: center;
+		padding: 0 1.5rem 3rem;
+		.banner_slider_wrap{
+			position:relative;
+			padding:4rem 0;
+			background: #fff;
+			ul{
+				.owl-controls{
+					text-align: center;
+					padding-top:3%;
+					.owl-nav{
+						display: none;
+					}
+					.owl-dots{
+						.owl-dot{
+							width:9px;
+							height:9px;
+							border-radius : 50%;
+							border:2px solid #000;
+							display: inline-block;
+							margin:2vw;
+							&.active{
+								background:#000;
+							}
+							span{
+
+							}
+						}
+					}
+				}
+				li{
+					a{
+						img{
+							width:100%;
+						}
+					}
+				}
+			}
+		}
+		.button_area_v2{
+			
+		}
+	}
+}
