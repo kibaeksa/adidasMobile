@@ -1,0 +1,193 @@
+@import './mobile/css/adidas/scss/common/mixin.scss';
+@import './mobile/css/adidas/scss/common/common.scss';
+@font-face{
+	font-family: 'neueplak-wide';
+	font-weight:900;
+	src:url('/fonts/neuePlak/NeuePlakW05-WideXBlack.ttf') format('truetype'),
+		url('/fonts/neuePlak/NeuePlakW05-WideXBlack.woff') format('woff'),
+		url('/fonts/neuePlak/NeuePlakW05-WideXBlack.woff2') format('woff2');
+}
+@font-face{
+	font-family: 'neueplak-wide';
+	font-weight:800;
+	src:url('/fonts/neuePlak/NeuePlakW05-WideBlack.ttf') format('truetype'),
+		url('/fonts/neuePlak/NeuePlakW05-WideBlack.woff') format('woff'),
+		url('/fonts/neuePlak/NeuePlakW05-WideBlack.woff2') format('woff2');
+}
+@font-face{
+	font-family: 'neueplak-wide';
+	font-weight:700;
+	src:url('/fonts/neuePlak/NeuePlakW05-WideBold.ttf') format('truetype'),
+		url('/fonts/neuePlak/NeuePlakW05-WideBold.woff') format('woff'),
+		url('/fonts/neuePlak/NeuePlakW05-WideBold.woff2') format('woff2');
+}
+@font-face{
+	font-family: 'neueplak-wide';
+	font-weight:600;
+	src:url('/fonts/neuePlak/NeuePlakW05-WideSemiBold.ttf') format('truetype'),
+		url('/fonts/neuePlak/NeuePlakW05-WideSemiBold.woff') format('woff'),
+		url('/fonts/neuePlak/NeuePlakW05-WideSemiBold.woff2') format('woff2');
+}
+@font-face{
+	font-family: 'neueplak-wide';
+	font-weight:400;
+	src:url('/fonts/neuePlak/NeuePlakW05-WideRegular.ttf') format('truetype'),
+		url('/fonts/neuePlak/NeuePlakW05-WideRegular.woff') format('woff'),
+		url('/fonts/neuePlak/NeuePlakW05-WideRegular.woff2') format('woff2');
+}
+@font-face{
+	font-family: 'neueplak-wide';
+	font-weight:300;
+	src:url('/fonts/neuePlak/NeuePlakW05-WideLight.ttf') format('truetype'),
+		url('/fonts/neuePlak/NeuePlakW05-WideLight.woff') format('woff'),
+		url('/fonts/neuePlak/NeuePlakW05-WideLight.woff2') format('woff2');
+}
+@font-face{
+	font-family: 'neueplak-wide';
+	font-weight:200;
+	src:url('/fonts/neuePlak/NeuePlakW05-WideThin.ttf') format('truetype'),
+		url('/fonts/neuePlak/NeuePlakW05-WideThin.woff') format('woff'),
+		url('/fonts/neuePlak/NeuePlakW05-WideThin.woff2') format('woff2');
+}
+@font-face{
+	font-family: 'neueplak-wide';
+	font-weight:100;
+	src:url('/fonts/neuePlak/NeuePlakW05-WideUltraLight.ttf') format('truetype'),
+		url('/fonts/neuePlak/NeuePlakW05-WideUltraLight.woff') format('woff'),
+		url('/fonts/neuePlak/NeuePlakW05-WideUltraLight.woff2') format('woff2');
+}
+
+#fury_cp{
+    //common
+    .btn{
+        &.sold{
+            a{
+                &:before{
+                    border-bottom: 1px solid #bbb;
+                    border-left: 1px solid #bbb;
+                }
+                &:after{
+                    border-right: 1px solid #bbb;
+                    border-top: 1px solid #bbb;
+                }
+            }
+        }
+        a{
+            position: relative;
+            background-color: transparent;
+            border: 1px solid #000;
+            align-items: center;
+            display: inline-block;
+            padding: 0 1.5rem;
+            text-decoration: none;
+            transition: transform .1s cubic-bezier(.3,0,.45,1),color .1s cubic-bezier(.3,0,.45,1),border .1s cubic-bezier(.3,0,.45,1),background .1s cubic-bezier(.3,0,.45,1);
+            white-space: nowrap;
+            font: 500 1.1rem/3.5rem 'NotoSansKR';
+            color:#fff;
+            background: #000;
+            letter-spacing: .1rem;
+            &::before{
+                border-bottom: 1px solid #000;
+                border-left: 1px solid #000;
+                bottom: -4px;
+                height: 3px;
+                left: 2px;
+                width: calc(100% + 1px);
+                content: "";
+                display: block;
+                position: absolute;
+            }
+            &::after{
+                border-right: 1px solid #000;
+                border-top: 1px solid #000;
+                height: calc(100% + 1px);
+                right: -4px;
+                top: 2px;
+                width: 3px;
+                content: "";
+                display: block;
+                position: absolute;
+            }
+            span.arrow{
+                display: inline-block;
+                width: 20px;
+                height: 10px;
+                margin-left: 17px;
+                vertical-align: middle;
+                background: url('/images/reebok/2019/event/fury/pumpfury/0821/arrow.png') no-repeat;
+                background-size: auto 100%;
+            }
+        }
+    }
+  
+    img{
+        width:100%;
+    }
+
+    .top{
+        img{
+            width: 100%;
+        }
+    }
+    .top2{
+        video{
+            width:100%;
+        }
+    }
+
+    .statement{
+        padding: 40px 0;
+        text-align: center;
+        background: #f3f3f3;
+        strong{
+            padding:0 0 15px 0;
+            display: block;
+            text-align: center;
+            font:800 1.5rem 'neueplak-wide';
+        }
+        p{
+            padding: 0 0 10px 0;
+            text-align: center;
+            font:400 1rem 'NotoSansKR';
+            text-transform: uppercase;
+        }
+        .btn{
+            margin:15px 0 0 0;
+        }
+    }
+
+    .tips{
+		position: relative;
+		padding: 1.5rem;
+		
+		width: 80%;
+		margin:0 auto;
+		margin-top:3rem;
+		background: #fff;
+		.title{
+			display: block;
+			text-align: center;
+			font: 400 1.1rem/1.1rem 'NotoSansKR','Nanum Gothic';
+            color: #000;
+            padding-bottom: 1rem;
+		}
+		.inn{
+			display: inline-block;
+			width: 100%;
+            vertical-align: middle;
+            text-align: left;
+			ul{
+				li{
+                    font: 300 0.9rem/1.4rem 'NotoSansKR';
+                    padding-bottom: 7px;
+                    &::before{
+                        display: inline-block;
+                        content: '·';
+                        font: 300 0.9rem/1.4rem 'NotoSansKR';
+                    }
+				}
+			}
+
+		}
+	}
+}
