@@ -929,17 +929,33 @@
 				}
 			});
 
+			
 			$('.category_size .content a').on('click',function(){
+				// 191011 선택한 엘리먼트 재선택시 해제
+				if ($(this).hasClass('on')) {
+					$(this).removeClass('on');
+					return false;
+				}
 				$('.category_size .content a').removeClass('on');
 				$(this).addClass('on');
 			})
-
+			
 			$('.category_color .content a').on('click',function(){
+				// 191011 선택한 엘리먼트 재선택시 해제
+				if ($(this).hasClass('on')) {
+					$(this).removeClass('on');
+					return false;
+				}
 				$('.category_color .content a').removeClass('on');
 				$(this).addClass('on');
 			})
-
+			
 			$('.category_price .content li').on('click',function(){
+				// 191011 선택한 엘리먼트 재선택시 해제
+				if ($(this).hasClass('on')) {
+					$(this).removeClass('on');
+					return false;
+				}
 				$('.category_price .content li').removeClass('on');
 				$(this).addClass('on');
 			})
