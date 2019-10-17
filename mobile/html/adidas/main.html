@@ -6,6 +6,7 @@
 	<meta name="format-detection" content="telephone=no">
 	<meta http-equiv="x-rim-auto-match" content="none">
 
+	<!-- <link href="/css/adidas/style_back.css" type="text/css" rel="stylesheet" /> -->
 	<link href="/css/adidas/style.css" type="text/css" rel="stylesheet" />
 	<link href="/css/adidas/fonts.css" type="text/css" rel="stylesheet" />
 
@@ -762,7 +763,7 @@
 						<a href="https://adidasco.eu.qualtrics.com/jfe/form/SV_9ZeskFly9vfEuxv" target="_blank">feedback</a>
 					</div>
 
-					<!-- <div class="viewed_items">
+					<!-- <div class="viewed_items ">
 						<h3>최근 본 상품</h3>
 						<div class="item_list">
 							<div class="slider">
@@ -1023,6 +1024,22 @@
 
 			<script type="text/javascript">
 				(function($){
+					// review renew :: 최근 본 상품 마진 변경
+					var viewedCarousel = $("#product-viewed-list").owlCarousel({
+                        stagePadding: 20,
+    					margin:15,
+    					items : 2,
+    					merge: true,
+                        dots : true,
+                        inactiveDots : true
+    				});
+
+                    viewedCarousel.on('changed.owl.carousel', function(event) {
+                        var index = Math.floor(event.item.index/2);
+                        if(event.item.count%2 !== 0 && event.item.index == event.item.count - 2){
+                            $(event.target).find('.owl-controls .owl-dot').removeClass('active').last().addClass('active');
+                        }
+    				});
 					// 170627
 					$(document).ready(function() {
 
@@ -1832,40 +1849,36 @@
 			</div>
 
 			<!-- 190604 A/B 테스트 제품영역 배너 슬라이드 추가 : 해당 css는 테스트 후 해당 영역이 실제 운영에 사용될 때 css 파일에 추가 예정 -->
-			<style>
-				.prodlist.product-banner .prod_box{padding:0;}
-			</style>
 			<div class="prodlist product-banner">
 				<div class="products owlcarousel-products-wrapper" id="product-best-banner">
 					<div class="prod_box">
-						<a href="http://m.adidas.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=01001002002004&INFLW_TC_CD=&term=1">
-							<div class="img"><img src="/images/adidas/common/abtest/prdbnn_01.jpg" alt=""></div>
-						</a>
+						<!-- 슬라이드 구조통합 a 위치 변경 -->
+						<a href="http://m.adidas.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=01001002002004&INFLW_TC_CD=&term=1"></a>
+						<div class="img"><img src="/images/adidas/common/abtest/prdbnn_01.jpg" alt=""></div>
 					</div>
 					<div class="prod_box">
-						<a href="http://m.adidas.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=01002002002004#ctgr_cd=01002002002004&strPage=1">
-							<div class="img"><img src="/images/adidas/common/abtest/prdbnn_02.jpg" alt=""></div>
-						</a>
+						<a href="http://m.adidas.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=01002002002004#ctgr_cd=01002002002004&strPage=1"></a>
+						<div class="img"><img src="/images/adidas/common/abtest/prdbnn_02.jpg" alt=""></div>
+						
 					</div>
 					<div class="prod_box">
-						<a href="http://m.adidas.co.kr/MO/Search/searchIR.action?query=%EB%B0%98%EB%B0%94%EC%A7%80">
-							<div class="img"><img src="/images/adidas/common/abtest/prdbnn_03.jpg" alt=""></div>
-						</a>
+						<a href="http://m.adidas.co.kr/MO/Search/searchIR.action?query=%EB%B0%98%EB%B0%94%EC%A7%80"></a>
+						<div class="img"><img src="/images/adidas/common/abtest/prdbnn_03.jpg" alt=""></div>
+						
 					</div>
 					<div class="prod_box">
-						<a href="http://m.adidas.co.kr/MO/Search/searchIR.action?query=%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C">
-							<div class="img"><img src="/images/adidas/common/abtest/prdbnn_04.jpg" alt=""></div>
-						</a>
+						<a href="http://m.adidas.co.kr/MO/Search/searchIR.action?query=%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C"></a>
+						<div class="img"><img src="/images/adidas/common/abtest/prdbnn_04.jpg" alt=""></div>
+						
 					</div>
 					<div class="prod_box">
-						<a href="http://m.adidas.co.kr/MO/Search/searchIR.action?query=%EB%A0%88%EA%B9%85%EC%8A%A4">
-							<div class="img"><img src="/images/adidas/common/abtest/prdbnn_05.jpg" alt=""></div>
-						</a>
+						<a href="http://m.adidas.co.kr/MO/Search/searchIR.action?query=%EB%A0%88%EA%B9%85%EC%8A%A4"></a>
+						<div class="img"><img src="/images/adidas/common/abtest/prdbnn_05.jpg" alt=""></div>
 					</div>
 					<div class="prod_box">
-						<a href="https://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=888&term=1">
-							<div class="img"><img src="/images/adidas/common/abtest/prdbnn_06.jpg" alt=""></div>
-						</a>
+						<a href="https://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=888&term=1"></a>
+						<div class="img"><img src="/images/adidas/common/abtest/prdbnn_06.jpg" alt=""></div>
+						
 					</div>
 				</div>
 			</div>
@@ -1894,275 +1907,347 @@
 			</div>
 			<!-- //161219 -->
 
+			<!-- 슬라이드 구조통합 베스트상품 -->
 			<div class="prodlist">
-				<h3>WHAT'S BEST</h3>
+				<h4 class="tit eng">WHAT'S BEST</h4>
 				<a href="#" class="view_all">인기상품 전체보기<span class="icons" data-icon=""></span></a>
-				<!-- 170208 owlcarousel-products-wrapper 클래스 추가 -->
+				
 				<div class="products owlcarousel-products-wrapper" id="product-best">
 					<div class="prod_box">
-						<a href="#">
-							<div class="img">
-								<span class="label adihs-b best">BEST</span>
-								<img src="//image.adidas.co.kr/upload/prod/basic/320/BA8775-1_320X320.jpg" alt="">
+						<a href="#"></a>
+						<div class="img">
+							<img src="//image.adidas.co.kr/upload/prod/basic/320/AQ1702-1_320X320.jpg" alt="">
+						</div>
+						<div class="info">
+							<!-- <div class="info_stat">
+								<span class="stat_sale">-30%</span>
+							</div> -->
+							<p class="info_title">튜블라 X 튜블라 X  튜블라 X 튜블라 X 튜블라 X 튜블라 X 튜블라 X 튜블라 X </p>
+							<div class="info_category">Men Originals</div>
+							<div class="info_price">
+								<div>129,000<span>원</span></div>
 							</div>
-							<p class="ctgr">MEN'S ORIGINALS</p>
-							<p class="tit">튜블라 X 튜블라 X 튜블라 X 튜블라 X 튜블라 X 튜블라 X 튜블라 X </p>
-							<div class="info">
-								<div class="rating">
-									<div class="star">
-										<span class="icons active" data-icon=""></span>
-										<span class="icons active" data-icon=""></span>
-										<span class="icons active" data-icon=""></span>
-										<span class="icons" data-icon=""></span>
-										<span class="icons" data-icon=""></span>
-									</div>
-								15</div>
-								<div class="price">
-									<div>85,200<span>원</span></div>
+							<div class="rating">
+								<div class="star">
+									<span class="icons active" data-icon=""></span>
+									<span class="icons active" data-icon=""></span>
+									<span class="icons active" data-icon=""></span>
+									<span class="icons active" data-icon=""></span>
+									<span class="icons active" data-icon=""></span>
 								</div>
+								102
 							</div>
-						</a>
+						</div>
 					</div>
 					<div class="prod_box">
-						<a href="#">
-							<div class="img">
-								<span class="label adihs-b best">BEST</span>
-								<img src="//image.adidas.co.kr/upload/prod/basic/320/BA8775-1_320X320.jpg" alt="">
+						<a href="#"></a>
+						<div class="img">
+							<img src="//image.adidas.co.kr/upload/prod/basic/320/AQ1702-1_320X320.jpg" alt="">
+						</div>
+						<div class="info">
+							<!-- <div class="info_stat">
+								<span class="stat_sale">-30%</span>
+							</div> -->
+							<p class="info_title">튜블라 X 튜블라 X  튜블라 X 튜블라 X 튜블라 X 튜블라 X 튜블라 X 튜블라 X </p>
+							<div class="info_category">Men Originals</div>
+							<div class="info_price">
+								<div>129,000<span>원</span></div>
 							</div>
-							<p class="ctgr">MEN'S ORIGINALS</p>
-							<p class="tit">이큅먼트 러닝 93</p>
-							<div class="info">
-								<div class="rating">
-									<div class="star">
-										<span class="icons active" data-icon=""></span>
-										<span class="icons active" data-icon=""></span>
-										<span class="icons active" data-icon=""></span>
-										<span class="icons active" data-icon=""></span>
-										<span class="icons" data-icon=""></span>
-									</div>
-								264</div>
-								<div class="price">
-									<div class="line">129,000<span>원</span></div>
-									<div class="sale">85,200<span>원</span></div>
+							<div class="rating">
+								<div class="star">
+									<span class="icons active" data-icon=""></span>
+									<span class="icons active" data-icon=""></span>
+									<span class="icons active" data-icon=""></span>
+									<span class="icons active" data-icon=""></span>
+									<span class="icons active" data-icon=""></span>
 								</div>
+								102
 							</div>
-						</a>
+						</div>
 					</div>
 					<div class="prod_box">
-						<a href="#">
-							<div class="img">
-								<span class="label adihs-b best">BEST</span>
-								<img src="//image.adidas.co.kr/upload/prod/basic/320/BA8775-1_320X320.jpg" alt="">
+						<a href="#"></a>
+						<div class="img">
+							<img src="//image.adidas.co.kr/upload/prod/basic/320/AQ1702-1_320X320.jpg" alt="">
+						</div>
+						<div class="info">
+							<!-- <div class="info_stat">
+								<span class="stat_sale">-30%</span>
+							</div> -->
+							<p class="info_title">튜블라 X 튜블라 X  튜블라 X 튜블라 X 튜블라 X 튜블라 X 튜블라 X 튜블라 X </p>
+							<div class="info_category">Men Originals</div>
+							<div class="info_price">
+								<div>129,000<span>원</span></div>
 							</div>
-							<p class="ctgr">MEN'S ORIGINALS</p>
-							<p class="tit">[송민호착장] 패디드 바시티 자켓</p>
-							<div class="info">
-								<div class="rating">
-									<div class="star">
-										<span class="icons" data-icon=""></span>
-										<span class="icons" data-icon=""></span>
-										<span class="icons" data-icon=""></span>
-										<span class="icons" data-icon=""></span>
-										<span class="icons" data-icon=""></span>
-									</div>
-								0</div>
-								<div class="price">
-									<div>85,000<span>원</span></div>
+							<div class="rating">
+								<div class="star">
+									<span class="icons active" data-icon=""></span>
+									<span class="icons active" data-icon=""></span>
+									<span class="icons active" data-icon=""></span>
+									<span class="icons active" data-icon=""></span>
+									<span class="icons active" data-icon=""></span>
 								</div>
+								102
 							</div>
-						</a>
-					</div>
-					<div class="prod_box">
-						<a href="#">
-							<div class="img">
-								<span class="label adihs-b best">BEST</span>
-								<img src="//image.adidas.co.kr/upload/prod/basic/320/BA8775-1_320X320.jpg" alt="">
-							</div>
-							<p class="ctgr">MEN'S ORIGINALS</p>
-							<p class="tit">주니어 베스킷볼 크루 프렌치테리 티셔츠</p>
-							<div class="info">
-								<div class="rating">
-									<div class="star">
-										<span class="icons active" data-icon=""></span>
-										<span class="icons active" data-icon=""></span>
-										<span class="icons active" data-icon=""></span>
-										<span class="icons active" data-icon=""></span>
-										<span class="icons active" data-icon=""></span>
-									</div>
-								102</div>
-								<div class="price">
-									<div>85,000<span>원</span></div>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="prod_box">
-						<a href="#">
-							<div class="img">
-								<span class="label adihs-b best">BEST</span>
-								<img src="//image.adidas.co.kr/upload/prod/basic/320/BA8775-1_320X320.jpg" alt="">
-							</div>
-							<p class="ctgr">MEN'S ORIGINALS</p>
-							<p class="tit">튜블라 X</p>
-							<div class="info">
-								<div class="rating">
-									<div class="star">
-										<span class="icons active" data-icon=""></span>
-										<span class="icons active" data-icon=""></span>
-										<span class="icons active" data-icon=""></span>
-										<span class="icons active" data-icon=""></span>
-										<span class="icons active" data-icon=""></span>
-									</div>
-								102</div>
-								<div class="price">
-									<div>85,000<span>원</span></div>
-								</div>
-							</div>
-						</a>
+						</div>
 					</div>
 				</div>
 			</div>
-			<!-- //prodlist -->
+			<!-- // 슬라이드 구조통합 end -->
 
-			<div class="prodlist">
-				<h3>NOW ON SALE</h3>
+			<!-- 슬라이드 구조통합 할인상품 -->
+			<div class="prodlist  ">
+				<h4 class="tit eng">NOW ON SALE</h3>
 				<a href="#" class="view_all">할인상품 전체보기<span class="icons" data-icon=""></span></a>
-				<!-- 170208 owlcarousel-products-wrapper 클래스 추가 -->
+				
 				<div class="products owlcarousel-products-wrapper" id="product-sale">
 					<div class="prod_box">
-						<a href="#">
-							<div class="img">
-								<!-- <div class="per">30%</div> -->
-								<!-- 160513 label 추가 -->
-								<span class="label adihs-b sale">-30%</span>
-								<img src="//image.adidas.co.kr/upload/prod/basic/320/AQ1702-1_320X320.jpg" alt="">
+						<a href="#"></a>
+						<div class="img">
+							<img src="//image.adidas.co.kr/upload/prod/basic/320/AQ1702-1_320X320.jpg" alt="">
+						</div>
+						<div class="info">
+							<div class="info_stat">
+								<span class="stat_sale">-30%</span>
 							</div>
-							<p class="ctgr">MEN'S ORIGINALS</p>
-							<p class="tit">튜블라 X 튜블라 X  튜블라 X 튜블라 X 튜블라 X 튜블라 X 튜블라 X 튜블라 X </p>
-							<div class="info">
-								<div class="rating">
-									<div class="star">
-										<span class="icons active" data-icon=""></span>
-										<span class="icons active" data-icon=""></span>
-										<span class="icons active" data-icon=""></span>
-										<span class="icons active" data-icon=""></span>
-										<span class="icons active" data-icon=""></span>
-									</div>
-								102</div>
-								<div class="price">
-									<div class="line">149,000<span>원</span></div>
-									<div class="sale">85,200<span>원</span></div>
+							<p class="info_title">튜블라 X 튜블라 X 튜블라 X 튜블라 X 튜블라 X 튜블라 X 튜블라 X 튜블라 X </p>
+							<div class="info_category">Men Originals</div>
+							<div class="info_price">
+								<div class="sale">89,000<span>원</span></div>
+								<div class="line">129,000<span>원</span></div>
+							</div>
+							<div class="rating">
+								<div class="star">
+									<span class="icons active" data-icon=""></span>
+									<span class="icons active" data-icon=""></span>
+									<span class="icons active" data-icon=""></span>
+									<span class="icons active" data-icon=""></span>
+									<span class="icons active" data-icon=""></span>
 								</div>
+								102
 							</div>
-						</a>
+						</div>
 					</div>
 					<div class="prod_box">
-						<a href="#">
-							<div class="img">
-								<!-- 160513 label 추가 -->
-								<span class="label adihs-b sale">-30%</span>
-								<img src="//image.adidas.co.kr/upload/prod/basic/320/AQ1702-1_320X320.jpg" alt="">
+						<a href="#"></a>
+						<div class="img">
+							<img src="//image.adidas.co.kr/upload/prod/basic/320/AQ1702-1_320X320.jpg" alt="">
+						</div>
+						<div class="info">
+							<div class="info_stat">
+								<span class="stat_sale">-30%</span>
 							</div>
-							<p class="ctgr">MEN'S ORIGINALS</p>
-							<p class="tit">튜블라 X</p>
-							<div class="info">
-								<div class="rating">
-									<div class="star">
-										<span class="icons active" data-icon=""></span>
-										<span class="icons active" data-icon=""></span>
-										<span class="icons active" data-icon=""></span>
-										<span class="icons" data-icon=""></span>
-										<span class="icons" data-icon=""></span>
-									</div>
-								102</div>
-								<div class="price">
-									<div class="line">129,000<span>원</span></div>
-									<div class="sale">87,200<span>원</span></div>
+							<p class="info_title">튜블라 X 튜블라 X 튜블라 X 튜블라 X 튜블라 X 튜블라 X 튜블라 X 튜블라 X </p>
+							<div class="info_category">Men Originals</div>
+							<div class="info_price">
+								<div class="sale">89,000<span>원</span></div>
+								<div class="line">129,000<span>원</span></div>
+							</div>
+							<div class="rating">
+								<div class="star">
+									<span class="icons active" data-icon=""></span>
+									<span class="icons active" data-icon=""></span>
+									<span class="icons active" data-icon=""></span>
+									<span class="icons active" data-icon=""></span>
+									<span class="icons active" data-icon=""></span>
 								</div>
+								102
 							</div>
-						</a>
+						</div>
 					</div>
 					<div class="prod_box">
-						<a href="#">
-							<div class="img">
-								<!-- 160513 label 추가 -->
-								<span class="label adihs-b sale">-30%</span>
-								<img src="//image.adidas.co.kr/upload/prod/basic/320/AQ1702-1_320X320.jpg" alt="">
+						<a href="#"></a>
+						<div class="img">
+							<img src="//image.adidas.co.kr/upload/prod/basic/320/AQ1702-1_320X320.jpg" alt="">
+						</div>
+						<div class="info">
+							<div class="info_stat">
+								<span class="stat_sale">-30%</span>
 							</div>
-							<p class="ctgr">MEN'S ORIGINALS</p>
-							<p class="tit">튜블라 X</p>
-							<div class="info">
-								<div class="rating">
-									<div class="star">
-										<span class="icons active" data-icon=""></span>
-										<span class="icons active" data-icon=""></span>
-										<span class="icons active" data-icon=""></span>
-										<span class="icons active" data-icon=""></span>
-										<span class="icons" data-icon=""></span>
-									</div>
-								102</div>
-								<div class="price">
-									<div class="line">129,000<span>원</span></div>
-									<div class="sale">87,200<span>원</span></div>
+							<p class="info_title">튜블라 X 튜블라 X 튜블라 X 튜블라 X 튜블라 X 튜블라 X 튜블라 X 튜블라 X </p>
+							<div class="info_category">Men Originals</div>
+							<div class="info_price">
+								<div class="sale">89,000<span>원</span></div>
+								<div class="line">129,000<span>원</span></div>
+							</div>
+							<div class="rating">
+								<div class="star">
+									<span class="icons active" data-icon=""></span>
+									<span class="icons active" data-icon=""></span>
+									<span class="icons active" data-icon=""></span>
+									<span class="icons active" data-icon=""></span>
+									<span class="icons active" data-icon=""></span>
 								</div>
+								102
 							</div>
-						</a>
+						</div>
+					</div>
+						
+				</div>
+			</div>
+			<!-- // 슬라이드 구조통합 end -->
+
+			<!-- 슬라이드 구조통합 최근본상품 -->
+			<div class="prodlist viewed-items">
+				<h4 class="tit">최근 본 상품 (리뉴얼용)</h4>
+				<div class="products owlcarousel-products-wrapper" id="product-viewed-list">
+					<div class="prod_box">
+						<a href="#"></a>
+						<div class="img">
+							<img src="//image.adidas.co.kr/upload/prod/basic/500/EE7238-01-01_500X500.jpg" alt="">
+						</div>
+						<div class="info">					
+							<div class="info_title">팔콘</div>
+							<div class="info_category">Men Originals</div>
+							<div class="info_price">
+								<div>129,000<span>원</span></div>
+							</div>
+							<div class="rating">
+								<div class="star">
+									<span class="icons active" data-icon=""></span>
+									<span class="icons active" data-icon=""></span>
+									<span class="icons active" data-icon=""></span>
+									<span class="icons" data-icon=""></span>
+									<span class="icons" data-icon=""></span>
+								</div>
+								126
+							</div>
+							<!-- //rating -->
+						</div>
 					</div>
 					<div class="prod_box">
-						<a href="#">
-							<div class="img">
-								<!-- 160513 label 추가 -->
-								<span class="label adihs-b sale">-30%</span>
-								<img src="//image.adidas.co.kr/upload/prod/basic/320/AQ1702-1_320X320.jpg" alt="">
+						<a href="#"></a>
+						<div class="img">
+							<img src="//image.adidas.co.kr/upload/prod/basic/500/EF1426-01-01_500X500.jpg" alt="">
+						</div>
+						<div class="info">					
+							<div class="info_title">울트라부스트 
+								제품명이 두줄 울트라부스트 
+								제품명이 두줄</div>
+							<div class="info_category">Men Originals</div>
+							<div class="info_price">
+								<div>129,000<span>원</span></div>
 							</div>
-							<p class="ctgr">MEN'S ORIGINALS</p>
-							<p class="tit">튜블라 X</p>
-							<div class="info">
-								<div class="rating">
-									<div class="star">
-										<span class="icons active" data-icon=""></span>
-										<span class="icons active" data-icon=""></span>
-										<span class="icons active" data-icon=""></span>
-										<span class="icons" data-icon=""></span>
-										<span class="icons" data-icon=""></span>
-									</div>
-								102</div>
-								<div class="price">
-									<div class="line">129,000<span>원</span></div>
-									<div class="sale">87,200<span>원</span></div>
+							<div class="rating">
+								<div class="star">
+									<span class="icons active" data-icon=""></span>
+									<span class="icons active" data-icon=""></span>
+									<span class="icons active" data-icon=""></span>
+									<span class="icons" data-icon=""></span>
+									<span class="icons" data-icon=""></span>
 								</div>
+								126
 							</div>
-						</a>
+							<!-- //rating -->
+						</div>
 					</div>
 					<div class="prod_box">
-						<a href="#">
-							<div class="img">
-								<!-- 160513 label 추가 -->
-								<span class="label adihs-b sale">-30%</span>
-								<img src="//image.adidas.co.kr/upload/prod/basic/320/AQ1702-1_320X320.jpg" alt="">
+						<a href="#"></a>
+						<div class="img">
+							<img src="//image.adidas.co.kr/upload/prod/basic/500/EG7836-01-01_500X500.jpg" alt="">
+						</div>
+						<div class="info">					
+							<div class="info_title">울트라부스트 
+								제품명이 두줄 울트라부스트 
+								제품명이 두줄</div>
+							<div class="info_category">Men Originals</div>
+							<div class="info_price">
+								<div>129,000<span>원</span></div>
 							</div>
-							<p class="ctgr">MEN'S ORIGINALS</p>
-							<p class="tit">튜블라 X</p>
-							<div class="info">
-								<div class="rating">
-									<div class="star">
-										<span class="icons" data-icon=""></span>
-										<span class="icons" data-icon=""></span>
-										<span class="icons" data-icon=""></span>
-										<span class="icons" data-icon=""></span>
-										<span class="icons" data-icon=""></span>
-									</div>
-								0</div>
-								<div class="price">
-									<div class="line">129,000<span>원</span></div>
-									<div class="sale">87,200<span>원</span></div>
+							<div class="rating">
+								<div class="star">
+									<span class="icons active" data-icon=""></span>
+									<span class="icons active" data-icon=""></span>
+									<span class="icons active" data-icon=""></span>
+									<span class="icons" data-icon=""></span>
+									<span class="icons" data-icon=""></span>
 								</div>
+								126
 							</div>
-						</a>
+							<!-- //rating -->
+						</div>
+					</div>
+					<div class="prod_box">
+						<a href="#"></a>
+						<div class="img">
+							<img src="//image.adidas.co.kr/upload/prod/basic/500/EE7238-01-01_500X500.jpg" alt="">
+						</div>
+						<div class="info">					
+							<div class="info_title">팔콘</div>
+							<div class="info_category">Men Originals</div>
+							<div class="info_price">
+								<div>129,000<span>원</span></div>
+							</div>
+							<div class="rating">
+								<div class="star">
+									<span class="icons active" data-icon=""></span>
+									<span class="icons active" data-icon=""></span>
+									<span class="icons active" data-icon=""></span>
+									<span class="icons" data-icon=""></span>
+									<span class="icons" data-icon=""></span>
+								</div>
+								126
+							</div>
+							<!-- //rating -->
+						</div>
+					</div>
+					<div class="prod_box">
+						<a href="#"></a>
+						<div class="img">
+							<img src="//image.adidas.co.kr/upload/prod/basic/500/EF1426-01-01_500X500.jpg" alt="">
+						</div>
+						<div class="info">					
+							<div class="info_title">울트라부스트 
+								제품명이 두줄 울트라부스트 
+								제품명이 두줄</div>
+							<div class="info_category">Men Originals</div>
+							<div class="info_price">
+								<div>129,000<span>원</span></div>
+							</div>
+							<div class="rating">
+								<div class="star">
+									<span class="icons active" data-icon=""></span>
+									<span class="icons active" data-icon=""></span>
+									<span class="icons active" data-icon=""></span>
+									<span class="icons" data-icon=""></span>
+									<span class="icons" data-icon=""></span>
+								</div>
+								126
+							</div>
+							<!-- //rating -->
+						</div>
+					</div>
+					<div class="prod_box">
+						<a href="#"></a>
+						<div class="img">
+							<img src="//image.adidas.co.kr/upload/prod/basic/500/EG7836-01-01_500X500.jpg" alt="">
+						</div>
+						<div class="info">					
+							<div class="info_title">울트라부스트 
+								제품명이 두줄 울트라부스트 
+								제품명이 두줄</div>
+							<div class="info_category">Men Originals</div>
+							<div class="info_price">
+								<div>129,000<span>원</span></div>
+							</div>
+							<div class="rating">
+								<div class="star">
+									<span class="icons active" data-icon=""></span>
+									<span class="icons active" data-icon=""></span>
+									<span class="icons active" data-icon=""></span>
+									<span class="icons" data-icon=""></span>
+									<span class="icons" data-icon=""></span>
+								</div>
+								126
+							</div>
+							<!-- //rating -->
+						</div>
 					</div>
 				</div>
 			</div>
-			<!-- //prodlist -->
+			<!-- // 슬라이드 구조통합 end -->
+
+			
 
 			<div class="feedback_facebook">
 				<div class="inner">
@@ -2270,11 +2355,14 @@
 							<li><a href="https://shop.adidas.co.kr/PF020620.action?pn=company" target="_blank"><strong>회사소개</strong></a></li> 
 							<li><a href="https://shop.adidas.co.kr/PF020620.action?pn=recruit" target="_blank"><strong>채용정보</strong></a></li>
 						</div>
-						<li><a href="http://shop.adidas.co.kr/PF010107.action?gubn=1" target="_blank">이용약관</a></li> 
+						<li><a href="https://shop.adidas.co.kr/PF010107.action?gubn=1" target="_blank"><strong>이용약관</strong></a></li>
 						<li><a href="http://shop.adidas.co.kr/PF010107.action?gubn=2" target="_blank">개인정보처리방침</a></li>
-						<li><a href="http://www.ftc.go.kr/info/bizinfo/communicationViewPopup.jsp?wrkr_no=2148107412" target="_blank">사업자정보확인</a></li>
+						<!-- 191015 추가 & 위치 변경 -->
+						<li><a href="#" target="_blank">맞춤형 광고</a></li>
 						<li><a href="https://m.adidas.co.kr/Common/PopJusticeBns.jsp" target="_blank">공정거래자율준수</a></li>
 						<li><a href="http://m.adidas.co.kr/Common/CertifiedInfoPop.jsp" target="_blank">채무지급보증안내</a></li>
+						<!-- 191015 추가 & 위치 변경 -->
+						<li><a href="http://www.ftc.go.kr/info/bizinfo/communicationViewPopup.jsp?wrkr_no=2148107412" target="_blank">사업자정보확인</a></li>
 					</ul>
 					<p>© adidas Korea LLC. All Rights Reserved</p>
 				</div>
@@ -2286,7 +2374,8 @@
 		<!-- 170629 쿠폰 발급안내 팝업 -->
 		<!-- <div class="modal-popup-wrapper modal-coupon-popup padding"
 		    data-modalpop=""
-		    data-modalpop-name="coupon-popup"
+			data-modalpop-name="coupon-popup"
+			data-modalpop-autoopen=""
 		>
 		    <div class="overlay"></div>
 		    <div class="popup">
@@ -2397,6 +2486,71 @@
 			</div>
 		</div> -->
 		<!-- 180919 추석 지연 팝업 end -->
+		<!-- 191015 맞춤형 광고 수신 동의 -->
+		<div class="modal-popup-wrapper modal-popup_ad "
+			data-modalpop=""
+			data-modalpop-valign="top"
+		    data-modalpop-name="modal-popup_ad"
+			data-modalpop-autoopen=""
+		>
+		    <div class="overlay"></div>
+		    <div class="popup" style="    ">
+		        <div class="popup-header">
+		            <h2>맞춤형 광고 수신 동의</h2>
+		            <a href="javascript:void(0)" class="close_x_btn"></a>
+		        </div>
+		        <div class="popup-contents">
+					<div class="info_text">
+						<p>
+							아래 맞춤형 광고 선택 동의하시면 아디다스 코리아에서는<br/>
+							웹사이트 내의 사용자 행동(쿠키정보, 이용내역 등) 및<br/>
+							개인식별정보(아이디)를 결합하여, 웹사이트 및 제휴채널을<br/>
+							통해 개인화된 광고 제공 및 웹사이트 개선과 같은 마케팅<br/>
+							활동을 위한 정보로 활용될 수 있습니다.<br/>
+							자세한 내용을 확인하려면 개인정보 처리방침에서 확인<br/>
+							하실 수 있습니다. 
+						</p>
+					</div>
+					<div class="agreement_wrap">
+						<div class="all_agree_ad" >
+							<div class="chk_box1 line_blue">
+								<input type="checkbox" id="check-all_ad" name="check_ad_agreement">
+								<label for="check-all_ad" class="adipro-r">(선택) 맞춤형 광고 수신을 위한 행태정보의 수집 및 이용에 대한 동의</label>
+							</div>
+							<a href="#" class="view_detail icons aft" data-icon="" target="_blank">자세히보기</a>
+						</div>
+						<div class="sub_agreements_ad">
+							<div class="agree_ad" style="">
+								<div class="chk_box1 line_blue agreeChk">
+									<input type="checkbox" id="check_ad_agreement1" name="check_ad_agreement">
+									<label for="check_ad_agreement1" class="adipro-r">(선택) 개인정보 처리위탁 동의 (맞춤형 광고 수신 관련)</label>
+								</div>
+							</div>
+							<div class="agree_ad" style="">
+								<div class="chk_box1 line_blue agreeChk">
+									<input type="checkbox" id="check_ad_agreement2" name="check_ad_agreement">
+									<label for="check_ad_agreement2" class="adipro-r">(선택) 개인정보 국외이전 동의 (맞춤형 광고 수신 관련)</label>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="button_area no_pdg">
+						<div class="blue">
+							<a href="#" >확인</a>
+						</div>
+					</div>
+				</div>
+				<div class="check_close">
+					<div class="chk_box1">
+						<input type="checkbox" id="check_closepop_today">
+						<label for="check_closepop_today">
+							7일간 보지 않기
+						</label>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 191015 맞춤형 광고 수신 동의 end -->
 
 	</div>
 
@@ -2408,6 +2562,23 @@
 	<script type="text/javascript">
 		(function($){
 			$(document).ready(function() {
+					// review renew :: 최근 본 상품 마진 변경
+					var viewedCarousel = $("#product-viewed-list").owlCarousel({
+                        stagePadding: 20,
+    					margin:15,
+    					items : 2,
+    					merge: true,
+                        dots : true,
+                        inactiveDots : true
+    				});
+
+                    viewedCarousel.on('changed.owl.carousel', function(event) {
+                        var index = Math.floor(event.item.index/2);
+                        if(event.item.count%2 !== 0 && event.item.index == event.item.count - 2){
+                            $(event.target).find('.owl-controls .owl-dot').removeClass('active').last().addClass('active');
+                        }
+    				});
+
 				/*
 				****************** 161219 삭제 ******************
 

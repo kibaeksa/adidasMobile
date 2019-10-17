@@ -580,26 +580,26 @@
                              * line_blue 클래스 추가
                              -->
 								<div class="chk_box1 line_blue">
-									<input type="checkbox" id="term3">
-									<label for="term3" class="adipro-r">(필수) 아디클럽 이용약관</label>
+                                    <input type="checkbox" id="term3">
+                                    <!-- 191015 텍스트 수정 -->
+									<label for="term3" class="adipro-r">(필수) 아디클럽 이용약관동의</label>
 								</div>
 								<a href="https://m.adidas.co.kr:446/MO/Member/allAgreeView.action?popCmd=agree3" class="view_detail icons" data-icon="" target="_blank"></a>
-							</div>
-
+                            </div>
+                            
+                            <div class="box agree_items_box">
+                                <!-- 170310
+                                * blue 클래스 삭제
+                                * line_blue 클래스 추가
+                                -->
+                                <div class="chk_box1 line_blue">
+                                    <input type="checkbox" id="term4">
+                                    <!-- 191015 텍스트 수정 -->
+                                    <label for="term4" class="adipro-r">(필수) 개인정보 처리위탁 동의</label>
+                                </div>
+                                <a href="https://m.adidas.co.kr:446/MO/Member/allAgreeView.action?popCmd=agree4" class="view_detail icons" data-icon="" target="_blank"></a>
+                            </div>
 						</div>
-
-						<div class="box agree_items_box">
-						    <!-- 170310
-                            * blue 클래스 삭제
-                            * line_blue 클래스 추가
-                            -->
-							<div class="chk_box1 line_blue">
-								<input type="checkbox" id="term4">
-								<label for="term4" class="adipro-r">(필수) 개인정보 취급 위탁동의 (구매 및 배송 등 관련)</label>
-							</div>
-							<a href="https://m.adidas.co.kr:446/MO/Member/allAgreeView.action?popCmd=agree4" class="view_detail icons" data-icon="" target="_blank"></a>
-						</div>
-
 
 						<div class="box sns">
                             <span>(선택) 쿠폰 발급, 회원전용 이벤트 등 안내 수신동의</span>
@@ -647,12 +647,32 @@
                           <li>해당 기간 서비스 미사용 시 휴면계정 전환되어 분리보관</li>
                           <li>기간 선택하지 않는 경우, 기본 1년 후 휴면계정 전환</li>
                       	</ul>
-                      	<!-- 171106 개인정보 보호기간 추가 END -->
-
-					</div>
+                          <!-- 171106 개인정보 보호기간 추가 END -->
+                    </div>
+                    <!-- 191015 -->
+                    <div class="box agree_items_box all_agree_ad" style="border-top: 1px solid #c8cbcc;">
+                        <div class="chk_box1 line_blue">
+                            <input type="checkbox" id="check-all_ad" name="check_ad_agreement">
+                            <label for="check-all_ad" class="adipro-r">(선택) 맞춤형 광고 수신을 위한 행태정보의 수집 및 이용에 대한 동의</label>
+                        </div>
+                        <a href="#" class="view_detail icons" data-icon="" target="_blank"></a>
+                    </div>
+                    <div class="sub_agreements_ad">
+                        <div class="box subscribe_details agree_ad" style="border-top: 1px dashed #b2b2b2; border-bottom-width: 0;">
+                            <div class="chk_box1 line_blue agreeChk">
+                                <input type="checkbox" id="check_ad_agreement1" name="check_ad_agreement">
+                                <label for="check_ad_agreement1" class="adipro-r">(선택) 개인정보 처리위탁 동의 (맞춤형 광고 수신 관련)</label>
+                            </div>
+                        </div>
+                        <div class="box subscribe_details agree_ad" style="border-bottom-width: 0;padding-bottom: 15px;">
+                            <div class="chk_box1 line_blue agreeChk">
+                                <input type="checkbox" id="check_ad_agreement2" name="check_ad_agreement">
+                                <label for="check_ad_agreement2" class="adipro-r">(선택) 개인정보 국외이전 동의 (맞춤형 광고 수신 관련)</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //191015 -->
 				</div>
-
-
            </div>
            <!-- //form_table -->
 
@@ -668,11 +688,19 @@
 
            <script type="text/javascript">
                (function($){
+                    // 191015 맞춤형 전체 체크선택
+                   $('#check-all_ad').bind('click',function(){
+                        if($('#check-all_ad').prop("checked")){
+                            $("input[name=check_ad_agreement]").prop("checked",true);
+                        }else{
+                            $("input[name=check_ad_agreement]").prop("checked",false);
+                        }
+                   });
+
                    $('#check_agree_all').bind('click',function(){
                        var elemInputs = $('.sub_agreements .agree_items .chk_box1');
                        var i = 0;
                        var isChecked = $(this).find('input[type="checkbox"]').prop('checked');
-
                        for(; i < elemInputs.length; i++){
                            if(isChecked){
                                if( !$(elemInputs[i]).find('input[type="checkbox"]').prop('checked') ) {
