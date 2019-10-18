@@ -6,6 +6,7 @@
 	<meta name="format-detection" content="telephone=no">
 	<meta http-equiv="x-rim-auto-match" content="none">
 
+	<!-- <link href="/css/adidas/style_slide모듈화된.css" type="text/css" rel="stylesheet" /> -->
 	<link href="/css/adidas/style.css" type="text/css" rel="stylesheet" />
 	<link href="/css/adidas/fonts.css" type="text/css" rel="stylesheet" />
 
@@ -2033,6 +2034,7 @@
 			</div>
 			<!-- //product_info -->
 
+			<!-- 슬라이드 구조통합 :: 추천 상품 슬라이드 oth_prodlist 클래스 추가 -->
 			<div class="prodlist oth_prodlist">
 				<h4 class="tit">추천 상품</h4>
 				<div class="products owlcarousel-products-wrapper" id="product-other">
@@ -2173,8 +2175,9 @@
 					</div>
 				</div>
 			</div>
-			<!-- //oth_prodlist -->
+			<!-- // 슬라이드 구조통합 :: oth_prodlist end -->
 
+			<!-- 슬라이드 구조통합 :: 최근 본 상품 슬라이드 -->
             <div class="prodlist ">
                 <h4 class="tit">최근 본 상품</h4>
                 <div class="products owlcarousel-products-wrapper" id="product-viewed-list">
@@ -2332,29 +2335,8 @@
                     </div>
                 </div>
 			</div>
-			<!-- //viewed-items -->
+			<!-- //슬라이드 구조통합 :: 최근 본 상품 슬라이드 end-->
 
-            <script type="text/javascript">
-                (function($){
-
-					// review renew :: 최근 본 상품 마진 변경
-                    var viewedCarousel = $("#product-viewed-list").owlCarousel({
-                        stagePadding: 20,
-    					margin:15,
-    					items : 2,
-    					merge: true,
-                        dots : true,
-                        inactiveDots : true
-    				});
-
-                    viewedCarousel.on('changed.owl.carousel', function(event) {
-                        var index = Math.floor(event.item.index/2);
-                        if(event.item.count%2 !== 0 && event.item.index == event.item.count - 2){
-                            $(event.target).find('.owl-controls .owl-dot').removeClass('active').last().addClass('active');
-                        }
-    				});
-                })(jQuery)
-            </script>
             <!-- //170208 -->
 
 			<div id="prod_now">
@@ -2929,7 +2911,7 @@
 					return false;
 				});
 
-                // review renew :: 추천상품 마진 변경
+                // 슬라이드 구조통합 :: 추천 상품 슬라이드
 				var owlRecommandProd = $("#product-other").owlCarousel({
                     stagePadding: 20,
 					margin:15,
@@ -2943,7 +2925,24 @@
                         $(event.target).find('.owl-controls .owl-dot').removeClass('active').last().addClass('active');
                     }
                 });
-                // 170208 추천상품 owlCarousel 수정 END
+				// 170208 추천상품 owlCarousel 수정 END
+				
+				// 슬라이드 구조통합 :: 최근 본 상품 슬라이드
+				var viewedCarousel = $("#product-viewed-list").owlCarousel({
+					stagePadding: 20,
+					margin:15,
+					items : 2,
+					merge: true,
+					dots : true,
+					inactiveDots : true
+				});
+
+				viewedCarousel.on('changed.owl.carousel', function(event) {
+					var index = Math.floor(event.item.index/2);
+					if(event.item.count%2 !== 0 && event.item.index == event.item.count - 2){
+						$(event.target).find('.owl-controls .owl-dot').removeClass('active').last().addClass('active');
+					}
+				});
 
 				$('.prod_imgs_cut>ul>li').zoomImage({
 					target : '>div',

@@ -6,8 +6,8 @@
 	<meta name="format-detection" content="telephone=no">
 	<meta http-equiv="x-rim-auto-match" content="none">
 
-	<!-- <link href="/css/adidas/style_back.css" type="text/css" rel="stylesheet" /> -->
 	<link href="/css/adidas/style.css" type="text/css" rel="stylesheet" />
+	<!-- <link href="/css/adidas/style_slide모듈화된.css" type="text/css" rel="stylesheet" /> -->
 	<link href="/css/adidas/fonts.css" type="text/css" rel="stylesheet" />
 
 	<script type="text/javascript" src="/designjs/common/jquery-1.12.0.min.js"></script>
@@ -1852,7 +1852,7 @@
 			<div class="prodlist product-banner">
 				<div class="products owlcarousel-products-wrapper" id="product-best-banner">
 					<div class="prod_box">
-						<!-- 슬라이드 구조통합 a 위치 변경 -->
+						<!-- 슬라이드 구조통합 :: 배너 슬라이드 a 태그 위치 변경 -->
 						<a href="http://m.adidas.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=01001002002004&INFLW_TC_CD=&term=1"></a>
 						<div class="img"><img src="/images/adidas/common/abtest/prdbnn_01.jpg" alt=""></div>
 					</div>
@@ -2088,8 +2088,8 @@
 			<!-- // 슬라이드 구조통합 end -->
 
 			<!-- 슬라이드 구조통합 최근본상품 -->
-			<div class="prodlist viewed-items">
-				<h4 class="tit">최근 본 상품 (리뉴얼용)</h4>
+			<div class="prodlist">
+				<h4 class="tit">최근 본 상품</h4>
 				<div class="products owlcarousel-products-wrapper" id="product-viewed-list">
 					<div class="prod_box">
 						<a href="#"></a>
@@ -2356,7 +2356,7 @@
 							<li><a href="https://shop.adidas.co.kr/PF020620.action?pn=recruit" target="_blank"><strong>채용정보</strong></a></li>
 						</div>
 						<li><a href="https://shop.adidas.co.kr/PF010107.action?gubn=1" target="_blank"><strong>이용약관</strong></a></li>
-						<li><a href="http://shop.adidas.co.kr/PF010107.action?gubn=2" target="_blank">개인정보처리방침</a></li>
+						<li><a href="https://shop.adidas.co.kr/PF010107.action?gubn=2" target="_blank"><strong>개인정보처리방침</strong></a></li>
 						<!-- 191015 추가 & 위치 변경 -->
 						<li><a href="#" target="_blank">맞춤형 광고</a></li>
 						<li><a href="https://m.adidas.co.kr/Common/PopJusticeBns.jsp" target="_blank">공정거래자율준수</a></li>
@@ -2562,22 +2562,7 @@
 	<script type="text/javascript">
 		(function($){
 			$(document).ready(function() {
-					// review renew :: 최근 본 상품 마진 변경
-					var viewedCarousel = $("#product-viewed-list").owlCarousel({
-                        stagePadding: 20,
-    					margin:15,
-    					items : 2,
-    					merge: true,
-                        dots : true,
-                        inactiveDots : true
-    				});
 
-                    viewedCarousel.on('changed.owl.carousel', function(event) {
-                        var index = Math.floor(event.item.index/2);
-                        if(event.item.count%2 !== 0 && event.item.index == event.item.count - 2){
-                            $(event.target).find('.owl-controls .owl-dot').removeClass('active').last().addClass('active');
-                        }
-    				});
 
 				/*
 				****************** 161219 삭제 ******************
@@ -2670,10 +2655,10 @@
 				});
 				// 190604 END
 
-				// 170208 owlCarousel 속성 수정
+				// 슬라이드 구조통합 :: 인기 상품 슬라이드
 				var owlBestProducts = $("#product-best").owlCarousel({
 					stagePadding: 20,
-					margin:3,
+					margin:15,
 					items : 2,
 					merge: true
 				});
@@ -2684,10 +2669,10 @@
                     }
                 });
 
-				// 170208 owlCarousel 속성 수정
+				// 슬라이드 구조통합 :: 할인 상품 슬라이드
 				var owlSaleProducts = $("#product-sale").owlCarousel({
 					stagePadding: 20,
-					margin:3,
+					margin:15,
 					items : 2,
 					merge: true
 				});
@@ -2696,7 +2681,23 @@
                     if(event.item.count%2 !== 0 && event.item.index == event.item.count - 2){
                         $(event.target).find('.owl-controls .owl-dot').removeClass('active').last().addClass('active');
                     }
-                });
+				});
+				// 슬라이드 구조통합 :: 최근 본 상품 슬라이드
+				var viewedCarousel = $("#product-viewed-list").owlCarousel({
+					stagePadding: 20,
+					margin:15,
+					items : 2,
+					merge: true,
+					dots : true,
+					inactiveDots : true
+				});
+
+				viewedCarousel.on('changed.owl.carousel', function(event) {
+					var index = Math.floor(event.item.index/2);
+					if(event.item.count%2 !== 0 && event.item.index == event.item.count - 2){
+						$(event.target).find('.owl-controls .owl-dot').removeClass('active').last().addClass('active');
+					}
+				});
 
 
 
