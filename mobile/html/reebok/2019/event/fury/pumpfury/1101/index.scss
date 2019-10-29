@@ -1,0 +1,196 @@
+@import "./mobile/MO/reebok/css/scss/about.scss";
+@font-face {
+    font-family: 'dinpro bold';
+    src: url('//image.reebok.co.kr/fonts/dinpro/DINPro-Bold.eot');
+    src: url('//image.reebok.co.kr/fonts/dinpro/DINPro-Bold.eot?#iefix') format('embedded-opentype'),
+         url('//image.reebok.co.kr/fonts/dinpro/DINPro-Bold.woff2') format('woff2'),
+         url('//image.reebok.co.kr/fonts/dinpro/DINPro-Bold.woff') format('woff'),
+         url('//image.reebok.co.kr/fonts/dinpro/DINPro-Bold.ttf') format('truetype');
+}
+.fury_cp{
+
+    //common
+    .btn{
+        &.sold{
+            a{
+                &:before{
+                    border-bottom: 1px solid #bbb;
+                    border-left: 1px solid #bbb;
+                }
+                &:after{
+                    border-right: 1px solid #bbb;
+                    border-top: 1px solid #bbb;
+                }
+            }
+        }
+        a{
+            position: relative;
+            background-color: transparent;
+            border: 1px solid #000;
+            align-items: center;
+            display: inline-block;
+            padding: 0 1.5rem;
+            text-decoration: none;
+            transition: transform .1s cubic-bezier(.3,0,.45,1),color .1s cubic-bezier(.3,0,.45,1),border .1s cubic-bezier(.3,0,.45,1),background .1s cubic-bezier(.3,0,.45,1);
+            white-space: nowrap;
+            font: 500 1.1rem/3.5rem 'NotoSansKR';
+            color:#fff;
+            background: #000;
+            letter-spacing: .1rem;
+            &::before{
+                border-bottom: 1px solid #000;
+                border-left: 1px solid #000;
+                bottom: -4px;
+                height: 3px;
+                left: 2px;
+                width: calc(100% + 1px);
+                content: "";
+                display: block;
+                position: absolute;
+            }
+            &::after{
+                border-right: 1px solid #000;
+                border-top: 1px solid #000;
+                height: calc(100% + 1px);
+                right: -4px;
+                top: 2px;
+                width: 3px;
+                content: "";
+                display: block;
+                position: absolute;
+            }
+            span.arrow{
+                display: inline-block;
+                width: 20px;
+                height: 10px;
+                margin-left: 17px;
+                vertical-align: middle;
+                background: url('/images/reebok/2019/event/fury/pumpfury/0821/arrow.png') no-repeat;
+                background-size: auto 100%;
+            }
+        }
+    }
+  
+    img{
+        width:100%;
+    }
+    .scroll{
+        &.on{
+            opacity: 1;
+        }
+    }
+    .main{
+        opacity: 0;
+        transition: all 1s;
+    }
+    .section{
+        position: relative;
+        opacity: 0;
+        transition: all 1s;
+        // 오픈후 주석처리
+        .section_txt{
+            padding: 3rem 2rem 4rem;
+            h1{
+                font: 400 17px/17px 'dinpro bold';
+                text-align: center;
+                color:#000;
+                letter-spacing: 1px;
+            }
+            p{
+                font: 400 11.5px/15px 'NotoSansKR';
+                text-align: center;
+                color:#000;
+                letter-spacing: 0px;
+                margin: 1rem 0;
+            }
+            .btn{
+                text-align: center;
+            }
+        }
+
+        // 1101 구매하기 오픈
+        .date11{
+            h1{
+                font: 400 17px/17px 'dinpro bold';
+                text-align: center;
+                color:#000;
+                letter-spacing: 1px;
+                margin: 2.5rem 0 0 0;
+            }
+            >span{
+                font: 400 11px/11px 'NotoSansKR';
+                text-align: center;
+                color: #000;
+                letter-spacing: .5px;
+                display: block;
+                margin-top: 10px;
+            }
+            .btn{
+                text-align:center;
+                margin: 1.5rem 0 1rem 0;
+            }
+            .notice{
+
+            }
+        }
+    }
+    .aside{
+        position: relative;
+        opacity: 0;
+        transition: all 1s;
+        .aside_txt{
+            position: absolute;
+            top:55%;
+            left:35%;
+            transform: translate(-50%,-50%);
+            background:#fff;
+            width:43%;
+            padding:7%;
+            img{
+                width:50%;
+            }
+            .wrap{
+                display:block;
+                h1{
+                    font: 400 1.5rem/1.5rem 'NotoSansKR';
+                    color:#fff;
+                    position: relative;
+                    z-index:1;
+                    display:inline-block;
+                    margin: 25px 0;
+                    letter-spacing: 0;
+                    &::after{
+                        display:block;
+                        content:'';
+                        clear:both;
+                        background:black;
+                        position: absolute;
+                        top:-3px;
+                        bottom:-3px;
+                        left:-3px;
+                        right:-3px;
+                        z-index:-1;
+                    }
+                }
+            }
+            p{
+                font: 400 .9rem/1.2rem 'NotoSansKR';
+                color:#000;
+                letter-spacing: 0;
+                span{
+                    font: 400 .9rem/1.2rem 'NotoSansKR';
+                }
+            }
+        }
+    }
+    .contents{
+        opacity: 0;
+        transition: all 1s;
+        .contents_wrap{
+            position: relative;
+
+        }
+    }
+    
+}
+// pumpfury END
