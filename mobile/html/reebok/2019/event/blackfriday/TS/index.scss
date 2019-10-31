@@ -1,23 +1,5 @@
 @import "./mobile/MO/reebok/css/scss/about.scss";
-@font-face {
-	font-family: 'adinenuPro-black';
-	src: url('/fonts/adineuePro/woff/adineuePRO-Black.woff') format('woff');
-}
 
-@font-face {
-	font-family: 'adinenuPro-bold';
-	src: url('/fonts/adineuePro/woff/adineuePRO-Bold.woff') format('woff');
-}
-
-@font-face {
-	font-family: 'adinenuPro-regular';
-	src: url('/fonts/adineuePro/woff/adineuePRO-Regular.woff') format('woff');
-}
-
-@font-face {
-	font-family: 'adinenuPro-light';
-	src: url('/fonts/adineuePro/woff/adineuePRO-Light.woff') format('woff');
-}
 .campaign.blackfriday{
 
     //common
@@ -28,9 +10,9 @@
         a{
             position: relative;
             display: block;
-            font: 500 1rem/40px 'NotoSansKR';
+            font: 500 1rem/45px 'NotoSansKR';
             color: #fff;
-            /* padding: 0 3rem; */
+            background: #000;
             letter-spacing: .1rem;
             width: 131px;
             span{
@@ -63,11 +45,13 @@
     .time-counting{
         position: relative;
         padding:3rem 0;
+        background: url("/images/reebok/2019/event/blackfriday/TS/timer_bg.jpg") no-repeat;
+        background-size: 100% 100%;
         p{
             text-align: center;
             &.title{
-                padding:0 0 1rem 0;
-                font:1.8rem 'adinenuPro-bold';
+                padding:0 0 1.8rem 0;
+                font:800 2.3rem/2rem 'neueplak';
                 letter-spacing: 1px;
             }
         }
@@ -82,31 +66,196 @@
                     letter-spacing: 1px;
                 }
                 span{
-                    font:3.5rem 'adinenuPro-bold';
+                    font:700 3.8rem/3rem 'neueplak';
                 }
                 em{
+                    display: inline-block;
+                    margin:1.5rem 0 0 0;
                     font:1.3rem 'adinenuPro-light';
                     letter-spacing: 1px;
                 }
             }
         }
     }
+    .line{
+        img{
+            width:100%;
+        }
+    }
     .items-slider{
         position: relative;
         left:-35px;
-        padding: 2rem 5rem 2rem 15px;
+        padding: 0rem 5rem 5rem 15px;
         .item-box{
             .txt-box{
                 margin-left: 22px;
                 padding: 1.3rem 0 0 0;
                 p{
-                    font: 2rem/2.1rem 'adinenuPro-bold';
+                    font:900 1.8rem/2.1rem 'NotoSansKR';
                     letter-spacing: 0px;   
                     &.date{
-                        padding: 0 0 .5rem 0;
-                        font: 1.8rem 'adinenuPro-bold';
+                        padding: 0 0 1.5rem 0;
+                        font:800 1.8rem/1rem 'neueplak-ext';
                         letter-spacing: 1px;
                     }
+                }
+            }
+        }
+    }
+
+    .benefits{
+        .box_txt{
+            padding:2.2rem 0 3.8rem;
+            text-align: center;
+
+            p{
+                text-align: center;
+                font:400 1.3rem 'NotoSansKR';
+                &.title{
+                    padding:0rem 0 1.5rem 0;
+                    font:900 2.8rem/3.2rem 'NotoSansKR';
+                    span{
+                        display: inline-block;
+                        margin-right: 2px;
+                        font:700 2.8rem 'neueplak-wide';
+                    }
+                }
+                &.red{
+                    padding:.5rem 0 0 0;
+                    font:600 1.4rem 'NotoSansKR';
+                    color: #d0091d;
+                }
+            }
+            .btn{
+                display: inline-block;
+                padding:2rem 0 0 0;
+            }
+        }
+        .item-today{
+            .main-txt{
+                padding:28px 15px 55px 35px;
+                strong{
+                    font: 900 2.2rem/2.5rem 'NotoSansKR';
+                }
+                p{
+                    font: 500 2rem/2.8rem 'NotoSansKR';
+                    span{
+                        display: inline-block;
+                        font: 500 2rem 'neueplak';
+                    }
+                    &.small{
+                        padding:1rem 0 1rem 0;
+                        font: 700 1.6rem 'NotoSansKR';
+                    }
+                }
+                .price{
+                    >div{
+                        font: 800 2.8rem/2.8rem 'neueplak-ext';
+                        color:#d0091d;
+                        span{
+                            display: inline-block;
+                            font: 900 2rem/2.5rem 'NotoSansKR';
+                        }
+                        &.origin{
+                            position: relative;
+                            margin-right: 10px;
+                            font: 500 2rem/2.8rem 'neueplak-ext';
+                            color:#444;
+                            &:after{
+                                content: '';
+                                display: inline-block;
+                                position: absolute;
+                                right:0;
+                                top:50%;
+                                width: 100%;
+                                height: 1px;
+                                background: #444;
+                            }
+                            span{
+                                font: 500 1.2rem/2.5rem 'NotoSansKR';
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .plus-sale{
+        position: relative;
+        background: #DE1123;
+        video{
+            width:100%;
+        }
+        .plus-sale-txt{
+            position: absolute;
+            top:75%;
+            left:35px;
+            transform: translate(0,-50%);
+            p{
+                font: 500 1.25rem 'NotoSansKR';
+                color:#fff;
+                &.title{
+                    padding:0 0 1.2rem 0;
+                    font: 900 2.6rem/2.8rem 'NotoSansKR';
+                    letter-spacing: 0px;
+                }
+            }
+            .btn{
+                padding:1.2rem 0 0 0;
+                a{
+                    color:#000;
+                    background: #fff;
+                    span{
+                        display: inline-block;
+                        width: 20px;
+                        height: 9px;
+                        background: url(/images/reebok/2019/event/myt/icons_arrow.png) no-repeat;
+                        background-size: 100% 100%;
+                        margin-left: 18px;
+                    }
+                    &:after{
+                        display: inline-block;
+                        content: '';
+                        border: 1px solid #fff;
+                        position: absolute;
+                        top: 0;left: 0;right: 0;bottom: 0;
+                        transform: translate(3px, 3px);
+                    }
+                }
+
+            }
+        }
+    }
+
+    .tips{
+        position: relative;
+        padding:2.2rem 0 3rem 35px;
+        background: #000;;
+        .title{
+            padding:0 0 1.4rem 0;
+            font: 900 1.8rem/2.1rem 'NotoSansKR';
+            color:#b8b8b8;
+        }
+        ul{
+            li{
+                position: relative;
+                padding:0 0 .5rem 10px;
+                font: 500 1.1rem 'NotoSansKR';
+                color:#b8b8b8;
+                &:after{
+                    position: absolute;
+                    top:10px;
+                    left:0;
+                    content: '';
+                    display: inline-block;
+                    width:2px;
+                    height:2px;
+                    border-radius: 50px;
+                    background: #b8b8b8;
+                }
+                span{
+                    font:600 1.1rem/1rem 'neueplak';
                 }
             }
         }
