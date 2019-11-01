@@ -318,7 +318,7 @@
 								지금 바로 회원 가입하세요!
 							</p>
 							<div class="btn">
-								<a href="https://m.adidas.co.kr/MO/Member/memJoin.action?">
+								<a href="https://m.reebok.co.kr/MO/Member/memJoin.action">
 									회원가입
 									<span></span>
 								</a>
@@ -346,7 +346,7 @@
 							</div>
 							
 							<div class="btn">
-								<a href="https://m.adidas.co.kr/MO/Member/memJoin.action?">
+								<a href="https://m.reebok.co.kr/MO/Member/memJoin.action">
 									회원가입
 									<span></span>
 								</a>
@@ -557,6 +557,8 @@
 				console.log('initialized--')	
 				const owlDots = document.querySelector(".owl-dots");
 				const owlDot = owlDots.querySelector(".owl-dot");
+				const owlSecondDot = owlDots.childNodes[1];
+				console.log(owlSecondDot)
 				let itemIndex = event.item.index;
 				itemIndex = 0;
 				let date = new Date();
@@ -565,6 +567,10 @@
 				// 현재 날짜가 4이면 인덱스 0
 				// 현재 날짜에 맞는 슬라이더 배경 데이 텍스트
 				sliderBg(getDate-4);
+				// init Dot is second
+				owlSecondDot.click();
+
+				
 			});
 			owlSlider.on('changed.owl.carousel', function(event) {
 				let itemIndex = event.item.index-1;
