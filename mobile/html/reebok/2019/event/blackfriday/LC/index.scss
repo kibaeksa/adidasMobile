@@ -159,13 +159,13 @@
                             p{
                                 box-sizing: border-box;
                                 text-align: left;
-                                padding: 0 5px;
+                                padding: 0 8px;
                                 color: #000;
                                 font: 400 .95rem/3rem 'NotoSansKR';
                                 span{
                                     position: absolute;
                                     top:50%;
-                                    right:5px;
+                                    right:8px;
                                     width:15px;
                                     height:2px;
                                     background: #000;
@@ -173,7 +173,7 @@
                                         content:'';
                                         position: absolute;
                                         display: inline-block;
-                                        width:3px;
+                                        width:4px;
                                         height:2px;
                                         background: #000;
                                         transform: rotate(45deg);
@@ -331,10 +331,12 @@
             display: inline-block;
             width:33.3%;
             text-align: center;
+
             &.on{
                 .txt-box{
                     p{
                         &.tle{
+                            color:#000;
                             &:after{
                                 opacity: 1;
                             }
@@ -366,6 +368,7 @@
                 letter-spacing: 0px;   
                 &.tle{
                     font:900 1.2rem 'NotoSansKR','neueplak-ext';
+                    color:#aaa;
                     span{
                         text-transform: uppercase;
                         font:800 1.3rem 'neueplak-ext';
@@ -392,10 +395,12 @@
             text-align: center;
             display: inline-block;
             opacity: 0;
+            transition: all 0.5s;
+
             >p{
                 display: inline-block;
                 font: 800 1.7rem 'neueplak-ext';
-                // color: #ab2328;
+                letter-spacing: 0;
                 color:#aaaaaa;
                 span{
                     display: inline-block;
@@ -441,6 +446,8 @@
             p{
                 text-align: center;
                 font:400 1.3rem 'NotoSansKR';
+                letter-spacing: 0;
+
                 strong{
                     font:600 1.3rem 'NotoSansKR';
                 }
@@ -485,13 +492,30 @@
             left:35px;
             transform: translate(0,-50%);
             p{
+                position: relative;
                 padding: 0 0 .4rem 0;
                 font: 500 1.2rem 'NotoSansKR';
                 color:#000;
+                letter-spacing: 0;
                 &.title{
                     padding:0 0 1.2rem 0;
                     font: 900 2.5rem/2.8rem 'NotoSansKR';
                     letter-spacing: 0px;
+                }
+            }
+            .plus-sale_sub-list{
+                p{
+                    padding-left:10px;
+                    &:after{
+                        content: '';
+                        display: inline-block;
+                        width:3px;
+                        height:3px;
+                        background: #000;
+                        position: absolute;
+                        top:10px;
+                        left:0;
+                    }
                 }
             }
             .btn{
@@ -538,6 +562,7 @@
                 font: 500 1rem 'NotoSansKR';
                 color:#bababa;
                 text-transform: uppercase;
+                letter-spacing: 0;
                 &:after{
                     position: absolute;
                     top:10px;
@@ -554,6 +579,8 @@
                     p{
                         margin:0 0 .5rem 0;
                         font: 500 .9rem 'NotoSansKR';  
+                        letter-spacing: 0;
+
                         &:last-child{
                             margin-bottom: 0;
                         }
