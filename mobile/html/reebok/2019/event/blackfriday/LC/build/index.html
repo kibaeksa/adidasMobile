@@ -133,7 +133,7 @@
 				<div class="campaign about_campaign blackfriday">
 
 					<div class="main-visual">
-						<a href="https://m.reebok.co.kr/MO/Promotion/landingPage.action?pageNo=1050"></a>
+						<a href="https://m.reebok.co.kr/MO/Promotion/landingPage.action?pageNo=1050" campaign-label="전체 제품 보기"></a>
 						<img src="/images/reebok/2019/event/blackfriday/LC/main_visual.jpg" alt="">
 					</div>
 
@@ -149,7 +149,7 @@
 							<div class="row">
 								<div class="day ">
 									<div class="img">
-										<a href="https://m.reebok.co.kr/MO/Promotion/landingPage.action?pageNo=1039"></a>
+										<a href="https://m.reebok.co.kr/MO/Promotion/landingPage.action?pageNo=1039" onclick="alert('데일리 슈퍼딜은 10 AM ~ 부터 시작입니다.'); return false;" campaign-label="구매하기"></a>
 										<img src="/images/reebok/2019/event/blackfriday/LC/item1.jpg" alt="">
 										<div class="buy">
 											<p>구매하기<span></span></p>
@@ -318,7 +318,7 @@
 								지금 바로 회원 가입하세요!
 							</p>
 							<div class="btn">
-								<a href="https://m.reebok.co.kr/MO/Member/memJoin.action">
+								<a href="https://m.reebok.co.kr/MO/Member/memJoin.action" campaign-label="회원가입">
 									회원가입
 									<span></span>
 								</a>
@@ -327,7 +327,7 @@
 					</div>
 
 					<div class="coupon-sale ">
-						<a href="https://m.reebok.co.kr/MO/Club/cponPublMem.action?KEY=SXZJNG1QN5" target="_blank"></a>
+						<a href="https://m.reebok.co.kr/MO/Club/cponPublMem.action?KEY=SXZJNG1QN5" target="_blank" campaign-label="쿠폰다운로드""></a>
 						<span class="coupon-sale-popup-btn"></span>
 						<img src="/images/reebok/2019/event/blackfriday/LC/coupon_download.jpg" alt="">
 					</div>
@@ -346,7 +346,7 @@
 							</div>
 							
 							<div class="btn">
-								<a href="https://m.reebok.co.kr/MO/Member/memJoin.action">
+								<a href="https://m.reebok.co.kr/MO/Member/memJoin.action" campaign-label="회원가입">
 									회원가입
 									<span></span>
 								</a>
@@ -533,7 +533,7 @@
 						</p>
 					</div>
 					<div class="btn">
-						<a href="${sliderItemTitle[myItem].link}">구매하기<span></span></a>
+						<a href="${sliderItemTitle[myItem].link}" campaign-label="구매하기">구매하기<span></span></a>
 					</div>
 				`;
 				sliderNavi.style.width = naviBoxWidth*sliderItemsLength + "px";
@@ -564,6 +564,7 @@
 				let date = new Date();
 				let getDate = date.getDate();
 				getDate = 4;
+				console.log(getDate)
 				// 현재 날짜가 4이면 인덱스 0
 				// 현재 날짜에 맞는 슬라이더 배경 데이 텍스트
 				sliderBg(getDate-4);
