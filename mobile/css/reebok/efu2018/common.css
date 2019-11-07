@@ -357,6 +357,12 @@ footer#footer address .lnk a{color:#a1a1a1;font-size:10px;letter-spacing:-.5px;t
 footer#footer address .cprgt{color:#a1a1a1;font-size:10px;}
 
 footer#footer address .inner p{text-align: center;color:#888;line-height: 2rem; letter-spacing: -1px; font:400 0.9rem/1.8rem 'NotoSansKR';}
+footer#footer address .inner p .cs{
+	position: relative;color:#888;
+}
+footer#footer address .inner p .cs::after{
+	content:'';display: inline-block;width:100%;height:1px;background: #888;position: absolute;bottom:0;left:0;
+}
 footer#footer address .inner p strong{font-weight: bold; color:#ccc;}
 footer#footer address .inner .f_url{padding-top: 2rem;}
 footer#footer address .inner .f_url p a{color:#999; font:300 1.1rem/2.2rem 'NotoSansKR';}
@@ -1123,3 +1129,23 @@ background:#fff;
 	margin-bottom: 0;
 	display: inline-block;
 }
+/* 191106 푸터 이용안내 팝업 추가 START */
+.modal-popup-wrapper.footer-cs-popup .popup-header{background: #fff !important;border-bottom: 1px solid #ebebeb;}
+.modal-popup-wrapper.footer-cs-popup .popup-header h2{font-weight: 400;}
+.modal-popup-wrapper.footer-cs-popup .popup-contents{padding:2rem;}
+.modal-popup-wrapper.footer-cs-popup .popup-contents .popup-contents_main{padding-bottom: 20px;border-bottom: 1px dotted #000;}
+.modal-popup-wrapper.footer-cs-popup .popup-contents .popup-contents_main .title{display:block;margin-bottom: 10px;font:700 3rem 'neueplak';color: #000;text-align: center;letter-spacing: 0;}
+.modal-popup-wrapper.footer-cs-popup .popup-contents .popup-contents_main .title span{display: inline-block;margin-left:8px;width:25px;height:25px;background: url("/images/adidas/common/ico_footer_phone.jpg") no-repeat;background-size:100% 100%;}
+.modal-popup-wrapper.footer-cs-popup .popup-contents .popup-contents_main ul{text-align: center;}
+.modal-popup-wrapper.footer-cs-popup .popup-contents .popup-contents_main ul li{display:inline-block;text-align: center;}
+.modal-popup-wrapper.footer-cs-popup .popup-contents .popup-contents_main ul li::before{top:10px;}
+.modal-popup-wrapper.footer-cs-popup .popup-contents ul li p{position:relative;font: 500 1.2rem 'NotoSansKR';color:#000;letter-spacing: -0.7px;margin-bottom: 2px;}
+.modal-popup-wrapper.footer-cs-popup .popup-contents ul li p small{font: 300 1.1rem 'NotoSansKR';}
+.modal-popup-wrapper.footer-cs-popup .popup-contents .popup-contents_sub p.title{margin: 1.6rem 0 1.2rem;font: 400 1.4rem 'NotoSansKR';color: #000;text-align: center;}
+.modal-popup-wrapper.footer-cs-popup .popup-contents .popup-contents_sub .row{display:flex;margin-bottom:10px;}
+.modal-popup-wrapper.footer-cs-popup .popup-contents .popup-contents_sub .row strong{display:inline-block;font: 800 1.3rem/1rem 'neueplak'; color:#000; text-transform: uppercase; letter-spacing: 0.4px;}
+.modal-popup-wrapper.footer-cs-popup .popup-contents .popup-contents_sub .row .row_sub{display: inline-block;width: 80%;vertical-align: top;margin-left:5px;}
+.modal-popup-wrapper.footer-cs-popup .popup-contents .popup-contents_sub .row .row_sub p{font: 500 14px/14px 'NotoSansKR';color:#000;}
+.modal-popup-wrapper.footer-cs-popup .popup-contents .popup-contents_sub .row .row_sub ul{margin-top:8px;width:250px;}
+.modal-popup-wrapper.footer-cs-popup .popup-contents .popup-contents_sub .row .row_sub ul li{display: inline-block;font: 300 13px 'NotoSansKR';color: #000;letter-spacing: -0.7px;width: 122px;}
+/* 191106 푸터 이용안내 팝업 추가 END */
