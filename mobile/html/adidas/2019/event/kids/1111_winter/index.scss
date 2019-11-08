@@ -1,0 +1,275 @@
+@import './mobile/css/adidas/scss/common/mixin.scss';
+@import './mobile/css/adidas/scss/common/common.scss';
+
+#container{
+	padding-top: 61px;
+}
+#kids_wnd{
+	position: relative;
+	.button_area_v2{
+		width: 130px;
+		a{
+			font-size: 1rem;
+			font-weight: normal;
+			height: 40px;
+			line-height: 38px;
+		    letter-spacing: 1px;
+			span.arrow{
+				margin-left: 10px;
+				width: 25px;
+				&:after{
+					width: 8px;
+				}
+				&:before{
+					width: 8px;
+				}
+			}
+		}
+	}
+
+	.main_visual{
+		position: relative;
+		>img{
+			display: block;
+			width: 100%;
+		}
+		.inn{
+			position: absolute;
+			top:71%;
+			left: 50%;
+			width: 100%;
+			@include css3(opacity,1);
+
+			transform: translate(-50%,-5%);
+			text-align: center;
+			h2{
+				color:#000;
+				font:700 1.8rem/1.8rem 'NotoSansKR';
+				letter-spacing: 1px;
+				text-align: center;
+			}
+			p{
+				padding: 0.5rem 0 1.4rem;
+				font:400 1.6rem/1.6rem 'NotoSansKR';
+				color:#000;
+				letter-spacing: 0.2px;
+				text-align: center;
+			}
+			.button_area_v2{
+				display: inline-block;
+			}
+		}
+	}
+
+	.statement{
+		position: relative;
+		padding: 3rem 0;
+		text-align: center;
+		img{
+			display: inline-block;
+			width: 60%;
+			margin-bottom: 1.5rem;
+		}
+		p{
+			text-align: center;
+			font:400 1.2rem 'NotoSansKR';
+			em{
+				font: 600 1.2rem 'NotoSansKR';
+				letter-spacing: normal;
+			}
+		}
+	}
+
+	.sect_prds{
+		position: relative;
+		>.bg{
+			img{
+				display: block;
+				width: 100%;
+			}
+			a{
+				position: absolute;
+				width: 30%;
+				height: 3%;
+				left: 50%;
+				margin-left: -16%;
+				// background: rgba(0, 0, 0, 0.6);
+				z-index: 5;
+				&:nth-child(2){top: 28.8%;}
+				&:nth-child(3){top: 61.5%;}
+				&:nth-child(4){top: 94.5%;}
+			}
+		}
+		.inner_sect{
+			overflow: hidden;
+			position: absolute;
+			width: 90%;
+			.grid-slide{
+				position: relative;
+				width: 67%;
+				padding-bottom: 62%;
+				left: 0;
+				img{
+					display: block;
+					width: 100%;
+					position: absolute;
+					top: 0;
+					left: 0;
+					@include css3(opacity,0);
+					@include css3(transition, all 0.5s);
+					&.on{
+						@include css3(opacity,1);
+					}
+				}
+				.navi{
+					position: absolute;
+					left:50%;
+					bottom: -1.5rem;
+					margin-left: -1rem;
+					z-index: 2;
+					span{
+						display: inline-block;
+						margin-right:6px;
+						width: 10px;height:10px;
+						background: #9ea194;
+						border-radius: 50px;
+						&.on{
+							background: #000;
+						}
+					}
+				}
+			}
+			.img_box{
+				position: relative;
+				width: 67%;
+				padding-bottom: 62%;
+				left: 0;
+				img{
+					display: block;
+					width: 100%;
+					position: absolute;
+					top: 0;
+					left: 0;
+					@include css3(opacity,0);
+					@include css3(transition, all 0.5s);
+					&.on{
+						@include css3(opacity,1);
+					}
+				}
+			}
+			.buy_box{
+				margin-top: 2rem;
+				padding: 5px 0;
+				float: left;
+				width: 100%;
+				text-align: center;
+				>span{
+					padding-bottom: 0.2rem;
+					display: block;
+					font:400 1.1rem/1.1rem 'adinenuPro-light';
+					color:#000;
+					letter-spacing: 1px;
+				}
+				h3{
+					font:600 2rem/2rem 'NotoSansKR';
+					letter-spacing: 1px;
+					color:#000;
+				}
+				h4{
+					font:500 1.2rem/1.2rem 'NotoSansKR';
+					color:#000;
+					padding-bottom: 5px;
+					letter-spacing: 1px;
+				}
+				p{
+					padding: 1rem 0 1.5rem;
+					font:400 1rem 'NotoSansKR';
+					letter-spacing: normal;
+					color:#000;
+				}
+				.button_area_v2{
+					display: inline-block;
+					width: 140px;
+					a{
+						font-weight: normal;
+						span{
+							display: inline-block;
+						}
+					}
+				}
+			}
+			&.prds_01{
+				top: 2.5%;
+				right: 5%;
+				.grid-slide{}
+			}
+			&.prds_02{
+				top: 27%;
+				right: 5%;
+				.grid-slide{
+					width: 62% !important;
+					padding-bottom: 62% !important;
+				}
+			}
+			&.prds_03{
+				top: 51.8%;
+				right: 5%;
+				.grid-slide{}
+			}
+			&.prds_04{
+				top: 76.5%;
+				right: 5%;
+				.grid-slide{}
+			}
+		}
+	}
+
+	.sect_bot{
+		position: relative;
+		>.bg{
+			img{
+				display: block;
+				width: 100%;
+			}
+		}
+		.b_box{
+			width: 100%;
+			position: absolute;
+			top: 50%;
+			left: 0;
+			transform: translateY(-50%);
+			z-index: 3;
+			text-align: center;
+			h2{
+				font:800 1.8rem/1.8rem 'NotoSansKR';
+				color:#000;
+				letter-spacing: 1px;
+				text-align: center;
+			}
+			h3{
+				padding: 0.5rem 0 1rem;
+				font:400 1.6rem/1.6rem 'NotoSansKR';
+				color:#000;
+				letter-spacing: 1px;
+				text-align: center;
+			}
+			p{
+				text-align: left;
+				font:500 1.2rem/1.4rem 'NotoSansKR';
+				color:#000;
+				padding-bottom: 2rem;
+				text-align: center;
+				em{
+					font: 1.2rem 'adinenuPro-bold';
+					letter-spacing: 1px;
+				}
+			}
+			.button_area_v2{
+				display: inline-block;
+				a{
+					padding: 0 20px;
+				}
+			}
+		}
+	}
+}
