@@ -440,7 +440,7 @@
 		<div id="container">
 <style type="text/css">@media screen and (max-width: 320px){html{font-size:10px}}@media screen and (min-width: 800px){html{font-size:12px}}.pseudo-element{content:'';display:block}#blackfriday_cp{position:relative;text-align:center}#blackfriday_cp .button_area_v2{width:130px}#blackfriday_cp .button_area_v2 a{font-size:1rem;font-weight:normal;height:36px;line-height:34px;letter-spacing:1px}#blackfriday_cp .button_area_v2 a span.arrow{margin-left:10px;width:25px}#blackfriday_cp .button_area_v2 a span.arrow:after{width:8px}#blackfriday_cp .button_area_v2 a span.arrow:before{width:8px}#blackfriday_cp .main img{width:100%}#blackfriday_cp .count-title{padding:2.3rem 0 0.6rem;font:2.2rem 'adinenuPro-regular';text-align:center;color:#0e1e42;letter-spacing:0}#blackfriday_cp .flipper_wrap{display:inline-block;margin-bottom:3rem}#blackfriday_cp .flipper-initialized>.flipper-delimiter{line-height:4.3rem;font-size:2rem;padding:0 .2em;display:inline-block}#blackfriday_cp .flipper:after{content:'';display:block;clear:both}#blackfriday_cp .members{position:relative}#blackfriday_cp .members a{position:absolute;top:0;left:0;width:100%;height:100%;z-index:1}#blackfriday_cp .members img{width:100%}#blackfriday_cp .bottom_slider_wrap{position:relative}#blackfriday_cp .bottom_slider_wrap .title{padding:2.8rem 0 2.8rem}#blackfriday_cp .bottom_slider_wrap .title strong{display:block;margin-bottom:.5rem;text-align:center;font:900 2.4rem 'NotoSansKR';color:#0e1e42}#blackfriday_cp .bottom_slider_wrap .title p{text-align:center;font:500 2rem/2.5rem 'NotoSansKR';color:#0e1e42}#blackfriday_cp .bottom_slider_wrap .title small{display:block;text-align:center;font:400 1rem 'NotoSansKR';letter-spacing:-0.3px;color:#000}#blackfriday_cp .bottom_slider_wrap .banner_slider_wrap_out{position:relative;left:-55px}#blackfriday_cp .bottom_slider_wrap .banner_slider_wrap_out .banner_slider_wrap{position:relative}#blackfriday_cp .bottom_slider_wrap .banner_slider_wrap_out .banner_slider_wrap ul li img{width:100%}
 </style>
-			<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+			<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
 
 			<link href="/html/adidas/2019/event/blackfriday/TS/countDown.css" type="text/css" rel="stylesheet" />
 			
@@ -494,7 +494,10 @@
 		<script src="/html/adidas/2019/event/blackfriday/TS/jquery.flipper-responsive.js"></script>
 		<script type="text/javascript">
 			$(function($){
-				$('#myFlipper').flipper('init');
+				
+				setTimeout(function(){
+					$('#myFlipper').flipper('init');
+				},1000)
 
 				var owlSlider = $('#slider_owl');
 
