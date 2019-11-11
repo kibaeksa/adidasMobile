@@ -455,9 +455,13 @@
 					<div class="flipper flipper-dark" data-reverse="true" data-datetime="2019-11-15 10:00:00" data-template="dd|HH|ii|ss" data-labels="Days|Hours|Min|Sec" id="myFlipper">
 				</div>
 				</div>
+
 				<div class="members">
 					<a href="https://m.adidas.co.kr/MO/Member/memJoin.action?"></a>
 					<img src="/images/adidas/2019/event/blackfriday/TS/img_join.jpg" alt="">
+				</div>
+				<div class="members">
+					<img src="/images/adidas/2019/event/blackfriday/TS/add.jpg" alt="">
 				</div>
 				<div class="members">
 					<img src="/images/adidas/2019/event/blackfriday/TS/daily_member_deal.jpg" alt="">
@@ -494,9 +498,12 @@
 		<script src="/html/adidas/2019/event/blackfriday/TS/jquery.flipper-responsive.js"></script>
 		<script type="text/javascript">
 			$(function($){
-				$('#myFlipper').flipper('init');
+				
 				setTimeout(function(){
-					$('.flipper_wrap').addClass('on');					
+					$('.flipper_wrap').addClass('on');	
+					setTimeout(function(){
+						$('#myFlipper').flipper('init');
+					},500)				
 				},1000)
 
 				var owlSlider = $('#slider_owl');
