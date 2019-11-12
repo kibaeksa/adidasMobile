@@ -60,14 +60,15 @@
 <!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha384-vk5WoKIaW/vJyUAd9n/wmopsmNhiy+L2Z+SBxGYnUkunIxVxAv/UtMOhba/xskxh" crossorigin="anonymous"></script> -->
 <script src="/html/adidas/2019/event/blackfriday/TS/jquery.flipper-responsive.js"></script>
 <script type="text/javascript">
-$(function($){
-	
-	setTimeout(function(){
-		$('.flipper_wrap').addClass('on');	
+
+	$(window).ready(function(){
+		$('#myFlipper').flipper('init');
 		setTimeout(function(){
-			$('#myFlipper').flipper('init');
-		},500)				
-	},1000)
+			$('.flipper_wrap').addClass('on');			
+		},1000)
+	});
+	
+
 
 	var owlSlider = $('#slider_owl');
 
@@ -81,7 +82,7 @@ $(function($){
 		nav: true
 	});
 
-});
+
 
 
 </script>
