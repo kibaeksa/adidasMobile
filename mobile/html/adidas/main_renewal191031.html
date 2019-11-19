@@ -1197,10 +1197,13 @@
 			<!-- 191031 메인 리뉴얼 start -->
 			<div class="content__container">
 				<!-- 
-					* 컬러값 클래스 *
-					txt_white 클래스 : masterhead / features 요소 안의 텍스트/버튼이 화이트 버젼일때 각각 부여.
+					* 컬러값 클래스 설명 *
+					1. txt_white 클래스 : masterhead / features 요소 안의 "텍스트"가 화이트 버젼일때 각각 부여.
 					- 마스터헤드는 masterhead__wrapper 클래스 txt_white 클래스를 부여.
 					- 피쳐스는 features__wrapper__grid 클래스 txt_white 클래스를 부여.
+
+					2. white 클래스 : masterhead / features 요소 안의 "버튼"이 화이트 버젼일때 각각 부여.
+					- button_area_v2 클래스의 자식 요소에 white 클래스를 부여.
 				-->
 				<!-- masterhead start -->
 				<!-- A타입(화이트) - 대제목2줄 소제목2줄 / 버튼 2개 -->
@@ -1218,7 +1221,10 @@
 						<div class="masterhead__wrapper__btns">
 							<div class="wrap">
 								<div class="button_area_v2" style="">
-									<div class="">
+								<!-- 191118 메인 텍스트/버튼 컬러 css 분리
+									: 해당 class란에 white를 추가하면 버튼 컬러 화이트로 변경 -->
+									<div class="white">
+								<!-- 191118 메인 텍스트/버튼 컬러 css 분리 -->
 										<div class="bg"></div>
 										<a href="#" campaign-label="자세히 보기">
 											자세히 보기
@@ -1230,7 +1236,7 @@
 									</div>
 								</div>
 								<div class="button_area_v2" style="">
-									<div class="">
+									<div class="white">
 										<div class="bg"></div>
 										<a href="#" campaign-label="구매하기">
 											구매하기
@@ -1300,7 +1306,7 @@
 						<div class="masterhead__wrapper__btns">
 							<div class="wrap">
 								<div class="button_area_v2" style="">
-									<div class="">
+									<div class="white">
 										<div class="bg"></div>
 										<a href="#" campaign-label="구매하기">
 											구매하기
@@ -1359,7 +1365,7 @@
 								<p>본고딕 이십사 픽셀</p>
 							</div>
 							<div class="button_area_v2" style="">
-								<div class="">
+								<div class="white">
 									<div class="bg"></div>
 									<a href="#" campaign-label="구매하기">
 										구매하기
@@ -1380,7 +1386,7 @@
 						<div class="wrap">
 							<h2>ONLY ENGLISH</h2>
 							<div class="button_area_v2" style="">
-								<div class="">
+								<div class="white">
 									<div class="bg"></div>
 									<a href="#" campaign-label="구매하기">
 										구매하기
@@ -1401,7 +1407,7 @@
 						<div class="wrap">
 							<h2>한글 버전</h2>
 							<div class="button_area_v2" style="">
-								<div class="">
+								<div class="white">
 									<div class="bg"></div>
 									<a href="#" campaign-label="구매하기">
 										구매하기
@@ -1421,7 +1427,7 @@
 						</div>
 						<div class="wrap">
 							<div class="button_area_v2" style="">
-								<div class="">
+								<div class="white">
 									<div class="bg"></div>
 									<a href="#" campaign-label="자세히 보기">
 										자세히 보기
