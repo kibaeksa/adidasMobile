@@ -16,8 +16,8 @@
 	<script type="text/javascript" src="/designjs/common/modalPopup.min.js"></script>
 	<script type="text/javascript" src="/designjs/common/zoomImage.js"></script>
 
-	<!-- 171221 runbase naver 지도 api v3 -->
-	<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=1KG6a0e2Hj9na72OD3D6"></script>
+	<!-- nmap remove 171221 runbase naver 지도 api v3 -->
+	<!-- <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=1KG6a0e2Hj9na72OD3D6"></script> -->
 
 	<title>아디다스 모바일</title>
 </head>
@@ -699,7 +699,48 @@
 		</div>
 
 		<div id="container">
-            <link rel="stylesheet" href="/css/adidas/runbase.css">
+			<link rel="stylesheet" href="/css/adidas/runbase.css">
+			<!-- 191126 google map script -->
+			<script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyBuQROSv5OwnhsPf0SBYsOt7l3olStXdEo" ></script>
+			<script type="text/javascript">
+				$(document).ready(function() {
+					var myLatlng = new google.maps.LatLng(37.5455919,127.0402492); // 위치값 위도 경도
+					var Y_point			= 37.5455919;		// Y 좌표
+					var X_point			= 127.0402492;		// X 좌표
+					var zoomLevel		= 18;				// 지도의 확대 레벨 : 숫자가 클수록 확대정도가 큼
+					var markerTitle		= "런베이스 서울";		// 현재 위치 마커에 마우스를 오버을때 나타나는 정보
+					var markerMaxWidth	= 300;				// 마커를 클릭했을때 나타나는 말풍선의 최대 크기
+				
+					// 말풍선 내용
+					var contentString	= '<div>' +
+					'<h2>런베이스 서울</h2>'+
+					'<p>안녕하세요. 런베이스 위치입니다.</p>' +
+					
+					'</div>';
+					var myLatlng = new google.maps.LatLng(Y_point, X_point);
+					var mapOptions = {
+										zoom: zoomLevel,
+										center: myLatlng,
+										mapTypeId: google.maps.MapTypeId.ROADMAP
+									}
+					var map = new google.maps.Map(document.getElementById('map_ma'), mapOptions);
+					var marker = new google.maps.Marker({
+															position: myLatlng,
+															map: map,
+															title: markerTitle
+					});
+					var infowindow = new google.maps.InfoWindow(
+																{
+																	content: contentString,
+																	maxWizzzdth: markerMaxWidth
+																}
+							);
+					google.maps.event.addListener(marker, 'click', function() {
+						infowindow.open(map, marker);
+					});
+				});
+			</script>
+			<!-- 191126 google map script end -->	
             <div class="runbase">
                 <div class="header">
                     <h2>
@@ -1004,9 +1045,15 @@
                         <h4 class="adipro-bk">RUNBASE SEOUL LOCATION</h4>
                     </div>
 
-					<div class="map_wrapper">						
-						<!-- <div id="nmap"></div> -->
-						<div id="map" style="width: 100% !important; height: 100%; position: absolute; top: 0; left: 0;"></div>					
+					
+					<div class="map_wrapper">		
+						<!-- 191126 google map html -->
+						<div id="map_ma" ></div>
+						<!-- 191126 google map html end -->	
+
+						<!-- nmap remove -->
+						<!-- <div id="nmap"></div>
+						<div id="map" style="width: 100% !important; height: 100%; position: absolute; top: 0; left: 0;"></div>					 -->
 					</div>
 				
 					<div class="description-box">
@@ -1093,6 +1140,7 @@
 					});
 				})();
 
+				// nmap remove
 				// var nPoint = new nhn.api.map.LatLng(37.5405867, 126.9946487);
 				// var oMap = new nhn.api.map.Map('nmap', {
 				// 	center : nPoint,
@@ -1104,24 +1152,25 @@
 				// var marker = new nhn.api.map.Marker(marker_icon, {point:nPoint});
 				// oMap.addOverlay(marker);
 
-				var runbaseLC = new naver.maps.LatLng(37.545627, 127.042434);
-				var map = new naver.maps.Map('map', {
-					center: new naver.maps.LatLng(37.545627, 127.042434),
-					zoom: 10
-				});
+				// var runbaseLC = new naver.maps.LatLng(37.545627, 127.042434);
+				// var map = new naver.maps.Map('map', {
+				// 	center: new naver.maps.LatLng(37.545627, 127.042434),
+				// 	zoom: 10
+				// });
 
 				// 마커로 사용할 이미지 정의
-				var markerOptions = {
-					position: runbaseLC,
-					icon: {
-						url: 'http://static.naver.net/maps/v3/pin_default.png',
-						size: new naver.maps.Size(22, 35),
-						anchor: new naver.maps.Point(11, 35)
-					}
-				};
-				var marker = new naver.maps.Marker(markerOptions);
+				// var markerOptions = {
+				// 	position: runbaseLC,
+				// 	icon: {
+				// 		url: 'http://static.naver.net/maps/v3/pin_default.png',
+				// 		size: new naver.maps.Size(22, 35),
+				// 		anchor: new naver.maps.Point(11, 35)
+				// 	}
+				// };
+				// var marker = new naver.maps.Marker(markerOptions);
 
-				marker.setMap(map); // 추가
+				// marker.setMap(map); 
+				// 추가
 
 				$(document).ready(function(){
 					$('.runbase_gnb li').bind('touchstart',function(){
