@@ -12423,6 +12423,22 @@ padding:30px 15px;
 	font-size:12px;
 }
 
+/* 191127 cart > button_area > disabled_naverpay :: cart.html */
+#container.order .button_area::after{
+	content:''; display: inline-block; clear: both;
+}
+#container.order .button_area.naverpay.disabled_naverpay>div:first-child{
+	width:100%;
+}
+#container.order .button_area.naverpay.disabled_naverpay>div.naverpay{
+	display: none;
+}
+#container.order .button_area.naverpay>div{
+	display: inline-block;
+	float: left;
+}
+/* 191127 cart > button_area > disabled_naverpay end */
+
 #container.order .button_area.naverpay div:first-child{
 	width:70%;
 }
@@ -24711,6 +24727,15 @@ em.prd_speedy .tooltip-box:before{
 	display: block;
 	width: 100%;
 }
+
+/* 191127 PDP > button_area > disabled_naverpay :: PDP_buybox-wc.html */
+#container.product_view.pdp_renew .product_order .btn_wrap .buy_btn.disabled_naverpay .add_cart{
+	width:100%;
+}
+#container.product_view.pdp_renew .product_order .btn_wrap .buy_btn.disabled_naverpay .btn_npay{
+	display: none;
+}
+/* 191127 PDP > button_area > disabled_naverpay end */
 
 #container.product_view.pdp_renew .product_order .btn_wrap .etc_info{
 	padding: 15px 0 10px;
