@@ -1,0 +1,138 @@
+@import './mobile/css/adidas/scss/common/mixin.scss';
+@import './mobile/css/adidas/scss/common/common.scss';
+
+#jkoo{
+	.button_area_v2{
+		display: inline-block;
+		a{
+			font: 700 .9rem/32px 'NotoSansKR';
+			padding: 0 5vw;
+			letter-spacing: 0;
+			height: 36px;
+			.arrow{
+				width:20px;
+				&::after{
+					width:8px;
+				}
+				&::before{
+					width:8px;
+				}
+			}
+		}
+	}
+	font: 500 .9rem/38px 'NotoSansKR';
+
+	img{
+		width:100%;
+	}
+	.rel{
+		position: relative;
+	}
+	.main{
+		.wrap{
+			position: absolute;
+			top: 0;
+			left: 50%;
+			transform: translateX(-50%);
+			padding-top: 95%;
+			.button_area_v2{
+			}
+		}
+	}
+	.section{
+		.wrap{
+			position: absolute;
+			top: 0;
+			left: 50%;
+			transform: translateX(-50%);
+			padding-top: 191%;
+		}
+	}
+	.state{
+		text-align: center;
+		padding: 3rem 0 0;
+		p{
+			font: 500 1rem/19px 'NotoSansKR';
+			color:#000;
+			letter-spacing: 0;
+			text-align: center;
+		}
+		.button_area_v2{
+			margin: 17px 0 0 0;
+		}
+		.shoes{
+			margin: 30px 0 0 0;
+		}
+	}
+	.state2{
+		background:#f9c8c3;
+		padding :3rem 0;
+		>img{
+			width:30%;
+		}
+		p{
+			margin: 10px 0 0 0;
+		}
+
+	}
+	.lookbook{
+		.lookbook-wrapper{
+			position: relative;
+			// padding: 2rem 1.5rem;
+			.lookbook-wrapper-img{
+				padding: 2rem 0 0 0;
+				text-align: center;
+				img{
+					width:92.5%;
+				}
+			}
+
+			&.purple{
+				background:#421e2c;
+			}
+			&.navy{
+				background:#18171e;
+			}
+			&.green{
+				background:#7aa58c;
+			}
+		}
+
+	}
+	.video{
+		position: relative;
+		a{
+			position: absolute;	
+			top:50%;
+			left:50%;
+			transform: translate(-50%,-50%);
+			z-index:1;
+			width: 14%;
+			img{
+			}
+		}
+	}
+	.grid__container{
+		&::after{
+			display: block;
+			content:'';
+			clear:both;
+		}
+		img{
+			float:left;
+			width:50%;
+			&:nth-child(3){
+				float: right;
+			}
+		}
+	}
+}
+@media (max-width:320px){
+	#jkoo{
+		.state{
+			p{
+				font: 500 10.5px/18px 'NotoSansKR';
+			}
+		}
+	}
+}
