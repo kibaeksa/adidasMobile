@@ -537,35 +537,7 @@
 
            <script type="text/javascript">
 
-                $(document).ready(function () {
-
-                    setTimeout(function () {
-                        $('#ultraboost_cp .main').addClass('on');
-                    }, 500);
-
-                    
-
-                });
-                $(window).ready(function(){
-                    var scrollArray = [];
-                    var scrollContents = document.querySelectorAll('.scroll');
-                    for (var i = 0; i < scrollContents.length; i++) {
-                        var mypos = scrollContents[i].offsetTop;
-
-                        scrollArray.push(mypos);
-                    };
-                    $(window).scroll(function () {
-                        
-                        var thisPos = $(this).scrollTop() + $(window).height() - 400;                        
-                        
-                        for (var pos = 0; pos < scrollArray.length; pos++) {
-                            if (thisPos > scrollArray[pos]) {
-                                $('#ultraboost_cp .scroll').eq(pos).addClass('on');
-                            }
-                        }
-
-                    });
-                })
+               
 
            </script>
 
