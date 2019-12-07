@@ -67,9 +67,9 @@
 					<div class="section__wrapper sec01 rel">
 						<div class="section__wrapper__main">
 							<div class="section__wrapper__img">
-								<img src="/images/adidas/2019/event/kids/yakids/1912_a_yakids_sec01_MO.jpg" alt="">
+								<img src="/images/adidas/2019/event/kids/yakids/1912_a_yakids_sec01_MO.png" alt="">
 							</div>
-							<div class="section__wrapper__txt">
+							<!-- <div class="section__wrapper__txt">
 								<h1>
 									알고 보면 더 실속 있는<br>
 									<em>스마트 포켓 키즈백</em><br>
@@ -83,7 +83,7 @@
 									소지품을 넣어두기 편리하고<br>
 									필요할 때 마다 쉽게 꺼내 쓸 수 있어요.									
 								</p>
-							</div>
+							</div> -->
 							<div class="section__wrapper__sub">
 								<div class="txt_btn">
 									<div class="txt">
@@ -117,22 +117,13 @@
 								</div>
 							</div>
 						</div>
-						<div class="scroll__wrapper">
-							<div class="scroll__wrapper__inner">
-								<img src="/images/adidas/2019/event/kids/yakids/1912_a_yakids_sec01_01_MO.png" alt="">
-								<img src="/images/adidas/2019/event/kids/yakids/1912_a_yakids_sec01_02_MO.png" alt="">
-								<img src="/images/adidas/2019/event/kids/yakids/1912_a_yakids_sec01_03_MO.png" alt="">
-								<img src="/images/adidas/2019/event/kids/yakids/1912_a_yakids_sec01_04_MO.png" alt="">
-								<img src="/images/adidas/2019/event/kids/yakids/1912_a_yakids_sec01_05_MO.png" alt="">
-							</div>
-						</div>
 					</div>
 					<div class="section__wrapper sec02 rel">
 							<div class="section__wrapper__main">
 								<div class="section__wrapper__img">
-									<img src="/images/adidas/2019/event/kids/yakids/1912_a_yakids_sec02_MO.jpg" alt="">
+									<img src="/images/adidas/2019/event/kids/yakids/1912_a_yakids_sec02_MO.png" alt="">
 								</div>
-								<div class="section__wrapper__txt">
+								<!-- <div class="section__wrapper__txt">
 									<h1>
 										알고 보면 더 실속 있는<br>
 										<em>스마트 포켓 키즈백</em><br>
@@ -146,7 +137,7 @@
 										소지품을 넣어두기 편리하고<br>
 										필요할 때 마다 쉽게 꺼내 쓸 수 있어요.									
 									</p>
-								</div>
+								</div> -->
 								<div class="section__wrapper__sub">
 									<div class="txt_btn">
 										<div class="txt">
@@ -227,32 +218,24 @@
 					]
 					function rolling() {
 						if (gridex == 1) {
+							elemitem.removeClass('on').eq(1).addClass('on');
+							elemobj.children('.navi').children('span').removeClass('on').eq(1).addClass('on');
 							gridex = 0;
-							elemitem.removeClass('on').eq(gridex).addClass('on');
-							elemnavi.children('span').removeClass('on').eq(gridex).addClass('on');
-							// elemobj.children('.navi').children('span').removeClass('on').eq(1).addClass('on');
-							num.text(crtNum[0]);
-							txt.text(crtTxt[0]);
-							console.log(gridex);
-
-						} else {
-							gridex++;
-							elemitem.removeClass('on').eq(gridex).addClass('on');
-							elemnavi.children('span').removeClass('on').eq(gridex).addClass('on');
 							num.text(crtNum[1]);
 							txt.text(crtTxt[1]);
-							console.log(gridex);
-
+						} else {
+							elemitem.removeClass('on').eq(0).addClass('on');
+							elemobj.children('.navi').children('span').removeClass('on').eq(0).addClass('on');
+							gridex++;
+							num.text(crtNum[0]);
+							txt.text(crtTxt[0]);
 						}
-
 					}
 					elemnavi.children('span').click(function () {
-						var gridex = $(this).index();
+						gridex = $(this).index();
 						elemitem.removeClass('on').eq(gridex).addClass('on');
 						elemnavi.children('span').removeClass('on').eq(gridex).addClass('on');
-						num.text(crtNum[gridex]);
-						txt.text(crtTxt[gridex]);
-						console.log(gridex);
+
 					});
 
 					var auto = setInterval(rolling, 2800);
@@ -277,43 +260,33 @@
 						'네이비'
 					]
 
-					function rolling2() {
+					function rolling() {
 						if (gridex == 1) {
-							gridex = 0;
-							elemitem.removeClass('on').eq(gridex).addClass('on');
-							elemnavi.children('span').removeClass('on').eq(gridex).addClass('on');
-							// elemobj.children('.navi').children('span').removeClass('on').eq(1).addClass('on');
-							num.text(crtNum[0]);
-							txt.text(crtTxt[0]);
-
-						} else {
-							gridex++;
 							elemitem.removeClass('on').eq(1).addClass('on');
-							elemnavi.children('span').removeClass('on').eq(1).addClass('on');
+							elemobj.children('.navi').children('span').removeClass('on').eq(1).addClass('on');
+							gridex = 0;
 							num.text(crtNum[1]);
 							txt.text(crtTxt[1]);
+
+						} else {
+							elemitem.removeClass('on').eq(0).addClass('on');
+							elemobj.children('.navi').children('span').removeClass('on').eq(0).addClass('on');
+							gridex++;
+							num.text(crtNum[0]);
+							txt.text(crtTxt[0]);
 						}
 					}
 					elemnavi.children('span').click(function () {
-						var gridex = $(this).index();
+						gridex = $(this).index();
 						elemitem.removeClass('on').eq(gridex).addClass('on');
 						elemnavi.children('span').removeClass('on').eq(gridex).addClass('on');
-						num.text(crtNum[gridex]);
-						txt.text(crtTxt[gridex]);
+
 					});
 
-					var auto = setInterval(rolling2, 2800);
-					
+					var auto = setInterval(rolling, 2800);
+
 					});
 				
-					// var scrollWrapper = $('.scroll__wrapper');
-					var scrollInner = $('.scroll__wrapper .scroll__wrapper__inner');
-					var scrollImg = scrollInner.find('img');
-					var scrollWidth = scrollImg.width();
-					var scrolllen = scrollImg.length;
-					var result = scrollInner.css({'width':scrollWidth*scrolllen+43+'px'});
-					// var result2 = scrollImg.css({'width':scrollWidth});
-					// console.log(scrollWidth);
 
 
 					var owlSlider = $('#slider_owl');
