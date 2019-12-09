@@ -15,7 +15,7 @@
 			// line-height: 34px;
             letter-spacing: 1px;
 			span.arrow{
-                margin-left: 15px;
+                margin-left: 13px;
                 width: 22px;
 				&:after{
 					width: 8px;
@@ -32,7 +32,7 @@
     .rel{
         position: relative;
     }
-    h1,p{
+    h1,p,span,em{
         letter-spacing: 0;
     }
     .main__wrapper{
@@ -81,10 +81,11 @@
         background:url('/images/adidas/2019/event/kids/yakids/1912_a_yakids_bg_MO.jpg') no-repeat;
         background-position: top;
         background-size:100% 100%;
+        padding: 2rem 0 0;
         .section__wrapper{
             padding-bottom:4rem;
             &:nth-child(2){
-                padding-bottom:0;
+                // padding-bottom:0;
                 .section__wrapper__main{
                     .section__wrapper__img{
                         &::after{
@@ -111,7 +112,7 @@
                         clear: both;
                         background: #ffe3e5;
                         width: 90%;
-                        height: 187%;
+                        height: 184%;
                         position: absolute;
                         top: 10%;
                         left: 50%;
@@ -134,7 +135,7 @@
                     margin: 0 auto;
                     padding:1rem 0 0 0;
                     h1{
-                        font: 700 25px/27px 'NotoSansKR';
+                        font: 700 2rem/2.5rem 'NotoSansKR';
                         color:#000;
                         em{
                             color:#ec5960;
@@ -142,13 +143,13 @@
                         }
                     }
                     span{
-                        font: 700 13px/13px 'NotoSansKR';
+                        font: 700 1rem/1rem 'NotoSansKR';
                         color:#000;
                         margin: 1rem 0;
                         display: inline-block;
                     }
                     p{
-                        font: 400 13px/18px 'NotoSansKR';
+                        font: 400 1rem/1.5rem 'NotoSansKR';
                         color:#000;
                     }
                 }
@@ -215,28 +216,45 @@
                     }
                 }
             }
+            // 대체용 스크롤 슬라이드
             .scroll__wrapper{
                 overflow-x: scroll;
                 width:100%;
-
+                -ms-scroll-snap-type: x mandatory;
+                scroll-snap-type: x mandatory;
                 .scroll__wrapper__inner{
-                    padding: 0 30px;
+                    padding: 0 20px;
                     img{
                         display: inline-block;
                         width:135px;
                         margin: 0 5px;
+                        scroll-snap-align:start;
                         &:first-child{
                             margin-left: 0;
+                            scroll-margin: 20px;
                         }
                         &:last-child{
                             margin-right: 0;
+                            scroll-margin: 20px;
+
                         }
                     }
                 }
-
+            }
+            // owl carousel
+            .banner_slider_wrap{
+                #slider_owl{
+                    .owl-item{
+                        li{
+                            text-align: center;
+                            img{
+                                width:90%;
+                            }
+                        }
+                    }
+                }
             }
         }
-
     }
     .btm__wrapper{
         .btm__wrapper__txt{
@@ -273,7 +291,33 @@
                 .scroll__wrapper{
                     .scroll__wrapper__inner{
                         img{
-                            width:120px;
+                            width:115px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 375px) and (max-width:380px){ 
+    #yakids{
+        .section__container{
+            .section__wrapper{
+                .section__wrapper__main{
+                    .section__wrapper__img{
+                        &::after{
+                            display: block;
+                            content: '';
+                            clear: both;
+                            background: #ffe3e5;
+                            width: 90%;
+                            height: 187%;
+                            position: absolute;
+                            top: 10%;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            z-index: 0;
                         }
                     }
                 }
