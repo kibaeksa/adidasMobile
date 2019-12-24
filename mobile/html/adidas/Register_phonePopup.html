@@ -10,10 +10,13 @@
 	<link href="/css/adidas/style.css" type="text/css" rel="stylesheet" />
 	<link href="/css/adidas/fonts.css" type="text/css" rel="stylesheet" />
 
-	<script type="text/javascript" src="/js/jquery-1.12.0.min.js"></script>
-	<script type="text/javascript" src="/js/swipe.js"></script>
-	<script type="text/javascript" src="/js/owl.carousel.min.js"></script>
-	<script type="text/javascript" src="/js/modalPopup.min.js"></script>
+	<script type="text/javascript" src="/designjs/common/jquery-1.12.0.min.js"></script>
+    <script type="text/javascript" src="/designjs/common/swipe.js"></script>
+	<script type="text/javascript" src="/designjs/common/owl.carousel.min.js"></script>
+	<script type="text/javascript" src="/designjs/common/modalPopup.min.js"></script>
+	<script type="text/javascript" src="/designjs/common/zoomImage.js"></script>
+    <script type="text/javascript" src="/designjs/adidas/common.js"></script>
+
 
 	<title>아디다스 모바일</title>
 </head>
@@ -672,9 +675,7 @@
                <div class="gray"><a href="#">회원가입</a></div>
            </div>
 
-            <!-- 180221 휴대폰 번호 중복 안내 팝업 -->
-
-            <!-- 오프라인 가입 -->
+            <!-- 191223 휴대폰 번호 중복 안내 팝업 -->
            <div class="modal-popup-wrapper register-popup"
                 data-modalpop=""
                 data-modalpop-name="popup_offline_join"
@@ -686,12 +687,19 @@
                         <h2>휴대폰 번호 중복안내</h2>
                         <a href="javascript:void(0)" class="close_x_btn"></a>
                     </div>
+                    <!-- 191223 popup-contents 텍스트 수정-->
                     <div class="popup-contents">
                         <p class="blue">오프라인 매장에서 이미 가입하셨네요!</p>
-                        <p class="mg15">공식몰 회원으로 <strong>일반 가입</strong> 진행하시면,<br>
-                        매장에서 적립하신 포인트를 사용하실 수 있습니다.</p>
-                        <p><strong>오프라인 가입 시</strong> 발급 받으신<br>
-                        임시 아이디/패스워드로 로그인하세요! (분실 : CS)</p>
+                        <p class="mg15">
+                            오프라인 가입 시 발급 받았던<br/>
+                            <strong>임시 아이디/패스워드</strong>로 로그인하세요.<br/>
+                            로그인하시면 SNS 계정과 연결됩니다.<br/>
+                            임시 계정을 분실하신 경우, CS에 문의해주세요.<br/>                            
+                        </p>
+                        <p>
+                            만약 오프라인 매장에서 가입한 적이 없으신 경우 <br/> 
+                            CS에 문의해주세요.
+                        </p>
                         <div class="form_table">
                             <div class="row">
                                <input type="text" placeholder="아이디">
@@ -699,8 +707,11 @@
                            <div class="row">
                               <input type="password" placeholder="비밀번호">
                           </div>
-                          <div class="button_area">
-                              <div class="blue"><a href="javascript:doLogin();" class="icons aft" data-icon="">일반 회원가입</a></div>
+                          <!-- 191223 button_area 텍스트 수정, button_area_wrap 상위 태그 추가-->
+                          <div class="button_area_wrap">
+                            <div class="button_area">
+                                <div class="blue"><a href="javascript:doLogin();" class="icons aft" data-icon="">SNS 계정과 연결하기</a></div>
+                            </div>
                           </div>
                         </div>
                     </div>
@@ -760,7 +771,7 @@
               </div>
             <!-- 180221 end -->
 
-			<!-- 180227 중복 가입 안내 -->
+			<!-- 191223 중복 가입 안내 -->
 			<div class="modal-popup-wrapper register-popup"
 				 data-modalpop=""
 				 data-modalpop-name="popup_member_already"
@@ -771,19 +782,22 @@
 					 <div class="popup-header">
 						 <h2>중복 가입 안내</h2>
 						 <a href="javascript:void(0)" class="close_x_btn"></a>
-					 </div>
+                     </div>
+                     <!-- 191223 popup-contents 텍스트 수정-->
 					 <div class="popup-contents">
 						 <p class="blue">이미 회원이시네요!</p>
-						 <p class="mg15">계속 진행하시면 연결된 SNS 계정이 변경됩니다.</p>
-						 <p>SNS 계정이 변경되어도<br>주문 정보 확인 및 적립 포인트 사용이 가능합니다.</p>
-						 <div class="button_area_wrap col2">
+						 <p class="mg15">가입하셨던 아이디에 이미 연결된 SNS 계정이 존재합니다.</p>
+						 <p>기존 아이디로 로그인 후<br/>마이페이지에서 SNS 계정 연결을 재설정하세요</p>
+						 <div class="button_area_wrap">
+                            <!-- 191223 button_area 텍스트 수정 -->
 						   <div class="button_area">
-							   <div class="blue"><a href="javascript:doLogin();" class="icons aft" data-icon="">새로운 SNS 계정 연결</a></div>
+							   <div class="blue"><a href="javascript:doLogin();" class="icons aft" data-icon="">로그인</a></div>
 						   </div>
-						   <div class="button_area" style="margin-bottom:0;">
-							   <div class="blue"><a href="javascript:doLogin();" class="icons aft" data-icon="">기존 SNS 계정 사용</a></div>
-						   </div>
-						 </div>
+                         </div>
+                         <!-- 191223 id_pw_find 추가-->
+                         <div class="id_pw_find">
+                            <a href="javascript:goFindUserId();">아이디 / 비밀번호 찾기</a>
+                        </div>
 					 </div>
 				 </div>
 			 </div>
