@@ -59,10 +59,20 @@
 	
 	
 					<script type="text/javascript">
-						$(document).ready(function(){
+						const randomTimeArray = [];
+						const characterBoxs = document.querySelectorAll('.character');
+						for ( var r = 1; r < characterBoxs.length+1; r ++){
+							const randomTime = (Math.floor(Math.random()*10 + 1))* 100;
+							randomTimeArray.push(randomTime)
+						}
 	
-	
-						});
+						for ( var i = 0; i < randomTimeArray.length; i++) {
+							(function(ii){
+								setTimeout(function(){
+									characterBoxs[ii].classList.add('show')
+								}, randomTimeArray[ii])
+							})(i)
+						}
 					</script>
 	
 				</section>
