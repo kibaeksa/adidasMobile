@@ -207,30 +207,30 @@
 
 
 				<script type="text/javascript">
-					const randomTimeArray = [];
-					const characterBoxs = document.querySelectorAll('.character');
-					for ( var r = 1; r < characterBoxs.length+1; r ++){
-						const randomTime = (Math.floor(Math.random()*10 + 1))* 100;
-						randomTimeArray.push(randomTime)
-					}
+					// const randomTimeArray = [];
+					// const characterBoxs = document.querySelectorAll('.character');
+					// for ( var r = 1; r < characterBoxs.length+1; r ++){
+					// 	const randomTime = (Math.floor(Math.random()*10 + 1))* 100;
+					// 	randomTimeArray.push(randomTime)
+					// }
 
-					$(window).scroll(function(){
-						var thispos = $(this).scrollTop() + $(window).height();							
+					// $(window).scroll(function(){
+					// 	var thispos = $(this).scrollTop() + $(window).height();							
 
-						for(var pos = 0; pos<randomTimeArray.length; pos++){
+					// 	for(var pos = 0; pos<randomTimeArray.length; pos++){
 		
-							if(thispos>randomTimeArray[pos]){
-								console.log('works?');
-								for ( var i = 0; i < randomTimeArray.length; i++) {
-									(function(ii){
-										setTimeout(function(){
-											characterBoxs[ii].classList.add('show')
-										}, randomTimeArray[ii])
-									})(i)
-								}
-							}
-						}
-					});
+					// 		if(thispos>randomTimeArray[pos]){
+					// 			console.log('works?');
+					// 			for ( var i = 0; i < randomTimeArray.length; i++) {
+					// 				(function(ii){
+					// 					setTimeout(function(){
+					// 						characterBoxs[ii].classList.add('show')
+					// 					}, randomTimeArray[ii])
+					// 				})(i)
+					// 			}
+					// 		}
+					// 	}
+					// });
 
 
 
