@@ -1,6 +1,8 @@
 @import './mobile/css/adidas/scss/common/mixin.scss';
 @import './mobile/css/adidas/scss/common/common.scss';
-
+html,body{
+	height:100%;
+}
 #ub20{
 	.button_area_v2{
 		width: 130px;
@@ -45,6 +47,22 @@
 		.popup{
 			background:none;
 			width:130%;
+			height: 100%;
+			.popup-header{
+				z-index: 2;
+				.close_x_btn{
+					width: 3rem;
+					height: 3rem;
+					position: absolute;
+					top: 50%;
+					right: 15px;
+					transform: translate3d(0, 355%, 0);
+					right: 24%;
+					&::after,&::before{
+						background:#fff;
+					}
+				}
+			}
 			.popup-contents{
 				padding: 0;
 				background:none;
@@ -105,15 +123,16 @@
 					position: absolute;
 					top:50%;
 					transform:translate(-50%,-50%);
-			
+					padding: 1rem 0;
+					text-align: center;
 					&.prev{
-						left:21%;
+						left:18%;
 						img{
 							width:50%;
 						}
 					}
 					&.next{
-						left:85%;
+						left:82%;
 						img{
 							width:51%;
 						}
@@ -121,7 +140,7 @@
 				}
 				.dot{
 					position: absolute;
-					bottom:-195px;
+					bottom:20%;
 					left:50%;
 					transform: translateX(-50%);
 					text-align:center;
@@ -144,7 +163,7 @@
 			.popup{
 				.popup-contents{
 					.dot{
-						bottom:-195px;
+						bottom:20%;
 					}
 				}
 			}
@@ -223,3 +242,32 @@
 		}
 	}
 }
+
+
+// @media screen and (min-width: 414px) {
+// 	#ub20{
+// 		.modal-popup-wrapper{
+// 			.popup{
+	
+// 				.popup-header{
+// 					.close_x_btn{
+// 						width: 3rem;
+// 						height: 3rem;
+// 						position: absolute;
+// 						top: 50%;
+// 						right: 15px;
+// 						transform: translate3d(0,365%,0);
+// 						right: 24%;
+						
+// 						&::after,&::before{
+// 							background:#fff;
+// 						}
+// 					}
+// 				}
+	
+// 			}
+	
+// 		}
+// 	}
+
+// }
