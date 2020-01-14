@@ -190,7 +190,9 @@
 					$(document).ready(function(){
 
 						$('.btn-play').bind('click', function () {
-							//alert('동영상이 준비중입니다');
+							alert('풀영상은 곧 공개 됩니다.');
+							return false;
+
 							var ytbId = $(this).attr('data-video-id');
 							var html = '<div id="video-layer" style="">';
 							html += '	<div class="bg" ></div>';
@@ -205,7 +207,6 @@
 								$('html').css({ overflow: 'scroll' });
 								$('#video-layer ').remove();
 							});
-
 
 							setTimeout(function () {
 								$('#video-layer').addClass('loaded');
