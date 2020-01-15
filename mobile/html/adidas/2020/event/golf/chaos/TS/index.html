@@ -442,53 +442,56 @@
 			<div id="chaos">
 
                 <div class="main_visual">
-									<img src="/images/adidas/2020/event/golf/chaos/ts/top_img.jpg" alt="">
+					<img src="/images/adidas/2020/event/golf/chaos/ts/top_img.jpg" alt="">
                 </div>
 
-								<div class="video">
-									<video src="/images/adidas/2020/event/golf/chaos/ts/TEASER_10_LORES_PP.mp4" muted="" playsinline="" loop="" autoplay=""></video>
-								</div>
+				<div class="video">
+					<video id="video" poster="/images/adidas/2019/event/adicolor/0712/bg_sect.jpg" loop muted autoplay playsinline>
+						<source src="http://imagem.adidas.co.kr/upload/design_temp/video/2020/a/golf/chaos/TEASER_10_LORES_PP.mp4" type="video/mp4">
+					</video>
+				</div>
 
-								<div class="count">
-									<div class="counter">
-									    <span id="time-day" class="num num1"></span>
-									    <span id="time-hour" class="num num2"></span>
-									    <span id="time-minute" class="num num3"></span>
-									    <span id="time-second" class="num num4"></span>
-									</div>
-									<div class="bg">
-										<img src="/images/adidas/2020/event/golf/chaos/ts/count_img.jpg" alt="">
-									</div>
-								</div>
-								<div class="bottom">
-									<div class="bg">
-										<img src="/images/adidas/2020/event/golf/chaos/ts/bottom_img.jpg" alt="">
-									</div>
-								</div>
+				<div class="count">
+					<div class="counter">
+						<span id="time-day" class="num num1"></span>
+						<span id="time-hour" class="num num2"></span>
+						<span id="time-minute" class="num num3"></span>
+						<span id="time-second" class="num num4"></span>
+					</div>
+					<div class="bg">
+						<img src="/images/adidas/2020/event/golf/chaos/ts/count_img.jpg" alt="">
+					</div>
+				</div>
 
-								<script type="text/javascript">
-								var ddaytimer = setInterval (dayGap, 1000)
-								function dayGap () {
-								    var dday = new Date("January 21, 2020 16:00:00");//디데이
-								    var ddayChange = dday.getTime();
-								    var nowday = new Date();//현재
-								    nowday = nowday.getTime();//밀리세컨드 단위변환
-								    var distance = ddayChange - nowday;//디데이에서 현재까지 뺀다.
+				<div class="bottom">
+					<div class="bg">
+						<img src="/images/adidas/2020/event/golf/chaos/ts/bottom_img.jpg" alt="">
+					</div>
+				</div>
 
-								    var d = Math.floor(distance / (1000 * 60 * 60 * 24));//일
+				<script type="text/javascript">
 
-								    var h = Math.floor((distance / (1000*60*60)) % 24);//시간
-								    var m = Math.floor((distance / (1000*60)) % 60);//분
-								    var s = Math.floor((distance / 1000) % 60);//초
+					var ddaytimer = setInterval (dayGap, 1000)
 
-										document.getElementById("time-day").innerHTML = d;
-					        document.getElementById("time-hour").innerHTML = h;
-					        document.getElementById("time-minute").innerHTML = m;
-					        document.getElementById("time-second").innerHTML = s;
+					function dayGap () {
+						var dday = new Date("January 21, 2020 16:00:00");//디데이
+						var ddayChange = dday.getTime();
+						var nowday = new Date();//현재
+						nowday = nowday.getTime();//밀리세컨드 단위변환
+						var distance = ddayChange - nowday;//디데이에서 현재까지 뺀다.
 
+						var d = Math.floor(distance / (1000 * 60 * 60 * 24));//일
 
-								}
-								</script>
+						var h = Math.floor((distance / (1000*60*60)) % 24);//시간
+						var m = Math.floor((distance / (1000*60)) % 60);//분
+						var s = Math.floor((distance / 1000) % 60);//초
+
+							document.getElementById("time-day").innerHTML = d;
+							document.getElementById("time-hour").innerHTML = h;
+							document.getElementById("time-minute").innerHTML = m;
+							document.getElementById("time-second").innerHTML = s;
+					}
+				</script>
 
 			</div>
 			<!-- //ivypark -->
@@ -525,7 +528,7 @@
 		</div>
 	</div>
 
-	<script type="text/javascript" src="/js/adidas/common.js"></script>
+	<script type="text/javascript" src="/designjs/adidas/common.js"></script>
 	<script type="text/javascript">
 
 		var openPopInStock;

@@ -438,59 +438,62 @@
 		</div>
 
 		<div id="container">
-<style type="text/css">@media screen and (max-width: 320px){html{font-size:10px}}@media screen and (min-width: 800px){html{font-size:12px}}.pseudo-element{content:'';display:block}#chaos{position:relative}#chaos .main_visual{position:relative}#chaos .main_visual>img{display:block;width:100%}#chaos .video{margin-bottom:-1%}#chaos .video video{width:100%}#chaos .count{position:relative;background-color:#000}#chaos .count .counter .num{width:20%;text-align:center;color:#1dff00;font:bold 8rem 'AdihausDIN-Cond';z-index:99}#chaos .count .counter .num1{position:absolute;bottom:22%;left:7%}#chaos .count .counter .num2{position:absolute;bottom:22%;left:28.8%}#chaos .count .counter .num3{position:absolute;bottom:22%;left:50.5%}#chaos .count .counter .num4{position:absolute;bottom:22%;left:72.4%}#chaos .count .bg>img{width:100%;display:block}#chaos .bottom{position:relative}#chaos .bottom .bg>img{width:100%;display:block}
+<style type="text/css">@media screen and (max-width: 320px){html{font-size:10px}}@media screen and (min-width: 800px){html{font-size:12px}}.pseudo-element{content:'';display:block}#chaos{position:relative}#chaos .main_visual{position:relative}#chaos .main_visual>img{display:block;width:100%}#chaos .video{margin-bottom:-1%}#chaos .video video{width:100%}#chaos .count{position:relative;background-color:#000}#chaos .count .counter .num{width:20%;text-align:center;color:#1dff00;font:bold 4rem 'AdihausDIN-Cond';z-index:99}#chaos .count .counter .num1{position:absolute;bottom:22%;left:7%}#chaos .count .counter .num2{position:absolute;bottom:22%;left:28.8%}#chaos .count .counter .num3{position:absolute;bottom:22%;left:50.5%}#chaos .count .counter .num4{position:absolute;bottom:22%;left:72.4%}#chaos .count .bg>img{width:100%;display:block}#chaos .bottom{position:relative}#chaos .bottom .bg>img{width:100%;display:block}
 </style>
 
 			<div id="chaos">
 
                 <div class="main_visual">
-									<img src="/images/adidas/2020/event/golf/chaos/ts/top_img.jpg" alt="">
+					<img src="/images/adidas/2020/event/golf/chaos/ts/top_img.jpg" alt="">
                 </div>
 
-								<div class="video">
-									<video src="/images/adidas/2020/event/golf/chaos/ts/TEASER_10_LORES_PP.mp4" muted="" playsinline="" loop="" autoplay=""></video>
-								</div>
+				<div class="video">
+					<video id="video" poster="/images/adidas/2019/event/adicolor/0712/bg_sect.jpg" loop muted autoplay playsinline>
+						<source src="http://imagem.adidas.co.kr/upload/design_temp/video/2020/a/golf/chaos/TEASER_10_LORES_PP.mp4" type="video/mp4">
+					</video>
+				</div>
 
-								<div class="count">
-									<div class="counter">
-									    <span id="time-day" class="num num1"></span>
-									    <span id="time-hour" class="num num2"></span>
-									    <span id="time-minute" class="num num3"></span>
-									    <span id="time-second" class="num num4"></span>
-									</div>
-									<div class="bg">
-										<img src="/images/adidas/2020/event/golf/chaos/ts/count_img.jpg" alt="">
-									</div>
-								</div>
-								<div class="bottom">
-									<div class="bg">
-										<img src="/images/adidas/2020/event/golf/chaos/ts/bottom_img.jpg" alt="">
-									</div>
-								</div>
+				<div class="count">
+					<div class="counter">
+						<span id="time-day" class="num num1"></span>
+						<span id="time-hour" class="num num2"></span>
+						<span id="time-minute" class="num num3"></span>
+						<span id="time-second" class="num num4"></span>
+					</div>
+					<div class="bg">
+						<img src="/images/adidas/2020/event/golf/chaos/ts/count_img.jpg" alt="">
+					</div>
+				</div>
 
-								<script type="text/javascript">
-								var ddaytimer = setInterval (dayGap, 1000)
-								function dayGap () {
-								    var dday = new Date("January 21, 2020 16:00:00");//디데이
-								    var ddayChange = dday.getTime();
-								    var nowday = new Date();//현재
-								    nowday = nowday.getTime();//밀리세컨드 단위변환
-								    var distance = ddayChange - nowday;//디데이에서 현재까지 뺀다.
+				<div class="bottom">
+					<div class="bg">
+						<img src="/images/adidas/2020/event/golf/chaos/ts/bottom_img.jpg" alt="">
+					</div>
+				</div>
 
-								    var d = Math.floor(distance / (1000 * 60 * 60 * 24));//일
+				<script type="text/javascript">
 
-								    var h = Math.floor((distance / (1000*60*60)) % 24);//시간
-								    var m = Math.floor((distance / (1000*60)) % 60);//분
-								    var s = Math.floor((distance / 1000) % 60);//초
+					var ddaytimer = setInterval (dayGap, 1000)
 
-										document.getElementById("time-day").innerHTML = d;
-					        document.getElementById("time-hour").innerHTML = h;
-					        document.getElementById("time-minute").innerHTML = m;
-					        document.getElementById("time-second").innerHTML = s;
+					function dayGap () {
+						var dday = new Date("January 21, 2020 16:00:00");//디데이
+						var ddayChange = dday.getTime();
+						var nowday = new Date();//현재
+						nowday = nowday.getTime();//밀리세컨드 단위변환
+						var distance = ddayChange - nowday;//디데이에서 현재까지 뺀다.
 
+						var d = Math.floor(distance / (1000 * 60 * 60 * 24));//일
 
-								}
-								</script>
+						var h = Math.floor((distance / (1000*60*60)) % 24);//시간
+						var m = Math.floor((distance / (1000*60)) % 60);//분
+						var s = Math.floor((distance / 1000) % 60);//초
+
+							document.getElementById("time-day").innerHTML = d;
+							document.getElementById("time-hour").innerHTML = h;
+							document.getElementById("time-minute").innerHTML = m;
+							document.getElementById("time-second").innerHTML = s;
+					}
+				</script>
 
 			</div>
 			<!-- //ivypark -->
@@ -527,7 +530,7 @@
 		</div>
 	</div>
 
-	<script type="text/javascript" src="/js/adidas/common.js"></script>
+	<script type="text/javascript" src="/designjs/adidas/common.js"></script>
 	<script type="text/javascript">
 
 		var openPopInStock;
