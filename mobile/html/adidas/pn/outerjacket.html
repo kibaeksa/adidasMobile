@@ -1,362 +1,117 @@
 <div id="container">
-	<style type="text/css">
-		@media screen and (max-width: 320px) {
-			html {
-				font-size: 10px
-			}
-		}
-
-		@media screen and (min-width: 800px) {
-			html {
-				font-size: 12px
-			}
-		}
-
-		.pseudo-element {
-			content: '';
-			display: block
-		}
-
-		#outerjacket {
-			position: relative
-		}
-
-		#outerjacket .button_area_v2 {
-			width: 130px
-		}
-
-		#outerjacket .button_area_v2 a {
-			font-size: 1rem;
-			font-weight: normal;
-			height: 36px;
-			line-height: 34px;
-			letter-spacing: 1px
-		}
-
-		#outerjacket .button_area_v2 a span.arrow {
-			margin-left: 10px;
-			width: 25px
-		}
-
-		#outerjacket .button_area_v2 a span.arrow:after {
-			width: 8px
-		}
-
-		#outerjacket .button_area_v2 a span.arrow:before {
-			width: 8px
-		}
-
-		#outerjacket .main_visual {
-			position: relative
-		}
-
-		#outerjacket .main_visual>img {
-			display: block;
-			width: 100%
-		}
-
-		#outerjacket .main_visual .tit {
-			position: absolute;
-			top: 55%
-		}
-
-		#outerjacket .main_visual .tit img {
-			display: block;
-			width: 100%
-		}
-
-		#outerjacket .txt_area {
-			padding: 4rem 0;
-			text-align: center
-		}
-
-		#outerjacket .txt_area h3 {
-			font: 900 2rem/2.5rem 'NotoSansKR';
-			color: #000;
-			text-align: center;
-			letter-spacing: 8px
-		}
-
-		#outerjacket .txt_area p.sub {
-			font: 400 1.2rem/1.8rem 'NotoSansKR';
-			color: #000;
-			text-align: center;
-			letter-spacing: 0.5px;
-			margin-top: 0.7rem
-		}
-
-		#outerjacket .txt_area .button_area_v2 {
-			margin-top: 1rem;
-			display: inline-block
-		}
-
-		#outerjacket .cont01 {
-			position: relative
-		}
-
-		#outerjacket .cont01 .bg_area img {
-			display: block;
-			width: 100%
-		}
-
-		#outerjacket .cont01 .txt_box1 {
-			position: absolute;
-			width: 82%;
-			border: 1px solid #fff;
-			background-color: rgba(255, 255, 255, 0.5);
-			padding: 1.6rem 0;
-			top: 55.5%;
-			left: 10%;
-			z-index: 999
-		}
-
-		#outerjacket .cont01 .txt_box1 p {
-			font: 500 1.1rem/1.6rem 'NotoSansKR';
-			color: #000;
-			font-style: italic;
-			text-align: center
-		}
-
-		#outerjacket .cont01 .txt_box1 span {
-			text-align: center;
-			display: block;
-			background-color: #000;
-			font: 300 1rem/1.7rem 'NotoSansKR';
-			color: #fff;
-			width: 30%;
-			position: absolute;
-			left: 50%;
-			bottom: -7%;
-			transform: translateX(-50%)
-		}
-
-		#outerjacket .cont01 .txt_box2 {
-			position: absolute;
-			top: 88%;
-			text-align: center;
-			z-index: 999;
-			width: 100%
-		}
-
-		#outerjacket .cont01 .txt_box2 p {
-			font: 700 1.1rem/1.5em 'NotoSansKR';
-			color: #000;
-			text-align: center
-		}
-
-		#outerjacket .cont01 .txt_box2 .button_area_v2 {
-			margin-top: 1rem;
-			display: inline-block
-		}
-
-		#outerjacket .cont02 {
-			position: relative
-		}
-
-		#outerjacket .cont02 .bg_area img {
-			display: block;
-			width: 100%
-		}
-
-		#outerjacket .cont02 .txt_box1 {
-			position: absolute;
-			width: 82%;
-			border: 1px solid #fff;
-			background-color: rgba(255, 255, 255, 0.5);
-			padding: 1.6rem 0;
-			top: 55.5%;
-			left: 10%;
-			z-index: 999
-		}
-
-		#outerjacket .cont02 .txt_box1 p {
-			font: 500 1.1rem/1.6rem 'NotoSansKR';
-			color: #000;
-			font-style: italic;
-			text-align: center
-		}
-
-		#outerjacket .cont02 .txt_box1 span {
-			text-align: center;
-			display: block;
-			background-color: #000;
-			font: 300 1rem/1.7rem 'NotoSansKR';
-			color: #fff;
-			width: 30%;
-			position: absolute;
-			left: 50%;
-			bottom: -7%;
-			transform: translateX(-50%)
-		}
-
-		#outerjacket .cont02 .txt_box2 {
-			position: absolute;
-			top: 88%;
-			text-align: center;
-			z-index: 999;
-			width: 100%
-		}
-
-		#outerjacket .cont02 .txt_box2 p {
-			font: 700 1.1rem/1.5em 'NotoSansKR';
-			color: #000;
-			text-align: center
-		}
-
-		#outerjacket .cont02 .txt_box2 .button_area_v2 {
-			margin-top: 1rem;
-			display: inline-block
-		}
-
-		#outerjacket .bottom {
-			position: relative
-		}
-
-		#outerjacket .bottom .bottom_txt_area {
-			width: 100%;
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			text-align: center
-		}
-
-		#outerjacket .bottom .bottom_txt_area h4 {
-			font: 700 1.4rem/2rem 'NotoSansKR';
-			color: #fff;
-			text-align: center;
-			letter-spacing: 3px
-		}
-
-		#outerjacket .bottom .bottom_txt_area p.sub {
-			font: 300 1.1rem/1.8rem 'NotoSansKR';
-			color: #fff;
-			text-align: center;
-			letter-spacing: 0.5px;
-			margin-top: 0.5rem
-		}
-
-		#outerjacket .bottom .bottom_txt_area .button_area_v2 {
-			margin-top: 1rem;
-			display: inline-block
-		}
-
-		#outerjacket .bottom img {
-			display: block;
-			width: 100%
-		}
+	<style type="text/css">@media screen and (max-width: 320px){html{font-size:10px}}@media screen and (min-width: 800px){html{font-size:12px}}.pseudo-element{content:'';display:block}#outerjacket{position:relative}#outerjacket .button_area_v2{width:130px}#outerjacket .button_area_v2 a{font-size:1rem;font-weight:normal;height:36px;line-height:34px;letter-spacing:1px}#outerjacket .button_area_v2 a span.arrow{margin-left:10px;width:25px}#outerjacket .button_area_v2 a span.arrow:after{width:8px}#outerjacket .button_area_v2 a span.arrow:before{width:8px}#outerjacket .main_visual{position:relative}#outerjacket .main_visual>img{display:block;width:100%}#outerjacket .main_visual .tit{position:absolute;top:55%}#outerjacket .main_visual .tit img{display:block;width:100%}#outerjacket .txt_area{padding:4rem 0;text-align:center}#outerjacket .txt_area h3{font:900 2rem/2.5rem 'NotoSansKR';color:#000;text-align:center;letter-spacing:8px}#outerjacket .txt_area p.sub{font:400 1.2rem/1.8rem 'NotoSansKR';color:#000;text-align:center;letter-spacing:0.5px;margin-top:0.7rem}#outerjacket .txt_area .button_area_v2{margin-top:1rem;display:inline-block}#outerjacket .cont01{position:relative}#outerjacket .cont01 .bg_area img{display:block;width:100%}#outerjacket .cont01 .txt_box1{position:absolute;width:82%;border:1px solid #fff;background-color:rgba(255,255,255,0.5);padding:1.6rem 0;top:55.5%;left:10%;z-index:999}#outerjacket .cont01 .txt_box1 p{font:500 1.1rem/1.6rem 'NotoSansKR';color:#000;font-style:italic;text-align:center}#outerjacket .cont01 .txt_box1 span{text-align:center;display:block;background-color:#000;font:300 1rem/1.7rem 'NotoSansKR';color:#fff;width:30%;position:absolute;left:50%;bottom:-7%;transform:translateX(-50%)}#outerjacket .cont01 .txt_box2{position:absolute;top:88%;text-align:center;z-index:999;width:100%}#outerjacket .cont01 .txt_box2 p{font:700 1.1rem/1.5em 'NotoSansKR';color:#000;text-align:center}#outerjacket .cont01 .txt_box2 .button_area_v2{margin-top:1rem;display:inline-block}#outerjacket .cont02{position:relative}#outerjacket .cont02 .bg_area img{display:block;width:100%}#outerjacket .cont02 .txt_box1{position:absolute;width:82%;border:1px solid #fff;background-color:rgba(255,255,255,0.5);padding:1.6rem 0;top:55.5%;left:10%;z-index:999}#outerjacket .cont02 .txt_box1 p{font:500 1.1rem/1.6rem 'NotoSansKR';color:#000;font-style:italic;text-align:center}#outerjacket .cont02 .txt_box1 span{text-align:center;display:block;background-color:#000;font:300 1rem/1.7rem 'NotoSansKR';color:#fff;width:30%;position:absolute;left:50%;bottom:-7%;transform:translateX(-50%)}#outerjacket .cont02 .txt_box2{position:absolute;top:88%;text-align:center;z-index:999;width:100%}#outerjacket .cont02 .txt_box2 p{font:700 1.1rem/1.5em 'NotoSansKR';color:#000;text-align:center}#outerjacket .cont02 .txt_box2 .button_area_v2{margin-top:1rem;display:inline-block}#outerjacket .bottom{position:relative}#outerjacket .bottom .bottom_txt_area{width:100%;position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);text-align:center}#outerjacket .bottom .bottom_txt_area h4{font:700 1.4rem/2rem 'NotoSansKR';color:#fff;text-align:center;letter-spacing:3px}#outerjacket .bottom .bottom_txt_area p.sub{font:300 1.1rem/1.8rem 'NotoSansKR';color:#fff;text-align:center;letter-spacing:0.5px;margin-top:0.5rem}#outerjacket .bottom .bottom_txt_area .button_area_v2{margin-top:1rem;display:inline-block}#outerjacket .bottom img{display:block;width:100%}
 	</style>
-
-	<div id="outerjacket">
-
-		<div class="main_visual">
-			<div class="tit">
-				<img src="/images/adidas/2020/event/outerjacket/top_txt.png" alt="">
-			</div>
-			<img src="/images/adidas/2020/event/outerjacket/top_img.jpg" alt="">
-		</div>
-
-		<div class="txt_area">
-			<h3>
-				아우터 자켓<br />모든 감각을 깨워
-			</h3>
-			<p class="sub">
-				어느 룩에나 잘 어울리는 아우터 자켓으로<br />
-				나만의 압도적인 스타일을 완성해 보세요.
-			</p>
-			<div class="button_area_v2">
-				<div class="">
-					<a href="#">
-						구매하기
-						<span class="arrow"></span>
-					</a>
-				</div>
-			</div>
-		</div>
-
-		<div class="cont01">
-			<div class="txt_box1">
-				<p>
-					단순한 것들도 특별함이 될 수 있다고 생각해요.<br />
-					쉽고 편안한 아이템이 때로는 더 스타일리쉬해 보일 수 있죠.<br />
-					그러려면 사소한 것들도 놓치지 않으려는<br />
-					노력이 필요한 것 같아요.
-				</p>
-				<span>모델&배우 이수혁</span>
-			</div>
-			<div class="txt_box2">
-				<p>
-					어느 룩에나 잘 어울리는 컬러 블록 디자인<br />
-					크기 조절이 가능한 후드로 연출하는 나만의 핏
-				</p>
-				<div class="button_area_v2">
-					<div class="">
-						<a href="#">
-							구매하기
-							<span class="arrow"></span>
-						</a>
+	
+				<div id="outerjacket">
+	
+					<div class="main_visual">
+						<div class="tit">
+							<img src="/images/adidas/2020/event/outerjacket/top_txt.png" alt="">
+						</div>
+						<img src="/images/adidas/2020/event/outerjacket/top_img.jpg" alt="">					
 					</div>
-				</div>
-			</div>
-			<div class="bg_area">
-				<img src="/images/adidas/2020/event/outerjacket/cont01_bg.jpg" alt="">
-			</div>
-		</div>
-
-		<div class="cont02">
-			<div class="txt_box1">
-				<p>
-					일상에서 경험하는 모든 것들이<br />
-					제 연기에 영감을 줘요.<br />
-					평소에 느끼고 기억해 둔 찰나의 감정들이<br />
-					연기하는 제 모습에서 풍부하게 되살아나는 것 같아요.
-				</p>
-				<span>배우 김희정</span>
-			</div>
-			<div class="txt_box2">
-				<p>
-					안감의 플리스 소재가 주는 부드러운 착용감<br />
-					양방향 지퍼로 다양한 스타일링
-				</p>
-				<div class="button_area_v2">
-					<div class="">
-						<a href="#">
-							구매하기
-							<span class="arrow"></span>
-						</a>
+					
+					<div class="txt_area">
+						<h3>
+							아우터 자켓<br />모든 감각을 깨워
+						</h3>
+						<p class="sub">
+							어느 룩에나 잘 어울리는 아우터 자켓으로<br />
+							나만의 압도적인 스타일을 완성해 보세요.
+						</p>
+						<div class="button_area_v2">
+							<div class="">
+								<a href="https://m.adidas.co.kr/MO/Promotion/landingPage.action?NFN_ST=Y&pageNo=1090&term=1" campaign-label="구매하기">
+									구매하기
+									<span class="arrow"></span>
+								</a>
+							</div>
+						</div>
 					</div>
-				</div>
-			</div>
-			<div class="bg_area">
-				<img src="/images/adidas/2020/event/outerjacket/cont02_bg.jpg" alt="">
-			</div>
-		</div>
-
-		<div class="bottom">
-			<div class="bottom_txt_area">
-				<h4>
-					아우터 자켓, 모든 감각을 깨워
-				</h4>
-				<p class="sub">
-					어떤 스타일에도 편안하게,<br />
-					언제든 주목받을 일상의 모든 순간
-				</p>
-				<div class="button_area_v2">
-					<div class="white">
-						<a href="#">
-							구매하기
-							<span class="arrow"></span>
-						</a>
+	
+					<div class="cont01">
+						<div class="txt_box1">
+							<p>
+								단순한 것들도 특별함이 될 수 있다고 생각해요.<br />
+								쉽고 편안한 아이템이 때로는 더 스타일리쉬해 보일 수 있죠.<br />
+								그러려면 사소한 것들도 놓치지 않으려는<br />
+								노력이 필요한 것 같아요.
+							</p>
+							<span>모델&배우 이수혁</span>
+						</div>
+						<div class="txt_box2">
+							<p>
+								어느 룩에나 잘 어울리는 컬러 블록 디자인<br />
+								크기 조절이 가능한 후드로 연출하는 나만의 핏
+							</p>
+							<div class="button_area_v2">
+								<div class="">
+									<a href="https://m.adidas.co.kr/MO/Promotion/landingPage.action?NFN_ST=Y&pageNo=1090&term=1" campaign-label="구매하기">
+										구매하기
+										<span class="arrow"></span>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="bg_area">
+							<img src="/images/adidas/2020/event/outerjacket/cont01_bg.jpg" alt="">
+						</div>
 					</div>
+	
+					<div class="cont02">
+						<div class="txt_box1">
+							<p>
+								일상에서 경험하는 모든 것들이<br />
+								제 연기에 영감을 줘요.<br />
+								평소에 느끼고 기억해 둔 찰나의 감정들이<br />
+								연기하는 제 모습에서 풍부하게 되살아나는 것 같아요.
+							</p>
+							<span>배우 김희정</span>
+						</div>
+						<div class="txt_box2">
+							<p>
+								안감의 플리스 소재가 주는 부드러운 착용감<br />
+								양방향 지퍼로 다양한 스타일링
+							</p>
+							<div class="button_area_v2">
+								<div class="">
+									<a href="https://m.adidas.co.kr/MO/Promotion/landingPage.action?NFN_ST=Y&pageNo=1090&term=1" campaign-label="구매하기">
+										구매하기
+										<span class="arrow"></span>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="bg_area">
+							<img src="/images/adidas/2020/event/outerjacket/cont02_bg.jpg" alt="">
+						</div>
+					</div>
+	
+					<div class="bottom">
+						<div class="bottom_txt_area">
+							<h4>
+								아우터 자켓, 모든 감각을 깨워
+							</h4>
+							<p class="sub">
+								어떤 스타일에도 편안하게,<br />
+								언제든 주목받을 일상의 모든 순간
+							</p>
+							<div class="button_area_v2">
+								<div class="white">
+									<a href="https://m.adidas.co.kr/MO/Promotion/landingPage.action?NFN_ST=Y&pageNo=1090&term=1" campaign-label="구매하기">
+										구매하기
+										<span class="arrow"></span>
+									</a>
+								</div>
+							</div>
+						</div>
+						
+							<img src="/images/adidas/2020/event/outerjacket/bottom_bg.jpg" alt="">
+						
+					</div>
+					
 				</div>
+				<!-- //outerjacket -->
+	
 			</div>
-
-			<img src="/images/adidas/2020/event/outerjacket/bottom_bg.jpg" alt="">
-
-		</div>
-
-	</div>
-	<!-- //outerjacket -->
-
-</div>
-		<!-- //container product_list -->
+			<!-- //container product_list -->
