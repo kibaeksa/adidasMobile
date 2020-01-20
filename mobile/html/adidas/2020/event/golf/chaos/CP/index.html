@@ -446,7 +446,7 @@
 					</div>
 				</div>
 				<div class="video__wrapper">
-					<video src="/images/adidas/2020/event/golf/chaos/cp/CONVERT_BOA_LORES_PP.mp4" loop playsinline autoplay muted></video>
+					<video src="/images/adidas/2020/event/golf/chaos/cp/TEASER_10_LORES_PP.mp4" loop playsinline autoplay muted></video>
 				</div>
 				<div class="tab__wrapper scrollT">
 					<div class="tab">
@@ -473,26 +473,61 @@
 						<a href=""></a>
 					</div>
 				</div>
-				<div class="video__container">
-					<video src="/images/adidas/2020/event/golf/chaos/cp/CONVERT_BOA_LORES_PP.mp4" loop playsinline autoplay muted class="video01 on"></video>
-					<video src="/images/adidas/2020/event/golf/chaos/cp/CONVERT_TWISTGRIP_LORES_PP.mp4" loop playsinline autoplay muted class="video02"></video>
-					<video src="/images/adidas/2020/event/golf/chaos/cp/CONVERT_BOOST_LORES_PP.mp4" loop playsinline autoplay muted class="video03"></video>
-					<video src="/images/adidas/2020/event/golf/chaos/cp/CONVERT_WATERPROOF_LORES_PP.mp4" loop playsinline autoplay muted class="video04"></video>
-					<div class="gages">
-						<div class="gage01 gage on">
-							<div></div>
-						</div>
-						<div class="gage02 gage">
-							<div></div>
-						</div>
-						<div class="gage03 gage">
-							<div></div>
-						</div>
-						<div class="gage04 gage">
-							<div></div>
-						</div>
-					</div>
+
+				<div class="video_01 on">
+					<video src="/images/adidas/2020/event/golf/chaos/cp/4video.mp4" loop playsinline autoplay muted></video>
+				</div>			
+				
+				<div class="video_01">
+					<video src="/images/adidas/2020/event/golf/chaos/cp/4video.mp4" loop playsinline autoplay muted></video>
 				</div>
+				
+				<!-- <div class="cont_video_wrap">
+					<button id="playBtn" stat="off">Play All</button>
+					<video class="cont_video on" poster="" muted preload playsinline>
+						<source src="/images/adidas/2020/event/golf/chaos/cp/CONVERT_BOA_LORES_PP.mp4"
+							type="video/mp4">
+					</video>
+					<video class="cont_video" poster="" muted preload playsinline>
+						<source src="/images/adidas/2020/event/golf/chaos/cp/CONVERT_TWISTGRIP_LORES_PP.mp4"
+							type="video/mp4">
+					</video>
+					<video class="cont_video" poster="" muted preload playsinline>
+						<source src="/images/adidas/2020/event/golf/chaos/cp/CONVERT_BOOST_LORES_PP.mp4"
+							type="video/mp4">
+					</video>
+					<video class="cont_video" poster="" muted preload playsinline>
+						<source src="/images/adidas/2020/event/golf/chaos/cp/CONVERT_WATERPROOF_LORES_PP.mp4"
+							type="video/mp4">
+					</video>
+				</div>
+
+				<div class="video_bg">
+					<img src="/images/adidas/2020/event/golf/chaos/cp/video_bg.jpg" alt="">
+				</div>
+				
+				<div class="cont_video_nav">
+					<a href="#" class="">
+						<span class="line"></span>
+						<span class="no">01</span>
+						보아
+					</a>
+					<a href="#">
+						<span class="line"></span>
+						<span class="no">02</span>
+						트위스트 그립
+					</a>
+					<a href="#">
+						<span class="line"></span>
+						<span class="no">03</span>
+						부스트
+					</a>
+					<a href="#">
+						<span class="line"></span>
+						<span class="no">04</span>
+						워터프루프
+					</a>
+				</div> -->
 				<div class="desc__wrapper">
 					<div class="desc__wrapper__img on">
 						<img src="/images/adidas/2020/event/golf/chaos/cp/2001_CHAOS_desc01_MO.jpg" alt="">
@@ -504,23 +539,33 @@
 				<script type="text/javascript">
 						$('.tab__wrapper .tab div').off().on('click',function(){
 							var tabIdx = $(this).index();
+							var toppos = $('.cont__wrapper').offset().top;
 							if(tabIdx === 0){
 								// console.log(tabIdx);
 								console.log("왼쪽");
 								$('.tab__wrapper .tab div').removeClass('on').eq(tabIdx).addClass('on');
 								$('.cont__wrapper .cont__wrapper__img').removeClass('on').eq(tabIdx).addClass('on');
 								$('.desc__wrapper .desc__wrapper__img').removeClass('on').eq(tabIdx).addClass('on');
-								var test = $('.video__container .gages .gage');
-								var test = $('.video__container video');
-								test.stop().animate({
-									'width':'100%'
-								},11000)
+								$('.video_01').removeClass('on').eq(tabIdx).addClass('on');
+								$('html,body').animate({
+									scrollTop: toppos - '100'
+								}, 500)
+								var video_01 = $('.video_01>video')								
+								video_01[0].currentTime = 0;
+								
+								
 							} else if(tabIdx === 1) {
 								// console.log(tabIdx);
 								console.log('가운데');
 								$('.tab__wrapper .tab div').removeClass('on').eq(tabIdx).addClass('on');
 								$('.cont__wrapper .cont__wrapper__img').removeClass('on').eq(tabIdx).addClass('on');
 								$('.desc__wrapper .desc__wrapper__img').removeClass('on').eq(tabIdx).addClass('on');
+								$('.video_01').removeClass('on').eq(tabIdx).addClass('on');
+								$('html,body').animate({
+									scrollTop: toppos - '100'
+								}, 500)
+								var video_01 = $('.video_01>video')
+								video_01[1].currentTime = 0;
 							}
 							else{
 								tabIdx = 2;
@@ -551,6 +596,51 @@
 								}
 							}
 						});
+
+						//video
+
+						$(function () {
+
+								var videoIdx = 0;
+								var videoTag = $('.cont_video');
+								var videoNav = $('.cont_video_nav');
+								var videoNavItem = videoNav.find('a');
+
+								//Play All 버튼 눌렸을 때 
+								$("#playBtn").click(function () {
+									var stat = $(this).attr("stat");
+
+									if (stat == "off") {
+										$("#playBtn").text("Pause").attr("stat", "on");
+										videoTag[videoIdx].play();
+									} else {
+										$("#playBtn").text("Play All").attr("stat", "off");
+										videoTag[videoIdx].pause();
+									}
+								});
+
+								//비디오 시작시 
+								videoTag.on('playing', function () {
+									$(this).addClass("on");
+									videoNavItem.eq(videoIdx).addClass("on");
+								});
+
+								//비디오 종료시 
+								videoTag.on('ended', function () {
+									var videoCount = videoTag.length;
+
+									if (++videoIdx > videoCount - 1) {
+										videoIdx = 0;
+									}
+
+									$(this).removeClass("on");
+									videoNavItem.eq(videoIdx - 1).removeClass("on");
+
+									//다음 비디오 재생
+									console.log(videoIdx);
+									videoTag[videoIdx].play();
+								});
+							});
 
 				</script>
 
