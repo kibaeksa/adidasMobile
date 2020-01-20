@@ -1,0 +1,139 @@
+@import './mobile/css/adidas/scss/common/mixin.scss';
+@import './mobile/css/adidas/scss/common/common.scss';
+
+#chaos{
+	position: relative;
+	.rel{
+		position: relative;
+	}
+	.center{
+		position: absolute;
+		top:50%;
+		left:50%;
+		transform: translate(-50%,-50%);
+	}
+	img{
+		width:100%;
+	}
+	video{
+		width:100%;
+	}
+	.main__wrapper{
+		.main__wrapper__img{
+			>img{
+				// width: 100%;
+			}
+		}
+	}
+	.video__wrapper{
+		video{
+			width:100%;
+		}
+	}
+	.tab__wrapper{
+		background:url('/images/adidas/2020/event/golf/chaos/cp/2001_CHAOS_tabBg01_MO.jpg') no-repeat;
+		background-size:100% 100%;
+		background-position:top;
+		width:100%;
+
+		&.active{
+			position:fixed;
+			top: 0;
+			z-index: 2;
+		}
+		.tab{
+			&::after{
+				display: block;
+				content:'';
+				clear:both;
+			}
+			div{
+				float: left;
+				width:calc(100%/3);
+				padding-bottom: 11%;
+				img{
+					display:none;
+					&.on{
+						display:block;						
+					}
+				}
+				&.lt{
+					background:url('/images/adidas/2020/event/golf/chaos/cp/2001_CHAOS_tab01_MO.png') no-repeat;
+					background-size:100% 100%;
+					background-position:top;
+					&.on{
+						background:url('/images/adidas/2020/event/golf/chaos/cp/2001_CHAOS_tab01_on_MO.png') no-repeat;
+						background-size:100% 100%;
+						background-position:top;
+					}
+				}
+				&.ct{
+					background:url('/images/adidas/2020/event/golf/chaos/cp/2001_CHAOS_tab02_MO.png') no-repeat;
+					background-size:100% 100%;
+					background-position:top;
+					&.on{
+						background:url('/images/adidas/2020/event/golf/chaos/cp/2001_CHAOS_tab02_on_MO.png') no-repeat;
+						background-size:100% 100%;
+						background-position:top;
+					}
+				}
+				&.rt{
+					background:url('/images/adidas/2020/event/golf/chaos/cp/2001_CHAOS_tab03_MO.png') no-repeat;
+					background-size:100% 100%;
+					background-position:top;
+					&.on{
+						background:url('/images/adidas/2020/event/golf/chaos/cp/2001_CHAOS_tab03_on_MO.png') no-repeat;
+						background-size:100% 100%;
+						background-position:top;
+					}
+				}
+			}
+		}
+	}
+	.cont__wrapper{
+		.cont__wrapper__img{
+			display:none;
+			&.on{
+				display:block;						
+			}
+			a{
+				position: absolute;
+				top:53%;
+				left:34%;
+				width:32%;
+				height:4.5%;				
+			}
+		}
+	}
+	.video__container{
+		video{
+			display:none;
+			&.on{
+				display: block;
+			}
+		}
+		&::after{
+			display:block;
+			content:'';
+			clear:both;
+		}
+		.gages{
+			width:calc(100%/4);
+			height:10px;
+			float:left;
+			div{
+				background:#75a900;
+				width:0;
+				height: inherit;
+			}
+		}
+	}
+	.desc__wrapper{
+		.desc__wrapper__img{
+			display:none;
+			&.on{
+				display:block;						
+			}
+		}
+	}
+}
