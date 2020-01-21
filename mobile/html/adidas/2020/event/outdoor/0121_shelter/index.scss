@@ -1,0 +1,401 @@
+@import './mobile/css/adidas/scss/common/mixin.scss';
+@import './mobile/css/adidas/scss/common/common.scss';
+
+
+#outdoor_cp{
+	position: relative;
+	background: #000;
+	.button_area_v2{
+		display: inline-block;
+		// width: 120px;
+		a{
+			padding: 0 1.5rem;
+			font: 600 1rem/38px 'NotoSansKR';
+			height: 38px;
+			letter-spacing: 1px;
+			span.arrow{
+				width: 18px;
+			    margin-left: 12px;
+				&:after{
+				    height: 2px;
+					top: -2px;
+				    width: 7px;
+				}
+				&:before{
+				    height: 2px;
+					bottom: -2px;
+					width: 7px;
+				}
+			}
+		}
+	}
+
+	.main{
+		position: relative;
+		img{
+			display: block;
+			width: 100%;
+		}
+		.inn_wrap{
+			position: absolute;
+			bottom: 2rem;
+			left: 2rem;
+			width: 100%;
+			.logo{
+				width: 53%;
+				img{
+					display: inline-block;
+					width:100%;
+				}
+			}
+			p{
+				padding-top: 1rem;
+				font:300 1.1rem/1.6rem 'NotoSansKR';
+				color: #fff;
+				letter-spacing: 0.5px;
+			}
+			.button_area_v2{
+				margin: 5% 0 0 0;
+				a{
+					font-weight: 500;
+				}
+			}
+		}
+	}
+
+	.statement{
+		position: relative;
+		.bg{
+			img{
+				display: block;
+				width: 100%;
+			}
+		}
+		.inbox{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 100%;
+			text-align: center;
+			h2 {
+				color: #fff;
+				font: 600 2.6rem/2.6rem 'NotoSansKR';
+				letter-spacing: 4px;
+			}
+			h3 {
+				color: #fff;
+				margin: 1rem 0;
+				font: 600 1.5rem/1.9rem 'NotoSansKR';
+				letter-spacing: 3.5px;
+			}
+			p{
+				text-align: center;
+				color:#c6c6c6;
+				font: 300 0.9rem/1.5rem 'NotoSansKR';
+				letter-spacing: 0.1px;
+				
+			}
+			.button_area_v2{
+				margin: 5% 0 0 0;
+				display: inline-block;
+			}
+		}
+	}
+
+	.navi_wrapper{
+		position: relative;
+		padding-bottom: 20%;
+		background: #000;
+		z-index: 10;
+		.navi_wrap {
+			position: absolute;
+			display: flex;
+			width: 100%;
+			.navi {
+				flex: 1;
+				height: 6.5rem;
+				box-sizing: border-box;
+				&.left {
+					background: url('/images/adidas/2020/event/outdoor/0121/btn_left_bg.jpg') no-repeat;
+					background-position: center center;
+					background-size: 100% 100%;
+
+					&.on {
+						background: url('/images/adidas/2020/event/outdoor/0121/btn_left_bg_on.jpg') no-repeat;
+						background-position: center center;
+						background-size: 100% 100%;
+					}
+				}
+
+				&.right {
+					background: url('/images/adidas/2020/event/outdoor/0121/btn_right_bg.jpg') no-repeat;
+					background-position: center center;
+					background-size: 100% 100%;
+
+					&.on {
+						background: url('/images/adidas/2020/event/outdoor/0121/btn_right_bg_on.jpg') no-repeat;
+						background-position: center center;
+						background-size: 100% 100%;
+					}
+				}
+
+				p {
+					text-align: center;
+					font: 400 13px/6.5rem 'NotoSansKR';
+					color: #fff;
+					letter-spacing: 1px;
+					text-indent: -9999px;
+				}
+			}
+
+			&.fixed {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				z-index: 10;
+			}
+		}
+	}
+
+	.items_wrapper{
+		position: relative;
+		padding-bottom: 1221%;
+		.item{
+			position: absolute;
+			top:0;
+			left:0;
+			width:100%;
+			opacity: 0;
+			&.on{
+				opacity: 1;
+
+				z-index: 5;
+			}
+			&.item2{
+				.slideitem_wrap{
+					&.slideitem_bg2{
+						background: url('/images/adidas/2020/event/outdoor/0121/item2_slider_bg.jpg') no-repeat;
+						background-size: 100% 100%;
+					}
+					.imgbg{
+						img{
+							width: 100%;
+						}
+					}
+					.s_slider_wrap{
+						position: absolute;
+						bottom: 5%;
+						left: 15px;
+						width: 70%;
+						box-sizing: border-box;
+						overflow: hidden;
+						ul{
+							// position: absolute;
+							// top: 0;
+						}
+					}
+				}
+			}
+			.item_top{
+				position: relative;
+				img{
+					display: block;
+					width: 100%;
+				}
+				.txt{
+					position: absolute;
+					bottom:1rem;
+					left:50%;
+					transform: translateX(-50%);
+					width:94%;
+					text-align: center;
+					background: rgba(0, 0, 0, 0.7);
+					padding: 2rem 1rem;
+					box-sizing: border-box;
+					h3{
+						display: block;
+						font:600 2rem/2rem 'NotoSansKR';
+						color: #fff;
+						letter-spacing: 3px;
+					}
+					p{
+						padding-top: 1.5rem;
+						color: #fff;
+						font:300 .85rem 'NotoSansKR';
+						letter-spacing: 0px;
+					}
+				}
+			}
+			.item_vid{
+				position: relative;
+				video{
+					display: block;
+					width: 100%;
+				}
+			}
+			.slideitem_wrap{
+				position: relative;
+				background: #000;
+				padding: 4rem 0 0;
+				&.slideitem_bg1 {
+					background: url('/images/adidas/2020/event/outdoor/0121/item1_slider_bg.jpg') no-repeat;
+					background-size: 100% 100%;
+				}
+				ul{
+					overflow: hidden;
+					width: 94%;
+					margin: 0 auto;
+					li{
+						img{
+							width:100%;
+						}
+					}
+				}
+				.owl-controls{
+					padding:20px 0 0 0;
+					.owl-dots{
+						text-align: center;
+						.owl-dot{
+							margin:0 4px;
+							display: inline-block;
+							width: 10px;
+							height: 10px;
+							border-radius: 50px;
+							border:1px solid #fff;
+							&.active{
+								background: #fff;
+							}
+						}
+					}
+				}
+				.txt_area{
+					padding: 1.5rem 0 4rem;
+					text-align: center;
+					p{
+						color:#fff;
+						font: 500 1.5rem 'NotoSansKR';
+						letter-spacing: 2px;
+						span{
+							font: 18px 'adinenuPro-bold';
+						letter-spacing: 3px;
+
+						}
+					}
+					.button_area_v2{
+						padding: 15px 0 0 ;
+					}
+				}
+				.txt_slide_inn{
+					position: absolute;
+					right: 15px;
+					bottom: 5%;
+					box-sizing: border-box;
+					width: 13rem;
+					height: 11rem;
+					padding: 11px 0 10px 11px;
+					text-align: left;
+					>*{
+						color:#fff;
+						text-align: left;
+					}
+					span{
+						display: inline-block;
+						font: 12px 'adinenuPro-light';
+						letter-spacing: 1px;
+						text-align: left;
+					}
+					p{
+						font: 300 13px 'NotoSansKR';	
+						letter-spacing: 0;
+					}
+					.price{
+						font: 300 13px 'NotoSansKR';	
+
+						span{
+							font: 14px 'adinenuPro-regular';
+
+						}
+					}
+				}
+				&.right{
+					.owl-dots{
+						text-align: right !important;
+					}
+				}
+			}
+			.s_slder_wrap{
+
+			}
+			.video_wrap{
+				img{
+					width:100%;
+				}
+			}
+		}
+	}
+
+	.cont_img {
+		position: relative;
+		.imgbg {
+			img{
+				display: block;
+				width: 100%;
+			}
+		}
+	}
+
+	.video_wrap{
+		position: relative;
+		background: #000;
+		&.right{
+			.txt{
+				p{
+					text-align: right;
+				}
+			}
+		}
+		video{
+			width:100%;
+		}
+		.txt{
+			position: absolute;
+			top:75%;
+			left:50%;
+			transform: translate(-50%,-50%);
+			width:90%;
+			p{
+				font: 300 1rem/1.8rem 'NotoSansKR';
+				color:#fff;
+				letter-spacing: 0.2px;
+				&.bold{
+					padding: 0 0 2% 0;
+					font: 600 1.8rem/2.5rem 'NotoSansKR';
+				}
+			}
+		}
+	}
+
+	#notizone{
+		position: relative;
+		img{
+			display: block;
+			width: 100%;
+		}
+	}
+
+	@media screen and (min-width: 321px) {
+		.navi_wrapper {
+			padding-bottom: 21%;
+		}
+	}
+
+	@media screen and (min-width:413px) {
+		.navi_wrapper {
+			padding-bottom: 18.8%;
+		}
+	}
+}
+
+
