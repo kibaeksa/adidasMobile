@@ -31,18 +31,21 @@
 			width:100%;
 		}
 	}
-	.tab__wrapper{
-		background:url('/images/adidas/2020/event/golf/chaos/cp/2001_CHAOS_tabBg01_MO.jpg') no-repeat;
-		background-size:100% 100%;
-		background-position:top;
-		width:100%;
 
-		&.active{
-			position:fixed;
-			top: 0;
-			z-index: 2;
-		}
+	.tab__wrapper{
+		position: relative;
 		.tab{
+			background:url('/images/adidas/2020/event/golf/chaos/cp/2001_CHAOS_tabBg01_MO.jpg') no-repeat;
+			background-size:100% 100%;
+			background-position:top;
+			position: absolute;
+			display: flex;
+			width: 100%;
+			top: 0;
+			&.active{
+				position:fixed;
+				z-index: 2;
+			}
 			&::after{
 				display: block;
 				content:'';
