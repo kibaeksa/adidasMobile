@@ -446,7 +446,7 @@
 					</div>
 				</div>
 				<div class="video__wrapper">
-					<video src="http://image.adidas.co.kr/upload/design_temp/video/2020/a/golf/chaos/MO/teaser.mp4" loop playsinline autoplay muted></video>
+					<video src="http://imagem.adidas.co.kr/upload/design_temp/video/2020/a/golf/chaos/MO/teaser.mp4" autoplay loop playsinline muted poster="/images/adidas/2020/event/golf/chaos/cp/poster01.jpg"></video>
 				</div>
 				<div class="tab__wrapper scrollT">
 					<div class="tab">
@@ -474,12 +474,18 @@
 					</div>
 				</div>
 
-				<div class="video_01 on">
-					<video src="http://image.adidas.co.kr/upload/design_temp/video/2020/a/golf/chaos/MO/4video.mp4" loop playsinline autoplay muted></video>
+				<div class="video_01 on first rel">
+					<video src="http://imagem.adidas.co.kr/upload/design_temp/video/2020/a/golf/chaos/MO/cont_video.mp4" loop playsinline muted poster="/images/adidas/2020/event/golf/chaos/cp/poster02.jpg"></video>
+					<a href="javascript:void(0)" class="center">
+						<img src="/images/adidas/2020/event/golf/chaos/CP/play_MO.png" alt="">
+					</a>
 				</div>			
 				
-				<div class="video_01">
-					<video src="http://image.adidas.co.kr/upload/design_temp/video/2020/a/golf/chaos/MO/4video.mp4" loop playsinline autoplay muted></video>
+				<div class="video_01 second rel">
+					<video src="http://imagem.adidas.co.kr/upload/design_temp/video/2020/a/golf/chaos/MO/cont_video.mp4" loop playsinline muted poster="/images/adidas/2020/event/golf/chaos/cp/poster02.jpg"></video>
+					<a href="javascript:void(0)" class="center">
+						<img src="/images/adidas/2020/event/golf/chaos/CP/play_MO.png" alt="">
+					</a>
 				</div>
 				
 				<!-- <div class="cont_video_wrap">
@@ -535,8 +541,35 @@
 					<div class="desc__wrapper__img">
 						<img src="/images/adidas/2020/event/golf/chaos/cp/2001_CHAOS_desc02_MO.jpg" alt="">
 					</div>
+					<div class="btm__btn">
+						<a href="https://m.adidas.co.kr/MO/Promotion/landingPage.action?NFN_ST=Y&pageNo=1107&term=1">코드케이오스 전 제품 보기</a>
+					</div>
 				</div>
 				<script type="text/javascript">
+						var mainVideo1 = $('.first');
+							mainVideo1.find('a').click(function(){
+							var vid = $('.first').find('video');
+							if(vid.hasClass('on')){
+								vid.removeClass('on');
+							} else{
+								vid[0].play();
+								vid.addClass('on');
+								$(this).css({'display':'none'});
+							}
+						});
+
+						var mainVideo2 = $('.second');
+							mainVideo2.find('a').click(function(){
+								var vid = $('.second').find('video');
+								if(vid.hasClass('on')){
+									vid.removeClass('on');
+								} else{
+									vid[0].play();
+									vid.addClass('on');
+									$(this).css({'display':'none'});
+								}
+							});
+					
 						$('.tab__wrapper .tab div').off().on('click',function(){
 							var tabIdx = $(this).index();
 							var toppos = $('.cont__wrapper').offset().top;
@@ -550,9 +583,11 @@
 								$('html,body').animate({
 									scrollTop: toppos - '100'
 								}, 500)
-								var video_01 = $('.video_01>video')								
-								video_01[0].currentTime = 0;
-								
+
+								var first = $('.first>video');
+								console.log();								
+								first[0].currentTime = 0;
+								// $('.first a').css({'display':'block'});
 								
 							} else if(tabIdx === 1) {
 								// console.log(tabIdx);
@@ -564,14 +599,18 @@
 								$('html,body').animate({
 									scrollTop: toppos - '100'
 								}, 500)
-								var video_01 = $('.video_01>video')
-								video_01[1].currentTime = 0;
+								
+								var second = $('.second>video')
+								second[0].currentTime = 0;
+								// $('.second a').css({'display':'block'});
+
 							}
 							else{
 								tabIdx = 2;
 								// console.log(tabIdx);
 								console.log("오른쪽");
 								event.preventDefault();
+								alert('COMING SOON');
 							}
 						});
 
