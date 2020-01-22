@@ -1,0 +1,192 @@
+@import "./mobile/MO/reebok/css/scss/about.scss";
+
+em{
+	font-style: normal;
+}
+#contents{
+    img{
+        vertical-align: middle;
+    }
+}
+
+.about_campaign.bt21{
+	.btn{
+		>div{
+			position: relative;
+			display: inline-block;
+			&::before{
+				border-bottom: 1px solid #000;
+				border-left: 1px solid #000;
+				bottom: -4px;
+				height: 3px;
+				left: 2px;
+				width: calc(100% + 1px);
+				content: "";
+				display: block;
+				position: absolute;
+			}
+			&::after{
+				border-right: 1px solid #000;
+				border-top: 1px solid #000;
+				height: calc(100% + 1px);
+				right: -4px;
+				top: 2px;
+				width: 3px;
+				content: "";
+				display: block;
+				position: absolute;
+			}
+			a{
+				padding: 0 1rem;
+				font: 600 1rem/3.4rem 'NotoSansKR';
+				letter-spacing: .1rem;
+				position: relative;
+				display: block;
+				text-align: center;
+				color: #fff;
+				background:#000;
+				z-index: 2;
+				border: 1px solid #000;
+				.arrow{
+					margin-top: -3px;
+					margin-left: 1.4rem;                
+					vertical-align: middle;
+					width: 20%;                
+				}
+			}
+		}
+		&.white{
+			>div{
+				&::before{
+					border-bottom: 1px solid #fff;
+					border-left: 1px solid #fff;
+				}
+				&::after{
+					border-right: 1px solid #fff;
+					border-top: 1px solid #fff;
+				}
+				a{
+					color: #000;
+					background:#fff;
+					border: 1px solid #fff;
+					.arrow{
+					}
+				}
+			}
+		}
+	}
+	.main {
+		position: relative;
+		video {
+			display: block;
+			width: 100%;
+		}
+
+		.vid_box {
+			position: absolute;
+			top: 58%;
+			left: 50%;
+			transform: translateX(-50%);
+			text-align: center;
+			z-index: 5;
+
+			h2 {
+				text-align: center;
+				img {
+					display: inline-block;
+					width: 70%;
+				}
+			}
+
+			a.btn-play {
+				margin-top: 1rem;
+				display: inline-block;
+				width: 3rem;
+
+				img {
+					display: block;
+					width: 100%;
+				}
+			}
+		}
+	}
+	img{
+		width:100%;
+	}
+	.state {
+		position: relative;
+		padding: 3.5rem 0;
+		h2{
+			font: 600 2rem/2.6rem 'NotoSansKR';
+			color: #000;
+			text-align: center;
+		}
+		p {
+			padding-top: 2.5rem;
+			font: 600 1.4rem 'NotoSansKR';
+			color: #5e5e5e;
+			text-align: center;
+		}
+
+		h3 {
+			margin-top: 1rem;
+			text-align: center;
+
+			img {
+				display: inline-block;
+				width: 86%;
+			}
+		}
+	}
+	.video__wrapper{
+		padding:3rem;
+		background:#fcf2d8;
+		video{
+			width:100%;
+		}
+		h1{
+			font: 700 21px/26px 'NotoSansKR';
+			letter-spacing: 2.5px;
+			color:#000;
+			text-align: center;
+		}
+		p{
+			font: 500 11px/25px 'NotoSansKR';
+			color:#686358;
+			text-align: center;
+			letter-spacing: 1px;
+		}
+		.btn{
+			text-align: center;
+			margin: 1rem 0 0 0;
+		}
+	}
+	.characters-wrap{
+		margin: 0 2.5rem;
+		overflow: hidden;
+		align-items: center;
+		.character{
+			float: left;
+			width:50%;
+			opacity: 0;
+			transform: rotate(20deg);
+			transition: all 0.2s;
+			&.show{
+				transform: rotate(0deg);
+				opacity: 1;
+			}
+			>div{
+				margin: 2.5rem 2.6rem;
+			}
+		}
+	}
+
+	.copyright{
+		margin: 0 0 3rem;
+		img{
+			width:100%;
+		}
+	}
+}
+
+// bt21
