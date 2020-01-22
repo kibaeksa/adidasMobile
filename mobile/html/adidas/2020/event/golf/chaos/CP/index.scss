@@ -32,9 +32,9 @@
 		}
 	}
 
-	.tab__wrapper{
+	.ptab_wrap{
 		position: relative;
-		.tab{
+		.ptab{
 			background:url('/images/adidas/2020/event/golf/chaos/cp/2001_CHAOS_tabBg01_MO.jpg') no-repeat;
 			background-size:100% 100%;
 			background-position:top;
@@ -97,6 +97,15 @@
 	.cont__wrapper{
 		.cont__wrapper__img{
 			display:none;
+			&:nth-child(3){
+				a{
+					position: absolute;
+					top: 62%;
+					left: 34%;
+					width: 32%;
+					height: 16.5%;
+				}
+			}
 			&.on{
 				display:block;						
 			}
@@ -110,98 +119,14 @@
 		}
 	}
 
-	// .cont_video_wrap{
-	// 				position: relative;
-	// 				width: 100%;
-	// 				height: 465px;		
-	// 				#playBtn{
-	// 					margin-bottom: 20px;
-	// 				}
-	// 				}
-	// 				.video_bg{
-	// 					width: 100%;
-	// 					margin-top: -2px;
-	// 				}
-	// 				.cont_video{
-	// 					display: none;
-	// 					position: absolute;						
-	// 					width: 100%;
-	// 				}
-	// 				.cont_video.on{
-	// 					display: block;
-	// 				}
-
-	// 				.cont_video_nav{
-	// 					position: absolute;
-	// 					bottom: 40.14%;												
-	// 					width: 100%;
-	// 				}
-	// 				.cont_video_nav a{
-	// 					display: inline-block;
-	// 					width: 24.7%;
-	// 					color:#999999;
-	// 					font:600 22px/32px "NotoSansKR";
-	// 					text-align: center;
-	// 					letter-spacing: 3px;
-	// 				}		
-	// 				.cont_video_nav a span.no{
-	// 					 font:24px 'AdihausDIN-Cond';
-	// 					 font-weight: bold;
-	// 					 margin-right: 1px;
-	// 					 letter-spacing: 3px;
-	// 				}
-	// 				.cont_video_nav a span.line{
-	// 					display: block;
-	// 					width: 0;
-	// 					height: 8px;
-	// 					background: #75a900;			
-	// 					margin-bottom: 10px;			
-	// 				}
-	// 				.cont_video_nav a span.line2{
-	// 					display: block;
-	// 					width: 0;
-	// 					height: 8px;
-	// 					background: #75a900;
-	// 					transition: all 0.6s;
-	// 				}
-	// 				.cont_video_nav a span.line3{
-	// 					display: block;
-	// 					width: 0;
-	// 					height: 8px;
-	// 					background: #75a900;
-	// 					transition: all 11s;
-	// 				}
-	// 				.cont_video_nav a span.line4{
-	// 					display: block;
-	// 					width: 0;
-	// 					height: 8px;
-	// 					background: #75a900;
-	// 					transition: all 0.6s;
-	// 				}
-
-	// 				.cont_video_nav a.on{					
-	// 					color:#75a900;
-	// 					font:600 22px/32px "NotoSansKR";
-	// 				}
-	// 				.cont_video_nav a.on span.line{
-	// 					width: 100%;
-	// 					transition: all 11s;
-	// 				}
-
-
-	
-		.video_01{
-			display:none;
-			&.on{
-				display: block;
-				margin-bottom: -1px;
-			}
+	.video_01{
+		display:none;
+		&.on{
+			display: block;
+			margin-bottom: -1px;
 		}
-		&::after{
-			display:block;
-			content:'';
-			clear:both;
-		}
+	}
+
 		
 	
 	.desc__wrapper{
@@ -211,21 +136,177 @@
 				display:block;						
 			}
 		}
-		.btm__btn{
-			background:url('/images/adidas/2020/event/golf/chaos/cp/btm_bg.jpg') no-repeat;
-			background-size:100%;
-			background-position: top;
-			text-align: center;
-			padding: 2rem 0;
-			a{
-				background: #000;
-				font: 500 12px/42.5px 'NotoSansKR';
-				color: #fff;
-				display: inline-block;
-				widtH: 55%;
-				margin: 0 auto;
-				letter-spacing: 0;
+		// .btm_btn{
+		// 	background:url('/images/adidas/2020/event/golf/chaos/cp/btm_bg.jpg') no-repeat;
+		// 	background-size:100%;
+		// 	background-position: top;
+		// 	text-align: center;
+		// 	padding: 2rem 0;
+		// 	a{
+		// 		background: #000;
+		// 		font: 500 12px/42.5px 'NotoSansKR';
+		// 		color: #fff;
+		// 		display: inline-block;
+		// 		widtH: 55%;
+		// 		margin: 0 auto;
+		// 		letter-spacing: 0;
+		// 	}
+		// }
+	}
+
+	.fixed__wrapper{
+		background:url('/images/adidas/2020/event/golf/chaos/cp/2001_CHAOS_prodBg_MO.jpg') no-repeat;
+		background-size:100% 100%;
+		background-position:top;
+		padding: 4rem 0 1rem;
+		.slide__wrapper{
+			margin: 0 0 15% 0;
+			.sliderlook{
+				.slick-list{
+					overflow:hidden;
+					width: 80%;
+    				margin: 0px auto;
+					.slick-track{
+						.slick-slide{
+							position: relative;
+							a{
+								position: absolute;
+								top:0;
+								left:0;
+								right:0;
+								bottom:0;
+								width:100%;
+								height:100%;
+							}
+							.slide_txt{
+								h1{
+									font: 700 13px/13px 'NotoSansKR';
+									color:#000;
+									text-align: center;
+								}
+								p{
+									font: 13px/28px 'AdihausDIN-Bold';
+									color:#000;
+									text-align: center;
+								}
+							}
+						}
+					}
+				}
+				.slick-dots{
+					text-align: center;
+					position: relative;
+					bottom: -15px;
+					li{
+						display: inline-block;
+						.dot{
+							background:url('/images/adidas/2020/event/golf/chaos/cp/dot.png') no-repeat;
+							// background-position:top;
+							// background-size: 100% 100%;
+							background-size: cover;
+							width: 17px;
+							height: 17px;
+							text-indent:-9999px;
+							margin:0 2px;
+						}
+						&.slick-active{
+							.dot{
+								background:url('/images/adidas/2020/event/golf/chaos/cp/dot_on.png') no-repeat;
+								// background-position:top;
+								// background-size: 100% 100%;
+								background-size: cover;
+							}
+						}
+					}
+				}
+			}
+			.prev-button{
+				position: absolute;
+				top:50%;
+				left:9%;
+				transform: translate(-50%,-50%);
+				img{
+					width:60%;
+				}
+			}
+			.next-button{
+				position: absolute;
+				top:50%;
+				left:93%;
+				transform: translate(-50%,-50%);
+				img{
+					width:60%;
+				}
 			}
 		}
 	}
+
+	#wrapper {
+	width: 500px;
+	position: relative;
+	}
+
+	.video-wrapper {
+	position: relative;
+
+	.tabs {
+		display: flex;
+		background:url('/images/adidas/2020/event/golf/chaos/cp/2001_CHAOS_tabBg02_MO.jpg') no-repeat;
+		background-position:top;
+		background-size:100% 100%;
+		a {
+			width: 100%;
+			height: 30px;
+			line-height: 30px;
+			color: #ddd;
+			cursor: pointer;
+			font: 700 11.5px/11.5px 'NotoSansKR';
+			color: #999999;
+			text-align: center;
+			padding: 1rem 0 2rem;
+			&.active {
+				color: #75a900;
+			}
+		}
+	}
+
+	.video-area {
+		width: 100%;
+		position: relative;
+
+		#video {
+		width: 100%;
+		// min-height: 300px;
+		}
+
+		.progress-bar {
+		width: 100%;
+		height: 5px;
+		position: relative;
+
+		/* position: absolute;
+		left: 0;
+		bottom: 0; */
+		background: #9abb4f;
+
+		> div {
+			width: 0%;
+			height: 100%;
+			position: 0;
+			left: 0;
+			top: 0;
+			background: #75a900;
+		}
+		}
+	}
+	}
+
+	.ptab_cont {
+	display: none;
+
+	&.on {
+		display: block;
+	}
+	}
+
 }
