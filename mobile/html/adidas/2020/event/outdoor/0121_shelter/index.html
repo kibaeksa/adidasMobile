@@ -749,9 +749,9 @@
 					</div>
 				</div>
 
-				<!-- <div id="notizone" name="notizone">
-					<img src="/images/adidas/2020/event/outdoor/0121/main_img.jpg" alt="">
-				</div> -->
+				<div id="notizone" name="notizone">
+					<img src="/images/adidas/2020/event/outdoor/0121/poster_img.jpg" alt="">
+				</div>
 
                 <script type="text/javascript">
                     $(document).ready(function(){
@@ -831,6 +831,18 @@
 						});
 
 						$(window).load(function(){
+
+							// poster 이동
+							var notizoneTop = $('#notizone').offset().top;
+							console.log(notizoneTop);
+
+							setTimeout(function() {
+							// $('.btn-notizone').trigger('click');
+							$('html, body').animate({'scrollTop':notizoneTop-65}, 40);
+							}, 10);
+
+
+
 
 							var navipos = $('.navi_wrapper').offset().top;
 
