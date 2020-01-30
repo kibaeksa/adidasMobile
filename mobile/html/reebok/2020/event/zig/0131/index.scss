@@ -1,0 +1,190 @@
+@import "./mobile/MO/reebok/css/scss/about.scss";
+
+#contents{
+    img{
+        vertical-align: middle;
+    }
+}
+//common
+html,body{
+    // height:100%;
+}
+.btn{
+	>div{
+        position: relative;
+        display: inline-block;
+		&::before{
+            border-bottom: 1px solid #000;
+            border-left: 1px solid #000;
+            bottom: -4px;
+            height: 3px;
+            left: 2px;
+            width: calc(100% + 1px);
+            content: "";
+            display: block;
+            position: absolute;
+		}
+		&::after{
+            border-right: 1px solid #000;
+            border-top: 1px solid #000;
+            height: calc(100% + 1px);
+            right: -4px;
+            top: 2px;
+            width: 3px;
+            content: "";
+            display: block;
+            position: absolute;
+        }
+		a{
+            padding: 0 1rem;
+			font: 600 1rem/3.4rem 'NotoSansKR';
+			letter-spacing: .1rem;
+			position: relative;
+			display: block;
+			text-align: center;
+			color: #fff;
+			background:#000;
+			z-index: 2;
+			border: 1px solid #000;
+			.arrow{
+                margin-top: -3px;
+                margin-left: 1.4rem;                
+                vertical-align: middle;
+                width: 20%;                
+			}
+		}
+	}
+    &.white{
+		>div{
+			&::before{
+				border-bottom: 1px solid #fff;
+				border-left: 1px solid #fff;
+			}
+			&::after{
+				border-right: 1px solid #fff;
+				border-top: 1px solid #fff;
+			}
+			a{
+				color: #000;
+				background:#fff;
+				border: 1px solid #fff;
+				.arrow{
+				}
+			}
+		}
+	}
+}
+
+.zig{
+    .main{
+		position: relative;
+		video{
+			display: block;
+			width: 100%;
+		}
+		.main_titbox{
+			display: none;
+			width: 100%;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			z-index: 3;
+			text-align: center;
+			h2{
+				text-align: center;
+				img{
+					width: 84%;
+					display: inline-block;
+				}
+			}
+			p{
+				padding: 1.4rem 0;
+				font: 1.1rem/1.1rem 'NotoSansKR';
+				color: #fff;
+				text-align: center;
+			}
+			a.btn-play{
+				display: inline-block;
+				width: 12%;
+				img{
+					display: block;
+					width: 100%;
+				}
+			}
+		}
+	}
+
+    .section{
+		position: relative;
+		&.sect_state{
+			margin-top: -2px;
+			background: url('/images/reebok/2020/event/zig/0131/200131_r_zig_02.jpg') 0 0 no-repeat;
+			.inn{
+				padding: 8rem 0;
+				text-align: center;
+				color: #fff;
+				h3{
+					font: 700 2rem/2rem 'NotoSansKR';
+					color: #fff;
+					text-align: center;
+					letter-spacing: 1px;
+				}
+				p{
+					padding-top: 1rem;
+					font: 300 0.9rem 'NotoSansKR';
+					color: #fff;
+					text-align: center;
+					letter-spacing: 1px;
+				}
+			}
+		}
+
+		&.sect_cont{
+			>div{
+				position: relative;
+				>img{
+					display: block;
+					width: 100%;
+				}
+				.cont_buybox{
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					z-index: 2;
+				}
+			}
+			.cont_1{
+				.inn {
+					position: absolute;
+					top: 45%;
+					left: 10%;
+					width: 80%;
+					background: #fff;
+					z-index: 2;
+					padding: 3rem 0;
+					box-sizing: border-box;
+					text-align: center;
+					h3 {
+						font: 600 1.8rem/2.4rem 'NotoSansKR';
+						color: #000;
+						text-align: center;
+					}
+
+					p {
+						padding: 1rem 0 1.5rem;
+						font: 400 1rem/1.4rem 'NotoSansKR';
+						color: #000;
+						text-align: center;
+					}
+
+					.btn {
+						display: inline-block;
+					}
+				}
+			}
+		}
+    }
+}
+
+// electro
