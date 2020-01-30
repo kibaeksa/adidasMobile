@@ -570,9 +570,135 @@
 						<div class="gray"><a href="#">회원가입</a></div>
 					</div>
 				</section>
+			<!-- 200130 리복 회원가입 중복 팝업 START -->
+				<!-- 휴대폰 중복 가입 팝업 -->
+				<div class="modal-popup-wrapper register-popup"
+					data-modalpop=""
+					data-modalpop-name="popup_offline_join"
+					data-modalpop-autoopen=""
+				>
+					<div class="overlay"></div>
+					<div class="popup">
+						<div class="popup-header">
+							<h2>휴대폰 번호 중복안내</h2>
+							<a href="javascript:void(0)" class="close_x_btn"></a>
+						</div>
+						<!-- 191223 popup-contents 텍스트 수정-->
+						<div class="popup-contents">
+							<p class="red">오프라인 매장에서 이미 가입하셨네요!</p>
+							<p class="mg15">
+								오프라인 가입 시 발급 받았던<br/>
+								<strong>임시 아이디/패스워드</strong>로 로그인하세요.<br/>
+								로그인하시면 SNS 계정과 연결됩니다.<br/>
+								임시 계정을 분실하신 경우, CS에 문의해주세요.<br/>                            
+							</p>
+							<p>
+								만약 오프라인 매장에서 가입한 적이 없으신 경우 <br/> 
+								CS에 문의해주세요.
+							</p>
+							<div class="form_table">
+								<div class="row">
+								<input type="text" placeholder="아이디">
+							</div>
+							<div class="row">
+								<input type="password" placeholder="비밀번호">
+							</div>
+							<!-- 191223 button_area 텍스트 수정, button_area_wrap 상위 태그 추가-->
+							<div class="button_area_wrap">
+								<div class="button_area">
+									<div class="red"><a href="javascript:doLogin();" class="icons aft" data-icon="">SNS 계정과 연결하기</a></div>
+								</div>
+							</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- SNS 중복 가입 팝업 -->
+				<div class="modal-popup-wrapper register-popup"
+					data-modalpop=""
+					data-modalpop-name="popup_sns_join"
+					data-modalpop-autoopen=""
+				>
+					<div class="overlay"></div>
+					<div class="popup">
+						<div class="popup-header">
+							<h2>휴대폰 번호 중복안내</h2>
+							<a href="javascript:void(0)" class="close_x_btn"></a>
+						</div>
+						<div class="popup-contents">
+							<p class="red">이미 해당 SNS로 가입하셨네요!</p>
+							<p><strong>가입하신 SNS로</strong> 로그인 해 주세요.</p>
+							<div class="button_area_wrap">
+							<div class="button_area">
+								<div class="red"><a href="javascript:doLogin();" class="icons aft" data-icon="">로그인</a></div>
+							</div>
+							<div class="id_pw_find">
+									<a href="javascript:goFindUserId();">아이디 / 비밀번호 찾기</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- 기존 회원 가입 -->
+				<div class="modal-popup-wrapper register-popup"
+					data-modalpop=""
+					data-modalpop-name="popup_member_join"
+					data-modalpop-autoopen=""
+				>
+					<div class="overlay"></div>
+					<div class="popup">
+						<div class="popup-header">
+							<h2>휴대폰 번호 중복안내</h2>
+							<a href="javascript:void(0)" class="close_x_btn"></a>
+						</div>
+						<div class="popup-contents">
+							<p class="red">이미 회원이시네요!</p>
+							<p><strong>가입하신 아이디로</strong> 로그인 해 주세요.</p>
+							<div class="button_area_wrap col2">
+								<div class="button_area">
+									<div class="red"><a href="javascript:doLogin();" class="icons aft" data-icon="">로그인</a></div>
+								</div>
+								<p>* 로그인하시면 SNS 계정으로 연결할 수 있습니다.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- 중복 가입 안내 -->
+				<div class="modal-popup-wrapper register-popup"`
+					data-modalpop=""
+					data-modalpop-name="popup_member_already"
+					data-modalpop-autoopen=""
+				>
+					<div class="overlay"></div>
+					<div class="popup">
+						<div class="popup-header">
+							<h2>중복 가입 안내</h2>
+							<a href="javascript:void(0)" class="close_x_btn"></a>
+						</div>
+						<!-- 191223 popup-contents 텍스트 수정-->
+						<div class="popup-contents">
+							<p class="red">이미 회원이시네요!</p>
+							<p class="mg15">가입하셨던 아이디에 이미 연결된 SNS 계정이 존재합니다.</p>
+							<p>기존 아이디로 로그인 후<br/>마이페이지에서 SNS 계정 연결을 재설정하세요</p>
+							<div class="button_area_wrap">
+								<!-- 191223 button_area 텍스트 수정 -->
+							<div class="button_area">
+								<div class="red"><a href="javascript:doLogin();" class="icons aft" data-icon="">로그인</a></div>
+							</div>
+							</div>
+							<!-- 191223 id_pw_find 추가-->
+							<div class="id_pw_find">
+								<a href="javascript:goFindUserId();">아이디 / 비밀번호 찾기</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			<!-- 200130 리복 회원가입 중복 팝업 END -->
+
+
 
 				<!-- popup 기존 회원 -->
-				<div class="modal-popup-wrapper register-popup join renewal"
+				<!-- <div class="modal-popup-wrapper register-popup join renewal"
 					data-modalpop=""
 					data-modalpop-name="popup_member_join"
 					data-modalpop-autoopen=""
@@ -594,11 +720,11 @@
 						  </div>
 					  </div>
 					</div>
-				</div>
+				</div> -->
 				<!-- popup end -->
 
 				<!-- popup sns 가입 -->
-				<div class="modal-popup-wrapper register-popup join renewal"
+				<!-- <div class="modal-popup-wrapper register-popup join renewal"
 					 data-modalpop=""
 					 data-modalpop-name="popup_sns_join"
 					 data-modalpop-autoopen=""
@@ -622,11 +748,11 @@
 							 </div>
 						 </div>
 					 </div>
-				</div>
+				</div> -->
 				<!-- popup end-->
 
 				<!-- popup 오프라인 가입 -->
-				<div class="modal-popup-wrapper register-popup join renewal"
+				<!-- <div class="modal-popup-wrapper register-popup join renewal"
 					 data-modalpop=""
 					 data-modalpop-name="popup_offline_join"
 					 data-modalpop-autoopen=""
@@ -657,11 +783,11 @@
 							 </div>
 						 </div>
 					 </div>
-				</div>
+				</div> -->
 				<!-- popup end-->
 
 				<!-- popup 중복 가입 안내 -->
-				<div class="modal-popup-wrapper register-popup join renewal"
+				<!-- <div class="modal-popup-wrapper register-popup join renewal"
 					 data-modalpop=""
 					 data-modalpop-name="popup_member_already"
 					 data-modalpop-autoopen=""
@@ -686,7 +812,7 @@
 							 </div>
 						 </div>
 					 </div>
-				</div>
+				</div> -->
 				<!-- popup end -->
 
 			</section>
