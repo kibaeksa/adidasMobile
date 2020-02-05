@@ -694,7 +694,7 @@ html.no-scroll body{
 	height: 16px;
 	display: inline-block;
 	margin-right: 5px;
-	background: url('//imagem.adidas.co.kr/images/reebok/ico_btn_kakao_gray.gif') 0 0 no-repeat;
+	background: url('/images/reebok/ico_btn_kakao.gif') 0 0 no-repeat;
 	-webkit-background-size: 14px auto;
 	background-size: 15px auto;
 	vertical-align: middle;
@@ -3314,17 +3314,35 @@ div.searchbox_info .title_sub ul li{float: left; margin-right: 5px; font: 300 14
 }
 
 #container .loginFind dl{
-	margin:10px 0 0;
+	margin:15px 0;
+}
+
+#container .loginFind dl h4 {
+	font: 600 1.2rem 'NotoSansKR';
+	color: #000;
 }
 
 #container .loginFind dl dt{
-	font:700 13px 'NotoSansKR';
+	font: 600 1rem 'NotoSansKR';
+	padding: 1rem 0;
 	color: #989898;
 }
 
-#container .loginFind dl dd li{
-	font:400 12px/16px 'NotoSansKR';
+#container .loginFind dl dd li {
+	padding: 0 0 4px 8px;
+	position: relative;
+	font: 400 1rem 'NotoSansKR';
+	word-break: keep-all;
 	color: #989898;
+	letter-spacing: -1px;
+}
+
+#container .loginFind dl dd li::before {
+	display: inline-block;
+	content: '-';
+	position: absolute;
+	top: 0;
+	left: 0;
 }
 
 #container .loginFind .tab_cont.find_intro .rdo_box1{ padding: 0 0 15px 0; }
@@ -3370,7 +3388,15 @@ div.searchbox_info .title_sub ul li{float: left; margin-right: 5px; font: 300 14
 	line-height: 55px;
 }
 
-#container .loginFind .button_area .kakao a{ background:#fff;height: 55px;line-height: 55px;color:#999;border:1px solid #ccc; font-weight:500;box-sizing:border-box; }
+#container .loginFind .button_area .kakao a{ 
+	background:#fff;
+	height: 55px;
+	line-height: 55px;
+	color:#000;
+	border:1px solid #ccc; 
+	font-weight:500;
+	box-sizing:border-box; 
+}
 
 #container .loginFind .button_area .kakao span{
 	width: 19px;
