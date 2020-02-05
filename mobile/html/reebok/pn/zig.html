@@ -98,32 +98,6 @@
 				<script type="text/javascript">
 
 					$(document).ready(function(){
-
-						$('.btn-play').bind('click', function () {
-							// alert('풀영상은 곧 공개 됩니다.');
-							// return false;
-
-							var ytbId = $(this).attr('data-video-id');
-							var html = '<div id="video-layer" style="">';
-							html += '	<div class="bg" ></div>';
-							html += '	<div class="video-box"></div>';
-							html += '	<a href="javascript:void(0)" class="close_x_btn white"></a>';
-							html += '</div>';
-
-							$('html').css({ overflow: 'hidden' });
-							$('body').append(html);
-
-							$('#video-layer .close_x_btn').bind('click', function () {
-								$('html').css({ overflow: 'scroll' });
-								$('#video-layer ').remove();
-							});
-
-							setTimeout(function () {
-								$('#video-layer').addClass('loaded');
-
-								$('#video-layer .video-box').append('<iframe width="100%" height="100%" src="https://www.youtube.com/embed/' + ytbId + '?rel=0" frameborder="0" allowfullscreen></iframe>')
-							}, 100);
-						});
 	
 					});
 				</script>

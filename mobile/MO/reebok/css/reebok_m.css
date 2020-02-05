@@ -3249,7 +3249,7 @@ div.searchbox_info .title_sub ul li{float: left; margin-right: 5px; font: 300 14
     height: 16px;
     display: inline-block;
     margin-right: 5px;
-    background: url('http://imagem.adidas.co.kr/images/adidas/ico_btn_naver_gray.gif') 0 0 no-repeat;
+    background: url('//imagem.adidas.co.kr/images/adidas/ico_btn_naver_gray.gif') 0 0 no-repeat;
     -webkit-background-size: 14px auto;
     background-size: 15px auto;
     vertical-align: middle;
@@ -4426,6 +4426,10 @@ div.layerpop_wrap#nomem_order_popup .inner .content .desc{
     -webkit-transform: translate3d(0,-50%,0);
     right: 1.2rem;
 }
+.modal-popup-wrapper>.popup>.popup-header .close_x_btn.btn_dn::before,
+.modal-popup-wrapper>.popup>.popup-header .close_x_btn.btn_dn::after{
+	display: none;
+}
 
 .modal-popup-wrapper>.popup>.popup-contents{
     position: relative;
@@ -5241,6 +5245,17 @@ div.layerpop_wrap#nomem_order_popup .inner .content .desc{
 	padding-bottom: 100%;
 }
 
+.oo_label{
+	width: 30px;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.oo_label img{
+	width: 100%;
+}
+
 #contents>.product_view .product_order>.prod_imgs_cut li>div .oo_label{
 	width:70px;
 	z-index: 10;
@@ -5251,6 +5266,10 @@ div.layerpop_wrap#nomem_order_popup .inner .content .desc{
 	overflow: hidden;
 	left: auto;
 	right:0;
+}
+
+#contents>.product_view .product_order>.prod_imgs_cut li>div .oo_label.crazy_label a{
+	display: block;
 }
 
 #contents>.product_view .product_order>.prod_imgs_cut li>div .label{
@@ -5382,6 +5401,7 @@ div.layerpop_wrap#nomem_order_popup .inner .content .desc{
 	position: absolute;
 	top: 0;
 	left: 0;
+	max-width: inherit;
 }
 
 #contents>.product_view .product_order>.prod_imgs_cut_num{
@@ -7307,6 +7327,7 @@ div.layerpop_wrap#nomem_order_popup .inner .content .desc{
 
 
 #contents>.product_view .product_order ul.info>li.size{
+	height: 30px;
 	margin-bottom:8px;
 }
 #contents>.product_view .product_order ul.info>li.size>strong{
@@ -7315,6 +7336,12 @@ div.layerpop_wrap#nomem_order_popup .inner .content .desc{
 
 #contents>.product_view .product_order ul.info>li.size .r_box{
 	text-align: right;
+}
+#contents>.product_view .product_order ul.info>li.size .r_box .modal-popup-click{
+	font: 1rem/30px 'NotoSansKR';
+	color: #000;
+	vertical-align: bottom;
+	text-decoration: underline;
 }
 #contents>.product_view .product_order ul.info>li.size .alarm_stock{
 	width: 150px;
@@ -7705,7 +7732,7 @@ div.layerpop_wrap#nomem_order_popup .inner .content .desc{
 
 #contents>.product_view .product_info>.detail_info .info_table:after{
 	content:'';
-	display: block;
+	display: none;
 	width: 100%;
 	height:70%;
 	position: absolute;
@@ -7766,6 +7793,62 @@ div.layerpop_wrap#nomem_order_popup .inner .content .desc{
 	border-bottom-width: 0;
 }
 
+
+/* 190517 연관카테고리 및 제원 테이블 */
+
+#contents>.product_view .related-ctr{
+    margin: 0 15px;
+	/* border-top:1px solid #e6e6e6; */
+	padding: 25px 0 20px 0;
+}
+
+#contents>.product_view .related-ctr p{
+    font:700 1.3rem 'NotoSansKR';
+    color:#000;
+}
+
+#contents>.product_view .related-ctr .related-words a{
+    display: inline-block;
+    padding: 10px 25px 10px 0;
+    font:400 1.15rem 'NotoSansKR';
+    color:#636363;
+}
+
+
+#contents>.product_view .product_info> .info_table{
+	padding: 0 15px 25px;
+}
+#contents>.product_view .product_info> .info_table table{
+	width: 100%;
+	border-top:2px solid #000;
+	margin-bottom: 20px;
+}
+#contents>.product_view .product_info> .info_table>table th,
+#contents>.product_view .product_info> .info_table>table td{
+	padding:13px 0;
+	font-size:12px;
+	text-align: left;
+	border-bottom: 1px solid #c3c3c3;
+	line-height: 16px;
+}
+#contents>.product_view .product_info> .info_table>table th{
+	width:90px;
+	padding-left: 10px;
+	font-weight:bold;
+	vertical-align: middle;
+}
+
+#contents>.product_view .product_info> .info_table>table td{
+	color: #666;
+}
+
+#contents>.product_view .product_info> .info_table>table tr:last-child>*{
+	/* border-bottom-width: 0; */
+}
+/* 190517 제원 테이블*/
+
+
+
 #contents>.product_view .product_info>.detail_info .prod_manual{
 	margin-bottom:10px;
 }
@@ -7825,6 +7908,7 @@ div.layerpop_wrap#nomem_order_popup .inner .content .desc{
 }
 
 #contents>.product_view .product_info>.detail_info .info_table .toggle_circle{
+	display: none;
 	background: #000;
 	position: absolute;
 	bottom:30px;
@@ -8916,16 +9000,17 @@ div.layerpop_wrap#nomem_order_popup .inner .content .desc{
 	color:#ff0000;
 }
 
-
-#contents>.product_view .product_info .order_info>li dl{overflow:hidden;clear:left;margin-bottom:15px;}
-#contents>.product_view .product_info .order_info>li dt{float:left;font-size:1.5rem;font-weight:bold;color:#333;font-weight:700;}
-#contents>.product_view .product_info .order_info>li dd{width:100%;float:left;line-height:18px;font-weight: 400;font-size:.9rem;}
-#contents>.product_view .product_info .order_info>li dd strong{font-weight:500;font-size:1.3rem;}
-#contents>.product_view .product_info .order_info>li dd li{padding:0 0 7px 7px;line-height:18px;letter-spacing:-.75px;background:url(//image.adidas.co.kr/images/adidas/common/bg_bullet.gif) 0 6px no-repeat;color:#777;}
-#contents>.product_view .product_info .order_info>li dd p{font-weight:bold;line-height:16px;}
-#contents>.product_view .product_info .order_info>li dd em{color:#db1800;font-size: .9rem;}
-#contents>.product_view .product_info .order_info>li dd blockquote{margin: 0 0 0 .5rem;font-weight:400;font-size: .9rem;}
-
+/* 190517 as클래스 추가 */
+#contents>.product_view .product_info .order_info>li.as dl{overflow:hidden;clear:left;margin-bottom:15px;}
+#contents>.product_view .product_info .order_info>li.as dt{font-size:16px;font-weight:bold;margin-bottom: 1.2rem;}
+#contents>.product_view .product_info .order_info>li.as dd{width:100%;float:left;line-height:18px;font-weight: 400;font-size:.9rem;}
+#contents>.product_view .product_info .order_info>li.as dd strong{font-weight:700;font-size:12px;}
+#contents>.product_view .product_info .order_info>li.as dd li{padding:0 0 7px 7px;line-height:18px;letter-spacing:-.75px;background:url(//image.adidas.co.kr/images/adidas/common/bg_bullet.gif) 0 6px no-repeat;color:#777;}
+#contents>.product_view .product_info .order_info>li.as dd p{font-weight:bold;line-height:16px;}
+#contents>.product_view .product_info .order_info>li.as dd em{color:#db1800;font-size: .9rem;}
+#contents>.product_view .product_info .order_info>li.as dd blockquote{margin: 0 0 0 .5rem;font-weight:400;font-size: .9rem;}
+#contents>.product_view .product_info .order_info>li.as .info_line{display: block;width: 100%;height: 1px;border-top: 1px dotted #000;margin: 2rem 0;}
+/* //190517 as클래스 추가 */
 
 
 #contents>.product_view .product_info .order_info>li dd table{width:100%; margin: 15px 0;font-size:.8rem;}
@@ -12201,3 +12286,35 @@ div.layerpop_wrap#nomem_order_popup .inner .content .desc{
 	font: 500 1rem/2rem 'NotoSansKR';
 	color:#444;
 }
+
+/* 190611 사이즈차트 리뉴얼 */
+.popup-sizechart{overflow-x:hidden;overflow-y: scroll;-webkit-overflow-scrolling: touch;z-index:131!important;}
+.popup-sizechart .popup{transform:none!important;top:initial!important;left:initial!important;}
+.popup-sizechart .popup-header{background:#fff!important;line-height: 50px;font-size: 16px;padding-left: 20px;border-bottom:1px solid #ccc;z-index:131;}
+.popup-sizechart .popup-contents{box-sizing: border-box;text-align: center;padding-bottom: 10rem!important;overflow-x: hidden;overflow-y: auto;-webkit-overflow-scrolling: touch;z-index:130;padding: 2rem!important;padding-top: 1rem!important;}
+.popup-sizechart .clothes{white-space: nowrap;display:inline-block;display: inline-block;overflow: hidden;width: 100%;}
+.popup-sizechart .clothes h1,.banner_slider_wrap h1{margin: 20px 0 10px .3rem;text-align: left;font-size: 1.2rem;font-weight: 700;}
+.popup-sizechart .section{display:inline-block;border-spacing:0;font-size:11px!important;margin-right: -2px;}
+.popup-sizechart .section .head_cont{text-align:center;vertical-align:middle;height:37.5px;/*width:95px;*/width:8.5rem;border-right:1px solid #000;border-bottom:1px solid #999;overflow:hidden;word-break:normal;}
+.popup-sizechart .section .body_cont{text-align:center;vertical-align:middle;height: 37.5px;width: 40px;padding: 0 10.5px;border-bottom: 1px solid #ccc;border-right: 1px solid #ccc;}
+.popup-sizechart .section .body_cont:last-child{border-right: 0;}
+.popup-sizechart .section01{overflow-y:hidden; white-space:nowrap;background:#ebedee;border:1px solid #999;border-right: 0;}
+.popup-sizechart .section01 tr:last-child .head_cont{border-bottom:0;}
+.popup-sizechart .section02{width:18rem;overflow-x:scroll;transform:translateZ(0);-webkit-transform:translateZ(0); white-space:nowrap;border:1px solid #ccc;border-left: 0;-webkit-overflow-scrolling: touch;}
+.popup-sizechart .section02	tr:last-child .body_cont{border-bottom:0;}
+.popup-sizechart .popup-contents .swipe{text-align: left;padding: 1rem .5rem;font-size:12px;}
+@media (min-width:414px){.popup-sizechart .section02{width:21rem;}}
+@media (min-width:360px){.popup-sizechart .popup-contents{padding: 1.6rem!important;padding-top: 1rem!important;}}
+@media (min-width:375px){.popup-sizechart .popup-contents{padding: 2rem!important;padding-top: 1rem!important;}}
+.popup-sizechart .banner_slider_wrap{position:relative;}
+.popup-sizechart .banner_slider_wrap ul li{text-align: left;}
+.popup-sizechart .banner_slider_wrap ul li a img{width:100%;}
+.popup-sizechart .banner_slider_wrap .owl-stage-outer{overflow:hidden;}
+.popup-sizechart .banner_slider_wrap .tips{margin: 1rem 0;}
+.popup-sizechart .banner_slider_wrap .tips li{line-height: 1.3rem;font-size:12px;}
+.size_chart_btn strong{top:-2px!important; left:14px!important;border:1px solid #027dbf; padding:5px 15px;color:#027dbf;}
+/* 190611 사이즈차트 리뉴얼 끝*/
+
+.modal-popup-wrapper.size_chart_temp .popup .popup-header .close_x_btn{width: 14%; height: 8vh;top:0;right:0;transform:translate3d(0, 0, 0);z-index:5;}
+.modal-popup-wrapper.size_chart_temp .popup .popup-contents{padding: 0; overflow-y: scroll;}
+.modal-popup-wrapper.size_chart_temp .popup .popup-contents img{display: block; width: 100%;}
