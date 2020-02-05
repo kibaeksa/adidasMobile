@@ -805,25 +805,24 @@
 						$('.tabs div div').removeClass('active').eq(index).addClass('active');
 						moveTo(index+1);
 						console.log(index);
-
 					}
 				});
 				// 호버 섹션 이동
 				$('.link__wrapper #slider01 .slick-list .slick-track .slick-slide').click(function(){
-						// var index = $('.slick-current').attr("data-slick-index");
-						var index = $(this).index();
+				// var index = $('.slick-current').attr("data-slick-index");
+					var index = $(this).index();
 				// $('.link__wrapper #slider01 div').click(function(){
 				// 	var index = $('.slick-current').attr("data-slick-index");
 				// 	var index = $(this).index();
 					if($('.slick-current').hasClass('slick-active')){
 						if (index == 0){
-							moveTo(index+1);
+							moveTo(index);
 							console.log(index);
 						} else if (index == 1){
-							moveTo(index+1);
+							moveTo(index);
 							console.log(index);
 						} else {
-							moveTo(index+1);
+							moveTo(index);
 							console.log(index);
 						}
 					}
