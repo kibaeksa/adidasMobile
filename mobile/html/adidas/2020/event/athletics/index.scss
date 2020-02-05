@@ -1,0 +1,278 @@
+@import './mobile/css/adidas/scss/common/mixin.scss';
+@import './mobile/css/adidas/scss/common/common.scss';
+
+#athletics {
+	position: relative;
+	.button_area_v2{
+		display: inline-block;
+		width: 130px;
+		a{
+			font-size: 1rem;
+			font-weight: normal;
+			height: 36px;
+			line-height: 34px;
+		    letter-spacing: 1px;
+			span.arrow{
+				margin-left: 10px;
+				width: 25px;
+				&:after{
+					width: 8px;
+				}
+				&:before{
+					width: 8px;
+				}
+			}
+		}
+	}
+
+	.main {
+		position: relative;
+
+		img {
+			display: block;
+			width: 100%;
+		}
+	}
+
+	.section {
+		position: relative;
+
+		&.video_wrap {
+			video {
+				display: block;
+				width: 100%;
+			}
+
+			.btn-play {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				width: 3rem;
+				transform: translate(-50%, -50%);
+				z-index: 2;
+				img{
+					display: block;
+					width: 100%;
+				}
+			}
+		}
+
+		&.state_wrap {
+			padding: 3rem 0;
+			color: #000;
+			text-align: center;
+
+			>* {
+				text-align: center;
+			}
+
+			h3 {
+				font: 600 1.6rem/2rem "NotoSansKR";
+			}
+
+			p {
+				padding: 1.5rem 0;
+				font: 1.2rem/1.6rem "NotoSansKR";
+			}
+
+			strong {
+				font: 500 1.2rem/1.6rem "NotoSansKR";
+			}
+		}
+
+		&.view_wrap {
+			overflow: hidden;
+
+			&.view01 {
+				background: url('/images/adidas/2020/event/athletics/view_01_bg.jpg') 0 0 no-repeat;
+				background-size: 100% 100%;
+			}
+
+			&.view02 {
+				background: url('/images/adidas/2020/event/athletics/view_02_bg.jpg') 0 0 no-repeat;
+				background-size: 100% 100%;
+			}
+
+			&.view03 {
+				background: url('/images/adidas/2020/event/athletics/view_03_bg.jpg') 0 0 no-repeat;
+				background-size: 100% 100%;
+			}
+
+			.view_top {
+				margin: 3rem 0 2rem;
+				color: #000;
+				text-align: center;
+
+				h3 {
+					font: 600 2.3rem/2.3rem "adinenuPro-bold";
+					text-align: center;
+					text-transform: uppercase;
+					letter-spacing: 2px;
+				}
+
+				p {
+					font: 400 1rem "NotoSansKR";
+					text-align: center;
+				}
+
+				.button_area_v2 {
+					margin-top: 15px;
+				}
+			}
+
+			.view_mid {
+				position: relative;
+				
+				.mid_sld {
+					display: block;
+					.slick-slide {
+						margin: 0 1rem;
+						img {
+							width: 100%;
+						}
+					}
+
+					.slick-dots {
+						text-align: center;
+						margin: 1rem 0 2rem;
+
+						li {
+							display: inline-block;
+							width: 9px;
+							height: 9px;
+							border-radius: 50%;
+							border: 1px solid #000;
+							margin: 0 3px;
+							cursor: pointer;
+
+							button {
+								display: none;
+							}
+
+							&.slick-active {
+								background: #000;
+							}
+						}
+					}
+				}
+			}
+
+			.view_bot {
+				padding: 0 1rem 1rem;
+				>img {
+					display: block;
+					width: 100%;
+				}
+
+				.bot_sld {
+					width: 100%;
+					.slick-slide {
+						img {
+							width: 100%;
+						}
+					}
+				}
+			}
+		}
+
+		&.creator_wrap {
+			background: url('/images/adidas/2020/event/athletics/creator_bg.jpg') 0 0 no-repeat;
+			background-size: 100% 100%;
+			text-align: center;
+			padding-bottom: 3rem;
+
+			h3 {
+				padding: 4.5rem 0 3rem;
+				font: 500 1.4rem "NotoSansKR";
+				color: #fff;
+				text-align: center;
+				text-transform: uppercase;
+			}
+
+			#slider_creator {
+				text-align: center;
+				padding: 0 3rem;
+
+				.slick-slide {
+					background: #fff;
+					color: #000;
+					text-align: center;
+					margin: 0 5px;
+					>* {
+						text-align: center;
+					}
+					>img{
+						width: 100%;
+					}
+					p {
+						&.p1 {
+							padding-top: 1rem;
+							font: 700 1.6rem/1.6rem "AdihausDIN-Cond";
+							text-transform: uppercase;
+							letter-spacing: 1px;
+
+							span {
+								font: 400 1rem/1.6rem "NotoSansKR";
+							}
+						}
+
+						&.p2 {
+							padding: 5px 0;
+							font: 600 1.1rem "NotoSansKR";
+						}
+
+						&.p3 {
+							padding-bottom: 1.5rem;
+							font: 400 1.1rem "NotoSansKR";
+						}
+					}
+				}
+
+				.slick-dots {
+					text-align: center;
+					margin: 1.5rem 0;
+
+					li {
+						display: inline-block;
+						width: 10px;
+						height: 10px;
+						border-radius: 50%;
+						border: 1px solid #fff;
+						margin: 0 3px;
+						cursor: pointer;
+
+						button {
+							display: none;
+						}
+
+						&.slick-active {
+							background: #fff;
+						}
+					}
+				}
+			}
+		}
+
+		&.bottom_wrap {
+			.buybox {
+				padding: 4rem 0;
+				text-align: center;
+
+				h3 {
+					font: 600 1.6rem/2rem "NotoSansKR";
+					text-align: center;
+					color: #000;
+				}
+
+				.button_area_v2 {
+					margin-top: 20px;
+				}
+			}
+
+			>img {
+				display: block;
+				width: 100%;
+			}
+		}
+	}
+}
