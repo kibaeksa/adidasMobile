@@ -2,9 +2,58 @@
 @import './mobile/css/adidas/scss/common/common.scss';
 
 #chaos{
+	// 공통
 	position: relative;
 	.rel{
 		position: relative;
+	}
+	.gridIn{
+		position: absolute;
+		bottom:8%;
+		left:50%;
+		transform: translateX(-50%);
+	}
+	.button_area_v2{
+		width: 110px;
+		a{
+			font-size: .9rem;
+			font-weight: normal;
+			height: 36px;
+			line-height: 34px;
+			letter-spacing: 1px;
+			position: relative;
+			span.arrow{
+				margin-left: 10px;
+				width: 20px;
+				&:after{
+					width: 8px;
+				}
+				&:before{
+					width: 8px;
+				}
+			}
+		}
+		&.white{
+			a{
+				background:#fff;
+				color:#000;
+				span.arrow{
+					background:#000;
+					&:after{
+						background:#000;
+					}
+					&:before{
+						background:#000;
+					}
+				}
+				&::after{
+					box-shadow:inset 0 0 0 1px #fff;;
+				}
+			}
+		}
+	}
+	.wid170{
+		width: 170px;
 	}
 	.center{
 		position: absolute;
@@ -19,19 +68,30 @@
 	video{
 		width:100%;
 	}
+
+	// 메인
 	.main__wrapper{
 		.main__wrapper__img{
 			>img{
-				// width: 100%;
 			}
 		}
 	}
+
+	// 상단 고정 비디오 컨텐츠
 	.video__wrapper{
-		video{
-			width:100%;
+		position: relative;
+		.btn_play{
+			display: inline-block;
+			position: absolute;
+			width: 50px;
+			height: 50px;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
 		}
 	}
-
+	
+	// 전체 탭
 	.ptab_wrap{
 		position: relative;
 		.ptab{
@@ -94,6 +154,8 @@
 			}
 		}
 	}
+
+	// 상단 탭 버튼 컨텐츠
 	.cont__wrapper{
 		.cont__wrapper__img{
 			display:none;
@@ -119,16 +181,7 @@
 		}
 	}
 
-	.video_01{
-		display:none;
-		&.on{
-			display: block;
-			margin-bottom: -1px;
-		}
-	}
-
-		
-	
+	// 하단 탭 설명 컨텐츠
 	.desc__wrapper{
 		.desc__wrapper__img{
 			display:none;
@@ -136,24 +189,76 @@
 				display:block;						
 			}
 		}
-		// .btm_btn{
-		// 	background:url('/images/adidas/2020/event/golf/chaos/cp/btm_bg.jpg') no-repeat;
-		// 	background-size:100%;
-		// 	background-position: top;
-		// 	text-align: center;
-		// 	padding: 2rem 0;
-		// 	a{
-		// 		background: #000;
-		// 		font: 500 12px/42.5px 'NotoSansKR';
-		// 		color: #fff;
-		// 		display: inline-block;
-		// 		widtH: 55%;
-		// 		margin: 0 auto;
-		// 		letter-spacing: 0;
-		// 	}
-		// }
 	}
 
+	// 비디오 컨텐츠
+	.video-wrapper {
+		position: relative;
+		.video-area {
+			width: 100%;
+			position: relative;
+			#video {
+			width: 100%;
+			}
+			.progress-bar {
+				width: 100%;
+				height: 5px;
+				position: relative;
+				background: #000;
+				&::after{
+					display: block;
+					content:'';
+					clear:both;
+				}
+				div{
+					float: left;
+					height:100%;
+					width:calc(100%/4);
+					border:0.5px solid #ccc;
+					box-sizing: border-box;
+					border-top:0;
+					border-bottom: 0;
+					&:first-child{
+						border-left:0;
+					}
+					&:last-child{
+						border-right:0;
+					}
+					> div {
+						width: 0%;
+						height: 100%;
+						position: 0;
+						left: 0;
+						top: 0;
+						background: #75a900;
+					}
+				}
+			}
+		}
+		.tabs {
+			display: flex;
+			background:url('/images/adidas/2020/event/golf/chaos/cp/2001_CHAOS_tabBg02_MO.jpg') no-repeat;
+			background-position:top;
+			background-size:100% 100%;
+			a {
+				width: 100%;
+				height: 30px;
+				line-height: 30px;
+				color: #ddd;
+				cursor: pointer;
+				font: 700 11.5px/11.5px 'NotoSansKR';
+				color: #666666;
+				text-align: center;
+				padding: 1rem 0 2rem;
+				letter-spacing: 0;
+				&.active {
+					color: #75a900;
+				}
+			}
+		}
+	}
+
+	// 최하단 고정 컨텐츠
 	.fixed__wrapper{
 		background:url('/images/adidas/2020/event/golf/chaos/cp/2001_CHAOS_prodBg_MO.jpg') no-repeat;
 		background-size:100% 100%;
@@ -246,73 +351,66 @@
 		}
 	}
 
-	#wrapper {
-	width: 500px;
-	position: relative;
-	}
-
-	.video-wrapper {
-	position: relative;
-
-	.tabs {
-		display: flex;
-		background:url('/images/adidas/2020/event/golf/chaos/cp/2001_CHAOS_tabBg02_MO.jpg') no-repeat;
-		background-position:top;
-		background-size:100% 100%;
-		a {
+	.grid__wrapper{
+		img{
+			width:100%;
+		}
+		video{
 			width: 100%;
-			height: 30px;
-			line-height: 30px;
-			color: #ddd;
-			cursor: pointer;
-			font: 700 11.5px/11.5px 'NotoSansKR';
-			color: #666666;
-			text-align: center;
-			padding: 1rem 0 2rem;
-			letter-spacing: 0;
-			&.active {
-				color: #75a900;
+			
+		}
+		
+		.grid__wrapper__cont{
+			// 섹션1
+			&::after{
+				display:block;
+				content:'';
+				clear:both;
 			}
+			.grid__obj{
+				float: left;
+				width:50%;
+				&:nth-child(2){ 
+					float: right;
+				}
+			}		
+		}
+
+		.grid__wrapper__cont2{
+			// 섹션1
+			&::after{
+				display:block;
+				content:'';
+				clear:both;
+			}
+			.grid__obj{
+				float: right;
+				width:50%;
+				&:nth-child(1){
+					float: left;
+				}
+			}		
 		}
 	}
 
-	.video-area {
-		width: 100%;
-		position: relative;
+	// .ptab_cont {
+	// display: none;
+	// 	&.on {
+	// 		display: block;
+	// 	}
+	// }
 
-		#video {
-		width: 100%;
-		// min-height: 300px;
-		}
+	// .video_01{
+	// 	display:none;
+	// 	&.on{
+	// 		display: block;
+	// 		margin-bottom: -1px;
+	// 	}
+	// }
 
-		.progress-bar {
-		width: 100%;
-		height: 5px;
-		position: relative;
-
-		/* position: absolute;
-		left: 0;
-		bottom: 0; */
-		background: #000;
-
-		> div {
-			width: 0%;
-			height: 100%;
-			position: 0;
-			left: 0;
-			top: 0;
-			background: #75a900;
-		}
-		}
-	}
-	}
-
-	.ptab_cont {
-	display: none;
-
-	&.on {
-		display: block;
-	}
-	}
+	// #wrapper {
+	// 	width: 500px;
+	// 	position: relative;
+	// }
 
 }
