@@ -1,6 +1,8 @@
 @import './mobile/css/adidas/scss/common/mixin.scss';
 @import './mobile/css/adidas/scss/common/common.scss';
-
+html,body{
+	height:100%;
+}
 #athletics {
 	position: relative;
 	.button_area_v2{
@@ -282,20 +284,22 @@
 		background-size: 100% 98.5%;
 		padding: 3.5rem 0 5rem;
 		text-align: center;
-		h1,p,span{
-			letter-spacing: 0;
-		}
+
 		.txt{
 			h1{
 				text-align: center;
 				font:700 16px/21px 'NotoSansKR';
 				color:#fff;
+				letter-spacing: 0;
+
 			}
 			p{
 				text-align: center;
 				font:500 11px/17px 'NotoSansKR';
 				color:#fff;
 				margin: 1rem 0;
+				letter-spacing: 0;
+
 			}
 			.pointer{
 				text-align: center;
@@ -329,7 +333,6 @@
 						transform: translateX(-50%);
 						opacity: 0;
 						transition: all 0.5s;
-						animation: moving;
 						img{
 							width:100%;
 						}
@@ -394,6 +397,7 @@
 						span{
 							font:11px/11px 'AdihausDIN-Bold';
 							color:#fff;
+							letter-spacing: 0;
 						}
 						.dot-img{
 							box-sizing:border-box;
@@ -408,6 +412,7 @@
 							text-align: center;
 							font:700 11px/11px 'NotoSansKR';
 							color:#fff;
+							letter-spacing: 0;
 						}
 					}
 				}
@@ -434,13 +439,4 @@
 		.button_area_v2{
 		}
 	}
-}
-@keyframes moving {
-
-	0% { top: 0%; }
-
-	50% { top: 5%; }
-
-	100% { top: 0%; }
-
 }
