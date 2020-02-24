@@ -507,7 +507,7 @@
 								<source src="https://imagem.adidas.co.kr/upload/design_temp/video/2020/a/athletics/0221/01.mp4" type="video/mp4">
 							</video>
 							<!-- <video src="https://imagem.adidas.co.kr/upload/design_temp/video/2020/a/athletics/0221/01.mp4" playsinline muted autoplay loop poster="/images/adidas/2020/event/athletics/0221/2002_a_athletics_video_poster01.jpg"></video> -->
-							<a href="javacript:void(0)" onclick="openModalVideoViewer('zIhRyQaO5sU')">
+							<a href="#" onclick="openModalVideoViewer('zIhRyQaO5sU')" class="nolink">
 								<img src="/images/adidas/2020/event/athletics/0221/play.png" alt="">
 							</a>
 						</div>
@@ -516,7 +516,7 @@
 								<source src="https://imagem.adidas.co.kr/upload/design_temp/video/2020/a/athletics/0221/02.mp4" type="video/mp4">
 							</video>
 							<!-- <video src="https://imagem.adidas.co.kr/upload/design_temp/video/2020/a/athletics/0221/02.mp4" playsinline muted autoplay loop poster="/images/adidas/2020/event/athletics/0221/2002_a_athletics_video_poster02.jpg"></video> -->
-							<a href="javacript:void(0)" onclick="openModalVideoViewer('K5pr5Z8c_jQ')">
+							<a href="#" onclick="openModalVideoViewer('K5pr5Z8c_jQ')" class="nolink">
 								<img src="/images/adidas/2020/event/athletics/0221/play.png" alt="">
 							</a>
 						</div>
@@ -525,7 +525,7 @@
 								<source src="https://imagem.adidas.co.kr/upload/design_temp/video/2020/a/athletics/0221/03.mp4" type="video/mp4">
 							</video>
 							<!-- <video src="https://imagem.adidas.co.kr/upload/design_temp/video/2020/a/athletics/0221/03.mp4" playsinline muted autoplay loop poster="/images/adidas/2020/event/athletics/0221/2002_a_athletics_video_poster03.jpg"></video> -->
-							<a href="javacript:void(0)" onclick="openModalVideoViewer('J0SwnS8O5qA')">
+							<a href="#" onclick="openModalVideoViewer('J0SwnS8O5qA')" class="nolink">
 								<img src="/images/adidas/2020/event/athletics/0221/play.png" alt="">
 							</a>
 						</div>
@@ -534,7 +534,7 @@
 								<source src="https://imagem.adidas.co.kr/upload/design_temp/video/2020/a/athletics/0221/04.mp4" type="video/mp4">
 							</video>
 							<!-- <video src="https://imagem.adidas.co.kr/upload/design_temp/video/2020/a/athletics/0221/04.mp4" playsinline muted autoplay loop poster="/images/adidas/2020/event/athletics/0221/2002_a_athletics_video_poster04.jpg"></video> -->
-							<a href="javacript:void(0)" onclick="openModalVideoViewer('mAlTbCyQzWI')">
+							<a href="#" onclick="openModalVideoViewer('mAlTbCyQzWI')">
 								<img src="/images/adidas/2020/event/athletics/0221/play.png" alt="">
 							</a>
 						</div>
@@ -758,7 +758,9 @@
 			<script>
 				$(document).ready(function () {
 
-
+					$('.nolink').click(function(event){
+						event.preventDefault();
+					})
 
 					// ytb slider
 					var ytbNavName = [
@@ -774,7 +776,12 @@
 						'미니월드',
 						'죠셉'
 					];
-
+					$('.prev-button_ytb').click(function(e){
+						e.preventDefault;
+					})
+					$('.next-button_ytb').click(function(e){
+						e.preventDefault;
+					})
 					$('#slider_ytb').slick({
 						centerMode: true,
 						centerPadding: '0',
@@ -903,7 +910,7 @@
 		</div>
 	</div>
 
-	<!-- <script type="text/javascript" src="/designjs/adidas/common.js"></script> -->
+	<script type="text/javascript" src="/designjs/adidas/common.js"></script>
 	<script type="text/javascript">
 
 		var openPopInStock;
