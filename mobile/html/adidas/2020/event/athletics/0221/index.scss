@@ -1,0 +1,443 @@
+@import './mobile/css/adidas/scss/common/mixin.scss';
+@import './mobile/css/adidas/scss/common/common.scss';
+html,body{
+	height:100%;
+}
+#athletics {
+	position: relative;
+	.button_area_v2{
+		display: inline-block;
+		width: 130px;
+		a{
+			font-size: 1rem;
+			font-weight: normal;
+			height: 36px;
+			line-height: 34px;
+		    letter-spacing: 1px;
+			span.arrow{
+				margin-left: 10px;
+				width: 25px;
+				&:after{
+					width: 8px;
+				}
+				&:before{
+					width: 8px;
+				}
+			}
+		}
+	}
+
+	.main {
+		position: relative;
+
+		img {
+			display: block;
+			width: 100%;
+		}
+	}
+
+	.section {
+		position: relative;
+
+		&.video_wrap {
+			video {
+				display: block;
+				width: 100%;
+			}
+
+			.btn-play {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				width: 3rem;
+				transform: translate(-50%, -50%);
+				z-index: 2;
+				img{
+					display: block;
+					width: 100%;
+				}
+			}
+		}
+
+		&.state_wrap {
+			padding: 3rem 0;
+			color: #000;
+			text-align: center;
+
+			>* {
+				text-align: center;
+			}
+
+			h3 {
+				font: 600 1.6rem/2rem "NotoSansKR";
+			}
+
+			p {
+				padding: 1.5rem 0;
+				font: 1.2rem/1.6rem "NotoSansKR";
+			}
+
+			strong {
+				font: 500 1.2rem/1.6rem "NotoSansKR";
+			}
+		}
+
+		&.view_wrap {
+			overflow: hidden;
+
+			&.view01 {
+				background: url('/images/adidas/2020/event/athletics/view_01_bg.jpg') 0 0 no-repeat;
+				background-size: 100% 100%;
+			}
+
+			&.view02 {
+				background: url('/images/adidas/2020/event/athletics/view_02_bg.jpg') 0 0 no-repeat;
+				background-size: 100% 100%;
+			}
+
+			&.view03 {
+				background: url('/images/adidas/2020/event/athletics/view_03_bg.jpg') 0 0 no-repeat;
+				background-size: 100% 100%;
+			}
+
+			.view_top {
+				margin: 3rem 0 2rem;
+				color: #000;
+				text-align: center;
+
+				h3 {
+					font: 600 2.3rem/2.3rem "adinenuPro-bold";
+					text-align: center;
+					text-transform: uppercase;
+					letter-spacing: 2px;
+				}
+
+				p {
+					font: 400 1rem "NotoSansKR";
+					text-align: center;
+				}
+
+				.button_area_v2 {
+					margin-top: 15px;
+				}
+			}
+
+			.view_mid {
+				position: relative;
+				
+				.mid_sld {
+					display: block;
+					.slick-slide {
+						margin: 0 1rem;
+						img {
+							width: 100%;
+						}
+					}
+
+					.slick-dots {
+						text-align: center;
+						margin: 1rem 0 2rem;
+
+						li {
+							display: inline-block;
+							width: 9px;
+							height: 9px;
+							border-radius: 50%;
+							border: 1px solid #000;
+							margin: 0 3px;
+							cursor: pointer;
+
+							button {
+								display: none;
+							}
+
+							&.slick-active {
+								background: #000;
+							}
+						}
+					}
+				}
+			}
+
+			.view_bot {
+				padding: 0 1rem 1rem;
+				>img {
+					display: block;
+					width: 100%;
+				}
+
+				.bot_sld {
+					width: 100%;
+					.slick-slide {
+						img {
+							width: 100%;
+						}
+					}
+				}
+			}
+		}
+
+		&.creator_wrap {
+			background: url('/images/adidas/2020/event/athletics/creator_bg.jpg') 0 0 no-repeat;
+			background-size: 100% 100%;
+			text-align: center;
+			padding-bottom: 3rem;
+
+			h3 {
+				padding: 4.5rem 0 3rem;
+				font: 500 1.4rem "NotoSansKR";
+				color: #fff;
+				text-align: center;
+				text-transform: uppercase;
+			}
+
+			#slider_creator {
+				text-align: center;
+				padding: 0 3rem;
+
+				.slick-slide {
+					background: #fff;
+					color: #000;
+					text-align: center;
+					margin: 0 5px;
+					>* {
+						text-align: center;
+					}
+					>img{
+						width: 100%;
+					}
+					p {
+						&.p1 {
+							padding-top: 1rem;
+							font: 700 1.6rem/1.6rem "AdihausDIN-Cond";
+							text-transform: uppercase;
+							letter-spacing: 1px;
+
+							span {
+								font: 400 1rem/1.6rem "NotoSansKR";
+							}
+						}
+
+						&.p2 {
+							padding: 5px 0;
+							font: 600 1.1rem "NotoSansKR";
+						}
+
+						&.p3 {
+							padding-bottom: 1.5rem;
+							font: 400 1.1rem "NotoSansKR";
+						}
+					}
+				}
+
+				.slick-dots {
+					text-align: center;
+					margin: 1.5rem 0;
+
+					li {
+						display: inline-block;
+						width: 10px;
+						height: 10px;
+						border-radius: 50%;
+						border: 1px solid #fff;
+						margin: 0 3px;
+						cursor: pointer;
+
+						button {
+							display: none;
+						}
+
+						&.slick-active {
+							background: #fff;
+						}
+					}
+				}
+			}
+		}
+
+		&.bottom_wrap {
+			.buybox {
+				padding: 4rem 0;
+				text-align: center;
+
+				h3 {
+					font: 600 1.6rem/2rem "NotoSansKR";
+					text-align: center;
+					color: #000;
+				}
+
+				.button_area_v2 {
+					margin-top: 20px;
+				}
+			}
+
+			>img {
+				display: block;
+				width: 100%;
+			}
+		}
+	}
+
+	.ytb__wrapper{
+		background:url('/images/adidas/2020/event/athletics/0221/bg.jpg') no-repeat;
+		background-position:top;
+		background-size: 100% 98.5%;
+		padding: 3.5rem 0 5rem;
+		text-align: center;
+
+		.txt{
+			h1{
+				text-align: center;
+				font: 700 18px/24px 'NotoSansKR';
+				color: #fff;
+				letter-spacing: 0;
+			}
+			p{
+				text-align: center;
+				font: 300 11px/17px 'NotoSansKR';
+				color: #fff;
+				margin: 1rem 0;
+				letter-spacing: 0;
+
+			}
+			.pointer{
+				text-align: center;
+				margin:2rem 0;
+				img{
+					width:5%;
+				}
+			}
+		}
+		.slider_nav_ytb{
+			position: relative;
+			>a{
+				position: absolute;
+				top:50%;
+				transform: translate(-50%,80%);
+				z-index:3;
+				&.prev-button_ytb{
+					left:6%;
+				}
+				&.next-button_ytb{
+					left:94%;
+				}
+			}
+			.nav_name{
+				ul{
+					position: relative;
+					li{
+						position: absolute;
+						top:0;
+						left:50%;
+						transform: translateX(-50%);
+						opacity: 0;
+						transition: all 0.5s;
+						img{
+							width:100%;
+						}
+						&.on{
+							opacity: 1;
+						}
+					}
+				}
+			}
+		}
+		#slider_ytb{
+			padding-top: 20%;
+			.slick-list{
+				.slick-track{
+					text-align: center;
+					.item{
+						position: relative;
+						video{
+							border: 5px solid #fff;
+							box-sizing:border-box;
+							width:93%;
+						}
+						a{
+							position: absolute;
+							top:50%;
+							left:50%;
+							transform: translate(-50%,-50%);
+							z-index:2;
+							img{
+								width: 65%;
+								margin: 0 auto;
+							}
+						}
+					}
+				}
+			}
+			.slick-dots{
+				padding: 1.5rem 1rem;
+				&::after{
+					display: block;
+					content:'';
+					clear:both;
+				}
+				li{
+					width: calc(96.5%/4);
+					float: left;
+					margin-right:3px;
+					&:last-child{
+						margin-right:0;
+					}
+					&.slick-active{
+						.dot_inner_ytb{
+							.dot-img{
+								border:2px solid #fff;
+								img{
+									filter: grayscale(0);
+									-ms-filter: grayscale(0);
+								}
+							}
+						}
+					}
+					.dot_inner_ytb{
+						text-align: center;
+						span{
+							font:11px/11px 'AdihausDIN-Bold';
+							color:#fff;
+							letter-spacing: 0;
+						}
+						.dot-img{
+							box-sizing:border-box;
+							margin: 0.5rem 0;
+							img{
+								width: 100%;
+								filter: grayscale(100%);
+								-ms-filter: grayscale(100%);
+							}
+						}
+						p{
+							text-align: center;
+							font:400 11px/11px 'NotoSansKR';
+							color:#fff;
+							letter-spacing: 0;
+						}
+					}
+				}
+			}
+		}
+		.ytb__wrapper__prod{
+			position: relative;
+			padding-bottom:50%;
+			div{
+				position: absolute;
+				top:0;
+				&.on{
+					img{
+						opacity: 1;
+					}
+				}
+				img{
+					width:100%;
+					opacity:0;
+					transition: all 0.5s;
+				}
+			}
+		}
+		.button_area_v2{
+		}
+	}
+}
