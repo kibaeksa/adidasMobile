@@ -790,16 +790,20 @@
 				})
 
 				// 스크롤시 헤더붙기
-				$(window).scroll(function(){
-					if($('#header').hasClass('hide')) {
-						$('.modal-popup-wrapper .popup').css({'top':50+'%'});
-					} else {
-						$('.modal-popup-wrapper .popup').css({'top':60+'%'});
-					}
+				$(window).load(function(){
+					$(window).scroll(function(){
+						if($('#header').hasClass('hide')) {
+							$('.modal-popup-wrapper .popup').css({'top':50+'%'});
+						} else {
+							$('.modal-popup-wrapper .popup').css({'top':50+'%'});
+						}
+					})
 				})
-
+				
 				$('.modal-popup-click').click(function(){
-                        $(window).bind('touchmove', function(e){e.preventDefault()});
+                        $('body').bind('touchmove', function(e){
+							e.preventDefault()
+						});
                         setTimeout(function(){
                             if($('.modal-popup-wrapper').hasClass('open')){
                                 $('html,body').addClass('not_scroll');                            
@@ -808,12 +812,12 @@
                     })
     
                     $('.modal-popup-wrapper .overlay').click(function(){
-                        $(window).unbind('touchmove');
-                            $('html,body').removeClass('not_scroll');                            
+                        $('body').unbind('touchmove');
+						$('html,body').removeClass('not_scroll');                            
                     })
                     $('.modal-popup-wrapper .close_x_btn').click(function(){
-                        $(window).unbind('touchmove');
-                            $('html,body').removeClass('not_scroll');                            
+                        $('body').unbind('touchmove');
+						$('html,body').removeClass('not_scroll');                            
                     })
 
 
