@@ -443,8 +443,8 @@
 				<link rel="stylesheet" type="text/css" href="/css/slick.css" />
 
 
-				<div class="modal-popup-wrapper pop1" data-modalpop="" data-modalpop-name="default-popup1" data-modalpop-width="750"
-				data-modalpop-height="500">
+				<div class="modal-popup-wrapper pop1" data-modalpop="" data-modalpop-name="default-popup1" data-modalpop-width=""
+				data-modalpop-height="">
 					<div class="overlay"></div>
 					<div class="popup">
 						<div class="popup-header">
@@ -455,7 +455,7 @@
 								
 								<img src="/images/adidas/2020/event/fasterthan/pop/ultra20_pop.jpg" alt="">
 								<a href="#" onclick="openModalVideoViewer('P0v2D1ePOBI')" campaign-label="비디오" class="alink" style="position: absolute;top:5%; left:0;width:100%;height:26%;"></a>
-								<div class="pop_slide" id="pop_slide_ul">
+								<!-- <div class="pop_slide" id="pop_slide_ul">
 									<div class="item">
 										<img src="/images/adidas/2020/event/fasterthan/pop/1-1.jpg" alt="">
 									</div>
@@ -468,13 +468,13 @@
 									<div class="item">
 										<img src="/images/adidas/2020/event/fasterthan/pop/1-4.jpg" alt="">
 									</div>
-								</div>
+								</div> -->
 							</div>							
 						</div>
 					</div>
 				</div>
-				<div class="modal-popup-wrapper pop2" data-modalpop="" data-modalpop-name="default-popup2" data-modalpop-width="750"
-				data-modalpop-height="500">
+				<div class="modal-popup-wrapper pop2" data-modalpop="" data-modalpop-name="default-popup2" data-modalpop-width="800"
+				data-modalpop-height="1626">
 					<div class="overlay"></div>
 					<div class="popup">
 						<div class="popup-header">
@@ -484,7 +484,7 @@
 							<div class="content__wrapper">								
 								<img src="/images/adidas/2020/event/fasterthan/pop/sl20_pop.jpg" alt="">
 								<a href="#" onclick="openModalVideoViewer('g93vpEXq0E8')" campaign-label="비디오" class="alink" style="position: absolute;top:5%; left:0;width:100%;height:26%;"></a>
-								<div class="pop_slide" id="pop_slide_sl">
+								<!-- <div class="pop_slide" id="pop_slide_sl">
 									<div class="item">
 										<img src="/images/adidas/2020/event/fasterthan/pop/2-1.jpg" alt="">
 									</div>
@@ -497,7 +497,7 @@
 									<div class="item">
 										<img src="/images/adidas/2020/event/fasterthan/pop/2-4.jpg" alt="">
 									</div>
-								</div>
+								</div> -->
 							</div>							
 						</div>
 					</div>
@@ -764,7 +764,6 @@
 					autoplay:true
 				});
 				$('.modal-popup-click.click01').click(function(){
-					$('.modal-popup-wrapper .popup').css({'top':85+'%'});
 					setTimeout(function(){
 						$('#pop_slide_ul').slick('setPosition');
 					},0)
@@ -783,20 +782,19 @@
 					autoplay:true
 				});
 				$('.modal-popup-click.click02').click(function(){
-					$('.modal-popup-wrapper .popup').css({'top':85+'%'});
 					setTimeout(function(){
 						$('#pop_slide_sl').slick('setPosition');
 					},0)
 				})
 
 				// 스크롤시 헤더붙기
-				$(window).scroll(function(){
-					if($('#header').hasClass('hide')) {
-						$('.modal-popup-wrapper .popup').css({'top':85+'%'});
-					} else {
-						$('.modal-popup-wrapper .popup').css({'top':90+'%'});
-					}
-				})
+				// $(window).scroll(function(){
+				// 	if($('#header').hasClass('hide')) {
+				// 		$('.modal-popup-wrapper .popup').css({'top':85+'%'});
+				// 	} else {
+				// 		$('.modal-popup-wrapper .popup').css({'top':90+'%'});
+				// 	}
+				// })
 
 				// 링크막기
 				var alink = $('#fasterthan .alink');
