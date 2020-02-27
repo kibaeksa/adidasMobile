@@ -797,19 +797,22 @@
 				})
 
 				$('.modal-popup-click').click(function(){
-					setTimeout(function(){
-						if($('.modal-popup-wrapper').hasClass('open')){
-							$('html,body').addClass('not_scroll');                            
-						}
-					},0)					
-				})
-
-				$('.modal-popup-wrapper .overlay').click(function(){
-						$('html,body').removeClass('not_scroll');                            
-				})
-				$('.modal-popup-wrapper .close_x_btn').click(function(){
-						$('html,body').removeClass('not_scroll');                            
-				})
+                        $(window).bind('touchmove', function(e){e.preventDefault()});
+                        setTimeout(function(){
+                            if($('.modal-popup-wrapper').hasClass('open')){
+                                $('html,body').addClass('not_scroll');                            
+                            }
+                        },0)					
+                    })
+    
+                    $('.modal-popup-wrapper .overlay').click(function(){
+                        $(window).unbind('touchmove');
+                            $('html,body').removeClass('not_scroll');                            
+                    })
+                    $('.modal-popup-wrapper .close_x_btn').click(function(){
+                        $(window).unbind('touchmove');
+                            $('html,body').removeClass('not_scroll');                            
+                    })
 
 
 				// 링크막기
