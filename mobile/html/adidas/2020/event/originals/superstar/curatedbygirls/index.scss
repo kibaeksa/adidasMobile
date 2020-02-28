@@ -1,0 +1,160 @@
+@import './mobile/css/adidas/scss/common/mixin.scss';
+@import './mobile/css/adidas/scss/common/common.scss';
+
+#superstar_girls{
+	position: relative;
+	.button_area_v2{
+		width: 180px;
+		a{
+			font-size: 0.9rem;
+			font-weight: normal;
+			height: 38px;
+			line-height: 38px;
+		    letter-spacing: 1px;
+			span.arrow{
+				margin-left: 10px;
+				width: 25px;
+				&:after{
+					width: 8px;
+				}
+				&:before{
+					width: 8px;
+				}
+			}
+		}
+	}
+	.rel{
+		position: relative;
+	}
+	img{
+		width:100%;
+	}
+	h1,p,span{
+		letter-spacing: 0;
+	}
+
+	// position: absolute;
+	// bottom: 7%;
+	// left: 50%;
+	// transform: translateX(-50%);
+
+
+
+
+
+	.main__wrapper{
+		.main__wrapper_img{
+
+		}
+	}
+	.state__container{
+		padding:3rem 2.5rem;
+		.state__wrapper{
+			//공통
+			h1{
+				font: 700 1.4rem/1.4rem 'NotoSansKR';
+				color: #000;
+				margin: 0 0 2rem 0;
+			}
+			p{
+				font: 300 0.9rem/1.5rem 'NotoSansKR';
+				color:#000;
+			}
+			img{}
+			.aside{
+				padding: 4rem 0 4rem 3.5rem;
+				white-space: nowrap;
+				margin: 0;
+				h1{
+					font: 500 1.7rem/3rem 'NotoSansKR';
+					color: #000;
+					margin:0;
+				}			
+			}
+			// head
+			&.state01{
+				h1{
+					font: 900 2.3rem/2.9rem 'NotoSansKR';
+					color: #000;
+					margin: 0 0 1.3rem;
+					span{
+						font: 2.3rem/2.5rem 'adinenuPro-bold';
+					}
+				}
+				p{
+					font: 400 1.2rem/1.8rem 'NotoSansKR';
+					color: #000;
+				}
+				.video{
+					position: relative;
+					margin: 2.5rem 0;
+					video{
+						width:100%;
+					}
+					>a{
+						position: absolute;
+						top:50%;
+						left:52%;
+						transform: translate(-50%,-50%);
+						img{
+							width:85%;
+						}
+					}
+				}
+			}
+			&.state02{
+				>img{
+					margin:0 0 2rem 0;
+				}
+			}
+			&.state05{
+				p{
+					margin: 0 0 2rem 0;
+				}
+				.button_area_v2{
+					padding:3rem 0 0 0;
+					margin: 0 auto;
+				}
+			}
+		}
+
+	}
+
+	.bottom__wrapper{
+		.bottom__wrapper__img{
+			img{
+			}
+			margin:0 0 1rem 0;
+		}
+	}
+
+}
+
+
+@media (min-width: 320px) and (max-width: 370px){
+	body{
+		#superstar_girls{
+			.state__container{
+				.state__wrapper{
+					p{
+						br{
+							content: '';
+							display: inline;
+							word-break: keep-all;
+							&.exception{
+								display: block;
+								word-break: normal;
+								margin-bottom: 13px;
+							}
+							&.exception_nomargin{
+								display: block;
+								word-break: normal;
+								margin-bottom: 0;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,219 @@
+@import './mobile/css/adidas/scss/common/mixin.scss';
+@import './mobile/css/adidas/scss/common/common.scss';
+
+#superstar{
+	position: relative;
+	background: #f4ece8;
+	.button_area_v2{
+		width: 130px;
+		a{
+			font-size: 1rem;
+			font-weight: normal;
+			height: 36px;
+			line-height: 34px;
+		    letter-spacing: 1px;
+			span.arrow{
+				margin-left: 10px;
+				width: 25px;
+				&:after{
+					width: 8px;
+				}
+				&:before{
+					width: 8px;
+				}
+			}
+		}
+	}
+
+	.main{
+		position: relative;
+		video {
+			display: block;
+			width: 100%;
+		}
+		a.play-video {
+			display: inline-block;
+			position: absolute;
+			bottom: 7%;
+			left: 50%;
+			transform: translateX(-50%);
+			font: 400 0.9rem/0.9rem 'NotoSansKR';
+			color: #fff;
+			letter-spacing: normal;
+			text-decoration: underline;
+			z-index: 3;
+		}
+		.button_area_v2 {
+			display: inline-block;
+			position: absolute;
+			bottom: 33%;
+			left: 50%;
+			width: auto;
+			transform: translateX(-50%);
+			a{
+				padding: 0 1rem;
+			}
+		}
+	}
+
+	.state {
+		position: relative;
+		padding: 3rem 0;
+		background: #f4ece8;
+		text-align: center;
+		p {
+			font: 400 1.1rem/1.8rem 'NotoSansKR';
+			color: #000;
+			text-align: center;
+		}
+		>div{
+			margin: 40px 0 15px 0;
+			&:last-child{
+				margin:0;
+			}
+			.button_area_v2{
+				width:223px;	
+			}
+		}
+		.button_area_v2 {
+			display: inline-block;
+
+			a {
+				padding: 0 20px;
+			}
+		}
+	}
+
+	.contents {
+		.vid_cont {
+			position: relative;
+			&.vid_cont1{
+				padding-bottom: 25%;
+			}
+			&.vid_cont2{
+				padding-bottom: 50%;
+				video{
+					margin: 5% 0 0 0;
+				}
+			}
+			video {
+				display: block;
+				width: 100%;
+			}
+
+			.buy_box {
+				position: absolute;
+				top: 0;
+				left:7%;
+				width: 86%;
+				z-index: 3;
+
+				p {
+					font: 400 1rem/1.8rem 'NotoSansKR';
+					color: #000;
+					word-break: keep-all;
+				}
+				>div{
+					.button_area_v2{
+						width:213px;	
+					}
+				}
+				.button_area_v2 {
+					margin-top: 1.5rem;
+					display: inline-block;
+
+					a {
+						padding: 0 1rem;
+					}
+				}
+
+				>span {
+					display: block;
+					margin-top: 1rem;
+				}
+			}
+		}
+		.aside__img{
+			padding:0 2rem;
+			img{
+				width:100%;
+			}
+		}
+		.team_cont {
+			padding: 3rem 0 4rem;
+			.txt_area {
+				// width: calc(1200px - 30px);
+				margin: 0 auto;
+				margin-left: 2rem;
+				h3 {
+					font: 500 1.8rem/1.8rem 'adinenuPro-bold';
+					color: #000;
+					text-transform: uppercase;
+					letter-spacing: 1px;
+				}
+
+				>p {
+					padding: 1rem 0 2rem;
+					font: 500 1rem/1rem 'NotoSansKR';
+					color: #000;
+				}
+			}
+
+			ul {
+				position: relative;
+				height: auto;
+				top:0;
+				left: 7%;
+				z-index: 9;
+				white-space: nowrap;
+				overflow-x: auto;
+				overflow-y: hidden;
+				width: 93%;
+				li {
+					position: relative;
+					display: inline-block;
+					width: 260px;
+					margin-right: 1.5rem;
+					vertical-align: top;
+					img {
+						display: block;
+						width: 100%;
+					}
+					h3 {
+						padding: 2rem 0 0;
+						font: 700 1.8rem/1.8rem 'NotoSansKR';
+						color: #000;
+					}
+					h4 {
+						padding: 10px 0 0;
+						font: 500 1.3rem/1.6rem 'NotoSansKR';
+						color: #000;
+					}
+					>p {
+						padding: 1rem 0 2rem;
+						font: 400 1rem/1.8rem 'NotoSansKR';
+						color: #000;
+						// letter-spacing: normal;
+					}
+					.button_area_v2{
+						width: auto;
+						display: inline-block;
+						margin-bottom: 1rem;
+						a{
+							padding: 0 1.2rem;
+							text-transform: uppercase;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.vid_bottom {
+		position: relative;
+		video {
+			display: block;
+			width: 100%;
+		}
+	}
+}
