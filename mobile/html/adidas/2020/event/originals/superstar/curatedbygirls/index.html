@@ -1,0 +1,680 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src="/data/eventRouter.js"></script>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+	<meta name="format-detection" content="telephone=no">
+	<meta http-equiv="x-rim-auto-match" content="none">
+
+	<link href="/css/adidas/style.css" type="text/css" rel="stylesheet" />
+	<link href="/css/adidas/fonts.css" type="text/css" rel="stylesheet" />
+
+
+    <script type="text/javascript" src="/designjs/common/jquery-1.12.0.min.js"></script>
+    <script type="text/javascript" src="/designjs/common/swipe.js"></script>
+	<script type="text/javascript" src="/designjs/common/owl.carousel.min.js"></script>
+	<script type="text/javascript" src="/designjs/common/modalPopup.min.js"></script>
+	<script type="text/javascript" src="/designjs/common/zoomImage.js"></script>
+
+
+	<title>아디다스 모바일</title>
+</head>
+<body>
+
+	<div id="wrap">
+		<div id="header" style="position: relative;">
+			<div class="nav_menu">
+				<div class="nav_menu_inner">
+
+					<div class="u_info1">
+						<a href="#" class="login"><span class="icons" data-icon=""></span>로그인</a>
+						<a href="#" class="join"><span class="icons" data-icon=""></span>회원가입</a>
+					</div>
+
+					<!-- <div class="u_info1">
+						<div class="user_box">
+							<p class="greet bronze"><span class="m">B</span>홍길동님 반갑습니다.</p>
+							<p class="noti">쿠폰 사용기간이 얼마 남지 않았습니다.</p>
+						</div>
+					</div> -->
+					<div class="u_info2">
+						<a href="#">마이페이지</a>
+						<a href="#">주문배송조회 <span>1</span></a>
+						<a href="#">나의 쿠폰 <span>12</span></a>
+					</div>
+					<ul class="gnb">
+						<li class="strong dep">
+							<a href="#">MEN</a>
+							<div class="depth_menu depth2">
+								<ul>
+									<li class="dep">
+										<a href="#">신발</a>
+										<div class="depth_menu depth3">
+											<ul>
+												<li class="all"><a href="#">전체보기</a></li>
+												<!-- <li class="tit">스포츠별</li> -->
+												<li><a href="#">라이프스타일 <span>(214)</span></a></li>
+												<li><a href="#">축구 <span>(214)</span></a></li>
+												<li><a href="#">농구 <span>(214)</span></a></li>
+												<li><a href="#">러닝 <span>(214)</span></a></li>
+												<li><a href="#">테니스 <span>(214)</span></a></li>
+												<li><a href="#">스윔 <span>(214)</span></a></li>
+												<li><a href="#">하이컷/미드컷 <span>(214)</span></a></li>
+												<li><a href="#">로우컷 <span>(214)</span></a></li>
+												<li><a href="#">샌들/슬리퍼 <span>(214)</span></a></li>
+												<li><a href="#">SPORT <span>(214)</span></a></li>
+												<li><a href="#">ORIGINALS <span>(214)</span></a></li>
+											</ul>
+										</div>
+									</li>
+									<li class="dep">
+										<a href="#">의류</a>
+										<div class="depth_menu depth3">
+											<ul>
+												<li class="all"><a href="#">전체보기</a></li>
+												<li><a href="#">라이프스타일 <span>(214)</span></a></li>
+												<li><a href="#">축구 <span>(214)</span></a></li>
+												<li><a href="#">농구 <span>(214)</span></a></li>
+												<li><a href="#">러닝 <span>(214)</span></a></li>
+												<li><a href="#">테니스 <span>(214)</span></a></li>
+												<li><a href="#">스윔 <span>(214)</span></a></li>
+												<li><a href="#">하이컷/미드컷 <span>(214)</span></a></li>
+												<li><a href="#">로우컷 <span>(214)</span></a></li>
+												<li><a href="#">샌들/슬리퍼 <span>(214)</span></a></li>
+												<li><a href="#">SPORT <span>(214)</span></a></li>
+												<li><a href="#">ORIGINALS <span>(214)</span></a></li>
+											</ul>
+										</div>
+									</li>
+									<li class="dep">
+										<a href="#">용품</a>
+										<div class="depth_menu depth3">
+											<ul>
+												<li class="all"><a href="#">전체보기</a></li>
+												<li><a href="#">라이프스타일 <span>(214)</span></a></li>
+												<li><a href="#">축구 <span>(214)</span></a></li>
+												<li><a href="#">농구 <span>(214)</span></a></li>
+												<li><a href="#">러닝 <span>(214)</span></a></li>
+												<li><a href="#">테니스 <span>(214)</span></a></li>
+												<li><a href="#">스윔 <span>(214)</span></a></li>
+												<li><a href="#">하이컷/미드컷 <span>(214)</span></a></li>
+												<li><a href="#">로우컷 <span>(214)</span></a></li>
+												<li><a href="#">샌들/슬리퍼 <span>(214)</span></a></li>
+												<li><a href="#">SPORT <span>(214)</span></a></li>
+												<li><a href="#">ORIGINALS <span>(214)</span></a></li>
+											</ul>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li class="strong dep">
+							<a href="#">WOMEN</a>
+							<div class="depth_menu depth2">
+								<ul>
+									<li class="dep">
+										<a href="#">신발</a>
+										<div class="depth_menu depth3">
+											<ul>
+												<li class="all"><a href="#">전체보기</a></li>
+												<li><a href="#">라이프스타일 <span>(214)</span></a></li>
+												<li><a href="#">축구 <span>(214)</span></a></li>
+												<li><a href="#">농구 <span>(214)</span></a></li>
+												<li><a href="#">러닝 <span>(214)</span></a></li>
+												<li><a href="#">테니스 <span>(214)</span></a></li>
+												<li><a href="#">스윔 <span>(214)</span></a></li>
+												<li><a href="#">하이컷/미드컷 <span>(214)</span></a></li>
+												<li><a href="#">로우컷 <span>(214)</span></a></li>
+												<li><a href="#">샌들/슬리퍼 <span>(214)</span></a></li>
+												<li><a href="#">SPORT <span>(214)</span></a></li>
+												<li><a href="#">ORIGINALS <span>(214)</span></a></li>
+											</ul>
+										</div>
+									</li>
+									<li class="dep">
+										<a href="#">의류</a>
+										<div class="depth_menu depth3">
+											<ul>
+												<li class="all"><a href="#">전체보기</a></li>
+												<li><a href="#">라이프스타일 <span>(214)</span></a></li>
+												<li><a href="#">축구 <span>(214)</span></a></li>
+												<li><a href="#">농구 <span>(214)</span></a></li>
+												<li><a href="#">러닝 <span>(214)</span></a></li>
+												<li><a href="#">테니스 <span>(214)</span></a></li>
+												<li><a href="#">스윔 <span>(214)</span></a></li>
+												<li><a href="#">하이컷/미드컷 <span>(214)</span></a></li>
+												<li><a href="#">로우컷 <span>(214)</span></a></li>
+												<li><a href="#">샌들/슬리퍼 <span>(214)</span></a></li>
+												<li><a href="#">SPORT <span>(214)</span></a></li>
+												<li><a href="#">ORIGINALS <span>(214)</span></a></li>
+											</ul>
+										</div>
+									</li>
+									<li class="dep">
+										<a href="#">용품</a>
+										<div class="depth_menu depth3">
+											<ul>
+												<li class="all"><a href="#">전체보기</a></li>
+												<li><a href="#">라이프스타일 <span>(214)</span></a></li>
+												<li><a href="#">축구 <span>(214)</span></a></li>
+												<li><a href="#">농구 <span>(214)</span></a></li>
+												<li><a href="#">러닝 <span>(214)</span></a></li>
+												<li><a href="#">테니스 <span>(214)</span></a></li>
+												<li><a href="#">스윔 <span>(214)</span></a></li>
+												<li><a href="#">하이컷/미드컷 <span>(214)</span></a></li>
+												<li><a href="#">로우컷 <span>(214)</span></a></li>
+												<li><a href="#">샌들/슬리퍼 <span>(214)</span></a></li>
+												<li><a href="#">SPORT <span>(214)</span></a></li>
+												<li><a href="#">ORIGINALS <span>(214)</span></a></li>
+											</ul>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li class="strong dep">
+							<a href="#">KIDS</a>
+							<div class="depth_menu depth2">
+								<ul>
+									<li class="dep">
+										<a href="#">신발</a>
+										<div class="depth_menu depth3">
+											<ul>
+												<li class="all"><a href="#">전체보기</a></li>
+												<li class="tit">스포츠별</li>
+												<li><a href="#">라이프스타일 <span>(214)</span></a></li>
+												<li><a href="#">축구 <span>(214)</span></a></li>
+												<li><a href="#">농구 <span>(214)</span></a></li>
+												<li><a href="#">러닝 <span>(214)</span></a></li>
+												<li><a href="#">테니스 <span>(214)</span></a></li>
+												<li><a href="#">스윔 <span>(214)</span></a></li>
+												<li class="tit">상품별</li>
+												<li><a href="#">하이컷/미드컷 <span>(214)</span></a></li>
+												<li><a href="#">로우컷 <span>(214)</span></a></li>
+												<li><a href="#">샌들/슬리퍼 <span>(214)</span></a></li>
+												<li class="tit">브랜드</li>
+												<li><a href="#">SPORT <span>(214)</span></a></li>
+												<li><a href="#">ORIGINALS <span>(214)</span></a></li>
+											</ul>
+										</div>
+									</li>
+									<li class="dep">
+										<a href="#">의류</a>
+										<div class="depth_menu depth3">
+											<ul>
+												<li class="all"><a href="#">전체보기</a></li>
+												<li class="tit">스포츠별</li>
+												<li><a href="#">라이프스타일 <span>(214)</span></a></li>
+												<li><a href="#">축구 <span>(214)</span></a></li>
+												<li><a href="#">농구 <span>(214)</span></a></li>
+												<li><a href="#">러닝 <span>(214)</span></a></li>
+												<li><a href="#">테니스 <span>(214)</span></a></li>
+												<li><a href="#">스윔 <span>(214)</span></a></li>
+												<li class="tit">상품별</li>
+												<li><a href="#">하이컷/미드컷 <span>(214)</span></a></li>
+												<li><a href="#">로우컷 <span>(214)</span></a></li>
+												<li><a href="#">샌들/슬리퍼 <span>(214)</span></a></li>
+												<li class="tit">브랜드</li>
+												<li><a href="#">SPORT <span>(214)</span></a></li>
+												<li><a href="#">ORIGINALS <span>(214)</span></a></li>
+											</ul>
+										</div>
+									</li>
+									<li class="dep">
+										<a href="#">용품</a>
+										<div class="depth_menu depth3">
+											<ul>
+												<li class="all"><a href="#">전체보기</a></li>
+												<li class="tit">스포츠별</li>
+												<li><a href="#">라이프스타일 <span>(214)</span></a></li>
+												<li><a href="#">축구 <span>(214)</span></a></li>
+												<li><a href="#">농구 <span>(214)</span></a></li>
+												<li><a href="#">러닝 <span>(214)</span></a></li>
+												<li><a href="#">테니스 <span>(214)</span></a></li>
+												<li><a href="#">스윔 <span>(214)</span></a></li>
+												<li class="tit">상품별</li>
+												<li><a href="#">하이컷/미드컷 <span>(214)</span></a></li>
+												<li><a href="#">로우컷 <span>(214)</span></a></li>
+												<li><a href="#">샌들/슬리퍼 <span>(214)</span></a></li>
+												<li class="tit">브랜드</li>
+												<li><a href="#">SPORT <span>(214)</span></a></li>
+												<li><a href="#">ORIGINALS <span>(214)</span></a></li>
+											</ul>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li class="dep">
+							<a href="#">SPORTS</a>
+							<div class="depth_menu depth2">
+								<ul>
+									<li class="dep">
+										<a href="#">ORIGINALS</a>
+										<div class="depth_menu depth3">
+											<ul>
+												<li class="all"><a href="#">전체보기</a></li>
+												<li><a href="#">라이프스타일 <span>(214)</span></a></li>
+												<li><a href="#">축구 <span>(214)</span></a></li>
+												<li><a href="#">농구 <span>(214)</span></a></li>
+												<li><a href="#">러닝 <span>(214)</span></a></li>
+											</ul>
+										</div>
+									</li>
+									<li class="dep">
+										<a href="#">ADIDAS NEO</a>
+										<div class="depth_menu depth3">
+											<ul>
+												<li class="all"><a href="#">전체보기</a></li>
+												<li><a href="#">라이프스타일 <span>(214)</span></a></li>
+												<li><a href="#">축구 <span>(214)</span></a></li>
+											</ul>
+										</div>
+									</li>
+									<li class="dep">
+										<a href="#">ADIDAS BY STELLA MCCARTNEY</a>
+										<div class="depth_menu depth3">
+											<ul>
+												<li class="all"><a href="#">전체보기</a></li>
+												<li><a href="#">축구 <span>(214)</span></a></li>
+												<li><a href="#">농구 <span>(214)</span></a></li>
+												<li><a href="#">러닝 <span>(214)</span></a></li>
+												<li><a href="#">테니스 <span>(214)</span></a></li>
+												<li><a href="#">스윔 <span>(214)</span></a></li>
+											</ul>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<a href="#">BRANDS</a>
+						</li>
+					</ul>
+					<div class="ctgr">
+						<div>
+							<a href="#">BEST <span class="icons" data-icon=""></span></a>
+							<a href="#">NEW <span class="icons" data-icon=""></span></a>
+						</div>
+						<div>
+							<a href="#">SALE <span class="icons" data-icon=""></span></span></a>
+							<a href="#">OUTLET <span class="icons" data-icon=""></span></a>
+						</div>
+					</div>
+					<div class="club_ctgr">
+						<a href="#">기획전</a>
+						<a href="#">아디클럽</a>
+						<a href="#">캠페인</a>
+					</div>
+					<div class="viewed_items">
+						<h3>최근 본 상품</h3>
+						<div class="item_list">
+							<div class="slider">
+								<div class="item">
+									<a href="#">
+										<p class="img"><img src="http://m.adidas.co.kr/upload/prod/basic/320/B35270-1_320X320.jpg" alt=""></p>
+										<p class="price">119,000<span>원</span></p>
+									</a>
+								</div>
+
+								<div class="item">
+									<a href="#">
+										<p class="img"><img src="http://m.adidas.co.kr/upload/prod/basic/320/S83386-1_320X320.jpg" alt=""></p>
+										<p class="price">119,000<span>원</span></p>
+									</a>
+								</div>
+
+								<div class="item">
+									<a href="#">
+										<p class="img"><img src="http://m.adidas.co.kr/upload/prod/basic/320/AF6749-1_320X320.jpg" alt=""></p>
+										<p class="price">95,200<span>원</span></p>
+									</a>
+								</div>
+
+								<div class="item">
+									<a href="#">
+										<p class="img"><img src="http://m.adidas.co.kr/upload/prod/basic/320/S75126-1_320X320.jpg" alt=""></p>
+										<p class="price">119,000<span>원</span></p>
+									</a>
+								</div>
+
+								<div class="item">
+									<a href="#">
+										<p class="img"><img src="http://m.adidas.co.kr/upload/prod/basic/320/S75556-1_320X320.jpg" alt=""></p>
+										<p class="price">119,000<span>원</span></p>
+									</a>
+								</div>
+
+								<div class="item">
+									<a href="#">
+										<p class="img"><img src="http://m.adidas.co.kr/upload/prod/basic/320/AF6441-1_320X320.jpg" alt=""></p>
+										<p class="price">119,000<span>원</span></p>
+									</a>
+								</div>
+
+								<div class="item">
+									<a href="#">
+										<p class="img"><img src="http://m.adidas.co.kr/upload/prod/basic/320/S74805-1_320X320.jpg" alt=""></p>
+										<p class="price">119,000<span>원</span></p>
+									</a>
+								</div>
+							</div>
+						</div>
+						<!-- //item_list -->
+
+					</div>
+					<!-- //viewed items -->
+
+					<div class="nav_footer">
+						<ul>
+							<li><a href="#">공지사항</a></li>
+							<li><a href="#">고객센터</a></li>
+							<li><a href="#">매장찾기</a></li>
+						</ul>
+						<div>
+							<p>교환 및 반품 문의 (본사로 반품불가) : 온라인스토어 고객센터 <a href="tel:1588-8241">1588-8241</a></p>
+							<p>(평일 9시 – 18시, 점심시간 12시 – 13시)</p>
+						</div>
+					</div>
+				</div>
+				<!-- //nav_menu_inner -->
+			</div>
+			<!-- //nav_menu -->
+
+			<div class="nav_search">
+				<div class="sch_box">
+					<form action="#" method="get">
+						<fieldset>
+							<input type="text" autocomplete="off">
+							<button type="submit" value="검색">
+								<span class="icons"></span>
+							</button>
+						</fieldset>
+					</form>
+				</div>
+				<div class="sch_tab">
+					<a href="#" class="on">최근 검색어</a>
+					<a href="#">인기 검색어</a>
+				</div>
+				<ul class="keyword_recent">
+					<li><a href="#">슈퍼스타<span class="close_x_btn"></span></a></li>
+					<li><a href="#">스탠스미스<span class="close_x_btn"></span></a></li>
+					<li><a href="#">트랙탑<span class="close_x_btn"></span></a></li>
+					<li><a href="#">MI SUPERSTAR<span class="close_x_btn"></span></a></li>
+					<li><a href="#">패딩<span class="close_x_btn"></span></a></li>
+					<li><a href="#">키엘<span class="close_x_btn"></span></a></li>
+					<!-- <li class="no_data">최근 검색하신 내역이 없습니다.</li> -->
+				</ul>
+				<ol class="sch_list" style="display:none;">
+					<li><span>1</span><a href="#">슈퍼스타</a></li>
+					<li><span>2</span><a href="#">수퍼스타</a></li>
+					<li><span>3</span><a href="#">트랙탑</a></li>
+					<li><span>4</span><a href="#">스탠스미스</a></li>
+					<li><span>5</span><a href="#">MI SUPERSTAR</a></li>
+					<li><span>6</span><a href="#">패딩</a></li>
+					<li><span>7</span><a href="#">키엘</a></li>
+					<li><span>8</span><a href="#">이큅먼트</a></li>
+					<li><span>9</span><a href="#">니고</a></li>
+					<li><span>10</span><a href="#">부스트</a></li>
+				</ol>
+				<!-- <div class="bnn"><img src="images/bnn_sch1.jpg" alt=""></div>
+				<div class="bnn"><img src="images/bnn_sch2.jpg" alt=""></div> -->
+			</div>
+
+			<div class="nav_main">
+				<a href="javascript:void(0);" class="btn_slide">
+					<span class="line1"></span>
+					<span class="line2"></span>
+					<span class="line3"></span>
+				</a>
+				<h1><a href="javascript:void(0);" class="logo icons"></a></h1>
+				<a href="#" class="btn_search icons">
+					<span class="icons"></span>
+				</a>
+				<a href="#" class="btn_market icons"></a>
+			</div>
+		</div>
+
+		<div id="container">
+
+			<div id="superstar_girls">
+				<div class="main__wrapper">
+					<div class="main__wrapper__img">
+						<img src="/images/adidas/2020/event/originals/superstar/curatedbygirls/2002_a_superstar_curated_main.jpg" alt="">
+					</div>
+				</div>
+				<div class="state__container">
+					<div class="state__wrapper state01">
+						<h1>
+							큐레이티드 바이 걸스<br>
+							<span>(CURATED BY GIRLS):</span><br>
+							예술 세계에서 여성성을<br>
+							대변하는 그녀들
+						</h1>
+						<p>
+							피드와 전시회 벽면을 여성 신예 예술가들로 채우며<br>
+							남성이 지배하는 공간에 여성을 포용시키는<br>
+							Curated by GIRLS.
+						</p>
+						<div class="video">
+							<video autoplay loop muted playsinline poster="/images/adidas/2020/event/originals/superstar/curatedbygirls/2002_a_superstar_curated_video.jpg">
+								<!-- <source src="https://image.adidas.co.kr/upload/design_temp/video/2020/a/originals/superstar/superstan/Superstar_MO.mp4" type="video/mp4"> -->
+							</video>
+							<a href="javascript:void(0)" onclick="openModalVideoViewer('03_x6guFVDM')" campaign-label="영상보기">
+								<img src="/images/adidas/2020/event/originals/superstar/superstan/play.png" alt="">
+							</a>
+						</div>
+					</div>
+					<div class="state__wrapper state02">
+						<p>
+							오늘날 예술 세계에서 영구 소장품 작가들의 약 87%가 남성이다.<br>
+							하지만 여성 작가들로만 이루어진 Curated by GIRLS 소속 팀은 공평한<br>
+							경쟁의 장을 만들 준비가 되어있다. 창립자이자 CEO인 레티샤<br>
+							드보(Laetitia Duveau)와 팀원인 이글리오나 드보(Igliona Duveau),<br>
+							플로렌틴 슐류터(Florentine Schlüter) 그리고 소울 슐레이만(Soul<br>
+							Suleiman)은 그들의 디지털 플랫폼과 국제 전시 등을 통해 여성<br>
+							예술가들에게 온라인과 IRL 상에서 자신의 작품을 선보일 공간<br>
+							을 제공해주고 있다. 레티샤는 “우리의 목적은 사랑과 긍정을 전파하고,<br>
+							예술가들과 사람들에게 힘을 실어주고, 여성성의 다양한 비전을<br>
+							보여주는 것”이라고 했다. 
+						</p>
+						<div class="aside">
+							<h1>
+								“우리 팀은 여자 4명으로<br>
+								구성되어 있지만 사실 모든<br>
+								사람들이 함께하는 큰 공동체<br>
+								같다고 할 수 있어요. 같은<br>
+								비전을 가진 누구나 우리의<br>
+								미션에 기여를 하고 있는<br>
+								거죠.” —레티샤 드보
+							</h1>
+						</div>
+						<img src="/images/adidas/2020/event/originals/superstar/curatedbygirls/2002_a_superstar_curated_img01.jpg" alt="">
+					</div>
+
+					<div class="state__wrapper state03">
+						<h1>
+							긍정이 힘이다
+						</h1>
+						<p>
+							예술계의 남성중심성에 지친 소수의 예술가 집단들이 긍정적인 변화를<br>
+							만들어 내기 위해 한 플랫폼에 자신들의 불만을 표출해내기 시작했다.<br>
+							레티샤는 “내가 4년 전 Curated by GIRLS를 시작하게 된 것도 이러한<br>
+							불만 때문이었다. 당시 예술 세계에서 우리가 느끼고 있던 다양성의<br>
+							부재에 대한 대답 같은 것이었다. 그리고 당시 우리는 여자는 이런<br>
+							모습이어야 한다, 이렇게 행동해야 한다, 앉아야 한다, 말해야 한다는<br>
+							식으로 정의 내려지는 것에 지쳐 있었다” 며 “우리 외에도 많은 사람들이<br>
+							이런 것에 지쳐 있었고, 숨을 쉴 수 있는 공간이 필요하다고 느끼고<br>
+							있었다”고 했다.<br>
+							<br class="exception">
+							Curated by GIRLS는 모든 포스팅과 팝업 그리고 강력한 메시지를 통해<br>
+							예술 세계를 개선시켜 나가며 슈퍼스타 팀의 영향력을 대변하고 있다.<br>
+							플로렌틴은 “우리는 신흥 예술가들을 지원하고, 시스템을 무너뜨리고,<br>
+							모두의 이익을 위한 변화를 꾀하는 일을 지속하고자 한다”고 했다.<br>
+							이글리오나는, “그리고 이 세상을 나 자신에 대한 포용력이든 타인에<br>
+							대한 포용력이든, 좀 더 포용력이 있는 곳으로 만들고자 한다.”고<br>
+							덧붙였다. Curated by GIRLS는 바르셀로나에서 베를린, 암스테르담에<br>
+							이르기까지 유럽 전역에서 전시회를 열었으며 각각의 사회에 이들이<br>
+							가져오는 긍정의 힘 때문에 소셜 미디어에서 많은 사랑을 받고 있다.
+						</p>
+						<div class="aside">
+							<h1>
+								“우리는 모든 여성…<br>
+								모든 인류를 옹호합니다.”<br>
+								—레이샤 드보와<br>
+								이글리어나 드보
+							</h1>
+						</div>
+					</div>
+
+					<div class="state__wrapper state04">
+						<h1>
+							집단의 힘을 전하다 
+						</h1>
+						<p>
+							Curated by GIRLS는 ‘함께라면 모두가 슈퍼스타’ 라는 메시지를 전하며<br>
+							슈퍼스타 패밀리의 환영 받는 일원이 되었다. 레이샤는 “우리가 함께일<br>
+							때 사람들은 우리와 함께 하려 하거나 우리와 같은 일을 하고 싶다는<br>
+							영감을 받게 된다. 단 한 명만 앞으로 걸어나간다면 우리가 하나의<br>
+							집단으로 나아갈 때와 동일한 영향력을 가질 수 없다. 함께해야 더<br>
+							목소리가 커질 수 있고 더 굳건해질 수 있다”고 했다. 소울은 “우리에게는<br>
+							이러한 집단의 에너지가 있고 이 에너지를 세계에 퍼트릴 힘이 있다.<br>
+							그리고 사람들은 이에 대해 매우 수용적”이라고 덧붙였다.<br>
+							<br class="exception">
+							그리고 진정한 게임 체인저들처럼 Curated by GIRLS 팀도 큰 변화는<br>
+							작은 것으로부터 시작한다는 것을 알고 있다. 이글리오나는 “이건 우리의<br>
+							얘기가 아니다”라고 했다. 그리고 플로렌틴이 “우리보다 더 큰 집합체를<br>
+							말하는 것”이라고 덧붙였다. 레이샤는 “우리 스스로가 모두 예술가이기<br>
+							때문에 우리를 알리고 우리를 보게 하는 것이 얼마나 어려운 일이라는<br>
+							것을 잘 알고 있다. 그렇기 때문에 이 일을 하고 있는 것이다. 누군가가<br>
+							해주기를 바랐기에 우리가 다른 예술가들, 여성들, 동성애자들 그리고 그<br>
+							밖의 모든 사람들을 위해 이 플랫폼을 만들고 있는 것”이라고 했다.
+						</p>
+						<div class="aside">
+							<h1>
+								“스스로를 교육하고, 서로를<br>
+								이해하려고 노력하는 것이<br>
+								중요합니다. 왜냐하면 우리<br>
+								모두가 다르다는 그 사실이<br>
+								아름답기 때문이죠.”<br>
+								—플로렌틴 슐류터
+							</h1>
+						</div>
+					</div>
+
+					<div class="state__wrapper state05">
+						<h1>
+							두려움은 없다
+						</h1>
+						<p>
+							예술계에 오랫동안 몸 담았던 Curated by GIRLS의 멤버들은 인내와<br>
+							자신감에 대해 잘 안다. 그들이 신흥 예술가들에게 프로로서 해 주고 싶은<br>
+							조언은:<br class="exception_nomargin">
+							“자신의 목소리가 중요한 것이다. 사람들은 당신이 하고자 하는 말을<br>
+							듣고 싶어 하고 들을 필요도 있다.” –소울 슐레이만<br>
+							“나의 예술성이 더 진화해 과거를 돌아봤을 때 ‘와, 내가 왜 이랬지’라고<br>
+							생각할 수도 있다. 하지만 그 때도 다 이유가 있었던 것이고, 그것 또한<br>
+							나의, 그리고 내 진화의 한 부분이다.”- 레이샤 드보<br>
+							<br class="exception">
+							그들은 “옳고 그른 건 없다. 모두 과정의 일부”라고 자신들의 말을<br>
+							끝맺는다. 결국 내가 할 수 있는 최선은? 내가 믿는 일을 하는 것이다.<br>
+							플로렌틴은 “그 어떤 것도 두려워 말고 문을 두드려라. 당신이 겪을<br>
+							최악의 상황은 거절을 당하는 것 뿐”이라고 했다. 그리고 소울은 “많은<br>
+							사람들은 실제 거절을 당하는 것 보다 거절 당할지도 모른다는 사실을 더<br>
+							두렵게 느낀다”고 덧붙였다.<br>
+							<br class="exception">
+							Curated by GIRLS가 한 가지 분명하게 보여주는 것은, 진정한 변화는<br>
+							자신이 하는 모든 일을 긍정적으로 생각하는 사람들로부터 시작된다는<br>
+							것이다.
+						</p>
+						<img src="/images/adidas/2020/event/originals/superstar/curatedbygirls/2002_a_superstar_curated_img02.jpg" alt="">
+						<div class="button_area_v2">
+							<div class="">
+								<a href="https://m.adidas.co.kr/MO/Event/pnEvtView.action?pn=changeisateamsport#team_cont" campaign-label="다른 팀원 만나러 가기">
+									다른 팀원 만나러 가기
+									<span class="arrow"></span>
+								</a>
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<div class="bottom__wrapper">
+					<div class="bottom__wrapper__img">
+						<img src="/images/adidas/2020/event/originals/superstar/curatedbygirls/2002_a_superstar_curated_img03.jpg" alt="">
+					</div>
+				</div>
+
+
+
+				<script>
+				</script>
+			</div>
+			<!-- //superstar_girls -->
+
+		</div>
+		<!-- //container product_list -->
+
+		<div id="footer">
+			<div class="f_menu">
+				<a href="#">로그인</a>
+				<a href="#">주문/배송조회</a>
+				<a href="#">고객센터</a>
+				<a href="#">매장찾기</a>
+			</div>
+			<div class="f_info">
+				<p class="tit">아디다스코리아(주)</p>
+				<p>137-955 서울특별시 서초구 서초대로 74길 4, 삼성생명 서초타워 9층</p>
+				<p>대표이사 : 쟝 미쉘 그라니에&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;사업자 등록번호 : 214-81-07412</p>
+				<p>교환 및 반품 문의 (본사로 반품불가) : 온라인스토어 고객센터 1588-8241</p>
+				<p>(평일 9시 – 18시, 점심시간 12시 – 13시)</p>
+				<p>제품 수선문의 : 아디다스 고객만족센터 080-022-7981 (평일 09시 – 18시)</p>
+				<p>통신판매업신고 : 2007-서울서초-10391</p>
+				<p>이메일 : adiCLUB_Korea@adidas.com</p>
+				<p>개인정보 관리책임자 : 김동일&nbsp;&nbsp;|&nbsp;&nbsp;개인정보 관리담당자 : 황선영</p>
+				<p><a href="#">개인정보취급방침 확인<span class="ico-arrow-circle"></span></a></p>
+				<ul>
+					<li><a href="#">구매이용약관</a></li>
+					<li><a href="#">채무지급보증안내 확인</a></li>
+					<li><a href="#">공정거래 자율준수</a></li>
+					<li><a href="#">공정거래 위원회 사업자 신원정보 확인</a></li>
+				</ul>
+				<p style="color:#666;">Copyright © 2011 adidas Korea Inc.</p>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="/designjs/adidas/common.js"></script>
+	<script type="text/javascript">
+
+		var openPopInStock;
+		(function($){
+
+			openPopInStock = function(){
+				$('#instock-notification-popup').addClass('open');
+			};
+
+			$('.view_type_btn a').bind('click',function(){
+				if($(this).hasClass('on')){
+					return;
+				}
+
+				if($(this).hasClass('box_type')){
+					$('.products_list').removeClass('list_type')
+				}else{
+					$('.products_list').addClass('list_type');
+				}
+
+				$('.view_type_btn a').removeClass('on');
+				$(this).addClass('on');
+			});
+
+		})(jQuery);
+
+	</script>
+
+</body>
+
+</html>
