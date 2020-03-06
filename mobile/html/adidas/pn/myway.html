@@ -1,0 +1,369 @@
+<div id="container">
+	<style type="text/css">
+		@media screen and (max-width: 320px) {
+			html {
+				font-size: 10px
+			}
+		}
+
+		@media screen and (min-width: 800px) {
+			html {
+				font-size: 12px
+			}
+		}
+
+		.pseudo-element {
+			content: '';
+			display: block
+		}
+
+		#xcategory {
+			position: relative
+		}
+
+		#xcategory .button_area_v2 {
+			display: inline-block
+		}
+
+		#xcategory .button_area_v2 a {
+			padding: 0 6vw;
+			font: 500 1rem/3.4rem 'NotoSansKR';
+			letter-spacing: .15rem;
+			height: 3.4rem
+		}
+
+		#xcategory .button_area_v2 a .arrow {
+			margin-left: 1rem;
+			width: 20px
+		}
+
+		#xcategory .button_area_v2 a .arrow::after,
+		#xcategory .button_area_v2 a .arrow::before {
+			width: 7px;
+			height: 2px
+		}
+
+		#xcategory .button_area_v2 a .arrow::before {
+			bottom: -2px
+		}
+
+		#xcategory .button_area_v2 a .arrow::after {
+			top: -2px
+		}
+
+		#xcategory .top_video {
+			position: relative
+		}
+
+		#xcategory .top_video video {
+			width: 100%
+		}
+
+		#xcategory .top_video .btn_play {
+			display: inline-block;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -30%);
+			width: 13%;
+			height: 13%
+		}
+
+		#xcategory .top_video .btn_play>img {
+			width: 100%
+		}
+
+		#xcategory .statement {
+			position: relative
+		}
+
+		#xcategory .statement .bg>img {
+			width: 100%;
+			display: block
+		}
+
+		#xcategory .statement .statement_txt .button_area_v2 {
+			position: absolute;
+			bottom: 11%;
+			left: 50%;
+			transform: translate(-50%);
+			z-index: 5
+		}
+
+		#xcategory .statement .statement_txt .button_area_v2 a {
+			padding: 0 20px
+		}
+
+		#xcategory .cont01_area>img {
+			display: block;
+			width: 100%
+		}
+
+		#xcategory .prod01 {
+			position: relative
+		}
+
+		#xcategory .prod01 .bg>img {
+			width: 100%;
+			display: block
+		}
+
+		#xcategory .prod01 .prod_bt {
+			position: absolute;
+			top: 51.5%;
+			left: 50%;
+			transform: translate(-50%);
+			z-index: 5;
+			white-space: nowrap;
+			text-align: center
+		}
+
+		#xcategory .prod01 .prod_bt p {
+			font: 400 1.2rem/1.8rem 'NotoSansKR';
+			text-align: center;
+			color: #000;
+			white-space: nowrap
+		}
+
+		#xcategory .prod01 .prod_bt p span {
+			font: 700 1.2rem/1.5rem 'NotoSansKR';
+			display: inline-block;
+			background-color: #efdfff;
+			white-space: nowrap
+		}
+
+		#xcategory .prod01 .prod_bt .button_area_v2 {
+			margin-top: 1rem
+		}
+
+		#xcategory .prod01 .prod_bt .button_area_v2 a {
+			padding: 0 20px
+		}
+
+		#xcategory .prod02 {
+			position: relative
+		}
+
+		#xcategory .prod02 .bg>img {
+			width: 100%;
+			display: block
+		}
+
+		#xcategory .prod02 .prod_bt {
+			position: absolute;
+			top: 55%;
+			left: 50%;
+			transform: translate(-50%);
+			z-index: 5;
+			white-space: nowrap;
+			text-align: center
+		}
+
+		#xcategory .prod02 .prod_bt p {
+			font: 400 1.2rem/1.8rem 'NotoSansKR';
+			text-align: center;
+			color: #000;
+			white-space: nowrap
+		}
+
+		#xcategory .prod02 .prod_bt p span {
+			font: 700 1.2rem/1.5rem 'NotoSansKR';
+			display: inline-block;
+			background-color: #efdfff;
+			white-space: nowrap
+		}
+
+		#xcategory .prod02 .prod_bt .button_area_v2 {
+			margin-top: 1rem
+		}
+
+		#xcategory .prod02 .prod_bt .button_area_v2 a {
+			padding: 0 20px
+		}
+
+		#xcategory .prod03 {
+			position: relative
+		}
+
+		#xcategory .prod03 .bg>img {
+			width: 100%;
+			display: block
+		}
+
+		#xcategory .prod03 .prod_bt {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%);
+			z-index: 5;
+			white-space: nowrap;
+			text-align: center
+		}
+
+		#xcategory .prod03 .prod_bt p {
+			font: 400 1.2rem/1.8rem 'NotoSansKR';
+			text-align: center;
+			color: #000;
+			white-space: nowrap
+		}
+
+		#xcategory .prod03 .prod_bt p span {
+			font: 700 1.2rem/1.5rem 'NotoSansKR';
+			display: inline-block;
+			background-color: #efdfff;
+			white-space: nowrap
+		}
+
+		#xcategory .prod03 .prod_bt .button_area_v2 {
+			margin-top: 1rem
+		}
+
+		#xcategory .prod03 .prod_bt .button_area_v2 a {
+			padding: 0 20px
+		}
+
+		#xcategory .btm_area {
+			position: relative
+		}
+
+		#xcategory .btm_area .bg>img {
+			width: 100%;
+			display: block
+		}
+
+		#xcategory .btm_area .btm_bt {
+			position: absolute;
+			top: 29%;
+			left: 50%;
+			transform: translate(-50%);
+			z-index: 5;
+			text-align: center
+		}
+
+		#xcategory .btm_area .btm_bt .button_area_v2 a {
+			padding: 0 20px
+		}
+	</style>
+
+	<div id="xcategory">
+
+
+		<div class="top_video">
+			<video id="video" poster="/images/adidas/2020/event/xcategory/video_bg.jpg" loop muted autoplay playsinline>
+				<source src="http://imagem.adidas.co.kr/upload/design_temp/video/2020/a/xcategory/X-category_MO.mp4"
+					type="video/mp4">
+			</video>
+			<a href="javascript:void(0)" class="btn_play" onclick="openModalVideoViewer('W_171Su3d5M')">
+				<img src="/images/adidas/2020/event/xcategory/play_bt.png" alt="영상 재생 버튼">
+			</a>
+		</div>
+
+		<div class="statement">
+			<div class="statement_txt">
+				<div class="button_area_v2">
+					<div class="">
+						<a href="https://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=1094"
+							campaign-label="구매하기">
+							구매하기
+							<span class="arrow"></span>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="bg">
+				<img src="/images/adidas/2020/event/xcategory/statement_bg.jpg" alt="">
+			</div>
+		</div>
+
+		<div class="cont01_area">
+			<img src="/images/adidas/2020/event/xcategory/cont01.jpg" alt="">
+		</div>
+
+		<div class="prod01">
+			<div class="prod_bt">
+				<p>
+					움직임이 편하고<br />
+					스타일리쉬한 디자인이 돋보이는 <span>윈드 브레이커</span>
+				</p>
+				<div class="button_area_v2">
+					<div class="">
+						<a href="https://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=1094"
+							campaign-label="구매하기">
+							구매하기
+							<span class="arrow"></span>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="bg">
+				<img src="/images/adidas/2020/event/xcategory/prod01.jpg" alt="">
+			</div>
+		</div>
+
+		<div class="prod02">
+			<div class="prod_bt">
+				<p>
+					안감의 이중 파워 메쉬 원단이<br />
+					안정적으로 받쳐주는 <span>미디엄 서포트 브라</span>
+				</p>
+				<div class="button_area_v2">
+					<div class="">
+						<a href="https://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=1094"
+							campaign-label="구매하기">
+							구매하기
+							<span class="arrow"></span>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="bg">
+				<img src="/images/adidas/2020/event/xcategory/prod02.jpg" alt="">
+			</div>
+		</div>
+
+		<div class="prod03">
+			<div class="prod_bt">
+				<p>
+					메쉬 원단으로 통기성이 뛰어나고<br />
+					입체 컷팅으로 자신감을 더해주는 <span>타이츠</span>
+				</p>
+				<div class="button_area_v2">
+					<div class="">
+						<a href="https://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=1094"
+							campaign-label="구매하기">
+							구매하기
+							<span class="arrow"></span>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="bg">
+				<img src="/images/adidas/2020/event/xcategory/prod03.jpg" alt="">
+			</div>
+		</div>
+
+		<div class="btm_area">
+			<div class="btm_bt">
+				<div class="button_area_v2">
+					<div class="">
+						<a href="https://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=1094"
+							campaign-label="구매하기">
+							구매하기
+							<span class="arrow"></span>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="bg">
+				<img src="/images/adidas/2020/event/xcategory/btm_img.jpg" alt="">
+			</div>
+		</div>
+
+
+
+		<script type="text/javascript">
+
+
+		</script>
+
+	</div>
