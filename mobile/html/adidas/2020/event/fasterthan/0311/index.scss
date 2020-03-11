@@ -1,0 +1,577 @@
+@import './mobile/css/adidas/scss/common/mixin.scss';
+@import './mobile/css/adidas/scss/common/common.scss';
+// html,body{
+// 	height:100%;
+// }
+.not_scroll{
+	overflow: hidden;
+}
+#fasterthan{
+
+	.button_area_v2{
+		width: 130px;
+		a{
+			font-size: 1rem;
+			font-weight: normal;
+			height: 36px;
+			line-height: 34px;
+			letter-spacing: 1px;
+			position: relative;
+			span.arrow{
+				margin-left: 10px;
+				width: 25px;
+				&:after{
+					width: 8px;
+				}
+				&:before{
+					width: 8px;
+				}
+			}
+		}
+	}
+	.rel{
+		position: relative;
+	}
+	.ct{
+		position: absolute;
+		top:50%;
+		left:50%;
+		transform: translate(-50%,-50%);
+	}
+	img{
+		width:100%;
+	}
+	// .main__wrapper__txt{
+	// 	position: absolute;
+	// 	bottom:2.5rem;
+	// 	left:50%;
+	// 	transform: translateX(-50%);
+	// 	white-space: nowrap;
+	// 	text-align: center;
+
+	// 	.button_area_v2{
+	// 		margin: 17.5px auto 0;
+	// 	}
+	// }
+
+	.main__wrapper{
+		.main__wrapper__img{
+			padding-top:120%;
+			img{
+				transition:all 2s;
+				position: absolute;
+				top:50%;
+				left:50%;
+				transform: translate(-50%,-50%);
+				opacity: 0;
+				// transition: all 1s ease-in;
+				&.on{
+					opacity: 1;
+				}
+			}			
+		}
+
+	}
+	.text__wrapper{
+		padding: 0 0 2.5rem 0;
+		.text__wrapper__txt{
+			>img{
+				width:100%;
+			}
+		}
+		.button_area_v2{
+			margin:0 auto;
+		}
+	}
+	.video__wrapper{
+		position: relative;
+		video{
+			display: block;
+			width:100%;			
+		}
+		>a{
+			position: absolute;
+			top:50%;
+			left:50%;
+			transform: translate(-50%,-50%);
+			text-align: center;
+			img{
+				width:50%;
+			}
+		}
+	}
+	.state__wrapper{
+		padding:2.5rem 0;
+		h1{
+			font: 700 18px/22px 'NotoSansKR';
+			color:#f0350e;
+			text-align: center;
+			letter-spacing: 0;
+		}
+		p{
+			font: 400 1.1rem/1.6rem 'NotoSansKR';
+			color: #000;
+			text-align: center;
+			letter-spacing: 0;
+			margin: 1.5rem 0 0 0;
+		}
+		span{
+			display:block;
+			text-align: center;
+			margin:2rem 0 0 0;
+			img{
+				width:37%;
+			}
+		}
+	}
+	.slide__wrapper{
+		background:url('/images/adidas/2020/event/fasterthan/2002_a_fasterthan_bg.jpg') no-repeat;
+		background-position: top;
+		background-size:100% 100%;
+		padding:0 1rem;
+		text-align: center;
+		&.lb{
+			background:url('/images/adidas/2020/event/fasterthan/0311/slide_lookbook_bg.jpg') no-repeat;
+			background-position: top;
+			background-size:100% 100%;
+			padding:3rem 1rem 0;
+			text-align: center;
+			&.rvs{
+				background:url('/images/adidas/2020/event/fasterthan/0311/slide_lookbook_bg_rvs.jpg') no-repeat;
+				background-position: top;
+				background-size:100% 100%;
+				padding:3rem 1rem 0;
+				text-align: center;
+			}
+		}
+		>img{
+			padding:4rem 0 2rem;
+			width:90%;
+		}
+		#slide{
+			.item{
+				position: relative;
+				a{
+					position: absolute;
+					bottom:11%;
+					left:0;
+					width:100%;
+					height:50%;
+				}
+				// .inner{
+				// 	text-align: center;
+				// 	padding: 1rem 1rem 0 1rem;
+				// 	background:#fff;
+				// 	min-height: 76vh;
+				// 	height: 76vh;
+				// 	.txt{
+				// 		min-height: 38.5vh;
+				// 		height: 38.5vh;
+				// 		margin: 2rem 0 0 0;
+				// 		h1{
+				// 			font: 700 1.5rem/1.5rem 'NotoSansKR';
+				// 			color:#000;
+				// 			text-align: center;
+				// 			letter-spacing: 0;
+				// 			>img{
+				// 				width:28%;
+				// 				display:inline-block;
+				// 			}
+				// 		}
+				// 		span{
+				// 			font: 400 1.2rem/1.5rem 'NotoSansKR';
+				// 			color:#000;
+				// 			letter-spacing: 0;
+				// 			margin:1rem 0 0 0;
+				// 			display: inline-block;
+				// 			strong{
+				// 				font-weight: 900;
+				// 			}
+				// 			.light{
+				// 				font-weight: 300;
+				// 				display: inline-block;
+				// 			}
+				// 		}
+				// 		p{
+				// 			font: 300 1rem/1.8rem 'NotoSansKR';
+				// 			color: #000;
+				// 			text-align: center;
+				// 			letter-spacing: 0;
+				// 		}
+				// 	}
+				// 	em{
+				// 		font: 400 1.3rem/1.3rem 'NotoSansKR';
+				// 		color:#000;
+				// 		letter-spacing: 0;
+				// 		display: inline-block;
+				// 	}
+				// }
+				// &.ver02{
+				// 	.inner{
+				// 		.txt{
+				// 			min-height: 25vh;
+				// 			height: 25vh;
+				// 			h1{
+				// 				margin:3rem 0 0 0;
+				// 			}
+				// 			span{
+	
+				// 			}
+				// 			P{
+				// 				margin:1rem 0;
+				// 			}
+				// 		}
+				// 		em{
+				// 			margin: 2rem 0;
+				// 		}
+				// 	}
+				// }
+			}
+			.slick-dots{
+				text-align: center;
+				padding: 1rem 0 4rem;
+				li{
+					width:13px;
+					height:13px;
+					border:1px solid #fff;
+					border-radius:50%;
+					display: inline-block;
+					margin-right:5px;
+					&:last-child{
+						margin-right:0;
+					}
+					button{
+						background:none;
+						border:0;
+						text-indent: -9999px;
+					}
+					&.slick-active{
+						background:#fff;
+					}
+				}
+			}
+		}
+		.sld_lookbook{
+			.item{
+				ul{
+					overflow: hidden;
+					li{
+						float: left;
+						width: 33%;
+						margin: 0 0.5% 0.5% 0;
+						&.head{
+							width: 66.5%;
+						}
+						&.mrnone{
+							margin-right: 0;
+						}
+						a{
+							display: block;
+							img{
+								display: block;
+								width: 100%;
+							}
+						}
+					}
+				}
+			}
+			.slick-dots {
+				text-align: center;
+				padding: 1rem 0 3rem;
+
+				li {
+					width: 13px;
+					height: 13px;
+					border: 1px solid #000;
+					border-radius: 50%;
+					display: inline-block;
+					margin-right: 5px;
+
+					&:last-child {
+						margin-right: 0;
+					}
+
+					button {
+						background: none;
+						border: 0;
+						text-indent: -9999px;
+					}
+
+					&.slick-active {
+						background: #000;
+					}
+				}
+			}
+		}
+	}
+	.aside__wrapper{
+		padding:2.5rem 0;
+		h1{
+			font: 700 18px/22px 'NotoSansKR';
+			color:#000;
+			text-align: center;
+			letter-spacing: 0;
+		}
+		p{
+			font: 400 12px/17px 'NotoSansKR';
+			color:#000;
+			text-align: center;
+			letter-spacing: 0;
+			margin:1.5rem 0 0 0;
+		}
+		.button_area_v2{
+			margin: 2rem auto 0;
+		}
+	}
+	.clock__wrapper{
+		background: url('/images/adidas/2020/event/fasterthan/ddayBg.jpg') no-repeat;
+		background-position: top;
+		background-size: 100% 100%;
+		padding: 3rem 0 4rem;
+		text-align: center;
+		>span{
+			font: 700 18px/18px 'NotoSansKR';
+			color:#fff;
+		}
+		.clock__wrapper__timer{
+			padding-bottom: 120px;
+			position: relative;
+			margin: 2rem 0;	
+			.inner{
+				position: absolute;
+				top:0;
+				left:50%;
+				transform: translateX(-50%);
+				width: 100%;
+				>div{
+					background:url('/images/adidas/2020/event/fasterthan/clockBg_single.png') no-repeat;
+					background-position: top;
+					display: inline-block;
+					background-size:100% auto;
+					min-width: 70px;
+					min-height: 130px;
+					margin-right: 3px;
+					.clockBg{
+						font: 700 100px/100px 'AdihausDIN-Cond';
+						color: #fff;
+						// position: absolute;
+						// top: 57%;
+						// left: 50%;
+						// transform: translate(-50%,-50%);
+						text-align: center;
+						padding-top: 18px;
+					}
+					#first{
+		
+					}
+					#second{
+		
+					}
+				}
+			}
+		}
+		.clock__wrapper__txt{
+			text-align: center;
+			h1{
+				font: 700 18px/23px 'NotoSansKR';
+				color:#fff;
+				text-align: center;
+				letter-spacing: 0;
+			}
+			p{
+				font: 400 12px/17px 'NotoSansKR';
+				color:#fff;
+				text-align: center;
+				letter-spacing: 0;
+				margin:1.5rem 0 0 0;
+			}
+			.button_area_v2{
+				margin:0 auto;
+				margin-top:3rem;
+			}
+		}
+
+
+
+	}
+	.prod__wrapper{
+		>img{}
+		.prod__wrapper__inner{
+			padding:2rem;
+			.txt{
+				padding:2rem;
+				white-space: nowrap;
+				h1{
+					font: 700 18px/22px 'NotoSansKR';
+					color:#000;
+					text-align: center;
+					letter-spacing: 0;
+					strong{
+						font: 700 18px/22px 'NotoSansKR';
+						color:#f0350e;
+					}
+				}
+				p{
+					font: 400 12px/17px 'NotoSansKR';
+					color:#000;
+					text-align: center;
+					letter-spacing: 0;
+					margin:1rem 0;
+				}
+				.button_area_v2{
+					margin:0 auto;
+					&:nth-child(3){
+						width:120px;
+					}
+					&:nth-child(4){
+						margin-top:1rem;
+					}
+				}
+			}
+		}
+	}
+	.modal-popup-wrapper{
+		.popup-header {
+			a {
+				z-index: 2;
+
+				&::before {
+					background: #fff;
+				}
+
+				&::after {
+					background: #fff;
+				}
+			}
+		}
+		&.pop_bot{
+			.popup {
+
+				// top: 80%!important;
+				
+
+				.popup-contents {
+					background: transparent;
+					padding: 0;
+					margin: 1.2rem;
+					height: 69vh;
+					overflow: auto;
+
+					.content__wrapper {
+						position: relative;
+
+						.pop_slide {
+							background: #fff;
+							padding: 2rem;
+
+							.item {
+								img {
+									width: 100%;
+									display: block;
+								}
+							}
+
+							.slick-dots {
+								text-align: center;
+								padding: 1rem 0 3rem;
+
+								li {
+									width: 13px;
+									height: 13px;
+									border: 1px solid #000;
+									border-radius: 50%;
+									display: inline-block;
+									margin-right: 5px;
+
+									&:last-child {
+										margin-right: 0;
+									}
+
+									button {
+										background: none;
+										border: 0;
+										text-indent: -9999px;
+									}
+
+									&.slick-active {
+										background: #000;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		&.pop_look{
+			.popup-contents {
+				background: transparent;
+				height: 63vh;
+				overflow: hidden;
+				.slide_popup{
+					margin: 0 4rem;
+					.slick-slide{
+						img{
+							display: inline-block;
+							vertical-align: middle;
+						}
+					}
+					.slick-dots {
+						text-align: center;
+						padding: 2rem 0 0;
+
+						li {
+							width: 13px;
+							height: 13px;
+							border: 1px solid #fff;
+							border-radius: 50%;
+							display: inline-block;
+							margin-right: 5px;
+
+							&:last-child {
+								margin-right: 0;
+							}
+
+							button {
+								background: none;
+								border: 0;
+								text-indent: -9999px;
+							}
+
+							&.slick-active {
+								background: #fff;
+							}
+						}
+					}					
+				}
+				a.btn {
+					display: inline-block;
+					position: absolute;
+					top: 50%;
+					display: inline-block;
+					width: 5rem;
+					height: 5rem;
+					transform: translateY(-80%);
+
+					// text-indent: -3000px;
+					&.prev {
+						left: 0;
+						background: url('/images/adidas/2019/event/missoni/1904_a_missoni_prev_MO.png') 0 0 no-repeat;
+						background-size: 50%;
+						background-position: center;
+					}
+
+					&.next {
+						right: 0;
+						background: url('/images/adidas/2019/event/missoni/1904_a_missoni_next_MO.png') 0 0 no-repeat;
+						background-size: 50%;
+						background-position: center;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
