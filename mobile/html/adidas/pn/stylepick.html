@@ -672,7 +672,7 @@
 					// 탭 섹션 이동
 					function moveTo(sec){
 						var offset = $(".sec" + sec).offset();
-						$('html, body').animate({scrollTop : offset.top-20}, 400);
+						$('html, body').animate({scrollTop : offset.top-70}, 400);
 					}
 					$('.tabs div div').click(function(){
 						var index = $(this).index();
@@ -704,7 +704,7 @@
 						var offsets = $(".sec1").offset().top;
 						var section = $('#stylepick .section');
 						// var index = 0;
-						if(thisScroll > offsets){
+						if(thisScroll > offsets-130){
 							$('.tabs').addClass('fixed');
 						}else{
 							$('.tabs').removeClass('fixed');
