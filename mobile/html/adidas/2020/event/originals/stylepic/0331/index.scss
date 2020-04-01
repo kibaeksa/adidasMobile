@@ -1,0 +1,486 @@
+@import './mobile/css/adidas/scss/common/mixin.scss';
+@import './mobile/css/adidas/scss/common/common.scss';
+// html,body{
+// 	height:100%;
+// }
+.not_scroll{
+	overflow: hidden;
+}
+#stylepick{
+
+	// .button_area_v2{
+	// 	width: 130px;
+	// 	a{
+	// 		font-size: 1rem;
+	// 		font-weight: normal;
+	// 		height: 36px;
+	// 		line-height: 34px;
+	// 		letter-spacing: 1px;
+	// 		position: relative;
+	// 		span.arrow{
+	// 			margin-left: 10px;
+	// 			width: 25px;
+	// 			&:after{
+	// 				width: 8px;
+	// 			}
+	// 			&:before{
+	// 				width: 8px;
+	// 			}
+	// 		}
+	// 	}
+	// }
+	.button_area_border{
+		position: relative;
+		display: inline-block;
+		margin:2rem 0 0 0;
+		&.white{
+			a{
+				background: #fff;
+				color: #000;
+				border: 1px solid #000;
+				span.arrow{
+					background: #000;
+					&:after{
+						background: #000;
+					}
+					&:before{
+						background:#000;
+					}
+				}
+			}
+		}
+		a{
+			font-weight: normal;
+			height: 36.5px;
+			line-height: 36.5px;
+			position: relative;
+			display: block;
+			text-align: center;
+			font: 500 1rem/36.5px 'NotoSansKR';
+			background: #000;
+			color: #fff;
+			border: 1px solid #000;
+			padding: 0 1.5rem;
+			span.arrow{
+				margin-left: 10px;
+				width: 20px;
+				position: relative;
+				top: -1px;
+				display: inline-block;
+				height: 2px;
+				background: #fff;
+				vertical-align: middle;
+				width: 20px;
+				&:after{
+					position: absolute;
+					bottom: -3px;
+					right: -2px;
+					content: '';
+					display: inline-block;
+					height: 3px;
+					background: #fff;
+					transform: rotate(-45deg);
+					-webkit-transform: rotate(-45deg);
+					width: 8px;
+				}
+				&:before{
+					width: 8px;
+					position: absolute;
+					top: -3px;
+					right: -2px;
+					content: '';
+					display: inline-block;
+					height: 3px;
+					background: #fff;
+					transform: rotate(45deg);
+					-webkit-transform: rotate(45deg);
+				}
+			}
+		}
+		.left{
+			width:1px;
+			background: #000;
+			height: 100%;
+			position: absolute;
+			top: 5%;
+			left: 101%;
+		}
+		.left_width{
+			width: 2.5px;
+			background: #000;
+			height: 1px;
+			position: absolute;
+			top: 5%;
+			left: 100%;
+		}
+		.bottom{
+			height: 1px;
+			width: 100%;
+			background: #000;
+			position: absolute;
+			bottom: -5%;
+			left: 1%;
+		}
+		.bottom_height{
+			height: 2px;
+			width: 1px;
+			background: #000;
+			position: absolute;
+			bottom: -5%;
+			left: 1%;
+		}
+	}
+
+	.rel{
+		position: relative;
+	}
+	.ct{
+		position: absolute;
+		top:50%;
+		left:50%;
+		transform: translate(-50%,-50%);
+	}
+	img{
+		width:100%;
+	}
+
+	.main__wrapper{
+		.main__wrapper__img{
+			padding-bottom: 135%;
+			img{
+				opacity: 0;
+				transition: all 2s;
+				position: absolute;
+				top:50%;
+				left:50%;
+				transform: translate(-50%,-50%);
+				width:100%;
+				
+				&.on{
+					opacity: 1;
+				}
+			}			
+		}
+	}
+	.aside__wrapper{
+		h1,em,p{
+			letter-spacing: 0;
+		}
+		.aside__wrapper__txt{
+			padding: 2.5rem 0 2rem 0;
+			h1{
+				text-align: center;
+				img{
+					width:88%;
+					margin:0 auto;
+				}
+			}
+			em{
+				font: 700 14px/14px 'NotoSansKR';
+				color:#000;
+				text-align: center;
+				display: block;
+				margin: 1.5rem 0 1rem;
+			}
+			p{
+				font: 400 11px/17px 'NotoSansKR';
+				color:#000;
+				text-align: center;
+			}
+		}
+		.link__wrapper{
+			padding:0 1rem;
+			&::after{
+				display: block;
+				clear:both;
+				content:'';
+			}
+			div{
+				float:left;
+				width:49%;
+				padding-right:5px;
+				&:last-child{
+					padding:0;
+				}
+			}
+		}
+	}
+	.tabs{
+		display:none;
+		background:url('/images/adidas/2020/event/originals/stylepic/0331/2003_a_stylepick_tabBg.jpg') no-repeat;
+		background-position: top;
+		background-size: 100% 100%;
+		&.fixed{
+			position: fixed;
+			display: block;
+			top:0;
+			width:100%;
+			z-index:3;
+		}
+		>div{
+			font-size: 0;
+			margin:0 1rem;
+			div{
+				text-align: center;
+				width:50%;
+				background:url('/images/adidas/2020/event/originals/stylepic/0331/2003_a_stylepick_tab01_off.png') no-repeat;
+				background-position: center;
+				background-size: 70% auto;
+				padding-bottom: 20%;
+				display: inline-block;
+				cursor:pointer;
+				&.active{
+					background:url('/images/adidas/2020/event/originals/stylepic/0331/2003_a_stylepick_tab01_on.png') no-repeat;
+					background-size: 70% auto;
+					background-position: center;
+				}
+				&:nth-child(2){
+					background:url('/images/adidas/2020/event/originals/stylepic/0331/2003_a_stylepick_tab02_off.png') no-repeat;
+					background-position: center;
+					background-size: 70% auto;
+					&.active{
+						background:url('/images/adidas/2020/event/originals/stylepic/0331/2003_a_stylepick_tab02_on.png') no-repeat;
+						background-position: center;
+						background-size: 70% auto;
+
+					}
+				}
+			}
+		}
+	}
+
+	.section{
+		.headline{
+			padding: 3rem 0 1.5rem;
+			h1{
+				font: 21px/23px 'adinenuPro-black';
+				color:#ff5656;
+				text-align: center;
+			}
+		}
+		.section__wrapper{
+			position: relative;
+			>a{
+				position: absolute;
+				text-indent: -9999px;
+				z-index:2;
+			}
+			.button__wrapper{
+				position: absolute;
+				bottom:4%;
+				left:50%;
+				transform: translateX(-50%);
+				.button_area_border{}
+			}
+		}
+		>.button__wrapper{
+			padding:3rem 0;
+			text-align: center;
+			.button_area_border{
+				margin:0;
+			}
+		}
+		&.sec1{
+			.section__wrapper{
+				.button__wrapper{
+					bottom:7%;
+				}
+				&:nth-child(2){
+					.button__wrapper{
+						bottom:8%;
+					}
+				}
+				&:nth-child(3){
+					.button__wrapper{
+						bottom:5.5%;
+					}
+				}
+				&:nth-child(4){
+					.button__wrapper{
+						bottom:6.5%;
+					}
+				}
+			}	
+		}
+		&.sec2{
+			.headline{
+				background:#f9fbfd;
+				h1{
+					color:#0006ff;
+				}
+			}
+			.section__wrapper{
+				&:nth-child(3){
+					.button__wrapper{
+						bottom:3%;
+					}
+				}
+				&:nth-child(4){
+					.button__wrapper{
+						bottom:6%;
+					}
+				}
+			}
+		}
+	}
+	.slide__wrapper{
+		background:url('/images/adidas/2020/event/originals/stylepic/0331/2003_a_stylepick_bg01.jpg') no-repeat;
+		background-position: top;
+		background-size:100% 100%;
+		padding:2rem 1rem;
+		text-align: center;
+		>img{
+			padding:4rem 0 2rem;
+			width:90%;
+		}
+		.sld_lookbook{
+			.item{
+				ul{
+					overflow: hidden;
+					position: relative;
+					top:1rem;
+					left: 0.6rem;
+					li{
+						float: left;
+						width: 31%;
+						margin: 0 1.5% 2% 0;
+						&.clear{
+							clear:both;
+						}
+						a{
+							display: block;
+							position: relative;
+							img{
+								display: block;
+								width: 100%;
+							}
+							.hover{
+								opacity: 1;
+								transition:all 1s;
+								position: absolute;
+								top:0.4rem;
+								right:0.4rem;
+								img{
+									width: 70%;
+    								margin: 0 auto;
+								}
+							}
+							// &:hover{
+							// 	.hover{
+							// 		opacity: 1;
+							// 	}
+							// }
+						}
+					}
+				}
+			}
+			.slick-dots {
+				text-align: center;
+				padding: 0.8rem 0.5rem 0;
+
+				li {
+					width:27.5px;
+					height:2.5px;
+					background:#434441;
+					display: inline-block;
+					margin-right:5px;
+					&:last-child{
+						margin-right:0;
+					}
+					button{
+						background:none;
+						border:0;
+						text-indent: -9999px;
+						outline: unset;
+					}
+					&.slick-active{
+						background:#fff;
+					}
+				}
+			}
+		}
+	}
+	.bottom__wrapper{
+		padding:4.5rem 3rem;
+		background:#e6e7ed;
+		.bottom__wrapper__item{
+			margin: 0 0 1.2rem 0;
+			&:last-child{
+				margin:0;
+			}
+		}
+	}
+
+	.modal-popup-wrapper{
+		.popup-header {
+			padding-bottom:10%;
+			background:none;
+			a {
+				z-index: 2;
+				right: 5rem;
+				&::before {
+					background: #fff;
+				}
+
+				&::after {
+					background: #fff;
+				}
+			}
+		}
+		&.pop_look{
+			.popup-contents {
+				background: transparent;
+				// height: 63vh;
+				overflow: hidden;
+				.slide_popup{
+					margin: 0 4rem;
+					.slick-slide{
+						img{
+							display: inline-block;
+							vertical-align: middle;
+						}
+					}
+				}
+				.numbering{
+					text-align: center;
+					color:#fff;
+					font: 13px/13px 'AdihausDIN-Bold';
+					margin: 1.5rem 0;
+					letter-spacing: 1px;
+					em,span{
+						color:#fff;
+						font: 13px/13px 'AdihausDIN-Bold';
+						letter-spacing: 1px;
+					}
+				}
+				a.btn {
+					display: inline-block;
+					position: absolute;
+					top: 50%;
+					display: inline-block;
+					width: 5rem;
+					height: 5rem;
+					transform: translateY(-80%);
+
+					// text-indent: -3000px;
+					&.prev {
+						left: 0;
+						background: url('/images/adidas/2019/event/missoni/1904_a_missoni_prev_MO.png') 0 0 no-repeat;
+						background-size: 50%;
+						background-position: center;
+					}
+
+					&.next {
+						right: 0;
+						background: url('/images/adidas/2019/event/missoni/1904_a_missoni_next_MO.png') 0 0 no-repeat;
+						background-size: 50%;
+						background-position: center;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+

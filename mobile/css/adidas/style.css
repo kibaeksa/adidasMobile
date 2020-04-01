@@ -780,7 +780,48 @@ html.no_srl{
 	width: 100%;
 	display: table;
 }
-
+/* 200319 이메일 인증 추가 */
+.form_table .email td >a.email_code{
+	width: 140px;
+    background: #505050;
+	color: #fff;
+	margin-top: 10px;
+}
+.form_table .email td .dot_line{
+	border: 0.5px dashed #ccc;
+    width: 100%;
+    margin: 10px 0;
+}
+.form_table .email td .td_wrap.email_validation input{
+	width: 100%;
+    min-width: 40px;
+    height: 40px;
+    padding-left: 5px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.form_table .email td .td_wrap.email_validation{
+	display:table;
+    width: 100%;
+}
+.form_table .email td .td_wrap.email_validation .cell_fix{
+	width:60%;
+	min-width: 60px;
+	display: table-cell;
+}
+.form_table .email td .td_wrap.email_validation .cell{
+	display: table-cell;
+    width: 100%;
+    padding-left:10px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+	vertical-align: top;
+}
+.form_table .email td .td_wrap.email_validation .cell a{
+	background: #505050;
+	color:#fff;
+}
+/* 200319 이메일 인증 추가 */
 
 .form_table td>div.td_wrap>div{
 	width: 100%;
@@ -20389,7 +20430,7 @@ em.prd_speedy .tooltip-box:before{
 
 #container.register-main .form_table{
 	margin-top: 15px;
-    /* padding:0 0 15px 0; */
+    padding:0 0 15px 0;
 }
 
 #container.register-main .form_table .row{
@@ -20448,8 +20489,26 @@ em.prd_speedy .tooltip-box:before{
 	margin-left: 5px;
 }
 
-#container.register-main .form_table .row.phone{
+#container.register-main .form_table .row.phone.able_edit{
 	margin-bottom: 30px;
+}
+
+#container.register-main .form_table .row.phone.able_edit input{
+	width: 63%;
+}
+
+#container.register-main .form_table .row.phone.able_edit .btn_phoneedit{
+	display: block;
+	width: 35%;
+	height: 40px;
+	line-height: 40px;
+	color: #fff;
+	background: #b3b3b3;
+	border-radius: 2px;
+	font-size: 13px;
+	text-align: center;
+	
+	margin-left: 2%;
 }
 
 #container.register-main .form_table .row.birth{
