@@ -1,0 +1,374 @@
+<div id="container">
+	<style type="text/css">
+		@media screen and (max-width: 320px) {
+			html {
+				font-size: 10px
+			}
+		}
+
+		@media screen and (min-width: 800px) {
+			html {
+				font-size: 12px
+			}
+		}
+
+		.pseudo-element {
+			content: '';
+			display: block
+		}
+
+		#rdy {
+			position: relative
+		}
+
+		#rdy .button_area_v2 {
+			display: inline-block
+		}
+
+		#rdy .button_area_v2 a {
+			padding: 0 6vw;
+			font: 500 1rem/3.4rem 'NotoSansKR';
+			letter-spacing: .15rem;
+			height: 3.4rem
+		}
+
+		#rdy .button_area_v2 a .arrow {
+			margin-left: 1rem;
+			width: 20px
+		}
+
+		#rdy .button_area_v2 a .arrow::after,
+		#rdy .button_area_v2 a .arrow::before {
+			width: 7px;
+			height: 2px
+		}
+
+		#rdy .button_area_v2 a .arrow::before {
+			bottom: -2px
+		}
+
+		#rdy .button_area_v2 a .arrow::after {
+			top: -2px
+		}
+
+		#rdy .top_area {
+			position: relative
+		}
+
+		#rdy .top_area>img {
+			width: 100%;
+			display: block
+		}
+
+		#rdy .statement {
+			position: relative
+		}
+
+		#rdy .statement .bg>img {
+			width: 100%;
+			display: block
+		}
+
+		#rdy .cont01_area {
+			position: relative
+		}
+
+		#rdy .cont01_area .txt_box {
+			position: absolute;
+			bottom: 5%;
+			left: 50%;
+			transform: translateX(-50%)
+		}
+
+		#rdy .cont01_area .txt_box .s_txt {
+			font: 300 1.1rem/1.8rem 'NotoSansKR';
+			color: #fff;
+			text-align: center;
+			letter-spacing: 1px;
+			white-space: nowrap
+		}
+
+		#rdy .cont01_area .txt_box .b_txt {
+			margin-top: 1rem;
+			font: 700 1.4rem/2.2rem 'NotoSansKR';
+			color: #fff;
+			text-align: center;
+			letter-spacing: 2px;
+			white-space: nowrap
+		}
+
+		#rdy .cont01_area .bg>img {
+			display: block;
+			width: 100%
+		}
+
+		#rdy .prod01 {
+			position: relative
+		}
+
+		#rdy .prod01 .bg>img {
+			width: 100%;
+			display: block
+		}
+
+		#rdy .prod01 .prod_bt {
+			position: absolute;
+			top: 83%;
+			left: 50%;
+			transform: translateX(-100%);
+			z-index: 5;
+			white-space: nowrap;
+			text-align: center
+		}
+
+		#rdy .prod01 .prod_bt .button_area_v2 a {
+			padding: 0 20px
+		}
+
+		#rdy .prod02 {
+			position: relative
+		}
+
+		#rdy .prod02 .bg>img {
+			width: 100%;
+			display: block
+		}
+
+		#rdy .prod02 .prod_bt {
+			position: absolute;
+			top: 83%;
+			left: 50%;
+			transform: translateX(0%);
+			z-index: 5;
+			white-space: nowrap;
+			text-align: center
+		}
+
+		#rdy .prod02 .prod_bt .button_area_v2 a {
+			padding: 0 20px
+		}
+
+		#rdy .usp_area {
+			position: relative;
+			padding-top: 0.5rem
+		}
+
+		#rdy .usp_area ul li {
+			margin-top: 3rem;
+			text-align: center
+		}
+
+		#rdy .usp_area ul li>img {
+			display: inline-block;
+			width: 66%;
+			text-align: center
+		}
+
+		#rdy .usp_area ul li p {
+			font: 400 1.2rem/1.8rem 'NotoSansKR';
+			color: #000;
+			margin-top: 10px;
+			text-align: center
+		}
+
+		#rdy .cont02_area {
+			position: relative;
+			margin-top: 3rem
+		}
+
+		#rdy .cont02_area .txt_box {
+			position: absolute;
+			bottom: 6%;
+			left: 50%;
+			transform: translateX(-50%)
+		}
+
+		#rdy .cont02_area .txt_box p {
+			margin-top: 30px;
+			font: 400 1rem/1.5rem 'NotoSansKR';
+			color: #fff;
+			text-align: center;
+			letter-spacing: 1px;
+			font-style: italic;
+			white-space: nowrap
+		}
+
+		#rdy .cont02_area .txt_box p span {
+			line-height: 3.4rem;
+			letter-spacing: 1px
+		}
+
+		#rdy .cont02_area .txt_box h4 {
+			margin-top: 1rem;
+			font: 700 1.4rem/2rem 'NotoSansKR';
+			color: #fff;
+			text-align: center;
+			letter-spacing: 1px;
+			white-space: nowrap
+		}
+
+		#rdy .cont02_area .bg>img {
+			display: block;
+			width: 100%
+		}
+
+		#rdy .btm_area {
+			position: relative
+		}
+
+		#rdy .btm_area .bg>img {
+			width: 100%;
+			display: block
+		}
+
+		#rdy .btm_area .btm_bt {
+			position: absolute;
+			bottom: 18%;
+			left: 50%;
+			transform: translate(-50%);
+			z-index: 5;
+			text-align: center
+		}
+
+		#rdy .btm_area .btm_bt .button_area_v2 a {
+			padding: 0 20px
+		}
+	</style>
+
+	<div id="rdy">
+
+
+		<div class="top_area">
+			<img src="/images/adidas/2020/event/rdy/top_img.jpg" alt="">
+		</div>
+
+		<div class="statement">
+			<div class="bg">
+				<img src="/images/adidas/2020/event/rdy/statement_img.jpg" alt="">
+			</div>
+		</div>
+
+		<div class="cont01_area">
+			<div class="txt_box">
+				<p class="s_txt">
+					HEAT.RDY는 어떤 환경과 날씨에도 방해 받지 않고<br />
+					항상 움직일 준비가 되어 있는 상태로 만들어 줍니다.
+				</p>
+				<p class="b_txt">
+					HEAT.RDY와 함께 준비되어 있는<br />
+					당신의 자신감은 더위도 막을 수 없습니다.
+				</p>
+			</div>
+			<div class="bg">
+				<img src="/images/adidas/2020/event/rdy/cont01_img.jpg" alt="">
+			</div>
+		</div>
+
+		<div class="prod01">
+			<div class="prod_bt">
+				<div class="button_area_v2">
+					<div class="">
+						<a href="https://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=1194"
+							campaign-label="구매하기">
+							구매하기
+							<span class="arrow"></span>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="bg">
+				<img src="/images/adidas/2020/event/rdy/prod01_img.jpg" alt="">
+			</div>
+		</div>
+
+		<div class="prod02">
+			<div class="prod_bt">
+				<div class="button_area_v2">
+					<div class="">
+						<a href="https://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=1194"
+							campaign-label="구매하기">
+							구매하기
+							<span class="arrow"></span>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="bg">
+				<img src="/images/adidas/2020/event/rdy/prod02_img.jpg" alt="">
+			</div>
+		</div>
+
+		<div class="usp_area">
+			<ul>
+				<li>
+					<img src="/images/adidas/2020/event/rdy/usp01.jpg" alt="">
+					<p>
+						땀을 빠르게 흡수하고 배출시켜<br />
+						쾌적한 착용감을 제공합니다.
+					</p>
+				</li>
+				<li>
+					<img src="/images/adidas/2020/event/rdy/usp02.jpg" alt="">
+					<p>
+						우수한 통기성으로<br />
+						움직이는 동안에도 시원함이 지속됩니다.
+					</p>
+				</li>
+				<li>
+					<img src="/images/adidas/2020/event/rdy/usp03.jpg" alt="">
+					<p>
+						공기 순환을 유도하는 디자인으로<br />
+						열기가 피부에 닿지 않도록 도와 줍니다.
+					</p>
+				</li>
+			</ul>
+		</div>
+
+		<div class="cont02_area">
+			<div class="txt_box">
+				<p>
+					내가 편안하게 수영을 하기 위해서는 어깨와 코어가 중요하다.<br />
+					그 준비가 잘 되었을 때 나는 자신감 있는 수영을 할 수 있다.<br />
+
+					<span>물 밖에서는 긴장과 부담을 느낀다.<br /></span>
+
+					하지만 물에 들어가는 순간 편안함을 느끼고<br />
+					내가 잘 할 수 있다는 믿음이 생긴다.
+				</p>
+				<h4>
+					- 국가대표 수영 선수 김서영
+				</h4>
+			</div>
+			<div class="bg">
+				<img src="/images/adidas/2020/event/rdy/cont02_img.jpg" alt="">
+			</div>
+		</div>
+
+		<div class="btm_area">
+			<div class="btm_bt">
+				<div class="button_area_v2">
+					<div class="">
+						<a href="https://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=1194"
+							campaign-label="구매하기">
+							구매하기
+							<span class="arrow"></span>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="bg">
+				<img src="/images/adidas/2020/event/rdy/statement02_img.jpg" alt="">
+			</div>
+		</div>
+
+
+
+		<script type="text/javascript">
+
+
+		</script>
+
+	</div>
+	<!-- //ivypark -->
+
+</div>
