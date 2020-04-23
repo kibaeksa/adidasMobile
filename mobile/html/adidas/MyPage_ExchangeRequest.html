@@ -2,16 +2,19 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no" />
 	<meta name="format-detection" content="telephone=no">
 	<meta http-equiv="x-rim-auto-match" content="none">
 
 	<link href="/css/adidas/style.css" type="text/css" rel="stylesheet" />
 	<link href="/css/adidas/fonts.css" type="text/css" rel="stylesheet" />
 
-	<script type="text/javascript" src="/js/jquery-1.12.0.min.js"></script>
-	<script type="text/javascript" src="/js/swipe.js"></script>
-	<script type="text/javascript" src="/js/owl.carousel.js"></script>
+	<script type="text/javascript" src="/designjs/common/jquery-1.12.0.min.js"></script>
+	<script type="text/javascript" src="/designjs/common/swipe.js"></script>
+	<script type="text/javascript" src="/designjs/common/owl.carousel.min.js"></script>
+	<script type="text/javascript" src="/designjs/common/modalPopup.min.js"></script>
+	<script type="text/javascript" src="/designjs/common/zoomImage.js"></script>
+	
 
 	
 	<title>아디다스 모바일</title>
@@ -460,12 +463,13 @@
 						</tr>
 					</table>					
 				</div>
+
 				<div class="box">	
 					<div class="oprod_box">
 						<div class="imgbox">
 							<div class="img">
 								<span class="oo_label size60"><img src="http://m.adidas.co.kr/images/adidas/bg_label_olt.jpg" alt="아울렛 상품" /></span>
-								<img src="http://shop.adidas.co.kr/upload/prod/basic/220/S82516-1_220X220.jpg" alt="">
+								<img src="http://image.adidas.co.kr/upload/prod/basic/320/EG0756-01-01_220X220.jpg" alt="">
 							</div>	
 							<div class="info">
 								<p class="ctgr">UNISEX ORIGINALS</p>
@@ -488,6 +492,13 @@
 						<!-- //imgbox -->
 						<div class="tb">
 							<table class="form_table grid_top">
+								<!-- 20200421 colgroup 추가 -->
+								<colgroup>
+									<col width="120">
+									<col width="40">
+									<col width="70">
+									<col width="*">
+								</colgroup>
 								<tr class="no_line">
 									<th>교환</th>
 									<td>
@@ -498,9 +509,7 @@
 											</div>
 										</div>
 									</td>
-								</tr>
-								
-								<tr class="no_line">
+									<!-- 20200421 교환사이즈 선택항목 이동 -->
 									<th>교환 사이즈</th>
 									<td>
 										<div class="td_wrap">
@@ -513,16 +522,20 @@
 														<option value="">270</option>
 														<option value="">275</option>
 													</select>
-												</div>		
-											</div>									
+												</div>
+											</div>
 										</div>
-										<!-- //td_wrap -->						
+										<!-- 20200421 교환사이즈 선택항목 이동 END -->
 									</td>
-								</tr>		
+								</tr>
+								
+								<!-- 20200421 기존 교환 사이즈 영역 제거 (위치이동) -->
 									
 								<tr class="no_line">
-									<th>반품사유</th>
-									<td>
+									<!-- 20200421 텍스트변경 -->
+									<th>교환사유</th>
+									<!-- 20200421 교환사이즈 이동으로 td 에 colspan 추가 -->
+									<td colspan="3">
 										<div class="td_wrap" style="margin-bottom:8px;">
 											<div class="cell">
 												<div class="sel_cmtype sel_design">
@@ -536,23 +549,9 @@
 												</div>															
 											</div>					
 										</div>
-										<!-- //td_wrap -->
-										<div class="td_wrap">
-											<div class="cell">
-												<input type="text" placeholder="상세 사유 입력">
-											</div>								
-										</div>
-										<!-- //td_wrap -->						
+										<!-- 20200421 기존 교환사유 제거 (위치이동)	 -->
 									</td>
-								</tr>
-								<tr class="no_line">
-									<th>교환 배송비</th>
-									<td>
-										<div class="td_wrap">
-											3,000원
-										</div>
-									</td>
-								</tr>																
+								</tr>													
 							</table>
 						</div>
 						<!-- //tb -->
@@ -562,7 +561,7 @@
 					<div class="oprod_box">
 						<div class="imgbox">
 							<div class="img">
-								<img src="http://shop.adidas.co.kr/upload/prod/basic/220/S82516-1_220X220.jpg" alt="">
+								<img src="http://image.adidas.co.kr/upload/prod/basic/320/EG0756-01-01_220X220.jpg" alt="">
 							</div>	
 							<div class="info">
 								<p class="ctgr">UNISEX ORIGINALS</p>
@@ -585,6 +584,13 @@
 						<!-- //imgbox -->
 						<div class="tb">
 							<table class="form_table grid_top">
+								<!-- 20200421 colgroup 추가 -->
+								<colgroup>
+									<col width="120">
+									<col width="40">
+									<col width="70">
+									<col width="*">
+								</colgroup>
 								<tr class="no_line">
 									<th>교환</th>
 									<td>
@@ -595,9 +601,7 @@
 											</div>
 										</div>
 									</td>
-								</tr>
-								
-								<tr class="no_line">
+									<!-- 20200421 교환사이즈 선택항목 이동 -->
 									<th>교환 사이즈</th>
 									<td>
 										<div class="td_wrap">
@@ -610,16 +614,20 @@
 														<option value="">270</option>
 														<option value="">275</option>
 													</select>
-												</div>		
-											</div>									
+												</div>
+											</div>
 										</div>
-										<!-- //td_wrap -->						
+										<!-- 20200421 교환사이즈 선택항목 이동 END -->
 									</td>
-								</tr>		
-									
+								</tr>
+
+								<!-- 20200421 기존 교환 사이즈 영역 제거 (위치이동) -->
+
 								<tr class="no_line">
-									<th>반품사유</th>
-									<td>
+									<!-- 20200421 텍스트변경 -->
+									<th>교환사유</th>
+									<!-- 20200421 교환사이즈 이동으로 td 에 colspan 추가 -->
+									<td colspan="3">
 										<div class="td_wrap" style="margin-bottom:8px;">
 											<div class="cell">
 												<div class="sel_cmtype sel_design">
@@ -630,16 +638,102 @@
 														<option value="">부재시,경비실에 맡겨주세요.</option>
 														<option value="">부재시,경비실에 맡겨주세요.</option>
 													</select>
-												</div>															
-											</div>					
+												</div>
+											</div>
 										</div>
-										<!-- //td_wrap -->
+										<!-- 20200421 기존 교환사유 제거 (위치이동)	 -->
+									</td>
+								</tr>
+							</table>
+						</div>
+						<!-- //tb -->
+					</div>	
+					<!-- //oprod_box -->
+
+					<div class="oprod_box">
+						<div class="imgbox">
+							<div class="img">
+								<img src="http://image.adidas.co.kr/upload/prod/basic/320/EG0756-01-01_220X220.jpg" alt="">
+							</div>	
+							<div class="info">
+								<p class="ctgr">UNISEX ORIGINALS</p>
+								<p class="tit">[모델착장] 슈퍼스타 파운데이션 슈즈 80s 빈티지 디럭스</p>
+								<div class="etc">	
+									<div class="price_box">
+										<div class="price">
+											<div class="line">129,000<span>원</span></div>
+											<div class="sale adihs">85,200<span>원</span></div>
+										</div>
+									</div>								
+									<div class="ops">
+										<p style="color:#666;">사이즈 : <span style="color:#000;" class="adihs-din-b">1</span></p>
+										<p style="color:#666;">수량 : <span style="color:#000;" class="adihs-din-b">1</span></p>
+									</div>
+								</div>
+								<!-- //etc -->
+							</div>
+						</div>
+						<!-- //imgbox -->
+						<div class="tb">
+							<table class="form_table grid_top">
+								<!-- 20200421 colgroup 추가 -->
+								<colgroup>
+									<col width="120">
+									<col width="40">
+									<col width="70">
+									<col width="*">
+								</colgroup>
+								<tr class="no_line">
+									<th>교환</th>
+									<td>
 										<div class="td_wrap">
-											<div class="cell">
-												<input type="text" placeholder="상세 사유 입력">
-											</div>								
+											<div class="chk_box1">
+												<input type="checkbox" id="prod_exch3">
+												<label for="prod_exch3"></label>
+											</div>
 										</div>
-										<!-- //td_wrap -->						
+									</td>
+									<!-- 20200421 교환사이즈 선택항목 이동 -->
+									<th>교환 사이즈</th>
+									<td>
+										<div class="td_wrap">
+											<div class="cell_fix">
+												<div class="sel_cmtype sel_design">
+													<a href="#"><span>270</span></a>
+													<select name="select_size" id="select_size">
+														<option value="">260</option>
+														<option value="">265</option>
+														<option value="">270</option>
+														<option value="">275</option>
+													</select>
+												</div>
+											</div>
+										</div>
+										<!-- 20200421 교환사이즈 선택항목 이동 END -->
+									</td>
+								</tr>
+
+								<!-- 20200421 기존 교환 사이즈 영역 제거 (위치이동) -->
+
+								<tr class="no_line">
+									<!-- 20200421 텍스트변경 -->
+									<th>교환사유</th>
+									<!-- 20200421 교환사이즈 이동으로 td 에 colspan 추가 -->
+									<td colspan="3">
+										<div class="td_wrap" style="margin-bottom:8px;">
+											<div class="cell">
+												<div class="sel_cmtype sel_design">
+													<a href="#"><span>선택</span></a>
+													<select name="select_size" id="select_size">
+														<option value="">부재시,경비실에 맡겨주세요.</option>
+														<option value="">부재시,경비실에 맡겨주세요.</option>
+														<option value="">부재시,경비실에 맡겨주세요.</option>
+														<option value="">부재시,경비실에 맡겨주세요.</option>
+													</select>
+												</div>
+											</div>
+										</div>
+										<!-- 20200421 기존 교환사유 제거 (위치이동)	 -->
 									</td>
 								</tr>
 							</table>
@@ -650,8 +744,35 @@
 				</div>	
 				<!-- //box -->
 
+				<!-- 20200421 상담신청내용 / 교환배송비 이동 -->
 				<div class="box">
-					<table class="form_table" style="border-top:3px solid #000;">	
+					<table class="form_table" style="border-top:3px solid #000;">
+						<tr class="no_line">
+							<th>상담신청내용</th>
+							<td>
+								<div class="td_wrap">
+									<div class="cell">
+										<!-- 20200421 기존 input 태그에서 web과 동일하게 textarea 로 변경 -->
+										<textarea name="name" style="width:100%;" rows="4" cols="40"></textarea>
+									</div>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th>교환 배송비</th>
+							<td>
+								<div class="td_wrap">
+									3,000원
+								</div>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<!-- 20200421 상담신청내용 / 교환배송비 이동 END -->
+
+				<div class="box">
+					<!-- 20200421 구분선이 겹치므로 form_table 클래스 div에 인라인 스타일삭제 -->
+					<table class="form_table">	
 						<tr class="adr">
 							<th>수거지 주소</th>
 							<td>
@@ -874,14 +995,7 @@
 		</div>
 	</div>
 
-	<script type="text/javascript" src="/js/adidas/common.js"></script>
-	<script type="text/javascript">
-		(function($){			
-			
-		})(jQuery);	
-
-	</script>
+	<script type="text/javascript" src="/designjs/adidas/common.js"></script>
 	
 </body>
-
 </html>
