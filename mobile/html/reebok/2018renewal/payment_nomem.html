@@ -1,0 +1,2744 @@
+
+
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+
+
+<title>리복</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Cache-Control" content="max-age=0">
+<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, width=device-width, user-scalable=no">
+<link href="/css/reebok/efu2018/content.css" rel="stylesheet" type="text/css"/>
+<link href="/css/reebok/efu2018/style.css" rel="stylesheet" type="text/css"/>
+<link href="/css/reebok/efu2018/swiper.min.css" rel="stylesheet" type="text/css"/>
+
+<script src="/designjs/common/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="/designjs/reebok/efu2018/ui.js"></script>
+<script type="text/javascript" src="/designjs/reebok/efu2018/swiper.min.js" charset="UTF-8"></script>
+<script type="text/javascript" src="/designjs/reebok/efu2018/slick.min.js" charset="UTF-8"></script>
+<script type="text/javascript" src="/designjs/reebok/commonFn.js"></script>
+<script type="text/javascript" src="/designjs/reebok/iscroll.js"></script>
+<script type="text/javascript" src="/designjs/reebok/swipe.js"></script>
+<script type="text/javascript" src="/designjs/reebok/reebok_js_m.js"></script>
+<script type="text/javascript" src="/designjs/reebok/commonReebok.js"></script>
+<script type="text/javascript" src="/designjs/common/modalPopup.min.js"></script>
+<script type="text/javascript" src="/designjs/common/owl.carousel.js"></script>
+<script type="text/javascript" src="/designjs/reebok/dqAutoCompleteCommonTop.js"></script> <!-- 개발관련 -->
+<script type="text/javascript" src="/designjs/reebok/common.js"></script><!-- 개발관련 -->
+<script type="text/javascript" src="/designjs/reebok/commonReebokR.js"></script><!-- 개발관련 -->
+<script type="text/javascript" src="/designjs/reebok/recentlyViewProducts.js" charset="UTF-8"></script><!-- 개발관련 -->
+<script type="text/javascript" src="/designjs/reebok/jquery.touchSlider.js" charset="UTF-8"></script>
+
+<script type="text/javascript">
+
+// 엔터키 사용하면 로그인 액션 실행
+function fn_enterPress() {
+	if ( window.event.keyCode == 13 ) doOrderLogin();
+}
+
+// 로그인을 위한 Action 부문
+function doOrderLogin(isNaver) {
+	if(document.loginform.PWERRPUCNT.value=="5"){
+		alert("로그인 오류 횟수를 초과하였습니다.\n아이디 찾기 혹은 비밀번호 찾기를 통해 본인인증 후에 로그인 주세요.");
+		return;
+	}
+	//네이버로그인 param이 없다면 false로 초기화
+	if (isNaver == undefined) {
+		isNaver = false;
+	}
+
+	if (!isNaver) {	//네이버 로그인이 아니면 (id, pw입력해서 로그인 한 경우)
+		document.loginform.NAVER_LOGIN_YN.value = "N";
+
+		if ( document.loginform.memId.value == "" ) {
+			alert("아이디가 입력되지 않았습니다.");
+			return;
+		}
+		if ( document.loginform.memPwd.value == "" ) {
+			alert("비밀번호가 입력되지 않았습니다.");
+			return;
+		}
+	}
+	else {
+		document.loginform.NAVER_LOGIN_YN.value = "Y";
+	}
+
+	document.loginform.work.value = "true";
+
+	ga('create', 'UA-XXXXX-Y', 'auto', {'allowLinker': true});
+	ga('set', 'userId', document.loginform.memId.value);
+	ga('set', 'dimension1', document.loginform.memId.value);
+ 	ga('require', 'linker');
+	ga('linker:autoLink', ['pay.naver.com'] );
+
+	// 휴면 회원 체크
+	if(fn_restRecover()) {
+		alert('휴면회원');
+		return false;
+	}
+
+	if("\MO\Order\orderInputNoMember.action?CART_NOS=201804099471753".indexOf("om16nmd10") >= 0){
+		NetFunnel_Action({cookie_id:"NETFUNNEL_LOGIN",port:"443",proto:"https",action_id:"preApplyLogin"},document.loginform);
+	}else if("\MO\Order\orderInputNoMember.action?CART_NOS=201804099471753".indexOf("S79168") >= 0){
+		NetFunnel_Action({cookie_id:"NETFUNNEL_LOGIN",port:"443",proto:"https",action_id:"closeSpstLogin"},document.loginform);
+	}else if("" == "buyLogIn"){
+		NetFunnel_Action({cookie_id:"NETFUNNEL_LOGIN",port:"443",proto:"https",action_id:"buyLogin"},document.loginform);
+	}else{
+		NetFunnel_Action({cookie_id:"NETFUNNEL_LOGIN",port:"443",proto:"https",action_id:"loginPage"},document.loginform);
+	}
+}
+
+//전체동의
+function fnAllTermsAgree(){
+	if(jQuery('#pay_agree_yn').is(":checked")){
+		jQuery('input:checkbox[id="term1"]').prop("checked", true);
+		jQuery('input:checkbox[id="term2"]').prop("checked", true);
+		jQuery('input:checkbox[id="term3"]').prop("checked", true);
+		jQuery('input:checkbox[id="term4"]').prop("checked", true);
+	}else{
+		jQuery('input:checkbox[id="term1"]').prop("checked", false);
+		jQuery('input:checkbox[id="term2"]').prop("checked", false);
+		jQuery('input:checkbox[id="term3"]').prop("checked", false);
+		jQuery('input:checkbox[id="term4"]').prop("checked", false);
+	}
+}
+
+jQuery(function(){
+	jQuery('.odr_pay_box>.tit.toggle_arw').on('click',function(){
+		var elemId = $(this).find('input[type="hidden"]').attr('id');
+		if(jQuery(this).hasClass('open')){
+			jQuery(this).removeClass('open');
+			jQuery(this).siblings('.cont').hide();
+
+			if( elemId == 'chkTp') {
+				jQuery('.odr_pay_box .add_toggle_arw').removeClass('open');
+				jQuery('.cont.add_cont').hide();
+			}
+		}else{
+			jQuery(this).addClass('open');
+			jQuery(this).siblings('.cont').show();
+
+			if( elemId == 'chkTp') {
+				jQuery('.odr_pay_box .add_toggle_arw').addClass('open');
+				jQuery('.cont.add_cont').show();
+			}
+		}
+	});
+
+	//배송비 팝업
+	jQuery('.icons').bind('click',function(event){
+		jQuery(this).parent().find('.tooltip-box').addClass('active');
+	});
+	jQuery('.tooltip-contents .close_x_btn').bind('click',function(event){
+		event.stopPropagation();
+		jQuery(this).parent().parent().removeClass('active');
+	});
+
+	//배송비 팝업
+	jQuery('.icons.aft').bind('click',function(event){
+		jQuery(this).parent().find('.tooltip-box').addClass('active');
+	});
+	jQuery('.tooltip-contents .close_x_btn').bind('click',function(event){
+		event.stopPropagation();
+		jQuery(this).parent().parent().removeClass('active');
+	});
+
+	jQuery(".payment_list").hide();
+	jQuery(".orderTab li:first").addClass("on").show();
+	jQuery(".payment_list:first").show();
+	jQuery(".orderTab li").click(function() {
+		jQuery(".orderTab li").removeClass("on");
+		jQuery(this).addClass("on");
+		jQuery(".payment_list").hide();
+
+		var activeTab = jQuery(this).find("a").attr("href");
+		jQuery(activeTab).show();
+		return false;
+	});
+
+
+	/* 결제수단 선택 */
+	jQuery('.select_payment .payment_list>div').bind('click',function(){
+
+		if(jQuery(this).hasClass('on')){
+			return false;
+		}
+		fn_ChangePayMethodUI(jQuery(this).attr('class'));
+		return false;
+	});
+
+
+	//로그인 , 비회원주문 선택
+	jQuery('.choice_login>.row>.chk_wrap>.rdo_box1').bind('click',function(){
+		var elemId = $(this).find('input[type="radio"]').attr('id');
+		if( elemId == 'order_nomem'){
+			jQuery('.choice_login .naver_box').hide();
+			jQuery('.choice_login .login_box').hide();
+			jQuery('.choice_login .nomem_box').show();
+			jQuery('#addr_form_box').show();
+		}
+		else if (elemId == 'order_mem') {
+			jQuery('.choice_login .naver_box').hide();
+			jQuery('.choice_login .nomem_box').hide();
+			jQuery('.choice_login .login_box').show();
+			jQuery('#addr_form_box').hide();
+		}
+		else {
+			jQuery('.choice_login .naver_box').show();
+			jQuery('.choice_login .nomem_box').hide();
+			jQuery('.choice_login .login_box').hide();
+			jQuery('#addr_form_box').hide();
+		}
+	});
+
+	// 161219 전체동의 클릭 시
+	jQuery('#pay_agree_yn').bind('click',function(){
+		jQuery('.sub_agreements').fadeIn();
+	});
+
+	// 180122 마이 아디다스 구매 동의 클릭 시
+	jQuery('#agree_mi').bind('click',function(){
+		if( miOpenYn == 'N' ) {
+			alert("유의사항 확인 하신 후 동의 진행 해 주세요.");
+
+			/* 171030 유의사항 전체보기 강조 함수 START*/
+			jQuery('.btn_miadi_noti .focused_box').fadeIn(500).fadeOut(500);
+			setTimeout(function(){
+				$('.btn_miadi_noti .focused_box').fadeIn(500).fadeOut(500);
+			},1100);
+			/* 171030 유의사항 전체보기 강조 함수 END */
+
+			return false;
+		}
+		jQuery('.mi_sub_agreements').fadeIn();
+	});
+
+	// 주문서 로그인실패시workwork
+	// 본인인증후 존재하는경우 로그인 화면노출 logInExist
+	var errTxt = '';
+	var chkVal = $(":input:radio[name=order_choice]:checked").val();
+	if( errTxt == 'logInErr' || errTxt == 'false' || chkVal == 'Y' || errTxt == 'loginExist') {
+		jQuery('.choice_login .nomem_box').hide();
+		jQuery('.choice_login .login_box').show();
+		jQuery('.choice_login #order_mem').prop("checked", true);
+	}
+	jQuery('.card_bft_layer .tar>a').bind('click',function(){
+		jQuery('#card_benefit_pop').addClass('open');
+		return false;
+	});
+	jQuery('#card_benefit_pop .close_x_btn').bind('click',function(){
+		jQuery('#card_benefit_pop').removeClass('open');
+		return false;
+	});
+
+	jQuery('#allAgreeBtn').click(function() {
+		jQuery('#allAgreePop').addClass("on");
+
+	});
+	jQuery('#allAgreePop .closeBtn').click(function() {
+		jQuery('#allAgreePop').removeClass("on");
+
+	});
+});
+
+
+/* 결제 유형 선택 */
+function fn_ChangePayMethod(sel) {
+	(function($) {
+
+		var fb_cardCdList = ['spay','kakao','lpay','payco','credit','kpay','swallet','mobile','naverpay','vbank'];
+		var fb_cardNmList = ['삼성페이','카카오페이','엘페이','페이코','신용카드','케이페이','SWALLET','휴대폰 결제','네이버페이','무통장 입금'];
+		var fb_easyCdList = ['spay','kakao','lpay','payco'];
+		var fb_easyPmntCd = ['B','O','L','C'];
+		var varPaymtType 	 = '03';
+		var varPGopaymethod  = 'CARD';
+		var varSwalletYn 	 = 'N';
+		var varCardPaymtType = '01';
+		var varEasyPaymentCd = '';
+		var varTitle 		 = '';
+
+		for(var i=0; i<fb_cardCdList.size(); i++){
+			if(sel == fb_cardCdList[i]) {
+				switch (sel) {
+					case "swallet"		  : varSwalletYn 	 = 'Y';			break;
+					case "kpay"			  : varCardPaymtType = '02';		break;
+					case fb_easyCdList[i] : varCardPaymtType = '03'; varEasyPaymentCd = fb_easyPmntCd[i]; break;
+					case "vbank"		  : varPaymtType	 = '05'; varPGopaymethod  = 'VBANK';	break;
+					case "mobile"		  : varPaymtType	 = '07'; varPGopaymethod  = 'MOBILE';	break;
+					case "naverpay"		  : varPaymtType	 = '08'; varPGopaymethod  = 'NAVERPAY';	break;
+				}
+				varTitle = fb_cardNmList[i];
+			}
+		}
+
+		$("#PAYMT_TYPE").val(varPaymtType);
+		$("#P_GOPAYMETHOD").val(varPGopaymethod);
+		$("#SWALLET_YN").val(varSwalletYn);
+		$("#CARD_PAYMT_TYPE").val(varCardPaymtType);
+		$("#tit_pay_mthd").html(varTitle);
+		$("#EASY_PAYMENT_CD").val(varEasyPaymentCd);
+		$("#EASY_CARD_PAYMT_TYPE").val(sel);
+
+		if (sel == "vbank" || sel == "naverpay") {
+			jQuery('#CASH_RECPT_APPLY_Y').click();
+			fn_ChangeCashRecptApply('Y');
+		}
+		else {
+			fn_initCashRecptMoblno();	// 핸드폰번호 초기화
+			fn_initCashRecptBizrno();	// 사업자번호 초기화
+		}
+		if (sessionStorage) {
+			sessionStorage.setItem("PAY_USE_METHOD", (sel ? String(sel).toUpperCase() : 'VBANK') );
+		}
+	})(jQuery);
+}
+/* 결제 유형 UI 설정 */
+function fn_ChangePayMethodUI(cName) {
+	(function($) {
+		$('.select_payment .payment_list>div').removeClass('on');
+		$('.select_payment .payments').hide();
+		switch (cName) {
+			case "p_card"		: $('#credit_payment').show(); break;
+			case "p_kp"			: $('#cardReport_choice2').show(); break;
+			case "p_mo"			: $('#mobile_payment').show(); break;
+			case "p_kakao"		: $('#kakao_payment').show();  break;
+			case "p_lp"			: $('#lpay_payment').show();   break;
+			case "p_payco"		: $('#payco_payment').show();  break;
+			case "p_sp"			: break;
+			case "p_acc"		:
+				$('#no_accbox').show();
+				$('#panel_accbox').show();
+				$('#naver_payment').hide();
+				break;
+			case "p_naverpay"	:
+				$('#naver_payment').show();
+				$('#no_accbox').hide();
+				$('#cashReport_choice').hide();
+
+				break;
+		}
+		$('.select_payment .payment_list>div.'+cName).addClass('on');
+	})(jQuery);
+}
+
+</script>
+</head>
+<body>
+	<section id="wrap">
+
+
+	<section id="headerWrap">
+
+		<!-- 쿠폰레이어-->
+		<div id="top_banner_mycpn" class="top_bnn" style="display: none;">
+			<a href="javascript:goCoupSel();"><img src="/images/reebok/efu2018/common/temp_cpn_pop.jpg" alt="쿠폰이 발급되었습니다. 쿠폰 확인하기"></a>
+			<a href="#" class="close" onclick="closeMyCpnLayer();"><img src="/images/reebok/efu2018/common/btn_topbnn_close.png" alt="닫기"></a>
+		</div>
+
+		<div id="header">
+			<div id="nav_menu_overlay"></div><a href="javascript:void(0)" class="navmenu_close close_x_btn" style="display:none;"></a><h1><a href="/index.jsp"><img src="/images/reebok/efu2018/common/logo.png" alt="reebok"></a></h1>
+			<a href="#" class="menuBtn"><img src="/images/reebok/efu2018/common/btn_menu.png" alt="메뉴"></a>
+			<div class="menuWrap">
+				<div class="menuArea">
+					<!-- 로그인전 -->
+					<ul class="utilArea">
+						<li><a href="">로그인/회원가입</a></li>
+						<li><a href="">마이페이지</a></li>
+						<li><a href="">주문배송</a></li>
+					</ul>
+					<!-- //로그인전 -->
+					<!-- 로그인후 -->
+
+					<div class="menuLoginArea">
+						<div class="infoArea">
+							<p class="name">홍길동님</p>
+							<p class="logoutBtn"><a href="">로그아웃</a></p>
+						</div>
+						<div class="barcode">
+							<img src="/images/reebok/efu2018/common/barcode.png" alt="reeclub barcode">
+							<a href="#" class="bacodePlus"></a>
+						</div>
+						<ul class="iconArea">
+							<li class="icon1"><a href="">쿠폰</a></li>
+							<li class="icon2"><a href="">주문배송</a></li>
+							<li class="icon3"><a href="">마이페이지</a></li>
+						</ul>
+					</div>
+					<!-- //로그인후 -->
+					<ul class="menu">
+						<li class="menuTit"><a href="#" class="tit">MEN</a>
+							<ul class="deth2">
+								<li class="bgNone"><a href="http://m.reebok.co.kr/MO/Product/newPrdList.action?ctgr_cd=02001">NEW</a></li>
+								<li class="bgNone"><a href="http://m.reebok.co.kr/MO/Product/bestPrdList.action?ctgr_cd=02001">BEST</a></li>
+								<li class="bgNone"><a href="http://m.reebok.co.kr/MO/Product/salePrdList.action?ctgr_cd=02001">SALE</a></li>
+								<li><a href="#" class="tit">ONLINE ONLY</a>
+									<div class="deth3">
+										<p class="sort">MEN</p>
+										<ul>
+											<li><a href="#">전체보기</a></li>
+											<li><a href="#">신발</a></li>
+											<li><a href="#">의류</a></li>
+											<li><a href="#">용품</a></li>
+										</ul>
+									</div>
+									<div class="deth3">
+										<p class="sort">KIDS</p>
+										<ul>
+											<li><a href="#">전체보기</a></li>
+											<li><a href="#">의류</a></li>
+										</ul>
+									</div>
+								</li>
+								<li><a href="" class="ko tit">신발</a>
+									<div class="deth3">
+										<p class="sort ko all"><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02001001">전체보기</a></p>
+									</div>
+									<div class="deth3">
+										<p class="sort ko">스포츠별</p>
+										<ul>
+											<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02001001001006">트레이닝</a></li>
+											<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02001001001003">러닝</a></li>
+											<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02001001001007">캐주얼</a></li>
+											<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02001001001009">스윔</a></li>
+										</ul>
+									</div>
+									<div class="deth3">
+										<p class="sort ko">상품별</p>
+										<ul>
+											<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02001001002001">하이컷/미드컷</a></li>
+											<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02001001002002">로우컷</a></li>
+											<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02001001002003">센들/슬리퍼</a></li>
+										</ul>
+									</div>
+								</li>
+								<li><a href="" class="ko tit">의류</a>
+									<div class="deth3">
+										<p class="sort ko all"><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02001002">전체보기</a></p>
+									</div>
+									<div class="deth3">
+										<p class="sort ko">스포츠별</p>
+										<ul>
+											<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02001002001006">트레이닝</a></li>
+											<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02001002001003">러닝</a></li>
+											<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02001002001005">아웃도어</a></li>
+											<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02001002001007">캐주얼</a></li>
+										</ul>
+									</div>
+									<div class="deth3">
+										<p class="sort ko">상품별</p>
+										<ul>
+											<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02001002002001">자켓</a></li>
+											<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02001002002006">트랙탑/저지탑</a></li>
+											<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02001002002002">티셔츠</a></li>
+											<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02001002002007">슬리브리스</a></li>
+											<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02001002002003">팬츠</a></li>
+											<li><a href="#">원터자켓</a></li>
+										</ul>
+									</div>
+								</li>
+								<li><a href="" class="ko tit">용품</a>
+									<div class="deth3">
+										<p class="sort ko all"><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02001003">전체보기</a></p>
+									</div>
+									<div class="deth3">
+										<p class="sort ko">스포츠별</p>
+										<ul>
+											<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02001003005008">전체보기</a></li>
+											<li><a href="#">기타</a></li>
+										</ul>
+									</div>
+									<div class="deth3">
+										<p class="sort ko">상품별</p>
+										<ul>
+											<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02001003006005">전체보기</a></li>
+										</ul>
+									</div>
+								</li>
+								<li><a href="" class="ko tit">브랜드</a>
+									<div class="deth3">
+										<p class="sort ko">피트니스</p>
+									</div>
+									<div class="deth3">
+										<p class="sort ko">클래식</p>
+									</div>
+								</li>
+							</ul>
+						</li>
+						<!-- //MEN -->
+
+						<li class="menuTit"><a href="#" class="tit">WOMEN</a>
+							<ul class="deth2">
+								<li class="bgNone"><a href="http://m.reebok.co.kr/MO/Product/newPrdList.action?ctgr_cd=02002">NEW</a></li>
+								<li class="bgNone"><a href="http://m.reebok.co.kr/MO/Product/bestPrdList.action?ctgr_cd=02002">BEST</a></li>
+								<li class="bgNone"><a href="http://m.reebok.co.kr/MO/Product/salePrdList.action?ctgr_cd=02002">SALE</a></li>
+								<li><a href="#" class="tit">ONLINE ONLY</a>
+									<div class="deth3">
+										<p class="sort">WOMEN</p>
+										<ul>
+											<li><a href="#">전체보기</a></li>
+											<li><a href="#">신발</a></li>
+											<li><a href="#">의류</a></li>
+											<li><a href="#">용품</a></li>
+										</ul>
+									</div>
+									<div class="deth3">
+										<p class="sort">KIDS</p>
+										<ul>
+											<li><a href="#">전체보기</a></li>
+											<li><a href="#">의류</a></li>
+										</ul>
+									</div>
+								</li>
+								<li><a href="" class="ko tit">신발</a>
+									<div class="deth3">
+										<p class="sort ko all"><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02002001">전체보기</a></p>
+									</div>
+									<div class="deth3">
+										<p class="sort ko">스포츠별</p>
+										<ul>
+											<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02002001001003">러닝</a></li>
+											<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02002001001009">스윔</a></li>
+											<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02002001001006">트레이닝</a></li>
+											<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02002001001007">캐주얼</a></li>
+										</ul>
+									</div>
+									<div class="deth3">
+										<p class="sort ko">상품별</p>
+										<ul>
+											<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02002001002001">하이컷/미드컷</a></li>
+											<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02002001002002">로우컷</a></li>
+											<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02002001002003">샌들/슬리퍼</a></li>
+										</ul>
+									</div>
+								</li>
+								<li><a href="" class="ko tit">의류</a>
+									<div class="deth3">
+										<p class="sort ko all"><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02002002">전체보기</a></p>
+									</div>
+									<div class="deth3">
+										<p class="sort ko">스포츠별</p>
+										<ul>
+											<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02002002001002">트레이닝</a></li>
+											<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02002002001001">러닝</a></li>
+											<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02002002001008">아웃도어</a></li>
+											<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02002002001003">캐주얼</a></li>
+										</ul>
+									</div>
+									<div class="deth3">
+										<p class="sort ko">상품별</p>
+										<ul>
+											<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02002002002001">자켓</a></li>
+											<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02002002002005">트랙탑/저지탑</a></li>
+											<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02002002002002">티셔츠</a></li>
+											<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02002002002006">브라탑/언더웨어</a></li>
+											<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02002002002003">팬츠</a></li>
+											<li><a href="#">원터자켓</a></li>
+											<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02002002002004">기타</a></li>
+										</ul>
+									</div>
+								</li>
+								<li><a href="" class="ko tit">용품</a>
+									<div class="deth3">
+										<p class="sort ko all"><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02002003">전체보기</a></p>
+									</div>
+									<div class="deth3">
+										<p class="sort ko">스포츠별</p>
+										<ul>
+											<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02002003005007">전체보기</a></li>
+										</ul>
+									</div>
+									<div class="deth3">
+										<p class="sort ko">상품별</p>
+										<ul>
+											<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02002003006005">전체보기</a></li>
+										</ul>
+									</div>
+								</li>
+								<li><a href="" class="ko tit">브랜드</a>
+									<div class="deth3">
+										<p class="sort ko">피트니스</p>
+									</div>
+									<div class="deth3">
+										<p class="sort ko">클래식</p>
+									</div>
+								</li>
+							</ul>
+						</li>
+						<!-- //WOMEN -->
+
+						<li class="menuTit"><a href="#" class="tit">KIDS</a>
+							<ul class="deth2">
+								<li class="bgNone"><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02003001" class="ko">전체보기</a></li>
+							</ul>
+						</li>
+						<!-- //kids -->
+
+						<li class="menuTit fitness"><a href="#" class="tit">FITNESS</a>
+							<ul class="deth2">
+								<li class="bgNone"><a href="">BEST</a></li>
+								<li class="bgNone"><a href="">NEW</a></li>
+								<li class="bgNone"><a href="">SALE</a></li>
+								<li class="bgNone"><a href="">MEN</a></li>
+								<li class="bgNone"><a href="">WOMEN</a></li>
+							</ul>
+						</li>
+						<!-- //fitness -->
+						<li class="menuTit"><a href="#" class="tit">CLASSIC</a>
+							<ul class="deth2">
+								<li class="bgNone"><a href="http://m.reebok.co.kr/MO/Product/newPrdList.action?ctgr_cd=02005" class="ko tit">NEW</a></li>
+								<li class="bgNone"><a href="http://m.reebok.co.kr/MO/Product/bestPrdList.action?ctgr_cd=02005">BEST</a></li>
+								<li class="bgNone"><a href="http://m.reebok.co.kr/MO/Product/salePrdList.action?ctgr_cd=02005">SALE</a></li>
+								<li class="bgNone"><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02005001">MEN</a></li>
+								<li class="bgNone"><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02005002">WOMEN</a></li>
+								<li><a href="#" class="tit">COLLECTION</a>
+									<div class="deth3">
+										<p class="sort ko">퓨리컬렉션</p>
+										<ul>
+											<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=0200600">전체보기</a></li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li class="menuTit"><a href="#" class="tit">COLLECTION</a>
+							<ul class="deth2">
+								<li class="bgNone"><a href="" class="ko tit">온라인단독</a></li>
+								<li><a href="#" class="tit ko">공식아울렛</a>
+									<div class="deth3">
+										<p class="sort">MEN</p>
+										<p class="sort">WOMEN</p>
+										<p class="sort">KIDS</p>
+									</div>
+								</li>
+								<li class="bgNone"><a href="" class="ko tit">크로스핏</a></li>
+								<li class="bgNone"><a href="" class="ko tit">퓨리컬렉션</a></li>
+								<li class="bgNone"><a href="" class="ko tit">요가컬렉션</a></li>
+								<li class="bgNone"><a href="" class="ko tit">컴뱃</a></li>
+							</ul>
+						</li>
+						<!-- 20180705 수정 -->
+						<li class="menuTit"><a href="http://m.reebok.co.kr/MO/Promotion/landingPage.action?pageNo=209 " class="tit">ONLINE ONLY</a></li>
+						<!-- //20180705 수정 -->
+					</ul>
+					<!-- 20180705 수정 -->
+					<div class="bannerArea">
+						<ul>
+							<li><a href="http://m.reebok.co.kr/MO/Product/newPrdList.action">신상품</a></li>
+							<li><a href="http://m.reebok.co.kr/MO/Product/salePrdList.action">할인상품</a></li>
+							<li><a href="http://m.reebok.co.kr/MO/Product/bestPrdList.action">인기상품</a></li>
+							<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdOutletListData.action?ctgr_cd=02001">공식아울렛</a></li>
+						</ul>
+						<div class="vrSroteBanner">
+							<a href="http://m.reebok.co.kr/vr/RCS_GB/web/index.html "><img src="/images/reebok/efu2018/common/vrstory.jpg" alt=""></a>
+						</div>
+					</div>
+					<!-- //20180705 수정 -->
+				</div>
+			</div>
+
+			<div class="menuBtnArea">
+				<span class="searchBtn"><a href="#"></a></span>
+				<div class="cartIcon">
+					<a href=""><img src="/images/reebok/efu2018/common/sprite-image.png" alt="장바구니"></a>
+					<span>12</span>
+				</div>
+				<span class="brandBtn"><a href="#" class="enter">BRAND</a></span>
+			</div>
+			<a href="#" class="menuClose"><!-- <img src="/images/reebok/efu2018/btn/btn_close.png" alt="닫기"> --></a>
+
+	<div id="brand_navWrap">
+		<div class="brandPd">
+			<div class="brandPdWrap">
+				<ul class="brand_nav">
+					<li>
+						<a href="/brand/campaigns.jsp">
+							<dl>
+								<!-- 20180329 text 수정 -->
+								<dt>CAMPAIGN</dt><!-- // 20180329 text 수정 -->
+								<dd>전통을 넘어 최고의 라이프스타일이 창조되는 곳</dd>
+							</dl>
+						</a>
+					</li>
+					<li class="nDepth">
+						<a href="javascript:;">
+							<dl>
+								<!-- 20180327 수정 - 텍스트 수정 -->
+								<dt>FITNESS</dt>
+								<!-- // 20180327 수정 - 텍스트 수정 -->
+								<dd>피트니스 라이프스타일의 출발점</dd>
+							</dl>
+						</a>
+						<div class="smallMenu">
+							<ul>
+								<!--  class="over" 버튼활성화  -->
+								<li><a href="/brand/fitness/training.jsp">TRANINIG</a></li>
+								<li><a href="/brand/fitness/running.jsp">RUNNING</a></li>
+								<li><a href="/brand/fitness/crossfit.jsp">CROSSFIT</a></li>
+								<li><a href="/brand/fitness/studio.jsp">STUDIO</a></li>
+								<li><a href="/brand/fitness/combat.jsp">COMBAT</a></li>
+							</ul>
+						</div>
+					</li>
+					<li class="nDepth">
+						<a href="javascript:;">
+							<dl>
+								<!-- 20180327 수정 - 텍스트 수정 -->
+								<dt>CLASSIC</dt>
+								<!-- // 20180327 수정 - 텍스트 수정 -->
+								<dd>리복의 역사가 오늘의 트렌드가 되는 곳</dd>
+							</dl>
+						</a>
+						<div class="smallMenu">
+							<ul>
+								<!-- 20180327 수정 - 텍스트 수정 -->
+								<!--  class="over" 버튼활성화  -->
+								<li><a href="/brand/classic/fury.jsp">1994 INSTAPUMP FURY</a></li>
+								<li><a href="/brand/classic/workout.jsp">1987 WORKOUT</a></li>
+								<li><a href="/brand/classic/clubc.jsp">1985 CLUB C</a></li>
+								<li><a href="/brand/classic/classicleather.jsp">1983 CLASSIC LEATHER</a></li>
+								<li><a href="/brand/classic/freestylehi.jsp">1982 FREESTYLE HI</a></li>
+							</ul>
+							<!-- // 20180327 수정 - 텍스트 수정 -->
+						</div>
+					</li>
+					<!-- 201804046 수정 - 추가&수정 -->
+					<li>
+						<a href="/brand/reeclub.jsp">
+							<dl>
+								<dt>REECLUB</dt>
+								<dd>다양한 혜택을 드리는 리복만의 커뮤니티</dd>
+							</dl>
+						</a>
+					</li>
+					<li>
+						<a href="/brand/blog.jsp">
+							<dl>
+								<dt>REEBOK BLOG</dt>
+								<dd>리복의 이야기와 정보가 공유되는 공간</dd>
+							</dl>
+						</a>
+					</li>
+					<li>
+						<a href="/brand/promotion.jsp">
+							<dl>
+								<dt>PROMOTION</dt>
+								<dd>리복이 선보이는 최고의 프로모션</dd>
+							</dl>
+						</a>
+					</li>
+					<!-- // 201804046 수정 - 추가&수정 -->
+				</ul>
+			</div>
+		</div>
+		<a href="#none" class="brand_close close_x_btn"></a>
+	</div>
+
+
+			<a href="#" class="brandmenuClose"><!-- <img src="/images/reebok/efu2018/btn/btn_close.png" alt="닫기"> --></a>
+		</div>
+		<div class="bacodeDetail">
+			<div class="bacodeDetailLogo"><img src="/images/reebok/efu2018/common/logo.png" alt="reebok"></div>
+			<div class="cont">
+				<p class="name">홍길동<span>님</span></p>
+				<img src="/images/reebok/efu2018/common/barcodeDetail.png" alt="reeclub barcode">
+				<p class="txt">휴대폰 번호가 일치하지 않거나, 스마트폰 소지자 정보 변경이 필요할 경우 리복 공식 온라인 스토어에 접속하신 후 <strong>나의정보수정 </strong>에서 변경해 주세요.</p>
+				<div class="barbodeLogo"><img src="/images/reebok/efu2018/common/barcodeLogo.png" alt="reeclub"></div>
+			</div>
+			<p class="close"><img src="/images/reebok/efu2018/common/btn_close.png" alt="닫기"></p>
+		</div>
+		<div id="global-search-slide">
+			<div class="search_field">
+				<div>
+					<form name="frmSrch" id="frmSrch" action="#" method="post" onsubmit="return false">
+						<input type="hidden" name="keyword" value="">
+						<input type="hidden" name="query" value="">
+						<input type="hidden" name="siteNm" value="">
+						<input type="hidden" name="siteCD" value="2">
+						<input type="search" name="S_PROD_NM" id="S_PROD_NM" value="" placeholder="검색어를 입력하세요" onkeypress="return handle_enter_top(1,event);" onfocus="javascript:this.value='';" onmousedown="javascript:dqtop_setTextbox('1',event);" autocomplete="off">
+						<button type="button" onclick="doSearch();" class="icons" data-icon="" onmousedown="javascript:trk_clickTrace('EVT','^리복모바일^검색돋보기');"></button>
+						<script language="JavaScript" src="//imagem.reebok.co.kr/js/search/dqAutoCompleteTopReebok.js"></script>
+						<div style="position:relative;z-index:1000;">
+							<div onmouseout="dqtop_setMouseoff();" onmouseover="dqtop_setMouseon();" style="position: absolute;left:0px;top:0px;z-index: 1000;width:100%;display:none;" id="dqAutoTop"></div>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="search_category">
+				<ul>
+					<li class="new on"><a href="#keyword_recent">최근 검색어</a></li>
+					<li class="fav"><a href="#pop_words">인기 검색어</a></li>
+				</ul>
+				<div class="contents">
+					<ul class="searched_keywords" id="keyword_recent" style="display: block;">
+						<!--<li><a href="#">FURY</a><a href="javascript:void(0)" class="close icons" data-icon=""></a></li>-->
+						<li class="no_data">최근 검색하신 내역이 없습니다.</li>
+					</ul>
+					<ol class="rank_keywords" id="pop_words" style="display: none;">
+						<li><a href="#"><span>1</span><strong class="icons" data-icon="">퓨리</strong></a></li>
+						<li><a href="#"><span>2</span><strong class="icons" data-icon="">퓨리 라이트</strong></a></li>
+						<li><a href="#"><span>3</span><strong class="icons" data-icon="">크로스핏</strong></a></li>
+						<li><a href="#"><span>4</span><strong class="icons" data-icon="">UFC</strong></a></li>
+						<li><a href="#"><span>5</span><strong class="icons" data-icon="">GL6000</strong></a></li>
+						<li><a href="#"><span>6</span><strong class="icons" data-icon="">DMX</strong></a></li>
+						<li><a href="#"><span>7</span><strong class="icons" data-icon="">FURYLITE</strong></a></li>
+						<li><a href="#"><span>8</span><strong class="icons" data-icon="">클럽C</strong></a></li>
+						<li><a href="j#"><span>9</span><strong class="icons" data-icon="">아즈텍</strong></a></li>
+						<li><a href="#"><span>10</span><strong class="icons" data-icon="">라인</strong></a></li>
+					</ol>
+				</div>
+			</div>
+		</div>
+
+		<!-- 상단 띠배너 S -->
+		<div class="notice_tits" id="speeds" style="display: block;">
+			<a class="b1 on" style="display: block;" href="javascript:void(0)">
+				<div><span class="ico"></span>스피드 배송 서비스 안내</div>
+			</a>
+			<a class="b2" href="http://m.reebok.co.kr/MO/Promotion/landingPage.action?pageNo=209" style="display: none;">
+				<div><span class="ico"></span>온라인 한정상품을 만나보세요</div>
+			</a>
+			<a class="b3" href="javascript:void(0)" style="display: none;">
+				<div><span class="ico"></span>교환, 환불은 이렇게</div>
+			</a>
+			<div class="more_ico sprite-image"></div>
+		</div>
+		<!-- 상단 띠배너 E -->
+
+		<!-- 180131 START 스피드 배송 교환/환불 안내팝업 -->
+		<div class="layerpopup popup_oneday_exchange"><!-- 20180416 추가 -->
+			<div class="header">
+				<a href="#" class="close_x_btn"></a>
+			</div>
+			<div class="contents">
+				<div class="ico">
+					<img src="http://imagem.reebok.co.kr/images/reebok/ico_exch_pop.png" alt="">
+				</div>
+				<h2>교환, 환불은 이렇게</h2>
+				<p class="bold">
+					교환, 반품은 배송완료일로부터 7일 이내에<br> 신청이 가능합니다.<br> 단, 포장을 개봉하였거나
+					포장이 훼손되어<br> (상품의 Tag분리/분실, 비닐포장 훼손, 신발박스 훼손 등)<br> 상품가치가
+					현저히 감소한 경우 교환, 반품 불가 합니다.
+				</p>
+				<p>
+					교환, 반품 관련 자세한 문의는 <br> 리복 고객센터 1588-7324로 해주시기 바랍니다.
+				</p>
+			</div>
+		</div>
+
+		<!-- 180131 스피드 배송 안내팝업 -->
+		<div class="layerpopup popup_oneday_open" id="spd">
+			<div class="header">
+				<a href="#" class="close_x_btn"></a>
+			</div>
+			<div class="contents">
+				<div class="ico">
+					<img src="http://imagem.reebok.co.kr/images/reebok/ico_truck_pop.png" alt="">
+				</div>
+				<h2>스피드 배송 서비스 안내</h2>
+				<p class="bold">
+					SPEEDY DELIVERY(스피드 배송)란? <br> 상품상세 페이지에 <span class="ico_car"></span>
+					표시가 된 상품을<br> 저녁 6시부터 다음 날 오전 9시까지 주문 후<br> 결제 완료된 <span class="ico_car"></span> 상품에 한하여 다음날 또는<br> 당일까지 빠르게 배송해 드리는
+					서비스 입니다.
+				</p>
+				<p style="text-align: center; padding: 0 6.5rem 2rem;">
+					<!-- 20180329 경로 수정 -->
+					<a href="http://m.reebok.co.kr/MO/Promotion/landingPage.action?pageNo=209" style="display: block; background-color: #000; color: #fff; text-align: center; width: 100%; height: 4rem; line-height: 4rem;">스피드
+						배송 제품보기</a>
+					<!-- // 20180329 경로 수정 -->
+					<!--// 20180403 링크 수정-->
+				</p>
+				<p>
+					배송지 기준으로 서울 및 수도권 <br> 인근지역(일부지역 제외)에 한하여 진행 됩니다.<br> 빠르고
+					안전한 배송을 위해 박스 규격은<br> 가로/세로/높이의 합이 80cm 이내이며,<br> 총 주문 수량은
+					3개로 제한 됩니다. (단, 신발은 2개만 가능)<br> 기타 SPEEDY DELIVERY(스피드 배송) 관련
+					자세한 안내는<br> FAQ를 참고해주시기 바랍니다.
+				</p>
+				<p class="bold">
+					<a href="/RPF080301.action?FAQ_DIVI=03&amp;FAQ_DIVI_DTL=05" class="icons aft" data-icon="">FAQ 바로가기</a>
+				</p>
+			</div>
+		</div>
+		<!-- 180131 스피드 배송 안내팝업 END-->
+		<!-- //20180416 추가 -->
+
+	<script type="text/javascript">
+	jQuery(function(){
+		jQuery(document).ready(function() {
+			// 170322 스피드 배송 상단 바 롤링 / 클릭 스크립트
+			var index = 0;
+			var commToday = "20180528";
+			var commTodayHh = "2018052811";
+
+			//  상단 공지바 (PDP, PLP만 노출)
+
+			if(commTodayHh >= 2017110710 ) {
+				jQuery('.notice_tits#speeds').css('display','block');
+				var length = jQuery('.notice_tits#speeds>a').length;
+				setInterval(function(){
+					jQuery('.notice_tits#speeds>a').removeClass('on');
+
+					setTimeout(function(){
+						jQuery('.notice_tits#speeds>a').hide();
+						if( index >= (length -1) ) {
+							index = 0;
+						} else {
+							index += 1;
+						}
+
+						jQuery('.notice_tits#speeds>a').eq(index).show();
+						setTimeout(function(){
+							jQuery('.notice_tits#speeds>a').eq(index).addClass('on');
+						},30);
+
+					},400);
+				},3000);
+			}
+
+			jQuery('#headerWrap .notice_tits#speeds>a').bind('click',function(){
+				if(jQuery(this).hasClass('b1')){
+					jQuery('.popup_oneday_open#spd').show();
+				}else if(jQuery(this).hasClass('b3')){
+					jQuery('.popup_oneday_exchange').show();
+				}
+			});
+
+
+			jQuery('.popup_oneday_exchange .header .close_x_btn , .popup_oneday_open .header .close_x_btn').bind('click',function(){
+				jQuery(this).parent().parent().hide();
+			});
+			// 170322 스피드 배송 상단 바 스크립트 끝
+
+			if (fn_getCookie('today_close_superweek')!='close') {
+				//jQuery('.modal-popup-wrapper').addClass('open');
+
+					//fn_weekendPopupOpen();
+
+			}
+			jQuery("#not_today_sw").click(function(){
+				fn_setCookie('today_close_superweek','close',1);
+				jQuery('#superWeekend').hide();
+			});
+		});
+
+	})
+	</script>
+	</section>
+
+
+
+		<div id="container" class="order login">
+			<h2>주문 결제</h2>
+			<div class="odr_pay_box order_prodlist">
+				<!--  20180413 수정 -->
+				<div class="cont">
+					<div class="choice_login">
+						<div class="row">
+							<div class="chk_wrap">
+								<div class="rdo_box1 blue">
+									<input type="radio" id="order_mem" name="order_choice" value="Y" checked="">
+									<label for="order_mem" class="adipro-r" id="loginLabel">로그인</label>
+								</div>
+							</div>
+							<div class="chk_wrap">
+								<div class="rdo_box1 blue">
+									<input type="radio" id="order_nomem" name="order_choice" value="N">
+									<label for="order_nomem" class="adipro-r">비회원 주문</label>
+								</div>
+							</div>
+							<div class="chk_wrap">
+	                               <div class="rdo_box1 blue">
+	                                   <input type="radio" id="order_naver" name="order_choice">
+	                                   <label for="order_naver" class="adipro-r">네이버 로그인</label>
+	                               </div>
+	                           </div>
+							</div>
+							<form name="loginform" id="loginform" method="post" action="https://m.adidas.co.kr/MO/Member/loginCheck.action" onsubmit="return false">
+								<input type="hidden" name="work" value="">
+								<input type="hidden" name="returnURL" id="orderReturnURL" value="\MO\Order\orderInputNoMember.action?CART_NOS=201804099471753">
+								<input type="hidden" name="CART_NOS" id="ORD_CART_NOS" value="201804099471753">
+								<input type="hidden" name="PWERRPUCNT" id="PWERRPUCNT" value="">
+								<input type="hidden" name="ordPageTp" id="ordPageTp" value="page">
+								<input type="hidden" name="orderQty" value="">
+								<input type="hidden" name="optionNo" value="">
+								<input type="hidden" name="prodCD" value="">
+								<input type="hidden" id="NAVER_LOGIN_YN" name="NAVER_LOGIN_YN" value="N">
+								<input type="hidden" name="NAVER_LOGIN_ID">
+								<input type="hidden" name="NAVER_LOGIN_NAME">
+								<input type="hidden" name="NAVER_LOGIN_EMAIL">
+							<div class="login_box" style="display: none;">
+								<div class="row">
+									<input type="text" name="memId" id="userId" maxlength="20" placeholder="아이디" onkeyup="fn_enterPress();" onclick="fn_pwerrpuinit();" value="">
+									<input type="password" name="memPwd" id="userPw" maxlength="40" placeholder="비밀번호" onkeyup="fn_enterPress();" onclick="fn_pwerrpuinit();">
+								</div>
+								<div style="margin-bottom:10px;line-height:17px;font-size:12px;color:#ff0000; display: none;">
+									고객님의 아이디 또는 비밀번호가 일치하지 않아.
+
+									로그인이 정상적으로 이루어지지 않았습니다.<br>5회 이상 로그인 오류시 본인인증 후 로그인 가능합니다.
+								</div>
+								<div style="margin-bottom:10px;line-height:17px;font-size:12px;color:#ff0000; display: none;">아이디와 비밀번호를 정확하게 다시 입력해주세요.</div>
+								<div class="row">
+									<div class="button_area no_pdg verify_btn">
+										<div class="blue"><a href="javascript:doOrderLogin();">로그인</a></div>
+									</div>
+								</div>
+								<div class="row">
+									<a href="javascript: goFindUserId();" class="icons aft" data-icon=" ">아이디, 비밀번호 찾기</a>
+								</div>
+							</div>
+						</form>
+						<div class="naver_box">
+							<div class="row">
+								<div class="button_area no_pdg verify_btn">
+									<div id="naver_id_login" class="naver"><a href="https://nid.naver.com/oauth2.0/authorize?response_type=token&amp;client_id=eaz10dnyRDFa_a0JE3OP&amp;redirect_uri=https%3A%2F%2Fm.adidas.co.kr%3A443%2FMO%2FOrder%2ForderInputNoMember.action%3Fwork%3D%26returnURL%3D%255CMO%255COrder%255CorderInputNoMember.action%253FCART_NOS%253D201804099471753%26CART_NOS%3D201804099471753%26PWERRPUCNT%3D%26ordPageTp%3Dpage%26orderQty%3D%26optionNo%3D%26prodCD%3D%26NAVER_LOGIN_YN%3DN%26NAVER_LOGIN_ID%3D%26NAVER_LOGIN_NAME%3D%26NAVER_LOGIN_EMAIL%3D%26memId%3D%26memPwd%3D%26&amp;state=1c70b861-c244-46b8-9f7a-d72ef0d93466" id="naver_id_login_anchor" class="btn-ctm sns_btn"><span>네이버 아이디로 로그인</span></a></div>
+									<script type="text/javascript">
+
+									   //============================================================================================
+									   //	2017-06-27 네아로 로그인동작방식 수정
+									   //============================================================================================
+									    var param = jQuery('#loginform').serialize() + "&";
+									    var naver_id_login = new naver_id_login("eaz10dnyRDFa_a0JE3OP", "https://m.adidas.co.kr:443/MO/Order/orderInputNoMember.action?"+param);
+									    var state = naver_id_login.getUniqState();
+									    naver_id_login.setButton("white", 3, 63);
+									    naver_id_login.setDomain("m.adidas.co.kr");
+									    naver_id_login.setState(state);
+									    naver_id_login.init_naver_id_login();
+
+										if (naver_id_login.oauthParams.error != '' && naver_id_login.oauthParams.error != undefined) {  // 기존 검증 프로세스
+												alert("네이버 계정 연동을하여주시기 바랍니다.");
+										}else{   // 토큰 및 에러 없을경우 로그인연동
+											naver_id_login.get_naver_userprofile("naverSignInCallback()");
+										}
+
+										function naverSignInCallback() {
+											fn_naver_callback(naver_id_login.getProfileData('id'), naver_id_login.getProfileData('name'), naver_id_login.getProfileData('email'));
+										}
+										//============================================================================================
+
+									</script>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--  // 20180413 수정 -->
+
+				<div class="tit toggle_arw open">
+					<strong>총 주문 상품 <em>2개</em></strong>
+				</div>
+				<div class="cont">
+					<ul>
+						<li>
+							<div class="img">
+								<span class="oo_label size60"><img src="http://m.adidas.co.kr/images/adidas/bg_label_olt.jpg" alt="아울렛 상품"></span>
+								<img src="http://shop.adidas.co.kr/upload/prod/basic/220/S82516-1_220X220.jpg" alt="">
+							</div>
+							<div class="info">
+								<!--  20180413 수정 -->
+								<p class="tit"><!-- <span class="icons bef" data-icon=""></span> --><span class="stit">[Reebokr Classic/Men’s]</span>슈퍼스타 파운데이션 슈즈 80s 빈티지 디럭스</p>
+								<div class="price">
+									<!-- <div class="line">129,000<span>원</span></div> -->
+									<div class="sale">109,000<span>원</span></div>
+								</div>
+	                             <!--
+	                              170310 제품코드 추가
+	                              * 앞에 제품코드 추가
+	                              * 사이즈,수량 앞에 콜론제거
+	                              -->
+								<div class="etc">
+									<!-- <span>BA1234</span> -->
+									<span>옵션 <strong>S</strong></span>
+									<span>수량 <strong>1</strong></span>
+									<!-- <span class="mpoints">5,450<span></span></span> -->
+									<!--  // 20180413 수정 -->
+								</div>
+	    					</div>
+						</li>
+						<li>
+							<div class="img">
+								<!-- 20180510추가 -->
+								<span class="icon"><img src="/images/reebok/efu2018/mypage/bg_oneday_label.png" alt="스피드배송"></span>
+								<!-- //20180510추가 -->
+								<img src="http://shop.adidas.co.kr/upload/prod/basic/220/S82516-1_220X220.jpg" alt="">
+							</div>
+							<div class="info">
+								<!--  20180413 수정 -->
+	    						<p class="tit"><!-- <span class="icons bef" data-icon=""></span> --><span class="stit">[Reebokr Classic/Men’s]</span>슈퍼스타 파운데이션 슈즈 80s 빈티지 디럭스</p>
+	   							<div class="price">
+	   								<!-- <div class="line">129,000<span>원</span></div> -->
+	   								<div class="sale">109,000<span>원</span></div>
+	   							</div>
+	                             <!--
+	                              170310 제품코드 추가
+	                              * 앞에 제품코드 추가
+	                              * 사이즈,수량 앞에 콜론제거
+	                              -->
+	    						<div class="etc">
+									<!-- <span>BA1234</span> -->
+	   								<span>옵션 <strong>S</strong></span>
+	   								<span>수량 <strong>1</strong></span>
+	   								<!-- <span class="mpoints">5,450<span></span></span> -->
+	   								<!--  // 20180413 수정 -->
+								</div>
+							</div>
+						</li>
+					</ul>
+
+					<div class="coupon_box">
+						<div class="txtbox">보유한 쿠폰 총 <strong>2</strong> 장</div>
+						<a href="/order/orderCouponForm.jsp" class="active">쿠폰사용</a>
+					</div>
+					<div class="total_result">
+						<div class="box prc clearfix p1">
+							<div class="t">총 주문 가격</div>
+							<div class="r">
+								<div class="price">
+									<div class="adihs">129,000<span>원</span></div>
+								</div>
+							</div>
+						</div>
+						<div class="box clearfix p2">
+							<div class="t">할인</div>
+							<div class="r">
+								<div class="price">
+									<div class="adihs">10,000<span>원</span></div>
+								</div>
+							</div>
+						</div>
+
+						<div class="box clearfix p3">
+							<div class="t">
+								<div class="deliv">
+									<a href="#none" class="icons view_deliv aft" data-icon="">배송비</a>
+									<div class="tooltip-box">
+										<div class="tooltip-contents">
+											<a href="javascript:void(0)" class="close_x_btn"></a>
+											<ul>
+	                                               <!--
+	                                                   170627 START
+	                                                   7월간 사용 될 무료배송 문구
+	                                                   <li>50,000원 이상 구매시 무료배송</li>
+	                                                -->
+	                                            	  <li>50,000원 이상 구매시 무료배송 (도서 산간 지역은 추가 배송비 발생)</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="r">
+								<div class="price">
+									<div class="adihs">1,500<span>원</span></div>
+								</div>
+							</div>
+						</div>
+
+						<div class="box prc clearfix p4">
+							<div class="t">총 결제 금액</div>
+							<div class="r">
+								<div class="price">
+									<div>129,000<span>원</span></div>
+								</div>
+								<div class="point">
+									예상 포인트 <div class="mpoints">5,450<span></span></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- //170224 -->
+
+			<div class="odr_pay_box add_toggle_arw open" id="addr_form_box" style="display: block;">
+				<div class="tit toggle_arw">
+					<input type="hidden" id="chkTp">
+					<strong>배송지 정보</strong>
+				</div>
+				<div class="cont add_cont" style="padding: 5px 15px 15px 15px;">
+					<div class="choice_login">
+						<!-- Modal Popup bg-->
+						<div id="uxabg"
+							style="width:100%;position:absolute;top:0;left:0;z-index:50;background:#000;opacity:0.5;display:none;">
+						</div>
+						<!--// Modal Popup bg-->
+
+						<!--우편번호찾기 IFRAME-->
+						<div id="uxazip"
+							style="width:100%;left:0px;text-align:center;display:none;z-index:100;position:absolute;top:460px;">
+							<iframe id="frmPostSearch" src="about:blank" frameborder="0" scrolling="no" width="99%"
+								height="540px" title="우편번호찾기 노출을 위한 프레임"></iframe>
+						</div>
+						<!--//우편번호찾기-->
+
+						<div class="nomem_box" style="display: block;">
+							<!-- 주문자정보 -->
+							<input type="hidden" name="MEM_NM" id="MEM_NM" value="">
+							<input type="hidden" name="MEM_MOBL" id="MEM_MOBL" value="">
+							<input type="hidden" name="DLIVY_POST_NO" id="DLIVY_POST_NO">
+							<input type="hidden" name="DLIVY_ADDR" id="DLIVY_ADDR">
+							<input type="hidden" name="DLIVY_ADDR_JI" id="DLIVY_ADDR_JI">
+							<input type="hidden" name="H_DLIVY_DTL_ADDR" id="H_DLIVY_DTL_ADDR">
+							<input type="hidden" name="DLIVY_DTL_ADDR" id="DLIVY_DTL_ADDR">
+
+							<div class="address_form">
+								<div class="row name">
+									<input type="text" name="receiver" id="receiver" onkeyup="javascript:fn_checkSpclCh(this);"
+										placeholder="* 수취인 이름" value="">
+								</div>
+								<div class="row">
+									<input type="tel" name="tel2" id="tel2" onkeyup="javascript:fn_checkSpclCh(this);"
+										placeholder="* 휴대전화 1" maxlength="11" value="">
+								</div>
+								<div class="row">
+									<input type="tel" name="tel1" id="tel1" onkeyup="javascript:fn_checkSpclCh(this);"
+										placeholder="휴대전화 2" maxlength="11" value="">
+								</div>
+								<div class="row email">
+									<input type="text" name="FIRST_EMAIL" id="FIRST_EMAIL"
+										onkeyup="javascript:fn_checkSpclCh(this);" class="mail_box1" maxlength="20"
+										style="ime-mode:disabled;" placeholder="* 이메일*">
+									<div class="a adipro">@</div>
+									<input type="text" name="LAST_EMAIL_IN" id="LAST_EMAIL_IN"
+										onkeyup="javascript:fn_checkSpclCh(this);" value="" maxlength="20"
+										style="ime-mode:disabled;">
+									<div class="sel_cmtype sel_design mail_box3" data-init="true">
+										<a href="#" class="toggle_arw s_arw"><span>직접입력</span></a>
+										<select name="LAST_EMAIL_SE" id="LAST_EMAIL_SE" onchange="emailSetting(this.value)">
+											<option value="self" selected="">직접입력</option>
+											<option value="naver.com">naver.com</option>
+											<option value="hanmail.net">hanmail.net</option>
+											<option value="gmail.com">gmail.com</option>
+											<option value="nate.com">nate.com</option>
+											<option value="hotmail.com">hotmail.com</option>
+										</select>
+									</div>
+								</div>
+								<div class="row address">
+									<input type="text" id="zipCode" name="zipCode" value="" placeholder="* 주소"
+										readonly="readonly">
+									<a href="javascript:fn_pop('fn_zipSearchSetting');" class="s_button">주소찾기</a>
+								</div>
+								<div class="row address">
+									<input type="text" id="Dliv_addr" name="Dliv_addr" readonly="readonly" placeholder="(도로명)">
+								</div>
+								<div class="row address">
+									<input type="text" id="Dliv_addr_ji" name="Dliv_addr_ji" readonly="readonly"
+										placeholder="(지번)">
+								</div>
+								<div class="row address">
+									<input type="text" id="Dliv_dtl_addr" name="Dliv_dtl_addr" readonly="readonly">
+									<input type="hidden" id="H_Dliv_dtl_addr" name="H_Dliv_dtl_addr" value="">
+								</div>
+
+								<!-- 161116 start -->
+								<div class="row chk_row">
+									<div class="stit">SMS 정보수신</div>
+									<div class="chk_wrap" style="width: auto;">
+										<div class="rdo_box1 blue">
+											<input type="radio" name="sms" id="smsY" value="Y">
+											<label for="smsY" class="adipro-r" onclick="jQuery('.noti_sms').hide()">예</label>
+										</div>
+									</div>
+									<div class="chk_wrap" style="width: auto;">
+										<div class="rdo_box1 blue">
+											<input type="radio" name="sms" id="smsN" value="N">
+											<label for="smsN" class="adipro-r" onclick="jQuery('.noti_sms').show()">아니오</label>
+										</div>
+									</div>
+								</div>
+								<!-- 161116 end -->
+
+								<div class="row noti_sms"
+									style="padding-left: 90px;font: 12px/16px 'NotoSansKR','Nanum Gothic';color: #027dbf;margin-bottom: 15px;margin-top: -10px;display: none;">
+									<p>개인정보보호정책에 따라 주문정보 관련 내용은<br>주문자에게 알림성으로 고지됩니다 </p>
+								</div>
+
+								<div class="row comment">
+									<div class="sel_cmtype sel_design" data-init="true">
+										<a href="#" class="toggle_arw s_arw"><span>배송 전 연락바랍니다.</span></a>
+										<select name="orderDescSel" id="orderDescSel">
+											<option value="">배송 요청사항</option>
+											<option value="부재시 경비실에 맡겨주세요.">부재시 경비실에 맡겨주세요.</option>
+											<option value="빠른 배송 부탁드립니다.">빠른 배송 부탁드립니다.</option>
+											<option value="부재시 핸드폰으로 연락바랍니다.">부재시 핸드폰으로 연락바랍니다.</option>
+											<option value="배송 전 연락바랍니다." selected="selected">배송 전 연락바랍니다.</option>
+										</select>
+									</div>
+								</div>
+								<div class="row comment">
+									<input type="text" name="orderDescInpt" id="orderDescInpt"
+										onkeyup="javascript:fn_checkSpclCh(this);" value="" placeholder="기타 내용을 입력해 주세요">
+								</div>
+							</div>
+							<!-- //address_form -->
+						</div>
+						<!-- //nomem_box -->
+					</div>
+					<!-- //choice_login -->
+				</div>
+			</div>
+
+			<div class="odr_pay_box select_payment select_payment_1801"> <!-- 180125 결제수단 클래스 추가 -->
+				<div class="tit toggle_arw open">
+					<strong>결제수단</strong>
+					<span>신용카드</span>
+				</div>
+				<div class="cont">
+					<!-- 170615 네이버페이 첫 결제 안내 문구 -->
+					<!-- <div style="margin-bottom: 15px;">
+					    <span style="font:0.9rem 'NotoSansKR';letter-spacing:-0.5px;">네이버페이로 첫 결제 시 무조건 2000원 <span style="font-family:'NotoSansKRLight'">(2017.06.12 - 25)</span> <a class="modal-popup-click" data-modalpop-click="naverpay-eventpopup" href="javascript:void(0)" style="margin-left:10px;color:#0285cd;">자세히 보기 <span class="icons2 aft" data-icon="" style="margin-left:2px;"></span></a></span>
+					</div> -->
+					<div class="payment_box">
+						<div class="payment_list" style="display: block;">
+							<!-- 180125 결제수단 목록 추가 -->
+							<div class="p_naver"><a href="#" class="icons" data-icon="">네이버페이</a></div>
+							<div class="p_kakao"><a href="#" class="icons" data-icon="">카카오페이</a></div>
+							<div class="p_lp"><a href="#" class="icons" data-icon="">L.Pay</a></div>
+							<div class="p_payco"><a href="#" class="icons" data-icon="">Payco</a></div>
+							<div class="on p_card"><a href="#" class="icons" data-icon="">카드결제</a></div>
+							<div class="p_kp"><a href="#" class="icons" data-icon="">KPAY</a></div>
+							<div class="p_acc"><a href="#" class="icons" data-icon="">무통장</a></div>
+							<div class="p_mo"><a href="#" class="icons" data-icon="">휴대폰</a></div>
+							<div class="p_samsung"><a href="#" class="icons" data-icon="">삼성페이</a></div>
+							<!-- 180125 결제수단 목록 추가 END-->
+						</div>
+						<!-- //payment_list -->
+
+						<div style="padding:5px 0 15px;border-bottom:1px solid #cfcfcf;">
+							<div class="chk_box1 blue">
+								<input type="checkbox" id="use_payment">
+								<label for="use_payment" class="adipro-r">선택한 결제수단을 다음에도 사용</label>
+							</div>
+						</div>
+						<!-- //161109 -->
+
+						<div class="payments" id="credit_payment" style="display:block;">
+							<div>
+								<ul class="credit_ops">
+									<li>
+										<label for="">카드종류</label>
+										<div class="sel_cmtype sel_design" data-init="true">
+											<a href="#" class="toggle_arw s_arw"><span>KB카드</span></a>
+											<select class="address_manage">
+												<option value="1">KB카드</option>
+												<option value="2">우리은행</option>
+											</select>
+										</div>
+									</li>
+									<li>
+										<label for="">할부기간</label>
+										<div class="sel_cmtype sel_design" data-init="true">
+											<a href="#" class="toggle_arw s_arw"><span>일시불</span></a>
+											<select class="address_manage">
+												<option value="1">일시불</option>
+												<option value="2">1개월</option>
+												<option value="2">2개월</option>
+											</select>
+										</div>
+									</li>
+								</ul>
+								<!-- 161213 start -->
+								<div class="view_more_area" style="padding:10px 0 0;">
+									<div class="tar">
+										<a href="#" class="icons2 aft" data-icon="">무이자할부</a>
+									</div>
+								</div>
+								<!-- //161213 -->
+
+							</div>
+						</div>
+
+						<div class="payments" id="mobile_payment">
+							<div>
+								<p class="tit" style="margin-bottom:12px;">결제 안내</p>
+								<p>결제 한도금액은 통신사별, 회원등급별, 신규/번호이동 여부에 따라 다를 수 있습니다.</p>
+								<p style="margin-bottom:15px"><strong>	※ 결제 제한 및 이용한도에 대한 자세한 내용은 FAQ 참고</strong></p>
+
+								<p>휴대폰 결제의 경우, 현금영수증 및 세금계산서 발급은 불가능합니다.</p>
+								<p style="margin-bottom:20px;">(현금영수증은 휴대폰 요금 현금 지불 시에만 통신사 통해 발급 가능)</p>
+
+								<p style="margin-bottom:12px;font-size:13px;color:#222;font-weight:bold;">취소 및 반품 안내</p>
+								<ul style="margin-bottom:15px;">
+									<li><span>-</span>결제한 달과 취소/반품한 달이 같은 경우, 결제 금액은 당일 취소 됩니다.</li>
+									<li><span>-</span>결제한 달과 취소/반품한 달이 다른 경우, 입력하신 은행 계좌로 영업일 기준 3일 이내에 환불 됩니다.</li>
+									<li><span>-</span>부분 취소/반품의 경우, 취소 건을 제외한 금액을 재결제 하시면 이전 결제 건 전체가 취소 됩니다.</li>
+									<li><span>-</span>부분 취소 시 결제한도 금액이 부족한 경우, 휴대폰 결제 외에 다른 결제 수단으로 이용해주세요.</li>
+								</ul>
+								<p><strong>	※ 자세한 결제 취소 및 반품 절차는 FAQ 참고</strong></p>
+							</div>
+						</div>
+
+						<div class="payments" id="cardReport_choice2">
+							<div>
+								<p class="tit" style="margin-bottom:12px;">KG이니시스의 스마트폰 앱 간편결제 서비스</p>
+								<p style="margin-bottom:15px;">사용자가 신용카드 결제정보를 Kpay에 미리 등록하고, 가맹점 결제 시 Kpay 어플리케이션을 실행, 간편하게 결제하는 서비스 입니다.</p>
+
+								<dl>
+									<dt>※ Kpay 지원 카드</dt>
+									<dd style="margin-bottom:15px;">
+										<ul>
+											<li style="line-height:15px;font-size:11px;color:#888;">신한, 비씨, 삼성, 롯데, 하나, 국민, 현대, 농협, 외환카드 사용가능</li>
+										</ul>
+									</dd>
+									<dt>※ Kpay 안드로이드 지원 단말</dt>
+									<dd>
+										<ul>
+											<li>
+												<strong>지원 OS :</strong>
+												<span>안드로이드 4.0 아이스크림 샌드위치 이상</span>
+											</li>
+											<li>
+												<strong>해상도 : </strong>
+												<span>1280 x 720 이상 단말</span>
+											</li>
+											<li>갤럭시S2 와 해당 동급 스마트폰 사용 불가</li>
+										</ul>
+									</dd>
+									<dt>※ Kpay iOS 지원 단말</dt>
+									<dd>
+										<ul>
+											<li>
+												<strong>지원 OS : </strong>
+												<span>iOS 6.0 이상</span>
+											</li>
+											<li>
+												<span>iPhone 4 이상 단말기 사용가능</span>
+											</li>
+											<li>
+												<strong>해상도 :</strong>
+												<span>1280 x 720 이상 단말</span>
+											</li>
+											<li>갤럭시S2 와 해당 동급 스마트폰 사용 불가</li>
+										</ul>
+									</dd>
+								</dl>
+								<p><strong>	위의 지원 카드 및 지원 단말기 등을 확인 후 사용해 주세요.</strong></p>
+							</div>
+						</div>
+						<div class="payments" id="no_accbox">
+							<p>아래 <strong>‘결제하기’</strong> 버튼클릭 후 입금은행 및 계좌, 입금기한을 확인하실 수 있습니다.</p>
+							<table class="form_table">
+								<tbody><tr class="no_line">
+									<th style="padding-bottom:0;">현금영수증 신청</th>
+									<td style="padding-bottom:0;">
+										<div class="td_wrap">
+											<div class="cell">
+												<div class="rdo_box1 blue" style="margin-right:15px;">
+													<input type="radio" name="CASH_RECPT_APPLY" id="CASH_RECPT_APPLY_Y">
+													<label for="CASH_RECPT_APPLY_Y">신청하기</label>
+												</div>
+												<div class="rdo_box1 blue">
+													<input type="radio" name="CASH_RECPT_APPLY" id="CASH_RECPT_APPLY_N">
+													<label for="CASH_RECPT_APPLY_N">신청안함</label>
+												</div>
+											</div>
+										</div>
+										<!-- //td_wrap -->
+									</td>
+								</tr>
+								<tr class="no_line">
+									<th>&nbsp;</th>
+									<td>
+										<div class="td_wrap">
+											<p>- 개인 소득공제용으로 신청하실 경우 국세청으로 자동전송됩니다.</p>
+											<p>- 사업자 지출 증빙용으로 신청하시면 세금계산서로 활용 가능합니다.</p>
+										</div>
+									</td>
+								</tr>
+							</tbody></table>
+
+							<table class="form_table" id="cashReport_choice">
+								<tbody><tr class="no_line">
+									<th style="border-top:1px dotted #ccc;">현금영수증 발급</th>
+									<td style="border-top:1px dotted #ccc;">
+										<div class="td_wrap">
+											<div class="cell">
+												<div class="rdo_box1 blue" style="margin-right:15px;">
+													<input type="radio" name="CASH_RECPT_PUBL_PRPOS_R" id="CASH_RECPT_PUBL_PRPOS_01" checked="">
+													<label for="CASH_RECPT_PUBL_PRPOS_01">개인소득공제용</label>
+												</div>
+												<div class="rdo_box1 blue">
+													<input type="radio" name="CASH_RECPT_PUBL_PRPOS_R" id="CASH_RECPT_PUBL_PRPOS_02">
+													<label for="CASH_RECPT_PUBL_PRPOS_02">사업자증빙용</label>
+												</div>
+											</div>
+										</div>
+										<!-- //td_wrap -->
+									</td>
+								</tr>
+
+								<tr id="cashReport_phn" class="phn no_line" style="display: table-row;">
+									<th>&nbsp;</th>
+									<td style="padding-top:0;">
+										<div class="td_wrap">
+											<input type="tel" style="width:100%;height:30px;border:1px solid #ddd;" placeholder="휴대폰 번호">
+										</div>
+										<!-- //td_wrap -->
+									</td>
+								</tr>
+								<tr id="cashReport_bizr" class="phn no_line">
+									<th>&nbsp;</th>
+									<td style="padding-top:0;">
+										<div class="td_wrap">
+											<input type="tel" style="width:100%;height:30px;border:1px solid #ddd;" placeholder="사업자 등록번호">
+										</div>
+										<!-- //td_wrap -->
+									</td>
+								</tr>
+							</tbody></table>
+							<div class="check_safedeal">
+								<p class="tit">한국스탠다드차타드은행 채무지급보증안내</p>
+								<p>당사는 고객님이 현금으로 결제한 금액에 대해 한국스탠다드차타드은행과 채무 지급보증 계약을 체결하여 안전거래를 보장하고 있습니다.</p>
+								<a href="#" class="icons aft" data-icon="">서비스 가입사실 확인</a>
+							</div>
+						</div>
+						<!-- //payments no_accbox -->
+
+						<!-- //180125 결제수단업데이트 -->
+						<div class="payments" id="naver_payment">
+							<div>
+								<ul class="li_hypn">
+								    <li>네이버페이는 네이버ID로 별도 앱 설치 없이 신용카드 또는 은행계좌 정보를<br>
+										등록하여 네이버페이 비밀번호로 결제할 수 있는 간편결제 서비스입니다.</li>
+								    <li>주문 변경 시 카드사 혜택 및 할부 적용 여부는 해당 카드사 정책에 따라<br>
+										변경될 수 있습니다.</li>
+								    <li>결제 가능한 신용카드 : 신한, 삼성, 현대, BC, 국민, 하나, 롯데, NH농협, 씨티</li>
+								    <li>결제 가능한 은행 : NH농협, 국민, 신한, 우리, 기업, SC제일, 부산, 경남, 수협, 우체국</li>
+									<li>네이버페이 카드 간편결제는 네이버페이에서 제공하는 카드사 별 무이자,<br>
+										청구할인 혜택을 받을 수 있습니다.</li>
+								</ul>
+							</div>
+							<table class="form_table">
+								<tbody><tr class="no_line">
+									<th style="padding-bottom:0;">현금영수증 신청</th>
+									<td style="padding-bottom:0;">
+										<div class="td_wrap">
+											<div class="cell">
+												<div class="rdo_box1 blue" style="margin-right:15px;">
+													<input type="radio" name="CASH_RECPT_APPLY" id="CASH_RECPT_APPLY_Y2">
+													<label for="CASH_RECPT_APPLY_Y2">신청하기</label>
+												</div>
+												<div class="rdo_box1 blue">
+													<input type="radio" name="CASH_RECPT_APPLY" id="CASH_RECPT_APPLY_N2">
+													<label for="CASH_RECPT_APPLY_N2">신청안함</label>
+												</div>
+											</div>
+										</div>
+										<!-- //td_wrap -->
+									</td>
+								</tr>
+								<tr class="no_line">
+									<th>&nbsp;</th>
+									<td>
+										<div class="td_wrap">
+											<p>- 개인 소득공제용으로 신청하실 경우 국세청으로 자동전송됩니다.</p>
+											<p>- 사업자 지출 증빙용으로 신청하시면 세금계산서로 활용 가능합니다.</p>
+										</div>
+									</td>
+								</tr>
+							</tbody></table>
+
+							<table class="form_table" id="cashReport_choice2">
+								<tbody><tr class="no_line">
+									<th style="border-top:1px dotted #ccc;">현금영수증 발급</th>
+									<td style="border-top:1px dotted #ccc;">
+										<div class="td_wrap">
+											<div class="cell">
+												<div class="rdo_box1 blue" style="margin-right:15px;">
+													<input type="radio" name="CASH_RECPT_PUBL_PRPOS_R" id="CASH_RECPT_PUBL_PRPOS_03" checked="">
+													<label for="CASH_RECPT_PUBL_PRPOS_03">개인소득공제용</label>
+												</div>
+												<div class="rdo_box1 blue">
+													<input type="radio" name="CASH_RECPT_PUBL_PRPOS_R" id="CASH_RECPT_PUBL_PRPOS_04">
+													<label for="CASH_RECPT_PUBL_PRPOS_04">사업자증빙용</label>
+												</div>
+											</div>
+										</div>
+										<!-- //td_wrap -->
+									</td>
+								</tr>
+
+								<tr id="cashReport_phn2" class="phn no_line" style="display: table-row;">
+									<th>&nbsp;</th>
+									<td style="padding-top:0;">
+										<div class="td_wrap">
+											<input type="tel" style="width:100%;height:30px;border:1px solid #ddd;" placeholder="휴대폰 번호">
+										</div>
+										<!-- //td_wrap -->
+									</td>
+								</tr>
+								<tr id="cashReport_bizr2" class="phn no_line">
+									<th>&nbsp;</th>
+									<td style="padding-top:0;">
+										<div class="td_wrap">
+											<input type="tel" style="width:100%;height:30px;border:1px solid #ddd;" placeholder="사업자 등록번호">
+										</div>
+										<!-- //td_wrap -->
+									</td>
+								</tr>
+							</tbody></table>
+							<div class="check_safedeal">
+								<p class="tit">한국스탠다드차타드은행 채무지급보증안내</p>
+								<p>당사는 고객님이 현금으로 결제한 금액에 대해 한국스탠다드차타드은행과 채무 지급보증 계약을 체결하여 안전거래를 보장하고 있습니다.</p>
+								<a href="#" class="icons aft" data-icon="">서비스 가입사실 확인</a>
+							</div>
+						</div>
+						<!-- //payment naver_payment -->
+
+						<div class="payments" id="kakao_payment">
+							<div>
+								<ul class="li_hypn">
+								    <li>카카오페이 간편결제는 카카오페이에서 운영하는 간편결제 서비스 입니다.</li>
+								    <li>결제가능카드 : 신한, BC, KB, 삼성, 현대, 롯데, 하나, NH</li>
+								    <li>카카오페이로 결제 시 카드사에서 제공하는 제휴 및 청구할인은 이용불가 합니다. </li>
+								</ul>
+							</div>
+						</div>
+						<!-- //payment kakao_payment -->
+
+						<div class="payments" id="lpay_payment">
+							<div>
+								<ul class="li_hypn">
+								    <li>L.pay 간편결제는 롯데에서 운영하는 온 / 오프라인 통합 간편결제 서비스<br>입니다.</li>
+								    <li>결제 불가 카드 : 농협카드, 씨티카드 (추후 서비스 제공 예정)</li>
+								    <li>결제방법 : 앱 가입 -&gt; 결제수단 등록 -&gt; 지문 or PIN 인증 후 결제</li>
+									<li>카드사/금융사별 정책에 따라 고액 결제 시, 추가 인증이 필요합니다.</li>
+								</ul>
+							</div>
+						</div>
+						<!-- //payment lpay_payment -->
+
+						<div class="payments" id="payco_payment">
+							<div>
+								<ul class="li_hypn">
+								    <li>PAYCO 간편결제는 엔에이치엔페이코(주)에서 운영하는 서비스이며,<br>PAYCO ID 하나로 간편하게 결제하실 수 있습니다.</li>
+								    <li>결제가능 카드 : 신한, BC, KB, 삼성, 현대, 롯데, 하나, NH</li>
+								    <li>BC, KB, 현대, NH로 결제 시 카드사에서 제공하는 제휴 및 청구할인 이용이 가능합니다. (단, 정책에 따라 일부 변동이 있을 수 있습니다.)</li>
+
+								</ul>
+							</div>
+						</div>
+						<!-- //payment payco_payment -->
+						<!-- //180125 결제수단업데이트END -->
+						<!-- 170324 border-bottom:1px solid #cfcfcf;padding-top:15px; 삭제  -->
+						<div class="view_more_area" style="margin-top:15px;">
+							<div style="margin-bottom:10px;">
+								<div class="chk_wrap">
+									<div class="chk_box1 blue">
+										<input type="checkbox" id="pay_agree_yn" onclick="fnAllTermsAgree();">
+										<label for="pay_agree_yn" style="color:#b71c26;font-weight:bold;">전체 동의하기</label>
+									</div>
+								</div>
+							</div>
+							<!-- 161219 start -->
+							<div class="sub_agreements" style="display:none;">
+								<div>
+									<div class="chk_wrap">
+										<div class="chk_box1 blue">
+											<input type="checkbox" id="term1" onclick="fnCheck();">
+											<label for="term1" class="adipro-r">전자금융거래 이용약관</label>
+										</div>
+									</div>
+									<a href="javascript:void(0);" class="icons aft" data-icon="" onclick="window.open('https://plugin.inicis.com/html60/main/01_Information.html','inicisTerm','width=980,height=580')">자세히 보기</a>
+								</div>
+
+								<div>
+									<div class="chk_wrap">
+										<div class="chk_box1 blue">
+											<input type="checkbox" id="term2" onclick="fnCheck();">
+											<label for="term2" class="adipro-r">고유식별정보 수집 및 이용안내</label>
+										</div>
+									</div>
+									<a href="javascript:void(0);" class="icons aft" data-icon="" onclick="window.open('https://plugin.inicis.com/html60/main/02_Information.html','inicisTerm','width=450,height=580')">자세히 보기</a>
+								</div>
+
+								<div>
+									<div class="chk_wrap">
+										<div class="chk_box1 blue">
+											<input type="checkbox" id="term3" onclick="fnCheck();">
+											<label for="term3" class="adipro-r">개인정보의 수집 및 이용안내</label>
+										</div>
+									</div>
+									<a href="javascript:void(0);" class="icons aft" data-icon="" onclick="window.open('https://plugin.inicis.com/html60/main/03_Information.html','inicisTerm','width=980,height=580')">자세히 보기</a>
+								</div>
+
+								<div>
+									<div class="chk_wrap">
+										<div class="chk_box1 blue">
+											<input type="checkbox" id="term4" onclick="fnCheck();">
+											<label for="term4" class="adipro-r">개인정보 제공 및 위탁안내</label>
+										</div>
+									</div>
+									<a href="javascript:void(0);" class="icons aft" data-icon="" onclick="window.open('https://plugin.inicis.com/html60/main/04_Information.html','inicisTerm','width=980,height=580')">자세히 보기</a>
+								</div>
+							</div>
+							<!-- //161219 -->
+						</div>
+						<!-- //161213 -->
+
+						
+						<div class="view_more_area" style="margin-top:15px;padding:15px 0;border-top:2px solid #000;">
+							<div>
+								<div class="chk_wrap">
+									<div class="chk_box1 blue">
+										<input type="checkbox" id="terms_nomem_agr" checked="checked">
+										<label for="terms_nomem_agr" class="adipro-r">비회원 구매동의 (전체 동의)</label>
+									</div>
+								</div>
+								<!-- 200512 비회원 구매동의 약관링크 변경 -->
+								<a href="https://m.reebok.co.kr/MO/Terms/terms.action?terms=200519_terms_01&headerdisp=N" class="icons2 aft"
+									target="_blank"
+									data-icon="">약관 전문 보기</a>
+							</div>
+							<!-- 200512 비회원 약관 추가 -->
+							<div style="margin-top: 9px;">
+								<div class="chk_box1 blue">
+									<span class="adipro-r" style="padding-left: 27px;">개인정보 수집 이용 동의</span>
+								</div>
+								<a href="https://m.reebok.co.kr/MO/Terms/terms.action?terms=200519_terms_pop_04&headerdisp=N" class="icons2 aft"
+									target="_blank"
+									data-icon="">자세히 보기</a>
+							</div>
+							<!-- //200512 -->
+						</div>
+						
+					</div>
+					<!-- //payment_box -->
+				</div>
+			</div>
+			<!-- //odr_pay_box -->
+
+
+			<!-- <div style="position:relative;padding:15px 67px 15px 15px;background:#f0f0f0;">
+				<div class="chk_box1 blue">
+				    <input type="checkbox" id="agree_mi">
+				    <label for="agree_mi" style="font-size:12px;vertical-align:middle;">
+				        마이 아디다스 상품 구매 동의
+				    </label>
+				</div>
+				
+				<a class="btn_miadi_noti" href="javascript:void(0)" style="position: absolute;top: 50%;right: 15px;color: #fff;font-size: 12px;background: #aaa;display: block;padding: 9px 12px;transform: translate3d(0,-50%,0);-webkit-transform: translate3d(0,-50%,0);letter-spacing: -0.5px;">
+					<span>유의사항 전체보기</span>
+					<span class="focused_box" style="display: none;width:100%;height:100%;border: 3px solid #027dbf;display: none;position: absolute;top:0;left:0;z-index: 10;box-sizing:border-box;-webkit-box-sizing:border-box;"></span>
+				</a>
+			</div> -->
+			
+			<div class="mi_sub_agreements" style="display:none; position:relative; background-color:#f0f0f0; padding-bottom:30px;">
+				<div class="mi_line" style="position:absolute; top:-3px; left:25px;">
+					<img src="http://imagem.adidas.co.kr/upload/fckeditor/temp/image/mi_line_180119_mo.jpg" alt="">
+				</div>
+				<ul style="padding:5px 0 0 50px;">
+					<li style="color:#027dbf; font-size:12px;">
+						<span class="icons" data-icon="" style="color:#027dbf; font-size:12px; margin-right:4px;"></span>결제 후 주문 취소 불가
+					</li>
+					<li style="color:#027dbf; font-size:12px; margin-top:8px;">
+						<span class="icons" data-icon="" style="color:#027dbf; font-size:12px; margin-right:4px;"></span>결제 후 제품 옵션 정보 수정 불가
+					</li>
+					<li style="color:#027dbf; font-size:12px; margin-top:8px;">
+						<span class="icons" data-icon="" style="color:#027dbf; font-size:12px; margin-right:4px;"></span>배송기간 : 주문 후 약 4~6주 소요가능
+					</li>
+				</ul>
+			</div>
+			<!-- 180122 수정 END-->
+			<div class="button_area no_pdg">
+				<!-- 160223 버튼 크기 값 수정-->
+				<div class="blue"><a href="#" style="height:60px;line-height:60px;">결제하기</a></div>
+			</div>
+		</div>
+		<!-- //container product_list -->
+		<!-- 180126 배송지 관리 -->
+		<div class="mypage order_cont_2" style="display:none;">
+			<div id="addr_list" class="addr_list">
+				<div class="box">
+					<div class="info">
+						<div class="top">
+							<div class="rdo_box1">
+								<input type="radio" id="DLIVY_CHECK_0" name="DLIVY_CHECK" value="0">
+								<label for="DLIVY_CHECK_0">기본배송지</label>
+								<div class="dft_adr icons" data-icon="">기본 배송지</div>
+							</div>
+						</div>
+						<ul>
+							<li><span>받는분 : </span><strong>김수영</strong></li>
+							<li><span>우편번호 : </span><strong>08709</strong></li>
+							<li><span>우편주소 : </span><strong>서울특별시 관악구 보라매로 62</strong></li>
+							<li><span>지번주소 : </span><strong>서울특별시 관악구 봉천동  1698-1 보라매삼성아파트</strong></li>
+							<li><span>상세주소 : </span><strong>(봉천동, 보라매삼성아파트108-)</strong></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="button_area col2" style="padding-top:30px;">
+				<div class="l_gray"><a href="javascript:fn_selDlvPl();">선택적용</a></div>
+				<div><a href="javascript:fn_dlvPlPopClose();">취소</a></div>
+			</div>
+		</div>
+
+		<div class="layerpop_wrap" id="miadidas_notification">
+			<div class="inner" style="width: 100%; padding: 0px 15px; position: absolute; left: 0px; top: 0px; margin: 137.1px 0px 0px; background: none;">
+				<a href="javascript:void(0)" class="close_x_btn" style="right:15px;"></a>
+				<div style="padding:15px;margin-bottom:15px;background:#fff;">
+					<dl>
+						<dt style="margin-bottom:10px;font-size:16px;">마이아디다스 유의사항</dt>
+						<dd>
+							<ol class="li_num">
+								<li style="margin-bottom:3px;font-size:12px;line-height:15px;">온라인스토어에서 본인이 직접 선택하여 입력한 정보(소재·색상·치수 등)에 오류가 없음을 충분히 확인 하였습니다.(결제 완료 후 작업하신 <strong style="color:#ef8811;">제품 정보 수정이 불가</strong>함을 이해 하였습니다.)</li>
+								<li style="margin-bottom:3px;font-size:12px;line-height:15px;">온라인스토어 화면상에 표시된 제품, 소재, 원단, 부분품 등의 색감·크기, 자수의 크기·위치·색감, 문자(도형)의 서체·위치·크기가 실물과 다소 다를 수 있음을 이해 하였습니다.</li>
+								<li style="margin-bottom:3px;font-size:12px;line-height:15px;color:#ef8811;font-weight:bold;">주문된 제품은 주문일로부터 약 4주~6주가 소요될 수 있으며, 제작공정 및 부득이한 사정에 따라 4~6주가 초과되어 배송될 수 있음을 알고 있습니다. 본인은 불합리한 장기지연이 아닌 한, 배송지연에 따른 책임이 아디다스에 있지 않음을 이해 했습니다.</li>
+								<li style="margin-bottom:3px;font-size:12px;line-height:15px;">주문생산을 위하여 본인이 직접 선택 입력한 정보를 바탕으로 제조된 주문제작 제품이 본인에게 치수 등이 맞지 않는 등의 상황이 발생하더라도 이는 제품의 하자로 간주되지 않으며 수선, 교환, 환불의 대상이 되지 않음을 이해 했습니다.</li>
+								<li style="margin-bottom:3px;font-size:12px;line-height:15px;">본인이 선택하여 주문한 제품은 주문제작 제품으로서, <strong style="color:#ef8811;">주문 후 주문취소를 하거나 주문변경을 할 수 없음에 동의합니다.</strong> 또한 주문제품이 본인 또는 본인이 지정한 자가 수령한 후, 본인이 선택한 디자인이나 색상에 불만이 있더라도 이는 교환이나 환불의 대상이 되지 않음을 이해 했습니다.</li>
+								<li style="margin-bottom:3px;font-size:12px;line-height:15px;">주문한 제품과 배송된 제품이 디자인, 색상 또는 사이즈 등이 명백히 다른 경우, 관련 법(배송 받은 날(수령일)로부터 3개월이내 반품가능 등)에 따라 환불 받을 수 있으며 아디다스는 환불 이외에 어떠한 법적 책임을 지지 않음을 이해 했습니다.</li>
+								<li style="margin-bottom:3px;font-size:12px;line-height:15px;">네이밍 주문 제작 시 아디다스가 부적절하다고 판단하는 명칭이나 조합 [ex) 제3자의 상표권 침해, 미풍양속에 반하는 명칭 등]은 입력이 불가 할 수 있으며, 입력 후에도 아디다스가 부적절하다고 판단하는 경우 주문 취소 가능함을 이해 하였습니다.</li>
+								<li style="margin-bottom:3px;font-size:12px;line-height:15px;">결제 완료 후 지정하신 <strong style="color:#ef8811;">배송 정보(주소,연락처 등) 수정이 불가</strong>함을 이해 하였습니다.</li>
+							</ol>
+						</dd>
+					</dl>
+				</div>
+			</div>
+		</div>
+
+		<!-- 170419 주소찾기 결과 START -->
+		<div class="layerpopup layerpopup_zipfinder " id="layerpopup-zipfinder">
+			<div class="header">
+				<h2>주소찾기</h2>
+		    	<a href="javascript:void(0)" class="close_x_btn"></a>
+		    </div>
+		    <div class="contents">
+		    	<div class="zip_result" style="margin-bottom: 30px;">
+		    		<ul class="zip_list">
+		    			<li>
+		    				<a href="#">
+		    					<strong>06449</strong>
+		    					<div class="address_box">
+		    						<div>
+		    							<div class="label">도로명</div>
+		    							서울 서초구 서초동 1362-26
+		    						</div>
+		    						<div>
+		    							<div class="label">지번</div>
+		    							서울 서초구 강남대로 253 (아웃백스테이크하우스)
+		    						</div>
+		    					</div>
+		    				</a>
+		    			</li>
+		    		</ul>
+		    	</div>
+		        <div class="search_wrap" style="margin-bottom: 30px;">
+		   			<div class="inner">
+		   				<div class="input_wrap" style="padding: 0;">
+		   					<input type="text" style="padding-left: 10px;" placeholder="상세주소를 입력해주세요.">
+		   				</div>
+		   			</div>
+		   		</div>
+				<div class="button_area" style="padding: 0 0 15px 0;">
+					<div class="blue"><a href="">확인 <span class="icons" data-icon="" style="font-size:11px;vertical-align:middle;margin-left:3px;"></span></a></div>
+				</div>
+				<div style="padding-bottom:30px;text-align:center;">
+					<a href="#" style="font-size:12px;color:#000;">주소 재검색하기 <span class="icons" data-icon=""></span></a>
+				</div>
+			</div>
+		</div>
+		<!-- 170419 END -->
+
+		<!-- 약관 레이어 팝업 -->
+		<!--   <div class="overlay"></div> -->
+		<div id="allAgreePop">
+			<div class="head">
+				<h1>아디다스 비회원구매 약관</h1>
+				<a href="" class="closeBtn"><img src="/images/reebok/efu2018/btn/btn_close2.png" alt="닫기"></a>
+			</div>
+
+		       <div class="terms">
+				<!-- 200512 아래 h2 텍스트 수정 -->
+				<h2>비회원 구매이용약관</h2>
+				<div class="content">
+					<p class="top">제1장 총칙</p>
+					<p>제1조 (목적)</p>
+					이 이용약관(이하 “약관” 또는 “이용계약”)은 아디다스코리아(유) (이하 “회사”)가 운영하는 웹사이트 및 모바일 페이지 등(이하 “사이트”)에서 제공하는 인터넷 관련 서비스(이하 “서비스”)를 이용함에 있어 회사와 이용자의 권리•의무 및 책임 사항을 규정함을 목적으로 합니다.
+					<p>제2조 (용어의 정의)</p>
+
+					1. 본 약관에서 정하는 용어의 정의는 다음과 같습니다.<br><br>
+					① “사이트”란 회사가 컴퓨터, 이동통신 등의 각종 유무선 장치를 포함하는 정보통신설비를 이용하여 상품이나 서비스를 이용자에게 제공할 수 있도록 설정한 가상공간을 말하며, 회사가 운영하고 있는 사이트의 현황은 아래와 같습니다. (2018. 01. 기준)<br>
+					- http://shop.adidas.co.kr<br>
+					- http://m.adidas.co.kr<br>
+					- 향후 회사에서 공지하고 운영하는 웹사이트 및 모바일 앱 등<br>
+					② “이용자”란 사이트에 접속하여 이 약관에 따라 회사가 제공하는 서비스를 받는 회원 및 비회원을 말합니다.<br>
+					③ “회원”이라 함은 회사에 개인정보 및 회사정보를 제공하여 회원등록을 한 자로서, 회사가 제공하는 정보(상품 및 서비스, 마케팅 정보 등)를 지속적으로 제공받으며, 회사가 제공하는 서비스를 계속적으로 이용할 수 있는 자를 말합니다.<br>
+					④ “비회원”이라 함은 회원으로 가입하지 않고 회사가 제공하는 서비스를 이용하는 자를 말합니다.<br>
+					⑤ "개인정보”란 생존하는 개인에 관한 정보로서 성명, 주민등록번호 등의 사항에 의하여 특정 개인을 식별할 수 있는 정보(당해 정보만으로는 특정 개인을 인식할 수 없더라도 다른 정보와 용이하게 결합하여 식별할 수 있는 것을 포함)를 말합니다.<br>
+					⑥ “아이디”란 회원의 식별과 회원의 서비스 이용을 위하여 회원이 설정하고 회사가 승인하여 회사에 등록된 영문, 숫자 또는 영문과 숫자의 조합을 말합니다.<br>
+					⑦ “비밀번호”란 회원의 동일성 확인을 위하여 회원 스스로가 설정하여 회사에 등록된 영문과 숫자의 조합을 말합니다.<br>
+					⑧ “회원등급”이란 회사가 제공하는 서비스를 이용한 결과에 따라 일정한 기준에 의하여 회사가 회원에게 부여하는 등급을 말합니다.<br>
+					⑨ “게시글”이란 이용자가 “서비스”를 이용함에 있어 “서비스상”에 게시한 글, 사진, 동영상 및 각종 파일과 링크 등의 게재물을 말합니다.<br>
+					⑩ “상품평”이란 게시글 중 상품 구매 후 해당 상품에 대한 종합적인 평가를 기록한 글, 이미지 등의 게재물을 말합니다. 회사는 회사 및 회사의 본사 기타 계열회사가 운영하는 사이트 또는 제휴한 사이트, 홍보채널 등에서의 상품의 판촉, 홍보 등을 위해 상품평을 복제, 배포, 전송, 전시할 수 있으며 본질적인 내용에 변경을 가하지 않는 범위 내에서 수정, 편집할 수 있습니다.<br>
+					⑪ “포인트” 란 회원이 상품을 구매할 때나, 회사가 제공하는 서비스를 이용할 때 회사가 제공하는 적립금을 의미하며, 환금 불가능한 회사 전용의 재산적 가치가 없는 사이버 데이터를 말하며, 일정 금액에 달한 포인트는 쿠폰으로 자동 전환되며 회원은 상품 구매 시 쿠폰을 사용할 수 있습니다.<br>
+					⑫ “서비스”란  제4조에 정한 바 대로 회사가 사이트를 통하여 이용자를 위하여 유료 또는 무료로 제공하는 행위 또는 그 행위의 대상인 유•무형의 물건 자체를 의미합니다.<br>
+
+					(13) “개별계약”이란 이용자가 회사의 특정 상품이나 용역의 구매를 신청하고 회사가 이에 대해 승낙하는 것을 말합니다.<br>
+					(14)“마이아디다스”란 이용자가 직접 디자인(색상, 소재, 네이밍 등)하여 “회사”에 주문 제작을 의뢰한 상품을 말합니다.<br>
+					2. 이 약관에서 사용하는 용어의 정의는 제1항에서 정하는 것을 제외하고는 관계법령 및 서비스 별 안내에서 정하는 바에 의합니다.<br><br>
+
+					<p>제3조 (약관의 명시 효력 및 변경)</p>
+					1. 이 약관은 이용자들이 알 수 있도록 회사의 서비스가 제공되는 사이트의 첫 화면에 게시하거나 기타의 방법으로 회원에게 공지함으로써 효력이 발생합니다.<br>
+					단, 약관의 내용은 이용자가 연결화면을 통하여 볼 수 있도록 할 수 있습니다.<br>
+					2. 회사는 전자상거래등에서의소비자보호에관한법률, 약관의규제등에관한법률, 전자거래기본법, 전자서명법, 정보통신망이용촉진등에관한법률, 소비자보호법, 개인정보보호법 등 관련 법령을 위배하지 않는 범위에서 이 약관을 개정할 수 있으며, 회사가 약관을 변경하는 경우에는 적용일자 및 변경사유를 명시하여 그 적용일자 7일 전부터 사이트에 공지합니다.<br>
+					단, 이용자에게 불리한 약관의 변경인 경우에는 30일 이전에 e-mail, SMS, 로그인 시 동의창 등으로 이용자에게 개별 통지합니다. 이 경우, 이용자의 연락처 미기재 및 변동 등으로 인하여 개별 통지가 어려운 경우에 한하여 이 약관에 의한 전체 공지(사이트 내 팝업창, 공지사항 페이지 내 또는 오프라인 매장 공지 등 회사가 정한 방법)로써 개별 통지를 한 것으로 봅니다. 변경된 약관은 본 조 제1항의 방법으로 공지함으로써 효력을 발생합니다.<br>
+					3. 전 항에도 불구하고 이용자가 정기적으로 회사가 운영하는 사이트에 방문하여 회사의 서비스를 이용하는 경우 약관의 변경에 동의하는 것으로 봅니다. 변경된 약관에 대한 정보를 알지 못하여 발생하는 회원 또는 이용자의 피해에 대하여 회사는 책임을 부담하지 않습니다.<br>
+					4. 회원은 변경된 약관에 동의하지 않을 경우 회원 탈퇴(이용계약의 해지)를 요청할 수 있으며, 회사가 제2항에 따라 변경된 약관을 공지 또는 통지하면서 이용자에게 약관 변경 적용일까지 거부의사를 표시하지 아니할 경우, 약관의 변경에 동의한 것으로 간주한다는 내용을 공지 또는 통지하였음에도 이용자가 명시적으로 약관 변경에 대한 거부의사를 위 약관 변경 적용일까지 회사에게 명시적으로 표시하지 아니하면 회사는 이용자가 변경 약관에 동의한 것으로 간주합니다.<br>
+
+					<p>제2장 서비스의 이용</p>
+					<p>제4조 (서비스의 제공)</p>
+					1. 회사는 다음과 같은 서비스를 제공합니다.<br>
+
+					① 쇼핑관련 정보 제공 서비스<br>
+					② 회원 커뮤니티 운영 서비스<br>
+					③ 사이트에서 상품 또는 용역에 대한 정보의 제공 및 구매 계약 체결<br>
+					④ 이용자가 사이트에서 구매 신청한 상품 또는 용역의 배송<br>
+					⑤ 기타 사이트가 정하는 이용자에게 유용한 부가 서비스<br>
+
+					2. 회사는 회원 또는 이용자가 사용하는 서비스에 대해 일정량의 사용료를 청구 할 수 있습니다.<br>
+					3. 서비스 이용은 회사의 업무상 기술상 특별한 지장이 없는 경우 연중 무휴, 1일 24시간을 원칙으로 합니다. 단, 회사는 천재지변 또는 전기공급 중단 등의 이에 준하는 불가항력으로 인하여 서비스를 제공할 수 없는 경우에는 서비스 제공에 관한 책임이 면제 됩니다.<br>
+					또한 이용자의 귀책사유로 인한 서비스 이용의 장애에 대해서는 일체 책임을 지지 않습니다.<br>
+					4. 회사는 이용자가 서비스를 이용하여 기대하는 손익이나 서비스를 통하여 획득한 자료 등으로 인한 손해에 관하여 책임을 지지 않습니다.<br>
+					또한 회사는 이용자가 서비스에 게재한 정보, 자료, 사실의 신뢰도, 정확성 등의 내용에 관하여 책임을 지지 않습니다.<br>
+					5. 회사는 서비스의 운용과 관련하여 사이트 화면, 홈페이지, 전자우편 등에 광고를 게재할 수 있습니다.<br>
+					6. 회사는 광고업무와 관련하여 회원 전체 또는 일부의 개인 정보에 관한 통계자료를 작성하여 이를 사용할 수 있고, 서비스를 통하여 회원의 컴퓨터에 쿠키를 전송할 수 있습니다. 이 경우 회원은 쿠키의 수신을 거부하거나 쿠키의 수신에 대하여 경고하도록 사용하는 컴퓨터의 브라우저 설정을 변경할 수 있습니다. 이 외의 개인정보 보호에 관해서는 관련법령 및 회사의 "개인정보처리방침"에 준합니다.<br>
+
+					<p>제5조 (서비스의 중단)</p>
+					1. 회사는 컴퓨터 등 정보통신설비의 보수 점검 교체 및 고장, 통신의 두절 등의 사유가 발생한 경우에는 서비스 제공을 일시적으로 중단할 수 있습니다.<br>
+					2. 본 조 제1항에 의한 서비스 중단의 경우 회사는 제8조에 정한 방법으로 이용자에게 통지합니다.<br>
+
+					<p>제3장 회원가입계약</p>
+					<p>제6조 (회원가입)</p>
+					1. 만 14세 이상의 자라면 누구나(국내 거주 외국인 포함) 사이트가 정한 가입 양식에 따라 이 약관에 동의한다는 의사 표시를 함으로써 회원가입을 신청합니다.<br>
+					2. 회사는 본 조 제1항과 같이 회원으로 가입할 것을 신청한 이용자 중 다음 각호에 해당하지 않는 한 회원으로 등록합니다.<br>
+
+					① 만 14세 미만의 자가 법정대리인(부모 등)의 동의 없이 이용신청을 하는 경우<br>
+					② 등록내용에 허위, 기재누락, 오기가 있는 경우<br>
+					③ 다른 사람의 명의를 이용하여 신청하는 경우<br>
+					④ 회원으로 등록하는 것이 사이트의 기술상 또는 업무 수행상 현저히 지장이 있다고 판단하는 경우<br>
+					⑤ 이 약관에 의하여 회원 자격을 상실한 적이 있는 것으로 관련 법령에 근거하여 회사가 확인한 경우. 단, 회사가 재가입을 승낙한 경우를 제외<br>
+					⑥ 기타 신청자의 귀책 사유로 이용 승낙이 곤란한 경우<br>
+
+					3. 회원가입계약의 성립시기는 회사의 승낙이 회원에게 도달한 시점으로 합니다.<br>
+					4. 회원은 개인정보관리화면을 통해 언제든지 본인의 개인정보를 열람하고 수정할 수 있습니다. 회원가입 신청 시 기재한 등록사항의 변경이 있는 경우, 즉시 변경사항을 온라인에서 최신의 정보로 수정하여야 합니다. 단, 이름, 아이디 등 기술적, 관리적으로 변경이 불가능한 정보는 수정할 수 없습니다. 회원 본인이 수정하지 않은 정보로 인하여 발생하는 손해는 당해 회원이 부담하며, 회사는 이에 대하여 아무런 책임을 지지 않습니다.<br>
+					5. 회사는 회원의 정보를 서비스를 제공하기 위한 목적 이외의 용도로 사용하거나 이용자의 동의 없이 제3자에게 제공하지 않습니다.<br>
+					6. 회사는 회원의 개인정보를 보호하기 위한 정책을 수립하고 개인정보관리 책임자를 지정하여 이를 게시합니다.<br>
+					7. 기타 회원의 개인정보 수집, 이용, 보유, 제공, 처리 등에 관한 사항은 관련 법령 및 개인정보 처리방침에 따릅니다.<br>
+
+					<p>제7조 (회원 탈퇴 및 자격상실)</p>
+					1. 회원은 회사에 언제든지 탈퇴(즉, 이용계약 해지)를 요청할 수 있으며 회사가 탈퇴요청 접수일로부터 24시간 이내 회원 탈퇴 처리를 함으로써 본 이용계약은 해지됩니다.<br>
+					단, 회원은 이용계약 해지 의사를 통지하기 전에 현재 진행중인 모든 상품의 거래를 완료하거나 철회 또는 취소하여야 하며, 거래의 철회 또는 취소로 인한 불이익은 회원 본인이 부담하여야 합니다.<br>
+					또한, 회원이 회사에 대한 채무를 전부 이행(마이너스 포인트의 상환, 구입한 재화 대금 지급 등) 하지 아니한 경우 회원이 당해 채무를 전부 이행할 때까지 회사는 회원 탈퇴 처리를 유보함으로써 회원의 이용계약 해지를 제한할 수 있습니다.<br>
+					2. 회원탈퇴로 인해 발생한 불이익에 대한 책임은 회원 본인이 져야 하며, 이용계약이 해지되면 회사는 회원에게 부가적으로 제공한 각종 혜택을 회수할 수 있습니다.<br>
+					3. 회원의 의사로 이용계약을 해지한 후 사이트의 재가입을 희망할 경우 회사의 자산을 보호하기 위한 목적(이용자가 회원 재가입, 임의 해지 등을 반복적으로 행함으로써 회사가 제공하는 각종 쿠폰, 이벤트 혜택 등의 경제상의 이익을 불•편법으로 수취하거나 이 과정에서 명의도용 등의 행위 우려가 있는 것으로 회사가 판단한 경우 등)에 따라 회사는 회원의 재가입을 제한할 수 있습니다.<br>
+					4. 회사는 전자상거래등에서의소비자보호에관한법률 등 타 법률에 의해 보존해야 할 필요가 있는 경우에는 회원의 개인정보를 일정기간 보유합니다.<br>
+					5. 회원이 다음 각 호의 사유에 해당하는 경우, 회사는 회원자격을 즉시 상실(이용계약 및/또는 개별계약 해지 포함) 시키거나 사이트 이용을 제한할 수 있고, 제한 기간은 회사가 정할 수 있습니다.<br>
+
+					① 회원/비회원 등록 신청 시에 허위 내용 및 다른 사람의 명의를 허락 없이 이용하여 등록한 경우<br>
+					② 사이트에 제공되는 정보를 변경하는 등 사이트의 운영을 방해한 경우<br>
+					③ 다른 회원의 아이디(ID)를 부정 사용하는 행위<br>
+					④ 범죄행위를 목적으로 하거나 기타 범죄행위와 관련된 행위<br>
+					⑤ 선량한 풍속, 기타 사회질서를 해하는 행위<br>
+					⑥ 타인의 명예를 훼손하거나 모욕하는 행위<br>
+					⑦ 타인의 지적재산권 등의 권리를 침해하는 행위<br>
+					⑧ 해킹행위 또는 컴퓨터 바이러스, 악성 프로그램의 유포 등 정보통신설비 및 전산망의 안전을 위협하는 행위<br>
+					⑨ 타인의 의사에 반하여 광고성 정보 등 일정한 내용을 지속적으로 전송하는 행위<br>
+					⑩ 서비스의 안전적인 운영에 지장을 주거나 줄 우려가 있는 일체의 행위<br>
+					⑪ 사이트를 이용하여 법령과 이 약관이 금지하는 행위를 하는 경우<br>
+					⑫ 정보통신망이용촉진및정보보호에관한법률이 정한 1년간 계속적으로 이용실적(로그인 및 구매실적)이 없는 경우<br>
+					(13) 기타 관계법령 및 본 약관상의 제반 규정을 위반하는 경우<br>
+
+					6. 회사는 본 조 제5항에 해당되는 경우 이용계약을 해지 할 수 있습니다.<br>
+					7. 회사가 이용계약을 해지하는 경우, 회사는 회원등록을 말소하며 회원에게 전자우편, 전화, 팩스 등 회사가 선택한 방법(이하 “통지방법”)을 통하여 해지사유를 밝혀 해지의사를 통지합니다. 이용계약은 회사의 해지의사를 회원에게 통지한 시점에 종료됩니다.<br>
+					8. 회사가 이용계약을 해지하더라도, 이용계약 해지 이전에 회사와 회원 간에 이미 체결된 개별계약의 완결에 관해서는 이 약관이 계속 적용될 수 있습니다.  단, 회사는 회원에게 부가적으로 제공한 각종 혜택을 회수할 수 있습니다.<br>
+
+					<p>제8조 (회원에 대한 통지)</p>
+					1. 회사가 회원에 대한 통지를 하는 경우, 회원이 정하거나 사이트 이용에 사용한 방법(email, SMS 등)으로 “통지방법”을 삼을 수 있습니다. 단, 통지는 국문을 원칙으로 합니다.<br>
+					2. 회사는 소정의 기간 동안 사이트에 통지사항을 게시 함으로써 개별 통지에 갈음할 수 있습니다 <br>
+
+
+					<p>제4장 개별계약</p>
+					<p>제9조 (구매신청)</p>
+					사이트 이용자는 이하의 방법에 의하여 구매를 신청합니다.<br>
+					1. 사이트에서 구매 신청하는 경우 다음의 절차에 의하여야 합니다.<br>
+
+					① 재화 또는 용역의 선택<br>
+					② 주문자 정보 및 배달지역 정보 입력<br>
+					③ 결제방법의 선택<br>
+					④ 결제 버튼을 클릭<br>
+
+					<p>제10조 (개별 계약의 성립)</p>
+					1. 회사는 제9조에 따른 구매신청에 대하여 승낙할 수 있습니다. 단, 아래 각 호의 어느 하나에 해당되는 경우는 그 예외로 합니다.<br>
+					① 이용자의 신청 내용에 허위, 기재누락, 오기가 있는 경우<br>
+					② 기타 구매 신청에 승낙하는 것이 사이트 기술상 또는 업무 수행상 현저히 지장이 있다고 판단하는 경우<br>
+					③ 마이아디다스 구매 시 주문에 따른 이용자가 사이트 상 동의를 하지 않는 경우<br>
+
+					2. 회사의 승낙이 제11조 제1항의 수신확인 통지형태로 이용자에게 도달한 시점에 구매계약이 성립한 것으로 봅니다.<br>
+					3. 미성년자의 구매 시 법정 대리인이 해당 계약에 대하여 동의를 하지 아니하면, 미성년자 본인 또는 법정대리인이 그 계약을 취소할 수 있습니다. 미성년자의 거래에 관한 상세한 사항은 관련 법령이 정한 바에 의합니다.<br>
+
+					<p>제5장 대금결제</p>
+
+					<p>제 11 조 (수신확인통지)</p>
+					1. 회사는 이용자의 구매 신청이 있는 경우 이용자에게 “통지방법”으로 수신확인통지를 합니다.<br>
+					2. 수신확인통지를 받은 이용자는 구매신청 의사표시와 불일치 등이 있는 경우 수신확인통지를 받은 후 즉시 구매신청변경 또는 취소를 요청할 수 있습니다. 단, 마이아디다스 제품 구매의 경우(즉, 결제 완료 시)에는 환불요청 및 처리가 적용되지 않습니다.<br>
+					3. 회사는 배송 전 이용자의 구매신청 변경 또는 취소 요청이 있는 경우 즉시 그 요청사항을 처리합니다.<br>
+
+					<p>제12조 (대금결제방법)</p>
+					상품 또는 용역의 구매에 대한 결제는 다음의 방법에 의합니다.<br>
+					1. 회사가 승인하는 신용카드에 의한 결제<br>
+					2. 회사가 승인하는 은행에 실시간 계좌이체에 의한 결제<br>
+					3. 회사가 승인하는 통신사에 의한 휴대폰 결제<br>
+					4. 회사가 승인하는 쿠폰 사용에 의한 결제<br>
+					5. 기타 회사가 인정하는 방법에 의한 결제<br>
+
+					<p>제13조 (포인트제도의 운영)</p>
+					1. 포인트는 회원이 회사가 운영하는 사이트 및 공개된 오프라인 매장에서 포인트 적립 대상 상품을 현금 및/또는 신용카드 등으로 구매하여 최종적으로 제품을 수령한 경우 쿠폰사용금액을 제외한 결재금액 기준 5%가 자동으로 무상 적립(예 : 1,000원 구매시, 50포인트 적립, 이하 “구매 포인트”) 될 수 있고, 포인트 적립 대상 상품을 회사가 운영하는 사이트 및 공개된 오프라인 매장에서 구매한 고객이 해당 상품 페이지 내에 상품평을 작성 하는 경우 일반 상품평의 경우 300 포인트, 이미지 상품평의 경우 500 포인트가 자동으로 무상 적립(이하 “상품평 포인트”) 될 수 있습니다. 단, 포인트 적립시점은 회사의 내부 사정(전산 상 지연 처리 등)에 따라 별도의 고지 없이 상당기간 지연될 수 있으며, 회사는 포인트 제도의 운영, 포인트 가치의 책정 등을 본 약관에서 정한 절차에 따라 변경 할 수 있습니다.<br>
+					2. 다음 각호에 해당하는 경우 구매 포인트를 부여하지 않습니다.<br>
+					① 본 조 제1항의 상품 구매 금액 중 1백원 미만의 거래 (예 : 1550원 구매 시 1500원에 대하여만 포인트 적립)<br>
+					② 회사의 직영점, 회사와 계약 된 공식 매장 또는 사이트를 제외한 기타 판매처에서의 상품 및 용역 구매한 경우<br>
+					③ 회사가 행사상품 (균일가) 또는 포인트 적립 불가임을 표시한 상품을 이용자가 구매한 경우<br>
+					④ 법인 (단체) 구매를 통한 할인한 경우<br>
+					⑤ 회사의 임직원 소매카드 사용을 통한 할인을 받은 경우<br>
+					3. 다음 각호에 해당하는 경우 상품평 포인트를 부여하지 않습니다. 또한, 다음 각호 중 3호와 4호에 해당하는 경우 회원 본인이 해당 상품평의 게재에 대한 책임을 부담하며, 회사는 해당 상품평에 대한 게재 중단 요구 등을 받거나 회사 내부적으로 판단하기에 부적절한 상품평인 경우 별도의 통지 없이 우선 게재 중단 조치를 할 수 있습니다.<br>
+					① 회사가 상품평을 게재할 상품의 판매 또는 게재를 중단한 경우<br>
+					② 회사가 운영하는 사이트 및 공개된 오프라인 매장에서 상품을 구매한 후 30일이 경과하거나 회원이 구매한 상품이 주문 취소 상태인 경우<br>
+					③ 해당 상품과 관련 없거나 타인의 저작권 등의 권리, 명예 내지 신용을 훼손하는 등 부적절한 상품평을 게재하는 경우<br>
+					④ 동일 상품에 대한 상품평을 중복 게재하는 경우(즉, 1회 상품평만 작성 가능)<br>
+					4. 적립된 포인트는 상품 및 용역을 구매한 매장 및 사이트 내 회원 서비스 화면에서 조회가 가능합니다.<br>
+					5. 회원이 매장 및 사이트에서 구매한 실적 내지 포인트 적립이 회원 개인의 선량한 의도가 아닌 부정 구매 또는 부정적립으로 판단될 시 회사는 회원의 당해 구매실적 내지 포인트 적립을 취소할 수 있으며, 부정 구매로 판단되거나 합리적인 사유로 의심되는 경우 해당 기간 포인트 누적 및 이용을 제한할 수 있습니다.<br>
+					6. 본 조 제5항의 부정 매출 판단은 회사가 1차적으로 담당하며, 회원 및 매장이 부정매출 또는 부정적립 판단에 대해 이의를 제기할 경우 본 약관 제25조 내지 제27조에 의거, 조정합니다.<br>
+					7. 본 조 제6항의 진행으로 회사가 고객에게 구매실적 미인정과 포인트 누적제한을 “통지방법”으로 통지한 후, 그 통지가 고객에게 도달된 날로부터 30일 이내에 회원이 회사에 이의제기가 없을 경우에는 회원이 동의한 것으로 간주합니다.<br>
+					8. 회원에게 적립된 포인트는 회원 본인 이외에 제3자에게 양도할 수 없으며 상속, 증여, 매매 등의 대상이 되지 않습니다.<br>
+					9. 적립 포인트는 그 잔여 포인트를 포함하여, 현금으로 환불되거나 변제될 수 없습니다.<br>
+					10. 포인트에 대한 서비스 제공은 회사의 상황에 따라 변경 될 수 있습니다. 포인트의 적립 및 사용 방법은 매장 및 사이트에 게시하는 방법으로 공지됩니다. 포인트의 적립률 및 할인 방법을 회원에게 불리한 방법으로 변경하는 경우에는 그 시행일로부터 최소 30일 이전에 “통지방법”으로 고지됩니다<br>
+					11. 포인트 적립에 오류가 있을 경우 회원은 오류 발생 시점으로부터 30일 이내에 회사에 정정신청을 하여야 합니다.<br>
+					다만, 회원이 오류 발생 사실을 알지 못한데 있어 회사의 귀책 사유가 있는 경우에는 회원은 오류사실을 알게 된 날로부터 30일 이내에 당해 오류사실을 늦게 알게 된 이유를 소명하여 회사에 정정 신청을 할 수 있습니다. 회사는 회원이 회사가 발행한 포인트 매출 영수증을 제시하거나 해당 매장의 동의를 서면으로 받아 서면으로 증빙을 제출하면 정정 요청일로부터 60일 이내에 포인트를 정정합니다.<br>
+					12. 회사는 매장 또는 사이트가 회원에게 부여한 포인트를 관리하고 운영하는 역할을 담당합니다. 적립 포인트는 회사가 이를 최종 승인함으로써 유효한 것으로 인정됩니다.<br>
+					13. 회원에게 지급된 포인트 일지라도 오프라인 매장 혹은 사이트와 회사 간의 포인트 확인 과정에서 불인정 사유가 발생할 경우 회사는 회원에게 통보 후 이를 취소할 수 있으며, 회원은 이의를 제기할 수 있습니다.<br>
+
+
+					<p>제14조 (쿠폰의 정의 및 사용)</p>
+					1. 쿠폰은 포인트 쿠폰과 이벤트 쿠폰(프로모션용 쿠폰, 생일쿠폰 등)으로 구분됩니다. 쿠폰은 회원의 휴대폰 SMS를 통해 발행 정보가 안내되며, 사이트 내의 마이페이지에서 쿠폰 현황을 조회 할 수 있습니다. 발행된 쿠폰은 유효기간 내에 오프라인 매장 또는 사이트에서 사용 가능합니다.<br>
+					2. 포인트 쿠폰은 회원이 적립한 포인트가 5,000포인트에 도달하면, 회사는 회원에게 무상 제공하는 5,000원 상당의 쿠폰을 의미합니다. 이벤트 쿠폰은 포인트 쿠폰과는 별도로 서비스 만족도를 높이기 위한 목적(프로모션, 생일 등)에서 회사가 회원에게 제공하는 쿠폰을 의미하며, 이벤트 쿠폰의 지급 대상, 기준, 사용방식 및 기한 등 구체적인 사항에 대해서는 별도로 정합니다.<br>
+					3. 회사가 포인트 쿠폰을 제공하는 경우 적립된 포인트는 발행된 쿠폰에 해당하는 포인트만큼 삭감됩니다. 포인트 쿠폰은 발행일 기준 16일 이후부터 12개월까지 사용 가능하며 유효기간이 지난 쿠폰은 사용할 수 없습니다. 오프라인 매장에서 쿠폰 사용을 위해서는 회원은 반드시 모바일 멤버십카드를 제시하여야 하며, 사이트 상에서 사용하는 경우에는 회원 로그인이 요구됩니다.<br>
+					4. 쿠폰 사용 시 쿠폰 금액 보다 적은 금액의 제품 구입 시에는 잔액을 환불해 드리지 않습니다.<br>
+					5. 쿠폰의 사용 권한은 회사로부터 쿠폰을 제공받았던 본인에 한하며 타인에게 양도, 상속, 증여, 매매 될 수 없습니다.<br>
+					6. 쿠폰은 다음 각호에 해당되는 경우 사용하실 수 없습니다.<br>
+
+					① 회사의 직영점 및 회사와 계약 된 공식 매장 또는 사이트를 제외한 기타 판매처에서의 구매 시<br>
+					② 행사상품 (균일가) 및 회사가 지정하는 상품 구매 시<br>
+					③ 법인 (단체) 구매를 통한 할인 시<br>
+					④ POS 및/또는 사이트 접속장애로 인해 쿠폰이 확인 되지 않을 시<br>
+
+					7. 회원이 포인트 쿠폰을 사용하여 제품을 구매 후 이를 본 이용약관에 의거하여 반품할 시, 구매에 사용한 포인트 쿠폰은 환원됩니다.<br>
+					단, 포인트 쿠폰을 제외한 기타 이벤트 쿠폰의 경우는 환원되지 않습니다.<br>
+					8. 회원이 제품 구매 후 이를 이용약관에 의거하여 반품할 시에는 해당 구매에 대하여 적립된 포인트도 취소됩니다.<br>
+					9. 쿠폰의 유효기간 내 미사용으로 인하여 쿠폰이 소멸된 경우에도 쿠폰 발행으로 삭제된 포인트는 환원되지 않습니다.<br>
+					10. 제7조 제5항에 따라 회원의 자격이 상실된 경우, 발행된 쿠폰은 그 유효기간에 상관 없이 회원 자격 상실일자를 기준으로 소멸됩니다.<br>
+
+					<p>제15조 (연체)</p>
+					1. 상품 또는 용역의 구매에 대한 신용카드, 통신사 등을 통한 결제가 연체되는 경우, 이용자가 지정하는 신용카드, 통신사 등 결제업자의 약관이 적용되며, 결제업자로부터 회사가 결제의 무효 또는 판매부인의 통지가 있는 경우 회사는 즉시 이용자의 사이트 이용을 일단 정지하고 (회원 아이디 및 비밀번호 사용정지) 지체없이 이용자에 대해 결제대금 연체에 따른 지급 방식 안내와 익월부터 대금결제방법의 변경 여부에 대한 확인 유무선 수단을 통한 연락을 합니다.<br>
+					2. 이용자가 사이트에 제공한 연락처로 연락이 되지 않을 경우 또는 이용자가 약속한 날, 기타 회사가 지정 날까지 결제대금 지급이 확인이 되지 않는 경우 회사는 당해 이용자의 사이트 이용을 제한 할 수 있습니다.<br>
+
+					<p>제6장 배송, 취소, 환불</p>
+					<p>제16조 (배송)</p>
+					1. 배송소요기간은 주문일 익일을 기산일로 하며 비수기를 기준으로 다음 각호와 같습니다.<br>
+
+					① 일반택배(주문일, 공휴일제외), 서울/경기 지역 : 3-6일, 그 외 지역 : 3-9일(제주도 및 도서산간지역의 경우 개별계약에 따름)<br>
+					② 공휴일 기타 휴무일에는 배송 되지 않습니다.<br>
+					③ 천재지변 등 불가항력적인 사유 발생시 그 해당기간 동안은 배송소요기간에서 제외됩니다.<br>
+					④ 마이아디다스 등 주문제작 제품의 경우 4-6주<br>
+
+					2. 상품 수령지가 대한민국 이외의 지역으로 되어 있는 배송 주문은 원칙적으로 금지되며 회사는 이용자의 구매 신청일로부터 3일 이내에 배송지의 변경을 요구할 수 있고, 이러한 요구에도 불구하고 이용자가 3일 이내에 국내 배송지로의 변경이 이루어지지 않는 경우 회사는 그 배송을 유보할 수 있습니다. (또는, 구매신청에 대한 승낙을 거절할 수 있습니다)<br>
+					3. 배송의 완료는 이용자가 지정한 장소(이용자가 택배사에 별도로 지정한 장소를 포함)로 구매 신청한 상품이 도달한 시점을 말합니다. 단, 이용자가 지정한 배송지가 택배사로 하여금 오인하거나 달리 해석될 수 있는 장소(예를 들어, 슈퍼마켓, 마을회관, 공공건물 및 공공시설 등) 인 경우 또는 제3자를 통한 상품 수령의 요청, 배송정보 오기재 등으로 인해 이용자에게 발생한 손해에 대해서는 회사가 일체 책임을 부담하지 않습니다.<br>
+
+					<p>제17조 (환불, 반품 및 교환)</p>
+					1. 이용자는 제11조 제1항의 수신확인의 통지를 받은 날 또는 상품을 배송 받은 날부터 7일 이내에 청약 철회를 할 수 있습니다.<br>
+					2. 이용자는 상품을 배송 받은 경우 다음 각호의 어느 하나에 해당하는 경우에는 반품 및 교환을 할 수 없습니다.<br>
+
+					① 이용자에게 책임 있는 사유로 재화 등이 멸실 또는 훼손된 경우<br>
+					다만, 재화 등의 내용을 확인하기 위하여 포장 등을 훼손한 경우에는 사전에 청약철회 제한에 관해 고지 하지 않은 한 청약철회 등을 할 수 있습니다.<br>
+					② 이용자의 사용 또는 일부 소비에 의하여 재화 등의 가치가 현저히 감소한 경우<br>
+					③ 시간의 경과에 의하여 재판매가 곤란할 정도로 재화 등의 가치가 현저히 감소한 경우 <br>
+					④ 같은 성능을 지닌 재화 등으로 복제가 가능한 경우 등의 사유로 그 원본인 재화 등의 포장(예를들어, 신발박스 및 기타 제품의 일부로 구성되는 포장)을 훼손한 경우<br>
+					⑤ 사이트에서 사전에 당해 상품 또는 용역의 개별 계약에 대하여 청약철회 제한에 관해 고지한 경우<br>
+					⑥ 마이아디다스 제품 등 별도로 이용자를 위하여 주문 제작한 제품의 경우<br>
+
+					3. 이용자는 본 조 제1항 및 제2항의 규정에 불구하고 재화 등의 내용이 표시 및 광고 내용과 다르거나 계약내용과 다르게 이행된 때에는 당해 재화 등을 공급 받은 날부터 3개월 이내, 그 사실을 안 날 또는 알 수 있었던 날부터 30일 이내에 청약 철회 등을 할 수 있습니다.<br>
+					4. 이용자는 본 조 제1항에 따라 상품의 구매를 취소(청약 철회)하는 경우에는 이미 제공 받은 상품을 반환하여야 하며, 회사는 이미 지급받은 상품의 대가를 상품 반환 받은 날부터 3영업일 이내에 이용자 또는 결제업자에게 환불하거나 결제업자에게 결제 대금의 청구를 정지하거나 취소할 것을 요청합니다. 단, 결제업자에게 환불하는 경우 이용자에게 별도 통지합니다.<br>
+					5. 본 조 제1항에 따라 상품의 구매가 취소(청약 철회)된 경우 그 반환에 필요한 일체의 비용은 이용자가 부담합니다.<br>
+					단, 재화 등의 내용이 표시•광고 내용과 다르거나 회사의 귀책으로 계약내용과 다르게 이행되어 청약철회 등을 하는 경우 또는 회사의 귀책에 따른 제품의 하자로 인한 경우에 있어서 재화 등의 반환에 필요한 비용은 회사가 부담합니다.<br>
+					6. 구매 신청한 상품 또는 용역의 품절 등의 사유로 상품 또는 용역의 제공이 불가한 때에는 회사는 지체 없이 그 사유를 이용자에게 통지하고, 환불 절차는 본 조 제4항에 따릅니다.<br>
+
+					<p>제7장 사이트와 이용자의 의무사항</p>
+
+					<p>제18조 (개인정보보호 )</p>
+					회사는 이용자의 개인정보를 보호하기 위하여 최선을 다하고 있으며 이와 관련하여서는 개인정보 처리방침에 따릅니다.<br>
+					<p>제19조 (회사의 의무)</p>
+					1. 회사는 법령과 이 약관이 정하는 바에 따라 지속적이고, 안정적으로 재화 또는 용역을 제공하는데 최선을 다합니다.<br>
+					2. 회사는 이용자가 안전하게 인터넷 서비스를 이용할 수 있도록 이용자의 개인정보(신용정보 포함)보호를 위한 보안 시스템을 갖추어야 합니다.<br>
+					3. 회사는 이용고객으로부터 제기되는 의견이나 불만이 정당하다고 객관적으로 인정될 경우에는 적절한 절차를 거쳐 즉시 처리하여야 합니다.<br>
+					다만, 즉시 처리가 곤란한 경우는 이용자에게 그 사유와 처리일정을 통보하여야 합니다.<br>
+					4. 회사는 소비자보호단체의 소비자보호 업무의 추진에 필요한 자료 등의 제공요구에 적극 협력합니다.<br>
+					5. 회사가 상품이나 용역에 대하여「표시•광고의공정화에관한법률」제3조 소정의 부당한 표시•광고행위를 함으로써 이용자가 손해를 입은 때에는 이를 배상할 책임을 집니다.<br>
+
+					<p>제20조 (이용자의 의무)</p>
+					1. 이용자는 다음 행위를 하여서는 안됩니다.<br>
+
+					① 신청 또는 변경 시 허위내용의 등록<br>
+					② 사이트에 게시된 정보의 변경<br>
+					③ 사이트가 정한 정보 이외의 정보(컴퓨터 프로그램 등) 등의 송신 또는 게시<br>
+					④ 사이트 기타 제3자의 저작권 등 지적재산권에 대한 침해<br>
+					⑤ 사이트 기타 제3자의 명예를 손상시키거나 업무를 방해하는 행위<br>
+					⑥ 외설 또는 폭력적인 메시지•화상•음성 기타 공서 양속에 반하는 정보를 사이트에 공개 또는 게시하는 행위<br>
+					⑦ 다른 이용자의 아이디, 비밀번호를 도용하는 행위<br>
+					⑧ 기타 관계 법령에 위반하거나 회사의 업무를 방해하는 등 기타 회사가 부적절하다고 판단하는 행위<br>
+
+					2. 회사는 본 조 제1항의 사항 등 사이트의 운영상 부적절 하다고 판단한 정보가 사이트에 게시되거나 사이트와 링크된 곳에 게시된 경우, 회사는 이용자 기타 정보의 게시를 행한 자의 승낙 및 사전 통지 없이 사이트에 게재된 당해 정보를 삭제하거나 사이트에 확장된 링크를 차단할 수 있습니다. 단, 회사는 이러한 정보의 삭제•링크의 차단 등을 할 의무를 지지 않습니다.<br>
+
+					<p>제21조 (회원의 아이디 및 비밀번호 관리)</p>
+					1. 아이디와 비밀번호에 대한 관리책임은 회원에게 있으며, 이를 제3자가 이용하도록 허락하거나 양도, 이전 해서는 안됩니다.<br>
+					2. 회사는 이용자 관리업무를 수행 하므로, 회원의 아이디로 인해 개인정보유출의 우려가 있거나, 반사회적 또는 미풍양속에 어긋나거나 회사의 정책에 반하는 경우 회원 아이디의 사용을 제한할 수 있습니다. 회원 아이디를 변경하고자 하는 경우에도 같습니다.<br>
+					3. 회원 아이디 및 비밀번호 부정사용에 의하여 발생되는 사용상 부주의 또는 제3자에 의한 부정사용 등에 대한 모든 책임은 해당 회원에게 있습니다.<br>
+					4. 회원이 자신의 아이디 및 비밀번호를 도난 당하거나 제3자가 사용하고 있음을 인지한 경우에는 즉시 회사에 통지하고 회사의 안내에 따라야 합니다.  단, 회원이 이를 회사에 통지하지 않거나 회사의 안내에 따르지 않아 발생한 손해에 대해서는 회사가 책임을 지지 않습니다.<br>
+					5. 회원은 원칙적으로 하나의 회원 아이디만을 개설할 수 있습니다.<br>
+
+					<p>제8장 기타</p>
+					<p>제 22 조 (저작권의 보호)</p>
+					1. 회사가 작성한 저작물에 대한 저작권 기타 지적재산권은 회사에 귀속합니다.<br>
+					2. 이용자는 회사의 서비스를 이용함으로써 얻은 정보 중 회사에게 지적재산권이 귀속된 정보를 회사의 사전 승낙 없이 복제, 송신, 출판, 배포, 방송 기타 방법에 의하여 영리목적으로 이용하거나 제3자에게 이용하게 하여서는 안됩니다.<br>
+					3. 회사는 이용자가 등록한 게시글 또는 상품평을 검색에 노출하거나, 판촉, 홍보 및 기타의 자료로 무상 사용할 수 있습니다.<br>
+					다만, 해당 게시물을 등록한 이용자가 게시물의 삭제와 함께 사용중지를 요청한 경우에는 즉시 사용을 중지합니다.<br>
+
+					<p>제23조 (게시물의 관리)</p>
+					1. 회사는 회원이 게시글 또는 상품평에 대한 모든 권리와 책임은 이를 게시한 회원에게 있습니다. 단, 회사는 회원이 다음 각호에 해당하는 경우 사전 통지 없이 해당 게시글 또는 상품평을 삭제하거나 열람을 제한하는 등의 조치를 취할 수 있습니다.<br>
+					① 타인의 권리나 명예, 신용 기타 정당한 이익을 침해하거나 심한 모욕을 주는 경우<br>
+					② 공공질서 및 미풍양속에 위반되는 내용인 경우<br>
+					③ 범죄행위와 관련된 내용을 포함하는 경우<br>
+					④ 회사의 저작권, 제3자의 저작권 등 기타 권리를 침해하는 내용인 경우<br>
+					⑤ 외설 또는 폭력적인 메시지•화상•음성 기타 공서 양속에 반하는 정보를 포함하는 경우<br>
+					⑥ 회사의 사전 승인 없이 상업광고, 판촉 내용을 게시하거나 타 사이트의 링크를 게시하는 경우<br>
+					⑦ 상품 및 용역 기타 서비스 이행과 관련 없는 내용인 경우<br>
+					⑧ 허위의 사실을 진실인 것처럼 호도하여 회사의 업무를 방해하거나 회사의 정당한 요청에 불구하고 3회 이상 사실관계 확인을 거부한 경우<br>
+					⑨ 기타 이 약관 또는 관련 법령에 위반된다고 회사가 판단한 경우<br>
+					2. 본 조 제1항에 해당하는 게시글 또는 상품평으로 인하여 법률상 이익이 침해된 자는 관련 법령이 정한 절차에 따라 회사에 해당 게시글 또는 상품평의 게시중단 및 삭제 등을 요청할 수 있으며, 회사는 관련 법령 및 회사의 정책에 따라 조치를 취할 수 있습니다<br>
+					3. 본 조 제1항에 해당하는 게시글 또는 상품평으로 인하여 회사가 제3자에 대하여 손해배상금을 지급하게 되는 경우(조정, 판결, 민사, 형사 불문) 해당 회원은 회사가 제3자에게 배상금을 지급하는 즉시 동일 금액 상당을 회사에게 지급할 의무를 부담 합니다.<br>
+					4. 회원 탈퇴 이후에는 해당 회원이 탈퇴 이전에 작성한 게시글 또는 상품평의 일부 또는 전부의 편집이나 삭제를 요청할 수 없고, 회원은 회원 탈퇴 이전에 자신이 작성한 게시글 또는 상품평에 대해 수정, 삭제 등 필요한 조치를 완료해야 합니다.<br>
+
+
+					<p>제24조 (면책조항)</p>
+					1. 회사는 천재지변, 전쟁 및 기타 이에 준하는 불가항력으로 인하여 서비스를 제공할 수 없는 경우에는 서비스 제공에 대한 책임이 면제됩니다.<br>
+					2. 회사는 기간통신 사업자가 전기통신 서비스를 중지하거나 정상적으로 제공하지 아니하여 손해가 발생한 경우 책임이 면제됩니다.<br>
+					3. 회사는 이용자의 귀책사유로 인한 서비스 이용의 장애 또는 손해에 대하여 책임을 지지 않습니다.<br>
+					4. 회사는 이용자가 서비스를 이용함으로써 기대되는 수익을 얻지 못하거나 서비스를 통해 얻은 자료를 이용하여 발생한 손해에 대해서는 책임을 부담하지 않습니다.<br>
+					5. 이용자 또는 제3자가 사이트 및 서비스 화면에 게재한 각종 정보, 자료, 사실 등의 내용에 관한 신뢰도 또는 정확성 등에 대하여 해당 이용자와 제3자가 책임을 지며, 회사는 이를 보증 하거나 그와 관련하여 어떠한 책임도 부담하지 아니 합니다.<br>
+					6. 회사는 서비스이용과 관련하여 이용자의 고의 또는 과실로 인하여 이용자 또는 제3자에게 발생한 손해에 대하여는 아무런 책임을 부담하지 않습니다.<br>
+					7. 회사의 사이트 및 서비스 화면에서 링크, 배너 등을 통하여 연결된 회사(이하 “피연결회사”)와 이용자 간에 해당 피연결회사가 독자적으로 제공하는 재화 등에 대하여 이루어진 거래의 경우, 회사는 이에 대해서 책임을 지지 않습니다.<br>
+
+					<p>제25조 (분쟁해결)</p>
+					1. 사이트는 이용자로부터 제출되는 불만사항 및 의견은 우선적으로 그 사항을 처리합니다. 다만, 신속한 처리가 곤란한 경우에는 이용자에게 그 사유와 처리일정을 즉시 통보합니다.<br>
+					2. 사이트와 이용자간에 발생한 분쟁은 전자문서및전자거래기본법 제 32조 및 동 시행령 제20조에 의하여 설치된 전자거래분쟁 조정위원회의 조정에 따를 수 있습니다. <br>
+
+					<p>제26조 (손해배상 등)</p>
+					서비스 이용과 관련하여 이용자의 귀책 사유로 회사 및/또는 제3자에게 손해가 발생한 경우, 회사는 당해 이용자에게 손해 배상을 청구할 수 있습니다.<br>
+
+					<p>제27조 (재판권 및 준거법)</p>
+
+					1. 서비스 이용으로 발생한 분쟁에 대해 소송이 제기되는 경우 서울중앙지방법원을 그 관할법원으로 합니다.<br>
+					2. 회사와 이용자 간에 제기된 전자상거래 소송에는 대한민국법을 적용합니다.<br>
+
+
+					<p>제28조 (약관 외 준칙)</p>
+					1. 이 약관에서 정하지 아니한 사항과 이 약관의 해석에 관하여는 전자상거래등에서의소비자보호에관한법률, 약관의규제등에관한법률, 공정거래위원회가 정하는 전자상거래등에서의소비자보호지침 및 관계법령 또는 상관례에 따릅니다.<br>
+					2. 회사는 필요한 경우 특정 서비스에 관하여 적용될 사항(이하 “개별약관”)을 정하여 이를 사이트 서비스 화면 게시 등을 통하여 공지할 수 있습니다.<br>
+					3. 회사는 필요한 경우 서비스 이용과 관련된 세부적인 내용(이하 "이용정책")을 정하여 이를 사이트 서비스 화면 게시 등을 통하여 공지할 수 있습니다.<br>
+					4. 이 약관이나 이용정책의 변경이 있을 경우 회사는 변경 내용의 효력발생일 7일 이전에 해당 변경 사항을 공지합니다. 단, 이용자에게 불리한 약관 변경의 경우 30일 전 해당 변경 사항을 공지합니다.<br>
+					5. 회원은 항상 개별약관이나 이용정책의 내용에 변경이 있는지 여부를 주시하여야 하며, 변경사항의 공지가 있을 시에는 이를 확인하여야 합니다.<br>
+
+					<p>제29조 (기타 조항)</p>
+					1. 회사는 필요한 경우 특정 서비스나 기능의 전부 또는 일부를 사이트를 통해 미리 공지한 후 일시적 또는 영구적으로 수정하거나 중단할 수 있습니다.<br>
+					2. 이용자는 회사의 서면동의 없이 이 약관상의 권리와 의무를 제3자에게 양도하거나 처분, 담보로 제공 할 수 없습니다.<br>
+					3. 이 약관과 관련하여 당사자간의 합의에 의하여 추가로 작성된 계약서, 협정서, 통보서 등과 회사의 정책변경, 법령의 제•개정 또는 공공기관의 고시나 지침 등에 의하여 회사가 사이트를 통해 공지하는 내용도 이용약관의 일부를 구성합니다.<br>
+
+					<p>[부칙] </p>
+
+					제1조 (시행일) 이 약관은 2011년 2월 7일부터 시행합니다.
+					<p>[부칙] </p>
+					제1조 (시행일) 이 약관은 2011년 9월 30일부터 시행합니다.<br>
+
+					<p>[부칙] </p>
+					제1조 (시행일) 이 약관은 2016년 1월 28일부터 시행합니다.<br>
+					<p>[부칙]</p>
+					제1조(시행일) 이 약관은 2016년 6월 26일부터 시행합니다.<br>
+					<p>[부칙]</p>
+					제1조(시행일) 이 약관은 2017년 3월 3일부터 시행합니다.<br>
+					<p>[부칙]</p>
+					제1조(시행일) 이 약관은 2018년 2월 1일부터 시행 합니다.<br>
+					본 약관에 대한 저작권은 회사에 귀속하며 무단복제, 배포, 전송 기타 저작권과 침해 행위를 엄금합니다.
+				</div>
+
+				<div class="terms">
+				<h2>개인정보 수집 이용 동의</h2>
+				<div class="content">
+					<p class="top">1. 개인정보의 수집·이용 목적</p>
+					- 회원 서비스 이용에 따른 본인확인 및 그 식별절차에 이용<br>
+					- 본인 실명여부의 확인을 위해 신용정보 집중기관으로 제공 및 활용<br>
+					- 현금영수증 등의 발행 및 확인<br>
+					- 고지사항 전달, 본인 의사 확인, 불만 처리 등 원활한 의사소통 경로의 확보<br>
+					- 물품 배송에 대한 정확한 배송지의 확보<br>
+					- 회원자격제한 대상의 확인<br>
+
+					<p>2. 수집하는 개인정보의 항목</p>
+					- 성명,&nbsp;전자우편주소,&nbsp;주소,&nbsp;휴대전화번호 <br>
+
+					<p>3. 개인정보의 보유 및 이용기간</p>
+					- 회원의 탈퇴 시(단, 구매이용약관 제7조 제3항, 제5항 또는 아디클럽 이용약관 제8조에 해당하는 경우 회원자격 제한일로부터 6개월간 보유)<br>
+					- 법령에서 정하는 기간이 있는 경우에는 그 기간
+				</div>
+			</div>
+
+			<!-- <div class="terms">
+				<h2>개인정보 취급 위탁 동의</h2>
+				<div class="content">
+					1) 회사는 서비스의 계약이행을 위하여 필요한 개인정보 처리 위탁을 하고 있으며 다음에 기재된 위탁업무 수행 목적 외에는 개인정보의 처리를 하지 않습니다.<br>
+					또한 회사는 수탁자의 수탁 받은 사항에 대한 재위탁을 제한하고 있습니다.<br>
+					개인정보의 처리 위탁을 받은 자와 위탁사항 등은 다음과 같습니다.
+					<br>
+					<table cellpadding="0" cellspacing="0" width="100%" style="border:1px solid #666;" summary="개인정보 위탁업체 및 사용용도">
+						<caption>개인정보 위탁업체 및 사용용도</caption>
+						<colgroup>
+							<col width="50%">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="col" style="border-right:1px solid #666;border-bottom:1px solid #666;padding:5px;">개인정보 처리 위탁을 받는 자(수탁자)</th>
+								<th scope="col" style="border-bottom:1px solid #666;padding:5px;">개인정보 처리 위탁을 하는 업무의 내용</th>
+							</tr>
+							<tr>
+								<td style="border-right:1px solid #666;border-bottom:1px solid #666;padding:5px;">밀버스㈜</td>
+								<td style="border-bottom:1px solid #666;padding:5px;">고객정보 분석, edm 발송업무, 멤버십 서비스 위탁 운영, SMS 발송 업무</td>
+							</tr>
+							<tr>
+								<td style="border-right:1px solid #666;border-bottom:1px solid #666;padding:5px;">SK플래닛㈜</td>
+								<td style="border-bottom:1px solid #666;padding:5px;">기프트콘 발송 (문자, 이메일) 업무</td>
+							</tr>
+							<tr>
+								<td style="border-right:1px solid #666;border-bottom:1px solid #666;padding:5px;">파이언넷㈜</td>
+								<td style="border-bottom:1px solid #666;padding:5px;">고객정보DB 시스템 및 사이트 위탁 운영 <br> 온라인 쇼핑몰 개발 및 운영 유지보수</td>
+							</tr>
+							<tr>
+								<td style="border-right:1px solid #666;border-bottom:1px solid #666;padding:5px;">㈜한국PNP</td>
+								<td style="border-bottom:1px solid #666;padding:5px;">AS접수 시스템 유지보수</td>
+							</tr>
+							<tr>
+								<td style="border-right:1px solid #666;border-bottom:1px solid #666;padding:5px;">㈜아이언텍</td>
+								<td style="border-bottom:1px solid #666;padding:5px;">POS 시스템 유지보수</td>
+							</tr>
+							<tr>
+								<td style="border-right:1px solid #666;border-bottom:1px solid #666;padding:5px;">㈜트랜스코스모스 코리아</td>
+								<td style="border-bottom:1px solid #666;padding:5px;">불만처리 등 고객만족센터 업무의 일체</td>
+							</tr>
+							<tr>
+								<td style="border-right:1px solid #666;border-bottom:1px solid #666;padding:5px;">㈜지에스기획</td>
+								<td style="border-bottom:1px solid #666;padding:5px;">SMS 발송 업무</td>
+							</tr>
+							<tr>
+								<td style="border-right:1px solid #666;border-bottom:1px solid #666;padding:5px;">주식회사 시소</td>
+								<td style="border-bottom:1px solid #666;padding:5px;">DM 또는 경품/상품 발송</td>
+							</tr>
+							<tr>
+								<td style="border-right:1px solid #666;border-bottom:1px solid #666;padding:5px;">㈜한진택배</td>
+								<td style="border-bottom:1px solid #666;padding:5px;">상품배송 업무 및 배송 위치•도착 정보 등의 서비스 제공</td>
+							</tr>
+							<tr>
+								<td style="border-right:1px solid #666;border-bottom:1px solid #666;padding:5px;">DHL 코리아</td>
+								<td style="border-bottom:1px solid #666;padding:5px;">상품배송 업무 및 배송위치 도착 정보 등의 서비스 제공</td>
+							</tr>
+							<tr>
+								<td style="border-right:1px solid #666;border-bottom:1px solid #666;padding:5px;">한국모바일인증㈜ <br> SCI평가정보㈜</td>
+								<td style="border-bottom:1px solid #666;padding:5px;">본인 확인 인증</td>
+							</tr>
+							<tr>
+								<td style="border-right:1px solid #666;padding:5px;border-bottom:1px solid #666;">
+								㈜동우산업<br>
+								영인 주식회사<br>
+								덕신산업
+								</td>
+								<td style="border-bottom:1px solid #666;padding:5px;">제품의 수선</td>
+							</tr>
+							<tr>
+								<td style="border-right:1px solid #666;border-bottom:1px solid #666;padding:5px;">성화기업택배㈜</td>
+								<td style="padding:5px;border-bottom:1px solid #666;">AS 제품의 배송</td>
+							</tr>
+							<tr>
+								<td style="border-right:1px solid #666;border-bottom:1px solid #666;padding:5px;">㈜ 월드이십일에이치큐</td>
+								<td style="padding:5px;border-bottom:1px solid #666;">ADIDAS RUNNERS(AR) 서비스 위탁 운영 및 RUNBASE SEOUL 이용과 관련한 업무의 일체</td>
+							</tr>
+							<tr>
+								<td style="border-right:1px solid #666;border-bottom:1px solid #666;padding:5px;">Microsoft Corporation, Microsoft Ireland Operations Limited</td>
+								<td style="padding:5px;border-bottom:1px solid #666;">오피스 365 소프트웨어 솔루션 제공에 수반되는 고객정보 보관 및 유지보수 업무위탁</td>
+							</tr>
+							<tr>
+								<td style="border-right:1px solid #666;border-bottom:1px solid #666;padding:5px;">메타넷 글로벌 유한회사</td>
+								<td style="padding:5px;border-bottom:1px solid #666;">고객정보 분석</td>
+							</tr>
+							<tr>
+								<td style="border-right:1px solid #666;border-bottom:1px solid #666;padding:5px;">㈜ 스와이프</td>
+								<td style="padding:5px;border-bottom:1px solid #666;">아디클럽 컬처 서비스 운영 (아디코인 적립)</td>
+							</tr>
+							<tr>
+								<td style="border-right:1px solid #666;border-bottom:1px solid #666;padding:5px;">㈜ KG이니시스</td>
+								<td style="padding:5px;border-bottom:1px solid #666;">결제처리(휴대폰, 무통장 입금, 계좌이체, 신용카드 및 기타 결제수단, 환불계좌 인증) 및 결제도용 방지</td>
+							</tr>
+							<tr>
+								<td style="border-right:1px solid #666;border-bottom:1px solid #666;padding:5px;">각 판매점 및 위탁판매 매장<br>
+									<a href="/MO/Customer/customerStoreList.action" style="color: blue;text-decoration: underline;">매장 리스트보기</a>
+								</td>
+								<td style="padding:5px;border-bottom:1px solid #666;">회원 가입, 상품 발송, AS 접수 및 처리</td>
+							</tr>
+						</tbody>
+					</table><br>
+					2) 회사는 신상품 소개, 이벤트 정보 등의 유용한 정보를 제공하기 위하여 개인정보 처리 위탁을 할 수 있으며 그러한 경우 별도의 동의절차를 밟고 있습니다.<br>
+
+					3) 회사는 원활한 서비스의 제공을 위하여 다음과 같이 관련 개인정보를 해외에 소재한 수탁업체의 서버에 보관하고자 개인정보를 국외로 이전하며 다음에 기재된 위탁업무 수행 목적 외에는 개인정보의 처리를 하지 않습니다.<br>
+
+
+					<table cellpadding="0" cellspacing="0" width="100%" style="border:1px solid #666;" summary="개인정보 위탁업체 및 사용용도">
+						<caption>개인정보 위탁업체 및 사용용도</caption>
+						<colgroup>
+							<col width="50%">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="col" style="border-right:1px solid #666;border-bottom:1px solid #666;padding:5px;">개인정보 처리 위탁을 받는 자(수탁업체)</th>
+								<th scope="col" style="border-bottom:1px solid #666;padding:5px;">Microsoft Corporation Microsoft Ireland Operations Limited</th>
+							</tr>
+							<tr>
+								<td style="border-right:1px solid #666;border-bottom:1px solid #666;padding:5px;">수탁업체 정보관리책임자 연락처</td>
+								<td style="border-bottom:1px solid #666;padding:5px;">Brendon Lynch<br>
+																					Chief Privacy Officer<br>
+																					Microsoft Corporation<br>
+																					One Microsoft Way<br>
+																					Redmond, Washington 98052<br>
+																					brendon.lynch@microsoft.com<br>
+																					Phone: 4258828080<br>
+																					Fax: 4257083135<br></td>
+							</tr>
+							<tr>
+								<td style="border-right:1px solid #666;border-bottom:1px solid #666;padding:5px;">이전되는 개인정보 항목</td>
+								<td style="border-bottom:1px solid #666;padding:5px;">회사가 수집, 보관하는 개인정보를 포함하는 데이터 일체</td>
+							</tr>
+							<tr>
+								<td style="border-right:1px solid #666;border-bottom:1px solid #666;padding:5px;">개인정보가 이전되는 국가, 이전 일시 및 방법</td>
+								<td style="border-bottom:1px solid #666;padding:5px;">Microsoft Corporation (미국), Microsoft Ireland Operations Limited (아일랜드)의 서버가 위치한 미국, 유럽 및 아시아에 전용 네트워크를 통한 일괄 전송 및 이후 회원가입 및 회원정보 변경 즉시 전용 네트워크를 통하여 이전 됨</td>
+							</tr>
+							<tr>
+								<td style="border-right:1px solid #666;border-bottom:1px solid #666;padding:5px;">위탁업무의 목적 및 보유, 이용기간</td>
+								<td style="border-bottom:1px solid #666;padding:5px;">이전된 정보는 솔루션 제공을 위한 서버보관을 목적으로 이용되며 회원의 탈퇴 시까지 보관 및 보유됨</td>
+							</tr>
+						</tbody>
+					</table><br>
+
+				</div>
+			</div> -->
+
+
+			</div>
+		    </div>
+
+		<!-- //약관 레이어 팝업 -->
+
+
+		<div class="layerpop_wrap" id="miadidas_notification">
+			<div class="inner" style="width: 100%; padding: 0px 15px; position: absolute; left: 0px; top: 0px; margin: 137.1px 0px 0px; background: none;">
+				<a href="javascript:void(0)" class="close_x_btn" style="right:15px;"></a>
+				<div style="padding:15px;margin-bottom:15px;background:#fff;">
+					<dl>
+						<dt style="margin-bottom:10px;font-size:16px;">마이아디다스 유의사항</dt>
+						<dd>
+							<ol class="li_num">
+								<li style="margin-bottom:3px;font-size:12px;line-height:15px;">온라인스토어에서 본인이 직접 선택하여 입력한 정보(소재·색상·치수 등)에 오류가 없음을 충분히 확인 하였습니다.(결제 완료 후 작업하신 <strong style="color:#ef8811;">제품 정보 수정이 불가</strong>함을 이해 하였습니다.)</li>
+								<li style="margin-bottom:3px;font-size:12px;line-height:15px;">온라인스토어 화면상에 표시된 제품, 소재, 원단, 부분품 등의 색감·크기, 자수의 크기·위치·색감, 문자(도형)의 서체·위치·크기가 실물과 다소 다를 수 있음을 이해 하였습니다.</li>
+								<li style="margin-bottom:3px;font-size:12px;line-height:15px;color:#ef8811;font-weight:bold;">주문된 제품은 주문일로부터 약 4주~6주가 소요될 수 있으며, 제작공정 및 부득이한 사정에 따라 4~6주가 초과되어 배송될 수 있음을 알고 있습니다. 본인은 불합리한 장기지연이 아닌 한, 배송지연에 따른 책임이 아디다스에 있지 않음을 이해 했습니다.</li>
+								<li style="margin-bottom:3px;font-size:12px;line-height:15px;">주문생산을 위하여 본인이 직접 선택 입력한 정보를 바탕으로 제조된 주문제작 제품이 본인에게 치수 등이 맞지 않는 등의 상황이 발생하더라도 이는 제품의 하자로 간주되지 않으며 수선, 교환, 환불의 대상이 되지 않음을 이해 했습니다.</li>
+								<li style="margin-bottom:3px;font-size:12px;line-height:15px;">본인이 선택하여 주문한 제품은 주문제작 제품으로서, <strong style="color:#ef8811;">주문 후 주문취소를 하거나 주문변경을 할 수 없음에 동의합니다.</strong> 또한 주문제품이 본인 또는 본인이 지정한 자가 수령한 후, 본인이 선택한 디자인이나 색상에 불만이 있더라도 이는 교환이나 환불의 대상이 되지 않음을 이해 했습니다.</li>
+								<li style="margin-bottom:3px;font-size:12px;line-height:15px;">주문한 제품과 배송된 제품이 디자인, 색상 또는 사이즈 등이 명백히 다른 경우, 관련 법(배송 받은 날(수령일)로부터 3개월이내 반품가능 등)에 따라 환불 받을 수 있으며 아디다스는 환불 이외에 어떠한 법적 책임을 지지 않음을 이해 했습니다.</li>
+								<li style="margin-bottom:3px;font-size:12px;line-height:15px;">네이밍 주문 제작 시 아디다스가 부적절하다고 판단하는 명칭이나 조합 [ex) 제3자의 상표권 침해, 미풍양속에 반하는 명칭 등]은 입력이 불가 할 수 있으며, 입력 후에도 아디다스가 부적절하다고 판단하는 경우 주문 취소 가능함을 이해 하였습니다.</li>
+								<li style="margin-bottom:3px;font-size:12px;line-height:15px;">결제 완료 후 지정하신 <strong style="color:#ef8811;">배송 정보(주소,연락처 등) 수정이 불가</strong>함을 이해 하였습니다.</li>
+							</ol>
+						</dd>
+					</dl>
+				</div>
+			</div>
+		</div>
+		<!-- 170615 네이버페이 이벤트 팝업 -->
+		<div class="modal-popup-wrapper" style="z-index: 901; width: 100%; height: 100%; left: 0px;" data-modalpop="" data-modalpop-name="naverpay-eventpopup" data-modalpop-valign="top" data-modalpop-init="true" data-modalpop-key="1547105273770">
+		    <div class="overlay"></div>
+		    <div class="popup" style="transform: translate3d(-50%, 0px, 0px); left: 50%;">
+		        <div class="popup-header">
+		            <h2>네이버페이 오픈 이벤트</h2>
+		            <a href="javascript:void(0)" class="close_x_btn"></a>
+		        </div>
+
+		        <div class="popup-contents" style="padding-bottom: 3rem;">
+					<img src="//imagem.adidas.co.kr/images/adidas/popup/popup_naverpay.jpg" alt="" style="width:100%">
+		            <div class="button_area">
+		                <div class="blue"><a href="http://m.campaign.naver.com/event/npay-adidas" class="icons aft" data-icon="">자세히 보기</a></div>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+
+		<!-- 카드혜택 상세팝업 -->
+		<div class="layerpop_wrap" id="card_benefit_pop">
+			<div class="inner">
+				<div class="top">
+					<h2>지금 할인되는 카드 프로모션</h2>
+					<a class="close_x_btn" href="javascript:void(0)"></a>
+				</div>
+				<div class="body">
+					<div class="box">
+						<h3>일반 결제 선할인 프로모션</h3>
+						<div class="info">
+							<table cellpadding="0" cellspacing="0" width="100%">
+								<colgroup>
+									<col width="25%">
+									<col width="25%">
+									<col width="*">
+								</colgroup>
+								<thead>
+									<tr>
+										<th>카드사</th>
+										<th>기간</th>
+										<th>내용</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>국민</td>
+										<td>04.01~04.30</td>
+										<td>
+											5만원 이상 구매시
+											2500원 할인
+										</td>
+									</tr>
+									<tr>
+										<td>국민</td>
+										<td>04.01~04.30</td>
+										<td>
+											10만원 이상 구매시
+											5000원 할인
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+
+						<ul class="li_hypn">
+							<li>쿠폰 금액을 제외한 실 결제 금액 기준입니다.</li>
+							<li>법인/체크/기프트 카드도 적용 가능합니다.</li>
+							<li>카드사의 사정으로 조기 종료 될수 있으니, 이니시스 결제창의 최종 결제 금액을 확인하세요.</li>
+						</ul>
+					</div>
+					<div class="box">
+						<h3>카드사 무이자 할부안내</h3>
+						<div class="info">
+							<table cellpadding="0" cellspacing="0" width="100%">
+								<colgroup>
+									<col width="25%">
+				                    <col width="25%">
+				                    <col width="30%">
+				                    <col width="20%">
+								</colgroup>
+								<thead>
+									<tr>
+										<th>카드사</th>
+										<th>기간</th>
+										<th>내용</th>
+										<th>할부개월</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>롯데</td>
+										<td>04.01~04.30</td>
+										<td>
+											5만원 이상 구매시
+										</td>
+										<td>2~11 개월</td>
+									</tr>
+									<tr>
+										<td>현대</td>
+										<td>04.01~04.30</td>
+										<td>
+											5만원 이상 구매시
+
+										</td>
+										<td>2~5 개월</td>
+									</tr>
+									<tr>
+										<td>국민</td>
+										<td>04.01~04.30</td>
+										<td>
+											5만원 이상 구매시
+										</td>
+										<td>2~6 개월</td>
+									</tr>
+									<tr>
+										<td>BC</td>
+										<td>04.01~04.30</td>
+										<td>
+											5만원 이상 구매시
+										</td>
+										<td>2~6 개월</td>
+									</tr>
+									<tr>
+										<td>삼성</td>
+										<td>04.01~04.30</td>
+										<td>
+											5만원 이상 구매시
+										</td>
+										<td>2~6 개월</td>
+									</tr>
+									<tr>
+										<td>신한</td>
+										<td>04.01~04.30</td>
+										<td>
+											5만원 이상 구매시
+										</td>
+										<td>2~6 개월</td>
+									</tr>
+									<tr>
+										<td>씨티</td>
+										<td>04.01~04.30</td>
+										<td>
+											5만원 이상 구매시
+										</td>
+										<td>2~6 개월</td>
+									</tr>
+									<tr>
+										<td>NH</td>
+										<td>04.01~04.30</td>
+										<td>
+											5만원 이상 구매시
+										</td>
+										<td>2~6 개월</td>
+									</tr>
+									<tr>
+										<td>하나</td>
+										<td>04.01~04.30</td>
+										<td>
+											5만원 이상 구매시
+										</td>
+										<td>2~6 개월</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<ul class="li_hypn">
+							<li>법인/체크/선불/기프트/은행계열카드 제외</li>
+				            <li>직계약 가맹점, 상점부담 무이자 가맹점, 특별제휴 가맹점, 오프라인 가맹점, 신규 가맹점 등 일부 제외</li>
+				            <li>무이자할부 결제 시 포인트, 마일리지 적립 제외</li>
+				            <li>카드사의 사정으로 변경 또는 종료될 수 있으니, 이니시스 결제창의 무이자 안내를 확인하세요.</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //카드혜택 상세팝업 -->
+
+	<div id="slideBg"></div>
+	<footer id="footer" class="footer-update">
+
+		<!-- 20180412추가 -->
+		<div class="go_top">
+			<a href="#">BACK TO TOP</a>
+		</div>
+		<!-- //20180412추가 -->
+
+	       <!-- 161223 f_menu 추가 -->
+	<ul class="f_menu">
+		<!-- 20180402 수정 -->
+		<li><a href="https://m.reebok.co.kr:447/MO/Member/loginCheck.action?returnURL=https%3A%2F%2Fm.reebok.co.kr%3A447%2FMO%2FMyPage%2FmypageOrdDeliSel.action%3F" onmousedown="javascript:trk_flashEnvView('_TRK_PI=FOOTCS');trk_clickTrace('EVT','^리복모바일^주문배송');">주문배송</a></li>
+		<li><a href="http://m-reebok.efusioni.com/brand/reeclub.jsp" onmousedown="javascript:trk_flashEnvView('_TRK_PI=FOOTST');trk_clickTrace('EVT','^리복모바일^리클럽');">리클럽</a></li>
+		<li><a href="http://m.reebok.co.kr/MO/Customer/customerStoreList.action" onmousedown="javascript:trk_flashEnvView('_TRK_PI=FOOTST');trk_clickTrace('EVT','^리복모바일^하단매장찾기');">매장안내</a></li>
+		<li><a href="http://m.reebok.co.kr/MO/Customer/customerCenter.action" onmousedown="javascript:trk_flashEnvView('_TRK_PI=FOOTCS');trk_clickTrace('EVT','^리복모바일^하단고객센터');">고객센터</a></li>
+		<li><a href="/center/notice.jsp">공지사항</a></li>
+		<!-- // 20180402 수정 -->
+	</ul>
+	<div class="newsletter">
+		<p>이메일 뉴스레터 구독</p>
+	<!-- 			<form method="post" name="eComFooterEmailForm-IMPORTANT" action="https://s780143993.t.eloqua.com/e/f2" onsubmit="setTimeout(function(){if(document.querySelector){var s=document.querySelector('form#form33 input[type=submit]');if(s){s.disabled=true;}}},100);return true;" id="form33" class="elq-form" > -->
+		<form method="post" name="eComFooterEmailForm-IMPORTANT" action="https://s780143993.t.eloqua.com/e/f2" id="form33" class="elq-form">
+			<input value="eComFooterEmailForm-IMPORTANT" type="hidden" name="elqFormName">
+			<input value="780143993" type="hidden" name="elqSiteId">
+			<input name="elqCampaignId" type="hidden">
+
+			<div class="input_wrap">
+				<input type="email" id="field0" name="emailAddress" placeholder="Email" onkeyup="KeyDownSpa();" onkeypress="return KeyDownSpa();">
+				<a href="#" class="input_btn icons aft newsletter_mail_button" data-icon=""></a>
+	<!-- 					<input type="submit" value="Submit" class="submit-button"> -->
+			</div>
+			<div class="marketing_chk">
+				<span class="chk_dsgn">
+					<input type="checkbox" id="marketing" value="Y" checked="checked">
+					<label for="marketing"></label>
+					<a href="https://m.reebok.co.kr:447/MO/reebok/html/m_join_agreement_subscribe.html" target="_blank">마케팅 수신동의<span></span></a>
+				</span>
+			</div>
+		</form>
+	</div>
+	<div class="sns_menu">
+		<a href="javascript:void(0)" class="fb"></a>
+		<a href="javascript:void(0)" class="insta"></a>
+		<a href="http://m.blog.naver.com/reebokkr" class="blog" target="_blank" onmousedown="javascript:trk_clickTrace('EVT','^리복모바일^네이버블로그')"></a>
+		<a href="https://m.youtube.com/channel/UCFrW9Ojay5Pk7s-4-KD0M6w" class="ytb" target="_blank"></a>
+		<a href="http://plus.kakao.com/home/@%EB%A6%AC%EB%B3%B5" class="kakao" target="_blank"></a>
+	</div>
+	  	<address>
+	          <div class="inner">
+	          	<p><strong>리복 공식 온라인 스토어</strong><span class="line l_left"> (아디다스 코리아)</span></p>
+	          	<p>서울특별시 서초구 서초대로 74길 4, 삼성생명 서초타워 23층 (06620)</p>
+	          	<p>대표 : 에드워드 닉슨</p>
+	          	<p>사업자 등록번호 : 214-81-07412</p>
+	          	<p>통신판매업신고번호 : 2007-서울서초-10391</p>
+	          	<p>개인정보 보호책임자 : 김동일</p>
+	          	<p>고객센터(심의/수선문의 포함) : 1588-7324 </p>
+	          	<div class="f_url">
+	         			<p>
+	         				<!-- 20180402 수정 -->
+	         				<a href="/http://m.reebok.co.kr/MO/reebok/html/m_join_purchase_clause.html"><strong>이용약관</strong></a><span class="line l_left">
+	         				<a href="http://shop.reebok.co.kr/RPF010107.action?gubn=2" target="_blank"><strong>개인정보처리방침</strong></a><span class="line l_left">
+	         				<a href="http://www.ftc.go.kr/bizCommPop.do?wrkr_no=2148107412&amp;apv_perm_no=" target="_blank">사업자정보확인</a>
+	        				</span></span></p>
+	        				<p>
+	         				<a href="http://m.reebok.co.kr/m_pop_justice_bns.html">공정거래자율준수</a><span class="line l_left">
+	         				<a href="http://m.reebok.co.kr/Common/CertifiedInfoPop.jsp" target="_blank">채무지급보증안내</a>
+	         				<!--// 20180402 수정 -->
+	        				</span></p>
+	           		<p>@adidas Korea, LLC. All Rights Reserved.</p>
+	         			<p class="f_logo">
+	         			<!-- 20180329 이미지 경로 수정 -->
+	         			<img src="http://imagem.reebok.co.kr/images/reebok/f_logo.jpg" alt="reebok">
+	         			<!-- // 20180329 이미지 경로 수정 -->
+	         			</p>
+	          	</div>
+	          </div>
+	      </address>
+	      <!-- 180402 sns_menu 기존 스크립트 추가 -->
+	      <!-- 161101 sns_menu 스크립트 추가 -->
+	      <script type="text/javascript">
+			(function($){
+
+				$('#footer .sns_menu>a').bind('click',function(){
+
+					var snsType = $(this).attr('class');
+					if(snsType !== 'insta' && snsType !== 'fb'){
+						return;
+					}
+
+					var elemHtml = 	document.getElementsByTagName('html')[0];
+					var x = $(this).offset().left;
+					var y = $(this).offset().top + $(this).height();
+
+					elemHtml.style.overflow = 'hidden';
+
+					var scrollTop = window.scrollY;
+
+					var html = '<div id="sns-footer-layer"><div class="btn_wrap" style="top:'+y+'px;left:'+x+'px">';
+					if(snsType == 'fb'){
+						html += '<a href="javascript:void(0)" class="close"></a><a href="https://www.facebook.com/Reebokkr/" class="fb" target="_blank" onmousedown="javascript:trk_clickTrace(\'EVT\',\'^리복모바일^페북코리아\')"><span>FITNESS</span></a><a href="https://www.facebook.com/rbk.classic/" class="fb" target="_blank" onmousedown="javascript:trk_clickTrace(\'EVT\',\'^리복모바일^페북클래식\')"><span>CLASSIC</span></a>';
+					}else if(snsType == 'insta'){
+						html += '<a href="javascript:void(0)" class="close"></a><a href="https://www.instagram.com/reebokkorea/" class="insta" target="_blank"><span>FITNESS</span></a><a href="https://www.instagram.com/reebokclassickorea/" class="insta" target="_blank"><span>CLASSIC</span></a>';
+					}
+
+					html += '</div></div>';
+					$('#container').append(html);
+
+					$('#sns-footer-layer .close').bind('click',function(){
+
+						var indexLength = $('#sns-footer-layer .btn_wrap a').length-1;
+
+						$('#sns-footer-layer .btn_wrap a').each(function(index){
+							var revIdx = $(this).index() * -1 + indexLength;
+							var elem = $('#sns-footer-layer .btn_wrap a').eq(revIdx);
+							setTimeout(function(){
+								elem.removeClass('active');
+							},50 * index);
+
+							setTimeout(function(){
+								$('#sns-footer-layer').removeClass('active');
+								setTimeout(function(){
+									$('#sns-footer-layer').remove();
+									elemHtml.style.overflow = '';
+								},200);
+							},100);
+						});
+					});
+
+					setTimeout(function(){
+						$('#sns-footer-layer').addClass('active');
+						$('#sns-footer-layer .btn_wrap a').each(function(index){
+							var elem = $(this);
+							setTimeout(function(){
+								elem.addClass('active');
+							},50 * index);
+
+						});
+
+					},10);
+				});
+
+
+				jQuery('.newsletter_mail_button').click(function() {
+					if( cfn_trim(jQuery("#field0").val()) == '' ){
+						alert("E-Mail을 입력해주세요.");
+						return false;
+					}
+
+					if(!emailChk()){
+						alert("E-Mail형식을 확인 하세요.");
+						return false;
+					}
+
+					if(!jQuery('.newsletter .marketing_chk').find('input:checkbox[id="marketing"]').is(":checked")){
+						alert("마케팅 수신동의를 체크 해주세요.");
+						return false;
+					}
+
+					alert('등록 되었습니다.');
+					jQuery('#form33').submit();
+
+				});
+
+				//이메일 체크
+				function emailChk(){
+					var emailVal = cfn_trim(jQuery("#field0").val());
+					var reg = /^((\w|[\-\.])+)@((\w|[\-\.][^(\.)\1])+)\.([A-Za-z]+)$/;
+					if (emailVal.search(reg) != -1 && emailVal.length < 31) {
+						jQuery("#field0").val(emailVal);
+						return true;
+					}
+					return false;
+				}
+
+			})(jQuery);
+
+			function KeyDownSpa() {
+				if(event.keyCode == 32){ return false; }
+
+				// 안드로이드 기종에서 스페이스바 keyCode 229로 인식
+				if( event.keyCode == 229 ){
+					var stEmail = jQuery('.input_wrap #field0').val();
+					jQuery('.input_wrap #field0').val(stEmail.trim());
+					return false;
+				}
+
+			}
+
+		</script>
+		<!-- // 180402 sns_menu 기존 스크립트 추가 -->
+	  </footer>
+	</section>
+</body>
+</html>
