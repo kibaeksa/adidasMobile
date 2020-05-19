@@ -42,7 +42,7 @@ html,body{
         }
 		a{
             padding: 0 1rem;
-			font: 600 1rem/3.4rem 'NotoSansKR';
+			font: 600 1rem/3.5rem 'NotoSansKR';
 			letter-spacing: .1rem;
 			position: relative;
 			display: block;
@@ -81,24 +81,22 @@ html,body{
 
 }
 
-.btn_w{
-	>div{
-		a{
-			padding: 2.1rem 0;
-			width:225px;
-			font: 600 1.6rem/1.6rem 'NotoSansKR';
-				.arrow{
-					margin-top: -3px;
-					width: 16%;
-				}				
-
-		}
-	}
-
-}
 
 
 .homeworkout{
+	@mixin title{
+		h3 {
+			font: 700 2.2rem/1.9rem 'neueplak-ext';
+			text-align: center;
+		}
+	}
+	@mixin sbtit{
+		p {
+			padding: 0.2rem 0 0.5rem;
+			font: 400 1.1rem/1.1rem 'NotoSansKR';
+			text-align: center;
+		}		
+	}
     .main {
     	position: relative;
 
@@ -130,7 +128,7 @@ html,body{
     		text-align: center;
 
     		h3 {
-    			font: 700 4.3rem/5.1rem 'neueplak-ext';
+    			font: 700 2.1rem/2.6rem 'neueplak-ext';
     			text-transform: uppercase;
     			text-align: center;
     			transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -149,20 +147,20 @@ html,body{
 
     		h4 {
     			padding-top: 0.5rem;
-    			font: 400 2.6rem/2.6rem 'neueplak';
+    			font: 400 1.4rem/2.6rem 'neueplak';
     			text-align: center;
     			transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
     			color: #fff;
     		}
 
-    		p {
-    			font: 400 2.2rem/2.6rem 'NotoSansKR';
-    			color: #fff;
+			p {
+				font: 400 1.1rem/1.6rem 'NotoSansKR';
+				color: #fff;
 				text-align: center;
-    		}
+			}
 
     		.btn {
-    			margin-top: 2.2rem;
+    			margin-top: 0.8rem;
     		}
     	}
     }
@@ -174,14 +172,14 @@ html,body{
     .sect_cont {
     	background: #fff;
 
-    	>div {
-    		position: relative;
+    	// >div {
+    	// 	position: relative;
 
     		.inn {
 				overflow: hidden;
     			position: relative;
     			width: 100%;
-    			padding: 3rem 1rem;
+    			padding: 2rem 1rem;
 				text-align: center;
 				box-sizing: border-box;
     		}
@@ -191,13 +189,11 @@ html,body{
 			}
 			
 
-			&.cont_blog {
+			.cont_blog {
 				.inn {
-					>h3 {
-						padding-bottom: 2rem;
-						font: 700 4.3rem/5.1rem 'neueplak-ext';
-						text-align: center;
-						
+					@include title();
+					h3{
+						padding:0 0 17px 0;	
 					}
 					ul {
 						li {
@@ -237,8 +233,8 @@ html,body{
 							}
 
 							button {
-								width: 26px;
-								height: 27px;
+								width: 13px;
+								height: 14px;
 								border-radius: 50%;
 								background: #d8d8d8;
 								text-indent: -999px;
@@ -248,8 +244,8 @@ html,body{
 				}
 			}
 
-    		&.cont_1 {
-				margin-top:2rem;
+    		.cont_1 {
+				margin-top:1rem;
     			.vid_box {
 					position: relative;
 					float: left;
@@ -270,39 +266,34 @@ html,body{
 					}
 
     				h4 {
-    					margin: 1.3rem 0;
-    					font: 600 2.2rem/2.2rem 'neueplak-ext';
+    					margin: 0.7rem 0;
+    					font: 600 1.1rem/1.2rem 'neueplak-ext';
 						text-align: center;
 						letter-spacing: -0.5px;
 						
     				}
 
     				p {
-    					font: 400 1.8rem/1.8rem 'NotoSansKR';
+    					font: 400 0.9rem/0.9rem 'NotoSansKR';
     					text-align: center;
     				}
     			}
     		}
 
-    		&.cont_2 {
+    		.cont_2 {
     			color: #000;
 
     			.inn {
     				padding: 0;
 
-    				>h3 {
-    					font: 700 4.3rem/3.8rem 'neueplak-ext';
-						text-align: center;
-						margin:79px 0 15px 0;
-    				}
+    				@include title();
+					>h3{
+						padding:39px 0 7px 0;
+					}
 
-    				>p {
-    					padding: 0.8rem 0 2rem;
-    					font: 400 2.2rem/2.2rem 'NotoSansKR';
-    					text-align: center;
-    				}
+					@include sbtit();
 
-    				ul#slider_cont2 {
+    				#slider_cont2 {
 						margin: 0 1rem;
     					li {
     						img {
@@ -311,13 +302,13 @@ html,body{
     						}
 
     						p {
-    							font: 400 2rem/2rem 'NotoSansKR';
+    							font: 400 1rem/1rem 'NotoSansKR';
     							text-align: center;
     						}
     					}
 					}
 					.slick-dots {
-						margin: 3rem 0 0;
+						margin: 1.5rem 0 0;
 						text-align: center;
 
 						li {
@@ -331,8 +322,8 @@ html,body{
 							}
 
 							button {
-								width: 26px;
-								height: 27px;
+								width: 13px;
+								height: 14px;
 								border-radius: 50%;
 								background: #d8d8d8;
 								text-indent: -999px;
@@ -342,22 +333,21 @@ html,body{
     			}
     		}
 
-    		&.cont_3 {
+    		.cont_3 {
     			overflow: hidden;
     			color: #000;
 
+				@include title();
     			>h3 {
-    				font: 700 4.3rem/4.2rem 'neueplak-ext';
-					text-align: center;
+    				
 					span{
 						display:block;
 					}
     			}
 
+				@include sbtit();
     			>p {
-    				padding:1.8rem 0 3.6rem 0;
-    				font: 400 2.2rem/2.2rem 'NotoSansKR';
-    				text-align: center;
+    				padding:0.9rem 0 1.8rem 0;
 				}
 				li{
 					float:left;
@@ -374,20 +364,21 @@ html,body{
 
     		}
 
-    		&.cont_5 {
+    		.cont_5 {
     			color: #000;
-
+				// display: block;
+				// width: 100%;
 				.inn{
 					padding-right: 0;
 					
-					h3 {
-						font: 700 4.3rem/4.2rem 'neueplak-ext';
-						text-align: center;
-						margin: 4rem 0 3.6rem 0;
-					}					
+					@include title();
+					>h3{
+						padding:35px 0 20px 0;
+					}
 
-					ul {
-						.slick-slide {
+					#slider_cont5_1 {
+						li {
+							position: relative;
 							img {
 								display: block;
 								width: 100%;
@@ -396,7 +387,7 @@ html,body{
 					}
 
 					.slick-dots {
-						margin: 4rem 0 3rem;
+						margin: 2rem 0 1.5rem;
 						text-align: center;
 
 						li {
@@ -410,8 +401,8 @@ html,body{
 							}
 
 							button {
-								width: 26px;
-								height: 27px;
+								width: 13px;
+								height: 14px;
 								border-radius: 50%;
 								background: #d8d8d8;
 								text-indent: -999px;
@@ -423,16 +414,14 @@ html,body{
 						display: inline-block;
 
 						a {
-							font:700 1.6rem/1.6rem 'NotoSansKR';
-							padding:2rem 0;
-							width: 260px;
+							font:700 1rem/3.5rem 'NotoSansKR';
 							.arrow{
-								width:17%;
+								width:15%;
 							}
 						}
 					}
 				}
     		}
-    	}
+    	// }
     }
 }
