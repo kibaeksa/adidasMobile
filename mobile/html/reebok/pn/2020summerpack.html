@@ -100,26 +100,28 @@
 						}, 400);
 					});
 
-					var scrollArray = [];
-					var scrollSelectors = document.querySelectorAll('.scroll');
+					$(window).load(function(){
+						var scrollArray = [];
+						var scrollSelectors = document.querySelectorAll('.scroll');
 
-					for (var i = 0; i < scrollSelectors.length; i++) {
-						var mypos = scrollSelectors[i].offsetTop;
-						scrollArray.push(mypos);
-					};
+						for (var i = 0; i < scrollSelectors.length; i++) {
+							var mypos = scrollSelectors[i].offsetTop;
+							scrollArray.push(mypos);
+						};
 
-					$(window).scroll(function () {
+						$(window).scroll(function () {
 
-						var thisPos = $(this).scrollTop() + $(window).height() - 200;
+							var thisPos = $(this).scrollTop() + $(window).height() - 200;
 
-						console.log(thisPos);
-						console.log(scrollArray);						
+							console.log(thisPos);
+							console.log(scrollArray);						
 
-						for (var pos = 0; pos < scrollArray.length; pos++) {
-							if (thisPos > scrollArray[pos]) {
-								$('.scroll').eq(pos).addClass('on');
+							for (var pos = 0; pos < scrollArray.length; pos++) {
+								if (thisPos > scrollArray[pos]) {
+									$('.scroll').eq(pos).addClass('on');
+								}
 							}
-						}
+						});
 					});
 				</script>
 			</section>
