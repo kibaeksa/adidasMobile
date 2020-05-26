@@ -1,0 +1,244 @@
+@import "./mobile/MO/reebok/css/scss/about.scss";
+
+#contents{
+    img{
+        vertical-align: middle;
+    }
+}
+//common
+html,body{
+    // height:100%;
+}
+.btn{
+	>div{
+        position: relative;
+        display: inline-block;
+		&::before{
+            border-bottom: 1px solid #000;
+            border-left: 1px solid #000;
+            bottom: -4px;
+            height: 3px;
+            left: 2px;
+            width: calc(100% + 1px);
+            content: "";
+            display: block;
+            position: absolute;
+		}
+		&::after{
+            border-right: 1px solid #000;
+            border-top: 1px solid #000;
+            height: calc(100% + 1px);
+            right: -4px;
+            top: 2px;
+            width: 3px;
+            content: "";
+            display: block;
+            position: absolute;
+        }
+		a{
+            padding: 0 1rem;
+			font: 500 1rem/3.4rem 'NotoSansKR';
+			letter-spacing: .1rem;
+			position: relative;
+			display: block;
+			text-align: center;
+			color: #000;
+			background:#fff;
+			z-index: 2;
+			border: 1px solid #000;
+			.arrow{
+                margin-top: -3px;
+                margin-left: 1.4rem;                
+                vertical-align: middle;
+                width: 20%;                
+			}
+		}
+	}
+    &.white{
+		>div{
+			&::before{
+				border-bottom: 1px solid #fff;
+				border-left: 1px solid #fff;
+			}
+			&::after{
+				border-right: 1px solid #fff;
+				border-top: 1px solid #fff;
+			}
+			a{
+				color: #000;
+				background:#fff;
+				border: 1px solid #fff;
+				.arrow{
+				}
+			}
+		}
+	}
+}
+
+/* event */
+#event_wrap {
+	>div {
+		display: block;
+		position: relative;
+	}
+
+	.main {
+		.main_set {
+			display: block;
+			position: relative;
+			>img {
+				display: block;
+				width: 100%;
+			}
+
+			&.mshead {}
+
+			&.msbody {
+				overflow: hidden;
+				height: 7rem;
+				background: #9cb7d4;
+				transition: 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+				>* {
+					text-align: center;
+					color: #000;
+
+					span {
+						font-family: 'neueplak';
+						font-weight: 600;
+						font-size: 1.1em;
+						line-height: inherit;
+						letter-spacing: 1px;
+					}
+				}
+
+				h3 {
+					padding: 1.5rem 0 0.8rem;
+					text-align: center;
+
+					img {
+						display: inline-block;
+						width: 100%;
+					}
+				}
+
+				h4 {
+					font: 500 1.2rem 'NotoSansKR';
+					transition: 1s;
+					// transition-delay: 0.8s;
+					opacity: 0;
+				}
+
+				p {
+					padding-top: 0.8rem;
+					font: 400 1.1rem/1.8rem 'NotoSansKR';
+					transition: 1s;
+					transition-delay: 0.8s;
+					opacity: 0;
+				}
+			}
+
+			&.msbot {}
+		}
+
+		&.on {
+			.msbody {
+				height: 15rem;
+
+				h4 {
+					opacity: 1;
+				}
+
+				p {
+					opacity: 1;
+				}
+			}
+		}
+	}
+
+	.section {
+		.cont_recommend {
+			background: #fff;
+
+			.inn {
+				display: block;
+				padding: 1.4rem;
+				text-align: center;
+
+				>img {
+					display: inline-block;
+					margin: 0.5rem 0 1rem;
+					width: 100%;
+				}
+
+				.recommend_info {
+					display: inline-block;
+					width: 100%;
+					padding: 2.5rem 1rem;
+					box-sizing: border-box;
+					-webkit-box-sizing: border-box;
+					color: #000;
+					background: #9cb7d4;
+
+					h4 {
+						font: 900 2.5rem 'NotoSansKR';
+						text-align: center;
+					}
+					h5 {
+						padding: 1rem 0;
+						font: 500 1.2rem 'NotoSansKR';
+						text-align: center;
+					}
+					p {
+						font: 400 1rem 'NotoSansKR';
+						text-align: center;
+					}
+				}
+
+				.btn {
+					margin-top: 2rem;
+				}
+
+				.recommend_noti {
+					padding: 1rem;
+					border: 1px solid #000;
+					margin: 3rem 0 1rem;
+					text-align: left;
+					h5 {
+						font: 600 1.2rem 'NotoSansKR';
+						letter-spacing: 3px;
+					}
+					ul {
+						margin-top: 0.5rem;
+						li {
+							font: 400 0.8rem 'NotoSansKR';
+							padding: 0 0 0.2rem 0.2rem;
+						}
+					}
+				}
+			}
+		}
+
+		.cont_showhero {
+			padding-bottom: 3rem;
+			img {
+				display: block;
+				width: 100%;
+			}
+		}
+	}
+
+	.bottom {
+		display: none;
+		text-align: center;
+		.bnn_area {
+			>a {
+				display: block;
+				img {
+					display: block;
+					width: 100%;
+				}
+			}
+		}
+	}
+}
