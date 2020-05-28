@@ -56,7 +56,23 @@ html,body{
 			}
 		}
 		.main__figure{
-
+			position: relative;
+			>div{
+				img{
+					z-index: -1;
+				}
+			}
+			>img{
+				position: absolute;
+				top:0;
+				left:0;
+				width:100%;
+				@include css3(opacity,0);
+				@include css3(transition, all 1s ease-in);
+				&.active{
+					@include css3(opacity,1);
+				}
+			}			
 		}
 		.main__text{
 			position: absolute;
