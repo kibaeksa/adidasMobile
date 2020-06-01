@@ -1,0 +1,283 @@
+@import './mobile/css/adidas/scss/common/mixin.scss';
+@import './mobile/css/adidas/scss/common/common.scss';
+
+html,body{
+	height: 100%;
+}
+
+
+#container{
+	.go_top a{
+	width: 100%;
+	height: 50px;
+	display: block;
+	position: relative;
+	background: url('/images/adidas/back_top.png') center 10px no-repeat;
+	background-size: 60px auto;
+	text-indent: -5000px;
+	}
+
+
+	#uniforia{
+		background:white;
+		position: relative;
+		overflow: hidden;
+		//common
+		.button_area_v2{
+			display: inline-block;
+			a{
+				padding:0 4vw;
+				font:700 1rem/3.4rem 'NotoSansKR';
+				letter-spacing: .1rem;
+				height: 3.4rem;
+				.arrow{
+					margin-left: 1rem;
+					width: 20px;
+					&::after, &::before{
+						width: 7px;
+    					height: 2px;
+					}
+					&::before{
+						bottom:-3px;
+					}
+					&::after{
+						top:-2px;
+					}
+				}
+			}
+		}
+
+		.inner{
+			margin: 0 auto;
+			position: relative;
+			box-sizing: border-box;	
+			padding:0 2rem
+		}
+	
+		.cf{
+			clear:both;
+			content:'';
+			display:block;
+		}
+
+		.vs_box{
+			position:relative;
+					
+			.uni_video{
+				// background:url('/images/adidas/2020/event/football/uniforiapack0602/video_bg.jpg');
+				// height:998px;
+				.video_act{
+					height: 100%;
+					   width: 100%;
+				}
+			}
+			.uni_video_txt{
+				// position:absolute; left:425px; top:285px;
+					position:absolute; left:35%; top:76%;
+					transform:translate(-50%, -50%);
+				h1{
+					font: 900 2.5rem/2.5rem 'NotoSansKR' ;
+					color:#111111;
+					letter-spacing:5px;
+				}
+				p{
+					font: 500 1.25rem/1.25rem 'NotoSansKR';
+					color:#111111;
+					padding:10px 0 22px 0;
+				}
+			}
+		}
+
+		.uni_contents{
+
+			.tab_box{
+					position:relative;
+					z-index:5;
+
+					.tab_tit{
+						ul{
+							background:#fff;
+							position:relative;
+							height:45px;
+
+							li{
+							position:absolute;left:50%;top:0;
+							transform:translateX(-50%);
+								
+								&.on{
+
+									h2{
+										opacity:1;
+										transition:all 2s;
+									}
+								}
+								h2{
+									text-align:center;
+									letter-spacing:0;
+									font:500 1.9rem/1.5rem 'adinenuPro-bold';
+									color:#111;
+									height:45px;
+									line-height:45px;		
+									opacity:0;				
+									padding-top:5px;	
+								}
+							}
+						}
+					}
+					.tab_btn{
+						ul{
+							background:#ebedee;
+							margin:0 auto;
+							text-align:center;
+							width:100%;
+							height:40px;
+							li{
+								display:inline-block;
+								margin-left:40px;
+								vertical-align:top;
+								
+								&:first-child{
+									margin-lefT:0;
+								}
+								a{
+									display:block;
+								
+									p{
+										font:500 1rem/1.5rem 'AdihausDIN';
+										color:#111;
+										height:40px;
+										line-height:40px;		
+										&.on{
+											text-decoration:underline;
+										}
+									}
+								}
+							}
+						}
+					}
+			}
+			.tab_con{
+				position:relative;
+				// height:720px;
+				z-index:4;
+				padding-bottom:190%;
+				height:0;
+				overflow:hidden;
+				width:100%;
+				max-width:100%;
+
+				.tab-content{
+					opacity:0;
+					position:absolute;left:50%;top:0;
+					transform:translateX(-50%);
+					width:100%;
+					padding-top:0;
+					z-index:0;
+					&.current{
+						opacity:1;
+						transition:all 2s;
+						z-index:1;
+					}
+
+					img{
+						width:100%;
+						margin-top:-20px;
+	
+					}
+					.all_uni{
+						.txt{
+							height:190px;
+							text-align:center;
+							h3{
+								text-align:center;
+								font: 700 2rem/1.5rem 'NotoSansKR' ;
+								color:#111;
+								padding:2.5rem 0 1rem 0;
+							}
+							p{
+								text-align:center;
+								font: 500 1rem/1.5rem 'NotoSansKR' ;
+								color:#111;
+								padding-bottom:1.2rem;
+								span{
+									display:block;
+								}
+							}
+						}
+					}
+				}		
+
+			}
+			
+	
+			.uni_link{
+				padding:40px 0;
+				.tit{
+					h4{
+						text-align:center;
+						font: 700 1.7rem/1.1rem 'NotoSansKR';
+						color:#111;
+						padding-bottom:15px;
+					}
+				}
+				.pro_list{
+					ul{
+						padding:10px 20px;
+						li{
+							text-align:center;
+							
+							overflow:hidden;
+							width:100%;
+							display:block;
+							margin-bottom:15px;
+
+							.pro_le{
+								float:left;
+								width:56%;
+								img{
+									displaY:block;
+									width:100%;
+								}
+								.nem{
+									width:96%;
+								}
+							}
+							&:nth-child(3){
+								margin-bottom:5px;
+							}
+
+							.pro_ra{
+								float:left;
+								width:40%;
+								h5{
+									padding:40% 0 15% 0;
+									img{
+										width:75%;
+										margin:0 auto;
+										display:block;
+									}
+									.x_tit{
+										width:25%;
+									}
+									.nem_tit{
+										width:88%;
+									}
+									&.pro_ra_x{
+										padding:23% 0 15% 0;
+									}
+								}
+							}
+							
+								
+								
+																
+
+
+						}
+					}
+				}
+			}
+		}
+	}
+
+}
