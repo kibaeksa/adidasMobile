@@ -1,5 +1,5 @@
 // [참고] https://www.w3schools.com/howto/howto_html_include.asp
-function includeHTML(callback) {
+(function includeHTML(callback) {
     var z, i, elmnt, file, xhrm;
     /*loop through a collection of all HTML elements:*/
     z = document.getElementsByTagName('*');
@@ -38,7 +38,7 @@ function includeHTML(callback) {
        return;
       }
     }
-    setTimeout(function() {
-      callback();
-    }, 0)
-  };
+    // setTimeout(function() {
+    //   callback();
+    // }, 0)
+  })();

@@ -1,70 +1,33 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
-	<meta name="format-detection" content="telephone=no">
-	<meta http-equiv="x-rim-auto-match" content="none">
+ <!DOCTYPE html>
+ <html>
 
-	<link href="/css/adidas/style.css" type="text/css" rel="stylesheet" />
-	<link href="/css/adidas/fonts.css" type="text/css" rel="stylesheet" />
+ <head>
+ 	<meta charset="UTF-8">
+ 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+ 	<meta name="format-detection" content="telephone=no">
+ 	<meta http-equiv="x-rim-auto-match" content="none">
 
-	<script type="text/javascript" src="/js/jquery-1.12.0.min.js"></script>
-	<script type="text/javascript" src="/js/swipe.js"></script>
-	<script type="text/javascript" src="/js/owl.carousel.js"></script>
+ 	<link href="/css/adidas/style.css" type="text/css" rel="stylesheet" />
+ 	<link href="/css/adidas/fonts.css" type="text/css" rel="stylesheet" />
 
+ 	<script type="text/javascript" src="/designjs/common/jquery-1.12.0.min.js"></script>
+ 	<script type="text/javascript" src="/designjs/common/swipe.js"></script>
+ 	<script type="text/javascript" src="/designjs/common/owl.carousel.min.js"></script>
+ 	<script type="text/javascript" src="/designjs/common/modalPopup.min.js"></script>
+ 	<script type="text/javascript" src="/designjs/common/zoomImage.js"></script>
 
-	<title>아디다스 모바일</title>
-</head>
-<body>
+ 	<title>아디다스 모바일</title>
 
-	<div id="wrap">
+ 	<style>
+ 		#container {
+ 			padding-top: 60px !important;
+ 		}
+ 	</style>
+ </head>
 
-		<div id="header">
-            <!--
-                171011
-                * nav_search , nav_menu 삭제
-                * nav_main 에 search_nav_main 클래스 추가
-             -->
-			<div class="nav_main search_nav_main">
-				<h1><a href="javascript:void(0);" class="logo icons"></a></h1>
-				<div class="sch_box">
-					<form name="frmSrch" id="frmSrch" action="#" method="post" onsubmit="return false">
-						<input type="hidden" name="keyword" value="">
-						<input type="hidden" name="query" value="">
-						<input type="hidden" name="siteNm" value="">
-						<input type="hidden" name="siteCD" value="1">
-						<fieldset>
-							<input type="search" id="S_PROD_NM" name="S_PROD_NM" value="검색어를 입력하세요" onkeypress="return handle_enter_top(1,event);" onfocus="javascript:this.value='';" onmousedown="javascript:dqtop_setTextbox('1',event);" title="검색어를 입력하세요" autocomplete="off">
-							<button type="submit" value="검색" onclick="javascript:doKeywordSearch();">
-								<span class="icons"></span>
-							</button>
-						</fieldset>
-					</form>
-				</div>
-			</div>
-			<div class="notice_tits">
-				<div class="notice_tits_wrap">
-					<div class="collout_bar on" id="h-pop-exchange_btn">
-						<a href="javascript:void(0)"></a>
-						<div class="img"><img src="/images/adidas/icon_exchange.png" alt=""></div>
-						<p>교환/환불은 이렇게</p>
-					</div>
-					<div class="collout_bar">
-						<a href="http://m.adidas.co.kr/MO/Main/mainDisp.action?INFLW_TC_CD=&amp;utm_expid=118388890-42.tzj7cM1gQzmk86DuRXW1sA.0"></a>
-						<div class="img"><img src="/images/adidas/icon_limited_edition.png" alt=""></div>
-						<p>온라인 한정상품을 만나보세요</p>
-					</div>
-					<div class="collout_bar" id="h_pop_today_delivery_btn">
-						<a href="javascript:void(0)"></a>
-						<div class="img"><img src="/images/adidas/icon_today_delivery.png" alt=""></div>
-						<p>스피드 배송 서비스 오픈!</p>
-					</div>
-				</div>
-				<a href="javascript:void(0)" class="more"><img src="/images/adidas/icon_view_more.png" alt=""></a>
-			</div>
-
-		</div>
+ <body>
+ 	<div id="wrap">
+ 		<header include-html="/html/adidas/inc/header_.html"></header>
 
 		<div class="filter_container_wraper">
 			<div class="overlay"></div>
@@ -733,36 +696,11 @@
 		</div>
 		<!-- //container product_list -->
 
-		<div id="footer">
-			<div class="f_menu">
-				<a href="#">로그인</a>
-				<a href="#">주문/배송조회</a>
-				<a href="#">고객센터</a>
-				<a href="#">매장찾기</a>
-			</div>
-			<div class="f_info">
-				<p class="tit">아디다스코리아(주)</p>
-				<p>137-955 서울특별시 서초구 서초대로 74길 4, 삼성생명 서초타워 9층</p>
-				<p>대표이사 : 쟝 미쉘 그라니에&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;사업자 등록번호 : 214-81-07412</p>
-				<p>교환 및 반품 문의 (본사로 반품불가) : 온라인스토어 고객센터 1588-8241</p>
-				<p>(평일 9시 – 18시, 점심시간 12시 – 13시)</p>
-				<p>제품 수선문의 : 아디다스 고객만족센터 080-022-7981 (평일 09시 – 18시)</p>
-				<p>통신판매업신고 : 2007-서울서초-10391</p>
-				<p>이메일 : adiCLUB_Korea@adidas.com</p>
-				<p>개인정보 관리책임자 : 김동일&nbsp;&nbsp;|&nbsp;&nbsp;개인정보 관리담당자 : 황선영</p>
-				<p><a href="#">개인정보취급방침 확인<span class="ico-arrow-circle"></span></a></p>
-				<ul>
-					<li><a href="#">구매이용약관</a></li>
-					<li><a href="#">채무지급보증안내 확인</a></li>
-					<li><a href="#">공정거래 자율준수</a></li>
-					<li><a href="#">공정거래 위원회 사업자 신원정보 확인</a></li>
-				</ul>
-				<p style="color:#666;">Copyright © 2011 adidas Korea Inc.</p>
-			</div>
-		</div>
+		<footer include-html="/html/adidas/inc/footer_.html"></footer>
 	</div>
-
-	<script type="text/javascript" src="/js/adidas/common.js"></script>
+	
+	<script type="text/javascript" src="/designjs/adidas/common.js"></script>
+	<script type="text/javascript" src="/designjs/adidas/includeHTML.js"></script>
 	<script type="text/javascript">
 		(function($){
 
