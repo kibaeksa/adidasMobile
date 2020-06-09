@@ -1,6 +1,36 @@
-<div id="container">
-<style type="text/css">@media screen and (max-width: 320px){html{font-size:10px}}@media screen and (min-width: 800px){html{font-size:12px}}.pseudo-element{content:'';display:block}#video-layer{position:fixed;top:0;left:0;width:100%;height:100%;z-index:1000}#video-layer .bg{width:100%;height:100%;position:absolute;top:0;left:0;transform-origin:center center;-webkit-transform-origin:center center;transform:scale(0);-webkit-transform:scale(0);opacity:0;background:#000;z-index:1;transition:all 0.4s;-webkit-transition:all 0.4s}#video-layer.loaded .bg{opacity:1;transform:scale(1.2);-webkit-transform:scale(1.2)}#video-layer .video-box{position:relative;width:100%;height:100%;z-index:3}#video-layer .close_x_btn{width:70px;height:70px;position:absolute;top:0;right:0;z-index:5;opacity:0}#video-layer.loaded .close_x_btn{opacity:1}#football_jersey{background:#000}#football_jersey .main{padding-top:3rem;text-align:center}#football_jersey .main p{font:2.2rem/1.5rem 'adinenuPro-light';color:#dbdbdb;letter-spacing:1.2rem}#football_jersey .main p span{font:2.8rem/4.3rem 'adinenuPro-black';letter-spacing:2px;color:#fff}#football_jersey .team_btn{overflow:hidden;padding:3rem}#football_jersey .team_btn ul{width:100%}#football_jersey .team_btn ul li{position:relative;display:block;float:left;width:33.3333%}#football_jersey .team_btn ul li:nth-child(2),#football_jersey .team_btn ul li:nth-child(3){margin-left:-1px}#football_jersey .team_btn ul li:nth-child(5){margin-left:-2px}#football_jersey .team_btn ul li:nth-child(4),#football_jersey .team_btn ul li:nth-child(5){margin-top:-1px;width:50%}#football_jersey .team_btn ul li a{display:block}#football_jersey .team_btn ul li a img{display:block;width:100%}#football_jersey .team_contents .section{position:relative}#football_jersey .team_contents .section .bg_area{width:100%}#football_jersey .team_contents .section .bg_area img{display:block;width:100%}#football_jersey .team_contents .section .buy_area h2{width:100%;position:absolute;top:3.4rem;left:50%;transform:translateX(-50%);text-align:center}#football_jersey .team_contents .section .buy_area h2 img{display:inline-block;height:16px}#football_jersey .team_contents .section .buy_area .button_area_v2{margin-top:30px;display:inline-block;width:140px;position:absolute;bottom:3.4rem;left:50%;transform:translateX(-50%);text-align:center}#football_jersey .team_contents .section .buy_area .button_area_v2 a{height:auto;font:500 14px/44px 'NotoSansKR'}#football_jersey .team_contents .section .buy_area .button_area_v2 a span{top:-2px}
-</style>
+ <!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src="/data/eventRouter.js"></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+	<meta name="format-detection" content="telephone=no">
+	<meta http-equiv="x-rim-auto-match" content="none">
+
+	<link href="/css/adidas/style.css" type="text/css" rel="stylesheet" />
+	<link href="/css/adidas/fonts.css" type="text/css" rel="stylesheet" />
+
+	<script type="text/javascript" src="/designjs/common/jquery-1.12.0.min.js"></script>
+	<script type="text/javascript" src="/designjs/common/swipe.js"></script>
+	<script type="text/javascript" src="/designjs/common/owl.carousel.min.js"></script>
+	<script type="text/javascript" src="/designjs/common/modalPopup.min.js"></script>
+	<script type="text/javascript" src="/designjs/common/zoomImage.js"></script>
+	<script type="text/javascript" src="/designjs/adidas/common.js"></script>
+
+	<title>아디다스 모바일</title>
+
+	<style>
+		#container {
+			padding-top: 60px !important;
+		}
+	</style>
+</head>
+<body>
+
+	<div id="wrap">
+		<header include-html="/html/adidas/inc/header_.html"></header>
+
+		<div id="container">
 
 			<div id="football_jersey">
 
@@ -72,6 +102,35 @@
 					
 					<!-- 맨체스터 유나이티드 -->
                 </div>
+
+				<script type="text/javascript">
+					$(document).ready(function(){
+
+                        // var index = 0;
+                        // var length = 5;
+
+                        // function jerseyAnim(idx){
+						// 	var offset = $(".sec" + idx).offset();
+                        //     $('.team_btn li').removeClass('on').eq(index - 1).addClass('on');
+                        //     $('html, body').animate({ scrollTop: offset.top }, 1000);
+                        // }
+
+                        // $('#football_jersey .team_btn li a').bind('click',function(){
+
+                        //     if($(this).parent().hasClass('on')){
+                        //         return;
+                        //     }
+
+						// 	index = $(this).parent().index() + 1;
+						// 	console.log(index);
+
+                        //     jerseyAnim(index);
+                        // });
+
+					});
+				</script>
+
+
             </div>
             <!-- football_jersey -->
 
@@ -80,3 +139,13 @@
 			</div>
 		</div>
 		<!-- //container product_view -->
+
+		<footer include-html="/html/adidas/inc/footer_.html"></footer>
+	</div>
+
+	<script type="text/javascript" src="/designjs/adidas/common.js"></script>
+	<script type="text/javascript" src="/designjs/adidas/includeHTML.js"></script>
+
+</body>
+
+</html>
