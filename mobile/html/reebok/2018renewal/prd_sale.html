@@ -42,14 +42,180 @@
 <script type="text/javascript" src="//imagem.reebok.co.kr/js/mo/reebok/ree_mob_skin.js" charset="UTF-8" ></script>
 
 
+<script type="text/javascript">
 
-	<script>
+jQuery(function(){
+		
+	jQuery(document).ready(function() {
+		var commToday = '20180410';
+		var commTodayHh = '2018041014';
+		var topEvtStDt = '20170920';
+		var topEvtEdDt = '20171009';
+		
+		var html = "";
+		 
+		
+		html += '<div class="header_layerpopup layerpopup headerpop_today_delivery" id="h-pop-today-delivery" style="display: none;">';
+		html += '    <a href="javascript:void(0)" class="close_x_btn"></a>';
+		html += '    <div class="contents">';
+		html += '        <div class="bg"></div>';
+		html += '        <div class="main_icon"><span class="icons aft" data-icon=""></span></div>';
+		html += '        <h2>스피드 배송 서비스 안내</h2>';
+		html += '        <p class="bold">';
+		html += '            SPEEDY DELIVERY(스피드 배송)란? <br>';
+		html += '            상품상세 페이지에 <span class="icons aft" data-icon=""></span> 표시가 된 상품을<br>';
+		html += '            저녁 6시부터 다음 날 오전 9시까지 주문 후<br>';
+		html += '            결제 완료된 <span class="icons aft" data-icon=""></span> 상품에 한하여 다음날 또는<br>';
+		html += '            당일까지 빠르게 배송해 드리는 서비스 입니다.';
+		html += '		</p>';
+		html += '		<div class="button_area" style="text-align: center;margin-bottom:50px;">';
+		html += '			<div><a href="/MO/Product/brandsPrdList.action?&term=1&INFLW_TC_CD=&S_CTGR_CD=01006009&ctgr_cd=01006009&sQuick=Y" class="icons aft" data-icon="" style="display:inline-block;width:80%;">스피드 배송 제품보기</a></div>';
+		html += '		</div>';
+		html += '        <p>';
+		html += '            배송지 기준으로 서울 및 수도권 <br>';
+		html += '            인근지역(일부지역 제외)에 한하여 진행 됩니다.<br>';
+		html += '            빠르고 안전한 배송을 위해 박스 규격은<br>';
+		html += '            가로/세로/높이의 합이 80cm 이내이며,<br>';
+		html += '            총 주문 수량은 3개로 제한 됩니다. (단, 신발은 2개만 가능)<br>';
+		html += '            기타 SPEEDY DELIVERY(스피드 배송) 관련 자세한 안내는<br>';
+		html += '            FAQ를 참고해주시기 바랍니다.';
+		html += '        </p>';
+		html += '        <p class="bold">';
+		html += '            <a href="/MO/Faq/faqList.action?FAQ_DIVI=03&FAQ_DIVI_DTL=05" class="icons aft" data-icon="" >FAQ 바로가기</a>';
+		html += '        </p>';
+		html += '    </div>';
+		html += '</div>';
+		 
+		
+		 
+		html += '  <div class="header_layerpopup layerpopup headerpop_exchange" id="h-pop-exchange" style="display: none;">';
+		html += '    <a href="javascript:void(0)" class="close_x_btn"></a>';
+		html += '    <div class="contents">';
+		html += '      <div class="bg"></div>';
+		html += '      <div class="main_icon"><span class="icons aft" data-icon=""></span></div>';
+		html += '      <h2>교환/환불은 이렇게</h2>';
+		html += '      <p class="bold">교환/반품은 배송완료일로부터 7일 이내에<br>신청이 가능합니다.<br>';
+		html += '        단, 포장을 개봉하였거나 포장이 훼손되어<br>(상품의 Tag분리/분실, 비닐포장 훼손, 신발박스 훼손 등)<br>';
+		html += '        상품가치가 현저히 감소한 경우 교환/반품 불가 합니다.</p>';
+		html += '      <p>교환/반품 관련 자세한 문의는 <br>아디다스 고객센터 1588-8241로 해주시기 바랍니다.</p>';
+		html += '    </div>';
+		html += '  </div>';
+		
+		 
+		var htmlDeliy = "";
+		htmlDeliy += ' <div class="header_layerpopup layerpopup headerpop_freedeliver" id="h-pop-free-delivery" style="display: none;background: rgba(255,255,255,0.95);">';
+		htmlDeliy += '   <a href="javascript:void(0)" class="close_x_btn"></a>';
+		htmlDeliy += '   <div class="contents" style="padding-top:110px;">';
+		htmlDeliy += '     <div class="bg"></div>';
+		htmlDeliy += '     <p class="bold" style="padding-bottom:0;font-size:2rem;line-height:2.8rem;"><br>';
+		htmlDeliy += '       추석 연휴 기간 배송지연 안내 </p>';
+		htmlDeliy += '     <p style="font-weight:400;font-size:1.1rem;line-height:2.3rem;font-family:\'NotoSansKR\'">';
+		htmlDeliy += ' 		<br/> 추석 명절로 인한 택배사의 배송 물량 증가로 배송이 지연되고 있습니다. <br/>';
+		htmlDeliy += ' 		10월1일(일) 오전 주문 건 부터는 <br/> 추석 명절 이후 10월10일(화) 부터 순차적으로 배송됩니다. <br/>';
+		htmlDeliy += ' 		배송관련 문의는 고객센터 1588-8241로 문의 주시기 바랍니다..<br/>';
+		htmlDeliy += ' 		<br/> 단, 9/30일자 주문 건은 일부 지역 배송이 불가할 수도 있습니다.';
+		htmlDeliy += '  	  </p>';
+		htmlDeliy += '   </div>';
+		htmlDeliy += ' </div>';
+		
+		 
+		if (commToday >= topEvtStDt && commToday <= topEvtEdDt) {
+			jQuery('.notice_tits#deliy').css('display', 'block');
+			jQuery('body').prepend(htmlDeliy);
+			
+			// 170627 헤더팝업 무료배송
+			jQuery('.collout_bar#h-pop-free-delivery_btn').bind('click',function(){
+				document.getElementById('wrap').scrollTopBefore = window.scrollY;
+				document.getElementById('wrap').style.display = 'block';
+				document.getElementById('h-pop-free-delivery').style.display = 'block';
+				window.scrollTo(0, 0);
+				jQuery('html').addClass('no_srl'); 
+// 				document.location.href = "/MO/Promotion/landingPage.action?pageNo=389";
+			});
 
-	</script>
+			// 170627 당일배송 지역찾기 레이어 닫았을 떄
+			jQuery('.layerpopup .close_x_btn').bind('click',function(){
+				document.getElementById('h-pop-free-delivery').style.display = 'none';
+				document.getElementById('wrap').style.display = 'block';
+				window.scrollTo(0, document.getElementById('wrap').scrollTopBefore);
+				jQuery('html').removeClass('no_srl');
+			});
+		} else {
+			 
+
+
+
+if(commTodayHh >=  2017110710 ) {
+	jQuery('.notice_tits#speeds').css('display', 'block');
+	jQuery('body').prepend(html);
+				var rolling = setInterval(notice_tits_auto, 1600);
+}
+				
+				// 170322 헤더팝업 당일배송
+				jQuery('#h_pop_today_delivery_btn').bind('click',function(){
+					document.getElementById('wrap').scrollTopBefore = window.scrollY;
+					document.getElementById('wrap').style.display = 'block';
+					document.getElementById('h-pop-today-delivery').style.display = 'block';
+					window.scrollTo(0, 0);
+					jQuery('html').addClass('no_srl');
+				});
+				// 170322 헤더팝업 교환환불
+				jQuery('#h-pop-exchange_btn').bind('click',function(){
+					document.getElementById('wrap').scrollTopBefore = window.scrollY;
+					document.getElementById('wrap').style.display = 'block';
+					document.getElementById('h-pop-exchange').style.display = 'block';
+					window.scrollTo(0, 0);
+					jQuery('html').addClass('no_srl');
+				});
+				
+				// 170322 당일배송 지역찾기 레이어 닫았을 떄
+				jQuery('.layerpopup .close_x_btn').bind('click',function(){
+					document.getElementById('h-pop-today-delivery').style.display = 'none';
+					document.getElementById('h-pop-exchange').style.display = 'none';
+					document.getElementById('wrap').style.display = 'block';
+					window.scrollTo(0, document.getElementById('wrap').scrollTopBefore);
+					jQuery('html').removeClass('no_srl');
+				});
+		}
+		
+		// 170627 헤더 작은 공지들 (로테이션기능 주석)
+		var tits_index = 0;
+		var len = jQuery(".notice_tits .notice_tits_wrap .collout_bar").length;
+		
+		function notice_tits_auto(){
+			if( tits_index == len-2 ){
+			  tits_index = 0;
+			  jQuery(".notice_tits .notice_tits_wrap .collout_bar").removeClass('on').eq(0).addClass('on');
+			
+			}else{
+			  tits_index ++;
+			  jQuery(".notice_tits .notice_tits_wrap .collout_bar").removeClass('on').eq(tits_index).addClass('on');
+			}
+		}
+    });
+//최근본 상품	
+	jQuery('.nViewSlide').slick({
+        slidesToShow:2,
+        slidesToScroll:1,
+        autoplaySpeed: 3000,
+        arrows:false,
+        //adaptiveHeight: true,
+        //infinite: true,
+        dots: true,
+        //adaptiveHeight: true
+      });
+});
+
+
+</script>
+<link href="/css/reebok/efu2018/swiper.min.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="/designjs/reebok/efu2018/swiper.min.js" charset="UTF-8"></script>
+
 </head>
 <body>
 <section id="wrap">
-	
+	<section id="container">
+		
 
 <section id="headerWrap">
 	
@@ -653,133 +819,486 @@ jQuery(function(){
 
 	
 
-	<div id="container" class="mypage">
-		<div id="location">
-			<span><a href="#">HOME</a></span>
-			<span>마이페이지</span>
-		</div>
-
-		<div class="user_id">
-			<div class="id gold"><strong>홍길동</strong>님</div>
-            <div class="mypageBarcode">
-            	<div class="barcode">
-            		<img src="/images/reebok/efu2018/common/barcode.png" alt="reeclub barcode">
-            		<a href="/mypage/member/card.jsp"></a>
-            	</div>
+		
+		<!-- 170525 product_list_update 클래스 추가 -->
+		<div id="container" class="product_list product_list_update">
+			<div class="ctgr_visual">
+				<img src="/images/reebok/efu2018/product/sale.jpg" alt="SALE">		
 			</div>
-		</div>
-		<!-- 180130 user_cpn -->
-		<div class="user_cpn col2">               
-			<a href="#">
-				<p class="icons" style="padding-left:0;">나의 쿠폰</p>
-				<p><strong>3</strong>장</p>
-			</a>
-			<a href="#">
-				<p class="icons" style="padding-left:0;">리클럽 포인트</p>
-				<p><strong>0</strong>p</p>                   
-			</a>     
-		</div>
-		<!-- //180130 user_cpn-->
+			<!-- <div class="page_heading">
+				<span>브랜드 / 아디다스 스텔라 맥카트니 / 신발</span>
+			</div> -->
 
-		<div class="order_process">
-			<h3>진행중인 주문 (최근 3주 기준)</h3>
-			<div class="box">
-				<div class="step1">
+			<div class="filter_wrapper">
+				<div class="toggle_speed">
+					<div class="chk_box1 blue">
+						<input type="checkbox" id="spped_prod">
+						<label for="spped_prod">스피드 배송</label>
+					</div>
+				</div>
+				
+			</div>
+
+			<!--
+				170525
+				* sorting_wrapper 추가
+			 -->
+			<div class="sorting_wrapper">
+				<div class="switch_view">
+					<a href="javascript:void(0)" class=" on icons" data-icon="" data-gridname="box"></a>
+					<a href="javascript:void(0)" class="  icons" data-icon="" data-gridname="list"></a>
+				</div>
+				<div class="count">총 <strong>528</strong>개 상품</div>
+
+				<div class="sel_boxtype sel_design">
+					<a href="#" class="toggle_arw"><span>정확도순</span></a>
+					<select name="order_by" id="order_by">
+						<option value="accuracy">정확도순</option>
+						<option value="best">베스트순</option>
+						<option value="new">신상품순</option>
+						<option value="high">높은가격순</option>
+						<option value="low">낮은가격순</option>
+					</select>
+				</div>
+			</div>
+			<!-- 제품있을경우 -->
+			<div class="product_grid">
+				<!--
+					170525
+					mi 제품 시 mi 클래스 추가
+				-->
+				<div class="box mi">
+					<a href="#" class="link"></a>
+					<div class="img">
+						<a href="#">
+							<div class="label adihs-b aft t-delivery " data-icon=""></div>
+							<img src="http://m.adidas.co.kr/upload/prod/basic/320/S81617-1_320X320.jpg" alt="">
+						</a>
+					</div>
+					<!-- //img -->
+					<div class="info">
+						<!--
+							170525
+							status 추가
+							* 유사제품 컬러 캐수
+						-->
+						<div class="status">
+							<span>4 컬러</span>
+						</div>
+						<div class="ctgr">Originals</div>
+						<div class="tit">아디다스 오리지널스 슈퍼스타 80s 디럭스 S19 라운드 디테일 프로덕트 레볼루션</div>
+						<div class="price">
+							<div class="line">1,229,000<span>원</span></div>
+							<div class="sale">1,125,200<span>원</span></div>
+						</div>
+						<!-- //price -->
+
+						<div class="rating">
+							<div class="star">
+								<span class="icons active" data-icon=""></span>
+								<span class="icons active" data-icon=""></span>
+								<span class="icons active" data-icon=""></span>
+								<span class="icons" data-icon=""></span>
+								<span class="icons" data-icon=""></span>
+							</div>
+							<!-- //star -->
+							126
+						</div>
+						<!-- //rating -->
+					</div>
+					<!-- //info -->
+				</div>
+				<div class="box mi">
+					<div class="img">
+						<a href="#">
+							<div class="label adihs-b new"></div>
+							<img src="http://m.adidas.co.kr/upload/prod/basic/320/AK0913-1_320X320.jpg" alt="">
+						</a>
+					</div>
+					<!-- //img -->
+					<div class="info">
+						<div class="status">
+							<span>2 컬러</span>
+						</div>
+						<div class="ctgr">Originals</div>
+						<div class="tit">[한정상품] S19 라운드테일</div>
+						<div class="price">
+							<div>979,000<span>원</span></div>
+						</div>
+						<!-- //price -->
+
+						<div class="rating">
+							<div class="star">
+								<span class="icons active" data-icon=""></span>
+								<span class="icons active" data-icon=""></span>
+								<span class="icons active" data-icon=""></span>
+								<span class="icons" data-icon=""></span>
+								<span class="icons" data-icon=""></span>
+							</div>
+							<!-- //star -->
+							126
+						</div>
+						<!-- //rating -->
+					</div>
+					<!-- //info -->
+
+				</div>
+				<div class="box">
+					<div class="img">
+						<a href="#">
+							<div class="label adihs-b best"></div>
+							<img src="http://m.adidas.co.kr/upload/prod/basic/320/S81337-1_320X320.jpg" alt="">
+						</a>
+					</div>
+					<!-- //img -->
+					<div class="info">
+						<div class="status">
+							<span>2 컬러</span>
+						</div>
+						<div class="ctgr">Originals</div>
+						<div class="tit">[재입고] 슈퍼스타 슬립온</div>
+						<div class="price">
+							<div>79,000<span>원</span></div>
+						</div>
+						<!-- //price -->
+
+						<div class="rating">
+							<div class="star">
+								<span class="icons active" data-icon=""></span>
+								<span class="icons active" data-icon=""></span>
+								<span class="icons active" data-icon=""></span>
+								<span class="icons" data-icon=""></span>
+								<span class="icons" data-icon=""></span>
+							</div>
+							<!-- //star -->
+							126
+						</div>
+						<!-- //rating -->
+					</div>
+					<!-- //info -->
+				</div>
+				<div class="box">
+					<div class="img">
+						<a href="#">
+							<div class="label adihs-b sale">-30%</div>
+							<img src="http://m.adidas.co.kr/upload/prod/basic/320/A61200-1_320X320.jpg" alt="">
+						</a>
+					</div>
+					<!-- //img -->
+					<div class="info">
+						<div class="status">
+							<span>2 컬러</span>
+						</div>
+						<div class="ctgr">Originals</div>
+						<div class="tit">INT 스윙맨 저지 #23 캐블리어스</div>
+						<div class="price">
+							<div>79,000<span>원</span></div>
+						</div>
+						<!-- //price -->
+
+						<div class="rating">
+							<div class="star">
+								<span class="icons active" data-icon=""></span>
+								<span class="icons active" data-icon=""></span>
+								<span class="icons active" data-icon=""></span>
+								<span class="icons" data-icon=""></span>
+								<span class="icons" data-icon=""></span>
+							</div>
+							<!-- //star -->
+							126
+						</div>
+						<!-- //rating -->
+					</div>
+					<!-- //info -->
+				</div>
+				<div class="box">
+					<div class="img">
+						<a href="#">
+							<img src="http://m.adidas.co.kr/upload/prod/basic/320/S93438-1_320X320.jpg" alt="">
+						</a>
+					</div>
+					<!-- //img -->
+					<div class="info">
+						<div class="status">
+							<span>4 컬러</span>
+						</div>
+						<div class="ctgr">Originals</div>
+						<div class="tit">[온라인단독] 블랙버드 페이즐리 후디</div>
+						<div class="price">
+							<div>79,000<span>원</span></div>
+						</div>
+						<!-- //price -->
+
+						<div class="rating">
+							<div class="star">
+								<span class="icons active" data-icon=""></span>
+								<span class="icons active" data-icon=""></span>
+								<span class="icons active" data-icon=""></span>
+								<span class="icons" data-icon=""></span>
+								<span class="icons" data-icon=""></span>
+							</div>
+							<!-- //star -->
+							126
+						</div>
+						<!-- //rating -->
+					</div>
+					<!-- //info -->
+				</div>
+				<div class="box">
+					<div class="img">
+						<a href="#">
+							<img src="http://m.adidas.co.kr/upload/prod/basic/320/S17677-1_320X320.jpg" alt="">
+						</a>
+					</div>
+					<!-- //img -->
+					<div class="info">
+						<div class="status">
+							<span>6 컬러</span>
+						</div>
+						<div class="ctgr">Originals</div>
+						<div class="tit">[온라인단독] ESS 3S M2M B</div>
+						<div class="price">
+							<div>79,000<span>원</span></div>
+						</div>
+						<!-- //price -->
+
+						<div class="rating">
+							<div class="star">
+								<span class="icons active" data-icon=""></span>
+								<span class="icons active" data-icon=""></span>
+								<span class="icons active" data-icon=""></span>
+								<span class="icons" data-icon=""></span>
+								<span class="icons" data-icon=""></span>
+							</div>
+							<!-- //star -->
+							126
+						</div>
+						<!-- //rating -->
+					</div>
+					<!-- //info -->
+				</div>
+				<div class="box">
+					<div class="img">
+						<a href="#">
+							<img src="http://m.adidas.co.kr/upload/prod/basic/320/B25700-1_320X320.jpg" alt="">
+						</a>
+					</div>
+					<!-- //img -->
+					<div class="info">
+						<div class="status">
+							<span>2 컬러</span>
+						</div>
+						<div class="ctgr">Originals</div>
+						<div class="tit">[한정상품] 튜블라 X (카모)</div>
+						<div class="price">
+							<div>79,000<span>원</span></div>
+						</div>
+						<!-- //price -->
+
+						<div class="rating">
+							<div class="star">
+								<span class="icons active" data-icon=""></span>
+								<span class="icons active" data-icon=""></span>
+								<span class="icons active" data-icon=""></span>
+								<span class="icons" data-icon=""></span>
+								<span class="icons" data-icon=""></span>
+							</div>
+							<!-- //star -->
+							126
+						</div>
+						<!-- //rating -->
+					</div>
+					<!-- //info -->
+				</div>
+				<div class="box">
+					<div class="img">
+						<a href="#">
+							<img src="http://m.adidas.co.kr/upload/prod/basic/320/A61200-1_320X320.jpg" alt="">
+						</a>
+					</div>
+					<!-- //img -->
+					<div class="info">
+						<div class="status">
+							<span>2 컬러</span>
+						</div>
+						<div class="ctgr">Originals</div>
+						<div class="tit">INT 스윙맨 저지 #23 캐블리어스</div>
+						<div class="price">
+							<div>79,000<span>원</span></div>
+						</div>
+						<!-- //price -->
+
+						<div class="rating">
+							<div class="star">
+								<span class="icons active" data-icon=""></span>
+								<span class="icons active" data-icon=""></span>
+								<span class="icons active" data-icon=""></span>
+								<span class="icons" data-icon=""></span>
+								<span class="icons" data-icon=""></span>
+							</div>
+							<!-- //star -->
+							126
+						</div>
+						<!-- //rating -->
+					</div>
+					<!-- //info -->
+				</div>
+			</div>
+			<!-- //product_grid -->
+			<!-- //제품있을경우 -->
+
+			<!-- 제품없을경우 -->
+			<p class="none">해당상품이 없습니다.</p>
+			<!-- //제품없을경우 -->
+			
+			<!-- 170525 paging -->
+			<div class="plp_paging">
+				<a href="#" class="prev disable">
+					<span></span>
+				</a>
+				<a href="#" class="next">
+					<span></span>
+				</a>
+				<div class="num">
+					<strong class="adihs-din-b">12</strong>
+					<span class="adihs-din-b"> / 22</span>
+				</div>
+			</div><!-- 해당상품 없을시 비노출 -->
+			<div class="viewed-items recentlyViewProducts">
+				<h4 class="tit">최근 본 상품</h4>	
+				<div class="nViewSlide">
+					<div class="swiper-slide" style="width: 166px; margin-right: 3px;">
+						<div class="prod_box">			
+							<a href="javascript:goProductDetailMi('CE0371', '', 'N');">				
+								<div class="img">					
+									<img src="http://image.adidas.co.kr/upload/prod/basic/500/CE0371-1_500X500.jpg" alt="클라이마칠 폴로">				
+								</div>				
+								<p class="ctgr">WOMEN'S TENNIS</p>				
+								<p class="tit">클라이마칠 폴로</p>				
+								<div class="price">					
+									<div>      65,000<span>원</span></div>				
+								</div>			
+							</a>		
+						</div>
+					</div>
+					<div class="swiper-slide" style="width: 166px; margin-right: 3px;">
+						<div class="prod_box">			
+							<a href="javascript:goProductDetailMi('CV8145', '', 'N');">				
+								<div class="img">					
+									<img src="http://image.adidas.co.kr/upload/prod/basic/500/CV8145-1_500X500.jpg" alt="T H 스냅백 캡">				
+								</div>				
+								<p class="ctgr">UNISEX ORIGINALS</p>				
+								<p class="tit">T H 스냅백 캡</p>				
+								<div class="price">					
+									<div>      49,000<span>원</span></div>				
+								</div>			
+							</a>		
+						</div>
+					</div>
+					<div class="swiper-slide" style="width: 166px; margin-right: 3px;">
+						<div class="prod_box">			
+							<a href="javascript:goProductDetailMi('CV8597', '', 'N');">				
+								<div class="img">					
+									<img src="http://image.adidas.co.kr/upload/prod/basic/500/CV8597-1_500X500.jpg" alt="OG AA-42 티">				
+								</div>				
+								<p class="ctgr">WOMEN'S ORIGINALS</p>				
+								<p class="tit">OG AA-42 티</p>				
+								<div class="price">					
+									<div>      59,000<span>원</span></div>				
+								</div>		
+							</a>		
+						</div>
+					</div>
+					<div class="swiper-slide" style="width: 166px; margin-right: 3px;">
+						<div class="prod_box">			
+							<a href="javascript:goProductDetailMi('CW2349', '', 'N');">				
+								<div class="img">					
+									<img src="http://image.adidas.co.kr/upload/prod/basic/500/CW2349-1_500X500.jpg" alt="클라이마 3.0 티">				
+								</div>				
+								<p class="ctgr">MEN'S ORIGINALS</p>				
+								<p class="tit">클라이마 3.0 티</p>				
+								<div class="price">					
+									<div>      49,000<span>원</span></div>				
+								</div>			
+							</a>		
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<!-- 171030 facebook -->
+			<div class="feedback_facebook">
+				<div class="inner">
 					<a href="#">
-						<p class="icons" data-icon=""></p>
-						<p class="status">입금 대기중</p>
-						<p class="num adihs-din-b">3</p>
+						<p class="feedback_facebook_title">FEEDBACK</p>
+						<span class="txt blue icons aft" data-icon="">여러분의 의견을 기다립니다</span>
 					</a>
 				</div>
-		        <div class="step2">
-		            <a href="#">
-		                <p class="icons" data-icon=""></p>
-		                <p class="status">결제완료</p>
-		                <p class="num adihs-din-b">1</p>
-		            </a>
-		        </div>
-		        <div class="step3">
-		            <a href="#">
-		                <p class="icons" data-icon=""></p>
-		                <p class="status">배송준비중</p>
-		                <p class="num adihs-din-b">0</p>
-		            </a>
-		        </div>
-		        <div class="step4">
-		            <a href="#">
-		                <p class="icons" data-icon=""></p>
-		                <p class="status">배송중</p>
-		                <p class="num adihs-din-b">0</p>
-		            </a>
-		        </div>
-		        <div class="step5">
-		            <a href="#">
-		                <p class="icons"></p>
-		                <p class="status">배송완료</p>
-		                <p class="num adihs-din-b">0</p>
-		            </a>
-		        </div>
+			</div>
+
+		</div>
+		<!-- //container product_list -->
+		
+		
+		
+		<div class="filter_container_wraper">
+		<div class="overlay"></div>
+		<a href="#" class="close_x_btn white"></a>
+	
+		<div class="filter_container" style="width: 315px;">
+			
+			<div class="category_box">
+				<div class="box category_size" data-filtertype="size" data-filtersizecl="1" style="display: none;">
+					<div class="tit"><a href="javascript:void(0)"> 사이즈(신발) <span class="toggle_circle"></span></a></div>
+					<div class="content"></div>
+				</div>
+				<div class="box category_size" data-filtertype="size" data-filtersizecl="2" style="display: block;">
+					<div class="tit"><a href="javascript:void(0)"> 사이즈(의류) <span class="toggle_circle"></span></a></div>
+					<div class="content"><a data-sizetp="2" data-sizenm="2XL" data-sizecd="2XL" class="adihs" href="javascript:void(0)">2XL</a><a data-sizetp="2" data-sizenm="3XL" data-sizecd="3XL" class="adihs" href="javascript:void(0)">3XL</a><a data-sizetp="2" data-sizenm="5XL" data-sizecd="5XL" class="adihs" href="javascript:void(0)">5XL</a><a data-sizetp="2" data-sizenm="L" data-sizecd="L" class="adihs" href="javascript:void(0)">L</a><a data-sizetp="2" data-sizenm="M" data-sizecd="M" class="adihs" href="javascript:void(0)">M</a><a data-sizetp="2" data-sizenm="S" data-sizecd="S" class="adihs on" href="javascript:void(0)">S</a><a data-sizetp="2" data-sizenm="XL" data-sizecd="XL" class="adihs" href="javascript:void(0)">XL</a><a data-sizetp="2" data-sizenm="XS" data-sizecd="XS" class="adihs" href="javascript:void(0)">XS</a></div>
+				</div>
+				<div class="box category_size" data-filtertype="size" data-filtersizecl="3" style="display: none;">
+					<div class="tit"><a href="javascript:void(0)"> 사이즈(용품) <span class="toggle_circle"></span></a></div>
+					<div class="content"></div>
+				</div>
+				<div class="box category_color" data-filtertype="color" style="display: block;">
+					<div class="tit"><a href="javascript:void(0)"> 컬러 <span class="toggle_circle"></span></a></div>
+					<div class="content"><a data-colornm="YELLOW" data-colorcd="yellow" class="yellow" href="javascript:void(0)"><span class="c1"></span><span class="c2"></span></a><a data-colornm="BLUE" data-colorcd="blue" class="blue" href="javascript:void(0)"><span class="c1"></span><span class="c2"></span></a><a data-colornm="NAVY" data-colorcd="navy" class="navy" href="javascript:void(0)"><span class="c1"></span><span class="c2"></span></a><a data-colornm="BEIGE" data-colorcd="beige" class="beige" href="javascript:void(0)"><span class="c1"></span><span class="c2"></span></a><a data-colornm="ORANGE" data-colorcd="orange" class="orange" href="javascript:void(0)"><span class="c1"></span><span class="c2"></span></a><a data-colornm="BLACK" data-colorcd="black" class="black" href="javascript:void(0)"><span class="c1"></span><span class="c2"></span></a><a data-colornm="KHAKI" data-colorcd="khaki" class="khaki" href="javascript:void(0)"><span class="c1"></span><span class="c2"></span></a><a data-colornm="GOLD" data-colorcd="gold" class="gold" href="javascript:void(0)"><span class="c1"></span><span class="c2"></span></a><a data-colornm="GREY" data-colorcd="grey" class="grey" href="javascript:void(0)"><span class="c1"></span><span class="c2"></span></a><a data-colornm="WHITE" data-colorcd="white" class="white" href="javascript:void(0)"><span class="c1"></span><span class="c2"></span></a><a data-colornm="RED" data-colorcd="red" class="red" href="javascript:void(0)"><span class="c1"></span><span class="c2"></span></a><a data-colornm="GREEN" data-colorcd="green" class="green" href="javascript:void(0)"><span class="c1"></span><span class="c2"></span></a><a data-colornm="PINK" data-colorcd="pink" class="pink" href="javascript:void(0)"><span class="c1"></span><span class="c2"></span></a><a data-colornm="SAND" data-colorcd="sand" class="sand" href="javascript:void(0)"><span class="c1"></span><span class="c2"></span></a></div>
+				</div>
+	
+				<div class="box category_price" data-filtertype="price">
+					<div class="tit">
+						<a href="javascript:void(0)"> 가격 <span class="toggle_circle"></span></a>
+					</div>
+					<div class="content">
+						<div class="inner">
+							<div class="price_box">
+								<p>최소</p>
+								<div class="iptbox"><input type="tel" maxlength="7" name="minPrice" pattern="[0-9]{10}[0-9]?" title="숫자로만 입력해주세요."></div>
+							</div>
+							<div class="price_box">
+								<p>최대</p>
+								<div class="iptbox"><input type="tel" maxlength="7" name="maxPrice" pattern="[0-9]{10}[0-9]?" title="숫자로만 입력해주세요."></div>
+							</div>
+							<a href="javascript:void(0)" class="icons aft" data-icon="">적용하기</a>
+						</div>
+	
+					</div>
+				</div>
+	
+				<div class="box category_products" data-filtertype="category" style="display: block;">
+					<div class="tit">
+						<a href="javascript:void(0)"> 상품분류 <span class="toggle_circle"></span></a>
+					</div>
+					<div class="content"><ul class="depth1">	<li class="open"><a href="javascript:;" class="adipro-b toggle_arw">WOMEN</a>		<ul class="depth2"><li><a href="javascript:;" data-link="goCatPrdData('01002');" data-cat1="WOMEN" data-cat2="전체보기"><b>전체보기</b></a></li><li class=""><a href="javascript:;" data-cat1="WOMEN" data-cat2="신발" class="toggle_arw">신발</a><ul class="depth3"><li><a href="javascript:;" data-link="goCatPrdData('01002001');" data-cat1="WOMEN" data-cat2="신발" data-cat3="전체보기"><b>전체보기</b></a></li><li><a href="javascript:;" data-cat1="WOMEN" data-cat2="신발" data-cat3="스포츠별"><b>스포츠별</b></a></li><li><a href="javascript:;" data-link="goCatPrdData('01002001001009');" data-cat1="WOMEN" data-cat2="신발" data-cat3="오리지널스 ">오리지널스 (255)</a></li><li><a href="javascript:;" data-link="goCatPrdData('01002001001003');" data-cat1="WOMEN" data-cat2="신발" data-cat3="러닝 ">러닝 (101)</a></li><li><a href="javascript:;" data-link="goCatPrdData('01002001001005');" data-cat1="WOMEN" data-cat2="신발" data-cat3="아웃도어 ">아웃도어 (9)</a></li><li><a href="javascript:;" data-link="goCatPrdData('01002001001006');" data-cat1="WOMEN" data-cat2="신발" data-cat3="트레이닝 ">트레이닝 (8)</a></li><li><a href="javascript:;" data-link="goCatPrdData('01002001001004');" data-cat1="WOMEN" data-cat2="신발" data-cat3="테니스 ">테니스 (7)</a></li><li><a href="javascript:;" data-link="goCatPrdData('01002001001008');" data-cat1="WOMEN" data-cat2="신발" data-cat3="스윔 ">스윔 (12)</a></li><li><a href="javascript:;" data-link="goCatPrdData('01002001001013');" data-cat1="WOMEN" data-cat2="신발" data-cat3="골프 ">골프 (11)</a></li><li><a href="javascript:;" data-cat1="WOMEN" data-cat2="신발" data-cat3="상품별"><b>상품별</b></a></li><li><a href="javascript:;" data-link="goCatPrdData('01002001002001');" data-cat1="WOMEN" data-cat2="신발" data-cat3="하이컷 / 미드컷 ">하이컷 / 미드컷 (20)</a></li><li><a href="javascript:;" data-link="goCatPrdData('01002001002002');" data-cat1="WOMEN" data-cat2="신발" data-cat3="로우컷 ">로우컷 (335)</a></li><li><a href="javascript:;" data-link="goCatPrdData('01002001002003');" data-cat1="WOMEN" data-cat2="신발" data-cat3="샌들 / 슬리퍼 ">샌들 / 슬리퍼 (34)</a></li><li><a href="javascript:;" data-cat1="WOMEN" data-cat2="신발" data-cat3="브랜드"><b>브랜드</b></a></li><li><a href="javascript:;" data-link="goCatPrdData('01002001003002');" data-cat1="WOMEN" data-cat2="신발" data-cat3="스포츠 ">스포츠 (152)</a></li><li><a href="javascript:;" data-link="goCatPrdData('01002001003001');" data-cat1="WOMEN" data-cat2="신발" data-cat3="오리지널스 ">오리지널스 (254)</a></li></ul></li><li class="open"><a href="javascript:;" data-cat1="WOMEN" data-cat2="의류" class="toggle_arw open">의류</a><ul class="depth3"><li><a href="javascript:;" data-link="goCatPrdData('01002002');" data-cat1="WOMEN" data-cat2="의류" data-cat3="전체보기"><b>전체보기</b></a></li><li><a href="javascript:;" data-cat1="WOMEN" data-cat2="의류" data-cat3="스포츠별"><b>스포츠별</b></a></li><li><a href="javascript:;" data-link="goCatPrdData('01002002001009');" data-cat1="WOMEN" data-cat2="의류" data-cat3="라이프스타일 ">라이프스타일 (144)</a></li><li><a href="javascript:;" data-link="goCatPrdData('01002002001003');" data-cat1="WOMEN" data-cat2="의류" data-cat3="러닝 ">러닝 (50)</a></li><li><a href="javascript:;" data-link="goCatPrdData('01002002001004');" data-cat1="WOMEN" data-cat2="의류" data-cat3="테니스 ">테니스 (23)</a></li><li><a href="javascript:;" data-link="goCatPrdData('01002002001005');" data-cat1="WOMEN" data-cat2="의류" data-cat3="아웃도어 ">아웃도어 (19)</a></li><li><a href="javascript:;" data-link="goCatPrdData('01002002001008');" data-cat1="WOMEN" data-cat2="의류" data-cat3="스윔 ">스윔 (4)</a></li><li><a href="javascript:;" data-link="goCatPrdData('01002002001006');" data-cat1="WOMEN" data-cat2="의류" data-cat3="트레이닝 ">트레이닝 (201)</a></li><li><a href="javascript:;" data-link="goCatPrdData('01002002001012');" data-cat1="WOMEN" data-cat2="의류" data-cat3="골프 ">골프 (25)</a></li><li><a href="javascript:;" data-cat1="WOMEN" data-cat2="의류" data-cat3="상품별"><b>상품별</b></a></li><li><a href="javascript:;" data-link="goCatPrdData('01002002002008');" data-cat1="WOMEN" data-cat2="의류" data-cat3="브라탑 ">브라탑 (54)</a></li><li><a href="javascript:;" data-link="goCatPrdData('01002002002005');" data-cat1="WOMEN" data-cat2="의류" data-cat3="슬리브리스 ">슬리브리스 (50)</a></li><li><a href="javascript:;" data-link="goCatPrdData('01002002002004');" data-cat1="WOMEN" data-cat2="의류" data-cat3="반팔티 ">반팔티 (79)</a></li><li><a href="javascript:;" data-link="goCatPrdData('01002002002003');" data-cat1="WOMEN" data-cat2="의류" data-cat3="긴팔티 ">긴팔티 (82)</a></li><li><a href="javascript:;" data-link="goCatPrdData('01002002002002');" data-cat1="WOMEN" data-cat2="의류" data-cat3="트랙탑 / 져지탑 ">트랙탑 / 져지탑 (40)</a></li><li><a href="javascript:;" data-link="goCatPrdData('01002002002001');" data-cat1="WOMEN" data-cat2="의류" data-cat3="자켓 ">자켓 (29)</a></li><li><a href="javascript:;" data-link="goCatPrdData('01002002002007');" data-cat1="WOMEN" data-cat2="의류" data-cat3="숏팬츠 / 타이즈 ">숏팬츠 / 타이즈 (88)</a></li><li><a href="javascript:;" data-link="goCatPrdData('01002002002006');" data-cat1="WOMEN" data-cat2="의류" data-cat3="팬츠 ">팬츠 (71)</a></li><li><a href="javascript:;" data-link="goCatPrdData('01002002002009');" data-cat1="WOMEN" data-cat2="의류" data-cat3="스커트 / 원피스 ">스커트 / 원피스 (34)</a></li><li><a href="javascript:;" data-link="goCatPrdData('01002002002011');" data-cat1="WOMEN" data-cat2="의류" data-cat3="수영복 ">수영복 (1)</a></li><li><a href="javascript:;" data-link="goCatPrdData('01002002002010');" data-cat1="WOMEN" data-cat2="의류" data-cat3="기타 ">기타 (4)</a></li><li><a href="javascript:;" data-cat1="WOMEN" data-cat2="의류" data-cat3="브랜드"><b>브랜드</b></a></li><li><a href="javascript:;" data-link="goCatPrdData('01002002003002');" data-cat1="WOMEN" data-cat2="의류" data-cat3="스포츠 ">스포츠 (320)</a></li><li><a href="javascript:;" data-link="goCatPrdData('01002002003001');" data-cat1="WOMEN" data-cat2="의류" data-cat3="오리지널스 ">오리지널스 (153)</a></li><li><a href="javascript:;" data-link="goCatPrdData('01002002003004');" data-cat1="WOMEN" data-cat2="의류" data-cat3="애슬레틱 ">애슬레틱 (59)</a></li></ul></li><li class=""><a href="javascript:;" data-cat1="WOMEN" data-cat2="용품" class="toggle_arw">용품</a><ul class="depth3"><li><a href="javascript:;" data-link="goCatPrdData('01002003');" data-cat1="WOMEN" data-cat2="용품" data-cat3="전체보기"><b>전체보기</b></a></li><li><a href="javascript:;" data-cat1="WOMEN" data-cat2="용품" data-cat3="상품별"><b>상품별</b></a></li><li><a href="javascript:;" data-link="goCatPrdData('01002003001002');" data-cat1="WOMEN" data-cat2="용품" data-cat3="모자 ">모자 (59)</a></li><li><a href="javascript:;" data-link="goCatPrdData('01002003001003');" data-cat1="WOMEN" data-cat2="용품" data-cat3="가방 ">가방 (115)</a></li><li><a href="javascript:;" data-link="goCatPrdData('01002003001004');" data-cat1="WOMEN" data-cat2="용품" data-cat3="공/피트니스 용품 ">공/피트니스 용품 (9)</a></li><li><a href="javascript:;" data-link="goCatPrdData('01002003001005');" data-cat1="WOMEN" data-cat2="용품" data-cat3="기타 ">기타 (19)</a></li><li><a href="javascript:;" data-cat1="WOMEN" data-cat2="용품" data-cat3="브랜드"><b>브랜드</b></a></li><li><a href="javascript:;" data-link="goCatPrdData('01002003002002');" data-cat1="WOMEN" data-cat2="용품" data-cat3="스포츠 ">스포츠 (82)</a></li><li><a href="javascript:;" data-link="goCatPrdData('01002003002001');" data-cat1="WOMEN" data-cat2="용품" data-cat3="오리지널스 ">오리지널스 (96)</a></li><li><a href="javascript:;" data-link="goCatPrdData('01002003002004');" data-cat1="WOMEN" data-cat2="용품" data-cat3="애슬레틱 ">애슬레틱 (26)</a></li></ul></li><li class=""><a href="javascript:;" data-cat1="WOMEN" data-cat2="신상품" class="toggle_arw">신상품</a><ul class="depth3"><li><a href="javascript:;" data-link="goNewPrdListDtl('01002', '');" data-cat1="WOMEN" data-cat2="신상품" data-cat3="전체보기">전체보기</a></li><li><a href="javascript:;" data-link="goNewPrdListDtl('01002', '1');" data-cat1="WOMEN" data-cat2="신상품" data-cat3="신발 ">신발 (34)</a></li><li><a href="javascript:;" data-link="goNewPrdListDtl('01002', '2');" data-cat1="WOMEN" data-cat2="신상품" data-cat3="의류 ">의류 (53)</a></li><li><a href="javascript:;" data-link="goNewPrdListDtl('01002', '3');" data-cat1="WOMEN" data-cat2="신상품" data-cat3="용품 ">용품 (13)</a></li></ul></li><li class=""><a href="javascript:;" data-cat1="WOMEN" data-cat2="인기상품" class="toggle_arw">인기상품</a><ul class="depth3"><li><a href="javascript:;" data-link="goBestPrdListDtl('01002', '');" data-cat1="WOMEN" data-cat2="인기상품" data-cat3="전체보기">전체보기</a></li><li><a href="javascript:;" data-link="goBestPrdListDtl('01002', '1');" data-cat1="WOMEN" data-cat2="인기상품" data-cat3="신발 ">신발 (35)</a></li><li><a href="javascript:;" data-link="goBestPrdListDtl('01002', '2');" data-cat1="WOMEN" data-cat2="인기상품" data-cat3="의류 ">의류 (44)</a></li><li><a href="javascript:;" data-link="goBestPrdListDtl('01002', '3');" data-cat1="WOMEN" data-cat2="인기상품" data-cat3="용품 ">용품 (21)</a></li></ul></li><li class=""><a href="javascript:;" data-cat1="WOMEN" data-cat2="할인상품" class="toggle_arw">할인상품</a><ul class="depth3"><li><a href="javascript:;" data-link="goSaleCatListDtl('01002', '');" data-cat1="WOMEN" data-cat2="할인상품" data-cat3="전체보기">전체보기</a></li><li><a href="javascript:;" data-link="goSaleCatListDtl('01002', '1');" data-cat1="WOMEN" data-cat2="할인상품" data-cat3="신발 ">신발 (27)</a></li><li><a href="javascript:;" data-link="goSaleCatListDtl('01002', '2');" data-cat1="WOMEN" data-cat2="할인상품" data-cat3="의류 ">의류 (83)</a></li><li><a href="javascript:;" data-link="goSaleCatListDtl('01002', '3');" data-cat1="WOMEN" data-cat2="할인상품" data-cat3="용품 ">용품 (18)</a></li></ul></li><li class=""><a href="javascript:;" data-cat1="WOMEN" data-cat2="공식아울렛" class="toggle_arw">공식아울렛</a><ul class="depth3"><li><a href="javascript:;" data-link="goOutletListDtl('01002', '');" data-cat1="WOMEN" data-cat2="공식아울렛" data-cat3="전체보기">전체보기</a></li><li><a href="javascript:;" data-link="goOutletListDtl('01002001', '01002', '001');" data-cat1="WOMEN" data-cat2="공식아울렛" data-cat3="신발 ">신발 (232)</a></li><li><a href="javascript:;" data-link="goOutletListDtl('01002002', '01002', '002');" data-cat1="WOMEN" data-cat2="공식아울렛" data-cat3="의류 ">의류 (546)</a></li><li><a href="javascript:;" data-link="goOutletListDtl('01002003', '01002', '003');" data-cat1="WOMEN" data-cat2="공식아울렛" data-cat3="용품 ">용품 (43)</a></li></ul></li>	</ul></li></ul></div>
+				</div>			
+				
 			</div>
 		</div>
-		<!-- //order_process -->
-
-		<!-- 180130 mypage_menu -->
-		<div class="mypage_menu mypage_menu01">
-		    <div class="mypage_menu_tit"><h2>쇼핑내역</h2></div>
-		    <ul>
-		        <li><a href="/mypage/order/list.jsp">주문배송</a></li>
-		        <li><a href="/mypage/return/history.jsp">취소반품</a></li>
-		        <li><a href="/mypage/exchange/history.jsp">교환내역</a></li>
-		        <li><a href="/mypage/return/payment.jsp">취소반품결제대기</a></li>
-		        <li><a href="/mypage/exchange/payment.jsp">교환결제대기</a></li>
-		    </ul>
+		<div class="button_area">
+			<div class="blue"><a href="javascript:void(0)">상품보기</a></div>
 		</div>
-		<div class="mypage_menu mypage_menu02">
-		    <div class="mypage_menu_tit"><h2>혜택관리</h2></div>
-		    <ul>
-		        <li><a href="/mypage/coupon/couponInquiry.jsp">쿠폰</a></li>
-		        <li><a href="/mypage/point.jsp">포인트</a></li>
-		    </ul>
-		</div>
-		<div class="mypage_menu mypage_menu03">
-		    <div class="mypage_menu_tit"><h2>이벤트 / 상품평</h2></div>
-		    <ul>
-		        <li><a href="#">내가 작성한 상품평</a></li>
-		    </ul>
-		</div>
-		<div class="mypage_menu mypage_menu05">
-		    <div class="mypage_menu_tit"><h2>회원관련</h2></div>
-		    <ul>
-		        <li><a href="#">회원 정보 수정</a></li>
-		        <li><a href="#">배송지 관리</a></li>
-		        <li><a href="#">SNS 연결 설정</a></li>
-		        <li><a href="#">1:1 문의내역</a></li>
-		        <li><a href="#">최근 본 상품</a></li>
-		    </ul>
-		</div>
-		<!-- //180130 mypage_menu -->
 	</div>
-	<!-- //container product_list -->
-	<script type="text/javascript">
-	  jQuery(function(){
-	   jQuery(document).ready(function() {
-	       jQuery('.toolbox>ul>li').bind('click',function(){
-	           if(jQuery(this).find('a').hasClass('on')){
-	               return false;
-	           }
-	           if(jQuery(this).hasClass('type_box')){
-	               jQuery('.product_grid').addClass('grid_2box');
-	           }else{
-	               jQuery('.product_grid').removeClass('grid_2box');
-	           }
-	           jQuery('.toolbox>ul>li>a').removeClass('on');
-	           jQuery(this).find('a').addClass('on');
-	           return false;
-	       });
-	   });
-	});
-	 </script>	
-	
+
 <div id="slideBg"></div><div id="slideBg"></div>
 	<footer id="footer" class="footer-update">
 					<div class="go_top">
@@ -801,7 +1320,7 @@ jQuery(function(){
 						</a>
 					</div>
 		<div class="sns_menu">
-						<a href="https://www.facebook.com/Reebokkr" class="fb" target="_blank" onmousedown="javascript:trk_clickTrace('EVT','^리복모바일^페북코리아')"></a>
+						<a href="https://www.facebook.com/Reebokkr" class="fb" target="_blank" onmousedown="javascript:trk_clickTrace(\'EVT\',\'^리복모바일^페북코리아\')"></a>
 						<a href="https://www.instagram.com/reebokkorea/" class="insta" target="_blank"></a>
 						<a href="http://m.blog.naver.com/reebokkr" class="blog" target="_blank" onmousedown="javascript:trk_clickTrace('EVT','^리복모바일^네이버블로그')"></a>
 						<a href="https://m.youtube.com/channel/UCFrW9Ojay5Pk7s-4-KD0M6w" class="ytb" target="_blank"></a>

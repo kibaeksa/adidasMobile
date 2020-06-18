@@ -42,92 +42,143 @@
 <script type="text/javascript" src="//imagem.reebok.co.kr/js/mo/reebok/ree_mob_skin.js" charset="UTF-8" ></script>
 
 
-
-
-		<!-- 20180330 링크수정 -->
-		<script src="/designjs/reebok/efu2018/imagesloaded.pkgd.min.js"></script>
-		<!-- // 20180330 링크수정 -->
-	</head>
 	<script>
-	// <!-- 20180403 text 수정 -->
 	jQuery(function(){
-		tab01();
-		jQuery('.tabContent .viewContent:eq(1)').hide();
-		jQuery('.joinTab ul li a').click(function(){
-			var idx = jQuery(this).parent().index();
-			jQuery('.joinTab ul li').removeClass('active');
-			jQuery(this).parent().addClass('active');
-			jQuery('.tabContent .viewContent').hide();
-			jQuery(".tabContent .viewContent:eq("+idx+")").show();
-			
-			if(jQuery(this).parent().index() == 0){
-				tab01();
-				jQuery('.onlineSlide').slick('unslick');
-				jQuery('.offlineSlide').slick('unslick');
-			}else{
-				tab02();
-				//20180412 수정//
-				jQuery('.kakaoSlide').slick('unslick');
-				jQuery('.syrupSlide').slick('unslick');
-				//20180412 수정 끝 //
-			}
-		});
-		//thumSlide
-	});
-	
-	function tab01(){
-		jQuery('.kakaoSlide').slick({
-			slidesToShow:1,
-	        slidesToScroll:1,
-	        autoplaySpeed: 3000,
-	        arrows:true,
-	        adaptiveHeight: true,
-	        infinite: true,
-	        dots: true,
-	        adaptiveHeight: true
-		});
-		jQuery('.syrupSlide').slick({
-			slidesToShow:1,
-	        slidesToScroll:1,
-	        autoplaySpeed: 3000,
-	        arrows:true,
-	        adaptiveHeight: true,
-	        infinite: true,
-	        dots: true,
-	        adaptiveHeight: true
-		});
-		
-	}
-	function tab02(){
-		jQuery('.offlineSlide').slick({
-			slidesToShow:1,
-	        slidesToScroll:1,
-	        autoplaySpeed: 3000,
-	        arrows:true,
-	        adaptiveHeight: true,
-	        infinite: true,
-	        dots: true,
-	        adaptiveHeight: true
-		});
-		
-		jQuery('.onlineSlide').slick({
-			slidesToShow:1,
-	        slidesToScroll:1,
-	        autoplaySpeed: 3000,
-	        arrows:true,
-	        adaptiveHeight: true,
-	        infinite: true,
-	        dots: true,
-	        adaptiveHeight: true
-		});
-		
-	}
-	<!-- // 20180403 text 수정 -->
-	</script>
-	<body>
-		<section id="wrap">
-			<section id="container">
+		jQuery(document).ready(function() {		
+			// html
+			var goAddCouponStoreHtml = function(req){
+				var oCouponPopup = jQuery('.modal-popup-wrapper.store_coupon_list[data-modalpop-name=store-popup]');
+				var	strHtml = '';
+				var	strPagingHtml = '';
+				var list = req.list;
 				
+				// 페이징
+				var pageNo = req.modelInfo.pageNo;
+				var currPage = req.modelInfo.currPage;
+				var page_total_size = req.total_size;
+					page_total_size = (parseInt(page_total_size) / 10).floor() + (((parseInt(page_total_size) % 10) > 0) ? 1 : 0);
+				
+				if(list.length > 0) {
+					for(var i = 0; i < list.length; i++) {
+						var data = list[i];
+						var addrAll = data.ADDR.replace(' ', '')+' '+data.DTL_ADDR.replace(' ', '');
+						var doroAddrAll = data.DORO_ADDR.replace(' ', '')+' '+data.DORO_DTL_ADDR.replace(' ', '');
+						var mark ='';
+						
+						// 아울렛은 sub 속성
+						if(data.STORE_DIVI == '03' || data.STORE_DIVI == '04') {
+							mark = 'ss';
+						} else if(data.STORE_DIVI == '') {
+							mark = 'olt';
+						}
+						
+						strHtml += '<li class="'+mark+'">';
+						strHtml += '	<p class="ctgr">'+data.STORE_DIVI_NM+'</p>';
+						strHtml += '	<p class="nm">'+data.STORE_NM+'</p>';
+						if(data.ADDR != '' ) {
+							strHtml += '	<p class="addr">지번명 :'+addrAll+' </p>';
+						}
+						if(data.DORO_ADDR != '' ) {
+							strHtml += '	<p class="addr">도로명 :'+doroAddrAll+'</p>';
+						}	
+						strHtml += '	<div class="btn">';
+						strHtml += '		<a href="javascript:getStorePosition(\''+addrAll+'\');" class="map_button">지도보기</a>';
+						
+						if(data.TEL_NO != '') {
+							strHtml += '		<a href="tel:'+data.TEL_NO+'" class="phone_button">'+data.TEL_NO+'</a>';
+						}
+						
+						strHtml += '	</div>';
+						strHtml += '</li>';
+					}
+					
+					// 패이징
+					if( parseInt(page_total_size) > 1 ){
+						jQuery('#page_total_size').val(page_total_size);
+						jQuery('.popup-contents .plp_paging').css({'display':'block'});
+						jQuery('.popup-contents .plp_paging .prev').removeClass('disable');
+						jQuery('.popup-contents .plp_paging .next').removeClass('disable');
+						
+						if( parseInt(currPage) < 2 ){
+							jQuery('.popup-contents .plp_paging .prev').addClass('disable');
+						}
+						if( parseInt(currPage) >= parseInt(page_total_size) ){
+							jQuery('.popup-contents .plp_paging .next').addClass('disable');
+						}
+						
+						strPagingHtml += '	<span class="adihs-din-b">'+currPage+'</span>';
+						strPagingHtml += '	<span class="adihs-din-b"> / </span>';
+						strPagingHtml += '	<span class="adihs-din-b">'+page_total_size+'</span>';
+					} else {
+						jQuery('.popup-contents .plp_paging').css({'display':'none'});
+					}
+				
+					// 버튼 클래스 변경
+					jQuery('.popup-contents .no_data').removeAttr('style');
+					jQuery('.popup-contents .no_data').attr('class','store_list');
+					
+				} else {
+					strHtml += '<li>';
+					strHtml += '	<p class="nm">검색된 결과가 없습니다.</p>';
+					strHtml += '</li>';
+					
+					// 버튼 클래스 변경
+					jQuery('#currPage').val(1);
+					jQuery('#pageNo').val(1);
+					jQuery('#searchStoreNm').val('');
+					jQuery('.popup-contents .store_list').css({'border-top':'1px', 'solid':'#d7d7d7','border-bottom':'1px', 'solid':'#d7d7d7'});
+					jQuery('.popup-contents .store_list').attr('class','no_data');
+					jQuery('.popup-contents .plp_paging').css({'display':'none'});
+				}
+				
+				jQuery('.popup-contents div').find('ul').html(strHtml);
+				jQuery('.popup-contents .plp_paging .num').html(strPagingHtml);
+				
+				ModalPopup.openPopup(oCouponPopup.attr('data-modalpop-name'));
+			}
+			// 레이어 닫기
+			jQuery('.store_coupon_list .close_x_btn').click(function(){
+				jQuery('#currPage').val(1);
+				jQuery('#pageNo').val(1);
+				jQuery('#searchStoreNm').val('');
+				jQuery('.coupon-store').css({'display':'none'});
+				jQuery('body,html').css({'overflow':'auto'});
+			});
+			
+			// 페이징
+			jQuery('.popup-contents .plp_paging a').click(function() {
+				var This = jQuery(this);
+				var pageNo = jQuery('#pageNo').val();
+				var currPage = jQuery('#currPage').val();
+				var page_total_size = jQuery('#page_total_size').val();
+				
+				if(This.hasClass('next')) {
+					if( parseInt(currPage) >= parseInt(page_total_size) ){
+						return false;
+					}
+					
+					jQuery('#currPage').val(parseInt(currPage) + 1);
+					jQuery('#pageNo').val(parseInt(pageNo) + 10);
+				} else {
+					if( parseInt(currPage) < 2) {
+						return false;
+					}
+					
+					jQuery('#currPage').val(parseInt(currPage) - 1);
+					jQuery('#pageNo').val(parseInt(pageNo) - 10);
+				}
+				
+				jQuery('.search_button').click();
+			});
+			
+			// 170929 쿠폰사용가능/온오프매장 end	
+		});		
+	});
+	</script>
+</head>
+<body>
+<section id="wrap">
+	
 
 <section id="headerWrap">
 	
@@ -731,439 +782,542 @@ jQuery(function(){
 
 	
 
-				<div id="nLocation">
-					<h2><a href="javascript:;">REECLUB</a></h2>						
+
+	<div id="container" class="mypage">
+		<div id="location">
+			<span><a href="#">HOME</a></span>
+			<span><a href="#">마이페이지</a></span>
+			<span>내 쿠폰 보기</span>
+		</div>
+		<div class="tab_box">
+			<div class="tab_btn">
+				<a href="/mypage/coupon/myCouponAll.jsp" class="on">전체</a>
+				<a href="/mypage/coupon/myCoupon.jsp">사용가능한 쿠폰</a>
+			</div>
+		</div>
+		<p class="desc" style="margin:20px 0;">쿠폰 발급자는 리복코리아㈜ 이며, 아래에서 쿠폰 내역을 확인 하실 수 있습니다. <strong style="color:#000;">적립된 포인트 5천 포인트에 도달하면, 자동으로 5천 포인트 쿠폰 발급됩니다.</strong></p>
+		<div class="cpn_box">
+			<dl>
+				<dt>쿠폰 일련번호 등록</dt>
+				<dd>
+					<ul class="li_hypn">
+						<li>리복매장에서 발급받은 쿠폰의 일련번호를 아래에 입력하십시요.</li>
+						<li>발급받으신 쿠폰 일련번호는 등록기간내에 등록하셔야 사용가능합니다.</li>
+						<li>입력완료된 쿠폰은 쿠폰현황에서 확인하실 수 있습니다.</li>
+						<li>쿠폰 일련번호에 하이픈(-)이 있는 경우, 제외하고 숫자만 입력하십시요.</li>
+					</ul>
+				</dd>
+			</dl>
+			<table class="form_table">
+				<tr class="no_line">
+					<td>
+						<div class="td_wrap">
+							<div class="cell">
+								<!-- 160317 input type 변경 -->
+								<input type="tel" placeholder="쿠폰 일련번호 입력">
+							</div>
+							<div class="cell_fix" style="width:90px;">
+								<a class="s_button d_gray" href="#" style="margin-left:10px;">확인</a>
+							</div>
+						</div>
+						<!-- //td_wrap -->
+					</td>
+				</tr>
+			</table>
+		</div>
+	
+		<!-- 쿠폰 있는 경우-전체 -->
+		<div class="mpg_orderbox box_nmg">
+			<div class="box">
+				<table class="form_table">
+					<tr>
+						<th>쿠폰명</th>
+						<td>포인트 쿠폰</td>
+					</tr>
+					<tr class="no_line">
+						<th>쿠폰금액</th>
+						<td><strong style="color:#000;">10,000</strong> 원</td>
+					</tr>
+					<tr class="no_line">
+						<th>사용처</th>
+						<td>온/오프라인 매장(단, 일부 오프라인 매장 제외)</td>
+					</tr>
+					<tr class="no_line">
+						<th>적용대상</th>
+						<td>전상품 (단, 일부 행사제품 제외)</td>
+					</tr>
+					<tr class="no_line">
+						<th>적용제한</th>
+						<td>적용 제한 없습니다.</td>
+					</tr>
+					<tr class="no_line">
+						<th>유효기간</th>
+						<td>2016-01-07 ~ 2016-04-06</td>
+					</tr>
+					<tr class="no_line">
+						<th>사용유무</th>
+						<td>회수</td>
+					</tr>
+				</table>
+			</div>
+
+			<div class="box">
+				<table class="form_table">
+					<tr>
+						<th>쿠폰명</th>
+						<td>포인트 쿠폰</td>
+					</tr>
+					<tr class="no_line">
+						<th>쿠폰금액</th>
+						<td><strong style="color:#000;">10,000</strong> 원</td>
+					</tr>
+					<tr class="no_line">
+						<th>사용처</th>
+						<td>온/오프라인 매장(단, 일부 오프라인 매장 제외)</td>
+					</tr>
+					<tr class="no_line">
+						<th>적용대상</th>
+						<td>전상품 (단, 일부 행사제품 제외)</td>
+					</tr>
+					<tr class="no_line">
+						<th>적용제한</th>
+						<td>적용 제한 없습니다.</td>
+					</tr>
+					<tr class="no_line">
+						<th>유효기간</th>
+						<td>2016-01-07 ~ 2016-04-06</td>
+					</tr>
+					<tr class="no_line">
+						<th>사용유무</th>
+						<td>미사용</td>
+					</tr>
+				</table>
+			</div>
+
+			<div class="box">
+				<table class="form_table">
+					<tr>
+						<th>쿠폰명</th>
+						<td>포인트 쿠폰</td>
+					</tr>
+					<tr class="no_line">
+						<th>쿠폰금액</th>
+						<td><strong style="color:#000;">10,000</strong> 원</td>
+					</tr>
+					<tr class="no_line">
+						<th>사용처</th>
+						<td>온/오프라인 매장(단, 일부 오프라인 매장 제외)</td>
+					</tr>
+					<tr class="no_line">
+						<th>적용대상</th>
+						<td>전상품 (단, 일부 행사제품 제외)</td>
+					</tr>
+					<tr class="no_line">
+						<th>적용제한</th>
+						<td>적용 제한 없습니다.</td>
+					</tr>
+					<tr class="no_line">
+						<th>유효기간</th>
+						<td>2016-01-07 ~ 2016-04-06</td>
+					</tr>
+					<tr class="no_line">
+						<th>사용유무</th>
+						<td>기간만료</td>
+					</tr>
+				</table>
+			</div>
+
+			<div class="box">
+				<table class="form_table">
+					<tr>
+						<th>쿠폰명</th>
+						<td>포인트 쿠폰</td>
+					</tr>
+					<tr class="no_line">
+						<th>쿠폰금액</th>
+						<td><strong style="color:#000;">10,000</strong> 원</td>
+					</tr>
+					<tr class="no_line">
+						<th>사용처</th>
+						<td>온/오프라인 매장(단, 일부 오프라인 매장 제외)</td>
+					</tr>
+					<tr class="no_line">
+						<th>적용대상</th>
+						<td>전상품 (단, 일부 행사제품 제외)</td>
+					</tr>
+					<tr class="no_line">
+						<th>적용제한</th>
+						<td>적용 제한 없습니다.</td>
+					</tr>
+					<tr class="no_line">
+						<th>유효기간</th>
+						<td>2016-01-07 ~ 2016-04-06</td>
+					</tr>
+					<tr class="no_line">
+						<th>사용유무</th>
+						<td>회수</td>
+					</tr>
+				</table>
+			</div>
+
+		</div>
+		<!-- //mpg_orderbox -->
+
+		<div class="paging" style="padding-top:20px;">
+			<div>
+				<a data-icon="" class="prev icons disable" href="#"></a>
+				<a class="on" href="#">1</a>
+				<a href="#">2</a>
+				<a href="#">3</a>
+				<a href="#">4</a>
+				<a href="#">5</a>
+				<a data-icon="" class="next icons" href="#"></a>
+			</div>
+		</div>
+		<!-- //쿠폰 있는 경우-전체 -->
+		
+		<!-- 쿠폰 없는 경우-전체 -->
+		<div class="no_data cancelNo_data">사용 가능한 쿠폰이 없습니다.</div>
+		<!-- //쿠폰 없는 경우-전체 -->
+		
+		<ul class="desc li_hypn" style="margin:25px 0;">
+			<li>전체 주문취소/반품일 경우, 보유 쿠폰은 주문 취소일 부터 유효기간 내 재사용 가능합니다.</li>
+			<li>복수개의 상품을 구매 후 일부 상품만 주문취소/반품하는 경우, 쿠폰금액의 차액은 환원되지 않습니다.</li>
+			<li>보다 상세한 유효기간 경과 시 보상 기준 및 잔액환급조건 등의 이용조건은 이용구매약관 제14조 참조 바랍니다</li>
+		</ul>
+	</div>
+	<!-- //container product_list -->
+	
+	<!-- 170929 쿠폰사용가능/온오프매장 -->
+       <div class="modal-popup-wrapper store_coupon_list"
+           data-modalpop=""
+           data-modalpop-valign="top"
+           data-modalpop-name="store-popup"
+       >
+		<div class="overlay"></div>
+		<div class="popup">
+		<div class="popup-header" style="background:#fff;border-bottom: 1px solid #e6e6e6;">
+			<h2>사용 가능 매장</h2>
+			<a href="javascript:void(0)" class="close_x_btn"></a>
+		</div>
+		<div class="popup-contents" style="overflow-x: hidden;">
+			<div class="search_box">
+				<input type="text" placeholder="지역을 입력하세요.(예 : 강남, 분당)">
+				<a href="" class="search_button"></a>
+			</div>
+			<div class="store_list">
+				<ul>
+					<li>
+						<p class="ctgr">Performance 판매점</p>
+						<p class="nm">OSC 동성로</p>
+						<p class="addr">지번명 :대구 중구 공평동 53-13번지</p>
+						<p class="addr">도로명 :대구 중구 동성로2길 50</p>
+						<div class="btn">
+							<a href="#" class="map_button">지도보기</a>
+							<a href="tel:02-595-3415" class="phone_button">02-595-3415</a>
+						</div>
+					</li>
+					<li class="ss">
+						<p class="ctgr">Performance 판매점</p>
+						<p class="nm">OSC 동성로</p>
+						<p class="addr">지번명 :대구 중구 공평동 53-13번지</p>
+						<p class="addr">도로명 :대구 중구 동성로2길 50</p>
+						<div class="btn">
+							<a href="#" class="map_button">지도보기</a>
+							<a href="tel:02-595-3415" class="phone_button">02-595-3415</a>
+						</div>
+					</li>
+					<li class="olt">
+						<p class="ctgr">OUTLET 직영</p>
+						<p class="nm">BCS 미아SUB</p>
+						<p class="addr">지번명 :대구 중구 공평동 53-13번지</p>
+						<p class="addr">도로명 :대구 중구 동성로2길 50</p>
+						<div class="btn">
+							<a href="#" class="map_button">지도보기</a>
+							<a href="tel:02-595-3415" class="phone_button">02-595-3415</a>
+						</div>
+					</li>
+					<li class="olt">
+						<p class="ctgr">OUTLET 직영</p>
+						<p class="nm">BCS 미아SUB</p>
+						<p class="addr">지번명 :대구 중구 공평동 53-13번지</p>
+						<p class="addr">도로명 :대구 중구 동성로2길 50</p>
+						<div class="btn">
+							<a href="#" class="map_button">지도보기</a>
+							<a href="tel:02-595-3415" class="phone_button">02-595-3415</a>
+						</div>
+					</li>
+					<li class="olt">
+						<p class="ctgr">OUTLET 직영</p>
+						<p class="nm">BCS 미아SUB</p>
+						<p class="addr">지번명 :대구 중구 공평동 53-13번지</p>
+						<p class="addr">도로명 :대구 중구 동성로2길 50</p>
+						<div class="btn">
+							<a href="#" class="map_button">지도보기</a>
+							<a href="tel:02-595-3415" class="phone_button">02-595-3415</a>
+						</div>
+					</li>
+					<li class="olt">
+						<p class="ctgr">OUTLET 직영</p>
+						<p class="nm">BCS 미아SUB</p>
+						<p class="addr">지번명 :대구 중구 공평동 53-13번지</p>
+						<p class="addr">도로명 :대구 중구 동성로2길 50</p>
+						<div class="btn">
+							<a href="#" class="map_button">지도보기</a>
+							<a href="tel:02-595-3415" class="phone_button">02-595-3415</a>
+						</div>
+					</li>
+					<li class="olt">
+						<p class="ctgr">OUTLET 직영</p>
+						<p class="nm">BCS 미아SUB</p>
+						<p class="addr">지번명 :대구 중구 공평동 53-13번지</p>
+						<p class="addr">도로명 :대구 중구 동성로2길 50</p>
+						<div class="btn">
+							<a href="#" class="map_button">지도보기</a>
+							<a href="tel:02-595-3415" class="phone_button">02-595-3415</a>
+						</div>
+					</li>
+					<li class="olt">
+						<p class="ctgr">OUTLET 직영</p>
+						<p class="nm">BCS 미아SUB</p>
+						<p class="addr">지번명 :대구 중구 공평동 53-13번지</p>
+						<p class="addr">도로명 :대구 중구 동성로2길 50</p>
+						<div class="btn">
+							<a href="#" class="map_button">지도보기</a>
+							<a href="tel:02-595-3415" class="phone_button">02-595-3415</a>
+						</div>
+					</li>
+					<li class="olt">
+						<p class="ctgr">OUTLET 직영</p>
+						<p class="nm">BCS 미아SUB</p>
+						<p class="addr">지번명 :대구 중구 공평동 53-13번지</p>
+						<p class="addr">도로명 :대구 중구 동성로2길 50</p>
+						<div class="btn">
+							<a href="#" class="map_button">지도보기</a>
+							<a href="tel:02-595-3415" class="phone_button">02-595-3415</a>
+						</div>
+					</li>
+					<li class="olt">
+						<p class="ctgr">OUTLET 직영</p>
+						<p class="nm">BCS 미아SUB</p>
+						<p class="addr">지번명 :대구 중구 공평동 53-13번지</p>
+						<p class="addr">도로명 :대구 중구 동성로2길 50</p>
+						<div class="btn">
+							<a href="#" class="map_button">지도보기</a>
+							<a href="tel:02-595-3415" class="phone_button">02-595-3415</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="plp_paging" style="display: block;">
+				<a href="javascript:void(0)" class="prev disable"><span></span></a>
+				<a href="javascript:void(0)" class="next"><span></span></a>
+				<div class="num">
+					<span class="adihs-din-b">1</span>
+					<span class="adihs-din-b"> / </span>
+					<span class="adihs-din-b">5</span>
 				</div>
-				<section id="contents" class="nReeclub">
-					<!-- 내용 -->
-					<div class="titArea"><!-- /images/reebok/efu2018/brand/reeclubBg.jpg -->
-						<h2>							
-							<img src="/images/reebok/efu2018/brand/reclubLogo.png" alt="ReeCLUB" class="logo">					
-						</h2>
-						<!-- 20180330 수정 -->
-						<h1>
-							리클럽은<br/>
-							리복 온·오프라인 매장에서<br/>
-							<span>특별한 혜택을 즐길 수 있는<br/>
-							리복 공식 멤버십입니다.</span>
-						</h1>			
-						<!-- <h3>
-							<img src="/images/reebok/efu2018/brand/reclubText.png" alt="멤버십의 기회는 누구에나 주어지지만, 클럽의 완성은 함께하는 우리의 몫입니다.">
-						</h3> -->						
-						<p>지금 리클럽 회원이 되어<br/>다양한 프로모션 기회를 놓치지 마세요.</p>
-						
-						<div class="btnArea">
-							<a href="https://m.reebok.co.kr:447/MO/Member/memAgreement.action" class="btnTypeC"><span>리클럽 가입하기</span></a>
-						</div>								
-						<!--//  20180330 수정 -->
+			</div>
+        </div>
+    </div>
+</div>
+<!-- 170929 쿠폰사용가능/온오프매장 end-->
+	<script type="text/javascript">
+	jQuery(function(){
+		// 170929 쿠폰사용가능/온오프매장
+		jQuery('.able-store').click(function(){
+			jQuery('.coupon-store').css({'display':'block'});
+			jQuery('body,html').css({'overflow':'hidden'});
+		});
+		jQuery('.coupon-store .close_x_btn').click(function(){
+			jQuery('.coupon-store').css({'display':'none'});
+			jQuery('body,html').css({'overflow':'auto'});
+		});
+	// 170929 쿠폰사용가능/온오프매장 end
+	});
+	</script>
+		
+<div id="slideBg"></div><div id="slideBg"></div>
+	<footer id="footer" class="footer-update">
+					<div class="go_top">
+						<a href="#">BACK TO TOP</a>
 					</div>
-					<div class="benefit">
-						<h4><img src="/images/reebok/efu2018/brand/reclubText01.jpg" alt="회원 혜택"></h4><!-- /images/reebok/efu2018/brand/tit_benefits.png -->		
-						<!-- 20180330 text 추가 -->
-						<p>
-							리클럽 회원이 되시면 온라인 공식몰과<br/>
-							오프라인 매장에서 구매 시 5% 포인트<br/>
-							적립, 할인 등 특별한 혜택을 받을 수 있습니다. 
-						</p>
-						<!-- // 20180330 text 추가 -->	
-						<!-- 20180330 text 수정 -->
-						<dl>
-							<dt>포인트 적립<dt>
-							<dd>
-								<strong>구매금액의 5% 포인트 적립</strong>
-								<ul>
-									<li>최종 결제 금액 기준 5% 적립</li>
-									<li>5천 포인트 달성 시 (결제금액 10만원 마다)
-									5천원 포인트 쿠폰으로 전환 발급</li>
-									<li>포인트 쿠폰 사용 기간 : 쿠폰 전환 16일 이후 ~ 12개월간</li>
-								</ul>
-							</dd>
-						</dl>
-						<!-- 190812 -->
-						<dl>
-							<dt>신규가입 10,000원 쿠폰<dt>
-							<dd>
-								<strong>신규가입 10,000원 쿠폰</strong>
-								<ul>
-									<li>쿠폰 사용처 : 리복 공식 온라인/오프라인 스토어</li>
-									<li>쿠폰 발급 시점 : 정회원 가입 즉시 발급</li>
-									<li>쿠폰 사용 기간 : 쿠폰 발급일로부터 <em class="red">30일간</em></li>
-									<li>쿠폰 사용 조건 : 10,000원 할인<br/>
-										(50,000원 이상 구매 시 사용가능)<br/>
-										<em>*정회원 가입 시에 발급되며, 매장에서 임시회원 가입 시<br/> 쿠폰 발급되지 않습니다.</em>
-									</li>
-								</ul>
-							</dd>
-						</dl>
-						<!-- 190812 end -->
-						<dl>
-							<dt>기념일 쿠폰<dt>
-							<dd>
-								<strong>기념일 10,000원 쿠폰</strong>
-								<ul>
-									<li>쿠폰 사용처 : 리복 공식 온라인/오프라인 스토어</li>
-									<li class="red">쿠폰 발급 시점 : 회원 가입 시 등록하신 생일 기준
-									2주 전 발급</li>
-									<li>쿠폰 사용 기간 : 쿠폰 발급 후 1개월</li>
-									<li>쿠폰 사용 조건 : 100,000원 이상 구매 시 사용가능</li>									
-								</ul>
-							</dd>
-						</dl>
-						<dl>
-							<dt>회원 전용 특별혜택<dt>
-							<dd class="content">
-								리클럽 회원 전용 이벤트 및 브랜드 행사 우선 초대<br/>
-								리클럽 회원 전용 쿠폰 제공 (시즌 쿠폰, 이벤트 쿠폰 등)<br/>
-								신제품 및 이벤트 최신 정보 제공
-							</dd>
-						</dl>				
-						<!-- // 20180330 text 수정 -->	
+		
+					<!-- 161223 f_menu 추가 -->
+					<ul class="f_menu">
+						<li><a href="javascript:goOrdDeliSel();" onmousedown="javascript:trk_flashEnvView('_TRK_PI=FOOTCS');trk_clickTrace('EVT','^리복모바일^주문배송');">주문배송</a></li>
+						<li><a href="https://m.reebok.co.kr/MO/AdiClub/reeClubIntro.action" onmousedown="javascript:trk_flashEnvView('_TRK_PI=FOOTST');trk_clickTrace('EVT','^리복모바일^리클럽');">리클럽</a></li>
+						<li><a href="https://m.reebok.co.kr/MO/Customer/customerStoreList.action" onmousedown="javascript:trk_flashEnvView('_TRK_PI=FOOTST');trk_clickTrace('EVT','^리복모바일^하단매장찾기');">매장안내</a></li>
+						<li><a href="javascript:goCsCenter();" onmousedown="javascript:trk_flashEnvView('_TRK_PI=FOOTCS');trk_clickTrace('EVT','^리복모바일^하단고객센터');">고객센터</a></li>
+						<li><a href="https://m.reebok.co.kr/MO/Notify/notiDetailList.action" onmousedown="javascript:trk_flashEnvView('_TRK_PI=FOOTST');trk_clickTrace('EVT','^리복모바일^공지사항');">공지사항</a></li>
+					</ul>
+		
+		<div class="f_bnn">
+						<a href="https://m.reebok.co.kr/MO/Member/memJoin.action" onmousedown="javascript:trk_flashEnvView('_TRK_PI=FOOTST');trk_clickTrace('EVT','^리복모바일^하단 회원가입');">
+							<img src="//imagem.reebok.co.kr/images/reebok/temp/bnn_join.jpg" width="100%" alt="">
+						</a>
 					</div>
-					<div class="titArea02"><!-- /images/reebok/efu2018/brand/reeclubBg.jpg -->						
-						<h4><img src="/images/reebok/efu2018/brand/reclubText02.png" alt="회원 가입 방법"></h4>
-						<p>리복 공식 온/오프라인 매장에서 그리고 손쉽게<br>모바일을 통해서도 리클럽 회원이 될 수 있습니다.</p>
-						<div class="btnArea">
-							<!-- 20180330 text 수정 --><a href="https://m.reebok.co.kr:447/MO/Member/memAgreement.action" class="btnTypeC"><span>리클럽 가입하기</span></a><!-- // 20180330 text 수정 -->	
-						</div><!-- /images/reebok/efu2018/brand/tit_benefits.png -->						
+		<div class="sns_menu">
+						<a href="https://www.facebook.com/Reebokkr" class="fb" target="_blank" onmousedown="javascript:trk_clickTrace(\'EVT\',\'^리복모바일^페북코리아\')"></a>
+						<a href="https://www.instagram.com/reebokkorea/" class="insta" target="_blank"></a>
+						<a href="http://m.blog.naver.com/reebokkr" class="blog" target="_blank" onmousedown="javascript:trk_clickTrace('EVT','^리복모바일^네이버블로그')"></a>
+						<a href="https://m.youtube.com/channel/UCFrW9Ojay5Pk7s-4-KD0M6w" class="ytb" target="_blank"></a>
+						<a href="http://plus.kakao.com/home/@%EB%A6%AC%EB%B3%B5" class="kakao" target="_blank"></a>
 					</div>
-					<div class="joinTab">
-						<ul class="joincontTab">
-							<li class="active"><a href="#!">간편회원가입</a></li>
-							<li><a href="#!">온/오프라인 회원가입</a></li>
-						</ul>
-					</div>
-					<div class="tabContent">
-						<!-- tab 내용-->
-						<div class="viewContent">
-							<h2>
-								<!-- 20180403 text 수정 -->
-								<span>카</span><span><img src="/images/reebok/efu2018/brand/kakaoBlt.jpg" alt="bullet"></span><span>카</span><span><img src="/images/reebok/efu2018/brand/kakaoBlt.jpg" alt="bullet"></span><span class="none">오</span><br/>
-								멤버십으로<br/><!-- // 20180403 text 수정 -->
-								<span class="lts">회  원  가  입</span>
-							</h2> 
-							<div class="kakaoSlideWrap">
-								<div class="kakaoSlide">
-									<div><a href="javascript:;"><img src="/images/reebok/efu2018/brand/kakao_slide01.jpg" alt="kakao 가입"></a></div>
-									<div><a href="javascript:;"><img src="/images/reebok/efu2018/brand/kakao_slide02.jpg" alt="kakao 가입"></a></div>
-									<div><a href="javascript:;"><img src="/images/reebok/efu2018/brand/kakao_slide03.jpg" alt="kakao 가입"></a></div>
-									<div><a href="javascript:;"><img src="/images/reebok/efu2018/brand/kakao_slide04.jpg" alt="kakao 가입"></a></div>
-								</div>
-							</div>
-							<div class="border"></div>
-							<h2>
-								<!-- 20180403 text 수정 -->
-								<span>시　</span><span><img src="/images/reebok/efu2018/brand/kakaoBlt.jpg" alt="bullet" class="sdot"></span><span>　럽</span><br/>
-								<span class="lts">회  원  가  입</span><!-- // 20180403 text 수정 -->
-							</h2> 
-							<div class="syrupSlideWrap">
-								<div class="syrupSlide">
-									<div><a href="javascript:;"><img src="/images/reebok/efu2018/brand/syrup_slide01.jpg" alt="syrup 가입"></a></div>
-									<div><a href="javascript:;"><img src="/images/reebok/efu2018/brand/syrup_slide02.jpg" alt="syrup 가입"></a></div>
-									<div><a href="javascript:;"><img src="/images/reebok/efu2018/brand/syrup_slide03.jpg" alt="syrup 가입"></a></div>
-									<div><a href="javascript:;"><img src="/images/reebok/efu2018/brand/syrup_slide04.jpg" alt="syrup 가입"></a></div>
-								</div>
+					<address>
+						<div class="inner">
+							<p><strong>리복 공식 온라인 스토어</strong><span class="line l_left"> (아디다스코리아(유))</span></p>
+							<p>서울특별시 서초구 서초대로 74길 4, 삼성생명 서초타워 23층 (06620)</p>
+							<p>대표자 : 폴 유엔 파이</p>
+							<p>사업자 등록번호 : 214-81-07412</p>
+							<p>통신판매업신고번호 : 2007-서울서초-10391</p>
+							<!-- 180913 정보추가 -->
+							<p>개인정보관리책임자 : 장영태</p>
+							<p>호스팅서비스사업자 : 아디다스코리아(유)</p>
+							<p>고객센터 : 1588-7324</p>
+							<p>이메일 : reeclub_korea@reebok.com</p>
+							<div class="f_url">
+								<!-- 170922 리클럽 추가, 사업자정보확인 위치변경 -->
+								<p>
+									<a href="https://m.reebok.co.kr/MO/Terms/terms.action?terms=terms_01"><strong>구매 이용약관</strong></a><span class="line l_left">
+									<a href="https://m.reebok.co.kr/MO/Terms/terms.action?terms=terms_02"><strong>개인정보처리방침</strong></a><span class="line l_left">
+									<a href="https://m.reebok.co.kr/MO/Terms/terms.action?terms=terms_03"><strong>리클럽 이용약관</strong></a>
+								</p>
+								<p>
+									<a href="http://www.ftc.go.kr/info/bizinfo/communicationViewPopup.jsp?wrkr_no=2148107412" target="_blank">사업자정보확인</a><span class="line l_left">
+									<a href="https://m.reebok.co.kr/Common/PopJusticeBns.jsp">공정거래자율준수</a><span class="line l_left">
+									<a href="https://m.reebok.co.kr/Common/CertifiedInfoPop.jsp" target="_blank">채무지급보증안내</a>
+								</p>
+								<p>© adidas Korea LLC. All Rights Reserved</p>
+								<p class="f_logo"><img src="//imagem.reebok.co.kr/images/reebok/f_logo.jpg" alt="reebok"></p>
 							</div>
 						</div>
-						
-						<div class="viewContent">
-							<h2>
-								<!-- 20180403 text 수정 -->
-								<span>온</span><span><img src="/images/reebok/efu2018/brand/kakaoBlt.jpg" alt="bullet"></span><span>라</span><span><img src="/images/reebok/efu2018/brand/kakaoBlt.jpg" alt="bullet"></span><span class="none">인</span><br/>
-								<span class="lts">회  원  가  입</span><!--// 20180403 text 수정 -->
-								<div class="btnArea">
-									<a href="https://m.reebok.co.kr:447/MO/Member/memAgreement.action" class="btnTypeC"><span>리클럽 가입하기</span></a>
-								</div><!-- /images/reebok/efu2018/brand/tit_benefits.png -->				
-							</h2> 
-							<div class="onlineSlideWrap">
-								<div class="onlineSlide">
-									<div><a href="javascript:;"><img src="/images/reebok/efu2018/brand/online_slide01.jpg" alt="online 가입"></a></div>
-									<div><a href="javascript:;"><img src="/images/reebok/efu2018/brand/online_slide02.jpg" alt="online 가입"></a></div>
-									<div><a href="javascript:;"><img src="/images/reebok/efu2018/brand/online_slide03.jpg" alt="online 가입"></a></div>
-									<div><a href="javascript:;"><img src="/images/reebok/efu2018/brand/online_slide04.jpg" alt="online 가입"></a></div>
-								</div>
-							</div>
-							<div class="border"></div>
-							<h2>
-								<!-- 20180403 text 수정 -->
-								<span>매　</span><span><img src="/images/reebok/efu2018/brand/kakaoBlt.jpg" alt="bullet" class="sdot"></span><span>　장</span><br/>
-								<span class="lts">회  원  가  입</span>
-								<!-- // 20180403 text 수정 -->
-							</h2> 
-							<div class="offlineSlideWrap">
-								<div class="offlineSlide">
-									<div><a href="javascript:;"><img src="/images/reebok/efu2018/brand/offline_slide01.jpg" alt="offline 가입"></a></div>
-									<div><a href="javascript:;"><img src="/images/reebok/efu2018/brand/offline_slide02.jpg" alt="offline 가입"></a></div>
-									<div><a href="javascript:;"><img src="/images/reebok/efu2018/brand/offline_slide03.jpg" alt="offline 가입"></a></div>
-									<div><a href="javascript:;"><img src="/images/reebok/efu2018/brand/offline_slide04.jpg" alt="offline 가입"></a></div>
-								</div>
-							</div>
-						</div>
-					</div>			
-					<!-- 20180330 text 추가 -->						
-					<div class="titArea03"><!-- /images/reebok/efu2018/brand/reeclubBg.jpg -->						
-						<h4><img src="/images/reebok/efu2018/brand/reclubText03.png" alt="리클럽 모바일 멤버십 카드 안내"></h4>
-						<p>
-						리클럽 전용 포인트 혜택을 편리하게 누릴 수 있도록<br/>
-						모바일로 다운받아 사용할 수 있는 리클럽 모바일<br/>
-						멤버십 카드입니다. 오프라인 스토어에서 포인트 적립<br/>
-						및 사용 시 모바일 멤버십 카드를 제시해야 합니다. 
-						</p>
-						<div class="btnArea">
-							<!-- 20180330 text 수정 --><a href="https://m.reebok.co.kr:447/MO/Member/memAgreement.action " class="btnTypeC"><span>리클럽 가입하기</span></a><!-- // 20180330 text 수정 -->	
-						</div><!-- /images/reebok/efu2018/brand/tit_benefits.png -->				
-					</div>
-					<p class="mobilememer">모바일멤버십 카드</p>
-					<div class="download">
-						<h2><!-- 20180403 text 수정 -->
-							<span>카</span><span><img src="/images/reebok/efu2018/brand/kakaoBlt.jpg" alt="bullet"></span><span>카</span><span><img src="/images/reebok/efu2018/brand/kakaoBlt.jpg" alt="bullet"></span><span class="none">오</span><br/>
-							다 운 로 드<br/><!-- 20180403 text 수정 -->
-							<span class="lts">방　  　법</span>
-						</h2> 
-						<div class="kakaoSlideWrap">
-							<div class="kakaoSlide">
-								<div><a href="javascript:;"><img src="/images/reebok/efu2018/brand/kakao_slide01.jpg" alt="kakao 가입"></a></div>
-								<div><a href="javascript:;"><img src="/images/reebok/efu2018/brand/kakao_slide02.jpg" alt="kakao 가입"></a></div>
-								<div><a href="javascript:;"><img src="/images/reebok/efu2018/brand/kakao_slide03.jpg" alt="kakao 가입"></a></div>
-								<div><a href="javascript:;"><img src="/images/reebok/efu2018/brand/kakao_slide04.jpg" alt="kakao 가입"></a></div>
-							</div>
-						</div>
-						<div class="border"></div>
-						<h2>
-							<!-- 20180403 text 수정 -->
-							<span>시　</span><span><img src="/images/reebok/efu2018/brand/kakaoBlt.jpg" alt="bullet" class="sdot"></span><span>　럽</span><br/>
-							다 운 로 드</br/>
-							<span class="lts">방　  　법</span><!-- // 20180403 text 수정 -->
-						</h2> 
-						<div class="syrupSlideWrap">
-							<div class="syrupSlide">
-								<div><a href="javascript:;"><img src="/images/reebok/efu2018/brand/syrup_slide01.jpg" alt="syrup 가입"></a></div>
-								<div><a href="javascript:;"><img src="/images/reebok/efu2018/brand/syrup_slide02.jpg" alt="syrup 가입"></a></div>
-								<div><a href="javascript:;"><img src="/images/reebok/efu2018/brand/syrup_slide03.jpg" alt="syrup 가입"></a></div>
-								<div><a href="javascript:;"><img src="/images/reebok/efu2018/brand/syrup_slide04.jpg" alt="syrup 가입"></a></div>
-							</div>
-						</div>
-					</div>
-					<div class="benefit02">
-						<dl>
-							<dt>리클럽 모바일<br/>멤버십 카드 발급 방법<dt>
-							<dd>
-								<strong>신규발급</strong>
-								<ul>
-									<li>
-										온라인 스토어 회원 가입 시 자동으로 모바일 멤버십<br/>
-										카드를 SMS 전송, 카카오멤버십/시럽으로 가입 시
-										해당 바코드 사용
-									</li>
-								</ul>
-								<strong>조회 및 재발급</strong>
-								<ul>
-									<li>
-										로그인 > 마이페이지 > 멤버십 카드 조회 또는<br/>재발급 신청　
-										<!-- 20180402 수정 -->
-										<p class="membershipChk"><a href="https://m.reebok.co.kr:447/MO/MyPage/mypageMemIdCrd.action">멤버십 카드 확인</a><p>
-										<!-- // 20180402 수정 -->
-									</li>
-								</ul>
-							</dd>							
-						</dl>
-							
-						<dl>
-							<dt>알아두세요.<dt>
-							<dd class="confirm">
-								오프라인 스토어에서 구매 후 포인트 적립 시,
-								리클럽 모바일 멤버십 카드를 제시해야 합니다. 
-								(SMS로 받은 멤버십 카드 이미지 또는 카카오톡/시럽의
-								멤버십 카드 사용 가능)
-								모바일 멤버십 카드 미소지 시, 구매 후 7일 이내 구매
-								영수증 및 모바일 멤버십 카드 다운로드 후 해당 매장
-								재방문 시 적립 가능합니다. 
-							</dd>
-						</dl>
-					</div>	
-					<!-- // 20180330 text 수정 -->	
-				</section>
-							
-				<div id="slideBg"></div><div id="slideBg"></div>
-				<footer id="footer" class="footer-update">
-								<div class="go_top">
-									<a href="#">BACK TO TOP</a>
-								</div>
-					
-								<!-- 161223 f_menu 추가 -->
-								<ul class="f_menu">
-									<li><a href="javascript:goOrdDeliSel();" onmousedown="javascript:trk_flashEnvView('_TRK_PI=FOOTCS');trk_clickTrace('EVT','^리복모바일^주문배송');">주문배송</a></li>
-									<li><a href="https://m.reebok.co.kr/MO/AdiClub/reeClubIntro.action" onmousedown="javascript:trk_flashEnvView('_TRK_PI=FOOTST');trk_clickTrace('EVT','^리복모바일^리클럽');">리클럽</a></li>
-									<li><a href="https://m.reebok.co.kr/MO/Customer/customerStoreList.action" onmousedown="javascript:trk_flashEnvView('_TRK_PI=FOOTST');trk_clickTrace('EVT','^리복모바일^하단매장찾기');">매장안내</a></li>
-									<li><a href="javascript:goCsCenter();" onmousedown="javascript:trk_flashEnvView('_TRK_PI=FOOTCS');trk_clickTrace('EVT','^리복모바일^하단고객센터');">고객센터</a></li>
-									<li><a href="https://m.reebok.co.kr/MO/Notify/notiDetailList.action" onmousedown="javascript:trk_flashEnvView('_TRK_PI=FOOTST');trk_clickTrace('EVT','^리복모바일^공지사항');">공지사항</a></li>
-								</ul>
-					
-					<div class="f_bnn">
-									<a href="https://m.reebok.co.kr/MO/Member/memJoin.action" onmousedown="javascript:trk_flashEnvView('_TRK_PI=FOOTST');trk_clickTrace('EVT','^리복모바일^하단 회원가입');">
-										<img src="//imagem.reebok.co.kr/images/reebok/temp/bnn_join.jpg" width="100%" alt="">
-									</a>
-								</div>
-					<div class="sns_menu">
-									<a href="https://www.facebook.com/Reebokkr" class="fb" target="_blank" onmousedown="javascript:trk_clickTrace(\'EVT\',\'^리복모바일^페북코리아\')"></a>
-									<a href="https://www.instagram.com/reebokkorea/" class="insta" target="_blank"></a>
-									<a href="http://m.blog.naver.com/reebokkr" class="blog" target="_blank" onmousedown="javascript:trk_clickTrace('EVT','^리복모바일^네이버블로그')"></a>
-									<a href="https://m.youtube.com/channel/UCFrW9Ojay5Pk7s-4-KD0M6w" class="ytb" target="_blank"></a>
-									<a href="http://plus.kakao.com/home/@%EB%A6%AC%EB%B3%B5" class="kakao" target="_blank"></a>
-								</div>
-								<address>
-									<div class="inner">
-										<p><strong>리복 공식 온라인 스토어</strong><span class="line l_left"> (아디다스코리아(유))</span></p>
-										<p>서울특별시 서초구 서초대로 74길 4, 삼성생명 서초타워 23층 (06620)</p>
-										<p>대표자 : 폴 유엔 파이</p>
-										<p>사업자 등록번호 : 214-81-07412</p>
-										<p>통신판매업신고번호 : 2007-서울서초-10391</p>
-										<!-- 180913 정보추가 -->
-										<p>개인정보관리책임자 : 장영태</p>
-										<p>호스팅서비스사업자 : 아디다스코리아(유)</p>
-										<p>고객센터 : 1588-7324</p>
-										<p>이메일 : reeclub_korea@reebok.com</p>
-										<div class="f_url">
-											<!-- 170922 리클럽 추가, 사업자정보확인 위치변경 -->
-											<p>
-												<a href="https://m.reebok.co.kr/MO/Terms/terms.action?terms=terms_01"><strong>구매 이용약관</strong></a><span class="line l_left">
-												<a href="https://m.reebok.co.kr/MO/Terms/terms.action?terms=terms_02"><strong>개인정보처리방침</strong></a><span class="line l_left">
-												<a href="https://m.reebok.co.kr/MO/Terms/terms.action?terms=terms_03"><strong>리클럽 이용약관</strong></a>
-											</p>
-											<p>
-												<a href="http://www.ftc.go.kr/info/bizinfo/communicationViewPopup.jsp?wrkr_no=2148107412" target="_blank">사업자정보확인</a><span class="line l_left">
-												<a href="https://m.reebok.co.kr/Common/PopJusticeBns.jsp">공정거래자율준수</a><span class="line l_left">
-												<a href="https://m.reebok.co.kr/Common/CertifiedInfoPop.jsp" target="_blank">채무지급보증안내</a>
-											</p>
-											<p>© adidas Korea LLC. All Rights Reserved</p>
-											<p class="f_logo"><img src="//imagem.reebok.co.kr/images/reebok/f_logo.jpg" alt="reebok"></p>
-										</div>
-									</div>
-								</address>
-							</footer>
-							<script type="text/javascript" src="//imagem.reebok.co.kr/js/weblog/4_INSIGHT_TRACKING_SCRIPT_FOR_M.REEBOK.CO.KR_V.5.1.4.js"></script>
-					<!-- 비저리 스크립트 -->
-					<script type="text/javascript">
-					(function() {
+					</address>
+				</footer>
+				<script type="text/javascript" src="//imagem.reebok.co.kr/js/weblog/4_INSIGHT_TRACKING_SCRIPT_FOR_M.REEBOK.CO.KR_V.5.1.4.js"></script>
+		<!-- 비저리 스크립트 -->
+		<script type="text/javascript">
+		(function() {
+			try {
+				var viz = document.createElement("script");
+				viz.type = "text/javascript";
+				viz.async = true;
+				viz.src = ("https:" == document.location.protocol ?"https://cdn6.vizury.com" : "http://cdn6.vizury.com")+ "/analyze/pixel.php?account_id=VIZVRM2016";
+		
+				var s = document.getElementsByTagName("script")[0];
+				s.parentNode.insertBefore(viz, s);
+				viz.onload = function() {
+					try {
+						pixel.parse();
+					} catch (i) {
+					}
+				};
+				viz.onreadystatechange = function() {
+					if (viz.readyState == "complete" || viz.readyState == "loaded") {
 						try {
-							var viz = document.createElement("script");
-							viz.type = "text/javascript";
-							viz.async = true;
-							viz.src = ("https:" == document.location.protocol ?"https://cdn6.vizury.com" : "http://cdn6.vizury.com")+ "/analyze/pixel.php?account_id=VIZVRM2016";
-					
-							var s = document.getElementsByTagName("script")[0];
-							s.parentNode.insertBefore(viz, s);
-							viz.onload = function() {
-								try {
-									pixel.parse();
-								} catch (i) {
-								}
-							};
-							viz.onreadystatechange = function() {
-								if (viz.readyState == "complete" || viz.readyState == "loaded") {
-									try {
-										pixel.parse();
-									} catch (i) {
-									}
-								}
-							};
+							pixel.parse();
 						} catch (i) {
 						}
-					})();
-					</script>
-					<!-- Toast eXchange Script :: START :: -->
-					<script type="text/javascript" src="//static.tagmanager.toast.com/tag/view/467" async="async"></script>
-					<script type="text/javascript">
-					window.ne_tgm_q = window.ne_tgm_q || [];
-					var toastJson = {"tagType":"visit","device":"mobile","pageEncoding":"utf-8"};
-					
-					window.ne_tgm_q.push(toastJson);
-					</script>
-					<!--// Toast eXchange Script :: END :: -->
-					
-					<iframe id="hfrADCheck" src="//adcheck.about.co.kr/mad/prd/view?shopid=M2DADIDAS" scrolling="no" frameborder="0" width="0" height="0"></iframe>
-					<script type="text/javascript">
-					 var NeoclickConversionDctSv="type=1,orderID=,amount=";
-					 var NeoclickConversionAccountID="22303";
-					</script>
-					<script type="text/javascript" src="//ck.ncclick.co.kr/NCDC_V2.js"></script>
-					</section><!-- container -->
-					</section><!-- //wrap -->
-					
-					<script language="javascript">
-						//넷퍼넬 로그인 종료
-						NetFunnel_Complete({cookie_id:"NETFUNNEL_LOGIN",action_id:"loginPage"});
-					</script>
-					
-					<script type="text/javascript">
-						jQuery(document).ready(function(){
-							if(typeof NetFunnel == "object") {
-								NetFunnel_Complete();
-							}
-						});
-					</script>
-					
-					<!-- 161101 sns_menu 스크립트 추가 -->
-					<script type="text/javascript">
-					(function($){
-						
-						jQuery('.newsletter_mail_button').click(function() {
-							if( cfn_trim(jQuery("#field0").val()) == '' ){
-								alert("E-Mail을 입력해주세요.");
-								return false;
-							}
-					
-							if(!emailChk()){
-								alert("E-Mail형식을 확인 하세요.");
-								return false;
-							}
-					
-							if(!jQuery('.newsletter .marketing_chk').find('input:checkbox[id="marketing"]').is(":checked")){
-								alert("마케팅 수신동의를 체크 해주세요.");
-								return false;
-							}
-					
-							alert('등록 되었습니다.');
-							jQuery('#form33').submit();
-					
-						});
-					
-						//이메일 체크
-						function emailChk(){
-							var emailVal = cfn_trim(jQuery("#field0").val());
-							var reg = /^((\w|[\-\.])+)@((\w|[\-\.][^(\.)\1])+)\.([A-Za-z]+)$/;
-							if (emailVal.search(reg) != -1 && emailVal.length < 31) {
-								jQuery("#field0").val(emailVal);
-								return true;
-							}
-							return false;
-						}
-					
-					})(jQuery);
-					
-					function KeyDownSpa() {
-						if(event.keyCode == 32){ return false; }
-					
-						// 안드로이드 기종에서 스페이스바 keyCode 229로 인식
-						if( event.keyCode == 229 ){
-							var stEmail = jQuery('.input_wrap #field0').val();
-							jQuery('.input_wrap #field0').val(stEmail.trim());
-							return false;
-						}
-					
 					}
-					</script>
-					<!--  카카오 상담톡 start -->
-					<script type="text/javascript">
-					function fn_kakaoChatOpen() {
-						var popup = window.open("","POP");
-						var frm = document.kakaoChatForm;
-						frm.submit();
-					}
-					</script>
-					<form id="kakaoChatForm" name="kakaoChatForm" target="POP" action="https://bizmessage.kakao.com/chat/open" method="post">
-					  <input type="hidden" name="uuid" value="@Reebok"/>
-					  <input type="hidden" name="extra" value="Homepage_Mobile"/>
-					</form>
-					<!--  카카오 상담톡 end -->
-					</body>
-					</html>
+				};
+			} catch (i) {
+			}
+		})();
+		</script>
+		<!-- Toast eXchange Script :: START :: -->
+		<script type="text/javascript" src="//static.tagmanager.toast.com/tag/view/467" async="async"></script>
+		<script type="text/javascript">
+		window.ne_tgm_q = window.ne_tgm_q || [];
+		var toastJson = {"tagType":"visit","device":"mobile","pageEncoding":"utf-8"};
+		
+		window.ne_tgm_q.push(toastJson);
+		</script>
+		<!--// Toast eXchange Script :: END :: -->
+		
+		<iframe id="hfrADCheck" src="//adcheck.about.co.kr/mad/prd/view?shopid=M2DADIDAS" scrolling="no" frameborder="0" width="0" height="0"></iframe>
+		<script type="text/javascript">
+		 var NeoclickConversionDctSv="type=1,orderID=,amount=";
+		 var NeoclickConversionAccountID="22303";
+		</script>
+		<script type="text/javascript" src="//ck.ncclick.co.kr/NCDC_V2.js"></script>
+		</section><!-- container -->
+		</section><!-- //wrap -->
+		
+		<script language="javascript">
+			//넷퍼넬 로그인 종료
+			NetFunnel_Complete({cookie_id:"NETFUNNEL_LOGIN",action_id:"loginPage"});
+		</script>
+		
+		<script type="text/javascript">
+			jQuery(document).ready(function(){
+				if(typeof NetFunnel == "object") {
+					NetFunnel_Complete();
+				}
+			});
+		</script>
+		
+		<!-- 161101 sns_menu 스크립트 추가 -->
+		<script type="text/javascript">
+		(function($){
+			
+			jQuery('.newsletter_mail_button').click(function() {
+				if( cfn_trim(jQuery("#field0").val()) == '' ){
+					alert("E-Mail을 입력해주세요.");
+					return false;
+				}
+		
+				if(!emailChk()){
+					alert("E-Mail형식을 확인 하세요.");
+					return false;
+				}
+		
+				if(!jQuery('.newsletter .marketing_chk').find('input:checkbox[id="marketing"]').is(":checked")){
+					alert("마케팅 수신동의를 체크 해주세요.");
+					return false;
+				}
+		
+				alert('등록 되었습니다.');
+				jQuery('#form33').submit();
+		
+			});
+		
+			//이메일 체크
+			function emailChk(){
+				var emailVal = cfn_trim(jQuery("#field0").val());
+				var reg = /^((\w|[\-\.])+)@((\w|[\-\.][^(\.)\1])+)\.([A-Za-z]+)$/;
+				if (emailVal.search(reg) != -1 && emailVal.length < 31) {
+					jQuery("#field0").val(emailVal);
+					return true;
+				}
+				return false;
+			}
+		
+		})(jQuery);
+		
+		function KeyDownSpa() {
+			if(event.keyCode == 32){ return false; }
+		
+			// 안드로이드 기종에서 스페이스바 keyCode 229로 인식
+			if( event.keyCode == 229 ){
+				var stEmail = jQuery('.input_wrap #field0').val();
+				jQuery('.input_wrap #field0').val(stEmail.trim());
+				return false;
+			}
+		
+		}
+		</script>
+		<!--  카카오 상담톡 start -->
+		<script type="text/javascript">
+		function fn_kakaoChatOpen() {
+			var popup = window.open("","POP");
+			var frm = document.kakaoChatForm;
+			frm.submit();
+		}
+		</script>
+		<form id="kakaoChatForm" name="kakaoChatForm" target="POP" action="https://bizmessage.kakao.com/chat/open" method="post">
+		  <input type="hidden" name="uuid" value="@Reebok"/>
+		  <input type="hidden" name="extra" value="Homepage_Mobile"/>
+		</form>
+		<!--  카카오 상담톡 end -->
+		</body>
+		</html>

@@ -1,6 +1,6 @@
 
 <!DOCTYPE HTML>
-<html>
+<html lang="ko">
 	<head>
 		
 
@@ -41,93 +41,29 @@
 <script type="text/javascript" src="//imagem.reebok.co.kr/js/mo/reebok/netfunnel.js" charset="UTF-8" ></script>
 <script type="text/javascript" src="//imagem.reebok.co.kr/js/mo/reebok/ree_mob_skin.js" charset="UTF-8" ></script>
 
-
-
-
-		<!-- 20180330 링크수정 -->
-		<script src="/designjs/reebok/efu2018/imagesloaded.pkgd.min.js"></script>
-		<!-- // 20180330 링크수정 -->
-	</head>
 	<script>
-	// <!-- 20180403 text 수정 -->
-	jQuery(function(){
-		tab01();
-		jQuery('.tabContent .viewContent:eq(1)').hide();
-		jQuery('.joinTab ul li a').click(function(){
-			var idx = jQuery(this).parent().index();
-			jQuery('.joinTab ul li').removeClass('active');
-			jQuery(this).parent().addClass('active');
-			jQuery('.tabContent .viewContent').hide();
-			jQuery(".tabContent .viewContent:eq("+idx+")").show();
-			
-			if(jQuery(this).parent().index() == 0){
-				tab01();
-				jQuery('.onlineSlide').slick('unslick');
-				jQuery('.offlineSlide').slick('unslick');
-			}else{
-				tab02();
-				//20180412 수정//
-				jQuery('.kakaoSlide').slick('unslick');
-				jQuery('.syrupSlide').slick('unslick');
-				//20180412 수정 끝 //
+	 jQuery(function(){
+		jQuery('.faq_ctgr ul li a').click(function(){
+			jQuery('.faq_ctgr ul li a').removeClass('on');
+			jQuery(this).addClass('on');	
+		});	
+		
+		jQuery(".cs_list .cs_li_head").click(function(){
+			if(!jQuery(this).hasClass("open")) {
+				jQuery(this).addClass("open");
+				jQuery(this).next(".cs_li_body").slideDown();
+			} else {
+				jQuery(this).removeClass("open");
+				jQuery(this).next(".cs_li_body").slideUp();
 			}
+			return false;
 		});
-		//thumSlide
 	});
-	
-	function tab01(){
-		jQuery('.kakaoSlide').slick({
-			slidesToShow:1,
-	        slidesToScroll:1,
-	        autoplaySpeed: 3000,
-	        arrows:true,
-	        adaptiveHeight: true,
-	        infinite: true,
-	        dots: true,
-	        adaptiveHeight: true
-		});
-		jQuery('.syrupSlide').slick({
-			slidesToShow:1,
-	        slidesToScroll:1,
-	        autoplaySpeed: 3000,
-	        arrows:true,
-	        adaptiveHeight: true,
-	        infinite: true,
-	        dots: true,
-	        adaptiveHeight: true
-		});
-		
-	}
-	function tab02(){
-		jQuery('.offlineSlide').slick({
-			slidesToShow:1,
-	        slidesToScroll:1,
-	        autoplaySpeed: 3000,
-	        arrows:true,
-	        adaptiveHeight: true,
-	        infinite: true,
-	        dots: true,
-	        adaptiveHeight: true
-		});
-		
-		jQuery('.onlineSlide').slick({
-			slidesToShow:1,
-	        slidesToScroll:1,
-	        autoplaySpeed: 3000,
-	        arrows:true,
-	        adaptiveHeight: true,
-	        infinite: true,
-	        dots: true,
-	        adaptiveHeight: true
-		});
-		
-	}
-	<!-- // 20180403 text 수정 -->
 	</script>
-	<body>
-		<section id="wrap">
-			<section id="container">
-				
+</head>
+<body>
+<section id="wrap">
+	
 
 <section id="headerWrap">
 	
@@ -731,260 +667,200 @@ jQuery(function(){
 
 	
 
-				<div id="nLocation">
-					<h2><a href="javascript:;">REECLUB</a></h2>						
+	<div id="container" class="mypage">
+		<div id="location">
+			<span><a href="javascript:goMain();">HOME</a></span>
+			<span><a href="javascript:goCsCenter();">고객센터</a></span>
+			<span>자주 묻는 질문</span>
+		</div>
+		<div class="cs_center">
+			<h2 style="margin:20px 0 10px;">자주 묻는 질문</h2>	
+			<form name="faqForm" id="faqForm" method="post" onsubmit="return false" action="">
+				<input type="hidden" id="FAQ_DIVI" name="FAQ_DIVI" value="BEST">
+				<div class="faq_sch">
+					<table class="form_table">	
+						<tbody>
+							<tr class="no_line">
+								<td>
+									<div class="td_wrap">									
+										<div class="cell">
+											<div class="sel_cmtype sel_design" style="min-width:130px;">
+												<a href="#">
+													<span>전체</span>
+												</a>
+												<select id="SRC_DIVI" name="SRC_DIVI">
+													<option value="">전체</option>											
+													<option value="01">상품문의</option>											
+													<option value="02">주문/결제</option>											
+													<option value="03">배송</option>										
+													<option value="04">주문 취소 및 교환</option>								
+													<option value="05">반품</option>											
+													<option value="06">포인트/쿠폰</option>											
+													<option value="07">회원/이벤트</option>											
+													<option value="08">AS 수선/심의</option>											
+													<option value="09">customize</option>											
+												</select>
+											</div>		
+										</div>
+										<div class="cell_fix" style="width:5px;"></div>
+										<div class="cell">
+											<input type="text" id="SRC_TXT" name="SRC_TXT" value="">
+										</div>
+										<div class="cell_fix" style="width:70px;">
+											<a href="javascript:fnSearch();" class="s_button" style="margin-left:5px;">질문검색</a>
+										</div>
+									</div>
+									<!-- //td_wrap -->								
+								</td>
+							</tr>	
+						</tbody>
+					</table>
 				</div>
-				<section id="contents" class="nReeclub">
-					<!-- 내용 -->
-					<div class="titArea"><!-- /images/reebok/efu2018/brand/reeclubBg.jpg -->
-						<h2>							
-							<img src="/images/reebok/efu2018/brand/reclubLogo.png" alt="ReeCLUB" class="logo">					
-						</h2>
-						<!-- 20180330 수정 -->
-						<h1>
-							리클럽은<br/>
-							리복 온·오프라인 매장에서<br/>
-							<span>특별한 혜택을 즐길 수 있는<br/>
-							리복 공식 멤버십입니다.</span>
-						</h1>			
-						<!-- <h3>
-							<img src="/images/reebok/efu2018/brand/reclubText.png" alt="멤버십의 기회는 누구에나 주어지지만, 클럽의 완성은 함께하는 우리의 몫입니다.">
-						</h3> -->						
-						<p>지금 리클럽 회원이 되어<br/>다양한 프로모션 기회를 놓치지 마세요.</p>
-						
-						<div class="btnArea">
-							<a href="https://m.reebok.co.kr:447/MO/Member/memAgreement.action" class="btnTypeC"><span>리클럽 가입하기</span></a>
-						</div>								
-						<!--//  20180330 수정 -->
-					</div>
-					<div class="benefit">
-						<h4><img src="/images/reebok/efu2018/brand/reclubText01.jpg" alt="회원 혜택"></h4><!-- /images/reebok/efu2018/brand/tit_benefits.png -->		
-						<!-- 20180330 text 추가 -->
-						<p>
-							리클럽 회원이 되시면 온라인 공식몰과<br/>
-							오프라인 매장에서 구매 시 5% 포인트<br/>
-							적립, 할인 등 특별한 혜택을 받을 수 있습니다. 
-						</p>
-						<!-- // 20180330 text 추가 -->	
-						<!-- 20180330 text 수정 -->
-						<dl>
-							<dt>포인트 적립<dt>
-							<dd>
-								<strong>구매금액의 5% 포인트 적립</strong>
-								<ul>
-									<li>최종 결제 금액 기준 5% 적립</li>
-									<li>5천 포인트 달성 시 (결제금액 10만원 마다)
-									5천원 포인트 쿠폰으로 전환 발급</li>
-									<li>포인트 쿠폰 사용 기간 : 쿠폰 전환 16일 이후 ~ 12개월간</li>
-								</ul>
-							</dd>
-						</dl>
-						<!-- 190812 -->
-						<dl>
-							<dt>신규가입 10,000원 쿠폰<dt>
-							<dd>
-								<strong>신규가입 10,000원 쿠폰</strong>
-								<ul>
-									<li>쿠폰 사용처 : 리복 공식 온라인/오프라인 스토어</li>
-									<li>쿠폰 발급 시점 : 정회원 가입 즉시 발급</li>
-									<li>쿠폰 사용 기간 : 쿠폰 발급일로부터 <em class="red">30일간</em></li>
-									<li>쿠폰 사용 조건 : 10,000원 할인<br/>
-										(50,000원 이상 구매 시 사용가능)<br/>
-										<em>*정회원 가입 시에 발급되며, 매장에서 임시회원 가입 시<br/> 쿠폰 발급되지 않습니다.</em>
-									</li>
-								</ul>
-							</dd>
-						</dl>
-						<!-- 190812 end -->
-						<dl>
-							<dt>기념일 쿠폰<dt>
-							<dd>
-								<strong>기념일 10,000원 쿠폰</strong>
-								<ul>
-									<li>쿠폰 사용처 : 리복 공식 온라인/오프라인 스토어</li>
-									<li class="red">쿠폰 발급 시점 : 회원 가입 시 등록하신 생일 기준
-									2주 전 발급</li>
-									<li>쿠폰 사용 기간 : 쿠폰 발급 후 1개월</li>
-									<li>쿠폰 사용 조건 : 100,000원 이상 구매 시 사용가능</li>									
-								</ul>
-							</dd>
-						</dl>
-						<dl>
-							<dt>회원 전용 특별혜택<dt>
-							<dd class="content">
-								리클럽 회원 전용 이벤트 및 브랜드 행사 우선 초대<br/>
-								리클럽 회원 전용 쿠폰 제공 (시즌 쿠폰, 이벤트 쿠폰 등)<br/>
-								신제품 및 이벤트 최신 정보 제공
-							</dd>
-						</dl>				
-						<!-- // 20180330 text 수정 -->	
-					</div>
-					<div class="titArea02"><!-- /images/reebok/efu2018/brand/reeclubBg.jpg -->						
-						<h4><img src="/images/reebok/efu2018/brand/reclubText02.png" alt="회원 가입 방법"></h4>
-						<p>리복 공식 온/오프라인 매장에서 그리고 손쉽게<br>모바일을 통해서도 리클럽 회원이 될 수 있습니다.</p>
-						<div class="btnArea">
-							<!-- 20180330 text 수정 --><a href="https://m.reebok.co.kr:447/MO/Member/memAgreement.action" class="btnTypeC"><span>리클럽 가입하기</span></a><!-- // 20180330 text 수정 -->	
-						</div><!-- /images/reebok/efu2018/brand/tit_benefits.png -->						
-					</div>
-					<div class="joinTab">
-						<ul class="joincontTab">
-							<li class="active"><a href="#!">간편회원가입</a></li>
-							<li><a href="#!">온/오프라인 회원가입</a></li>
-						</ul>
-					</div>
-					<div class="tabContent">
-						<!-- tab 내용-->
-						<div class="viewContent">
-							<h2>
-								<!-- 20180403 text 수정 -->
-								<span>카</span><span><img src="/images/reebok/efu2018/brand/kakaoBlt.jpg" alt="bullet"></span><span>카</span><span><img src="/images/reebok/efu2018/brand/kakaoBlt.jpg" alt="bullet"></span><span class="none">오</span><br/>
-								멤버십으로<br/><!-- // 20180403 text 수정 -->
-								<span class="lts">회  원  가  입</span>
-							</h2> 
-							<div class="kakaoSlideWrap">
-								<div class="kakaoSlide">
-									<div><a href="javascript:;"><img src="/images/reebok/efu2018/brand/kakao_slide01.jpg" alt="kakao 가입"></a></div>
-									<div><a href="javascript:;"><img src="/images/reebok/efu2018/brand/kakao_slide02.jpg" alt="kakao 가입"></a></div>
-									<div><a href="javascript:;"><img src="/images/reebok/efu2018/brand/kakao_slide03.jpg" alt="kakao 가입"></a></div>
-									<div><a href="javascript:;"><img src="/images/reebok/efu2018/brand/kakao_slide04.jpg" alt="kakao 가입"></a></div>
-								</div>
+			</form>
+			<div class="faq_ctgr">
+				<ul>
+					<li><a href="javascript:fnSearchDivi('BEST');" class="on">FAQ</a></li>		
+					<li><a href="javascript:fnSearchDivi('01');">상품문의</a></li>			
+					<li><a href="javascript:fnSearchDivi('02');">주문/결제</a></li>				
+					<li><a href="javascript:fnSearchDivi('03');">배송</a></li>				
+					<li><a href="javascript:fnSearchDivi('04');">주문 취소 및 교환</a></li>				
+					<li><a href="javascript:fnSearchDivi('05');">반품</a></li>		
+					<li><a href="javascript:fnSearchDivi('06');">포인트/쿠폰</a></li>				
+					<li><a href="javascript:fnSearchDivi('07');">회원/이벤트</a></li>			
+					<li><a href="javascript:fnSearchDivi('08');">AS 수선/심의</a></li>			
+					<li><a href="javascript:fnSearchDivi('09');">customize</a></li>			
+				</ul>
+			</div>
+			<dl class="cs_list">		
+				<dt>FAQ<span class="desc">가장 많이 문의하시는 질문을 모았습니다.</span></dt>
+				<dd>
+					<ol>
+						<li>
+							<div class="cs_li_head"><a href="#"><span class="num">1</span>상품 교환은 가능한가요?</a></div>
+							<div class="cs_li_body">
+								<p></p><p><span style="font-family: 굴림"><strong>교환의 경우 <span style="color: #ff0000">동일 상품의 재고가 있을 경우 사이즈&nbsp;교환만</span> 가능</strong>합니다.<br>다른 상품으로 교환을 원하실 경우 반품 후 재주문을 해주셔야 합니다.<br>&nbsp;<br>※ 교환 신청을 하지 않고 상품을 보내는 경우, <br>&nbsp;&nbsp;&nbsp; 분실 우려가 있으니 <strong>반드시 마이페이지에서 교환 신청해 주셔야 합니다. <br></strong><span style="color: #0000ff"><strong><br>(단, Customize 주문 제작 상품의 경우 주문완료 시 교환 및 취소 불가)</strong></span></span></p><p></p>
 							</div>
-							<div class="border"></div>
-							<h2>
-								<!-- 20180403 text 수정 -->
-								<span>시　</span><span><img src="/images/reebok/efu2018/brand/kakaoBlt.jpg" alt="bullet" class="sdot"></span><span>　럽</span><br/>
-								<span class="lts">회  원  가  입</span><!-- // 20180403 text 수정 -->
-							</h2> 
-							<div class="syrupSlideWrap">
-								<div class="syrupSlide">
-									<div><a href="javascript:;"><img src="/images/reebok/efu2018/brand/syrup_slide01.jpg" alt="syrup 가입"></a></div>
-									<div><a href="javascript:;"><img src="/images/reebok/efu2018/brand/syrup_slide02.jpg" alt="syrup 가입"></a></div>
-									<div><a href="javascript:;"><img src="/images/reebok/efu2018/brand/syrup_slide03.jpg" alt="syrup 가입"></a></div>
-									<div><a href="javascript:;"><img src="/images/reebok/efu2018/brand/syrup_slide04.jpg" alt="syrup 가입"></a></div>
-								</div>
+						</li>
+						<li>
+							<div class="cs_li_head"><a href="#"><span class="num">2</span>근처 매장에서 다른 제품으로 교환되나요?</a></div>
+							<div class="cs_li_body">
+								<p><span style="font-family: 굴림">교환은 구입처를 통해 사이즈 교환만 가능하며, 인근 타매장에서&nbsp;교환 불가 합니다.<br><br>&nbsp;&gt; 온라인 스토어 구매건의 경우&nbsp;<br>&nbsp;&nbsp; &nbsp;<strong><span style="font-family: 굴림">홈페이지&nbsp;&gt; 마이페이지 &gt; 주문/배송 조회 &gt; 교환 접수 </span></strong><span style="font-family: 굴림">가능하며&nbsp;<br></span><strong>&nbsp;&nbsp; 고객센터(1588-8241)</strong>를 통해&nbsp;문의&nbsp; 및 접수해 주시기 바랍니다.<br><br>&nbsp;&gt; 오프라인 매장 구매건의 경우 구입한 매장으로 교환 문의 부탁 드립니다.</span></p>
 							</div>
-						</div>
-						
-						<div class="viewContent">
-							<h2>
-								<!-- 20180403 text 수정 -->
-								<span>온</span><span><img src="/images/reebok/efu2018/brand/kakaoBlt.jpg" alt="bullet"></span><span>라</span><span><img src="/images/reebok/efu2018/brand/kakaoBlt.jpg" alt="bullet"></span><span class="none">인</span><br/>
-								<span class="lts">회  원  가  입</span><!--// 20180403 text 수정 -->
-								<div class="btnArea">
-									<a href="https://m.reebok.co.kr:447/MO/Member/memAgreement.action" class="btnTypeC"><span>리클럽 가입하기</span></a>
-								</div><!-- /images/reebok/efu2018/brand/tit_benefits.png -->				
-							</h2> 
-							<div class="onlineSlideWrap">
-								<div class="onlineSlide">
-									<div><a href="javascript:;"><img src="/images/reebok/efu2018/brand/online_slide01.jpg" alt="online 가입"></a></div>
-									<div><a href="javascript:;"><img src="/images/reebok/efu2018/brand/online_slide02.jpg" alt="online 가입"></a></div>
-									<div><a href="javascript:;"><img src="/images/reebok/efu2018/brand/online_slide03.jpg" alt="online 가입"></a></div>
-									<div><a href="javascript:;"><img src="/images/reebok/efu2018/brand/online_slide04.jpg" alt="online 가입"></a></div>
-								</div>
+						</li>
+						<li>
+							<div class="cs_li_head"><a href="#"><span class="num">3</span>반품 신청 및 환불 절차는 어떻게 되나요?</a></div>
+							<div class="cs_li_body">
+								<p></p><p><span style="font-family: 굴림"><strong>1. 반품신청<br></strong>&nbsp;&nbsp; ◎ 회원 구매시 :&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ⓐ [로그인] -&gt; [마이페이지] -&gt; [나의 쇼핑내역] -&gt; [취소반품조회] <br><br>&nbsp;&nbsp; ◎ 비회원 구매시<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ⓐ [주문/배송조회] -&gt; [비회원 로그인] -&gt; [나의 쇼핑내역] -&gt;[취소반품조회]<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ⓑ 상품 수령한 날로부터 7일 이내만 신청이 가능<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ※ 마이페이지에서 반품 접수&nbsp;불가시 : 인터넷 익스플로어 &gt; 도구 &gt; 호환성 보기 체크 후 신청 가능합니다.<br>&nbsp;</span></p><p><span style="font-family: 굴림"><strong>2. 반품배송<br></strong>&nbsp;&nbsp;&nbsp;&nbsp; 반품 접수&nbsp;후 일주일내 한진택배 기사님이&nbsp;접수하신&nbsp;회수지로 방문하여 수거 합니다.<br><span style="color: #ff0000"><span style="font-size: 12px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><strong><span style="color: #ff0000"><span style="font-size: 12px">※ </span></span><span style="font-size: 12px"><span style="color: red">주문 제품이 출고된 매장이 아닌 아디다스 본사로 교환/반품 택배 발송 시 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 다시 출고된 매장으로 반송처리 되어지므로, </span></span><span style="font-size: 12px"><span style="color: red">교환/반품 처리 기간이 지연 됩니다.&nbsp;&nbsp;</span></span></strong><br>&nbsp;</span></p><p><span style="font-family: 굴림"><strong>3. 배송비 결제<br></strong>&nbsp;&nbsp;&nbsp;&nbsp; 반품 배송된 상품은 매장에서 이상유무를 확인하게 되며, 이상이 없을 시 반품 확정 됩니다.<br>&nbsp;&nbsp;&nbsp;&nbsp; 매장에서 반품을 확정하면, 고객님의 결제대금에서 배송비가 자동으로 차감되어&nbsp;계산 됩니다. <br><span style="color: #ff0000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ※ 단순 변심 등 고객님의 책임 있는 사유로 인해 반품되는 경우 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 최초 배송비를 포함한 왕복 배송비 5,000원을 고객님께서 부담하셔야&nbsp; 합니다.<br>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;(단, 제주도 및 도서산간 지역은 배송비가 추가 될 수 있습니다.)<br><br></span><strong>4. 환불완료</strong><br>&nbsp;&nbsp;&nbsp;&nbsp; 반품 상품 검수하여&nbsp;최종 반품&nbsp;확정된 경우&nbsp;주문&nbsp;결제 수단에 따라 환불 진행 됩니다.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>ⓐ 실시간 계좌이체 :</strong>&nbsp;영업일 기준 3일 이내에 환불.<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<strong>ⓑ 무통장입금 :</strong> 영업 일기준 3일 이내 환불.<br>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<strong>ⓒ 신용카드 :&nbsp;</strong> 최장 7일 내&nbsp; 해당 카드사에 기존 승인내역에 대한 취소 확인&nbsp; 가능.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (승인취소 및 결제 반영일에 따라 입금날짜는 카드사 별로 다를 수 있으니&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; 자세한 내용은 해당 카드사로 문의하여 주십시오.)</span></p><p></p>
 							</div>
-							<div class="border"></div>
-							<h2>
-								<!-- 20180403 text 수정 -->
-								<span>매　</span><span><img src="/images/reebok/efu2018/brand/kakaoBlt.jpg" alt="bullet" class="sdot"></span><span>　장</span><br/>
-								<span class="lts">회  원  가  입</span>
-								<!-- // 20180403 text 수정 -->
-							</h2> 
-							<div class="offlineSlideWrap">
-								<div class="offlineSlide">
-									<div><a href="javascript:;"><img src="/images/reebok/efu2018/brand/offline_slide01.jpg" alt="offline 가입"></a></div>
-									<div><a href="javascript:;"><img src="/images/reebok/efu2018/brand/offline_slide02.jpg" alt="offline 가입"></a></div>
-									<div><a href="javascript:;"><img src="/images/reebok/efu2018/brand/offline_slide03.jpg" alt="offline 가입"></a></div>
-									<div><a href="javascript:;"><img src="/images/reebok/efu2018/brand/offline_slide04.jpg" alt="offline 가입"></a></div>
-								</div>
+						</li>
+						<li>
+							<div class="cs_li_head"><a href="#"><span class="num">4</span>제조년월이란 무엇인가요?</a></div>
+							<div class="cs_li_body">
+								<p></p><p>해당 제품이 생산된 년월로 관련 법률에 따라 최초 제조년월로 표기하고 있습니다. 정확한 제조년월은 배송 받으신 상품의 라벨을 참고하시기 바랍니다.</p><p></p>
 							</div>
-						</div>
-					</div>			
-					<!-- 20180330 text 추가 -->						
-					<div class="titArea03"><!-- /images/reebok/efu2018/brand/reeclubBg.jpg -->						
-						<h4><img src="/images/reebok/efu2018/brand/reclubText03.png" alt="리클럽 모바일 멤버십 카드 안내"></h4>
-						<p>
-						리클럽 전용 포인트 혜택을 편리하게 누릴 수 있도록<br/>
-						모바일로 다운받아 사용할 수 있는 리클럽 모바일<br/>
-						멤버십 카드입니다. 오프라인 스토어에서 포인트 적립<br/>
-						및 사용 시 모바일 멤버십 카드를 제시해야 합니다. 
-						</p>
-						<div class="btnArea">
-							<!-- 20180330 text 수정 --><a href="https://m.reebok.co.kr:447/MO/Member/memAgreement.action " class="btnTypeC"><span>리클럽 가입하기</span></a><!-- // 20180330 text 수정 -->	
-						</div><!-- /images/reebok/efu2018/brand/tit_benefits.png -->				
-					</div>
-					<p class="mobilememer">모바일멤버십 카드</p>
-					<div class="download">
-						<h2><!-- 20180403 text 수정 -->
-							<span>카</span><span><img src="/images/reebok/efu2018/brand/kakaoBlt.jpg" alt="bullet"></span><span>카</span><span><img src="/images/reebok/efu2018/brand/kakaoBlt.jpg" alt="bullet"></span><span class="none">오</span><br/>
-							다 운 로 드<br/><!-- 20180403 text 수정 -->
-							<span class="lts">방　  　법</span>
-						</h2> 
-						<div class="kakaoSlideWrap">
-							<div class="kakaoSlide">
-								<div><a href="javascript:;"><img src="/images/reebok/efu2018/brand/kakao_slide01.jpg" alt="kakao 가입"></a></div>
-								<div><a href="javascript:;"><img src="/images/reebok/efu2018/brand/kakao_slide02.jpg" alt="kakao 가입"></a></div>
-								<div><a href="javascript:;"><img src="/images/reebok/efu2018/brand/kakao_slide03.jpg" alt="kakao 가입"></a></div>
-								<div><a href="javascript:;"><img src="/images/reebok/efu2018/brand/kakao_slide04.jpg" alt="kakao 가입"></a></div>
+						</li>
+						<li>
+							<div class="cs_li_head"><a href="#"><span class="num">5</span>주문한 상품을 취소(부분취소) 또는 교환하고 싶은데 어떻게 하나요?</a></div>
+							<div class="cs_li_body">
+								<p></p><p><span style="font-family: 굴림"><strong>1. 주문취소(부분취소)</strong><br>&nbsp;&nbsp; 주문 상태가 <span style="color: #ff0000"><strong>배송준비중 단계 전</strong></span>까지는 <br>&nbsp;&nbsp; <strong>마이페이지 &gt; 주문/배송조회 </strong>또는 <strong>취소/반품조회</strong>에서 <strong>주문취소가 가능</strong>합니다. <br>&nbsp;&nbsp; ※ 상품이 택배사로 전달 되었거나 이미 출고된 상품은 주문취소가 불가하며 수령 후 반품을 해 주셔야 합니다.<br>&nbsp; &nbsp;※ 마이페이지에서 취소 접수&nbsp;불가시 : 인터넷 익스플로어 &gt; 도구 &gt; 호환성 보기 체크 후 신청 가능합니다.<br></span><br><span style="font-family: 굴림"><strong>2. 교환/반품<br></strong>&nbsp;"전자상거래 등에서의 소비자보호에 관한 법률 제 17조"에 의거 아래와 같은 경우 청약 철회가 가능합니다.&nbsp;<br><br>&nbsp;-&nbsp; 실제 상품,용역 등을 제공받은 날로부터 7일이내<br>&nbsp;-&nbsp; 상품하자 이외 사이즈, 색상교환 등 단순 변심에 의한 교환/반품 배송비는 고객부담<br>&nbsp;-&nbsp; 상품에 따라 TAG제거, 신발 BOX훼손, 라벨, 포장 등의 훼손이나 폐기 후에는 교환/반품 불가<br>&nbsp;<br>※ 상품에 따라 취소/교환/반품의 기준이 다를 수 있으며, 자세한 사항은 상품 상세설명에서 기재하고 있습니다.<br><span style="color: #ff0000"><span style="font-size: 12px">※ </span></span><span style="font-size: 12px"><span style="color: red">주문 제품이 출고된 매장이 아닌 아디다스 본사로 교환/반품 택배 발송 시에는&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;다시 출고된 매장으로 반송처리 되므로, </span></span><span style="font-size: 12px"><span style="color: red">교환/반품 처리 기간이 지연됩니다.&nbsp;&nbsp;<br><br></span><strong><span style="color: #000080">(단, Customize 주문 제작 상품의 경우 주문완료 시 교환 및 취소 불가)</span></strong></span></span></p><p></p>
 							</div>
-						</div>
-						<div class="border"></div>
-						<h2>
-							<!-- 20180403 text 수정 -->
-							<span>시　</span><span><img src="/images/reebok/efu2018/brand/kakaoBlt.jpg" alt="bullet" class="sdot"></span><span>　럽</span><br/>
-							다 운 로 드</br/>
-							<span class="lts">방　  　법</span><!-- // 20180403 text 수정 -->
-						</h2> 
-						<div class="syrupSlideWrap">
-							<div class="syrupSlide">
-								<div><a href="javascript:;"><img src="/images/reebok/efu2018/brand/syrup_slide01.jpg" alt="syrup 가입"></a></div>
-								<div><a href="javascript:;"><img src="/images/reebok/efu2018/brand/syrup_slide02.jpg" alt="syrup 가입"></a></div>
-								<div><a href="javascript:;"><img src="/images/reebok/efu2018/brand/syrup_slide03.jpg" alt="syrup 가입"></a></div>
-								<div><a href="javascript:;"><img src="/images/reebok/efu2018/brand/syrup_slide04.jpg" alt="syrup 가입"></a></div>
+						</li>
+						<li>
+							<div class="cs_li_head"><a href="#"><span class="num">6</span>아디다스 공식 온라인 스토어 A/S 정책 안내</a></div>
+							<div class="cs_li_body">
+								<p><img alt="" src="http://image.adidas.co.kr/images/adidas/common/bg_prod_as_faq.jpg">.</p>
 							</div>
-						</div>
-					</div>
-					<div class="benefit02">
-						<dl>
-							<dt>리클럽 모바일<br/>멤버십 카드 발급 방법<dt>
-							<dd>
-								<strong>신규발급</strong>
-								<ul>
-									<li>
-										온라인 스토어 회원 가입 시 자동으로 모바일 멤버십<br/>
-										카드를 SMS 전송, 카카오멤버십/시럽으로 가입 시
-										해당 바코드 사용
-									</li>
-								</ul>
-								<strong>조회 및 재발급</strong>
-								<ul>
-									<li>
-										로그인 > 마이페이지 > 멤버십 카드 조회 또는<br/>재발급 신청　
-										<!-- 20180402 수정 -->
-										<p class="membershipChk"><a href="https://m.reebok.co.kr:447/MO/MyPage/mypageMemIdCrd.action">멤버십 카드 확인</a><p>
-										<!-- // 20180402 수정 -->
-									</li>
-								</ul>
-							</dd>							
-						</dl>
+						</li>
+						<li>
+							<div class="cs_li_head"><a href="#"><span class="num">7</span>상품 배송 기간은 얼마나 걸리나요?</a></div>
+							<div class="cs_li_body">
+								<p><span style="font-family: 굴림">주문하신 상품은 결제 완료 후 <strong><span style="color: #0000ff">평균 3일~7일(휴일 및 공휴일 제외)</span></strong> 이내에 배송 됩니다. <br>도서 산간 지역과 제주도등 일부 지역은 배송 기간이 더 소요될 수 있습니다. <br><span style="color: #ff0000"><strong><br>※ 단, Customize 주문 제작 상품의 경우<br>&nbsp;&nbsp;&nbsp; 해외에서 제작하여 배송지 주소로 직접 배송하기 때문에&nbsp;평균 4주~7주 소요 됩니다.</strong></span></span></p>
+							</div>
+						</li>
+						<li>
+							<div class="cs_li_head"><a href="#"><span class="num">8</span>선물 받은 상품(타 사이트, 예: ABC마트 등을 통한 온/오프라인 구매)은 교환 가능한가요?</a></div>
+							<div class="cs_li_body">
+								<p><span style="font-family: 굴림">아디다스 공식 온라인 스토어를 통해 구입한 제품에 한해서만 교환 가능합니다. <br>공식 온라인 스토어를 통해 구입한 제품이 아닌 경우 각각의 구입처를 통해 교환 가능여부를 확인 하시기 바랍니다. </span></p>
+							</div>
+						</li>
+						<li>
+							<div class="cs_li_head"><a href="#"><span class="num">9</span>상품 받고 밖에서 한 번 신었는데 이상해요. 교환되나요?</a></div>
+							<div class="cs_li_body">
+								<p><span style="font-size: 12px"><span style="font-family: 굴림">상품 수령하고 택 제거 후 외부에서 착용 및 착화시에는 교환이 어렵습니다.<br>단, 품질 하자라고 생각되신다면 상품을 근처 매장에 맡겨 담당부서로 심의를 통하여<br> 상품 자체 하자인지 여부 확인과정을 진행하여 교환이 가능한지 확인 가능하오니<br> <span style="color: #0000ff">매장 구매건은 구매 매장으로</span>,&nbsp; <span style="color: #0000ff">온라인 주문건은 고객센터 (1588-8241 &gt; 6번)</span>로<br> 문의주시면 안내해드리겠습니다</span></span></p>
+							</div>
+						</li>
+						<li>
+							<div class="cs_li_head"><a href="#"><span class="num">10</span>반품시 배송비는 누가 부담하나요?</a></div>
+							<div class="cs_li_body">
+								<p><span style="font-family: 굴림">상품 품질 하자 및 배송등의 문제 일 경우에는 추후 상품의 상태 확인 후 무료 배송 여부를 결정해드리며, <br><span style="color: #ff0000">사이즈나 고객 단순변심 반품일 경우에는 고객님 부담(왕복배송비=최초 주문배송비 + 반품배송비)으로 진행</span>됩니다.</span></p>
+							</div>
+						</li>
+						<li>
+							<div class="cs_li_head"><a href="#"><span class="num">11</span>팀/단체복을 주문하고 싶어요.</a></div>
+							<div class="cs_li_body">
+								<p><a target="blank" href="http://image.adidas.co.kr/upload/faq/adidas/2017adidas_B2B.pdf"><img alt="" src="http://image.adidas.co.kr/upload/fckeditor/temp/image/adidas_b2b.jpg"> </a></p>
+							</div>
+						</li>
+						<li>
+							<div class="cs_li_head"><a href="#"><span class="num">12</span>매장 방문 수령 또는 퀵배송이 가능한가요?</a></div>
+							<div class="cs_li_body">
+								<p><span style="font-family: 굴림"><span style="font-family: 굴림">상품 출고전 상태일 경우&nbsp;고객센터(1588-8241)로 문의 주시면<br></span>매장방문 수령 또는 퀵배송이 가능한지 확인 후 안내 가능합니다.<br><span style="color: #ff0000"><br><strong>※ 단, 퀵 비용은 고객 부담이며, 주문시 결제한 배송비는 환불되지 않습니다.</strong></span></span></p>
+							</div>
+						</li>
+						<li>
+							<div class="cs_li_head"><a href="#"><span class="num">13</span>제품은 어떻게 발송되나요?</a></div>
+							<div class="cs_li_body">
+								<p></p><div><span style="font-family: 굴림"><span style="font-size: 12px">주문하신 모든 상품은 <span style="color: #000000"><b>한진</b><b>택배(매장에 따라 다소 상이)</b></span>를 통해 배송 됩니다. <br>입금/결제 확인 후 아디다스 공식 오프라인 매장으로 배정되며</span> <br><span style="font-size: 12px">제품별 재고 보유 상황에 따라 동시 주문건이라도 제품이 각 다른 매장에서 개별 배송될 수 있습니다. </span></span></div><div><strong><span style="color: #ff0000"><span style="font-family: 굴림"><span style="font-size: 12px"><span style="font-family: 굴림"><span style="font-size: 12px">또한,&nbsp;</span></span>상품품절 또는 재고부족(하자)등의 사유로 배송이 지연되거나 배송이 불가 할 수 있습니다.<br><br></span></span></span></strong><span style="font-family: 굴림"><span style="font-size: 12px">※ 상품품절 또는 재고부족(하자)등의 사유로 배송이 어려울 경우 영업일 기준 3일 이내에 안내해 드리고 있습니다.</span></span></div><p></p>
+							</div>
+						</li>
+						<li>
+							<div class="cs_li_head"><a href="#"><span class="num">14</span>원산지 정보란 무엇인가요?</a></div>
+							<div class="cs_li_body">
+								<p></p><p>해당 제품이 생산된 지역입니다. 다만 일부 제품의 경우 제품 제조 사정으로 인한 복수 표기를 원칙으로 하고 있습니다. (예 : 태국/중국)</p><p></p>
+							</div>
+						</li>
+						<li>
+							<div class="cs_li_head"><a href="#"><span class="num">15</span>배송비는 무료인가요?</a></div>
+							<div class="cs_li_body">
+								<p><span style="font-family: 굴림">구매 금액이 <span style="color: #ff6600"><strong>50,000원 이상인 경우 무료배송 / </strong></span><span style="color: #ff6600"><strong>50,000원 미만인 경우 2,500원의 배송비가 부과</strong></span> 됩니다. <br>단, 제주지역 및 도서산간 지역은 기본 배송비에 추가 배송비가 발생됩니다.&nbsp;<br><strong><br>&lt;추가 배송비&gt;&nbsp;</strong><br>- 제주지역 : 3,000원<br>- 도서산간 지역 : 4,500원<br><strong><br><span style="color: #0000ff">※ 단, Customize&nbsp;주문제작 상품의 경우<br>&nbsp;&nbsp;&nbsp;구매 가격과 도서/산간 직역과 관계 없이&nbsp;1건당 15,000원 배송비 부과 됩니다.</span></strong><br></span></p>
+							</div>
+						</li>
+						<li>
+							<div class="cs_li_head"><a href="#"><span class="num">17</span>주문한 상품이 도착하지 않았어요.</a></div>
+							<div class="cs_li_body">
+								<p><span style="font-family: 굴림">배송이 지연되거나 주문 상품이 배송 누락 되었을 경우<br></span><span style="font-family: 굴림"><a href="http://shop.adidas.co.kr/PF080304.action"><strong><span style="color: #3366ff">[HOME &gt; 고객센터 &gt; 1:1 문의]</span></strong></a>로 문의 또는 <strong>고객센터(1588-8241)</strong>로 문의시&nbsp;<br>상세히 안내 받으실 수 있습니다.<br><br>※&nbsp;택배사 송장 조회시 이동 이력이 확인되지 않는 경우 <br>&nbsp;&nbsp;&nbsp; 한진택배 고객센터(1588-0011)로 문의하시면&nbsp;빠른 안내를 받으실 수 있습니다.<br></span></p>
+							</div>
+						</li>
+						<li>
+							<div class="cs_li_head"><a href="#"><span class="num">18</span>생일 쿠폰은 언제 발행되나요?</a></div>
+							<div class="cs_li_body">
+								<p><span style="font-family: 굴림">회원 가입시 등록된 생일 기준&nbsp;2주전 발급되며, 발급된 쿠폰은 1개월간 10만원 이상 구매시 적용 가능합니다.<br>생일인 달 중간에 가입 하신 경우, 가입하신 다음 날 쿠폰이 발행 됩니다.</span></p>
+							</div>
+						</li>
+						<li>
+							<div class="cs_li_head"><a href="#"><span class="num">19</span>배송중일 때 상품취소는 어떻게 하나요?</a></div>
+							<div class="cs_li_body">
+								<p><span style="font-family: 굴림">상품이 택배사로 인계되어 배송중인 경우&nbsp;취소 신청이 불가합니다. <br>이 경우 상품 수령 후 반품으로 진행해야 합니다.<br></span></p>
+							</div>
+						</li>
+						<li>
+							<div class="cs_li_head"><a href="#"><span class="num">20</span>반품이 불가능한 경우도 있나요?</a></div>
+							<div class="cs_li_body">
+								<p><strong><span style="font-family: 굴림"><span style="color: #0000ff">반품은 상품을 수령한 날로부터&nbsp;7일 이내에 신청하실 수 있으며,</span></span></strong><span style="font-family: 굴림"><span style="color: #0000ff"> <br></span>다음과 같은 경우 반품 신청이 불가능 할 수 있습니다.<br><br>&nbsp;- 반품 요청 기간이 지난 경우<br>&nbsp;- 포장을 개봉하였거나 포장이 훼손되어 상품 가치가 현저히 감소한 경우<br>&nbsp;- 구매자의 책임있는 사유로 상품 등이 멸실 또는 훼손된 경우 (신발 박스를 훼손한 경우)<br>&nbsp;- 구매자의 사용 또는 일부 소비에 의하여 상품 가치가 현저히 감소한 경우<br>&nbsp; &nbsp; (예 : 텍을 제거하거나&nbsp;신발 박스를 훼손 했을 경우)&nbsp;<br>&nbsp;- 기간의 경과에 의하여 재판매가 곤란할 정도로 상품가치가 현저히 감소한 경우<br>&nbsp;- 주문 확인 후 상품 제작에 들어가는 주문 제작 상품인 경우<br>&nbsp;&nbsp;&nbsp; (단, 제품 하자시 소비자 분쟁 해결 기준 환불)<br>&nbsp;- 복제가 가능한 상품 등의 포장을 훼손한 경우</span></p>
+							</div>
+						</li>
+					</ol>
+				</dd>
+			</dl>
+			<!-- //cs_list -->
+		</div>
+		<!-- //cs_center -->
+	</div>
+	<!-- //container product_list -->
+	
 							
-						<dl>
-							<dt>알아두세요.<dt>
-							<dd class="confirm">
-								오프라인 스토어에서 구매 후 포인트 적립 시,
-								리클럽 모바일 멤버십 카드를 제시해야 합니다. 
-								(SMS로 받은 멤버십 카드 이미지 또는 카카오톡/시럽의
-								멤버십 카드 사용 가능)
-								모바일 멤버십 카드 미소지 시, 구매 후 7일 이내 구매
-								영수증 및 모바일 멤버십 카드 다운로드 후 해당 매장
-								재방문 시 적립 가능합니다. 
-							</dd>
-						</dl>
-					</div>	
-					<!-- // 20180330 text 수정 -->	
-				</section>
-							
-				<div id="slideBg"></div><div id="slideBg"></div>
-				<footer id="footer" class="footer-update">
+	<div id="slideBg"></div><div id="slideBg"></div>
+		<footer id="footer" class="footer-update">
 								<div class="go_top">
 									<a href="#">BACK TO TOP</a>
 								</div>
@@ -997,173 +873,173 @@ jQuery(function(){
 									<li><a href="javascript:goCsCenter();" onmousedown="javascript:trk_flashEnvView('_TRK_PI=FOOTCS');trk_clickTrace('EVT','^리복모바일^하단고객센터');">고객센터</a></li>
 									<li><a href="https://m.reebok.co.kr/MO/Notify/notiDetailList.action" onmousedown="javascript:trk_flashEnvView('_TRK_PI=FOOTST');trk_clickTrace('EVT','^리복모바일^공지사항');">공지사항</a></li>
 								</ul>
-					
-					<div class="f_bnn">
-									<a href="https://m.reebok.co.kr/MO/Member/memJoin.action" onmousedown="javascript:trk_flashEnvView('_TRK_PI=FOOTST');trk_clickTrace('EVT','^리복모바일^하단 회원가입');">
-										<img src="//imagem.reebok.co.kr/images/reebok/temp/bnn_join.jpg" width="100%" alt="">
-									</a>
-								</div>
-					<div class="sns_menu">
-									<a href="https://www.facebook.com/Reebokkr" class="fb" target="_blank" onmousedown="javascript:trk_clickTrace(\'EVT\',\'^리복모바일^페북코리아\')"></a>
-									<a href="https://www.instagram.com/reebokkorea/" class="insta" target="_blank"></a>
-									<a href="http://m.blog.naver.com/reebokkr" class="blog" target="_blank" onmousedown="javascript:trk_clickTrace('EVT','^리복모바일^네이버블로그')"></a>
-									<a href="https://m.youtube.com/channel/UCFrW9Ojay5Pk7s-4-KD0M6w" class="ytb" target="_blank"></a>
-									<a href="http://plus.kakao.com/home/@%EB%A6%AC%EB%B3%B5" class="kakao" target="_blank"></a>
-								</div>
-								<address>
-									<div class="inner">
-										<p><strong>리복 공식 온라인 스토어</strong><span class="line l_left"> (아디다스코리아(유))</span></p>
-										<p>서울특별시 서초구 서초대로 74길 4, 삼성생명 서초타워 23층 (06620)</p>
-										<p>대표자 : 폴 유엔 파이</p>
-										<p>사업자 등록번호 : 214-81-07412</p>
-										<p>통신판매업신고번호 : 2007-서울서초-10391</p>
-										<!-- 180913 정보추가 -->
-										<p>개인정보관리책임자 : 장영태</p>
-										<p>호스팅서비스사업자 : 아디다스코리아(유)</p>
-										<p>고객센터 : 1588-7324</p>
-										<p>이메일 : reeclub_korea@reebok.com</p>
-										<div class="f_url">
-											<!-- 170922 리클럽 추가, 사업자정보확인 위치변경 -->
-											<p>
-												<a href="https://m.reebok.co.kr/MO/Terms/terms.action?terms=terms_01"><strong>구매 이용약관</strong></a><span class="line l_left">
-												<a href="https://m.reebok.co.kr/MO/Terms/terms.action?terms=terms_02"><strong>개인정보처리방침</strong></a><span class="line l_left">
-												<a href="https://m.reebok.co.kr/MO/Terms/terms.action?terms=terms_03"><strong>리클럽 이용약관</strong></a>
-											</p>
-											<p>
-												<a href="http://www.ftc.go.kr/info/bizinfo/communicationViewPopup.jsp?wrkr_no=2148107412" target="_blank">사업자정보확인</a><span class="line l_left">
-												<a href="https://m.reebok.co.kr/Common/PopJusticeBns.jsp">공정거래자율준수</a><span class="line l_left">
-												<a href="https://m.reebok.co.kr/Common/CertifiedInfoPop.jsp" target="_blank">채무지급보증안내</a>
-											</p>
-											<p>© adidas Korea LLC. All Rights Reserved</p>
-											<p class="f_logo"><img src="//imagem.reebok.co.kr/images/reebok/f_logo.jpg" alt="reebok"></p>
-										</div>
-									</div>
-								</address>
-							</footer>
-							<script type="text/javascript" src="//imagem.reebok.co.kr/js/weblog/4_INSIGHT_TRACKING_SCRIPT_FOR_M.REEBOK.CO.KR_V.5.1.4.js"></script>
-					<!-- 비저리 스크립트 -->
-					<script type="text/javascript">
-					(function() {
-						try {
-							var viz = document.createElement("script");
-							viz.type = "text/javascript";
-							viz.async = true;
-							viz.src = ("https:" == document.location.protocol ?"https://cdn6.vizury.com" : "http://cdn6.vizury.com")+ "/analyze/pixel.php?account_id=VIZVRM2016";
-					
-							var s = document.getElementsByTagName("script")[0];
-							s.parentNode.insertBefore(viz, s);
-							viz.onload = function() {
-								try {
-									pixel.parse();
-								} catch (i) {
-								}
-							};
-							viz.onreadystatechange = function() {
-								if (viz.readyState == "complete" || viz.readyState == "loaded") {
+								
+								<div class="f_bnn">
+												<a href="https://m.reebok.co.kr/MO/Member/memJoin.action" onmousedown="javascript:trk_flashEnvView('_TRK_PI=FOOTST');trk_clickTrace('EVT','^리복모바일^하단 회원가입');">
+													<img src="//imagem.reebok.co.kr/images/reebok/temp/bnn_join.jpg" width="100%" alt="">
+												</a>
+											</div>
+								<div class="sns_menu">
+												<a href="https://www.facebook.com/Reebokkr" class="fb" target="_blank" onmousedown="javascript:trk_clickTrace(\'EVT\',\'^리복모바일^페북코리아\')"></a>
+												<a href="https://www.instagram.com/reebokkorea/" class="insta" target="_blank"></a>
+												<a href="http://m.blog.naver.com/reebokkr" class="blog" target="_blank" onmousedown="javascript:trk_clickTrace('EVT','^리복모바일^네이버블로그')"></a>
+												<a href="https://m.youtube.com/channel/UCFrW9Ojay5Pk7s-4-KD0M6w" class="ytb" target="_blank"></a>
+												<a href="http://plus.kakao.com/home/@%EB%A6%AC%EB%B3%B5" class="kakao" target="_blank"></a>
+											</div>
+											<address>
+												<div class="inner">
+													<p><strong>리복 공식 온라인 스토어</strong><span class="line l_left"> (아디다스코리아(유))</span></p>
+													<p>서울특별시 서초구 서초대로 74길 4, 삼성생명 서초타워 23층 (06620)</p>
+													<p>대표자 : 폴 유엔 파이</p>
+													<p>사업자 등록번호 : 214-81-07412</p>
+													<p>통신판매업신고번호 : 2007-서울서초-10391</p>
+													<!-- 180913 정보추가 -->
+													<p>개인정보관리책임자 : 장영태</p>
+													<p>호스팅서비스사업자 : 아디다스코리아(유)</p>
+													<p>고객센터 : 1588-7324</p>
+													<p>이메일 : reeclub_korea@reebok.com</p>
+													<div class="f_url">
+														<!-- 170922 리클럽 추가, 사업자정보확인 위치변경 -->
+														<p>
+															<a href="https://m.reebok.co.kr/MO/Terms/terms.action?terms=terms_01"><strong>구매 이용약관</strong></a><span class="line l_left">
+															<a href="https://m.reebok.co.kr/MO/Terms/terms.action?terms=terms_02"><strong>개인정보처리방침</strong></a><span class="line l_left">
+															<a href="https://m.reebok.co.kr/MO/Terms/terms.action?terms=terms_03"><strong>리클럽 이용약관</strong></a>
+														</p>
+														<p>
+															<a href="http://www.ftc.go.kr/info/bizinfo/communicationViewPopup.jsp?wrkr_no=2148107412" target="_blank">사업자정보확인</a><span class="line l_left">
+															<a href="https://m.reebok.co.kr/Common/PopJusticeBns.jsp">공정거래자율준수</a><span class="line l_left">
+															<a href="https://m.reebok.co.kr/Common/CertifiedInfoPop.jsp" target="_blank">채무지급보증안내</a>
+														</p>
+														<p>© adidas Korea LLC. All Rights Reserved</p>
+														<p class="f_logo"><img src="//imagem.reebok.co.kr/images/reebok/f_logo.jpg" alt="reebok"></p>
+													</div>
+												</div>
+											</address>
+										</footer>
+										<script type="text/javascript" src="//imagem.reebok.co.kr/js/weblog/4_INSIGHT_TRACKING_SCRIPT_FOR_M.REEBOK.CO.KR_V.5.1.4.js"></script>
+								<!-- 비저리 스크립트 -->
+								<script type="text/javascript">
+								(function() {
 									try {
-										pixel.parse();
+										var viz = document.createElement("script");
+										viz.type = "text/javascript";
+										viz.async = true;
+										viz.src = ("https:" == document.location.protocol ?"https://cdn6.vizury.com" : "http://cdn6.vizury.com")+ "/analyze/pixel.php?account_id=VIZVRM2016";
+								
+										var s = document.getElementsByTagName("script")[0];
+										s.parentNode.insertBefore(viz, s);
+										viz.onload = function() {
+											try {
+												pixel.parse();
+											} catch (i) {
+											}
+										};
+										viz.onreadystatechange = function() {
+											if (viz.readyState == "complete" || viz.readyState == "loaded") {
+												try {
+													pixel.parse();
+												} catch (i) {
+												}
+											}
+										};
 									} catch (i) {
 									}
+								})();
+								</script>
+								<!-- Toast eXchange Script :: START :: -->
+								<script type="text/javascript" src="//static.tagmanager.toast.com/tag/view/467" async="async"></script>
+								<script type="text/javascript">
+								window.ne_tgm_q = window.ne_tgm_q || [];
+								var toastJson = {"tagType":"visit","device":"mobile","pageEncoding":"utf-8"};
+								
+								window.ne_tgm_q.push(toastJson);
+								</script>
+								<!--// Toast eXchange Script :: END :: -->
+								
+								<iframe id="hfrADCheck" src="//adcheck.about.co.kr/mad/prd/view?shopid=M2DADIDAS" scrolling="no" frameborder="0" width="0" height="0"></iframe>
+								<script type="text/javascript">
+								 var NeoclickConversionDctSv="type=1,orderID=,amount=";
+								 var NeoclickConversionAccountID="22303";
+								</script>
+								<script type="text/javascript" src="//ck.ncclick.co.kr/NCDC_V2.js"></script>
+								</section><!-- container -->
+								</section><!-- //wrap -->
+								
+								<script language="javascript">
+									//넷퍼넬 로그인 종료
+									NetFunnel_Complete({cookie_id:"NETFUNNEL_LOGIN",action_id:"loginPage"});
+								</script>
+								
+								<script type="text/javascript">
+									jQuery(document).ready(function(){
+										if(typeof NetFunnel == "object") {
+											NetFunnel_Complete();
+										}
+									});
+								</script>
+								
+								<!-- 161101 sns_menu 스크립트 추가 -->
+								<script type="text/javascript">
+								(function($){
+									
+									jQuery('.newsletter_mail_button').click(function() {
+										if( cfn_trim(jQuery("#field0").val()) == '' ){
+											alert("E-Mail을 입력해주세요.");
+											return false;
+										}
+								
+										if(!emailChk()){
+											alert("E-Mail형식을 확인 하세요.");
+											return false;
+										}
+								
+										if(!jQuery('.newsletter .marketing_chk').find('input:checkbox[id="marketing"]').is(":checked")){
+											alert("마케팅 수신동의를 체크 해주세요.");
+											return false;
+										}
+								
+										alert('등록 되었습니다.');
+										jQuery('#form33').submit();
+								
+									});
+								
+									//이메일 체크
+									function emailChk(){
+										var emailVal = cfn_trim(jQuery("#field0").val());
+										var reg = /^((\w|[\-\.])+)@((\w|[\-\.][^(\.)\1])+)\.([A-Za-z]+)$/;
+										if (emailVal.search(reg) != -1 && emailVal.length < 31) {
+											jQuery("#field0").val(emailVal);
+											return true;
+										}
+										return false;
+									}
+								
+								})(jQuery);
+								
+								function KeyDownSpa() {
+									if(event.keyCode == 32){ return false; }
+								
+									// 안드로이드 기종에서 스페이스바 keyCode 229로 인식
+									if( event.keyCode == 229 ){
+										var stEmail = jQuery('.input_wrap #field0').val();
+										jQuery('.input_wrap #field0').val(stEmail.trim());
+										return false;
+									}
+								
 								}
-							};
-						} catch (i) {
-						}
-					})();
-					</script>
-					<!-- Toast eXchange Script :: START :: -->
-					<script type="text/javascript" src="//static.tagmanager.toast.com/tag/view/467" async="async"></script>
-					<script type="text/javascript">
-					window.ne_tgm_q = window.ne_tgm_q || [];
-					var toastJson = {"tagType":"visit","device":"mobile","pageEncoding":"utf-8"};
-					
-					window.ne_tgm_q.push(toastJson);
-					</script>
-					<!--// Toast eXchange Script :: END :: -->
-					
-					<iframe id="hfrADCheck" src="//adcheck.about.co.kr/mad/prd/view?shopid=M2DADIDAS" scrolling="no" frameborder="0" width="0" height="0"></iframe>
-					<script type="text/javascript">
-					 var NeoclickConversionDctSv="type=1,orderID=,amount=";
-					 var NeoclickConversionAccountID="22303";
-					</script>
-					<script type="text/javascript" src="//ck.ncclick.co.kr/NCDC_V2.js"></script>
-					</section><!-- container -->
-					</section><!-- //wrap -->
-					
-					<script language="javascript">
-						//넷퍼넬 로그인 종료
-						NetFunnel_Complete({cookie_id:"NETFUNNEL_LOGIN",action_id:"loginPage"});
-					</script>
-					
-					<script type="text/javascript">
-						jQuery(document).ready(function(){
-							if(typeof NetFunnel == "object") {
-								NetFunnel_Complete();
-							}
-						});
-					</script>
-					
-					<!-- 161101 sns_menu 스크립트 추가 -->
-					<script type="text/javascript">
-					(function($){
-						
-						jQuery('.newsletter_mail_button').click(function() {
-							if( cfn_trim(jQuery("#field0").val()) == '' ){
-								alert("E-Mail을 입력해주세요.");
-								return false;
-							}
-					
-							if(!emailChk()){
-								alert("E-Mail형식을 확인 하세요.");
-								return false;
-							}
-					
-							if(!jQuery('.newsletter .marketing_chk').find('input:checkbox[id="marketing"]').is(":checked")){
-								alert("마케팅 수신동의를 체크 해주세요.");
-								return false;
-							}
-					
-							alert('등록 되었습니다.');
-							jQuery('#form33').submit();
-					
-						});
-					
-						//이메일 체크
-						function emailChk(){
-							var emailVal = cfn_trim(jQuery("#field0").val());
-							var reg = /^((\w|[\-\.])+)@((\w|[\-\.][^(\.)\1])+)\.([A-Za-z]+)$/;
-							if (emailVal.search(reg) != -1 && emailVal.length < 31) {
-								jQuery("#field0").val(emailVal);
-								return true;
-							}
-							return false;
-						}
-					
-					})(jQuery);
-					
-					function KeyDownSpa() {
-						if(event.keyCode == 32){ return false; }
-					
-						// 안드로이드 기종에서 스페이스바 keyCode 229로 인식
-						if( event.keyCode == 229 ){
-							var stEmail = jQuery('.input_wrap #field0').val();
-							jQuery('.input_wrap #field0').val(stEmail.trim());
-							return false;
-						}
-					
-					}
-					</script>
-					<!--  카카오 상담톡 start -->
-					<script type="text/javascript">
-					function fn_kakaoChatOpen() {
-						var popup = window.open("","POP");
-						var frm = document.kakaoChatForm;
-						frm.submit();
-					}
-					</script>
-					<form id="kakaoChatForm" name="kakaoChatForm" target="POP" action="https://bizmessage.kakao.com/chat/open" method="post">
-					  <input type="hidden" name="uuid" value="@Reebok"/>
-					  <input type="hidden" name="extra" value="Homepage_Mobile"/>
-					</form>
-					<!--  카카오 상담톡 end -->
-					</body>
-					</html>
+								</script>
+								<!--  카카오 상담톡 start -->
+								<script type="text/javascript">
+								function fn_kakaoChatOpen() {
+									var popup = window.open("","POP");
+									var frm = document.kakaoChatForm;
+									frm.submit();
+								}
+								</script>
+								<form id="kakaoChatForm" name="kakaoChatForm" target="POP" action="https://bizmessage.kakao.com/chat/open" method="post">
+								  <input type="hidden" name="uuid" value="@Reebok"/>
+								  <input type="hidden" name="extra" value="Homepage_Mobile"/>
+								</form>
+								<!--  카카오 상담톡 end -->
+								</body>
+								</html>

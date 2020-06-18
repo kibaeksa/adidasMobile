@@ -987,7 +987,7 @@ function fn_ChangePayMethodUI(cName) {
 								</div>
 							</div>
 						</form>
-						<div class="naver_box" style="">
+						<div class="naver_box">
 							<div class="row">
 								<div class="button_area no_pdg verify_btn">
 									<div id="naver_id_login" class="naver"><a href="https://nid.naver.com/oauth2.0/authorize?response_type=token&amp;client_id=eaz10dnyRDFa_a0JE3OP&amp;redirect_uri=https%3A%2F%2Fm.adidas.co.kr%3A443%2FMO%2FOrder%2ForderInputNoMember.action%3Fwork%3D%26returnURL%3D%255CMO%255COrder%255CorderInputNoMember.action%253FCART_NOS%253D201804099471753%26CART_NOS%3D201804099471753%26PWERRPUCNT%3D%26ordPageTp%3Dpage%26orderQty%3D%26optionNo%3D%26prodCD%3D%26NAVER_LOGIN_YN%3DN%26NAVER_LOGIN_ID%3D%26NAVER_LOGIN_NAME%3D%26NAVER_LOGIN_EMAIL%3D%26memId%3D%26memPwd%3D%26&amp;state=1c70b861-c244-46b8-9f7a-d72ef0d93466" id="naver_id_login_anchor" class="btn-ctm sns_btn"><span>네이버 아이디로 로그인</span></a></div>
@@ -2405,171 +2405,151 @@ function fn_ChangePayMethodUI(cName) {
 			</div>
 		</div>
 		<!-- //카드혜택 상세팝업 -->
-
-	<div id="slideBg"></div>
-	<footer id="footer" class="footer-update">
-
-		<!-- 20180412추가 -->
-		<div class="go_top">
-			<a href="#">BACK TO TOP</a>
-		</div>
-		<!-- //20180412추가 -->
-
-	       <!-- 161223 f_menu 추가 -->
-	<ul class="f_menu">
-		<!-- 20180402 수정 -->
-		<li><a href="https://m.reebok.co.kr:447/MO/Member/loginCheck.action?returnURL=https%3A%2F%2Fm.reebok.co.kr%3A447%2FMO%2FMyPage%2FmypageOrdDeliSel.action%3F" onmousedown="javascript:trk_flashEnvView('_TRK_PI=FOOTCS');trk_clickTrace('EVT','^리복모바일^주문배송');">주문배송</a></li>
-		<li><a href="http://m-reebok.efusioni.com/brand/reeclub.jsp" onmousedown="javascript:trk_flashEnvView('_TRK_PI=FOOTST');trk_clickTrace('EVT','^리복모바일^리클럽');">리클럽</a></li>
-		<li><a href="http://m.reebok.co.kr/MO/Customer/customerStoreList.action" onmousedown="javascript:trk_flashEnvView('_TRK_PI=FOOTST');trk_clickTrace('EVT','^리복모바일^하단매장찾기');">매장안내</a></li>
-		<li><a href="http://m.reebok.co.kr/MO/Customer/customerCenter.action" onmousedown="javascript:trk_flashEnvView('_TRK_PI=FOOTCS');trk_clickTrace('EVT','^리복모바일^하단고객센터');">고객센터</a></li>
-		<li><a href="/center/notice.jsp">공지사항</a></li>
-		<!-- // 20180402 수정 -->
-	</ul>
-	<div class="newsletter">
-		<p>이메일 뉴스레터 구독</p>
-	<!-- 			<form method="post" name="eComFooterEmailForm-IMPORTANT" action="https://s780143993.t.eloqua.com/e/f2" onsubmit="setTimeout(function(){if(document.querySelector){var s=document.querySelector('form#form33 input[type=submit]');if(s){s.disabled=true;}}},100);return true;" id="form33" class="elq-form" > -->
-		<form method="post" name="eComFooterEmailForm-IMPORTANT" action="https://s780143993.t.eloqua.com/e/f2" id="form33" class="elq-form">
-			<input value="eComFooterEmailForm-IMPORTANT" type="hidden" name="elqFormName">
-			<input value="780143993" type="hidden" name="elqSiteId">
-			<input name="elqCampaignId" type="hidden">
-
-			<div class="input_wrap">
-				<input type="email" id="field0" name="emailAddress" placeholder="Email" onkeyup="KeyDownSpa();" onkeypress="return KeyDownSpa();">
-				<a href="#" class="input_btn icons aft newsletter_mail_button" data-icon=""></a>
-	<!-- 					<input type="submit" value="Submit" class="submit-button"> -->
-			</div>
-			<div class="marketing_chk">
-				<span class="chk_dsgn">
-					<input type="checkbox" id="marketing" value="Y" checked="checked">
-					<label for="marketing"></label>
-					<a href="https://m.reebok.co.kr:447/MO/reebok/html/m_join_agreement_subscribe.html" target="_blank">마케팅 수신동의<span></span></a>
-				</span>
-			</div>
-		</form>
-	</div>
-	<div class="sns_menu">
-		<a href="javascript:void(0)" class="fb"></a>
-		<a href="javascript:void(0)" class="insta"></a>
-		<a href="http://m.blog.naver.com/reebokkr" class="blog" target="_blank" onmousedown="javascript:trk_clickTrace('EVT','^리복모바일^네이버블로그')"></a>
-		<a href="https://m.youtube.com/channel/UCFrW9Ojay5Pk7s-4-KD0M6w" class="ytb" target="_blank"></a>
-		<a href="http://plus.kakao.com/home/@%EB%A6%AC%EB%B3%B5" class="kakao" target="_blank"></a>
-	</div>
-	  	<address>
-	          <div class="inner">
-	          	<p><strong>리복 공식 온라인 스토어</strong><span class="line l_left"> (아디다스 코리아)</span></p>
-	          	<p>서울특별시 서초구 서초대로 74길 4, 삼성생명 서초타워 23층 (06620)</p>
-	          	<p>대표 : 에드워드 닉슨</p>
-	          	<p>사업자 등록번호 : 214-81-07412</p>
-	          	<p>통신판매업신고번호 : 2007-서울서초-10391</p>
-	          	<p>개인정보 보호책임자 : 김동일</p>
-	          	<p>고객센터(심의/수선문의 포함) : 1588-7324 </p>
-	          	<div class="f_url">
-	         			<p>
-	         				<!-- 20180402 수정 -->
-	         				<a href="/http://m.reebok.co.kr/MO/reebok/html/m_join_purchase_clause.html"><strong>이용약관</strong></a><span class="line l_left">
-	         				<a href="http://shop.reebok.co.kr/RPF010107.action?gubn=2" target="_blank"><strong>개인정보처리방침</strong></a><span class="line l_left">
-	         				<a href="http://www.ftc.go.kr/bizCommPop.do?wrkr_no=2148107412&amp;apv_perm_no=" target="_blank">사업자정보확인</a>
-	        				</span></span></p>
-	        				<p>
-	         				<a href="http://m.reebok.co.kr/m_pop_justice_bns.html">공정거래자율준수</a><span class="line l_left">
-	         				<a href="http://m.reebok.co.kr/Common/CertifiedInfoPop.jsp" target="_blank">채무지급보증안내</a>
-	         				<!--// 20180402 수정 -->
-	        				</span></p>
-	           		<p>@adidas Korea, LLC. All Rights Reserved.</p>
-	         			<p class="f_logo">
-	         			<!-- 20180329 이미지 경로 수정 -->
-	         			<img src="http://imagem.reebok.co.kr/images/reebok/f_logo.jpg" alt="reebok">
-	         			<!-- // 20180329 이미지 경로 수정 -->
-	         			</p>
-	          	</div>
-	          </div>
-	      </address>
-	      <!-- 180402 sns_menu 기존 스크립트 추가 -->
-	      <!-- 161101 sns_menu 스크립트 추가 -->
-	      <script type="text/javascript">
-			(function($){
-
-				$('#footer .sns_menu>a').bind('click',function(){
-
-					var snsType = $(this).attr('class');
-					if(snsType !== 'insta' && snsType !== 'fb'){
-						return;
+						
+		<div id="slideBg"></div><div id="slideBg"></div>
+		<footer id="footer" class="footer-update">
+						<div class="go_top">
+							<a href="#">BACK TO TOP</a>
+						</div>
+			
+						<!-- 161223 f_menu 추가 -->
+						<ul class="f_menu">
+							<li><a href="javascript:goOrdDeliSel();" onmousedown="javascript:trk_flashEnvView('_TRK_PI=FOOTCS');trk_clickTrace('EVT','^리복모바일^주문배송');">주문배송</a></li>
+							<li><a href="https://m.reebok.co.kr/MO/AdiClub/reeClubIntro.action" onmousedown="javascript:trk_flashEnvView('_TRK_PI=FOOTST');trk_clickTrace('EVT','^리복모바일^리클럽');">리클럽</a></li>
+							<li><a href="https://m.reebok.co.kr/MO/Customer/customerStoreList.action" onmousedown="javascript:trk_flashEnvView('_TRK_PI=FOOTST');trk_clickTrace('EVT','^리복모바일^하단매장찾기');">매장안내</a></li>
+							<li><a href="javascript:goCsCenter();" onmousedown="javascript:trk_flashEnvView('_TRK_PI=FOOTCS');trk_clickTrace('EVT','^리복모바일^하단고객센터');">고객센터</a></li>
+							<li><a href="https://m.reebok.co.kr/MO/Notify/notiDetailList.action" onmousedown="javascript:trk_flashEnvView('_TRK_PI=FOOTST');trk_clickTrace('EVT','^리복모바일^공지사항');">공지사항</a></li>
+						</ul>
+			
+			<div class="f_bnn">
+							<a href="https://m.reebok.co.kr/MO/Member/memJoin.action" onmousedown="javascript:trk_flashEnvView('_TRK_PI=FOOTST');trk_clickTrace('EVT','^리복모바일^하단 회원가입');">
+								<img src="//imagem.reebok.co.kr/images/reebok/temp/bnn_join.jpg" width="100%" alt="">
+							</a>
+						</div>
+			<div class="sns_menu">
+							<a href="https://www.facebook.com/Reebokkr" class="fb" target="_blank" onmousedown="javascript:trk_clickTrace('EVT','^리복모바일^페북코리아')"></a>
+							<a href="https://www.instagram.com/reebokkorea/" class="insta" target="_blank"></a>
+							<a href="http://m.blog.naver.com/reebokkr" class="blog" target="_blank" onmousedown="javascript:trk_clickTrace('EVT','^리복모바일^네이버블로그');"></a>
+							<a href="https://m.youtube.com/channel/UCFrW9Ojay5Pk7s-4-KD0M6w" class="ytb" target="_blank"></a>
+							<a href="http://plus.kakao.com/home/@%EB%A6%AC%EB%B3%B5" class="kakao" target="_blank"></a>
+						</div>
+						<address>
+							<div class="inner">
+								<p><strong>리복 공식 온라인 스토어</strong><span class="line l_left"> (아디다스코리아(유))</span></p>
+								<p>서울특별시 서초구 서초대로 74길 4, 삼성생명 서초타워 23층 (06620)</p>
+								<p>대표자 : 폴 유엔 파이</p>
+								<p>사업자 등록번호 : 214-81-07412</p>
+								<p>통신판매업신고번호 : 2007-서울서초-10391</p>
+								<!-- 180913 정보추가 -->
+								<p>개인정보관리책임자 : 장영태</p>
+								<p>호스팅서비스사업자 : 아디다스코리아(유)</p>
+								<p>고객센터 : 1588-7324</p>
+								<p>이메일 : reeclub_korea@reebok.com</p>
+								<div class="f_url">
+									<!-- 170922 리클럽 추가, 사업자정보확인 위치변경 -->
+									<p>
+										<a href="https://m.reebok.co.kr/MO/Terms/terms.action?terms=terms_01"><strong>구매 이용약관</strong></a><span class="line l_left">
+										<a href="https://m.reebok.co.kr/MO/Terms/terms.action?terms=terms_02"><strong>개인정보처리방침</strong></a><span class="line l_left">
+										<a href="https://m.reebok.co.kr/MO/Terms/terms.action?terms=terms_03"><strong>리클럽 이용약관</strong></a>
+									</p>
+									<p>
+										<a href="http://www.ftc.go.kr/info/bizinfo/communicationViewPopup.jsp?wrkr_no=2148107412" target="_blank">사업자정보확인</a><span class="line l_left">
+										<a href="https://m.reebok.co.kr/Common/PopJusticeBns.jsp">공정거래자율준수</a><span class="line l_left">
+										<a href="https://m.reebok.co.kr/Common/CertifiedInfoPop.jsp" target="_blank">채무지급보증안내</a>
+									</p>
+									<p>© adidas Korea LLC. All Rights Reserved</p>
+									<p class="f_logo"><img src="//imagem.reebok.co.kr/images/reebok/f_logo.jpg" alt="reebok"></p>
+								</div>
+							</div>
+						</address>
+					</footer>
+					<script type="text/javascript" src="//imagem.reebok.co.kr/js/weblog/4_INSIGHT_TRACKING_SCRIPT_FOR_M.REEBOK.CO.KR_V.5.1.4.js"></script>
+			<!-- 비저리 스크립트 -->
+			<script type="text/javascript">
+			(function() {
+				try {
+					var viz = document.createElement("script");
+					viz.type = "text/javascript";
+					viz.async = true;
+					viz.src = ("https:" == document.location.protocol ?"https://cdn6.vizury.com" : "http://cdn6.vizury.com")+ "/analyze/pixel.php?account_id=VIZVRM2016";
+			
+					var s = document.getElementsByTagName("script")[0];
+					s.parentNode.insertBefore(viz, s);
+					viz.onload = function() {
+						try {
+							pixel.parse();
+						} catch (i) {
+						}
+					};
+					viz.onreadystatechange = function() {
+						if (viz.readyState == "complete" || viz.readyState == "loaded") {
+							try {
+								pixel.parse();
+							} catch (i) {
+							}
+						}
+					};
+				} catch (i) {
+				}
+			})();
+			</script>
+			<!-- Toast eXchange Script :: START :: -->
+			<script type="text/javascript" src="//static.tagmanager.toast.com/tag/view/467" async="async"></script>
+			<script type="text/javascript">
+			window.ne_tgm_q = window.ne_tgm_q || [];
+			var toastJson = {"tagType":"visit","device":"mobile","pageEncoding":"utf-8"};
+			
+			window.ne_tgm_q.push(toastJson);
+			</script>
+			<!--// Toast eXchange Script :: END :: -->
+			
+			<iframe id="hfrADCheck" src="//adcheck.about.co.kr/mad/prd/view?shopid=M2DADIDAS" scrolling="no" frameborder="0" width="0" height="0"></iframe>
+			<script type="text/javascript">
+			 var NeoclickConversionDctSv="type=1,orderID=,amount=";
+			 var NeoclickConversionAccountID="22303";
+			</script>
+			<script type="text/javascript" src="//ck.ncclick.co.kr/NCDC_V2.js"></script>
+			</section><!-- container -->
+			</section><!-- //wrap -->
+			
+			<script language="javascript">
+				//넷퍼넬 로그인 종료
+				NetFunnel_Complete({cookie_id:"NETFUNNEL_LOGIN",action_id:"loginPage"});
+			</script>
+			
+			<script type="text/javascript">
+				jQuery(document).ready(function(){
+					if(typeof NetFunnel == "object") {
+						NetFunnel_Complete();
 					}
-
-					var elemHtml = 	document.getElementsByTagName('html')[0];
-					var x = $(this).offset().left;
-					var y = $(this).offset().top + $(this).height();
-
-					elemHtml.style.overflow = 'hidden';
-
-					var scrollTop = window.scrollY;
-
-					var html = '<div id="sns-footer-layer"><div class="btn_wrap" style="top:'+y+'px;left:'+x+'px">';
-					if(snsType == 'fb'){
-						html += '<a href="javascript:void(0)" class="close"></a><a href="https://www.facebook.com/Reebokkr/" class="fb" target="_blank" onmousedown="javascript:trk_clickTrace(\'EVT\',\'^리복모바일^페북코리아\')"><span>FITNESS</span></a><a href="https://www.facebook.com/rbk.classic/" class="fb" target="_blank" onmousedown="javascript:trk_clickTrace(\'EVT\',\'^리복모바일^페북클래식\')"><span>CLASSIC</span></a>';
-					}else if(snsType == 'insta'){
-						html += '<a href="javascript:void(0)" class="close"></a><a href="https://www.instagram.com/reebokkorea/" class="insta" target="_blank"><span>FITNESS</span></a><a href="https://www.instagram.com/reebokclassickorea/" class="insta" target="_blank"><span>CLASSIC</span></a>';
-					}
-
-					html += '</div></div>';
-					$('#container').append(html);
-
-					$('#sns-footer-layer .close').bind('click',function(){
-
-						var indexLength = $('#sns-footer-layer .btn_wrap a').length-1;
-
-						$('#sns-footer-layer .btn_wrap a').each(function(index){
-							var revIdx = $(this).index() * -1 + indexLength;
-							var elem = $('#sns-footer-layer .btn_wrap a').eq(revIdx);
-							setTimeout(function(){
-								elem.removeClass('active');
-							},50 * index);
-
-							setTimeout(function(){
-								$('#sns-footer-layer').removeClass('active');
-								setTimeout(function(){
-									$('#sns-footer-layer').remove();
-									elemHtml.style.overflow = '';
-								},200);
-							},100);
-						});
-					});
-
-					setTimeout(function(){
-						$('#sns-footer-layer').addClass('active');
-						$('#sns-footer-layer .btn_wrap a').each(function(index){
-							var elem = $(this);
-							setTimeout(function(){
-								elem.addClass('active');
-							},50 * index);
-
-						});
-
-					},10);
 				});
-
-
+			</script>
+			
+			<!-- 161101 sns_menu 스크립트 추가 -->
+			<script type="text/javascript">
+			(function($){
+				
 				jQuery('.newsletter_mail_button').click(function() {
 					if( cfn_trim(jQuery("#field0").val()) == '' ){
 						alert("E-Mail을 입력해주세요.");
 						return false;
 					}
-
+			
 					if(!emailChk()){
 						alert("E-Mail형식을 확인 하세요.");
 						return false;
 					}
-
+			
 					if(!jQuery('.newsletter .marketing_chk').find('input:checkbox[id="marketing"]').is(":checked")){
 						alert("마케팅 수신동의를 체크 해주세요.");
 						return false;
 					}
-
+			
 					alert('등록 되었습니다.');
 					jQuery('#form33').submit();
-
+			
 				});
-
+			
 				//이메일 체크
 				function emailChk(){
 					var emailVal = cfn_trim(jQuery("#field0").val());
@@ -2580,24 +2560,33 @@ function fn_ChangePayMethodUI(cName) {
 					}
 					return false;
 				}
-
+			
 			})(jQuery);
-
+			
 			function KeyDownSpa() {
 				if(event.keyCode == 32){ return false; }
-
+			
 				// 안드로이드 기종에서 스페이스바 keyCode 229로 인식
 				if( event.keyCode == 229 ){
 					var stEmail = jQuery('.input_wrap #field0').val();
 					jQuery('.input_wrap #field0').val(stEmail.trim());
 					return false;
 				}
-
+			
 			}
-
-		</script>
-		<!-- // 180402 sns_menu 기존 스크립트 추가 -->
-	  </footer>
-	</section>
-</body>
-</html>
+			</script>
+			<!--  카카오 상담톡 start -->
+			<script type="text/javascript">
+			function fn_kakaoChatOpen() {
+				var popup = window.open("","POP");
+				var frm = document.kakaoChatForm;
+				frm.submit();
+			}
+			</script>
+			<form id="kakaoChatForm" name="kakaoChatForm" target="POP" action="https://bizmessage.kakao.com/chat/open" method="post">
+			  <input type="hidden" name="uuid" value="@Reebok"/>
+			  <input type="hidden" name="extra" value="Homepage_Mobile"/>
+			</form>
+			<!--  카카오 상담톡 end -->
+			</body>
+			</html>

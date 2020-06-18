@@ -42,92 +42,13 @@
 <script type="text/javascript" src="//imagem.reebok.co.kr/js/mo/reebok/ree_mob_skin.js" charset="UTF-8" ></script>
 
 
-
-
-		<!-- 20180330 링크수정 -->
-		<script src="/designjs/reebok/efu2018/imagesloaded.pkgd.min.js"></script>
-		<!-- // 20180330 링크수정 -->
-	</head>
-	<script>
-	// <!-- 20180403 text 수정 -->
-	jQuery(function(){
-		tab01();
-		jQuery('.tabContent .viewContent:eq(1)').hide();
-		jQuery('.joinTab ul li a').click(function(){
-			var idx = jQuery(this).parent().index();
-			jQuery('.joinTab ul li').removeClass('active');
-			jQuery(this).parent().addClass('active');
-			jQuery('.tabContent .viewContent').hide();
-			jQuery(".tabContent .viewContent:eq("+idx+")").show();
-			
-			if(jQuery(this).parent().index() == 0){
-				tab01();
-				jQuery('.onlineSlide').slick('unslick');
-				jQuery('.offlineSlide').slick('unslick');
-			}else{
-				tab02();
-				//20180412 수정//
-				jQuery('.kakaoSlide').slick('unslick');
-				jQuery('.syrupSlide').slick('unslick');
-				//20180412 수정 끝 //
-			}
-		});
-		//thumSlide
-	});
-	
-	function tab01(){
-		jQuery('.kakaoSlide').slick({
-			slidesToShow:1,
-	        slidesToScroll:1,
-	        autoplaySpeed: 3000,
-	        arrows:true,
-	        adaptiveHeight: true,
-	        infinite: true,
-	        dots: true,
-	        adaptiveHeight: true
-		});
-		jQuery('.syrupSlide').slick({
-			slidesToShow:1,
-	        slidesToScroll:1,
-	        autoplaySpeed: 3000,
-	        arrows:true,
-	        adaptiveHeight: true,
-	        infinite: true,
-	        dots: true,
-	        adaptiveHeight: true
-		});
-		
-	}
-	function tab02(){
-		jQuery('.offlineSlide').slick({
-			slidesToShow:1,
-	        slidesToScroll:1,
-	        autoplaySpeed: 3000,
-	        arrows:true,
-	        adaptiveHeight: true,
-	        infinite: true,
-	        dots: true,
-	        adaptiveHeight: true
-		});
-		
-		jQuery('.onlineSlide').slick({
-			slidesToShow:1,
-	        slidesToScroll:1,
-	        autoplaySpeed: 3000,
-	        arrows:true,
-	        adaptiveHeight: true,
-	        infinite: true,
-	        dots: true,
-	        adaptiveHeight: true
-		});
-		
-	}
-	<!-- // 20180403 text 수정 -->
+	<script type="text/javascript">
 	</script>
-	<body>
-		<section id="wrap">
-			<section id="container">
-				
+</head>
+<body>
+<section id="wrap">
+	<section id="container">
+		
 
 <section id="headerWrap">
 	
@@ -731,439 +652,521 @@ jQuery(function(){
 
 	
 
-				<div id="nLocation">
-					<h2><a href="javascript:;">REECLUB</a></h2>						
-				</div>
-				<section id="contents" class="nReeclub">
-					<!-- 내용 -->
-					<div class="titArea"><!-- /images/reebok/efu2018/brand/reeclubBg.jpg -->
-						<h2>							
-							<img src="/images/reebok/efu2018/brand/reclubLogo.png" alt="ReeCLUB" class="logo">					
-						</h2>
-						<!-- 20180330 수정 -->
-						<h1>
-							리클럽은<br/>
-							리복 온·오프라인 매장에서<br/>
-							<span>특별한 혜택을 즐길 수 있는<br/>
-							리복 공식 멤버십입니다.</span>
-						</h1>			
-						<!-- <h3>
-							<img src="/images/reebok/efu2018/brand/reclubText.png" alt="멤버십의 기회는 누구에나 주어지지만, 클럽의 완성은 함께하는 우리의 몫입니다.">
-						</h3> -->						
-						<p>지금 리클럽 회원이 되어<br/>다양한 프로모션 기회를 놓치지 마세요.</p>
-						
-						<div class="btnArea">
-							<a href="https://m.reebok.co.kr:447/MO/Member/memAgreement.action" class="btnTypeC"><span>리클럽 가입하기</span></a>
-						</div>								
-						<!--//  20180330 수정 -->
-					</div>
-					<div class="benefit">
-						<h4><img src="/images/reebok/efu2018/brand/reclubText01.jpg" alt="회원 혜택"></h4><!-- /images/reebok/efu2018/brand/tit_benefits.png -->		
-						<!-- 20180330 text 추가 -->
-						<p>
-							리클럽 회원이 되시면 온라인 공식몰과<br/>
-							오프라인 매장에서 구매 시 5% 포인트<br/>
-							적립, 할인 등 특별한 혜택을 받을 수 있습니다. 
-						</p>
-						<!-- // 20180330 text 추가 -->	
-						<!-- 20180330 text 수정 -->
-						<dl>
-							<dt>포인트 적립<dt>
-							<dd>
-								<strong>구매금액의 5% 포인트 적립</strong>
-								<ul>
-									<li>최종 결제 금액 기준 5% 적립</li>
-									<li>5천 포인트 달성 시 (결제금액 10만원 마다)
-									5천원 포인트 쿠폰으로 전환 발급</li>
-									<li>포인트 쿠폰 사용 기간 : 쿠폰 전환 16일 이후 ~ 12개월간</li>
-								</ul>
-							</dd>
-						</dl>
-						<!-- 190812 -->
-						<dl>
-							<dt>신규가입 10,000원 쿠폰<dt>
-							<dd>
-								<strong>신규가입 10,000원 쿠폰</strong>
-								<ul>
-									<li>쿠폰 사용처 : 리복 공식 온라인/오프라인 스토어</li>
-									<li>쿠폰 발급 시점 : 정회원 가입 즉시 발급</li>
-									<li>쿠폰 사용 기간 : 쿠폰 발급일로부터 <em class="red">30일간</em></li>
-									<li>쿠폰 사용 조건 : 10,000원 할인<br/>
-										(50,000원 이상 구매 시 사용가능)<br/>
-										<em>*정회원 가입 시에 발급되며, 매장에서 임시회원 가입 시<br/> 쿠폰 발급되지 않습니다.</em>
-									</li>
-								</ul>
-							</dd>
-						</dl>
-						<!-- 190812 end -->
-						<dl>
-							<dt>기념일 쿠폰<dt>
-							<dd>
-								<strong>기념일 10,000원 쿠폰</strong>
-								<ul>
-									<li>쿠폰 사용처 : 리복 공식 온라인/오프라인 스토어</li>
-									<li class="red">쿠폰 발급 시점 : 회원 가입 시 등록하신 생일 기준
-									2주 전 발급</li>
-									<li>쿠폰 사용 기간 : 쿠폰 발급 후 1개월</li>
-									<li>쿠폰 사용 조건 : 100,000원 이상 구매 시 사용가능</li>									
-								</ul>
-							</dd>
-						</dl>
-						<dl>
-							<dt>회원 전용 특별혜택<dt>
-							<dd class="content">
-								리클럽 회원 전용 이벤트 및 브랜드 행사 우선 초대<br/>
-								리클럽 회원 전용 쿠폰 제공 (시즌 쿠폰, 이벤트 쿠폰 등)<br/>
-								신제품 및 이벤트 최신 정보 제공
-							</dd>
-						</dl>				
-						<!-- // 20180330 text 수정 -->	
-					</div>
-					<div class="titArea02"><!-- /images/reebok/efu2018/brand/reeclubBg.jpg -->						
-						<h4><img src="/images/reebok/efu2018/brand/reclubText02.png" alt="회원 가입 방법"></h4>
-						<p>리복 공식 온/오프라인 매장에서 그리고 손쉽게<br>모바일을 통해서도 리클럽 회원이 될 수 있습니다.</p>
-						<div class="btnArea">
-							<!-- 20180330 text 수정 --><a href="https://m.reebok.co.kr:447/MO/Member/memAgreement.action" class="btnTypeC"><span>리클럽 가입하기</span></a><!-- // 20180330 text 수정 -->	
-						</div><!-- /images/reebok/efu2018/brand/tit_benefits.png -->						
-					</div>
-					<div class="joinTab">
-						<ul class="joincontTab">
-							<li class="active"><a href="#!">간편회원가입</a></li>
-							<li><a href="#!">온/오프라인 회원가입</a></li>
+		<div class="layer_bg" style="display:none;"></div>
+		<div id="popup_not_repay" style="display:none; background:#ff5400;border: 3px solid #fff; left: 50%; margin-left: -48%; margin-top: -130px; position: fixed; top: 50%; width: 96%; z-index: 5000;display:none" class="bdrbox">
+			<div style="width:100px;height:100px;border:3px solid #fff;border-radius:100px;margin:25px auto 19px;">
+				<div style="width:6px;height:40px;background:#fff;margin:23px auto 5px;"></div>
+				<div style="width:6px;height:6px;background:#fff;margin:0 auto;"></div>
+			</div>
+			<p style="margin-bottom:20px;text-align:center;color:#fff;font-size:14px;">현재 결제 대기중인 건이 있습니다!</p>
+			<a style="width:150px;margin:10px auto 20px;" class="btn1" href="#" onclick="javascript:goExchgRepayList();"> 결제하러 가기</a>
+		</div>
+		<section id="contents">
+    		<section class="m_contents">
+
+        		<form id="frmSrchInit" name="frmSrchInit" action="/MO/Search/searchIR.action" method="post">
+					<input type="hidden" id="query1" name="query" value="">
+				</form>
+		        <form id="frmSrchM" name="frmSrchM" method="post" onsubmit="return false;" action="/MO/Search/searchIR.action" autocomplete="off">
+		        <input type="hidden" name="strPage" value="1">
+		        <input type="hidden" name="query" value="퓨리">
+		        <input type="hidden" name="siteCD" value="2">
+		        <input type="hidden" name="siteNm" value="reebok">
+		        <!--20171114 상세카테고리검색 추가 -->
+				<input type="hidden" id="C_NM" name="C_NM" value="">
+		
+				<!-- searchbox - info START -->
+				<div class="searchbox_info">	
+					<p class="title"><strong>"퓨리"</strong> 검색 결과 <b>35개</b> 상품</p>
+					<div class="title_sub">
+						<ul>
+							<li><a href="javascript:fnRelateSearch('vbfl')">vbfl</a></li>
+							<li><a href="javascript:fnRelateSearch('인스타펌프')">인스타펌프</a></li>
+							<li><a href="javascript:fnRelateSearch('푸리')">푸리</a></li>
 						</ul>
 					</div>
-					<div class="tabContent">
-						<!-- tab 내용-->
-						<div class="viewContent">
-							<h2>
-								<!-- 20180403 text 수정 -->
-								<span>카</span><span><img src="/images/reebok/efu2018/brand/kakaoBlt.jpg" alt="bullet"></span><span>카</span><span><img src="/images/reebok/efu2018/brand/kakaoBlt.jpg" alt="bullet"></span><span class="none">오</span><br/>
-								멤버십으로<br/><!-- // 20180403 text 수정 -->
-								<span class="lts">회  원  가  입</span>
-							</h2> 
-							<div class="kakaoSlideWrap">
-								<div class="kakaoSlide">
-									<div><a href="javascript:;"><img src="/images/reebok/efu2018/brand/kakao_slide01.jpg" alt="kakao 가입"></a></div>
-									<div><a href="javascript:;"><img src="/images/reebok/efu2018/brand/kakao_slide02.jpg" alt="kakao 가입"></a></div>
-									<div><a href="javascript:;"><img src="/images/reebok/efu2018/brand/kakao_slide03.jpg" alt="kakao 가입"></a></div>
-									<div><a href="javascript:;"><img src="/images/reebok/efu2018/brand/kakao_slide04.jpg" alt="kakao 가입"></a></div>
-								</div>
+				</div>
+				<!-- searchbox - info END -->
+		        <div class="prodlist_type2"> 
+		        	<div class="filter_wrapper">
+						<div class="toggle_speed">
+							<div class="chk_box1 blue">
+								<input type="checkbox" id="spped_prod">
+								<label for="spped_prod">스피드 배송</label>
 							</div>
-							<div class="border"></div>
-							<h2>
-								<!-- 20180403 text 수정 -->
-								<span>시　</span><span><img src="/images/reebok/efu2018/brand/kakaoBlt.jpg" alt="bullet" class="sdot"></span><span>　럽</span><br/>
-								<span class="lts">회  원  가  입</span><!-- // 20180403 text 수정 -->
-							</h2> 
-							<div class="syrupSlideWrap">
-								<div class="syrupSlide">
-									<div><a href="javascript:;"><img src="/images/reebok/efu2018/brand/syrup_slide01.jpg" alt="syrup 가입"></a></div>
-									<div><a href="javascript:;"><img src="/images/reebok/efu2018/brand/syrup_slide02.jpg" alt="syrup 가입"></a></div>
-									<div><a href="javascript:;"><img src="/images/reebok/efu2018/brand/syrup_slide03.jpg" alt="syrup 가입"></a></div>
-									<div><a href="javascript:;"><img src="/images/reebok/efu2018/brand/syrup_slide04.jpg" alt="syrup 가입"></a></div>
-								</div>
+						</div>
+					</div>
+		            <div class="top">
+						<div class="switch_view">
+							<a href="javascript:void(0)" class=" on icons" data-icon="" data-gridname="box"></a>
+							<a href="javascript:void(0)" class="  icons" data-icon="" data-gridname="list"></a>
+						</div>
+						<div class="count">총 <strong>528</strong>개 상품</div>
+		                <select id="order_by" name="order_by" onchange="javascript:doIrSearch2();">
+		                	<option value="best">베스트순</option>
+		                    <option value="new">신상품순</option>
+		                    <option value="accuracy">정확도순</option>
+		                    <option value="evlCnt">상품평순</option>
+		                    <option value="high">높은가격순</option>
+		                    <option value="low">낮은가격순</option>
+		                </select>
+		            </div>
+		            
+		            
+					<div class="product_grid grid_2box"><!-- 2분할 정렬일때  grid_2box 추가-->
+						<div class="box" data-completed="Y" data-prodidx="1">
+							<div class="img" data-cd="CQ2508" data-miyn="N" data-spid="">
+								<a href="javascript:void(0)">
+									<div class="label adihs-b new"></div>
+									<img src="http://image.adidas.co.kr/upload/prod/basic/320/CQ2508-1_320X320.jpg" alt="" data-defaultimage="" style="">
+								</a>
 							</div>
+							<div class="info">
+								<div class="ctgr">WOMEN'S ORIGINALS</div>
+								<div class="tit">튜블라 던</div>
+								<div class="rating">
+									<div class="star" data-rating="">
+										<span class="icons" data-icon=""></span>
+										<span class="icons" data-icon=""></span>
+										<span class="icons" data-icon=""></span>
+										<span class="icons" data-icon=""></span>
+										<span class="icons" data-icon=""></span>
+									</div>
+								</div>
+								<div class="price"><div>129,000<span>원</span></div></div>
+							</div>	
+						</div>
+		
+						<div class="box" data-completed="Y" data-prodidx="2">
+							<div class="img" data-cd="CQ3083" data-miyn="N" data-spid="">
+								<a href="javascript:void(0)">
+									<div class="label adihs-b best"></div>
+									<img src="http://image.adidas.co.kr/upload/prod/basic/320/CQ3083-1_320X320.jpg" alt="" data-defaultimage="" style="">
+								</a>
+							</div>
+							<div class="info">
+								<div class="ctgr">WOMEN'S ORIGINALS</div>
+								<div class="tit">크레이지 8 ADV</div>
+								<div class="rating">
+									<div class="star" data-rating="">
+										<span class="icons" data-icon=""></span>
+										<span class="icons" data-icon=""></span>
+										<span class="icons" data-icon=""></span>
+										<span class="icons" data-icon=""></span>
+										<span class="icons" data-icon=""></span>
+									</div>
+								</div>
+								<div class="price"><div>149,000<span>원</span></div></div>
+							</div>	
+						</div>
+		
+						<div class="box" data-completed="Y" data-prodidx="3">
+							<div class="img" data-cd="CQ3084" data-miyn="N" data-spid="">
+								<a href="javascript:void(0)">
+									<div class="label adihs-b new"></div>
+									<img src="http://image.adidas.co.kr/upload/prod/basic/320/CQ3084-1_320X320.jpg" alt="" data-defaultimage="" style="">
+								</a>
+							</div>
+							<div class="info">
+								<div class="ctgr">WOMEN'S ORIGINALS</div>
+								<div class="tit">크레이지 8 ADV</div>
+								<div class="rating">
+									<div class="star" data-rating="">
+										<span class="icons" data-icon=""></span>
+										<span class="icons" data-icon=""></span>
+										<span class="icons" data-icon=""></span>
+										<span class="icons" data-icon=""></span>
+										<span class="icons" data-icon=""></span>
+									</div>
+								</div>
+								<div class="price"><div>149,000<span>원</span></div></div>
+							</div>	
+						</div>
+				
+						<div class="box" data-completed="Y" data-prodidx="4">
+							<div class="img" data-cd="CM8167" data-miyn="N" data-spid="">
+								<a href="javascript:void(0)">
+									<div class="label adihs-b new"></div>
+									<img src="http://image.adidas.co.kr/upload/prod/basic/320/CM8167-1_320X320.jpg" alt="" data-defaultimage="" style="">
+								</a>
+							</div>
+							<div class="info">
+								<div class="ctgr">WOMEN'S ORIGINALS</div>
+								<div class="tit">아딜렛 앵클랩</div>
+								<div class="rating">
+									<div class="star" data-rating="">
+										<span class="icons" data-icon=""></span>
+										<span class="icons" data-icon=""></span>
+										<span class="icons" data-icon=""></span>
+										<span class="icons" data-icon=""></span>
+										<span class="icons" data-icon=""></span>
+									</div>
+								</div>
+								<div class="price"><div>129,000<span>원</span></div></div>
+							</div>	
+						</div>
+				
+						<div class="box" data-completed="Y" data-prodidx="5">
+							<div class="img" data-cd="DB2119" data-miyn="N" data-spid="">
+								<a href="javascript:void(0)">
+									<div class="label adihs-b new"></div>
+									<img src="http://image.adidas.co.kr/upload/prod/basic/320/DB2119-1_320X320.jpg" alt="" data-defaultimage="" style="">
+								</a>
+							</div>
+							<div class="info">
+								<div class="ctgr">WOMEN'S ORIGINALS</div>
+								<div class="tit">플래시백 러너</div>
+								<div class="rating">
+									<div class="star" data-rating="">
+										<span class="icons" data-icon=""></span>
+										<span class="icons" data-icon=""></span>
+										<span class="icons" data-icon=""></span>
+										<span class="icons" data-icon=""></span>
+										<span class="icons" data-icon=""></span>
+									</div>
+								</div>
+								<div class="price"><div>89,000<span>원</span></div></div>
+							</div>	
+						</div>
+						<div class="box" data-completed="Y" data-prodidx="18">
+							<div class="img" data-cd="CQ2190" data-miyn="N" data-spid="">
+								<a href="javascript:void(0)">
+									
+									<img src="http://image.adidas.co.kr/upload/prod/basic/320/CQ2190-1_320X320.jpg" alt="" data-defaultimage="" style="">
+								</a>
+							</div>
+							<div class="info">
+								<div class="ctgr">WOMEN'S ORIGINALS</div>
+								<div class="tit">가젤</div>
+								<div class="rating">
+									<div class="star" data-rating="">
+										<span class="icons" data-icon=""></span>
+										<span class="icons" data-icon=""></span>
+										<span class="icons" data-icon=""></span>
+										<span class="icons" data-icon=""></span>
+										<span class="icons" data-icon=""></span>
+									</div>
+								</div>
+								<div class="price"><div>109,000<span>원</span></div></div>
+							</div>	
+						</div>
+							
+						<div class="box" data-completed="Y" data-prodidx="19">
+							<div class="img" data-cd="CQ2527" data-miyn="N" data-spid="">
+								<a href="javascript:void(0)">
+									<div class="label adihs-b icons aft t-delivery" data-icon=""></div>
+									<img src="http://image.adidas.co.kr/upload/prod/basic/320/CQ2527-1_320X320.jpg" alt="" data-defaultimage="" style="">
+								</a>
+							</div>
+							<div class="info">
+								<div class="ctgr">WOMEN'S ORIGINALS</div>
+								<div class="tit">I-5923</div>
+								<div class="rating">
+									<div class="star" data-rating="5">
+										<span class="icons active" data-icon=""></span>
+										<span class="icons active" data-icon=""></span>
+										<span class="icons active" data-icon=""></span>
+										<span class="icons active" data-icon=""></span>
+										<span class="icons active" data-icon=""></span>
+									</div>
+								</div>
+								<div class="price"><div>119,000<span>원 ~</span></div></div>
+							</div>	
 						</div>
 						
-						<div class="viewContent">
-							<h2>
-								<!-- 20180403 text 수정 -->
-								<span>온</span><span><img src="/images/reebok/efu2018/brand/kakaoBlt.jpg" alt="bullet"></span><span>라</span><span><img src="/images/reebok/efu2018/brand/kakaoBlt.jpg" alt="bullet"></span><span class="none">인</span><br/>
-								<span class="lts">회  원  가  입</span><!--// 20180403 text 수정 -->
-								<div class="btnArea">
-									<a href="https://m.reebok.co.kr:447/MO/Member/memAgreement.action" class="btnTypeC"><span>리클럽 가입하기</span></a>
-								</div><!-- /images/reebok/efu2018/brand/tit_benefits.png -->				
-							</h2> 
-							<div class="onlineSlideWrap">
-								<div class="onlineSlide">
-									<div><a href="javascript:;"><img src="/images/reebok/efu2018/brand/online_slide01.jpg" alt="online 가입"></a></div>
-									<div><a href="javascript:;"><img src="/images/reebok/efu2018/brand/online_slide02.jpg" alt="online 가입"></a></div>
-									<div><a href="javascript:;"><img src="/images/reebok/efu2018/brand/online_slide03.jpg" alt="online 가입"></a></div>
-									<div><a href="javascript:;"><img src="/images/reebok/efu2018/brand/online_slide04.jpg" alt="online 가입"></a></div>
-								</div>
+						<div class="box" data-completed="Y" data-prodidx="60">
+							<div class="img" data-cd="CG5462" data-miyn="N" data-spid="">
+								<a href="javascript:void(0)">	
+									<img src="http://image.adidas.co.kr/upload/prod/basic/320/CG5462-1_320X320.jpg" alt="" data-defaultimage="" style="">
+								</a>
 							</div>
-							<div class="border"></div>
-							<h2>
-								<!-- 20180403 text 수정 -->
-								<span>매　</span><span><img src="/images/reebok/efu2018/brand/kakaoBlt.jpg" alt="bullet" class="sdot"></span><span>　장</span><br/>
-								<span class="lts">회  원  가  입</span>
-								<!-- // 20180403 text 수정 -->
-							</h2> 
-							<div class="offlineSlideWrap">
-								<div class="offlineSlide">
-									<div><a href="javascript:;"><img src="/images/reebok/efu2018/brand/offline_slide01.jpg" alt="offline 가입"></a></div>
-									<div><a href="javascript:;"><img src="/images/reebok/efu2018/brand/offline_slide02.jpg" alt="offline 가입"></a></div>
-									<div><a href="javascript:;"><img src="/images/reebok/efu2018/brand/offline_slide03.jpg" alt="offline 가입"></a></div>
-									<div><a href="javascript:;"><img src="/images/reebok/efu2018/brand/offline_slide04.jpg" alt="offline 가입"></a></div>
-								</div>
-							</div>
-						</div>
-					</div>			
-					<!-- 20180330 text 추가 -->						
-					<div class="titArea03"><!-- /images/reebok/efu2018/brand/reeclubBg.jpg -->						
-						<h4><img src="/images/reebok/efu2018/brand/reclubText03.png" alt="리클럽 모바일 멤버십 카드 안내"></h4>
-						<p>
-						리클럽 전용 포인트 혜택을 편리하게 누릴 수 있도록<br/>
-						모바일로 다운받아 사용할 수 있는 리클럽 모바일<br/>
-						멤버십 카드입니다. 오프라인 스토어에서 포인트 적립<br/>
-						및 사용 시 모바일 멤버십 카드를 제시해야 합니다. 
-						</p>
-						<div class="btnArea">
-							<!-- 20180330 text 수정 --><a href="https://m.reebok.co.kr:447/MO/Member/memAgreement.action " class="btnTypeC"><span>리클럽 가입하기</span></a><!-- // 20180330 text 수정 -->	
-						</div><!-- /images/reebok/efu2018/brand/tit_benefits.png -->				
-					</div>
-					<p class="mobilememer">모바일멤버십 카드</p>
-					<div class="download">
-						<h2><!-- 20180403 text 수정 -->
-							<span>카</span><span><img src="/images/reebok/efu2018/brand/kakaoBlt.jpg" alt="bullet"></span><span>카</span><span><img src="/images/reebok/efu2018/brand/kakaoBlt.jpg" alt="bullet"></span><span class="none">오</span><br/>
-							다 운 로 드<br/><!-- 20180403 text 수정 -->
-							<span class="lts">방　  　법</span>
-						</h2> 
-						<div class="kakaoSlideWrap">
-							<div class="kakaoSlide">
-								<div><a href="javascript:;"><img src="/images/reebok/efu2018/brand/kakao_slide01.jpg" alt="kakao 가입"></a></div>
-								<div><a href="javascript:;"><img src="/images/reebok/efu2018/brand/kakao_slide02.jpg" alt="kakao 가입"></a></div>
-								<div><a href="javascript:;"><img src="/images/reebok/efu2018/brand/kakao_slide03.jpg" alt="kakao 가입"></a></div>
-								<div><a href="javascript:;"><img src="/images/reebok/efu2018/brand/kakao_slide04.jpg" alt="kakao 가입"></a></div>
-							</div>
-						</div>
-						<div class="border"></div>
-						<h2>
-							<!-- 20180403 text 수정 -->
-							<span>시　</span><span><img src="/images/reebok/efu2018/brand/kakaoBlt.jpg" alt="bullet" class="sdot"></span><span>　럽</span><br/>
-							다 운 로 드</br/>
-							<span class="lts">방　  　법</span><!-- // 20180403 text 수정 -->
-						</h2> 
-						<div class="syrupSlideWrap">
-							<div class="syrupSlide">
-								<div><a href="javascript:;"><img src="/images/reebok/efu2018/brand/syrup_slide01.jpg" alt="syrup 가입"></a></div>
-								<div><a href="javascript:;"><img src="/images/reebok/efu2018/brand/syrup_slide02.jpg" alt="syrup 가입"></a></div>
-								<div><a href="javascript:;"><img src="/images/reebok/efu2018/brand/syrup_slide03.jpg" alt="syrup 가입"></a></div>
-								<div><a href="javascript:;"><img src="/images/reebok/efu2018/brand/syrup_slide04.jpg" alt="syrup 가입"></a></div>
-							</div>
-						</div>
-					</div>
-					<div class="benefit02">
-						<dl>
-							<dt>리클럽 모바일<br/>멤버십 카드 발급 방법<dt>
-							<dd>
-								<strong>신규발급</strong>
-								<ul>
-									<li>
-										온라인 스토어 회원 가입 시 자동으로 모바일 멤버십<br/>
-										카드를 SMS 전송, 카카오멤버십/시럽으로 가입 시
-										해당 바코드 사용
-									</li>
-								</ul>
-								<strong>조회 및 재발급</strong>
-								<ul>
-									<li>
-										로그인 > 마이페이지 > 멤버십 카드 조회 또는<br/>재발급 신청　
-										<!-- 20180402 수정 -->
-										<p class="membershipChk"><a href="https://m.reebok.co.kr:447/MO/MyPage/mypageMemIdCrd.action">멤버십 카드 확인</a><p>
-										<!-- // 20180402 수정 -->
-									</li>
-								</ul>
-							</dd>							
-						</dl>
-							
-						<dl>
-							<dt>알아두세요.<dt>
-							<dd class="confirm">
-								오프라인 스토어에서 구매 후 포인트 적립 시,
-								리클럽 모바일 멤버십 카드를 제시해야 합니다. 
-								(SMS로 받은 멤버십 카드 이미지 또는 카카오톡/시럽의
-								멤버십 카드 사용 가능)
-								모바일 멤버십 카드 미소지 시, 구매 후 7일 이내 구매
-								영수증 및 모바일 멤버십 카드 다운로드 후 해당 매장
-								재방문 시 적립 가능합니다. 
-							</dd>
-						</dl>
-					</div>	
-					<!-- // 20180330 text 수정 -->	
-				</section>
-							
-				<div id="slideBg"></div><div id="slideBg"></div>
-				<footer id="footer" class="footer-update">
-								<div class="go_top">
-									<a href="#">BACK TO TOP</a>
-								</div>
-					
-								<!-- 161223 f_menu 추가 -->
-								<ul class="f_menu">
-									<li><a href="javascript:goOrdDeliSel();" onmousedown="javascript:trk_flashEnvView('_TRK_PI=FOOTCS');trk_clickTrace('EVT','^리복모바일^주문배송');">주문배송</a></li>
-									<li><a href="https://m.reebok.co.kr/MO/AdiClub/reeClubIntro.action" onmousedown="javascript:trk_flashEnvView('_TRK_PI=FOOTST');trk_clickTrace('EVT','^리복모바일^리클럽');">리클럽</a></li>
-									<li><a href="https://m.reebok.co.kr/MO/Customer/customerStoreList.action" onmousedown="javascript:trk_flashEnvView('_TRK_PI=FOOTST');trk_clickTrace('EVT','^리복모바일^하단매장찾기');">매장안내</a></li>
-									<li><a href="javascript:goCsCenter();" onmousedown="javascript:trk_flashEnvView('_TRK_PI=FOOTCS');trk_clickTrace('EVT','^리복모바일^하단고객센터');">고객센터</a></li>
-									<li><a href="https://m.reebok.co.kr/MO/Notify/notiDetailList.action" onmousedown="javascript:trk_flashEnvView('_TRK_PI=FOOTST');trk_clickTrace('EVT','^리복모바일^공지사항');">공지사항</a></li>
-								</ul>
-					
-					<div class="f_bnn">
-									<a href="https://m.reebok.co.kr/MO/Member/memJoin.action" onmousedown="javascript:trk_flashEnvView('_TRK_PI=FOOTST');trk_clickTrace('EVT','^리복모바일^하단 회원가입');">
-										<img src="//imagem.reebok.co.kr/images/reebok/temp/bnn_join.jpg" width="100%" alt="">
-									</a>
-								</div>
-					<div class="sns_menu">
-									<a href="https://www.facebook.com/Reebokkr" class="fb" target="_blank" onmousedown="javascript:trk_clickTrace(\'EVT\',\'^리복모바일^페북코리아\')"></a>
-									<a href="https://www.instagram.com/reebokkorea/" class="insta" target="_blank"></a>
-									<a href="http://m.blog.naver.com/reebokkr" class="blog" target="_blank" onmousedown="javascript:trk_clickTrace('EVT','^리복모바일^네이버블로그')"></a>
-									<a href="https://m.youtube.com/channel/UCFrW9Ojay5Pk7s-4-KD0M6w" class="ytb" target="_blank"></a>
-									<a href="http://plus.kakao.com/home/@%EB%A6%AC%EB%B3%B5" class="kakao" target="_blank"></a>
-								</div>
-								<address>
-									<div class="inner">
-										<p><strong>리복 공식 온라인 스토어</strong><span class="line l_left"> (아디다스코리아(유))</span></p>
-										<p>서울특별시 서초구 서초대로 74길 4, 삼성생명 서초타워 23층 (06620)</p>
-										<p>대표자 : 폴 유엔 파이</p>
-										<p>사업자 등록번호 : 214-81-07412</p>
-										<p>통신판매업신고번호 : 2007-서울서초-10391</p>
-										<!-- 180913 정보추가 -->
-										<p>개인정보관리책임자 : 장영태</p>
-										<p>호스팅서비스사업자 : 아디다스코리아(유)</p>
-										<p>고객센터 : 1588-7324</p>
-										<p>이메일 : reeclub_korea@reebok.com</p>
-										<div class="f_url">
-											<!-- 170922 리클럽 추가, 사업자정보확인 위치변경 -->
-											<p>
-												<a href="https://m.reebok.co.kr/MO/Terms/terms.action?terms=terms_01"><strong>구매 이용약관</strong></a><span class="line l_left">
-												<a href="https://m.reebok.co.kr/MO/Terms/terms.action?terms=terms_02"><strong>개인정보처리방침</strong></a><span class="line l_left">
-												<a href="https://m.reebok.co.kr/MO/Terms/terms.action?terms=terms_03"><strong>리클럽 이용약관</strong></a>
-											</p>
-											<p>
-												<a href="http://www.ftc.go.kr/info/bizinfo/communicationViewPopup.jsp?wrkr_no=2148107412" target="_blank">사업자정보확인</a><span class="line l_left">
-												<a href="https://m.reebok.co.kr/Common/PopJusticeBns.jsp">공정거래자율준수</a><span class="line l_left">
-												<a href="https://m.reebok.co.kr/Common/CertifiedInfoPop.jsp" target="_blank">채무지급보증안내</a>
-											</p>
-											<p>© adidas Korea LLC. All Rights Reserved</p>
-											<p class="f_logo"><img src="//imagem.reebok.co.kr/images/reebok/f_logo.jpg" alt="reebok"></p>
-										</div>
+							<div class="info">
+								<div class="ctgr">UNISEX ORIGINALS</div>
+								<div class="tit">슈퍼스타</div>
+								<div class="rating">
+									<div class="star" data-rating="3">
+										<span class="icons active" data-icon=""></span>
+										<span class="icons active" data-icon=""></span>
+										<span class="icons active" data-icon=""></span>
+										<span class="icons" data-icon=""></span>
+										<span class="icons" data-icon=""></span>
 									</div>
-								</address>
-							</footer>
-							<script type="text/javascript" src="//imagem.reebok.co.kr/js/weblog/4_INSIGHT_TRACKING_SCRIPT_FOR_M.REEBOK.CO.KR_V.5.1.4.js"></script>
-					<!-- 비저리 스크립트 -->
-					<script type="text/javascript">
-					(function() {
+								</div>
+								<div class="price"><div>109,000<span>원 ~</span></div></div>
+							</div>	
+						</div>
+					</div>
+					<!-- //prod_list -->
+				</div>
+			<!-- //prodlist_type2 -->
+			</form>
+			<script language="javascript">function goPrev(pageNo){ if (pageNo < 1) {	alert("첫번째 페이지입니다. 이전 페이지로 이동하실 수 없습니다.");	return;} else {var url = 'http://m.reebok.co.kr/MO/Search/searchIR.action';var param = '?strPage=' + pageNo;param += '&query=%ED%93%A8%EB%A6%AC'; location.href = url + param;}}function goNext(pageNo, nextYn){if (nextYn == "N") {	alert("다음 페이지는 존재하지 않습니다. 다음 페이지로 이동하실 수 없습니다.");	return;} else {var url = 'http://m.reebok.co.kr/MO/Search/searchIR.action';var param = '?strPage=' + pageNo;param += '&query=%ED%93%A8%EB%A6%AC'; location.href = url + param;}}</script>
+			<div class="plp_paging">
+				<a href="#" class="prev disable">
+					<span></span>
+				</a>
+				<a href="#" class="next">
+					<span></span>
+				</a>
+				<div class="num">
+					<strong class="adihs-din-b">12</strong>
+					<span class="adihs-din-b"> / 22</span>
+				</div>
+			</div>
+			<!-- 상품리뷰 -->
+			<div class="productReview">
+				<p class="tit">상품리뷰</p>
+				<ul id="makeListEval" class="review_list">
+					<li id="li_eval_0"> 
+						<div class="star"> 
+							<span class="icons active" data-icon=""></span> 
+							<span class="icons active" data-icon=""></span> 
+							<span class="icons active" data-icon=""></span> 
+							<span class="icons" data-icon=""></span> 
+							<span class="icons" data-icon=""></span> 
+						</div> 
+						<div class="date adihs">2018-05-18</div> 
+						<div class="prod_cd">CM9572</div> 
+						<div class="content" id="eview_content0">거의 운동화 구두 다 265 신어서
+						265 주문해서 신었는데 딱 맞습니다.
+						너무 딱 맞는거 불편한 사람들은 한치수 큰거 사도 이쁠거 같아요~^^
+						잘 신겠습니다!!</div> 
+						<div class="info"> 
+							<span class="u_id adihs-din-b">han***</span> 
+							<span class="gender">여, 30대</span>
+						</div> 
+						<div class="photos clearfix"> 
+							<a href="javascript:void(0)"><img src="http://imagem.reebok.co.kr/upload/eval/201805/6ca55798016b41a7a3038ae66363a71e_0518174541.jpg" alt=""></a> 
+						</div> 
+					</li> 
+					<li id="li_eval_1"> 
+						<div class="star"> 
+							<span class="icons active" data-icon=""></span> 
+							<span class="icons active" data-icon=""></span> 
+							<span class="icons active" data-icon=""></span> 
+							<span class="icons" data-icon=""></span> 
+							<span class="icons" data-icon=""></span> 
+						</div> 
+						<div class="date adihs">2018-05-17</div> 
+						<div class="prod_cd">CM9572</div> 
+						<div class="content" id="eview_content1">상품 받고 봤는데 가죽이 사진에선 안보였지만 마름모모양으로 울퉁불퉁하게 돼있어요 신경쓰이는 정도는 아니지만 사진이랑은 좀 다르네요 신어보니 나쁘지않네용 좋아요~</div> 
+						<div class="info"> 
+							<span class="u_id adihs-din-b">rud***</span>
+							<span class="gender">여, 30대</span> 
+						</div> 
+					</li> 
+					<li id="li_eval_2"> 
+						<div class="star"> 
+							<span class="icons active" data-icon=""></span> 
+							<span class="icons active" data-icon=""></span> 
+							<span class="icons active" data-icon=""></span> 
+							<span class="icons" data-icon=""></span> 
+							<span class="icons" data-icon=""></span> 
+						</div> 
+						<div class="date adihs">2018-05-16</div> 
+						<div class="prod_cd">CM9572</div> 
+						<div class="content" id="eview_content2">배송도 빠르고 착용감도 좋아 아주 만족합니다.
+					추가로 할인하여 더 저렴하게 구매할수 있어서 좋았어요. 전체적으로 아주 만족합니다. 많이 파세요~^^</div> 
+						<div class="info"> 
+							<span class="u_id adihs-din-b">cst***</span> 
+							<span class="gender">여, 30대</span> 
+						</div> 
+						<div class="photos clearfix"> 
+							<a href="javascript:void(0)"><img src="http://imagem.reebok.co.kr/upload/eval/201805/8ca785fdee6344f68c8c9d2f4a6775bf_0516220612.jpg" alt=""></a> 
+							<a href="javascript:void(0)"><img src="http://imagem.reebok.co.kr/upload/eval/201805/089b24c6b7fd434abff68b17cb36d09f_0516220612.jpg" alt=""></a> 
+						</div> 
+					</li> 
+				</ul>
+				<div class="btnMore"><a href="">더보기</a></div>
+			</div>
+		</section>
+	</section>
+	<!-- //contents -->
+
+	<div id="wp_tg_cts" style="display:none;"></div>
+
+	
+<div id="slideBg"></div><div id="slideBg"></div>
+	<footer id="footer" class="footer-update">
+					<div class="go_top">
+						<a href="#">BACK TO TOP</a>
+					</div>
+		
+					<!-- 161223 f_menu 추가 -->
+					<ul class="f_menu">
+						<li><a href="javascript:goOrdDeliSel();" onmousedown="javascript:trk_flashEnvView('_TRK_PI=FOOTCS');trk_clickTrace('EVT','^리복모바일^주문배송');">주문배송</a></li>
+						<li><a href="https://m.reebok.co.kr/MO/AdiClub/reeClubIntro.action" onmousedown="javascript:trk_flashEnvView('_TRK_PI=FOOTST');trk_clickTrace('EVT','^리복모바일^리클럽');">리클럽</a></li>
+						<li><a href="https://m.reebok.co.kr/MO/Customer/customerStoreList.action" onmousedown="javascript:trk_flashEnvView('_TRK_PI=FOOTST');trk_clickTrace('EVT','^리복모바일^하단매장찾기');">매장안내</a></li>
+						<li><a href="javascript:goCsCenter();" onmousedown="javascript:trk_flashEnvView('_TRK_PI=FOOTCS');trk_clickTrace('EVT','^리복모바일^하단고객센터');">고객센터</a></li>
+						<li><a href="https://m.reebok.co.kr/MO/Notify/notiDetailList.action" onmousedown="javascript:trk_flashEnvView('_TRK_PI=FOOTST');trk_clickTrace('EVT','^리복모바일^공지사항');">공지사항</a></li>
+					</ul>
+		
+		<div class="f_bnn">
+						<a href="https://m.reebok.co.kr/MO/Member/memJoin.action" onmousedown="javascript:trk_flashEnvView('_TRK_PI=FOOTST');trk_clickTrace('EVT','^리복모바일^하단 회원가입');">
+							<img src="//imagem.reebok.co.kr/images/reebok/temp/bnn_join.jpg" width="100%" alt="">
+						</a>
+					</div>
+		<div class="sns_menu">
+						<a href="https://www.facebook.com/Reebokkr" class="fb" target="_blank" onmousedown="javascript:trk_clickTrace(\'EVT\',\'^리복모바일^페북코리아\')"></a>
+						<a href="https://www.instagram.com/reebokkorea/" class="insta" target="_blank"></a>
+						<a href="http://m.blog.naver.com/reebokkr" class="blog" target="_blank" onmousedown="javascript:trk_clickTrace('EVT','^리복모바일^네이버블로그')"></a>
+						<a href="https://m.youtube.com/channel/UCFrW9Ojay5Pk7s-4-KD0M6w" class="ytb" target="_blank"></a>
+						<a href="http://plus.kakao.com/home/@%EB%A6%AC%EB%B3%B5" class="kakao" target="_blank"></a>
+					</div>
+					<address>
+						<div class="inner">
+							<p><strong>리복 공식 온라인 스토어</strong><span class="line l_left"> (아디다스코리아(유))</span></p>
+							<p>서울특별시 서초구 서초대로 74길 4, 삼성생명 서초타워 23층 (06620)</p>
+							<p>대표자 : 폴 유엔 파이</p>
+							<p>사업자 등록번호 : 214-81-07412</p>
+							<p>통신판매업신고번호 : 2007-서울서초-10391</p>
+							<!-- 180913 정보추가 -->
+							<p>개인정보관리책임자 : 장영태</p>
+							<p>호스팅서비스사업자 : 아디다스코리아(유)</p>
+							<p>고객센터 : 1588-7324</p>
+							<p>이메일 : reeclub_korea@reebok.com</p>
+							<div class="f_url">
+								<!-- 170922 리클럽 추가, 사업자정보확인 위치변경 -->
+								<p>
+									<a href="https://m.reebok.co.kr/MO/Terms/terms.action?terms=terms_01"><strong>구매 이용약관</strong></a><span class="line l_left">
+									<a href="https://m.reebok.co.kr/MO/Terms/terms.action?terms=terms_02"><strong>개인정보처리방침</strong></a><span class="line l_left">
+									<a href="https://m.reebok.co.kr/MO/Terms/terms.action?terms=terms_03"><strong>리클럽 이용약관</strong></a>
+								</p>
+								<p>
+									<a href="http://www.ftc.go.kr/info/bizinfo/communicationViewPopup.jsp?wrkr_no=2148107412" target="_blank">사업자정보확인</a><span class="line l_left">
+									<a href="https://m.reebok.co.kr/Common/PopJusticeBns.jsp">공정거래자율준수</a><span class="line l_left">
+									<a href="https://m.reebok.co.kr/Common/CertifiedInfoPop.jsp" target="_blank">채무지급보증안내</a>
+								</p>
+								<p>© adidas Korea LLC. All Rights Reserved</p>
+								<p class="f_logo"><img src="//imagem.reebok.co.kr/images/reebok/f_logo.jpg" alt="reebok"></p>
+							</div>
+						</div>
+					</address>
+				</footer>
+				<script type="text/javascript" src="//imagem.reebok.co.kr/js/weblog/4_INSIGHT_TRACKING_SCRIPT_FOR_M.REEBOK.CO.KR_V.5.1.4.js"></script>
+		<!-- 비저리 스크립트 -->
+		<script type="text/javascript">
+		(function() {
+			try {
+				var viz = document.createElement("script");
+				viz.type = "text/javascript";
+				viz.async = true;
+				viz.src = ("https:" == document.location.protocol ?"https://cdn6.vizury.com" : "http://cdn6.vizury.com")+ "/analyze/pixel.php?account_id=VIZVRM2016";
+		
+				var s = document.getElementsByTagName("script")[0];
+				s.parentNode.insertBefore(viz, s);
+				viz.onload = function() {
+					try {
+						pixel.parse();
+					} catch (i) {
+					}
+				};
+				viz.onreadystatechange = function() {
+					if (viz.readyState == "complete" || viz.readyState == "loaded") {
 						try {
-							var viz = document.createElement("script");
-							viz.type = "text/javascript";
-							viz.async = true;
-							viz.src = ("https:" == document.location.protocol ?"https://cdn6.vizury.com" : "http://cdn6.vizury.com")+ "/analyze/pixel.php?account_id=VIZVRM2016";
-					
-							var s = document.getElementsByTagName("script")[0];
-							s.parentNode.insertBefore(viz, s);
-							viz.onload = function() {
-								try {
-									pixel.parse();
-								} catch (i) {
-								}
-							};
-							viz.onreadystatechange = function() {
-								if (viz.readyState == "complete" || viz.readyState == "loaded") {
-									try {
-										pixel.parse();
-									} catch (i) {
-									}
-								}
-							};
+							pixel.parse();
 						} catch (i) {
 						}
-					})();
-					</script>
-					<!-- Toast eXchange Script :: START :: -->
-					<script type="text/javascript" src="//static.tagmanager.toast.com/tag/view/467" async="async"></script>
-					<script type="text/javascript">
-					window.ne_tgm_q = window.ne_tgm_q || [];
-					var toastJson = {"tagType":"visit","device":"mobile","pageEncoding":"utf-8"};
-					
-					window.ne_tgm_q.push(toastJson);
-					</script>
-					<!--// Toast eXchange Script :: END :: -->
-					
-					<iframe id="hfrADCheck" src="//adcheck.about.co.kr/mad/prd/view?shopid=M2DADIDAS" scrolling="no" frameborder="0" width="0" height="0"></iframe>
-					<script type="text/javascript">
-					 var NeoclickConversionDctSv="type=1,orderID=,amount=";
-					 var NeoclickConversionAccountID="22303";
-					</script>
-					<script type="text/javascript" src="//ck.ncclick.co.kr/NCDC_V2.js"></script>
-					</section><!-- container -->
-					</section><!-- //wrap -->
-					
-					<script language="javascript">
-						//넷퍼넬 로그인 종료
-						NetFunnel_Complete({cookie_id:"NETFUNNEL_LOGIN",action_id:"loginPage"});
-					</script>
-					
-					<script type="text/javascript">
-						jQuery(document).ready(function(){
-							if(typeof NetFunnel == "object") {
-								NetFunnel_Complete();
-							}
-						});
-					</script>
-					
-					<!-- 161101 sns_menu 스크립트 추가 -->
-					<script type="text/javascript">
-					(function($){
-						
-						jQuery('.newsletter_mail_button').click(function() {
-							if( cfn_trim(jQuery("#field0").val()) == '' ){
-								alert("E-Mail을 입력해주세요.");
-								return false;
-							}
-					
-							if(!emailChk()){
-								alert("E-Mail형식을 확인 하세요.");
-								return false;
-							}
-					
-							if(!jQuery('.newsletter .marketing_chk').find('input:checkbox[id="marketing"]').is(":checked")){
-								alert("마케팅 수신동의를 체크 해주세요.");
-								return false;
-							}
-					
-							alert('등록 되었습니다.');
-							jQuery('#form33').submit();
-					
-						});
-					
-						//이메일 체크
-						function emailChk(){
-							var emailVal = cfn_trim(jQuery("#field0").val());
-							var reg = /^((\w|[\-\.])+)@((\w|[\-\.][^(\.)\1])+)\.([A-Za-z]+)$/;
-							if (emailVal.search(reg) != -1 && emailVal.length < 31) {
-								jQuery("#field0").val(emailVal);
-								return true;
-							}
-							return false;
-						}
-					
-					})(jQuery);
-					
-					function KeyDownSpa() {
-						if(event.keyCode == 32){ return false; }
-					
-						// 안드로이드 기종에서 스페이스바 keyCode 229로 인식
-						if( event.keyCode == 229 ){
-							var stEmail = jQuery('.input_wrap #field0').val();
-							jQuery('.input_wrap #field0').val(stEmail.trim());
-							return false;
-						}
-					
 					}
-					</script>
-					<!--  카카오 상담톡 start -->
-					<script type="text/javascript">
-					function fn_kakaoChatOpen() {
-						var popup = window.open("","POP");
-						var frm = document.kakaoChatForm;
-						frm.submit();
-					}
-					</script>
-					<form id="kakaoChatForm" name="kakaoChatForm" target="POP" action="https://bizmessage.kakao.com/chat/open" method="post">
-					  <input type="hidden" name="uuid" value="@Reebok"/>
-					  <input type="hidden" name="extra" value="Homepage_Mobile"/>
-					</form>
-					<!--  카카오 상담톡 end -->
-					</body>
-					</html>
+				};
+			} catch (i) {
+			}
+		})();
+		</script>
+		<!-- Toast eXchange Script :: START :: -->
+		<script type="text/javascript" src="//static.tagmanager.toast.com/tag/view/467" async="async"></script>
+		<script type="text/javascript">
+		window.ne_tgm_q = window.ne_tgm_q || [];
+		var toastJson = {"tagType":"visit","device":"mobile","pageEncoding":"utf-8"};
+		
+		window.ne_tgm_q.push(toastJson);
+		</script>
+		<!--// Toast eXchange Script :: END :: -->
+		
+		<iframe id="hfrADCheck" src="//adcheck.about.co.kr/mad/prd/view?shopid=M2DADIDAS" scrolling="no" frameborder="0" width="0" height="0"></iframe>
+		<script type="text/javascript">
+		 var NeoclickConversionDctSv="type=1,orderID=,amount=";
+		 var NeoclickConversionAccountID="22303";
+		</script>
+		<script type="text/javascript" src="//ck.ncclick.co.kr/NCDC_V2.js"></script>
+		</section><!-- container -->
+		</section><!-- //wrap -->
+		
+		<script language="javascript">
+			//넷퍼넬 로그인 종료
+			NetFunnel_Complete({cookie_id:"NETFUNNEL_LOGIN",action_id:"loginPage"});
+		</script>
+		
+		<script type="text/javascript">
+			jQuery(document).ready(function(){
+				if(typeof NetFunnel == "object") {
+					NetFunnel_Complete();
+				}
+			});
+		</script>
+		
+		<!-- 161101 sns_menu 스크립트 추가 -->
+		<script type="text/javascript">
+		(function($){
+			
+			jQuery('.newsletter_mail_button').click(function() {
+				if( cfn_trim(jQuery("#field0").val()) == '' ){
+					alert("E-Mail을 입력해주세요.");
+					return false;
+				}
+		
+				if(!emailChk()){
+					alert("E-Mail형식을 확인 하세요.");
+					return false;
+				}
+		
+				if(!jQuery('.newsletter .marketing_chk').find('input:checkbox[id="marketing"]').is(":checked")){
+					alert("마케팅 수신동의를 체크 해주세요.");
+					return false;
+				}
+		
+				alert('등록 되었습니다.');
+				jQuery('#form33').submit();
+		
+			});
+		
+			//이메일 체크
+			function emailChk(){
+				var emailVal = cfn_trim(jQuery("#field0").val());
+				var reg = /^((\w|[\-\.])+)@((\w|[\-\.][^(\.)\1])+)\.([A-Za-z]+)$/;
+				if (emailVal.search(reg) != -1 && emailVal.length < 31) {
+					jQuery("#field0").val(emailVal);
+					return true;
+				}
+				return false;
+			}
+		
+		})(jQuery);
+		
+		function KeyDownSpa() {
+			if(event.keyCode == 32){ return false; }
+		
+			// 안드로이드 기종에서 스페이스바 keyCode 229로 인식
+			if( event.keyCode == 229 ){
+				var stEmail = jQuery('.input_wrap #field0').val();
+				jQuery('.input_wrap #field0').val(stEmail.trim());
+				return false;
+			}
+		
+		}
+		</script>
+		<!--  카카오 상담톡 start -->
+		<script type="text/javascript">
+		function fn_kakaoChatOpen() {
+			var popup = window.open("","POP");
+			var frm = document.kakaoChatForm;
+			frm.submit();
+		}
+		</script>
+		<form id="kakaoChatForm" name="kakaoChatForm" target="POP" action="https://bizmessage.kakao.com/chat/open" method="post">
+		  <input type="hidden" name="uuid" value="@Reebok"/>
+		  <input type="hidden" name="extra" value="Homepage_Mobile"/>
+		</form>
+		<!--  카카오 상담톡 end -->
+		</body>
+		</html>
