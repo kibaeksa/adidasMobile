@@ -1,0 +1,224 @@
+@import './mobile/css/adidas/scss/common/mixin.scss';
+@import './mobile/css/adidas/scss/common/common.scss';
+
+#rdy{
+	position: relative;
+
+	/*
+		common
+	*/
+	.button_area_v2{
+		display: inline-block;
+		a{
+			padding: 0 6vw;
+			font: 500 1rem/3.4rem 'NotoSansKR';
+			letter-spacing: .15rem;
+			height: 3.4rem;
+			.arrow{
+				margin-left: 1rem;
+				width: 20px;
+				&::after, &::before{
+					width: 7px;
+					height: 2px;
+				}
+				&::before{
+					bottom:-2px;
+				}
+				&::after{
+					top:-2px;
+				}
+			}
+		}
+	}
+
+	/*
+		contents
+	*/
+	.section{
+		img{
+			display: block;
+			width: 100%;
+		}
+
+		&.section__visual{
+
+		}
+		&.section__video{
+			padding: 3rem 1.3rem;
+			.section__video__playbox{
+				display: block;
+				position: relative;
+				button{
+					width: 50px;
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+					z-index: 3;
+
+					background: 0 none;
+					border: 0 none;
+				}
+			}
+			h4{
+				padding: 1.2rem 0 0.5rem;
+				text-align: center;
+				img{
+					display: inline-block;
+					width: 80%;
+				}
+			}
+			p{
+				font: 1rem 'NotoSansKR';
+				text-align: center;
+			}
+		}
+		&.section__statement{
+			padding: 3rem 0 7rem;
+			.section__statement__imgbox {
+				margin-top: 3rem;
+				padding: 0 3rem;
+				img{
+					margin-bottom: 1rem;
+					&:last-child {
+						margin: 0;
+					}
+				}
+			}
+		}
+		&.section__prds{
+			padding: 2rem 1rem 3rem;
+			background: url('/images/adidas/2020/event/rdy/0626/sect_prds_bg.jpg') 0 0 no-repeat;
+			background-size: 100% auto;
+			&.seoyeong{
+				background: url('/images/adidas/2020/event/rdy/0626/sect_prds_bg2.jpg') 0 0 no-repeat;
+				background-size: 100% auto;
+			}
+			.section__prds__head{
+				text-align: center;
+				>*{
+					text-align: center;
+					color: #fff;
+				}
+				h4{
+					text-align: center;
+					img{
+						display: inline-block;
+						width: 92%;
+					}
+				}
+				p{
+					padding: 0.5rem 0;
+					font: 500 1.3rem 'NotoSansKR';
+					letter-spacing: 1px;
+				}
+				>span{
+					display: block;
+					font: 300 1rem 'NotoSansKR';
+					letter-spacing: normal;
+				}
+				.button_area_v2{
+					display: inline-block;
+					margin-top: 1rem;
+				}
+			}
+			ul.section__prds__body{
+				overflow: hidden;
+				margin-top: 3rem;
+				padding: 0 6rem;
+				li{
+					display: block;
+					margin-bottom: 3rem;
+					text-align: center;
+					.button_area_v2{
+						display: inline-block;
+						margin-top: 1rem;
+					}
+					&:last-child{
+						margin: 3px;
+					}
+				}
+			}
+		}
+		&.section__creator{
+			padding: 4rem 0 7rem 1rem;
+			background: url('/images/adidas/2020/event/rdy/0626/sect_line.jpg') no-repeat;
+			background-size: 100% auto;
+			background-position: center bottom;
+			h4 {
+				font: 600 2rem/2.4rem 'NotoSansKR';
+				text-align: center;
+				letter-spacing: 1px;
+			}
+			ul.section__creator__body {
+				margin-top: 3rem;
+				.slick-list{
+					overflow: visible !important;
+				}
+				.slick-slide {
+					width: 67vw;
+					padding-right: 1rem;
+					img {
+						display: block;
+						width: 100%;
+					}
+				}
+			}
+		}
+		&.section__collection{
+			padding: 4rem 1rem 7rem;
+			background: url('/images/adidas/2020/event/rdy/0626/sect_line.jpg') no-repeat;
+			background-size: 100% auto;
+			background-position: center bottom;
+			h4 {
+				font: 600 2rem/2.4rem 'NotoSansKR';
+				text-align: center;
+				letter-spacing: 1px;
+			}
+			ul.section__collection__body {
+				margin-top: 3rem;
+				li {
+					display: block;
+					text-align: center;
+					margin-bottom: 4rem;
+					&:last-child {
+						margin: 0;
+					}
+					h4{
+						padding: 1rem 0 0.5rem;
+						font: 600 1.6rem/1.6rem 'adinenuPro-bold';
+						text-align: center;
+						letter-spacing: 1px;
+						text-transform: uppercase;
+					}
+					p{
+						font: 300 1rem/1rem 'NotoSansKR';
+						text-align: center;
+						letter-spacing: 1px;
+					}
+					.button_area_v2{
+						margin-top: 1rem;
+						display: inline-block;
+					}
+				}
+			}
+		}
+		&.section__endbox{
+			padding: 4rem 0;
+			text-align: center;
+			h5 {
+				font: 1.3rem 'NotoSansKR';
+				text-align: center;
+				letter-spacing: 1px;
+				strong{
+					font-weight: 600;
+					letter-spacing: 1px;
+				}
+			}
+			img{
+				display: inline-block;
+				margin-top: 3rem;
+			}
+		}
+	}
+}
