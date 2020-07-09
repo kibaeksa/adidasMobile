@@ -148,7 +148,7 @@
 										</a>
 									</div>
 								</div>
-								<em>*7월6일 오전 11시 ~ 7일 오전 10시 59분까지 구매가능</em>
+								<em>*7월13일 오전 11시 ~ 14일 오전 10시 59분까지 구매가능</em>
 							</div>
 						</div>
 					</div><!--main_vs end-->
@@ -175,7 +175,7 @@
 								</a>
 							</div>
 						</div>
-						<em>*7월6일 오전 11시 ~ 7일 오전 10시 59분까지 구매가능</em>							
+						<em>*7월13일 오전 11시 ~ 14일 오전 10시 59분까지 구매가능</em>							
 					</div><!--spec_deal end-->
 					<div class="monday_slider">
 						<div class="monday_box">
@@ -192,7 +192,7 @@
 								</p>
 							</div>
 							<div class="slider_list">
-								<div class="item on">
+								<div class="item">
 									<img src="/images/reebok/2020/event/luckymonday/mon_slider01.jpg" alt="" />
 									<div class="txt2">
 										<h3><span>1</span></h3>
@@ -201,12 +201,12 @@
 											CLASSIC<span></span>
 											VECTOR DAY
 										</Strong>
-										<div class="over">
+										<div class="over on">
 											<h4>종료</h4>
 										</div>
 									</div>
 								</div>
-								<div class="item prevent">
+								<div class="item">
 									<img src="/images/reebok/2020/event/luckymonday/mon_slider02.jpg" alt="" />
 									<div class="txt2">
 										<div class="line"></div>
@@ -295,14 +295,22 @@
 											<h4>종료</h4>
 										</div>										
 									</div>
-								</div>		
+								</div>	
 							</div>
 							
 							<div class="tab_list">
 								<div class="tab_box on">
 									<h3>7/6</h3>
 									<p><span>CLASSIC VECTOR DAY</span></p>
-									<img src ="/images/reebok/2020/event/luckymonday/tab_img1.png" alt="" class="on" />
+									<div class="tab_img">
+										<img src ="/images/reebok/2020/event/luckymonday/tab_img1.png" alt="" class="on" />
+										<div class="over2 on">
+											<h4>종료</h4>
+										</div>										
+									</div>
+									<div class="tab_bar">
+										<img src ="/images/reebok/2020/event/luckymonday/tab_box_bar.png" alt="" />	
+									</div>									
 									<div class="btn">
 										<div>
 											<a href="https://m.reebok.co.kr/MO/Promotion/landingPage.action?pageNo=1282" campaign-label="구매하기">
@@ -316,7 +324,15 @@
 								<div class="tab_box">
 									<h3>7/13</h3>
 									<p><span>CLASSIC VECTOR DAY</span></p>
-									<img src ="/images/reebok/2020/event/luckymonday/tab_img1.png" alt="" />
+									<div class="tab_img">
+										<img src ="/images/reebok/2020/event/luckymonday/tab_img2.png" alt="" />
+										<div class="over2">
+											<h4>종료</h4>
+										</div>											
+									</div>
+									<div class="tab_bar">
+										<img src ="/images/reebok/2020/event/luckymonday/tab_box_bar.png" alt="" />	
+									</div>
 									<div class="btn">
 										<div>
 											<a href="https://m.reebok.co.kr/MO/Promotion/landingPage.action?pageNo=1283" campaign-label="구매하기">
@@ -325,7 +341,7 @@
 											</a>
 										</div>
 									</div>
-									<em>*7월6일 오전 11시 ~ 7일 오전 10시 59분까지 구매가능</em>							
+									<em>*7월13일 오전 11시 ~ 14일 오전 10시 59분까지 구매가능</em>							
 								</div>								
 							</div>
 						</div>
@@ -335,7 +351,7 @@
 							<h3>구매 시 유의사항</h3>
 							<p>
 								행사기간 : 위의 행사 일자마다<span></span>
-								<span class="bak">매주 월요일 오전 11시 ~ 다음날 오후 11시 59분 까지</span><span></span>
+								<span class="bak">매주 월요일 오전 11시 ~ 다음날 오전 10시 59분 까지</span><span></span>
 								리클럽 회원에 한해 구매 가능합니다.<span></span>
 								재고 부족으로 인한 에상 치 못한 주문 취소가 발생할 수 있습니다.<span></span>
 							</p>
@@ -390,28 +406,14 @@
 						autoplaySpeed: 3000,
 						cssEase: 'linear',
 						arrows:false,						
-						// responsive: [
-						// 	{
-						// 	breakpoint: 768,
-						// 	settings: {
-						// 		arrows: false,
-						// 		centerMode: true,
-						// 		centerPadding: '100px',
-						// 		slidesToShow: 3
-						// 	}
-						// 	},
-						// 	{
-						// 	breakpoint: 480,
-						// 	settings: {
-						// 		arrows: false,
-						// 		centerMode: true,
-						// 		centerPadding: '100px',
-						// 		slidesToShow: 1
-						// 	}
-						// 	}
-						// ]
+		
 						});
 						// slider
+						// var index = $('.slick-current').attr('data-slick-index');
+						setTimeout(function () {
+							$('.slider_list').slick('setPosition');
+							$('.slider_list').slick('slickGoTo', 1);
+						}, 0)
 					});
 					$(document).ready(function () {
 						$(document).scroll(function() {
@@ -420,14 +422,10 @@
 							console.log(currentScroll);
 						})
 						});
-
+						
 					$(window).load(function(){
 						$('.main_box .txt p').addClass('on');	
 						$('.main_box .txt p span').addClass('on');
-
-						// if (maxHeight <= currentScroll + 1000) {
-						// 	
-						// }
 					});
 
 					$(window).scroll(function(){
@@ -438,39 +436,28 @@
 							}							
 						}
 					})
-			// 		$('btn li.tab').click(function(){
-			// 			var index = $(this).index();
-			// $('.tab_list').eq(index).addClass('on');
-			// 		})
-			$('.slider_list').on('afterChange', function(event, slick, currentSlide, nextSlide){
+	
+					$('.slider_list').on('afterChange', function(event, slick, currentSlide, nextSlide){
 
-					// var index = $('.slick-current').attr('data-slick-index');
-					// console.log(currentSlide);
-					// var test = $(this).index();
-					// console.log(test);
+							// var index = $('.slick-current').attr('data-slick-index');
+							// console.log(currentSlide);
 
-					if($('.slider_list').find('.slick-current').hasClass('prevent')){
-						alert('comming soon');
-					} else {
-						$('.tab_list .tab_box').removeClass('on').eq(currentSlide).addClass('on');
-						// alert('오픈');
-					}
-					// var index = $('.slick-current').attr('data-slick-index');
-					// $('.tab_list .tab_box a').eq(nextSlide).prop('href', 14);
-					// $('.tab_list .tab_box').removeClass('on').eq(nextSlide).addClass('on');
-			});
-						// $('.tab_list .tab_box').fadeOut(1000);
-						// $('.slider_list .item').on('click', function(){
-						// 	$('.tab_list .tab_box').fadeIn(1000);
-						// 	$('.tab_list .tab_box').addClass('on');
-						// });
-					// $('.slider_list .item').click(function(){	
-					// 	// var index = $(this).index();
-					// 	var index = $('.slick-current').attr('data-slick-index');
-					// 	console.log(index);					
-					// 	$('.tab_list .tab_box').removeClass('on').eq(index).addClass('on');
-					// 	$('.tab_list .tab_box').removeClass('on').eq(index).addClass('on');						
-					// });	
+
+							$('.slider_list .slick-active').addClass('on');
+							$('.slider_list .prevent').removeClass('on');
+
+							// $('.slider_list .item .over').css('opacity', '0');
+
+
+							if($('.slider_list').find('.slick-current').hasClass('prevent')){
+								alert('comming soon');
+							} else {
+								$('.tab_list .tab_box').removeClass('on').eq(currentSlide).addClass('on');
+								$('.tab_list .tab_box .tab_img').addClass('on');
+								$('.slider_list .slick-active').removeClass('on');
+							}
+					});
+			
 				</script>
 
 			</section>
