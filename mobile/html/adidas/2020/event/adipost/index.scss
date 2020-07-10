@@ -104,9 +104,10 @@ button{
 		position:fixed; left:0;top:60px;
 		background:#fff; border:1px solid #ccc;
 		width:100%; 
+		height: 92%;
 		z-index:10;
 		display:none;
-		
+		overflow-y: scroll;
 		.slider_popup{
 			// position:fixed; left:50%;top:50%;
 			// transform:translate(-50%, -50%);
@@ -115,21 +116,34 @@ button{
 			position:relative;
 			width:100%;
 			overflow-y:scroll;
-
-			video{
-				position: relative;
-				left: -147px;
-				top: 0;
-				width: 177%;
-			}
 		}
 		.slick-list{
 			width: 100%;
-			img{
-				width:100%;
-			}
 			.slick-slide{
 				overflow: hidden;
+				position: relative;
+				text-align: center;
+				.video_wrap{
+					position: absolute;
+					top: 0;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					video {
+						display: block;
+						width: 100%;
+						top: 0;
+						left: 0;
+						width: 100%;
+						height: 100%;
+						object-fit: cover;
+						transform: none;
+					}
+				}
+				img {
+					display: block;
+					width: 100%;
+				}
 			}
 		}
 		.slick-dots {
@@ -183,10 +197,10 @@ button{
 		}	
 		.slider_txt{
 			width:100%;
+			padding:2rem 0 4rem;
 			margin:0 auto;
 			text-align:center;
 			p{
-				padding:2rem 0 0 0 ;
 				font:400 1.1rem/1.8rem 'NotoSansKR';
 				color:#111;
 				letter-spacing:normal;
@@ -202,13 +216,15 @@ button{
 				display:block;
 				font:700 1rem/1.5rem 'NotoSansKR';
 				color:#111;
-				padding:0.5rem 0 1.5rem 0;				
+				padding:1rem 0 2rem 0;				
 				letter-spacing:normal;
 				text-transform:uppercase;
 			}
 		}
 		.adiPopClose_btn{
-			position:absolute;right:0.7rem;top:0.7rem;
+			position: fixed;
+			right:0.7rem;
+			top:5.7rem;
 			button{
 				background:url('/images/adidas/2020/event/adipost/popup_close.png')center center no-repeat;
 				width:28px;

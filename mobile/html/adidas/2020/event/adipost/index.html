@@ -30,7 +30,7 @@
 		<header include-html="/html/adidas/inc/header_.html"></header>
 
 		<div id="container">
-			<script type="text/javascript" src="/designjs/common/slick.min.js"></script>
+			
 			<link rel="stylesheet" type="text/css" href="/css/slick.css" />
 
 			<!-- <div class="overlay_mask"></div> -->
@@ -95,7 +95,8 @@
 						<div class="button_area_v2" style="">
 							<div class="">
 								<div class="bg"></div>								
-								<a href="https://shop.adidas.co.kr/PF070801.action?pageNo=1294&NFN_ST=Y" campaign-label="가입하기" class="">
+								<a href="https://m.adidas.co.kr/MO/Event/pnEvtView.action?pn=READYFORSPORT&year=" campaign-label="가입하기"
+									class="">
 									자세히 보기
 									<span class="arrow">
 										<em class="top"></em>
@@ -107,6 +108,7 @@
 					</div>
 					<div class="adiPopClose_btn"><button></button></div>
 				</div>
+				<!-- 001 -->
 
 				<div class="slider_popup_wrap"> 
 					<div class="slider_popup sld_002">
@@ -120,11 +122,12 @@
 							클라이마쿨과 함께 여름을 즐겨 보세요.
 							
 						</p>
-						<strong>#SUPERNOVA #ADIDASRUNNING​ </strong>
+						<strong>#CLIMACOOL</strong>
 						<div class="button_area_v2" style="">
 							<div class="">
 								<div class="bg"></div>								
-								<a href="https://shop.adidas.co.kr/PF070801.action?pageNo=1294&NFN_ST=Y" campaign-label="가입하기" class="">
+								<a href="https://m.adidas.co.kr/MO/Promotion/landingPage.action?NFN_ST=Y&pageNo=1238&term=1"
+									campaign-label="가입하기" class="">
 									자세히 보기
 									<span class="arrow">
 										<em class="top"></em>
@@ -136,14 +139,18 @@
 					</div>
 					<div class="adiPopClose_btn"><button></button></div>
 				</div>
+				<!-- 002 -->
 
 				<div class="slider_popup_wrap">
 					<div class="slider_popup sld_003">
 						<div class="item">
-							<video autoplay muted loop poster playsinline ="/images/adidas/2020/event/adipost/popupImg/003/01.jpg" width="600px" height="auto" class="video_act">
-								<source src="https://shop.adidas.co.kr/upload/design_temp/video/2020/a/supernova/supernova1280x720.mp4" type="video/mp4" />
-								<source src="/images/adidas/2020/event/adipost/popupImg/003/01.jpg" type="video/webm" />
-							</video>
+							<div class="video_wrap">
+								<video autoplay muted loop poster playsinline="/images/adidas/2020/event/adipost/popupImg/003/01.jpg"
+									width="100%" class="video_act">
+									<source src="https://imagem.adidas.co.kr/upload/design_temp/video/2020/a/supernova/supernova1280x720.mp4"
+										type="video/mp4" />
+								</video>
+							</div>
 						</div>
 						<div class="item">
 							<img src="/images/adidas/2020/event/adipost/popupImg/003/01.jpg" alt=""/>
@@ -155,13 +162,12 @@
 							유연하면서도 탄력감 있게 받쳐주는 쿠셔닝의 신세계.<span></span>​
 							다시 뜨겁게 땀 흘릴 그 날을 위해​ <span></span>
 							슈퍼노바와 함께 다시 뛰기 위한 완벽한 준비를 시작해 보세요.​<span></span>
-							
-						</p>
+						</p>						
 						<strong>#SUPERNOVA #ADIDASRUNNING​ </strong>
 						<div class="button_area_v2" style="">
 							<div class="">
 								<div class="bg"></div>								
-								<a href="https://shop.adidas.co.kr/PF070801.action?pageNo=1294&NFN_ST=Y" campaign-label="가입하기" class="">
+								<a href="https://m.adidas.co.kr/MO/Event/pnEvtView.action?pn=SUPERNOVA&year=" campaign-label="가입하기" class="">
 									자세히 보기
 									<span class="arrow">
 										<em class="top"></em>
@@ -173,9 +179,11 @@
 					</div>
 					<div class="adiPopClose_btn"><button></button></div>
 				</div>
-				<!-- <div class="bg"></div>				 -->
+				<!-- 003 -->
+				
 			</div><!--adipost-->	
 
+			<script type="text/javascript" src="/designjs/common/slick.min.js"></script>
 			<script>
 			
 				$(function(){
@@ -210,6 +218,8 @@
 					}
 	
 					// 팝업 슬라이드 처리 스크립트
+					var htmlDom = $('html');
+					var BodyDom = $('body');
 					var POPUP_BTN =  $('#adipost .adipost_btn');
 					var CLOSE_POP_BTN = $('.slider_popup_wrap .close');
 					var sldPopDom = $('.slider_popup_wrap');
@@ -243,7 +253,7 @@
 					});
 	
 					$(".sld_003").slick({
-						autoplay: true,
+						// autoplay: true,
 						autoplaySpeed: 3000,
 						infinite: true,
 						dots: true,
@@ -254,14 +264,20 @@
 						cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)',
 						focusOnSelect: false,
 						pauseOnHover:false
+					});	
+					
+					var slickItem = $('.slick-slide');
+					var deviceWidth = window.innerWidth;
+				
+					slickItem.css({
+						'height' : deviceWidth,
 					});
 	
-	
 					POPUP_BTN.on('click', function(){
-						// var index = $(this).index();
 						var index = $(this).attr("data-itemidx") - 1;
-						
-						console.log(index);
+
+						htmlDom.css({'overflow':'hidden'});
+						BodyDom.css({'overflow':'hidden'});
 	
 						// 1. 팝업오픈
 						// $('.slider_popup_wrap').fadeIn();
@@ -270,22 +286,17 @@
 						$('.adiPopClose_btn').fadeIn();
 	
 						$(".slider_popup").slick('setPosition');
-						
 					});
 					
 					$('.adiPopClose_btn').on('click', function(){
 						$('.slider_popup_wrap').fadeOut();
 						$(this).fadeOut();
+
+						htmlDom.css({'overflow':'auto'});
+						BodyDom.css({'overflow':'auto'});
 					});
 
-					// $('.overlay_mask').on('click', function(){
-					// 	$('.slider_popup_wrap').fadeOut();
-					// 	$(this).fadeOut();
-					// });
-	
-	
-	
-	
+
 	
 	
 	
