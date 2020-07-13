@@ -1,0 +1,256 @@
+@import './mobile/css/adidas/scss/common/mixin.scss';
+@import './mobile/css/adidas/scss/common/common.scss';
+
+#rdy_summer{
+	position: relative;
+
+	/*
+		common
+	*/
+	.button_area_v2{
+		display: inline-block;
+		a{
+			padding: 0 6vw;
+			font: 500 1rem/3.4rem 'NotoSansKR';
+			letter-spacing: .15rem;
+			height: 3.4rem;
+			.arrow{
+				margin-left: 1rem;
+				width: 20px;
+				&::after, &::before{
+					width: 7px;
+					height: 2px;
+				}
+				&::before{
+					bottom:-2px;
+				}
+				&::after{
+					top:-2px;
+				}
+			}
+		}
+	}
+
+	/*
+		contents
+	*/
+	.section{
+		position: relative;
+		&.sect__visual {
+			>img{
+				display: block;
+				width: 100%;
+			}
+			.sect_visual_title {
+				padding: 2rem 0 3rem;
+				text-align: center;
+				>span{
+					display: block;
+					font: 800 3.5rem/3.5rem 'adinenuPro-black';
+					text-transform: uppercase;
+					letter-spacing: 2px;
+					&::before{
+						position: absolute;
+						content: "STYLE PICK";
+						font: 800 3.5rem/3.5rem 'adinenuPro-black';
+						color: #2cd2ce;
+						text-transform: uppercase;
+						letter-spacing: 2px;
+						transform: translate(3px, 3px);
+						z-index: -1;
+					}
+				}
+				h3{
+					position: relative;
+					padding-top: 0.5rem;
+					font: 800 5.4rem/5.4rem 'adinenuPro-black';
+					text-transform: uppercase;
+					color: #2cd2ce;
+					&::before {
+						position: absolute;
+						content: "READY FOR SUMMER";
+						font: 800 5.4rem/5.4rem 'adinenuPro-black';
+						text-transform: uppercase;
+						color: #000;
+						transform: translate(-38px, 4px);
+						z-index: -1;
+					}
+				}
+				p{
+					padding: 0.7rem 0;
+					font: 400 1rem/1.7rem 'NotoSansKR';
+					letter-spacing: 2px;
+					&.strtxt{
+						font: 600 1.6rem/1.6rem 'NotoSansKR';
+						letter-spacing: normal;
+					}
+				}
+				.button_area_v2{
+					margin-top: 1rem;
+				}
+			}
+		}
+
+		&.sect__navi {
+			overflow: hidden;
+			height: 3.283rem;
+			img{
+				display: block;
+				width: 100%;
+			}
+			ul {
+				overflow: hidden;
+				width: 100%;
+				position: absolute;
+				top: 0;left: 0;
+				background: #fff;
+				&.fixed {
+					position: fixed;
+					z-index: 10;
+				}
+				li{
+					float: left;
+					width: 24.4%;
+					text-align: center;
+					background: #ccdbdb;
+					span{
+						display: inline-block;
+						padding: 1rem 0 0.7rem;
+						font: 400 1.3rem 'adinenuPro-bold';
+						text-transform: uppercase;
+						letter-spacing: 1px;
+						color: #fff;
+					}
+					&:nth-child(2){
+						margin-left: 0.8%;
+					}
+					&:nth-child(3){
+						margin:0 0.8%;
+					}
+					&.on{
+						background: #2cd2ce;
+						a{
+							color: #000;
+						}
+					}
+				}
+			}
+		}
+
+		&.sect__cont{
+			.sect_cont_naviarea{
+				display: block;
+				width: 100%;
+				height: 3.5rem;
+			}
+			h4{
+				img{
+					display: block;
+					width: 100%;
+				}
+			}
+			>p{
+				padding: 1rem 0 2.2rem;
+				font: 400 0.9rem/1.5rem 'NotoSansKR';
+				text-align: center;
+				letter-spacing: 2px;
+			}
+			.sect__cont__sld{
+				text-align: center;
+				padding-bottom: 4rem;
+				ul{
+					.slick-slide{
+						img{
+							display: block;
+							width: 100%;
+						}
+					}
+				}
+				.slick-dots {
+					display: inline-block;
+					margin: 1rem auto;
+					overflow: hidden;
+
+					li {
+						float: left;
+						padding: 0 1px;
+
+						&.slick-active {
+							button {
+								background: url('/images/adidas/2020/event/rdy/0715_summer/sld_dot_on.png') 0 0 no-repeat;
+								background-size: cover;
+								background-position: 100% 100%;
+							}
+						}
+
+						button {
+							width: 15px;
+							height: 15px;
+							border: 0 none;
+							background: url('/images/adidas/2020/event/rdy/0715_summer/sld_dot.png') 0 0 no-repeat;
+							background-size: cover;
+							background-position: 100% 100%;
+							text-indent: -9999px;
+							box-sizing: unset;
+							padding: 0;
+						}
+					}
+				}
+				>p {
+					padding: 0 0 1.8rem;
+					font: 400 0.9rem/1.5rem 'NotoSansKR';
+					text-align: center;
+					letter-spacing: normal;
+				}
+				.button_area_v2{
+
+				}
+			}
+		}
+
+		&.sect__collection {
+			>img{
+				display: block;
+				width: 100%;
+			}
+			a{
+				display: inline-block;
+				position: absolute;
+				width: 48%;
+				height: 26.5%;
+				// background: rgba(0, 0, 0, 0.4);
+				z-index: 1;
+			}
+		}
+
+		&.sect__state {
+			.sect_state_title {
+				padding: 3rem 0 4rem;
+				text-align: center;
+				p {
+					font: 300 1.2rem/1.7rem 'NotoSansKR';
+					letter-spacing: normal;
+					&.strtxt {
+						padding: 0.7rem 0;
+						font: 600 1.9rem/2.5rem 'NotoSansKR';
+						letter-spacing: 2px;
+					}
+				}
+				.button_area_v2 {
+					margin-top: 1rem;
+				}
+			}
+		}
+
+		&.sect__bnnsale {
+			padding: 0 1rem 3rem;
+			a{
+				display: inline-block;
+				img {
+					display: block;
+					width: 100%;
+				}
+			}
+		}
+	}
+}
