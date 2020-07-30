@@ -1,0 +1,229 @@
+@import "./mobile/MO/reebok/css/scss/about.scss";
+
+#contents{
+    img{
+        vertical-align: middle;
+    }
+}
+//common
+.btn{
+	>div{
+        position: relative;
+        display: inline-block;
+		&::before{
+            border-bottom: 1px solid #000;
+            border-left: 1px solid #000;
+            bottom: -4px;
+            height: 3px;
+            left: 2px;
+            width: calc(100% + 1px);
+            content: "";
+            display: block;
+            position: absolute;
+		}
+		&::after{
+            border-right: 1px solid #000;
+            border-top: 1px solid #000;
+            height: calc(100% + 1px);
+            right: -4px;
+            top: 2px;
+            width: 3px;
+            content: "";
+            display: block;
+            position: absolute;
+        }
+		a{
+            padding: 0 1rem;
+			font: 600 1rem/3.4rem 'NotoSansKR';
+			letter-spacing: .1rem;
+			position: relative;
+			display: block;
+			text-align: center;
+			color: #fff;
+			background:#000;
+			z-index: 2;
+			border: 1px solid #000;
+			.arrow{
+                margin-top: -3px;
+                margin-left: 1.4rem;                
+                vertical-align: middle;
+                width: 20%;                
+			}
+		}
+	}
+    &.white{
+		>div{
+			&::before{
+				border-bottom: 1px solid #fff;
+				border-left: 1px solid #fff;
+			}
+			&::after{
+				border-right: 1px solid #fff;
+				border-top: 1px solid #fff;
+			}
+			a{
+				color: #000;
+				background:#fff;
+				border: 1px solid #fff;
+				.arrow{
+				}
+			}
+		}
+	}
+    &.custom{
+		>div{
+			&::before {
+				border: 1px solid #000;
+				width: calc(100% + 1px);
+				height: 100%;
+				background: #de4748;
+				box-sizing: border-box;
+				-webkit-box-sizing: border-box;
+			}
+
+			&::after {
+				content: none;
+			}
+			a{
+				color: #000;
+				background:#fff;
+				border: 1px solid #000;
+				.arrow{
+				}
+			}
+		}
+	}
+}
+
+.btn_black{
+	display: inline-block;
+	background: #000;
+	text-align: center;
+	a{
+		position: relative;
+		display: block;
+		font: 500 1.1rem/42px 'NotoSansKR';
+		color: #fff;
+		letter-spacing: .1rem;
+		width: 125px;
+		span{
+			display: inline-block;
+			width: 20px;
+			height: 9px;
+			background: url(/images/reebok/2019/event/myt/icons_arrow_w.png) no-repeat;
+			background-size: 100% 100%;
+			margin-left: 18px;
+		}
+		&:after{
+			display: inline-block;
+			content: '';
+			border: 1px solid #000;
+			position: absolute;
+			top: 0;left: 0;right: 0;bottom: 0;
+			transform: translate(3px, 3px);
+		}
+	}
+}
+
+.interval {
+	.section {
+		position: relative;
+
+		&.sect_visual {
+			>img {
+				display: block;
+				width: 100%;
+			}
+		}
+
+		&.sect_state {
+			background: #1c1c1a;
+			padding: 3rem 0 3.5rem;
+
+			.txt_box {
+				text-align: center;
+
+				p {
+					font: 400 1rem/1.8rem 'NotoSansKR';
+					color: #fff;
+					text-align: center;
+				}
+
+				.btn {
+					display: inline-block;
+					margin-top: 1.5rem;
+				}
+			}
+		}
+
+		&.sect_video {
+			background: url('/images/reebok/2020/event/interval/0731/video_bg.jpg') no-repeat;
+			background-position: center top;
+			background-size: cover;
+			text-align: center;
+			padding: 4rem 0 6rem;
+
+			.video_titbox {
+				h3 {
+					padding-bottom: 3rem;
+					font: 700 2.8rem/3rem 'neueplak-ext';
+					font-style: italic;
+					letter-spacing: 1px;
+					color: #fff;
+					text-transform: uppercase;
+					text-align: center;
+				}
+			}
+
+			video {
+				display: inline-block;
+				width: 100%;
+			}
+		}
+
+		&.sect_grid {
+			padding: 5px 0;
+			background: #1e368c;
+
+			ul {
+				overflow: hidden;
+
+				li {
+					overflow: hidden;
+					width: 49.25%;
+					float: left;
+					&:last-child {
+						float: right;
+					}
+					>img {
+						display: block;
+						width: 100%;
+						margin-bottom: 5px;
+						&:last-child {
+							margin-bottom: 0;
+						}
+					}
+				}
+			}
+		}
+
+		&.sect_bottom {
+			padding-bottom: 5px;
+			background: #1e368c;
+			>img {
+				display: block;
+				width: 100%;
+			}
+
+			.btn {
+				position: absolute;
+				bottom: 22%;
+				left: 50%;
+				transform: translateX(-50%);
+				z-index: 2;
+			}
+		}
+	}
+}
+
+
