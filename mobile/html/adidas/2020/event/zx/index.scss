@@ -1,0 +1,449 @@
+@import './mobile/css/adidas/scss/common/mixin.scss';
+@import './mobile/css/adidas/scss/common/common.scss';
+
+html,body{
+	width:100%;
+}
+
+button{
+	outline:none;
+}
+em{
+	font-style:normal;
+}
+.clearfix{
+	clear:both;
+	display:block;
+	content:"";
+}
+
+.button_area_v2{
+	display: inline-block;
+	a{
+		padding: 0 6vw;
+		font: 500 1rem/3.4rem 'NotoSansKR';
+		letter-spacing: .15rem;
+		height: 3.4rem;
+		.arrow{
+			margin-left: 1rem;
+			width: 20px;
+			&::after, &::before{
+				width: 7px;
+				height: 2px;
+			}
+			&::before{
+				bottom:-2px;
+			}
+			&::after{
+				top:-2px;
+			}
+		}
+	}
+}
+
+#zx {
+	position: relative;
+
+	.rel{
+		position: relative;
+	}
+
+	.center{
+		position: absolute;
+		top:0;
+		left:50%;
+		transform: translateX(-50%);
+	}
+	
+	.main__visual{
+		>img{
+			display:block;
+			width:100%;
+		}
+
+		.main__txt{
+			padding:4.1rem 1rem 3rem 1rem;			
+			text-align:center;
+			
+			h1{
+				text-align:center;
+				img{
+					display:block;
+					margin:0 auto;
+					width:38%;
+				}
+			}
+
+			p{
+				padding:2rem 0 1rem 0;
+				text-align:center;
+				font:400 1rem/1.9rem 'NotoSansKR';
+				color:#111;
+				letter-spacing:0;
+				span{
+					display:block;
+				}
+			}
+			em{
+				display:block;
+				text-align:center;
+				font:400 1rem/1.9rem 'NotoSansKR';
+				color:#111;
+				letter-spacing:0;				
+			}
+			strong{
+				display:block;
+				font:600 1.2rem/2rem 'adinenuPro-bold';
+				color:#111;
+				text-transform:uppercase;
+				letter-spacing:1px;
+				padding-bottom:2.5rem;
+			}
+		}
+	}
+
+	.zx_bar{
+		img{
+			width:100%;
+			display:block;
+		}
+	}
+
+	@mixin sldier_tit {
+		font: 3.7rem/4rem 'adinenuPro-bold';
+		color:#111;
+		text-align:center;
+		letter-spacing:2px;
+		text-transform:uppercase;
+	}	
+
+	@mixin sldier_txt {
+		display:block;
+		text-align:center;
+		font:400 1rem/1.5rem 'NotoSansKR';
+		color:#111;
+		letter-spacing:2px;				
+	}		
+
+
+	.tab__btn{
+		padding-top:30px;
+		position:relative;
+		height:30px;
+
+		.tabs{
+			padding:0 1rem;
+			&.fixed{
+				position: fixed;
+				top:60px;
+				left:50%;
+				transform: translateX(-50%);
+				z-index: 3;
+				widtH:94%;
+			}
+
+			.tabs__item{
+				font: 1.3rem/1.5rem 'adinenuPro-bold';
+				color: #969c9d;
+				background: #e3eced;
+				width:33.3%;
+				float: left;
+				text-align: center;
+				padding: 10px 0 10px;
+				letter-spacing: 1.5px;
+				position:relative;
+				&::before{
+					content:'';
+					display:block;
+					position:absolute;left:0;top:8px;
+					width:2px;
+					height:22px;
+					background:#b7b7b7;
+				}
+				&.active{
+					color: #111;
+				}
+				&:first-child{
+					&::before{
+						display:none;
+					}
+				}
+			}
+		}	
+	}
+
+
+	.zx_boost_tab{
+			.zx_boost_txt{
+				padding:0 0 3.2rem 0;
+				text-align:center;
+				
+				h2{
+					padding:3.8rem 0 0.5rem 0;
+					font: 3.7rem/4rem 'adinenuPro-bold';
+					text-align:center;
+					color:#111;
+					letter-spacing: 2px;
+				}
+
+				p{
+					text-align:center;			
+					font:400 1rem/1.5rem 'NotoSansKR';					
+					color:#111;
+					letter-spacing:1px;
+					strong{
+						font: 1.2rem/1.5rem 'adinenuPro-bold';
+					}
+					span{
+						display:block;
+					}
+				}
+			}
+
+			.content{
+				position: relative;
+				.content__bg{
+					background:url('/images/adidas/2020/event/zx/video_bg.jpg')center center no-repeat;
+					background-size:100%;
+					.content__video{
+
+						.boost_video_list{
+							overflow:hidden;		
+							ul{
+								text-align:center;
+								margin:0 0.5rem 0 1rem;
+								li{
+									text-align:center;									
+									float:left;
+									vertical-align:top;
+									width:48%;
+									margin:0 auto;
+									&:first-child{
+										margin-right:2%;
+									}
+									video{
+										width:100%;
+									}
+								}
+							}					
+						}
+
+					}
+				}
+				.zx2k4d{
+					background:url('/images/adidas/2020/event/zx/zx2k_bg.jpg')center center no-repeat;
+					margin-bottom:2.5rem;
+				}		
+
+				.florine{
+					background:url('/images/adidas/2020/event/zx/florine_bg.jpg')center center no-repeat;
+					margin-bottom:2.5rem;					
+				}					
+
+				.slick-dots {
+					padding:1.2rem 0 1.5rem 0;
+					text-align: center;
+				}			
+				.slick-dots li {
+					display: inline-block;
+					margin-right: 10px;
+				}
+				.slick-dots li button {
+					width: 20px;
+					height: 5px;
+					background:#adadad;
+					border:0;
+					padding: 0;
+					text-indent: -9999px;
+				}			
+				.slick-dots li.slick-active button {
+					background:#111;
+				}
+				.slick-slide{
+					img{
+						margin:0 auto;
+					}
+				}
+			}			
+		
+
+		.zx_boost_txt2{
+			padding:2.6rem 0 0 0;
+			p{
+				text-align:center;
+				font:400 0.85rem/1.6rem 'NotoSansKR';				
+				letter-spacing: 0;
+				color:#111;
+				>.space{
+					display:block;
+				}
+				.pro_bold{
+					font: 1.1rem/1.6rem 'adinenuPro-bold';
+					text-align:center;
+					text-transform:uppercase;
+					letter-spacing: 2px;
+				}
+				em{
+					padding:3rem 0 2.4rem 0;
+					display:block;
+					font: 1.1rem/1.6rem 'adinenuPro-bold';
+					background: linear-gradient(to right, #fe3225 40%, #3f58b3 60%);
+					-webkit-background-clip: text;
+					-webkit-text-fill-color: transparent;					
+					text-transform:uppercase;
+					letter-spacing: 1px;					
+				}
+				strong{
+					display:block;
+					font:400 0.9rem/1.6rem 'NotoSansKR';	
+					padding:1rem 0 3rem 0;		
+					letter-spacing: 1px;			
+				}
+			}
+		}
+
+		.boost_slider{
+			width:100%;
+			margin:0 auto;
+			text-align:center;
+			padding-bottom:3.3rem;
+			.slider_bg{
+				background:url('/images/adidas/2020/event/zx/boost_slider_bg.jpg')center top 36% no-repeat;
+				background-size:100%;
+				position:relative;				
+				.slider_01{
+					widtH:80%;
+					margin:0 auto;
+				}
+				.slick-slide img{
+					width:100%;
+				}				
+				.slick-dots li {
+					display: inline-block;
+					margin-right: 5px;
+				}					
+			}
+		}
+
+		.all__slider{
+			text-align:center;
+			padding-bottom:4rem;
+			.sldier_txt{
+				padding:3rem 0 3rem 0;
+				text-align:center;
+				h3{
+					@include sldier_tit;
+				}
+				p{
+					@include sldier_txt;
+					padding-top:1rem;
+					span{
+						display:block;
+					}
+					strong{
+						font: 1.1rem/1.5rem 'adinenuPro-bold';						
+						letter-spacing:normal;
+					}
+				}
+			}
+			.content__bg2{
+				.slider_02{
+					width:85%;
+					margin:0 auto;
+					padding-top:2.5rem;
+				}
+				.slider_03{
+					width:85%;
+					margin:0 auto;					
+					padding-top:2.5rem;					
+				}
+				.slick-slide img{
+					width:100%;
+				}	
+				.slick-dots {
+					padding:1.5rem 0 1rem 0;
+					text-align: center;
+				}				
+			}
+
+			video{
+				width:94%;
+			}
+		}
+	}//zx_boost_tab
+	.zxience{
+		padding:3rem 1rem 4rem 1rem;
+		text-align:center;
+		h3{
+			max-width:1240px;
+			margin:0 auto;
+			img{
+				text-align:center;
+				display:block;
+				margin:0 auto;
+				width:85%;
+			}
+			padding-bottom:1rem;
+		}
+		p{
+			padding:1rem 0 0.5rem 0;
+			text-align:center;
+			font:400 1rem/1.9rem 'NotoSansKR';
+			color:#111;
+			letter-spacing:0;
+			span{
+				display:block;
+			}
+			em{
+				display:block;
+				padding:0.5rem 0 0.2rem 0;
+				font-style:normal;
+				letter-spacing:normal;
+			}
+			strong{
+				display:block;
+				font: 1.1rem/1.5rem 'adinenuPro-bold';	
+				text-transform:uppercase;		
+				padding-bottom:1.5rem;	
+				letter-spacing:1px;		
+			}			
+		}
+	}
+	.a_zx{
+		text-align:center;		
+		.a_zx_bg{
+			background:url('/images/adidas/2020/event/zx/a_zx_bg.jpg')no-repeat;
+			background-size:100%;
+			text-align:center;				
+		}	
+		.a_zx_txt{
+			text-align:center;
+			padding:0 0 4.7rem 0;
+			h3{
+				padding-top:5.8rem;
+				text-align:center;
+				img{
+					display:block;
+					margin:0 auto;
+					width:45%;
+				}
+			}
+
+			p{
+				text-align:center;			
+				font:600 1rem/1.7rem 'NotoSansKR';					
+				color:#111;
+				letter-spacing:1px;				
+				padding:1.5rem 0 2rem 0;
+
+				span{
+					display:block;
+				}
+				em{
+					display:block;
+					padding:0.4rem 0;
+				}
+			}
+		}
+	}
+}
