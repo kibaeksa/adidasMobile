@@ -36,9 +36,9 @@
 	
 					<div class="tab__btn">
 						<div class="tabs scroll">
-							<div class="tabs__item active">BOOST</div>
-							<div class="tabs__item" >4D</div>
-							<div class="tabs__item" >FLORINE</div>
+							<div class="tabs__item active on" onclick="moveTo('boost')">BOOST</div>
+							<div class="tabs__item" onclick="moveTo('4d')">4D</div>
+							<div class="tabs__item" onclick="moveTo('florine')">FLORINE</div>
 						</div>
 					</div>
 	
@@ -292,10 +292,9 @@
 	
 						$('#header').addClass('alwaysOn');
 	
-	
-						function moveTo(contName){
+						function moveTo(sec){
 							// alert(contName);
-							var contOffset = $(".cont__" + contName).offset();
+							var contOffset = $(".sec" + sec).offset();
 							$('html, body').animate({scrollTop : contOffset.top - 90}, 400);
 						}
 	
