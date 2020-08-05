@@ -102,7 +102,7 @@
 						</div>
 						<div class="zx_boost_txt2">
 							<p>
-								<span class="pro_bold">ZXience Lab</span>에서의 끝없는 연구와 실험<span class="space"></span>
+								<span class="pro_bold">ZXIENCE LAB</span>에서의 끝없는 연구와 실험<span class="space"></span>
 								지금껏 경험해 보지 못한 새로운 스니커즈의 시대를 열다.<span class="space"></span>
 								<em>#Zxientist #CoZXiness #Zxience #Zxneakers</em>
 								독창적이고 감각적인 영상을 만들어 내는 비쥬일 디렉터 <span class="pro_bold">DPR IAN</span><span class="space"></span>
@@ -263,7 +263,7 @@
 								<em></em>
 								A-ZX를 기념하는 이니셜을 확인해보세요.									
 							</p>
-							<div class="button_area_v2 a_zx_button">
+							<!-- <div class="button_area_v2 a_zx_button">
 								<div class="">
 									<div class="bg"></div>
 									<a href="https://m.adidas.co.kr/MO/Event/pnEvtView.action?pn=a-zx">
@@ -274,7 +274,7 @@
 										</span>
 									</a>
 								</div>
-							</div>									
+							</div>									 -->
 						</div>
 					</div>
 				</div><!--a_zx-->
@@ -283,7 +283,6 @@
 		
 			<script type="text/javascript">
 				$(window).load(function(){
-
 					// scroll action
 					$(this).scroll(function(){
 						var thisScroll = $(this).scrollTop();
@@ -320,83 +319,91 @@
 						moveTo(index+1);
 					})
 
+					$('#header').addClass('alwaysOn');
 
-						
-							// 스크롤 이벤트
-							var scrollArray = [];
-							var scrollContents = document.querySelectorAll('.scroll');
-							var objStart = $(".tab__btn").offset().top - 30;
-							// var objStart = 665;
-							var lastScrollValue = 0;
-							var naviWrap = $('.tabs');
-							var naviItme = $('.tabs .tabs__item');
-							var headerHide = $('#header').hasClass('hide');
-							// console.log("objStart :" +objStart);
 
-							for (var i = 0; i < scrollContents.length; i++) {
-								var mypos = scrollContents[i].offsetTop;
-								scrollArray.push(mypos);
+					function moveTo(contName){
+						// alert(contName);
+						var contOffset = $(".cont__" + contName).offset();
+						$('html, body').animate({scrollTop : contOffset.top - 90}, 400);
+					}
+
+					// 스크롤 이벤트
+					var scrollArray = [];
+					var scrollContents = document.querySelectorAll('.scroll');
+					var objStart = $(".tab__btn").offset().top - 30;
+					// var objStart = 665;
+					var lastScrollValue = 0;
+					var naviWrap = $('.tabs');
+					var naviItme = $('.tabs .tabs__item');
+					var headerHide = $('#header').hasClass('hide');
+					// console.log("objStart :" +objStart);
+
+					for (var i = 0; i < scrollContents.length; i++) {
+						var mypos = scrollContents[i].offsetTop;
+						scrollArray.push(mypos);
+					}
+					// console.log(scrollArray);
+
+					$(this).scroll(function () {
+						var thisPos = $(this).scrollTop(); //+ $(window).height()
+
+						for (var pos = 0; pos < scrollArray.length; pos++) {
+							if (thisPos > scrollArray[pos]) {
+								// 스크롤메뉴 하위 엘레먼트 활성화
+								naviItme.removeClass('on').eq(pos).addClass('on');
 							}
-							// console.log(scrollArray);
+						}
+						
+						// 스크롤 메뉴 헤더관계 처리
+						if (thisPos > objStart) {
+							naviWrap.addClass('fixed');
+							naviWrap.css("top", "60px");
 
-							$(this).scroll(function () {
-								var thisPos = $(this).scrollTop(); //+ $(window).height()
-
-								for (var pos = 0; pos < scrollArray.length; pos++) {
-									if (thisPos > scrollArray[pos]) {
-										// 스크롤메뉴 하위 엘레먼트 활성화
-										naviItme.removeClass('on').eq(pos).addClass('on');
-									}
-								}
-								
-								// 스크롤 메뉴 헤더관계 처리
-								if (thisPos > objStart) {
-									naviWrap.addClass('fixed');
-									naviWrap.css("top", "60px");
-
-								} else {
-									naviWrap.removeClass('fixed').css("top", "0");
-									if (thisPos == objStart) {
-										$('#header').addClass("hide");
-									}
-								}
-								thisPos = lastScrollValue;
-							});
+						} else {
+							naviWrap.removeClass('fixed').css("top", "0");
+							if (thisPos == objStart) {
+								$('#header').addClass("hide");
+							}
+						}
+						thisPos = lastScrollValue;
+					});
 
 				})
+				$(document).ready(function(){
+					$('.content .slider_01').slick({
+						slidesToShow: 1,
+						slidesToScroll: 1,
+						autoplay: false,
+						autoplaySpeed: 3500,
+						dots: true,
+						infinite: true,
+						// cssEase: 'linear',
+						arrows:false,						
+					});
 
-			$('.content .slider_01').slick({
-				slidesToShow: 1,
-				slidesToScroll: 1,
-				autoplay: false,
-				autoplaySpeed: 3500,
-				dots: true,
-				infinite: true,
-				// cssEase: 'linear',
-				arrows:false,						
-			});
+					$('.content .slider_02').slick({
+						slidesToShow: 1,
+						slidesToScroll: 1,
+						autoplay: false,
+						autoplaySpeed: 3500,
+						dots: true,
+						infinite: true,
+						cssEase: 'linear',
+						arrows:false,						
+					});
 
-			$('.content .slider_02').slick({
-				slidesToShow: 1,
-				slidesToScroll: 1,
-				autoplay: false,
-				autoplaySpeed: 3500,
-				dots: true,
-				infinite: true,
-				cssEase: 'linear',
-				arrows:false,						
-			});
-
-			$('.content .slider_03').slick({
-				slidesToShow: 1,
-				slidesToScroll: 1,
-				autoplay: false,
-				autoplaySpeed: 3500,
-				dots: true,
-				infinite: true,
-				cssEase: 'linear',
-				arrows:false,						
-			});					
+					$('.content .slider_03').slick({
+						slidesToShow: 1,
+						slidesToScroll: 1,
+						autoplay: false,
+						autoplaySpeed: 3500,
+						dots: true,
+						infinite: true,
+						cssEase: 'linear',
+						arrows:false,						
+					});					
+				});
 		</script>					
 		</div>
 		<!-- //container product_list -->
