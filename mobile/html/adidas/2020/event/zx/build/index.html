@@ -67,9 +67,9 @@
 
 				<div class="tab__btn">
 					<div class="tabs scroll">
-						<div class="tabs__item active on" onclick="moveTo('boost')">BOOST</div>
-						<div class="tabs__item" onclick="moveTo('4d')">4D</div>
-						<div class="tabs__item" onclick="moveTo('florine')">FLORINE</div>
+						<div class="tabs__item active" >BOOST</div>
+						<div class="tabs__item">4D</div>
+						<div class="tabs__item">FLORINE</div>
 					</div>
 				</div>
 
@@ -299,7 +299,7 @@
 						};
 						$.each(section,function(index,elem){
 							var $target = section.eq(index);
-							targetTop = $target.offset().top - 40;
+							targetTop = $target.offset().top - 100;
 							console.log(targetTop);
 							console.log(thisScroll);
 							if(targetTop<=thisScroll){
@@ -310,14 +310,13 @@
 					})
 
 					// move to the section
-					function moveTo(sec){
-						var offset = $(".sec" + sec).offset();
-						$('html, body').animate({scrollTop : offset.top-100}, 400);
-					}
+					// function moveTo(sec){
+					// 	var offset = $(".sec" + sec).offset();
+					// 	$('html, body').animate({scrollTop : offset.top-110}, 400);
+					// }
 					$('.tabs .tabs__item').click(function(){
 						var index = $(this).index();
 						console.log(index);
-						// $('.tabs .tabs__item').removeClass('active').eq(index).addClass('active');
 						moveTo(index+1);
 					})
 
@@ -332,7 +331,7 @@
 					// 스크롤 이벤트
 					var scrollArray = [];
 					var scrollContents = document.querySelectorAll('.scroll');
-					var objStart = $(".tab__btn").offset().top - 30;
+					var objStart = $(".tab__btn").offset().top - 40;
 					// var objStart = 665;
 					var lastScrollValue = 0;
 					var naviWrap = $('.tabs');
