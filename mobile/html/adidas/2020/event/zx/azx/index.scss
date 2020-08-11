@@ -136,7 +136,6 @@
 		}
 
 		&.sect_contents {
-			margin-top: 1rem;
 			position: static;
 			background: #fff;
 			-webkit-box-sizing: border-box;
@@ -167,7 +166,7 @@
 
 				.thisprd_buybox {
 					position: absolute;
-					bottom: 2rem;
+					bottom: 5.5rem;
 					left: 1.5rem;
 					z-index: 2;
 
@@ -178,13 +177,14 @@
 					}
 
 					h3 {
-						padding-bottom: 1rem;
-						font: 400 2.4rem/2.4rem 'adinenuPro-bold';
+						padding-bottom: 0.5rem;
+						font: 400 1.9rem/1.9rem 'adinenuPro-bold';
+						letter-spacing: 1px;
 						color: #000;
 					}
 
 					p {
-						font: 400 1.1rem 'NotoSansKR';
+						font: 400 1rem 'NotoSansKR';
 						color: #000;
 						transition-delay: 0.1s;
 					}
@@ -196,6 +196,97 @@
 
 						a {
 							padding: 0 20px;
+						}
+					}
+				}
+			}
+
+			.collection__wrapper {
+				padding: 4rem 0 3rem;
+				background: url('/images/adidas/2020/event/zx/azx/collect_bg.jpg') no-repeat;
+				background-size: cover;
+
+				.collection__head {
+					text-align: center;
+
+					h3 {
+						text-align: center;
+						img{
+							display: block;
+							width: 100%;
+						}
+					}
+
+					p {
+						padding-top: 0.5rem;
+						font: 400 1.1rem 'NotoSansKR';
+						letter-spacing: normal;
+						color: #000;
+						text-align: center;
+					}
+				}
+
+				ul#collection__slider {
+					margin-top: 3rem;
+
+					.slick-slide {
+						padding: 0 1rem;
+						>img{
+							display: block;
+							width: 100%;
+						}
+
+						.infoBox {
+							padding: 1.1rem 1rem 0.5rem;
+							.infoBox_inn{
+								height: 8rem; //10rem
+								h4 {
+									font: 400 1.9rem/1.9rem 'adinenuPro-black';
+									letter-spacing: 0.5px;
+									color: #000;
+								}
+
+								p {
+									padding: 0.4rem 0 2rem;
+									font: 400 1.1rem/1.5rem 'NotoSansKR';
+									color: #000;
+								}
+							}
+							.button_area_v2 {
+								display: inline-block;
+								width: auto;
+
+								a {
+									padding: 0 2rem;
+								}
+							}
+						}
+					}
+					.slick-dots {
+						text-align: center;
+						padding: 3rem 0 0;
+
+						li {
+							width: 10px;
+							height: 10px;
+							border: 2px solid #000;
+							border-radius: 50%;
+							display: inline-block;
+							margin-right: 8px;
+
+							&:last-child {
+								margin-right: 0;
+							}
+
+							button {
+								background: none;
+								border: 0;
+								text-indent: -9999px;
+							}
+
+							&.slick-active {
+								background: #000;
+							}
 						}
 					}
 				}
