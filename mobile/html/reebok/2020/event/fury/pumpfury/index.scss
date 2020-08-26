@@ -1,0 +1,218 @@
+@import "./mobile/MO/reebok/css/scss/about.scss";
+
+#contents{
+    img{
+        vertical-align: middle;
+    }
+}
+//common
+html,body{
+    // height:100%;
+}
+.btn{
+	display: inline-block;
+	background: #000;
+	text-align: center;
+	a{
+		position: relative;
+		display: block;
+		font: 500 1.1rem/42px 'NotoSansKR';
+		color: #fff;
+		letter-spacing: .1rem;
+		width: 125px;
+		span{
+			display: inline-block;
+			width: 20px;
+			height: 9px;
+			background: url(/images/reebok/2019/event/myt/icons_arrow_w.png) no-repeat;
+			background-size: 100% 100%;
+			margin-left: 18px;
+		}
+		&:after{
+			display: inline-block;
+			content: '';
+			border: 1px solid #000;
+			position: absolute;
+			top: 0;left: 0;right: 0;bottom: 0;
+			transform: translate(3px, 3px);
+		}
+	}
+}
+.rel{
+	position: relative;
+}
+img{
+	width:100%;
+}
+h3, h4, p, span, a{
+	letter-spacing: 1px;
+}
+div, img, a{
+	outline: none;
+}
+.pumpfury{
+	main{
+		.visuals{
+			position: relative;
+			.visuals__text{
+				position: absolute;
+				top: 10%;
+				left:7.5%;
+				>h3, >span{
+					color: #000;
+					position: relative;
+				}
+				>h3{
+					font: 700 28px/30px 'neueplak-wide';
+				}
+				>span{
+					font: 400 12px/12px 'NotoSansKR';
+					margin: 15px 0 30px 0;
+					display: inline-block;
+					transition-delay: 0.5s;
+				}
+			}
+		}
+		.carousel{
+			background: #000;
+			&.on{
+				.item--active{
+					img{
+						-webkit-animation: brightness 1.5s;
+						animation: brightness 1.5s;
+						-webkit-animation-delay: 1s;
+						animation-delay: 1s;
+					}
+					@-webkit-keyframes brightness {
+						0%, 100%  { -webkit-filter: brightness(none); }
+						50% { -webkit-filter: brightness(10); }
+					}
+				}
+			}
+			.carousel__title{
+				background: #ed361f;
+				margin: 0 0 7px 0;
+				>p, >h5{
+					color: #fff;
+					text-align: center;
+				}
+				p{
+					font: 700 20px/20px 'neueplak-wide';
+					padding: 25px 0;
+				}
+			}
+			#slider{
+				.slick-list{
+					.slick-track{
+						.item{
+							position: relative;
+							.item-head{
+								text-align: center;
+								span{
+									display: block;
+									font: 700 15px/15px 'neueplak-wide';
+									color: #fff;
+									background: #ed361f;
+									padding: 1.8rem 0;
+									margin: 0 0.4rem;
+								}
+							}
+							.item-body{
+								img{
+									width: 97%;
+									margin: 0 auto;
+								}
+							}
+							.item-foot{
+								text-align: center;
+								a{
+									display: block;
+									font: 700 14px/14px 'NotoSansKR';
+									color: #fff;
+									background: #ed361f;
+									padding: 1.8rem 0;
+									margin: 0 0.4rem;
+								}
+							}
+							.item-info{
+								text-align: center;
+								font: 300 11px/11px 'NotoSansKR'; 
+								color: #fff;
+								padding: 10px 0 40px 0;
+							}
+							&.dark {
+								.item-head{
+									span{
+									background: #424243;
+										
+									}
+								}
+								.item-foot{
+									a{
+										background: #424243;
+
+									}
+								}
+							}
+							&.green {
+								.item-head{
+									span{
+									background: #b8cd10;
+										
+									}
+								}
+								.item-foot{
+									a{
+										background: #b8cd10;
+
+									}
+								}
+							}
+							
+						}
+					}
+				}
+				.slick-dots{
+					text-align: center;
+					padding: 0 0 20px 0;
+						li{
+						display: inline-block;
+						margin: 0 2px;
+						width: 55px;
+						height: 5px;
+						background-color: #1f1f1f;						
+						text-indent: -9999px;
+						opacity: 0.9;
+						cursor: pointer;
+							&.slick-active{
+							background: #ed361f;
+							}
+						}
+					}
+			}
+		}
+
+		.bottoms{
+			padding: 35px 0 50px;
+			.bottoms__body{
+				text-align: center;
+				>h4{
+					text-align: center;
+					color: #000;
+					font: 500 12px/12px 'NotoSansKR';
+					letter-spacing: 0;
+				}
+				.btn{
+					margin: 20px 0 45px 0;
+				}
+				img{
+					width: 30%;
+					display: block;
+					margin: 0 auto;
+				}
+			}
+		}
+	}
+}
+
+// electro
