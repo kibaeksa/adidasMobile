@@ -282,7 +282,6 @@ button {
 						}
 
 						.txt2 {
-
 							h3 {
 								span {
 									opacity: 1;
@@ -354,7 +353,7 @@ button {
 								display: inline-block;
 								font: 900 3.6rem/2.5rem 'neueplak';
 								padding: 4.5rem 0 0 0;
-								color: #111;
+								color: #fff;
 								opacity: 0.7;
 								position: relative;
 
@@ -375,7 +374,7 @@ button {
 
 						p {
 							font: 400 1.9rem/2.5rem 'neueplak';
-							color: #111;
+							color: #fff;
 							padding-top:0.5rem;
 							text-transform: uppercase;
 							opacity: 0.6;
@@ -385,7 +384,7 @@ button {
 						strong {
 							display: block;
 							font: 900 1.9rem/2.2rem 'neueplak';
-							color: #111;
+							color: #fff;
 							padding: 1.2rem 0 0 0;
 							text-transform: uppercase;
 							opacity: 0.5;
@@ -443,8 +442,22 @@ button {
 					}
 					
 					&.prevent{
+						.txt2{
+							h3{
+								span{
+									color:#fff;
+								}
+							}
+							p{
+								color:#fff;
+							}
+							strong{
+								color:#fff;
+							}
+							
+						}
 						&::after{
-							opacity:0;
+							opacity:1;
 						}
 					}
 
@@ -455,6 +468,7 @@ button {
 								opacity: 1;
 								transition-delay: 0.3s;
 								transition: all 0.3s;
+								color:#111;
 							}
 						}
 
@@ -462,12 +476,14 @@ button {
 							opacity: 1;
 							transition-delay: 0.5s;
 							transition: all 0.7s;
+							color:#111;
 						}
 
 						strong {
 							opacity: 1;
 							transition-delay: 0.7s;
 							transition: all 0.9s;
+							color:#111;
 						}								
 					}
 
