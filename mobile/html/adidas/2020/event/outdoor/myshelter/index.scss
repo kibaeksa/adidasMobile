@@ -1,0 +1,408 @@
+@import './mobile/css/adidas/scss/common/mixin.scss';
+@import './mobile/css/adidas/scss/common/common.scss';
+
+html,body{
+	height: 100%;
+}
+
+button{
+	outline:none;
+}
+
+.button_area_v2{
+	display: inline-block;
+	a{
+		padding:0 4vw;
+		font:700 1rem/3.4rem 'NotoSansKR';
+		letter-spacing: .1rem;
+		height: 3.4rem;
+		.arrow{
+			margin-left: 1rem;
+			width: 20px;
+			&::after, &::before{
+				width: 7px;
+				height: 2px;
+			}
+			&::before{
+				bottom:-3px;
+			}
+			&::after{
+				top:-2px;
+			}
+		}
+	}
+}
+
+.inner{
+	margin: 0 auto;
+	position: relative;
+	box-sizing: border-box;	
+	padding:0 2rem;
+}
+
+.clearfix{
+	clear:both;
+	content:'';
+	display:block;
+}
+
+
+
+
+#container{
+
+
+	#myshelter{
+		position: relative;
+		background: #000;
+	
+		.main{
+			position: relative;
+			img{
+				display: block;
+				width: 100%;
+			}
+			.inn_wrap{
+				position: absolute;
+				bottom: 3.5rem;
+				left: 2rem;
+				width: 100%;
+				.logo{
+					width: 53%;
+					img{
+						display: inline-block;
+						width:100%;
+					}
+				}
+				p{
+					padding-top: 1rem;
+					font:300 1.1rem/1.6rem 'NotoSansKR';
+					color: #fff;
+					letter-spacing: 0.5px;
+					span{
+						display:block;
+					}
+				}
+				.button_area_v2{
+					margin: 5% 0 0 0;
+					a{
+						font-weight: 500;
+					}
+				}
+			}
+		}
+	
+		.statement{
+			position: relative;
+			background:#000;
+			text-align: center;
+			padding:2rem 0.8rem;
+			.inbox{
+				text-align: center;
+				h2 {
+					color: #fff;
+					font: 600 2.7rem/3.2rem 'NotoSansKR';
+					letter-spacing: 6px;
+				}
+
+				h3 {
+					color: #fff;
+					margin: 1rem 0;
+					font: 600 1.7rem/2.1rem 'NotoSansKR';
+					letter-spacing: 3.5px;
+					span{
+						display:block;
+					}
+				}
+
+				p{
+					text-align: center;
+					color:#c6c6c6;
+					font: 400 0.9rem/1.5rem 'NotoSansKR';
+					letter-spacing: 0px;
+					span{
+						display:block;
+					}					
+				}
+
+				.button_area_v2{
+					margin: 5% 0 0 0;
+					display: inline-block;
+				}
+			}
+		}
+	
+		.navi_wrap{
+			position:relative;
+			.navi{
+				.navi_list{
+					overflow: hidden;
+					.shelter_all{
+						
+						>img{
+							width:100%;
+						}
+						.txt{
+							position:absolute;left:75%;top:49%;
+							transform:translate(-50%,-50%);
+							width:50%;
+							text-align:left;
+							h3{
+								font:600 1.2rem/1.5rem 'NotoSansKR';
+								color:#fff;
+								text-align: left;
+								letter-spacing: 1px;
+								padding:0 0 1rem 0;
+							}
+							>p{
+								font:300 0.8rem/1.2rem 'NotoSansKR';
+								padding-bottom:1.5rem;
+								color:#fff;
+								text-align: left;
+								letter-spacing: 0;
+								span{
+									display:block;
+								}
+								em{
+									display:block;
+									padding:0.5rem 0;
+								}
+							}
+							a{
+								
+								display:inline-block;
+								background:#fff;
+								>p{
+									font:600 1rem/1.2rem 'NotoSansKR';
+									color:#111;
+									text-align: center;
+									letter-spacing: 0;										
+									padding:0.5rem 3.5rem;
+								}
+							}
+						}
+						.txt2{
+							position:absolute;left:29%;top:50%;
+							transform:translate(-50%,-50%);
+							width:50%;
+							text-align:left;		
+							a{
+								
+								display:inline-block;
+								background:#fff;
+								>p{
+									font:600 0.9rem/1.2rem 'NotoSansKR';
+									color:#111;
+									text-align: center;
+									letter-spacing: 0;										
+									padding:0.5rem 2.6rem;
+								}
+							}												
+						}
+							
+					}
+					.shelter_m{
+						position:relative;
+
+					}
+					.shelter_w{
+						position:relative;
+			
+					}						
+			
+				}
+			}
+		}
+
+		.all_item{
+			.statement{
+				position: relative;
+				background:#000;
+				text-align: center;		
+				padding: 2.2rem 0;
+				.content{
+					position: relative;
+					text-align: center;
+					h2{
+						img{
+							width:70%;
+						}
+					}				
+				}				
+			}
+			.video_full_wrap {
+				position: relative;
+				// height: 1080px;
+				img{
+					display:block;
+					width:100%;
+					// position: absolute;
+					// top: 0;
+					// left: 50%;
+					// margin-left: -960px;
+				}
+				.video_btn{
+					position:absolute;left:50%;top:50%;
+					transform:translate(-50%, -50%);
+					button{
+						background:url('/images/adidas/2020/event/outdoor/myshelter/btn.png')no-repeat;
+						width:57px;
+						height:63px;	
+						border:0;
+						background-size:70%;
+						margin-left:30%;
+					}
+				}	
+			}		
+	
+			.slider_wrap{
+				position:relative;
+	
+	
+				.collection{
+					position: relative;
+	
+					.imgbg{
+						position: absolute;
+						top:0;
+						left:0;
+						width:100%;		
+						img{
+							width:100%;
+						}				
+					}
+	
+					.slider_all_list{
+						padding:4rem 1rem 0 1rem;
+						img{
+							width:100%;
+						}
+
+						.slick-dots {
+							padding:1.5rem 0 1rem 0;
+							text-align: center;
+							width:100%;
+							margin:0 auto;
+						}	
+
+						.slick-dots li {
+							display: inline-block;
+							margin-right: 10px;
+						}
+
+						.slick-dots li button {
+							width: 13px;
+							height: 13px;
+							background:0;
+							border:2px solid #fff;
+							border-radius:50%;
+							padding: 0;
+							text-indent: -9999px;
+						}		
+
+						.slick-dots li.slick-active button {
+							background:#fff;
+						}	
+
+					}
+				
+					.slider_bottom{
+						position: relative;
+						text-align: center;
+						p{
+							font: 600 1.7rem/1.5rem 'NotoSansKR';
+							color: #fff;
+							text-align: center;
+							letter-spacing: 1px;
+							text-transform: uppercase;
+							span{
+								text-transform: uppercase;
+								font: 30px 'adinenuPro-bold';
+							}
+						}
+
+						.button_area_v2{
+							margin:2rem 0 4rem 0;
+						}
+
+					}
+				}
+			}
+
+			.list_wrap{
+				position:relative;
+				.item1{
+					position:relative;
+				}
+				.item2{
+					position:relative;
+				}
+				.item3{
+					position:relative;
+				}	
+				.list_all_wrap{
+					.list_bg{
+						img{
+							width:100%;
+						}
+					}
+					.list_txt{
+						position: absolute;;
+						left:50%;
+						top:76%;
+						transform:translate(-50%,-50%);
+						width:90%;
+						h4{
+							text-align: left;
+							font:600 2rem/2rem 'NotoSansKR';
+							color:#fff;
+							letter-spacing:0;				
+							span{
+								display:block;
+							}
+						}
+		
+						p{
+							padding-top:1rem;
+							text-align: left;
+							font:300 1.1rem/1.7rem 'NotoSansKR';
+							color:#fff;
+							letter-spacing:0;		
+							span{
+								display:block;
+							}							
+						}						
+					}
+
+					.list_txt2{
+						position: absolute;;
+						left:auto;
+						right:-40%;
+						top:76%;
+						transform:translate(-50%,-50%);
+						width:90%;
+						text-align:right;
+						h4{
+							text-align:right;
+						}
+						p{
+							text-align:right;
+						}
+					}
+				}
+			}	
+			.all_product{
+				text-align:center;
+				.pro_tit{
+					text-align:center;
+					padding-bottom:1.5rem;
+					>img{
+						margin:0 auto;
+						text-align:center;
+						width:70%;
+					}
+				}
+			}		
+		}		
+	}
+}
