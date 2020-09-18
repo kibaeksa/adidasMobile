@@ -1,0 +1,151 @@
+@import './mobile/css/adidas/scss/common/mixin.scss';
+@import './mobile/css/adidas/scss/common/common.scss';
+#readyfornature{
+	position: relative;
+	.button_area_v2{
+		a{
+			font-size: 1rem;
+			font-weight: normal;
+			height: 36px;
+			line-height: 34px;
+			letter-spacing: 1px;
+			padding: 0 1rem;
+			span.arrow{
+				margin-left: 10px;
+				width: 25px;
+				&:after{
+					width: 8px;
+				}
+				&:before{
+					width: 8px;
+				}
+			}
+		}
+	}
+	span, p, em{
+		letter-spacing: 1px;
+	}
+
+	@mixin center ( $top, $bottom, $left, $transform ) {
+		position: absolute;
+		top: $top;
+		bottom: $bottom;
+		left: $left;
+		transform: $transform;
+	}
+	$ctct: translate(-50%,-50%); 
+	$ct: translateX(-50%);
+
+	main{
+		img, video{
+			width: 100%;
+		}
+		section{
+			position: relative;
+		}
+		.visuals{
+			video{
+			}
+			>a{
+				text-align: center;
+				@include center(50%, auto, 50%, $ctct);
+				img{
+					width: 50%;
+				}
+			}
+		}
+		.sections{
+			>img{
+				width: 100%;
+			}
+		}
+		.textBody{
+			text-align: center;
+			padding: 3rem 0;
+			&.on {
+				em, p{
+					opacity: 1;
+					-webkit-opacity: 1;
+				}
+			}
+			em, p{
+				opacity: 0;
+				-webkit-opacity: 0;
+				transition: all 0.5s ease-in;
+				-webkit-transition: all 0.5s ease-in;
+			}
+			em{
+				font:27px 'adinenuPro-black';
+				color: #000;
+			}
+			p{
+				font:700 13px/19px 'NotoSansKR';
+				color: #000;
+				transition-delay: 0.5s;
+				-webkit-transition-delay: 0.5s;
+				margin: 0.5rem 0 0 0;
+			}
+			&:nth-of-type(6) {
+				p{
+					font:400 11px/17px 'NotoSansKR';
+					color: #000;
+					margin: 0;
+					&:nth-of-type(2) {
+						margin: 1.2rem 0 0 0;
+						transition-delay: 0.5s;
+						-webkit-transition-delay: 0.5s;
+					}
+				}
+				@media screen and (max-device-width: 320px){ 
+					p{
+						font:400 0.8rem/1.5rem 'NotoSansKR';
+					}
+				}
+			}
+		}
+		.grid__container{
+			>div{
+				background: url('/images/adidas/2020/event/readyfornature/background01.jpg') no-repeat;
+				background-position: top;
+				background-size: 100% 100%;
+				padding: 3rem 0;
+				&:nth-of-type(2) {
+					background: url('/images/adidas/2020/event/readyfornature/background02.jpg') no-repeat;
+					background-position: top;
+					background-size: 100% 100%;
+					.inner{
+						.grid__itme{
+							padding: 0 2rem 0;
+						}
+					}
+				}
+				text-align: center;
+				>em{
+					display: block;
+					font:24px 'adinenuPro-black';
+					margin: 0 0 1rem 0;
+				}
+				.inner{
+					.grid__item{
+						padding: 0 2.2rem 1.3rem;
+						position: relative;
+						.button_area_v2{
+							@include center(auto, 17%, 50%, $ct);
+						}
+					}
+				}
+			}
+		}
+		.bottoms{
+			video{
+			}
+			>a{
+				text-align: center;
+				@include center(50%, auto, 50%, $ctct);
+				img{
+					width: 50%;
+				}
+			}
+		}
+	}	
+}
