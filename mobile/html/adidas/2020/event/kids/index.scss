@@ -1,0 +1,239 @@
+@import './mobile/css/adidas/scss/common/mixin.scss';
+@import './mobile/css/adidas/scss/common/common.scss';
+#kids{
+	position: relative;
+	.button_area_v2{
+		a{
+			font-size: 1rem;
+			font-weight: normal;
+			height: 36px;
+			line-height: 34px;
+			letter-spacing: 1px;
+			padding: 0 1rem;
+			span.arrow{
+				margin-left: 10px;
+				width: 25px;
+				&:after{
+					width: 8px;
+				}
+				&:before{
+					width: 8px;
+				}
+			}
+		}
+	}
+	span, p, em{
+		letter-spacing: 1px;
+	}
+
+
+	// 변수
+	$ctct: translate(-50%,-50%); 
+	$ctY: translateY(-50%);
+	$ctX: translateX(-50%);
+	$adinBlk: 'adinenuPro-black';
+	$adinBld: 'adinenuPro-bold';
+	$noto: 'NotoSansKR';
+	
+	// 앱솔루트 - 재사용.
+	@mixin center ( $top, $bottom, $left, $transform ) {
+		position: absolute;
+		top: $top;
+		bottom: $bottom;
+		left: $left;
+		transform: $transform;
+	}
+
+	// $val의 값이 auto면 퍼센티지,
+	// $val에 높이값이 있으면 가운데 정렬 - 재사용. 
+	@mixin auto( $val ) {
+		height: $val;
+		@if ( $val == auto ) {
+			.figure{
+				img, video{
+					width: 100%;
+				}
+			}
+		} @else {
+			.figure{
+				@include center( 0, auto, 50%, $ctX );
+			}
+		}
+	}
+
+	div,a {
+		outline: none;
+	}
+
+	main{
+		img, video{
+			width: 100%;
+		}
+		section{
+			position: relative;
+		}
+		.visuals{
+		}
+		.sections{
+			>img{
+				width: 100%;
+			}
+		}
+		.articles{
+			background: url('/images/adidas/2020/event/kids/bg.jpg') no-repeat;
+			background-position: top;
+			background-size: 100% 100%;
+			padding: 3rem 0 3.5rem 0;
+			text-align: center;
+			p{
+				font: 400 1rem/1.5rem "NotoSansKR";
+				color: #000;
+				text-align: center;
+			}
+			em{
+				font: 700 1.4rem/1.4rem $noto;
+				color: #000;
+				text-align: center;
+				display: block;
+				margin: 1.5rem 0 2rem 0;
+			}
+			.button_area_v2{
+				display: inline-block;
+			}
+		}
+		.contents__container{
+			background: #f9fdff;
+			&.men-contents{
+				background: #fffbf6;
+				>div{
+					.txt{
+						h3{
+							&::after{
+								background: #efa963;
+							}
+						}
+					}
+				}
+			}
+			>div{
+				.txt{
+					text-align: center;
+					padding: 3.5rem 0;
+					h3{
+						font: 700 16px/16px $noto;
+						color: #fff;
+						display: inline-block;
+						z-index: 0;
+						position: relative;
+						text-align: center;
+						&::after{
+							display: block;
+							content: '';
+							clear: both;
+							position: absolute;
+							top: -4px;
+							left: -13px;
+							right: -13px;
+							bottom: -7px;
+							z-index: -1;
+							background: #7dc1e3;
+						}
+					}
+					p{
+						font: 300 1rem/1.5rem $noto;
+						color: #000;
+						margin: 2rem 0;
+						text-align: center;
+					}
+					.button_area_v2{
+						display: inline-block;
+					}
+				}
+				.contents__slider{
+					width: 58%;
+					margin: 0 auto;
+					position: relative;
+					text-align: center;
+					.slick-list{
+						.slick-track{
+							.item{
+								img{
+									width: 100%;
+								}
+							}
+						}
+					}
+					.arrow-buttons{
+						@include center( 39%, auto, auto, $ctct );
+						text-align: center;
+						img{
+							width: 55%;
+							margin: 0 auto;
+						}
+						&.prev-button{
+							left: -18%;
+						}
+						&.next-button{
+							right: -35%;
+							transform: translate(-50%, -50%)rotate(180deg);
+						}
+					}
+					>span{
+						font: 700 15px/15px 'AdihausDIN-Bold';
+						color: #959595;
+						display: inline-block;
+						padding: 3rem 0 2.5rem 0;
+						letter-spacing: 0;
+					}
+				}
+			}
+		}
+		.bottom-articles{
+			padding: 3.5rem 0 4rem 0;
+			background: #fdf9f7;
+			text-align: center;
+			h5{
+				font: 700 16px/16px $noto;
+				color: #fff;
+				position: relative;
+				display: inline-block;
+				z-index: 0;
+				&::after{
+					display: block;
+					content: '';
+					clear: both;
+					position: absolute;
+					top: -4px;
+					left: -13px;
+					right: -13px;
+					bottom: -7px;
+					z-index: -1;
+					background: #bc7a5d;
+				}
+			}
+			p{
+				font: 400 1rem/1.6rem $noto;
+				color: #000;
+				text-align: center;
+				margin: 2rem 0;
+			}
+			.button_area_v2{
+				display: inline-block;
+			}
+		}
+		.bottoms{
+			padding: 2rem 0;
+			em{
+				font: 700 1rem/1.5rem $noto;
+				color: #000;
+				text-align: center;
+				margin: 0 0 2rem 0;
+				display: block;
+			}
+			.figure{
+				width: 85%;
+				margin: 0 auto;
+			}
+		}
+	}	
+}
