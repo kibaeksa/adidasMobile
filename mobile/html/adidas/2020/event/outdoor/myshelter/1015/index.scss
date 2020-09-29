@@ -1,0 +1,746 @@
+@import './mobile/css/adidas/scss/common/mixin.scss';
+@import './mobile/css/adidas/scss/common/common.scss';
+
+button{
+	outline:none;
+}
+a{
+	outline:none;
+}
+
+#shelter_udt{
+	position: relative;
+	background: #000;
+	.button_area_v2{
+		display: inline-block;
+		// width: 120px;
+		a{
+			padding: 0 1.5rem;
+			font: 600 1rem/38px 'NotoSansKR';
+			height: 38px;
+			letter-spacing: 1px;
+			span.arrow{
+				width: 18px;
+			    margin-left: 12px;
+				&:after{
+				    height: 2px;
+					top: -2px;
+				    width: 7px;
+				}
+				&:before{
+				    height: 2px;
+					bottom: -2px;
+					width: 7px;
+				}
+			}
+		}
+	}
+
+	.main{
+		position: relative;
+		img{
+			display: block;
+			width: 100%;
+		}
+		.inn_wrap{
+			position: absolute;
+			bottom: 2rem;
+			left: 2rem;
+			width: 100%;
+			.logo{
+				width: 53%;
+				img{
+					display: inline-block;
+					width:100%;
+				}
+			}
+			p{
+				padding-top: 1rem;
+				font:300 1.1rem/1.6rem 'NotoSansKR';
+				color: #fff;
+				letter-spacing: 0.5px;
+			}
+			.button_area_v2{
+				margin: 5% 0 0 0;
+				a{
+					font-weight: 500;
+				}
+			}
+		}
+	}
+
+	.statement{
+		position: relative;
+		.bg{
+			img{
+				display: block;
+				width: 100%;
+			}
+		}
+		.inbox{
+			padding:3rem 0;
+			width: 100%;
+			text-align: center;
+			h2 {
+				color: #fff;
+				font: 900 2.6rem/2.6rem 'NotoSansKR';
+				letter-spacing: 4px;
+			}
+			h3 {
+				color: #fff;
+				margin: 1rem 0;
+				font: 900 1.5rem/1.9rem 'NotoSansKR';
+				letter-spacing: 3.5px;
+			}
+			p{
+				text-align: center;
+				color:#c6c6c6;
+				font: 300 0.9rem/1.5rem 'NotoSansKR';
+				letter-spacing: 0.1px;
+				
+			}
+			.button_area_v2{
+				margin: 5% 0 0 0;
+				display: inline-block;
+			}
+		}
+	}
+
+	.navi_wrapper{
+		position: relative;
+		padding-bottom: 20%;
+		background: #000;
+		z-index: 10;
+		.navi_wrap {
+			position: absolute;
+			display: flex;
+			width: 100%;
+			.navi {
+				flex: 1;
+				height: 8.5rem;
+				box-sizing: border-box;
+				&.left {
+					background: url('/images/adidas/2020/event/outdoor/myshelter/1015/btn_left_bg.jpg') no-repeat;
+					background-position: center center;
+					background-size: 100% 100%;
+
+					&.on {
+						background: url('/images/adidas/2020/event/outdoor/myshelter/1015/btn_left_bg_on.jpg') no-repeat;
+						background-position: center center;
+						background-size: 100% 100%;
+					}
+				}
+
+				&.right {
+					background: url('/images/adidas/2020/event/outdoor/myshelter/1015/btn_right_bg.jpg') no-repeat;
+					background-position: center center;
+					background-size: 100% 100%;
+
+					&.on {
+						background: url('/images/adidas/2020/event/outdoor/myshelter/1015/btn_right_bg_on.jpg') no-repeat;
+						background-position: center center;
+						background-size: 100% 100%;
+					}
+				}
+
+				p {
+					text-align: center;
+					font: 400 13px/8.5rem 'NotoSansKR';
+					color: #fff;
+					letter-spacing: 1px;
+					text-indent: -9999px;
+				}
+			}
+
+			&.fixed {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				z-index: 10;
+			}
+		}
+	}
+
+	.items_wrapper{
+		position: relative;
+		padding-bottom: 1196%;
+		.item{
+			position: absolute;
+			top:0;
+			left:0;
+			width:100%;
+			opacity: 0;
+			&.on{
+				opacity: 1;
+
+				z-index: 5;
+			}
+			&.item2{
+				.slideitem_wrap{
+					&.slideitem_bg2{
+						background: url('/images/adidas/2020/event/outdoor/0121/item2_slider_bg.jpg') no-repeat;
+						background-size: 100% 100%;
+					}
+					.imgbg{
+						img{
+							width: 100%;
+						}
+					}
+					.s_slider_wrap{
+						position: absolute;
+						bottom: 5%;
+						left: 15px;
+						width: 70%;
+						box-sizing: border-box;
+						overflow: hidden;
+						ul{
+							// position: absolute;
+							// top: 0;
+						}
+					}
+				}
+			}
+			.item_top{
+				position: relative;
+				img{
+					display: block;
+					width: 100%;
+				}
+				.txt{
+					position: absolute;
+					bottom:1rem;
+					left:50%;
+					top:73%;
+					transform: translate(-50%,-50%);
+					width:88%;
+					text-align: center;
+					background: rgba(0, 0, 0, 0.7);
+					padding: 2rem 1rem;
+					box-sizing: border-box;
+					height:47%;
+					@media screen and (max-width: 320px) {
+						top:74%;
+						height:49%;
+					}					
+					h3{
+						img{
+							width:75%;
+							margin:0 auto;
+						}
+					}
+					p{
+						padding-top: 1.5rem;
+						padding-bottom:2rem;
+						color: #fff;
+						font:300 0.85rem/1.5rem 'NotoSansKR';
+						letter-spacing: 0px;
+					}
+					.button_area_v2{
+						a{
+							padding:0 1.5rem;
+						}
+					}
+				}
+			}
+			.item_vid{
+				position: relative;
+				>img{
+					width:100%;
+					position:relative;
+				}
+				.video_btn{
+					position:absolute;left:50%;top:50%;
+					transform:translate(-50%, -50%);
+					button{
+						background:url('/images/adidas/2020/event/outdoor/myshelter/1015/btn.png')no-repeat;
+						width:57px;
+						height:63px;	
+						border:0;
+						background-size:70%;
+						margin-left:30%;
+					}
+				}	
+			}
+			.slideitem_wrap{
+				position: relative;
+				background: #000;
+				padding: 2rem 0 0;
+				&.slideitem_bg1 {
+					background: url('/images/adidas/2020/event/outdoor/myshelter/1015/item1_slider_bg.jpg') no-repeat;
+					background-size: 100% 100%;
+				}
+				&.slideitem_bg2 {
+					background: url('/images/adidas/2020/event/outdoor/myshelter/1015/item1_slider_bg2.jpg') no-repeat;
+					background-size: 100% 100%;
+				}				
+				.txt{
+					padding-bottom:2rem;
+					h2{
+						text-align:center;
+						img{
+							width:85%;
+							margin:0 auto;
+						}
+					}
+				}
+				ul{
+					overflow: hidden;
+					width: 94%;
+					margin: 0 auto;
+					li{
+						img{
+							width:100%;
+						}
+					}
+				}
+				.owl-controls{
+					padding:20px 0 0 0;
+					.owl-dots{
+						text-align: center;
+						.owl-dot{
+							margin:0 4px;
+							display: inline-block;
+							width: 10px;
+							height: 10px;
+							border-radius: 50px;
+							border:1px solid #fff;
+							&.active{
+								background: #fff;
+							}
+						}
+					}
+				}
+				.txt_area{
+					padding: 1.5rem 0 4rem;
+					text-align: center;
+					p{
+						color:#fff;
+						font: 500 1.5rem 'NotoSansKR';
+						letter-spacing: 2px;
+						span{
+							font: 18px 'adinenuPro-bold';
+						letter-spacing: 3px;
+
+						}
+					}
+					.button_area_v2{
+						padding: 15px 0 0 ;
+					}
+				}
+				.txt_slide_inn{
+					position: absolute;
+					right: 15px;
+					bottom: 5%;
+					box-sizing: border-box;
+					width: 13rem;
+					height: 11rem;
+					padding: 11px 0 10px 11px;
+					text-align: left;
+					>*{
+						color:#fff;
+						text-align: left;
+					}
+					span{
+						display: inline-block;
+						font: 12px 'adinenuPro-light';
+						letter-spacing: 1px;
+						text-align: left;
+					}
+					p{
+						font: 300 13px 'NotoSansKR';	
+						letter-spacing: 0;
+					}
+					.price{
+						font: 300 13px 'NotoSansKR';	
+
+						span{
+							font: 14px 'adinenuPro-regular';
+
+						}
+					}
+				}
+				&.right{
+					.owl-dots{
+						text-align: right !important;
+					}
+				}
+			}
+			.s_slder_wrap{
+
+			}
+			.video_wrap{
+				img{
+					width:100%;
+				}
+				.slick-dots {
+					position:absolute;left:50%;bottom:3%;
+					text-align: center;
+					width:100%;
+					display:block;
+					margin-left:-46%;
+				}			
+		
+				.slick-dots li {
+					display: inline-block;
+					margin-right: 5px;
+				}
+				.slick-dots li button {
+					width: 13px;
+					height: 13px;
+					background:#787c91;
+					border-radius:50%;
+					border:0;
+					padding: 0;
+					text-indent: -9999px;
+				}			
+				.slick-dots li.slick-active button {
+					background:#ff4700;
+				}					
+			}
+			.video_sl_01{
+				position:absolute;left:33%;top:28.4%;
+				transform: translate(-50%,-50%);
+				width:65%;
+				.slick{
+					position:relative;
+					img{
+						width:100%;
+					}
+				}
+			}
+			.video_sl_02{
+				position:absolute;left:68%;top:29%;
+				transform: translate(-50%,-50%);
+				width:65%;
+				.slick{
+					position:relative;
+					img{
+						width:100%;
+					}
+				}
+			}			
+			
+		}
+	}
+
+	.cont_img {
+		position: relative;
+		.imgbg {
+			img{
+				display: block;
+				width: 100%;
+			}
+		}
+	}
+
+	.video_wrap{
+		position: relative;
+		background: #000;
+		&.right{
+			.txt{
+				p{
+					text-align: right;
+				}
+			}
+		}
+		video{
+			width:100%;
+		}
+		.txt{
+			position: absolute;
+			top:75%;
+			left:50%;
+			transform: translate(-50%,-50%);
+			width:90%;
+			p{
+				font: 300 1rem/1.8rem 'NotoSansKR';
+				color:#fff;
+				letter-spacing: 0.2px;
+				&.bold{
+					padding: 0 0 2% 0;
+					font: 600 1.8rem/2.5rem 'NotoSansKR';
+				}
+			}
+		}
+	}
+
+	.all_product{
+		text-align:center;
+		padding:3rem 0;
+		.pro_tit{
+			text-align:center;
+			padding-bottom:1.5rem;
+			>img{
+				margin:0 auto;
+				text-align:center;
+				width:70%;
+			}
+		}
+	}	
+
+	.navi_wrap2{
+		position:relative;
+		.navi2{
+			.navi_list2{
+				overflow: hidden;
+				.shelter_all{
+					
+					>img{
+						width:100%;
+					}
+					.txt{
+						position:absolute;left:74%;top:50%;
+						transform:translate(-50%,-50%);
+						width:50%;
+						text-align:center;
+						h3{
+							font:600 1.2rem/1.5rem 'NotoSansKR';
+							color:#fff;
+							text-align: center;
+							letter-spacing: 1px;
+							padding:0 0 1rem 0;
+						}
+						>p{
+							font:300 0.7rem/1.1rem 'NotoSansKR';
+							padding-bottom:1.5rem;
+							color:#fff;
+							text-align: center;
+							letter-spacing: -0.1px;
+							span{
+								display:block;
+							}
+							em{
+								display:block;
+								padding:0.5rem 0;
+							}
+						}
+						a{
+							
+							display:inline-block;
+							background:#fff;
+							>p{
+								font:600 1rem/1.2rem 'NotoSansKR';
+								color:#111;
+								text-align: center;
+								letter-spacing: 0;										
+								padding:0.5rem 2.5rem;
+							}
+						}
+					}
+					.txt2{
+						position:absolute;left:26.5%;top:50%;
+						transform:translate(-50%,-50%);
+						width:50%;
+						text-align:center;		
+						a{
+							
+							display:inline-block;
+							background:#fff;
+							>p{
+								font:600 0.9rem/1.2rem 'NotoSansKR';
+								color:#111;
+								text-align: center;
+								letter-spacing: 0;										
+								padding:0.5rem 2rem;
+							}
+						}												
+					}
+						
+				}
+				.shelter_m{
+					position:relative;
+
+				}
+				.shelter_w{
+					position:relative;
+		
+				}						
+		
+			}
+		}
+	}
+
+	.all_item{
+		.statement{
+			position: relative;
+			background:#000;
+			text-align: center;		
+			padding: 2.2rem 0;
+			.content{
+				position: relative;
+				text-align: center;
+				h2{
+					img{
+						width:70%;
+					}
+				}				
+			}				
+		}
+		.video_full_wrap {
+			position: relative;
+			// height: 1080px;
+			img{
+				display:block;
+				width:100%;
+				// position: absolute;
+				// top: 0;
+				// left: 50%;
+				// margin-left: -960px;
+			}
+			.video_btn{
+				position:absolute;left:50%;top:50%;
+				transform:translate(-50%, -50%);
+				button{
+					background:url('/images/adidas/2020/event/outdoor/myshelter/btn.png')no-repeat;
+					width:57px;
+					height:63px;	
+					border:0;
+					background-size:70%;
+					margin-left:30%;
+				}
+			}	
+		}		
+
+		.slider_wrap{
+			position:relative;
+
+
+			.collection{
+				position: relative;
+
+				.imgbg{
+					position: absolute;
+					top:0;
+					left:0;
+					width:100%;		
+					img{
+						width:100%;
+					}				
+				}
+
+				.slider_all_list{
+					padding:4rem 1rem 0 1rem;
+					img{
+						width:100%;
+					}
+
+					.slick-dots {
+						padding:1.5rem 0 1rem 0;
+						text-align: center;
+						width:100%;
+						margin:0 auto;
+					}	
+
+					.slick-dots li {
+						display: inline-block;
+						margin-right: 10px;
+					}
+
+					.slick-dots li button {
+						width: 13px;
+						height: 13px;
+						background:0;
+						border:2px solid #fff;
+						border-radius:50%;
+						padding: 0;
+						text-indent: -9999px;
+					}		
+
+					.slick-dots li.slick-active button {
+						background:#fff;
+					}	
+
+				}
+			
+				.slider_bottom{
+					position: relative;
+					text-align: center;
+					p{
+						font: 600 1.7rem/1.5rem 'NotoSansKR';
+						color: #fff;
+						text-align: center;
+						letter-spacing: 1px;
+						text-transform: uppercase;
+						span{
+							text-transform: uppercase;
+							font: 30px 'adinenuPro-bold';
+						}
+					}
+
+					.button_area_v2{
+						margin:2rem 0 4rem 0;
+					}
+
+				}
+			}
+		}
+
+		.list_wrap{
+			position:relative;
+			.item1{
+				position:relative;
+			}
+			.item2{
+				position:relative;
+			}
+			.item3{
+				position:relative;
+			}	
+			.list_all_wrap{
+				.list_bg{
+					img{
+						width:100%;
+					}
+				}
+				.list_txt{
+					position: absolute;;
+					left:50%;
+					top:76%;
+					transform:translate(-50%,-50%);
+					width:90%;
+					h4{
+						text-align: left;
+						font:600 2rem/2rem 'NotoSansKR';
+						color:#fff;
+						letter-spacing:0;				
+						span{
+							display:block;
+						}
+					}
+	
+					p{
+						padding-top:1rem;
+						text-align: left;
+						font:300 1.1rem/1.7rem 'NotoSansKR';
+						color:#fff;
+						letter-spacing:0;		
+						span{
+							display:block;
+						}							
+					}						
+				}
+
+				.list_txt2{
+					position: absolute;;
+					left:auto;
+					right:-40%;
+					top:76%;
+					transform:translate(-50%,-50%);
+					width:90%;
+					text-align:right;
+					h4{
+						text-align:right;
+					}
+					p{
+						text-align:right;
+					}
+				}
+			}
+		}	
+	}	
+
+
+}
+
+
