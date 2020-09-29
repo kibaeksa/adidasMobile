@@ -907,15 +907,54 @@
 							nav: false
 						});
 
+						// $('.navi_wrap .navi').click(function(){
+						// 	var itemchildDivArray = [];
+						// 	var index = $(this).index();
+						// 	var thisitem = $('.items_wrapper .item').eq(index);
+
+						// 	var itemchildDiv = thisitem.children('.h');
+						// 	var _navTop = $('.navi_wrapper').offset().top;
+							
+						// 	$('html, body').animate({scrollTop: _navTop}, 800,);
+
+						// 	$('.navi_wrap .navi').removeClass('on').eq(index).addClass('on');
+						// 	$('.items_wrapper .item').removeClass('on').eq(index).addClass('on');
+						// 	// 해당하는 각 div 높이 값 구해서 더하기
+							
+						// 	$(itemchildDiv).each(function(index, item){ 
+						// 		var geth = Math.round(itemchildDiv.eq(index).height())
+						// 		itemchildDivArray.push(geth);
+						// 		console.log(itemchildDivArray)
+						// 	});
+						// 	var totalh = 0;
+						// 	for( var i = 0; i<itemchildDivArray.length; i++){
+						// 		totalh += itemchildDivArray[i];
+						// 		console.log(totalh)
+						// 	}
+						// 	if ( index == 0) {
+						// 		$('.items_wrapper').css({
+						// 			'padding-bottom': totalh + 60 + 'px'
+						// 		});
+						// 	} else {
+						// 		$('.items_wrapper').css({
+						// 			'padding-bottom': totalh + 'px'
+						// 		});
+						// 	}
+						// });
+
 						$('.navi_wrap .navi').click(function(){
 							var itemchildDivArray = [];
 							var index = $(this).index();
 							var thisitem = $('.items_wrapper .item').eq(index);
 
 							var itemchildDiv = thisitem.children('.h');
-							var _navTop = $('.navi_wrapper').offset().top -60;
-							
-							$('html, body').animate({scrollTop: _navTop}, 800,);
+							var _navTop = $('.navi_wrapper').offset().top;
+							if ( $('#header').hasClass('hide') ) {
+								$('html, body').animate({scrollTop: _navTop}, 800,);
+							} else {
+								$('html, body').animate({scrollTop: _navTop}, 800,) - 60;
+
+							}
 
 							$('.navi_wrap .navi').removeClass('on').eq(index).addClass('on');
 							$('.items_wrapper .item').removeClass('on').eq(index).addClass('on');
@@ -933,7 +972,7 @@
 							}
 							if ( index == 0) {
 								$('.items_wrapper').css({
-									'padding-bottom': totalh + 102 + 'px'
+									'padding-bottom': totalh + 50 + 'px'
 								});
 							} else {
 								$('.items_wrapper').css({
@@ -948,29 +987,26 @@
 						$(window).load(function(){
 
 							var navipos = $('.navi_wrapper').offset().top;
-
 							$(window).scroll(function () {
-								var thisPos = $(this).scrollTop() ;
+								var thisPos = $(this).scrollTop();
 
 								console.log(navipos)
-								if(thisPos>navipos){
-								$('.navi_wrap').addClass('fixed');
-								if(!$('#header').hasClass('hide')){
-								$('.navi_wrap.fixed').css({
-
-								top:'60px'
-								})
-								}else{
-								$('.navi_wrap.fixed').css({
-								top:'0px'
-								})
-								}
-
-								}else{
-								$('.navi_wrap').removeClass('fixed');
-								$('.navi_wrap').css({
-								top:'0px'
-								})
+								if ( thisPos > navipos ){
+									$('.navi_wrap').addClass('fixed');
+									if ( !$('#header').hasClass('hide') ){
+										$('.navi_wrap.fixed').css({
+											top:'60px'
+										})
+									} else {
+										$('.navi_wrap.fixed').css({
+											top:'0px'
+										})
+									}
+								} else {
+									$('.navi_wrap').removeClass('fixed');
+									$('.navi_wrap').css({
+										top:'0px'
+									})
 								}
 							});
 						});
