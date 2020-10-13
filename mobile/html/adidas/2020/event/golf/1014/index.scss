@@ -12,29 +12,36 @@
 	// $adinBld: 'adinenuPro-bold';
 	// $noto: 'NotoSansKR';
 	
-	// // 앱솔루트 - 재사용.
-	// @mixin center ( $top, $bottom, $left, $transform ) {
-	// 	position: absolute;
-	// 	top: $top;
-	// 	bottom: $bottom;
-	// 	left: $left;
-	// 	transform: $transform;
-	// }
+	// 앱솔루트 - 재사용.
+	@mixin center ( $top, $bottom, $left, $transform ) {
+		position: absolute;
+		top: $top;
+		bottom: $bottom;
+		left: $left;
+		transform: $transform;
+	}
 
 	// // $val의 값이 auto면 퍼센티지,
 	// // $val에 높이값이 있으면 가운데 정렬 - 재사용. 
 	// @mixin auto($val) {
 	// 	height: $val;
 	// 	@if ( $val == auto ) {
-	// 		.figure{
+	// 		div[class~="figure"]{
 	// 			img, video{
 	// 				width: 100%;
 	// 			}
 	// 		}
 	// 	} @else {
-	// 		.figure{
+	// 		div[class~="figure"]{
 	// 			@include center(0, auto, 50%, $ctX);
 	// 		}
+	// 	}
+	// }
+	// @mixin after() {
+	// 	&::after{
+	// 		display: block;
+	// 		content: '';
+	// 		clear: both;
 	// 	}
 	// }
 
@@ -72,7 +79,14 @@
 			width: 100%;
 		}
 		.visuals{
-			.figure{
+			&.on{
+				.visuals__text{
+					opacity: 1;
+					-webkit-opacity: 1;
+					left: 6%;
+				}
+			}
+			.visuals__figure{
 				position: relative;
 				padding-top: 175%;
 				img{
@@ -89,8 +103,11 @@
 				}
 			}
 			.visuals__text{
-				@include center( 7%, auto, 6%, none );
+				@include center( 7%, auto, 0, none );
 				width: 63%;
+				opacity: 0;
+				-webkit-opacity: 0;
+				transition: all 1s ease-in-out;
 				img{
 					width: 100%;
 				}
@@ -105,26 +122,70 @@
 			video{
 				width: 86.6%;
 			}
+			>div{
+				padding: 2.2rem;
+				>div{
+					margin-top: 2.2rem;
+					&.first{
+						@include after();
+						margin: 0;
+						img{
+							float: left;
+							width: 46.5%;
+							&:last-child{
+								float: right;
+							}
+						}
+					}
+					>img{
+						width: 100%;
+					}
+				}
+			}
 		}
 		.sub-visual{
 			&.on{
+				.sub-visual__main{
+					opacity: 1;
+					-webkit-opacity: 1;
+				}
 				.sub-visual__text{
 					opacity: 1;
 					-webkit-opacity: 1;
 				}
 			}
-			.sub-visual__text{
-				@include center( 44.5%, auto, 7%, $ctY );
-				width: 65%;
+			.sub-visual__main{
+				opacity: 0;
 				-webkit-opacity: 0;
 				transition: all 1s ease-in-out;
 			}
+			.sub-visual__text{
+				@include center( 44.5%, auto, 7%, $ctY );
+				width: 65%;
+				opacity: 0;
+				-webkit-opacity: 0;
+				transition: all 1s ease-in-out;
+				transition-delay: 1s;
+			}
 			&.women__section{
+				&.on{
+					.sub-visual__figure{
+						opacity: 1;
+						-webkit-opacity: 1;	
+					}
+				}
 				.sub-visual__text{
 					top: 30.5%;
 				}
+				.sub-visual__figure{
+					opacity: 0;
+					-webkit-opacity: 0;
+					transition: all 1s ease-in-out;
+					transition-delay: 2s;
+				}
 				video{
 					width: 90%;
+					
 				}
 			}
 		}

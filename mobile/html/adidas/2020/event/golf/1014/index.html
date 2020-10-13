@@ -33,7 +33,7 @@
 				<link rel="stylesheet" type="text/css" href="/css/slick.css" />
 				<main role="main">
 					<section class="visuals">
-						<div class="figure">
+						<div class="visuals__figure">
 							<img src="/images/adidas/2020/event/golf/1014/main01.jpg" alt="" class="on">
 							<img src="/images/adidas/2020/event/golf/1014/main02.jpg" alt="">
 						</div>
@@ -42,7 +42,7 @@
 						</div>
 					</section>
 					<section class="attachment">
-						<div class="figure">
+						<div class="attachment__figure">
 							<img src="/images/adidas/2020/event/golf/1014/bg.jpg" alt="" class="on">
 						</div>
 					</section>
@@ -50,9 +50,18 @@
 						<img src="/images/adidas/2020/event/golf/1014/text01.jpg" alt="">
 					</section>
 					<section class="grid__container">
-						<video src="//image.adidas.co.kr/upload/design_temp/video/2020/a/golf/DT.mp4" autoplay muted playsinline loop poster="/images/adidas/2020/event/golf/1014/movie01.jpg" class="last"></video>
+						<video src="//image.adidas.co.kr/upload/design_temp/video/2020/a/golf/1014/movie01_MO.mp4" autoplay muted playsinline loop poster="/images/adidas/2020/event/golf/1014/movie01.jpg" class="last"></video>
 						<div>
-							<img src="/images/adidas/2020/event/golf/1014/grid.jpg" alt="">
+							<div class="first">
+								<img src="/images/adidas/2020/event/golf/1014/grid01.jpg" alt="">
+								<img src="/images/adidas/2020/event/golf/1014/grid02.jpg" alt="">
+							</div>
+							<div>
+								<img src="/images/adidas/2020/event/golf/1014/grid03.jpg" alt="">
+							</div>
+							<div>
+								<img src="/images/adidas/2020/event/golf/1014/grid04.jpg" alt="">
+							</div>
 						</div>
 					</section>
 					<section class="sub-visual">
@@ -73,7 +82,7 @@
 							</div>
 						</div>
 						<div class="sub-visual__figure">
-							<video src="//image.adidas.co.kr/upload/design_temp/video/2020/a/golf/DT.mp4" autoplay muted playsinline loop poster="/images/adidas/2020/event/golf/1014/movie02.jpg"></video>
+							<video src="//imagem.adidas.co.kr/upload/design_temp/video/2020/a/golf/1014/movie02_MO.mp4" autoplay muted playsinline loop poster="/images/adidas/2020/event/golf/1014/movie02.jpg"></video>
 						</div>
 					</section>
 					<section class="banners">
@@ -140,7 +149,7 @@
 					// 	$(this).attr("href") === "#" && e.preventDefault();
 					// })
 					var rolling = ( function(){
-						var mainImg = $('#golf .visuals .figure img');
+						var mainImg = $('#golf .visuals .visuals__figure img');
 						var index = 0;
 						setInterval( function() {
 							if ( index == 1 ) {
@@ -155,13 +164,14 @@
 					
 					// scroll event
 					var scrollEvent = ( function(){
+						$('#golf .visuals').addClass('on');
 						$('#golf .sub-visual').addClass('scroll');
 						$(this).scroll( function() {
 							var thisScroll = $(this).scrollTop();
 							var section = $('#golf .scroll');
 							$.each( section, function( index, elem ){
 								var $target = section.eq( index );
-								var targetTop = $target.offset().top -300;
+								var targetTop = $target.offset().top -600;
 								targetTop <= thisScroll && $('#golf .scroll').eq( index ).addClass('on');
 								targetTop > thisScroll && $('#golf .scroll').eq( index ).removeClass('on');
 							})
