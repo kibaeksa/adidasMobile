@@ -1,0 +1,170 @@
+@import './mobile/css/adidas/scss/common/mixin.scss';
+@import './mobile/css/adidas/scss/common/common.scss';
+
+#golf{
+	position: relative;
+
+	// // 변수
+	// $ctct: translate(-50%,-50%); 
+	// $ctX: translateX(-50%);
+	// $ctY: translateY(-50%);
+	// $adinBlk: 'adinenuPro-black';
+	// $adinBld: 'adinenuPro-bold';
+	// $noto: 'NotoSansKR';
+	
+	// // 앱솔루트 - 재사용.
+	// @mixin center ( $top, $bottom, $left, $transform ) {
+	// 	position: absolute;
+	// 	top: $top;
+	// 	bottom: $bottom;
+	// 	left: $left;
+	// 	transform: $transform;
+	// }
+
+	// // $val의 값이 auto면 퍼센티지,
+	// // $val에 높이값이 있으면 가운데 정렬 - 재사용. 
+	// @mixin auto($val) {
+	// 	height: $val;
+	// 	@if ( $val == auto ) {
+	// 		.figure{
+	// 			img, video{
+	// 				width: 100%;
+	// 			}
+	// 		}
+	// 	} @else {
+	// 		.figure{
+	// 			@include center(0, auto, 50%, $ctX);
+	// 		}
+	// 	}
+	// }
+
+	.button_area_v2{
+		a{
+			font-size: 1rem;
+			font-weight: normal;
+			height: 36px;
+			line-height: 34px;
+			letter-spacing: 1px;
+			padding: 0 1.5rem;
+			span.arrow{
+				margin-left: 10px;
+				width: 25px;
+				&:after{
+					width: 8px;
+				}
+				&:before{
+					width: 8px;
+				}
+			}
+		}
+	}
+	span, p{
+		letter-spacing: 0;
+	}
+	div, img, a{
+		outline: none;
+	}
+	main{
+		section{
+			position: relative;
+		}
+		img{
+			width: 100%;
+		}
+		.visuals{
+			.figure{
+				position: relative;
+				padding-top: 175%;
+				img{
+					opacity: 0;
+					-webkit-opacity: 0;
+					transition: all 1s ease-in-out;
+					-webkit-transition: all 1s ease-in-out;
+					@include center( 0, auto, 0, none);
+					width: 100%;
+					&.on{
+						opacity: 1;
+						-webkit-opacity: 1;
+					}
+				}
+			}
+			.visuals__text{
+				@include center( 7%, auto, 6%, none );
+				width: 63%;
+				img{
+					width: 100%;
+				}
+			}
+		}
+		.attachment{}
+		.title{
+			padding: 3rem 2rem;
+		}
+		.grid__container{
+			text-align: center;
+			video{
+				width: 86.6%;
+			}
+		}
+		.sub-visual{
+			&.on{
+				.sub-visual__text{
+					opacity: 1;
+					-webkit-opacity: 1;
+				}
+			}
+			.sub-visual__text{
+				@include center( 44.5%, auto, 7%, $ctY );
+				width: 65%;
+				-webkit-opacity: 0;
+				transition: all 1s ease-in-out;
+			}
+			&.women__section{
+				.sub-visual__text{
+					top: 30.5%;
+				}
+				video{
+					width: 90%;
+				}
+			}
+		}
+		.banners{
+			>div{
+				padding: 6rem;
+				>div{
+					padding-bottom: 5rem;
+					text-align: center;
+					.button_area_v2{
+						padding-top: 2.2rem;
+						display: inline-block;
+						>div{
+							a{
+								font-size: .9rem;
+							}
+						}
+					}
+					&:last-of-type {
+						padding: 0;
+					}
+				}
+			}
+		}
+		.bottoms{
+			padding: 2.5rem 0 6rem 0;
+			text-align: center;
+			>img{
+				width: 63%;
+				margin: 0 auto;
+			}
+			>p{
+				font: 900 15px/15px $noto;
+				color: #000;
+				text-align: center;
+				margin: 1rem 0 2rem 0;
+			}
+			.button_area_v2{
+				display: inline-block;
+			}
+		}
+	}	
+}
