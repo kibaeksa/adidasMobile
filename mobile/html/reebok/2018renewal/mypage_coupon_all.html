@@ -11,9 +11,9 @@
 
 <link rel="apple-touch-icon-precomposed" href="//imagem.reebok.co.kr/images/reebok/icon_114.png" />
 <link rel="shortcut icon" href="//imagem.reebok.co.kr/images/reebok/icon_57.png" />
-<link rel="stylesheet" type="text/css" href="//imagem.reebok.co.kr/css/reebok/efu2018/content.css" />
-<link rel="stylesheet" type="text/css" href="//imagem.reebok.co.kr/css/reebok/efu2018/style.css" />
-<link rel="stylesheet" type="text/css" href="//imagem.reebok.co.kr/css/reebok/efu2018/swiper.min.css" />
+<link rel="stylesheet" type="text/css" href="/css/reebok/efu2018/content.css" />
+<link rel="stylesheet" type="text/css" href="/css/reebok/efu2018/style.css" />
+<link rel="stylesheet" type="text/css" href="/css/reebok/efu2018/swiper.min.css" />
 
 <script type="text/javascript" src="//service.maxymiser.net/api/us/reebok.co.kr/3a9227/mmapi.js" ></script>
 <script type="text/javascript" src="//imagem.reebok.co.kr/js/reebok/common.base.js" ></script>
@@ -181,12 +181,6 @@
 	
 
 <section id="headerWrap">
-	
-	<!-- 쿠폰레이어-->
-	<div id="top_banner_mycpn" class="top_bnn" style="display:block;">
-		<a href="javascript:goCoupSel();"><img src="/images/reebok/efu2018/common/temp_cpn_pop.jpg" alt="쿠폰이 발급되었습니다. 쿠폰 확인하기"/></a>
-		<a href="#" class="close" onclick="closeMyCpnLayer();"><img src="/images/reebok/efu2018/common/btn_topbnn_close.png" alt="닫기"/></a>
-	</div>
 	
 	<div id="header">
 		<h1><a href="/index.jsp"><img src="/images/reebok/efu2018/common/logo.png" alt="reebok"></a></h1>
@@ -641,21 +635,6 @@
 			</div>
 		</div>
 	</div>
-	
-	<!-- 상단 띠배너 S -->
-	<div class="notice_tits" id="speeds" style="display: block;">
-		<a class="b1" style="display: none;" href="javascript:void(0)">
-			<div><span class="ico"></span>스피드 배송 서비스 안내</div>
-		</a>
-		<a class="b2" href="http://m.reebok.co.kr/MO/Promotion/landingPage.action?pageNo=209" style="display: none;">
-			<div><span class="ico"></span>온라인 한정상품을 만나보세요</div>
-		</a>
-		<a class="b3 on" href="javascript:void(0)" style="display: block;">
-			<div><span class="ico"></span>교환, 환불은 이렇게</div>
-		</a>
-		<div class="more_ico sprite-image"></div>
-	</div>
-	<!-- 상단 띠배너 E -->
 
 	<!-- 180131 START 스피드 배송 교환/환불 안내팝업 -->
 	<div class="layerpopup popup_oneday_exchange"><!-- 20180416 추가 -->
@@ -790,9 +769,12 @@ jQuery(function(){
 			<span>내 쿠폰 보기</span>
 		</div>
 		<div class="tab_box">
+			<!-- 20201016 탭 변경
+				- 전체 -> 최근 쿠폰 
+				- default 사용 가능한 쿠폰 유지 -->
 			<div class="tab_btn">
-				<a href="/mypage/coupon/myCouponAll.jsp" class="on">전체</a>
-				<a href="/mypage/coupon/myCoupon.jsp">사용가능한 쿠폰</a>
+				<a href="/mypage/coupon/myCouponAll.jsp" class="on">최근 쿠폰</a>
+				<a href="/mypage/coupon/myCoupon.jsp">사용 가능한 쿠폰</a>
 			</div>
 		</div>
 		<p class="desc" style="margin:20px 0;">쿠폰 발급자는 리복코리아㈜ 이며, 아래에서 쿠폰 내역을 확인 하실 수 있습니다. <strong style="color:#000;">적립된 포인트 5천 포인트에 도달하면, 자동으로 5천 포인트 쿠폰 발급됩니다.</strong></p>
@@ -825,11 +807,14 @@ jQuery(function(){
 				</tr>
 			</table>
 		</div>
+
+		<!-- 20201016 안내 문구 추가 -->
+		<p class="coupon_notice">*기간 만료된 미사용 쿠폰은 만료 시점으로부터 3개월 까지만 보여집니다.</p>
 	
 		<!-- 쿠폰 있는 경우-전체 -->
 		<div class="mpg_orderbox box_nmg">
 			<div class="box">
-				<table class="form_table">
+				<table class="form_table" style="border-top:3px solid #000;">
 					<tr>
 						<th>쿠폰명</th>
 						<td>포인트 쿠폰</td>
