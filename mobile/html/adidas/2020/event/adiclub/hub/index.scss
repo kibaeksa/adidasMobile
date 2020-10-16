@@ -7,7 +7,9 @@
 .not_scroll{
 	overflow: hidden;
 }
-
+a{
+	outline:none;
+}
 
 #adiclub_week {
 	overflow: hidden;
@@ -81,11 +83,12 @@
 		}
 
 		&.sect_benefit{
-			padding: 2.5rem 0 2.5rem;
-			background:url('/images/adidas/2020/event/adiclub/be_bg.jpg')no-repeat;			
-			background-size:contain;
+			// padding: 2.5rem 0 2.5rem;
+			// background:url('/images/adidas/2020/event/adiclub/be_bg.jpg')no-repeat;			
+			// background-size:contain;
 			.benefit_bg{
 				position:relative;
+				// padding-bottom:7rem;
 				>img{
 					width:100%;
 					display:block;
@@ -93,24 +96,32 @@
 			}			
 			.benefit_inner{
 				text-align: center;
-				// position:absolute;left:50%;top:53%;
-				// transform:translate(-50%,-50%);
-				// width:100%;
-
+				position:absolute;left:50%;top:52%;
+				transform:translate(-50%,-50%);
+				width:100%;
 				h3 {
 					font: 600 1.9rem/2.5rem 'adinenuPro-bold';
 					color: #111;
 					text-align: center;
 					letter-spacing: 2px;
 				}
+				p {
+					text-align: center;
+					font: 300 1rem/1.5rem 'NotoSansKR';
+					color: #111;
+					letter-spacing:0;
+					span{
+						display:block;
+					}
+				}				
 				.button_area_v2 {
 					display: inline-block;
-					margin-top: 0.6rem;
+					margin-top: 2rem;
 				}
-				ul{
-
+				>ul{
 					padding-top: 2rem;
-					width: 70%;
+					margin-left:1.5rem;
+					width: 100%;
 					li{
 						// float: left;
 						// width: 32%;
@@ -119,13 +130,12 @@
 						a{
 							display: block;
 						}
-
 					}
 					.slick-list {
 						width: 90%;
 						padding-right: 300px;
 						.slick-slide {
-							padding-right: 15px;
+							// padding-right: 15px;
 							outline: 0 none;
 							cursor: pointer;
 		
@@ -136,11 +146,36 @@
 							}
 		
 							img {
-								width: 100%;
+								width: 95%;
 							}
 						}
 					}					
 				}
+				.slick-dots {
+					padding:1rem 0 2rem 0;
+					text-align: center;
+					margin: 0 auto;
+					// width: 30%;
+					// margin: 0 auto;			
+					// overflow: hidden;	
+				}			
+				.slick-dots li {
+					display: inline-block;
+					margin-right: 5px;
+				}
+				.slick-dots li button {
+					width: 20px;
+					height: 2px;
+					background:none;
+					border:1px solid #111;
+					padding: 0;
+					text-indent: -9999px;
+					vertical-align:bottom;				
+				}			
+				.slick-dots li.slick-active button {
+					height:4px;
+					background:#111;
+				}						
 			}
 		}
 
