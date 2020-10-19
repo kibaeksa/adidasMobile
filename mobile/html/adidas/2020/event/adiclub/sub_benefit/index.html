@@ -1,21 +1,22 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
+
 <head>
-    <script type="text/javascript" src="https://imagem.adidas.co.kr//data/eventRouter.js"></script>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
-	<meta name="format-detection" content="telephone=no">
-	<meta http-equiv="x-rim-auto-match" content="none">
+    <script type="text/javascript" src="/data/eventRouter.js"></script>
 
-	<link href="https://imagem.adidas.co.kr//css/adidas/style.css" type="text/css" rel="stylesheet" />
-	<link href="https://imagem.adidas.co.kr/css/adidas/fonts.css" type="text/css" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="x-rim-auto-match" content="none">
 
-	<script type="text/javascript" src="https://imagem.adidas.co.kr//designjs/common/jquery-1.12.0.min.js"></script>
-	<script type="text/javascript" src="https://imagem.adidas.co.kr//designjs/common/swipe.js"></script>
-	<script type="text/javascript" src="https://imagem.adidas.co.kr//designjs/common/owl.carousel.min.js"></script>
-	<script type="text/javascript" src="https://imagem.adidas.co.kr//designjs/common/modalPopup.min.js"></script>
-	<script type="text/javascript" src="https://imagem.adidas.co.kr//designjs/common/zoomImage.js"></script>
-	<script type="text/javascript" src="https://imagem.adidas.co.kr//designjs/adidas/common.js"></script>
+    <link href="/css/adidas/style.css" type="text/css" rel="stylesheet" />
+    <link href="/css/adidas/fonts.css" type="text/css" rel="stylesheet" />
+
+    <script type="text/javascript" src="/designjs/common/jquery-1.12.0.min.js"></script>
+    <script type="text/javascript" src="/designjs/common/swipe.js"></script>
+    <script type="text/javascript" src="/designjs/common/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="/designjs/common/modalPopup.min.js"></script>
+    <script type="text/javascript" src="/designjs/common/zoomImage.js"></script>
 
 	<title>아디다스 모바일</title>
 
@@ -27,7 +28,8 @@
 
 		<!-- 권장 코드작성 위치 START -->
 		<div id="container">
-
+			<script type="text/javascript" src="/designjs/common/slick.min.js"></script>
+			<link rel="stylesheet" type="text/css" href="/css/slick.css" />
 			<!-- <link rel="stylesheet" type="text/css" href="m_event_acw.css" /> -->
 			<div id="adiclubweek">
 
@@ -49,7 +51,26 @@
 					</dl>
 					<div class="box-wrap">
 						<div class="box-background"><img src="/images/adidas/2020/event/adiclub/sub_benefit/m_img_acw201015_cont3_1.png" alt="" ></div>
-						<div class="swiper-container">
+						<div class="slider_bene01">
+							<div class="slider03">
+								<div>
+									<a onclick="alert('Coming Soon!');" style="cursor:pointer">
+										 <img src="/images/adidas/2020/event/adiclub/sub_benefit/m_img_acw201015_cont3_2.png" alt="">                                   
+									</a>
+								</div>
+								<div>
+									<a onclick="alert('Coming Soon!');" style="cursor:pointer">
+										 <img src="/images/adidas/2020/event/adiclub/sub_benefit/m_img_acw201015_cont3_3.png" alt="">    
+									</a>
+								</div>
+								<div>
+									<a onclick="alert('Coming Soon!');" style="cursor:pointer">
+										 <img src="/images/adidas/2020/event/adiclub/sub_benefit/m_img_acw201015_cont3_4.png" alt="">    
+									</a>
+								</div>														
+							</div>
+						</div>
+						<!-- <div class="swiper-container">
 							<div class="swiper-wrapper">
 								<div class="swiper-slide"><a href="#;false;" onClick="alert('Coming Soon!')"><img src="/images/adidas/2020/event/adiclub/sub_benefit/m_img_acw201015_cont3_2.png" alt="" ></a></div>
 								<div class="swiper-slide"><a href="#;false;" onClick="alert('Coming Soon!')"><img src="/images/adidas/2020/event/adiclub/sub_benefit/m_img_acw201015_cont3_3.png" alt="" ></a></div>
@@ -58,7 +79,7 @@
 							<div class="swiper-button-prev"></div>
 							<div class="swiper-button-next"></div>
 							<div class="swiper-pagination"></div>
-						</div>
+						</div> -->
 						<p class="text">이미지를 클릭하시면 제품 페이지로 이동됩니다.</p>
 					</div>
 				</div>
@@ -129,6 +150,20 @@
 						prevEl: '.contain-section2 .swiper-button-prev',
 					},
 				})
+				$(document).ready(function(){
+					$('.slider_bene01 .slider03').slick({
+						slidesToShow: 1,
+						slidesToScroll: 1,
+						draggable: true,
+						autoplay: true,
+						autoplaySpeed: 2000,
+						// dots: true,
+						infinite: true,
+						// cssEase: 'linear',
+						arrows:true,								
+						dots:true,
+					});				
+				});
 			</script>
 
             <div class="go_top">
