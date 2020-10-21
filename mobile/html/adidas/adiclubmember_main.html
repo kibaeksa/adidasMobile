@@ -1,21 +1,23 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no" />
 	<meta name="format-detection" content="telephone=no">
 	<meta http-equiv="x-rim-auto-match" content="none">
-
 	<link href="/css/adidas/style.css" type="text/css" rel="stylesheet" />
 	<link href="/css/adidas/fonts.css" type="text/css" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="/designjs/common/swiper/swiper.min.css">
+	<link rel="stylesheet" type="text/css" href="/css/adidas/m_event_ar.css">
 
 	<script type="text/javascript" src="/designjs/common/jquery-1.12.0.min.js"></script>
 	<script type="text/javascript" src="/designjs/common/swipe.js"></script>
 	<script type="text/javascript" src="/designjs/common/owl.carousel.min.js"></script>
 	<script type="text/javascript" src="/designjs/common/modalPopup.min.js"></script>
 	<script type="text/javascript" src="/designjs/common/zoomImage.js"></script>
-	<script type="text/javascript" src="/designjs/adidas/common.js"></script>
-
+	<script type="text/javascript" src="/designjs/common/swiper/swiper.min.js"></script>
+	<script type="text/javascript" src="/designjs/common/swiper/swiper.jquery.min.js"></script>
 
 	<title>아디다스 모바일</title>
 </head>
@@ -288,12 +290,14 @@
                                 </ul>
                             </div>
 
-							
+							<!-- 20201021 아디클럽 팝업 -->
                             <div class="button_area">								
-								<div><a href="#"><em>아디클럽 스포츠 서비스 신청하기</em><span data-icon="" class="icons aft"></span></a></div>								
+								<div><a href="javascript:void(0);" class="btn-ctm arrow modal-popup-click" data-modalpop-click="popup_name1"><em>아디클럽 스포츠 서비스 신청하기</em><span data-icon="" class="icons aft"></span></a></div>								
 								<!-- <div class="blue"><a href="#"><em>아디클럽 컬처<br>서비스 신청하기</em><span data-icon="" class="icons aft"></span></a></div> -->								
 							</div>
-							
+                 			<!-- 20201021 아디클럽 팝업 end -->
+                            
+
                             <div class="advantages advantages2">
                                 <div class="box">
                                     <div class="img_box">
@@ -371,7 +375,54 @@
 
 			<div class="go_top">
 				<a href="#">BACK TO TOP</a>
-			</div>
+            </div>
+            <!-- 20201021 아디클럽 팝업 -->
+            <style>
+                .modal-popup-wrapper .close_x_btn:after {
+                    background: none;
+                }
+
+                .modal-popup-wrapper .close_x_btn:before {
+                    background: none;
+                }
+            </style>        
+
+            <div class="modal-popup-wrapper"
+                data-modalpop=""
+                data-modalpop-name="popup_name1"
+            >
+            <div class="overlay" style="background: rgba(0, 0, 0, 0.7);"></div>
+                <div class="popup" style="background:none;">
+                    <div class="popup-header">
+                        <div class="close_x_btn" href="javascript:void(0)"
+                            style="-webkit-transform: translate3d(0,-100%,0);transform: translate3d(0,-100%,0);background:url('http://imagem.adidas.co.kr/images/adidas/ar_pop_btn_cancel_201709.png');    background-size: 100%;">
+                        </div>
+                    </div>
+                    <div class="contents" style="padding: 1.2rem 1rem 0;">
+                        <img src="http://imagem.adidas.co.kr/upload/design_temp/etc/2020/2010_a_AR_MO.jpg" alt=""
+                            style="width:100%;">
+                    </div>
+                </div>            
+            </div>
+            <!-- <button class="modal-popup-click" data-modalpop-click="popup_name1">기본팝업</button>             -->
+            <!-- 20201021 아디클럽 팝업 end-->
+
+            <!--<div class="layerpopup-wrapper layerpopup-adiclub">
+                <div class="overlay" style="background: rgba(0, 0, 0, 0.7);"></div>
+                <div class="layerpopup" style="background:none;">
+                    <div class="header">
+                        <div class="close_x_btn" href="javascript:void(0)"
+                            style="-webkit-transform: translate3d(0,-100%,0);transform: translate3d(0,-100%,0);background:url('http://imagem.adidas.co.kr/images/adidas/ar_pop_btn_cancel_201709.png');    background-size: 100%;">
+                        </div>
+                    </div>
+                    <div class="contents" style="padding: 1.2rem 1rem 0;">
+                        <img src="http://imagem.adidas.co.kr/upload/design_temp/etc/2002/COVID_popup.jpg" alt=""
+                            style="width:100%;">
+                    </div>
+                </div>
+            </div>
+            200225 코로나 팝업 end -->
+
 		</div>
 		<!-- //container product_list -->
 
@@ -379,7 +430,155 @@
 	</div>
 
 	<script type="text/javascript" src="/designjs/adidas/common.js"></script>
-	<script type="text/javascript" src="/designjs/adidas/includeHTML.js"></script>
+    <script type="text/javascript" src="/designjs/adidas/includeHTML.js"></script>
+	<script type="text/javascript">
+
+		(function ($) {
+
+            $(document).ready(function () {
+                $(".close_x_btn").click(function () {
+                    $(".layerpopup-wrapper").css('display', 'none'); // 팝업창 닫기
+                });
+            });
+
+			$(document).ready(function () {
+
+				$('.layerpopup-wrapper .close_x_btn').click(function () {
+					$(this).parent('.header').parent('.layerpopup-adiclub').parent('.layerpopup-wrapper').css({ 'display': 'none' })
+				});
+
+
+				$('.toolbox>ul>li').bind('click', function () {
+
+					if ($(this).find('a').hasClass('on')) {
+						return false;
+					}
+
+					if ($(this).hasClass('type_box')) {
+						$('.product_grid').addClass('grid_2box');
+					} else {
+						$('.product_grid').removeClass('grid_2box');
+					}
+
+					$('.toolbox>ul>li>a').removeClass('on');
+					$(this).find('a').addClass('on');
+					return false;
+
+				});
+
+
+
+
+				/* 170726 START */
+				function renderStationContents(data) {
+					/* Data handle  */
+					var imgAbsolutePath = '//image.adidas.co.kr/images/adidas/club/adiclub_renewal_170518/';
+					for (key in data) {
+						data[key].CS_DESC = data[key].CS_DESC.replace(/\n/, '<br/>');
+						data[key].CS_BENEFIT = data[key].CS_BENEFIT.replace(/\n/, '<br/>');
+						data[key].CS_ADDR_TEL = data[key].CS_ADDR_TEL.replace(/\n/, '<br/>');
+					}
+
+					var key;
+					var count = 0;
+					var htmlString = '<ul>';
+
+					for (key in data) {
+						htmlString += '<li>';
+						htmlString += '    <div class="top toggle_arw">';
+						htmlString += '        <div class="img icons" data-icon="">' + (data[key].CS_IMG_NM ? '<img src="' + (imgAbsolutePath + data[key].CS_IMG_NM) + '" alt="">' : '') + '</div>';
+						htmlString += '        <div class="infobox">';
+						htmlString += '            <p class="tit">' + data[key].CS_NM + '</p>';
+						htmlString += '            <div class="desc">' + data[key].CS_DESC + '</div>';
+						htmlString += '        </div>';
+						htmlString += '    </div>';
+						htmlString += '    <div class="cont">';
+						htmlString += '        <dl>';
+						htmlString += '            <dt>소개</dt>';
+						htmlString += '            <dd>' + data[key].CS_INTRO + '</dd>';
+						htmlString += '        </dl>';
+						htmlString += '        <dl>';
+						htmlString += '            <dt>혜택</dt>';
+						htmlString += '            <dd>' + data[key].CS_BENEFIT + '</dd>';
+						htmlString += '        </dl>';
+						htmlString += '        <dl>';
+						htmlString += '            <dt>주소 / 연락처</dt>';
+						htmlString += '            <dd>' + data[key].CS_ADDR_TEL + '</dd>';
+						htmlString += '        </dl>';
+						htmlString += '    </div>';
+						htmlString += '</li>';
+					}
+					htmlString += '</ul>';
+
+					$('#station_contents').html(htmlString);
+					bindStationEvent();
+				}
+
+
+				function bindStationEvent() {
+					$('.adiclub_station li .top').bind('click', function () {
+						if ($(this).hasClass('open')) {
+							$(this).removeClass('open');
+						} else {
+							$(this).addClass('open');
+						}
+					});
+				}
+				/* 170726 END */
+
+
+				/* 170726 임시 데이터 */
+				var tempData = [
+					{
+						"CS_NO": "26",
+						"CS_NM": "Room 360",
+						"CS_LOCA": "01",
+						"CS_LOCA_NM": "서울",
+						"CS_TYPE": "01",
+						"CS_TYPE_NM": "쇼핑/유통",
+						"CS_IMG_NM": "culture_station_img1.jpg",
+						"CS_DESC": "스테이션 쇼핑/유통\n혜택 제품 구매 시 할인 혜택",
+						"CS_INTRO": "Hip-Hop, Funk, Disco 중고 및 최신 레코드를 디제이 소울스케이프가<br/>직접 셀렉하여 판매<br/><a href=\"http://naver.com\" class=\"link\">자세히보기</a>",
+						"CS_BENEFIT": "상세 혜택은 추후 공지됩니다.",
+						"CS_ADDR_TEL": "서울시 서초구 방배동 985-11, 1층\n02-3474-0360"
+					},
+					{
+						"CS_NO": "27",
+						"CS_NM": "Warped",
+						"CS_LOCA": "01",
+						"CS_LOCA_NM": "경기",
+						"CS_TYPE": "01",
+						"CS_TYPE_NM": "쇼핑/유통",
+						"CS_IMG_NM": "culture_station_img2.jpg",
+						"CS_DESC": "스테이션 카페/디저트\n혜택 제품 구매 시 할인 혜택",
+						"CS_INTRO": "Know Wave, Have a good time 등 최신 유행 아이템을 만나볼 수 있으며 <br/>디제이가 스토어 내에서 항시 음악을 플레이<br/><a href=\"http://naver.com\" class=\"link\">자세히보기</a>",
+						"CS_BENEFIT": "상세 혜택은 추후 공지됩니다.",
+						"CS_ADDR_TEL": "서울시 용산구 한남동 683-94번지 1층\n070-7808-0852"
+					},
+					{
+						"CS_NO": "28",
+						"CS_NM": "1984",
+						"CS_LOCA": "01",
+						"CS_LOCA_NM": "경기",
+						"CS_TYPE": "01",
+						"CS_TYPE_NM": "쇼핑/유통",
+						"CS_IMG_NM": "culture_station_img3.jpg",
+						"CS_DESC": "스테이션 카페/디저트\n혜택 제품 구매 시 할인 혜택",
+						"CS_INTRO": "홍대 연남동 부근 위치, 각종 의류 및 서적, 라이프 굿즈를 판매하는 편집샵으로 <br/>1984 카페를 동시에 운영<br/><a href=\"http://naver.com\" class=\"link\">자세히보기</a>",
+						"CS_BENEFIT": "상세 혜택은 추후 공지됩니다.",
+						"CS_ADDR_TEL": "서울시 마포구 동교동 158-24 번지 1층\n02-325-1984"
+					}
+				];
+
+
+				renderStationContents(tempData);
+
+			});
+
+
+		})(jQuery);
+
+	</script>    
 
 </body>
 
