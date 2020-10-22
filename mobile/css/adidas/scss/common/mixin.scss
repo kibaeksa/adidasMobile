@@ -60,13 +60,13 @@ $noto: 'NotoSansKR';
 @mixin auto($val) {
     height: $val;
     @if ( $val == auto ) {
-        div[class~="figure"]{
+        div[class*="figure"]{
             img, video{
                 width: 100%;
             }
         }
     } @else {
-        div[class~="figure"]{
+        div[class*="figure"]{
             @include center(0, auto, 50%, $ctX);
         }
     }

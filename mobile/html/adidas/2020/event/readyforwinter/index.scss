@@ -1,0 +1,245 @@
+@import './mobile/css/adidas/scss/common/mixin.scss';
+@import './mobile/css/adidas/scss/common/common.scss';
+// #wrap{
+// 	padding-top:60px;
+// }
+#winter{
+	position: relative;
+	.button_area_v2{
+		a{
+			font-size: 1rem;
+			font-weight: normal;
+			height: 36px;
+			line-height: 34px;
+			letter-spacing: 1px;
+			padding: 0 1.5rem;
+			span.arrow{
+				margin-left: 10px;
+				width: 25px;
+				&:after{
+					width: 8px;
+				}
+				&:before{
+					width: 8px;
+				}
+			}
+		}
+	}
+	span, p{
+		letter-spacing: 0;
+	}
+	div, img, a{
+		outline: none;
+	}
+	
+		// ########## 믹스인 확인 ##########
+		// './mobile/css/adidas/scss/common/mixin.scss'
+
+	main{
+		@mixin btns(){
+			.button_area_v2{
+				display: inline-block;
+				>div{
+						a{
+							background: transparent;
+							border: 1px solid #fff;
+							color: #fff;
+							.arrow{
+								background: #fff;
+								&::after,&::before{
+									background: #fff;
+								}
+							}
+							&::after{
+								display: none;
+							}
+						}
+				}
+			}
+		}
+		section{
+			position: relative;
+		}
+		img{
+			width: 100%;
+		}
+		.visuals{
+			// $val: auto or 600px;
+			// @include auto($val);
+			$val: auto;
+			@include auto($val);
+		}
+		@for $i from 1 through 6 {
+			.bg0#{$i} {
+				background: url('/images/adidas/2020/event/readyforwinter/bg0#{$i}.jpg') no-repeat;
+				background-position: top;
+				background-size: 100% 100%;
+			}
+		}
+		.video{
+			text-align: center;
+			padding: 2rem;
+			.video__figure{
+				position: relative;
+				display: inline-block;
+				width: 49.2%;
+				margin-right: 4px;
+				>a{
+					@include center(50%, auto, 50%, $ctct);
+					img{
+						width: 50%;
+					}
+				}
+				&:last-child{
+					margin: 0;
+				}
+			}
+		}
+		.asides{
+			padding: 3rem 0;
+			text-align: center;
+			h3{
+				font: 700 23px/23px $noto;
+				color: #fff;
+				text-align: center;
+			}
+			p{
+				font: 400 14px/20px $noto;
+				color: #fff;
+				text-align: center;
+				margin: 1rem 0 1.5rem 0;
+			}
+			.button_area_v2{
+				display: inline-block;
+			}
+			&.bg03{
+				background-size: 100% auto;
+				padding: 15% 0;
+			}
+		}
+		.carousel__container{
+			.carousel{
+				padding: 2.5rem 0 3.5rem 0;
+				text-align: center;
+				>p{
+					font: 400 16px/25px $noto;
+					color: #fff;
+					text-align: center;
+					margin: 0 0 1rem 0;
+					em{
+						font-weight: 900;
+						line-height: 25px;
+						font-style: none;
+					}
+				}
+				.slider{
+					width: 87%;
+					margin: 0 auto;
+					overflow: hidden;
+				}
+				.slick-dots{
+					text-align: center;
+					position: relative;
+					margin: 1.5rem 0 1.5rem 0;
+					li{
+						width: 11px;
+						height: 11px;
+						border:1px solid #fff;
+						border-radius: 50%;
+						display: inline-block;
+						margin-right: 6px;
+						&:last-child{
+							margin: 0;
+						}
+						button{
+							border: 0;
+							background: none;
+							text-indent: -9999px;
+							outline: none;
+						}
+						&.slick-active{
+							background: #fff;
+						}
+					}
+				}
+				.button_area_v2{
+					display: inline-block;
+				}
+			}
+		}
+		.descs{
+			text-align: center;
+			.descs__figure{
+				padding-top: 113.5%;
+				>div{
+					@include center(0, auto, 0, none);
+					opacity: 0;
+					transition: all 1s;
+					&.on{
+						opacity: 1;
+						z-index: 2;
+					}
+				}
+			}
+			.dots{
+				@include center(auto, 22%, 27%, none);
+				z-index: 3;
+				li{
+					width: 11px;
+					height: 11px;
+					border-radius: 50%;
+					border: 1.5px solid #fff;
+					display: inline-block;
+					margin-right: 7px;
+					&.on{
+						background: #fff;
+					}
+					&:last-child{
+						margin: 0;
+					}
+				}
+			}
+			@include btns();
+			.button_area_v2{
+				@include center(auto, 7%, 50%, $ctX);
+			}
+		}
+		.bottoms{
+			text-align: center;
+			padding: 2.5rem 0;
+			p{
+				font: 700 14px/20px $noto;
+				color: #fff;
+				text-align: center;
+			}
+			>img{
+				display: block;
+				width: 60%;
+				margin: 15px auto;
+			}
+			.button_area_v2{
+				display: inline-block;
+			}
+		}
+		.banners{
+			.txt{
+				@include center(50%, auto, 5%, $ctY);
+				>img{
+					width: 50%;
+				}
+				p{
+					font: 700 13px/13px $noto;
+					color: #fff;
+					margin: 1rem 0;
+				}
+				@include btns();
+			}
+			&:last-child{
+				p{
+					line-height: 19px;
+					margin-top: 0;
+				}
+			}
+		}
+	}	
+}
