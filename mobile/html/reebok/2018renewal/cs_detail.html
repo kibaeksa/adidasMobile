@@ -28,7 +28,7 @@
 <script type="text/javascript" src="//imagem.reebok.co.kr/js/mo/reebok/commonFn.js" ></script>
 <script type="text/javascript" src="//imagem.reebok.co.kr/js/mo/reebok/iscroll.js" ></script>
 <script type="text/javascript" src="//imagem.reebok.co.kr/js/mo/reebok/swipe.js" ></script>
-<script type="text/javascript" src="//imagem.reebok.co.kr/js/mo/reebok/reebok_js_m.js" ></script>
+<!-- <script type="text/javascript" src="//imagem.reebok.co.kr/js/mo/reebok/reebok_js_m.js" ></script> -->
 <script type="text/javascript" src="//imagem.reebok.co.kr/js/mo/reebok/commonReebok.js" ></script>
 <script type="text/javascript" src="//imagem.reebok.co.kr/js/search/dqAutoCompleteCommonTop.js" ></script>
 <script type="text/javascript" src="//imagem.reebok.co.kr/js/swipe.js" ></script>
@@ -65,981 +65,328 @@
 <section id="wrap">
 	
 
-<section id="headerWrap">
-	
-	<!-- 쿠폰레이어-->
-	<div id="top_banner_mycpn" class="top_bnn" style="display:block;">
-		<a href="javascript:goCoupSel();"><img src="/images/reebok/efu2018/common/temp_cpn_pop.jpg" alt="쿠폰이 발급되었습니다. 쿠폰 확인하기"/></a>
-		<a href="#" class="close" onclick="closeMyCpnLayer();"><img src="/images/reebok/efu2018/common/btn_topbnn_close.png" alt="닫기"/></a>
-	</div>
-	
-	<div id="header">
-		<h1><a href="/index.jsp"><img src="/images/reebok/efu2018/common/logo.png" alt="reebok"></a></h1>
-		<a href="#" class="menuBtn"><img src="/images/reebok/efu2018/common/btn_menu.png" alt="메뉴"></a>
-		<div class="menuWrap">
-			<div class="menuArea">
-				<!-- 로그인전 -->
-				<ul class="utilArea">
-					<li><a href="">로그인/회원가입</a></li>
-					<li><a href="">마이페이지</a></li>
-					<li><a href="">주문배송</a></li>
-				</ul>
-				<!-- //로그인전 -->
-				<!-- 로그인후 -->
-				
-				<div class="menuLoginArea">
-					<div class="infoArea">
-						<p class="name">홍길동님</p>
-						<p class="logoutBtn"><a href="">로그아웃</a></p>
+				<header include-html="/html/reebok/inc/header.html"></header>
+
+				<div id="container" class="mypage">
+					<div id="location">
+						<span><a href="javascript:goMain();">HOME</a></span>
+						<span><a href="javascript:goCsCenter();">고객센터</a></span>
+						<span>자주 묻는 질문</span>
 					</div>
-					<div class="barcode">
-						<img src="/images/reebok/efu2018/common/barcode.png" alt="reeclub barcode"/>
-						<a href="#" class="bacodePlus"></a>
-					</div>
-					<ul class="iconArea">
-						<li class="icon1"><a href="">쿠폰</a></li>
-						<li class="icon2"><a href="">주문배송</a></li>
-						<li class="icon3"><a href="">마이페이지</a></li>
-					</ul>
-				</div>
-				<!-- //로그인후 -->
-				<ul class="menu">
-					<li class="menuTit"><a href="#" class="tit">MEN</a>
-						<ul class="deth2">
-							<li class="bgNone"><a href="http://m.reebok.co.kr/MO/Product/newPrdList.action?ctgr_cd=02001">NEW</a></li>
-							<li class="bgNone"><a href="http://m.reebok.co.kr/MO/Product/bestPrdList.action?ctgr_cd=02001">BEST</a></li>
-							<li class="bgNone"><a href="http://m.reebok.co.kr/MO/Product/salePrdList.action?ctgr_cd=02001">SALE</a></li>
-							<li><a href="#" class="tit">ONLINE ONLY</a>
-								<div class="deth3">
-									<p class="sort">MEN</p>
-									<ul>
-										<li><a href="#">전체보기</a></li>
-										<li><a href="#">신발</a></li>
-										<li><a href="#">의류</a></li>
-										<li><a href="#">용품</a></li>
-									</ul>
-								</div>
-								<div class="deth3">
-									<p class="sort">KIDS</p>
-									<ul>
-										<li><a href="#">전체보기</a></li>
-										<li><a href="#">의류</a></li>
-									</ul>
-								</div>
-							</li>
-							<li><a href="" class="ko tit">신발</a>
-								<div class="deth3">
-									<p class="sort ko all"><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02001001">전체보기</a></p>
-								</div>
-								<div class="deth3">
-									<p class="sort ko">스포츠별</p>
-									<ul>
-										<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02001001001006">트레이닝</a></li>
-										<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02001001001003">러닝</a></li>
-										<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02001001001007">캐주얼</a></li>
-										<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02001001001009">스윔</a></li>
-									</ul>
-								</div>
-								<div class="deth3">
-									<p class="sort ko">상품별</p>
-									<ul>
-										<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02001001002001">하이컷/미드컷</a></li>
-										<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02001001002002">로우컷</a></li>
-										<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02001001002003">센들/슬리퍼</a></li>
-									</ul>
-								</div>
-							</li>
-							<li><a href="" class="ko tit">의류</a>
-								<div class="deth3">
-									<p class="sort ko all"><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02001002">전체보기</a></p>
-								</div>
-								<div class="deth3">
-									<p class="sort ko">스포츠별</p>
-									<ul>
-										<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02001002001006">트레이닝</a></li>
-										<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02001002001003">러닝</a></li>
-										<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02001002001005">아웃도어</a></li>
-										<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02001002001007">캐주얼</a></li>
-									</ul>
-								</div>
-								<div class="deth3">
-									<p class="sort ko">상품별</p>
-									<ul>
-										<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02001002002001">자켓</a></li>
-										<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02001002002006">트랙탑/저지탑</a></li>
-										<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02001002002002">티셔츠</a></li>
-										<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02001002002007">슬리브리스</a></li>
-										<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02001002002003">팬츠</a></li>
-										<li><a href="#">원터자켓</a></li>
-									</ul>
-								</div>
-							</li>
-							<li><a href="" class="ko tit">용품</a>
-								<div class="deth3">
-									<p class="sort ko all"><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02001003">전체보기</a></p>
-								</div>
-								<div class="deth3">
-									<p class="sort ko">스포츠별</p>
-									<ul>
-										<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02001003005008">전체보기</a></li>
-										<li><a href="#">기타</a></li>
-									</ul>
-								</div>
-								<div class="deth3">
-									<p class="sort ko">상품별</p>
-									<ul>
-										<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02001003006005">전체보기</a></li>
-									</ul>
-								</div>
-							</li>
-							<li><a href="" class="ko tit">브랜드</a>
-								<div class="deth3">
-									<p class="sort ko">피트니스</p>
-								</div>
-								<div class="deth3">
-									<p class="sort ko">클래식</p>
-								</div>
-							</li>
-						</ul>
-					</li>
-					<!-- //MEN -->
-					
-					<li class="menuTit"><a href="#" class="tit">WOMEN</a>
-						<ul class="deth2">
-							<li class="bgNone"><a href="http://m.reebok.co.kr/MO/Product/newPrdList.action?ctgr_cd=02002">NEW</a></li>
-							<li class="bgNone"><a href="http://m.reebok.co.kr/MO/Product/bestPrdList.action?ctgr_cd=02002">BEST</a></li>
-							<li class="bgNone"><a href="http://m.reebok.co.kr/MO/Product/salePrdList.action?ctgr_cd=02002">SALE</a></li>
-							<li><a href="#" class="tit">ONLINE ONLY</a>
-								<div class="deth3">
-									<p class="sort">WOMEN</p>
-									<ul>
-										<li><a href="#">전체보기</a></li>
-										<li><a href="#">신발</a></li>
-										<li><a href="#">의류</a></li>
-										<li><a href="#">용품</a></li>
-									</ul>
-								</div>
-								<div class="deth3">
-									<p class="sort">KIDS</p>
-									<ul>
-										<li><a href="#">전체보기</a></li>
-										<li><a href="#">의류</a></li>
-									</ul>
-								</div>
-							</li>
-							<li><a href="" class="ko tit">신발</a>
-								<div class="deth3">
-									<p class="sort ko all"><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02002001">전체보기</a></p>
-								</div>
-								<div class="deth3">
-									<p class="sort ko">스포츠별</p>
-									<ul>
-										<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02002001001003">러닝</a></li>
-										<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02002001001009">스윔</a></li>
-										<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02002001001006">트레이닝</a></li>
-										<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02002001001007">캐주얼</a></li>
-									</ul>
-								</div>
-								<div class="deth3">
-									<p class="sort ko">상품별</p>
-									<ul>
-										<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02002001002001">하이컷/미드컷</a></li>
-										<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02002001002002">로우컷</a></li>
-										<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02002001002003">샌들/슬리퍼</a></li>
-									</ul>
-								</div>
-							</li>
-							<li><a href="" class="ko tit">의류</a>
-								<div class="deth3">
-									<p class="sort ko all"><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02002002">전체보기</a></p>
-								</div>
-								<div class="deth3">
-									<p class="sort ko">스포츠별</p>
-									<ul>
-										<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02002002001002">트레이닝</a></li>
-										<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02002002001001">러닝</a></li>
-										<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02002002001008">아웃도어</a></li>
-										<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02002002001003">캐주얼</a></li>
-									</ul>
-								</div>
-								<div class="deth3">
-									<p class="sort ko">상품별</p>
-									<ul>
-										<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02002002002001">자켓</a></li>
-										<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02002002002005">트랙탑/저지탑</a></li>
-										<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02002002002002">티셔츠</a></li>
-										<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02002002002006">브라탑/언더웨어</a></li>
-										<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02002002002003">팬츠</a></li>
-										<li><a href="#">원터자켓</a></li>
-										<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02002002002004">기타</a></li>
-									</ul>
-								</div>
-							</li>
-							<li><a href="" class="ko tit">용품</a>
-								<div class="deth3">
-									<p class="sort ko all"><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02002003">전체보기</a></p>
-								</div>
-								<div class="deth3">
-									<p class="sort ko">스포츠별</p>
-									<ul>
-										<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02002003005007">전체보기</a></li>
-									</ul>
-								</div>
-								<div class="deth3">
-									<p class="sort ko">상품별</p>
-									<ul>
-										<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02002003006005">전체보기</a></li>
-									</ul>
-								</div>
-							</li>
-							<li><a href="" class="ko tit">브랜드</a>
-								<div class="deth3">
-									<p class="sort ko">피트니스</p>
-								</div>
-								<div class="deth3">
-									<p class="sort ko">클래식</p>
-								</div>
-							</li>
-						</ul>
-					</li>
-					<!-- //WOMEN -->
-					
-					<li class="menuTit"><a href="#"  class="tit">KIDS</a>
-						<ul class="deth2">
-							<li class="bgNone"><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02003001" class="ko">전체보기</a></li>
-						</ul>
-					</li>
-					<!-- //kids -->
-					
-					<li class="menuTit fitness"><a href="#" class="tit">FITNESS</a>
-						<ul class="deth2">
-							<li class="bgNone"><a href="">BEST</a></li>
-							<li class="bgNone"><a href="">NEW</a></li>
-							<li class="bgNone"><a href="">SALE</a></li>
-							<li class="bgNone"><a href="">MEN</a></li>
-							<li class="bgNone"><a href="">WOMEN</a></li>
-						</ul>
-					</li>
-					<!-- //fitness -->
-					<li class="menuTit"><a href="#" class="tit">CLASSIC</a>
-						<ul class="deth2">
-							<li class="bgNone"><a href="http://m.reebok.co.kr/MO/Product/newPrdList.action?ctgr_cd=02005" class="ko tit">NEW</a></li>
-							<li class="bgNone"><a href="http://m.reebok.co.kr/MO/Product/bestPrdList.action?ctgr_cd=02005">BEST</a></li>
-							<li class="bgNone"><a href="http://m.reebok.co.kr/MO/Product/salePrdList.action?ctgr_cd=02005">SALE</a></li>
-							<li class="bgNone"><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02005001">MEN</a></li>
-							<li class="bgNone"><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=02005002">WOMEN</a></li>
-							<li><a href="#" class="tit">COLLECTION</a>
-								<div class="deth3">
-									<p class="sort ko">퓨리컬렉션</p>
-									<ul>
-										<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdListData.action?ctgr_cd=0200600">전체보기</a></li>
-									</ul>
-								</div>
-							</li>	
-						</ul>
-					</li>
-					<li class="menuTit"><a href="#" class="tit">COLLECTION</a>
-						<ul class="deth2">
-							<li class="bgNone"><a href="" class="ko tit">온라인단독</a></li>	
-							<li><a href="#" class="tit ko">공식아울렛</a>
-								<div class="deth3">
-									<p class="sort">MEN</p>
-									<p class="sort">WOMEN</p>
-									<p class="sort">KIDS</p>							
-								</div>
-							</li>
-							<li class="bgNone"><a href="" class="ko tit">크로스핏</a></li>	
-							<li class="bgNone"><a href="" class="ko tit">퓨리컬렉션</a></li>	
-							<li class="bgNone"><a href="" class="ko tit">요가컬렉션</a></li>	
-							<li class="bgNone"><a href="" class="ko tit">컴뱃</a></li>	
-						</ul>
-					</li>	
-					<!-- 20180705 수정 -->
-					<li class="menuTit"><a href="http://m.reebok.co.kr/MO/Promotion/landingPage.action?pageNo=209 " class="tit">ONLINE ONLY</a></li>	
-					<!-- //20180705 수정 -->
-				</ul>
-				<!-- 20180705 수정 -->
-				<div class="bannerArea">
-					<ul>
-						<li><a href="http://m.reebok.co.kr/MO/Product/newPrdList.action">신상품</a></li>
-						<li><a href="http://m.reebok.co.kr/MO/Product/salePrdList.action">할인상품</a></li>
-						<li><a href="http://m.reebok.co.kr/MO/Product/bestPrdList.action">인기상품</a></li>
-						<li><a href="http://m.reebok.co.kr/MO/Product/eachCatPrdOutletListData.action?ctgr_cd=02001">공식아울렛</a></li>
-					</ul>
-					<div class="vrSroteBanner">
-						<a href="http://m.reebok.co.kr/vr/RCS_GB/web/index.html "><img src="/images/reebok/efu2018/common/vrstory.jpg" alt=""></a>
-					</div>
-				</div>	
-				<!-- //20180705 수정 -->			
-			</div>
-		</div>
- 
-		<div class="menuBtnArea">
-			<span class="searchBtn"><a href="#"></a></span>
-			<div class="cartIcon">
-				<a href=""><img src="/images/reebok/efu2018/common/sprite-image.png" alt="장바구니"></a>
-				<span>12</span>
-			</div> 
-			<span class="brandBtn"><a href="#" class="enter">BRAND</a></span>
-		</div>
-		<a href="#" class="menuClose"><!-- <img src="/images/reebok/efu2018/btn/btn_close.png" alt="닫기"> --></a>
-		
-<div id="brand_navWrap">
-	<div class="brandPd">
-		<div class="brandPdWrap">
-			<ul class="brand_nav">
-				<li>
-					<a href="/brand/campaigns.jsp">
-						<dl>
-							<!-- 20180329 text 수정 -->
-							<dt>CAMPAIGN</dt><!-- // 20180329 text 수정 -->
-							<dd>전통을 넘어 최고의 라이프스타일이 창조되는 곳</dd>
-						</dl>
-					</a>
-				</li>
-				<li class="nDepth">
-					<a href="javascript:;">
-						<dl>
-							<!-- 20180327 수정 - 텍스트 수정 -->
-							<dt>FITNESS</dt>
-							<!-- // 20180327 수정 - 텍스트 수정 -->
-							<dd>피트니스 라이프스타일의 출발점</dd>
-						</dl>
-					</a>
-					<div class="smallMenu">
-						<ul>
-							<!--  class="over" 버튼활성화  -->
-							<li><a href="/brand/fitness/training.jsp">TRANINIG</a></li>
-							<li><a href="/brand/fitness/running.jsp">RUNNING</a></li>
-							<li><a href="/brand/fitness/crossfit.jsp">CROSSFIT</a></li>
-							<li><a href="/brand/fitness/studio.jsp">STUDIO</a></li>
-							<li><a href="/brand/fitness/combat.jsp">COMBAT</a></li>
-						</ul>
-					</div>
-				</li>
-				<li class="nDepth">
-					<a href="javascript:;">
-						<dl>
-							<!-- 20180327 수정 - 텍스트 수정 -->
-							<dt>CLASSIC</dt>
-							<!-- // 20180327 수정 - 텍스트 수정 -->
-							<dd>리복의 역사가 오늘의 트렌드가 되는 곳</dd>
-						</dl>
-					</a>
-					<div class="smallMenu">
-						<ul>
-							<!-- 20180327 수정 - 텍스트 수정 -->
-							<!--  class="over" 버튼활성화  -->
-							<li><a href="/brand/classic/fury.jsp">1994 INSTAPUMP FURY</a></li>
-							<li><a href="/brand/classic/workout.jsp">1987 WORKOUT</a></li>
-							<li><a href="/brand/classic/clubc.jsp">1985 CLUB C</a></li>
-							<li><a href="/brand/classic/classicleather.jsp">1983 CLASSIC LEATHER</a></li>
-							<li><a href="/brand/classic/freestylehi.jsp">1982 FREESTYLE HI</a></li>
-						</ul>
-						<!-- // 20180327 수정 - 텍스트 수정 -->
-					</div>
-				</li>			
-				<!-- 201804046 수정 - 추가&수정 -->	
-				<li>
-					<a href="/brand/reeclub.jsp">
-						<dl>
-							<dt>REECLUB</dt>
-							<dd>다양한 혜택을 드리는 리복만의 커뮤니티</dd>
-						</dl>
-					</a>
-				</li>			
-				<li>
-					<a href="/brand/blog.jsp">
-						<dl>
-							<dt>REEBOK BLOG</dt>
-							<dd>리복의 이야기와 정보가 공유되는 공간</dd>
-						</dl>
-					</a>
-				</li>
-				<li>
-					<a href="/brand/promotion.jsp">
-						<dl>
-							<dt>PROMOTION</dt>
-							<dd>리복이 선보이는 최고의 프로모션</dd>
-						</dl>
-					</a>
-				</li>
-				<!-- // 201804046 수정 - 추가&수정 -->	
-			</ul>
-		</div>
-	</div>
-	<a href="#none" class="brand_close close_x_btn"></a>
-</div>
-
-
-		<a href="#" class="brandmenuClose"><!-- <img src="/images/reebok/efu2018/btn/btn_close.png" alt="닫기"> --></a>
-	</div>
-	<div class="bacodeDetail">
-		<div class="bacodeDetailLogo"><img src="/images/reebok/efu2018/common/logo.png" alt="reebok"></div>
-		<div class="cont">
-			<p class="name">홍길동<span>님</span></p>
-			<img src="/images/reebok/efu2018/common/barcodeDetail.png" alt="reeclub barcode"/>
-			<p class="txt">휴대폰 번호가 일치하지 않거나, 스마트폰 소지자 정보 변경이 필요할 경우 리복 공식 온라인 스토어에 접속하신 후 <strong>나의정보수정 </strong>에서 변경해 주세요.</p>
-			<div class="barbodeLogo"><img src="/images/reebok/efu2018/common/barcodeLogo.png" alt="reeclub"/></div>
-		</div>	
-		<p class="close"><img src="/images/reebok/efu2018/common/btn_close.png" alt="닫기"/></p>
-	</div>
-	<div id="global-search-slide">
-		<div class="search_field">
-			<div>
-				<form name="frmSrch" id="frmSrch" action="#" method="post" onsubmit="return false">
-					<input type="hidden" name="keyword" value="">
-					<input type="hidden" name="query" value="">
-					<input type="hidden" name="siteNm" value="">
-					<input type="hidden" name="siteCD" value="2">
-					<input type="search" name="S_PROD_NM" id="S_PROD_NM" value="" placeholder="검색어를 입력하세요" onkeypress="return handle_enter_top(1,event);" onfocus="javascript:this.value='';" onmousedown="javascript:dqtop_setTextbox('1',event);" autocomplete="off">
-					<button type="button" onclick="doSearch();" class="icons" data-icon="" onmousedown="javascript:trk_clickTrace('EVT','^리복모바일^검색돋보기');"></button>
-					<script language="JavaScript" src="//imagem.reebok.co.kr/js/search/dqAutoCompleteTopReebok.js"></script>
-					<div style="position:relative;z-index:1000;">
-						<div onmouseout="dqtop_setMouseoff();" onmouseover="dqtop_setMouseon();" style="position: absolute;left:0px;top:0px;z-index: 1000;width:100%;display:none;" id="dqAutoTop"></div>
-					</div>
-				</form>
-			</div>
-		</div>
-		<div class="search_category">
-			<ul>
-				<li class="new"><a href="#keyword_recent">최근 검색어</a></li>
-				<li class="fav"><a href="#pop_words">인기 검색어</a></li>
-			</ul>
-			<div class="contents">
-				<ul class="searched_keywords" id="keyword_recent">
-					<!--<li><a href="#">FURY</a><a href="javascript:void(0)" class="close icons" data-icon=""></a></li>-->
-					<li class="no_data">최근 검색하신 내역이 없습니다.</li>		
-				</ul>
-				<ol class="rank_keywords"  id="pop_words">
-					<li><a href="#"><span>1</span><strong class="icons" data-icon="">퓨리</strong></a></li>
-					<li><a href="#"><span>2</span><strong class="icons" data-icon="">퓨리 라이트</strong></a></li>
-					<li><a href="#"><span>3</span><strong class="icons" data-icon="">크로스핏</strong></a></li>
-					<li><a href="#"><span>4</span><strong class="icons" data-icon="">UFC</strong></a></li>
-					<li><a href="#"><span>5</span><strong class="icons" data-icon="">GL6000</strong></a></li>
-					<li><a href="#"><span>6</span><strong class="icons" data-icon="">DMX</strong></a></li>
-					<li><a href="#"><span>7</span><strong class="icons" data-icon="">FURYLITE</strong></a></li>
-					<li><a href="#"><span>8</span><strong class="icons" data-icon="">클럽C</strong></a></li>
-					<li><a href="j#"><span>9</span><strong class="icons" data-icon="">아즈텍</strong></a></li>
-					<li><a href="#"><span>10</span><strong class="icons" data-icon="">라인</strong></a></li>
-				</ol>
-			</div>
-		</div>
-	</div>
-	
-	<!-- 상단 띠배너 S -->
-	<div class="notice_tits" id="speeds" style="display: block;">
-		<a class="b1" style="display: none;" href="javascript:void(0)">
-			<div><span class="ico"></span>스피드 배송 서비스 안내</div>
-		</a>
-		<a class="b2" href="http://m.reebok.co.kr/MO/Promotion/landingPage.action?pageNo=209" style="display: none;">
-			<div><span class="ico"></span>온라인 한정상품을 만나보세요</div>
-		</a>
-		<a class="b3 on" href="javascript:void(0)" style="display: block;">
-			<div><span class="ico"></span>교환, 환불은 이렇게</div>
-		</a>
-		<div class="more_ico sprite-image"></div>
-	</div>
-	<!-- 상단 띠배너 E -->
-
-	<!-- 180131 START 스피드 배송 교환/환불 안내팝업 -->
-	<div class="layerpopup popup_oneday_exchange"><!-- 20180416 추가 -->
-		<div class="header">
-			<a href="#" class="close_x_btn"></a>
-		</div>
-		<div class="contents">
-			<div class="ico">
-				<img src="http://imagem.reebok.co.kr/images/reebok/ico_exch_pop.png"	alt="">
-			</div>
-			<h2>교환, 환불은 이렇게</h2>
-			<p class="bold">
-				교환, 반품은 배송완료일로부터 7일 이내에<br> 신청이 가능합니다.<br> 단, 포장을 개봉하였거나
-				포장이 훼손되어<br> (상품의 Tag분리/분실, 비닐포장 훼손, 신발박스 훼손 등)<br> 상품가치가
-				현저히 감소한 경우 교환, 반품 불가 합니다.
-			</p>
-			<p>
-				교환, 반품 관련 자세한 문의는 <br> 리복 고객센터 1588-7324로 해주시기 바랍니다.
-			</p>
-		</div>
-	</div>
-
-	<!-- 180131 스피드 배송 안내팝업 -->
-	<div class="layerpopup popup_oneday_open" id="spd">
-		<div class="header">
-			<a href="#" class="close_x_btn"></a>
-		</div>
-		<div class="contents">
-			<div class="ico">
-				<img
-					src="http://imagem.reebok.co.kr/images/reebok/ico_truck_pop.png" alt="">
-			</div>
-			<h2>스피드 배송 서비스 안내</h2>
-			<p class="bold">
-				SPEEDY DELIVERY(스피드 배송)란? <br> 상품상세 페이지에 <span class="ico_car"></span>
-				표시가 된 상품을<br> 저녁 6시부터 다음 날 오전 9시까지 주문 후<br> 결제 완료된 <span
-					class="ico_car"></span> 상품에 한하여 다음날 또는<br> 당일까지 빠르게 배송해 드리는
-				서비스 입니다.
-			</p>
-			<p style="text-align: center; padding: 0 6.5rem 2rem;">
-				<!-- 20180329 경로 수정 -->
-				<a href="http://m.reebok.co.kr/MO/Promotion/landingPage.action?pageNo=209"
-					style="display: block; background-color: #000; color: #fff; text-align: center; width: 100%; height: 4rem; line-height: 4rem;">스피드
-					배송 제품보기</a>
-				<!-- // 20180329 경로 수정 -->				
-				<!--// 20180403 링크 수정-->
-			</p>
-			<p>
-				배송지 기준으로 서울 및 수도권 <br> 인근지역(일부지역 제외)에 한하여 진행 됩니다.<br> 빠르고
-				안전한 배송을 위해 박스 규격은<br> 가로/세로/높이의 합이 80cm 이내이며,<br> 총 주문 수량은
-				3개로 제한 됩니다. (단, 신발은 2개만 가능)<br> 기타 SPEEDY DELIVERY(스피드 배송) 관련
-				자세한 안내는<br> FAQ를 참고해주시기 바랍니다.
-			</p>
-			<p class="bold">
-				<a href="/RPF080301.action?FAQ_DIVI=03&amp;FAQ_DIVI_DTL=05"	class="icons aft" data-icon="">FAQ 바로가기</a>
-			</p>
-		</div>
-	</div>
-	<!-- 180131 스피드 배송 안내팝업 END-->
-	<!-- //20180416 추가 -->
-	
-<script type="text/javascript">
-jQuery(function(){
-	jQuery(document).ready(function() {
-		// 170322 스피드 배송 상단 바 롤링 / 클릭 스크립트
-		var index = 0;
-		var commToday = "20180528";
-		var commTodayHh = "2018052811";
-
-		//  상단 공지바 (PDP, PLP만 노출)
-		
-		if(commTodayHh >= 2017110710 ) {
-			jQuery('.notice_tits#speeds').css('display','block');
-			var length = jQuery('.notice_tits#speeds>a').length;
-			setInterval(function(){
-				jQuery('.notice_tits#speeds>a').removeClass('on');
-
-				setTimeout(function(){
-					jQuery('.notice_tits#speeds>a').hide();
-					if( index >= (length -1) ) {
-						index = 0;
-					} else {
-						index += 1;
-					}
-
-					jQuery('.notice_tits#speeds>a').eq(index).show();
-					setTimeout(function(){
-						jQuery('.notice_tits#speeds>a').eq(index).addClass('on');
-					},30);
-
-				},400);
-			},3000);
-		}
-
-		jQuery('#headerWrap .notice_tits#speeds>a').bind('click',function(){
-			if(jQuery(this).hasClass('b1')){
-				jQuery('.popup_oneday_open#spd').show();
-			}else if(jQuery(this).hasClass('b3')){
-				jQuery('.popup_oneday_exchange').show();
-			}
-		});
-		
-
-		jQuery('.popup_oneday_exchange .header .close_x_btn , .popup_oneday_open .header .close_x_btn').bind('click',function(){
-			jQuery(this).parent().parent().hide();
-		});
-		// 170322 스피드 배송 상단 바 스크립트 끝
-		
-		if (fn_getCookie('today_close_superweek')!='close') {
-			//jQuery('.modal-popup-wrapper').addClass('open');
-			
-				//fn_weekendPopupOpen();
-			
-		}
-		jQuery("#not_today_sw").click(function(){
-			fn_setCookie('today_close_superweek','close',1);
-			jQuery('#superWeekend').hide();
-		});
-	});
-
-})
-</script>
-</section>
-
-	
-
-	<div id="container" class="mypage">
-		<div id="location">
-			<span><a href="javascript:goMain();">HOME</a></span>
-			<span><a href="javascript:goCsCenter();">고객센터</a></span>
-			<span>자주 묻는 질문</span>
-		</div>
-		<div class="cs_center">
-			<h2 style="margin:20px 0 10px;">자주 묻는 질문</h2>	
-			<form name="faqForm" id="faqForm" method="post" onsubmit="return false" action="">
-				<input type="hidden" id="FAQ_DIVI" name="FAQ_DIVI" value="BEST">
-				<div class="faq_sch">
-					<table class="form_table">	
-						<tbody>
-							<tr class="no_line">
-								<td>
-									<div class="td_wrap">									
-										<div class="cell">
-											<div class="sel_cmtype sel_design" style="min-width:130px;">
-												<a href="#">
-													<span>전체</span>
-												</a>
-												<select id="SRC_DIVI" name="SRC_DIVI">
-													<option value="">전체</option>											
-													<option value="01">상품문의</option>											
-													<option value="02">주문/결제</option>											
-													<option value="03">배송</option>										
-													<option value="04">주문 취소 및 교환</option>								
-													<option value="05">반품</option>											
-													<option value="06">포인트/쿠폰</option>											
-													<option value="07">회원/이벤트</option>											
-													<option value="08">AS 수선/심의</option>											
-													<option value="09">customize</option>											
-												</select>
-											</div>		
-										</div>
-										<div class="cell_fix" style="width:5px;"></div>
-										<div class="cell">
-											<input type="text" id="SRC_TXT" name="SRC_TXT" value="">
-										</div>
-										<div class="cell_fix" style="width:70px;">
-											<a href="javascript:fnSearch();" class="s_button" style="margin-left:5px;">질문검색</a>
-										</div>
-									</div>
-									<!-- //td_wrap -->								
-								</td>
-							</tr>	
-						</tbody>
-					</table>
-				</div>
-			</form>
-			<div class="faq_ctgr">
-				<ul>
-					<li><a href="javascript:fnSearchDivi('BEST');" class="on">FAQ</a></li>		
-					<li><a href="javascript:fnSearchDivi('01');">상품문의</a></li>			
-					<li><a href="javascript:fnSearchDivi('02');">주문/결제</a></li>				
-					<li><a href="javascript:fnSearchDivi('03');">배송</a></li>				
-					<li><a href="javascript:fnSearchDivi('04');">주문 취소 및 교환</a></li>				
-					<li><a href="javascript:fnSearchDivi('05');">반품</a></li>		
-					<li><a href="javascript:fnSearchDivi('06');">포인트/쿠폰</a></li>				
-					<li><a href="javascript:fnSearchDivi('07');">회원/이벤트</a></li>			
-					<li><a href="javascript:fnSearchDivi('08');">AS 수선/심의</a></li>			
-					<li><a href="javascript:fnSearchDivi('09');">customize</a></li>			
-				</ul>
-			</div>
-			<dl class="cs_list">		
-				<dt>FAQ<span class="desc">가장 많이 문의하시는 질문을 모았습니다.</span></dt>
-				<dd>
-					<ol>
-						<li>
-							<div class="cs_li_head"><a href="#"><span class="num">1</span>상품 교환은 가능한가요?</a></div>
-							<div class="cs_li_body">
-								<p></p><p><span style="font-family: 굴림"><strong>교환의 경우 <span style="color: #ff0000">동일 상품의 재고가 있을 경우 사이즈&nbsp;교환만</span> 가능</strong>합니다.<br>다른 상품으로 교환을 원하실 경우 반품 후 재주문을 해주셔야 합니다.<br>&nbsp;<br>※ 교환 신청을 하지 않고 상품을 보내는 경우, <br>&nbsp;&nbsp;&nbsp; 분실 우려가 있으니 <strong>반드시 마이페이지에서 교환 신청해 주셔야 합니다. <br></strong><span style="color: #0000ff"><strong><br>(단, Customize 주문 제작 상품의 경우 주문완료 시 교환 및 취소 불가)</strong></span></span></p><p></p>
-							</div>
-						</li>
-						<li>
-							<div class="cs_li_head"><a href="#"><span class="num">2</span>근처 매장에서 다른 제품으로 교환되나요?</a></div>
-							<div class="cs_li_body">
-								<p><span style="font-family: 굴림">교환은 구입처를 통해 사이즈 교환만 가능하며, 인근 타매장에서&nbsp;교환 불가 합니다.<br><br>&nbsp;&gt; 온라인 스토어 구매건의 경우&nbsp;<br>&nbsp;&nbsp; &nbsp;<strong><span style="font-family: 굴림">홈페이지&nbsp;&gt; 마이페이지 &gt; 주문/배송 조회 &gt; 교환 접수 </span></strong><span style="font-family: 굴림">가능하며&nbsp;<br></span><strong>&nbsp;&nbsp; 고객센터(1588-8241)</strong>를 통해&nbsp;문의&nbsp; 및 접수해 주시기 바랍니다.<br><br>&nbsp;&gt; 오프라인 매장 구매건의 경우 구입한 매장으로 교환 문의 부탁 드립니다.</span></p>
-							</div>
-						</li>
-						<li>
-							<div class="cs_li_head"><a href="#"><span class="num">3</span>반품 신청 및 환불 절차는 어떻게 되나요?</a></div>
-							<div class="cs_li_body">
-								<p></p><p><span style="font-family: 굴림"><strong>1. 반품신청<br></strong>&nbsp;&nbsp; ◎ 회원 구매시 :&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ⓐ [로그인] -&gt; [마이페이지] -&gt; [나의 쇼핑내역] -&gt; [취소반품조회] <br><br>&nbsp;&nbsp; ◎ 비회원 구매시<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ⓐ [주문/배송조회] -&gt; [비회원 로그인] -&gt; [나의 쇼핑내역] -&gt;[취소반품조회]<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ⓑ 상품 수령한 날로부터 7일 이내만 신청이 가능<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ※ 마이페이지에서 반품 접수&nbsp;불가시 : 인터넷 익스플로어 &gt; 도구 &gt; 호환성 보기 체크 후 신청 가능합니다.<br>&nbsp;</span></p><p><span style="font-family: 굴림"><strong>2. 반품배송<br></strong>&nbsp;&nbsp;&nbsp;&nbsp; 반품 접수&nbsp;후 일주일내 한진택배 기사님이&nbsp;접수하신&nbsp;회수지로 방문하여 수거 합니다.<br><span style="color: #ff0000"><span style="font-size: 12px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><strong><span style="color: #ff0000"><span style="font-size: 12px">※ </span></span><span style="font-size: 12px"><span style="color: red">주문 제품이 출고된 매장이 아닌 아디다스 본사로 교환/반품 택배 발송 시 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 다시 출고된 매장으로 반송처리 되어지므로, </span></span><span style="font-size: 12px"><span style="color: red">교환/반품 처리 기간이 지연 됩니다.&nbsp;&nbsp;</span></span></strong><br>&nbsp;</span></p><p><span style="font-family: 굴림"><strong>3. 배송비 결제<br></strong>&nbsp;&nbsp;&nbsp;&nbsp; 반품 배송된 상품은 매장에서 이상유무를 확인하게 되며, 이상이 없을 시 반품 확정 됩니다.<br>&nbsp;&nbsp;&nbsp;&nbsp; 매장에서 반품을 확정하면, 고객님의 결제대금에서 배송비가 자동으로 차감되어&nbsp;계산 됩니다. <br><span style="color: #ff0000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ※ 단순 변심 등 고객님의 책임 있는 사유로 인해 반품되는 경우 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 최초 배송비를 포함한 왕복 배송비 5,000원을 고객님께서 부담하셔야&nbsp; 합니다.<br>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;(단, 제주도 및 도서산간 지역은 배송비가 추가 될 수 있습니다.)<br><br></span><strong>4. 환불완료</strong><br>&nbsp;&nbsp;&nbsp;&nbsp; 반품 상품 검수하여&nbsp;최종 반품&nbsp;확정된 경우&nbsp;주문&nbsp;결제 수단에 따라 환불 진행 됩니다.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>ⓐ 실시간 계좌이체 :</strong>&nbsp;영업일 기준 3일 이내에 환불.<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<strong>ⓑ 무통장입금 :</strong> 영업 일기준 3일 이내 환불.<br>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<strong>ⓒ 신용카드 :&nbsp;</strong> 최장 7일 내&nbsp; 해당 카드사에 기존 승인내역에 대한 취소 확인&nbsp; 가능.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (승인취소 및 결제 반영일에 따라 입금날짜는 카드사 별로 다를 수 있으니&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; 자세한 내용은 해당 카드사로 문의하여 주십시오.)</span></p><p></p>
-							</div>
-						</li>
-						<li>
-							<div class="cs_li_head"><a href="#"><span class="num">4</span>제조년월이란 무엇인가요?</a></div>
-							<div class="cs_li_body">
-								<p></p><p>해당 제품이 생산된 년월로 관련 법률에 따라 최초 제조년월로 표기하고 있습니다. 정확한 제조년월은 배송 받으신 상품의 라벨을 참고하시기 바랍니다.</p><p></p>
-							</div>
-						</li>
-						<li>
-							<div class="cs_li_head"><a href="#"><span class="num">5</span>주문한 상품을 취소(부분취소) 또는 교환하고 싶은데 어떻게 하나요?</a></div>
-							<div class="cs_li_body">
-								<p></p><p><span style="font-family: 굴림"><strong>1. 주문취소(부분취소)</strong><br>&nbsp;&nbsp; 주문 상태가 <span style="color: #ff0000"><strong>배송준비중 단계 전</strong></span>까지는 <br>&nbsp;&nbsp; <strong>마이페이지 &gt; 주문/배송조회 </strong>또는 <strong>취소/반품조회</strong>에서 <strong>주문취소가 가능</strong>합니다. <br>&nbsp;&nbsp; ※ 상품이 택배사로 전달 되었거나 이미 출고된 상품은 주문취소가 불가하며 수령 후 반품을 해 주셔야 합니다.<br>&nbsp; &nbsp;※ 마이페이지에서 취소 접수&nbsp;불가시 : 인터넷 익스플로어 &gt; 도구 &gt; 호환성 보기 체크 후 신청 가능합니다.<br></span><br><span style="font-family: 굴림"><strong>2. 교환/반품<br></strong>&nbsp;"전자상거래 등에서의 소비자보호에 관한 법률 제 17조"에 의거 아래와 같은 경우 청약 철회가 가능합니다.&nbsp;<br><br>&nbsp;-&nbsp; 실제 상품,용역 등을 제공받은 날로부터 7일이내<br>&nbsp;-&nbsp; 상품하자 이외 사이즈, 색상교환 등 단순 변심에 의한 교환/반품 배송비는 고객부담<br>&nbsp;-&nbsp; 상품에 따라 TAG제거, 신발 BOX훼손, 라벨, 포장 등의 훼손이나 폐기 후에는 교환/반품 불가<br>&nbsp;<br>※ 상품에 따라 취소/교환/반품의 기준이 다를 수 있으며, 자세한 사항은 상품 상세설명에서 기재하고 있습니다.<br><span style="color: #ff0000"><span style="font-size: 12px">※ </span></span><span style="font-size: 12px"><span style="color: red">주문 제품이 출고된 매장이 아닌 아디다스 본사로 교환/반품 택배 발송 시에는&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;다시 출고된 매장으로 반송처리 되므로, </span></span><span style="font-size: 12px"><span style="color: red">교환/반품 처리 기간이 지연됩니다.&nbsp;&nbsp;<br><br></span><strong><span style="color: #000080">(단, Customize 주문 제작 상품의 경우 주문완료 시 교환 및 취소 불가)</span></strong></span></span></p><p></p>
-							</div>
-						</li>
-						<li>
-							<div class="cs_li_head"><a href="#"><span class="num">6</span>아디다스 공식 온라인 스토어 A/S 정책 안내</a></div>
-							<div class="cs_li_body">
-								<p><img alt="" src="http://image.adidas.co.kr/images/adidas/common/bg_prod_as_faq.jpg">.</p>
-							</div>
-						</li>
-						<li>
-							<div class="cs_li_head"><a href="#"><span class="num">7</span>상품 배송 기간은 얼마나 걸리나요?</a></div>
-							<div class="cs_li_body">
-								<p><span style="font-family: 굴림">주문하신 상품은 결제 완료 후 <strong><span style="color: #0000ff">평균 3일~7일(휴일 및 공휴일 제외)</span></strong> 이내에 배송 됩니다. <br>도서 산간 지역과 제주도등 일부 지역은 배송 기간이 더 소요될 수 있습니다. <br><span style="color: #ff0000"><strong><br>※ 단, Customize 주문 제작 상품의 경우<br>&nbsp;&nbsp;&nbsp; 해외에서 제작하여 배송지 주소로 직접 배송하기 때문에&nbsp;평균 4주~7주 소요 됩니다.</strong></span></span></p>
-							</div>
-						</li>
-						<li>
-							<div class="cs_li_head"><a href="#"><span class="num">8</span>선물 받은 상품(타 사이트, 예: ABC마트 등을 통한 온/오프라인 구매)은 교환 가능한가요?</a></div>
-							<div class="cs_li_body">
-								<p><span style="font-family: 굴림">아디다스 공식 온라인 스토어를 통해 구입한 제품에 한해서만 교환 가능합니다. <br>공식 온라인 스토어를 통해 구입한 제품이 아닌 경우 각각의 구입처를 통해 교환 가능여부를 확인 하시기 바랍니다. </span></p>
-							</div>
-						</li>
-						<li>
-							<div class="cs_li_head"><a href="#"><span class="num">9</span>상품 받고 밖에서 한 번 신었는데 이상해요. 교환되나요?</a></div>
-							<div class="cs_li_body">
-								<p><span style="font-size: 12px"><span style="font-family: 굴림">상품 수령하고 택 제거 후 외부에서 착용 및 착화시에는 교환이 어렵습니다.<br>단, 품질 하자라고 생각되신다면 상품을 근처 매장에 맡겨 담당부서로 심의를 통하여<br> 상품 자체 하자인지 여부 확인과정을 진행하여 교환이 가능한지 확인 가능하오니<br> <span style="color: #0000ff">매장 구매건은 구매 매장으로</span>,&nbsp; <span style="color: #0000ff">온라인 주문건은 고객센터 (1588-8241 &gt; 6번)</span>로<br> 문의주시면 안내해드리겠습니다</span></span></p>
-							</div>
-						</li>
-						<li>
-							<div class="cs_li_head"><a href="#"><span class="num">10</span>반품시 배송비는 누가 부담하나요?</a></div>
-							<div class="cs_li_body">
-								<p><span style="font-family: 굴림">상품 품질 하자 및 배송등의 문제 일 경우에는 추후 상품의 상태 확인 후 무료 배송 여부를 결정해드리며, <br><span style="color: #ff0000">사이즈나 고객 단순변심 반품일 경우에는 고객님 부담(왕복배송비=최초 주문배송비 + 반품배송비)으로 진행</span>됩니다.</span></p>
-							</div>
-						</li>
-						<li>
-							<div class="cs_li_head"><a href="#"><span class="num">11</span>팀/단체복을 주문하고 싶어요.</a></div>
-							<div class="cs_li_body">
-								<p><a target="blank" href="http://image.adidas.co.kr/upload/faq/adidas/2017adidas_B2B.pdf"><img alt="" src="http://image.adidas.co.kr/upload/fckeditor/temp/image/adidas_b2b.jpg"> </a></p>
-							</div>
-						</li>
-						<li>
-							<div class="cs_li_head"><a href="#"><span class="num">12</span>매장 방문 수령 또는 퀵배송이 가능한가요?</a></div>
-							<div class="cs_li_body">
-								<p><span style="font-family: 굴림"><span style="font-family: 굴림">상품 출고전 상태일 경우&nbsp;고객센터(1588-8241)로 문의 주시면<br></span>매장방문 수령 또는 퀵배송이 가능한지 확인 후 안내 가능합니다.<br><span style="color: #ff0000"><br><strong>※ 단, 퀵 비용은 고객 부담이며, 주문시 결제한 배송비는 환불되지 않습니다.</strong></span></span></p>
-							</div>
-						</li>
-						<li>
-							<div class="cs_li_head"><a href="#"><span class="num">13</span>제품은 어떻게 발송되나요?</a></div>
-							<div class="cs_li_body">
-								<p></p><div><span style="font-family: 굴림"><span style="font-size: 12px">주문하신 모든 상품은 <span style="color: #000000"><b>한진</b><b>택배(매장에 따라 다소 상이)</b></span>를 통해 배송 됩니다. <br>입금/결제 확인 후 아디다스 공식 오프라인 매장으로 배정되며</span> <br><span style="font-size: 12px">제품별 재고 보유 상황에 따라 동시 주문건이라도 제품이 각 다른 매장에서 개별 배송될 수 있습니다. </span></span></div><div><strong><span style="color: #ff0000"><span style="font-family: 굴림"><span style="font-size: 12px"><span style="font-family: 굴림"><span style="font-size: 12px">또한,&nbsp;</span></span>상품품절 또는 재고부족(하자)등의 사유로 배송이 지연되거나 배송이 불가 할 수 있습니다.<br><br></span></span></span></strong><span style="font-family: 굴림"><span style="font-size: 12px">※ 상품품절 또는 재고부족(하자)등의 사유로 배송이 어려울 경우 영업일 기준 3일 이내에 안내해 드리고 있습니다.</span></span></div><p></p>
-							</div>
-						</li>
-						<li>
-							<div class="cs_li_head"><a href="#"><span class="num">14</span>원산지 정보란 무엇인가요?</a></div>
-							<div class="cs_li_body">
-								<p></p><p>해당 제품이 생산된 지역입니다. 다만 일부 제품의 경우 제품 제조 사정으로 인한 복수 표기를 원칙으로 하고 있습니다. (예 : 태국/중국)</p><p></p>
-							</div>
-						</li>
-						<li>
-							<div class="cs_li_head"><a href="#"><span class="num">15</span>배송비는 무료인가요?</a></div>
-							<div class="cs_li_body">
-								<p><span style="font-family: 굴림">구매 금액이 <span style="color: #ff6600"><strong>50,000원 이상인 경우 무료배송 / </strong></span><span style="color: #ff6600"><strong>50,000원 미만인 경우 2,500원의 배송비가 부과</strong></span> 됩니다. <br>단, 제주지역 및 도서산간 지역은 기본 배송비에 추가 배송비가 발생됩니다.&nbsp;<br><strong><br>&lt;추가 배송비&gt;&nbsp;</strong><br>- 제주지역 : 3,000원<br>- 도서산간 지역 : 4,500원<br><strong><br><span style="color: #0000ff">※ 단, Customize&nbsp;주문제작 상품의 경우<br>&nbsp;&nbsp;&nbsp;구매 가격과 도서/산간 직역과 관계 없이&nbsp;1건당 15,000원 배송비 부과 됩니다.</span></strong><br></span></p>
-							</div>
-						</li>
-						<li>
-							<div class="cs_li_head"><a href="#"><span class="num">17</span>주문한 상품이 도착하지 않았어요.</a></div>
-							<div class="cs_li_body">
-								<p><span style="font-family: 굴림">배송이 지연되거나 주문 상품이 배송 누락 되었을 경우<br></span><span style="font-family: 굴림"><a href="http://shop.adidas.co.kr/PF080304.action"><strong><span style="color: #3366ff">[HOME &gt; 고객센터 &gt; 1:1 문의]</span></strong></a>로 문의 또는 <strong>고객센터(1588-8241)</strong>로 문의시&nbsp;<br>상세히 안내 받으실 수 있습니다.<br><br>※&nbsp;택배사 송장 조회시 이동 이력이 확인되지 않는 경우 <br>&nbsp;&nbsp;&nbsp; 한진택배 고객센터(1588-0011)로 문의하시면&nbsp;빠른 안내를 받으실 수 있습니다.<br></span></p>
-							</div>
-						</li>
-						<li>
-							<div class="cs_li_head"><a href="#"><span class="num">18</span>생일 쿠폰은 언제 발행되나요?</a></div>
-							<div class="cs_li_body">
-								<p><span style="font-family: 굴림">회원 가입시 등록된 생일 기준&nbsp;2주전 발급되며, 발급된 쿠폰은 1개월간 10만원 이상 구매시 적용 가능합니다.<br>생일인 달 중간에 가입 하신 경우, 가입하신 다음 날 쿠폰이 발행 됩니다.</span></p>
-							</div>
-						</li>
-						<li>
-							<div class="cs_li_head"><a href="#"><span class="num">19</span>배송중일 때 상품취소는 어떻게 하나요?</a></div>
-							<div class="cs_li_body">
-								<p><span style="font-family: 굴림">상품이 택배사로 인계되어 배송중인 경우&nbsp;취소 신청이 불가합니다. <br>이 경우 상품 수령 후 반품으로 진행해야 합니다.<br></span></p>
-							</div>
-						</li>
-						<li>
-							<div class="cs_li_head"><a href="#"><span class="num">20</span>반품이 불가능한 경우도 있나요?</a></div>
-							<div class="cs_li_body">
-								<p><strong><span style="font-family: 굴림"><span style="color: #0000ff">반품은 상품을 수령한 날로부터&nbsp;7일 이내에 신청하실 수 있으며,</span></span></strong><span style="font-family: 굴림"><span style="color: #0000ff"> <br></span>다음과 같은 경우 반품 신청이 불가능 할 수 있습니다.<br><br>&nbsp;- 반품 요청 기간이 지난 경우<br>&nbsp;- 포장을 개봉하였거나 포장이 훼손되어 상품 가치가 현저히 감소한 경우<br>&nbsp;- 구매자의 책임있는 사유로 상품 등이 멸실 또는 훼손된 경우 (신발 박스를 훼손한 경우)<br>&nbsp;- 구매자의 사용 또는 일부 소비에 의하여 상품 가치가 현저히 감소한 경우<br>&nbsp; &nbsp; (예 : 텍을 제거하거나&nbsp;신발 박스를 훼손 했을 경우)&nbsp;<br>&nbsp;- 기간의 경과에 의하여 재판매가 곤란할 정도로 상품가치가 현저히 감소한 경우<br>&nbsp;- 주문 확인 후 상품 제작에 들어가는 주문 제작 상품인 경우<br>&nbsp;&nbsp;&nbsp; (단, 제품 하자시 소비자 분쟁 해결 기준 환불)<br>&nbsp;- 복제가 가능한 상품 등의 포장을 훼손한 경우</span></p>
-							</div>
-						</li>
-					</ol>
-				</dd>
-			</dl>
-			<!-- //cs_list -->
-		</div>
-		<!-- //cs_center -->
-	</div>
-	<!-- //container product_list -->
-	
-							
-	<div id="slideBg"></div><div id="slideBg"></div>
-		<footer id="footer" class="footer-update">
-								<div class="go_top">
-									<a href="#">BACK TO TOP</a>
-								</div>
-					
-								<!-- 161223 f_menu 추가 -->
-								<ul class="f_menu">
-									<li><a href="javascript:goOrdDeliSel();" onmousedown="javascript:trk_flashEnvView('_TRK_PI=FOOTCS');trk_clickTrace('EVT','^리복모바일^주문배송');">주문배송</a></li>
-									<li><a href="https://m.reebok.co.kr/MO/AdiClub/reeClubIntro.action" onmousedown="javascript:trk_flashEnvView('_TRK_PI=FOOTST');trk_clickTrace('EVT','^리복모바일^리클럽');">리클럽</a></li>
-									<li><a href="https://m.reebok.co.kr/MO/Customer/customerStoreList.action" onmousedown="javascript:trk_flashEnvView('_TRK_PI=FOOTST');trk_clickTrace('EVT','^리복모바일^하단매장찾기');">매장안내</a></li>
-									<li><a href="javascript:goCsCenter();" onmousedown="javascript:trk_flashEnvView('_TRK_PI=FOOTCS');trk_clickTrace('EVT','^리복모바일^하단고객센터');">고객센터</a></li>
-									<li><a href="https://m.reebok.co.kr/MO/Notify/notiDetailList.action" onmousedown="javascript:trk_flashEnvView('_TRK_PI=FOOTST');trk_clickTrace('EVT','^리복모바일^공지사항');">공지사항</a></li>
-								</ul>
-								
-								<div class="f_bnn">
-												<a href="https://m.reebok.co.kr/MO/Member/memJoin.action" onmousedown="javascript:trk_flashEnvView('_TRK_PI=FOOTST');trk_clickTrace('EVT','^리복모바일^하단 회원가입');">
-													<img src="//imagem.reebok.co.kr/images/reebok/temp/bnn_join.jpg" width="100%" alt="">
-												</a>
-											</div>
-								<div class="sns_menu">
-												<a href="https://www.facebook.com/Reebokkr" class="fb" target="_blank" onmousedown="javascript:trk_clickTrace(\'EVT\',\'^리복모바일^페북코리아\')"></a>
-												<a href="https://www.instagram.com/reebokkorea/" class="insta" target="_blank"></a>
-												<a href="http://m.blog.naver.com/reebokkr" class="blog" target="_blank" onmousedown="javascript:trk_clickTrace('EVT','^리복모바일^네이버블로그')"></a>
-												<a href="https://m.youtube.com/channel/UCFrW9Ojay5Pk7s-4-KD0M6w" class="ytb" target="_blank"></a>
-												<a href="http://plus.kakao.com/home/@%EB%A6%AC%EB%B3%B5" class="kakao" target="_blank"></a>
-											</div>
-											<address>
-												<div class="inner">
-													<p><strong>리복 공식 온라인 스토어</strong><span class="line l_left"> (아디다스코리아(유))</span></p>
-													<p>서울특별시 서초구 서초대로 74길 4, 삼성생명 서초타워 23층 (06620)</p>
-													<p>대표자 : 폴 유엔 파이</p>
-													<p>사업자 등록번호 : 214-81-07412</p>
-													<p>통신판매업신고번호 : 2007-서울서초-10391</p>
-													<!-- 180913 정보추가 -->
-													<p>개인정보관리책임자 : 장영태</p>
-													<p>호스팅서비스사업자 : 아디다스코리아(유)</p>
-													<p>고객센터 : 1588-7324</p>
-													<p>이메일 : reeclub_korea@reebok.com</p>
-													<div class="f_url">
-														<!-- 170922 리클럽 추가, 사업자정보확인 위치변경 -->
-														<p>
-															<a href="https://m.reebok.co.kr/MO/Terms/terms.action?terms=terms_01"><strong>구매 이용약관</strong></a><span class="line l_left">
-															<a href="https://m.reebok.co.kr/MO/Terms/terms.action?terms=terms_02"><strong>개인정보처리방침</strong></a><span class="line l_left">
-															<a href="https://m.reebok.co.kr/MO/Terms/terms.action?terms=terms_03"><strong>리클럽 이용약관</strong></a>
-														</p>
-														<p>
-															<a href="http://www.ftc.go.kr/info/bizinfo/communicationViewPopup.jsp?wrkr_no=2148107412" target="_blank">사업자정보확인</a><span class="line l_left">
-															<a href="https://m.reebok.co.kr/Common/PopJusticeBns.jsp">공정거래자율준수</a><span class="line l_left">
-															<a href="https://m.reebok.co.kr/Common/CertifiedInfoPop.jsp" target="_blank">채무지급보증안내</a>
-														</p>
-														<p>© adidas Korea LLC. All Rights Reserved</p>
-														<p class="f_logo"><img src="//imagem.reebok.co.kr/images/reebok/f_logo.jpg" alt="reebok"></p>
+					<div class="cs_center">
+						<h2 style="margin:20px 0 10px;">자주 묻는 질문</h2>	
+						<form name="faqForm" id="faqForm" method="post" onsubmit="return false" action="">
+							<input type="hidden" id="FAQ_DIVI" name="FAQ_DIVI" value="BEST">
+							<div class="faq_sch">
+								<table class="form_table">	
+									<tbody>
+										<tr class="no_line">
+											<td>
+												<div class="td_wrap">									
+													<div class="cell">
+														<div class="sel_cmtype sel_design" style="min-width:130px;">
+															<a href="#">
+																<span>전체</span>
+															</a>
+															<select id="SRC_DIVI" name="SRC_DIVI">
+																<option value="">전체</option>											
+																<option value="01">상품문의</option>											
+																<option value="02">주문/결제</option>											
+																<option value="03">배송</option>										
+																<option value="04">주문 취소 및 교환</option>								
+																<option value="05">반품</option>											
+																<option value="06">포인트/쿠폰</option>											
+																<option value="07">회원/이벤트</option>											
+																<option value="08">AS 수선/심의</option>											
+																<option value="09">customize</option>											
+															</select>
+														</div>		
+													</div>
+													<div class="cell_fix" style="width:5px;"></div>
+													<div class="cell">
+														<input type="text" id="SRC_TXT" name="SRC_TXT" value="">
+													</div>
+													<div class="cell_fix" style="width:70px;">
+														<a href="javascript:fnSearch();" class="s_button" style="margin-left:5px;">질문검색</a>
 													</div>
 												</div>
-											</address>
-										</footer>
-										<script type="text/javascript" src="//imagem.reebok.co.kr/js/weblog/4_INSIGHT_TRACKING_SCRIPT_FOR_M.REEBOK.CO.KR_V.5.1.4.js"></script>
-								<!-- 비저리 스크립트 -->
-								<script type="text/javascript">
-								(function() {
-									try {
-										var viz = document.createElement("script");
-										viz.type = "text/javascript";
-										viz.async = true;
-										viz.src = ("https:" == document.location.protocol ?"https://cdn6.vizury.com" : "http://cdn6.vizury.com")+ "/analyze/pixel.php?account_id=VIZVRM2016";
-								
-										var s = document.getElementsByTagName("script")[0];
-										s.parentNode.insertBefore(viz, s);
-										viz.onload = function() {
-											try {
-												pixel.parse();
-											} catch (i) {
-											}
-										};
-										viz.onreadystatechange = function() {
-											if (viz.readyState == "complete" || viz.readyState == "loaded") {
-												try {
-													pixel.parse();
-												} catch (i) {
-												}
-											}
-										};
-									} catch (i) {
-									}
-								})();
-								</script>
-								<!-- Toast eXchange Script :: START :: -->
-								<script type="text/javascript" src="//static.tagmanager.toast.com/tag/view/467" async="async"></script>
-								<script type="text/javascript">
-								window.ne_tgm_q = window.ne_tgm_q || [];
-								var toastJson = {"tagType":"visit","device":"mobile","pageEncoding":"utf-8"};
-								
-								window.ne_tgm_q.push(toastJson);
-								</script>
-								<!--// Toast eXchange Script :: END :: -->
-								
-								<iframe id="hfrADCheck" src="//adcheck.about.co.kr/mad/prd/view?shopid=M2DADIDAS" scrolling="no" frameborder="0" width="0" height="0"></iframe>
-								<script type="text/javascript">
-								 var NeoclickConversionDctSv="type=1,orderID=,amount=";
-								 var NeoclickConversionAccountID="22303";
-								</script>
-								<script type="text/javascript" src="//ck.ncclick.co.kr/NCDC_V2.js"></script>
-								</section><!-- container -->
-								</section><!-- //wrap -->
-								
-								<script language="javascript">
-									//넷퍼넬 로그인 종료
-									NetFunnel_Complete({cookie_id:"NETFUNNEL_LOGIN",action_id:"loginPage"});
-								</script>
-								
-								<script type="text/javascript">
-									jQuery(document).ready(function(){
-										if(typeof NetFunnel == "object") {
-											NetFunnel_Complete();
-										}
-									});
-								</script>
-								
-								<!-- 161101 sns_menu 스크립트 추가 -->
-								<script type="text/javascript">
-								(function($){
+												<!-- //td_wrap -->								
+											</td>
+										</tr>	
+									</tbody>
+								</table>
+							</div>
+						</form>
+						<div class="faq_ctgr">
+							<ul>
+								<li><a href="javascript:fnSearchDivi('BEST');" class="on">FAQ</a></li>		
+								<li><a href="javascript:fnSearchDivi('01');">상품문의</a></li>			
+								<li><a href="javascript:fnSearchDivi('02');">주문/결제</a></li>				
+								<li><a href="javascript:fnSearchDivi('03');">배송</a></li>				
+								<li><a href="javascript:fnSearchDivi('04');">주문 취소 및 교환</a></li>				
+								<li><a href="javascript:fnSearchDivi('05');">반품</a></li>		
+								<li><a href="javascript:fnSearchDivi('06');">포인트/쿠폰</a></li>				
+								<li><a href="javascript:fnSearchDivi('07');">회원/이벤트</a></li>			
+								<li><a href="javascript:fnSearchDivi('08');">AS 수선/심의</a></li>			
+								<li><a href="javascript:fnSearchDivi('09');">customize</a></li>			
+							</ul>
+						</div>
+						<dl class="cs_list">		
+							<dt>FAQ<span class="desc">가장 많이 문의하시는 질문을 모았습니다.</span></dt>
+							<dd>
+								<ol>
+									<li>
+										<div class="cs_li_head"><a href="#"><span class="num">1</span>상품 교환은 가능한가요?</a></div>
+										<div class="cs_li_body">
+											<p></p><p><span style="font-family: 굴림"><strong>교환의 경우 <span style="color: #ff0000">동일 상품의 재고가 있을 경우 사이즈&nbsp;교환만</span> 가능</strong>합니다.<br>다른 상품으로 교환을 원하실 경우 반품 후 재주문을 해주셔야 합니다.<br>&nbsp;<br>※ 교환 신청을 하지 않고 상품을 보내는 경우, <br>&nbsp;&nbsp;&nbsp; 분실 우려가 있으니 <strong>반드시 마이페이지에서 교환 신청해 주셔야 합니다. <br></strong><span style="color: #0000ff"><strong><br>(단, Customize 주문 제작 상품의 경우 주문완료 시 교환 및 취소 불가)</strong></span></span></p><p></p>
+										</div>
+									</li>
+									<li>
+										<div class="cs_li_head"><a href="#"><span class="num">2</span>근처 매장에서 다른 제품으로 교환되나요?</a></div>
+										<div class="cs_li_body">
+											<p><span style="font-family: 굴림">교환은 구입처를 통해 사이즈 교환만 가능하며, 인근 타매장에서&nbsp;교환 불가 합니다.<br><br>&nbsp;&gt; 온라인 스토어 구매건의 경우&nbsp;<br>&nbsp;&nbsp; &nbsp;<strong><span style="font-family: 굴림">홈페이지&nbsp;&gt; 마이페이지 &gt; 주문/배송 조회 &gt; 교환 접수 </span></strong><span style="font-family: 굴림">가능하며&nbsp;<br></span><strong>&nbsp;&nbsp; 고객센터(1588-8241)</strong>를 통해&nbsp;문의&nbsp; 및 접수해 주시기 바랍니다.<br><br>&nbsp;&gt; 오프라인 매장 구매건의 경우 구입한 매장으로 교환 문의 부탁 드립니다.</span></p>
+										</div>
+									</li>
+									<li>
+										<div class="cs_li_head"><a href="#"><span class="num">3</span>반품 신청 및 환불 절차는 어떻게 되나요?</a></div>
+										<div class="cs_li_body">
+											<p></p><p><span style="font-family: 굴림"><strong>1. 반품신청<br></strong>&nbsp;&nbsp; ◎ 회원 구매시 :&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ⓐ [로그인] -&gt; [마이페이지] -&gt; [나의 쇼핑내역] -&gt; [취소반품조회] <br><br>&nbsp;&nbsp; ◎ 비회원 구매시<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ⓐ [주문/배송조회] -&gt; [비회원 로그인] -&gt; [나의 쇼핑내역] -&gt;[취소반품조회]<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ⓑ 상품 수령한 날로부터 7일 이내만 신청이 가능<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ※ 마이페이지에서 반품 접수&nbsp;불가시 : 인터넷 익스플로어 &gt; 도구 &gt; 호환성 보기 체크 후 신청 가능합니다.<br>&nbsp;</span></p><p><span style="font-family: 굴림"><strong>2. 반품배송<br></strong>&nbsp;&nbsp;&nbsp;&nbsp; 반품 접수&nbsp;후 일주일내 한진택배 기사님이&nbsp;접수하신&nbsp;회수지로 방문하여 수거 합니다.<br><span style="color: #ff0000"><span style="font-size: 12px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><strong><span style="color: #ff0000"><span style="font-size: 12px">※ </span></span><span style="font-size: 12px"><span style="color: red">주문 제품이 출고된 매장이 아닌 아디다스 본사로 교환/반품 택배 발송 시 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 다시 출고된 매장으로 반송처리 되어지므로, </span></span><span style="font-size: 12px"><span style="color: red">교환/반품 처리 기간이 지연 됩니다.&nbsp;&nbsp;</span></span></strong><br>&nbsp;</span></p><p><span style="font-family: 굴림"><strong>3. 배송비 결제<br></strong>&nbsp;&nbsp;&nbsp;&nbsp; 반품 배송된 상품은 매장에서 이상유무를 확인하게 되며, 이상이 없을 시 반품 확정 됩니다.<br>&nbsp;&nbsp;&nbsp;&nbsp; 매장에서 반품을 확정하면, 고객님의 결제대금에서 배송비가 자동으로 차감되어&nbsp;계산 됩니다. <br><span style="color: #ff0000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ※ 단순 변심 등 고객님의 책임 있는 사유로 인해 반품되는 경우 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 최초 배송비를 포함한 왕복 배송비 5,000원을 고객님께서 부담하셔야&nbsp; 합니다.<br>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;(단, 제주도 및 도서산간 지역은 배송비가 추가 될 수 있습니다.)<br><br></span><strong>4. 환불완료</strong><br>&nbsp;&nbsp;&nbsp;&nbsp; 반품 상품 검수하여&nbsp;최종 반품&nbsp;확정된 경우&nbsp;주문&nbsp;결제 수단에 따라 환불 진행 됩니다.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>ⓐ 실시간 계좌이체 :</strong>&nbsp;영업일 기준 3일 이내에 환불.<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<strong>ⓑ 무통장입금 :</strong> 영업 일기준 3일 이내 환불.<br>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<strong>ⓒ 신용카드 :&nbsp;</strong> 최장 7일 내&nbsp; 해당 카드사에 기존 승인내역에 대한 취소 확인&nbsp; 가능.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (승인취소 및 결제 반영일에 따라 입금날짜는 카드사 별로 다를 수 있으니&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; 자세한 내용은 해당 카드사로 문의하여 주십시오.)</span></p><p></p>
+										</div>
+									</li>
+									<li>
+										<div class="cs_li_head"><a href="#"><span class="num">4</span>제조년월이란 무엇인가요?</a></div>
+										<div class="cs_li_body">
+											<p></p><p>해당 제품이 생산된 년월로 관련 법률에 따라 최초 제조년월로 표기하고 있습니다. 정확한 제조년월은 배송 받으신 상품의 라벨을 참고하시기 바랍니다.</p><p></p>
+										</div>
+									</li>
+									<li>
+										<div class="cs_li_head"><a href="#"><span class="num">5</span>주문한 상품을 취소(부분취소) 또는 교환하고 싶은데 어떻게 하나요?</a></div>
+										<div class="cs_li_body">
+											<p></p><p><span style="font-family: 굴림"><strong>1. 주문취소(부분취소)</strong><br>&nbsp;&nbsp; 주문 상태가 <span style="color: #ff0000"><strong>배송준비중 단계 전</strong></span>까지는 <br>&nbsp;&nbsp; <strong>마이페이지 &gt; 주문/배송조회 </strong>또는 <strong>취소/반품조회</strong>에서 <strong>주문취소가 가능</strong>합니다. <br>&nbsp;&nbsp; ※ 상품이 택배사로 전달 되었거나 이미 출고된 상품은 주문취소가 불가하며 수령 후 반품을 해 주셔야 합니다.<br>&nbsp; &nbsp;※ 마이페이지에서 취소 접수&nbsp;불가시 : 인터넷 익스플로어 &gt; 도구 &gt; 호환성 보기 체크 후 신청 가능합니다.<br></span><br><span style="font-family: 굴림"><strong>2. 교환/반품<br></strong>&nbsp;"전자상거래 등에서의 소비자보호에 관한 법률 제 17조"에 의거 아래와 같은 경우 청약 철회가 가능합니다.&nbsp;<br><br>&nbsp;-&nbsp; 실제 상품,용역 등을 제공받은 날로부터 7일이내<br>&nbsp;-&nbsp; 상품하자 이외 사이즈, 색상교환 등 단순 변심에 의한 교환/반품 배송비는 고객부담<br>&nbsp;-&nbsp; 상품에 따라 TAG제거, 신발 BOX훼손, 라벨, 포장 등의 훼손이나 폐기 후에는 교환/반품 불가<br>&nbsp;<br>※ 상품에 따라 취소/교환/반품의 기준이 다를 수 있으며, 자세한 사항은 상품 상세설명에서 기재하고 있습니다.<br><span style="color: #ff0000"><span style="font-size: 12px">※ </span></span><span style="font-size: 12px"><span style="color: red">주문 제품이 출고된 매장이 아닌 아디다스 본사로 교환/반품 택배 발송 시에는&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;다시 출고된 매장으로 반송처리 되므로, </span></span><span style="font-size: 12px"><span style="color: red">교환/반품 처리 기간이 지연됩니다.&nbsp;&nbsp;<br><br></span><strong><span style="color: #000080">(단, Customize 주문 제작 상품의 경우 주문완료 시 교환 및 취소 불가)</span></strong></span></span></p><p></p>
+										</div>
+									</li>
+									<li>
+										<div class="cs_li_head"><a href="#"><span class="num">6</span>아디다스 공식 온라인 스토어 A/S 정책 안내</a></div>
+										<div class="cs_li_body">
+											<p><img alt="" src="http://image.adidas.co.kr/images/adidas/common/bg_prod_as_faq.jpg">.</p>
+										</div>
+									</li>
+									<li>
+										<div class="cs_li_head"><a href="#"><span class="num">7</span>상품 배송 기간은 얼마나 걸리나요?</a></div>
+										<div class="cs_li_body">
+											<p><span style="font-family: 굴림">주문하신 상품은 결제 완료 후 <strong><span style="color: #0000ff">평균 3일~7일(휴일 및 공휴일 제외)</span></strong> 이내에 배송 됩니다. <br>도서 산간 지역과 제주도등 일부 지역은 배송 기간이 더 소요될 수 있습니다. <br><span style="color: #ff0000"><strong><br>※ 단, Customize 주문 제작 상품의 경우<br>&nbsp;&nbsp;&nbsp; 해외에서 제작하여 배송지 주소로 직접 배송하기 때문에&nbsp;평균 4주~7주 소요 됩니다.</strong></span></span></p>
+										</div>
+									</li>
+									<li>
+										<div class="cs_li_head"><a href="#"><span class="num">8</span>선물 받은 상품(타 사이트, 예: ABC마트 등을 통한 온/오프라인 구매)은 교환 가능한가요?</a></div>
+										<div class="cs_li_body">
+											<p><span style="font-family: 굴림">아디다스 공식 온라인 스토어를 통해 구입한 제품에 한해서만 교환 가능합니다. <br>공식 온라인 스토어를 통해 구입한 제품이 아닌 경우 각각의 구입처를 통해 교환 가능여부를 확인 하시기 바랍니다. </span></p>
+										</div>
+									</li>
+									<li>
+										<div class="cs_li_head"><a href="#"><span class="num">9</span>상품 받고 밖에서 한 번 신었는데 이상해요. 교환되나요?</a></div>
+										<div class="cs_li_body">
+											<p><span style="font-size: 12px"><span style="font-family: 굴림">상품 수령하고 택 제거 후 외부에서 착용 및 착화시에는 교환이 어렵습니다.<br>단, 품질 하자라고 생각되신다면 상품을 근처 매장에 맡겨 담당부서로 심의를 통하여<br> 상품 자체 하자인지 여부 확인과정을 진행하여 교환이 가능한지 확인 가능하오니<br> <span style="color: #0000ff">매장 구매건은 구매 매장으로</span>,&nbsp; <span style="color: #0000ff">온라인 주문건은 고객센터 (1588-8241 &gt; 6번)</span>로<br> 문의주시면 안내해드리겠습니다</span></span></p>
+										</div>
+									</li>
+									<li>
+										<div class="cs_li_head"><a href="#"><span class="num">10</span>반품시 배송비는 누가 부담하나요?</a></div>
+										<div class="cs_li_body">
+											<p><span style="font-family: 굴림">상품 품질 하자 및 배송등의 문제 일 경우에는 추후 상품의 상태 확인 후 무료 배송 여부를 결정해드리며, <br><span style="color: #ff0000">사이즈나 고객 단순변심 반품일 경우에는 고객님 부담(왕복배송비=최초 주문배송비 + 반품배송비)으로 진행</span>됩니다.</span></p>
+										</div>
+									</li>
+									<li>
+										<div class="cs_li_head"><a href="#"><span class="num">11</span>팀/단체복을 주문하고 싶어요.</a></div>
+										<div class="cs_li_body">
+											<p><a target="blank" href="http://image.adidas.co.kr/upload/faq/adidas/2017adidas_B2B.pdf"><img alt="" src="http://image.adidas.co.kr/upload/fckeditor/temp/image/adidas_b2b.jpg"> </a></p>
+										</div>
+									</li>
+									<li>
+										<div class="cs_li_head"><a href="#"><span class="num">12</span>매장 방문 수령 또는 퀵배송이 가능한가요?</a></div>
+										<div class="cs_li_body">
+											<p><span style="font-family: 굴림"><span style="font-family: 굴림">상품 출고전 상태일 경우&nbsp;고객센터(1588-8241)로 문의 주시면<br></span>매장방문 수령 또는 퀵배송이 가능한지 확인 후 안내 가능합니다.<br><span style="color: #ff0000"><br><strong>※ 단, 퀵 비용은 고객 부담이며, 주문시 결제한 배송비는 환불되지 않습니다.</strong></span></span></p>
+										</div>
+									</li>
+									<li>
+										<div class="cs_li_head"><a href="#"><span class="num">13</span>제품은 어떻게 발송되나요?</a></div>
+										<div class="cs_li_body">
+											<p></p><div><span style="font-family: 굴림"><span style="font-size: 12px">주문하신 모든 상품은 <span style="color: #000000"><b>한진</b><b>택배(매장에 따라 다소 상이)</b></span>를 통해 배송 됩니다. <br>입금/결제 확인 후 아디다스 공식 오프라인 매장으로 배정되며</span> <br><span style="font-size: 12px">제품별 재고 보유 상황에 따라 동시 주문건이라도 제품이 각 다른 매장에서 개별 배송될 수 있습니다. </span></span></div><div><strong><span style="color: #ff0000"><span style="font-family: 굴림"><span style="font-size: 12px"><span style="font-family: 굴림"><span style="font-size: 12px">또한,&nbsp;</span></span>상품품절 또는 재고부족(하자)등의 사유로 배송이 지연되거나 배송이 불가 할 수 있습니다.<br><br></span></span></span></strong><span style="font-family: 굴림"><span style="font-size: 12px">※ 상품품절 또는 재고부족(하자)등의 사유로 배송이 어려울 경우 영업일 기준 3일 이내에 안내해 드리고 있습니다.</span></span></div><p></p>
+										</div>
+									</li>
+									<li>
+										<div class="cs_li_head"><a href="#"><span class="num">14</span>원산지 정보란 무엇인가요?</a></div>
+										<div class="cs_li_body">
+											<p></p><p>해당 제품이 생산된 지역입니다. 다만 일부 제품의 경우 제품 제조 사정으로 인한 복수 표기를 원칙으로 하고 있습니다. (예 : 태국/중국)</p><p></p>
+										</div>
+									</li>
+									<li>
+										<div class="cs_li_head"><a href="#"><span class="num">15</span>배송비는 무료인가요?</a></div>
+										<div class="cs_li_body">
+											<p><span style="font-family: 굴림">구매 금액이 <span style="color: #ff6600"><strong>50,000원 이상인 경우 무료배송 / </strong></span><span style="color: #ff6600"><strong>50,000원 미만인 경우 2,500원의 배송비가 부과</strong></span> 됩니다. <br>단, 제주지역 및 도서산간 지역은 기본 배송비에 추가 배송비가 발생됩니다.&nbsp;<br><strong><br>&lt;추가 배송비&gt;&nbsp;</strong><br>- 제주지역 : 3,000원<br>- 도서산간 지역 : 4,500원<br><strong><br><span style="color: #0000ff">※ 단, Customize&nbsp;주문제작 상품의 경우<br>&nbsp;&nbsp;&nbsp;구매 가격과 도서/산간 직역과 관계 없이&nbsp;1건당 15,000원 배송비 부과 됩니다.</span></strong><br></span></p>
+										</div>
+									</li>
+									<li>
+										<div class="cs_li_head"><a href="#"><span class="num">17</span>주문한 상품이 도착하지 않았어요.</a></div>
+										<div class="cs_li_body">
+											<p><span style="font-family: 굴림">배송이 지연되거나 주문 상품이 배송 누락 되었을 경우<br></span><span style="font-family: 굴림"><a href="http://shop.adidas.co.kr/PF080304.action"><strong><span style="color: #3366ff">[HOME &gt; 고객센터 &gt; 1:1 문의]</span></strong></a>로 문의 또는 <strong>고객센터(1588-8241)</strong>로 문의시&nbsp;<br>상세히 안내 받으실 수 있습니다.<br><br>※&nbsp;택배사 송장 조회시 이동 이력이 확인되지 않는 경우 <br>&nbsp;&nbsp;&nbsp; 한진택배 고객센터(1588-0011)로 문의하시면&nbsp;빠른 안내를 받으실 수 있습니다.<br></span></p>
+										</div>
+									</li>
+									<li>
+										<div class="cs_li_head"><a href="#"><span class="num">18</span>생일 쿠폰은 언제 발행되나요?</a></div>
+										<div class="cs_li_body">
+											<p><span style="font-family: 굴림">회원 가입시 등록된 생일 기준&nbsp;2주전 발급되며, 발급된 쿠폰은 1개월간 10만원 이상 구매시 적용 가능합니다.<br>생일인 달 중간에 가입 하신 경우, 가입하신 다음 날 쿠폰이 발행 됩니다.</span></p>
+										</div>
+									</li>
+									<li>
+										<div class="cs_li_head"><a href="#"><span class="num">19</span>배송중일 때 상품취소는 어떻게 하나요?</a></div>
+										<div class="cs_li_body">
+											<p><span style="font-family: 굴림">상품이 택배사로 인계되어 배송중인 경우&nbsp;취소 신청이 불가합니다. <br>이 경우 상품 수령 후 반품으로 진행해야 합니다.<br></span></p>
+										</div>
+									</li>
+									<li>
+										<div class="cs_li_head"><a href="#"><span class="num">20</span>반품이 불가능한 경우도 있나요?</a></div>
+										<div class="cs_li_body">
+											<p><strong><span style="font-family: 굴림"><span style="color: #0000ff">반품은 상품을 수령한 날로부터&nbsp;7일 이내에 신청하실 수 있으며,</span></span></strong><span style="font-family: 굴림"><span style="color: #0000ff"> <br></span>다음과 같은 경우 반품 신청이 불가능 할 수 있습니다.<br><br>&nbsp;- 반품 요청 기간이 지난 경우<br>&nbsp;- 포장을 개봉하였거나 포장이 훼손되어 상품 가치가 현저히 감소한 경우<br>&nbsp;- 구매자의 책임있는 사유로 상품 등이 멸실 또는 훼손된 경우 (신발 박스를 훼손한 경우)<br>&nbsp;- 구매자의 사용 또는 일부 소비에 의하여 상품 가치가 현저히 감소한 경우<br>&nbsp; &nbsp; (예 : 텍을 제거하거나&nbsp;신발 박스를 훼손 했을 경우)&nbsp;<br>&nbsp;- 기간의 경과에 의하여 재판매가 곤란할 정도로 상품가치가 현저히 감소한 경우<br>&nbsp;- 주문 확인 후 상품 제작에 들어가는 주문 제작 상품인 경우<br>&nbsp;&nbsp;&nbsp; (단, 제품 하자시 소비자 분쟁 해결 기준 환불)<br>&nbsp;- 복제가 가능한 상품 등의 포장을 훼손한 경우</span></p>
+										</div>
+									</li>
+								</ol>
+							</dd>
+						</dl>
+						<!-- //cs_list -->
+					</div>
+					<!-- //cs_center -->
+				</div>
+				<!-- //container product_list -->
+			
 									
-									jQuery('.newsletter_mail_button').click(function() {
-										if( cfn_trim(jQuery("#field0").val()) == '' ){
-											alert("E-Mail을 입력해주세요.");
-											return false;
-										}
-								
-										if(!emailChk()){
-											alert("E-Mail형식을 확인 하세요.");
-											return false;
-										}
-								
-										if(!jQuery('.newsletter .marketing_chk').find('input:checkbox[id="marketing"]').is(":checked")){
-											alert("마케팅 수신동의를 체크 해주세요.");
-											return false;
-										}
-								
-										alert('등록 되었습니다.');
-										jQuery('#form33').submit();
-								
-									});
-								
-									//이메일 체크
-									function emailChk(){
-										var emailVal = cfn_trim(jQuery("#field0").val());
-										var reg = /^((\w|[\-\.])+)@((\w|[\-\.][^(\.)\1])+)\.([A-Za-z]+)$/;
-										if (emailVal.search(reg) != -1 && emailVal.length < 31) {
-											jQuery("#field0").val(emailVal);
-											return true;
-										}
-										return false;
-									}
-								
-								})(jQuery);
-								
-								function KeyDownSpa() {
-									if(event.keyCode == 32){ return false; }
-								
-									// 안드로이드 기종에서 스페이스바 keyCode 229로 인식
-									if( event.keyCode == 229 ){
-										var stEmail = jQuery('.input_wrap #field0').val();
-										jQuery('.input_wrap #field0').val(stEmail.trim());
-										return false;
-									}
-								
+				<div id="slideBg"></div><div id="slideBg"></div>
+				<footer include-html="/html/reebok/inc/footer.html"></footer>
+
+				<script type="text/javascript" src="/designjs/common/includeHTML.js"></script>
+				<script type="text/javascript" src="//imagem.reebok.co.kr/js/weblog/4_INSIGHT_TRACKING_SCRIPT_FOR_M.REEBOK.CO.KR_V.5.1.4.js"></script>
+				<!-- 비저리 스크립트 -->
+				<script type="text/javascript">
+				(function() {
+					try {
+						var viz = document.createElement("script");
+						viz.type = "text/javascript";
+						viz.async = true;
+						viz.src = ("https:" == document.location.protocol ?"https://cdn6.vizury.com" : "http://cdn6.vizury.com")+ "/analyze/pixel.php?account_id=VIZVRM2016";
+				
+						var s = document.getElementsByTagName("script")[0];
+						s.parentNode.insertBefore(viz, s);
+						viz.onload = function() {
+							try {
+								pixel.parse();
+							} catch (i) {
+							}
+						};
+						viz.onreadystatechange = function() {
+							if (viz.readyState == "complete" || viz.readyState == "loaded") {
+								try {
+									pixel.parse();
+								} catch (i) {
 								}
-								</script>
-								<!--  카카오 상담톡 start -->
-								<script type="text/javascript">
-								function fn_kakaoChatOpen() {
-									var popup = window.open("","POP");
-									var frm = document.kakaoChatForm;
-									frm.submit();
-								}
-								</script>
-								<form id="kakaoChatForm" name="kakaoChatForm" target="POP" action="https://bizmessage.kakao.com/chat/open" method="post">
-								  <input type="hidden" name="uuid" value="@Reebok"/>
-								  <input type="hidden" name="extra" value="Homepage_Mobile"/>
-								</form>
-								<!--  카카오 상담톡 end -->
-								</body>
-								</html>
+							}
+						};
+					} catch (i) {
+					}
+				})();
+				</script>
+				<!-- Toast eXchange Script :: START :: -->
+				<script type="text/javascript" src="//static.tagmanager.toast.com/tag/view/467" async="async"></script>
+				<script type="text/javascript">
+				window.ne_tgm_q = window.ne_tgm_q || [];
+				var toastJson = {"tagType":"visit","device":"mobile","pageEncoding":"utf-8"};
+				
+				window.ne_tgm_q.push(toastJson);
+				</script>
+				<!--// Toast eXchange Script :: END :: -->
+				
+				<iframe id="hfrADCheck" src="//adcheck.about.co.kr/mad/prd/view?shopid=M2DADIDAS" scrolling="no" frameborder="0" width="0" height="0"></iframe>
+				<script type="text/javascript">
+					var NeoclickConversionDctSv="type=1,orderID=,amount=";
+					var NeoclickConversionAccountID="22303";
+				</script>
+				<script type="text/javascript" src="//ck.ncclick.co.kr/NCDC_V2.js"></script>
+				</section><!-- container -->
+				</section><!-- //wrap -->
+				
+				<script language="javascript">
+					//넷퍼넬 로그인 종료
+					NetFunnel_Complete({cookie_id:"NETFUNNEL_LOGIN",action_id:"loginPage"});
+				</script>
+				
+				<script type="text/javascript">
+					jQuery(document).ready(function(){
+						if(typeof NetFunnel == "object") {
+							NetFunnel_Complete();
+						}
+					});
+				</script>
+				
+				<!-- 161101 sns_menu 스크립트 추가 -->
+				<script type="text/javascript">
+				(function($){
+					
+					jQuery('.newsletter_mail_button').click(function() {
+						if( cfn_trim(jQuery("#field0").val()) == '' ){
+							alert("E-Mail을 입력해주세요.");
+							return false;
+						}
+				
+						if(!emailChk()){
+							alert("E-Mail형식을 확인 하세요.");
+							return false;
+						}
+				
+						if(!jQuery('.newsletter .marketing_chk').find('input:checkbox[id="marketing"]').is(":checked")){
+							alert("마케팅 수신동의를 체크 해주세요.");
+							return false;
+						}
+				
+						alert('등록 되었습니다.');
+						jQuery('#form33').submit();
+				
+					});
+				
+					//이메일 체크
+					function emailChk(){
+						var emailVal = cfn_trim(jQuery("#field0").val());
+						var reg = /^((\w|[\-\.])+)@((\w|[\-\.][^(\.)\1])+)\.([A-Za-z]+)$/;
+						if (emailVal.search(reg) != -1 && emailVal.length < 31) {
+							jQuery("#field0").val(emailVal);
+							return true;
+						}
+						return false;
+					}
+				
+				})(jQuery);
+				
+				function KeyDownSpa() {
+					if(event.keyCode == 32){ return false; }
+				
+					// 안드로이드 기종에서 스페이스바 keyCode 229로 인식
+					if( event.keyCode == 229 ){
+						var stEmail = jQuery('.input_wrap #field0').val();
+						jQuery('.input_wrap #field0').val(stEmail.trim());
+						return false;
+					}
+				
+				}
+				</script>
+				<!--  카카오 상담톡 start -->
+				<script type="text/javascript">
+				function fn_kakaoChatOpen() {
+					var popup = window.open("","POP");
+					var frm = document.kakaoChatForm;
+					frm.submit();
+				}
+				</script>
+				<form id="kakaoChatForm" name="kakaoChatForm" target="POP" action="https://bizmessage.kakao.com/chat/open" method="post">
+					<input type="hidden" name="uuid" value="@Reebok"/>
+					<input type="hidden" name="extra" value="Homepage_Mobile"/>
+				</form>
+				<!--  카카오 상담톡 end -->
+				</body>
+			</html>
