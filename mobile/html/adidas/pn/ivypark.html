@@ -206,17 +206,32 @@
 						
 						$(window).scroll(function(){
 							var thispos = $(this).scrollTop();
-							console.log(thispos + ":" + navipos);
+
+							// console.log(thispos + ":" + navipos);
 							
 							if(thispos > navipos - 60){
 								$('.navi').addClass('fixed');
+
+								if(!$('#header').hasClass('hide')){
+									$('.navi.fixed').css({
+										top:'61px'
+									})
+								}else{
+									$('.navi.fixed').css({
+										top:'0px'
+									})
+								}
 							}else{
 								$('.navi').removeClass('fixed');
+
+								$('.navi').css({
+									top:'0px'
+								})
 							}
 						});
 
 					});
-
+					
 				});
 			</script>
 
