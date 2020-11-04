@@ -84,69 +84,6 @@ a{
 				padding:3rem 0 1.6rem;
 			}
 		}
-		// &.sect_benefit{
-		// 	// padding: 2.5rem 0 3.7rem;
-		// 	// background:url('/images/adidas/2020/event/adiclub/be_bg.jpg')no-repeat;			
-		// 	// background-size:cover;
-		// 		.benefit_bg{
-		// 		position:relative;
-		// 		>img{
-		// 			width:100%;
-		// 			display:block;
-		// 		}
-		// 	}			
-		// 	.benefit_inner{
-		// 		text-align: center;
-		// 		// position:absolute;left:50%;top:48%;
-		// 		// transform:translate(-50%,-50%);
-		// 		// width:100%;
-
-		// 		h3 {
-		// 			font: 600 1.9rem/2.5rem 'adinenuPro-bold';
-		// 			color: #111;
-		// 			text-align: center;
-		// 			letter-spacing: 2px;
-		// 		}
-		// 		.button_area_v2 {
-		// 			display: inline-block;
-		// 			margin-top: 0.6rem;
-		// 		}
-		// 		ul{
-		// 			margin-top: 2.5rem;
-		// 			overflow: hidden;
-		// 			width: 100%;
-		// 			li{
-		// 				float: left;
-		// 				width: 32%;
-		// 				margin-left:2%;
-		// 				vertical-align:top;
-		// 				a{
-		// 					display: block;
-		// 					.box{
-		// 						padding:5rem 0;
-		// 						background:#111;
-		// 						height:3rem;	
-		// 						.txt{
-		// 							h2{
-		// 								color:#fff;
-		// 								font:900 1.4rem/1.6rem 'adinenuPro-black';
-		// 								letter-spacing:1px;
-		// 								text-transform:uppercase;
-		// 								span{
-		// 									display:block;
-		// 								}
-		// 							}
-		// 						}
-		// 					}
-
-		// 				}
-		// 				&:first-child{
-		// 					margin-left:0;
-		// 				}
-		// 			}
-		// 		}
-		// 	}
-		// }
 
 		&.sect_stage{
 			.sect_stage_wrap {
@@ -245,7 +182,42 @@ a{
 					width:100%;
 				}
 			}
-
+		}
+		&.item_viewSld{
+			ul{
+				li{
+					img{
+						display: block;
+						width: 100%;
+					}
+				}
+			}
+			.slick-dots {
+				position: absolute;
+				bottom: 5%;
+				width: 100%;
+				text-align: center;
+				margin: 0 auto;
+				li{
+					display: inline-block;
+					margin-right: 8px;
+					button{
+						width: 13px;
+						height: 13px;
+						border-radius: 50%;
+						background: none;
+						border: 1px solid #fff;
+						padding: 0;
+						text-indent: -9999px;
+						vertical-align: bottom;
+					}
+					&.slick-active{
+						button{
+							background: #fff;
+						}
+					}
+				}	
+			}
 		}
 
 		&.sect_member {
