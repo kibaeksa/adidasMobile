@@ -302,11 +302,12 @@
 							$.each( section, function( index, elem ){
 								var $target = section.eq( index );
 								var targetTop = $target.offset().top;
-								if(!$('#header').hasClass('hide')) {
-									$('#golf .fixed-active').css({'padding-top':'60px'})
-								}
-								if ($('#header').hasClass('hide') || !$('#golf .tabs').hasClass('.fixed-active')){
+								if ($('#header').hasClass('hide')){
+										$('#golf .tabs').css({'padding-top':'0'})
+								} else if(!$('#golf .tabs').hasClass('fixed-active')) {
 									$('#golf .tabs').css({'padding-top':'0'})
+								} else {
+										$('#golf .tabs').css({'padding-top':'60px'})
 								}
 								targetTop <= thisScroll && $('#golf .tabs').eq( index ).addClass('fixed-active');
 								targetTop > thisScroll && $('#golf .tabs').eq( index ).removeClass('fixed-active');
