@@ -299,6 +299,11 @@
 							$.each( section, function( index, elem ){
 								var $target = section.eq( index );
 								var targetTop = $target.offset().top;
+								if(!$('#header').hasClass('hide')) {
+									$('#golf .fixed-active').css({'padding-top':'60px'})
+								} else{
+									$('#golf .fixed-active').css({'padding-top':'0'})
+								}
 								targetTop <= thisScroll && $('#golf .tabs').eq( index ).addClass('fixed-active');
 								targetTop > thisScroll && $('#golf .tabs').eq( index ).removeClass('fixed-active');
 							});
