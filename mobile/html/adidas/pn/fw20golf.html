@@ -275,7 +275,7 @@
                                     if(!$('#header').hasClass('hide')) {
                                         $('#golf .fixed-active').css({'padding-top':'60px'})
                                     }
-                                    if ($('#header').hasClass('hide') && !$('#golf .tabs').hasClass('.fixed-active')){
+                                    if ($('#header').hasClass('hide') || !$('#golf .tabs').hasClass('.fixed-active')){
                                         $('#golf .tabs').css({'padding-top':'0'})
                                     }
                                     targetTop <= thisScroll && $('#golf .tabs').eq( index ).addClass('fixed-active');
