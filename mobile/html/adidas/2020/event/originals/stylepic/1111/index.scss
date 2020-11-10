@@ -1,0 +1,350 @@
+@import './mobile/css/adidas/scss/common/mixin.scss';
+@import './mobile/css/adidas/scss/common/common.scss';
+html,body{
+	height:100%;
+}
+#stylepick{
+
+	.button_area_v2{
+		a{
+			font-size: 1rem;
+			font-weight: normal;
+			height: 36px;
+			line-height: 34px;
+			letter-spacing: 1px;
+			padding: 0 1.5rem;
+			span.arrow{
+				margin-left: 10px;
+				width: 25px;
+				&:after{
+					width: 8px;
+				}
+				&:before{
+					width: 8px;
+				}
+			}
+		}
+	}
+	img{
+		width:100%;
+	}
+	h1,p,span{
+		letter-spacing: 0;
+		white-space: nowrap;
+	}
+	div,img, button{
+		outline: unset;
+	}
+	.visuals{
+		position: relative;
+		$val: auto;
+		@include auto($val);
+		.visuals__text{
+			@include center(auto, 33%, 50%, $ctX);
+		}
+	}
+	.slider_container{
+		position: relative;
+		.wrap{
+			.slider{
+				.slick-list{
+					overflow: visible;
+					.slick-track{
+						.item{
+							position: relative;
+							// padding-bottom: 28.5%;
+							padding-bottom: 71.5%;
+							img{
+								@include center(-10%, auto, auto, none);
+							}
+							.button_area_v2{
+								@include center(auto, 5%, 5%, none);
+							}
+							&.right{
+								.button_area_v2{
+									@include center(auto, 5%, auto, none);
+									right: 5%;
+								}
+							}
+						}
+					}
+				}
+				.slick-dots{
+					text-align: center;
+					padding: 2rem 0 5rem 0;
+					li{
+						display: inline-block;
+						margin-right: 4px;
+						height: 4px;
+						width: 40px;
+						background: #ecedef;
+						vertical-align: bottom;
+						&:last-of-type{
+							margin: 0;
+						}
+						&.slick-active{
+							height: 10px;
+							&.purple{
+								background: #8a18f8;
+							}
+							&.orange{
+								background: #d9993f;
+							}
+						}
+						button{
+							border: 0;
+							background: none;
+							text-indent: -9999px;
+						}
+					}
+				}
+			}
+		}
+	}
+	.tabs{
+		&.fixed-active{
+			position: fixed;
+			top: 0;
+			width: 100%;
+			z-index: 2;
+		}
+		ul{
+			width: 100%;
+			@include after();
+			li{
+				width: 50%;
+				float: left;
+				padding: 0.7rem 0;
+				background: #f1f1f1;
+				text-align: center;
+				a{
+					font: 700 12.5px/12.5px 'AdihausDIN-Cond';
+					color: #cccccc;
+					letter-spacing: 3.5px;
+					position: relative;
+    			top: 2px;
+				}
+				&.active{
+					a{
+						color: #000000;
+					}
+				}
+				&.orange{
+					background: #d9993f;
+				}
+				&.purple{
+					background: #8a18f8;
+				}
+			}
+		}
+	}
+	@for $i from 1 through 3 {
+		.bg0#{$i} {
+			background: url('/images/adidas/2020/event/originals/stylepic/1111/bg0#{$i}.jpg') no-repeat;
+			background-position: 0 30px;
+			background-size: 100% 100%;
+		}
+		.bg03{
+			background-position: top;
+		}
+	}
+	#slider02, #slider03 {
+		.slick-dots{
+			display: none !important;
+		}
+	}
+	.slider__main{
+		position: relative;
+		text-align: center;
+		.wrap{
+			.slider{
+				.slick-list{
+					width: 86%;
+					margin: 0 auto 0.4rem;
+					.slick-track{
+						.item{
+							img{
+							}
+						}
+					}
+				}
+				// .slick-dots{
+				// 	text-align: center;
+				// 	padding: 2rem 0 0;
+				// 	width: 100%;
+				// 	overflow-x: scroll;
+				// 	overflow-y: hidden;
+				// 	white-space: nowrap;
+				// 	li{
+				// 		display: inline-block;
+				// 		width: 24%;
+				// 		opacity: 0.5;
+				// 		&.slick-active{
+				// 			opacity: 1;
+				// 			height: 10px;
+				// 			&.purple{
+				// 				background: #8a18f8;
+				// 			}
+				// 			&.orange{
+				// 				background: #d9993f;
+				// 			}
+				// 		}
+				// 		button{
+				// 			border: 0;
+				// 			background: none;
+				// 			text-indent: -9999px;
+				// 		}
+				// 	}
+				// }
+			}
+		}
+		&.slider__side{
+			position: relative;
+			.slider{
+				.slick-list{
+					width: 100%;
+					margin: 0 auto;
+					.slick-track{
+						.item{
+							font-size: 0;
+							img{
+								display: inline-block;
+								width: 50%;
+							}
+						}
+					}
+				}
+
+			}
+			.prev-button{
+				@include center(50%, auto, 0, $ctY);
+				width: 8%;
+			}
+			.next-button{
+				@include center(50%, auto, auto, $ctY);
+				right: 0;
+				width: 8%;
+			}
+		}
+	}
+	.slider_dots{
+		width: 98%;
+		text-align: center;
+    padding-top: 1rem;
+		.slider{
+			.slick-list{
+				overflow: visible;
+				.item{
+					opacity: 0.5;
+					transition: all 0.5s;
+					&.active{
+						opacity: 1;
+					}
+				}
+			}
+		}
+		.button_area_v2{
+			padding: 2.7rem 0 4rem 0;
+			display: inline-block;
+		}
+	}
+	.slider__mid{
+		.sub__tabs{
+			width: 60%;
+			margin: 0 auto;
+			padding: 2rem 0;
+			@include after();
+			li{
+				width: 50%;
+				float: left;
+			}
+		}
+		#slider05{
+			.slick-dots{
+				text-align: center;
+				padding: 1.5rem 0;
+				li{
+					display: inline-block;
+					width: 11%;
+					background: #953a1c;
+					margin-right: 8px;
+					height: 3px;
+					vertical-align: bottom;
+					&:last-of-type{
+						margin: 0;
+					}
+					&.slick-active{
+						opacity: 1;
+						height: 7px;
+						background: #000;
+					}
+					button{
+						border: 0;
+						background: none;
+						text-indent: -9999px;
+					}
+				}
+			}
+		}
+	}
+
+	.video-section{
+		position: relative;
+		padding-bottom: 5rem;
+		.button_area_v2{
+			@include center(5%, auto, 50%, $ctX);
+			display: inline-block;
+			text-align: center;
+		}
+	}
+	.bottoms{
+		>div{
+			position: relative;
+			.button_area_v2{
+				@include center(auto, 23%, auto, none);
+				right: 6%;
+				@media screen and (min-width: 414px) {
+					right: 9%;
+					bottom: 26%;
+				}
+			}
+		}
+	}
+	.section02{
+		.section02top{
+			position: relative;
+			.button_area_v2{
+				@include center(auto, 8%, 50%, $ctX);
+			}
+		}
+	}
+}
+
+
+// @media screen and (min-width: 414px) {
+// 	#ub20{
+// 		.modal-popup-wrapper{
+// 			.popup{
+	
+// 				.popup-header{
+// 					.close_x_btn{
+// 						width: 3rem;
+// 						height: 3rem;
+// 						position: absolute;
+// 						top: 50%;
+// 						right: 15px;
+// 						transform: translate3d(0,365%,0);
+// 						right: 24%;
+						
+// 						&::after,&::before{
+// 							background:#fff;
+// 						}
+// 					}
+// 				}
+	
+// 			}
+	
+// 		}
+// 	}
+
+// }
