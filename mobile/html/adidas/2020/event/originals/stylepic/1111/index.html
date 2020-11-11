@@ -53,7 +53,7 @@
 					</div>
 					<div class="slider_container">
 						<div class="wrap">
-							<div id="slider01" class="slider autos">
+							<div id="slider01" class="slider auto-slide">
 								<div class="item right">
 									<img src="/images/adidas/2020/event/originals/stylepic/1111/slide01/slide01_01.png" alt="">
 									<div class="button_area_v2" style="">
@@ -214,7 +214,7 @@
 							</div>
 							<div class="slider_dots">
 								<div class="wrap">
-									<div id="slider07" class="slider">
+									<div id="slider07" class="slider indi-slide">
 										<div class="item">
 											<img src="/images/adidas/2020/event/originals/stylepic/1111/slide02/shSub01.jpg" alt="">
 										</div>
@@ -392,7 +392,7 @@
 							</div>
 							<div class="slider_dots">
 								<div class="wrap">
-									<div id="slider08" class="slider">
+									<div id="slider08" class="slider indi-slide">
 										<div class="item">
 											<img src="/images/adidas/2020/event/originals/stylepic/1111/slide03/clSub01.jpg" alt="">
 										</div>
@@ -468,7 +468,7 @@
 
 						<div class="slider__side slider__main">
 							<div class="wrap">
-								<div id="slider04" class="slider arrows01">
+								<div id="slider04" class="slider arrow-slide01">
 									<div class="item">
 										<img src="/images/adidas/2020/event/originals/stylepic/1111/slide04/top-01.jpg" alt="">
 										<img src="/images/adidas/2020/event/originals/stylepic/1111/slide04/top-02.jpg" alt="">
@@ -504,7 +504,7 @@
 								</li>
 							</div>
 							<div class="wrap">
-								<div id="slider05" class="slider autos">
+								<div id="slider05" class="slider auto-slide">
 									<div class="item">
 										<img src="/images/adidas/2020/event/originals/stylepic/1111/slide04/mid-01.jpg" alt="">
 									</div>
@@ -516,7 +516,7 @@
 						</div>
 						<div class="slider__side slider__main">
 							<div class="wrap">
-								<div id="slider06" class="slider arrows02">
+								<div id="slider06" class="slider arrow-slide02">
 									<div class="item">
 										<img src="/images/adidas/2020/event/originals/stylepic/1111/slide04/bot-01.jpg" alt="">
 										<img src="/images/adidas/2020/event/originals/stylepic/1111/slide04/bot-02.jpg" alt="">
@@ -611,13 +611,15 @@
 			<script type="text/javascript" src="/designjs/common/slick.min.js"></script>
 
 			<script type="text/javascript">
-					// preventDefault
-					$('#stylepick .videos').click(function(e){
-						$(this).attr("href") === "#" && e.preventDefault();
-					})
+
+				// preventDefault
+				$('#stylepick .videos').click(function(e){
+					$(this).attr("href") === "#" && e.preventDefault();
+				})
+
 				// carousels
 				function Comp02( elem ) {
-					if( elem.hasClass('autos')) {
+					if( elem.hasClass('auto-slide') ) {
 						elem.slick({
 							slidesToShow: 1,
 							slidesToScroll: 1,
@@ -629,7 +631,7 @@
 							arrows: false,
 							fade: true,
 						});
-					} else if( elem.hasClass('arrows01')) {
+					} else if( elem.hasClass('arrow-slide01') ) {
 						elem.slick({
 							slidesToShow: 1,
 							slidesToScroll: 1,
@@ -642,7 +644,7 @@
 							nextArrow: $('.next-button01'),
 							prevArrow: $('.prev-button01'),
 						});
-					} else if( elem.hasClass('arrows02')) {
+					} else if( elem.hasClass('arrow-slide02') ) {
 						elem.slick({
 							slidesToShow: 1,
 							slidesToScroll: 1,
@@ -655,7 +657,19 @@
 							nextArrow: $('.next-button02'),
 							prevArrow: $('.prev-button02'),
 						});
-					} else {
+					} else if( elem.hasClass('indi-slide') ) {
+						elem.slick({
+							slidesToShow: 4,
+							slidesToScroll: 1,
+							autoplaySpeed: 2800,
+							infinite: false,
+							autoplay: false,
+							dots: false,
+							cssEase: 'linear',
+							arrows: false,
+							focusOnSelect: true,
+						});
+					} else { // 디폴트
 						elem.slick({
 							slidesToShow: 1,
 							slidesToScroll: 1,
@@ -670,42 +684,19 @@
 					}
 				}
 				var constructor02 = ( function(){
-					for( var i=0; i<6; i++ ) {
+					var item = $('#stylepick .slider');
+					for( var i=0; i<item.length; i++ ) {
 						var c1 = new Comp02(
 							$('#slider0'+(i+1)),
 						);
 					}
 				}() );
 
-				$('#slider07').slick({
-					slidesToShow: 4,
-					slidesToScroll: 1,
-					autoplaySpeed: 2800,
-					infinite: false,
-					autoplay: false,
-					dots: false,
-					cssEase: 'linear',
-					arrows: false,
-					focusOnSelect: true,
-				});
-				$('#slider08').slick({
-					slidesToShow: 4,
-					slidesToScroll: 1,
-					autoplaySpeed: 2800,
-					infinite: false,
-					autoplay: false,
-					dots: false,
-					cssEase: 'linear',
-					arrows: false,
-					focusOnSelect: true,
-				});
-				$('#slider01 .slick-active').addClass('orange');
-				$('#slider01 .slick-active').addClass('purple');
-
 				// On before slide change
+				// 1번 슬라이드 인디케이터 싱크
+				$('#slider01 .slick-active').addClass('orange');
 				$('#slider01').on('afterChange', function(event, slick, currentSlide, nextSlide){
 					var index = $('.slick-current').attr("data-slick-index"); 
-					// console.log(index);
 					if(index == 0) {
 						$('#slider01 .slick-active').removeClass('purple').eq(index).addClass('orange');
 					} else{
@@ -713,6 +704,7 @@
 					}
 				});
 
+				// 7번 indi-slide & #slider02(SHERPA) 싱크
 				$('#slider07 .item').eq(0).addClass('active');
 				$('#slider02').on('afterChange', function(event, slick, currentSlide, nextSlide){
 					var index = $('.slick-current').attr("data-slick-index");
@@ -726,8 +718,8 @@
 					$('#slider02').slick('slickGoTo',index);
 					$('#slider02 .item').removeClass('active slick-current').eq(index).addClass('active slick-current');
 				});
-	
 
+				// 8번 indi-slide & #slider03(CL) 싱크
 				$('#slider08 .item').eq(0).addClass('active');
 				$('#slider03').on('afterChange', function(event, slick, currentSlide, nextSlide){
 					var index = $('.slick-current').attr("data-slick-index");
@@ -742,10 +734,11 @@
 					$('#slider03 .item').removeClass('active').eq(index).addClass('active');
 				});
 
-
-				$('#slider05').on('afterChange', function(event, slick, currentSlide, nextSlide){
+				// 5번 하단 탭버튼 이미지 싱크
+				$('#slider05').on('beforeChange', function(event, slick, currentSlide, nextSlide){
 					var index = $('.slick-current').attr("data-slick-index");
-					if( index == 0) {
+					// console.log(currentSlide);
+					if( nextSlide == 0) {
 						$('.sub__tabs li').eq(0).find('img').attr('src','/images/adidas/2020/event/originals/stylepic/1111/home_on.jpg');
 						$('.sub__tabs li').eq(1).find('img').attr('src','/images/adidas/2020/event/originals/stylepic/1111/city.jpg');
 					} else {
@@ -754,9 +747,27 @@
 					}
 				});
 
+				// 탭 섹션 이동
+				function moveTo(sec){
+					var offset = $(".section0" + sec).offset();
+					$('html, body').animate({scrollTop : offset.top}, 400);
+				}
+				// 탭버튼 이벤트
+				$('.tabs ul li').stop().click(function(){
+					var index = $(this).index();
+						if (index == 0){
+							moveTo(index+1);
+							$('.tabs ul li').removeClass('active purple').eq(index).addClass('active orange');
+							console.log(index);
+						} else {
+							// alert(index);
+							moveTo(index+1);
+							$('.tabs ul li').removeClass('active orange').eq(index).addClass('active purple');
+							console.log(index);
+						}
+				});
 
-
-				// 탭클릭
+				// 하단 서브 탭버튼 클릭
 				$('.sub__tabs li').stop().click(function(){
 					var index = $(this).index();
 					$('#slider05').slick('setPosition');
@@ -770,54 +781,33 @@
 					}
 				})
 				
-				// 탭 섹션 이동
-				function moveTo(sec){
-					var offset = $(".section0" + sec).offset();
-					$('html, body').animate({scrollTop : offset.top}, 400);
-				}
-
-
-
+				// 스크롤 이벤트
 				var scrollEvent02 = ( function(){
-						$('#stylepick .section01').addClass('fixed');
-						$('#stylepick .section02').addClass('fixed');
-						$(this).scroll( function() {
-							var thisScroll = $(this).scrollTop();
-							var section = $('#stylepick .fixed');
-							$.each( section, function( index, elem ){
-								var $target = section.eq( index );
-								var targetTop = $target.offset().top;
-								if ($('#header').hasClass('hide')){
-										$('#stylepick .tabs').css({'padding-top':'0'})
-								} else if(!$('#stylepick .tabs').hasClass('fixed-active')) {
+					$('#stylepick .section01').addClass('fixed');
+					$('#stylepick .section02').addClass('fixed');
+					$(this).scroll( function() {
+						var thisScroll = $(this).scrollTop();
+						var section = $('#stylepick .fixed');
+						$.each( section, function( index, elem ){
+							var $target = section.eq( index );
+							var targetTop = $target.offset().top;
+							if ($('#header').hasClass('hide')){
 									$('#stylepick .tabs').css({'padding-top':'0'})
-								} else {
-										$('#stylepick .tabs').css({'padding-top':'60px'})
-								}
-								targetTop <= thisScroll && $('#stylepick .tabs').eq( index ).addClass('fixed-active');
-								targetTop > thisScroll && $('#stylepick .tabs').eq( index ).removeClass('fixed-active');
-								if( index == 0) {
-									targetTop < thisScroll && $('#stylepick .tabs li').removeClass('active purple').eq( index ).addClass('active orange');
-								} else {
-									targetTop < thisScroll && $('#stylepick .tabs li').removeClass('active orange').eq( index ).addClass('active purple');
-								}
-							});
-						});
-					} )();
-
-					$('.tabs ul li').stop().click(function(){
-						var index = $(this).index();
-							if (index == 0){
-								moveTo(index+1);
-								$('.tabs ul li').removeClass('active purple').eq(index).addClass('active orange');
-								console.log(index);
+							} else if(!$('#stylepick .tabs').hasClass('fixed-active')) {
+								$('#stylepick .tabs').css({'padding-top':'0'})
 							} else {
-								// alert(index);
-								moveTo(index+1);
-								$('.tabs ul li').removeClass('active orange').eq(index).addClass('active purple');
-								console.log(index);
+									$('#stylepick .tabs').css({'padding-top':'60px'})
 							}
+							targetTop <= thisScroll && $('#stylepick .tabs').eq( index ).addClass('fixed-active');
+							targetTop > thisScroll && $('#stylepick .tabs').eq( index ).removeClass('fixed-active');
+							if( index == 0) {
+								targetTop < thisScroll && $('#stylepick .tabs li').removeClass('active purple').eq( index ).addClass('active orange');
+							} else {
+								targetTop < thisScroll && $('#stylepick .tabs li').removeClass('active orange').eq( index ).addClass('active purple');
+							}
+						});
 					});
+				} )();
 				
 			
 			
