@@ -322,7 +322,13 @@
 										</div>
 										<div class="item">
 											<img src="/images/adidas/2020/event/originals/stylepic/1111/slide02/shSub36.jpg" alt="">
-										</div>														
+										</div>
+										<div class="item">
+											<img src="/images/adidas/2020/event/originals/stylepic/1111/slide02/fake.jpg" alt="">
+										</div>
+										<div class="item">
+											<img src="/images/adidas/2020/event/originals/stylepic/1111/slide02/fake.jpg" alt="">
+										</div>													
 									</div>
 								</div>
 								<div class="button_area_v2" style="">
@@ -472,6 +478,10 @@
 										<img src="/images/adidas/2020/event/originals/stylepic/1111/slide04/top-05.jpg" alt="">
 										<img src="/images/adidas/2020/event/originals/stylepic/1111/slide04/top-06.jpg" alt="">
 									</div>
+									<div class="item">
+										<img src="/images/adidas/2020/event/originals/stylepic/1111/slide04/top-07.jpg" alt="">
+										<img src="/images/adidas/2020/event/originals/stylepic/1111/slide04/top-08.jpg" alt="">
+									</div>
 								</div>
 							</div>
 							<div class="prev-button01 prev-button">
@@ -515,10 +525,6 @@
 									<div class="item">
 										<img src="/images/adidas/2020/event/originals/stylepic/1111/slide04/bot-05.jpg" alt="">
 										<img src="/images/adidas/2020/event/originals/stylepic/1111/slide04/bot-06.jpg" alt="">
-									</div>
-									<div class="item">
-										<img src="/images/adidas/2020/event/originals/stylepic/1111/slide04/bot-07.jpg" alt="">
-										<img src="/images/adidas/2020/event/originals/stylepic/1111/slide04/bot-08.jpg" alt="">
 									</div>
 								</div>
 							</div>
@@ -736,19 +742,19 @@
 
 				$('#slider05').on('afterChange', function(event, slick, currentSlide, nextSlide){
 					var index = $('.slick-current').attr("data-slick-index");
-					// if( index == 0) {
-					// 	$('.sub__tabs li').eq(0).find('img').attr('src','/images/adidas/2020/event/originals/stylepic/1111/home_on.jpg');
-					// 	$('.sub__tabs li').eq(1).find('img').attr('src','/images/adidas/2020/event/originals/stylepic/1111/city.jpg');
-					// } else {
-					// 	$('.sub__tabs li').eq(0).find('img').attr('src','/images/adidas/2020/event/originals/stylepic/1111/home.jpg');
-					// 	$('.sub__tabs li').eq(1).find('img').attr('src','/images/adidas/2020/event/originals/stylepic/1111/city_on.jpg');
-					// }
+					if( index == 0) {
+						$('.sub__tabs li').eq(0).find('img').attr('src','/images/adidas/2020/event/originals/stylepic/1111/home_on.jpg');
+						$('.sub__tabs li').eq(1).find('img').attr('src','/images/adidas/2020/event/originals/stylepic/1111/city.jpg');
+					} else {
+						$('.sub__tabs li').eq(0).find('img').attr('src','/images/adidas/2020/event/originals/stylepic/1111/home.jpg');
+						$('.sub__tabs li').eq(1).find('img').attr('src','/images/adidas/2020/event/originals/stylepic/1111/city_on.jpg');
+					}
 				});
 
 
 
 				// 탭클릭
-				$('.sub__tabs li').click(function(){
+				$('.sub__tabs li').stop().click(function(){
 					var index = $(this).index();
 					$('#slider05').slick('setPosition');
 					$('#slider05').slick('slickGoTo',index);
@@ -766,21 +772,7 @@
 					var offset = $(".section0" + sec).offset();
 					$('html, body').animate({scrollTop : offset.top}, 400);
 				}
-				$('.tabs ul li').click(function(){
-					var index = $(this).index();
-					if (index == 0){
-						$('.tabs ul li').removeClass('active').eq(index).addClass('active');
-						moveTo(index+1);
-						console.log(index);
-						$('.tabs ul li').removeClass('purple').eq(index).addClass('orange');
-					} else {
-						$('.tabs ul li').removeClass('active').eq(index).addClass('active');
-						moveTo(index+1);
-						console.log(index);
-						$('.tabs ul li').removeClass('orange').eq(index).addClass('purple');
-					}
-				});
-				
+
 
 
 				var scrollEvent02 = ( function(){
@@ -802,15 +794,28 @@
 								targetTop <= thisScroll && $('#stylepick .tabs').eq( index ).addClass('fixed-active');
 								targetTop > thisScroll && $('#stylepick .tabs').eq( index ).removeClass('fixed-active');
 								if( index == 0) {
-									targetTop <= thisScroll && $('#stylepick .tabs li').removeClass('active purple').eq( index ).addClass('active orange');
+									targetTop < thisScroll && $('#stylepick .tabs li').removeClass('active purple').eq( index ).addClass('active orange');
 								} else {
-									targetTop <= thisScroll && $('#stylepick .tabs li').removeClass('active orange').eq( index ).addClass('active purple');
+									targetTop < thisScroll && $('#stylepick .tabs li').removeClass('active orange').eq( index ).addClass('active purple');
 								}
 							});
 						});
 					} )();
 
-
+					$('.tabs ul li').stop().click(function(){
+						var index = $(this).index();
+							if (index == 0){
+								moveTo(index+1);
+								$('.tabs ul li').removeClass('active purple').eq(index).addClass('active orange');
+								console.log(index);
+							} else {
+								// alert(index);
+								moveTo(index+1);
+								$('.tabs ul li').removeClass('active orange').eq(index).addClass('active purple');
+								console.log(index);
+							}
+					});
+				
 			
 			
 
