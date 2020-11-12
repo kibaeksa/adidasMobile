@@ -1,0 +1,212 @@
+@import "./mobile/MO/reebok/css/scss/about.scss";
+
+#contents {
+	img {
+		vertical-align: middle;
+	}
+}
+
+
+body {
+	// height:100%;
+	outline:none;
+}
+
+button {
+	outline: none;
+}
+
+a{
+	outline: none;
+	
+}
+
+.btn {
+	>div {
+		position: relative;
+		display: inline-block;
+
+		&::before {
+			border-bottom: 1px solid #000;
+			border-left: 1px solid #000;
+			bottom: -4px;
+			height: 3px;
+			left: 2px;
+			width: calc(100% + 1px);
+			content: "";
+			display: block;
+			position: absolute;
+		}
+
+		&::after {
+			border-right: 1px solid #000;
+			border-top: 1px solid #000;
+			height: calc(100% + 1px);
+			right: -4px;
+			top: 2px;
+			width: 3px;
+			content: "";
+			display: block;
+			position: absolute;
+		}
+
+		a {
+			padding: 0 1rem;
+			font: 600 1rem/3.4rem 'NotoSansKR';
+			letter-spacing: .1rem;
+			position: relative;
+			display: block;
+			text-align: center;
+			color: #fff;
+			background: #000;
+			z-index: 2;
+			border: 1px solid #000;
+
+			.arrow {
+				margin-top: -3px;
+				margin-left: 1.4rem;
+				vertical-align: middle;
+				// width: 20%;
+			}
+		}
+	}
+
+	&.white {
+		>div {
+			&::before {
+				border-bottom: 1px solid #fff;
+				border-left: 1px solid #fff;
+			}
+
+			&::after {
+				border-right: 1px solid #fff;
+				border-top: 1px solid #fff;
+			}
+
+			a {
+				color: #000;
+				background: #fff;
+				border: 1px solid #fff;
+
+			}
+		}
+	}
+}
+
+.rel {
+	position: relative;
+}
+
+#cardbi {
+	position: relative;
+	.main{
+		position: relative;
+		.bg_wrap{
+			position: relative;
+			img{
+				display:block;
+				width:100%;
+			}
+		}
+
+	}
+
+	.contents{
+		.section{
+			position:relative;
+		}
+		.justlike{
+			text-align:center;
+			padding:3.3rem 0;
+			.txt{
+				color:#111;
+				text-align:center;
+				h1{
+					font:700 2.1rem/2.8rem 'neueplak-wide';
+					letter-spacing:0;
+					text-align:center;
+					text-transform:uppercase;
+				}
+				p{
+					font:400 1.2rem/1.9rem 'NotoSansKR';
+					letter-spacing:0;
+					text-align:center;		
+					padding:1.5rem 0 1.8rem 0;
+					span{
+						display:block;
+					}		
+				}
+				strong{
+					display:block;
+					font:700 1.3rem/1.6rem 'neueplak-wide';
+					letter-spacing:0;
+					text-transform:uppercase;
+					text-align:center;					
+				}
+				.btn{
+					text-align:center;
+					margin:2rem 0 0 0;
+				}
+			}
+		}
+		.list{
+			position:relative;
+			>.bg{
+				position:relative;
+				img{
+					display:block;
+					width:100%;
+				}
+			}
+			.bg2{
+				position:relative;
+			}
+			.bg3{
+				position:relative;
+			}			
+			.list_gif_crab{
+				position:absolute;
+				left: 50%;
+				top: 50.5%;
+				transform: translate(-50%, -50%);
+				margin-left: -63px;
+				>img{
+					width:80%;
+				}
+			}
+			.list_gif_eyes{
+				position: absolute;
+				left: 63%;
+				top: 95.5%;
+				transform: translate(-50%, -50%);
+				>img{
+					width:130%;
+				}
+			}			
+		}
+	}
+	.cadi{
+		position:relative;
+		img{
+			display:block;
+			width:100%;
+		}
+	}
+	.b_buy{
+		position:relative;
+		.bg2{
+			>img{
+				width:100%;
+			}
+		}				
+		.txt{
+			position:absolute;
+			left:50%;
+			top:58%;
+			transform:translate(-50%,-50%);
+			.btn{
+				margin:1.5rem 0 0 0;
+			}
+		}
+	}
+}
