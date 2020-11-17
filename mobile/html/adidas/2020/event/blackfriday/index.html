@@ -34,7 +34,7 @@
 				<main role="main">
 					<section class="visuals">
 						<div class="visuals__figure">
-							<video src="https://image.adidas.co.kr/upload/design_temp/video/2020/a/originals/winter/1105/minho.mp4" autoplay playsinline muted loop poster="/images/adidas/2020/event/blackfriday/main.jpg"></video>
+							<video src="https://image.adidas.co.kr/upload/design_temp/video/2020/a/blackfriday/main_MO.mp4" autoplay playsinline muted loop poster="/images/adidas/2020/event/blackfriday/main.jpg"></video>
 							<img src="/images/adidas/2020/event/blackfriday/main.jpg" alt="메인이미지">
 						</div>
 						<div class="visuals__text">
@@ -156,13 +156,13 @@
 
 						<div id="slider03" class="slider">
 								<div class="item">
-									<a href="https://m.adidas.co.kr/index_netfunnel_landingPage.html?pageNo=1489&term=1">
+									<a href="https://m.adidas.co.kr/index_netfunnel_landingPage.html?pageNo=1489&term=1" class="">
 										<img src="/images/adidas/2020/event/blackfriday/sub-main01.jpg" alt="캠페인이미지01">
 									</a>
 								</div>
 								<div class="item">
-									<a href="https://m.adidas.co.kr/index_netfunnel_landingPage.html?pageNo=1492&term=1" class="prevent">
-										<img src="/images/adidas/2020/event/blackfriday/sub-main-csoon.jpg" alt="캠페인이미지02">
+									<a href="https://m.adidas.co.kr/index_netfunnel_landingPage.html?pageNo=1492&term=1" class="">
+										<img src="/images/adidas/2020/event/blackfriday/sub-main02.jpg" alt="캠페인이미지02">
 									</a>
 								</div>
 								<div class="item">
@@ -170,7 +170,7 @@
 										<img src="/images/adidas/2020/event/blackfriday/sub-main-csoon.jpg" alt="캠페인이미지03">
 									</a>
 									</div>
-								<div class="item">
+								<!-- <div class="item">
 									<a href="https://m.adidas.co.kr/index_netfunnel_landingPage.html?pageNo=1487&term=1" class="prevent">
 										<img src="/images/adidas/2020/event/blackfriday/sub-main-csoon.jpg" alt="캠페인이미지04">
 									</a>
@@ -189,7 +189,7 @@
 									<a href="https://m.adidas.co.kr/index_netfunnel_landingPage.html?pageNo=1362&term=1" class="prevent">
 										<img src="/images/adidas/2020/event/blackfriday/sub-main-csoon.jpg" alt="캠페인이미지07">
 									</a>
-								</div>
+								</div> -->
 						</div>
 
 					</section>
@@ -217,6 +217,10 @@
 				<script type="text/javascript">
 					$(document).ready(function(){
 	
+
+						// ### 1. day0n 클래스 수동 삽입 필요 ###
+						// ### 2. 날짜별 2, 3번 슬라이드 초기화 필요 ###
+
 						// preventDefault
 						$('#blackfriday .prevent').click(function(e){
 							e.preventDefault();
@@ -282,12 +286,12 @@
 							}
 						} )
 
-						// 3번 슬라이드 이닛 ############## 날짜별 인덱스 수동 삽입 ###############
+						// 3번 슬라이드 초기화
 						$('#slider03').slick('setPosition');
-						$('#slider03').slick('slickGoTo', 1 );
+						$('#slider03').slick('slickGoTo', 0 );
 
 
-						// 1번 슬라이드 텍스트 날짜별 클래스 수동 삽입
+						// 1번 슬라이드 텍스트 삽입
 						function insertDayText (){
 							var result = $('.slide__container02').attr('class').split('day', 2)[1]-1;
 							var head = [ 'FLEECE', 'READY FOR NATURE', 'WINTER JACKET', 'TRIPLE BLACK', 'CLASSIC ICONS', 'INNOVATION' ];
