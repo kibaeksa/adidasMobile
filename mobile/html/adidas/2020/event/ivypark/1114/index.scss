@@ -35,52 +35,40 @@ html,body{
 	div,img, button{
 		outline: unset;
 	}
-	.visuals{
+	.visuals__figure {
 		position: relative;
-		$val: auto;
-		@include auto($val);
-		// .button_area_v2{
-		// 	@include center(auto, 7%, 50%, $ctX);
-		// }
 		a{
 			display: inline-block;
 			position: absolute;
-			top: 23.9%;
+			top: 83.5%;
 			left: 30%;
 			width: 40%;
-			height: 2%;
+			height: 7%;
 			z-index: 2;
 			// background: steelblue;
 			// opacity: 0.4;
 		}
 	}
+
+	.sect_video {
+		position: relative;
+
+		>video {
+			display: block;
+			width: 100%;
+		}
+
+		>img {
+			display: block;
+			width: 100%;
+		}
+
+		.btn-play {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			z-index: 3;
+		}
+	}
 }
-
-
-// @media screen and (min-width: 414px) {
-// 	#ub20{
-// 		.modal-popup-wrapper{
-// 			.popup{
-	
-// 				.popup-header{
-// 					.close_x_btn{
-// 						width: 3rem;
-// 						height: 3rem;
-// 						position: absolute;
-// 						top: 50%;
-// 						right: 15px;
-// 						transform: translate3d(0,365%,0);
-// 						right: 24%;
-						
-// 						&::after,&::before{
-// 							background:#fff;
-// 						}
-// 					}
-// 				}
-	
-// 			}
-	
-// 		}
-// 	}
-
-// }

@@ -20,6 +20,12 @@
 
 
 	<title>아디다스 모바일</title>
+
+	<style>
+       #container {
+           padding-top: 60px !important;
+       }
+   </style>
 </head>
 <body>
 
@@ -31,24 +37,33 @@
 
 			<div id="ivypark">
 				<link rel="stylesheet" type="text/css" href="/css/slick.css"/>
-				<main role="main">
-					<div class="visuals">
-						<div class="visuals__figure">
-							<img src="/images/adidas/2020/event/ivypark/1114/1114_a_IVY-PARK_MO.jpg" alt="">
-						</div>
-						<a href="https://m.adidas.co.kr/MO/Member/memJoin.action?SS_TC_CD=" campaign-label="가입하기"></a>
-					</div>
-				</main>
+			
+				<div class="visuals__figure">
+					<img src="/images/adidas/2020/event/ivypark/1114/main_img.jpg" alt="">
+					<a href="https://m.adidas.co.kr/MO/Member/memJoin.action?SS_TC_CD=" campaign-label="가입하기"></a>
+				</div>
+
+				<div class="sect_video">
+					<!-- <video id="video" poster="/images/adidas/2020/event/ivypark/1114/video_poster.jpg" loop muted autoplay playsinline>
+						<source src="https://image.adidas.co.kr/upload/design_temp/video/2020/a/athletics/0221/03.mp4"
+						type="video/mp4">
+					</video> -->
+					<img src="/images/adidas/2020/event/ivypark/1114/video_poster.jpg" alt="">
+					<a href="#;" class="btn-play" onclick="openModalVideoViewer('aPjgZ0tLd5I')">
+						<img src="/images/adidas/2020/event/athletics/play.png" alt="">
+					</a>
+				</div>
+				
+				<div class="visuals__figure">
+					<img src="/images/adidas/2020/event/ivypark/1114/cont_img.jpg" alt="">
+				</div>
 			</div>
 			<!-- //stylepic -->
 			<script type="text/javascript" src="/designjs/adidas/common.js"></script>
 			<script type="text/javascript" src="/designjs/common/slick.min.js"></script>
 
 			<script type="text/javascript">
-				// preventDefault
-				$('#stylepick .videos').click(function(e){
-					$(this).attr("href") === "#" && e.preventDefault();
-				})
+				
 			</script>
 		</div>
 		<!-- //container product_list -->
