@@ -85,7 +85,7 @@ html,body{
 						&.slick-active{
 							height: 7px;
 							&.purple{
-								background: #8a18f8;
+								background: #1885bc;
 							}
 							&.orange{
 								background: #d9993f;
@@ -133,22 +133,23 @@ html,body{
 					background: #d9993f;
 				}
 				&.purple{
-					background: #8a18f8;
+					background: #1885bc;
 				}
 			}
 		}
 	}
-	@for $i from 1 through 3 {
+	@for $i from 1 through 4 {
 		.bg0#{$i} {
 			background: url('/images/adidas/2020/event/originals/stylepic/1111/bg0#{$i}.jpg') no-repeat;
 			background-position: 0 30px;
 			background-size: 100% 100%;
 		}
-		.bg03{
+		.bg03,
+		.bg04 {
 			background-position: top;
 		}
 	}
-	#slider02, #slider03 {
+	#slider2, #slider3 {
 		.slick-dots{
 			display: none !important;
 		}
@@ -209,7 +210,7 @@ html,body{
 							font-size: 0;
 							img{
 								display: inline-block;
-								width: 50%;
+								width: 100%;
 							}
 						}
 					}
@@ -259,14 +260,15 @@ html,body{
 				float: left;
 			}
 		}
-		#slider05{
+		#slider5,
+		#slider10{
 			.slick-dots{
 				text-align: center;
 				padding: 1.5rem 0;
 				li{
 					display: inline-block;
 					width: 11%;
-					background: #953a1c;
+					background: rgba(0, 0, 0, 0.4);
 					margin-right: 8px;
 					height: 3px;
 					vertical-align: bottom;
