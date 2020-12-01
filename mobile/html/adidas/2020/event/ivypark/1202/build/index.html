@@ -1,4 +1,38 @@
-<div id="container">
+ <!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src="/data/eventRouter.js"></script>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+	<meta name="format-detection" content="telephone=no">
+	<meta http-equiv="x-rim-auto-match" content="none">
+
+	<link href="/css/adidas/style.css" type="text/css" rel="stylesheet" />
+	<link href="/css/adidas/fonts.css" type="text/css" rel="stylesheet" />
+
+
+    <script type="text/javascript" src="/designjs/common/jquery-1.12.0.min.js"></script>
+    <script type="text/javascript" src="/designjs/common/swipe.js"></script>
+	<script type="text/javascript" src="/designjs/common/owl.carousel.min.js"></script>
+	<script type="text/javascript" src="/designjs/common/modalPopup.min.js"></script>
+	<script type="text/javascript" src="/designjs/common/zoomImage.js"></script>
+
+	<title>아디다스 모바일</title>
+
+	<style>
+		#container {
+			padding-top: 60px !important;
+		}
+   	</style>
+</head>
+<body>
+
+	<div id="wrap">
+		<header include-html="/html/adidas/inc/header_.html"></header>
+
+
+		<div id="container">
 <style type="text/css">@media screen and (max-width: 320px){html{font-size:10px}}@media screen and (min-width: 800px){html{font-size:12px}}.pseudo-element{content:'';display:block}html,body{height:100%}#ivypark .button_area_v2 a{font-size:1rem;font-weight:normal;height:36px;line-height:34px;letter-spacing:1px;padding:0 1.5rem}#ivypark .button_area_v2 a span.arrow{margin-left:30px;width:25px}#ivypark .button_area_v2 a span.arrow:after{width:8px}#ivypark .button_area_v2 a span.arrow:before{width:8px}#ivypark img{width:100%}#ivypark h1,#ivypark p,#ivypark span{letter-spacing:0;white-space:nowrap}#ivypark div,#ivypark img,#ivypark button{outline:unset}#ivypark .visuals{position:relative;height:auto}#ivypark .visuals div[class*="figure"] img,#ivypark .visuals div[class*="figure"] video{width:100%}#ivypark .visuals .button_area_v2{position:absolute;top:auto;bottom:7%;left:50%;transform:translateX(-50%)}
 </style>
 
@@ -36,3 +70,41 @@
 			</script>
 		</div>
 		<!-- //container product_list -->
+
+		<footer include-html="/html/adidas/inc/footer_.html"></footer>
+
+	</div>
+
+	<script type="text/javascript" src="/designjs/adidas/common.js"></script>
+	<script type="text/javascript">
+
+		var openPopInStock;
+		(function($){
+
+			openPopInStock = function(){
+				$('#instock-notification-popup').addClass('open');
+			};
+
+			$('.view_type_btn a').bind('click',function(){
+				if($(this).hasClass('on')){
+					return;
+				}
+
+				if($(this).hasClass('box_type')){
+					$('.products_list').removeClass('list_type')
+				}else{
+					$('.products_list').addClass('list_type');
+				}
+
+				$('.view_type_btn a').removeClass('on');
+				$(this).addClass('on');
+			});
+
+		})(jQuery);
+
+	</script>
+	<script type="text/javascript" src="/designjs/common/includeHTML.js"></script>
+
+</body>
+
+</html>
