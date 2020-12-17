@@ -1,0 +1,156 @@
+ <!DOCTYPE html>
+ <html>
+
+ <head>
+ 	<meta charset="UTF-8">
+ 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+ 	<meta name="format-detection" content="telephone=no">
+ 	<meta http-equiv="x-rim-auto-match" content="none">
+
+ 	<link href="/css/adidas/style.css" type="text/css" rel="stylesheet" />
+ 	<link href="/css/adidas/fonts.css" type="text/css" rel="stylesheet" />
+
+ 	<script type="text/javascript" src="/designjs/common/jquery-1.12.0.min.js"></script>
+ 	<script type="text/javascript" src="/designjs/common/swipe.js"></script>
+ 	<script type="text/javascript" src="/designjs/common/owl.carousel.min.js"></script>
+ 	<script type="text/javascript" src="/designjs/common/modalPopup.min.js"></script>
+ 	<script type="text/javascript" src="/designjs/common/zoomImage.js"></script>
+
+ 	<title>아디다스 모바일</title>
+
+ 	<style>
+ 		#container {
+ 			padding-top: 60px !important;
+ 		}
+ 	</style>
+ </head>
+
+ <body>
+ 	<div id="wrap">
+ 		<header include-html="/html/adidas/inc/header_.html"></header>
+
+		<!-- 201228 이벤트 현황 신규 페이지 -->
+		<div id="container" class="mypage">
+			<div id="location">
+				<span><a href="#">HOME</a></span>
+				<span><a href="#">마이페이지</a></span>
+				<span>이벤트 현황</span>
+			</div>
+			
+			<p class="desc" style="padding:20px 15px; text-align:center;">회원님께서 참여하신 이벤트와 당첨내역을 확인 하실 수 있습니다.</p>
+
+			<div class="event_select">
+				<div class="sel_boxtype sel_design">
+					<select name="event_stat" id="event_stat">
+						<option value="1" selected="">전체</option>
+						<option value="2">진행중</option>
+						<option value="3">종료</option>
+					</select>
+					<a href="#" class="toggle_arw"><span>전체</span></a>
+				</div>
+			</div>
+
+			<div class="event_list">
+				<ul>
+					<li class="event_item">
+						<table>
+							<tr class="event_table_head">
+								<th>이벤트명</th>
+								<td>YEEZY BOOST 700 V2 _Raffle</td>
+							</tr>
+							<tr>
+								<th>상태</th>
+								<td>진행중</td>
+							</tr>
+							<tr>
+								<th>응모일</th>
+								<td>2020-11-04</td>
+							</tr>
+							<tr>
+								<th>응모기간</th>
+								<td>2020-10-25 ~ 2020-11-02</td>
+							</tr>
+							<tr>
+								<th>당첨자 발표</th>
+								<td>2020-11-05</td>
+							</tr>
+							<tr>
+								<th>당첨 여부</th>
+								<td>미당첨</td>
+							</tr>
+						</table>
+					</li>
+					<li class="event_item">
+						<table>
+							<tr class="event_table_head">
+								<th>이벤트명</th>
+								<td>래플 이지부스트</td>
+							</tr>
+							<tr>
+								<th>상태</th>
+								<td>종료</td>
+							</tr>
+							<tr>
+								<th>응모일</th>
+								<td>2020-10-28</td>
+							</tr>
+							<tr>
+								<th>응모기간</th>
+								<td>2020-10-20 ~ 2020-10-25</td>
+							</tr>
+							<tr>
+								<th>당첨자 발표</th>
+								<td>2020-10-30</td>
+							</tr>
+							<tr>
+								<th>당첨 여부</th>
+								<td><a href="" class="event_win">당첨</a></td>
+							</tr>
+						</table>
+					</li>
+				</ul>
+			</div>
+
+			<div class="paging" style="padding-top:20px;">
+				<div>
+					<a data-icon="" class="prev icons disable" href="#"></a>
+					<a class="on" href="#">1</a>
+					<a href="#">2</a>
+					<a href="#">3</a>
+					<a href="#">4</a>
+					<a href="#">5</a>
+					<a data-icon="" class="next icons" href="#"></a>
+				</div>
+			</div>
+
+			<div class="go_top">
+				<a href="#">BACK TO TOP</a>
+			</div>
+		</div>
+		<!-- // 201228 이벤트 현황 신규 페이지 -->
+		<!-- // container eventlist -->
+
+		<footer include-html="/html/adidas/inc/footer_.html"></footer>
+	</div>
+	
+	<script type="text/javascript" src="/designjs/adidas/common.js"></script>
+	<script type="text/javascript" src="/designjs/common/includeHTML.js"></script>
+	<script type="text/javascript">
+		(function($){
+
+			$('.point_tb .toggle_arw').bind('click',function(){
+
+				if($(this).hasClass('open')){
+					$(this).removeClass('open');
+				}else{
+					$(this).addClass('open');
+				}
+			});
+
+		})(jQuery);
+
+	</script>
+
+</body>
+
+</html>
