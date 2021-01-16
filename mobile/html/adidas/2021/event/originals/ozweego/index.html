@@ -250,7 +250,7 @@
 										</section>
 								</section>
 
-
+								<!-- oz start -->
 								<section class="contents__container oz">
 										<section class="video01">
 												<img src="/images/adidas/2021/event/originals/ozweego/oz/oz_video01.jpg" alt="">
@@ -453,37 +453,34 @@
 												<img src="/images/adidas/2021/event/originals/ozweego/oz/oz_outro.jpg" alt="">
 										</section>
 								</section>
+								<!-- oz end -->
 						</section>
 				</main>
-
-
 
 		</div>
 			<!-- //ozweego -->
 			<script type="text/javascript" src="/designjs/common/slick.min.js"></script>
 			<script type="text/javascript">
 				$(document).ready(function(){
-
-					var rolling = ( function(){
-						var mainImg = $('.visuals__figure img');
+					// rolling
+					var rolling = (function(){
+						var imgs = $('.visuals__figure img');
 						var index = 0;
 						setInterval( function() {
-							if ( index == 1 ) {
-								mainImg.removeClass('on').eq( index ).addClass('on');
-								index = 0;
-							} else {
-								mainImg.removeClass('on').eq( index ).addClass('on');
-								index++;
-								// console.log(index);
-							}
+							function switcher(set){ imgs.removeClass('on').eq(index).addClass('on'); set; }
+							index==1 ? switcher(index=0):switcher(index++);
 						}, 3700 );
-					} )();
+					})();
+
+					// tab
 					$('.visuals__tab a').click(function(){
 						var index = $(this).index();
-						console.log(index);
 						$('.contents .contents__container').removeClass('on').eq(index-1).addClass('on');
-					})
-					// // preventDefault
+						function bg(color){ $('.contents').css('background',color) };
+						index==1 ? bg('#cae017'):bg('#ccbfae');			
+					});
+
+					// preventDefault
 					$('#ozweego .prevent').click(function(e){
 						$(this).attr("href") === "#" && e.preventDefault();
 					})

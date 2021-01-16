@@ -3,7 +3,7 @@
 
 #ozweego{
 	position: relative;
-	a{
+	button, div, a{
 		outline: none;
 	}
 	.button_area_v2 {
@@ -40,7 +40,6 @@
 				background: url('/images/adidas/2021/event/originals/ozweego/celox/bg0#{$i}.jpg') no-repeat;
 				background-position: top;
 				background-size: 100% 100%;
-	
 			}
 		}
 	}
@@ -64,7 +63,7 @@
 				@include center(0, auto, 0, none);
 				z-index: 1;
 				opacity: 0;
-				transition: all 0.2s ease-in;
+				transition: all 0.5s ease-in;
 				&.on{
 					opacity: 1;
 				}
@@ -75,6 +74,7 @@
 	.contents{
 		width: 100%;
 		padding-top: 839%;
+		background: #cae017;
 		@media screen and (device-width: 320px) {
 			padding-top: 865%;
 		}
@@ -219,6 +219,7 @@
 						}
 					}
 					p{
+						text-align: left;
 						width: 75%;
 						margin: 0 auto 1rem;
 						font: 500 10px/17px $noto;
