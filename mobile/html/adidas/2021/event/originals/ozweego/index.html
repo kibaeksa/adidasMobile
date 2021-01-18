@@ -495,6 +495,14 @@
 						$('.contents .contents__container').removeClass('on').eq(index-1).addClass('on');
 						function bg(color){ $('.contents').css('background',color) };
 						index==1 ? bg('#cae017'):bg('#ccbfae');			
+						if( index == 2 ) {
+							console.log(index);
+							$('.contents').addClass('padd');
+						} else {
+							console.log(index);
+
+							$('.contents').removeClass('padd');
+						}
 					});
 
 					// preventDefault
