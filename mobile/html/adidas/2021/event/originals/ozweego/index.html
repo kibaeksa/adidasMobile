@@ -478,7 +478,13 @@
 							var targetTop = $('.scroll').offset().top-70;
 							// console.log(targetTop);
 							if(targetTop <= thisScroll) {
-								$('#ozweego .tabs').addClass('fixed');
+								if($('#header').hasClass('hide')) {
+									$('#ozweego .tabs').addClass('fixed');
+									$('#ozweego .tabs').css('top',4+'%');
+								}else{
+									$('#ozweego .tabs').addClass('fixed');
+									$('#ozweego .tabs').css('top',11+'%');
+								}
 							} else {
 								$('#ozweego .tabs').removeClass('fixed');
 							}
