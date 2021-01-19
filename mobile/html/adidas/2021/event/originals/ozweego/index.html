@@ -46,7 +46,7 @@
 									<a href="#" style="position: absolute;top:5%;left:51%;width:33%;height:87%" class="prevent"></a>
 							</section>
 						</section>
-						<section class="contents scroll">
+						<section class="contents scroll sec">
 								<section class="contents__container celox on">
 										<section class="video01">
 												<img src="/images/adidas/2021/event/originals/ozweego/celox/celox_video01.jpg" alt="">
@@ -463,6 +463,11 @@
 			<!-- //ozweego -->
 			<script type="text/javascript" src="/designjs/common/slick.min.js"></script>
 			<script type="text/javascript">
+
+				function moveTo(sec){
+					var offset = $(".sec").offset();
+					$('html, body').animate({scrollTop : offset.top-20}, 400);
+				}
 				$(document).ready(function(){
 					$(this).scroll(function(){
 						var thisScroll = $(this).scrollTop();
@@ -494,7 +499,8 @@
 						var index = $(this).index();
 						$('.contents .contents__container').removeClass('on').eq(index-1).addClass('on');
 						function bg(color){ $('.contents').css('background',color) };
-						index==1 ? bg('#cae017'):bg('#ccbfae');			
+						index==1 ? bg('#cae017'):bg('#ccbfae');
+						moveTo();		
 						if( index == 2 ) {
 							console.log(index);
 							$('.contents').addClass('padd');
