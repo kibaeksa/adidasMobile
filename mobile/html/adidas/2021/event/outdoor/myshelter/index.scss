@@ -1,0 +1,232 @@
+@import './mobile/css/adidas/scss/common/mixin.scss';
+@import './mobile/css/adidas/scss/common/common.scss';
+
+#myshelter{
+	position: relative;
+	button, div, a{
+		outline: none;
+	}
+	.button_area_v2 {
+		display: inline-block;
+		a {
+			height: 43px;
+			font: 400 10px/43px 'NotoSansKR';
+			letter-spacing: 1px;
+			padding: 0 20px;
+		}
+		>div.gray {
+			a {
+				background: #1b1b1e;
+				color: #fff;
+				&::after{
+					-webkit-box-shadow: inset 0 0 0 1px #1b1b1e;
+					box-shadow: inset 0 0 0 1px #1b1b1e;
+				}
+			}
+		}
+	}
+	.rel{
+		position: relative;
+	}
+	section{
+		position: relative;
+	}
+	img{
+		width: 100%;
+	}
+	span, p{
+		letter-spacing: 0;
+	}
+	@for $i from 1 through 3 {
+		.bg0#{$i} {
+			background: url('/images/adidas/2021/event/outdoor/myshelter/bg0#{$i}.jpg') no-repeat;
+			background-position: top;
+			background-size: 100% 100%;
+		}
+	}
+	// @media screen and (device-width: 320px) {
+	// 	padding-top: 865%;
+	// }
+	main{
+		background: rgb(25,36,44);
+		background: linear-gradient(90deg, rgba(25,36,44,1) 0%, rgba(31,49,73,1) 23%, rgba(46,48,62,1) 53%, rgba(36,32,51,1) 100%);
+	}
+	.visuals{
+		&.on{
+			img{
+				opacity: 1;
+			}
+		}
+		.visuals__text{
+			@include center(10%, auto, 50%, $ctX);
+			width: 85%;
+			white-space: nowrap;
+			text-align: center;
+			p{
+				font: 500 13px/19px $noto;
+				color: #000;
+				margin: 1rem 0 1.5rem 0;
+			}
+		}
+		>img{
+			width: 17%;
+			position: absolute;
+			@include center(auto, 4%, 5%, none);
+			opacity: 0;
+			transition: all 1s ease-in-out;
+			&:last-child{
+				width: 13%;
+				@include center(auto, 5%, auto, none);
+				right: 5%;
+				transition-delay: 0.5s;
+			}
+		}
+	}
+	.sections{
+		&.on{
+			.sections__text{
+				img{
+					opacity: 1;
+				}
+			}
+		}
+		.sections__text{
+			@include center(5%, auto, 50%, $ctX);
+			@include after();
+			width: 90%;
+			>img{
+				width: 28%;
+				float: left;
+				opacity: 0;
+				transition: all 1s ease-in-out;
+			}
+			.button_area_v2{
+				float: right;
+				padding-top: 1rem;
+			}
+		}
+		&.section02{
+			.sections__text{
+				img{
+					width: 20%;
+				}
+			}
+		}
+	}
+	.asides{
+		&.on{
+			img{
+				-webkit-animation: brightness 1.5s;
+				animation: brightness 1.5s;
+				-webkit-animation-delay: 1s;
+				animation-delay: 0.6s;
+			}
+			@-webkit-keyframes brightness {
+				0%, 100%  { -webkit-filter: brightness(none); }
+				50% { -webkit-filter: brightness(10); }
+			}
+		}
+	}
+	.contents{
+		padding: 3.5rem 0 6rem;
+		.contents__text{
+			text-align: center;
+			>img{
+				width: 80%;
+			}
+			>p{
+				font: 500 13px/17px $noto;
+				color: #000;
+				padding: 1rem 0 1.5rem 0;
+				text-align: center;
+			}
+			.button_area_v2{
+				margin: 0 0 4.5rem 0;
+			}
+			&.contents__text02{
+				>div{
+					text-align: center;
+					margin: 0 0 1rem 0;
+					p{
+						display: inline-block;
+						position: relative;
+						font: 700 17px/23px $noto;
+						color: #000;
+						z-index: 1;
+						&::after{
+							content:'';
+							display: block;
+							position: absolute;
+							top: -2px;
+							left: -10px;
+							right:  -10px;
+							bottom: -3px;
+							background: #ffefd4;
+							z-index: -1;
+						}
+					}
+				}
+				>span{
+					margin: 0.3rem 0 0 0;
+					font: 500 12px/17px $noto;
+					color: #000;
+				}
+			}
+		}
+		>div{
+			.contents__inner{
+				padding: 4rem 0;
+				>div{
+					@include after();
+					padding-left: 3rem;
+					span{
+						font: 700 14px/14px $noto;
+						color: #000;
+					}
+					p{
+						font: 500 12px/18px $noto;
+						color: #000;
+						margin: 0.8rem 0 1.5rem 0;
+					}
+					&:last-child{
+						float: right;
+						padding-right: 3rem;
+						text-align: right;
+					}
+				}
+			}
+			&:last-child{
+
+			}
+		}
+	}
+	.modelcuts{
+		text-align: center;
+		padding: 2rem 0;
+		>img{
+			width: 90%;
+		}
+		.modelcuts__inner{
+			p{
+				font: 500 16px/16px $noto;
+				color: #fff;
+				margin: 3rem 0 1rem 0;
+			}
+			img{
+
+			}
+		}
+		&.bg03{
+			.modelcuts__inner{
+				p{
+					margin: 0 0 1.5rem;
+				}
+			}
+		}
+	}
+	.bottoms{
+		.button_area_v2{
+			@include center(63%, auto, 50%, $ctct);
+		}
+	}
+}
