@@ -30,13 +30,13 @@
 		<div id="container">
 			<div id="fos">
 				<link rel="stylesheet" type="text/css" href="/css/slick.css" />
-				<div class="main">
+				<div class="main fos_all">
 					<div class="slider_01">
 						<div class="item"><img src="/images/adidas/2021/event/fos/main_vs1.jpg" alt="메인이미지1" /></div>
 						<div class="item"><img src="/images/adidas/2021/event/fos/main_vs2.jpg" alt="메인이미지2" /></div>
 					</div>
-					<div class="main_slider_txt">
-						<h1>선을 넘나드는 자유</h1>
+					<div class="main_slider_txt ">
+						<h1 class="hideme">선을 넘나드는 자유</h1>
 						<p>
 							과거, 현재, 미래,<br />
 							도심, 트랙, 거리.<br /><br />
@@ -297,6 +297,21 @@
 							});
 						});
 					} )();
+
+					$(document).ready(function() {
+						/* 1 */
+						$(window).scroll( function(){
+							/* 2 */
+							$('.hideme').each( function(i){
+								var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+								var bottom_of_window = $(window).scrollTop() + $(window).height();
+								/* 3 */
+								if( bottom_of_window > bottom_of_object/2 ){
+									$(this).animate({'opacity':'1'},500);
+								}
+							}); 
+						});
+					});					
 				</script>
 		</div>
 		<!-- //container product_list -->
