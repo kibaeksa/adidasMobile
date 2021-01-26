@@ -1,0 +1,264 @@
+@import './mobile/css/adidas/scss/common/mixin.scss';
+@import './mobile/css/adidas/scss/common/common.scss';
+
+.clearfix{
+	clear:both;
+	display:block;
+	content:'';
+}
+a{
+	outline:none;
+}
+button{
+	outline:none;
+}
+
+.button_area_v2 {
+	display: inline-block;
+	a {
+		height: 44px;
+		font: 400 13px/43px 'NotoSansKR';
+		letter-spacing: 1px;
+		padding: 0 20px;
+	}
+	>div.gray {
+		a {
+			background: #1b1b1e;
+			color: #fff;
+			&::after{
+				-webkit-box-shadow: inset 0 0 0 1px #1b1b1e;
+				box-shadow: inset 0 0 0 1px #1b1b1e;
+			}
+		}
+	}
+}
+
+@mixin cont_txt {
+	font:500 1rem/2rem 'NotoSansKR';
+	letter-spacing:1px;
+	text-align:center;
+}
+
+#fos{
+	.main{
+		.slider_01{
+			.slick-slide{
+				>img{
+					width:100%;
+				}
+			}
+		}
+		.main_slider_txt{
+			padding:2.5rem 0;
+			text-align:center;
+			color:#111;
+			h1{
+				font:900 3rem/3rem 'NotoSansKR';
+				letter-spacing:1px;
+			}
+			p{
+				font:500 1rem/1.5rem 'NotoSansKR';
+				letter-spacing:1px;
+				padding:1.6rem 0 1.2rem 0;
+			}
+			strong{
+				padding-bottom:2.3rem;
+				display:block;
+				font:600 1.5rem/1.5rem 'NotoSansKR';
+				letter-spacing:0;				
+				>span{
+					font:600 1.6rem/1.5rem 'NotoSansKR';
+				}
+			}
+		}
+	}
+	.fos_all{
+		position:relative;
+		&.active{
+			.video_bg_wrap{
+				>img{
+					opacity:1;
+				}
+			}
+		}
+		.video_bg_wrap{
+			>img{
+				opacity:0;
+				transition-duration:0.6s;
+				transition-delay:0.3s;
+				transition:all 0.3s;
+			}
+		}
+	}
+	.cont1{
+		.video_bg_wrap{
+			position:relative;
+			>img{
+				width:100%;
+				position:relative;
+			}
+			.video01{
+				// background:url('/images/adidas/2021/event/fos/video01_back.jpg')no-repeat;
+				position:absolute;left:54%;top:55%;
+				transform:translate(-50%, -50%);
+				width:100%;			
+				>img{
+					width:96%;
+				}
+				.video_btn{
+					position:absolute;left:50%;top:50%;
+					transform:translate(-50%, -50%);
+					button{
+						background:url('/images/adidas/2021/event/fos/video_btn.png')no-repeat;
+						width:108px;
+						height:120px;	
+						border:0;
+						background-position:center;
+						background-size:60%;
+						margin:0 auto;
+					}
+				}	
+			}		
+			.video02{
+				position:absolute;left:50%;top:55%;
+				transform:translate(-50%, -50%);
+				width:100%;					
+			}	
+		}
+		.video01_txt{
+			padding:2.5rem 0 3.8rem 0;
+			text-align:center;
+			h2{
+				@include cont_txt;
+				span{
+					font:600 1.2rem/2rem 'NotoSansKR';					
+					letter-spacing:1px;
+				}
+			}
+		}
+	}
+	.cont2{
+		.cont2_style{
+			>img{
+				width:100%;
+			}
+			.txt{
+				padding:2.2rem 0 3.3rem 0;
+				text-align:center;
+				h2{
+					@include cont_txt;	
+					padding-bottom:1.6rem;
+				}
+			}
+		}
+	}
+	.cont3{
+		position:relative;
+		.all_slider{
+			padding:0 0 0.5rem 0;
+			position:relative;
+			.slick-slide{
+				>img{
+					width:75%;
+					margin:0 auto;
+				}
+			}
+		}
+	}
+	.cont3_slider1{
+		padding:2.5rem 0 4.5rem 0;
+		margin-bottom:3.8rem;
+		background:url('/images/adidas/2021/event/fos/slider_bg.jpg')no-repeat;
+		.slider_03{
+			position:relative;
+			margin:4rem 0 0 0;
+		}		
+		.slider_04{
+			position:relative;
+			margin:4rem 0 0 0;
+		}		
+		.slider_06{
+			position:relative;
+			margin:4rem 0 0 0;
+		}		
+		.slider_07{
+			position:relative;
+			margin:4rem 0 0 0;
+		}				
+		.slick-arrow{
+			font-size:0;
+			border:0;
+		}
+
+		.slick-prev{
+			position:absolute;
+			left: 3.5%;
+			top: 44%;
+			background: url('/images/adidas/2021/event/fos/prev.png')center center no-repeat;
+			width: 21px;
+			height: 28px;
+			z-index:3;
+			background-size:70%;
+		}					
+		.slick-next{
+			position:absolute;
+			right: 3.5%;
+			top: 44%;
+			background: url('/images/adidas/2021/event/fos/next.png')center center no-repeat;
+			width: 21px;
+			height: 28px;
+			z-index:3;
+			background-size:70%;
+		}			
+		.slick-dots {
+			position:absolute;left:50%;bottom:-8%;
+			text-align: center;
+			width:100%;
+			display:block;
+			margin-left:-50%;
+		}			
+
+		.slick-dots li {
+			display: inline-block;
+			margin-right: 5px;
+		}
+		.slick-dots li button {
+			width: 13px;
+			height: 13px;
+			background:none;
+			border-radius:50%;
+			border:1px solid #111;
+			padding: 0;
+			text-indent: -9999px;
+		}			
+		.slick-dots li.slick-active button {
+			background:#111;
+		}			
+	}
+	.cont3_slider2{
+		background:url('/images/adidas/2021/event/fos/slider_bg2.jpg')no-repeat;
+		margin-bottom:0;
+	}
+	.cont4{
+		position:relative;
+		.txt{
+			padding:3.3rem 0;
+			text-align:center;
+			color:#111;
+			h3{
+				font:500 1.4rem/2rem 'NotoSansKR';
+				letter-spacing:1px;
+			}
+			p{
+				font:900 2.2rem/3rem 'NotoSansKR';
+				letter-spacing:1px;			
+				padding:1rem 0 2rem 0;
+			}
+		}
+	}
+	.cont5{
+		>img{
+			width:100%;
+		}
+	}
+}
