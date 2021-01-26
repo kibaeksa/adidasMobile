@@ -215,12 +215,16 @@
 
 					$('.slider_01').slick({
 						slidesToShow: 1,
-						slidesToScroll: 1,
-						autoplay: false,
-						autoplaySpeed: 3500,
-						dots: false,
-						infinite: true,
-						arrows:false,						
+                            slidesToScroll: 1,
+                            autoplay: true,
+                            autoplaySpeed: 3500,
+                            dots: false,
+                            infinite: true,
+                            arrows:false,		
+                            infinite: true,
+                            speed: 500,
+                            fade: true,
+                            cssEase: 'linear'  					
 					});
 
 					$('.slider_02').slick({
@@ -311,6 +315,11 @@
 								}
 							}); 
 						});
+						// setTimeout(function(){
+						// 	$('.hideme').clearQueue();
+						
+						// 	$('.hideme').animate({'opacity':'0'},500);
+						// }, 6000)						
 					});					
 				</script>
 		</div>
