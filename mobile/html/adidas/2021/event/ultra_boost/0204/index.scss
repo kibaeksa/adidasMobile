@@ -1,0 +1,205 @@
+@import './mobile/css/adidas/scss/common/mixin.scss';
+@import './mobile/css/adidas/scss/common/common.scss';
+html, body{
+	height: 100%;
+}
+#ultraboost{
+	position: relative;
+
+	button, div, a{
+		outline: none;
+	}
+	.button_area_v2 {
+		display: inline-block;
+		a {
+			height: 43px;
+			font: 400 12px/43px 'NotoSansKR';
+			letter-spacing: 1px;
+			padding: 0 20px;
+		}
+		>div.gray {
+			a {
+				background: #1b1b1e;
+				color: #fff;
+				&::after{
+					-webkit-box-shadow: inset 0 0 0 1px #1b1b1e;
+					box-shadow: inset 0 0 0 1px #1b1b1e;
+				}
+			}
+		}
+	}
+	section{
+		position: relative;
+		background: #fcfe61;
+	}
+	img{
+		width: 100%;
+	}
+	span, p{
+		letter-spacing: 0;
+	}
+	@for $i from 1 through 2 {
+		.bg0#{$i} {
+			background: url('/images/adidas/2021/event/ultra_boost/0204/bg0#{$i}.jpg') no-repeat;
+			background-position: top;
+			background-size: 100% auto;
+		}
+	}
+
+	main{
+		background: rgb(25,36,44);
+	}
+	.visuals{
+		a{
+			position: absolute;
+			top: 32.5%;
+			left: 76.5%;
+			width: 18%;
+			height: 6.5%;
+			text-indent: -9999px;
+			z-index: 1;
+		}
+		.visuals__figure{
+			@include center(70%, auto, 0, $ctY);
+			@include after();
+			img{
+				float: left;
+				width: 50%;
+			}
+		}
+	}
+	.section03{
+		>div{
+			a{
+				position: absolute;
+				top: 36%;
+				left: 41%;
+				width: 18%;
+				height: 28%;
+				text-indent: -9999px;
+				z-index: 1;
+			}
+		}
+	}
+	.slider01__container{
+		padding: 3rem 0 0 0;
+		#slider01{
+			text-align: center;
+			.slick-dots{
+				padding: 1.3rem 0 3rem;
+				li{
+					display: inline-block;
+					width: 7px;
+					height: 7px;
+					border: 1px solid #000;
+					border-radius: 50%;
+					margin-right: 5px;
+					text-indent: -9999px;
+					&.slick-active{
+						background: #000;
+					}
+					&:last-child{
+						margin: 0;
+					}
+					button{
+						background: none;
+						border: 0;
+					}
+				}
+			}
+		}
+	}
+	.slider02__container{
+		#slider02{
+			text-align: center;
+			.slick-list{
+				width: 90%;
+				margin: 0 auto;
+				overflow: hidden;
+			}
+			.item{
+				img{
+					width:95%;
+					margin: 0 auto;
+				}
+			}
+		}
+		.slider__nav02{
+			@include center(50%, auto, 50%, $ctct);
+			@include after();
+			width: 100%;
+			img{
+				width: 50%;
+			}
+			>div{
+				text-align: center;
+			}
+			.prev-button{
+				float: left;
+			}
+			.next-button{
+				float: right;
+				transform: rotate(180deg);
+			}
+		}
+	}
+	.section04{
+		padding: 3rem 0 0 0;
+	}
+	.section05{
+		padding-bottom: 2rem;
+		background: #065178;
+		.section05__figure{
+			position: relative;
+			a{
+				position: absolute;
+				top: 55%;
+				left: 45%;
+				width: 11%;
+				height: 14%;
+				text-indent: -9999px;
+				z-index: 1;
+			}
+		}
+		.bg02{
+			padding: 0 1rem;
+			.inner{
+				position: relative;
+				padding: 0 0 12vh 0;
+				width: 23%;
+				margin: 0 0 1.2rem 0;
+				>div{
+					position: absolute;
+					top: 0;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					video{
+						display: block;
+						top: 0;
+						left: 0;
+						width: 100%;
+						height: 100%;
+						object-fit: cover;
+						transform: none;
+					}
+				}
+			}
+		}
+	}
+	.section06{
+		// padding: 3rem 0 0 0;
+		>div{
+			position: relative;
+			a{
+				position: absolute;
+				top: 61%;
+				left: 44%;
+				width: 11%;
+				height: 14%;
+				text-indent: -9999px;
+				z-index: 1;
+			}
+		}
+	}
+}
