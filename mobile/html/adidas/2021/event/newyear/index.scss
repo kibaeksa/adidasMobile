@@ -1,0 +1,368 @@
+@import './mobile/css/adidas/scss/common/mixin.scss';
+@import './mobile/css/adidas/scss/common/common.scss';
+// html,body{
+// 	height:100%;
+// }
+.not_scroll{
+	overflow: hidden;
+}
+
+#newyear {
+
+	.button_area_v2 {
+		display: inline-block;
+		
+		margin-top: 1.5rem;
+		a {
+			font-size: 0.9rem;
+			font-weight: normal;
+			height: 36px;
+			line-height: 34px;
+			letter-spacing: 1px;
+			padding: 0 1.5rem;
+
+			span.arrow {
+				margin-left: 10px;
+				width: 25px;
+
+				&:after {
+					width: 8px;
+				}
+
+				&:before {
+					width: 8px;
+				}
+			}
+			&::after{
+				transform: translate(2px, 2px) !important;
+			}
+		}
+	}
+
+	.section {
+		position: relative;
+	}
+
+	.sect_visual {
+		.visual_video {
+			video {
+				display: block;
+				width: 100%;
+			}
+		}
+
+		.visual_deco {
+			>img {
+				display: block;
+				width: 100%;
+			}
+		}
+
+		.visual_inner {
+			.visual_box {
+				margin-right: 5%;
+				float: right;
+			}
+
+			.visual_article {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-600px, -50%);
+				z-index: 3;
+
+				h3 {
+					font: 50px/50px 'adinenuPro-black';
+					color: #000;
+					text-transform: uppercase;
+					letter-spacing: 1px;
+				}
+
+				h4 {
+					padding-top: 10px;
+					font: 400 22px/22px 'NotoSansKR';
+					color: #000;
+					letter-spacing: normal;
+				}
+
+				.button_area_v2 {}
+			}
+		}
+	}
+
+	.sect_contents {
+		padding: 0 0 4rem;
+		text-align: center;
+
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+
+		>img {
+			display: block;
+			width: 100%;
+		}
+
+		p {
+			padding-top: 2rem;
+			font: 400 0.9rem/1.7rem 'NotoSansKR';
+			color: #000;
+			letter-spacing: normal;
+			text-align: center;
+
+			&.c_wt {
+				color: #fff;
+			}
+		}
+
+		.button_area_v2 {}
+	}
+
+	.sect_others {
+		padding: 2rem 1.5rem 0;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+
+		.other_box {
+			width: 100%;
+			text-align: center;
+			padding-bottom: 4rem;
+			>img {
+				display: block;
+				width: 100%;
+			}
+
+			p {
+				padding-top: 1.5rem;
+				// height: 120px;
+				font: 400 1.1rem 'NotoSansKR';
+				color: #000;
+				letter-spacing: normal;
+				text-align: center;
+			}
+
+			.button_area_v2 {}
+		}
+	}
+
+	.sect_kakao {
+		a{
+			>img {
+				display: block;
+				width: 100%;
+			}
+		}
+	}
+
+	.sect_event {
+		>img {
+			display: block;
+			width: 100%;
+		}
+		
+			a{
+				display: inline-block;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 50%;
+				height: 100%;
+				// background: red;
+			}
+		
+	}
+
+	.sect_showtime {
+		border: 14px solid #000;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+
+		.showtime_head {
+			padding-top: 4rem;
+
+			>* {
+				text-align: center;
+			}
+
+			h4 {
+				img{
+					display: inline-block;
+					width: 70%;
+				}
+			}
+
+			h5 {
+				padding: 1rem 0;
+				font: 400 1.35rem/1.35rem 'NotoSansKR';
+				color: #000;
+				letter-spacing: 6px;
+			}
+
+			p {
+				img {
+					display: inline-block;
+					width: 40%;
+				}
+			}
+		}
+
+		.showtime_body {
+			ul {
+				overflow: hidden;
+				width: 100%;
+				margin: 55px auto 0;
+				li {
+					padding: 2rem 0.7rem;
+					float: left;
+					width: 50%;
+					text-align: center;
+ 					border-right: 1px solid #ccc;
+					-webkit-box-sizing: border-box;
+					box-sizing: border-box;
+					background: url(/images/adidas/2021/event/newyear/showtime_line_hf.jpg) left top no-repeat;
+					background-size: 100% auto;
+					>* {
+						text-align: center;
+					}
+					
+					img {
+						display: block;
+						width: 100%;
+					}
+					&.st_notice{
+						display: table-cell;
+						vertical-align: middle;
+						p{
+							text-align: center;
+							img{
+								display: inline-block;
+								width: 80%;
+							}
+						}
+					}
+					p {
+						font-family: 'AdihausDIN-Bold',	'NotoSansKR';
+						color: #000;
+						
+						&.st_date {
+							padding-bottom: 1rem;
+							font-size: 1.2rem;
+							font-weight: bold;
+							letter-spacing: 0;
+						}
+
+						&.st_txt1 {
+							padding: 1rem 0 0.1rem;
+							font-size: 1.3rem;
+							line-height: 1.6rem;
+							font-weight: bold;
+
+							span {
+								font-family: 'AdihausDIN-Cond';
+								font-size: 1.6rem;
+								font-weight: bold;
+							}
+						}
+
+						&.st_txt2 {
+							font-size: 1.1rem;
+							line-height: 1.3rem;
+							font-weight: 500;
+
+							span {
+								font-family: 'AdihausDIN-Cond';
+								font-size: 1.3rem;
+								letter-spacing: normal;
+							}
+						}
+					}
+
+					.button_area_v2 {}
+				}
+			}
+		}
+
+		>p {
+			padding-bottom: 50px;
+			font: 600 22px/22px 'NotoSansKR';
+			color: #000;
+			letter-spacing: 4px;
+			text-align: center;
+		}
+	}
+
+	.sect_member {
+		padding: 4rem 0 3rem;
+		text-align: center;
+
+		h4 {
+			text-align: center;
+
+			>img {
+				display: inline-block;
+				width: 100%;
+			}
+		}
+
+		.slider_wrap {
+			margin: 2rem auto 0;
+			width: 70%;
+
+			.slider_cont {
+				width: 100%;
+
+				.slick-list {
+					overflow: visible;
+					.slick-slide {
+						padding: 0 0.5rem;
+
+						a {
+							>img {
+								display: block;
+								width: 100%;
+							}
+						}
+					}
+				}
+			}
+
+			.slick-dots {
+				padding: 1.2rem 0 0 0;
+				text-align: center;
+
+
+				li {
+					display: inline-block;
+					margin: 0 2px;
+
+					button {
+						width: 8px;
+						height: 8px;
+						background: #ccc;
+						border: 0 none;
+						border-radius: 50%;
+						padding: 0;
+						text-indent: -9999px;
+						vertical-align: bottom;
+						// transition: 0;
+					}
+
+					&.slick-active {
+						button {
+							background: #111;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.sect_sale {
+		a{
+			display: block;
+			>img {
+				display: block;
+				width: 100%;
+			}
+		}
+	}
+}
