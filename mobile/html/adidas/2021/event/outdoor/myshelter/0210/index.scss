@@ -1,0 +1,360 @@
+@import './mobile/css/adidas/scss/common/mixin.scss';
+@import './mobile/css/adidas/scss/common/common.scss';
+
+.clearfix{
+	clear:both;
+	display:block;
+	content:'';
+}
+a{
+	outline:none;
+}
+button{
+	outline:none;
+}
+
+.button_area_v2 {
+	display: inline-block;
+	a {
+		height: 44px;
+		font: 400 13px/43px 'NotoSansKR';
+		letter-spacing: 1px;
+		padding: 0 20px;
+	}
+	>div.gray {
+		a {
+			background: #1b1b1e;
+			color: #fff;
+			&::after{
+				-webkit-box-shadow: inset 0 0 0 1px #1b1b1e;
+				box-shadow: inset 0 0 0 1px #1b1b1e;
+			}
+		}
+	}
+}
+
+@mixin cont_txt {
+	font:500 1rem/2rem 'NotoSansKR';
+	letter-spacing:1px;
+	text-align:center;
+}
+
+#shelter_rain {
+	position: relative;
+	background: #000;
+	.main{
+		.slider03{
+			.item{
+				position:relative;
+			}
+			.slick-slide{
+				>img{
+					margin:0 auto;
+					width:100%;
+				}
+			}
+		}
+	}
+
+	.statement{
+		position: relative;
+		padding:2.8rem 0;
+		background:#000f21;
+		.content{
+			text-align:center;
+			h2{
+				font:500 1.1rem/1.7rem 'NotoSansKR';
+				color:#fff;
+				text-align: center;
+				letter-spacing:2px;
+			}
+			p{
+				font:600 1.7rem/2.5rem 'NotoSansKR';
+				color:#fff;
+				text-align: center;
+				letter-spacing:1px;
+				padding:0.8rem 0 1.8rem;
+			}
+		}
+	}
+
+	.video_wrap {
+		position: relative;
+		>img{
+			width:100%;
+			position:relative;
+		}
+		.video_btn{
+			position:absolute;
+			left:50%;
+			top:50%;
+			transform:translate(-50%, -50%);
+			margin:0 auto;
+			button{
+				background:url('/images/adidas/2021/event/outdoor/myshelter/0210/video_btn.png')no-repeat;
+				background-size:60%;
+				background-position:center;
+				width:67px;
+				height:75px;	
+				border:0;
+			}
+		}	
+	}
+
+	.statement2{
+		padding:1.9rem 0;
+		background:#000f21;
+		.content{
+			h3{
+				text-align:center;
+				>img{
+					width:60%;
+					margin:0 auto;
+				}
+			}
+		}
+	}
+
+	.all_slider{
+		position: relative;
+		z-index: 3;
+		padding:4rem 1.5rem 4.1rem 1.5rem;
+		.slick-slide{
+			>img{
+				width:100%;
+			}
+		} 
+		.txt{
+			text-align:center;
+			color:#fff;
+			h3{
+				>img{
+					width:80%;
+					margin:0 auto;
+				}
+			}
+			p{
+				font:400 1.17rem/1.75rem 'NotoSansKR';
+				text-align: center;
+				letter-spacing:1px;		
+				padding:1.8rem 0 2.9rem 0;
+				>span{
+					display:block;
+					padding:0.3rem 0;
+				}		
+			}
+		}
+		.slick-dots {
+			padding:1.5rem 0 0 0;
+			text-align: center;
+		}			
+
+		.slick-dots li {
+			display: inline-block;
+			margin-right: 6px;
+		}
+		.slick-dots li button {
+			width: 11px;
+			height: 11px;
+			background:none;
+			border-radius:50%;
+			border:1px solid #fff;
+			padding: 0;
+			text-indent: -9999px;
+		}			
+	
+		.slick-dots li.slick-active button {
+			background:#fff;
+		}	
+	}
+
+	.all_slider2{
+		position: relative;
+		z-index: 3;
+		padding:4rem 1.5rem 4.1rem 1.5rem;
+		.slick-slide{
+			position:relative;
+			>img{
+				width:120%;
+				margin-left:-10%;
+			}
+		} 
+		.txt{
+			p{
+				padding-top:5em;
+				font:600 1.4rem/2rem 'NotoSansKR';
+				text-align: center;
+				letter-spacing:1px;		
+				color:#fff;
+			}
+		}
+
+		.slick-dots {
+			position:absolute;
+			left:50%;
+			top:81%;
+			transform:translate(-50%,-50%);
+			// padding:1.5rem 0 0 0;
+			text-align: center;
+		}			
+
+		.slick-dots li {
+			display: inline-block;
+			// margin-right: 6px;
+		}
+
+		.slick-dots li button {
+			background:url('/images/adidas/2021/event/outdoor/myshelter/0210/active_off.png')no-repeat;
+			background-size:60%;
+			background-position:center;
+			width:28px;
+			height:44px;	
+			border:0;
+			padding: 0;
+			text-indent: -9999px;
+		}			
+	
+		.slick-dots li.slick-active button {
+			background:url('/images/adidas/2021/event/outdoor/myshelter/0210/active_on.png')no-repeat;			
+			background-size:60%;
+			background-position:center;			
+		}
+		.slick-dots li.on button {
+			background:url('/images/adidas/2021/event/outdoor/myshelter/0210/active_on.png')no-repeat;			
+			background-size:60%;
+			background-position:center;			
+		}						
+	}
+
+	.slider02_02{
+		.slick-slide{
+			position:relative;
+			>img{
+				width:110%;
+				margin-left:-10%;
+			}
+		} 		
+		.slick-dots li button {
+			background:url('/images/adidas/2021/event/outdoor/myshelter/0210/active_off1.png')no-repeat;
+			background-size:60%;
+			background-position:center;
+			width:28px;
+			height:44px;	
+			border:0;
+			padding: 0;
+			text-indent: -9999px;
+		}			
+	
+		.slick-dots li.slick-active button {
+			background:url('/images/adidas/2021/event/outdoor/myshelter/0210/active_on1.png')no-repeat;			
+			background-size:60%;
+			background-position:center;			
+		}		
+		.slick-dots li.on button {
+			background:url('/images/adidas/2021/event/outdoor/myshelter/0210/active_on1.png')no-repeat;			
+			background-size:60%;
+			background-position:center;			
+		}			
+	}
+
+	.my_slider01{
+		background:url('/images/adidas/2021/event/outdoor/myshelter/0210/slider_01_bg.jpg')no-repeat;
+		background-size:100% 100%;
+	}
+
+	.my_slider02{
+		background:url('/images/adidas/2021/event/outdoor/myshelter/0210/slider_03_bg.jpg')no-repeat;
+		background-size:100% 100%;
+	}	
+
+	.my_slider01_02{
+		background:url('/images/adidas/2021/event/outdoor/myshelter/0210/slider_02_bg.jpg')no-repeat;
+		background-size:100% 100%;
+	}
+
+	.my_slider02_02{
+		background:url('/images/adidas/2021/event/outdoor/myshelter/0210/slider_04_bg.jpg')no-repeat;
+		background-size:100% 100%;
+	}	
+
+	
+	
+	.statement3{
+		position: relative;
+		z-index: 3;
+		background:url('/images/adidas/2021/event/outdoor/myshelter/0210/statement_bg.jpg')no-repeat 100%;
+		background-size:cover;
+		background-position:center;		
+		padding:3.1rem 0 3rem 0;
+		.content{
+			text-align:center;
+			h2{
+				font:500 1.3rem/1.5rem 'NotoSansKR';
+				color:#fff;
+				text-align: center;
+				letter-spacing:4px;
+			}				
+			p{
+				padding:0.8rem 0 1.6rem 0;
+				>img{
+					width:75%;
+					margin:0 auto;
+				}
+			}
+		}
+	}	
+	.rain_video02{
+		background:#000f21;
+		padding:2.5rem 0;
+		.video_wrap {
+			position: relative;
+			padding:0 1.5rem;
+			ul{
+				li{
+					width:100%;
+					display:block;
+					position:relative;
+					padding-bottom:1.6rem;
+					>img{
+						width:100%;
+					}
+				}
+
+			}
+			.video_btn{
+				position:absolute;
+				left:50%;
+				top:50%;
+				transform:translate(-50%, -50%);
+				margin:0 auto;
+				button{
+					background:url('/images/adidas/2021/event/outdoor/myshelter/0210/video_btn.png')no-repeat;
+					background-size:60%;
+					background-position:center;
+					width:67px;
+					height:75px;	
+					border:0;
+				}
+			}	
+		}
+	}
+	.statement4{
+		position: relative;
+		z-index: 3;
+		background:url('/images/adidas/2021/event/outdoor/myshelter/0210/statement_bg2.jpg')no-repeat 100%;
+		background-size:cover;
+		background-position:center;	
+		padding:4.4rem 0 3.3rem 0;
+		.content{
+			text-align:center;
+			h4{
+				>img{
+					width:75%;
+					margin:0 auto;
+				}
+				padding:0 0 1.6rem 0;
+			}				
+		}		
+	}
+
+}
