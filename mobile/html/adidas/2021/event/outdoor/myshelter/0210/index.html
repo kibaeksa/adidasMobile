@@ -273,12 +273,19 @@
 
 						// On before slide change
 						$('.slider01_02').on('beforeChange', function(event, slick, currentSlide, nextSlide){
-							var index = nextSlide;
-							if( currentSlide < nextSlide ) {
-								$('.slider01_02 .slick-dots li').eq(nextSlide-1).addClass('on');
-							} else{
-								$('.slider01_02 .slick-dots li').eq(nextSlide).removeClass('on');
-							}
+							( function mod() {
+								console.log(nextSlide);
+								if( nextSlide == 0 || nextSlide == 1 ) {
+								$('.slider01_02 .slick-dots li').removeClass('on');
+								}
+								// 생성자 함수
+								function Constructor( i ){
+								$('.slider01_02 .slick-dots li').eq(i).addClass('on');
+								}
+								for( var i=0; i < nextSlide;  i++ ){
+								new Constructor( i );
+								}
+							}() )
 						});
 
 						$('.all_slider .slider03').slick({
@@ -303,14 +310,60 @@
   							centerPadding: '30px',						
 						});								
 
+						// // On before slide change
+						// $('.slider02_02').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+						// 	var index = nextSlide;
+						// 	if( currentSlide < nextSlide ) {
+						// 		$('.slider02_02 .slick-dots li').eq(nextSlide-1).addClass('on');
+						// 	} else{
+						// 		$('.slider02_02 .slick-dots li').eq(nextSlide).removeClass('on');
+						// 	}
+
+						// 	// if( currentSlide <= nextSlide ) {
+						// 	// 	$('.slider02_02 .slick-dots li').eq(nextSlide-1).addClass('on');
+						// 	// } else{
+						// 	// 	$('.slider02_02 .slick-dots li').eq(nextSlide).removeClass('on');
+						// 	// }if( 1 <= nextSlide ){
+						// 	// 	$('.slider02_02 .slick-dots li').eq(nextSlide).addClass('on');
+						// 	// }else{
+						// 	// 	$('.slider02_02 .slick-dots li').eq(nextSlide).removeClass('on');
+						// 	// }if( 2 <= nextSlide ){
+						// 	// 	$('.slider02_02 .slick-dots li').eq(nextSlide).addClass('on');
+						// 	// }else{
+						// 	// 	$('.slider02_02 .slick-dots li').eq(nextSlide).removeClass('on');
+						// 	// }if( 3 <= nextSlide ){
+						// 	// 	$('.slider02_02 .slick-dots li').eq(nextSlide).addClass('on');
+						// 	// }else{
+						// 	// 	$('.slider02_02 .slick-dots li').eq(nextSlide).removeClass('on');
+						// 	// }
+
+						// 	if( nextSlide == 2){
+						// 		$('.my_slider02_02 .txt').addClass('on');
+						// 		$('.my_slider02_02 .txt2').addClass('on');
+						// 	}else{
+						// 		$('.my_slider02_02 .txt').removeClass('on');
+						// 		$('.my_slider02_02 .txt2').removeClass('on');
+						// 	}if( nextSlide == 3){
+						// 		$('.my_slider02_02 .txt').addClass('on');
+						// 		$('.my_slider02_02 .txt2').addClass('on');
+						// 	}
+							
+						// });				
 						// On before slide change
 						$('.slider02_02').on('beforeChange', function(event, slick, currentSlide, nextSlide){
-							var index = nextSlide;
-							if( currentSlide < nextSlide ) {
-								$('.slider02_02 .slick-dots li').eq(nextSlide-1).addClass('on');
-							} else{
-								$('.slider02_02 .slick-dots li').eq(nextSlide).removeClass('on');
-							}
+							( function mod() {
+								console.log(nextSlide);
+								if( nextSlide == 0 || nextSlide == 1 ) {
+								$('.slider02_02 .slick-dots li').removeClass('on');
+								}
+								// 생성자 함수
+								function Constructor( i ){
+								$('.slider02_02 .slick-dots li').eq(i).addClass('on');
+								}
+								for( var i=0; i < nextSlide;  i++ ){
+								new Constructor( i );
+								}
+							}() )
 
 							if( nextSlide == 2){
 								$('.my_slider02_02 .txt').addClass('on');
@@ -321,9 +374,8 @@
 							}if( nextSlide == 3){
 								$('.my_slider02_02 .txt').addClass('on');
 								$('.my_slider02_02 .txt2').addClass('on');
-							}
-							
-						});						
+							}							
+						});								
 				
 					});	
 				</script>
