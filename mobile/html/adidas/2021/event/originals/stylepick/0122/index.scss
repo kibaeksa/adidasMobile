@@ -52,7 +52,7 @@
 
 	.sect_visualtext {
 		padding: 2rem 0 3rem;
-		background: #000;
+		background: #5d0508;
 		text-align: center;
 
 		>* {
@@ -101,11 +101,11 @@
 		display: block;
 		height: auto;
 		width: 100%;
-		background: #eb5827;
+		background: #3d0205;
 		.navi {
 			overflow: hidden;
 			width: calc(100% + 2px);
-			background: #eb5827;
+			background: #3d0205;
 			margin-left: -1px;
 			&.fixed {
 				position: fixed;
@@ -123,7 +123,9 @@
 				cursor: pointer;
 				&.on {
 					.btn {
-						background: #000;
+						background: #ffa951;
+						color: #3d0205;
+						font-weight: 600;
 					}
 				}
 				.btn {
@@ -284,11 +286,43 @@
 			}
 		}
 
+		.slider_number {
+			overflow: hidden;
+			margin: 0 auto;
+			padding: 1.5rem 0 2rem;
+			text-align: center;
+			width: auto;
+
+			p {
+				font: 1.1rem 'AdihausDIN-Cond';
+				color: #fff;
+				letter-spacing: 2px;
+				text-align: center;
+
+				span.crt_number {
+					font: inherit;
+					color: inherit;
+					letter-spacing: inherit;
+				}
+			}
+		}
+
 		.slider_bottom {
 			text-align: center;
 			padding-bottom: 5rem;
 
 			.button_area_v2 {}
+		}
+	}
+
+	.sect_kakao {
+		z-index: 2;
+		a{
+			display: block;
+			img {
+				display: block;
+				width: 100%;
+			}
 		}
 	}
 }
