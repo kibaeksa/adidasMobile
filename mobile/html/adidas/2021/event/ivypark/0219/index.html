@@ -1,0 +1,179 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src="/data/eventRouter.js"></script>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+	<meta name="format-detection" content="telephone=no">
+	<meta http-equiv="x-rim-auto-match" content="none">
+
+	<link href="/css/adidas/style.css" type="text/css" rel="stylesheet" />
+	<link href="/css/adidas/fonts.css" type="text/css" rel="stylesheet" />
+
+
+    <script type="text/javascript" src="/designjs/common/jquery-1.12.0.min.js"></script>
+    <script type="text/javascript" src="/designjs/common/swipe.js"></script>
+	<script type="text/javascript" src="/designjs/common/owl.carousel.min.js"></script>
+	<script type="text/javascript" src="/designjs/common/modalPopup.min.js"></script>
+	<script type="text/javascript" src="/designjs/common/zoomImage.js"></script>
+
+
+	<title>아디다스 모바일</title>
+</head>
+<body>
+
+	<div id="wrap">
+		<header include-html="/html/adidas/inc/header_.html"></header>
+
+
+		<div id="container">
+			<link rel="stylesheet" type="text/css" href="/css/slick.css" />
+			<div id="ivypark">
+				<main role="main">
+					<section class="visuals">
+						<div class="visuals__figure">
+							<img src="/images/adidas/2021/event/ivypark/0219/main.jpg" alt="">
+							<div class="btn_default">
+								<a href="https://m.adidas.co.kr/MO/Promotion/landingPage.action?NFN_ST=Y&pageNo=1579&term=1" campaign-label="구매하기">
+									구매하기
+								</a>
+							</div>
+						</div>
+					</section>
+					<section class="models">
+						<img src="/images/adidas/2021/event/ivypark/0210/modelcut.jpg" alt="">
+					</section>
+					<section class="carousel__container carousel01">
+						<h3 class="heads">ADIDAS EXCLUSIVES</h3>
+						<div id="slider01" class="slider">
+							<div class="item">
+								<img src="/images/adidas/2021/event/ivypark/0210/slide01_01.jpg" alt="">
+							</div>
+							<div class="item">
+								<img src="/images/adidas/2021/event/ivypark/0210/slide01_02.jpg" alt="">
+							</div>
+							<div class="item">
+								<img src="/images/adidas/2021/event/ivypark/0210/slide01_03.jpg" alt="">
+							</div>
+							<div class="item">
+								<img src="/images/adidas/2021/event/ivypark/0210/slide01_04.jpg" alt="">
+							</div>
+							<div class="item">
+								<img src="/images/adidas/2021/event/ivypark/0210/slide01_05.jpg" alt="">
+							</div>
+						</div>
+					</section>
+					<section class="events">
+						<div>
+							<h4 class="heads">
+								FOLLOW US TO STAY IN<br>
+								THE KNOW
+							</h4>
+							<p>
+								아래 SNS 채널을 통해 더욱 빠르고 다양한<br>
+								아디다스 오리지널스 그리고 IVY PARK의 소식을 경험해보세요.
+							</p>
+							<div>
+								<img src="/images/adidas/2021/event/ivypark/0210/insta.jpg" alt="">
+								<a href="https://www.instagram.com/weareivypark/" campaign-label="아이비파크인스타"></a>
+								<a href="https://www.instagram.com/originals_kr/" campaign-label="오리지날스인스타"></a>
+							</div>
+						</div>
+					</section>
+					<section class="carousel__container carousel02">
+						<div id="slider02" class="slider">
+							<div class="item">
+								<img src="/images/adidas/2021/event/ivypark/0210/slide02_01.jpg" alt="">
+							</div>
+							<div class="item">
+								<img src="/images/adidas/2021/event/ivypark/0210/slide02_02.jpg" alt="">
+							</div>
+							<div class="item">
+								<img src="/images/adidas/2021/event/ivypark/0210/slide02_03.jpg" alt="">
+							</div>
+							<div class="item">
+								<img src="/images/adidas/2021/event/ivypark/0210/slide02_04.jpg" alt="">
+							</div>
+							<div class="item">
+								<img src="/images/adidas/2021/event/ivypark/0210/slide02_05.jpg" alt="">
+							</div>
+						</div>
+					</section>
+					<section class="bottoms">
+						<div class="bottoms__figure">
+							<img src="/images/adidas/2021/event/ivypark/0210/bottoms.jpg" alt="">
+						</div>
+						<div class="btn_default">
+							<a href="https://m.adidas.co.kr/MO/Event/pnEvtView.action?pn=NEWYEAR&year=" campaign-label="멤버 한정 행사보기">
+								멤버 한정 행사보기
+							</a>
+						</div>
+					</section>
+
+				</main>
+			</div>
+			<!-- //ivypark -->
+			<script type="text/javascript" src="/designjs/common/slick.min.js"></script>
+			<script type="text/javascript">
+				$(document).ready(function(){
+					
+					function Comp( elem, prev, next ) {
+						this.mod = function( // 모듈
+								slidesToShow, infinite, auto, centerMode, dots, focusOnSelect, asNavFor, swipe, fade
+							) {
+							elem.slick({
+								cssEase: 'linear',
+								slidesToScroll: 1,
+								autoplaySpeed: 2800,
+								arrows: true,
+								prevArrow: prev,
+								nextArrow: next, 
+								slidesToShow: slidesToShow, // 커스텀 시작
+								infinite: infinite,
+								autoplay: auto,
+								centerMode: centerMode,
+								dots: dots,
+								focusOnSelect: focusOnSelect,
+								asNavFor: asNavFor,
+								swipe: swipe,
+								fade: fade,
+							});
+						}
+						// number, infinite, auto, centerMode, dots, focusOnSelect, asNavFor, swipe, fade,
+						if ( elem.hasClass('sub-slide01') ) { // 두번째 슬라이드
+							this.mod( 1, true, false, false, true, '', false, true, false );
+						} else { // default slide
+							this.mod( 1, true, false, false, true, '', false, true, false );
+						}
+					}
+
+					// 인스턴스
+					var slideCount = $('#ivypark .slider').length;
+					for( var i=0; i<slideCount; i++ ) {
+						new Comp( 
+							$('#slider0'+(i+1)),
+							$('.slider__nav0'+(i+1)+' .prev-button'), 
+							$('.slider__nav0'+(i+1)+' .next-button')
+						);
+					}
+
+
+				});		
+			</script>			
+
+		</div>
+		<!-- //container product_list -->
+
+		<script type="text/javascript" src="/designjs/adidas/common.js"></script>
+
+		<footer include-html="/html/adidas/inc/footer_.html"></footer>
+	</div>
+
+	<script type="text/javascript" src="/js/adidas/common.js"></script>
+	<script type="text/javascript" src="/designjs/common/includeHTML.js"></script>
+
+
+</body>
+
+</html>
