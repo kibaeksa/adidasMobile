@@ -35,89 +35,176 @@
 		}
 	}
 
-	.section {
+	.tabs_wrap{
 		position: relative;
-	}
-
-	.sect_visual {
-		>img {
-			display: block;
+		height: 35px;
+		background: #000;
+		.tabs_inner{
+			position: absolute;
+			top: 0;
 			width: 100%;
-		}
-	}
-
-	.sect_contents {
-		background: url(/images/adidas/2021/event/football/0120/cont_bg.jpg) no-repeat;
-		background-size: 100% 100%;
-
-		.cont_head {
-			width: 100%;
-			margin: 0 auto;
-			padding: 2rem 0 8rem;
-			text-align: center;
-
-			h3 {
-				font: 700 2.2rem/2.2rem "NotoSansKR";
-				color: #fff;
-				text-align: center;
-				letter-spacing: 1px;
+			height: 35px;
+			left: 50%;
+			transform: translateX(-50%);
+			z-index: 5;
+			&.fixed{
+				position: fixed;
+				top: 60px;
 			}
-
-			p {
-				padding-top: 1.5rem;
-				font: 300 1.2rem/2rem "NotoSansKR";
-				color: #fff;
-				text-align: center;
-			}
-
-			.button_area_v2 {
-				margin-top: 2rem;
-			}
-		}
-
-		.cont_body {
-			width: 100%;
-			padding-bottom: 4rem;
-
-			.feature_wrap {
-				width: 100%;
-				margin-bottom: 4rem;
-				padding: 0 3rem;
-				-webkit-box-sizing: border-box;
-				box-sizing: border-box;
-				&:last-child {
-					margin-bottom: 0;
+			ul{
+				overflow: hidden;
+				li{
+					position: relative;
+					float: left;
+					width: 50%;
+					a{
+						display: inline-block;
+						border: 2px solid #fff;
+						background: #000;
+						width: 100%;
+						height: 35px;
+						font: 500 0.9rem/28px 'NotoSansKR';
+						color: #fff;
+						text-align: center;
+						letter-spacing: 2px;
+						-webkit-box-sizing: border-box;
+						box-sizing: border-box;
+						
+					}
+					&:first-child{
+						a{
+							border-right: 1px solid #fac67a;
+						}
+					}
+					&:last-child{
+						a{
+							border-left: 1px solid #fac67a;
+						}
+					}
+					&.on{
+						a{
+							border-color: #fac67a;
+							color: #fac67a;
+							&::after{
+								position: absolute;
+								top: 70%;
+								left: 50%;
+								transform: translateX(-50%);
+								content: '';
+								display: inline-block;
+								width: 6px;
+								height: 4px;
+								background: url(/images/adidas/2021/event/football/0120/tab_on.png) no-repeat;
+								background-size: 100%;
+								z-index: 1;
+							}
+						}
+					}
 				}
+			}
+		}
+	}
 
+	.contents_wrap{
+		.content_sect{
+			display: none;
+			&.on{
+				display: block;
+			}
+			&.content_01 {
+				.sect_contents {
+					background: url(/images/adidas/2021/event/football/0120/cont_bg.jpg) no-repeat;
+					background-size: 100% 100%;
+				}
+			}
+			&.content_02 {
+				.sect_contents {
+					background: url(/images/adidas/2021/event/football/0120/copa/cont_bg.jpg) no-repeat;
+					background-size: 100% 100%;
+				}
+			}
+			.section {
+				position: relative;
+			}
+
+			.sect_visual {
 				>img {
 					display: block;
 					width: 100%;
 				}
+			}
 
-				.feature_txt {
+			.sect_contents {
+				.cont_head {
 					width: 100%;
-					padding-top: 2rem;
-					h4 {
-						font: 700 2rem/2rem "NotoSansKR";
+					margin: 0 auto;
+					padding: 2rem 0 8rem;
+					text-align: center;
+
+					h3 {
+						font: 700 2.2rem/2.2rem "NotoSansKR";
 						color: #fff;
 						text-align: center;
-						letter-spacing: 3px;
-
-						em {
-							font: 2rem/2rem "adinenuPro-bold";
-							letter-spacing: 2px;
-						}
+						letter-spacing: 1px;
 					}
 
 					p {
-						padding-top: 1rem;
+						padding-top: 1.5rem;
 						font: 300 1.2rem/2rem "NotoSansKR";
 						color: #fff;
 						text-align: center;
-						letter-spacing: normal;
-						em {
-							font: 1.2rem/2rem "adinenuPro-regular";
-							letter-spacing: normal;
+					}
+
+					.button_area_v2 {
+						margin-top: 2rem;
+					}
+				}
+
+				.cont_body {
+					width: 100%;
+					padding-bottom: 4rem;
+
+					.feature_wrap {
+						width: 100%;
+						margin-bottom: 4rem;
+						padding: 0 3rem;
+						-webkit-box-sizing: border-box;
+						box-sizing: border-box;
+						&:last-child {
+							margin-bottom: 0;
+						}
+
+						>img {
+							display: block;
+							width: 100%;
+						}
+
+						.feature_txt {
+							width: 100%;
+							padding-top: 2rem;
+							h4 {
+								font: 700 2rem/2rem "NotoSansKR";
+								color: #fff;
+								text-align: center;
+								letter-spacing: 3px;
+
+								em {
+									font: 2rem/2rem "adinenuPro-bold";
+									letter-spacing: 2px;
+								}
+							}
+
+							p {
+								padding-top: 1rem;
+								font: 300 1.2rem/2rem "NotoSansKR";
+								color: #fff;
+								text-align: center;
+								letter-spacing: normal;
+								em {
+									font: 1.2rem/2rem "adinenuPro-regular";
+									letter-spacing: normal;
+								}
+							}
 						}
 					}
 				}
@@ -127,8 +214,9 @@
 
 	.sect_prdlist {
 		padding: 4rem 3rem 3rem;
-		background: url(/images/adidas/2021/event/football/0120/prdlist_bg.jpg) no-repeat;
-		background-size: 100% 100%;
+		background: #000;
+		// background: url(/images/adidas/2021/event/football/0120/prdlist_bg.jpg) no-repeat;
+		// background-size: 100% 100%;
 
 		ul {
 			width: 100%;
