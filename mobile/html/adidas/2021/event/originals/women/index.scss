@@ -1,0 +1,159 @@
+@import './mobile/css/adidas/scss/common/mixin.scss';
+@import './mobile/css/adidas/scss/common/common.scss';
+html, body{
+	height: 100%;
+}
+#women{
+	position: relative;
+
+	section{
+		position: relative;
+	}
+	img{
+		width: 100%;
+	}
+	span, p, em{
+		letter-spacing: 0;
+	}
+	// @for $i from 1 through 2 {
+	// 	.bg0#{$i} {
+	// 		background: url('/images/adidas/2021/event/ultra_boost/0204/bg0#{$i}.jpg') no-repeat;
+	// 		background-position: top;
+	// 		background-size: 100% auto;
+	// 	}
+	// }
+	.section01{
+		text-align: center;
+		white-space: nowrap;
+		padding: 2rem;
+		>img{
+			width: 80%;
+		}
+		.btn_default{
+			margin-top: 2rem;
+		}
+		em{
+			display: block;
+			margin: 0.8rem 0 0;
+			font: 700 16px/16px $noto;
+			color: #000;
+		}
+		p{
+			font: 500 15px/22px $noto;
+			color: #000;
+			&:nth-child(4){
+				margin: 2rem 0;
+			}
+		}
+	}
+	.videos{
+		.txt{
+			@include center(55%, auto, 50%, $ctct);
+			text-align: center;
+			>img{
+				margin: 1rem auto 0.5rem;
+				width: 65%;
+			}
+			>a{
+				img{
+					display: block;
+					margin: 0 auto;
+					width: 20%;
+				}
+			}
+			p{
+				font: 900 15px/15px $noto;
+				color: #fff;
+			}
+		}
+	}
+	.grids{
+		>.item{
+			position: relative;
+			.txt{
+				@include center(auto, 8%, 50%, $ctX);
+				white-space: nowrap;
+				text-align: center;
+				>a{
+					img{
+						display: block;
+						width: 15%;
+						margin: 0 auto;
+					}
+				}
+				>p{
+					font: 400 12px/17px $noto;
+					color: #fff;
+					margin-top: 0.3rem;
+				}
+				>em{
+					display: block;
+					font: 900 17px/17px $noto;
+					color: #fff;
+					margin: 0.5rem 0 1rem;
+				}
+				>div{
+					text-align: center;
+					img{
+						width: 22%;
+					}
+					&.text04{
+						>img{ width: 42%; }
+					}
+					&.text05{
+						>img{ width: 65%; }
+					}
+					&.text06{
+						>img{ width: 63%; }
+					}
+				}
+			}
+		}
+		>div{
+			@include after();
+			.item{
+				position: relative;
+				width: 50%;
+				float: left;
+				.btn_default{
+					@include center(auto, 10%, 50%, $ctX);
+					white-space: nowrap;
+
+				}
+			}
+		}
+	}
+	.coupons{
+		text-align: center;
+		padding: 3.5rem 0;
+		background: #dfeaf1;
+		p, span, em{
+			display: block; 
+			color: #000;
+			text-align: center;
+		}
+		p{
+			font: 900 22px/22px $noto;
+			em{
+				display: inline-block;
+				font: 900 24px/24px $adinBlk;
+			}
+		}
+		span{
+			font: 400 13px/13px $noto;
+			margin-top: 0.5rem;
+		}
+		>em{
+			font: 400 13px/13px $noto;
+			margin-bottom: 15px;
+		}
+		>img{
+			display: block;
+			margin: 1.5rem auto;
+			width: 65%
+		}
+		.btn_default{
+			margin: 0 auto;
+		}
+	}
+}
