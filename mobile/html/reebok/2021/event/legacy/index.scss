@@ -1,0 +1,265 @@
+@import "./mobile/MO/reebok/css/scss/about.scss";
+
+#contents {
+	img {
+		vertical-align: middle;
+	}
+}
+
+body {
+	// height:100%;
+	outline:none;
+}
+
+button {
+	outline: none;
+}
+
+a{
+	outline: none;
+	
+}
+
+.btn {
+	>div {
+		position: relative;
+		display: inline-block;
+
+		&::before {
+			border-bottom: 1px solid #000;
+			border-left: 1px solid #000;
+			bottom: -4px;
+			height: 3px;
+			left: 2px;
+			width: calc(100% + 1px);
+			content: "";
+			display: block;
+			position: absolute;
+		}
+
+		&::after {
+			border-right: 1px solid #000;
+			border-top: 1px solid #000;
+			height: calc(100% + 1px);
+			right: -4px;
+			top: 2px;
+			width: 3px;
+			content: "";
+			display: block;
+			position: absolute;
+		}
+
+		a {
+			padding: 0 1rem;
+			font: 400 1rem/3.4rem 'NotoSansKR';
+			letter-spacing: .1rem;
+			position: relative;
+			display: block;
+			text-align: center;
+			color: #fff;
+			background: #000;
+			z-index: 2;
+			border: 1px solid #000;
+
+			.arrow {
+				margin-top: -3px;
+				margin-left: 1.4rem;
+				vertical-align: middle;
+				// width: 20%;
+			}
+		}
+	}
+
+	&.white {
+		>div {
+			&::before {
+				border-bottom: 1px solid #fff;
+				border-left: 1px solid #fff;
+			}
+
+			&::after {
+				border-right: 1px solid #fff;
+				border-top: 1px solid #fff;
+			}
+
+			a {
+				color: #000;
+				background: #fff;
+				border: 1px solid #fff;
+
+			}
+		}
+	}
+}
+
+#legacy {
+	.section {
+		position: relative;
+		>img {
+			display: block;
+			width: 100%;
+		}
+	}
+
+	.sect_visual {
+		.visual_info {
+			position: absolute;
+			top: 4%;
+			left: 7%;
+			// transform: translateY(-50%);
+			z-index: 1;
+
+			h3 {
+				font: 900 3rem/3rem 'neueplak-ext';
+				color: #fff;
+			}
+
+			p {
+				padding-top: 1rem;
+				font: 400 1.1rem 'NotoSansKR';
+				color: #fff;
+			}
+		}
+		.btn {
+			position: absolute;
+			top: 10%;
+			right: 7%;
+		}
+	}
+
+	.sect_statement {
+		.sect_inner {
+			position: absolute;
+			top: 46%;
+			left: 50%;
+			width: 100%;
+			transform: translate(-50%, -50%);
+			z-index: 1;
+
+			h4 {
+				font: 500 1.3rem 'NotoSansKR';
+				color: #fff;
+				text-align: center;
+				letter-spacing: normal;
+			}
+		}
+	}
+
+	.sect_look {
+		.autoSlider_wrap {
+			width: 100%;
+
+			>ul {
+				width: 100%;
+
+				li {
+					outline: 0 none;
+
+					img {
+						display: block;
+						width: 100%;
+					}
+				}
+			}
+		}
+
+		.slider_wrap {
+			position: relative;
+			width: 100%;
+			padding: 3rem;
+			-webkit-box-sizing: border-box;
+			box-sizing: border-box;
+
+			>ul {
+				width: 100%;
+
+				li {
+					outline: 0 none;
+
+					img {
+						display: block;
+						width: 100%;
+					}
+				}
+			}
+
+			.slider_nav {
+				>* {
+					position: absolute;
+					top: 50%;
+				}
+
+				.prev-button {
+					left: 12%;
+				}
+
+				.next-button {
+					right: 12%;
+				}
+			}
+
+			.slick-dots {
+				position: absolute;
+				bottom: 2%;
+				left: 50%;
+				transform: translateX(-50%);
+				z-index: 2;
+
+				li {
+					display: inline-block;
+					margin: 0 4px;
+
+					button {
+						width: 12px;
+						height: 12px;
+						border: 2px solid #fff;
+						border-radius: 50%;
+						background: none;
+						padding: 0;
+						text-indent: -9999px;
+						vertical-align: bottom;
+						// transition: 0;
+					}
+
+					&.slick-active {
+						button {
+							background: #fff;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.sect_endbox {
+		.endbox_info {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			z-index: 1;
+			text-align: center;
+
+			h3 {
+				font: 900 2.2rem/2.2rem 'neueplak-ext';
+				color: #000;
+				text-align: inherit;
+				letter-spacing: 1px;
+				white-space: nowrap;
+			}
+
+			p {
+				padding-top: 1rem;
+				font: 500 1.2rem 'NotoSansKR';
+				color: #000;
+				text-align: inherit;
+				letter-spacing: normal;
+			}
+
+			.btn {
+				display: inline-block;
+				margin-top: 1.5rem;
+			}
+		}
+	}
+}
