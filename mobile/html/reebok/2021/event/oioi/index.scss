@@ -1,0 +1,273 @@
+@import "./mobile/MO/reebok/css/scss/about.scss";
+
+#contents {
+	img {
+		vertical-align: middle;
+	}
+}
+
+body {
+	// height:100%;
+	outline:none;
+}
+
+button {
+	outline: none;
+}
+
+a{
+	outline: none;
+	
+}
+
+.btn {
+	>div {
+		position: relative;
+		display: inline-block;
+
+		&::before {
+			border-bottom: 1px solid #000;
+			border-left: 1px solid #000;
+			bottom: -4px;
+			height: 3px;
+			left: 2px;
+			width: calc(100% + 1px);
+			content: "";
+			display: block;
+			position: absolute;
+		}
+
+		&::after {
+			border-right: 1px solid #000;
+			border-top: 1px solid #000;
+			height: calc(100% + 1px);
+			right: -4px;
+			top: 2px;
+			width: 3px;
+			content: "";
+			display: block;
+			position: absolute;
+		}
+
+		a {
+			padding: 0 1rem;
+			font: 600 1rem/3.4rem 'NotoSansKR';
+			letter-spacing: .1rem;
+			position: relative;
+			display: block;
+			text-align: center;
+			color: #fff;
+			background: #000;
+			z-index: 2;
+			border: 1px solid #000;
+
+			.arrow {
+				margin-top: -3px;
+				margin-left: 1.4rem;
+				vertical-align: middle;
+				// width: 20%;
+			}
+		}
+	}
+
+	&.white {
+		>div {
+			&::before {
+				border-bottom: 1px solid #fff;
+				border-left: 1px solid #fff;
+			}
+
+			&::after {
+				border-right: 1px solid #fff;
+				border-top: 1px solid #fff;
+			}
+
+			a {
+				color: #000;
+				background: #fff;
+				border: 1px solid #fff;
+
+			}
+		}
+	}
+}
+
+.rel {
+	position: relative;
+}
+
+#oioi {
+	background:#f1f1f1;
+	.section{
+		position: relative;
+		>img{
+			display: block;
+			width: 100%;
+		}
+		
+	}	
+	.cont1_main{
+		position:relative;
+		background:url('/images/reebok/2021/event/oioi/main_vs.jpg')no-repeat;
+		background-size:100% 100%;
+		padding:0 2.5rem;
+		.main_txt{
+			text-align:center;
+			h1{
+				padding:3.3rem 0 1.5rem 0;
+				>img{
+					width:77%;
+				}
+			}
+			strong{
+				display:block;
+				padding-bottom:2.5rem;
+				>img{
+					width:98%;
+				}				
+			}
+			>img{
+				width:100%;
+			}
+			p{
+				font: 400 1.1rem/1.8rem 'NotoSansKR';
+				color: #fff;		
+				letter-spacing:0.5px;
+				padding:3rem 0 2rem 0;
+			}
+			em{
+				display:block;
+				padding:1.9rem 0 3.3rem 0;
+				>img{
+					width:65%;
+				}
+			}
+		}
+	}
+
+	.cont2_slider{
+		background:url('/images/reebok/2021/event/oioi/cont2_img.jpg')no-repeat;
+		background-size:100% 100%;
+		text-align:center;
+		.slider01_list{
+			padding:3rem 2.5rem;
+			.slider01_box{
+				border:6px solid #fff;
+				box-sizing:border-box;
+				padding:1.5rem 1.5rem 2rem 1.5rem;
+			}
+		}
+
+		.slider02_list{
+			padding:0.5rem 0 2.5rem 2.5rem;
+			.slider02_box{
+				border:6px solid #fff;
+				padding:1.5rem 1.5rem 2rem 0;
+				width:100%;
+				.slider02{
+					margin-left:-3.1rem;
+					img{
+						width:100%;
+					}
+				}
+			}
+		}	
+
+		.slider03_list{
+			padding:3rem 2.5rem;
+			.slider03_box{
+				border:6px solid #fff;
+				box-sizing:border-box;
+				padding:1.5rem 1.5rem 2rem 1.5rem;
+			}
+					
+		}		
+
+		.slick-dots {
+			padding:1.5rem 0 0 0;
+			text-align: center;
+		}			
+		.slick-dots li {
+			display: inline-block;
+			margin-right: 6px;
+		}
+		.slick-dots li button {
+			width: 13px;
+			height: 13px;
+			background:none;
+			border-radius:50%;
+			border:1px solid #fff;
+			padding: 0;
+			text-indent: -9999px;
+		}			
+	
+		.slick-dots li.slick-active button {
+			background:#fff;
+		}				
+		.slick-arrow{
+			font-size:0;
+			border:0;
+		}
+		  .slick-prev{
+			position:absolute;
+			left: 2%;
+			top: 38%;
+			background: url('/images/reebok/2021/event/oioi/prev.png')no-repeat 50%;
+			background-size:60%;
+			width: 33px;
+			height: 60px;
+			z-index:1;
+			outline:none;
+		}					
+		  .slick-next{
+			position:absolute;
+			right: 2%;
+			top: 38%;
+			background: url('/images/reebok/2021/event/oioi/next.png')no-repeat 50%;
+			background-size:60%;
+			width: 33px;
+			height: 60px;
+			z-index:1;
+			outline:none;
+		}				
+	}
+
+	.cont4_video{
+		.video_wrap{
+			position:absolute;
+			left:50%;
+			top:38%;
+			transform:translate(-50%,-50%);
+			width:85%;
+			video{
+				width:100%;
+			}
+			>a{
+				position:absolute;left:50%;top:50%;
+				transform:translate(-50%,-50%);								
+				display:block;
+				text-align: center;
+				cursor: pointer;
+				img{
+					width:60%;
+				}
+			}			
+		}		
+		.video_txt{
+			position:absolute;
+			left:50%;
+			top:80%;
+			transform:translate(-50%,-50%);	
+			width: 100%;
+			text-align: center;			
+			h4{
+				font: 400 1.1rem/1.8rem 'NotoSansKR';
+				color: #fff;		
+				letter-spacing:1px;	
+				padding-bottom:2rem;			
+			}							
+		}			
+	}
+
+	
+}
