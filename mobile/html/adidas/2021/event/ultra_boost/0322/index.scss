@@ -95,8 +95,14 @@ html, body{
 		}
 	}
 	.slider01__container{
-		padding: 0 1.6rem 0;
-		background: #fbfd61;
+		// padding: 0 1.6rem 0;
+		// background: #fbfd61;
+		border-left: 1.6rem solid #fcfe61;
+    	border-right: 1.6rem solid #fcfe61;
+		@media all and (min-device-width: 414px) {
+			border-left: 1.75rem solid #fcfe61;
+			border-right: 1.75rem solid #fcfe61;
+		}
 		#slider01{
 			text-align: center;
 			.slick-dots{
@@ -142,25 +148,42 @@ html, body{
 		}
 	}
 	.slider02__container{
+		background: none;
+		border-left: 1.6rem solid #fcfe61;
+    	border-right: 1.6rem solid #fcfe61;
+		@media all and (min-device-width: 414px) {
+			border-left: 1.75rem solid #fcfe61;
+			border-right: 1.75rem solid #fcfe61;
+		}
 		#slider02{
 			text-align: center;
+			width: 100%;
+			margin: 0 auto;
+			overflow: hidden;
 			.slick-list{
-				width: 90%;
+				position: relative;
+				left: -3px;
+				width: 102%;
 				margin: 0 auto;
 				overflow: hidden;
 				background: #2595b7;
-			}
-			.item{
-				img{
-					width:95%;
-					margin: 0 auto;
+				.slick-track{
+					position: relative;
+					left: -1px;
+					.item{
+						img{
+							width:94%;
+							margin: 0 auto;
+						}
+					}
 				}
 			}
+
 		}
 		.slider__nav02{
 			@include center(50%, auto, 50%, $ctct);
 			@include after();
-			width: 100%;
+			width: 111%;
 			img{
 				width: 50%;
 			}
@@ -177,15 +200,20 @@ html, body{
 		}
 	}
 	.section03{
-		padding: 0 1.6rem;
-		background: #fcfe61;
+		// padding: 0 1.6rem;
+		// background: #fcfe61;
+		border-left: 1.6rem solid #fcfe61;
+    	border-right: 1.6rem solid #fcfe61;
+		@media all and (min-device-width: 414px) {
+			border-left: 1.75rem solid #fcfe61;
+			border-right: 1.75rem solid #fcfe61;
+		}
 		div{
 			padding: 2rem 0;
 			background: #2595b7;
 		}
 	}
 	.section04{
-		// padding: 3rem 0 0 0;
 	}
 	.section05{
 		background: #065178;
