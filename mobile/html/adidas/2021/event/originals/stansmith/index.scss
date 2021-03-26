@@ -1,0 +1,369 @@
+@import './mobile/css/adidas/scss/common/mixin.scss';
+@import './mobile/css/adidas/scss/common/common.scss';
+html, body{
+	height: 100%;
+}
+#stansmith{
+	position: relative;
+
+	section{
+		position: relative;
+	}
+	img{
+		width: 100%;
+	}
+	span, p, em{
+		letter-spacing: 0;
+	}
+	.topBanner{
+		padding-bottom: 100%;
+		video{
+			position: absolute;
+			object-fit: cover;
+			width: 100%;
+			height: 100%;
+		}
+	}
+	.topBanner__text{
+		a{
+			position: absolute;
+			top: 79.5%;
+			left: 11%;
+			width: 31%;
+			height: 10%;
+			text-indent: -9999px;
+		}
+	}
+	.description{
+		.inner{
+			padding: 3rem 0;
+			p{
+				font: 500 11px/1.5rem $noto;
+				color: #000;
+				text-align: center;
+				&:first-child{
+					margin-bottom: 1rem;
+				}
+			}
+		}
+		.event{
+			position: relative;
+			a{
+				position: absolute;
+				top: 71.5%;
+				left: 34.5%;
+				width: 31%;
+				height: 12%;
+				text-indent: -9999px;
+			}
+		}
+		&.last{
+			text-align: center;
+			background: #00843d;
+			.inner{
+				p{
+					color: #fff;
+				}
+			}
+			.btn_default{
+				margin-top: 1rem;
+			}
+		}
+	}
+	.popup__container{
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 701;
+		overflow: auto;
+		// opacity: 0;
+		display: none;
+		&.on{
+			// opacity: 1;
+			display: block;
+			z-index: 2;
+		}
+		.overlay{
+			width: 100%;
+			height: 100%;
+			z-index: 700;
+			background: rgba(0,0,0,0.99);
+			opacity: 0.7;
+			-ms-filter: alpha(opacity=70);
+			filter: alpha(opacity=70);
+			position: fixed;
+			top: 0;
+			left: 0;
+		}
+		.popup{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 82%;
+			margin: 0 auto;
+			transform: translate(-50%,-50%);
+			z-index:701;
+			button.close{
+				position: fixed;
+				top: -8%;
+				right: 0;
+				background: none;
+				border: none;
+				text-indent: -9999px;
+				z-index: 702;
+				cursor: pointer;
+				&::before, &::after{
+					position: absolute;
+					top: 0;
+					left: 0;
+					display: block;
+					clear: both;
+					content: '';
+					width: 2px;
+					height: 20px;
+					background: #fff;
+					z-index: 702;
+				}
+				&::before{
+					transform: rotate(45deg);
+				}
+				&::after{
+					transform: rotate(-45deg);
+				}
+			}
+			.slider{
+				.slick-dots{
+					text-align: center;
+					margin-top: 1rem;
+					li{
+						display: inline-block;
+						width: 7px;
+						height: 7px;
+						margin: 0 2.5px;
+						background: #737373;
+						border-radius: 50%;
+						img{
+							width: 100%;
+						}
+						button{
+							background: none;
+							border: none;
+							text-indent: -9999px;
+						}
+						&.slick-active{
+							background: #84bc01;
+						}
+					}
+				}
+			}
+			.slider__nav{
+				@include center(44%, auto, auto, $ctY);
+				@include after();
+				width: 100%;
+				.prev-button, .next-button{
+					position: relative;
+					img{
+						width: 60%;
+						margin: 0 auto;
+					}
+				}
+				.prev-button{
+					float: left;
+					left: -8%;
+					transform: rotate(180deg);
+				}
+				.next-button{
+					float: right;
+					right: -8%;
+				}
+			}
+		}
+	}
+	.card__container{
+		text-align: center;
+		ul{
+			@include after();
+			width: 95%;
+			margin: 3rem auto 0;
+			white-space: nowrap;
+			.slick-list{
+				overflow: visible;
+				padding: 0 8rem;
+				.slick-track{
+					li{
+						position: relative;
+						float: left;
+						width: 12.5%;
+						cursor: pointer;
+						.inner{
+							position: relative;
+							text-align: center;
+							background: #fff;
+							transform-style: preserve-3d;
+							opacity: 0.999;
+							transition: all 2s ease-in-out;
+							.hover{
+								@include center(50%, auto, 50%, $ctct);
+								width: 3.5rem;
+								height: 3.5rem;
+								@include css3(opacity, 0);
+								@include css3(transition, all 0.5s);
+								z-index: 2;
+							}
+							>img{
+								width: 75%;
+								margin: 0 auto;
+								// box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2), 1px 1px 1px rgba(0, 0, 0, 0.1);
+								border-radius: 12px;
+							}
+							// &:hover{
+							// 	&::after{
+							// 		display: block;
+							// 		position: absolute;
+							// 		top:0;
+							// 		left:0;
+							// 		width:100%;
+							// 		height:100%;
+							// 		content: '';
+							// 		clear: both;
+							// 		background: rgba(255,255,255,0.5);
+							// 	}
+							// 	.hover{
+							// 		@include css3(opacity, 1);
+							// 	}
+							// }
+						}
+		
+					}
+				}
+			}
+			.slick-dots{
+				text-align: center;
+				margin: 1rem 0 2rem;
+				width: 100%;
+				li{
+					display: inline-block;
+					width: 7px;
+					height: 7px;
+					margin: 0 2.5px;
+					background: #737373;
+					border-radius: 50%;
+					img{
+						width: 100%;
+					}
+					button{
+						background: none;
+						border: none;
+						text-indent: -9999px;
+					}
+					&.slick-active{
+						background: #84bc01;
+					}
+				}
+			}
+		}
+		p{
+			font: 400 13px/13px $noto;
+			color: #000;
+			text-align: center;
+		}
+		.btn_default{
+			margin: 2.5rem 0 4rem;
+		};
+	}
+	.title__wrapper{
+		width: 100%;
+		.title__wrapper__inner{
+			position: relative;
+			width: 270%;
+			animation: scroll 25s linear 0s infinite;
+			overflow: hidden;
+			div{
+				float: left;
+				width: 50%;
+				&:nth-child(2){
+					left:131%;
+				}
+				img{
+					width:100%;
+				}
+			}
+
+		}
+	}
+	.grid__container{
+		@include after();
+		&.on{
+			.item{
+				@include css3(opacity,1);
+				top: 0;
+				@for $i from 2 through 7 {
+					&:nth-child(#{$i}){
+						@include css3(transition-delay,#{$i*0.15+s});
+					}
+				}
+			}
+		}
+		.item{
+			position: relative;
+			&:first-child{
+				width: 100%;
+			}
+			width: 50%;
+			float: left;
+			@include css3(opacity,0);
+			@include css3(transition, all 0.5s);
+			&.video{
+				padding-bottom: 50%;
+				video{
+					position: absolute;
+					object-fit: cover;
+					width: 100%;
+					height: 100%;
+				}
+			}
+		}
+	}
+	@keyframes scroll {
+		from{
+			// transform:translate(0,0)
+			left:0;
+		}
+		to{
+			left:-135%;
+			// transform:translate(-135%,0);
+		}
+	}
+	.desc__container{
+		.head{
+			text-align: center;
+			.btn_default{
+				margin: 0 0 4rem;
+			}
+		}
+		.item{
+			position: relative;
+			a{
+				position: absolute;
+				top: 79%;
+				left: 34%;
+				width: 31%;
+				height: 7%;
+				text-indent: -9999px;
+			}
+			&:nth-child(3){
+				a{
+					top: 78.5%;
+				}
+			}
+			&:nth-child(4){
+				a{
+					top: 79.5%;
+				}
+			}
+
+		}
+	}
+}
