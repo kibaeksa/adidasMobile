@@ -1,0 +1,282 @@
+@import './mobile/css/adidas/scss/common/mixin.scss';
+@import './mobile/css/adidas/scss/common/common.scss';
+html, body{
+	height: 100%;
+}
+#formotion{
+	position: relative;
+	section{
+		position: relative;
+	}
+	img{
+		width: 100%;
+	}
+	span, p, em{
+		letter-spacing: 0;
+	}
+	// @for $i from 1 through 2 {
+	// 	.bg0#{$i} {
+	// 		background: url('/images/adidas/2021/event/ultra_boost/0204/bg0#{$i}.jpg') no-repeat;
+	// 		background-position: top;
+	// 		background-size: 100% auto;
+	// 	}
+	// }
+	.visuals{
+		.btn_default{
+			position: absolute;
+			top: 78%;
+			left: 5%;
+		}
+	}
+	.section{
+		text-align: center;
+		white-space: nowrap;
+		padding: 3rem 0 4rem;
+		>img{
+			display: block;
+			width: 79%;
+			margin: 0 auto;
+		}
+		.btn_default{
+			margin-top: 2rem;
+		}
+		// em{
+		// 	display: block;
+		// 	margin: 0.8rem 0 0;
+		// 	font: 700 16px/16px $noto;
+		// 	color: #000;
+		// }
+		p{
+			font: 500 15px/22px $noto;
+			color: #000;
+			&.last{
+				margin: 2rem 0;
+			}
+		}
+	}
+
+	.tabs{
+		position: relative;
+		&.fixed{
+			position: fixed;
+			top:0;
+			width: 100%;
+			z-index: 2;
+		}
+		ul{
+			@include after();
+			width: 100%;
+			li{
+				float: left;
+				width: 50%;
+				text-align: center;
+				&.on{
+					background: #fa6465;
+				}
+				&.blue{
+					background: #0080c8;
+				}
+				background: #cccccc;
+				img{
+					vertical-align: middle;
+					display: block;
+					margin: 0 auto;
+					width: 15%;
+					padding: 0.5rem 0;
+				}
+			}
+		}
+	}
+	.content__container{
+		display: none;
+		@keyframes fade-in {
+			from {
+				opacity: 0;
+			}
+			to {
+				opacity: 1;
+			}
+		}
+		&.on{
+			display: block;
+			animation: fade-in 1s;
+			animation-fill-mode: forwards;
+			@include css3(transition, 0.5s);
+		}
+		// 오리지날스
+		.videos{
+			.txt{
+				@include center(55%, auto, 50%, $ctct);
+				text-align: center;
+				>img{
+					margin: 1rem auto 0.5rem;
+					width: 65%;
+				}
+				>a{
+					img{
+						display: block;
+						margin: 0 auto;
+						width: 20%;
+					}
+				}
+				p{
+					font: 900 15px/15px $noto;
+					color: #fff;
+				}
+			}
+		}
+		.grids{
+			>.item{
+				position: relative;
+				.txt{
+					@include center(auto, 8%, 50%, $ctX);
+					white-space: nowrap;
+					text-align: center;
+					>a{
+						img{
+							display: block;
+							width: 15%;
+							margin: 0 auto;
+						}
+					}
+					>p{
+						font: 400 12px/17px $noto;
+						color: #fff;
+						margin-top: 0.3rem;
+					}
+					>em{
+						display: block;
+						font: 900 17px/17px $noto;
+						color: #fff;
+						margin: 0.5rem 0 1rem;
+					}
+					>div{
+						text-align: center;
+						img{
+							width: 22%;
+						}
+						&.text04{
+							>img{ width: 42%; }
+						}
+						&.text05{
+							>img{ width: 65%; }
+						}
+						&.text06{
+							>img{ width: 63%; }
+						}
+					}
+				}
+				&.extra{
+					.txt{
+						>a{
+							display: block;
+							margin-bottom: 1.7rem;
+						}
+					}
+				}
+			}
+			>div{
+				@include after();
+				.item{
+					position: relative;
+					width: 50%;
+					float: left;
+					.btn_default{
+						@include center(auto, 10%, 50%, $ctX);
+						white-space: nowrap;
+	
+					}
+				}
+			}
+		}
+		// .showtime{
+		// 	.showtime__figure{
+		// 		position: relative;
+		// 		a{
+		// 			position: absolute;
+		// 			top: 78%;
+		// 			left: 33%;
+		// 			width: 34%;
+		// 			height: 10%;
+		// 			text-indent: -9999px;
+		// 		}
+		// 	}
+		// }
+		// .coupons{
+		// 	text-align: center;
+		// 	padding: 3.5rem 0;
+		// 	background: #dfeaf1;
+		// 	p, span, em{
+		// 		display: block; 
+		// 		color: #000;
+		// 		text-align: center;
+		// 	}
+		// 	p{
+		// 		font: 900 22px/22px $noto;
+		// 		em{
+		// 			display: inline-block;
+		// 			font: 900 24px/24px $adinBlk;
+		// 		}
+		// 	}
+		// 	span{
+		// 		font: 400 13px/13px $noto;
+		// 		margin-top: 0.5rem;
+		// 	}
+		// 	>em{
+		// 		font: 400 13px/13px $noto;
+		// 		margin-bottom: 15px;
+		// 	}
+		// 	>img{
+		// 		display: block;
+		// 		margin: 1.5rem auto;
+		// 		width: 65%
+		// 	}
+		// 	.btn_default{
+		// 		margin: 0 auto;
+		// 	}
+		// }
+		// 아디다스
+		&.adidas{
+			.grid__container{
+				video{
+					display: block;
+					width: 100%;
+				}
+				>.btn_default{
+					position: absolute;
+					@include center(56%, auto, 50%, $ctX);
+				}
+			}
+			.txt{
+				text-align: center;
+				padding: 4rem 0;
+				img{
+					width: 82%;
+					margin: 0 auto;
+				}
+				p{
+					font: 300 13px/19px $noto;
+					color: #000;
+					text-align: center;
+					margin: 1.5rem 0 0;
+					span{
+						display: block;
+						font-size: 16px;
+						font-weight: 700;
+						margin-top: 0.5rem;
+					}
+				}
+				&.last{
+					p{
+						margin: 0;
+					}
+					img{
+						display: block;
+						margin: 1rem auto 1.5rem;
+					}
+				}
+			}
+		}
+	}
+
+}
