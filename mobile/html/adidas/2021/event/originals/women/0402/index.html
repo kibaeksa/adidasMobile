@@ -390,7 +390,7 @@
 								var $target = section.eq(index);
 								var targetTop = $target.offset().top;
 								targetTop <= thisScroll && $('#formotion .tabs').addClass('fixed');
-								targetTop >= thisScroll && $('#formotion .tabs').removeClass('fixed');
+								targetTop >= thisScroll && $('#formotion .tabs').removeClass('fixed').css('top', 0 + 'px');
 							}
 							if (!$('#header').hasClass('hide')) {
 								$('.fixed').css('top', 61 + 'px');
