@@ -1,0 +1,274 @@
+@import './mobile/css/adidas/scss/common/mixin.scss';
+@import './mobile/css/adidas/scss/common/common.scss';
+
+.clearfix{
+	clear:both;
+	display:block;
+	content:'';
+}
+a{
+	outline:none;
+}
+button{
+	outline:none;
+}
+
+.button_area_v2 {
+	display: inline-block;
+	a {
+		height: 44px;
+		font: 400 13px/43px 'NotoSansKR';
+		letter-spacing: 1px;
+		padding: 0 20px;
+	}
+	>div.gray {
+		a {
+			background: #1b1b1e;
+			color: #fff;
+			&::after{
+				-webkit-box-shadow: inset 0 0 0 1px #1b1b1e;
+				box-shadow: inset 0 0 0 1px #1b1b1e;
+			}
+		}
+	}
+}
+
+#thesia {
+
+	section{
+		position: relative;
+	}
+	img{
+		width: 100%;
+	}
+
+	.section{
+		.section01_video{
+			margin-bottom:-1px;
+			video{
+				width:100%;
+			}
+		}
+		.section02_box{
+			background: url('/images/adidas/2021/event/originals/thesia/section01_bg.jpg') no-repeat;
+			background-position: top;
+			background-size: cover;
+			padding:0 1.3rem 3rem 1.3rem;
+			text-align:center;
+		}
+		.txt{
+			padding:5rem 0 3.5rem 0;
+			text-align:center;
+			color:#fff;
+			h1{
+				font: 600 1.8rem/2rem 'NotoSansKR';
+				letter-spacing:2px;
+			}
+			strong{
+				display:block;
+				padding:1rem 0 1.6rem 0;
+				>img{
+					width:76%;
+				}
+			}
+			em{
+				display:block;
+				font: 500 1.55rem/2rem 'NotoSansKR';
+				letter-spacing:2px;
+			}
+			p{
+				display:block;
+				padding:2rem 0 0.5rem 0;
+				font: 400 0.9rem/1.5rem 'NotoSansKR';
+				letter-spacing:1px;				
+			}			
+		}
+		.cont2_video{
+			position: relative;
+			.video_wrap {
+				position: relative;
+				padding-bottom:0.5rem;
+				>img{
+					width:100%;
+					position:relative;
+				}
+				.video_btn{
+					position:absolute;
+					left:50%;
+					top:50%;
+					transform:translate(-50%, -50%);
+					margin:0 auto;
+					button{
+						background:url('/images/adidas/2021/event/originals/thesia/video_btn.png')no-repeat;
+						background-size:60%;
+						background-position:center;
+						width:44px;
+						height:44px;	
+						border:0;
+					}
+				}	
+			}		
+		}
+	}
+	
+	.slider03_box{
+		background: url('/images/adidas/2021/event/originals/thesia/sect03_bgg.jpg') no-repeat;
+		background-position: top;
+		background-size:cover;
+		overflow:hidden;
+		padding:1rem 1.5rem;
+		.slider01_left{
+			width:50%;
+			float:left;
+		}
+		.slider01_right{
+			width:50%;
+			float:left;
+		}		
+				
+		.slick-slider{
+			.slick-active {
+			  >img {
+				transform: translateY(0) !important;
+				opacity: 1;
+			  }
+			}
+			img {
+			  transition: 0.3s cubic-bezier(0.39, 0.575, 0.565, 1);
+			  transform: translateY(15px);
+			  opacity: 0;
+			}
+		  }		
+	}
+
+	.sect03_btn{
+		background: url('/images/adidas/2021/event/originals/thesia/sect03_bg2.jpg') no-repeat;
+		background-position: top;
+		background-size:cover;
+		text-align:center;
+		padding-bottom:1.8rem;
+	}
+	.section04{
+		display:block;
+		.slider04_box{
+			background: url('/images/adidas/2021/event/originals/thesia/slider01_bg.jpg') no-repeat;
+			background-position: top;
+			background-size:cover;
+			padding:4.1rem 3.3rem 2.5rem 3.3rem;
+			text-align: center;
+		}
+		.slider05_box{
+			background: url('/images/adidas/2021/event/originals/thesia/slider02_bg.jpg') no-repeat;
+			background-position: top;
+			background-size:cover;
+			padding:3.5rem 3.3rem 2.5rem 3.3rem;
+			text-align: center;		
+		}		
+
+		.slick-dots {
+			overflow: hidden;
+			margin: 0 auto;
+			padding: 1rem 0 0;
+			text-align: center;
+			width: auto;
+		
+			li{
+				display: inline-block;
+				&.slick-active {
+					button{
+						background: #fff;
+					}
+				}
+			}
+			button {
+				display: inline-block;
+				margin: 0 3px;
+				padding: 0;
+				width: 8px;
+				height: 8px;
+				background:none;
+				border: 1px solid #fff;
+				border-radius: 50%;
+				box-sizing: border-box;
+				text-indent: -9999px;
+			}
+		}	
+
+		.slick-arrow{
+			font-size:0;
+			border:0;
+		}
+
+		.slick-prev{
+			position:absolute;
+			left: -9.5%;
+			top: 35%;
+			background: url('/images/adidas/2021/event/originals/thesia/prev.png')center center no-repeat;
+			width: 19px;
+			height: 35px;
+			z-index:3;
+			background-size:70%;
+		}					
+		.slick-next{
+			position:absolute;
+			right: -9.5%;
+			top: 35%;
+			background: url('/images/adidas/2021/event/originals/thesia/next.png')center center no-repeat;
+			width: 19px;
+			height: 35px;
+			z-index:3;
+			background-size:70%;
+		}		
+
+		.txt{
+			.box{
+				background: url('/images/adidas/2021/event/originals/thesia/sect04_txt_bg.jpg') no-repeat;
+				background-position: top;
+				background-size: 100% auto;			
+				padding:2.5rem 0 2.5rem 0;				
+				h2{
+					display:block;
+					font: 500 1rem/1.8rem 'NotoSansKR';
+					letter-spacing:1px;	
+					color:#fff;
+					text-align:center;
+					em{
+						font: 600 1rem/1.8rem 'NotoSansKR';								
+						letter-spacing:1px;	
+					}
+					span{
+						font: 600 1rem/1.8rem 'NotoSansKR';		
+						background:#fff;		
+						color:#111;
+						padding:0 5px;
+						letter-spacing:1px;	
+					}
+				}
+			}
+			.box2{
+				background: url('/images/adidas/2021/event/originals/thesia/sect05_txt_bg.jpg') no-repeat;
+				background-position: top;
+				background-size: 100% auto;			
+				padding:2.5rem 0 2.5rem 0;	
+			}			
+		}
+	}
+	.section07_box{
+		background: url('/images/adidas/2021/event/originals/thesia/cont7_img.jpg') no-repeat;
+		background-position: top;
+		background-size: 100% auto;			
+		text-align:center;	
+		padding:2rem 0 2.5rem 0;
+		h3{
+			font: 600 1.3rem/1.5rem 'NotoSansKR';		
+			color:#fff;
+			letter-spacing:1px;	
+			padding-bottom:0.7rem;
+		}
+		p{
+			>img{
+				width:52%;
+			}
+		}
+	}
+}
