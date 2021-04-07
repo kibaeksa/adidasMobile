@@ -822,17 +822,17 @@
 						
 
 						function tab_move() {
-							$( 'html, body' ).animate( { scrollTop : $('.tab_con').offset().top -75}, 600 );
+							$( 'html, body' ).animate( { scrollTop : $('.tab_con').offset().top -135}, 600 );
 						}
-							
+
 						$(window).on('load', function(){
 							var naviTop = $('.cont2_tab').offset().top;
 							var navipos = $('.tab_btn').offset().top;
-	
+
 							$(window).scroll(function() { //메뉴의 위치를 파악
 								var heightpos = $(this).scrollTop();
 								if(heightpos>navipos){
-									if($('#header').hasClass('hide')) {
+									if(!$('#header').hasClass('hide')) {
 										$('.tab_btn').addClass('fixed');
 										$('.tab_btn.fixed').css({
 											top:'0'
@@ -850,6 +850,13 @@
 									})										
 								}
 							});					
+
+							// if ( $('#header').hasClass('hide') ) {
+							// 	$('html, body').animate({scrollTop: naviTop}, 600,);
+							// } else {
+							// 	$('html, body').animate({scrollTop: naviTop}, 600,) - 60;
+							// }			
+
 							//탭 버튼 온오프 
 							$('#tab1_bt_off').show();
 							$('#tab1_bt_on').hide();	
@@ -902,7 +909,8 @@
 								$('#tab1_bt_on').hide();
 								$('#tab2_bt_on').hide();
 								$('#tab3_bt_on').hide();
-							});									
+							});					
+
 
 						});
 
