@@ -172,23 +172,26 @@
 						$('#look3-3').slick(sldOpt4);
 
 						//스크롤 이벤트
-						var scrollArray = [];
-						var scrollContent = document.querySelectorAll('.scroll');
-						for (var i = 0; i < scrollContent.length; i++) {
-							var mypos = scrollContent[i].offsetTop;
-							scrollArray.push(mypos)
-						}
-						console.log(scrollArray);
-
-						$(window).scroll(function () {
-							var thispos = $(this).scrollTop() + $(window).height() - 400;
-							// console.log(thispos);
-							for (var pos = 0; pos < scrollArray.length; pos++) {
-								if (thispos > scrollArray[pos]) {
-									$('.scroll').eq(pos).addClass('on');
-								}
+						$(window).load(function(){
+							var scrollArray = [];
+							var scrollContent = document.querySelectorAll('.scroll');
+							for (var i = 0; i < scrollContent.length; i++) {
+								var mypos = scrollContent[i].offsetTop;
+								scrollArray.push(mypos)
 							}
+							console.log(scrollArray);
+
+							$(window).scroll(function () {
+								var thispos = $(this).scrollTop() + $(window).height() - 400;
+								// console.log(thispos);
+								for (var pos = 0; pos < scrollArray.length; pos++) {
+									if (thispos > scrollArray[pos]) {
+										$('.scroll').eq(pos).addClass('on');
+									}
+								}
+							});
 						});
+						
 
 						// video
 						$('.play-video').bind('click', function () {
