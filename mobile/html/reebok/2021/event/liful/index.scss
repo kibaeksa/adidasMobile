@@ -1,0 +1,405 @@
+@import "./mobile/MO/reebok/css/scss/about.scss";
+
+#contents {
+  img {
+    vertical-align: middle;
+  }
+}
+
+body {
+  // height:100%;
+  outline: none;
+}
+
+button {
+  outline: none;
+}
+
+a {
+  outline: none;
+}
+
+.btn {
+  > div {
+    position: relative;
+    display: inline-block;
+
+    &::before {
+      border-bottom: 1px solid #000;
+      border-left: 1px solid #000;
+      bottom: -4px;
+      height: 3px;
+      left: 2px;
+      width: calc(100% + 1px);
+      content: "";
+      display: block;
+      position: absolute;
+    }
+
+    &::after {
+      border-right: 1px solid #000;
+      border-top: 1px solid #000;
+      height: calc(100% + 1px);
+      right: -4px;
+      top: 2px;
+      width: 3px;
+      content: "";
+      display: block;
+      position: absolute;
+    }
+
+    a {
+      padding: 0 1rem;
+      font: 400 1rem/3.4rem "NotoSansKR";
+      letter-spacing: 0.1rem;
+      position: relative;
+      display: block;
+      text-align: center;
+      color: #fff;
+      background: #000;
+      z-index: 2;
+      border: 1px solid #000;
+
+      .arrow {
+        margin-top: -3px;
+        margin-left: 1.4rem;
+        vertical-align: middle;
+        // width: 20%;
+      }
+    }
+  }
+
+  &.white {
+    > div {
+      &::before {
+        border-bottom: 1px solid #fff;
+        border-left: 1px solid #fff;
+      }
+
+      &::after {
+        border-right: 1px solid #fff;
+        border-top: 1px solid #fff;
+      }
+
+      a {
+        color: #000;
+        background: #fff;
+        border: 1px solid #fff;
+      }
+    }
+  }
+}
+
+#fitness {
+  .clfix {
+    &:after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+  }
+  .slick-slide {
+    outline: 0 none;
+  }
+  .slick-dots {
+    position: absolute;
+    overflow: hidden;
+    text-align: center;
+    z-index: 3;
+    li {
+      display: inline-block;
+      margin: 0 3px;
+      border: 0;
+      text-indent: -9999px;
+      background: transparent;
+      width: 7px;
+      height: 7px;
+      border: 1px solid #9ed125;
+      border-radius: 50%;
+      transition: all 0.3s;
+      &.slick-active {
+        background: #9ed125;
+      }
+    }
+  }
+  .section {
+    position: relative;
+    z-index: 1;
+  }
+  .sect_visual {
+    > img {
+      display: block;
+      width: 100%;
+    }
+    > a.play-video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      z-index: 2;
+      > img {
+        display: inline-block;
+        width: 50%;
+      }
+    }
+  }
+
+  .cont_wrap {
+    background: url("/images/reebok/2021/event/liful/cont_bg.jpg") 100% 100% no-repeat;
+    > * {
+      &:after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+    }
+  }
+
+  .sect_innersize {
+    width: 100%;
+  }
+
+  .sect_state {
+    padding: 4rem 0 4.3rem;
+    text-align: center;
+    h3 {
+      font: 700 2.3rem/2.3rem "neueplak";
+      color: #fff;
+      text-align: center;
+      letter-spacing: 2px;
+      span.thin {
+        font: 200 30px/30px "neueplak";
+      }
+    }
+    .btn {
+      //   margin-top: 2rem;
+    }
+  }
+
+  .sect_look_1 {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    .slider_box {
+      padding: 0 3rem;
+      &:nth-child(1) {
+        #look1-1 {
+          float: right;
+          width: 80%;
+          &:before {
+            display: inline-block;
+            content: "";
+            position: absolute;
+            top: 1rem;
+            bottom: 0;
+            left: -5rem;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            border: 1px solid #4d613a;
+            transition: 1s;
+            transition-delay: 1s;
+          }
+        }
+      }
+      &:nth-child(2) {
+        margin: 7rem 0 3rem;
+        #look1-2 {
+          float: left;
+          width: 80%;
+        }
+      }
+      .slick-dots {
+        bottom: 0;
+        left: -20px;
+        li {
+          display: block;
+          margin: 5px 0;
+        }
+      }
+    }
+    .txt_box {
+      h4 {
+        font: 700 2.5rem/2.5rem "neueplak";
+        color: #fff;
+        letter-spacing: 2px;
+        text-align: center;
+        span.thin {
+          font: 200 2.5rem/2.5rem "neueplak";
+          color: #fff;
+        }
+      }
+      p {
+        padding-top: 1.5rem;
+        font: 400 1.1rem "neueplak", "NotoSansKR";
+        color: #fff;
+        letter-spacing: normal;
+        text-align: center;
+      }
+      h5 {
+        padding-top: 1.5rem;
+        text-align: center;
+        > img {
+          display: inline-block;
+          width: 24%;
+          min-width: 95px;
+        }
+      }
+    }
+  }
+
+  .sect_look_2 {
+    margin-top: 5rem;
+    text-align: center;
+    padding: 0 1rem;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    .slider_box {
+      width: 100%;
+      > img {
+        position: absolute;
+        z-index: 2;
+      }
+      .slick-dots {
+        width: 100%;
+        bottom: -25px;
+      }
+    }
+    .btn {
+      margin-top: 3rem;
+    }
+  }
+
+  .sect_look_3 {
+    padding: 8rem 0 5rem;
+    .slider_box {
+      .slick-dots {
+        width: 100%;
+        bottom: -25px;
+        li {
+        }
+      }
+      &:nth-child(1) {
+        padding: 0 2.5rem;
+        .slick-dots {
+          width: auto;
+          top: -5px;
+          right: -14px;
+          li {
+            display: block;
+            margin: 5px 0;
+            button {
+              display: none;
+            }
+          }
+        }
+      }
+      &:nth-child(2) {
+        padding: 6rem 5rem;
+        ul#look3-3 {
+        }
+      }
+      &:nth-child(3) {
+        padding: 0 2.5rem;
+        ul#look3-2 {
+        }
+      }
+    }
+    .txt_box {
+      margin-top: 6rem;
+      padding: 0 5rem;
+      text-align: center;
+      h5 {
+        text-align: center;
+        > img {
+          display: inline-block;
+          max-width: 160px;
+        }
+      }
+      .btn {
+        margin-top: 3rem;
+      }
+    }
+  }
+}
+
+.bg_deco_2 {
+  position: absolute;
+  top: 44%;
+  right: -44%;
+  width: 356px;
+  height: 356px;
+  border: 1px solid #4d613a;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.bg_deco_3 {
+  position: absolute;
+  top: 44%;
+  left: 39%;
+  width: 1px;
+  height: 300px;
+  background: #4d613a;
+  z-index: -1;
+}
+
+.bg_deco_4 {
+  position: absolute;
+  top: 16%;
+  left: 39%;
+  width: 380px;
+  height: 380px;
+  border: 1px solid #4d613a;
+  transform: rotate(10deg);
+  transition: 1s;
+  z-index: -1;
+  span {
+    position: absolute;
+    display: inline-block;
+    border: 1px solid #4d613a;
+    transition: 1s;
+    &:first-child {
+      top: 15px;
+      left: 15px;
+      width: 350px;
+      height: 350px;
+      opacity: 0.7;
+      transform: rotate(10deg);
+    }
+    &:last-child {
+      top: 30px;
+      left: 30px;
+      width: 320px;
+      height: 320px;
+      opacity: 0.5;
+      transform: rotate(20deg);
+    }
+  }
+}
+
+.sect_look_3.on {
+  .bg_deco_4 {
+    transform: rotate(0);
+    span {
+      &:first-child {
+        transform: rotate(0);
+      }
+      &:last-child {
+        transform: rotate(0);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 376px) {
+  .bg_deco_1 {
+    bottom: 62% !important;
+  }
+}
+@media screen and (max-width: 321px) {
+  .bg_deco_1 {
+    bottom: 62% !important;
+  }
+}
