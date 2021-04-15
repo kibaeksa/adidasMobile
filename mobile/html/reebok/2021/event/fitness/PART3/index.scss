@@ -1,0 +1,409 @@
+@import "./mobile/MO/reebok/css/scss/about.scss";
+
+#contents {
+  img {
+    vertical-align: middle;
+  }
+}
+
+body {
+  // height:100%;
+  outline: none;
+}
+
+button {
+  outline: none;
+}
+
+a {
+  outline: none;
+}
+
+.btn {
+  > div {
+    position: relative;
+    display: inline-block;
+
+    &::before {
+      border-bottom: 1px solid #000;
+      border-left: 1px solid #000;
+      bottom: -3px;
+      height: 3px;
+      left: 2px;
+      width: calc(100%);
+      content: "";
+      display: block;
+      position: absolute;
+    }
+
+    &::after {
+      border-right: 1px solid #000;
+      border-top: 1px solid #000;
+      height: calc(100%);
+      right: -3px;
+      top: 2px;
+      width: 3px;
+      content: "";
+      display: block;
+      position: absolute;
+    }
+
+    a {
+      padding: 0 1rem;
+      font: 400 0.9rem/3.4rem "NotoSansKR";
+      letter-spacing: 0.1rem;
+      position: relative;
+      display: block;
+      text-align: center;
+      color: #fff;
+      background: #000;
+      z-index: 2;
+      border: 1px solid #000;
+
+      .arrow {
+        display: inline-block;
+        margin-top: -3px;
+        margin-left: 1.4rem;
+        vertical-align: middle;
+        // width: 20%;
+      }
+    }
+  }
+
+  &.white {
+    > div {
+      &::before {
+        border-bottom: 1px solid #fff;
+        border-left: 1px solid #fff;
+      }
+
+      &::after {
+        border-right: 1px solid #fff;
+        border-top: 1px solid #fff;
+      }
+
+      a {
+        color: #000;
+        background: #fff;
+        border: 1px solid #fff;
+      }
+    }
+  }
+}
+
+#fitness {
+  .sect_wrap {
+    padding: 3rem 0;
+    &.sect_wrap_a {
+      background: url("/images/reebok/2021/event/fitness/PART3/sect_a_bg.jpg") no-repeat;
+      background-size: cover;
+    }
+    &.sect_wrap_b {
+      background: url("/images/reebok/2021/event/fitness/PART3/sect_b_bg.jpg") no-repeat;
+      background-size: cover;
+    }
+  }
+  .section {
+    position: relative;
+    > img {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  .head_area {
+    padding: 0 0 2rem;
+    width: 100%;
+    text-align: center;
+    &.wt {
+      h4 {
+        color: #fff;
+      }
+      p {
+        color: #fff;
+      }
+    }
+    h4 {
+      font: 700 1.9rem/1.9rem "neueplak-ext", "NotoSansKR";
+      text-align: center;
+      color: #fff;
+      letter-spacing: 1px;
+      span {
+        font: 900 2.5rem/2.5rem "NotoSansKR";
+        color: #fff;
+        letter-spacing: inherit;
+      }
+      &.small {
+        font-weight: 400;
+        font-size: 2.2rem;
+        line-height: 2.2rem;
+        span {
+          font-size: inherit;
+          line-height: inherit;
+        }
+      }
+    }
+    h5 {
+      text-align: center;
+      img {
+        display: inline-block;
+      }
+    }
+    p {
+      padding-top: 1.2rem;
+      font: 300 1.1rem "NotoSansKR";
+      color: #fff;
+      text-align: center;
+      letter-spacing: 2px;
+      &.by {
+        font: 700 1rem "neueplak-ext";
+        letter-spacing: 2px;
+      }
+      span {
+        font: 700 1.2rem "neueplak-ext";
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+    }
+    .btn {
+      margin-top: 2rem;
+    }
+  }
+
+  .cont_slide {
+    position: relative;
+    width: 88%;
+    margin: 0 auto;
+    text-align: center;
+    .slick-list {
+      overflow: visible !important;
+    }
+    .slick-slide {
+      outline: none;
+      padding: 0 0.5rem;
+      opacity: 0.6;
+      transition: 1s;
+      transition-delay: 0.4s;
+      &.slick-current {
+        opacity: 1;
+      }
+      img {
+        display: block;
+        width: 100%;
+      }
+    }
+
+    .slick-dots {
+      display: inline-block;
+      margin: 1.2rem 0 0;
+      li {
+        display: inline-block;
+        margin: 0 3px;
+        width: 10px;
+        height: 10px;
+        border: 1px solid #fff;
+        border-radius: 50%;
+        text-indent: -9999px;
+        cursor: pointer;
+
+        &.slick-active {
+          background: #fff;
+        }
+      }
+    }
+  }
+
+  .sect_visual {
+    > img {
+      display: block;
+      width: 100%;
+    }
+    // .visual_text {
+    //   position: absolute;
+    //   width: 100%;
+    //   top: 10%;
+    //   left: 0;
+    //   z-index: 2;
+    //   &.on {
+    //     h3 {
+    //       // -webkit-filter: blur(0);
+    //       // filter: blur(0);
+    //       transform: translateX(0);
+    //       opacity: 1;
+    //     }
+    //   }
+    //   h3 {
+    //     padding-bottom: 40px;
+    //     display: inline-block;
+    //     font: 900 3rem/3rem "NotoSansKR";
+    //     text-align: center;
+
+    //     //   -webkit-filter: blur(30px);
+    //     //   filter: blur(30px);
+    //     transform: translateX(-30px);
+    //     transition: 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+    //     opacity: 0;
+
+    //     &.t_top {
+    //       color: #000;
+    //     }
+    //     &.t_bot {
+    //       color: #ff6061;
+    //     }
+    //     &:nth-child(1) {
+    //       transition-delay: 0;
+    //     }
+    //     &:nth-child(2) {
+    //       transition-delay: 0.4s;
+    //     }
+    //     &:nth-child(3) {
+    //       transition-delay: 0.8s;
+    //     }
+    //     &:nth-child(4) {
+    //       transition-delay: 1.2s;
+    //     }
+    //   }
+    // }
+  }
+
+  .sect_recommend {
+    padding: 3rem 0;
+    background: url("/images/reebok/2021/event/fitness/PART3/recom_bg.jpg") no-repeat;
+    background-size: cover;
+    .navi_recommend {
+      padding-top: 3rem;
+      ul {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        li {
+          position: relative;
+          width: auto;
+          font: 400 1.2rem/1.2rem "NotoSansKR";
+          letter-spacing: 1px;
+          transition: 500ms;
+          &::after {
+            content: "";
+            display: inline-block;
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #000;
+            transition: 500ms;
+          }
+          &.on {
+            font-size: 1.3rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            &::after {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+    .recommend_cards {
+      margin: 3rem 0 0;
+      padding: 0 2.5rem;
+      width: 100%;
+      text-align: center;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      .slick-list {
+        .slick-slide {
+          display: block;
+          width: 100%;
+          padding-bottom: 3px;
+          text-align: center;
+          > img {
+            display: inline-block;
+          }
+          .btn {
+            //   width: 190px;
+            margin: 1.5rem 4px 3px;
+            display: inline-block;
+          }
+        }
+      }
+      .slick-dots {
+        display: inline-block;
+        margin: 2rem 0 0;
+        li {
+          display: inline-block;
+          margin: 0 3px;
+          padding: 0;
+          width: 10px;
+          height: 10px;
+          border: 1px solid #000;
+          border-radius: 50%;
+          text-indent: -9999px;
+          cursor: pointer;
+
+          &.slick-active {
+            background: #000;
+          }
+        }
+      }
+    }
+  }
+
+  .sect_video {
+    color: #fff;
+    text-align: center;
+    .head_area {
+      h4 {
+        span.thin {
+          font: 300 1.9rem/1.9rem "neueplak-ext", "NotoSansKR";
+          text-align: center;
+        }
+        &.middle {
+          font: 300 2.6rem/2.6rem "NotoSansKR";
+        }
+      }
+    }
+    .body_area {
+      position: relative;
+      padding: 0 2rem;
+      > img {
+        display: block;
+        width: 100%;
+      }
+      > a.play-video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        > img {
+          width: 50%;
+        }
+      }
+    }
+    .btn {
+      margin-top: 2rem;
+      display: inline-block;
+    }
+  }
+
+  .sect_look {
+    padding: 6rem 0 0;
+    background-size: cover;
+    text-align: center;
+    .head_area {
+      h4 {
+        font: 400 3rem/3rem "NotoSansKR";
+        letter-spacing: 3px;
+        text-align: center;
+        color: #fff;
+        span {
+          font-weight: bold;
+          font-size: 3rem;
+          letter-spacing: inherit;
+        }
+      }
+    }
+  }
+}
