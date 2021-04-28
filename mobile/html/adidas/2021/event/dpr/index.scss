@@ -1,0 +1,239 @@
+@import "./mobile/css/adidas/scss/common/mixin.scss";
+@import "./mobile/css/adidas/scss/common/common.scss";
+// html,body{
+// 	height:100%;
+// }
+.not_scroll {
+  overflow: hidden;
+}
+
+#dpr {
+  .btn_default {
+    &.m0 {
+      margin-top: 0;
+    }
+  }
+  .section {
+    position: relative;
+  }
+
+  .sect_visual {
+    .visual_img {
+      width: 100%;
+      img {
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+
+  .sect_visualtext {
+    padding: 1rem 0;
+    background: #000;
+    text-align: center;
+
+    > * {
+      text-align: center;
+      color: #fff;
+    }
+    p {
+      font: 300 1.1rem/1.7rem "NotoSansKR";
+      letter-spacing: normal;
+    }
+  }
+
+  .sect_statement {
+    padding: 2rem;
+    .inner {
+      background: #eaf0f1;
+      text-align: center;
+      padding: 1.5rem;
+      p {
+        font: 500 1rem/1.6rem "NotoSansKR";
+        letter-spacing: normal;
+        color: #000;
+        span {
+          font-weight: 900;
+          letter-spacing: 1px;
+        }
+      }
+    }
+  }
+
+  .sect_flow {
+    background: #e0e0e0;
+    .flow_img {
+      display: flex;
+      height: 420px;
+      flex-direction: row;
+      overflow-x: scroll;
+      // pointer-events: none;
+      > img {
+        display: block;
+        // animation: flow 8s infinite linear;
+        // transition-delay: 2s;
+      }
+    }
+    .flow_text {
+      background: #e0e0e0;
+      text-align: center;
+      padding: 1rem 0 2rem;
+      p {
+        font: 500 1rem/1.6rem "NotoSansKR";
+        letter-spacing: normal;
+        color: #000;
+      }
+    }
+  }
+
+  .sect_video {
+    text-align: center;
+    padding: 1.5rem 0 2rem;
+    .video_box {
+      position: relative;
+      > img {
+        display: block;
+        width: 100%;
+      }
+      .btn-play {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        > img {
+          animation: playbtn 2s infinite cubic-bezier(0.77, 0, 0.175, 1);
+        }
+      }
+    }
+    p {
+      padding-top: 1.4rem;
+      font: 500 1rem/1.6rem "NotoSansKR";
+      letter-spacing: normal;
+      color: #000;
+    }
+  }
+
+  .sect_lookbook {
+    text-align: center;
+    padding-bottom: 3px;
+    .look_slider_form {
+      margin: auto;
+      width: 86%;
+      padding: 1.5rem 0 1.3rem;
+      background: #fff;
+      .slick-list {
+        overflow: visible;
+        .slick-slide {
+          padding: 0 4px;
+          > img {
+            display: block;
+            width: 100%;
+          }
+        }
+      }
+      .slick-dots {
+        text-align: center;
+        padding: 0.8rem 0 0;
+        li {
+          width: 14px;
+          height: 2px;
+          background: #747474;
+          display: inline-block;
+          margin-right: 5px;
+          vertical-align: bottom;
+          &:last-child {
+            margin-right: 0;
+          }
+          button {
+            background: none;
+            border: 0;
+            text-indent: -9999px;
+          }
+          &.slick-active {
+            height: 4px;
+            background: #000;
+          }
+        }
+      }
+    }
+  }
+  .look_text {
+    padding: 2rem 0;
+    background: #000;
+    text-align: center;
+    p {
+      font: 400 1rem/1.6rem "NotoSansKR";
+      letter-spacing: normal;
+      color: #fff;
+    }
+  }
+
+  .sect_grid {
+    padding: 1rem 0 3rem;
+    text-align: center;
+    .btn_default {
+      margin-top: 0;
+    }
+    ul {
+      margin-top: 2rem;
+      overflow: hidden;
+      li {
+        float: left;
+        width: 25%;
+        > img {
+          display: block;
+          width: 100%;
+        }
+      }
+    }
+    &.grid2 {
+      padding: 0 0 2rem;
+      ul {
+        margin: 0;
+        overflow: hidden;
+        li {
+          float: left;
+          width: 50%;
+          > img {
+            display: block;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  .sect_logo {
+    > img {
+      display: block;
+      width: 100%;
+    }
+  }
+}
+
+@keyframes flow {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-742px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes playbtn {
+  0% {
+    transform: rotate(-20deg) skew(30deg, 20deg);
+    filter: blur(5px);
+  }
+  50% {
+    transform: rotate(0) skew(0);
+    filter: blur(0);
+  }
+  100% {
+    transform: rotate(-20deg) skew(30deg, 20deg);
+    filter: blur(5px);
+  }
+}
