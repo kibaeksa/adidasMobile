@@ -193,21 +193,21 @@
 						$(this).attr("href") === "#" && e.preventDefault();
 					})
 
-					var img = (function () {
-						var img = $('.visual__container .img');
-						var index = 0;
-						setInterval(function () {
-							if (index == 0) {
-								img.eq(0).find('img').removeClass('on').eq(index).addClass('on');
-								img.eq(1).find('img').removeClass('on').eq(index).addClass('on');
-								index++;
-							} else {
-								img.eq(0).find('img').removeClass('on').eq(index).addClass('on');
-								img.eq(1).find('img').removeClass('on').eq(index).addClass('on');
-								index = 0;
-							}
-						}, 2000)
-					}())
+					// var img = (function () {
+					// 	var img = $('.visual__container .img');
+					// 	var index = 0;
+					// 	setInterval(function () {
+					// 		if (index == 0) {
+					// 			img.eq(0).find('img').removeClass('on').eq(index).addClass('on');
+					// 			img.eq(1).find('img').removeClass('on').eq(index).addClass('on');
+					// 			index++;
+					// 		} else {
+					// 			img.eq(0).find('img').removeClass('on').eq(index).addClass('on');
+					// 			img.eq(1).find('img').removeClass('on').eq(index).addClass('on');
+					// 			index = 0;
+					// 		}
+					// 	}, 2000)
+					// }())
 
 					// 상단 슬라이드
 					function Comp(elem, prev, next) {
