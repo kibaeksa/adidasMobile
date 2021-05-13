@@ -139,6 +139,7 @@
 							</a>
 						</div>
 					</section>
+
 					<div class="carousel">
 						<a class="carousel-item prevent" onclick="openModalVideoViewer('v4LAgvRilIs')">
 							<img src="/images/adidas/2021/event/coreslide/slide02_01.jpg">
@@ -192,6 +193,16 @@
 					$('#coreslide .prevent').click(function (e) {
 						$(this).attr("href") === "#" && e.preventDefault();
 					})
+
+					var isMobile = window.matchMedia("only screen and (max-width: 768px)").matches;
+					if (isMobile) {
+						//Conditional script here
+						var carousel = $('.carousel');
+						var img = $('.carousel .carousel-item img');
+						setTimeout(function () {
+							carousel.height(img.height());
+						}, 0)
+					}
 
 					// 상단 슬라이드
 					function Comp(elem, prev, next) {
