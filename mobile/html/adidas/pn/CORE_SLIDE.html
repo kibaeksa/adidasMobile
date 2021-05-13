@@ -268,18 +268,39 @@
         }
 
         #coreslide .carousel {
-            height: auto
+            height: 450px
         }
 
         #coreslide .carousel .carousel-item {
             width: 75%;
-            height: 100%;
+            height: auto;
             padding-bottom: 100%
         }
 
+        #coreslide .carousel .carousel-item a {
+            transform: translateY(0)
+        }
+
         #coreslide .carousel .indicators {
-            position: relative;
-            padding-top: 100%
+            z-index: 2
+        }
+
+        @media screen and (max-width: 320px) {
+            #coreslide .carousel .indicators {
+                bottom: 10%
+            }
+        }
+
+        @media screen and (min-width: 360px) {
+            #coreslide .carousel .indicators {
+                bottom: 5%
+            }
+        }
+
+        @media screen and (min-width: 414px) {
+            #coreslide .carousel .indicators {
+                bottom: 0
+            }
         }
 
         #coreslide .carousel .indicators li {
@@ -466,22 +487,6 @@
                 $(this).attr("href") === "#" && e.preventDefault();
             })
 
-            // var img = (function () {
-            // 	var img = $('.visual__container .img');
-            // 	var index = 0;
-            // 	setInterval(function () {
-            // 		if (index == 0) {
-            // 			img.eq(0).find('img').removeClass('on').eq(index).addClass('on');
-            // 			img.eq(1).find('img').removeClass('on').eq(index).addClass('on');
-            // 			index++;
-            // 		} else {
-            // 			img.eq(0).find('img').removeClass('on').eq(index).addClass('on');
-            // 			img.eq(1).find('img').removeClass('on').eq(index).addClass('on');
-            // 			index = 0;
-            // 		}
-            // 	}, 2000)
-            // }())
-
             // 상단 슬라이드
             function Comp(elem, prev, next) {
                 this.mod = function ( // 모듈
@@ -524,9 +529,6 @@
                                     centerPadding: '125px',
                                 }
                             }
-                            // You can unslick at a given breakpoint now by adding:
-                            // settings: "unslick"
-                            // instead of a settings object
                         ]
                     });
                 }
@@ -555,21 +557,24 @@
             });
 
             $('.slide__container .item').click(function () {
-                var index = $('#slider01').find('.slick-current').attr("data-slick-index");
-                makePopup(Number(index));
-                console.log(index);
-                $('.popup__container').removeClass('on');
-                $('.popup__container').eq(index).addClass('on');
-                // close
-                $('.popup__container .close').click(function () {
+                var index = $(this).attr("data-slick-index");
+                if ($(this).hasClass('slick-center') && index != -1) {
+                    makePopup(Number(index));
                     $('.popup__container').removeClass('on');
-                })
-                $('.popup__container .overlay').click(function () {
-                    $('.popup__container').removeClass('on');
-                })
-                // var index = $(this).index();
-                // $('.slider').slick('setPosition');
-                // $('.slider').slick('slickGoTo', 0);
+                    $('.popup__container').eq(index).addClass('on');
+                    // close
+                    $('.popup__container .close').click(function () {
+                        $('.popup__container').removeClass('on');
+                        $('#coreslide section').css({ 'filter': 'blur(' + 0 + 'px)' });
+                    })
+                    $('.popup__container .overlay').click(function () {
+                        $('.popup__container').removeClass('on');
+                        $('#coreslide section').css({ 'filter': 'blur(' + 0 + 'px)' });
+                    })
+                }
+                if ($('.popup__container').hasClass('on')) {
+                    $('#coreslide section').css({ 'filter': 'blur(' + 3 + 'px)' });
+                }
             })
 
             // 팝업

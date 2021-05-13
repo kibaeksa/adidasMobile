@@ -208,19 +208,29 @@
 	}
 
 	.carousel {
-		height: auto;
+		height: 450px;
 		.carousel-item{
             width: 75%;
-			height: 100%;
-			padding-bottom: 95%;
+			height: auto;
+			padding-bottom: 100%;
+			&.active{
+				// z-index: 100 !important;
+			}
 			a{
 				transform: translateY(0);
 			}
 		}
 		.indicators{
-			position: relative;
-			padding-top: 100%;
-		
+			z-index: 2;
+			@media screen and (max-width: 320px) {
+				bottom: 10%;
+			}
+			@media screen and (min-width: 360px) {
+				bottom: 5%;
+			}
+			@media screen and (min-width: 414px) {
+				bottom: 0;
+			}
 			li{
 				width: 10px;
 				height: 10px;
