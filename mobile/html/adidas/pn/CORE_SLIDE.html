@@ -268,7 +268,25 @@
         }
 
         #coreslide .carousel {
-            height: auto
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            -webkit-transform-origin: 0% 50%;
+            transform-origin: 0% 50%
+        }
+
+        @media screen and (max-width: 320px) {
+            #coreslide .carousel {
+                height: 345px
+            }
+        }
+
+        @media screen and (min-width: 414px) {
+            #coreslide .carousel {
+                height: 435px
+            }
         }
 
         #coreslide .carousel>img {
@@ -279,7 +297,15 @@
 
         #coreslide .carousel .carousel-item {
             width: 75%;
-            height: auto
+            height: inherit;
+            visibility: hidden;
+            position: absolute;
+            top: 0;
+            left: 0
+        }
+
+        #coreslide .carousel .carousel-item.active {
+            z-index: 100 !important
         }
 
         #coreslide .carousel .carousel-item a {
@@ -287,9 +313,7 @@
         }
 
         #coreslide .carousel .indicators {
-            z-index: 2;
-            position: relative;
-            top: 0.7rem
+            z-index: 100
         }
 
         #coreslide .carousel .indicators li {
@@ -302,6 +326,11 @@
 
         #coreslide .carousel .indicators li.active {
             background: #000000
+        }
+
+        #coreslide .carousel.scrolling .carousel-item .materialboxed,
+        #coreslide .carousel .carousel-item:not(.active) .materialboxed {
+            pointer-events: none
         }
 
         #coreslide .bottom__container {
@@ -423,32 +452,31 @@
                 </div>
             </section>
             <div class="carousel">
-                <img src="/images/adidas/2021/event/coreslide/slide02_01.jpg">
-                <a href="#" class="carousel-item prevent" onclick="openModalVideoViewer('v4LAgvRilIs')">
+                <a class="carousel-item prevent" onclick="openModalVideoViewer('v4LAgvRilIs')">
                     <img src="/images/adidas/2021/event/coreslide/slide02_01.jpg">
                 </a>
-                <a href="#" class="carousel-item prevent">
+                <a class="carousel-item prevent">
                     <img src="/images/adidas/2021/event/coreslide/slide02_02.jpg">
                 </a>
-                <a href="#" class="carousel-item prevent">
+                <a class="carousel-item prevent">
                     <img src="/images/adidas/2021/event/coreslide/slide02_03.jpg">
                 </a>
-                <a href="#" class="carousel-item prevent">
+                <a class="carousel-item prevent">
                     <img src="/images/adidas/2021/event/coreslide/slide02_04.jpg">
                 </a>
-                <a href="#" class="carousel-item prevent">
+                <a class="carousel-item prevent">
                     <img src="/images/adidas/2021/event/coreslide/slide02_05.jpg">
                 </a>
-                <a href="#" class="carousel-item prevent">
+                <a class="carousel-item prevent">
                     <img src="/images/adidas/2021/event/coreslide/slide02_06.jpg">
                 </a>
-                <a href="#" class="carousel-item prevent">
+                <a class="carousel-item prevent">
                     <img src="/images/adidas/2021/event/coreslide/slide02_07.jpg">
                 </a>
-                <a href="#" class="carousel-item prevent">
+                <a class="carousel-item prevent">
                     <img src="/images/adidas/2021/event/coreslide/slide02_08.jpg">
                 </a>
-                <a href="#" class="carousel-item prevent">
+                <a class="carousel-item prevent">
                     <img src="/images/adidas/2021/event/coreslide/slide02_09.jpg">
                 </a>
             </div>
@@ -545,7 +573,6 @@
                     // noWrap: true
                 });
             });
-
             $('.slide__container .item').click(function () {
                 var index = $(this).attr("data-slick-index");
                 if ($(this).hasClass('slick-center') && index != -1) {
