@@ -268,13 +268,18 @@
         }
 
         #coreslide .carousel {
-            height: 450px
+            height: auto
+        }
+
+        #coreslide .carousel>img {
+            opacity: 0;
+            width: 75%;
+            margin: 1rem auto
         }
 
         #coreslide .carousel .carousel-item {
             width: 75%;
-            height: auto;
-            padding-bottom: 100%
+            height: auto
         }
 
         #coreslide .carousel .carousel-item a {
@@ -282,25 +287,9 @@
         }
 
         #coreslide .carousel .indicators {
-            z-index: 2
-        }
-
-        @media screen and (max-width: 320px) {
-            #coreslide .carousel .indicators {
-                bottom: 10%
-            }
-        }
-
-        @media screen and (min-width: 360px) {
-            #coreslide .carousel .indicators {
-                bottom: 5%
-            }
-        }
-
-        @media screen and (min-width: 414px) {
-            #coreslide .carousel .indicators {
-                bottom: 0
-            }
+            z-index: 2;
+            position: relative;
+            top: 0.7rem
         }
 
         #coreslide .carousel .indicators li {
@@ -434,6 +423,7 @@
                 </div>
             </section>
             <div class="carousel">
+                <img src="/images/adidas/2021/event/coreslide/slide02_01.jpg">
                 <a href="#" class="carousel-item prevent" onclick="openModalVideoViewer('v4LAgvRilIs')">
                     <img src="/images/adidas/2021/event/coreslide/slide02_01.jpg">
                 </a>

@@ -208,11 +208,15 @@
 	}
 
 	.carousel {
-		height: 450px;
+		height: auto;
+		>img{
+			opacity: 0;
+			width: 75%;
+			margin: 1rem auto;
+		}
 		.carousel-item{
             width: 75%;
 			height: auto;
-			padding-bottom: 100%;
 			&.active{
 				// z-index: 100 !important;
 			}
@@ -222,15 +226,8 @@
 		}
 		.indicators{
 			z-index: 2;
-			@media screen and (max-width: 320px) {
-				bottom: 10%;
-			}
-			@media screen and (min-width: 360px) {
-				bottom: 5%;
-			}
-			@media screen and (min-width: 414px) {
-				bottom: 0;
-			}
+			position: relative;
+			top: 0.7rem;
 			li{
 				width: 10px;
 				height: 10px;
