@@ -1,0 +1,661 @@
+<div id="container">
+    <style type="text/css">
+        @media screen and (max-width: 320px) {
+            html {
+                font-size: 10px
+            }
+        }
+
+        @media screen and (min-width: 800px) {
+            html {
+                font-size: 12px
+            }
+        }
+
+        .pseudo-element {
+            content: '';
+            display: block
+        }
+
+        #wrap {
+            padding-top: 50px
+        }
+
+        .btn_default {
+            margin-top: 0
+        }
+
+        p,
+        span,
+        em,
+        h3 {
+            letter-spacing: 0
+        }
+
+        @keyframes fade-in {
+            from {
+                opacity: 0
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        #coreslide img {
+            width: 100%
+        }
+
+        #coreslide .bg01 {
+            background: url("/images/adidas/2021/event/coreslide/bg01.jpg") no-repeat;
+            background-position: top;
+            background-size: 100% auto
+        }
+
+        #coreslide .bg02 {
+            background: url("/images/adidas/2021/event/coreslide/bg02.jpg") no-repeat;
+            background-position: top;
+            background-size: 100% auto
+        }
+
+        #coreslide section {
+            position: relative
+        }
+
+        #coreslide .popup__container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 701;
+            overflow: auto;
+            display: none
+        }
+
+        #coreslide .popup__container.on {
+            display: block;
+            z-index: 2
+        }
+
+        #coreslide .popup__container .overlay {
+            width: 100%;
+            height: 100%;
+            z-index: 700;
+            background: rgba(0, 0, 0, 0.99);
+            opacity: 0.7;
+            -ms-filter: alpha(opacity=70);
+            filter: alpha(opacity=70);
+            position: fixed;
+            top: 0;
+            left: 0
+        }
+
+        #coreslide .popup__container .popup {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 82%;
+            margin: 0 auto;
+            transform: translate(-50%, -50%);
+            z-index: 701
+        }
+
+        #coreslide .popup__container .popup button.close {
+            position: fixed;
+            top: -8%;
+            right: 0;
+            background: none;
+            border: none;
+            text-indent: -9999px;
+            z-index: 702;
+            cursor: pointer
+        }
+
+        #coreslide .popup__container .popup button.close::before,
+        #coreslide .popup__container .popup button.close::after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            clear: both;
+            content: '';
+            width: 2px;
+            height: 20px;
+            background: #fff;
+            z-index: 702
+        }
+
+        #coreslide .popup__container .popup button.close::before {
+            transform: rotate(45deg)
+        }
+
+        #coreslide .popup__container .popup button.close::after {
+            transform: rotate(-45deg)
+        }
+
+        #coreslide .popup__container .popup .img .slick-dots {
+            text-align: center;
+            margin-top: 1rem
+        }
+
+        #coreslide .popup__container .popup .img .slick-dots li {
+            display: inline-block;
+            width: 7px;
+            height: 7px;
+            margin: 0 2.5px;
+            background: #737373;
+            border-radius: 50%
+        }
+
+        #coreslide .popup__container .popup .img .slick-dots li img {
+            width: 100%
+        }
+
+        #coreslide .popup__container .popup .img .slick-dots li button {
+            background: none;
+            border: none;
+            text-indent: -9999px
+        }
+
+        #coreslide .popup__container .popup .img .slick-dots li.slick-active {
+            background: #84bc01
+        }
+
+        #coreslide .popup__container .popup .slider__nav {
+            position: absolute;
+            top: 44%;
+            bottom: auto;
+            left: auto;
+            transform: translateY(-50%);
+            margin-left: auto;
+            width: 100%
+        }
+
+        #coreslide .popup__container .popup .slider__nav::after {
+            display: block;
+            content: '';
+            clear: both
+        }
+
+        #coreslide .popup__container .popup .slider__nav .prev-button,
+        #coreslide .popup__container .popup .slider__nav .next-button {
+            position: relative
+        }
+
+        #coreslide .popup__container .popup .slider__nav .prev-button img,
+        #coreslide .popup__container .popup .slider__nav .next-button img {
+            width: 60%;
+            margin: 0 auto
+        }
+
+        #coreslide .popup__container .popup .slider__nav .prev-button {
+            float: left;
+            left: -8%;
+            transform: rotate(180deg)
+        }
+
+        #coreslide .popup__container .popup .slider__nav .next-button {
+            float: right;
+            right: -8%
+        }
+
+        #coreslide .visual__container {
+            width: 100%
+        }
+
+        #coreslide .visual__container::after {
+            display: block;
+            content: '';
+            clear: both
+        }
+
+        #coreslide .visual__container .img {
+            position: relative;
+            width: 50%;
+            float: left
+        }
+
+        #coreslide .visual__container .img img {
+            display: none;
+            width: 80%;
+            margin: 0 auto
+        }
+
+        #coreslide .visual__container .img img.on {
+            display: block
+        }
+
+        #coreslide .visual__container .img.lefty {
+            padding-bottom: 35px
+        }
+
+        #coreslide .visual__container .img.righty {
+            position: relative;
+            top: 1.3rem
+        }
+
+        #coreslide .visual__container .txt {
+            position: absolute;
+            top: 50%;
+            bottom: auto;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            margin-left: auto;
+            width: 100%;
+            white-space: nowrap
+        }
+
+        #coreslide .visual__container .txt h3,
+        #coreslide .visual__container .txt p {
+            text-align: center;
+            color: #ffffff
+        }
+
+        #coreslide .visual__container .txt h3 {
+            font: 900 20px/20px "adinenuPro-bold";
+            text-shadow: 1px 1px 1px #000000
+        }
+
+        #coreslide .visual__container .txt p {
+            font: 500 11px/11px "adinenuPro-bold"
+        }
+
+        #coreslide .desc__container {
+            text-align: center;
+            padding: 60px 0 32.5px
+        }
+
+        #coreslide .desc__container p,
+        #coreslide .desc__container em,
+        #coreslide .desc__container span {
+            color: #000000;
+            text-align: center;
+            display: block
+        }
+
+        #coreslide .desc__container p {
+            font: 900 24px/24px "adinenuPro-bold";
+            margin-bottom: 3px
+        }
+
+        #coreslide .desc__container em {
+            font: 700 17px/17px "NotoSansKR"
+        }
+
+        #coreslide .desc__container span {
+            font: 500 13.5px/18px "NotoSansKR";
+            margin-top: 20px
+        }
+
+        #coreslide .desc__container .btn_default {
+            margin-top: 20px
+        }
+
+        #coreslide .slide__container {
+            margin-bottom: 2rem
+        }
+
+        #coreslide .slide__container .item img {
+            width: 90%;
+            margin: 0 auto
+        }
+
+        #coreslide .slide__container .prev-button,
+        #coreslide .slide__container .next-button {
+            position: absolute;
+            top: 50%;
+            bottom: auto;
+            left: auto;
+            transform: translateY(-50%);
+            margin-left: auto;
+            z-index: 2
+        }
+
+        #coreslide .slide__container .prev-button img,
+        #coreslide .slide__container .next-button img {
+            width: 50%
+        }
+
+        #coreslide .slide__container .prev-button {
+            left: 0;
+            transform: translateY(-50%) rotate(180deg)
+        }
+
+        #coreslide .slide__container .next-button {
+            right: 0
+        }
+
+        #coreslide .grid__container {
+            margin-bottom: 1rem
+        }
+
+        #coreslide .carousel .carousel-item {
+            width: 75%;
+            height: 100%;
+            padding-bottom: 100%
+        }
+
+        #coreslide .carousel .indicators li {
+            width: 10px;
+            height: 10px;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 50%;
+            margin: 10px 4px
+        }
+
+        #coreslide .carousel .indicators li.active {
+            background: #000000
+        }
+
+        #coreslide .bottom__container {
+            padding: 3.5rem 0 4rem;
+            text-align: center
+        }
+
+        #coreslide .bottom__container img {
+            width: 20%;
+            margin: 0 auto
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="/css/slick.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <div id="coreslide">
+        <main role="main">
+            <section class="visual__container bg01">
+                <img src="/images/adidas/2021/event/coreslide/Campaign Page_Top Banner_M.jpg">
+                <!-- <div class="img lefty">
+                                <img src="/images/adidas/2021/event/coreslide/main01_01.jpg" class="on">
+                                <img src="/images/adidas/2021/event/coreslide/main02_01.jpg">
+                            </div>
+                            <div class="img righty">
+                                <img src="/images/adidas/2021/event/coreslide/main02_01.jpg" class="on">
+                                <img src="/images/adidas/2021/event/coreslide/main01_01.jpg">
+                            </div> -->
+                <!-- <div class="txt">
+                                <h3>
+                                    STEP IN COMPORT
+                                </h3>
+                                <p>신는 순간 나만 아는 그 느낌</p>
+                            </div> -->
+            </section>
+            <section class="desc__container">
+                <p>
+                    DURAMO SL SLIDE • SANDAL
+                </p>
+                <em>
+                    발끝부터 통통 튀는 매일
+                </em>
+                <span>
+                    더위를 잊게 해주는 컬러풀한 나만의 스타일<br />
+                    신는 순간 잊을 수 없는 편안함
+                </span>
+                <div class="btn_default">
+                    <a href="https://m.adidas.co.kr/MO/Promotion/landingPage.action?NFN_ST=Y&pageNo=1655&term=1"
+                        campaign-label="구매하기">
+                        구매하기
+                    </a>
+                </div>
+            </section>
+            <section class="slide__container">
+                <div class="sliders" id="slider01">
+                    <div class="item">
+                        <a href="#" class="prevent">
+                            <img src="/images/adidas/2021/event/coreslide/slide01_01.jpg">
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#" class="prevent">
+                            <img src="/images/adidas/2021/event/coreslide/slide01_02.jpg">
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#" class="prevent">
+                            <img src="/images/adidas/2021/event/coreslide/slide01_03.jpg">
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#" class="prevent">
+                            <img src="/images/adidas/2021/event/coreslide/slide01_04.jpg">
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#" class="prevent">
+                            <img src="/images/adidas/2021/event/coreslide/slide01_05.jpg">
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#" class="prevent">
+                            <img src="/images/adidas/2021/event/coreslide/slide01_06.jpg">
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#" class="prevent">
+                            <img src="/images/adidas/2021/event/coreslide/slide01_07.jpg">
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#" class="prevent">
+                            <img src="/images/adidas/2021/event/coreslide/slide01_08.jpg">
+                        </a>
+                    </div>
+                </div>
+                <div class="prev-button">
+                    <img src="/images/adidas/2021/event/coreslide/arrow.png" alt="">
+                </div>
+                <div class="next-button">
+                    <img src="/images/adidas/2021/event/coreslide/arrow.png" alt="">
+                </div>
+            </section>
+            <section class="desc__container">
+                <em>
+                    어떤 발에도 자유로운 핏
+                </em>
+                <span>
+                    오래 신어도 폭신한 쿠션감으로<br />
+                    매일매일 편안한 느낌
+                </span>
+                <div class="btn_default">
+                    <a href="https://m.adidas.co.kr/MO/Promotion/landingPage.action?NFN_ST=Y&pageNo=1655&term=1"
+                        campaign-label="구매하기">
+                        구매하기
+                    </a>
+                </div>
+            </section>
+            <section class="grid__container">
+                <img src="/images/adidas/2021/event/coreslide/grid.jpg">
+            </section>
+            <section class="desc__container">
+                <em>
+                    매일 신고 싶은 다양한 컬러와 스타일
+                </em>
+                <span>
+                    버클과 스트랩이 없는 깔끔한 디자인의<br />
+                    언제 어디에나 어울리는 데일리 스타일
+                </span>
+                <div class="btn_default">
+                    <a href="https://m.adidas.co.kr/MO/Promotion/landingPage.action?NFN_ST=Y&pageNo=1655&term=1"
+                        campaign-label="구매하기">
+                        구매하기
+                    </a>
+                </div>
+            </section>
+            <div class="carousel">
+                <a href="#" class="carousel-item prevent" onclick="openModalVideoViewer('v4LAgvRilIs')">
+                    <img src="/images/adidas/2021/event/coreslide/slide02_01.jpg">
+                </a>
+                <a href="#" class="carousel-item prevent">
+                    <img src="/images/adidas/2021/event/coreslide/slide02_02.jpg">
+                </a>
+                <a href="#" class="carousel-item prevent">
+                    <img src="/images/adidas/2021/event/coreslide/slide02_03.jpg">
+                </a>
+                <a href="#" class="carousel-item prevent">
+                    <img src="/images/adidas/2021/event/coreslide/slide02_04.jpg">
+                </a>
+                <a href="#" class="carousel-item prevent">
+                    <img src="/images/adidas/2021/event/coreslide/slide02_05.jpg">
+                </a>
+                <a href="#" class="carousel-item prevent">
+                    <img src="/images/adidas/2021/event/coreslide/slide02_06.jpg">
+                </a>
+                <a href="#" class="carousel-item prevent">
+                    <img src="/images/adidas/2021/event/coreslide/slide02_07.jpg">
+                </a>
+                <a href="#" class="carousel-item prevent">
+                    <img src="/images/adidas/2021/event/coreslide/slide02_08.jpg">
+                </a>
+                <a href="#" class="carousel-item prevent">
+                    <img src="/images/adidas/2021/event/coreslide/slide02_09.jpg">
+                </a>
+            </div>
+            <section class="bottom__container">
+                <img src="/images/adidas/2021/event/coreslide/logo.jpg">
+            </section>
+            <div class="popup__container popup01"></div>
+            <div class="popup__container popup02"></div>
+            <div class="popup__container popup03"></div>
+            <div class="popup__container popup04"></div>
+            <div class="popup__container popup05"></div>
+            <div class="popup__container popup06"></div>
+            <div class="popup__container popup07"></div>
+            <div class="popup__container popup08"></div>
+            <div class="popup__container popup09"></div>
+
+        </main>
+    </div>
+
+    <script type="text/javascript" src="/designjs/common/slick.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // 앵커 방지
+            $('#coreslide .prevent').click(function (e) {
+                $(this).attr("href") === "#" && e.preventDefault();
+            })
+
+            var img = (function () {
+                var img = $('.visual__container .img');
+                var index = 0;
+                setInterval(function () {
+                    if (index == 0) {
+                        img.eq(0).find('img').removeClass('on').eq(index).addClass('on');
+                        img.eq(1).find('img').removeClass('on').eq(index).addClass('on');
+                        index++;
+                    } else {
+                        img.eq(0).find('img').removeClass('on').eq(index).addClass('on');
+                        img.eq(1).find('img').removeClass('on').eq(index).addClass('on');
+                        index = 0;
+                    }
+                }, 2000)
+            }())
+
+            // 상단 슬라이드
+            function Comp(elem, prev, next) {
+                this.mod = function ( // 모듈
+                    slidesToShow, infinite, auto, centerMode, dots, focusOnSelect, asNavFor, swipe, fade
+                ) {
+                    elem.slick({
+                        cssEase: 'linear',
+                        slidesToScroll: 1,
+                        autoplaySpeed: 3800,
+                        // centerPadding: '115px',
+                        arrows: true,
+                        variableWidth: false,
+                        prevArrow: prev,
+                        nextArrow: next,
+                        slidesToShow: slidesToShow, // 커스텀 시작
+                        infinite: infinite,
+                        autoplay: auto,
+                        centerMode: centerMode,
+                        dots: dots,
+                        focusOnSelect: focusOnSelect,
+                        asNavFor: asNavFor,
+                        swipe: swipe,
+                        fade: fade,
+                        responsive: [
+                            {
+                                breakpoint: 321,
+                                settings: {
+                                    centerPadding: '90px',
+                                }
+                            },
+                            {
+                                breakpoint: 376,
+                                settings: {
+                                    centerPadding: '115px',
+                                }
+                            },
+                            {
+                                breakpoint: 415,
+                                settings: {
+                                    centerPadding: '125px',
+                                }
+                            }
+                            // You can unslick at a given breakpoint now by adding:
+                            // settings: "unslick"
+                            // instead of a settings object
+                        ]
+                    });
+                }
+                // 실행
+                this.mod(1, true, false, true, false, '', false, true, false);
+            }
+            // 인스턴스
+            var slideCount = $('#coreslide .sliders').length;
+            for (var i = 0; i < slideCount; i++) {
+                new Comp(
+                    $('#slider0' + (i + 1)),
+                    $('.prev-button'),
+                    $('.next-button')
+                );
+            }
+
+            // 하단 슬라이드
+            $(document).ready(function () {
+                $('.carousel').carousel({
+                    numVisible: 5,
+                    shift: 0,
+                    // padding: 100,
+                    indicators: true,
+                    // noWrap: true
+                });
+            });
+
+            $('.slide__container .item').click(function () {
+                var index = $('#slider01').find('.slick-current').attr("data-slick-index");
+                makePopup(Number(index));
+                console.log(index);
+                $('.popup__container').removeClass('on');
+                $('.popup__container').eq(index).addClass('on');
+                // close
+                $('.popup__container .close').click(function () {
+                    $('.popup__container').removeClass('on');
+                })
+                $('.popup__container .overlay').click(function () {
+                    $('.popup__container').removeClass('on');
+                })
+                // var index = $(this).index();
+                // $('.slider').slick('setPosition');
+                // $('.slider').slick('slickGoTo', 0);
+            })
+
+            // 팝업
+            function makePopup(index) {
+                var container = $('.popup__container');
+                var component = '';
+                component += '<div class="overlay"></div>'
+                component += '<div class="popup">'
+                component += '<button class="close"></button>'
+                component += '<div class="img">'
+                component += '<img src="/images/adidas/2021/event/coreslide/slide01_0' + (index + 1) + '.jpg">'
+                component += '</div>'
+                component += '</div>'
+                container.html(component);
+            }
+
+        });
+
+    </script>
+</div>
+<!-- //container product_list -->
