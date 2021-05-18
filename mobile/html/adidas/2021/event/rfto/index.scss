@@ -1,0 +1,195 @@
+@import "./mobile/css/adidas/scss/common/mixin.scss";
+@import "./mobile/css/adidas/scss/common/common.scss";
+// html,body{
+// 	height:100%;
+// }
+.not_scroll {
+  overflow: hidden;
+}
+
+#rfto {
+  .btn_default {
+    &.m0 {
+      margin-top: 0;
+    }
+  }
+  .section {
+    position: relative;
+  }
+
+  .sect_visual {
+    .visual_img {
+      width: 100%;
+      img {
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+
+  .sect_statement {
+    padding: 2rem;
+    &.sect_possible {
+      padding: 0 0 4rem;
+      .inner {
+        h4 {
+          padding-top: 2rem;
+        }
+        p {
+          padding-top: 2rem;
+        }
+      }
+    }
+    &.sect_event {
+      padding: 0 0 4rem;
+      .inner {
+        h4 {
+          padding-top: 2rem;
+        }
+        ul {
+          padding-top: 2rem;
+          li {
+            padding-bottom: 1rem;
+            font: 500 1rem/1.7rem "NotoSansKR";
+            letter-spacing: normal;
+            color: #000;
+          }
+        }
+        span {
+          font: 400 0.8rem/0.8rem "NotoSansKR";
+          letter-spacing: normal;
+          color: #000;
+        }
+        .btn_default {
+          margin-top: 2rem;
+        }
+      }
+    }
+    .inner {
+      text-align: center;
+      > img {
+        display: block;
+        width: 100%;
+      }
+      h4 {
+        padding-top: 0.5rem;
+        font: 700 2rem/2.6rem "NotoSansKR";
+        letter-spacing: normal;
+        color: #000;
+      }
+      p {
+        padding-top: 2rem;
+        font: 500 1.2rem/2rem "NotoSansKR";
+        letter-spacing: normal;
+        color: #000;
+        span {
+          font-weight: 900;
+          letter-spacing: 1px;
+        }
+      }
+    }
+  }
+
+  .sect_lookbook {
+    text-align: center;
+    padding: 3rem 0;
+    h4 {
+      font: 700 2rem/2.6rem "NotoSansKR";
+      letter-spacing: normal;
+      color: #000;
+    }
+    p {
+      padding-top: 0.5rem;
+      font: 500 1.2rem/2rem "NotoSansKR";
+      letter-spacing: normal;
+      color: #000;
+    }
+    .look_slider_form {
+      margin: auto;
+      width: 86%;
+      padding: 1.5rem 0 1.3rem;
+      background: #fff;
+      .slick-list {
+        overflow: visible;
+        .slick-slide {
+          padding: 0 4px;
+          > img {
+            display: block;
+            width: 100%;
+          }
+          p {
+            text-align: center;
+          }
+        }
+      }
+      .slick-dots {
+        text-align: center;
+        padding: 0.8rem 0 0;
+        li {
+          width: 14px;
+          height: 2px;
+          background: #747474;
+          display: inline-block;
+          margin-right: 5px;
+          vertical-align: bottom;
+          &:last-child {
+            margin-right: 0;
+          }
+          button {
+            background: none;
+            border: 0;
+            text-indent: -9999px;
+          }
+          &.slick-active {
+            height: 4px;
+            background: #000;
+          }
+        }
+      }
+    }
+  }
+
+  .sect_video {
+    text-align: center;
+    .video_box {
+      position: relative;
+      > img {
+        display: block;
+        width: 100%;
+      }
+      .btn-play {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        > img {
+          animation: playbtn 2s infinite cubic-bezier(0.77, 0, 0.175, 1);
+        }
+      }
+    }
+    p {
+      padding-top: 1.4rem;
+      font: 500 1rem/1.6rem "NotoSansKR";
+      letter-spacing: normal;
+      color: #000;
+    }
+  }
+
+  .sect_endbox {
+    padding: 0 0 4rem;
+    text-align: center;
+    p {
+      padding: 3rem 0;
+      font: 500 1.1rem/1.7rem "NotoSansKR";
+      letter-spacing: normal;
+      color: #000;
+    }
+    > img {
+      display: block;
+      width: 100%;
+    }
+    .btn_default {
+    }
+  }
+}
