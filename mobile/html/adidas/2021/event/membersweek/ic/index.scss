@@ -1,0 +1,377 @@
+@import "./mobile/css/adidas/scss/common/mixin.scss";
+@import "./mobile/css/adidas/scss/common/common.scss";
+// html,body{
+// 	height:100%;
+// }
+.ins-preview-wrapper {
+  display: none !important;
+}
+.not_scroll {
+  overflow: hidden;
+}
+.clearfix{
+  display:block;
+  clear:both;
+  content: "";
+}
+#members {
+  .all_cont{
+    position: relative;
+    >img{
+      width:100%;
+    }
+  }
+  .cont1{
+    position: relative;
+    .main_video{
+      video {
+        position: relative;
+        width: 100%;
+        z-index: 1;
+      }
+    }
+    .main_txt{
+      text-align:center;
+      color:#111;
+      padding:2.5rem 1rem;
+      h1{
+        >img{
+          width:90%;
+        }
+      }
+      p{
+        font:500 0.9rem/1.3rem 'NotoSansKR';
+        letter-spacing:0;    
+        padding:1.4rem 0 0 0;    
+      }
+    }
+  }
+
+  .cont2{
+    .cont2_bg{
+      >img{
+        width:100%;
+      }
+      .cont2_tab{
+        position: relative;
+        .tab_btn{
+          position:absolute;
+          left:59%;
+          top:11%;
+          transform: translate(-50%,-50%);
+          z-index:2;
+          width:100%;
+          ul{
+            li{
+              float:left;
+              margin-right:0.5rem;
+              width:41%;
+              a{
+                display:block;
+                width:12.5rem;
+                height:3rem;
+                // background:#88c9c3;
+                border-radius:5px;
+              }
+            }
+            .tab2{
+              background:#111;
+            }
+          }
+        }
+        @media screen and(min-width:414px){
+          .tab_btn{
+            left:61%;
+            top:11%;
+          }
+        }        
+      }
+    }
+    .tab_con{
+      position:relative;
+      .tab__content{
+        width:100%;
+        z-index:0;
+        display:none;
+        position: relative;
+        &.current{
+          display: block;
+          animation: fade-in 1s;
+          animation-fill-mode: forwards;
+          @include css3(transition, 0.5s);
+        }
+        >img{
+          width:100%;
+        }
+      } 
+      .tab1_btn{
+        position:absolute;
+        left:109%;
+        top:30%;
+        transform: translate(-50%,-50%);        
+        width:100%;        
+        a{
+          display:block;
+          width:10rem;
+          height:3rem;
+          // background:#88c9c3;
+        }
+      }
+      @media screen and(min-width:414px){
+        .tab1_btn{
+          left:110.5%;
+          top:30%;
+        }
+      }         
+      .tab1_btn_1{
+        position:absolute;
+        top:30%;
+      }
+      .tab1_btn_2{
+        position:absolute;
+        top:57%;
+      }      
+      .tab1_btn_3{
+        position:absolute;
+        top:84%;
+      }         
+      
+    }   
+    .cont2_bot{
+      position:relative;
+      >img{
+        width:100%;
+      }
+      .cont2_bot_btn{
+        position:absolute;
+        left:107%;
+        top:50%;
+        transform: translate(-50%,-50%);        
+        width:100%;        
+        a{
+          display:block;
+          width:10rem;
+          height:3rem;
+          // background:#fff;
+        }
+      }  
+      @media screen and(min-width:414px){
+        .cont2_bot_btn{
+          left:109%;
+        }
+      }          
+      .cont2_bot_btn_1{
+        top:22%;
+      }
+      .cont2_bot_btn_2{
+        top:47%;
+      }      
+      .cont2_bot_btn_3{
+        top:72%;
+      }             
+    }
+  }
+  .cont3{
+    .cont3_bg{
+      position: relative;
+      background:#88c9c3;
+      padding:1.6rem 0 1.6rem 0;
+      .cont3_txt{
+        text-align:center;
+        padding:0 1rem;
+        span{
+          font:600 1.1rem/1.4rem 'NotoSansKR';
+          letter-spacing:0;   
+          display:block;      
+          padding-bottom:0.4rem;     
+        }
+        h2{
+          >img{
+            width:80%;
+          }
+        }           
+      }
+
+      .cont3_slider{
+        padding:2rem 1rem 0 1rem;
+        .slider_box{
+          width:60%;
+          margin:0 auto;
+          li{
+            text-align:center;
+            .btn_default{
+              margin:0 0 0 0;
+            }
+          }
+          .btn_move{
+            .btn_default{
+              margin:1.5rem 0 0 0;
+            }
+          }
+          .slick-slide{
+            >img{
+              width: 100%;
+              margin: 0 auto;
+            }
+          } 
+
+          .slick-arrow{
+            font-size:0;
+            border:0;
+          }
+      
+          .slick-prev{
+            position:absolute;
+            left: -30.5%;
+            top: 31%;
+            background: url('/images/adidas/2021/event/membersweek/ic/prev.png')center center no-repeat;
+            width: 27px;
+            height: 59px;
+            z-index:3;
+            background-size:70%;
+            outline:none;
+          }					
+          .slick-next{
+            position:absolute;
+            right: -30.5%;
+            top: 31%;
+            background: url('/images/adidas/2021/event/membersweek/ic/next.png')center center no-repeat;
+            width: 27px;
+            height: 59px;
+            z-index:3;
+            background-size:70%;
+            outline:none;
+          }	  
+        }
+      }
+    }
+  }
+  .cont4{
+    .cont4_bg{
+      position: relative;
+      >img{
+        width:100%;
+      }
+      .cont4_tab{
+        position: relative;
+        .tab_btn{
+          position:absolute;
+          left:53%;
+          top:1.5%;
+          transform: translate(-50%,-50%);
+          z-index:2;
+          width:100%;
+          ul{
+            li{
+              float:left;
+              margin-right:0.5rem;
+              width:48%;
+              a{
+                display:block;
+                width:14rem;
+                height:2.5rem;
+                // background:#88c9c3;
+                border-radius:5px;
+              }
+            }
+            .tab2{
+              background:#111;
+            }
+          }
+        }
+        // @media screen and(min-width:414px){
+        //   .tab_btn{
+        //     left:61%;
+        //     top:11%;
+        //   }
+        // }        
+      }      
+    }
+    .tab_con2{
+      position:relative;
+      .tab_content{
+        width:100%;
+        z-index:0;
+        display:none;
+        position: relative;
+        &.current{
+          display: block;
+          animation: fade-in 1s;
+          animation-fill-mode: forwards;
+          @include css3(transition, 0.5s);
+        }
+        >img{
+          width:100%;
+        }
+        .tab3_btn{
+          position:absolute;
+          left:97%;
+          top:19%;
+          transform: translate(-50%,-50%);        
+          width:100%;        
+          a{
+            display:block;
+            width:12rem;
+            height:3rem;
+            // background:#88c9c3;
+          }
+        }          
+        .tab1_btn_1{
+          top:18.7%;
+        }
+        .tab1_btn_2{
+          top:22.7%;
+        }         
+        .tab1_btn_3{
+          top:90%;
+          left:105%;
+          a{
+            width:10rem;
+          }
+        }  
+        .tab1_btn_4{
+          left:60%;
+          top:23.3%;
+          >img{
+            width:70%;
+          }
+        }           
+        .tab1_btn_5{
+          top: 42.8%;
+          left: 76%;
+        }      
+        .tab1_btn_6{
+          top: 83%;
+          left: 84%;
+        }              
+      }
+    }    
+  }
+  
+  .cont6{
+    .cont6_bg{
+      padding:0.6rem 2.8rem 0 2.8rem;
+      background:#88c9c3;
+      .txt{
+        text-align:center;
+        color:#111;
+        padding:1.3rem 0;
+        h4{
+          font:600 1.5rem/1.5rem 'NotoSansKR';
+          letter-spacing:0;
+        }
+        strong{
+          display:block;
+          font:900 2.5rem/2.5rem 'NotoSansKR';
+          letter-spacing:0;
+          padding:1rem 0 0.4rem 0;
+        }
+        p{
+          font:600 1.1rem/1.3rem 'NotoSansKR';
+          letter-spacing:0;
+        }
+        
+      }
+    }
+  }
+}
