@@ -9,17 +9,17 @@
 
 #rfto {
   @for $i from 1 through 3 {
-		.bg0#{$i} {
-			background: url('/images/adidas/2021/event/rfto/bg0#{$i}.jpg') no-repeat;
-			background-position: top;
-			background-size: 100% 100%;
-		}
-	}
+    .bg0#{$i} {
+      background: url("/images/adidas/2021/event/rfto/bg0#{$i}.jpg") no-repeat;
+      background-position: top;
+      background-size: 100% 100%;
+    }
+  }
   .btn_default {
     &.m0 {
       margin-top: 0;
     }
-    a{
+    a {
       letter-spacing: 0;
     }
   }
@@ -40,10 +40,10 @@
   .sect_statement {
     &.sect_possible {
       .inner {
-        >img{
+        > img {
           width: 100%;
         }
-        >div{
+        > div {
           padding: 5rem 0 2rem;
           h4 {
             padding: 0;
@@ -61,11 +61,11 @@
       .inner {
         white-space: nowrap;
         text-align: center;
-        >img{
+        > img {
           width: 100%;
           padding: 0;
         }
-        >div:not(.btn_default){
+        > div:not(.btn_default) {
           width: 80%;
           margin: 0 auto;
           text-align: left;
@@ -91,7 +91,7 @@
             letter-spacing: normal;
             color: #000;
             margin-top: 1.5rem;
-          } 
+          }
         }
         .btn_default {
           margin-top: 2rem;
@@ -233,17 +233,17 @@
   .sect_endbox {
     padding: 0 0 4rem;
     text-align: center;
-    >div:not(.btn_default){
+    > div:not(.btn_default) {
       position: relative;
       padding-bottom: 50%;
-      >img{
+      > img {
         width: 100%;
       }
       p {
         font: 400 1.25rem/1.7rem "NotoSansKR";
         letter-spacing: 1px;
         color: #000;
-        @include center(72%,auto,53%,$ctct);
+        @include center(72%, auto, 53%, $ctct);
         white-space: nowrap;
         text-align: left;
       }
@@ -253,6 +253,17 @@
       width: 100%;
     }
     .btn_default {
+    }
+  }
+
+  .sect_endbox2 {
+    padding-bottom: 4rem;
+    > a {
+      display: block;
+      img {
+        display: block;
+        width: 100%;
+      }
     }
   }
 }
