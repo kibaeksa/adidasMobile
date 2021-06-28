@@ -84,13 +84,24 @@ button{
     ul {
       text-align: center;
       li {
-        display: inline-block;
+        float:left;
         margin-left: 0;
         vertical-align: top;
         text-align: center;
-        width: 33%;
+        width: 33.3333333%;
         position: relative;
         background:#fff;
+        &:before {
+          content: "";
+          display: block;
+          position: absolute;
+          right:-1px;
+          top: 15%;
+          height: 70%;
+          width: 2px;
+          background:#aaacad;
+          // z-index:1;
+        }           
         a {
           display: block;
           p {
@@ -98,7 +109,7 @@ button{
             font: 900 1.1rem/1.5rem "adinenuPro-bold";
             color:#aaacad;
             height: 40px;
-            line-height: 40px;
+            line-height: 42px;
             text-align: center;
             text-transform: uppercase;
             letter-spacing:0;
@@ -132,6 +143,11 @@ button{
           }
         }
       }
+      :nth-child(3){
+        &:before{
+          display:none;
+        }
+      }         
     }
   }
   .tab_con {
