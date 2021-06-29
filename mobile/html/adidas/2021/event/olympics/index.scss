@@ -1,0 +1,206 @@
+@import "./mobile/css/adidas/scss/common/mixin.scss";
+@import "./mobile/css/adidas/scss/common/common.scss";
+// html,body{
+// 	height:100%;
+// }
+.not_scroll {
+  overflow: hidden;
+}
+
+#olympics {
+  .section {
+    position: relative;
+  }
+
+  .sect_visual {
+    .visual_img {
+      display: block;
+      img {
+        display: block;
+        width: 100%;
+      }
+    }
+    .btn_default {
+      margin-top: 0;
+      position: absolute;
+      left: 50%;
+      bottom: 5%;
+      transform: translateX(-50%);
+      z-index: 2;
+    }
+  }
+
+  .sect_visual_video {
+    text-align: center;
+    > img {
+      display: block;
+      width: 100%;
+    }
+    a.btn-play {
+      position: absolute;
+      width: 90%;
+      height: 53%;
+      top: 3%;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+    }
+    .btn_default {
+      margin-top: 0;
+      position: absolute;
+      bottom: 5%;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+    }
+  }
+
+  .contents_wrap {
+    padding: 3rem 0;
+    background: url("/images/adidas/2021/event/olympics/contents_bg.jpg") left top no-repeat;
+    background-size: 100% 100%;
+    text-align: center;
+    > div {
+      text-align: center;
+    }
+    .sect_people {
+      width: 100%;
+      text-align: center;
+      .people_box {
+        overflow: hidden;
+        position: relative;
+        display: inline-block;
+        width: 90%;
+        margin-bottom: 1rem;
+        z-index: 2;
+
+        > img {
+          float: left;
+          width: 30%;
+          margin-bottom: 10px;
+        }
+        .txt {
+          float: left;
+          padding: 10% 1rem 0;
+          p {
+            font: 300 0.8rem/1.3rem "NotoSansKR";
+            color: #fff;
+            letter-spacing: normal;
+            text-align: left;
+          }
+          h5 {
+            padding: 0.5rem 0 0;
+            font: 500 1.3rem/1.3rem "NotoSansKR";
+            color: #fff;
+            letter-spacing: 1px;
+            text-align: left;
+          }
+        }
+        &.right {
+          > img {
+            float: right;
+          }
+          .txt {
+            float: right;
+            p,
+            h5 {
+              text-align: right !important;
+            }
+          }
+          &::before {
+            left: auto;
+            right: 15px;
+          }
+        }
+        &::before {
+          position: absolute;
+          left: 15px;
+          bottom: 0;
+          display: inline-block;
+          content: "";
+          width: 88%;
+          height: 90%;
+          background: #f05041;
+          z-index: -1;
+        }
+      }
+    }
+    .sect_lollin {
+      padding-bottom: 3rem;
+      .lollin_box {
+        position: relative;
+        h4 {
+          padding: 2.5rem 0 1.5rem;
+          font: 600 1.4rem/1.4rem "NotoSansKR";
+          color: #f05041;
+          letter-spacing: 1px;
+          text-align: center;
+        }
+        .lollin_slider {
+          width: 80%;
+          margin: 0 auto;
+          .slick-list {
+            .slick-slide {
+              position: relative;
+              video,
+              img {
+                display: block;
+                width: 100%;
+              }
+              a.btn-play {
+                position: absolute;
+                width: 200px;
+                height: 200px;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 2;
+              }
+            }
+          }
+        }
+        .carousel_wrapper_nav {
+          //   width: 70.3125%;
+          .arrow-button {
+            position: absolute;
+            top: 55%;
+            width: 1.4rem;
+            > img {
+              display: block;
+              width: 100%;
+            }
+            &.prev-button {
+              left: 4%;
+            }
+
+            &.next-button {
+              right: 4%;
+            }
+          }
+        }
+      }
+      .btn_default {
+        margin-top: 1rem;
+      }
+    }
+    .sect_look {
+      .sect_img {
+        width: 100%;
+        text-align: center;
+        > img {
+          display: inline-block;
+          width: 90%;
+        }
+      }
+      .btn_default {
+      }
+    }
+  }
+
+  .sect_membership {
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+}
