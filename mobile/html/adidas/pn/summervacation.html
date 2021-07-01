@@ -1,0 +1,592 @@
+<div id="container">
+    <style type="text/css">
+        @media screen and (max-width: 320px) {
+            html {
+                font-size: 10px
+            }
+        }
+
+        @media screen and (min-width: 800px) {
+            html {
+                font-size: 12px
+            }
+        }
+
+        .pseudo-element {
+            content: '';
+            display: block
+        }
+
+        .btn_default {
+            margin-top: 0
+        }
+
+        @keyframes fade-in {
+            from {
+                opacity: 0
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        #stylecuration section {
+            position: relative
+        }
+
+        #stylecuration div,
+        #stylecuration img,
+        #stylecuration button {
+            outline: none
+        }
+
+        #stylecuration img {
+            width: 100%
+        }
+
+        #stylecuration .btn_default {
+            margin-top: 0
+        }
+
+        #stylecuration .bg01 {
+            background: url("/images/adidas/2021/event/stylecuration/0702/bg01.jpg") no-repeat;
+            background-position: top;
+            background-size: 100% 100%
+        }
+
+        #stylecuration .bg02 {
+            background: url("/images/adidas/2021/event/stylecuration/0702/bg02.jpg") no-repeat;
+            background-position: top;
+            background-size: 100% 100%
+        }
+
+        #stylecuration .bg03 {
+            background: url("/images/adidas/2021/event/stylecuration/0702/bg03.jpg") no-repeat;
+            background-position: top;
+            background-size: 100% 100%
+        }
+
+        #stylecuration .visual__container {
+            padding: 2rem 0 3rem
+        }
+
+        #stylecuration .visual__container.on .visual__figure {
+            opacity: 1;
+            -webkit-opacity: 1;
+            -moz-opacity: 1;
+            top: 0
+        }
+
+        #stylecuration .visual__container.on .visual__figure:nth-child(2) {
+            transition-delay: .3s;
+            -webkit-transition-delay: .3s;
+            -moz-transition-delay: .3s
+        }
+
+        #stylecuration .visual__container.on .visual__figure:nth-child(3) {
+            transition-delay: .45s;
+            -webkit-transition-delay: .45s;
+            -moz-transition-delay: .45s
+        }
+
+        #stylecuration .visual__container.on .visual__figure:nth-child(4) {
+            transition-delay: .6s;
+            -webkit-transition-delay: .6s;
+            -moz-transition-delay: .6s
+        }
+
+        #stylecuration .visual__container.on .visual__figure:nth-child(5) {
+            transition-delay: .75s;
+            -webkit-transition-delay: .75s;
+            -moz-transition-delay: .75s
+        }
+
+        #stylecuration .visual__container.on .visual__figure:nth-child(6) {
+            transition-delay: .9s;
+            -webkit-transition-delay: .9s;
+            -moz-transition-delay: .9s
+        }
+
+        #stylecuration .visual__container.on .visual__figure:nth-child(7) {
+            transition-delay: 1.05s;
+            -webkit-transition-delay: 1.05s;
+            -moz-transition-delay: 1.05s
+        }
+
+        #stylecuration .visual__container .visual__figure {
+            width: 100%;
+            margin: 0 auto
+        }
+
+        #stylecuration .visual__container .visual__figure img {
+            width: 100%
+        }
+
+        #stylecuration .visual__container .txt {
+            width: 80%;
+            margin: 0 auto;
+            white-space: nowrap;
+            text-align: center
+        }
+
+        #stylecuration .visual__container .txt>img {
+            display: block;
+            margin-top: 2rem;
+            width: 100%
+        }
+
+        #stylecuration .visual__container .txt>img:nth-child(2) {
+            width: 75%;
+            margin: 1rem auto 0
+        }
+
+        #stylecuration .visual__container .txt p {
+            font: 500 3.6vw/5.9vw "NotoSansKR";
+            color: #000000;
+            text-align: center;
+            margin-top: 1.8rem
+        }
+
+        #stylecuration .visual__container .txt p:nth-child(4) {
+            margin-top: 1rem
+        }
+
+        #stylecuration .visual__container .txt .btn_default {
+            margin-top: 1.5rem
+        }
+
+        #stylecuration .desc__container div {
+            text-align: center
+        }
+
+        #stylecuration .desc__container div img {
+            width: 100%;
+            margin: 0 auto
+        }
+
+        #stylecuration .slide__container {
+            padding: 2rem 0 3rem 0;
+            text-align: center
+        }
+
+        #stylecuration .slide__container.sub .slick-list {
+            width: 85%;
+            margin: 0 auto;
+            overflow: visible
+        }
+
+        #stylecuration .slide__container.sub .slick-list .slick-track .item img {
+            width: 99.5%;
+            margin: 0 auto
+        }
+
+        #stylecuration .slide__container.sub .prev-button {
+            left: 32%
+        }
+
+        #stylecuration .slide__container.sub .next-button {
+            right: 32%
+        }
+
+        #stylecuration .slide__container .slick-list {
+            width: 92%;
+            margin: 0 auto
+        }
+
+        #stylecuration .slide__container .slick-list .slick-track .item img {
+            width: 100%;
+            margin: 0 auto
+        }
+
+        #stylecuration .slide__container .slick-dots {
+            text-align: center;
+            margin: 1rem 0 1.5rem 0
+        }
+
+        #stylecuration .slide__container .slick-dots li {
+            display: inline-block;
+            width: 10px;
+            height: 2px;
+            margin: 0 1.5px;
+            background-color: #ffffff;
+            text-indent: -9999px;
+            vertical-align: bottom
+        }
+
+        #stylecuration .slide__container .slick-dots li.slick-active {
+            height: 3.5px;
+            background-color: #000000
+        }
+
+        #stylecuration .slide__container .slick-dots li button {
+            border: 0;
+            background: none
+        }
+
+        #stylecuration .slide__container .prev-button,
+        #stylecuration .slide__container .next-button {
+            position: absolute;
+            top: 50%;
+            bottom: auto;
+            left: auto;
+            transform: translateY(-50%);
+            margin-left: auto;
+            z-index: 2
+        }
+
+        #stylecuration .slide__container .prev-button {
+            left: 8%;
+            transform: translateY(-50%) rotate(180deg)
+        }
+
+        #stylecuration .slide__container .next-button {
+            right: 8%
+        }
+
+        #stylecuration .video__container {
+            text-align: center
+        }
+
+        #stylecuration .video__container>a {
+            display: block;
+            width: 100%;
+            margin: 0 auto
+        }
+
+        #stylecuration .video__container .btn_default {
+            margin-top: 1.5rem
+        }
+
+        #stylecuration .bottom__container img {
+            width: 100%
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="/css/slick.css" />
+    <div id="stylecuration">
+        <main role="main">
+            <section class="visual__container bg01">
+                <div class="visual__figure">
+                    <img src="/images/adidas/2021/event/stylecuration/0702/main01.png" alt="">
+                </div>
+                <div class="txt">
+                    <img src="/images/adidas/2021/event/stylecuration/0702/text_logo01.png" alt="">
+                    <img src="/images/adidas/2021/event/stylecuration/0702/text_logo02.png" alt="">
+                    <p>
+                        추억을 남기고 싶은 여름,<br />
+                        분위기를 더해주는 배케이션 룩<br />
+
+                    </p>
+                    <p>
+                        아디다스 오리지널스와 <br />
+                        더오픈 프로덕트 그리고 조거쉬의 만남
+                    </p>
+                    <div class="btn_default">
+                        <a href="https://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=1694"
+                            campaign-label="구매하기">
+                            구매하기
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <div class="theopen">
+                <section class="desc__container">
+                    <div>
+                        <img src="/images/adidas/2021/event/stylecuration/0702/text01.jpg" alt="">
+                    </div>
+                </section>
+                <div class="bg02">
+                    <section class="slide__container">
+                        <div class="sliders" id="slider01">
+                            <div class="item">
+                                <img src="/images/adidas/2021/event/stylecuration/0702/theopen_LOOKBOOK_1/1.png" alt="">
+                            </div>
+                            <div class="item">
+                                <img src="/images/adidas/2021/event/stylecuration/0702/theopen_LOOKBOOK_1/2.png" alt="">
+                            </div>
+                            <div class="item">
+                                <img src="/images/adidas/2021/event/stylecuration/0702/theopen_LOOKBOOK_1/3.png" alt="">
+                            </div>
+                            <div class="item">
+                                <img src="/images/adidas/2021/event/stylecuration/0702/theopen_LOOKBOOK_1/4.png" alt="">
+                            </div>
+                            <div class="item">
+                                <img src="/images/adidas/2021/event/stylecuration/0702/theopen_LOOKBOOK_1/5.png" alt="">
+                            </div>
+                            <div class="item">
+                                <img src="/images/adidas/2021/event/stylecuration/0702/theopen_LOOKBOOK_1/6.png" alt="">
+                            </div>
+                            <div class="item">
+                                <img src="/images/adidas/2021/event/stylecuration/0702/theopen_LOOKBOOK_1/7.png" alt="">
+                            </div>
+                            <div class="item">
+                                <img src="/images/adidas/2021/event/stylecuration/0702/theopen_LOOKBOOK_1/8.png" alt="">
+                            </div>
+                            <div class="item">
+                                <img src="/images/adidas/2021/event/stylecuration/0702/theopen_LOOKBOOK_1/9.png" alt="">
+                            </div>
+                            <div class="item">
+                                <img src="/images/adidas/2021/event/stylecuration/0702/theopen_LOOKBOOK_1/10.png"
+                                    alt="">
+                            </div>
+                        </div>
+                        <!-- <div class="prev-button prev-button01">
+                                        <img src="/images/adidas/2021/event/stylecuration/0702/arrow.png" alt="">
+                                    </div>
+                                    <div class="next-button next-button01">
+                                        <img src="/images/adidas/2021/event/stylecuration/0702/arrow.png" alt="">
+                                    </div> -->
+                        <div class="btn_default">
+                            <a href="https://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=1694"
+                                campaign-label="구매하기">
+                                구매하기
+                            </a>
+                        </div>
+                    </section>
+                    <section class="video__container">
+                        <a href="#" class="prevent" onclick="openModalVideoViewer('K54LLXQ8vW4')">
+                            <img src="/images/adidas/2021/event/stylecuration/0702/video01.jpg" alt="">
+                        </a>
+                        <div class="btn_default">
+                            <a href="https://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=1694"
+                                campaign-label="구매하기">
+                                구매하기
+                            </a>
+                        </div>
+                    </section>
+                    <section class="slide__container sub">
+                        <div class="sliders" id="slider02">
+                            <div class="item">
+                                <img src="/images/adidas/2021/event/stylecuration/0702/theopen_LOOKBOOK_2/1.png" alt="">
+                            </div>
+                            <div class="item">
+                                <img src="/images/adidas/2021/event/stylecuration/0702/theopen_LOOKBOOK_2/2.png" alt="">
+                            </div>
+                            <div class="item">
+                                <img src="/images/adidas/2021/event/stylecuration/0702/theopen_LOOKBOOK_2/3.png" alt="">
+                            </div>
+                            <div class="item">
+                                <img src="/images/adidas/2021/event/stylecuration/0702/theopen_LOOKBOOK_2/4.png" alt="">
+                            </div>
+                            <div class="item">
+                                <img src="/images/adidas/2021/event/stylecuration/0702/theopen_LOOKBOOK_2/5.png" alt="">
+                            </div>
+                            <div class="item">
+                                <img src="/images/adidas/2021/event/stylecuration/0702/theopen_LOOKBOOK_2/6.png" alt="">
+                            </div>
+                            <div class="item">
+                                <img src="/images/adidas/2021/event/stylecuration/0702/theopen_LOOKBOOK_2/7.png" alt="">
+                            </div>
+                            <div class="item">
+                                <img src="/images/adidas/2021/event/stylecuration/0702/theopen_LOOKBOOK_2/8.png" alt="">
+                            </div>
+                            <div class="item">
+                                <img src="/images/adidas/2021/event/stylecuration/0702/theopen_LOOKBOOK_2/9.png" alt="">
+                            </div>
+                            <div class="item">
+                                <img src="/images/adidas/2021/event/stylecuration/0702/theopen_LOOKBOOK_2/10.png"
+                                    alt="">
+                            </div>
+                        </div>
+                        <!-- <div class="prev-button prev-button02">
+                                        <img src="/images/adidas/2021/event/stylecuration/0702/arrow.jpg" alt="">
+                                    </div>
+                                    <div class="next-button next-button02">
+                                        <img src="/images/adidas/2021/event/stylecuration/0702/arrow.jpg" alt="">
+                                    </div> -->
+                        <div class="btn_default">
+                            <a href="https://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=1694"
+                                campaign-label="구매하기">
+                                구매하기
+                            </a>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <div class="joegush">
+                <section class="desc__container">
+                    <div>
+                        <img src="/images/adidas/2021/event/stylecuration/0702/text02.jpg" alt="">
+                    </div>
+                </section>
+                <div class="bg03">
+                    <section class="slide__container">
+                        <div class="sliders" id="slider03">
+                            <div class="item">
+                                <img src="/images/adidas/2021/event/stylecuration/0702/joegush_LOOKBOOK_1/1.png" alt="">
+                            </div>
+                            <div class="item">
+                                <img src="/images/adidas/2021/event/stylecuration/0702/joegush_LOOKBOOK_1/2.png" alt="">
+                            </div>
+                            <div class="item">
+                                <img src="/images/adidas/2021/event/stylecuration/0702/joegush_LOOKBOOK_1/3.png" alt="">
+                            </div>
+                            <div class="item">
+                                <img src="/images/adidas/2021/event/stylecuration/0702/joegush_LOOKBOOK_1/4.png" alt="">
+                            </div>
+                            <div class="item">
+                                <img src="/images/adidas/2021/event/stylecuration/0702/joegush_LOOKBOOK_1/5.png" alt="">
+                            </div>
+                            <div class="item">
+                                <img src="/images/adidas/2021/event/stylecuration/0702/joegush_LOOKBOOK_1/6.png" alt="">
+                            </div>
+                            <div class="item">
+                                <img src="/images/adidas/2021/event/stylecuration/0702/joegush_LOOKBOOK_1/7.png" alt="">
+                            </div>
+                            <div class="item">
+                                <img src="/images/adidas/2021/event/stylecuration/0702/joegush_LOOKBOOK_1/8.png" alt="">
+                            </div>
+                            <div class="item">
+                                <img src="/images/adidas/2021/event/stylecuration/0702/joegush_LOOKBOOK_1/9.png" alt="">
+                            </div>
+                            <div class="item">
+                                <img src="/images/adidas/2021/event/stylecuration/0702/joegush_LOOKBOOK_1/10.png"
+                                    alt="">
+                            </div>
+                            <div class="item">
+                                <img src="/images/adidas/2021/event/stylecuration/0702/joegush_LOOKBOOK_1/11.png"
+                                    alt="">
+                            </div>
+                        </div>
+                        <!-- <div class="prev-button prev-button03">
+                                        <img src="/images/adidas/2021/event/stylecuration/0702/arrow.png" alt="">
+                                    </div>
+                                    <div class="next-button next-button03">
+                                        <img src="/images/adidas/2021/event/stylecuration/0702/arrow.png" alt="">
+                                    </div> -->
+                        <div class="btn_default">
+                            <a href="https://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=1694"
+                                campaign-label="구매하기">
+                                구매하기
+                            </a>
+                        </div>
+                    </section>
+                    <section class="video__container">
+                        <a href="#" class="prevent" onclick="openModalVideoViewer('8bhC4tJ-7eQ')">
+                            <img src="/images/adidas/2021/event/stylecuration/0702/video02.jpg" alt="">
+                        </a>
+                        <div class="btn_default">
+                            <a href="https://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=1694"
+                                campaign-label="구매하기">
+                                구매하기
+                            </a>
+                        </div>
+                    </section>
+                    <section class="slide__container sub">
+                        <div class="sliders" id="slider04">
+                            <div class="item">
+                                <img src="/images/adidas/2021/event/stylecuration/0702/joegush_LOOKBOOK_2/1.png" alt="">
+                            </div>
+                            <div class="item">
+                                <img src="/images/adidas/2021/event/stylecuration/0702/joegush_LOOKBOOK_2/2.png" alt="">
+                            </div>
+                            <div class="item">
+                                <img src="/images/adidas/2021/event/stylecuration/0702/joegush_LOOKBOOK_2/3.png" alt="">
+                            </div>
+                            <div class="item">
+                                <img src="/images/adidas/2021/event/stylecuration/0702/joegush_LOOKBOOK_2/4.png" alt="">
+                            </div>
+                            <div class="item">
+                                <img src="/images/adidas/2021/event/stylecuration/0702/joegush_LOOKBOOK_2/5.png" alt="">
+                            </div>
+                            <div class="item">
+                                <img src="/images/adidas/2021/event/stylecuration/0702/joegush_LOOKBOOK_2/6.png" alt="">
+                            </div>
+                            <div class="item">
+                                <img src="/images/adidas/2021/event/stylecuration/0702/joegush_LOOKBOOK_2/7.png" alt="">
+                            </div>
+                            <div class="item">
+                                <img src="/images/adidas/2021/event/stylecuration/0702/joegush_LOOKBOOK_2/8.png" alt="">
+                            </div>
+                            <div class="item">
+                                <img src="/images/adidas/2021/event/stylecuration/0702/joegush_LOOKBOOK_2/9.png" alt="">
+                            </div>
+                            <div class="item">
+                                <img src="/images/adidas/2021/event/stylecuration/0702/joegush_LOOKBOOK_2/10.png"
+                                    alt="">
+                            </div>
+                        </div>
+                        <!-- <div class="prev-button prev-button04">
+                                        <img src="/images/adidas/2021/event/stylecuration/0702/arrow.jpg" alt="">
+                                    </div>
+                                    <div class="next-button next-button04">
+                                        <img src="/images/adidas/2021/event/stylecuration/0702/arrow.jpg" alt="">
+                                    </div> -->
+                        <div class="btn_default">
+                            <a href="https://m.adidas.co.kr/MO/Promotion/landingPage.action?pageNo=1694"
+                                campaign-label="구매하기">
+                                구매하기
+                            </a>
+                        </div>
+                    </section>
+                </div>
+                <section class="bottom__container">
+                    <img src="/images/adidas/2021/event/stylecuration/0702/bottom.jpg" alt="">
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script type="text/javascript" src="/designjs/common/slick.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            // 앵커 방지
+            $('#stylecuration .prevent').click(function (e) {
+                $(this).attr("href") === "#" && e.preventDefault();
+            })
+
+            // 상단 슬라이드
+            function Comp(elem, prev, next) {
+                this.mod = function ( // 모듈
+                    slidesToShow, infinite, auto, centerMode, dots, focusOnSelect, asNavFor, swipe, fade
+                ) {
+                    elem.slick({
+                        cssEase: 'linear',
+                        slidesToScroll: 1,
+                        autoplaySpeed: 3800,
+                        arrows: true,
+                        variableWidth: false,
+                        prevArrow: prev,
+                        nextArrow: next,
+                        slidesToShow: slidesToShow, // 커스텀 시작
+                        infinite: infinite,
+                        autoplay: auto,
+                        centerMode: centerMode,
+                        dots: dots,
+                        focusOnSelect: focusOnSelect,
+                        asNavFor: asNavFor,
+                        swipe: swipe,
+                        fade: fade,
+                    });
+                }
+                // 실행
+                this.mod(1, true, false, false, true, '', false, true, false);
+            }
+            // 인스턴스
+            var slideCount = $('#stylecuration .sliders').length;
+            for (var i = 0; i < slideCount; i++) {
+                new Comp(
+                    $('#slider0' + (i + 1)),
+                    $('.prev-button0' + (i + 1)),
+                    $('.next-button0' + (i + 1))
+                );
+            }
+            // scroll event
+            $('#fos section').addClass('scroll');
+            $(this).scroll(function () {
+                var thisScroll = $(this).scrollTop();
+                var section = $('#fos .scroll');
+                $.each(section, function (index, elem) {
+                    var $target = section.eq(index);
+                    var targetTop = $target.offset().top - 700;
+                    targetTop <= thisScroll && $('#fos .scroll').eq(index).addClass('on');
+                    targetTop >= thisScroll && $('#fos .scroll').eq(index).removeClass('on');
+                })
+            })
+
+        });
+
+    </script>
+</div>
+<!-- //container product_list -->
