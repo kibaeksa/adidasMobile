@@ -396,7 +396,13 @@
             contents.fadeOut(0).eq(_idx).fadeIn(400);
             contentsVideo.fadeOut(0).eq(_idx).fadeIn(400);
             lollinSlider.slick("setPosition");
+            tabMove();
           });
+
+          function tabMove() {
+            console.log(tabs01.offset().top);
+            $("html, body").animate({ scrollTop: tabs01.offset().top - 60 }, 600);
+          }
 
           // sliders
           for (let i = 0; i < lollinSlider.length; i++) {
