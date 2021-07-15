@@ -1,0 +1,233 @@
+@import "./mobile/css/adidas/scss/common/mixin.scss";
+@import "./mobile/css/adidas/scss/common/common.scss";
+// html,body{
+// 	height:100%;
+// }
+.not_scroll {
+  overflow: hidden;
+}
+
+#ozworld {
+  .section {
+    position: relative;
+  }
+
+  .sect_visual {
+    .visual_img {
+      display: block;
+      img {
+        display: block;
+        width: 100%;
+      }
+    }
+    .btn_default {
+      margin-top: 0;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+    }
+  }
+
+  .sect_visual_state {
+    .visual_img {
+      display: block;
+      img {
+        display: block;
+        width: 100%;
+      }
+    }
+    .btn_default {
+      margin-top: 0;
+      position: absolute;
+      left: 50%;
+      bottom: 5%;
+      transform: translateX(-50%);
+      z-index: 2;
+    }
+  }
+
+  .sect_visual_video {
+    background: #40335f;
+    padding: 2.4rem 3rem;
+    text-align: center;
+    .inner {
+      overflow: hidden;
+      margin: 0 auto;
+      width: 100%;
+    }
+    a.video_box {
+      float: left;
+      width: 48%;
+      height: 53%;
+      > img {
+        display: block;
+        width: 100%;
+      }
+      &:first-child {
+        margin-right: 4%;
+      }
+      &:last-child {
+        margin-top: 2rem;
+      }
+    }
+    .btn_default {
+      margin-top: 2rem;
+    }
+  }
+
+  .sect_tabs {
+    > img {
+      display: block;
+      width: 100%;
+    }
+    .tab_btns {
+      overflow: hidden;
+      position: absolute;
+      top: 36%;
+      left: 2%;
+      width: 96%;
+      height: 47%;
+      a.tab_btn {
+        float: left;
+        width: 30%;
+        height: 100%;
+        margin: 0 1.6666%;
+      }
+    }
+  }
+
+  .contents_wrap {
+    display: none;
+    text-align: center;
+    > div {
+      text-align: center;
+    }
+    .sect_desc {
+      > img {
+        display: block;
+        width: 100%;
+      }
+      .btn_default {
+        margin-top: 0;
+        position: absolute;
+        left: 50%;
+        bottom: 8%;
+        transform: translateX(-50%);
+        z-index: 2;
+      }
+    }
+    .sect_lollin {
+      padding: 5rem 0;
+      &.red {
+        background: url("/images/adidas/2021/event/ozworld/cont_01_bg.jpg") 0 0 no-repeat;
+        background-size: cover;
+      }
+      &.yellow {
+        background: url("/images/adidas/2021/event/ozworld/cont_02_bg01.jpg") 0 0 no-repeat;
+        background-size: cover;
+      }
+      &.green {
+        background: url("/images/adidas/2021/event/ozworld/cont_02_bg02.jpg") 0 0 no-repeat;
+        background-size: cover;
+      }
+      &.grey {
+        background: url("/images/adidas/2021/event/ozworld/cont_02_bg03.jpg") 0 0 no-repeat;
+        background-size: cover;
+      }
+      &.blue {
+        background: url("/images/adidas/2021/event/ozworld/cont_03_bg.jpg") 0 0 no-repeat;
+        background-size: cover;
+      }
+      h4 {
+        text-align: center;
+        img {
+          display: inline-block;
+          width: 54%;
+        }
+      }
+      .lollin_box {
+        position: relative;
+        padding-top: 2rem;
+        .lollin_slider {
+          width: 80%;
+          margin: 0 auto;
+          .slick-list {
+            .slick-slide {
+              position: relative;
+              padding: 0 4px;
+              video,
+              img {
+                display: block;
+                width: 100%;
+              }
+              a.btn-play {
+                position: absolute;
+                width: 200px;
+                height: 200px;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 2;
+              }
+            }
+          }
+        }
+        .carousel_wrapper_nav {
+          //   width: 70.3125%;
+          .arrow-button {
+            position: absolute;
+            top: 42%;
+            width: 1.4rem;
+            > img {
+              display: block;
+              width: 100%;
+            }
+            &.prev-button {
+              left: 3%;
+            }
+
+            &.next-button {
+              right: 3%;
+            }
+          }
+        }
+      }
+      .btn_default {
+        margin-top: 1rem;
+      }
+    }
+  }
+
+  .video_wrap {
+    display: none;
+    &.video02 {
+      background: url("/images/adidas/2021/event/ozworld/cont_02_video_bg.jpg") 0 0 no-repeat;
+      background-size: cover;
+    }
+    &.video03 {
+      background: url("/images/adidas/2021/event/ozworld/cont_03_video_bg.jpg") 0 0 no-repeat;
+      background-size: cover;
+    }
+    .sect_cont_video {
+      padding: 2.4rem 3rem;
+      text-align: center;
+      .inner {
+        overflow: hidden;
+        margin: 0 auto;
+        width: 100%;
+        text-align: center;
+      }
+      a.video_box {
+        display: inline-block;
+        width: 48%;
+        height: 53%;
+        > img {
+          display: block;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
